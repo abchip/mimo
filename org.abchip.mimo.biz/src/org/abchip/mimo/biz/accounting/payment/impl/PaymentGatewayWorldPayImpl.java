@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isAuthMode <em>Auth Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isFixContact <em>Fix Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isHideContact <em>Hide Contact</em>}</li>
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getRedirectUrl <em>Redirect Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getTestMode <em>Test Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isWithDelivery <em>With Delivery</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,24 +46,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isAuthMode() <em>Auth Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -241,6 +226,15 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * @ordered
 	 */
 	protected boolean withDelivery = WITH_DELIVERY_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -336,7 +330,24 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -346,8 +357,8 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -522,8 +533,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
 				return isAuthMode();
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT:
@@ -544,6 +553,9 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 				return getTestMode();
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
 				return isWithDelivery();
+			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -556,9 +568,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
 				setAuthMode((Boolean)newValue);
 				return;
@@ -589,6 +598,9 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
 				setWithDelivery((Boolean)newValue);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -601,9 +613,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
 				setAuthMode(AUTH_MODE_EDEFAULT);
 				return;
@@ -634,6 +643,9 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
 				setWithDelivery(WITH_DELIVERY_EDEFAULT);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -646,8 +658,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
 				return authMode != AUTH_MODE_EDEFAULT;
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT:
@@ -668,6 +678,8 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 				return testMode != TEST_MODE_EDEFAULT;
 			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
 				return withDelivery != WITH_DELIVERY_EDEFAULT;
+			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -682,9 +694,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
-		result.append(", authMode: ");
+		result.append(" (authMode: ");
 		result.append(authMode);
 		result.append(", fixContact: ");
 		result.append(fixContact);

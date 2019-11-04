@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.content.content.impl;
 
 import org.abchip.mimo.biz.content.content.ContentPackage;
+import org.abchip.mimo.biz.content.content.ContentType;
 import org.abchip.mimo.biz.content.content.ContentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeAttrImpl#getContentTypeId <em>Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeAttrImpl#getContentTypeId <em>Content Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,26 +40,6 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentTypeId() <em>Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentTypeId() <em>Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentTypeId = CONTENT_TYPE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -96,6 +79,16 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContentTypeId() <em>Content Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentType contentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,7 +138,24 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	 * @generated
 	 */
 	@Override
-	public String getContentTypeId() {
+	public ContentType getContentTypeId() {
+		if (contentTypeId != null && ((EObject)contentTypeId).eIsProxy()) {
+			InternalEObject oldContentTypeId = (InternalEObject)contentTypeId;
+			contentTypeId = (ContentType)eResolveProxy(oldContentTypeId);
+			if (contentTypeId != oldContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
+			}
+		}
+		return contentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentType basicGetContentTypeId() {
 		return contentTypeId;
 	}
 
@@ -155,8 +165,8 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	 * @generated
 	 */
 	@Override
-	public void setContentTypeId(String newContentTypeId) {
-		String oldContentTypeId = contentTypeId;
+	public void setContentTypeId(ContentType newContentTypeId) {
+		ContentType oldContentTypeId = contentTypeId;
 		contentTypeId = newContentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
@@ -193,12 +203,13 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
-				return getContentTypeId();
 			case ContentPackage.CONTENT_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case ContentPackage.CONTENT_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
+				if (resolve) return getContentTypeId();
+				return basicGetContentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,14 +222,14 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
-				setContentTypeId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case ContentPackage.CONTENT_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
+				setContentTypeId((ContentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,14 +243,14 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
-				setContentTypeId(CONTENT_TYPE_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
+				setContentTypeId((ContentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,12 +264,12 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
-				return CONTENT_TYPE_ID_EDEFAULT == null ? contentTypeId != null : !CONTENT_TYPE_ID_EDEFAULT.equals(contentTypeId);
 			case ContentPackage.CONTENT_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case ContentPackage.CONTENT_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID:
+				return contentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,9 +284,7 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentTypeId: ");
-		result.append(contentTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

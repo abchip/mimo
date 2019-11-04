@@ -108,22 +108,13 @@ public interface WebsitePackage extends EPackage {
 	int WEB_ANALYTICS_CONFIG__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Web Site Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_ANALYTICS_CONFIG__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Web Analytics Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Web Analytics Type Id</b></em>' reference.
@@ -132,7 +123,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Web Site Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_ANALYTICS_CONFIG__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Web Analytics Config</em>' class.
@@ -281,22 +281,13 @@ public interface WebsitePackage extends EPackage {
 	int WEB_SITE_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Web Site Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_CONTENT__WEB_SITE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int WEB_SITE_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -305,7 +296,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int WEB_SITE_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Web Site Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE_CONTENT__WEB_SITE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Content Id</b></em>' reference.
@@ -481,22 +481,13 @@ public interface WebsitePackage extends EPackage {
 	int WEB_SITE_PATH_ALIAS__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Web Site Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_PATH_ALIAS__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Path Alias</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PATH_ALIAS__PATH_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int WEB_SITE_PATH_ALIAS__PATH_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -505,7 +496,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PATH_ALIAS__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WEB_SITE_PATH_ALIAS__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Alias To</b></em>' attribute.
@@ -514,7 +505,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PATH_ALIAS__ALIAS_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int WEB_SITE_PATH_ALIAS__ALIAS_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Map Key</b></em>' attribute.
@@ -523,7 +514,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PATH_ALIAS__MAP_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int WEB_SITE_PATH_ALIAS__MAP_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -532,7 +523,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PATH_ALIAS__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int WEB_SITE_PATH_ALIAS__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Web Site Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE_PATH_ALIAS__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Content Id</b></em>' reference.
@@ -599,22 +599,13 @@ public interface WebsitePackage extends EPackage {
 	int WEB_SITE_PUBLISH_POINT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_PUBLISH_POINT__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>About Content Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Content Dept</b></em>' attribute.
@@ -623,7 +614,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__CONTENT_DEPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WEB_SITE_PUBLISH_POINT__CONTENT_DEPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Left Bar Id</b></em>' attribute.
@@ -632,7 +623,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__LEFT_BAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int WEB_SITE_PUBLISH_POINT__LEFT_BAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Line Logo</b></em>' attribute.
@@ -641,7 +632,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__LINE_LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int WEB_SITE_PUBLISH_POINT__LINE_LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Logo</b></em>' attribute.
@@ -650,7 +641,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int WEB_SITE_PUBLISH_POINT__LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Medallion Logo</b></em>' attribute.
@@ -659,7 +650,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__MEDALLION_LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int WEB_SITE_PUBLISH_POINT__MEDALLION_LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Right Bar Id</b></em>' attribute.
@@ -668,7 +659,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__RIGHT_BAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int WEB_SITE_PUBLISH_POINT__RIGHT_BAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Style Sheet File</b></em>' attribute.
@@ -677,7 +668,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__STYLE_SHEET_FILE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int WEB_SITE_PUBLISH_POINT__STYLE_SHEET_FILE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Template Title</b></em>' attribute.
@@ -686,7 +677,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__TEMPLATE_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int WEB_SITE_PUBLISH_POINT__TEMPLATE_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE_PUBLISH_POINT__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Web Site Publish Point</em>' class.
@@ -709,15 +709,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getWebAnalyticsConfig();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Web Site Id</em>'.
+	 * @return the meta object for the reference '<em>Web Site Id</em>'.
 	 * @see org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId()
 	 * @see #getWebAnalyticsConfig()
 	 * @generated
 	 */
-	EAttribute getWebAnalyticsConfig_WebSiteId();
+	EReference getWebAnalyticsConfig_WebSiteId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}'.
@@ -806,15 +806,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getWebSiteContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebSiteContent#getWebSiteId <em>Web Site Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.website.WebSiteContent#getWebSiteId <em>Web Site Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Web Site Id</em>'.
+	 * @return the meta object for the reference '<em>Web Site Id</em>'.
 	 * @see org.abchip.mimo.biz.content.website.WebSiteContent#getWebSiteId()
 	 * @see #getWebSiteContent()
 	 * @generated
 	 */
-	EAttribute getWebSiteContent_WebSiteId();
+	EReference getWebSiteContent_WebSiteId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.website.WebSiteContent#getContentId <em>Content Id</em>}'.
@@ -925,15 +925,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getWebSitePathAlias();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Web Site Id</em>'.
+	 * @return the meta object for the reference '<em>Web Site Id</em>'.
 	 * @see org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId()
 	 * @see #getWebSitePathAlias()
 	 * @generated
 	 */
-	EAttribute getWebSitePathAlias_WebSiteId();
+	EReference getWebSitePathAlias_WebSiteId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getPathAlias <em>Path Alias</em>}'.
@@ -1012,15 +1012,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getWebSitePublishPoint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content Id</em>'.
+	 * @return the meta object for the reference '<em>Content Id</em>'.
 	 * @see org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId()
 	 * @see #getWebSitePublishPoint()
 	 * @generated
 	 */
-	EAttribute getWebSitePublishPoint_ContentId();
+	EReference getWebSitePublishPoint_ContentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getAboutContentId <em>About Content Id</em>}'.
@@ -1154,12 +1154,12 @@ public interface WebsitePackage extends EPackage {
 		EClass WEB_ANALYTICS_CONFIG = eINSTANCE.getWebAnalyticsConfig();
 
 		/**
-		 * The meta object literal for the '<em><b>Web Site Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Web Site Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_ANALYTICS_CONFIG__WEB_SITE_ID = eINSTANCE.getWebAnalyticsConfig_WebSiteId();
+		EReference WEB_ANALYTICS_CONFIG__WEB_SITE_ID = eINSTANCE.getWebAnalyticsConfig_WebSiteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Web Analytics Type Id</b></em>' reference feature.
@@ -1230,12 +1230,12 @@ public interface WebsitePackage extends EPackage {
 		EClass WEB_SITE_CONTENT = eINSTANCE.getWebSiteContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Web Site Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Web Site Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE_CONTENT__WEB_SITE_ID = eINSTANCE.getWebSiteContent_WebSiteId();
+		EReference WEB_SITE_CONTENT__WEB_SITE_ID = eINSTANCE.getWebSiteContent_WebSiteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
@@ -1322,12 +1322,12 @@ public interface WebsitePackage extends EPackage {
 		EClass WEB_SITE_PATH_ALIAS = eINSTANCE.getWebSitePathAlias();
 
 		/**
-		 * The meta object literal for the '<em><b>Web Site Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Web Site Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE_PATH_ALIAS__WEB_SITE_ID = eINSTANCE.getWebSitePathAlias_WebSiteId();
+		EReference WEB_SITE_PATH_ALIAS__WEB_SITE_ID = eINSTANCE.getWebSitePathAlias_WebSiteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Path Alias</b></em>' attribute feature.
@@ -1388,12 +1388,12 @@ public interface WebsitePackage extends EPackage {
 		EClass WEB_SITE_PUBLISH_POINT = eINSTANCE.getWebSitePublishPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE_PUBLISH_POINT__CONTENT_ID = eINSTANCE.getWebSitePublishPoint_ContentId();
+		EReference WEB_SITE_PUBLISH_POINT__CONTENT_ID = eINSTANCE.getWebSitePublishPoint_ContentId();
 
 		/**
 		 * The meta object literal for the '<em><b>About Content Id</b></em>' attribute feature.

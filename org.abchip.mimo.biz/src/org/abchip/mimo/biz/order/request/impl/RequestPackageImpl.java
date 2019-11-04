@@ -1076,8 +1076,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestAttribute_CustRequestId() {
-		return (EAttribute)custRequestAttributeEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestAttribute_CustRequestId() {
+		return (EReference)custRequestAttributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1087,7 +1087,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestAttribute_AttrName() {
-		return (EAttribute)custRequestAttributeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)custRequestAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1097,7 +1097,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestAttribute_AttrDescription() {
-		return (EAttribute)custRequestAttributeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)custRequestAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1107,7 +1107,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestAttribute_AttrValue() {
-		return (EAttribute)custRequestAttributeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)custRequestAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1166,8 +1166,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestCommEvent_CustRequestId() {
-		return (EAttribute)custRequestCommEventEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestCommEvent_CustRequestId() {
+		return (EReference)custRequestCommEventEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1196,8 +1196,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestContent_CustRequestId() {
-		return (EAttribute)custRequestContentEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestContent_CustRequestId() {
+		return (EReference)custRequestContentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1217,7 +1217,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestContent_FromDate() {
-		return (EAttribute)custRequestContentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)custRequestContentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1227,7 +1227,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestContent_ThruDate() {
-		return (EAttribute)custRequestContentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)custRequestContentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1246,8 +1246,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestItem_CustRequestId() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestItem_CustRequestId() {
+		return (EReference)custRequestItemEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1257,7 +1257,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_CustRequestItemSeqId() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1267,7 +1267,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_ConfigId() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1287,7 +1287,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_Description() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1297,7 +1297,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_MaximumAmount() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1307,7 +1307,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_Priority() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1327,7 +1327,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_Quantity() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1337,7 +1337,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_RequiredByDate() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1347,7 +1347,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_ReservLength() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1357,7 +1357,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_ReservPersons() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1367,7 +1367,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_ReservStart() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1377,7 +1377,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_SelectedAmount() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1387,7 +1387,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_SequenceNum() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1407,7 +1407,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItem_Story() {
-		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)custRequestItemEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1456,8 +1456,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestItemWorkEffort_CustRequestId() {
-		return (EAttribute)custRequestItemWorkEffortEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestItemWorkEffort_CustRequestId() {
+		return (EReference)custRequestItemWorkEffortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1467,7 +1467,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestItemWorkEffort_CustRequestItemSeqId() {
-		return (EAttribute)custRequestItemWorkEffortEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)custRequestItemWorkEffortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1496,8 +1496,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestNote_CustRequestId() {
-		return (EAttribute)custRequestNoteEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestNote_CustRequestId() {
+		return (EReference)custRequestNoteEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1516,8 +1516,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestParty_CustRequestId() {
-		return (EAttribute)custRequestPartyEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestParty_CustRequestId() {
+		return (EReference)custRequestPartyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1547,7 +1547,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestParty_FromDate() {
-		return (EAttribute)custRequestPartyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)custRequestPartyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1557,7 +1557,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestParty_ThruDate() {
-		return (EAttribute)custRequestPartyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)custRequestPartyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1756,8 +1756,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestTypeAttr_CustRequestTypeId() {
-		return (EAttribute)custRequestTypeAttrEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestTypeAttr_CustRequestTypeId() {
+		return (EReference)custRequestTypeAttrEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1767,7 +1767,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestTypeAttr_AttrName() {
-		return (EAttribute)custRequestTypeAttrEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)custRequestTypeAttrEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1777,7 +1777,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 */
 	@Override
 	public EAttribute getCustRequestTypeAttr_Description() {
-		return (EAttribute)custRequestTypeAttrEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)custRequestTypeAttrEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1796,8 +1796,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustRequestWorkEffort_CustRequestId() {
-		return (EAttribute)custRequestWorkEffortEClass.getEStructuralFeatures().get(0);
+	public EReference getCustRequestWorkEffort_CustRequestId() {
+		return (EReference)custRequestWorkEffortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1930,10 +1930,10 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		createEAttribute(custRequestEClass, CUST_REQUEST__CUST_REQUEST_WORK_EFFORTS);
 
 		custRequestAttributeEClass = createEClass(CUST_REQUEST_ATTRIBUTE);
-		createEAttribute(custRequestAttributeEClass, CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID);
 		createEAttribute(custRequestAttributeEClass, CUST_REQUEST_ATTRIBUTE__ATTR_NAME);
 		createEAttribute(custRequestAttributeEClass, CUST_REQUEST_ATTRIBUTE__ATTR_DESCRIPTION);
 		createEAttribute(custRequestAttributeEClass, CUST_REQUEST_ATTRIBUTE__ATTR_VALUE);
+		createEReference(custRequestAttributeEClass, CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID);
 
 		custRequestCategoryEClass = createEClass(CUST_REQUEST_CATEGORY);
 		createEAttribute(custRequestCategoryEClass, CUST_REQUEST_CATEGORY__CUST_REQUEST_CATEGORY_ID);
@@ -1941,17 +1941,16 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		createEReference(custRequestCategoryEClass, CUST_REQUEST_CATEGORY__CUST_REQUEST_TYPE_ID);
 
 		custRequestCommEventEClass = createEClass(CUST_REQUEST_COMM_EVENT);
-		createEAttribute(custRequestCommEventEClass, CUST_REQUEST_COMM_EVENT__CUST_REQUEST_ID);
+		createEReference(custRequestCommEventEClass, CUST_REQUEST_COMM_EVENT__CUST_REQUEST_ID);
 		createEReference(custRequestCommEventEClass, CUST_REQUEST_COMM_EVENT__COMMUNICATION_EVENT_ID);
 
 		custRequestContentEClass = createEClass(CUST_REQUEST_CONTENT);
-		createEAttribute(custRequestContentEClass, CUST_REQUEST_CONTENT__CUST_REQUEST_ID);
 		createEAttribute(custRequestContentEClass, CUST_REQUEST_CONTENT__FROM_DATE);
 		createEAttribute(custRequestContentEClass, CUST_REQUEST_CONTENT__THRU_DATE);
+		createEReference(custRequestContentEClass, CUST_REQUEST_CONTENT__CUST_REQUEST_ID);
 		createEReference(custRequestContentEClass, CUST_REQUEST_CONTENT__CONTENT_ID);
 
 		custRequestItemEClass = createEClass(CUST_REQUEST_ITEM);
-		createEAttribute(custRequestItemEClass, CUST_REQUEST_ITEM__CUST_REQUEST_ID);
 		createEAttribute(custRequestItemEClass, CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID);
 		createEAttribute(custRequestItemEClass, CUST_REQUEST_ITEM__CONFIG_ID);
 		createEAttribute(custRequestItemEClass, CUST_REQUEST_ITEM__DESCRIPTION);
@@ -1965,6 +1964,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		createEAttribute(custRequestItemEClass, CUST_REQUEST_ITEM__SELECTED_AMOUNT);
 		createEAttribute(custRequestItemEClass, CUST_REQUEST_ITEM__SEQUENCE_NUM);
 		createEAttribute(custRequestItemEClass, CUST_REQUEST_ITEM__STORY);
+		createEReference(custRequestItemEClass, CUST_REQUEST_ITEM__CUST_REQUEST_ID);
 		createEReference(custRequestItemEClass, CUST_REQUEST_ITEM__STATUS_ID);
 		createEReference(custRequestItemEClass, CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID);
 		createEReference(custRequestItemEClass, CUST_REQUEST_ITEM__PRODUCT_ID);
@@ -1974,17 +1974,17 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		createEAttribute(custRequestItemNoteEClass, CUST_REQUEST_ITEM_NOTE__CUST_REQUEST_ITEM_SEQ_ID);
 
 		custRequestItemWorkEffortEClass = createEClass(CUST_REQUEST_ITEM_WORK_EFFORT);
-		createEAttribute(custRequestItemWorkEffortEClass, CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID);
 		createEAttribute(custRequestItemWorkEffortEClass, CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ITEM_SEQ_ID);
+		createEReference(custRequestItemWorkEffortEClass, CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID);
 		createEReference(custRequestItemWorkEffortEClass, CUST_REQUEST_ITEM_WORK_EFFORT__WORK_EFFORT_ID);
 
 		custRequestNoteEClass = createEClass(CUST_REQUEST_NOTE);
-		createEAttribute(custRequestNoteEClass, CUST_REQUEST_NOTE__CUST_REQUEST_ID);
+		createEReference(custRequestNoteEClass, CUST_REQUEST_NOTE__CUST_REQUEST_ID);
 
 		custRequestPartyEClass = createEClass(CUST_REQUEST_PARTY);
-		createEAttribute(custRequestPartyEClass, CUST_REQUEST_PARTY__CUST_REQUEST_ID);
 		createEAttribute(custRequestPartyEClass, CUST_REQUEST_PARTY__FROM_DATE);
 		createEAttribute(custRequestPartyEClass, CUST_REQUEST_PARTY__THRU_DATE);
+		createEReference(custRequestPartyEClass, CUST_REQUEST_PARTY__CUST_REQUEST_ID);
 		createEReference(custRequestPartyEClass, CUST_REQUEST_PARTY__PARTY_ID);
 		createEReference(custRequestPartyEClass, CUST_REQUEST_PARTY__ROLE_TYPE_ID);
 
@@ -2010,12 +2010,12 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		createEAttribute(custRequestTypeEClass, CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS);
 
 		custRequestTypeAttrEClass = createEClass(CUST_REQUEST_TYPE_ATTR);
-		createEAttribute(custRequestTypeAttrEClass, CUST_REQUEST_TYPE_ATTR__CUST_REQUEST_TYPE_ID);
 		createEAttribute(custRequestTypeAttrEClass, CUST_REQUEST_TYPE_ATTR__ATTR_NAME);
 		createEAttribute(custRequestTypeAttrEClass, CUST_REQUEST_TYPE_ATTR__DESCRIPTION);
+		createEReference(custRequestTypeAttrEClass, CUST_REQUEST_TYPE_ATTR__CUST_REQUEST_TYPE_ID);
 
 		custRequestWorkEffortEClass = createEClass(CUST_REQUEST_WORK_EFFORT);
-		createEAttribute(custRequestWorkEffortEClass, CUST_REQUEST_WORK_EFFORT__CUST_REQUEST_ID);
+		createEReference(custRequestWorkEffortEClass, CUST_REQUEST_WORK_EFFORT__CUST_REQUEST_ID);
 		createEReference(custRequestWorkEffortEClass, CUST_REQUEST_WORK_EFFORT__WORK_EFFORT_ID);
 
 		respondingPartyEClass = createEClass(RESPONDING_PARTY);
@@ -2136,10 +2136,11 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		addEOperation(custRequestEClass, ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(custRequestAttributeEClass, CustRequestAttribute.class, "CustRequestAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestAttribute_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, CustRequestAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, CustRequestAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, CustRequestAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestAttribute_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestAttribute_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 
 		initEClass(custRequestCategoryEClass, CustRequestCategory.class, "CustRequestCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustRequestCategory_CustRequestCategoryId(), ecorePackage.getEString(), "custRequestCategoryId", null, 1, 1, CustRequestCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2150,19 +2151,20 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		addEOperation(custRequestCategoryEClass, ecorePackage.getEString(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(custRequestCommEventEClass, CustRequestCommEvent.class, "CustRequestCommEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestCommEvent_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestCommEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestCommEvent_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestCommEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestCommEvent_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 		initEReference(getCustRequestCommEvent_CommunicationEventId(), theCommunicationPackage.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, CustRequestCommEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustRequestCommEvent_CommunicationEventId().getEKeys().add(theCommunicationPackage.getCommunicationEvent_CommunicationEventId());
 
 		initEClass(custRequestContentEClass, CustRequestContent.class, "CustRequestContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestContent_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestContent_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, CustRequestContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestContent_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, CustRequestContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestContent_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestContent_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 		initEReference(getCustRequestContent_ContentId(), theContentPackage.getContent(), null, "contentId", null, 0, 1, CustRequestContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustRequestContent_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 
 		initEClass(custRequestItemEClass, CustRequestItem.class, "CustRequestItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestItem_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestItem_CustRequestItemSeqId(), ecorePackage.getEString(), "custRequestItemSeqId", null, 1, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestItem_ConfigId(), ecorePackage.getEString(), "configId", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestItem_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2176,6 +2178,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		initEAttribute(getCustRequestItem_SelectedAmount(), ecorePackage.getEBigDecimal(), "selectedAmount", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestItem_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestItem_Story(), ecorePackage.getEString(), "story", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestItem_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestItem_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 		initEReference(getCustRequestItem_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustRequestItem_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEReference(getCustRequestItem_CustRequestResolutionId(), this.getCustRequestResolution(), null, "custRequestResolutionId", null, 0, 1, CustRequestItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2188,18 +2192,21 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		initEAttribute(getCustRequestItemNote_CustRequestItemSeqId(), ecorePackage.getEString(), "custRequestItemSeqId", null, 1, 1, CustRequestItemNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(custRequestItemWorkEffortEClass, CustRequestItemWorkEffort.class, "CustRequestItemWorkEffort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestItemWorkEffort_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestItemWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestItemWorkEffort_CustRequestItemSeqId(), ecorePackage.getEString(), "custRequestItemSeqId", null, 1, 1, CustRequestItemWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestItemWorkEffort_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestItemWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestItemWorkEffort_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 		initEReference(getCustRequestItemWorkEffort_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, CustRequestItemWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustRequestItemWorkEffort_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
 
 		initEClass(custRequestNoteEClass, CustRequestNote.class, "CustRequestNote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestNote_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestNote_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestNote_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 
 		initEClass(custRequestPartyEClass, CustRequestParty.class, "CustRequestParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestParty_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestParty_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, CustRequestParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestParty_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, CustRequestParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestParty_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestParty_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 		initEReference(getCustRequestParty_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, CustRequestParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustRequestParty_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getCustRequestParty_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, CustRequestParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2243,12 +2250,14 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		addEOperation(custRequestTypeEClass, ecorePackage.getEString(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(custRequestTypeAttrEClass, CustRequestTypeAttr.class, "CustRequestTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestTypeAttr_CustRequestTypeId(), ecorePackage.getEString(), "custRequestTypeId", null, 1, 1, CustRequestTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, CustRequestTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustRequestTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustRequestTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestTypeAttr_CustRequestTypeId(), this.getCustRequestType(), null, "custRequestTypeId", null, 0, 1, CustRequestTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestTypeAttr_CustRequestTypeId().getEKeys().add(this.getCustRequestType_CustRequestTypeId());
 
 		initEClass(custRequestWorkEffortEClass, CustRequestWorkEffort.class, "CustRequestWorkEffort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustRequestWorkEffort_CustRequestId(), ecorePackage.getEString(), "custRequestId", null, 1, 1, CustRequestWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustRequestWorkEffort_CustRequestId(), this.getCustRequest(), null, "custRequestId", null, 0, 1, CustRequestWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustRequestWorkEffort_CustRequestId().getEKeys().add(this.getCustRequest_CustRequestId());
 		initEReference(getCustRequestWorkEffort_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, CustRequestWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustRequestWorkEffort_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
 
@@ -2374,12 +2383,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCustRequestAttribute_CustRequestId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getCustRequestAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -2398,25 +2401,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCustRequestCommEvent_CustRequestId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getCustRequestContent_CustRequestId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getCustRequestContent_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getCustRequestItem_CustRequestId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2440,25 +2425,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCustRequestItemWorkEffort_CustRequestId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getCustRequestItemWorkEffort_CustRequestItemSeqId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getCustRequestNote_CustRequestId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getCustRequestParty_CustRequestId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2524,19 +2491,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCustRequestTypeAttr_CustRequestTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getCustRequestTypeAttr_AttrName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getCustRequestWorkEffort_CustRequestId(),
 		   source,
 		   new String[] {
 			   "key", "true"

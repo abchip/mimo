@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
@@ -40,23 +41,14 @@ public class InvoiceItemTypeGlAccountImpl extends BizEntityImpl implements Invoi
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInvoiceItemTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INVOICE_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceItemTypeId = INVOICE_ITEM_TYPE_ID_EDEFAULT;
+	protected InvoiceItemType invoiceItemTypeId;
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -181,7 +173,24 @@ public class InvoiceItemTypeGlAccountImpl extends BizEntityImpl implements Invoi
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceItemTypeId() {
+	public InvoiceItemType getInvoiceItemTypeId() {
+		if (invoiceItemTypeId != null && ((EObject)invoiceItemTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceItemTypeId = (InternalEObject)invoiceItemTypeId;
+			invoiceItemTypeId = (InvoiceItemType)eResolveProxy(oldInvoiceItemTypeId);
+			if (invoiceItemTypeId != oldInvoiceItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
+			}
+		}
+		return invoiceItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceItemType basicGetInvoiceItemTypeId() {
 		return invoiceItemTypeId;
 	}
 
@@ -191,8 +200,8 @@ public class InvoiceItemTypeGlAccountImpl extends BizEntityImpl implements Invoi
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceItemTypeId(String newInvoiceItemTypeId) {
-		String oldInvoiceItemTypeId = invoiceItemTypeId;
+	public void setInvoiceItemTypeId(InvoiceItemType newInvoiceItemTypeId) {
+		InvoiceItemType oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
@@ -207,7 +216,8 @@ public class InvoiceItemTypeGlAccountImpl extends BizEntityImpl implements Invoi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__INVOICE_ITEM_TYPE_ID:
-				return getInvoiceItemTypeId();
+				if (resolve) return getInvoiceItemTypeId();
+				return basicGetInvoiceItemTypeId();
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -227,7 +237,7 @@ public class InvoiceItemTypeGlAccountImpl extends BizEntityImpl implements Invoi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId((String)newValue);
+				setInvoiceItemTypeId((InvoiceItemType)newValue);
 				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -248,7 +258,7 @@ public class InvoiceItemTypeGlAccountImpl extends BizEntityImpl implements Invoi
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId(INVOICE_ITEM_TYPE_ID_EDEFAULT);
+				setInvoiceItemTypeId((InvoiceItemType)null);
 				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -269,29 +279,13 @@ public class InvoiceItemTypeGlAccountImpl extends BizEntityImpl implements Invoi
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__INVOICE_ITEM_TYPE_ID:
-				return INVOICE_ITEM_TYPE_ID_EDEFAULT == null ? invoiceItemTypeId != null : !INVOICE_ITEM_TYPE_ID_EDEFAULT.equals(invoiceItemTypeId);
+				return invoiceItemTypeId != null;
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case InvoicePackage.INVOICE_ITEM_TYPE_GL_ACCOUNT__GL_ACCOUNT_ID:
 				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (invoiceItemTypeId: ");
-		result.append(invoiceItemTypeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //InvoiceItemTypeGlAccountImpl

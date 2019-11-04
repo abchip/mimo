@@ -389,7 +389,7 @@ public interface TimesheetPackage extends EPackage {
 	int TIMESHEET_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Timesheet Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Timesheet Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -665,15 +665,15 @@ public interface TimesheetPackage extends EPackage {
 	EClass getTimesheetRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getTimesheetId <em>Timesheet Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getTimesheetId <em>Timesheet Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Timesheet Id</em>'.
+	 * @return the meta object for the reference '<em>Timesheet Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getTimesheetId()
 	 * @see #getTimesheetRole()
 	 * @generated
 	 */
-	EAttribute getTimesheetRole_TimesheetId();
+	EReference getTimesheetRole_TimesheetId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getPartyId <em>Party Id</em>}'.
@@ -902,12 +902,12 @@ public interface TimesheetPackage extends EPackage {
 		EClass TIMESHEET_ROLE = eINSTANCE.getTimesheetRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Timesheet Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Timesheet Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMESHEET_ROLE__TIMESHEET_ID = eINSTANCE.getTimesheetRole_TimesheetId();
+		EReference TIMESHEET_ROLE__TIMESHEET_ID = eINSTANCE.getTimesheetRole_TimesheetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.

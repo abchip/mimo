@@ -55,30 +55,29 @@ public interface ProductPromoCodeParty extends BizEntity {
 	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Code Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Code Id</em>' attribute.
-	 * @see #setProductPromoCodeId(String)
+	 * @return the value of the '<em>Product Promo Code Id</em>' reference.
+	 * @see #setProductPromoCodeId(ProductPromoCode)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeParty_ProductPromoCodeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productPromoCodeId"
 	 * @generated
 	 */
-	String getProductPromoCodeId();
+	ProductPromoCode getProductPromoCodeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty#getProductPromoCodeId <em>Product Promo Code Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty#getProductPromoCodeId <em>Product Promo Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Code Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Code Id</em>' reference.
 	 * @see #getProductPromoCodeId()
 	 * @generated
 	 */
-	void setProductPromoCodeId(String value);
+	void setProductPromoCodeId(ProductPromoCode value);
 
 } // ProductPromoCodeParty

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.order.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderRole;
 import org.abchip.mimo.biz.party.party.Party;
@@ -42,24 +43,14 @@ public class OrderRoleImpl extends BizEntityImpl implements OrderRole {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrderId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
+	protected OrderHeader orderId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -106,7 +97,24 @@ public class OrderRoleImpl extends BizEntityImpl implements OrderRole {
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ROLE__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -116,8 +124,8 @@ public class OrderRoleImpl extends BizEntityImpl implements OrderRole {
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ROLE__ORDER_ID, oldOrderId, orderId));
@@ -212,7 +220,8 @@ public class OrderRoleImpl extends BizEntityImpl implements OrderRole {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OrderPackage.ORDER_ROLE__ORDER_ID:
-				return getOrderId();
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -232,7 +241,7 @@ public class OrderRoleImpl extends BizEntityImpl implements OrderRole {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case OrderPackage.ORDER_ROLE__ORDER_ID:
-				setOrderId((String)newValue);
+				setOrderId((OrderHeader)newValue);
 				return;
 			case OrderPackage.ORDER_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -253,7 +262,7 @@ public class OrderRoleImpl extends BizEntityImpl implements OrderRole {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case OrderPackage.ORDER_ROLE__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
+				setOrderId((OrderHeader)null);
 				return;
 			case OrderPackage.ORDER_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -274,29 +283,13 @@ public class OrderRoleImpl extends BizEntityImpl implements OrderRole {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case OrderPackage.ORDER_ROLE__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
+				return orderId != null;
 			case OrderPackage.ORDER_ROLE__PARTY_ID:
 				return partyId != null;
 			case OrderPackage.ORDER_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //OrderRoleImpl

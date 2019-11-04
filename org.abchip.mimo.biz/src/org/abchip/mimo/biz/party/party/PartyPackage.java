@@ -190,22 +190,13 @@ public interface PartyPackage extends EPackage {
 	int AFFILIATE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AFFILIATE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Affiliate Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__AFFILIATE_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int AFFILIATE__AFFILIATE_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Affiliate Name</b></em>' attribute.
@@ -214,7 +205,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__AFFILIATE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int AFFILIATE__AFFILIATE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Date Time Approved</b></em>' attribute.
@@ -223,7 +214,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__DATE_TIME_APPROVED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int AFFILIATE__DATE_TIME_APPROVED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Date Time Created</b></em>' attribute.
@@ -232,7 +223,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__DATE_TIME_CREATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int AFFILIATE__DATE_TIME_CREATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Site Page Views</b></em>' attribute.
@@ -241,7 +232,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__SITE_PAGE_VIEWS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int AFFILIATE__SITE_PAGE_VIEWS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Site Type</b></em>' attribute.
@@ -250,7 +241,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__SITE_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int AFFILIATE__SITE_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Site Visitors</b></em>' attribute.
@@ -259,7 +250,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__SITE_VISITORS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int AFFILIATE__SITE_VISITORS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Year Established</b></em>' attribute.
@@ -268,7 +259,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFFILIATE__YEAR_ESTABLISHED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int AFFILIATE__YEAR_ESTABLISHED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AFFILIATE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Affiliate</em>' class.
@@ -561,22 +561,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_ATTRIBUTE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -585,7 +576,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -594,7 +585,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ATTRIBUTE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -652,22 +652,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_CARRIER_ACCOUNT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_CARRIER_ACCOUNT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CARRIER_ACCOUNT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_CARRIER_ACCOUNT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Account Number</b></em>' attribute.
@@ -676,7 +667,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CARRIER_ACCOUNT__ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_CARRIER_ACCOUNT__ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -685,7 +676,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CARRIER_ACCOUNT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_CARRIER_ACCOUNT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CARRIER_ACCOUNT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Party Id</b></em>' reference.
@@ -752,22 +752,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_CLASSIFICATION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_CLASSIFICATION__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CLASSIFICATION__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PARTY_CLASSIFICATION__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -776,7 +767,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CLASSIFICATION__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PARTY_CLASSIFICATION__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CLASSIFICATION__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Classification Group Id</b></em>' reference.
@@ -1034,22 +1034,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_CONTENT__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PARTY_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1058,7 +1049,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PARTY_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTENT__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Content Id</b></em>' reference.
@@ -1225,22 +1225,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_DATA_SOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_DATA_SOURCE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_DATA_SOURCE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_DATA_SOURCE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1249,7 +1240,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_DATA_SOURCE__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_DATA_SOURCE__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Create</b></em>' attribute.
@@ -1258,7 +1249,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_DATA_SOURCE__IS_CREATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_DATA_SOURCE__IS_CREATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Visit Id</b></em>' attribute.
@@ -1267,7 +1258,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_DATA_SOURCE__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_DATA_SOURCE__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_DATA_SOURCE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Data Source Id</b></em>' reference.
@@ -1334,22 +1334,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_GEO_POINT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_GEO_POINT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_GEO_POINT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_GEO_POINT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1358,7 +1349,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_GEO_POINT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_GEO_POINT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_GEO_POINT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Geo Point Id</b></em>' reference.
@@ -1732,22 +1732,22 @@ public interface PartyPackage extends EPackage {
 	int PARTY_ICS_AVS_OVERRIDE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_ICS_AVS_OVERRIDE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Avs Decline String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_ICS_AVS_OVERRIDE__AVS_DECLINE_STRING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_ICS_AVS_OVERRIDE__AVS_DECLINE_STRING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ICS_AVS_OVERRIDE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Ics Avs Override</em>' class.
@@ -1805,22 +1805,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_IDENTIFICATION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_IDENTIFICATION__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Id Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_IDENTIFICATION__ID_VALUE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PARTY_IDENTIFICATION__ID_VALUE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Party Identification Type Id</b></em>' reference.
@@ -1829,7 +1820,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_IDENTIFICATION__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Identification</em>' class.
@@ -2123,22 +2123,22 @@ public interface PartyPackage extends EPackage {
 	int PARTY_INVITATION_GROUP_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Invitation Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Party Invitation Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Invitation Group Assoc</em>' class.
@@ -2196,22 +2196,22 @@ public interface PartyPackage extends EPackage {
 	int PARTY_INVITATION_ROLE_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Invitation Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_INVITATION_ROLE_ASSOC__PARTY_INVITATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_INVITATION_ROLE_ASSOC__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_INVITATION_ROLE_ASSOC__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Party Invitation Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_INVITATION_ROLE_ASSOC__PARTY_INVITATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Invitation Role Assoc</em>' class.
@@ -2269,22 +2269,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_NAME_HISTORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_NAME_HISTORY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Change Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_NAME_HISTORY__CHANGE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_NAME_HISTORY__CHANGE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -2293,7 +2284,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_NAME_HISTORY__FIRST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_NAME_HISTORY__FIRST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Group Name</b></em>' attribute.
@@ -2302,7 +2293,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_NAME_HISTORY__GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_NAME_HISTORY__GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
@@ -2311,7 +2302,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_NAME_HISTORY__LAST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_NAME_HISTORY__LAST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Middle Name</b></em>' attribute.
@@ -2320,7 +2311,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_NAME_HISTORY__MIDDLE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PARTY_NAME_HISTORY__MIDDLE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Personal Title</b></em>' attribute.
@@ -2329,7 +2320,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_NAME_HISTORY__PERSONAL_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PARTY_NAME_HISTORY__PERSONAL_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Suffix</b></em>' attribute.
@@ -2338,7 +2329,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_NAME_HISTORY__SUFFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PARTY_NAME_HISTORY__SUFFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_NAME_HISTORY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Name History</em>' class.
@@ -2414,7 +2414,7 @@ public interface PartyPackage extends EPackage {
 	int PARTY_NOTE__NOTE = BizPackage.BIZ_ENTITY_NOTE__NOTE;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2478,22 +2478,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_PROFILE_DEFAULT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_PROFILE_DEFAULT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Default Bill Addr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_PROFILE_DEFAULT__DEFAULT_BILL_ADDR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_PROFILE_DEFAULT__DEFAULT_BILL_ADDR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Default Pay Meth</b></em>' attribute.
@@ -2502,7 +2493,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_PROFILE_DEFAULT__DEFAULT_PAY_METH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_PROFILE_DEFAULT__DEFAULT_PAY_METH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Ship Addr</b></em>' attribute.
@@ -2511,7 +2502,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_ADDR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_ADDR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Default Ship Meth</b></em>' attribute.
@@ -2520,7 +2511,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_METH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_METH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_PROFILE_DEFAULT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
@@ -2587,22 +2587,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_RELATIONSHIP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id From</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_RELATIONSHIP__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RELATIONSHIP__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PARTY_RELATIONSHIP__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -2611,7 +2602,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RELATIONSHIP__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PARTY_RELATIONSHIP__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Permissions Enum Id</b></em>' attribute.
@@ -2620,7 +2611,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RELATIONSHIP__PERMISSIONS_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int PARTY_RELATIONSHIP__PERMISSIONS_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Position Title</b></em>' attribute.
@@ -2629,7 +2620,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RELATIONSHIP__POSITION_TITLE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int PARTY_RELATIONSHIP__POSITION_TITLE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Relationship Name</b></em>' attribute.
@@ -2638,7 +2629,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RELATIONSHIP__RELATIONSHIP_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int PARTY_RELATIONSHIP__RELATIONSHIP_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -2647,7 +2638,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RELATIONSHIP__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int PARTY_RELATIONSHIP__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RELATIONSHIP__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
@@ -2895,7 +2895,7 @@ public interface PartyPackage extends EPackage {
 	int PARTY_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2968,22 +2968,22 @@ public interface PartyPackage extends EPackage {
 	int PARTY_STATUS__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_STATUS__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Status Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_STATUS__STATUS_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_STATUS__STATUS_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_STATUS__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -3168,22 +3168,13 @@ public interface PartyPackage extends EPackage {
 	int PARTY_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_TYPE_ATTR__PARTY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3192,7 +3183,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Party Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_TYPE_ATTR__PARTY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Type Attr</em>' class.
@@ -3946,22 +3946,13 @@ public interface PartyPackage extends EPackage {
 	int ROLE_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_TYPE_ATTR__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ROLE_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3970,7 +3961,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ROLE_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_TYPE_ATTR__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Role Type Attr</em>' class.
@@ -4028,22 +4028,13 @@ public interface PartyPackage extends EPackage {
 	int VENDOR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENDOR__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Manifest Company Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENDOR__MANIFEST_COMPANY_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int VENDOR__MANIFEST_COMPANY_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Manifest Company Title</b></em>' attribute.
@@ -4052,7 +4043,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VENDOR__MANIFEST_COMPANY_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int VENDOR__MANIFEST_COMPANY_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Manifest Logo Url</b></em>' attribute.
@@ -4061,7 +4052,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VENDOR__MANIFEST_LOGO_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int VENDOR__MANIFEST_LOGO_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Manifest Policies</b></em>' attribute.
@@ -4070,7 +4061,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VENDOR__MANIFEST_POLICIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int VENDOR__MANIFEST_POLICIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENDOR__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Vendor</em>' class.
@@ -4128,22 +4128,13 @@ public interface PartyPackage extends EPackage {
 	int WEB_SITE_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int WEB_SITE_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -4152,7 +4143,7 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_ROLE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WEB_SITE_ROLE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -4161,7 +4152,16 @@ public interface PartyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int WEB_SITE_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
@@ -4245,15 +4245,15 @@ public interface PartyPackage extends EPackage {
 	EClass getAffiliate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.Affiliate#getPartyId()
 	 * @see #getAffiliate()
 	 * @generated
 	 */
-	EAttribute getAffiliate_PartyId();
+	EReference getAffiliate_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.Affiliate#getAffiliateDescription <em>Affiliate Description</em>}'.
@@ -4584,15 +4584,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyAttribute#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyAttribute#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyAttribute#getPartyId()
 	 * @see #getPartyAttribute()
 	 * @generated
 	 */
-	EAttribute getPartyAttribute_PartyId();
+	EReference getPartyAttribute_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyAttribute#getAttrName <em>Attr Name</em>}'.
@@ -4638,15 +4638,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyCarrierAccount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyCarrierAccount#getPartyId()
 	 * @see #getPartyCarrierAccount()
 	 * @generated
 	 */
-	EAttribute getPartyCarrierAccount_PartyId();
+	EReference getPartyCarrierAccount_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getCarrierPartyId <em>Carrier Party Id</em>}'.
@@ -4703,15 +4703,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyClassification();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyClassification#getPartyId()
 	 * @see #getPartyClassification()
 	 * @generated
 	 */
-	EAttribute getPartyClassification_PartyId();
+	EReference getPartyClassification_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}'.
@@ -4865,15 +4865,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyContent#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyContent#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyContent#getPartyId()
 	 * @see #getPartyContent()
 	 * @generated
 	 */
-	EAttribute getPartyContent_PartyId();
+	EReference getPartyContent_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyContent#getContentId <em>Content Id</em>}'.
@@ -4973,15 +4973,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyDataSource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyDataSource#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyDataSource#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyDataSource#getPartyId()
 	 * @see #getPartyDataSource()
 	 * @generated
 	 */
-	EAttribute getPartyDataSource_PartyId();
+	EReference getPartyDataSource_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyDataSource#getDataSourceId <em>Data Source Id</em>}'.
@@ -5049,15 +5049,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyGeoPoint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyGeoPoint#getPartyId()
 	 * @see #getPartyGeoPoint()
 	 * @generated
 	 */
-	EAttribute getPartyGeoPoint_PartyId();
+	EReference getPartyGeoPoint_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getGeoPointId <em>Geo Point Id</em>}'.
@@ -5201,15 +5201,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyIcsAvsOverride();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyIcsAvsOverride#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyIcsAvsOverride#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyIcsAvsOverride#getPartyId()
 	 * @see #getPartyIcsAvsOverride()
 	 * @generated
 	 */
-	EAttribute getPartyIcsAvsOverride_PartyId();
+	EReference getPartyIcsAvsOverride_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyIcsAvsOverride#getAvsDeclineString <em>Avs Decline String</em>}'.
@@ -5233,15 +5233,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyIdentification();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyIdentification#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyIdentification#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyIdentification#getPartyId()
 	 * @see #getPartyIdentification()
 	 * @generated
 	 */
-	EAttribute getPartyIdentification_PartyId();
+	EReference getPartyIdentification_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyIdentification#getPartyIdentificationTypeId <em>Party Identification Type Id</em>}'.
@@ -5439,15 +5439,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyInvitationGroupAssoc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyInvitationId <em>Party Invitation Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyInvitationId <em>Party Invitation Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Invitation Id</em>'.
+	 * @return the meta object for the reference '<em>Party Invitation Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyInvitationId()
 	 * @see #getPartyInvitationGroupAssoc()
 	 * @generated
 	 */
-	EAttribute getPartyInvitationGroupAssoc_PartyInvitationId();
+	EReference getPartyInvitationGroupAssoc_PartyInvitationId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyIdTo <em>Party Id To</em>}'.
@@ -5471,15 +5471,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyInvitationRoleAssoc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc#getPartyInvitationId <em>Party Invitation Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc#getPartyInvitationId <em>Party Invitation Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Invitation Id</em>'.
+	 * @return the meta object for the reference '<em>Party Invitation Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc#getPartyInvitationId()
 	 * @see #getPartyInvitationRoleAssoc()
 	 * @generated
 	 */
-	EAttribute getPartyInvitationRoleAssoc_PartyInvitationId();
+	EReference getPartyInvitationRoleAssoc_PartyInvitationId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc#getRoleTypeId <em>Role Type Id</em>}'.
@@ -5503,15 +5503,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyNameHistory();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId()
 	 * @see #getPartyNameHistory()
 	 * @generated
 	 */
-	EAttribute getPartyNameHistory_PartyId();
+	EReference getPartyNameHistory_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getChangeDate <em>Change Date</em>}'.
@@ -5601,15 +5601,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyNote();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyNote#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyNote#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyNote#getPartyId()
 	 * @see #getPartyNote()
 	 * @generated
 	 */
-	EAttribute getPartyNote_PartyId();
+	EReference getPartyNote_PartyId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.party.PartyProfileDefault <em>Profile Default</em>}'.
@@ -5622,15 +5622,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyProfileDefault();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyProfileDefault#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyProfileDefault#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyProfileDefault#getPartyId()
 	 * @see #getPartyProfileDefault()
 	 * @generated
 	 */
-	EAttribute getPartyProfileDefault_PartyId();
+	EReference getPartyProfileDefault_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyProfileDefault#getProductStoreId <em>Product Store Id</em>}'.
@@ -5698,15 +5698,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyRelationship();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPartyIdFrom <em>Party Id From</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPartyIdFrom <em>Party Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id From</em>'.
+	 * @return the meta object for the reference '<em>Party Id From</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyRelationship#getPartyIdFrom()
 	 * @see #getPartyRelationship()
 	 * @generated
 	 */
-	EAttribute getPartyRelationship_PartyIdFrom();
+	EReference getPartyRelationship_PartyIdFrom();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPartyIdTo <em>Party Id To</em>}'.
@@ -5949,15 +5949,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyRole#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyRole#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyRole#getPartyId()
 	 * @see #getPartyRole()
 	 * @generated
 	 */
-	EAttribute getPartyRole_PartyId();
+	EReference getPartyRole_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyRole#getRoleTypeId <em>Role Type Id</em>}'.
@@ -5981,15 +5981,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyStatus();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyStatus#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyStatus#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyStatus#getStatusId()
 	 * @see #getPartyStatus()
 	 * @generated
 	 */
-	EAttribute getPartyStatus_StatusId();
+	EReference getPartyStatus_StatusId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyStatus#getPartyId <em>Party Id</em>}'.
@@ -6100,15 +6100,15 @@ public interface PartyPackage extends EPackage {
 	EClass getPartyTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Type Id</em>'.
+	 * @return the meta object for the reference '<em>Party Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId()
 	 * @see #getPartyTypeAttr()
 	 * @generated
 	 */
-	EAttribute getPartyTypeAttr_PartyTypeId();
+	EReference getPartyTypeAttr_PartyTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -6602,15 +6602,15 @@ public interface PartyPackage extends EPackage {
 	EClass getRoleTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.RoleTypeAttr#getRoleTypeId <em>Role Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.RoleTypeAttr#getRoleTypeId <em>Role Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.RoleTypeAttr#getRoleTypeId()
 	 * @see #getRoleTypeAttr()
 	 * @generated
 	 */
-	EAttribute getRoleTypeAttr_RoleTypeId();
+	EReference getRoleTypeAttr_RoleTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.RoleTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -6645,15 +6645,15 @@ public interface PartyPackage extends EPackage {
 	EClass getVendor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.Vendor#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.Vendor#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.Vendor#getPartyId()
 	 * @see #getVendor()
 	 * @generated
 	 */
-	EAttribute getVendor_PartyId();
+	EReference getVendor_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.Vendor#getManifestCompanyName <em>Manifest Company Name</em>}'.
@@ -6710,15 +6710,15 @@ public interface PartyPackage extends EPackage {
 	EClass getWebSiteRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.party.WebSiteRole#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.WebSiteRole#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.party.WebSiteRole#getPartyId()
 	 * @see #getWebSiteRole()
 	 * @generated
 	 */
-	EAttribute getWebSiteRole_PartyId();
+	EReference getWebSiteRole_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.party.WebSiteRole#getRoleTypeId <em>Role Type Id</em>}'.
@@ -6842,12 +6842,12 @@ public interface PartyPackage extends EPackage {
 		EClass AFFILIATE = eINSTANCE.getAffiliate();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AFFILIATE__PARTY_ID = eINSTANCE.getAffiliate_PartyId();
+		EReference AFFILIATE__PARTY_ID = eINSTANCE.getAffiliate_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Affiliate Description</b></em>' attribute feature.
@@ -7094,12 +7094,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_ATTRIBUTE = eINSTANCE.getPartyAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_ATTRIBUTE__PARTY_ID = eINSTANCE.getPartyAttribute_PartyId();
+		EReference PARTY_ATTRIBUTE__PARTY_ID = eINSTANCE.getPartyAttribute_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -7136,12 +7136,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_CARRIER_ACCOUNT = eINSTANCE.getPartyCarrierAccount();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_CARRIER_ACCOUNT__PARTY_ID = eINSTANCE.getPartyCarrierAccount_PartyId();
+		EReference PARTY_CARRIER_ACCOUNT__PARTY_ID = eINSTANCE.getPartyCarrierAccount_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Carrier Party Id</b></em>' reference feature.
@@ -7186,12 +7186,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_CLASSIFICATION = eINSTANCE.getPartyClassification();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_CLASSIFICATION__PARTY_ID = eINSTANCE.getPartyClassification_PartyId();
+		EReference PARTY_CLASSIFICATION__PARTY_ID = eINSTANCE.getPartyClassification_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Classification Group Id</b></em>' reference feature.
@@ -7312,12 +7312,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_CONTENT = eINSTANCE.getPartyContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_CONTENT__PARTY_ID = eINSTANCE.getPartyContent_PartyId();
+		EReference PARTY_CONTENT__PARTY_ID = eINSTANCE.getPartyContent_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
@@ -7396,12 +7396,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_DATA_SOURCE = eINSTANCE.getPartyDataSource();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_DATA_SOURCE__PARTY_ID = eINSTANCE.getPartyDataSource_PartyId();
+		EReference PARTY_DATA_SOURCE__PARTY_ID = eINSTANCE.getPartyDataSource_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Source Id</b></em>' reference feature.
@@ -7454,12 +7454,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_GEO_POINT = eINSTANCE.getPartyGeoPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_GEO_POINT__PARTY_ID = eINSTANCE.getPartyGeoPoint_PartyId();
+		EReference PARTY_GEO_POINT__PARTY_ID = eINSTANCE.getPartyGeoPoint_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Geo Point Id</b></em>' reference feature.
@@ -7570,12 +7570,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_ICS_AVS_OVERRIDE = eINSTANCE.getPartyIcsAvsOverride();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_ICS_AVS_OVERRIDE__PARTY_ID = eINSTANCE.getPartyIcsAvsOverride_PartyId();
+		EReference PARTY_ICS_AVS_OVERRIDE__PARTY_ID = eINSTANCE.getPartyIcsAvsOverride_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Avs Decline String</b></em>' attribute feature.
@@ -7596,12 +7596,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_IDENTIFICATION = eINSTANCE.getPartyIdentification();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_IDENTIFICATION__PARTY_ID = eINSTANCE.getPartyIdentification_PartyId();
+		EReference PARTY_IDENTIFICATION__PARTY_ID = eINSTANCE.getPartyIdentification_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Identification Type Id</b></em>' reference feature.
@@ -7754,12 +7754,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_INVITATION_GROUP_ASSOC = eINSTANCE.getPartyInvitationGroupAssoc();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Invitation Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Invitation Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID = eINSTANCE.getPartyInvitationGroupAssoc_PartyInvitationId();
+		EReference PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID = eINSTANCE.getPartyInvitationGroupAssoc_PartyInvitationId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id To</b></em>' reference feature.
@@ -7780,12 +7780,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_INVITATION_ROLE_ASSOC = eINSTANCE.getPartyInvitationRoleAssoc();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Invitation Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Invitation Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_INVITATION_ROLE_ASSOC__PARTY_INVITATION_ID = eINSTANCE.getPartyInvitationRoleAssoc_PartyInvitationId();
+		EReference PARTY_INVITATION_ROLE_ASSOC__PARTY_INVITATION_ID = eINSTANCE.getPartyInvitationRoleAssoc_PartyInvitationId();
 
 		/**
 		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
@@ -7806,12 +7806,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_NAME_HISTORY = eINSTANCE.getPartyNameHistory();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_NAME_HISTORY__PARTY_ID = eINSTANCE.getPartyNameHistory_PartyId();
+		EReference PARTY_NAME_HISTORY__PARTY_ID = eINSTANCE.getPartyNameHistory_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Change Date</b></em>' attribute feature.
@@ -7880,12 +7880,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_NOTE = eINSTANCE.getPartyNote();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_NOTE__PARTY_ID = eINSTANCE.getPartyNote_PartyId();
+		EReference PARTY_NOTE__PARTY_ID = eINSTANCE.getPartyNote_PartyId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl <em>Profile Default</em>}' class.
@@ -7898,12 +7898,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_PROFILE_DEFAULT = eINSTANCE.getPartyProfileDefault();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_PROFILE_DEFAULT__PARTY_ID = eINSTANCE.getPartyProfileDefault_PartyId();
+		EReference PARTY_PROFILE_DEFAULT__PARTY_ID = eINSTANCE.getPartyProfileDefault_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
@@ -7956,12 +7956,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_RELATIONSHIP = eINSTANCE.getPartyRelationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id From</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_RELATIONSHIP__PARTY_ID_FROM = eINSTANCE.getPartyRelationship_PartyIdFrom();
+		EReference PARTY_RELATIONSHIP__PARTY_ID_FROM = eINSTANCE.getPartyRelationship_PartyIdFrom();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id To</b></em>' reference feature.
@@ -8144,12 +8144,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_ROLE = eINSTANCE.getPartyRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_ROLE__PARTY_ID = eINSTANCE.getPartyRole_PartyId();
+		EReference PARTY_ROLE__PARTY_ID = eINSTANCE.getPartyRole_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
@@ -8170,12 +8170,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_STATUS = eINSTANCE.getPartyStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_STATUS__STATUS_ID = eINSTANCE.getPartyStatus_StatusId();
+		EReference PARTY_STATUS__STATUS_ID = eINSTANCE.getPartyStatus_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -8262,12 +8262,12 @@ public interface PartyPackage extends EPackage {
 		EClass PARTY_TYPE_ATTR = eINSTANCE.getPartyTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_TYPE_ATTR__PARTY_TYPE_ID = eINSTANCE.getPartyTypeAttr_PartyTypeId();
+		EReference PARTY_TYPE_ATTR__PARTY_TYPE_ID = eINSTANCE.getPartyTypeAttr_PartyTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -8638,12 +8638,12 @@ public interface PartyPackage extends EPackage {
 		EClass ROLE_TYPE_ATTR = eINSTANCE.getRoleTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROLE_TYPE_ATTR__ROLE_TYPE_ID = eINSTANCE.getRoleTypeAttr_RoleTypeId();
+		EReference ROLE_TYPE_ATTR__ROLE_TYPE_ID = eINSTANCE.getRoleTypeAttr_RoleTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -8672,12 +8672,12 @@ public interface PartyPackage extends EPackage {
 		EClass VENDOR = eINSTANCE.getVendor();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VENDOR__PARTY_ID = eINSTANCE.getVendor_PartyId();
+		EReference VENDOR__PARTY_ID = eINSTANCE.getVendor_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Manifest Company Name</b></em>' attribute feature.
@@ -8722,12 +8722,12 @@ public interface PartyPackage extends EPackage {
 		EClass WEB_SITE_ROLE = eINSTANCE.getWebSiteRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE_ROLE__PARTY_ID = eINSTANCE.getWebSiteRole_PartyId();
+		EReference WEB_SITE_ROLE__PARTY_ID = eINSTANCE.getWebSiteRole_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.

@@ -891,8 +891,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimesheetRole_TimesheetId() {
-		return (EAttribute)timesheetRoleEClass.getEStructuralFeatures().get(0);
+	public EReference getTimesheetRole_TimesheetId() {
+		return (EReference)timesheetRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -968,7 +968,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		createEReference(timesheetEClass, TIMESHEET__APPROVED_BY_USER_LOGIN_ID);
 
 		timesheetRoleEClass = createEClass(TIMESHEET_ROLE);
-		createEAttribute(timesheetRoleEClass, TIMESHEET_ROLE__TIMESHEET_ID);
+		createEReference(timesheetRoleEClass, TIMESHEET_ROLE__TIMESHEET_ID);
 		createEReference(timesheetRoleEClass, TIMESHEET_ROLE__PARTY_ID);
 		createEReference(timesheetRoleEClass, TIMESHEET_ROLE__ROLE_TYPE_ID);
 	}
@@ -1050,7 +1050,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		addEOperation(timesheetEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timesheetRoleEClass, TimesheetRole.class, "TimesheetRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimesheetRole_TimesheetId(), ecorePackage.getEString(), "timesheetId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimesheetRole_TimesheetId(), this.getTimesheet(), null, "timesheetId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheetRole_TimesheetId().getEKeys().add(this.getTimesheet_TimesheetId());
 		initEReference(getTimesheetRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimesheetRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getTimesheetRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1085,12 +1086,6 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		   });
 		addAnnotation
 		  (getTimesheet_TimesheetId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTimesheetRole_TimesheetId(),
 		   source,
 		   new String[] {
 			   "key", "true"

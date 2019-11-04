@@ -235,22 +235,13 @@ public interface DocumentPackage extends EPackage {
 	int DOCUMENT_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Document Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT_ATTRIBUTE__DOCUMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int DOCUMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -259,7 +250,7 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int DOCUMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -268,7 +259,16 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int DOCUMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Document Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ATTRIBUTE__DOCUMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -435,22 +435,13 @@ public interface DocumentPackage extends EPackage {
 	int DOCUMENT_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Document Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int DOCUMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -459,7 +450,16 @@ public interface DocumentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int DOCUMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Document Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Type Attr</em>' class.
@@ -580,15 +580,15 @@ public interface DocumentPackage extends EPackage {
 	EClass getDocumentAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getDocumentId <em>Document Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getDocumentId <em>Document Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Document Id</em>'.
+	 * @return the meta object for the reference '<em>Document Id</em>'.
 	 * @see org.abchip.mimo.biz.content.document.DocumentAttribute#getDocumentId()
 	 * @see #getDocumentAttribute()
 	 * @generated
 	 */
-	EAttribute getDocumentAttribute_DocumentId();
+	EReference getDocumentAttribute_DocumentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getAttrName <em>Attr Name</em>}'.
@@ -699,15 +699,15 @@ public interface DocumentPackage extends EPackage {
 	EClass getDocumentTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Document Type Id</em>'.
+	 * @return the meta object for the reference '<em>Document Type Id</em>'.
 	 * @see org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId()
 	 * @see #getDocumentTypeAttr()
 	 * @generated
 	 */
-	EAttribute getDocumentTypeAttr_DocumentTypeId();
+	EReference getDocumentTypeAttr_DocumentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -838,12 +838,12 @@ public interface DocumentPackage extends EPackage {
 		EClass DOCUMENT_ATTRIBUTE = eINSTANCE.getDocumentAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Document Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Document Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT_ATTRIBUTE__DOCUMENT_ID = eINSTANCE.getDocumentAttribute_DocumentId();
+		EReference DOCUMENT_ATTRIBUTE__DOCUMENT_ID = eINSTANCE.getDocumentAttribute_DocumentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -930,12 +930,12 @@ public interface DocumentPackage extends EPackage {
 		EClass DOCUMENT_TYPE_ATTR = eINSTANCE.getDocumentTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Document Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Document Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID = eINSTANCE.getDocumentTypeAttr_DocumentTypeId();
+		EReference DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID = eINSTANCE.getDocumentTypeAttr_DocumentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.

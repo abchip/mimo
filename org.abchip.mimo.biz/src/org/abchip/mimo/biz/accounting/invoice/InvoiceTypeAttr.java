@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTypeAttr()
@@ -82,30 +82,29 @@ public interface InvoiceTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Type Id</em>' attribute.
-	 * @see #setInvoiceTypeId(String)
+	 * @return the value of the '<em>Invoice Type Id</em>' reference.
+	 * @see #setInvoiceTypeId(InvoiceType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTypeAttr_InvoiceTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="invoiceTypeId"
 	 * @generated
 	 */
-	String getInvoiceTypeId();
+	InvoiceType getInvoiceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr#getInvoiceTypeId <em>Invoice Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr#getInvoiceTypeId <em>Invoice Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Type Id</em>' reference.
 	 * @see #getInvoiceTypeId()
 	 * @generated
 	 */
-	void setInvoiceTypeId(String value);
+	void setInvoiceTypeId(InvoiceType value);
 
 } // InvoiceTypeAttr

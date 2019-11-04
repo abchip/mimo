@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetStdImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetStdImpl#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetStdImpl#getEstimatedDuration <em>Estimated Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetStdImpl#getEstimatedQuantity <em>Estimated Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetStdImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetStdImpl#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEstimatedCost() <em>Estimated Cost</em>}' attribute.
@@ -123,6 +104,16 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 * @ordered
 	 */
 	protected double estimatedQuantity = ESTIMATED_QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' reference.
@@ -268,7 +259,24 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -278,8 +286,8 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -293,14 +301,15 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
 				return getEstimatedCost();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION:
 				return getEstimatedDuration();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
 				return getEstimatedQuantity();
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
 				if (resolve) return getFixedAssetTypeId();
 				return basicGetFixedAssetTypeId();
@@ -316,9 +325,6 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
 				setEstimatedCost((BigDecimal)newValue);
 				return;
@@ -327,6 +333,9 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
 				setEstimatedQuantity((Double)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
 				setFixedAssetTypeId((FixedAssetType)newValue);
@@ -343,9 +352,6 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
 				setEstimatedCost(ESTIMATED_COST_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
 				setEstimatedQuantity(ESTIMATED_QUANTITY_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
 				setFixedAssetTypeId((FixedAssetType)null);
@@ -370,14 +379,14 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
 				return ESTIMATED_COST_EDEFAULT == null ? estimatedCost != null : !ESTIMATED_COST_EDEFAULT.equals(estimatedCost);
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION:
 				return estimatedDuration != ESTIMATED_DURATION_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
 				return estimatedQuantity != ESTIMATED_QUANTITY_EDEFAULT;
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
 				return fixedAssetTypeId != null;
 		}
@@ -394,9 +403,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", estimatedCost: ");
+		result.append(" (estimatedCost: ");
 		result.append(estimatedCost);
 		result.append(", estimatedDuration: ");
 		result.append(estimatedDuration);

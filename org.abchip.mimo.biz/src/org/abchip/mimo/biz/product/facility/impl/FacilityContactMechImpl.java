@@ -10,7 +10,8 @@ package org.abchip.mimo.biz.product.facility.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityContactMech;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -28,11 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl#getExtension <em>Extension</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -44,26 +45,6 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -145,6 +126,16 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,7 +143,7 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	 * @generated
 	 * @ordered
 	 */
-	protected TelecomNumber contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,10 +193,10 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	 * @generated
 	 */
 	@Override
-	public TelecomNumber getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (TelecomNumber)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -219,7 +210,7 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TelecomNumber basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -229,8 +220,8 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(TelecomNumber newContactMechId) {
-		TelecomNumber oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -311,7 +302,24 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -321,8 +329,8 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID, oldFacilityId, facilityId));
@@ -336,8 +344,6 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
-				return getFacilityId();
 			case FacilityPackage.FACILITY_CONTACT_MECH__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.FACILITY_CONTACT_MECH__COMMENTS:
@@ -346,6 +352,9 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 				return getExtension();
 			case FacilityPackage.FACILITY_CONTACT_MECH__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 			case FacilityPackage.FACILITY_CONTACT_MECH__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -361,9 +370,6 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -376,8 +382,11 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 			case FacilityPackage.FACILITY_CONTACT_MECH__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((TelecomNumber)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -391,9 +400,6 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -406,8 +412,11 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 			case FacilityPackage.FACILITY_CONTACT_MECH__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((TelecomNumber)null);
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -421,8 +430,6 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case FacilityPackage.FACILITY_CONTACT_MECH__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.FACILITY_CONTACT_MECH__COMMENTS:
@@ -431,6 +438,8 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 				return EXTENSION_EDEFAULT == null ? extension != null : !EXTENSION_EDEFAULT.equals(extension);
 			case FacilityPackage.FACILITY_CONTACT_MECH__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.FACILITY_CONTACT_MECH__FACILITY_ID:
+				return facilityId != null;
 			case FacilityPackage.FACILITY_CONTACT_MECH__CONTACT_MECH_ID:
 				return contactMechId != null;
 		}
@@ -447,9 +456,7 @@ public class FacilityContactMechImpl extends BizEntityImpl implements FacilityCo
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (facilityId: ");
-		result.append(facilityId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

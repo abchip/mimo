@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentTypeAttr()
@@ -82,30 +82,29 @@ public interface DocumentTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Document Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Document Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Document Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Document Type Id</em>' attribute.
-	 * @see #setDocumentTypeId(String)
+	 * @return the value of the '<em>Document Type Id</em>' reference.
+	 * @see #setDocumentTypeId(DocumentType)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentTypeAttr_DocumentTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="documentTypeId"
 	 * @generated
 	 */
-	String getDocumentTypeId();
+	DocumentType getDocumentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Document Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Document Type Id</em>' reference.
 	 * @see #getDocumentTypeId()
 	 * @generated
 	 */
-	void setDocumentTypeId(String value);
+	void setDocumentTypeId(DocumentType value);
 
 } // DocumentTypeAttr

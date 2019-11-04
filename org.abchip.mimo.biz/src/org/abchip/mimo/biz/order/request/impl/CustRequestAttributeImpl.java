@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.order.request.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestAttribute;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,10 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestAttributeImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestAttributeImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,26 +40,6 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -117,6 +100,16 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustRequestId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustRequest custRequestId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +205,24 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -222,8 +232,8 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -237,14 +247,15 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
-				return getCustRequestId();
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +268,6 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
-				return;
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -268,6 +276,9 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 				return;
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,9 +292,6 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
-				return;
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -292,6 +300,9 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 				return;
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,14 +316,14 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID:
+				return custRequestId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,9 +338,7 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (custRequestId: ");
-		result.append(custRequestId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

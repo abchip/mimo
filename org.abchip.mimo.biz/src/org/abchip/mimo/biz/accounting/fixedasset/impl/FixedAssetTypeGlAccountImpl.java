@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
@@ -46,23 +47,14 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFixedAssetTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FIXED_ASSET_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetTypeId = FIXED_ASSET_TYPE_ID_EDEFAULT;
+	protected FixedAssetType fixedAssetTypeId;
 	/**
 	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -392,7 +384,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetTypeId() {
+	public FixedAssetType getFixedAssetTypeId() {
+		if (fixedAssetTypeId != null && ((EObject)fixedAssetTypeId).eIsProxy()) {
+			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
+			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
+			if (fixedAssetTypeId != oldFixedAssetTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
+			}
+		}
+		return fixedAssetTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAssetType basicGetFixedAssetTypeId() {
 		return fixedAssetTypeId;
 	}
 
@@ -402,8 +411,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetTypeId(String newFixedAssetTypeId) {
-		String oldFixedAssetTypeId = fixedAssetTypeId;
+	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
+		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
 		fixedAssetTypeId = newFixedAssetTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
@@ -458,7 +467,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID:
-				return getFixedAssetTypeId();
+				if (resolve) return getFixedAssetTypeId();
+				return basicGetFixedAssetTypeId();
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
 				if (resolve) return getFixedAssetId();
 				return basicGetFixedAssetId();
@@ -493,7 +503,7 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId((String)newValue);
+				setFixedAssetTypeId((FixedAssetType)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
 				setFixedAssetId((FixedAsset)newValue);
@@ -529,7 +539,7 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId(FIXED_ASSET_TYPE_ID_EDEFAULT);
+				setFixedAssetTypeId((FixedAssetType)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
 				setFixedAssetId((FixedAsset)null);
@@ -565,7 +575,7 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID:
-				return FIXED_ASSET_TYPE_ID_EDEFAULT == null ? fixedAssetTypeId != null : !FIXED_ASSET_TYPE_ID_EDEFAULT.equals(fixedAssetTypeId);
+				return fixedAssetTypeId != null;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
 				return fixedAssetId != null;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
@@ -582,22 +592,6 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 				return lossGlAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fixedAssetTypeId: ");
-		result.append(fixedAssetTypeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //FixedAssetTypeGlAccountImpl

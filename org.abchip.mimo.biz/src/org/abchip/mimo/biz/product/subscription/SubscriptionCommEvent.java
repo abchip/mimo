@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent#getSubscriptionId <em>Subscription Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionCommEvent()
@@ -55,30 +55,29 @@ public interface SubscriptionCommEvent extends BizEntity {
 	void setCommunicationEventId(CommunicationEvent value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Subscription Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Id</em>' attribute.
-	 * @see #setSubscriptionId(String)
+	 * @return the value of the '<em>Subscription Id</em>' reference.
+	 * @see #setSubscriptionId(Subscription)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionCommEvent_SubscriptionId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="subscriptionId"
 	 * @generated
 	 */
-	String getSubscriptionId();
+	Subscription getSubscriptionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent#getSubscriptionId <em>Subscription Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent#getSubscriptionId <em>Subscription Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscription Id</em>' attribute.
+	 * @param value the new value of the '<em>Subscription Id</em>' reference.
 	 * @see #getSubscriptionId()
 	 * @generated
 	 */
-	void setSubscriptionId(String value);
+	void setSubscriptionId(Subscription value);
 
 } // SubscriptionCommEvent

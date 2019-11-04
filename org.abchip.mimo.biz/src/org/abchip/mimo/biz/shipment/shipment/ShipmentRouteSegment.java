@@ -14,9 +14,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
-import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
@@ -28,7 +28,6 @@ import org.abchip.mimo.biz.product.facility.Facility;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentRouteSegmentId <em>Shipment Route Segment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getActualArrivalDate <em>Actual Arrival Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getActualCost <em>Actual Cost</em>}</li>
@@ -52,14 +51,15 @@ import org.abchip.mimo.biz.product.facility.Facility;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getTrackingIdNumber <em>Tracking Id Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getUpdatedByUserLoginId <em>Updated By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getUpsHighValueReport <em>Ups High Value Report</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDeliveryId <em>Delivery Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginFacilityId <em>Origin Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestFacilityId <em>Dest Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestContactMechId <em>Dest Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCurrencyUomId <em>Currency Uom Id</em>}</li>
@@ -314,12 +314,12 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Carrier Party Id</em>' reference.
-	 * @see #setCarrierPartyId(PartyGroup)
+	 * @see #setCarrierPartyId(Party)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_CarrierPartyId()
 	 * @model keys="partyId"
 	 * @generated
 	 */
-	PartyGroup getCarrierPartyId();
+	Party getCarrierPartyId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierPartyId <em>Carrier Party Id</em>}' reference.
@@ -329,7 +329,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @see #getCarrierPartyId()
 	 * @generated
 	 */
-	void setCarrierPartyId(PartyGroup value);
+	void setCarrierPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Carrier Restriction Codes</b></em>' attribute.
@@ -470,12 +470,12 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dest Contact Mech Id</em>' reference.
-	 * @see #setDestContactMechId(PostalAddress)
+	 * @see #setDestContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_DestContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getDestContactMechId();
+	ContactMech getDestContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestContactMechId <em>Dest Contact Mech Id</em>}' reference.
@@ -485,7 +485,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @see #getDestContactMechId()
 	 * @generated
 	 */
-	void setDestContactMechId(PostalAddress value);
+	void setDestContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Dest Facility Id</b></em>' reference.
@@ -678,12 +678,12 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Origin Contact Mech Id</em>' reference.
-	 * @see #setOriginContactMechId(PostalAddress)
+	 * @see #setOriginContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_OriginContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getOriginContactMechId();
+	ContactMech getOriginContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginContactMechId <em>Origin Contact Mech Id</em>}' reference.
@@ -693,7 +693,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @see #getOriginContactMechId()
 	 * @generated
 	 */
-	void setOriginContactMechId(PostalAddress value);
+	void setOriginContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Origin Facility Id</b></em>' reference.
@@ -748,31 +748,30 @@ public interface ShipmentRouteSegment extends BizEntity {
 	void setOriginTelecomNumberId(TelecomNumber value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Id</em>' attribute.
-	 * @see #setShipmentId(String)
+	 * @return the value of the '<em>Shipment Id</em>' reference.
+	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ShipmentId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="shipmentId"
 	 * @generated
 	 */
-	String getShipmentId();
+	Shipment getShipmentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentId <em>Shipment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentId <em>Shipment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Id</em>' reference.
 	 * @see #getShipmentId()
 	 * @generated
 	 */
-	void setShipmentId(String value);
+	void setShipmentId(Shipment value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' reference.

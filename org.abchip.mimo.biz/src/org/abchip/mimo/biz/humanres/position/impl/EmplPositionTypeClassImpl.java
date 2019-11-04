@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.position.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.humanres.position.EmplPositionClassType;
+import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl#getStandardHoursPerWeek <em>Standard Hours Per Week</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionTypeId = EMPL_POSITION_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -123,6 +104,16 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPositionType emplPositionTypeId;
 
 	/**
 	 * The cached value of the '{@link #getEmplPositionClassTypeId() <em>Empl Position Class Type Id</em>}' reference.
@@ -199,7 +190,24 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionTypeId() {
+	public EmplPositionType getEmplPositionTypeId() {
+		if (emplPositionTypeId != null && ((EObject)emplPositionTypeId).eIsProxy()) {
+			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
+			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
+			if (emplPositionTypeId != oldEmplPositionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
+			}
+		}
+		return emplPositionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPositionType basicGetEmplPositionTypeId() {
 		return emplPositionTypeId;
 	}
 
@@ -209,8 +217,8 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionTypeId(String newEmplPositionTypeId) {
-		String oldEmplPositionTypeId = emplPositionTypeId;
+	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
+		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
@@ -293,14 +301,15 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				return getEmplPositionTypeId();
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
 				return getFromDate();
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK:
 				return getStandardHoursPerWeek();
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
 				return getThruDate();
+			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
+				if (resolve) return getEmplPositionTypeId();
+				return basicGetEmplPositionTypeId();
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
 				if (resolve) return getEmplPositionClassTypeId();
 				return basicGetEmplPositionClassTypeId();
@@ -316,9 +325,6 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -327,6 +333,9 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)newValue);
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
 				setEmplPositionClassTypeId((EmplPositionClassType)newValue);
@@ -343,9 +352,6 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId(EMPL_POSITION_TYPE_ID_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)null);
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
 				setEmplPositionClassTypeId((EmplPositionClassType)null);
@@ -370,14 +379,14 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				return EMPL_POSITION_TYPE_ID_EDEFAULT == null ? emplPositionTypeId != null : !EMPL_POSITION_TYPE_ID_EDEFAULT.equals(emplPositionTypeId);
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK:
 				return standardHoursPerWeek != STANDARD_HOURS_PER_WEEK_EDEFAULT;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
+				return emplPositionTypeId != null;
 			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
 				return emplPositionClassTypeId != null;
 		}
@@ -394,9 +403,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (emplPositionTypeId: ");
-		result.append(emplPositionTypeId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", standardHoursPerWeek: ");
 		result.append(standardHoursPerWeek);

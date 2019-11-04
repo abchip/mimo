@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
@@ -60,31 +60,30 @@ public interface ReturnItemShipment extends BizEntity {
 	void setQuantity(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Return Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Return Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Id</em>' attribute.
-	 * @see #setReturnId(String)
+	 * @return the value of the '<em>Return Id</em>' reference.
+	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ReturnId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="returnId"
 	 * @generated
 	 */
-	String getReturnId();
+	ReturnHeader getReturnId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnId <em>Return Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnId <em>Return Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Id</em>' attribute.
+	 * @param value the new value of the '<em>Return Id</em>' reference.
 	 * @see #getReturnId()
 	 * @generated
 	 */
-	void setReturnId(String value);
+	void setReturnId(ReturnHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Return Item Seq Id</b></em>' attribute.

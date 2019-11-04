@@ -18,11 +18,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigOptionId <em>Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigOptionName <em>Config Option Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOption()
@@ -136,30 +136,29 @@ public interface ProductConfigOption extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Config Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Config Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Config Item Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Config Item Id</em>' attribute.
-	 * @see #setConfigItemId(String)
+	 * @return the value of the '<em>Config Item Id</em>' reference.
+	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOption_ConfigItemId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="configItemId"
 	 * @generated
 	 */
-	String getConfigItemId();
+	ProductConfigItem getConfigItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Config Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Config Item Id</em>' reference.
 	 * @see #getConfigItemId()
 	 * @generated
 	 */
-	void setConfigItemId(String value);
+	void setConfigItemId(ProductConfigItem value);
 
 } // ProductConfigOption

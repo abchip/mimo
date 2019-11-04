@@ -22,10 +22,10 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
@@ -143,31 +143,30 @@ public interface PicklistRole extends BizEntity {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Picklist Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Picklist Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Picklist Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Picklist Id</em>' attribute.
-	 * @see #setPicklistId(String)
+	 * @return the value of the '<em>Picklist Id</em>' reference.
+	 * @see #setPicklistId(Picklist)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_PicklistId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="picklistId"
 	 * @generated
 	 */
-	String getPicklistId();
+	Picklist getPicklistId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId <em>Picklist Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId <em>Picklist Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Picklist Id</em>' attribute.
+	 * @param value the new value of the '<em>Picklist Id</em>' reference.
 	 * @see #getPicklistId()
 	 * @generated
 	 */
-	void setPicklistId(String value);
+	void setPicklistId(Picklist value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.

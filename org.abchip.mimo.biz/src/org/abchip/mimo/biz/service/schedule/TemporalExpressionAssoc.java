@@ -18,8 +18,8 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId <em>From Temp Expr Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getExprAssocType <em>Expr Assoc Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId <em>From Temp Expr Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getToTempExprId <em>To Temp Expr Id</em>}</li>
  * </ul>
  *
@@ -29,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface TemporalExpressionAssoc extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>From Temp Expr Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>From Temp Expr Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>From Temp Expr Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From Temp Expr Id</em>' attribute.
-	 * @see #setFromTempExprId(String)
+	 * @return the value of the '<em>From Temp Expr Id</em>' reference.
+	 * @see #setFromTempExprId(TemporalExpression)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_FromTempExprId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="tempExprId"
 	 * @generated
 	 */
-	String getFromTempExprId();
+	TemporalExpression getFromTempExprId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId <em>From Temp Expr Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId <em>From Temp Expr Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From Temp Expr Id</em>' attribute.
+	 * @param value the new value of the '<em>From Temp Expr Id</em>' reference.
 	 * @see #getFromTempExprId()
 	 * @generated
 	 */
-	void setFromTempExprId(String value);
+	void setFromTempExprId(TemporalExpression value);
 
 	/**
 	 * Returns the value of the '<em><b>To Temp Expr Id</b></em>' reference.

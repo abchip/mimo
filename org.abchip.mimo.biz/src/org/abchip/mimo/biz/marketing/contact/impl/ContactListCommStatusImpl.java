@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.marketing.contact.impl;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListCommStatus;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
@@ -31,8 +32,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getContactListId <em>Contact List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getMessageId <em>Message Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getContactListId <em>Contact List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getPartyId <em>Party Id</em>}</li>
@@ -47,26 +48,6 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_LIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactListId = CONTACT_LIST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMessageId() <em>Message Id</em>}' attribute.
@@ -87,6 +68,16 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @ordered
 	 */
 	protected String messageId = MESSAGE_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactList contactListId;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
@@ -243,7 +234,24 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public String getContactListId() {
+	public ContactList getContactListId() {
+		if (contactListId != null && ((EObject)contactListId).eIsProxy()) {
+			InternalEObject oldContactListId = (InternalEObject)contactListId;
+			contactListId = (ContactList)eResolveProxy(oldContactListId);
+			if (contactListId != oldContactListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID, oldContactListId, contactListId));
+			}
+		}
+		return contactListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactList basicGetContactListId() {
 		return contactListId;
 	}
 
@@ -253,8 +261,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public void setContactListId(String newContactListId) {
-		String oldContactListId = contactListId;
+	public void setContactListId(ContactList newContactListId) {
+		ContactList oldContactListId = contactListId;
 		contactListId = newContactListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID, oldContactListId, contactListId));
@@ -411,10 +419,11 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
-				return getContactListId();
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				return getMessageId();
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
+				if (resolve) return getContactListId();
+				return basicGetContactListId();
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
 				if (resolve) return getCommunicationEventId();
 				return basicGetCommunicationEventId();
@@ -442,11 +451,11 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
-				setContactListId((String)newValue);
-				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				setMessageId((String)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
+				setContactListId((ContactList)newValue);
 				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)newValue);
@@ -475,11 +484,11 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
-				setContactListId(CONTACT_LIST_ID_EDEFAULT);
-				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				setMessageId(MESSAGE_ID_EDEFAULT);
+				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
+				setContactListId((ContactList)null);
 				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)null);
@@ -508,10 +517,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
-				return CONTACT_LIST_ID_EDEFAULT == null ? contactListId != null : !CONTACT_LIST_ID_EDEFAULT.equals(contactListId);
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				return MESSAGE_ID_EDEFAULT == null ? messageId != null : !MESSAGE_ID_EDEFAULT.equals(messageId);
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
+				return contactListId != null;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
 				return communicationEventId != null;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
@@ -536,9 +545,7 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contactListId: ");
-		result.append(contactListId);
-		result.append(", messageId: ");
+		result.append(" (messageId: ");
 		result.append(messageId);
 		result.append(')');
 		return result.toString();

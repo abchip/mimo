@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,12 +22,12 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#isHasExported <em>Has Exported</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#isIsBillable <em>Is Billable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getSiteId <em>Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeId <em>Tracking Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
@@ -168,31 +169,30 @@ public interface TrackingCodeOrderReturn extends BizEntity {
 	void setOrderItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Return Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Return Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Id</em>' attribute.
-	 * @see #setReturnId(String)
+	 * @return the value of the '<em>Return Id</em>' reference.
+	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrderReturn_ReturnId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="returnId"
 	 * @generated
 	 */
-	String getReturnId();
+	ReturnHeader getReturnId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getReturnId <em>Return Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getReturnId <em>Return Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Id</em>' attribute.
+	 * @param value the new value of the '<em>Return Id</em>' reference.
 	 * @see #getReturnId()
 	 * @generated
 	 */
-	void setReturnId(String value);
+	void setReturnId(ReturnHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Site Id</b></em>' attribute.

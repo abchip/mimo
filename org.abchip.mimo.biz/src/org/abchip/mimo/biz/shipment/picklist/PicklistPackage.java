@@ -344,22 +344,13 @@ public interface PicklistPackage extends EPackage {
 	int PICKLIST_ITEM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Picklist Bin Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PICKLIST_ITEM__PICKLIST_BIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PICKLIST_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PICKLIST_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -368,7 +359,7 @@ public interface PicklistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PICKLIST_ITEM__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PICKLIST_ITEM__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -377,7 +368,16 @@ public interface PicklistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PICKLIST_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PICKLIST_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Picklist Bin Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICKLIST_ITEM__PICKLIST_BIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Order Id</b></em>' reference.
@@ -462,22 +462,13 @@ public interface PicklistPackage extends EPackage {
 	int PICKLIST_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Picklist Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PICKLIST_ROLE__PICKLIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PICKLIST_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PICKLIST_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -486,7 +477,7 @@ public interface PicklistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PICKLIST_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PICKLIST_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -495,7 +486,16 @@ public interface PicklistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PICKLIST_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PICKLIST_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Picklist Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICKLIST_ROLE__PICKLIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
@@ -580,22 +580,22 @@ public interface PicklistPackage extends EPackage {
 	int PICKLIST_STATUS_HISTORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Picklist Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PICKLIST_STATUS_HISTORY__PICKLIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Change Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PICKLIST_STATUS_HISTORY__CHANGE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PICKLIST_STATUS_HISTORY__CHANGE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Picklist Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICKLIST_STATUS_HISTORY__PICKLIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Change User Login Id</b></em>' reference.
@@ -819,15 +819,15 @@ public interface PicklistPackage extends EPackage {
 	EClass getPicklistItem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getPicklistBinId <em>Picklist Bin Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getPicklistBinId <em>Picklist Bin Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Picklist Bin Id</em>'.
+	 * @return the meta object for the reference '<em>Picklist Bin Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistItem#getPicklistBinId()
 	 * @see #getPicklistItem()
 	 * @generated
 	 */
-	EAttribute getPicklistItem_PicklistBinId();
+	EReference getPicklistItem_PicklistBinId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getOrderId <em>Order Id</em>}'.
@@ -906,15 +906,15 @@ public interface PicklistPackage extends EPackage {
 	EClass getPicklistRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId <em>Picklist Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId <em>Picklist Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Picklist Id</em>'.
+	 * @return the meta object for the reference '<em>Picklist Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId()
 	 * @see #getPicklistRole()
 	 * @generated
 	 */
-	EAttribute getPicklistRole_PicklistId();
+	EReference getPicklistRole_PicklistId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPartyId <em>Party Id</em>}'.
@@ -993,15 +993,15 @@ public interface PicklistPackage extends EPackage {
 	EClass getPicklistStatusHistory();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getPicklistId <em>Picklist Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getPicklistId <em>Picklist Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Picklist Id</em>'.
+	 * @return the meta object for the reference '<em>Picklist Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getPicklistId()
 	 * @see #getPicklistStatusHistory()
 	 * @generated
 	 */
-	EAttribute getPicklistStatusHistory_PicklistId();
+	EReference getPicklistStatusHistory_PicklistId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getChangeDate <em>Change Date</em>}'.
@@ -1212,12 +1212,12 @@ public interface PicklistPackage extends EPackage {
 		EClass PICKLIST_ITEM = eINSTANCE.getPicklistItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Picklist Bin Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Picklist Bin Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PICKLIST_ITEM__PICKLIST_BIN_ID = eINSTANCE.getPicklistItem_PicklistBinId();
+		EReference PICKLIST_ITEM__PICKLIST_BIN_ID = eINSTANCE.getPicklistItem_PicklistBinId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
@@ -1278,12 +1278,12 @@ public interface PicklistPackage extends EPackage {
 		EClass PICKLIST_ROLE = eINSTANCE.getPicklistRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Picklist Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Picklist Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PICKLIST_ROLE__PICKLIST_ID = eINSTANCE.getPicklistRole_PicklistId();
+		EReference PICKLIST_ROLE__PICKLIST_ID = eINSTANCE.getPicklistRole_PicklistId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
@@ -1344,12 +1344,12 @@ public interface PicklistPackage extends EPackage {
 		EClass PICKLIST_STATUS_HISTORY = eINSTANCE.getPicklistStatusHistory();
 
 		/**
-		 * The meta object literal for the '<em><b>Picklist Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Picklist Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PICKLIST_STATUS_HISTORY__PICKLIST_ID = eINSTANCE.getPicklistStatusHistory_PicklistId();
+		EReference PICKLIST_STATUS_HISTORY__PICKLIST_ID = eINSTANCE.getPicklistStatusHistory_PicklistId();
 
 		/**
 		 * The meta object literal for the '<em><b>Change Date</b></em>' attribute feature.

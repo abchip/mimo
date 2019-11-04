@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.ProductFacilityLocation;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -28,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityLocationImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityLocationImpl#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityLocationImpl#getMinimumStock <em>Minimum Stock</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityLocationImpl#getMoveQuantity <em>Move Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityLocationImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityLocationImpl#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getLocationSeqId() <em>Location Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,6 +103,16 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected BigDecimal moveQuantity = MOVE_QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
@@ -227,7 +218,24 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -237,8 +245,8 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID, oldProductId, productId));
@@ -292,14 +300,15 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
-				return getProductId();
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__LOCATION_SEQ_ID:
 				return getLocationSeqId();
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__MINIMUM_STOCK:
 				return getMinimumStock();
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__MOVE_QUANTITY:
 				return getMoveQuantity();
+			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__FACILITY_ID:
 				if (resolve) return getFacilityId();
 				return basicGetFacilityId();
@@ -315,9 +324,6 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__LOCATION_SEQ_ID:
 				setLocationSeqId((String)newValue);
 				return;
@@ -326,6 +332,9 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 				return;
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__MOVE_QUANTITY:
 				setMoveQuantity((BigDecimal)newValue);
+				return;
+			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__FACILITY_ID:
 				setFacilityId((Facility)newValue);
@@ -342,9 +351,6 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__LOCATION_SEQ_ID:
 				setLocationSeqId(LOCATION_SEQ_ID_EDEFAULT);
 				return;
@@ -353,6 +359,9 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 				return;
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__MOVE_QUANTITY:
 				setMoveQuantity(MOVE_QUANTITY_EDEFAULT);
+				return;
+			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__FACILITY_ID:
 				setFacilityId((Facility)null);
@@ -369,14 +378,14 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__LOCATION_SEQ_ID:
 				return LOCATION_SEQ_ID_EDEFAULT == null ? locationSeqId != null : !LOCATION_SEQ_ID_EDEFAULT.equals(locationSeqId);
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__MINIMUM_STOCK:
 				return MINIMUM_STOCK_EDEFAULT == null ? minimumStock != null : !MINIMUM_STOCK_EDEFAULT.equals(minimumStock);
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__MOVE_QUANTITY:
 				return MOVE_QUANTITY_EDEFAULT == null ? moveQuantity != null : !MOVE_QUANTITY_EDEFAULT.equals(moveQuantity);
+			case FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID:
+				return productId != null;
 			case FacilityPackage.PRODUCT_FACILITY_LOCATION__FACILITY_ID:
 				return facilityId != null;
 		}
@@ -393,9 +402,7 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", locationSeqId: ");
+		result.append(" (locationSeqId: ");
 		result.append(locationSeqId);
 		result.append(", minimumStock: ");
 		result.append(minimumStock);

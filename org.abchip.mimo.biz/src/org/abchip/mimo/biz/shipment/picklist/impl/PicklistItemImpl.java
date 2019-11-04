@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistItem;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,10 +32,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getPicklistBinId <em>Picklist Bin Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getPicklistBinId <em>Picklist Bin Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getItemStatusId <em>Item Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistItemImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
@@ -47,26 +48,6 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPicklistBinId() <em>Picklist Bin Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicklistBinId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PICKLIST_BIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPicklistBinId() <em>Picklist Bin Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicklistBinId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String picklistBinId = PICKLIST_BIN_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -127,6 +108,16 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 * @ordered
 	 */
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPicklistBinId() <em>Picklist Bin Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPicklistBinId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PicklistBin picklistBinId;
 
 	/**
 	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
@@ -326,7 +317,24 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 * @generated
 	 */
 	@Override
-	public String getPicklistBinId() {
+	public PicklistBin getPicklistBinId() {
+		if (picklistBinId != null && ((EObject)picklistBinId).eIsProxy()) {
+			InternalEObject oldPicklistBinId = (InternalEObject)picklistBinId;
+			picklistBinId = (PicklistBin)eResolveProxy(oldPicklistBinId);
+			if (picklistBinId != oldPicklistBinId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID, oldPicklistBinId, picklistBinId));
+			}
+		}
+		return picklistBinId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PicklistBin basicGetPicklistBinId() {
 		return picklistBinId;
 	}
 
@@ -336,8 +344,8 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 * @generated
 	 */
 	@Override
-	public void setPicklistBinId(String newPicklistBinId) {
-		String oldPicklistBinId = picklistBinId;
+	public void setPicklistBinId(PicklistBin newPicklistBinId) {
+		PicklistBin oldPicklistBinId = picklistBinId;
 		picklistBinId = newPicklistBinId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID, oldPicklistBinId, picklistBinId));
@@ -397,14 +405,15 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
-				return getPicklistBinId();
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case PicklistPackage.PICKLIST_ITEM__SHIP_GROUP_SEQ_ID:
 				return getShipGroupSeqId();
 			case PicklistPackage.PICKLIST_ITEM__QUANTITY:
 				return getQuantity();
+			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
+				if (resolve) return getPicklistBinId();
+				return basicGetPicklistBinId();
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ID:
 				if (resolve) return getOrderId();
 				return basicGetOrderId();
@@ -426,9 +435,6 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
-				setPicklistBinId((String)newValue);
-				return;
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -437,6 +443,9 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 				return;
 			case PicklistPackage.PICKLIST_ITEM__QUANTITY:
 				setQuantity((BigDecimal)newValue);
+				return;
+			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
+				setPicklistBinId((PicklistBin)newValue);
 				return;
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ID:
 				setOrderId((OrderHeader)newValue);
@@ -459,9 +468,6 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
-				setPicklistBinId(PICKLIST_BIN_ID_EDEFAULT);
-				return;
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -470,6 +476,9 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 				return;
 			case PicklistPackage.PICKLIST_ITEM__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
+				setPicklistBinId((PicklistBin)null);
 				return;
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ID:
 				setOrderId((OrderHeader)null);
@@ -492,14 +501,14 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
-				return PICKLIST_BIN_ID_EDEFAULT == null ? picklistBinId != null : !PICKLIST_BIN_ID_EDEFAULT.equals(picklistBinId);
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case PicklistPackage.PICKLIST_ITEM__SHIP_GROUP_SEQ_ID:
 				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
 			case PicklistPackage.PICKLIST_ITEM__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+			case PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID:
+				return picklistBinId != null;
 			case PicklistPackage.PICKLIST_ITEM__ORDER_ID:
 				return orderId != null;
 			case PicklistPackage.PICKLIST_ITEM__ITEM_STATUS_ID:
@@ -520,9 +529,7 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (picklistBinId: ");
-		result.append(picklistBinId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", shipGroupSeqId: ");
 		result.append(shipGroupSeqId);

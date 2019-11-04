@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
 import org.abchip.mimo.biz.content.website.WebAnalyticsType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebAnalyticsConfigImpl#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebAnalyticsConfigImpl#getWebAnalyticsCode <em>Web Analytics Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebAnalyticsConfigImpl#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebAnalyticsConfigImpl#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,26 +41,6 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WEB_SITE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getWebAnalyticsCode() <em>Web Analytics Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,6 +70,16 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	 * @ordered
 	 */
 	protected WebAnalyticsType webAnalyticsTypeId;
+
+	/**
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebSiteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WebSite webSiteId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,7 +169,24 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	 * @generated
 	 */
 	@Override
-	public String getWebSiteId() {
+	public WebSite getWebSiteId() {
+		if (webSiteId != null && ((EObject)webSiteId).eIsProxy()) {
+			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
+			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
+			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID, oldWebSiteId, webSiteId));
+			}
+		}
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebSite basicGetWebSiteId() {
 		return webSiteId;
 	}
 
@@ -188,8 +196,8 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	 * @generated
 	 */
 	@Override
-	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
+	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID, oldWebSiteId, webSiteId));
@@ -203,13 +211,14 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
-				return getWebSiteId();
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_CODE:
 				return getWebAnalyticsCode();
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID:
 				if (resolve) return getWebAnalyticsTypeId();
 				return basicGetWebAnalyticsTypeId();
+			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
+				if (resolve) return getWebSiteId();
+				return basicGetWebSiteId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -222,14 +231,14 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
-				setWebSiteId((String)newValue);
-				return;
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_CODE:
 				setWebAnalyticsCode((String)newValue);
 				return;
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID:
 				setWebAnalyticsTypeId((WebAnalyticsType)newValue);
+				return;
+			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
+				setWebSiteId((WebSite)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,14 +252,14 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
-				setWebSiteId(WEB_SITE_ID_EDEFAULT);
-				return;
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_CODE:
 				setWebAnalyticsCode(WEB_ANALYTICS_CODE_EDEFAULT);
 				return;
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID:
 				setWebAnalyticsTypeId((WebAnalyticsType)null);
+				return;
+			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
+				setWebSiteId((WebSite)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -264,12 +273,12 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
-				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_CODE:
 				return WEB_ANALYTICS_CODE_EDEFAULT == null ? webAnalyticsCode != null : !WEB_ANALYTICS_CODE_EDEFAULT.equals(webAnalyticsCode);
 			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID:
 				return webAnalyticsTypeId != null;
+			case WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID:
+				return webSiteId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -284,9 +293,7 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (webSiteId: ");
-		result.append(webSiteId);
-		result.append(", webAnalyticsCode: ");
+		result.append(" (webAnalyticsCode: ");
 		result.append(webAnalyticsCode);
 		result.append(')');
 		return result.toString();

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.request.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestParty;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.party.Party;
@@ -30,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestPartyImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestPartyImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestPartyImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestPartyImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestPartyImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestPartyImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -104,6 +85,16 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustRequestId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustRequest custRequestId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -150,7 +141,24 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -160,8 +168,8 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -301,12 +309,13 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
-				return getCustRequestId();
 			case RequestPackage.CUST_REQUEST_PARTY__FROM_DATE:
 				return getFromDate();
 			case RequestPackage.CUST_REQUEST_PARTY__THRU_DATE:
 				return getThruDate();
+			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
 			case RequestPackage.CUST_REQUEST_PARTY__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -325,14 +334,14 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
-				return;
 			case RequestPackage.CUST_REQUEST_PARTY__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_PARTY__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_PARTY__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -352,14 +361,14 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
-				return;
 			case RequestPackage.CUST_REQUEST_PARTY__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case RequestPackage.CUST_REQUEST_PARTY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)null);
 				return;
 			case RequestPackage.CUST_REQUEST_PARTY__PARTY_ID:
 				setPartyId((Party)null);
@@ -379,12 +388,12 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case RequestPackage.CUST_REQUEST_PARTY__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RequestPackage.CUST_REQUEST_PARTY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID:
+				return custRequestId != null;
 			case RequestPackage.CUST_REQUEST_PARTY__PARTY_ID:
 				return partyId != null;
 			case RequestPackage.CUST_REQUEST_PARTY__ROLE_TYPE_ID:
@@ -403,9 +412,7 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (custRequestId: ");
-		result.append(custRequestId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

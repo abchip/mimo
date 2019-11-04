@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.security.securitygroup.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
 import org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.UserLoginSecurityGroupImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.UserLoginSecurityGroupImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.UserLoginSecurityGroupImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.UserLoginSecurityGroupImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.UserLoginSecurityGroupImpl#getGroupId <em>Group Id</em>}</li>
  * </ul>
  *
@@ -42,27 +43,6 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-
-	/**
-	 * The default value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
 
 
 	/**
@@ -107,6 +87,17 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin userLoginId;
 
 
 	/**
@@ -230,7 +221,24 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 * @generated
 	 */
 	@Override
-	public String getUserLoginId() {
+	public UserLogin getUserLoginId() {
+		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
+			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
+			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
+			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+			}
+		}
+		return userLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetUserLoginId() {
 		return userLoginId;
 	}
 
@@ -240,8 +248,8 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 * @generated
 	 */
 	@Override
-	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
+	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID, oldUserLoginId, userLoginId));
@@ -255,12 +263,13 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
-				return getUserLoginId();
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__FROM_DATE:
 				return getFromDate();
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__THRU_DATE:
 				return getThruDate();
+			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
+				if (resolve) return getUserLoginId();
+				return basicGetUserLoginId();
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__GROUP_ID:
 				if (resolve) return getGroupId();
 				return basicGetGroupId();
@@ -276,14 +285,14 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
-				setUserLoginId((String)newValue);
-				return;
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)newValue);
 				return;
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__GROUP_ID:
 				setGroupId((SecurityGroup)newValue);
@@ -300,14 +309,14 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
-				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
-				return;
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)null);
 				return;
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__GROUP_ID:
 				setGroupId((SecurityGroup)null);
@@ -324,12 +333,12 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
-				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID:
+				return userLoginId != null;
 			case SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__GROUP_ID:
 				return groupId != null;
 		}
@@ -346,9 +355,7 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (userLoginId: ");
-		result.append(userLoginId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

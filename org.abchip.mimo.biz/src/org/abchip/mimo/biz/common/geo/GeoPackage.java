@@ -108,22 +108,13 @@ public interface GeoPackage extends EPackage {
 	int COUNTRY_ADDRESS_FORMAT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COUNTRY_ADDRESS_FORMAT__GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Address Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Has Postal Code Ext</b></em>' attribute.
@@ -132,7 +123,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Postal Code Regex</b></em>' attribute.
@@ -141,7 +132,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Require Postal Code</b></em>' attribute.
@@ -150,7 +141,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Require Postal Code Ext</b></em>' attribute.
@@ -159,7 +150,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE_EXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE_EXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Require State Province Id</b></em>' attribute.
@@ -168,7 +159,16 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COUNTRY_ADDRESS_FORMAT__GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Geo Assoc Type Id</b></em>' reference.
@@ -662,7 +662,7 @@ public interface GeoPackage extends EPackage {
 	int GEO_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Geo Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1027,15 +1027,15 @@ public interface GeoPackage extends EPackage {
 	EClass getCountryAddressFormat();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId()
 	 * @see #getCountryAddressFormat()
 	 * @generated
 	 */
-	EAttribute getCountryAddressFormat_GeoId();
+	EReference getCountryAddressFormat_GeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getAddressFormat <em>Address Format</em>}'.
@@ -1330,15 +1330,15 @@ public interface GeoPackage extends EPackage {
 	EClass getGeoAssoc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.geo.GeoAssoc#getGeoId <em>Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.geo.GeoAssoc#getGeoId <em>Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.common.geo.GeoAssoc#getGeoId()
 	 * @see #getGeoAssoc()
 	 * @generated
 	 */
-	EAttribute getGeoAssoc_GeoId();
+	EReference getGeoAssoc_GeoId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.geo.GeoAssoc#getGeoIdTo <em>Geo Id To</em>}'.
@@ -1590,12 +1590,12 @@ public interface GeoPackage extends EPackage {
 		EClass COUNTRY_ADDRESS_FORMAT = eINSTANCE.getCountryAddressFormat();
 
 		/**
-		 * The meta object literal for the '<em><b>Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COUNTRY_ADDRESS_FORMAT__GEO_ID = eINSTANCE.getCountryAddressFormat_GeoId();
+		EReference COUNTRY_ADDRESS_FORMAT__GEO_ID = eINSTANCE.getCountryAddressFormat_GeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Address Format</b></em>' attribute feature.
@@ -1824,12 +1824,12 @@ public interface GeoPackage extends EPackage {
 		EClass GEO_ASSOC = eINSTANCE.getGeoAssoc();
 
 		/**
-		 * The meta object literal for the '<em><b>Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GEO_ASSOC__GEO_ID = eINSTANCE.getGeoAssoc_GeoId();
+		EReference GEO_ASSOC__GEO_ID = eINSTANCE.getGeoAssoc_GeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Geo Id To</b></em>' reference feature.

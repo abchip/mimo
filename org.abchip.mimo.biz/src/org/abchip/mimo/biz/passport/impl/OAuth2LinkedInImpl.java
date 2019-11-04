@@ -12,10 +12,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.OAuth2LinkedIn;
 import org.abchip.mimo.biz.passport.PassportPackage;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getApiKey <em>Api Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getIconUrl <em>Icon Url</em>}</li>
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getSecretKey <em>Secret Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getTestReturnUrl <em>Test Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,26 +47,6 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -226,6 +209,16 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,7 +243,24 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -260,8 +270,8 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -459,8 +469,6 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case PassportPackage.OAUTH2_LINKED_IN__FROM_DATE:
 				return getFromDate();
 			case PassportPackage.OAUTH2_LINKED_IN__API_KEY:
@@ -477,6 +485,9 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 				return getTestReturnUrl();
 			case PassportPackage.OAUTH2_LINKED_IN__THRU_DATE:
 				return getThruDate();
+			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -489,9 +500,6 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case PassportPackage.OAUTH2_LINKED_IN__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -516,6 +524,9 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 			case PassportPackage.OAUTH2_LINKED_IN__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -528,9 +539,6 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case PassportPackage.OAUTH2_LINKED_IN__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -555,6 +563,9 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 			case PassportPackage.OAUTH2_LINKED_IN__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -567,8 +578,6 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case PassportPackage.OAUTH2_LINKED_IN__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PassportPackage.OAUTH2_LINKED_IN__API_KEY:
@@ -585,6 +594,8 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 				return TEST_RETURN_URL_EDEFAULT == null ? testReturnUrl != null : !TEST_RETURN_URL_EDEFAULT.equals(testReturnUrl);
 			case PassportPackage.OAUTH2_LINKED_IN__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID:
+				return productStoreId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -599,9 +610,7 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreId: ");
-		result.append(productStoreId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", apiKey: ");
 		result.append(apiKey);

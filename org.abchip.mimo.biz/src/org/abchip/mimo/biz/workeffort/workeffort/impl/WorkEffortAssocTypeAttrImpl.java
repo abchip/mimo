@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeAttrImpl#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeAttrImpl#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortAssocTypeId() <em>Work Effort Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortAssocTypeId() <em>Work Effort Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortAssocTypeId = WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -96,6 +79,16 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortAssocTypeId() <em>Work Effort Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffortAssocType workEffortAssocTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortAssocTypeId() {
+	public WorkEffortAssocType getWorkEffortAssocTypeId() {
+		if (workEffortAssocTypeId != null && ((EObject)workEffortAssocTypeId).eIsProxy()) {
+			InternalEObject oldWorkEffortAssocTypeId = (InternalEObject)workEffortAssocTypeId;
+			workEffortAssocTypeId = (WorkEffortAssocType)eResolveProxy(oldWorkEffortAssocTypeId);
+			if (workEffortAssocTypeId != oldWorkEffortAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID, oldWorkEffortAssocTypeId, workEffortAssocTypeId));
+			}
+		}
+		return workEffortAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortAssocType basicGetWorkEffortAssocTypeId() {
 		return workEffortAssocTypeId;
 	}
 
@@ -178,8 +188,8 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortAssocTypeId(String newWorkEffortAssocTypeId) {
-		String oldWorkEffortAssocTypeId = workEffortAssocTypeId;
+	public void setWorkEffortAssocTypeId(WorkEffortAssocType newWorkEffortAssocTypeId) {
+		WorkEffortAssocType oldWorkEffortAssocTypeId = workEffortAssocTypeId;
 		workEffortAssocTypeId = newWorkEffortAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID, oldWorkEffortAssocTypeId, workEffortAssocTypeId));
@@ -193,12 +203,13 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
-				return getWorkEffortAssocTypeId();
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
+				if (resolve) return getWorkEffortAssocTypeId();
+				return basicGetWorkEffortAssocTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,14 +222,14 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
-				setWorkEffortAssocTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
+				setWorkEffortAssocTypeId((WorkEffortAssocType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,14 +243,14 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
-				setWorkEffortAssocTypeId(WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
+				setWorkEffortAssocTypeId((WorkEffortAssocType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,12 +264,12 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
-				return WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT == null ? workEffortAssocTypeId != null : !WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT.equals(workEffortAssocTypeId);
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case WorkeffortPackage.WORK_EFFORT_ASSOC_TYPE_ATTR__WORK_EFFORT_ASSOC_TYPE_ID:
+				return workEffortAssocTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,9 +284,7 @@ public class WorkEffortAssocTypeAttrImpl extends BizEntityImpl implements WorkEf
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortAssocTypeId: ");
-		result.append(workEffortAssocTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

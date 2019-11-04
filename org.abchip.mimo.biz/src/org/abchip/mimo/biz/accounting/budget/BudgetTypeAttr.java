@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetTypeAttr()
@@ -82,30 +82,29 @@ public interface BudgetTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Type Id</em>' attribute.
-	 * @see #setBudgetTypeId(String)
+	 * @return the value of the '<em>Budget Type Id</em>' reference.
+	 * @see #setBudgetTypeId(BudgetType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetTypeAttr_BudgetTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="budgetTypeId"
 	 * @generated
 	 */
-	String getBudgetTypeId();
+	BudgetType getBudgetTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Type Id</em>' reference.
 	 * @see #getBudgetTypeId()
 	 * @generated
 	 */
-	void setBudgetTypeId(String value);
+	void setBudgetTypeId(BudgetType value);
 
 } // BudgetTypeAttr

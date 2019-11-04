@@ -20,10 +20,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFacilityGroupId <em>Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFacilityGroupId <em>Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getParentFacilityGroupId <em>Parent Facility Group Id</em>}</li>
  * </ul>
  *
@@ -112,31 +112,30 @@ public interface FacilityGroupRollup extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Group Id</em>' attribute.
-	 * @see #setFacilityGroupId(String)
+	 * @return the value of the '<em>Facility Group Id</em>' reference.
+	 * @see #setFacilityGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRollup_FacilityGroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="facilityGroupId"
 	 * @generated
 	 */
-	String getFacilityGroupId();
+	FacilityGroup getFacilityGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFacilityGroupId <em>Facility Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFacilityGroupId <em>Facility Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Group Id</em>' reference.
 	 * @see #getFacilityGroupId()
 	 * @generated
 	 */
-	void setFacilityGroupId(String value);
+	void setFacilityGroupId(FacilityGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent Facility Group Id</b></em>' reference.

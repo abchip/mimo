@@ -729,8 +729,8 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCountryAddressFormat_GeoId() {
-		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(0);
+	public EReference getCountryAddressFormat_GeoId() {
+		return (EReference)countryAddressFormatEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -740,7 +740,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	@Override
 	public EAttribute getCountryAddressFormat_AddressFormat() {
-		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -760,7 +760,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	@Override
 	public EAttribute getCountryAddressFormat_HasPostalCodeExt() {
-		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -770,7 +770,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	@Override
 	public EAttribute getCountryAddressFormat_PostalCodeRegex() {
-		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -780,7 +780,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	@Override
 	public EAttribute getCountryAddressFormat_RequirePostalCode() {
-		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -790,7 +790,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	@Override
 	public EAttribute getCountryAddressFormat_RequirePostalCodeExt() {
-		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -800,7 +800,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	@Override
 	public EAttribute getCountryAddressFormat_RequireStateProvinceId() {
-		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1009,8 +1009,8 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGeoAssoc_GeoId() {
-		return (EAttribute)geoAssocEClass.getEStructuralFeatures().get(0);
+	public EReference getGeoAssoc_GeoId() {
+		return (EReference)geoAssocEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1243,13 +1243,13 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 
 		// Create classes and their features
 		countryAddressFormatEClass = createEClass(COUNTRY_ADDRESS_FORMAT);
-		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__GEO_ID);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE_EXT);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID);
+		createEReference(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__GEO_ID);
 		createEReference(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID);
 
 		countryCapitalEClass = createEClass(COUNTRY_CAPITAL);
@@ -1276,7 +1276,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		createEAttribute(geoEClass, GEO__TAX_AUTH_TAX_AUTHORITIES);
 
 		geoAssocEClass = createEClass(GEO_ASSOC);
-		createEAttribute(geoAssocEClass, GEO_ASSOC__GEO_ID);
+		createEReference(geoAssocEClass, GEO_ASSOC__GEO_ID);
 		createEReference(geoAssocEClass, GEO_ASSOC__GEO_ID_TO);
 		createEReference(geoAssocEClass, GEO_ASSOC__GEO_ASSOC_TYPE_ID);
 
@@ -1360,13 +1360,14 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(countryAddressFormatEClass, CountryAddressFormat.class, "CountryAddressFormat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCountryAddressFormat_GeoId(), ecorePackage.getEString(), "geoId", null, 1, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_AddressFormat(), ecorePackage.getEString(), "addressFormat", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_HasPostalCodeExt(), ecorePackage.getEBoolean(), "hasPostalCodeExt", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_PostalCodeRegex(), ecorePackage.getEString(), "postalCodeRegex", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_RequirePostalCode(), ecorePackage.getEBoolean(), "requirePostalCode", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_RequirePostalCodeExt(), ecorePackage.getEBoolean(), "requirePostalCodeExt", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_RequireStateProvinceId(), ecorePackage.getEString(), "requireStateProvinceId", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCountryAddressFormat_GeoId(), this.getGeo(), null, "geoId", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCountryAddressFormat_GeoId().getEKeys().add(this.getGeo_GeoId());
 		initEReference(getCountryAddressFormat_GeoAssocTypeId(), this.getGeoAssocType(), null, "geoAssocTypeId", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCountryAddressFormat_GeoAssocTypeId().getEKeys().add(this.getGeoAssocType_GeoAssocTypeId());
 
@@ -1447,7 +1448,8 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		addEOperation(geoEClass, ecorePackage.getEString(), "toShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(geoAssocEClass, GeoAssoc.class, "GeoAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGeoAssoc_GeoId(), ecorePackage.getEString(), "geoId", null, 1, 1, GeoAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGeoAssoc_GeoId(), this.getGeo(), null, "geoId", null, 0, 1, GeoAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getGeoAssoc_GeoId().getEKeys().add(this.getGeo_GeoId());
 		initEReference(getGeoAssoc_GeoIdTo(), this.getGeo(), null, "geoIdTo", null, 0, 1, GeoAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGeoAssoc_GeoIdTo().getEKeys().add(this.getGeo_GeoId());
 		initEReference(getGeoAssoc_GeoAssocTypeId(), this.getGeoAssocType(), null, "geoAssocTypeId", null, 0, 1, GeoAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1509,12 +1511,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getCountryAddressFormat_GeoId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 		addAnnotation
 		  (getCountryCode_CountryCode(),
 		   source,
@@ -1694,12 +1690,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getGeoAssoc_GeoId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (geoAssocTypeEClass.getEOperations().get(0),

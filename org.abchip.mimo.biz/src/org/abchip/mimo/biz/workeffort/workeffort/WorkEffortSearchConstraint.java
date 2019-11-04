@@ -18,7 +18,6 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#getWorkEffortSearchResultId <em>Work Effort Search Result Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#isAnyPrefix <em>Any Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#isAnySuffix <em>Any Suffix</em>}</li>
@@ -29,6 +28,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#isIsAnd <em>Is And</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#getLowValue <em>Low Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#isRemoveStems <em>Remove Stems</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#getWorkEffortSearchResultId <em>Work Effort Search Result Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchConstraint()
@@ -298,30 +298,29 @@ public interface WorkEffortSearchConstraint extends BizEntity {
 	void setRemoveStems(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Search Result Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Search Result Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Search Result Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Search Result Id</em>' attribute.
-	 * @see #setWorkEffortSearchResultId(String)
+	 * @return the value of the '<em>Work Effort Search Result Id</em>' reference.
+	 * @see #setWorkEffortSearchResultId(WorkEffortSearchResult)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchConstraint_WorkEffortSearchResultId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="workEffortSearchResultId"
 	 * @generated
 	 */
-	String getWorkEffortSearchResultId();
+	WorkEffortSearchResult getWorkEffortSearchResultId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#getWorkEffortSearchResultId <em>Work Effort Search Result Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint#getWorkEffortSearchResultId <em>Work Effort Search Result Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Search Result Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Search Result Id</em>' reference.
 	 * @see #getWorkEffortSearchResultId()
 	 * @generated
 	 */
-	void setWorkEffortSearchResultId(String value);
+	void setWorkEffortSearchResultId(WorkEffortSearchResult value);
 
 } // WorkEffortSearchConstraint

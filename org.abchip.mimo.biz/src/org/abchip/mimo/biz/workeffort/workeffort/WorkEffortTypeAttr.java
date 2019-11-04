@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortTypeAttr()
@@ -82,30 +82,29 @@ public interface WorkEffortTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Type Id</em>' attribute.
-	 * @see #setWorkEffortTypeId(String)
+	 * @return the value of the '<em>Work Effort Type Id</em>' reference.
+	 * @see #setWorkEffortTypeId(WorkEffortType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortTypeAttr_WorkEffortTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="workEffortTypeId"
 	 * @generated
 	 */
-	String getWorkEffortTypeId();
+	WorkEffortType getWorkEffortTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr#getWorkEffortTypeId <em>Work Effort Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr#getWorkEffortTypeId <em>Work Effort Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Type Id</em>' reference.
 	 * @see #getWorkEffortTypeId()
 	 * @generated
 	 */
-	void setWorkEffortTypeId(String value);
+	void setWorkEffortTypeId(WorkEffortType value);
 
 } // WorkEffortTypeAttr

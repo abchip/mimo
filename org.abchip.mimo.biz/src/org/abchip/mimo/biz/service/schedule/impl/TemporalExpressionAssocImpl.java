@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl#getFromTempExprId <em>From Temp Expr Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl#getExprAssocType <em>Expr Assoc Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl#getFromTempExprId <em>From Temp Expr Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl#getToTempExprId <em>To Temp Expr Id</em>}</li>
  * </ul>
  *
@@ -39,26 +39,6 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getFromTempExprId() <em>From Temp Expr Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromTempExprId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FROM_TEMP_EXPR_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromTempExprId() <em>From Temp Expr Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromTempExprId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fromTempExprId = FROM_TEMP_EXPR_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getExprAssocType() <em>Expr Assoc Type</em>}' attribute.
@@ -79,6 +59,16 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 * @ordered
 	 */
 	protected String exprAssocType = EXPR_ASSOC_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFromTempExprId() <em>From Temp Expr Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromTempExprId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TemporalExpression fromTempExprId;
 
 	/**
 	 * The cached value of the '{@link #getToTempExprId() <em>To Temp Expr Id</em>}' reference.
@@ -115,7 +105,24 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 * @generated
 	 */
 	@Override
-	public String getFromTempExprId() {
+	public TemporalExpression getFromTempExprId() {
+		if (fromTempExprId != null && ((EObject)fromTempExprId).eIsProxy()) {
+			InternalEObject oldFromTempExprId = (InternalEObject)fromTempExprId;
+			fromTempExprId = (TemporalExpression)eResolveProxy(oldFromTempExprId);
+			if (fromTempExprId != oldFromTempExprId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, oldFromTempExprId, fromTempExprId));
+			}
+		}
+		return fromTempExprId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TemporalExpression basicGetFromTempExprId() {
 		return fromTempExprId;
 	}
 
@@ -125,8 +132,8 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 * @generated
 	 */
 	@Override
-	public void setFromTempExprId(String newFromTempExprId) {
-		String oldFromTempExprId = fromTempExprId;
+	public void setFromTempExprId(TemporalExpression newFromTempExprId) {
+		TemporalExpression oldFromTempExprId = fromTempExprId;
 		fromTempExprId = newFromTempExprId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, oldFromTempExprId, fromTempExprId));
@@ -203,10 +210,11 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				return getFromTempExprId();
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
 				return getExprAssocType();
+			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
+				if (resolve) return getFromTempExprId();
+				return basicGetFromTempExprId();
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
 				if (resolve) return getToTempExprId();
 				return basicGetToTempExprId();
@@ -222,11 +230,11 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				setFromTempExprId((String)newValue);
-				return;
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
 				setExprAssocType((String)newValue);
+				return;
+			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
+				setFromTempExprId((TemporalExpression)newValue);
 				return;
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
 				setToTempExprId((TemporalExpression)newValue);
@@ -243,11 +251,11 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				setFromTempExprId(FROM_TEMP_EXPR_ID_EDEFAULT);
-				return;
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
 				setExprAssocType(EXPR_ASSOC_TYPE_EDEFAULT);
+				return;
+			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
+				setFromTempExprId((TemporalExpression)null);
 				return;
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
 				setToTempExprId((TemporalExpression)null);
@@ -264,10 +272,10 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				return FROM_TEMP_EXPR_ID_EDEFAULT == null ? fromTempExprId != null : !FROM_TEMP_EXPR_ID_EDEFAULT.equals(fromTempExprId);
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
 				return EXPR_ASSOC_TYPE_EDEFAULT == null ? exprAssocType != null : !EXPR_ASSOC_TYPE_EDEFAULT.equals(exprAssocType);
+			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
+				return fromTempExprId != null;
 			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
 				return toTempExprId != null;
 		}
@@ -284,9 +292,7 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromTempExprId: ");
-		result.append(fromTempExprId);
-		result.append(", exprAssocType: ");
+		result.append(" (exprAssocType: ");
 		result.append(exprAssocType);
 		result.append(')');
 		return result.toString();

@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getCoeffName <em>Coeff Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getCoeffValue <em>Coeff Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteCoefficient()
@@ -84,30 +84,29 @@ public interface QuoteCoefficient extends BizEntity {
 	void setCoeffValue(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Id</em>' attribute.
-	 * @see #setQuoteId(String)
+	 * @return the value of the '<em>Quote Id</em>' reference.
+	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteCoefficient_QuoteId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="quoteId"
 	 * @generated
 	 */
-	String getQuoteId();
+	Quote getQuoteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Id</em>' reference.
 	 * @see #getQuoteId()
 	 * @generated
 	 */
-	void setQuoteId(String value);
+	void setQuoteId(Quote value);
 
 } // QuoteCoefficient

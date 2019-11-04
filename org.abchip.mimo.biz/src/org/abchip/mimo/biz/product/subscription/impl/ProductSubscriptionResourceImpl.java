@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#isAutomaticExtend <em>Automatic Extend</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getAvailableTime <em>Available Time</em>}</li>
@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseTime <em>Use Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
@@ -58,26 +59,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -298,6 +279,16 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @ordered
 	 */
 	protected long useTime = USE_TIME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' reference.
@@ -887,7 +878,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -897,8 +905,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID, oldProductId, productId));
@@ -952,8 +960,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
-				return getProductId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				return getFromDate();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AUTOMATIC_EXTEND:
@@ -976,6 +982,9 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 				return getUseCountLimit();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				return getUseTime();
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				if (resolve) return getSubscriptionResourceId();
 				return basicGetSubscriptionResourceId();
@@ -1009,9 +1018,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -1044,6 +1050,9 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				setUseTime((Long)newValue);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				setSubscriptionResourceId((SubscriptionResource)newValue);
@@ -1078,9 +1087,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -1113,6 +1119,9 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				setUseTime(USE_TIME_EDEFAULT);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				setSubscriptionResourceId((SubscriptionResource)null);
@@ -1147,8 +1156,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AUTOMATIC_EXTEND:
@@ -1171,6 +1178,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 				return useCountLimit != USE_COUNT_LIMIT_EDEFAULT;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				return useTime != USE_TIME_EDEFAULT;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
+				return productId != null;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				return subscriptionResourceId != null;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
@@ -1199,9 +1208,7 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", automaticExtend: ");
 		result.append(automaticExtend);

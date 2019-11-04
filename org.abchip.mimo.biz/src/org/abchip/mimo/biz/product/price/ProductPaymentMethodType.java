@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  * </ul>
@@ -88,31 +89,30 @@ public interface ProductPaymentMethodType extends BizEntity {
 	void setPaymentMethodTypeId(PaymentMethodType value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_ProductId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.

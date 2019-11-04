@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
@@ -26,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getIdValue <em>Id Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}</li>
  * </ul>
  *
@@ -35,28 +36,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType> implements FixedAssetIdent {
 	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getIdValue() <em>Id Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +57,15 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 * @ordered
 	 */
 	protected String idValue = ID_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
 	/**
 	 * The cached value of the '{@link #getFixedAssetIdentTypeId() <em>Fixed Asset Ident Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -133,7 +124,24 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -143,8 +151,8 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -198,10 +206,11 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				return getIdValue();
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
 				if (resolve) return getFixedAssetIdentTypeId();
 				return basicGetFixedAssetIdentTypeId();
@@ -217,11 +226,11 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				setIdValue((String)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
 				setFixedAssetIdentTypeId((FixedAssetIdentType)newValue);
@@ -238,11 +247,11 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				setIdValue(ID_VALUE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
 				setFixedAssetIdentTypeId((FixedAssetIdentType)null);
@@ -259,10 +268,10 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				return ID_VALUE_EDEFAULT == null ? idValue != null : !ID_VALUE_EDEFAULT.equals(idValue);
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
+				return fixedAssetId != null;
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
 				return fixedAssetIdentTypeId != null;
 		}
@@ -279,9 +288,7 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fixedAssetId: ");
-		result.append(fixedAssetId);
-		result.append(", idValue: ");
+		result.append(" (idValue: ");
 		result.append(idValue);
 		result.append(')');
 		return result.toString();

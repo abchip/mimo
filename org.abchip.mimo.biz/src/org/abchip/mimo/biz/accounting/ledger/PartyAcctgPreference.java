@@ -15,6 +15,7 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +26,6 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#isEnableAccounting <em>Enable Accounting</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getFiscalYearStartDay <em>Fiscal Year Start Day</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getFiscalYearStartMonth <em>Fiscal Year Start Month</em>}</li>
@@ -37,6 +37,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderIdPrefix <em>Order Id Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteIdPrefix <em>Quote Id Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#isUseInvoiceIdForReturns <em>Use Invoice Id For Returns</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getTaxFormId <em>Tax Form Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getCogsMethodId <em>Cogs Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}</li>
@@ -472,31 +473,30 @@ public interface PartyAcctgPreference extends BizEntity {
 	void setOrderSeqCustMethId(CustomMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_PartyId()
-	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Quote Id Prefix</b></em>' attribute.

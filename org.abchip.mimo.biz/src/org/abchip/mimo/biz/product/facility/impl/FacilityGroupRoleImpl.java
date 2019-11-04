@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.facility.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityGroupRole;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -41,24 +42,14 @@ public class FacilityGroupRoleImpl extends BizEntityImpl implements FacilityGrou
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFacilityGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FACILITY_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityGroupId = FACILITY_GROUP_ID_EDEFAULT;
+	protected FacilityGroup facilityGroupId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -185,7 +176,24 @@ public class FacilityGroupRoleImpl extends BizEntityImpl implements FacilityGrou
 	 * @generated
 	 */
 	@Override
-	public String getFacilityGroupId() {
+	public FacilityGroup getFacilityGroupId() {
+		if (facilityGroupId != null && ((EObject)facilityGroupId).eIsProxy()) {
+			InternalEObject oldFacilityGroupId = (InternalEObject)facilityGroupId;
+			facilityGroupId = (FacilityGroup)eResolveProxy(oldFacilityGroupId);
+			if (facilityGroupId != oldFacilityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_GROUP_ROLE__FACILITY_GROUP_ID, oldFacilityGroupId, facilityGroupId));
+			}
+		}
+		return facilityGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityGroup basicGetFacilityGroupId() {
 		return facilityGroupId;
 	}
 
@@ -195,8 +203,8 @@ public class FacilityGroupRoleImpl extends BizEntityImpl implements FacilityGrou
 	 * @generated
 	 */
 	@Override
-	public void setFacilityGroupId(String newFacilityGroupId) {
-		String oldFacilityGroupId = facilityGroupId;
+	public void setFacilityGroupId(FacilityGroup newFacilityGroupId) {
+		FacilityGroup oldFacilityGroupId = facilityGroupId;
 		facilityGroupId = newFacilityGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP_ROLE__FACILITY_GROUP_ID, oldFacilityGroupId, facilityGroupId));
@@ -211,7 +219,8 @@ public class FacilityGroupRoleImpl extends BizEntityImpl implements FacilityGrou
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FacilityPackage.FACILITY_GROUP_ROLE__FACILITY_GROUP_ID:
-				return getFacilityGroupId();
+				if (resolve) return getFacilityGroupId();
+				return basicGetFacilityGroupId();
 			case FacilityPackage.FACILITY_GROUP_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -231,7 +240,7 @@ public class FacilityGroupRoleImpl extends BizEntityImpl implements FacilityGrou
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FacilityPackage.FACILITY_GROUP_ROLE__FACILITY_GROUP_ID:
-				setFacilityGroupId((String)newValue);
+				setFacilityGroupId((FacilityGroup)newValue);
 				return;
 			case FacilityPackage.FACILITY_GROUP_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -252,7 +261,7 @@ public class FacilityGroupRoleImpl extends BizEntityImpl implements FacilityGrou
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FacilityPackage.FACILITY_GROUP_ROLE__FACILITY_GROUP_ID:
-				setFacilityGroupId(FACILITY_GROUP_ID_EDEFAULT);
+				setFacilityGroupId((FacilityGroup)null);
 				return;
 			case FacilityPackage.FACILITY_GROUP_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -273,29 +282,13 @@ public class FacilityGroupRoleImpl extends BizEntityImpl implements FacilityGrou
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FacilityPackage.FACILITY_GROUP_ROLE__FACILITY_GROUP_ID:
-				return FACILITY_GROUP_ID_EDEFAULT == null ? facilityGroupId != null : !FACILITY_GROUP_ID_EDEFAULT.equals(facilityGroupId);
+				return facilityGroupId != null;
 			case FacilityPackage.FACILITY_GROUP_ROLE__PARTY_ID:
 				return partyId != null;
 			case FacilityPackage.FACILITY_GROUP_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (facilityGroupId: ");
-		result.append(facilityGroupId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //FacilityGroupRoleImpl

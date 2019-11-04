@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.product.facility;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.party.contact.TelecomNumber;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getExtension <em>Extension</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -69,12 +69,12 @@ public interface FacilityContactMech extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(TelecomNumber)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMech_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	TelecomNumber getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -84,7 +84,7 @@ public interface FacilityContactMech extends BizEntity {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(TelecomNumber value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Extension</b></em>' attribute.
@@ -166,30 +166,29 @@ public interface FacilityContactMech extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMech_FacilityId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityContactMech#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 } // FacilityContactMech

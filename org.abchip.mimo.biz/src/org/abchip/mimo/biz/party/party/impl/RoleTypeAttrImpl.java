@@ -9,10 +9,13 @@ package org.abchip.mimo.biz.party.party.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.party.party.RoleTypeAttr;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeAttrImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeAttrImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,25 +38,6 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +74,15 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +155,24 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -172,8 +182,8 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -187,12 +197,13 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
-				return getRoleTypeId();
 			case PartyPackage.ROLE_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case PartyPackage.ROLE_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +216,14 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
 			case PartyPackage.ROLE_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case PartyPackage.ROLE_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +237,14 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case PartyPackage.ROLE_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case PartyPackage.ROLE_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +258,12 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case PartyPackage.ROLE_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case PartyPackage.ROLE_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID:
+				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,9 +278,7 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

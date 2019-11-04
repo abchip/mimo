@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.humanres.ability.ResponsibilityType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getEmplPositionId <em>Empl Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getEmplPositionId <em>Empl Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  * </ul>
  *
@@ -60,31 +60,30 @@ public interface EmplPositionResponsibility extends BizEntity {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Empl Position Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Empl Position Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Empl Position Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Empl Position Id</em>' attribute.
-	 * @see #setEmplPositionId(String)
+	 * @return the value of the '<em>Empl Position Id</em>' reference.
+	 * @see #setEmplPositionId(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionResponsibility_EmplPositionId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="emplPositionId"
 	 * @generated
 	 */
-	String getEmplPositionId();
+	EmplPosition getEmplPositionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getEmplPositionId <em>Empl Position Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getEmplPositionId <em>Empl Position Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Empl Position Id</em>' attribute.
+	 * @param value the new value of the '<em>Empl Position Id</em>' reference.
 	 * @see #getEmplPositionId()
 	 * @generated
 	 */
-	void setEmplPositionId(String value);
+	void setEmplPositionId(EmplPosition value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.

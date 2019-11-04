@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.requirement.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementCustRequest;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementCustRequestImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementCustRequestImpl#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementCustRequestImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementCustRequestImpl#getRequirementId <em>Requirement Id</em>}</li>
  * </ul>
  *
@@ -39,26 +40,6 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCustRequestItemSeqId() <em>Cust Request Item Seq Id</em>}' attribute.
@@ -79,6 +60,16 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	 * @ordered
 	 */
 	protected String custRequestItemSeqId = CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustRequestId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustRequest custRequestId;
 
 	/**
 	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' reference.
@@ -115,7 +106,24 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -125,8 +133,8 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -203,10 +211,11 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
-				return getCustRequestId();
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ITEM_SEQ_ID:
 				return getCustRequestItemSeqId();
+			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
 				if (resolve) return getRequirementId();
 				return basicGetRequirementId();
@@ -222,11 +231,11 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
-				return;
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId((String)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
 				setRequirementId((Requirement)newValue);
@@ -243,11 +252,11 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
-				return;
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId(CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)null);
 				return;
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
 				setRequirementId((Requirement)null);
@@ -264,10 +273,10 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ITEM_SEQ_ID:
 				return CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT == null ? custRequestItemSeqId != null : !CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT.equals(custRequestItemSeqId);
+			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ID:
+				return custRequestId != null;
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
 				return requirementId != null;
 		}
@@ -284,9 +293,7 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (custRequestId: ");
-		result.append(custRequestId);
-		result.append(", custRequestItemSeqId: ");
+		result.append(" (custRequestItemSeqId: ");
 		result.append(custRequestItemSeqId);
 		result.append(')');
 		return result.toString();

@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryTypeAttr()
@@ -82,30 +82,29 @@ public interface ProductCategoryTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Type Id</em>' attribute.
-	 * @see #setProductCategoryTypeId(String)
+	 * @return the value of the '<em>Product Category Type Id</em>' reference.
+	 * @see #setProductCategoryTypeId(ProductCategoryType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryTypeAttr_ProductCategoryTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productCategoryTypeId"
 	 * @generated
 	 */
-	String getProductCategoryTypeId();
+	ProductCategoryType getProductCategoryTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getProductCategoryTypeId <em>Product Category Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getProductCategoryTypeId <em>Product Category Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Type Id</em>' reference.
 	 * @see #getProductCategoryTypeId()
 	 * @generated
 	 */
-	void setProductCategoryTypeId(String value);
+	void setProductCategoryTypeId(ProductCategoryType value);
 
 } // ProductCategoryTypeAttr

@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceNote;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,27 +33,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	/**
-	 * The default value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInvoiceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String invoiceId = INVOICE_ID_EDEFAULT;
+	protected Invoice invoiceId;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,7 +70,24 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceId() {
+	public Invoice getInvoiceId() {
+		if (invoiceId != null && ((EObject)invoiceId).eIsProxy()) {
+			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
+			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
+			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_NOTE__INVOICE_ID, oldInvoiceId, invoiceId));
+			}
+		}
+		return invoiceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoiceId() {
 		return invoiceId;
 	}
 
@@ -86,8 +97,8 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
+	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_NOTE__INVOICE_ID, oldInvoiceId, invoiceId));
@@ -102,7 +113,8 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_NOTE__INVOICE_ID:
-				return getInvoiceId();
+				if (resolve) return getInvoiceId();
+				return basicGetInvoiceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,7 +128,7 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_NOTE__INVOICE_ID:
-				setInvoiceId((String)newValue);
+				setInvoiceId((Invoice)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,7 +143,7 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_NOTE__INVOICE_ID:
-				setInvoiceId(INVOICE_ID_EDEFAULT);
+				setInvoiceId((Invoice)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -146,25 +158,9 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_NOTE__INVOICE_ID:
-				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
+				return invoiceId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (invoiceId: ");
-		result.append(invoiceId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //InvoiceNoteImpl

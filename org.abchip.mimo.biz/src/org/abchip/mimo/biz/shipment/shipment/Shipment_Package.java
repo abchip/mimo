@@ -109,22 +109,13 @@ public interface Shipment_Package extends EPackage {
 	int CARRIER_SHIPMENT_BOX_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Box Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Oversize Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Packaging Type Code</b></em>' attribute.
@@ -133,7 +124,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Box Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -200,22 +200,13 @@ public interface Shipment_Package extends EPackage {
 	int CARRIER_SHIPMENT_METHOD__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Service Code</b></em>' attribute.
@@ -224,7 +215,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Number</b></em>' attribute.
@@ -233,7 +224,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Method Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -652,22 +652,22 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT__ORIGIN_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
 
 	/**
-	 * The feature id for the '<em><b>Origin Telecom Number Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT__ORIGIN_TELECOM_NUMBER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
-
-	/**
 	 * The feature id for the '<em><b>Destination Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT__DESTINATION_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
+	int SHIPMENT__DESTINATION_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Origin Telecom Number Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT__ORIGIN_TELECOM_NUMBER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Destination Telecom Number Id</b></em>' reference.
@@ -824,22 +824,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_ATTRIBUTE__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -848,7 +839,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -857,7 +848,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SHIPMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_ATTRIBUTE__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Shipment Attribute</em>' class.
@@ -1051,7 +1051,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_CONTACT_MECH__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2482,22 +2482,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_ITEM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_ITEM__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -2506,7 +2497,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Content Description</b></em>' attribute.
@@ -2515,7 +2506,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_ITEM__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -2582,22 +2582,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_ITEM_BILLING__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_ITEM_BILLING__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Item Seq Id</b></em>' attribute.
@@ -2606,7 +2597,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_ITEM_BILLING__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Id</b></em>' reference.
@@ -2673,22 +2673,22 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_ITEM_FEATURE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_ITEM_FEATURE__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ITEM_FEATURE__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_ITEM_FEATURE__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_ITEM_FEATURE__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Id</b></em>' reference.
@@ -2837,22 +2837,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_PACKAGE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_PACKAGE__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Package Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE__SHIPMENT_PACKAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_PACKAGE__SHIPMENT_PACKAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Box Height</b></em>' attribute.
@@ -2861,7 +2852,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE__BOX_HEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_PACKAGE__BOX_HEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Box Length</b></em>' attribute.
@@ -2870,7 +2861,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE__BOX_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SHIPMENT_PACKAGE__BOX_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Box Width</b></em>' attribute.
@@ -2879,7 +2870,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE__BOX_WIDTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SHIPMENT_PACKAGE__BOX_WIDTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Date Created</b></em>' attribute.
@@ -2888,7 +2879,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE__DATE_CREATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SHIPMENT_PACKAGE__DATE_CREATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Insured Value</b></em>' attribute.
@@ -2897,7 +2888,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE__INSURED_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SHIPMENT_PACKAGE__INSURED_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
@@ -2906,7 +2897,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE__WEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SHIPMENT_PACKAGE__WEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_PACKAGE__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Box Type Id</b></em>' reference.
@@ -2991,22 +2991,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_PACKAGE_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Package Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Item Seq Id</b></em>' attribute.
@@ -3015,7 +3006,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -3024,7 +3015,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_CONTENT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SHIPMENT_PACKAGE_CONTENT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sub Product Quantity</b></em>' attribute.
@@ -3033,7 +3024,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Sub Product Id</b></em>' reference.
@@ -3100,22 +3100,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_PACKAGE_ROUTE_SEG__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Package Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_PACKAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_PACKAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Route Segment Id</b></em>' attribute.
@@ -3124,7 +3115,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ROUTE_SEGMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ROUTE_SEGMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Box Number</b></em>' attribute.
@@ -3133,7 +3124,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__BOX_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__BOX_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Cod Amount</b></em>' attribute.
@@ -3142,7 +3133,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Insured Amount</b></em>' attribute.
@@ -3151,7 +3142,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>International Invoice</b></em>' attribute.
@@ -3160,7 +3151,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__INTERNATIONAL_INVOICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__INTERNATIONAL_INVOICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Label Html</b></em>' attribute.
@@ -3169,7 +3160,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_HTML = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_HTML = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Label Image</b></em>' attribute.
@@ -3178,7 +3169,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_IMAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_IMAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Label Intl Sign Image</b></em>' attribute.
@@ -3187,7 +3178,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_INTL_SIGN_IMAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_INTL_SIGN_IMAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Label Printed</b></em>' attribute.
@@ -3196,7 +3187,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_PRINTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_PRINTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Package Other Cost</b></em>' attribute.
@@ -3205,7 +3196,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_OTHER_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_OTHER_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Package Service Cost</b></em>' attribute.
@@ -3214,7 +3205,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_SERVICE_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_SERVICE_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Package Transport Cost</b></em>' attribute.
@@ -3223,7 +3214,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_TRANSPORT_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_TRANSPORT_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Tracking Code</b></em>' attribute.
@@ -3232,7 +3223,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
@@ -3299,22 +3299,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Route Segment Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ROUTE_SEGMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ROUTE_SEGMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Actual Arrival Date</b></em>' attribute.
@@ -3323,7 +3314,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_ARRIVAL_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_ARRIVAL_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Actual Cost</b></em>' attribute.
@@ -3332,7 +3323,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Actual Other Cost</b></em>' attribute.
@@ -3341,7 +3332,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_OTHER_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_OTHER_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Actual Service Cost</b></em>' attribute.
@@ -3350,7 +3341,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_SERVICE_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_SERVICE_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Actual Start Date</b></em>' attribute.
@@ -3359,7 +3350,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Actual Transport Cost</b></em>' attribute.
@@ -3368,7 +3359,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_TRANSPORT_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SHIPMENT_ROUTE_SEGMENT__ACTUAL_TRANSPORT_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Billing Weight</b></em>' attribute.
@@ -3377,7 +3368,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Delivery Zone</b></em>' attribute.
@@ -3386,7 +3377,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Restriction Codes</b></em>' attribute.
@@ -3395,7 +3386,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Restriction Desc</b></em>' attribute.
@@ -3404,7 +3395,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Arrival Date</b></em>' attribute.
@@ -3413,7 +3404,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Start Date</b></em>' attribute.
@@ -3422,7 +3413,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__ESTIMATED_START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int SHIPMENT_ROUTE_SEGMENT__ESTIMATED_START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Home Delivery Date</b></em>' attribute.
@@ -3431,7 +3422,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Home Delivery Type</b></em>' attribute.
@@ -3440,7 +3431,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Date</b></em>' attribute.
@@ -3449,7 +3440,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Third Party Account Number</b></em>' attribute.
@@ -3458,7 +3449,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Third Party Country Geo Code</b></em>' attribute.
@@ -3467,7 +3458,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_COUNTRY_GEO_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_COUNTRY_GEO_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Third Party Postal Code</b></em>' attribute.
@@ -3476,7 +3467,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_POSTAL_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+	int SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_POSTAL_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Tracking Digest</b></em>' attribute.
@@ -3485,7 +3476,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__TRACKING_DIGEST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int SHIPMENT_ROUTE_SEGMENT__TRACKING_DIGEST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Tracking Id Number</b></em>' attribute.
@@ -3494,7 +3485,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__TRACKING_ID_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+	int SHIPMENT_ROUTE_SEGMENT__TRACKING_ID_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Updated By User Login Id</b></em>' attribute.
@@ -3503,7 +3494,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__UPDATED_BY_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+	int SHIPMENT_ROUTE_SEGMENT__UPDATED_BY_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Ups High Value Report</b></em>' attribute.
@@ -3512,7 +3503,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
+	int SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Id</b></em>' reference.
@@ -3569,22 +3569,22 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 29;
 
 	/**
-	 * The feature id for the '<em><b>Origin Telecom Number Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 30;
-
-	/**
 	 * The feature id for the '<em><b>Dest Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 31;
+	int SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 30;
+
+	/**
+	 * The feature id for the '<em><b>Origin Telecom Number Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Dest Telecom Number Id</b></em>' reference.
@@ -3678,22 +3678,22 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_STATUS__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_STATUS__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Status Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_STATUS__STATUS_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_STATUS__STATUS_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_STATUS__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
@@ -4023,22 +4023,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -4047,7 +4038,16 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SHIPMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Shipment Type Attr</em>' class.
@@ -4233,15 +4233,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getCarrierShipmentBoxType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Box Type Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Box Type Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getShipmentBoxTypeId()
 	 * @see #getCarrierShipmentBoxType()
 	 * @generated
 	 */
-	EAttribute getCarrierShipmentBoxType_ShipmentBoxTypeId();
+	EReference getCarrierShipmentBoxType_ShipmentBoxTypeId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getPartyId <em>Party Id</em>}'.
@@ -4287,15 +4287,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getCarrierShipmentMethod();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentMethod#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentMethod#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.CarrierShipmentMethod#getShipmentMethodTypeId()
 	 * @see #getCarrierShipmentMethod()
 	 * @generated
 	 */
-	EAttribute getCarrierShipmentMethod_ShipmentMethodTypeId();
+	EReference getCarrierShipmentMethod_ShipmentMethodTypeId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentMethod#getPartyId <em>Party Id</em>}'.
@@ -4878,15 +4878,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute#getShipmentId()
 	 * @see #getShipmentAttribute()
 	 * @generated
 	 */
-	EAttribute getShipmentAttribute_ShipmentId();
+	EReference getShipmentAttribute_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute#getAttrName <em>Attr Name</em>}'.
@@ -5041,15 +5041,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentContactMech();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentId()
 	 * @see #getShipmentContactMech()
 	 * @generated
 	 */
-	EAttribute getShipmentContactMech_ShipmentId();
+	EReference getShipmentContactMech_ShipmentId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentContactMechTypeId <em>Shipment Contact Mech Type Id</em>}'.
@@ -6121,15 +6121,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentItem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItem#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItem#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentItem#getShipmentId()
 	 * @see #getShipmentItem()
 	 * @generated
 	 */
-	EAttribute getShipmentItem_ShipmentId();
+	EReference getShipmentItem_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItem#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}'.
@@ -6186,15 +6186,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentItemBilling();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getShipmentId()
 	 * @see #getShipmentItemBilling()
 	 * @generated
 	 */
-	EAttribute getShipmentItemBilling_ShipmentId();
+	EReference getShipmentItemBilling_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}'.
@@ -6240,15 +6240,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentItemFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature#getShipmentId()
 	 * @see #getShipmentItemFeature()
 	 * @generated
 	 */
-	EAttribute getShipmentItemFeature_ShipmentId();
+	EReference getShipmentItemFeature_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}'.
@@ -6326,15 +6326,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentPackage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentId()
 	 * @see #getShipmentPackage()
 	 * @generated
 	 */
-	EAttribute getShipmentPackage_ShipmentId();
+	EReference getShipmentPackage_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}'.
@@ -6457,15 +6457,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentPackageContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getShipmentId()
 	 * @see #getShipmentPackageContent()
 	 * @generated
 	 */
-	EAttribute getShipmentPackageContent_ShipmentId();
+	EReference getShipmentPackageContent_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}'.
@@ -6533,15 +6533,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentPackageRouteSeg();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getShipmentId()
 	 * @see #getShipmentPackageRouteSeg()
 	 * @generated
 	 */
-	EAttribute getShipmentPackageRouteSeg_ShipmentId();
+	EReference getShipmentPackageRouteSeg_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}'.
@@ -6719,15 +6719,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentRouteSegment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentId()
 	 * @see #getShipmentRouteSegment()
 	 * @generated
 	 */
-	EAttribute getShipmentRouteSegment_ShipmentId();
+	EReference getShipmentRouteSegment_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentRouteSegmentId <em>Shipment Route Segment Id</em>}'.
@@ -7125,15 +7125,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentStatus();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getStatusId()
 	 * @see #getShipmentStatus()
 	 * @generated
 	 */
-	EAttribute getShipmentStatus_StatusId();
+	EReference getShipmentStatus_StatusId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getShipmentId <em>Shipment Id</em>}'.
@@ -7364,15 +7364,15 @@ public interface Shipment_Package extends EPackage {
 	EClass getShipmentTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getShipmentTypeId <em>Shipment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getShipmentTypeId <em>Shipment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getShipmentTypeId()
 	 * @see #getShipmentTypeAttr()
 	 * @generated
 	 */
-	EAttribute getShipmentTypeAttr_ShipmentTypeId();
+	EReference getShipmentTypeAttr_ShipmentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -7483,12 +7483,12 @@ public interface Shipment_Package extends EPackage {
 		EClass CARRIER_SHIPMENT_BOX_TYPE = eINSTANCE.getCarrierShipmentBoxType();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Box Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Box Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID = eINSTANCE.getCarrierShipmentBoxType_ShipmentBoxTypeId();
+		EReference CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID = eINSTANCE.getCarrierShipmentBoxType_ShipmentBoxTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -7525,12 +7525,12 @@ public interface Shipment_Package extends EPackage {
 		EClass CARRIER_SHIPMENT_METHOD = eINSTANCE.getCarrierShipmentMethod();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID = eINSTANCE.getCarrierShipmentMethod_ShipmentMethodTypeId();
+		EReference CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID = eINSTANCE.getCarrierShipmentMethod_ShipmentMethodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -7963,12 +7963,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_ATTRIBUTE = eINSTANCE.getShipmentAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_ATTRIBUTE__SHIPMENT_ID = eINSTANCE.getShipmentAttribute_ShipmentId();
+		EReference SHIPMENT_ATTRIBUTE__SHIPMENT_ID = eINSTANCE.getShipmentAttribute_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -8087,12 +8087,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_CONTACT_MECH = eINSTANCE.getShipmentContactMech();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_CONTACT_MECH__SHIPMENT_ID = eINSTANCE.getShipmentContactMech_ShipmentId();
+		EReference SHIPMENT_CONTACT_MECH__SHIPMENT_ID = eINSTANCE.getShipmentContactMech_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Contact Mech Type Id</b></em>' reference feature.
@@ -8897,12 +8897,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_ITEM = eINSTANCE.getShipmentItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_ITEM__SHIPMENT_ID = eINSTANCE.getShipmentItem_ShipmentId();
+		EReference SHIPMENT_ITEM__SHIPMENT_ID = eINSTANCE.getShipmentItem_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Item Seq Id</b></em>' attribute feature.
@@ -8947,12 +8947,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_ITEM_BILLING = eINSTANCE.getShipmentItemBilling();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_ITEM_BILLING__SHIPMENT_ID = eINSTANCE.getShipmentItemBilling_ShipmentId();
+		EReference SHIPMENT_ITEM_BILLING__SHIPMENT_ID = eINSTANCE.getShipmentItemBilling_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Item Seq Id</b></em>' attribute feature.
@@ -8989,12 +8989,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_ITEM_FEATURE = eINSTANCE.getShipmentItemFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_ITEM_FEATURE__SHIPMENT_ID = eINSTANCE.getShipmentItemFeature_ShipmentId();
+		EReference SHIPMENT_ITEM_FEATURE__SHIPMENT_ID = eINSTANCE.getShipmentItemFeature_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Item Seq Id</b></em>' attribute feature.
@@ -9057,12 +9057,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_PACKAGE = eINSTANCE.getShipmentPackage();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_PACKAGE__SHIPMENT_ID = eINSTANCE.getShipmentPackage_ShipmentId();
+		EReference SHIPMENT_PACKAGE__SHIPMENT_ID = eINSTANCE.getShipmentPackage_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Package Seq Id</b></em>' attribute feature.
@@ -9155,12 +9155,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_PACKAGE_CONTENT = eINSTANCE.getShipmentPackageContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID = eINSTANCE.getShipmentPackageContent_ShipmentId();
+		EReference SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID = eINSTANCE.getShipmentPackageContent_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Package Seq Id</b></em>' attribute feature.
@@ -9213,12 +9213,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_PACKAGE_ROUTE_SEG = eINSTANCE.getShipmentPackageRouteSeg();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID = eINSTANCE.getShipmentPackageRouteSeg_ShipmentId();
+		EReference SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID = eINSTANCE.getShipmentPackageRouteSeg_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Package Seq Id</b></em>' attribute feature.
@@ -9351,12 +9351,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_ROUTE_SEGMENT = eINSTANCE.getShipmentRouteSegment();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID = eINSTANCE.getShipmentRouteSegment_ShipmentId();
+		EReference SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID = eINSTANCE.getShipmentRouteSegment_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Route Segment Id</b></em>' attribute feature.
@@ -9649,12 +9649,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_STATUS = eINSTANCE.getShipmentStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_STATUS__STATUS_ID = eINSTANCE.getShipmentStatus_StatusId();
+		EReference SHIPMENT_STATUS__STATUS_ID = eINSTANCE.getShipmentStatus_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
@@ -9831,12 +9831,12 @@ public interface Shipment_Package extends EPackage {
 		EClass SHIPMENT_TYPE_ATTR = eINSTANCE.getShipmentTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID = eINSTANCE.getShipmentTypeAttr_ShipmentTypeId();
+		EReference SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID = eINSTANCE.getShipmentTypeAttr_ShipmentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.

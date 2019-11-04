@@ -32,10 +32,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getLeaveTypeId <em>Leave Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getEmplLeaveReasonTypeId <em>Empl Leave Reason Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getApproverPartyId <em>Approver Party Id</em>}</li>
@@ -49,26 +49,6 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -129,6 +109,16 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getLeaveTypeId() <em>Leave Type Id</em>}' reference.
@@ -401,7 +391,24 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -411,8 +418,8 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__PARTY_ID, oldPartyId, partyId));
@@ -449,14 +456,15 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
-				return getPartyId();
 			case EmploymentPackage.EMPL_LEAVE__FROM_DATE:
 				return getFromDate();
 			case EmploymentPackage.EMPL_LEAVE__DESCRIPTION:
 				return getDescription();
 			case EmploymentPackage.EMPL_LEAVE__THRU_DATE:
 				return getThruDate();
+			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case EmploymentPackage.EMPL_LEAVE__LEAVE_TYPE_ID:
 				if (resolve) return getLeaveTypeId();
 				return basicGetLeaveTypeId();
@@ -481,9 +489,6 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case EmploymentPackage.EMPL_LEAVE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -492,6 +497,9 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 				return;
 			case EmploymentPackage.EMPL_LEAVE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 			case EmploymentPackage.EMPL_LEAVE__LEAVE_TYPE_ID:
 				setLeaveTypeId((EmplLeaveType)newValue);
@@ -517,9 +525,6 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case EmploymentPackage.EMPL_LEAVE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -528,6 +533,9 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 				return;
 			case EmploymentPackage.EMPL_LEAVE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 			case EmploymentPackage.EMPL_LEAVE__LEAVE_TYPE_ID:
 				setLeaveTypeId((EmplLeaveType)null);
@@ -553,14 +561,14 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case EmploymentPackage.EMPL_LEAVE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case EmploymentPackage.EMPL_LEAVE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case EmploymentPackage.EMPL_LEAVE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case EmploymentPackage.EMPL_LEAVE__PARTY_ID:
+				return partyId != null;
 			case EmploymentPackage.EMPL_LEAVE__LEAVE_TYPE_ID:
 				return leaveTypeId != null;
 			case EmploymentPackage.EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID:
@@ -583,9 +591,7 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", description: ");
 		result.append(description);

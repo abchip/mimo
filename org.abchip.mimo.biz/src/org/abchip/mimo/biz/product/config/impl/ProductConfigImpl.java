@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfig;
 import org.abchip.mimo.biz.product.config.ProductConfigItem;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -28,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getConfigTypeId <em>Config Type Id</em>}</li>
@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#isIsMandatory <em>Is Mandatory</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigImpl#getConfigItemId <em>Config Item Id</em>}</li>
  * </ul>
  *
@@ -48,26 +49,6 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -227,6 +208,16 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getConfigItemId() <em>Config Item Id</em>}' reference.
@@ -401,7 +392,24 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -411,8 +419,8 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID, oldProductId, productId));
@@ -512,8 +520,6 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
-				return getProductId();
 			case ConfigPackage.PRODUCT_CONFIG__SEQUENCE_NUM:
 				return getSequenceNum();
 			case ConfigPackage.PRODUCT_CONFIG__FROM_DATE:
@@ -530,6 +536,9 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 				return getLongDescription();
 			case ConfigPackage.PRODUCT_CONFIG__THRU_DATE:
 				return getThruDate();
+			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ConfigPackage.PRODUCT_CONFIG__CONFIG_ITEM_ID:
 				if (resolve) return getConfigItemId();
 				return basicGetConfigItemId();
@@ -545,9 +554,6 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
 				return;
@@ -572,6 +578,9 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 			case ConfigPackage.PRODUCT_CONFIG__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
 			case ConfigPackage.PRODUCT_CONFIG__CONFIG_ITEM_ID:
 				setConfigItemId((ProductConfigItem)newValue);
 				return;
@@ -587,9 +596,6 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
 				return;
@@ -614,6 +620,9 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 			case ConfigPackage.PRODUCT_CONFIG__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
 			case ConfigPackage.PRODUCT_CONFIG__CONFIG_ITEM_ID:
 				setConfigItemId((ProductConfigItem)null);
 				return;
@@ -629,8 +638,6 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ConfigPackage.PRODUCT_CONFIG__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case ConfigPackage.PRODUCT_CONFIG__FROM_DATE:
@@ -647,6 +654,8 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 				return LONG_DESCRIPTION_EDEFAULT == null ? longDescription != null : !LONG_DESCRIPTION_EDEFAULT.equals(longDescription);
 			case ConfigPackage.PRODUCT_CONFIG__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID:
+				return productId != null;
 			case ConfigPackage.PRODUCT_CONFIG__CONFIG_ITEM_ID:
 				return configItemId != null;
 		}
@@ -663,9 +672,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", sequenceNum: ");
+		result.append(" (sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(", fromDate: ");
 		result.append(fromDate);

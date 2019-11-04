@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.common.portal.impl;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
+import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.common.portal.PortletCategory;
 import org.abchip.mimo.biz.common.portal.PortletPortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -34,27 +35,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PortletPortletCategoryImpl extends BizEntityImpl implements PortletPortletCategory {
 	/**
-	 * The default value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPortletId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PORTAL_PORTLET_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' attribute.
+	 * The cached value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPortalPortletId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String portalPortletId = PORTAL_PORTLET_ID_EDEFAULT;
+	protected PortalPortlet portalPortletId;
 
 	/**
 	 * The cached value of the '{@link #getPortletCategoryId() <em>Portlet Category Id</em>}' reference.
@@ -91,7 +83,24 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 * @generated
 	 */
 	@Override
-	public String getPortalPortletId() {
+	public PortalPortlet getPortalPortletId() {
+		if (portalPortletId != null && ((EObject)portalPortletId).eIsProxy()) {
+			InternalEObject oldPortalPortletId = (InternalEObject)portalPortletId;
+			portalPortletId = (PortalPortlet)eResolveProxy(oldPortalPortletId);
+			if (portalPortletId != oldPortalPortletId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
+			}
+		}
+		return portalPortletId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortalPortlet basicGetPortalPortletId() {
 		return portalPortletId;
 	}
 
@@ -101,8 +110,8 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 * @generated
 	 */
 	@Override
-	public void setPortalPortletId(String newPortalPortletId) {
-		String oldPortalPortletId = portalPortletId;
+	public void setPortalPortletId(PortalPortlet newPortalPortletId) {
+		PortalPortlet oldPortalPortletId = portalPortletId;
 		portalPortletId = newPortalPortletId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
@@ -157,7 +166,8 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				return getPortalPortletId();
+				if (resolve) return getPortalPortletId();
+				return basicGetPortalPortletId();
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
 				if (resolve) return getPortletCategoryId();
 				return basicGetPortletCategoryId();
@@ -174,7 +184,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				setPortalPortletId((String)newValue);
+				setPortalPortletId((PortalPortlet)newValue);
 				return;
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
 				setPortletCategoryId((PortletCategory)newValue);
@@ -192,7 +202,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				setPortalPortletId(PORTAL_PORTLET_ID_EDEFAULT);
+				setPortalPortletId((PortalPortlet)null);
 				return;
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
 				setPortletCategoryId((PortletCategory)null);
@@ -210,27 +220,11 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				return PORTAL_PORTLET_ID_EDEFAULT == null ? portalPortletId != null : !PORTAL_PORTLET_ID_EDEFAULT.equals(portalPortletId);
+				return portalPortletId != null;
 			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
 				return portletCategoryId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (portalPortletId: ");
-		result.append(portalPortletId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PortletPortletCategoryImpl

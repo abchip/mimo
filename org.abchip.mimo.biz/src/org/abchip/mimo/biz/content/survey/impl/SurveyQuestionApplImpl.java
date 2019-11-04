@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.content.survey.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionAppl;
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getExternalFieldRef <em>External Field Ref</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#isRequiredField <em>Required Field</em>}</li>
@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getWithSurveyOptionSeqId <em>With Survey Option Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getWithSurveyQuestionId <em>With Survey Question Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  * </ul>
  *
@@ -51,26 +52,6 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyId = SURVEY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -272,6 +253,16 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	protected String withSurveyQuestionId = WITH_SURVEY_QUESTION_ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSurveyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Survey surveyId;
+
+	/**
 	 * The cached value of the '{@link #getSurveyQuestionId() <em>Survey Question Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -398,7 +389,24 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 * @generated
 	 */
 	@Override
-	public String getSurveyId() {
+	public Survey getSurveyId() {
+		if (surveyId != null && ((EObject)surveyId).eIsProxy()) {
+			InternalEObject oldSurveyId = (InternalEObject)surveyId;
+			surveyId = (Survey)eResolveProxy(oldSurveyId);
+			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID, oldSurveyId, surveyId));
+			}
+		}
+		return surveyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Survey basicGetSurveyId() {
 		return surveyId;
 	}
 
@@ -408,8 +416,8 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 * @generated
 	 */
 	@Override
-	public void setSurveyId(String newSurveyId) {
-		String oldSurveyId = surveyId;
+	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID, oldSurveyId, surveyId));
@@ -601,8 +609,6 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
-				return getSurveyId();
 			case SurveyPackage.SURVEY_QUESTION_APPL__FROM_DATE:
 				return getFromDate();
 			case SurveyPackage.SURVEY_QUESTION_APPL__EXTERNAL_FIELD_REF:
@@ -623,6 +629,9 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 				return getWithSurveyOptionSeqId();
 			case SurveyPackage.SURVEY_QUESTION_APPL__WITH_SURVEY_QUESTION_ID:
 				return getWithSurveyQuestionId();
+			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
+				if (resolve) return getSurveyId();
+				return basicGetSurveyId();
 			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_QUESTION_ID:
 				if (resolve) return getSurveyQuestionId();
 				return basicGetSurveyQuestionId();
@@ -638,9 +647,6 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
-				setSurveyId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_QUESTION_APPL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -671,6 +677,9 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 			case SurveyPackage.SURVEY_QUESTION_APPL__WITH_SURVEY_QUESTION_ID:
 				setWithSurveyQuestionId((String)newValue);
 				return;
+			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
+				setSurveyId((Survey)newValue);
+				return;
 			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_QUESTION_ID:
 				setSurveyQuestionId((SurveyQuestion)newValue);
 				return;
@@ -686,9 +695,6 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
-				setSurveyId(SURVEY_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_QUESTION_APPL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -719,6 +725,9 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 			case SurveyPackage.SURVEY_QUESTION_APPL__WITH_SURVEY_QUESTION_ID:
 				setWithSurveyQuestionId(WITH_SURVEY_QUESTION_ID_EDEFAULT);
 				return;
+			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
+				setSurveyId((Survey)null);
+				return;
 			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_QUESTION_ID:
 				setSurveyQuestionId((SurveyQuestion)null);
 				return;
@@ -734,8 +743,6 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
-				return SURVEY_ID_EDEFAULT == null ? surveyId != null : !SURVEY_ID_EDEFAULT.equals(surveyId);
 			case SurveyPackage.SURVEY_QUESTION_APPL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SurveyPackage.SURVEY_QUESTION_APPL__EXTERNAL_FIELD_REF:
@@ -756,6 +763,8 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 				return WITH_SURVEY_OPTION_SEQ_ID_EDEFAULT == null ? withSurveyOptionSeqId != null : !WITH_SURVEY_OPTION_SEQ_ID_EDEFAULT.equals(withSurveyOptionSeqId);
 			case SurveyPackage.SURVEY_QUESTION_APPL__WITH_SURVEY_QUESTION_ID:
 				return WITH_SURVEY_QUESTION_ID_EDEFAULT == null ? withSurveyQuestionId != null : !WITH_SURVEY_QUESTION_ID_EDEFAULT.equals(withSurveyQuestionId);
+			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID:
+				return surveyId != null;
 			case SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_QUESTION_ID:
 				return surveyQuestionId != null;
 		}
@@ -772,9 +781,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (surveyId: ");
-		result.append(surveyId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", externalFieldRef: ");
 		result.append(externalFieldRef);

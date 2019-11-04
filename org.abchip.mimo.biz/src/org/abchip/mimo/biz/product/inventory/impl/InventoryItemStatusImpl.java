@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemStatus;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getStatusEndDatetime <em>Status End Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
@@ -46,26 +47,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getStatusDatetime() <em>Status Datetime</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -145,6 +126,16 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 * @ordered
 	 */
 	protected Date statusEndDatetime = STATUS_END_DATETIME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
 
 	/**
 	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
@@ -363,7 +354,24 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -373,8 +381,8 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -388,8 +396,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_DATETIME:
 				return getStatusDatetime();
 			case InventoryPackage.INVENTORY_ITEM_STATUS__OWNER_PARTY_ID:
@@ -398,6 +404,9 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 				return getProductId();
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_END_DATETIME:
 				return getStatusEndDatetime();
+			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_ID:
 				if (resolve) return getStatusId();
 				return basicGetStatusId();
@@ -416,9 +425,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_DATETIME:
 				setStatusDatetime((Date)newValue);
 				return;
@@ -430,6 +436,9 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 				return;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_END_DATETIME:
 				setStatusEndDatetime((Date)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
 				return;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_ID:
 				setStatusId((StatusItem)newValue);
@@ -449,9 +458,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_DATETIME:
 				setStatusDatetime(STATUS_DATETIME_EDEFAULT);
 				return;
@@ -463,6 +469,9 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 				return;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_END_DATETIME:
 				setStatusEndDatetime(STATUS_END_DATETIME_EDEFAULT);
+				return;
+			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
 				return;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_ID:
 				setStatusId((StatusItem)null);
@@ -482,8 +491,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_DATETIME:
 				return STATUS_DATETIME_EDEFAULT == null ? statusDatetime != null : !STATUS_DATETIME_EDEFAULT.equals(statusDatetime);
 			case InventoryPackage.INVENTORY_ITEM_STATUS__OWNER_PARTY_ID:
@@ -492,6 +499,8 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_END_DATETIME:
 				return STATUS_END_DATETIME_EDEFAULT == null ? statusEndDatetime != null : !STATUS_END_DATETIME_EDEFAULT.equals(statusEndDatetime);
+			case InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_ID:
 				return statusId != null;
 			case InventoryPackage.INVENTORY_ITEM_STATUS__CHANGE_BY_USER_LOGIN_ID:
@@ -510,9 +519,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (inventoryItemId: ");
-		result.append(inventoryItemId);
-		result.append(", statusDatetime: ");
+		result.append(" (statusDatetime: ");
 		result.append(statusDatetime);
 		result.append(", ownerPartyId: ");
 		result.append(ownerPartyId);

@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.product.product.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductAttribute;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,11 +26,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAttributeImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAttributeImpl#getAttrType <em>Attr Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAttributeImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,26 +40,6 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -137,6 +120,16 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +225,24 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -242,8 +252,8 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID, oldProductId, productId));
@@ -280,8 +290,6 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_DESCRIPTION:
@@ -290,6 +298,9 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 				return getAttrType();
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,9 +313,6 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -316,6 +324,9 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 				return;
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -329,9 +340,6 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -343,6 +351,9 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 				return;
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -356,8 +367,6 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_DESCRIPTION:
@@ -366,6 +375,8 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 				return ATTR_TYPE_EDEFAULT == null ? attrType != null : !ATTR_TYPE_EDEFAULT.equals(attrType);
 			case ProductPackage.PRODUCT_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID:
+				return productId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -380,9 +391,7 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

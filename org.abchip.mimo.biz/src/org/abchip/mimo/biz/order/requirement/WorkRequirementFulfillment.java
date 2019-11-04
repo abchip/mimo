@@ -30,31 +30,30 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  */
 public interface WorkRequirementFulfillment extends BizEntityTyped<WorkReqFulfType> {
 	/**
-	 * Returns the value of the '<em><b>Requirement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Id</em>' attribute.
-	 * @see #setRequirementId(String)
+	 * @return the value of the '<em>Requirement Id</em>' reference.
+	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkRequirementFulfillment_RequirementId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="requirementId"
 	 * @generated
 	 */
-	String getRequirementId();
+	Requirement getRequirementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment#getRequirementId <em>Requirement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment#getRequirementId <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Id</em>' reference.
 	 * @see #getRequirementId()
 	 * @generated
 	 */
-	void setRequirementId(String value);
+	void setRequirementId(Requirement value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.

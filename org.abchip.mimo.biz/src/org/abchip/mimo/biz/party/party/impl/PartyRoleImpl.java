@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyRole;
 import org.abchip.mimo.biz.party.party.RoleType;
@@ -34,27 +35,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
@@ -131,7 +123,24 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_ROLE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -141,8 +150,8 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_ROLE__PARTY_ID, oldPartyId, partyId));
@@ -157,7 +166,8 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PartyPackage.PARTY_ROLE__PARTY_ID:
-				return getPartyId();
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
 				if (resolve) return getRoleTypeId();
 				return basicGetRoleTypeId();
@@ -174,7 +184,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PartyPackage.PARTY_ROLE__PARTY_ID:
-				setPartyId((String)newValue);
+				setPartyId((Party)newValue);
 				return;
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)newValue);
@@ -192,7 +202,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PartyPackage.PARTY_ROLE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
+				setPartyId((Party)null);
 				return;
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)null);
@@ -210,27 +220,11 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PartyPackage.PARTY_ROLE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+				return partyId != null;
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PartyRoleImpl

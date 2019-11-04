@@ -752,8 +752,8 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCommEventContentAssoc_ContentId() {
-		return (EAttribute)commEventContentAssocEClass.getEStructuralFeatures().get(0);
+	public EReference getCommEventContentAssoc_ContentId() {
+		return (EReference)commEventContentAssocEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -773,7 +773,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 */
 	@Override
 	public EAttribute getCommEventContentAssoc_FromDate() {
-		return (EAttribute)commEventContentAssocEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)commEventContentAssocEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -793,7 +793,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 */
 	@Override
 	public EAttribute getCommEventContentAssoc_SequenceNum() {
-		return (EAttribute)commEventContentAssocEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)commEventContentAssocEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -803,7 +803,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 */
 	@Override
 	public EAttribute getCommEventContentAssoc_ThruDate() {
-		return (EAttribute)commEventContentAssocEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)commEventContentAssocEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1102,8 +1102,8 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCommunicationEventProduct_ProductId() {
-		return (EAttribute)communicationEventProductEClass.getEStructuralFeatures().get(0);
+	public EReference getCommunicationEventProduct_ProductId() {
+		return (EReference)communicationEventProductEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1192,17 +1192,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCommunicationEventPurpose_CommunicationEventPrpTypId() {
-		return (EAttribute)communicationEventPurposeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCommunicationEventPurpose_CommunicationEventId() {
+	public EReference getCommunicationEventPurpose_CommunicationEventPrpTypId() {
 		return (EReference)communicationEventPurposeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1212,8 +1202,18 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
+	public EReference getCommunicationEventPurpose_CommunicationEventId() {
+		return (EReference)communicationEventPurposeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getCommunicationEventPurpose_Description() {
-		return (EAttribute)communicationEventPurposeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)communicationEventPurposeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1232,8 +1232,8 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCommunicationEventRole_CommunicationEventId() {
-		return (EAttribute)communicationEventRoleEClass.getEStructuralFeatures().get(0);
+	public EReference getCommunicationEventRole_CommunicationEventId() {
+		return (EReference)communicationEventRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1370,10 +1370,10 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		createEAttribute(commContentAssocTypeEClass, COMM_CONTENT_ASSOC_TYPE__DESCRIPTION);
 
 		commEventContentAssocEClass = createEClass(COMM_EVENT_CONTENT_ASSOC);
-		createEAttribute(commEventContentAssocEClass, COMM_EVENT_CONTENT_ASSOC__CONTENT_ID);
 		createEAttribute(commEventContentAssocEClass, COMM_EVENT_CONTENT_ASSOC__FROM_DATE);
 		createEAttribute(commEventContentAssocEClass, COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM);
 		createEAttribute(commEventContentAssocEClass, COMM_EVENT_CONTENT_ASSOC__THRU_DATE);
+		createEReference(commEventContentAssocEClass, COMM_EVENT_CONTENT_ASSOC__CONTENT_ID);
 		createEReference(commEventContentAssocEClass, COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID);
 		createEReference(commEventContentAssocEClass, COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID);
 
@@ -1407,7 +1407,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		createEReference(communicationEventEClass, COMMUNICATION_EVENT__REASON_ENUM_ID);
 
 		communicationEventProductEClass = createEClass(COMMUNICATION_EVENT_PRODUCT);
-		createEAttribute(communicationEventProductEClass, COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID);
+		createEReference(communicationEventProductEClass, COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID);
 		createEReference(communicationEventProductEClass, COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID);
 
 		communicationEventPrpTypEClass = createEClass(COMMUNICATION_EVENT_PRP_TYP);
@@ -1418,12 +1418,12 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		createEAttribute(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES);
 
 		communicationEventPurposeEClass = createEClass(COMMUNICATION_EVENT_PURPOSE);
-		createEAttribute(communicationEventPurposeEClass, COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID);
 		createEAttribute(communicationEventPurposeEClass, COMMUNICATION_EVENT_PURPOSE__DESCRIPTION);
 		createEReference(communicationEventPurposeEClass, COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID);
+		createEReference(communicationEventPurposeEClass, COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID);
 
 		communicationEventRoleEClass = createEClass(COMMUNICATION_EVENT_ROLE);
-		createEAttribute(communicationEventRoleEClass, COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID);
+		createEReference(communicationEventRoleEClass, COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID);
 		createEReference(communicationEventRoleEClass, COMMUNICATION_EVENT_ROLE__PARTY_ID);
 		createEReference(communicationEventRoleEClass, COMMUNICATION_EVENT_ROLE__ROLE_TYPE_ID);
 		createEReference(communicationEventRoleEClass, COMMUNICATION_EVENT_ROLE__CONTACT_MECH_ID);
@@ -1462,12 +1462,14 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 		ContactPackage theContactPackage_1 = (ContactPackage)EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
 		org.abchip.mimo.biz.marketing.contact.ContactPackage theContactPackage = (org.abchip.mimo.biz.marketing.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.marketing.contact.ContactPackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1495,10 +1497,11 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		initEAttribute(getCommContentAssocType_Description(), ecorePackage.getEString(), "description", null, 0, 1, CommContentAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commEventContentAssocEClass, CommEventContentAssoc.class, "CommEventContentAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommEventContentAssoc_ContentId(), ecorePackage.getEString(), "contentId", null, 1, 1, CommEventContentAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommEventContentAssoc_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, CommEventContentAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommEventContentAssoc_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, CommEventContentAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommEventContentAssoc_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, CommEventContentAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommEventContentAssoc_ContentId(), theContentPackage.getContent(), null, "contentId", null, 0, 1, CommEventContentAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCommEventContentAssoc_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 		initEReference(getCommEventContentAssoc_CommunicationEventId(), this.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, CommEventContentAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCommEventContentAssoc_CommunicationEventId().getEKeys().add(this.getCommunicationEvent_CommunicationEventId());
 		initEReference(getCommEventContentAssoc_CommContentAssocTypeId(), this.getCommContentAssocType(), null, "commContentAssocTypeId", null, 0, 1, CommEventContentAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1560,7 +1563,8 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		addEOperation(communicationEventEClass, ecorePackage.getEString(), "subscriptionCommEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(communicationEventProductEClass, CommunicationEventProduct.class, "CommunicationEventProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationEventProduct_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, CommunicationEventProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationEventProduct_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, CommunicationEventProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCommunicationEventProduct_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 		initEReference(getCommunicationEventProduct_CommunicationEventId(), this.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, CommunicationEventProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCommunicationEventProduct_CommunicationEventId().getEKeys().add(this.getCommunicationEvent_CommunicationEventId());
 
@@ -1575,13 +1579,15 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		addEOperation(communicationEventPrpTypEClass, ecorePackage.getEString(), "childCommunicationEventPrpTyps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(communicationEventPurposeEClass, CommunicationEventPurpose.class, "CommunicationEventPurpose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationEventPurpose_CommunicationEventPrpTypId(), ecorePackage.getEString(), "communicationEventPrpTypId", null, 1, 1, CommunicationEventPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationEventPurpose_Description(), ecorePackage.getEString(), "description", null, 0, 1, CommunicationEventPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationEventPurpose_CommunicationEventId(), this.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, CommunicationEventPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCommunicationEventPurpose_CommunicationEventId().getEKeys().add(this.getCommunicationEvent_CommunicationEventId());
+		initEReference(getCommunicationEventPurpose_CommunicationEventPrpTypId(), this.getCommunicationEventPrpTyp(), null, "communicationEventPrpTypId", null, 0, 1, CommunicationEventPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCommunicationEventPurpose_CommunicationEventPrpTypId().getEKeys().add(this.getCommunicationEventPrpTyp_CommunicationEventPrpTypId());
 
 		initEClass(communicationEventRoleEClass, CommunicationEventRole.class, "CommunicationEventRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationEventRole_CommunicationEventId(), ecorePackage.getEString(), "communicationEventId", null, 1, 1, CommunicationEventRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationEventRole_CommunicationEventId(), this.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, CommunicationEventRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCommunicationEventRole_CommunicationEventId().getEKeys().add(this.getCommunicationEvent_CommunicationEventId());
 		initEReference(getCommunicationEventRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, CommunicationEventRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCommunicationEventRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getCommunicationEventRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, CommunicationEventRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1662,12 +1668,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCommEventContentAssoc_ContentId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getCommEventContentAssoc_FromDate(),
 		   source,
 		   new String[] {
@@ -1722,12 +1722,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEventProduct_ProductId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (communicationEventPrpTypEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1744,18 +1738,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getCommunicationEventPurpose_CommunicationEventPrpTypId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getCommunicationEventRole_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (communicationEventTypeEClass.getEOperations().get(0),

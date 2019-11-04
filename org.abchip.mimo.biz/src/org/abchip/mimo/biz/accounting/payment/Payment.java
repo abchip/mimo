@@ -38,9 +38,9 @@ import org.abchip.mimo.biz.party.party.RoleType;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentRefNum <em>Payment Ref Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentTypeId <em>Payment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getActualCurrencyUomId <em>Actual Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentPreferenceId <em>Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom <em>Party Id From</em>}</li>
@@ -492,12 +492,12 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Payment Method Id</em>' reference.
-	 * @see #setPaymentMethodId(GiftCard)
+	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentMethodId()
 	 * @model keys="paymentMethodId"
 	 * @generated
 	 */
-	GiftCard getPaymentMethodId();
+	PaymentMethod getPaymentMethodId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}' reference.
@@ -507,7 +507,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #getPaymentMethodId()
 	 * @generated
 	 */
-	void setPaymentMethodId(GiftCard value);
+	void setPaymentMethodId(PaymentMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Gateway Response Id</b></em>' reference.

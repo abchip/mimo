@@ -25,10 +25,10 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getProductAverageCostTypeId <em>Product Average Cost Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getAverageCost <em>Average Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getProductAverageCostTypeId <em>Product Average Cost Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getFacilityId <em>Facility Id</em>}</li>
@@ -197,30 +197,29 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Average Cost Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Average Cost Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Average Cost Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Average Cost Type Id</em>' attribute.
-	 * @see #setProductAverageCostTypeId(String)
+	 * @return the value of the '<em>Product Average Cost Type Id</em>' reference.
+	 * @see #setProductAverageCostTypeId(ProductAverageCostType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_ProductAverageCostTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productAverageCostTypeId"
 	 * @generated
 	 */
-	String getProductAverageCostTypeId();
+	ProductAverageCostType getProductAverageCostTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getProductAverageCostTypeId <em>Product Average Cost Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCost#getProductAverageCostTypeId <em>Product Average Cost Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Average Cost Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Average Cost Type Id</em>' reference.
 	 * @see #getProductAverageCostTypeId()
 	 * @generated
 	 */
-	void setProductAverageCostTypeId(String value);
+	void setProductAverageCostTypeId(ProductAverageCostType value);
 
 } // ProductAverageCost

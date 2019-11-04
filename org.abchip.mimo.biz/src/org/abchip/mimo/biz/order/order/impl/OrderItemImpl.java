@@ -16,6 +16,7 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.order.order.OrderItemType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getAutoCancelDate <em>Auto Cancel Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getBudgetId <em>Budget Id</em>}</li>
@@ -75,6 +75,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitListPrice <em>Unit List Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitPrice <em>Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitRecurringPrice <em>Unit Recurring Price</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getFromInventoryItemId <em>From Inventory Item Id</em>}</li>
@@ -94,26 +95,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -836,6 +817,16 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	protected BigDecimal unitRecurringPrice = UNIT_RECURRING_PRICE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
 	 * The cached value of the '{@link #getOrderItemTypeId() <em>Order Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1448,7 +1439,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -1458,8 +1466,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__ORDER_ID, oldOrderId, orderId));
@@ -2213,8 +2221,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_ITEM__AUTO_CANCEL_DATE:
@@ -2287,6 +2293,9 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return getUnitPrice();
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				return getUnitRecurringPrice();
+			case OrderPackage.ORDER_ITEM__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
 				if (resolve) return getOrderItemTypeId();
 				return basicGetOrderItemTypeId();
@@ -2329,9 +2338,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -2440,6 +2446,9 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				setUnitRecurringPrice((BigDecimal)newValue);
 				return;
+			case OrderPackage.ORDER_ITEM__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
 				setOrderItemTypeId((OrderItemType)newValue);
 				return;
@@ -2482,9 +2491,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -2593,6 +2599,9 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				setUnitRecurringPrice(UNIT_RECURRING_PRICE_EDEFAULT);
 				return;
+			case OrderPackage.ORDER_ITEM__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
 				setOrderItemTypeId((OrderItemType)null);
 				return;
@@ -2635,8 +2644,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_ITEM__AUTO_CANCEL_DATE:
@@ -2709,6 +2716,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return UNIT_PRICE_EDEFAULT == null ? unitPrice != null : !UNIT_PRICE_EDEFAULT.equals(unitPrice);
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				return UNIT_RECURRING_PRICE_EDEFAULT == null ? unitRecurringPrice != null : !UNIT_RECURRING_PRICE_EDEFAULT.equals(unitRecurringPrice);
+			case OrderPackage.ORDER_ITEM__ORDER_ID:
+				return orderId != null;
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
 				return orderItemTypeId != null;
 			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
@@ -2743,9 +2752,7 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", autoCancelDate: ");
 		result.append(autoCancelDate);

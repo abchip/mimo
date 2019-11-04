@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getInstruction <em>Instruction</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getQuantity <em>Quantity</em>}</li>
@@ -43,6 +42,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductAssocTypeId <em>Product Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductIdTo <em>Product Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getRoutingWorkEffortId <em>Routing Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
@@ -56,26 +56,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -226,6 +206,16 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @ordered
 	 */
 	protected ProductAssocType productAssocTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getProductIdTo() <em>Product Id To</em>}' reference.
@@ -613,7 +603,24 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -623,8 +630,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID, oldProductId, productId));
@@ -678,8 +685,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				return getFromDate();
 			case ProductPackage.PRODUCT_ASSOC__INSTRUCTION:
@@ -697,6 +702,9 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
 				if (resolve) return getProductAssocTypeId();
 				return basicGetProductAssocTypeId();
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
 				if (resolve) return getProductIdTo();
 				return basicGetProductIdTo();
@@ -721,9 +729,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -747,6 +752,9 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 				return;
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
 				setProductAssocTypeId((ProductAssocType)newValue);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
 				setProductIdTo((Product)newValue);
@@ -772,9 +780,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -798,6 +803,9 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 				return;
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
 				setProductAssocTypeId((ProductAssocType)null);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
 				setProductIdTo((Product)null);
@@ -823,8 +831,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ProductPackage.PRODUCT_ASSOC__INSTRUCTION:
@@ -841,6 +847,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
 				return productAssocTypeId != null;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
+				return productId != null;
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
 				return productIdTo != null;
 			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
@@ -863,9 +871,7 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", instruction: ");
 		result.append(instruction);

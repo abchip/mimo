@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.shoppinglist.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
@@ -40,24 +41,14 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' attribute.
+	 * The cached value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getShoppingListId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SHOPPING_LIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShoppingListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shoppingListId = SHOPPING_LIST_ID_EDEFAULT;
+	protected ShoppingList shoppingListId;
 
 	/**
 	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
@@ -94,7 +85,24 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	 * @generated
 	 */
 	@Override
-	public String getShoppingListId() {
+	public ShoppingList getShoppingListId() {
+		if (shoppingListId != null && ((EObject)shoppingListId).eIsProxy()) {
+			InternalEObject oldShoppingListId = (InternalEObject)shoppingListId;
+			shoppingListId = (ShoppingList)eResolveProxy(oldShoppingListId);
+			if (shoppingListId != oldShoppingListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
+			}
+		}
+		return shoppingListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShoppingList basicGetShoppingListId() {
 		return shoppingListId;
 	}
 
@@ -104,8 +112,8 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	 * @generated
 	 */
 	@Override
-	public void setShoppingListId(String newShoppingListId) {
-		String oldShoppingListId = shoppingListId;
+	public void setShoppingListId(ShoppingList newShoppingListId) {
+		ShoppingList oldShoppingListId = shoppingListId;
 		shoppingListId = newShoppingListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
@@ -160,7 +168,8 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID:
-				return getShoppingListId();
+				if (resolve) return getShoppingListId();
+				return basicGetShoppingListId();
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__WORK_EFFORT_ID:
 				if (resolve) return getWorkEffortId();
 				return basicGetWorkEffortId();
@@ -177,7 +186,7 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID:
-				setShoppingListId((String)newValue);
+				setShoppingListId((ShoppingList)newValue);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)newValue);
@@ -195,7 +204,7 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID:
-				setShoppingListId(SHOPPING_LIST_ID_EDEFAULT);
+				setShoppingListId((ShoppingList)null);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)null);
@@ -213,27 +222,11 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID:
-				return SHOPPING_LIST_ID_EDEFAULT == null ? shoppingListId != null : !SHOPPING_LIST_ID_EDEFAULT.equals(shoppingListId);
+				return shoppingListId != null;
 			case ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__WORK_EFFORT_ID:
 				return workEffortId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shoppingListId: ");
-		result.append(shoppingListId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ShoppingListWorkEffortImpl

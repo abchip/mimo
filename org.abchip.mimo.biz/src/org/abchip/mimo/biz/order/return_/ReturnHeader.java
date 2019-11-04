@@ -16,7 +16,7 @@ import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -271,12 +271,12 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Origin Contact Mech Id</em>' reference.
-	 * @see #setOriginContactMechId(PostalAddress)
+	 * @see #setOriginContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_OriginContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getOriginContactMechId();
+	ContactMech getOriginContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId <em>Origin Contact Mech Id</em>}' reference.
@@ -286,7 +286,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #getOriginContactMechId()
 	 * @generated
 	 */
-	void setOriginContactMechId(PostalAddress value);
+	void setOriginContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Method Id</b></em>' reference.

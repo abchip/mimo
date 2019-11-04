@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#isPrimaryFlag <em>Primary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
  * </ul>
  *
@@ -44,26 +44,6 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEmplPositionIdReportingTo() <em>Empl Position Id Reporting To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionIdReportingTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_ID_REPORTING_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionIdReportingTo() <em>Empl Position Id Reporting To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionIdReportingTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionIdReportingTo = EMPL_POSITION_ID_REPORTING_TO_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -144,6 +124,16 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEmplPositionIdReportingTo() <em>Empl Position Id Reporting To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionIdReportingTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPosition emplPositionIdReportingTo;
 
 	/**
 	 * The cached value of the '{@link #getEmplPositionIdManagedBy() <em>Empl Position Id Managed By</em>}' reference.
@@ -266,7 +256,24 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionIdReportingTo() {
+	public EmplPosition getEmplPositionIdReportingTo() {
+		if (emplPositionIdReportingTo != null && ((EObject)emplPositionIdReportingTo).eIsProxy()) {
+			InternalEObject oldEmplPositionIdReportingTo = (InternalEObject)emplPositionIdReportingTo;
+			emplPositionIdReportingTo = (EmplPosition)eResolveProxy(oldEmplPositionIdReportingTo);
+			if (emplPositionIdReportingTo != oldEmplPositionIdReportingTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO, oldEmplPositionIdReportingTo, emplPositionIdReportingTo));
+			}
+		}
+		return emplPositionIdReportingTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPosition basicGetEmplPositionIdReportingTo() {
 		return emplPositionIdReportingTo;
 	}
 
@@ -276,8 +283,8 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionIdReportingTo(String newEmplPositionIdReportingTo) {
-		String oldEmplPositionIdReportingTo = emplPositionIdReportingTo;
+	public void setEmplPositionIdReportingTo(EmplPosition newEmplPositionIdReportingTo) {
+		EmplPosition oldEmplPositionIdReportingTo = emplPositionIdReportingTo;
 		emplPositionIdReportingTo = newEmplPositionIdReportingTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO, oldEmplPositionIdReportingTo, emplPositionIdReportingTo));
@@ -337,8 +344,6 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
-				return getEmplPositionIdReportingTo();
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__FROM_DATE:
 				return getFromDate();
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__COMMENTS:
@@ -347,6 +352,9 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 				return isPrimaryFlag();
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__THRU_DATE:
 				return getThruDate();
+			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
+				if (resolve) return getEmplPositionIdReportingTo();
+				return basicGetEmplPositionIdReportingTo();
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY:
 				if (resolve) return getEmplPositionIdManagedBy();
 				return basicGetEmplPositionIdManagedBy();
@@ -362,9 +370,6 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
-				setEmplPositionIdReportingTo((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -376,6 +381,9 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 				return;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
+				setEmplPositionIdReportingTo((EmplPosition)newValue);
 				return;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY:
 				setEmplPositionIdManagedBy((EmplPosition)newValue);
@@ -392,9 +400,6 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
-				setEmplPositionIdReportingTo(EMPL_POSITION_ID_REPORTING_TO_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -406,6 +411,9 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 				return;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
+				setEmplPositionIdReportingTo((EmplPosition)null);
 				return;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY:
 				setEmplPositionIdManagedBy((EmplPosition)null);
@@ -422,8 +430,6 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
-				return EMPL_POSITION_ID_REPORTING_TO_EDEFAULT == null ? emplPositionIdReportingTo != null : !EMPL_POSITION_ID_REPORTING_TO_EDEFAULT.equals(emplPositionIdReportingTo);
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__COMMENTS:
@@ -432,6 +438,8 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 				return primaryFlag != PRIMARY_FLAG_EDEFAULT;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO:
+				return emplPositionIdReportingTo != null;
 			case PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY:
 				return emplPositionIdManagedBy != null;
 		}
@@ -448,9 +456,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (emplPositionIdReportingTo: ");
-		result.append(emplPositionIdReportingTo);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.finaccount.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountRole;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountRoleImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountRoleImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
@@ -40,27 +41,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole {
 	/**
-	 * The default value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountId = FIN_ACCOUNT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -97,6 +80,15 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccount finAccountId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -267,7 +259,24 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountId() {
+	public FinAccount getFinAccountId() {
+		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
+			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
+			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
+			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
+			}
+		}
+		return finAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccount basicGetFinAccountId() {
 		return finAccountId;
 	}
 
@@ -277,8 +286,8 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountId(String newFinAccountId) {
-		String oldFinAccountId = finAccountId;
+	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
@@ -292,12 +301,13 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
-				return getFinAccountId();
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__FROM_DATE:
 				return getFromDate();
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__THRU_DATE:
 				return getThruDate();
+			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
+				if (resolve) return getFinAccountId();
+				return basicGetFinAccountId();
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -316,14 +326,14 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
-				setFinAccountId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -343,14 +353,14 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
-				setFinAccountId(FIN_ACCOUNT_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)null);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -370,12 +380,12 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
-				return FIN_ACCOUNT_ID_EDEFAULT == null ? finAccountId != null : !FIN_ACCOUNT_ID_EDEFAULT.equals(finAccountId);
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FinaccountPackage.FIN_ACCOUNT_ROLE__FIN_ACCOUNT_ID:
+				return finAccountId != null;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__PARTY_ID:
 				return partyId != null;
 			case FinaccountPackage.FIN_ACCOUNT_ROLE__ROLE_TYPE_ID:
@@ -394,9 +404,7 @@ public class FinAccountRoleImpl extends BizEntityImpl implements FinAccountRole 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (finAccountId: ");
-		result.append(finAccountId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

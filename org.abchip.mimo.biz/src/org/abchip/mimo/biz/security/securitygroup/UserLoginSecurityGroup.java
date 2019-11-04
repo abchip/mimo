@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.security.securitygroup;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}</li>
  * </ul>
  *
@@ -111,30 +112,29 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Login Id</em>' attribute.
-	 * @see #setUserLoginId(String)
+	 * @return the value of the '<em>User Login Id</em>' reference.
+	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_UserLoginId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getUserLoginId();
+	UserLogin getUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>User Login Id</em>' reference.
 	 * @see #getUserLoginId()
 	 * @generated
 	 */
-	void setUserLoginId(String value);
+	void setUserLoginId(UserLogin value);
 
 } // UserLoginSecurityGroup

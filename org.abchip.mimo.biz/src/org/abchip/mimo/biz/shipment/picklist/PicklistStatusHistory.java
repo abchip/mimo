@@ -22,8 +22,8 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getChangeDate <em>Change Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getChangeUserLoginId <em>Change User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getStatusIdTo <em>Status Id To</em>}</li>
@@ -88,31 +88,30 @@ public interface PicklistStatusHistory extends BizEntity {
 	void setChangeUserLoginId(UserLogin value);
 
 	/**
-	 * Returns the value of the '<em><b>Picklist Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Picklist Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Picklist Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Picklist Id</em>' attribute.
-	 * @see #setPicklistId(String)
+	 * @return the value of the '<em>Picklist Id</em>' reference.
+	 * @see #setPicklistId(Picklist)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistStatusHistory_PicklistId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="picklistId"
 	 * @generated
 	 */
-	String getPicklistId();
+	Picklist getPicklistId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getPicklistId <em>Picklist Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory#getPicklistId <em>Picklist Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Picklist Id</em>' attribute.
+	 * @param value the new value of the '<em>Picklist Id</em>' reference.
 	 * @see #getPicklistId()
 	 * @generated
 	 */
-	void setPicklistId(String value);
+	void setPicklistId(Picklist value);
 
 	/**
 	 * Returns the value of the '<em><b>Status Id</b></em>' reference.

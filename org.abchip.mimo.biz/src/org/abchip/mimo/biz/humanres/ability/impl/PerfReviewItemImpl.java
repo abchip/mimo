@@ -12,6 +12,7 @@ import org.abchip.mimo.biz.humanres.ability.PerfRatingType;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItem;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItemType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -28,11 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getEmployeePartyId <em>Employee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getEmployeeRoleTypeId <em>Employee Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getPerfReviewId <em>Perf Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getPerfReviewItemSeqId <em>Perf Review Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getEmployeePartyId <em>Employee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getPerfRatingTypeId <em>Perf Rating Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl#getPerfReviewItemTypeId <em>Perf Review Item Type Id</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEmployeePartyId() <em>Employee Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmployeePartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPLOYEE_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmployeePartyId() <em>Employee Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmployeePartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String employeePartyId = EMPLOYEE_PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEmployeeRoleTypeId() <em>Employee Role Type Id</em>}' attribute.
@@ -146,6 +127,16 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getEmployeePartyId() <em>Employee Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmployeePartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party employeePartyId;
+
+	/**
 	 * The cached value of the '{@link #getPerfRatingTypeId() <em>Perf Rating Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,7 +204,24 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 * @generated
 	 */
 	@Override
-	public String getEmployeePartyId() {
+	public Party getEmployeePartyId() {
+		if (employeePartyId != null && ((EObject)employeePartyId).eIsProxy()) {
+			InternalEObject oldEmployeePartyId = (InternalEObject)employeePartyId;
+			employeePartyId = (Party)eResolveProxy(oldEmployeePartyId);
+			if (employeePartyId != oldEmployeePartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID, oldEmployeePartyId, employeePartyId));
+			}
+		}
+		return employeePartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetEmployeePartyId() {
 		return employeePartyId;
 	}
 
@@ -223,8 +231,8 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 * @generated
 	 */
 	@Override
-	public void setEmployeePartyId(String newEmployeePartyId) {
-		String oldEmployeePartyId = employeePartyId;
+	public void setEmployeePartyId(Party newEmployeePartyId) {
+		Party oldEmployeePartyId = employeePartyId;
 		employeePartyId = newEmployeePartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID, oldEmployeePartyId, employeePartyId));
@@ -387,8 +395,6 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
-				return getEmployeePartyId();
 			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_ROLE_TYPE_ID:
 				return getEmployeeRoleTypeId();
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ID:
@@ -397,6 +403,9 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 				return getPerfReviewItemSeqId();
 			case AbilityPackage.PERF_REVIEW_ITEM__COMMENTS:
 				return getComments();
+			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
+				if (resolve) return getEmployeePartyId();
+				return basicGetEmployeePartyId();
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
 				if (resolve) return getPerfRatingTypeId();
 				return basicGetPerfRatingTypeId();
@@ -415,9 +424,6 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
-				setEmployeePartyId((String)newValue);
-				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_ROLE_TYPE_ID:
 				setEmployeeRoleTypeId((String)newValue);
 				return;
@@ -429,6 +435,9 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__COMMENTS:
 				setComments((String)newValue);
+				return;
+			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
+				setEmployeePartyId((Party)newValue);
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
 				setPerfRatingTypeId((PerfRatingType)newValue);
@@ -448,9 +457,6 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
-				setEmployeePartyId(EMPLOYEE_PARTY_ID_EDEFAULT);
-				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_ROLE_TYPE_ID:
 				setEmployeeRoleTypeId(EMPLOYEE_ROLE_TYPE_ID_EDEFAULT);
 				return;
@@ -462,6 +468,9 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
+				return;
+			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
+				setEmployeePartyId((Party)null);
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
 				setPerfRatingTypeId((PerfRatingType)null);
@@ -481,8 +490,6 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
-				return EMPLOYEE_PARTY_ID_EDEFAULT == null ? employeePartyId != null : !EMPLOYEE_PARTY_ID_EDEFAULT.equals(employeePartyId);
 			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_ROLE_TYPE_ID:
 				return EMPLOYEE_ROLE_TYPE_ID_EDEFAULT == null ? employeeRoleTypeId != null : !EMPLOYEE_ROLE_TYPE_ID_EDEFAULT.equals(employeeRoleTypeId);
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ID:
@@ -491,6 +498,8 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 				return PERF_REVIEW_ITEM_SEQ_ID_EDEFAULT == null ? perfReviewItemSeqId != null : !PERF_REVIEW_ITEM_SEQ_ID_EDEFAULT.equals(perfReviewItemSeqId);
 			case AbilityPackage.PERF_REVIEW_ITEM__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
+			case AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID:
+				return employeePartyId != null;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
 				return perfRatingTypeId != null;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID:
@@ -509,9 +518,7 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (employeePartyId: ");
-		result.append(employeePartyId);
-		result.append(", employeeRoleTypeId: ");
+		result.append(" (employeeRoleTypeId: ");
 		result.append(employeeRoleTypeId);
 		result.append(", perfReviewId: ");
 		result.append(perfReviewId);

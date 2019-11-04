@@ -848,8 +848,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEmplLeave_PartyId() {
-		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(0);
+	public EReference getEmplLeave_PartyId() {
+		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -869,7 +869,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmplLeave_FromDate() {
-		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -889,7 +889,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmplLeave_Description() {
-		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -919,7 +919,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmplLeave_ThruDate() {
-		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1558,8 +1558,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPayrollPreference_PartyId() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(0);
+	public EReference getPayrollPreference_PartyId() {
+		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1569,7 +1569,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_RoleTypeId() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1579,7 +1579,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_PayrollPreferenceSeqId() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1589,7 +1589,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_AccountNumber() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1599,7 +1599,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_BankName() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1619,7 +1619,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_FlatAmount() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1629,7 +1629,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_FromDate() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1649,7 +1649,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_Percentage() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1669,7 +1669,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_RoutingNumber() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1679,7 +1679,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_ThruDate() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2000,10 +2000,10 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEReference(benefitTypeEClass, BENEFIT_TYPE__PARENT_TYPE_ID);
 
 		emplLeaveEClass = createEClass(EMPL_LEAVE);
-		createEAttribute(emplLeaveEClass, EMPL_LEAVE__PARTY_ID);
 		createEAttribute(emplLeaveEClass, EMPL_LEAVE__FROM_DATE);
 		createEAttribute(emplLeaveEClass, EMPL_LEAVE__DESCRIPTION);
 		createEAttribute(emplLeaveEClass, EMPL_LEAVE__THRU_DATE);
+		createEReference(emplLeaveEClass, EMPL_LEAVE__PARTY_ID);
 		createEReference(emplLeaveEClass, EMPL_LEAVE__LEAVE_TYPE_ID);
 		createEReference(emplLeaveEClass, EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID);
 		createEReference(emplLeaveEClass, EMPL_LEAVE__APPROVER_PARTY_ID);
@@ -2080,7 +2080,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEReference(payHistoryEClass, PAY_HISTORY__PERIOD_TYPE_ID);
 
 		payrollPreferenceEClass = createEClass(PAYROLL_PREFERENCE);
-		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__PARTY_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__ROLE_TYPE_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__PAYROLL_PREFERENCE_SEQ_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__ACCOUNT_NUMBER);
@@ -2090,6 +2089,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__PERCENTAGE);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__ROUTING_NUMBER);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__THRU_DATE);
+		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PARTY_ID);
 		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID);
 		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID);
 		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PERIOD_TYPE_ID);
@@ -2199,10 +2199,11 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		addEOperation(benefitTypeEClass, ecorePackage.getEString(), "childBenefitTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplLeaveEClass, EmplLeave.class, "EmplLeave", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEmplLeave_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplLeave_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplLeave_Description(), ecorePackage.getEString(), "description", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplLeave_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEmplLeave_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmplLeave_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getEmplLeave_LeaveTypeId(), this.getEmplLeaveType(), null, "leaveTypeId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeave_LeaveTypeId().getEKeys().add(this.getEmplLeaveType_LeaveTypeId());
 		initEReference(getEmplLeave_EmplLeaveReasonTypeId(), this.getEmplLeaveReasonType(), null, "emplLeaveReasonTypeId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2311,7 +2312,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		getPayHistory_PeriodTypeId().getEKeys().add(thePeriodPackage.getPeriodType_PeriodTypeId());
 
 		initEClass(payrollPreferenceEClass, PayrollPreference.class, "PayrollPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPayrollPreference_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_PayrollPreferenceSeqId(), ecorePackage.getEString(), "payrollPreferenceSeqId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_AccountNumber(), ecorePackage.getEString(), "accountNumber", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2321,6 +2321,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEAttribute(getPayrollPreference_Percentage(), ecorePackage.getEDouble(), "percentage", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_RoutingNumber(), ecorePackage.getEString(), "routingNumber", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPayrollPreference_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPayrollPreference_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getPayrollPreference_DeductionTypeId(), thePaymentPackage.getDeductionType(), null, "deductionTypeId", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayrollPreference_DeductionTypeId().getEKeys().add(thePaymentPackage.getDeductionType_DeductionTypeId());
 		initEReference(getPayrollPreference_PaymentMethodTypeId(), thePaymentPackage.getPaymentMethodType(), null, "paymentMethodTypeId", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2453,12 +2455,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getEmplLeave_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getEmplLeave_FromDate(),
 		   source,
 		   new String[] {
@@ -2580,12 +2576,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   });
 		addAnnotation
 		  (getPayHistory_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getPayrollPreference_PartyId(),
 		   source,
 		   new String[] {
 			   "key", "true"

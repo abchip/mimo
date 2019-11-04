@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestContent;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
@@ -42,26 +43,6 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -102,6 +83,16 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustRequestId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustRequest custRequestId;
 
 	/**
 	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
@@ -178,7 +169,24 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -188,8 +196,8 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -249,12 +257,13 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
-				return getCustRequestId();
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				return getFromDate();
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				return getThruDate();
+			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
 			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
 				if (resolve) return getContentId();
 				return basicGetContentId();
@@ -270,14 +279,14 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
-				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
 				setContentId((Content)newValue);
@@ -294,14 +303,14 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
-				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)null);
 				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
 				setContentId((Content)null);
@@ -318,12 +327,12 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
+				return custRequestId != null;
 			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
 				return contentId != null;
 		}
@@ -340,9 +349,7 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (custRequestId: ");
-		result.append(custRequestId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

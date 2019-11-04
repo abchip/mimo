@@ -26,7 +26,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemDetailSeqId <em>Inventory Item Detail Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getAccountingQuantityDiff <em>Accounting Quantity Diff</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getAvailableToPromiseDiff <em>Available To Promise Diff</em>}</li>
@@ -43,6 +42,7 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getUnitCost <em>Unit Cost</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getReceiptId <em>Receipt Id</em>}</li>
@@ -577,31 +577,30 @@ public interface InventoryItemDetail extends BizEntity {
 	void setWorkEffortId(WorkEffort value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
-	 * @see #setInventoryItemId(String)
+	 * @return the value of the '<em>Inventory Item Id</em>' reference.
+	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_InventoryItemId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="inventoryItemId"
 	 * @generated
 	 */
-	String getInventoryItemId();
+	InventoryItem getInventoryItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemId <em>Inventory Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemId <em>Inventory Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #getInventoryItemId()
 	 * @generated
 	 */
-	void setInventoryItemId(String value);
+	void setInventoryItemId(InventoryItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Physical Inventory Id</b></em>' reference.

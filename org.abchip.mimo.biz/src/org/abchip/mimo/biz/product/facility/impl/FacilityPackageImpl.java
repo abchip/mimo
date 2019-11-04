@@ -890,8 +890,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContainerGeoPoint_ContainerId() {
-		return (EAttribute)containerGeoPointEClass.getEStructuralFeatures().get(0);
+	public EReference getContainerGeoPoint_ContainerId() {
+		return (EReference)containerGeoPointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -911,7 +911,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getContainerGeoPoint_FromDate() {
-		return (EAttribute)containerGeoPointEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)containerGeoPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -921,7 +921,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getContainerGeoPoint_ThruDate() {
-		return (EAttribute)containerGeoPointEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)containerGeoPointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1180,8 +1180,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityAttribute_FacilityId() {
-		return (EAttribute)facilityAttributeEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityAttribute_FacilityId() {
+		return (EReference)facilityAttributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1191,7 +1191,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityAttribute_AttrName() {
-		return (EAttribute)facilityAttributeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1201,7 +1201,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityAttribute_AttrDescription() {
-		return (EAttribute)facilityAttributeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1211,7 +1211,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityAttribute_AttrValue() {
-		return (EAttribute)facilityAttributeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)facilityAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1230,8 +1230,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityCalendar_FacilityId() {
-		return (EAttribute)facilityCalendarEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityCalendar_FacilityId() {
+		return (EReference)facilityCalendarEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1241,7 +1241,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityCalendar_CalendarId() {
-		return (EAttribute)facilityCalendarEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityCalendarEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1261,7 +1261,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityCalendar_FromDate() {
-		return (EAttribute)facilityCalendarEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityCalendarEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1271,7 +1271,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityCalendar_ThruDate() {
-		return (EAttribute)facilityCalendarEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)facilityCalendarEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1330,17 +1330,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityCarrierShipment_FacilityId() {
-		return (EAttribute)facilityCarrierShipmentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFacilityCarrierShipment_PartyId() {
+	public EReference getFacilityCarrierShipment_FacilityId() {
 		return (EReference)facilityCarrierShipmentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1350,8 +1340,18 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getFacilityCarrierShipment_PartyId() {
+		return (EReference)facilityCarrierShipmentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getFacilityCarrierShipment_RoleTypeId() {
-		return (EAttribute)facilityCarrierShipmentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityCarrierShipmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1380,8 +1380,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityContactMech_FacilityId() {
-		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityContactMech_FacilityId() {
+		return (EReference)facilityContactMechEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1401,7 +1401,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContactMech_FromDate() {
-		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1411,7 +1411,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContactMech_Comments() {
-		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1421,7 +1421,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContactMech_Extension() {
-		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1431,7 +1431,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContactMech_ThruDate() {
-		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)facilityContactMechEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1450,8 +1450,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityContactMechPurpose_FacilityId() {
-		return (EAttribute)facilityContactMechPurposeEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityContactMechPurpose_FacilityId() {
+		return (EReference)facilityContactMechPurposeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1471,7 +1471,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EReference getFacilityContactMechPurpose_ContactMechPurposeTypeId() {
-		return (EReference)facilityContactMechPurposeEClass.getEStructuralFeatures().get(3);
+		return (EReference)facilityContactMechPurposeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1481,7 +1481,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContactMechPurpose_FromDate() {
-		return (EAttribute)facilityContactMechPurposeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityContactMechPurposeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1491,7 +1491,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContactMechPurpose_ThruDate() {
-		return (EAttribute)facilityContactMechPurposeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityContactMechPurposeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1510,8 +1510,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityContent_FacilityId() {
-		return (EAttribute)facilityContentEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityContent_FacilityId() {
+		return (EReference)facilityContentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1531,7 +1531,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContent_FromDate() {
-		return (EAttribute)facilityContentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityContentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1541,7 +1541,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityContent_ThruDate() {
-		return (EAttribute)facilityContentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityContentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1620,8 +1620,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityGroupMember_FacilityId() {
-		return (EAttribute)facilityGroupMemberEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityGroupMember_FacilityId() {
+		return (EReference)facilityGroupMemberEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1641,7 +1641,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityGroupMember_FromDate() {
-		return (EAttribute)facilityGroupMemberEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityGroupMemberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1651,7 +1651,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityGroupMember_SequenceNum() {
-		return (EAttribute)facilityGroupMemberEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityGroupMemberEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1661,7 +1661,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityGroupMember_ThruDate() {
-		return (EAttribute)facilityGroupMemberEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)facilityGroupMemberEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1680,8 +1680,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityGroupRole_FacilityGroupId() {
-		return (EAttribute)facilityGroupRoleEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityGroupRole_FacilityGroupId() {
+		return (EReference)facilityGroupRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1720,8 +1720,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityGroupRollup_FacilityGroupId() {
-		return (EAttribute)facilityGroupRollupEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityGroupRollup_FacilityGroupId() {
+		return (EReference)facilityGroupRollupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1741,7 +1741,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityGroupRollup_FromDate() {
-		return (EAttribute)facilityGroupRollupEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityGroupRollupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1751,7 +1751,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityGroupRollup_SequenceNum() {
-		return (EAttribute)facilityGroupRollupEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityGroupRollupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1761,7 +1761,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityGroupRollup_ThruDate() {
-		return (EAttribute)facilityGroupRollupEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)facilityGroupRollupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1810,8 +1810,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityLocation_FacilityId() {
-		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityLocation_FacilityId() {
+		return (EReference)facilityLocationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1821,7 +1821,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityLocation_LocationSeqId() {
-		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1831,7 +1831,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityLocation_AisleId() {
-		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1841,7 +1841,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityLocation_AreaId() {
-		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1861,7 +1861,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityLocation_LevelId() {
-		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1881,7 +1881,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityLocation_PositionId() {
-		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1891,7 +1891,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityLocation_SectionId() {
-		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)facilityLocationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1970,8 +1970,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityParty_FacilityId() {
-		return (EAttribute)facilityPartyEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityParty_FacilityId() {
+		return (EReference)facilityPartyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2001,7 +2001,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityParty_FromDate() {
-		return (EAttribute)facilityPartyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityPartyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2011,7 +2011,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityParty_ThruDate() {
-		return (EAttribute)facilityPartyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityPartyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2090,8 +2090,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityTypeAttr_FacilityTypeId() {
-		return (EAttribute)facilityTypeAttrEClass.getEStructuralFeatures().get(0);
+	public EReference getFacilityTypeAttr_FacilityTypeId() {
+		return (EReference)facilityTypeAttrEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2101,7 +2101,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityTypeAttr_AttrName() {
-		return (EAttribute)facilityTypeAttrEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)facilityTypeAttrEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2111,7 +2111,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacilityTypeAttr_Description() {
-		return (EAttribute)facilityTypeAttrEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityTypeAttrEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2130,8 +2130,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductFacility_ProductId() {
-		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(0);
+	public EReference getProductFacility_ProductId() {
+		return (EReference)productFacilityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2151,7 +2151,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getProductFacility_DaysToShip() {
-		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2161,7 +2161,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getProductFacility_LastInventoryCount() {
-		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2171,7 +2171,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getProductFacility_MinimumStock() {
-		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2181,7 +2181,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getProductFacility_ReorderQuantity() {
-		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productFacilityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2210,8 +2210,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductFacilityLocation_ProductId() {
-		return (EAttribute)productFacilityLocationEClass.getEStructuralFeatures().get(0);
+	public EReference getProductFacilityLocation_ProductId() {
+		return (EReference)productFacilityLocationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2231,7 +2231,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getProductFacilityLocation_LocationSeqId() {
-		return (EAttribute)productFacilityLocationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)productFacilityLocationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2241,7 +2241,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getProductFacilityLocation_MinimumStock() {
-		return (EAttribute)productFacilityLocationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)productFacilityLocationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2251,7 +2251,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getProductFacilityLocation_MoveQuantity() {
-		return (EAttribute)productFacilityLocationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productFacilityLocationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2290,9 +2290,9 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEReference(containerEClass, CONTAINER__FACILITY_ID);
 
 		containerGeoPointEClass = createEClass(CONTAINER_GEO_POINT);
-		createEAttribute(containerGeoPointEClass, CONTAINER_GEO_POINT__CONTAINER_ID);
 		createEAttribute(containerGeoPointEClass, CONTAINER_GEO_POINT__FROM_DATE);
 		createEAttribute(containerGeoPointEClass, CONTAINER_GEO_POINT__THRU_DATE);
+		createEReference(containerGeoPointEClass, CONTAINER_GEO_POINT__CONTAINER_ID);
 		createEReference(containerGeoPointEClass, CONTAINER_GEO_POINT__GEO_POINT_ID);
 
 		containerTypeEClass = createEClass(CONTAINER_TYPE);
@@ -2322,16 +2322,16 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEAttribute(facilityEClass, FACILITY__FACILITY_LOCATIONS);
 
 		facilityAttributeEClass = createEClass(FACILITY_ATTRIBUTE);
-		createEAttribute(facilityAttributeEClass, FACILITY_ATTRIBUTE__FACILITY_ID);
 		createEAttribute(facilityAttributeEClass, FACILITY_ATTRIBUTE__ATTR_NAME);
 		createEAttribute(facilityAttributeEClass, FACILITY_ATTRIBUTE__ATTR_DESCRIPTION);
 		createEAttribute(facilityAttributeEClass, FACILITY_ATTRIBUTE__ATTR_VALUE);
+		createEReference(facilityAttributeEClass, FACILITY_ATTRIBUTE__FACILITY_ID);
 
 		facilityCalendarEClass = createEClass(FACILITY_CALENDAR);
-		createEAttribute(facilityCalendarEClass, FACILITY_CALENDAR__FACILITY_ID);
 		createEAttribute(facilityCalendarEClass, FACILITY_CALENDAR__CALENDAR_ID);
 		createEAttribute(facilityCalendarEClass, FACILITY_CALENDAR__FROM_DATE);
 		createEAttribute(facilityCalendarEClass, FACILITY_CALENDAR__THRU_DATE);
+		createEReference(facilityCalendarEClass, FACILITY_CALENDAR__FACILITY_ID);
 		createEReference(facilityCalendarEClass, FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID);
 
 		facilityCalendarTypeEClass = createEClass(FACILITY_CALENDAR_TYPE);
@@ -2340,30 +2340,30 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEAttribute(facilityCalendarTypeEClass, FACILITY_CALENDAR_TYPE__PARENT_TYPE_ID);
 
 		facilityCarrierShipmentEClass = createEClass(FACILITY_CARRIER_SHIPMENT);
-		createEAttribute(facilityCarrierShipmentEClass, FACILITY_CARRIER_SHIPMENT__FACILITY_ID);
 		createEAttribute(facilityCarrierShipmentEClass, FACILITY_CARRIER_SHIPMENT__ROLE_TYPE_ID);
 		createEReference(facilityCarrierShipmentEClass, FACILITY_CARRIER_SHIPMENT__PARTY_ID);
+		createEReference(facilityCarrierShipmentEClass, FACILITY_CARRIER_SHIPMENT__FACILITY_ID);
 		createEReference(facilityCarrierShipmentEClass, FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID);
 
 		facilityContactMechEClass = createEClass(FACILITY_CONTACT_MECH);
-		createEAttribute(facilityContactMechEClass, FACILITY_CONTACT_MECH__FACILITY_ID);
 		createEAttribute(facilityContactMechEClass, FACILITY_CONTACT_MECH__FROM_DATE);
 		createEAttribute(facilityContactMechEClass, FACILITY_CONTACT_MECH__COMMENTS);
 		createEAttribute(facilityContactMechEClass, FACILITY_CONTACT_MECH__EXTENSION);
 		createEAttribute(facilityContactMechEClass, FACILITY_CONTACT_MECH__THRU_DATE);
+		createEReference(facilityContactMechEClass, FACILITY_CONTACT_MECH__FACILITY_ID);
 		createEReference(facilityContactMechEClass, FACILITY_CONTACT_MECH__CONTACT_MECH_ID);
 
 		facilityContactMechPurposeEClass = createEClass(FACILITY_CONTACT_MECH_PURPOSE);
-		createEAttribute(facilityContactMechPurposeEClass, FACILITY_CONTACT_MECH_PURPOSE__FACILITY_ID);
 		createEAttribute(facilityContactMechPurposeEClass, FACILITY_CONTACT_MECH_PURPOSE__FROM_DATE);
 		createEAttribute(facilityContactMechPurposeEClass, FACILITY_CONTACT_MECH_PURPOSE__THRU_DATE);
 		createEReference(facilityContactMechPurposeEClass, FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID);
+		createEReference(facilityContactMechPurposeEClass, FACILITY_CONTACT_MECH_PURPOSE__FACILITY_ID);
 		createEReference(facilityContactMechPurposeEClass, FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID);
 
 		facilityContentEClass = createEClass(FACILITY_CONTENT);
-		createEAttribute(facilityContentEClass, FACILITY_CONTENT__FACILITY_ID);
 		createEAttribute(facilityContentEClass, FACILITY_CONTENT__FROM_DATE);
 		createEAttribute(facilityContentEClass, FACILITY_CONTENT__THRU_DATE);
+		createEReference(facilityContentEClass, FACILITY_CONTENT__FACILITY_ID);
 		createEReference(facilityContentEClass, FACILITY_CONTENT__CONTENT_ID);
 
 		facilityGroupEClass = createEClass(FACILITY_GROUP);
@@ -2374,22 +2374,22 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEReference(facilityGroupEClass, FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID);
 
 		facilityGroupMemberEClass = createEClass(FACILITY_GROUP_MEMBER);
-		createEAttribute(facilityGroupMemberEClass, FACILITY_GROUP_MEMBER__FACILITY_ID);
 		createEAttribute(facilityGroupMemberEClass, FACILITY_GROUP_MEMBER__FROM_DATE);
 		createEAttribute(facilityGroupMemberEClass, FACILITY_GROUP_MEMBER__SEQUENCE_NUM);
 		createEAttribute(facilityGroupMemberEClass, FACILITY_GROUP_MEMBER__THRU_DATE);
+		createEReference(facilityGroupMemberEClass, FACILITY_GROUP_MEMBER__FACILITY_ID);
 		createEReference(facilityGroupMemberEClass, FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID);
 
 		facilityGroupRoleEClass = createEClass(FACILITY_GROUP_ROLE);
-		createEAttribute(facilityGroupRoleEClass, FACILITY_GROUP_ROLE__FACILITY_GROUP_ID);
+		createEReference(facilityGroupRoleEClass, FACILITY_GROUP_ROLE__FACILITY_GROUP_ID);
 		createEReference(facilityGroupRoleEClass, FACILITY_GROUP_ROLE__PARTY_ID);
 		createEReference(facilityGroupRoleEClass, FACILITY_GROUP_ROLE__ROLE_TYPE_ID);
 
 		facilityGroupRollupEClass = createEClass(FACILITY_GROUP_ROLLUP);
-		createEAttribute(facilityGroupRollupEClass, FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID);
 		createEAttribute(facilityGroupRollupEClass, FACILITY_GROUP_ROLLUP__FROM_DATE);
 		createEAttribute(facilityGroupRollupEClass, FACILITY_GROUP_ROLLUP__SEQUENCE_NUM);
 		createEAttribute(facilityGroupRollupEClass, FACILITY_GROUP_ROLLUP__THRU_DATE);
+		createEReference(facilityGroupRollupEClass, FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID);
 		createEReference(facilityGroupRollupEClass, FACILITY_GROUP_ROLLUP__PARENT_FACILITY_GROUP_ID);
 
 		facilityGroupTypeEClass = createEClass(FACILITY_GROUP_TYPE);
@@ -2397,13 +2397,13 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEAttribute(facilityGroupTypeEClass, FACILITY_GROUP_TYPE__DESCRIPTION);
 
 		facilityLocationEClass = createEClass(FACILITY_LOCATION);
-		createEAttribute(facilityLocationEClass, FACILITY_LOCATION__FACILITY_ID);
 		createEAttribute(facilityLocationEClass, FACILITY_LOCATION__LOCATION_SEQ_ID);
 		createEAttribute(facilityLocationEClass, FACILITY_LOCATION__AISLE_ID);
 		createEAttribute(facilityLocationEClass, FACILITY_LOCATION__AREA_ID);
 		createEAttribute(facilityLocationEClass, FACILITY_LOCATION__LEVEL_ID);
 		createEAttribute(facilityLocationEClass, FACILITY_LOCATION__POSITION_ID);
 		createEAttribute(facilityLocationEClass, FACILITY_LOCATION__SECTION_ID);
+		createEReference(facilityLocationEClass, FACILITY_LOCATION__FACILITY_ID);
 		createEReference(facilityLocationEClass, FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID);
 		createEReference(facilityLocationEClass, FACILITY_LOCATION__GEO_POINT_ID);
 
@@ -2415,9 +2415,9 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEReference(facilityLocationGeoPointEClass, FACILITY_LOCATION_GEO_POINT__GEO_POINT_ID);
 
 		facilityPartyEClass = createEClass(FACILITY_PARTY);
-		createEAttribute(facilityPartyEClass, FACILITY_PARTY__FACILITY_ID);
 		createEAttribute(facilityPartyEClass, FACILITY_PARTY__FROM_DATE);
 		createEAttribute(facilityPartyEClass, FACILITY_PARTY__THRU_DATE);
+		createEReference(facilityPartyEClass, FACILITY_PARTY__FACILITY_ID);
 		createEReference(facilityPartyEClass, FACILITY_PARTY__PARTY_ID);
 		createEReference(facilityPartyEClass, FACILITY_PARTY__ROLE_TYPE_ID);
 
@@ -2429,24 +2429,24 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEAttribute(facilityTypeEClass, FACILITY_TYPE__FACILITY_TYPE_ATTRS);
 
 		facilityTypeAttrEClass = createEClass(FACILITY_TYPE_ATTR);
-		createEAttribute(facilityTypeAttrEClass, FACILITY_TYPE_ATTR__FACILITY_TYPE_ID);
 		createEAttribute(facilityTypeAttrEClass, FACILITY_TYPE_ATTR__ATTR_NAME);
 		createEAttribute(facilityTypeAttrEClass, FACILITY_TYPE_ATTR__DESCRIPTION);
+		createEReference(facilityTypeAttrEClass, FACILITY_TYPE_ATTR__FACILITY_TYPE_ID);
 
 		productFacilityEClass = createEClass(PRODUCT_FACILITY);
-		createEAttribute(productFacilityEClass, PRODUCT_FACILITY__PRODUCT_ID);
 		createEAttribute(productFacilityEClass, PRODUCT_FACILITY__DAYS_TO_SHIP);
 		createEAttribute(productFacilityEClass, PRODUCT_FACILITY__LAST_INVENTORY_COUNT);
 		createEAttribute(productFacilityEClass, PRODUCT_FACILITY__MINIMUM_STOCK);
 		createEAttribute(productFacilityEClass, PRODUCT_FACILITY__REORDER_QUANTITY);
+		createEReference(productFacilityEClass, PRODUCT_FACILITY__PRODUCT_ID);
 		createEReference(productFacilityEClass, PRODUCT_FACILITY__FACILITY_ID);
 		createEReference(productFacilityEClass, PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID);
 
 		productFacilityLocationEClass = createEClass(PRODUCT_FACILITY_LOCATION);
-		createEAttribute(productFacilityLocationEClass, PRODUCT_FACILITY_LOCATION__PRODUCT_ID);
 		createEAttribute(productFacilityLocationEClass, PRODUCT_FACILITY_LOCATION__LOCATION_SEQ_ID);
 		createEAttribute(productFacilityLocationEClass, PRODUCT_FACILITY_LOCATION__MINIMUM_STOCK);
 		createEAttribute(productFacilityLocationEClass, PRODUCT_FACILITY_LOCATION__MOVE_QUANTITY);
+		createEReference(productFacilityLocationEClass, PRODUCT_FACILITY_LOCATION__PRODUCT_ID);
 		createEReference(productFacilityLocationEClass, PRODUCT_FACILITY_LOCATION__FACILITY_ID);
 	}
 
@@ -2484,6 +2484,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2554,9 +2555,10 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		addEOperation(containerEClass, ecorePackage.getEString(), "toInventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(containerGeoPointEClass, ContainerGeoPoint.class, "ContainerGeoPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContainerGeoPoint_ContainerId(), ecorePackage.getEString(), "containerId", null, 1, 1, ContainerGeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainerGeoPoint_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ContainerGeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainerGeoPoint_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ContainerGeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainerGeoPoint_ContainerId(), this.getContainer(), null, "containerId", null, 0, 1, ContainerGeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContainerGeoPoint_ContainerId().getEKeys().add(this.getContainer_ContainerId());
 		initEReference(getContainerGeoPoint_GeoPointId(), theGeoPackage.getGeoPoint(), null, "geoPointId", null, 0, 1, ContainerGeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getContainerGeoPoint_GeoPointId().getEKeys().add(theGeoPackage.getGeoPoint_GeoPointId());
 
@@ -2641,16 +2643,18 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		addEOperation(facilityEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityAttributeEClass, FacilityAttribute.class, "FacilityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityAttribute_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, FacilityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, FacilityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, FacilityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityAttribute_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityAttribute_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 
 		initEClass(facilityCalendarEClass, FacilityCalendar.class, "FacilityCalendar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityCalendar_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityCalendar_CalendarId(), ecorePackage.getEString(), "calendarId", null, 1, 1, FacilityCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityCalendar_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FacilityCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityCalendar_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FacilityCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityCalendar_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityCalendar_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getFacilityCalendar_FacilityCalendarTypeId(), this.getFacilityCalendarType(), null, "facilityCalendarTypeId", null, 0, 1, FacilityCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityCalendar_FacilityCalendarTypeId().getEKeys().add(this.getFacilityCalendarType_FacilityCalendarTypeId());
 
@@ -2660,35 +2664,39 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEAttribute(getFacilityCalendarType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, FacilityCalendarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(facilityCarrierShipmentEClass, FacilityCarrierShipment.class, "FacilityCarrierShipment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityCarrierShipment_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityCarrierShipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityCarrierShipment_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, FacilityCarrierShipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFacilityCarrierShipment_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, FacilityCarrierShipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityCarrierShipment_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getFacilityCarrierShipment_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityCarrierShipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityCarrierShipment_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getFacilityCarrierShipment_ShipmentMethodTypeId(), theShipment_Package.getShipmentMethodType(), null, "shipmentMethodTypeId", null, 0, 1, FacilityCarrierShipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityCarrierShipment_ShipmentMethodTypeId().getEKeys().add(theShipment_Package.getShipmentMethodType_ShipmentMethodTypeId());
 
 		initEClass(facilityContactMechEClass, FacilityContactMech.class, "FacilityContactMech", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityContactMech_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContactMech_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContactMech_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContactMech_Extension(), ecorePackage.getEString(), "extension", null, 0, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContactMech_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFacilityContactMech_ContactMechId(), theContactPackage_1.getTelecomNumber(), null, "contactMechId", null, 0, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityContactMech_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityContactMech_FacilityId().getEKeys().add(this.getFacility_FacilityId());
+		initEReference(getFacilityContactMech_ContactMechId(), theContactPackage_1.getContactMech(), null, "contactMechId", null, 0, 1, FacilityContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityContactMech_ContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
 
 		initEClass(facilityContactMechPurposeEClass, FacilityContactMechPurpose.class, "FacilityContactMechPurpose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityContactMechPurpose_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityContactMechPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContactMechPurpose_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FacilityContactMechPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContactMechPurpose_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FacilityContactMechPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFacilityContactMechPurpose_ContactMechPurposeTypeId(), theContactPackage_1.getContactMechPurposeType(), null, "contactMechPurposeTypeId", null, 0, 1, FacilityContactMechPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityContactMechPurpose_ContactMechPurposeTypeId().getEKeys().add(theContactPackage_1.getContactMechPurposeType_ContactMechPurposeTypeId());
+		initEReference(getFacilityContactMechPurpose_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityContactMechPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityContactMechPurpose_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getFacilityContactMechPurpose_ContactMechId(), theContactPackage_1.getContactMech(), null, "contactMechId", null, 0, 1, FacilityContactMechPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityContactMechPurpose_ContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
 
 		initEClass(facilityContentEClass, FacilityContent.class, "FacilityContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityContent_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContent_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FacilityContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityContent_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FacilityContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityContent_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityContent_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getFacilityContent_ContentId(), theContentPackage.getContent(), null, "contentId", null, 0, 1, FacilityContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityContent_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 
@@ -2704,25 +2712,28 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		addEOperation(facilityGroupEClass, ecorePackage.getEString(), "facilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityGroupMemberEClass, FacilityGroupMember.class, "FacilityGroupMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityGroupMember_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityGroupMember_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FacilityGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityGroupMember_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, FacilityGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityGroupMember_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FacilityGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityGroupMember_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityGroupMember_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getFacilityGroupMember_FacilityGroupId(), this.getFacilityGroup(), null, "facilityGroupId", null, 0, 1, FacilityGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityGroupMember_FacilityGroupId().getEKeys().add(this.getFacilityGroup_FacilityGroupId());
 
 		initEClass(facilityGroupRoleEClass, FacilityGroupRole.class, "FacilityGroupRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityGroupRole_FacilityGroupId(), ecorePackage.getEString(), "facilityGroupId", null, 1, 1, FacilityGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityGroupRole_FacilityGroupId(), this.getFacilityGroup(), null, "facilityGroupId", null, 0, 1, FacilityGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityGroupRole_FacilityGroupId().getEKeys().add(this.getFacilityGroup_FacilityGroupId());
 		initEReference(getFacilityGroupRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, FacilityGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityGroupRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getFacilityGroupRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, FacilityGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityGroupRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
 
 		initEClass(facilityGroupRollupEClass, FacilityGroupRollup.class, "FacilityGroupRollup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityGroupRollup_FacilityGroupId(), ecorePackage.getEString(), "facilityGroupId", null, 1, 1, FacilityGroupRollup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityGroupRollup_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FacilityGroupRollup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityGroupRollup_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, FacilityGroupRollup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityGroupRollup_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FacilityGroupRollup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityGroupRollup_FacilityGroupId(), this.getFacilityGroup(), null, "facilityGroupId", null, 0, 1, FacilityGroupRollup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityGroupRollup_FacilityGroupId().getEKeys().add(this.getFacilityGroup_FacilityGroupId());
 		initEReference(getFacilityGroupRollup_ParentFacilityGroupId(), this.getFacilityGroup(), null, "parentFacilityGroupId", null, 0, 1, FacilityGroupRollup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityGroupRollup_ParentFacilityGroupId().getEKeys().add(this.getFacilityGroup_FacilityGroupId());
 
@@ -2733,13 +2744,14 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		addEOperation(facilityGroupTypeEClass, ecorePackage.getEString(), "facilityGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityLocationEClass, FacilityLocation.class, "FacilityLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityLocation_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityLocation_LocationSeqId(), ecorePackage.getEString(), "locationSeqId", null, 1, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityLocation_AisleId(), ecorePackage.getEString(), "aisleId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityLocation_AreaId(), ecorePackage.getEString(), "areaId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityLocation_LevelId(), ecorePackage.getEString(), "levelId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityLocation_PositionId(), ecorePackage.getEString(), "positionId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityLocation_SectionId(), ecorePackage.getEString(), "sectionId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityLocation_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityLocation_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getFacilityLocation_LocationTypeEnumId(), theEnumPackage.getEnumeration(), null, "locationTypeEnumId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityLocation_LocationTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEReference(getFacilityLocation_GeoPointId(), theGeoPackage.getGeoPoint(), null, "geoPointId", null, 0, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2754,9 +2766,10 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		getFacilityLocationGeoPoint_GeoPointId().getEKeys().add(theGeoPackage.getGeoPoint_GeoPointId());
 
 		initEClass(facilityPartyEClass, FacilityParty.class, "FacilityParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityParty_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, FacilityParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityParty_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FacilityParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityParty_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FacilityParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityParty_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, FacilityParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityParty_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getFacilityParty_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, FacilityParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityParty_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getFacilityParty_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, FacilityParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2775,26 +2788,29 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		addEOperation(facilityTypeEClass, ecorePackage.getEString(), "facilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityTypeAttrEClass, FacilityTypeAttr.class, "FacilityTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFacilityTypeAttr_FacilityTypeId(), ecorePackage.getEString(), "facilityTypeId", null, 1, 1, FacilityTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, FacilityTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, FacilityTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityTypeAttr_FacilityTypeId(), this.getFacilityType(), null, "facilityTypeId", null, 0, 1, FacilityTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFacilityTypeAttr_FacilityTypeId().getEKeys().add(this.getFacilityType_FacilityTypeId());
 
 		initEClass(productFacilityEClass, ProductFacility.class, "ProductFacility", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductFacility_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFacility_DaysToShip(), ecorePackage.getELong(), "daysToShip", null, 0, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFacility_LastInventoryCount(), ecorePackage.getEBigDecimal(), "lastInventoryCount", null, 0, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFacility_MinimumStock(), ecorePackage.getEBigDecimal(), "minimumStock", null, 0, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFacility_ReorderQuantity(), ecorePackage.getEBigDecimal(), "reorderQuantity", null, 0, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductFacility_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductFacility_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 		initEReference(getProductFacility_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFacility_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 		initEReference(getProductFacility_RequirementMethodEnumId(), theEnumPackage.getEnumeration(), null, "requirementMethodEnumId", null, 0, 1, ProductFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFacility_RequirementMethodEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		initEClass(productFacilityLocationEClass, ProductFacilityLocation.class, "ProductFacilityLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductFacilityLocation_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductFacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFacilityLocation_LocationSeqId(), ecorePackage.getEString(), "locationSeqId", null, 1, 1, ProductFacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFacilityLocation_MinimumStock(), ecorePackage.getEBigDecimal(), "minimumStock", null, 0, 1, ProductFacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFacilityLocation_MoveQuantity(), ecorePackage.getEBigDecimal(), "moveQuantity", null, 0, 1, ProductFacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductFacilityLocation_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, ProductFacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductFacilityLocation_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 		initEReference(getProductFacilityLocation_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, ProductFacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFacilityLocation_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 
@@ -2893,12 +2909,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   });
 		addAnnotation
 		  (getContainer_ContainerId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getContainerGeoPoint_ContainerId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3066,19 +3076,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getFacilityAttribute_FacilityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getFacilityAttribute_AttrName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getFacilityCalendar_FacilityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3102,19 +3100,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getFacilityCarrierShipment_FacilityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getFacilityCarrierShipment_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getFacilityContactMech_FacilityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3126,19 +3112,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getFacilityContactMechPurpose_FacilityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getFacilityContactMechPurpose_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getFacilityContent_FacilityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3162,25 +3136,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getFacilityGroupMember_FacilityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getFacilityGroupMember_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getFacilityGroupRole_FacilityGroupId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getFacilityGroupRollup_FacilityGroupId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3199,12 +3155,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   });
 		addAnnotation
 		  (getFacilityGroupType_FacilityGroupTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getFacilityLocation_FacilityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3229,12 +3179,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   });
 		addAnnotation
 		  (getFacilityLocationGeoPoint_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getFacilityParty_FacilityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3270,25 +3214,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getFacilityTypeAttr_FacilityTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getFacilityTypeAttr_AttrName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductFacility_ProductId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductFacilityLocation_ProductId(),
 		   source,
 		   new String[] {
 			   "key", "true"

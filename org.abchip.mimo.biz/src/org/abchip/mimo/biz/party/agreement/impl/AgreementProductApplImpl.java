@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.agreement.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementProductAppl;
 import org.abchip.mimo.biz.product.product.Product;
@@ -28,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
@@ -38,27 +39,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class AgreementProductApplImpl extends BizEntityImpl implements AgreementProductAppl {
 	/**
-	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementId = AGREEMENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -95,6 +78,15 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 * @ordered
 	 */
 	protected BigDecimal price = PRICE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Agreement agreementId;
 	/**
 	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -216,7 +208,24 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 * @generated
 	 */
 	@Override
-	public String getAgreementId() {
+	public Agreement getAgreementId() {
+		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
+			InternalEObject oldAgreementId = (InternalEObject)agreementId;
+			agreementId = (Agreement)eResolveProxy(oldAgreementId);
+			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
+			}
+		}
+		return agreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agreement basicGetAgreementId() {
 		return agreementId;
 	}
 
@@ -226,8 +235,8 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 * @generated
 	 */
 	@Override
-	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
+	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
@@ -241,12 +250,13 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
-				return getAgreementId();
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				return getPrice();
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
+				if (resolve) return getAgreementId();
+				return basicGetAgreementId();
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
 				if (resolve) return getProductId();
 				return basicGetProductId();
@@ -262,14 +272,14 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
-				setAgreementId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				setPrice((BigDecimal)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
+				setAgreementId((Agreement)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
 				setProductId((Product)newValue);
@@ -286,14 +296,14 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
-				setAgreementId(AGREEMENT_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				setPrice(PRICE_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
+				setAgreementId((Agreement)null);
 				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
 				setProductId((Product)null);
@@ -310,12 +320,12 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
-				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				return PRICE_EDEFAULT == null ? price != null : !PRICE_EDEFAULT.equals(price);
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID:
+				return agreementId != null;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
 				return productId != null;
 		}
@@ -332,9 +342,7 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementId: ");
-		result.append(agreementId);
-		result.append(", agreementItemSeqId: ");
+		result.append(" (agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
 		result.append(", price: ");
 		result.append(price);

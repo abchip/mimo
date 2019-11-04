@@ -18,8 +18,8 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyInvitationId <em>Party Invitation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyInvitationId <em>Party Invitation Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitationGroupAssoc()
@@ -36,12 +36,12 @@ public interface PartyInvitationGroupAssoc extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Id To</em>' reference.
-	 * @see #setPartyIdTo(Party)
+	 * @see #setPartyIdTo(PartyGroup)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitationGroupAssoc_PartyIdTo()
 	 * @model keys="partyId"
 	 * @generated
 	 */
-	Party getPartyIdTo();
+	PartyGroup getPartyIdTo();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyIdTo <em>Party Id To</em>}' reference.
@@ -51,33 +51,32 @@ public interface PartyInvitationGroupAssoc extends BizEntity {
 	 * @see #getPartyIdTo()
 	 * @generated
 	 */
-	void setPartyIdTo(Party value);
+	void setPartyIdTo(PartyGroup value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Invitation Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Invitation Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Invitation Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Invitation Id</em>' attribute.
-	 * @see #setPartyInvitationId(String)
+	 * @return the value of the '<em>Party Invitation Id</em>' reference.
+	 * @see #setPartyInvitationId(PartyInvitation)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitationGroupAssoc_PartyInvitationId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="partyInvitationId"
 	 * @generated
 	 */
-	String getPartyInvitationId();
+	PartyInvitation getPartyInvitationId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyInvitationId <em>Party Invitation Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyInvitationId <em>Party Invitation Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Invitation Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Invitation Id</em>' reference.
 	 * @see #getPartyInvitationId()
 	 * @generated
 	 */
-	void setPartyInvitationId(String value);
+	void setPartyInvitationId(PartyInvitation value);
 
 } // PartyInvitationGroupAssoc

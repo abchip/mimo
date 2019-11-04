@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.order.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemContactMech;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
@@ -28,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemContactMechImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemContactMechImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemContactMechImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemContactMechImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemContactMechImpl#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
  * </ul>
@@ -41,26 +42,6 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -81,6 +62,16 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 * @ordered
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
 
 	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
@@ -207,7 +198,24 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -217,8 +225,8 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID, oldOrderId, orderId));
@@ -255,10 +263,11 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
+			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -277,11 +286,11 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)newValue);
@@ -301,11 +310,11 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)null);
@@ -325,10 +334,10 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
+			case OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID:
+				return orderId != null;
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_ID:
 				return contactMechId != null;
 			case OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID:
@@ -347,9 +356,7 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(')');
 		return result.toString();

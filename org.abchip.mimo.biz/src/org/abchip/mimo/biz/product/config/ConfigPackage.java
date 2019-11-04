@@ -226,22 +226,13 @@ public interface ConfigPackage extends EPackage {
 	int PROD_CONF_ITEM_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Config Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROD_CONF_ITEM_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PROD_CONF_ITEM_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -250,7 +241,16 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROD_CONF_ITEM_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PROD_CONF_ITEM_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Config Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Content Id</b></em>' reference.
@@ -426,22 +426,13 @@ public interface ConfigPackage extends EPackage {
 	int PRODUCT_CONFIG__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_CONFIG__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PRODUCT_CONFIG__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -450,7 +441,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PRODUCT_CONFIG__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Config Type Id</b></em>' attribute.
@@ -459,7 +450,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__CONFIG_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PRODUCT_CONFIG__CONFIG_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Default Config Option Id</b></em>' attribute.
@@ -468,7 +459,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__DEFAULT_CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_CONFIG__DEFAULT_CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -477,7 +468,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PRODUCT_CONFIG__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Mandatory</b></em>' attribute.
@@ -486,7 +477,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__IS_MANDATORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_CONFIG__IS_MANDATORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Long Description</b></em>' attribute.
@@ -495,7 +486,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__LONG_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_CONFIG__LONG_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -504,7 +495,16 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_CONFIG__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Product Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_CONFIG__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Config Item Id</b></em>' reference.
@@ -789,22 +789,13 @@ public interface ConfigPackage extends EPackage {
 	int PRODUCT_CONFIG_OPTION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Config Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_CONFIG_OPTION__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Config Option Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION__CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PRODUCT_CONFIG_OPTION__CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Config Option Name</b></em>' attribute.
@@ -813,7 +804,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION__CONFIG_OPTION_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PRODUCT_CONFIG_OPTION__CONFIG_OPTION_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -822,7 +813,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PRODUCT_CONFIG_OPTION__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -831,7 +822,16 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_CONFIG_OPTION__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Config Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_CONFIG_OPTION__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Product Config Option</em>' class.
@@ -889,22 +889,13 @@ public interface ConfigPackage extends EPackage {
 	int PRODUCT_CONFIG_OPTION_IACTN__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Config Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Config Option Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Config Option Id To</b></em>' attribute.
@@ -913,7 +904,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -922,7 +913,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION_IACTN__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PRODUCT_CONFIG_OPTION_IACTN__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Config Iactn Type Id</b></em>' attribute.
@@ -931,7 +922,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_IACTN_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_IACTN_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -940,7 +931,16 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_OPTION_IACTN__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PRODUCT_CONFIG_OPTION_IACTN__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Config Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Config Item Id To</b></em>' reference.
@@ -1007,22 +1007,13 @@ public interface ConfigPackage extends EPackage {
 	int PRODUCT_CONFIG_PRODUCT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Config Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_CONFIG_PRODUCT__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Config Option Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_PRODUCT__CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PRODUCT_CONFIG_PRODUCT__CONFIG_OPTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -1031,7 +1022,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_PRODUCT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PRODUCT_CONFIG_PRODUCT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -1040,7 +1031,16 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CONFIG_PRODUCT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PRODUCT_CONFIG_PRODUCT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Config Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_CONFIG_PRODUCT__CONFIG_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -1250,15 +1250,15 @@ public interface ConfigPackage extends EPackage {
 	EClass getProdConfItemContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId <em>Config Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId <em>Config Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Config Item Id</em>'.
+	 * @return the meta object for the reference '<em>Config Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId()
 	 * @see #getProdConfItemContent()
 	 * @generated
 	 */
-	EAttribute getProdConfItemContent_ConfigItemId();
+	EReference getProdConfItemContent_ConfigItemId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getContentId <em>Content Id</em>}'.
@@ -1369,15 +1369,15 @@ public interface ConfigPackage extends EPackage {
 	EClass getProductConfig();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProductConfig#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.config.ProductConfig#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id</em>'.
+	 * @return the meta object for the reference '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.product.config.ProductConfig#getProductId()
 	 * @see #getProductConfig()
 	 * @generated
 	 */
-	EAttribute getProductConfig_ProductId();
+	EReference getProductConfig_ProductId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.config.ProductConfig#getConfigItemId <em>Config Item Id</em>}'.
@@ -1641,15 +1641,15 @@ public interface ConfigPackage extends EPackage {
 	EClass getProductConfigOption();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Config Item Id</em>'.
+	 * @return the meta object for the reference '<em>Config Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId()
 	 * @see #getProductConfigOption()
 	 * @generated
 	 */
-	EAttribute getProductConfigOption_ConfigItemId();
+	EReference getProductConfigOption_ConfigItemId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigOptionId <em>Config Option Id</em>}'.
@@ -1706,15 +1706,15 @@ public interface ConfigPackage extends EPackage {
 	EClass getProductConfigOptionIactn();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemId <em>Config Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemId <em>Config Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Config Item Id</em>'.
+	 * @return the meta object for the reference '<em>Config Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemId()
 	 * @see #getProductConfigOptionIactn()
 	 * @generated
 	 */
-	EAttribute getProductConfigOptionIactn_ConfigItemId();
+	EReference getProductConfigOptionIactn_ConfigItemId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigOptionId <em>Config Option Id</em>}'.
@@ -1793,15 +1793,15 @@ public interface ConfigPackage extends EPackage {
 	EClass getProductConfigProduct();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Config Item Id</em>'.
+	 * @return the meta object for the reference '<em>Config Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId()
 	 * @see #getProductConfigProduct()
 	 * @generated
 	 */
-	EAttribute getProductConfigProduct_ConfigItemId();
+	EReference getProductConfigProduct_ConfigItemId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigOptionId <em>Config Option Id</em>}'.
@@ -2000,12 +2000,12 @@ public interface ConfigPackage extends EPackage {
 		EClass PROD_CONF_ITEM_CONTENT = eINSTANCE.getProdConfItemContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Config Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Config Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID = eINSTANCE.getProdConfItemContent_ConfigItemId();
+		EReference PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID = eINSTANCE.getProdConfItemContent_ConfigItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
@@ -2092,12 +2092,12 @@ public interface ConfigPackage extends EPackage {
 		EClass PRODUCT_CONFIG = eINSTANCE.getProductConfig();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_CONFIG__PRODUCT_ID = eINSTANCE.getProductConfig_ProductId();
+		EReference PRODUCT_CONFIG__PRODUCT_ID = eINSTANCE.getProductConfig_ProductId();
 
 		/**
 		 * The meta object literal for the '<em><b>Config Item Id</b></em>' reference feature.
@@ -2298,12 +2298,12 @@ public interface ConfigPackage extends EPackage {
 		EClass PRODUCT_CONFIG_OPTION = eINSTANCE.getProductConfigOption();
 
 		/**
-		 * The meta object literal for the '<em><b>Config Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Config Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_CONFIG_OPTION__CONFIG_ITEM_ID = eINSTANCE.getProductConfigOption_ConfigItemId();
+		EReference PRODUCT_CONFIG_OPTION__CONFIG_ITEM_ID = eINSTANCE.getProductConfigOption_ConfigItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Config Option Id</b></em>' attribute feature.
@@ -2348,12 +2348,12 @@ public interface ConfigPackage extends EPackage {
 		EClass PRODUCT_CONFIG_OPTION_IACTN = eINSTANCE.getProductConfigOptionIactn();
 
 		/**
-		 * The meta object literal for the '<em><b>Config Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Config Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID = eINSTANCE.getProductConfigOptionIactn_ConfigItemId();
+		EReference PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID = eINSTANCE.getProductConfigOptionIactn_ConfigItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Config Option Id</b></em>' attribute feature.
@@ -2414,12 +2414,12 @@ public interface ConfigPackage extends EPackage {
 		EClass PRODUCT_CONFIG_PRODUCT = eINSTANCE.getProductConfigProduct();
 
 		/**
-		 * The meta object literal for the '<em><b>Config Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Config Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_CONFIG_PRODUCT__CONFIG_ITEM_ID = eINSTANCE.getProductConfigProduct_ConfigItemId();
+		EReference PRODUCT_CONFIG_PRODUCT__CONFIG_ITEM_ID = eINSTANCE.getProductConfigProduct_ConfigItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Config Option Id</b></em>' attribute feature.

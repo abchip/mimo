@@ -34,27 +34,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLink {
 	/**
-	 * The default value of the '{@link #getContactMechIdFrom() <em>Contact Mech Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_FROM_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getContactMechIdFrom() <em>Contact Mech Id From</em>}' attribute.
+	 * The cached value of the '{@link #getContactMechIdFrom() <em>Contact Mech Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContactMechIdFrom()
 	 * @generated
 	 * @ordered
 	 */
-	protected String contactMechIdFrom = CONTACT_MECH_ID_FROM_EDEFAULT;
+	protected ContactMech contactMechIdFrom;
 
 	/**
 	 * The cached value of the '{@link #getContactMechIdTo() <em>Contact Mech Id To</em>}' reference.
@@ -91,7 +82,24 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	 * @generated
 	 */
 	@Override
-	public String getContactMechIdFrom() {
+	public ContactMech getContactMechIdFrom() {
+		if (contactMechIdFrom != null && ((EObject)contactMechIdFrom).eIsProxy()) {
+			InternalEObject oldContactMechIdFrom = (InternalEObject)contactMechIdFrom;
+			contactMechIdFrom = (ContactMech)eResolveProxy(oldContactMechIdFrom);
+			if (contactMechIdFrom != oldContactMechIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
+			}
+		}
+		return contactMechIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechIdFrom() {
 		return contactMechIdFrom;
 	}
 
@@ -101,8 +109,8 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	 * @generated
 	 */
 	@Override
-	public void setContactMechIdFrom(String newContactMechIdFrom) {
-		String oldContactMechIdFrom = contactMechIdFrom;
+	public void setContactMechIdFrom(ContactMech newContactMechIdFrom) {
+		ContactMech oldContactMechIdFrom = contactMechIdFrom;
 		contactMechIdFrom = newContactMechIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
@@ -157,7 +165,8 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM:
-				return getContactMechIdFrom();
+				if (resolve) return getContactMechIdFrom();
+				return basicGetContactMechIdFrom();
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
 				if (resolve) return getContactMechIdTo();
 				return basicGetContactMechIdTo();
@@ -174,7 +183,7 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM:
-				setContactMechIdFrom((String)newValue);
+				setContactMechIdFrom((ContactMech)newValue);
 				return;
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
 				setContactMechIdTo((ContactMech)newValue);
@@ -192,7 +201,7 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM:
-				setContactMechIdFrom(CONTACT_MECH_ID_FROM_EDEFAULT);
+				setContactMechIdFrom((ContactMech)null);
 				return;
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
 				setContactMechIdTo((ContactMech)null);
@@ -210,27 +219,11 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM:
-				return CONTACT_MECH_ID_FROM_EDEFAULT == null ? contactMechIdFrom != null : !CONTACT_MECH_ID_FROM_EDEFAULT.equals(contactMechIdFrom);
+				return contactMechIdFrom != null;
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
 				return contactMechIdTo != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contactMechIdFrom: ");
-		result.append(contactMechIdFrom);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ContactMechLinkImpl

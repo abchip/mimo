@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  * </ul>
  *
@@ -39,26 +40,6 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -79,6 +60,16 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
@@ -178,7 +169,24 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -188,8 +196,8 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -203,10 +211,11 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				return getDescription();
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
 				if (resolve) return getCommunicationEventId();
 				return basicGetCommunicationEventId();
@@ -222,11 +231,11 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)newValue);
@@ -243,11 +252,11 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)null);
@@ -264,10 +273,10 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
 				return communicationEventId != null;
 		}
@@ -284,9 +293,7 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", description: ");
+		result.append(" (description: ");
 		result.append(description);
 		result.append(')');
 		return result.toString();

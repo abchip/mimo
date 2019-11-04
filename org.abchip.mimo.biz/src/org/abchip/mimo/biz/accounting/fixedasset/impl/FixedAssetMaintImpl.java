@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -33,10 +34,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getMaintHistSeqId <em>Maint Hist Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getIntervalQuantity <em>Interval Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getProductMaintSeqId <em>Product Maint Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getScheduleWorkEffortId <em>Schedule Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getIntervalUomId <em>Interval Uom Id</em>}</li>
@@ -49,27 +50,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMaint {
 	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getMaintHistSeqId() <em>Maint Hist Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,6 +107,15 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @ordered
 	 */
 	protected String productMaintSeqId = PRODUCT_MAINT_SEQ_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
 	/**
 	 * The cached value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -513,7 +505,24 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -523,8 +532,8 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -538,14 +547,15 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				return getMaintHistSeqId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_QUANTITY:
 				return getIntervalQuantity();
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return getProductMaintSeqId();
+			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
 				if (resolve) return getProductMaintTypeId();
 				return basicGetProductMaintTypeId();
@@ -576,9 +586,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				setMaintHistSeqId((String)newValue);
 				return;
@@ -587,6 +594,9 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId((String)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
 				setProductMaintTypeId((ProductMaintType)newValue);
@@ -618,9 +628,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				setMaintHistSeqId(MAINT_HIST_SEQ_ID_EDEFAULT);
 				return;
@@ -629,6 +636,9 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId(PRODUCT_MAINT_SEQ_ID_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
 				setProductMaintTypeId((ProductMaintType)null);
@@ -660,14 +670,14 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				return MAINT_HIST_SEQ_ID_EDEFAULT == null ? maintHistSeqId != null : !MAINT_HIST_SEQ_ID_EDEFAULT.equals(maintHistSeqId);
 			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_QUANTITY:
 				return INTERVAL_QUANTITY_EDEFAULT == null ? intervalQuantity != null : !INTERVAL_QUANTITY_EDEFAULT.equals(intervalQuantity);
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return PRODUCT_MAINT_SEQ_ID_EDEFAULT == null ? productMaintSeqId != null : !PRODUCT_MAINT_SEQ_ID_EDEFAULT.equals(productMaintSeqId);
+			case FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID:
+				return fixedAssetId != null;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
 				return productMaintTypeId != null;
 			case FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID:
@@ -694,9 +704,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fixedAssetId: ");
-		result.append(fixedAssetId);
-		result.append(", maintHistSeqId: ");
+		result.append(" (maintHistSeqId: ");
 		result.append(maintHistSeqId);
 		result.append(", intervalQuantity: ");
 		result.append(intervalQuantity);

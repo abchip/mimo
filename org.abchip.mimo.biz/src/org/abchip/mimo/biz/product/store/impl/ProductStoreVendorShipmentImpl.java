@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.product.store.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreVendorShipment;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
@@ -42,24 +43,14 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductStoreId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
+	protected ProductStore productStoreId;
 
 	/**
 	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' reference.
@@ -236,7 +227,24 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -246,8 +254,8 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -262,7 +270,8 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				return getProductStoreId();
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
 				if (resolve) return getVendorPartyId();
 				return basicGetVendorPartyId();
@@ -285,7 +294,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
+				setProductStoreId((ProductStore)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
 				setVendorPartyId((Party)newValue);
@@ -309,7 +318,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
+				setProductStoreId((ProductStore)null);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
 				setVendorPartyId((Party)null);
@@ -333,7 +342,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
+				return productStoreId != null;
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
 				return vendorPartyId != null;
 			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
@@ -342,22 +351,6 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 				return carrierPartyId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreId: ");
-		result.append(productStoreId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductStoreVendorShipmentImpl

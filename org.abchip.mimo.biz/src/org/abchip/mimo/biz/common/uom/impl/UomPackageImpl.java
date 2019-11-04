@@ -767,8 +767,8 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUomConversion_UomId() {
-		return (EAttribute)uomConversionEClass.getEStructuralFeatures().get(0);
+	public EReference getUomConversion_UomId() {
+		return (EReference)uomConversionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -788,7 +788,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversion_ConversionFactor() {
-		return (EAttribute)uomConversionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)uomConversionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -808,7 +808,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversion_DecimalScale() {
-		return (EAttribute)uomConversionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)uomConversionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -818,7 +818,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversion_RoundingMode() {
-		return (EAttribute)uomConversionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)uomConversionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -837,8 +837,8 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUomConversionDated_UomId() {
-		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(0);
+	public EReference getUomConversionDated_UomId() {
+		return (EReference)uomConversionDatedEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -858,7 +858,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversionDated_FromDate() {
-		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -868,7 +868,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversionDated_ConversionFactor() {
-		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -888,7 +888,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversionDated_DecimalScale() {
-		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -908,7 +908,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversionDated_RoundingMode() {
-		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -918,7 +918,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 */
 	@Override
 	public EAttribute getUomConversionDated_ThruDate() {
-		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)uomConversionDatedEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1039,20 +1039,20 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		createEAttribute(uomEClass, UOM__MAIN_UOM_CONVERSIONS);
 
 		uomConversionEClass = createEClass(UOM_CONVERSION);
-		createEAttribute(uomConversionEClass, UOM_CONVERSION__UOM_ID);
 		createEAttribute(uomConversionEClass, UOM_CONVERSION__CONVERSION_FACTOR);
 		createEAttribute(uomConversionEClass, UOM_CONVERSION__DECIMAL_SCALE);
 		createEAttribute(uomConversionEClass, UOM_CONVERSION__ROUNDING_MODE);
+		createEReference(uomConversionEClass, UOM_CONVERSION__UOM_ID);
 		createEReference(uomConversionEClass, UOM_CONVERSION__UOM_ID_TO);
 		createEReference(uomConversionEClass, UOM_CONVERSION__CUSTOM_METHOD_ID);
 
 		uomConversionDatedEClass = createEClass(UOM_CONVERSION_DATED);
-		createEAttribute(uomConversionDatedEClass, UOM_CONVERSION_DATED__UOM_ID);
 		createEAttribute(uomConversionDatedEClass, UOM_CONVERSION_DATED__FROM_DATE);
 		createEAttribute(uomConversionDatedEClass, UOM_CONVERSION_DATED__CONVERSION_FACTOR);
 		createEAttribute(uomConversionDatedEClass, UOM_CONVERSION_DATED__DECIMAL_SCALE);
 		createEAttribute(uomConversionDatedEClass, UOM_CONVERSION_DATED__ROUNDING_MODE);
 		createEAttribute(uomConversionDatedEClass, UOM_CONVERSION_DATED__THRU_DATE);
+		createEReference(uomConversionDatedEClass, UOM_CONVERSION_DATED__UOM_ID);
 		createEReference(uomConversionDatedEClass, UOM_CONVERSION_DATED__UOM_ID_TO);
 		createEReference(uomConversionDatedEClass, UOM_CONVERSION_DATED__CUSTOM_METHOD_ID);
 		createEReference(uomConversionDatedEClass, UOM_CONVERSION_DATED__PURPOSE_ENUM_ID);
@@ -1260,22 +1260,24 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		addEOperation(uomEClass, ecorePackage.getEString(), "widthProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(uomConversionEClass, UomConversion.class, "UomConversion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUomConversion_UomId(), ecorePackage.getEString(), "uomId", null, 1, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversion_ConversionFactor(), ecorePackage.getEDouble(), "conversionFactor", null, 0, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversion_DecimalScale(), ecorePackage.getELong(), "decimalScale", null, 0, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversion_RoundingMode(), ecorePackage.getEString(), "roundingMode", null, 0, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUomConversion_UomId(), this.getUom(), null, "uomId", null, 0, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUomConversion_UomId().getEKeys().add(this.getUom_UomId());
 		initEReference(getUomConversion_UomIdTo(), this.getUom(), null, "uomIdTo", null, 0, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUomConversion_UomIdTo().getEKeys().add(this.getUom_UomId());
 		initEReference(getUomConversion_CustomMethodId(), theMethodPackage.getCustomMethod(), null, "customMethodId", null, 0, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUomConversion_CustomMethodId().getEKeys().add(theMethodPackage.getCustomMethod_CustomMethodId());
 
 		initEClass(uomConversionDatedEClass, UomConversionDated.class, "UomConversionDated", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUomConversionDated_UomId(), ecorePackage.getEString(), "uomId", null, 1, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversionDated_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversionDated_ConversionFactor(), ecorePackage.getEDouble(), "conversionFactor", null, 0, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversionDated_DecimalScale(), ecorePackage.getELong(), "decimalScale", null, 0, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversionDated_RoundingMode(), ecorePackage.getEString(), "roundingMode", null, 0, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUomConversionDated_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUomConversionDated_UomId(), this.getUom(), null, "uomId", null, 0, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUomConversionDated_UomId().getEKeys().add(this.getUom_UomId());
 		initEReference(getUomConversionDated_UomIdTo(), this.getUom(), null, "uomIdTo", null, 0, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUomConversionDated_UomIdTo().getEKeys().add(this.getUom_UomId());
 		initEReference(getUomConversionDated_CustomMethodId(), theMethodPackage.getCustomMethod(), null, "customMethodId", null, 0, 1, UomConversionDated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1759,18 +1761,6 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getUomConversion_UomId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getUomConversionDated_UomId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (getUomConversionDated_FromDate(),

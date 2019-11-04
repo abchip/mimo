@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.contact;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -60,31 +61,30 @@ public interface PartyContactMechPurpose extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_PartyId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -147,12 +147,12 @@ public interface PartyContactMechPurpose extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(TelecomNumber)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	TelecomNumber getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -162,6 +162,6 @@ public interface PartyContactMechPurpose extends BizEntity {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(TelecomNumber value);
+	void setContactMechId(ContactMech value);
 
 } // PartyContactMechPurpose

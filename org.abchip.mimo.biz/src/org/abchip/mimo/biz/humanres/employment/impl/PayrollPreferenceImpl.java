@@ -17,6 +17,7 @@ import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PayrollPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -33,7 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPayrollPreferenceSeqId <em>Payroll Preference Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getAccountNumber <em>Account Number</em>}</li>
@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPercentage <em>Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getRoutingNumber <em>Routing Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getDeductionTypeId <em>Deduction Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
@@ -55,26 +56,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
@@ -255,6 +236,16 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getDeductionTypeId() <em>Deduction Type Id</em>}' reference.
@@ -443,7 +434,24 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -453,8 +461,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID, oldPartyId, partyId));
@@ -663,8 +671,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
-				return getPartyId();
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROLE_TYPE_ID:
 				return getRoleTypeId();
 			case EmploymentPackage.PAYROLL_PREFERENCE__PAYROLL_PREFERENCE_SEQ_ID:
@@ -683,6 +689,9 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 				return getRoutingNumber();
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				return getThruDate();
+			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
 				if (resolve) return getDeductionTypeId();
 				return basicGetDeductionTypeId();
@@ -704,9 +713,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
@@ -734,6 +740,9 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
 				setDeductionTypeId((DeductionType)newValue);
 				return;
@@ -755,9 +764,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
@@ -785,6 +791,9 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
 				setDeductionTypeId((DeductionType)null);
 				return;
@@ -806,8 +815,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case EmploymentPackage.PAYROLL_PREFERENCE__PAYROLL_PREFERENCE_SEQ_ID:
@@ -826,6 +833,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 				return ROUTING_NUMBER_EDEFAULT == null ? routingNumber != null : !ROUTING_NUMBER_EDEFAULT.equals(routingNumber);
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID:
+				return partyId != null;
 			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
 				return deductionTypeId != null;
 			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
@@ -846,9 +855,7 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(", payrollPreferenceSeqId: ");
 		result.append(payrollPreferenceSeqId);

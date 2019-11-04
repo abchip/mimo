@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoAction;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getAmount <em>Amount</em>}</li>
@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#isUseCartQuantity <em>Use Cart Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getProductPromoActionEnumId <em>Product Promo Action Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  * </ul>
  *
@@ -51,26 +52,6 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getProductPromoRuleId() <em>Product Promo Rule Id</em>}' attribute.
@@ -251,6 +232,16 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	 * @ordered
 	 */
 	protected CustomMethod customMethodId;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
 
 	/**
 	 * The cached value of the '{@link #getOrderAdjustmentTypeId() <em>Order Adjustment Type Id</em>}' reference.
@@ -591,7 +582,24 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -601,8 +609,8 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -616,8 +624,6 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_RULE_ID:
 				return getProductPromoRuleId();
 			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ACTION_SEQ_ID:
@@ -640,6 +646,9 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 			case PromoPackage.PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID:
 				if (resolve) return getCustomMethodId();
 				return basicGetCustomMethodId();
+			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
 			case PromoPackage.PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID:
 				if (resolve) return getOrderAdjustmentTypeId();
 				return basicGetOrderAdjustmentTypeId();
@@ -655,9 +664,6 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_RULE_ID:
 				setProductPromoRuleId((String)newValue);
 				return;
@@ -688,6 +694,9 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 			case PromoPackage.PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID:
 				setCustomMethodId((CustomMethod)newValue);
 				return;
+			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
+				return;
 			case PromoPackage.PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID:
 				setOrderAdjustmentTypeId((OrderAdjustmentType)newValue);
 				return;
@@ -703,9 +712,6 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_RULE_ID:
 				setProductPromoRuleId(PRODUCT_PROMO_RULE_ID_EDEFAULT);
 				return;
@@ -736,6 +742,9 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 			case PromoPackage.PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID:
 				setCustomMethodId((CustomMethod)null);
 				return;
+			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
+				return;
 			case PromoPackage.PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID:
 				setOrderAdjustmentTypeId((OrderAdjustmentType)null);
 				return;
@@ -751,8 +760,6 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_RULE_ID:
 				return PRODUCT_PROMO_RULE_ID_EDEFAULT == null ? productPromoRuleId != null : !PRODUCT_PROMO_RULE_ID_EDEFAULT.equals(productPromoRuleId);
 			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ACTION_SEQ_ID:
@@ -773,6 +780,8 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 				return productPromoActionEnumId != null;
 			case PromoPackage.PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID:
 				return customMethodId != null;
+			case PromoPackage.PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ID:
+				return productPromoId != null;
 			case PromoPackage.PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID:
 				return orderAdjustmentTypeId != null;
 		}
@@ -789,9 +798,7 @@ public class ProductPromoActionImpl extends BizEntityImpl implements ProductProm
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productPromoId: ");
-		result.append(productPromoId);
-		result.append(", productPromoRuleId: ");
+		result.append(" (productPromoRuleId: ");
 		result.append(productPromoRuleId);
 		result.append(", productPromoActionSeqId: ");
 		result.append(productPromoActionSeqId);

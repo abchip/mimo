@@ -14,7 +14,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,8 +31,8 @@ import org.abchip.mimo.biz.party.contact.PostalAddress;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getExternalAccountId <em>External Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount()
@@ -101,12 +101,12 @@ public interface BillingAccount extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(PostalAddress)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -116,7 +116,7 @@ public interface BillingAccount extends BizEntity {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(PostalAddress value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

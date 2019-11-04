@@ -11,11 +11,11 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
-import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
 import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderType;
 import org.abchip.mimo.biz.order.quote.QuoteType;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -138,7 +138,7 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 * @generated
 	 * @ordered
 	 */
-	protected PartyAcctgPreference partyId;
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' reference.
@@ -321,10 +321,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 * @generated
 	 */
 	@Override
-	public PartyAcctgPreference getPartyId() {
+	public Party getPartyId() {
 		if (partyId != null && ((EObject)partyId).eIsProxy()) {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (PartyAcctgPreference)eResolveProxy(oldPartyId);
+			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__PARTY_ID, oldPartyId, partyId));
@@ -338,7 +338,7 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PartyAcctgPreference basicGetPartyId() {
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -348,8 +348,8 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(PartyAcctgPreference newPartyId) {
-		PartyAcctgPreference oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__PARTY_ID, oldPartyId, partyId));
@@ -494,7 +494,7 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 				setThruDate((Date)newValue);
 				return;
 			case LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__PARTY_ID:
-				setPartyId((PartyAcctgPreference)newValue);
+				setPartyId((Party)newValue);
 				return;
 			case LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__INVOICE_TYPE_ID:
 				setInvoiceTypeId((InvoiceType)newValue);
@@ -530,7 +530,7 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
 			case LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__PARTY_ID:
-				setPartyId((PartyAcctgPreference)null);
+				setPartyId((Party)null);
 				return;
 			case LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__INVOICE_TYPE_ID:
 				setInvoiceTypeId((InvoiceType)null);

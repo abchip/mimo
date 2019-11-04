@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getBudgetId <em>Budget Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetAttribute()
@@ -82,31 +82,30 @@ public interface BudgetAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Id</em>' attribute.
-	 * @see #setBudgetId(String)
+	 * @return the value of the '<em>Budget Id</em>' reference.
+	 * @see #setBudgetId(Budget)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetAttribute_BudgetId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="budgetId"
 	 * @generated
 	 */
-	String getBudgetId();
+	Budget getBudgetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getBudgetId <em>Budget Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getBudgetId <em>Budget Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Id</em>' reference.
 	 * @see #getBudgetId()
 	 * @generated
 	 */
-	void setBudgetId(String value);
+	void setBudgetId(Budget value);
 
 	/**
 	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.

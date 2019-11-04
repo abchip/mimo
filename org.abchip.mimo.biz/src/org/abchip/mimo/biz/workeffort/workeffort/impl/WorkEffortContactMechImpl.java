@@ -10,7 +10,8 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContactMech;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContactMechImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContactMechImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContactMechImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContactMechImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContactMechImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContactMechImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -125,6 +106,16 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
+
+	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,7 +123,7 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 * @generated
 	 * @ordered
 	 */
-	protected TelecomNumber contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,10 +173,10 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 * @generated
 	 */
 	@Override
-	public TelecomNumber getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (TelecomNumber)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -199,7 +190,7 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TelecomNumber basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -209,8 +200,8 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(TelecomNumber newContactMechId) {
-		TelecomNumber oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -268,7 +259,24 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -278,8 +286,8 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -293,14 +301,15 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__COMMENTS:
 				return getComments();
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -316,9 +325,6 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -328,8 +334,11 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
+				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((TelecomNumber)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -343,9 +352,6 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -355,8 +361,11 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
+				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((TelecomNumber)null);
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -370,14 +379,14 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID:
 				return contactMechId != null;
 		}
@@ -394,9 +403,7 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

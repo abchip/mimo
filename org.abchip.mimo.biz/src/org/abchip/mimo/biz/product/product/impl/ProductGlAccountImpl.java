@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductGlAccount;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -43,24 +44,14 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
@@ -237,7 +228,24 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -247,8 +255,8 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID, oldProductId, productId));
@@ -263,7 +271,8 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID:
-				return getProductId();
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -286,7 +295,7 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID:
-				setProductId((String)newValue);
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -310,7 +319,7 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
+				setProductId((Product)null);
 				return;
 			case ProductPackage.PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -334,7 +343,7 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+				return productId != null;
 			case ProductPackage.PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case ProductPackage.PRODUCT_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
@@ -343,22 +352,6 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductGlAccountImpl

@@ -22,7 +22,6 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getLastModifiedDate <em>Last Modified Date</em>}</li>
@@ -31,6 +30,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getUpperCoordinate <em>Upper Coordinate</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentIdTo <em>Content Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentAssocTypeId <em>Content Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getCreatedByUserLogin <em>Created By User Login</em>}</li>
@@ -97,31 +97,30 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	void setContentAssocTypeId(ContentAssocType value);
 
 	/**
-	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Id</em>' attribute.
-	 * @see #setContentId(String)
+	 * @return the value of the '<em>Content Id</em>' reference.
+	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="contentId"
 	 * @generated
 	 */
-	String getContentId();
+	Content getContentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentId <em>Content Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentId <em>Content Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content Id</em>' attribute.
+	 * @param value the new value of the '<em>Content Id</em>' reference.
 	 * @see #getContentId()
 	 * @generated
 	 */
-	void setContentId(String value);
+	void setContentId(Content value);
 
 	/**
 	 * Returns the value of the '<em><b>Content Id To</b></em>' reference.

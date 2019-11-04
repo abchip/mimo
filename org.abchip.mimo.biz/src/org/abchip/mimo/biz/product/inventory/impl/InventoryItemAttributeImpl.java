@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.product.inventory.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemAttribute;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,10 +26,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,26 +40,6 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -116,6 +99,16 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,7 +181,24 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -198,8 +208,8 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -236,14 +246,15 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,9 +267,6 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -267,6 +275,9 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 				return;
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,9 +291,6 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -291,6 +299,9 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 				return;
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -304,14 +315,14 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case InventoryPackage.INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -326,9 +337,7 @@ public class InventoryItemAttributeImpl extends BizEntityImpl implements Invento
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (inventoryItemId: ");
-		result.append(inventoryItemId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

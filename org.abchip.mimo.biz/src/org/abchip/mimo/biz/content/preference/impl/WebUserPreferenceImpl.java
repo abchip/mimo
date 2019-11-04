@@ -12,6 +12,7 @@ import org.abchip.mimo.biz.content.preference.WebPreferenceType;
 import org.abchip.mimo.biz.content.preference.WebUserPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -28,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getWebPreferenceValue <em>Web Preference Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getWebPreferenceTypeId <em>Web Preference Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,6 +93,16 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @ordered
 	 */
 	protected WebPreferenceType webPreferenceTypeId;
+
+	/**
+	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin userLoginId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -188,7 +179,24 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @generated
 	 */
 	@Override
-	public String getUserLoginId() {
+	public UserLogin getUserLoginId() {
+		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
+			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
+			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
+			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+			}
+		}
+		return userLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetUserLoginId() {
 		return userLoginId;
 	}
 
@@ -198,8 +206,8 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @generated
 	 */
 	@Override
-	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
+	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID, oldUserLoginId, userLoginId));
@@ -299,8 +307,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
-				return getUserLoginId();
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				return getVisitId();
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE:
@@ -308,6 +314,9 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
 				if (resolve) return getWebPreferenceTypeId();
 				return basicGetWebPreferenceTypeId();
+			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
+				if (resolve) return getUserLoginId();
+				return basicGetUserLoginId();
 			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -323,9 +332,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
-				setUserLoginId((String)newValue);
-				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				setVisitId((String)newValue);
 				return;
@@ -334,6 +340,9 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
 				setWebPreferenceTypeId((WebPreferenceType)newValue);
+				return;
+			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)newValue);
 				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -350,9 +359,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
-				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
-				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				setVisitId(VISIT_ID_EDEFAULT);
 				return;
@@ -361,6 +367,9 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
 				setWebPreferenceTypeId((WebPreferenceType)null);
+				return;
+			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)null);
 				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
 				setPartyId((Party)null);
@@ -377,14 +386,14 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
-				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE:
 				return WEB_PREFERENCE_VALUE_EDEFAULT == null ? webPreferenceValue != null : !WEB_PREFERENCE_VALUE_EDEFAULT.equals(webPreferenceValue);
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
 				return webPreferenceTypeId != null;
+			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
+				return userLoginId != null;
 			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
 				return partyId != null;
 		}
@@ -401,9 +410,7 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (userLoginId: ");
-		result.append(userLoginId);
-		result.append(", visitId: ");
+		result.append(" (visitId: ");
 		result.append(visitId);
 		result.append(", webPreferenceValue: ");
 		result.append(webPreferenceValue);

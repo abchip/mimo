@@ -8,7 +8,7 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +19,6 @@ import org.abchip.mimo.biz.party.contact.PostalAddress;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getBankName <em>Bank Name</em>}</li>
@@ -27,6 +26,7 @@ import org.abchip.mimo.biz.party.contact.PostalAddress;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getCompanyNameOnAccount <em>Company Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getNameOnAccount <em>Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getRoutingNumber <em>Routing Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -174,12 +174,12 @@ public interface CheckAccount extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(PostalAddress)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -189,7 +189,7 @@ public interface CheckAccount extends BizEntity {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(PostalAddress value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Name On Account</b></em>' attribute.
@@ -218,31 +218,30 @@ public interface CheckAccount extends BizEntity {
 	void setNameOnAccount(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Id</em>' attribute.
-	 * @see #setPaymentMethodId(String)
+	 * @return the value of the '<em>Payment Method Id</em>' reference.
+	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_PaymentMethodId()
-	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="paymentMethodId"
 	 * @generated
 	 */
-	String getPaymentMethodId();
+	PaymentMethod getPaymentMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Id</em>' reference.
 	 * @see #getPaymentMethodId()
 	 * @generated
 	 */
-	void setPaymentMethodId(String value);
+	void setPaymentMethodId(PaymentMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>Routing Number</b></em>' attribute.

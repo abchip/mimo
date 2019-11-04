@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,12 +26,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl#getCustomerId <em>Customer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl#getEnableBeagle <em>Enable Beagle</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl#getEnableCvn <em>Enable Cvn</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl#getRefundPwd <em>Refund Pwd</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl#getTestMode <em>Test Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,24 +41,6 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getCustomerId() <em>Customer Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -146,6 +131,15 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 * @ordered
 	 */
 	protected String testMode = TEST_MODE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +235,24 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -251,8 +262,8 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -312,8 +323,6 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__CUSTOMER_ID:
 				return getCustomerId();
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__ENABLE_BEAGLE:
@@ -324,6 +333,9 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 				return getRefundPwd();
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__TEST_MODE:
 				return getTestMode();
+			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -336,9 +348,6 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__CUSTOMER_ID:
 				setCustomerId((String)newValue);
 				return;
@@ -354,6 +363,9 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__TEST_MODE:
 				setTestMode((String)newValue);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -366,9 +378,6 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__CUSTOMER_ID:
 				setCustomerId(CUSTOMER_ID_EDEFAULT);
 				return;
@@ -384,6 +393,9 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__TEST_MODE:
 				setTestMode(TEST_MODE_EDEFAULT);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -396,8 +408,6 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__CUSTOMER_ID:
 				return CUSTOMER_ID_EDEFAULT == null ? customerId != null : !CUSTOMER_ID_EDEFAULT.equals(customerId);
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__ENABLE_BEAGLE:
@@ -408,6 +418,8 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 				return REFUND_PWD_EDEFAULT == null ? refundPwd != null : !REFUND_PWD_EDEFAULT.equals(refundPwd);
 			case PaymentPackage.PAYMENT_GATEWAY_EWAY__TEST_MODE:
 				return TEST_MODE_EDEFAULT == null ? testMode != null : !TEST_MODE_EDEFAULT.equals(testMode);
+			case PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -422,9 +434,7 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
-		result.append(", customerId: ");
+		result.append(" (customerId: ");
 		result.append(customerId);
 		result.append(", enableBeagle: ");
 		result.append(enableBeagle);

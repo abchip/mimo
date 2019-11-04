@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -40,23 +41,14 @@ public class GlAccountTypeDefaultImpl extends BizEntityImpl implements GlAccount
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountTypeId = GL_ACCOUNT_TYPE_ID_EDEFAULT;
+	protected GlAccountType glAccountTypeId;
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -141,7 +133,24 @@ public class GlAccountTypeDefaultImpl extends BizEntityImpl implements GlAccount
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountTypeId() {
+	public GlAccountType getGlAccountTypeId() {
+		if (glAccountTypeId != null && ((EObject)glAccountTypeId).eIsProxy()) {
+			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
+			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
+			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
+			}
+		}
+		return glAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountType basicGetGlAccountTypeId() {
 		return glAccountTypeId;
 	}
 
@@ -151,8 +160,8 @@ public class GlAccountTypeDefaultImpl extends BizEntityImpl implements GlAccount
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountTypeId(String newGlAccountTypeId) {
-		String oldGlAccountTypeId = glAccountTypeId;
+	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
@@ -207,7 +216,8 @@ public class GlAccountTypeDefaultImpl extends BizEntityImpl implements GlAccount
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_TYPE_ID:
-				return getGlAccountTypeId();
+				if (resolve) return getGlAccountTypeId();
+				return basicGetGlAccountTypeId();
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -227,7 +237,7 @@ public class GlAccountTypeDefaultImpl extends BizEntityImpl implements GlAccount
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId((String)newValue);
+				setGlAccountTypeId((GlAccountType)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -248,7 +258,7 @@ public class GlAccountTypeDefaultImpl extends BizEntityImpl implements GlAccount
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId(GL_ACCOUNT_TYPE_ID_EDEFAULT);
+				setGlAccountTypeId((GlAccountType)null);
 				return;
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -269,29 +279,13 @@ public class GlAccountTypeDefaultImpl extends BizEntityImpl implements GlAccount
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_TYPE_ID:
-				return GL_ACCOUNT_TYPE_ID_EDEFAULT == null ? glAccountTypeId != null : !GL_ACCOUNT_TYPE_ID_EDEFAULT.equals(glAccountTypeId);
+				return glAccountTypeId != null;
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case LedgerPackage.GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_ID:
 				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (glAccountTypeId: ");
-		result.append(glAccountTypeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GlAccountTypeDefaultImpl

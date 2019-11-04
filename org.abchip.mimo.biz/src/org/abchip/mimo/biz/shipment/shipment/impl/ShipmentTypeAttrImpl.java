@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeAttrImpl#getShipmentTypeId <em>Shipment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeAttrImpl#getShipmentTypeId <em>Shipment Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentTypeId() <em>Shipment Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentTypeId() <em>Shipment Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentTypeId = SHIPMENT_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -96,6 +79,16 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentTypeId() <em>Shipment Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShipmentType shipmentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 * @generated
 	 */
 	@Override
-	public String getShipmentTypeId() {
+	public ShipmentType getShipmentTypeId() {
+		if (shipmentTypeId != null && ((EObject)shipmentTypeId).eIsProxy()) {
+			InternalEObject oldShipmentTypeId = (InternalEObject)shipmentTypeId;
+			shipmentTypeId = (ShipmentType)eResolveProxy(oldShipmentTypeId);
+			if (shipmentTypeId != oldShipmentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
+			}
+		}
+		return shipmentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentType basicGetShipmentTypeId() {
 		return shipmentTypeId;
 	}
 
@@ -178,8 +188,8 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 * @generated
 	 */
 	@Override
-	public void setShipmentTypeId(String newShipmentTypeId) {
-		String oldShipmentTypeId = shipmentTypeId;
+	public void setShipmentTypeId(ShipmentType newShipmentTypeId) {
+		ShipmentType oldShipmentTypeId = shipmentTypeId;
 		shipmentTypeId = newShipmentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
@@ -193,12 +203,13 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				return getShipmentTypeId();
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
+				if (resolve) return getShipmentTypeId();
+				return basicGetShipmentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,14 +222,14 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				setShipmentTypeId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
+				setShipmentTypeId((ShipmentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,14 +243,14 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				setShipmentTypeId(SHIPMENT_TYPE_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
+				setShipmentTypeId((ShipmentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,12 +264,12 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				return SHIPMENT_TYPE_ID_EDEFAULT == null ? shipmentTypeId != null : !SHIPMENT_TYPE_ID_EDEFAULT.equals(shipmentTypeId);
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
+				return shipmentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,9 +284,7 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentTypeId: ");
-		result.append(shipmentTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

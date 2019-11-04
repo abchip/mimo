@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
@@ -22,10 +23,13 @@ import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
@@ -196,20 +200,43 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	private void setValue(EObject eObject, String slot, Object value) {
 
 		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
-		if (eFeature != null) {
-			if (value == null)
-				eObject.eUnset(eFeature);
-			else {
-				try {
-					eObject.eSet(eFeature, value);
-				} catch (ClassCastException e) {
-					if (eFeature.getEType() instanceof EDataType) {
-						value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
-						eObject.eSet(eFeature, value);
-					}
-				} catch (Exception e) {
-					e.toString();
+		if (eFeature == null)
+			return;
+
+		if (value == null) {
+			eObject.eUnset(eFeature);
+			return;
+		}
+
+		if (eFeature instanceof EReference) {
+			EReference eReference = (EReference)eFeature;
+			EClassifier eClassifier = eReference.getEType();
+			if(eClassifier instanceof EClass) {
+				EClass eClass = (EClass)eClassifier;
+				InternalEObject eValue = (InternalEObject) EcoreUtil.create(eClass);
+				eValue.eSetProxyURI(org.eclipse.emf.common.util.URI.createURI(value.toString()));
+				if(eValue instanceof EntityNameable) {
+					Entity entity = (Entity)eValue;
+					Frame<?> domainFrame = entity.isa();
+					for(String key: domainFrame.getKeys()) {
+						domainFrame.setValue(entity, key, value.toString());
+						break;
+					}					
 				}
+				eObject.eSet(eFeature, eValue);
+			}
+			else
+				"".toString();
+		} else {
+			try {
+				eObject.eSet(eFeature, value);
+			} catch (ClassCastException e) {
+				if (eFeature.getEType() instanceof EDataType) {
+					value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
+					eObject.eSet(eFeature, value);
+				}
+			} catch (Exception e) {
+				e.toString();
 			}
 		}
 	}

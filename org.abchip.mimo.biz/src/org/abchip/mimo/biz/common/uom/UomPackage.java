@@ -217,22 +217,13 @@ public interface UomPackage extends EPackage {
 	int UOM_CONVERSION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UOM_CONVERSION__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Conversion Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION__CONVERSION_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int UOM_CONVERSION__CONVERSION_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Decimal Scale</b></em>' attribute.
@@ -241,7 +232,7 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION__DECIMAL_SCALE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int UOM_CONVERSION__DECIMAL_SCALE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Rounding Mode</b></em>' attribute.
@@ -250,7 +241,16 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION__ROUNDING_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int UOM_CONVERSION__ROUNDING_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UOM_CONVERSION__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Uom Id To</b></em>' reference.
@@ -326,22 +326,13 @@ public interface UomPackage extends EPackage {
 	int UOM_CONVERSION_DATED__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UOM_CONVERSION_DATED__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION_DATED__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int UOM_CONVERSION_DATED__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Conversion Factor</b></em>' attribute.
@@ -350,7 +341,7 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION_DATED__CONVERSION_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int UOM_CONVERSION_DATED__CONVERSION_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Decimal Scale</b></em>' attribute.
@@ -359,7 +350,7 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION_DATED__DECIMAL_SCALE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int UOM_CONVERSION_DATED__DECIMAL_SCALE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Rounding Mode</b></em>' attribute.
@@ -368,7 +359,7 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION_DATED__ROUNDING_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int UOM_CONVERSION_DATED__ROUNDING_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -377,7 +368,16 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_CONVERSION_DATED__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int UOM_CONVERSION_DATED__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UOM_CONVERSION_DATED__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Uom Id To</b></em>' reference.
@@ -676,15 +676,15 @@ public interface UomPackage extends EPackage {
 	EClass getUomConversion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.uom.UomConversion#getUomId <em>Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.uom.UomConversion#getUomId <em>Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.common.uom.UomConversion#getUomId()
 	 * @see #getUomConversion()
 	 * @generated
 	 */
-	EAttribute getUomConversion_UomId();
+	EReference getUomConversion_UomId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.uom.UomConversion#getUomIdTo <em>Uom Id To</em>}'.
@@ -752,15 +752,15 @@ public interface UomPackage extends EPackage {
 	EClass getUomConversionDated();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomId <em>Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomId <em>Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.common.uom.UomConversionDated#getUomId()
 	 * @see #getUomConversionDated()
 	 * @generated
 	 */
-	EAttribute getUomConversionDated_UomId();
+	EReference getUomConversionDated_UomId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomIdTo <em>Uom Id To</em>}'.
@@ -1027,12 +1027,12 @@ public interface UomPackage extends EPackage {
 		EClass UOM_CONVERSION = eINSTANCE.getUomConversion();
 
 		/**
-		 * The meta object literal for the '<em><b>Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UOM_CONVERSION__UOM_ID = eINSTANCE.getUomConversion_UomId();
+		EReference UOM_CONVERSION__UOM_ID = eINSTANCE.getUomConversion_UomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Uom Id To</b></em>' reference feature.
@@ -1085,12 +1085,12 @@ public interface UomPackage extends EPackage {
 		EClass UOM_CONVERSION_DATED = eINSTANCE.getUomConversionDated();
 
 		/**
-		 * The meta object literal for the '<em><b>Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UOM_CONVERSION_DATED__UOM_ID = eINSTANCE.getUomConversionDated_UomId();
+		EReference UOM_CONVERSION_DATED__UOM_ID = eINSTANCE.getUomConversionDated_UomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Uom Id To</b></em>' reference feature.

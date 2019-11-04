@@ -20,10 +20,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory#getCurrentPassword <em>Current Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginPasswordHistory()
@@ -111,30 +111,29 @@ public interface UserLoginPasswordHistory extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Login Id</em>' attribute.
-	 * @see #setUserLoginId(String)
+	 * @return the value of the '<em>User Login Id</em>' reference.
+	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginPasswordHistory_UserLoginId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getUserLoginId();
+	UserLogin getUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory#getUserLoginId <em>User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory#getUserLoginId <em>User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>User Login Id</em>' reference.
 	 * @see #getUserLoginId()
 	 * @generated
 	 */
-	void setUserLoginId(String value);
+	void setUserLoginId(UserLogin value);
 
 } // UserLoginPasswordHistory

@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.party.communication.impl;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventRole;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
@@ -40,27 +41,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class CommunicationEventRoleImpl extends BizEntityImpl implements CommunicationEventRole {
 	/**
-	 * The default value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMUNICATION_EVENT_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
+	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCommunicationEventId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String communicationEventId = COMMUNICATION_EVENT_ID_EDEFAULT;
+	protected CommunicationEvent communicationEventId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -283,7 +275,24 @@ public class CommunicationEventRoleImpl extends BizEntityImpl implements Communi
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventId() {
+	public CommunicationEvent getCommunicationEventId() {
+		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
+			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
+			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
+			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+			}
+		}
+		return communicationEventId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEvent basicGetCommunicationEventId() {
 		return communicationEventId;
 	}
 
@@ -293,8 +302,8 @@ public class CommunicationEventRoleImpl extends BizEntityImpl implements Communi
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
+	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
@@ -309,7 +318,8 @@ public class CommunicationEventRoleImpl extends BizEntityImpl implements Communi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID:
-				return getCommunicationEventId();
+				if (resolve) return getCommunicationEventId();
+				return basicGetCommunicationEventId();
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -335,7 +345,7 @@ public class CommunicationEventRoleImpl extends BizEntityImpl implements Communi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((String)newValue);
+				setCommunicationEventId((CommunicationEvent)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -362,7 +372,7 @@ public class CommunicationEventRoleImpl extends BizEntityImpl implements Communi
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId(COMMUNICATION_EVENT_ID_EDEFAULT);
+				setCommunicationEventId((CommunicationEvent)null);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -389,7 +399,7 @@ public class CommunicationEventRoleImpl extends BizEntityImpl implements Communi
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID:
-				return COMMUNICATION_EVENT_ID_EDEFAULT == null ? communicationEventId != null : !COMMUNICATION_EVENT_ID_EDEFAULT.equals(communicationEventId);
+				return communicationEventId != null;
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__PARTY_ID:
 				return partyId != null;
 			case CommunicationPackage.COMMUNICATION_EVENT_ROLE__ROLE_TYPE_ID:
@@ -400,22 +410,6 @@ public class CommunicationEventRoleImpl extends BizEntityImpl implements Communi
 				return statusId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (communicationEventId: ");
-		result.append(communicationEventId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CommunicationEventRoleImpl

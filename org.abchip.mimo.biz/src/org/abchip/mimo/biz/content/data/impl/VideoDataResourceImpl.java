@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.VideoDataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl#getVideoData <em>Video Data</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getVideoData() <em>Video Data</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +58,16 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	 * @ordered
 	 */
 	protected byte[] videoData = VIDEO_DATA_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataResourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataResource dataResourceId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	 * @generated
 	 */
 	@Override
-	public String getDataResourceId() {
+	public DataResource getDataResourceId() {
+		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
+			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
+			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
+			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+			}
+		}
+		return dataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetDataResourceId() {
 		return dataResourceId;
 	}
 
@@ -111,8 +121,8 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(String newDataResourceId) {
-		String oldDataResourceId = dataResourceId;
+	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
@@ -149,10 +159,11 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return getDataResourceId();
 			case DataPackage.VIDEO_DATA_RESOURCE__VIDEO_DATA:
 				return getVideoData();
+			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
+				if (resolve) return getDataResourceId();
+				return basicGetDataResourceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,11 +176,11 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((String)newValue);
-				return;
 			case DataPackage.VIDEO_DATA_RESOURCE__VIDEO_DATA:
 				setVideoData((byte[])newValue);
+				return;
+			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,11 +194,11 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
-				return;
 			case DataPackage.VIDEO_DATA_RESOURCE__VIDEO_DATA:
 				setVideoData(VIDEO_DATA_EDEFAULT);
+				return;
+			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -201,10 +212,10 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
 			case DataPackage.VIDEO_DATA_RESOURCE__VIDEO_DATA:
 				return VIDEO_DATA_EDEFAULT == null ? videoData != null : !VIDEO_DATA_EDEFAULT.equals(videoData);
+			case DataPackage.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID:
+				return dataResourceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,9 +230,7 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataResourceId: ");
-		result.append(dataResourceId);
-		result.append(", videoData: ");
+		result.append(" (videoData: ");
 		result.append(videoData);
 		result.append(')');
 		return result.toString();

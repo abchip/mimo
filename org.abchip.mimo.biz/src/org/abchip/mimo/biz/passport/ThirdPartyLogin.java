@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.passport;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.store.ProductStore;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,12 +21,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getLoginMethTypeId <em>Login Meth Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getLoginProviderId <em>Login Provider Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin()
@@ -34,31 +35,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ThirdPartyLogin extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Product Store Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Id</em>' attribute.
-	 * @see #setProductStoreId(String)
+	 * @return the value of the '<em>Product Store Id</em>' reference.
+	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin_ProductStoreId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productStoreId"
 	 * @generated
 	 */
-	String getProductStoreId();
+	ProductStore getProductStoreId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Id</em>' reference.
 	 * @see #getProductStoreId()
 	 * @generated
 	 */
-	void setProductStoreId(String value);
+	void setProductStoreId(ProductStore value);
 
 	/**
 	 * Returns the value of the '<em><b>Login Meth Type Id</b></em>' attribute.

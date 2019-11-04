@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.document.impl;
 
+import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentAttribute;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,10 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentAttributeImpl#getDocumentId <em>Document Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentAttributeImpl#getDocumentId <em>Document Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,26 +41,6 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDocumentId() <em>Document Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DOCUMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDocumentId() <em>Document Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String documentId = DOCUMENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,6 +100,16 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDocumentId() <em>Document Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Document documentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +205,24 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 * @generated
 	 */
 	@Override
-	public String getDocumentId() {
+	public Document getDocumentId() {
+		if (documentId != null && ((EObject)documentId).eIsProxy()) {
+			InternalEObject oldDocumentId = (InternalEObject)documentId;
+			documentId = (Document)eResolveProxy(oldDocumentId);
+			if (documentId != oldDocumentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID, oldDocumentId, documentId));
+			}
+		}
+		return documentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Document basicGetDocumentId() {
 		return documentId;
 	}
 
@@ -222,8 +232,8 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 * @generated
 	 */
 	@Override
-	public void setDocumentId(String newDocumentId) {
-		String oldDocumentId = documentId;
+	public void setDocumentId(Document newDocumentId) {
+		Document oldDocumentId = documentId;
 		documentId = newDocumentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID, oldDocumentId, documentId));
@@ -237,14 +247,15 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
-				return getDocumentId();
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
+				if (resolve) return getDocumentId();
+				return basicGetDocumentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +268,6 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
-				setDocumentId((String)newValue);
-				return;
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -268,6 +276,9 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 				return;
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
+				setDocumentId((Document)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,9 +292,6 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
-				setDocumentId(DOCUMENT_ID_EDEFAULT);
-				return;
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -292,6 +300,9 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 				return;
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
+				setDocumentId((Document)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,14 +316,14 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
-				return DOCUMENT_ID_EDEFAULT == null ? documentId != null : !DOCUMENT_ID_EDEFAULT.equals(documentId);
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID:
+				return documentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,9 +338,7 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (documentId: ");
-		result.append(documentId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

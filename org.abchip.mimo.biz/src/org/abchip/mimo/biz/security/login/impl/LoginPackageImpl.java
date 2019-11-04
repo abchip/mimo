@@ -896,8 +896,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserLoginHistory_UserLoginId() {
-		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(0);
+	public EReference getUserLoginHistory_UserLoginId() {
+		return (EReference)userLoginHistoryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -907,7 +907,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginHistory_FromDate() {
-		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -937,7 +937,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginHistory_PasswordUsed() {
-		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -947,7 +947,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginHistory_SuccessfulLogin() {
-		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -957,7 +957,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginHistory_ThruDate() {
-		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -967,7 +967,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginHistory_VisitId() {
-		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)userLoginHistoryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -986,8 +986,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserLoginPasswordHistory_UserLoginId() {
-		return (EAttribute)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(0);
+	public EReference getUserLoginPasswordHistory_UserLoginId() {
+		return (EReference)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -997,7 +997,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginPasswordHistory_FromDate() {
-		return (EAttribute)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1007,7 +1007,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginPasswordHistory_CurrentPassword() {
-		return (EAttribute)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1017,7 +1017,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginPasswordHistory_ThruDate() {
-		return (EAttribute)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)userLoginPasswordHistoryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1036,8 +1036,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserLoginSecurityQuestion_QuestionEnumId() {
-		return (EAttribute)userLoginSecurityQuestionEClass.getEStructuralFeatures().get(0);
+	public EReference getUserLoginSecurityQuestion_QuestionEnumId() {
+		return (EReference)userLoginSecurityQuestionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1057,7 +1057,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginSecurityQuestion_SecurityAnswer() {
-		return (EAttribute)userLoginSecurityQuestionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)userLoginSecurityQuestionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1076,8 +1076,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserLoginSession_UserLoginId() {
-		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(0);
+	public EReference getUserLoginSession_UserLoginId() {
+		return (EReference)userLoginSessionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1087,7 +1087,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginSession_SavedDate() {
-		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1097,7 +1097,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 */
 	@Override
 	public EAttribute getUserLoginSession_SessionData() {
-		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1151,30 +1151,30 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		createEAttribute(userLoginEClass, USER_LOGIN__USER_PREFERENCES);
 
 		userLoginHistoryEClass = createEClass(USER_LOGIN_HISTORY);
-		createEAttribute(userLoginHistoryEClass, USER_LOGIN_HISTORY__USER_LOGIN_ID);
 		createEAttribute(userLoginHistoryEClass, USER_LOGIN_HISTORY__FROM_DATE);
 		createEAttribute(userLoginHistoryEClass, USER_LOGIN_HISTORY__PASSWORD_USED);
 		createEAttribute(userLoginHistoryEClass, USER_LOGIN_HISTORY__SUCCESSFUL_LOGIN);
 		createEAttribute(userLoginHistoryEClass, USER_LOGIN_HISTORY__THRU_DATE);
 		createEAttribute(userLoginHistoryEClass, USER_LOGIN_HISTORY__VISIT_ID);
+		createEReference(userLoginHistoryEClass, USER_LOGIN_HISTORY__USER_LOGIN_ID);
 		createEReference(userLoginHistoryEClass, USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID);
 		createEReference(userLoginHistoryEClass, USER_LOGIN_HISTORY__PARTY_ID);
 
 		userLoginPasswordHistoryEClass = createEClass(USER_LOGIN_PASSWORD_HISTORY);
-		createEAttribute(userLoginPasswordHistoryEClass, USER_LOGIN_PASSWORD_HISTORY__USER_LOGIN_ID);
 		createEAttribute(userLoginPasswordHistoryEClass, USER_LOGIN_PASSWORD_HISTORY__FROM_DATE);
 		createEAttribute(userLoginPasswordHistoryEClass, USER_LOGIN_PASSWORD_HISTORY__CURRENT_PASSWORD);
 		createEAttribute(userLoginPasswordHistoryEClass, USER_LOGIN_PASSWORD_HISTORY__THRU_DATE);
+		createEReference(userLoginPasswordHistoryEClass, USER_LOGIN_PASSWORD_HISTORY__USER_LOGIN_ID);
 
 		userLoginSecurityQuestionEClass = createEClass(USER_LOGIN_SECURITY_QUESTION);
-		createEAttribute(userLoginSecurityQuestionEClass, USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID);
 		createEAttribute(userLoginSecurityQuestionEClass, USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER);
+		createEReference(userLoginSecurityQuestionEClass, USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID);
 		createEReference(userLoginSecurityQuestionEClass, USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID);
 
 		userLoginSessionEClass = createEClass(USER_LOGIN_SESSION);
-		createEAttribute(userLoginSessionEClass, USER_LOGIN_SESSION__USER_LOGIN_ID);
 		createEAttribute(userLoginSessionEClass, USER_LOGIN_SESSION__SAVED_DATE);
 		createEAttribute(userLoginSessionEClass, USER_LOGIN_SESSION__SESSION_DATA);
+		createEReference(userLoginSessionEClass, USER_LOGIN_SESSION__USER_LOGIN_ID);
 	}
 
 	/**
@@ -1203,6 +1203,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1232,7 +1233,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		initEAttribute(getUserLogin_RequirePasswordChange(), ecorePackage.getEBoolean(), "requirePasswordChange", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLogin_SuccessiveFailedLogins(), ecorePackage.getELong(), "successiveFailedLogins", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLogin_UserLdapDn(), ecorePackage.getEString(), "userLdapDn", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserLogin_PartyId(), thePartyPackage.getPartyGroup(), null, "partyId", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserLogin_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserLogin_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEAttribute(getUserLogin_UserLoginHistories(), ecorePackage.getEString(), "userLoginHistories", null, 0, -1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLogin_UserLoginPasswordHistories(), ecorePackage.getEString(), "userLoginPasswordHistories", null, 0, -1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1329,33 +1330,37 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		addEOperation(userLoginEClass, ecorePackage.getEString(), "visitors", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userLoginHistoryEClass, UserLoginHistory.class, "UserLoginHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserLoginHistory_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 1, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginHistory_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginHistory_PasswordUsed(), ecorePackage.getEString(), "passwordUsed", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginHistory_SuccessfulLogin(), ecorePackage.getEBoolean(), "successfulLogin", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginHistory_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginHistory_VisitId(), ecorePackage.getEString(), "visitId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserLoginHistory_UserLoginId(), this.getUserLogin(), null, "userLoginId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginHistory_UserLoginId().getEKeys().add(this.getUserLogin_UserLoginId());
 		initEReference(getUserLoginHistory_OriginUserLoginId(), this.getUserLogin(), null, "originUserLoginId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserLoginHistory_OriginUserLoginId().getEKeys().add(this.getUserLogin_UserLoginId());
 		initEReference(getUserLoginHistory_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserLoginHistory_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		initEClass(userLoginPasswordHistoryEClass, UserLoginPasswordHistory.class, "UserLoginPasswordHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserLoginPasswordHistory_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 1, 1, UserLoginPasswordHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginPasswordHistory_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, UserLoginPasswordHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginPasswordHistory_CurrentPassword(), ecorePackage.getEString(), "currentPassword", null, 0, 1, UserLoginPasswordHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginPasswordHistory_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UserLoginPasswordHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserLoginPasswordHistory_UserLoginId(), this.getUserLogin(), null, "userLoginId", null, 0, 1, UserLoginPasswordHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginPasswordHistory_UserLoginId().getEKeys().add(this.getUserLogin_UserLoginId());
 
 		initEClass(userLoginSecurityQuestionEClass, UserLoginSecurityQuestion.class, "UserLoginSecurityQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserLoginSecurityQuestion_QuestionEnumId(), ecorePackage.getEString(), "questionEnumId", null, 1, 1, UserLoginSecurityQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSecurityQuestion_SecurityAnswer(), ecorePackage.getEString(), "securityAnswer", null, 0, 1, UserLoginSecurityQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserLoginSecurityQuestion_QuestionEnumId(), theEnumPackage.getEnumeration(), null, "questionEnumId", null, 0, 1, UserLoginSecurityQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginSecurityQuestion_QuestionEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEReference(getUserLoginSecurityQuestion_UserLoginId(), this.getUserLogin(), null, "userLoginId", null, 0, 1, UserLoginSecurityQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserLoginSecurityQuestion_UserLoginId().getEKeys().add(this.getUserLogin_UserLoginId());
 
 		initEClass(userLoginSessionEClass, UserLoginSession.class, "UserLoginSession", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserLoginSession_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 1, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSession_SavedDate(), ecorePackage.getEDate(), "savedDate", null, 0, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSession_SessionData(), ecorePackage.getEString(), "sessionData", null, 0, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserLoginSession_UserLoginId(), this.getUserLogin(), null, "userLoginId", null, 0, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginSession_UserLoginId().getEKeys().add(this.getUserLogin_UserLoginId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1667,37 +1672,13 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getUserLoginHistory_UserLoginId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getUserLoginHistory_FromDate(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getUserLoginPasswordHistory_UserLoginId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getUserLoginPasswordHistory_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getUserLoginSecurityQuestion_QuestionEnumId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getUserLoginSession_UserLoginId(),
 		   source,
 		   new String[] {
 			   "key", "true"

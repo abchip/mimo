@@ -20,6 +20,7 @@ import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPrice;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.product.price.ProductPriceType;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#isTaxInPrice <em>Tax In Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTaxPercentage <em>Tax Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
@@ -67,26 +68,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -287,6 +268,16 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' reference.
@@ -711,7 +702,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -721,8 +729,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_ID, oldProductId, productId));
@@ -1068,8 +1076,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
-				return getProductId();
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				return getFromDate();
 			case PricePackage.PRODUCT_PRICE__CREATED_DATE:
@@ -1090,6 +1096,9 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 				return getTaxPercentage();
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				return getThruDate();
+			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
 				if (resolve) return getProductPriceTypeId();
 				return basicGetProductPriceTypeId();
@@ -1132,9 +1141,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -1164,6 +1170,9 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 				return;
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
 				setProductPriceTypeId((ProductPriceType)newValue);
@@ -1207,9 +1216,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -1239,6 +1245,9 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 				return;
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
 				setProductPriceTypeId((ProductPriceType)null);
@@ -1282,8 +1291,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PricePackage.PRODUCT_PRICE__CREATED_DATE:
@@ -1304,6 +1311,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 				return TAX_PERCENTAGE_EDEFAULT == null ? taxPercentage != null : !TAX_PERCENTAGE_EDEFAULT.equals(taxPercentage);
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
+				return productId != null;
 			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
 				return productPriceTypeId != null;
 			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
@@ -1338,9 +1347,7 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", createdDate: ");
 		result.append(createdDate);

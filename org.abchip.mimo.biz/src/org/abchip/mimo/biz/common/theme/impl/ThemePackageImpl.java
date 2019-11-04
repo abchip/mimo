@@ -720,8 +720,8 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVisualThemeResource_VisualThemeId() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(0);
+	public EReference getVisualThemeResource_VisualThemeId() {
+		return (EReference)visualThemeResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -741,7 +741,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EAttribute getVisualThemeResource_SequenceId() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -751,7 +751,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EAttribute getVisualThemeResource_ResourceValue() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -819,9 +819,9 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		createEReference(visualThemeEClass, VISUAL_THEME__VISUAL_THEME_SET_ID);
 
 		visualThemeResourceEClass = createEClass(VISUAL_THEME_RESOURCE);
-		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__VISUAL_THEME_ID);
 		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__SEQUENCE_ID);
 		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_VALUE);
+		createEReference(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__VISUAL_THEME_ID);
 		createEReference(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID);
 
 		visualThemeSetEClass = createEClass(VISUAL_THEME_SET);
@@ -873,9 +873,10 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		getVisualTheme_VisualThemeSetId().getEKeys().add(this.getVisualThemeSet_VisualThemeSetId());
 
 		initEClass(visualThemeResourceEClass, VisualThemeResource.class, "VisualThemeResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVisualThemeResource_VisualThemeId(), ecorePackage.getEString(), "visualThemeId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeResource_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeResource_ResourceValue(), ecorePackage.getEString(), "resourceValue", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualThemeResource_VisualThemeId(), this.getVisualTheme(), null, "visualThemeId", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisualThemeResource_VisualThemeId().getEKeys().add(this.getVisualTheme_VisualThemeId());
 		initEReference(getVisualThemeResource_ResourceTypeEnumId(), theEnumPackage.getEnumeration(), null, "resourceTypeEnumId", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getVisualThemeResource_ResourceTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
@@ -928,12 +929,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		String source = "mimo-ent-slot";
 		addAnnotation
 		  (getVisualTheme_VisualThemeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getVisualThemeResource_VisualThemeId(),
 		   source,
 		   new String[] {
 			   "key", "true"

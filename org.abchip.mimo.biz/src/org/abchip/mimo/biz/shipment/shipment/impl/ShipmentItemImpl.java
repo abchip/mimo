@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentItem;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemImpl#getShipmentContentDescription <em>Shipment Content Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShipmentItemSeqId() <em>Shipment Item Seq Id</em>}' attribute.
@@ -123,6 +104,16 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 * @ordered
 	 */
 	protected String shipmentContentDescription = SHIPMENT_CONTENT_DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
 
 	/**
 	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
@@ -245,7 +236,24 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -255,8 +263,8 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -293,14 +301,15 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
-				return getShipmentId();
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID:
 				return getShipmentItemSeqId();
 			case Shipment_Package.SHIPMENT_ITEM__QUANTITY:
 				return getQuantity();
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION:
 				return getShipmentContentDescription();
+			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 			case Shipment_Package.SHIPMENT_ITEM__PRODUCT_ID:
 				if (resolve) return getProductId();
 				return basicGetProductId();
@@ -316,9 +325,6 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId((String)newValue);
 				return;
@@ -327,6 +333,9 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 				return;
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION:
 				setShipmentContentDescription((String)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM__PRODUCT_ID:
 				setProductId((Product)newValue);
@@ -343,9 +352,6 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 				return;
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION:
 				setShipmentContentDescription(SHIPMENT_CONTENT_DESCRIPTION_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM__PRODUCT_ID:
 				setProductId((Product)null);
@@ -370,14 +379,14 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID:
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case Shipment_Package.SHIPMENT_ITEM__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION:
 				return SHIPMENT_CONTENT_DESCRIPTION_EDEFAULT == null ? shipmentContentDescription != null : !SHIPMENT_CONTENT_DESCRIPTION_EDEFAULT.equals(shipmentContentDescription);
+			case Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID:
+				return shipmentId != null;
 			case Shipment_Package.SHIPMENT_ITEM__PRODUCT_ID:
 				return productId != null;
 		}
@@ -394,9 +403,7 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentId: ");
-		result.append(shipmentId);
-		result.append(", shipmentItemSeqId: ");
+		result.append(" (shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);
 		result.append(", quantity: ");
 		result.append(quantity);

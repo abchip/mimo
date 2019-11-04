@@ -23,7 +23,6 @@ import org.abchip.mimo.biz.content.survey.Survey;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getAccountCodeLength <em>Account Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getAccountValidDays <em>Account Valid Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isAllowAuthToNegative <em>Allow Auth To Negative</em>}</li>
@@ -35,6 +34,7 @@ import org.abchip.mimo.biz.content.survey.Survey;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishThreshold <em>Replenish Threshold</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isRequirePinCode <em>Require Pin Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isValidateGCFinAcct <em>Validate GC Fin Acct</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
@@ -410,30 +410,29 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	void setValidateGCFinAcct(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Id</em>' attribute.
-	 * @see #setProductStoreId(String)
+	 * @return the value of the '<em>Product Store Id</em>' reference.
+	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ProductStoreId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productStoreId"
 	 * @generated
 	 */
-	String getProductStoreId();
+	ProductStore getProductStoreId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getProductStoreId <em>Product Store Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getProductStoreId <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Id</em>' reference.
 	 * @see #getProductStoreId()
 	 * @generated
 	 */
-	void setProductStoreId(String value);
+	void setProductStoreId(ProductStore value);
 
 } // ProductStoreFinActSetting

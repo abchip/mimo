@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.product.promo.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.ProductPromoCodeParty;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -39,24 +40,14 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductPromoCodeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_PROMO_CODE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoCodeId = PRODUCT_PROMO_CODE_ID_EDEFAULT;
+	protected ProductPromoCode productPromoCodeId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -133,7 +124,24 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoCodeId() {
+	public ProductPromoCode getProductPromoCodeId() {
+		if (productPromoCodeId != null && ((EObject)productPromoCodeId).eIsProxy()) {
+			InternalEObject oldProductPromoCodeId = (InternalEObject)productPromoCodeId;
+			productPromoCodeId = (ProductPromoCode)eResolveProxy(oldProductPromoCodeId);
+			if (productPromoCodeId != oldProductPromoCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
+			}
+		}
+		return productPromoCodeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromoCode basicGetProductPromoCodeId() {
 		return productPromoCodeId;
 	}
 
@@ -143,8 +151,8 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoCodeId(String newProductPromoCodeId) {
-		String oldProductPromoCodeId = productPromoCodeId;
+	public void setProductPromoCodeId(ProductPromoCode newProductPromoCodeId) {
+		ProductPromoCode oldProductPromoCodeId = productPromoCodeId;
 		productPromoCodeId = newProductPromoCodeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
@@ -159,7 +167,8 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID:
-				return getProductPromoCodeId();
+				if (resolve) return getProductPromoCodeId();
+				return basicGetProductPromoCodeId();
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -176,7 +185,7 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId((String)newValue);
+				setProductPromoCodeId((ProductPromoCode)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -194,7 +203,7 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId(PRODUCT_PROMO_CODE_ID_EDEFAULT);
+				setProductPromoCodeId((ProductPromoCode)null);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
 				setPartyId((Party)null);
@@ -212,27 +221,11 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID:
-				return PRODUCT_PROMO_CODE_ID_EDEFAULT == null ? productPromoCodeId != null : !PRODUCT_PROMO_CODE_ID_EDEFAULT.equals(productPromoCodeId);
+				return productPromoCodeId != null;
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
 				return partyId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productPromoCodeId: ");
-		result.append(productPromoCodeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductPromoCodePartyImpl

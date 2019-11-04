@@ -16,9 +16,9 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
-import org.abchip.mimo.biz.accounting.payment.GiftCard;
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.PaymentType;
@@ -53,9 +53,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPaymentRefNum <em>Payment Ref Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPaymentTypeId <em>Payment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getActualCurrencyUomId <em>Actual Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPaymentPreferenceId <em>Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl#getPartyIdFrom <em>Party Id From</em>}</li>
@@ -202,6 +202,15 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	protected PaymentMethodType paymentMethodTypeId;
 	/**
+	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethod paymentMethodId;
+	/**
 	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -219,15 +228,6 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @ordered
 	 */
 	protected Uom actualCurrencyUomId;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GiftCard paymentMethodId;
 	/**
 	 * The cached value of the '{@link #getPaymentPreferenceId() <em>Payment Preference Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -884,10 +884,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @generated
 	 */
 	@Override
-	public GiftCard getPaymentMethodId() {
+	public PaymentMethod getPaymentMethodId() {
 		if (paymentMethodId != null && ((EObject)paymentMethodId).eIsProxy()) {
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
-			paymentMethodId = (GiftCard)eResolveProxy(oldPaymentMethodId);
+			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
@@ -901,7 +901,7 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GiftCard basicGetPaymentMethodId() {
+	public PaymentMethod basicGetPaymentMethodId() {
 		return paymentMethodId;
 	}
 
@@ -911,8 +911,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodId(GiftCard newPaymentMethodId) {
-		GiftCard oldPaymentMethodId = paymentMethodId;
+	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
@@ -1087,15 +1087,15 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			case PaymentPackage.PAYMENT__PAYMENT_METHOD_TYPE_ID:
 				if (resolve) return getPaymentMethodTypeId();
 				return basicGetPaymentMethodTypeId();
+			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
+				if (resolve) return getPaymentMethodId();
+				return basicGetPaymentMethodId();
 			case PaymentPackage.PAYMENT__CURRENCY_UOM_ID:
 				if (resolve) return getCurrencyUomId();
 				return basicGetCurrencyUomId();
 			case PaymentPackage.PAYMENT__ACTUAL_CURRENCY_UOM_ID:
 				if (resolve) return getActualCurrencyUomId();
 				return basicGetActualCurrencyUomId();
-			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
-				if (resolve) return getPaymentMethodId();
-				return basicGetPaymentMethodId();
 			case PaymentPackage.PAYMENT__PAYMENT_PREFERENCE_ID:
 				if (resolve) return getPaymentPreferenceId();
 				return basicGetPaymentPreferenceId();
@@ -1159,14 +1159,14 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			case PaymentPackage.PAYMENT__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId((PaymentMethodType)newValue);
 				return;
+			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)newValue);
+				return;
 			case PaymentPackage.PAYMENT__CURRENCY_UOM_ID:
 				setCurrencyUomId((Uom)newValue);
 				return;
 			case PaymentPackage.PAYMENT__ACTUAL_CURRENCY_UOM_ID:
 				setActualCurrencyUomId((Uom)newValue);
-				return;
-			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
-				setPaymentMethodId((GiftCard)newValue);
 				return;
 			case PaymentPackage.PAYMENT__PAYMENT_PREFERENCE_ID:
 				setPaymentPreferenceId((OrderPaymentPreference)newValue);
@@ -1232,14 +1232,14 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			case PaymentPackage.PAYMENT__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId((PaymentMethodType)null);
 				return;
+			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)null);
+				return;
 			case PaymentPackage.PAYMENT__CURRENCY_UOM_ID:
 				setCurrencyUomId((Uom)null);
 				return;
 			case PaymentPackage.PAYMENT__ACTUAL_CURRENCY_UOM_ID:
 				setActualCurrencyUomId((Uom)null);
-				return;
-			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
-				setPaymentMethodId((GiftCard)null);
 				return;
 			case PaymentPackage.PAYMENT__PAYMENT_PREFERENCE_ID:
 				setPaymentPreferenceId((OrderPaymentPreference)null);
@@ -1296,12 +1296,12 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 				return paymentTypeId != null;
 			case PaymentPackage.PAYMENT__PAYMENT_METHOD_TYPE_ID:
 				return paymentMethodTypeId != null;
+			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
+				return paymentMethodId != null;
 			case PaymentPackage.PAYMENT__CURRENCY_UOM_ID:
 				return currencyUomId != null;
 			case PaymentPackage.PAYMENT__ACTUAL_CURRENCY_UOM_ID:
 				return actualCurrencyUomId != null;
-			case PaymentPackage.PAYMENT__PAYMENT_METHOD_ID:
-				return paymentMethodId != null;
 			case PaymentPackage.PAYMENT__PAYMENT_PREFERENCE_ID:
 				return paymentPreferenceId != null;
 			case PaymentPackage.PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID:

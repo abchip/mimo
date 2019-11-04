@@ -44,23 +44,14 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
+	protected Party organizationPartyId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -123,7 +114,24 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -133,8 +141,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -309,7 +317,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -335,7 +344,7 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
+				setOrganizationPartyId((Party)newValue);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -362,7 +371,7 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
+				setOrganizationPartyId((Party)null);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
 				setPartyId((Party)null);
@@ -389,7 +398,7 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
+				return organizationPartyId != null;
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
 				return partyId != null;
 			case LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID:
@@ -400,22 +409,6 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PartyGlAccountImpl

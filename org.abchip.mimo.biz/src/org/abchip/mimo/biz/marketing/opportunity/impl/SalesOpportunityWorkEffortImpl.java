@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.marketing.opportunity.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
@@ -40,24 +41,14 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
+	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSalesOpportunityId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SALES_OPPORTUNITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String salesOpportunityId = SALES_OPPORTUNITY_ID_EDEFAULT;
+	protected SalesOpportunity salesOpportunityId;
 
 	/**
 	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
@@ -94,7 +85,24 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 * @generated
 	 */
 	@Override
-	public String getSalesOpportunityId() {
+	public SalesOpportunity getSalesOpportunityId() {
+		if (salesOpportunityId != null && ((EObject)salesOpportunityId).eIsProxy()) {
+			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
+			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
+			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
+			}
+		}
+		return salesOpportunityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesOpportunity basicGetSalesOpportunityId() {
 		return salesOpportunityId;
 	}
 
@@ -104,8 +112,8 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 * @generated
 	 */
 	@Override
-	public void setSalesOpportunityId(String newSalesOpportunityId) {
-		String oldSalesOpportunityId = salesOpportunityId;
+	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
@@ -160,7 +168,8 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				return getSalesOpportunityId();
+				if (resolve) return getSalesOpportunityId();
+				return basicGetSalesOpportunityId();
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
 				if (resolve) return getWorkEffortId();
 				return basicGetWorkEffortId();
@@ -177,7 +186,7 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId((String)newValue);
+				setSalesOpportunityId((SalesOpportunity)newValue);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)newValue);
@@ -195,7 +204,7 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId(SALES_OPPORTUNITY_ID_EDEFAULT);
+				setSalesOpportunityId((SalesOpportunity)null);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)null);
@@ -213,27 +222,11 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				return SALES_OPPORTUNITY_ID_EDEFAULT == null ? salesOpportunityId != null : !SALES_OPPORTUNITY_ID_EDEFAULT.equals(salesOpportunityId);
+				return salesOpportunityId != null;
 			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
 				return workEffortId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (salesOpportunityId: ");
-		result.append(salesOpportunityId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SalesOpportunityWorkEffortImpl

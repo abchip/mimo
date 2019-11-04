@@ -33,13 +33,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPermissionsEnumId <em>Permissions Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPositionTitle <em>Position Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getRelationshipName <em>Relationship Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
@@ -56,25 +56,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdFrom = PARTY_ID_FROM_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -183,6 +164,15 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyIdFrom;
 	/**
 	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -490,7 +480,24 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdFrom() {
+	public Party getPartyIdFrom() {
+		if (partyIdFrom != null && ((EObject)partyIdFrom).eIsProxy()) {
+			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
+			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
+			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
+			}
+		}
+		return partyIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdFrom() {
 		return partyIdFrom;
 	}
 
@@ -500,8 +507,8 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
+	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
@@ -715,8 +722,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
-				return getPartyIdFrom();
 			case PartyPackage.PARTY_RELATIONSHIP__FROM_DATE:
 				return getFromDate();
 			case PartyPackage.PARTY_RELATIONSHIP__COMMENTS:
@@ -729,6 +734,9 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 				return getRelationshipName();
 			case PartyPackage.PARTY_RELATIONSHIP__THRU_DATE:
 				return getThruDate();
+			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
+				if (resolve) return getPartyIdFrom();
+				return basicGetPartyIdFrom();
 			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_TO:
 				if (resolve) return getPartyIdTo();
 				return basicGetPartyIdTo();
@@ -762,9 +770,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
-				setPartyIdFrom((String)newValue);
-				return;
 			case PartyPackage.PARTY_RELATIONSHIP__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -782,6 +787,9 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 				return;
 			case PartyPackage.PARTY_RELATIONSHIP__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
+				setPartyIdFrom((Party)newValue);
 				return;
 			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_TO:
 				setPartyIdTo((Party)newValue);
@@ -816,9 +824,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
-				setPartyIdFrom(PARTY_ID_FROM_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_RELATIONSHIP__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -836,6 +841,9 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 				return;
 			case PartyPackage.PARTY_RELATIONSHIP__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
+				setPartyIdFrom((Party)null);
 				return;
 			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_TO:
 				setPartyIdTo((Party)null);
@@ -870,8 +878,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
-				return PARTY_ID_FROM_EDEFAULT == null ? partyIdFrom != null : !PARTY_ID_FROM_EDEFAULT.equals(partyIdFrom);
 			case PartyPackage.PARTY_RELATIONSHIP__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PartyPackage.PARTY_RELATIONSHIP__COMMENTS:
@@ -884,6 +890,8 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 				return RELATIONSHIP_NAME_EDEFAULT == null ? relationshipName != null : !RELATIONSHIP_NAME_EDEFAULT.equals(relationshipName);
 			case PartyPackage.PARTY_RELATIONSHIP__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM:
+				return partyIdFrom != null;
 			case PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_TO:
 				return partyIdTo != null;
 			case PartyPackage.PARTY_RELATIONSHIP__ROLE_TYPE_ID_FROM:
@@ -912,9 +920,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyIdFrom: ");
-		result.append(partyIdFrom);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.party.party.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyNameHistory;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,7 +28,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getChangeDate <em>Change Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getGroupName <em>Group Name</em>}</li>
@@ -33,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getPersonalTitle <em>Personal Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getSuffix <em>Suffix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,24 +45,6 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getChangeDate() <em>Change Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -186,6 +171,15 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 * @ordered
 	 */
 	protected String suffix = SUFFIX_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -373,7 +367,24 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_NAME_HISTORY__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -383,8 +394,8 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__PARTY_ID, oldPartyId, partyId));
@@ -398,8 +409,6 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
-				return getPartyId();
 			case PartyPackage.PARTY_NAME_HISTORY__CHANGE_DATE:
 				return getChangeDate();
 			case PartyPackage.PARTY_NAME_HISTORY__FIRST_NAME:
@@ -414,6 +423,9 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 				return getPersonalTitle();
 			case PartyPackage.PARTY_NAME_HISTORY__SUFFIX:
 				return getSuffix();
+			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -426,9 +438,6 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case PartyPackage.PARTY_NAME_HISTORY__CHANGE_DATE:
 				setChangeDate((Date)newValue);
 				return;
@@ -450,6 +459,9 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 			case PartyPackage.PARTY_NAME_HISTORY__SUFFIX:
 				setSuffix((String)newValue);
 				return;
+			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -462,9 +474,6 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_NAME_HISTORY__CHANGE_DATE:
 				setChangeDate(CHANGE_DATE_EDEFAULT);
 				return;
@@ -486,6 +495,9 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 			case PartyPackage.PARTY_NAME_HISTORY__SUFFIX:
 				setSuffix(SUFFIX_EDEFAULT);
 				return;
+			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -498,8 +510,6 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PartyPackage.PARTY_NAME_HISTORY__CHANGE_DATE:
 				return CHANGE_DATE_EDEFAULT == null ? changeDate != null : !CHANGE_DATE_EDEFAULT.equals(changeDate);
 			case PartyPackage.PARTY_NAME_HISTORY__FIRST_NAME:
@@ -514,6 +524,8 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 				return PERSONAL_TITLE_EDEFAULT == null ? personalTitle != null : !PERSONAL_TITLE_EDEFAULT.equals(personalTitle);
 			case PartyPackage.PARTY_NAME_HISTORY__SUFFIX:
 				return SUFFIX_EDEFAULT == null ? suffix != null : !SUFFIX_EDEFAULT.equals(suffix);
+			case PartyPackage.PARTY_NAME_HISTORY__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -528,9 +540,7 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", changeDate: ");
+		result.append(" (changeDate: ");
 		result.append(changeDate);
 		result.append(", firstName: ");
 		result.append(firstName);

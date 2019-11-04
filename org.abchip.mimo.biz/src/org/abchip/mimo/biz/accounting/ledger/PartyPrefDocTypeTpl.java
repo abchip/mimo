@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.order.order.OrderType;
 import org.abchip.mimo.biz.order.quote.QuoteType;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,12 +152,12 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Id</em>' reference.
-	 * @see #setPartyId(PartyAcctgPreference)
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_PartyId()
 	 * @model keys="partyId"
 	 * @generated
 	 */
-	PartyAcctgPreference getPartyId();
+	Party getPartyId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl#getPartyId <em>Party Id</em>}' reference.
@@ -166,7 +167,7 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(PartyAcctgPreference value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Pref Doc Type Tpl Id</b></em>' attribute.

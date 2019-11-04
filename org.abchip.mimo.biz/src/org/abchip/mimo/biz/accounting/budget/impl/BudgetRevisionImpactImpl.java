@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,12 +28,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpactImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpactImpl#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpactImpl#getRevisionSeqId <em>Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpactImpl#isAddDeleteFlag <em>Add Delete Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpactImpl#getRevisedAmount <em>Revised Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpactImpl#getRevisionReason <em>Revision Reason</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpactImpl#getBudgetId <em>Budget Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,24 +43,6 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -148,6 +133,15 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 * @ordered
 	 */
 	protected String revisionReason = REVISION_REASON_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,7 +283,24 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -299,8 +310,8 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID, oldBudgetId, budgetId));
@@ -314,8 +325,6 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
-				return getBudgetId();
 			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ITEM_SEQ_ID:
 				return getBudgetItemSeqId();
 			case BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_SEQ_ID:
@@ -326,6 +335,9 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 				return getRevisedAmount();
 			case BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_REASON:
 				return getRevisionReason();
+			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -338,9 +350,6 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId((String)newValue);
 				return;
@@ -356,6 +365,9 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 			case BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_REASON:
 				setRevisionReason((String)newValue);
 				return;
+			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
+				setBudgetId((Budget)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -368,9 +380,6 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId(BUDGET_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -386,6 +395,9 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 			case BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_REASON:
 				setRevisionReason(REVISION_REASON_EDEFAULT);
 				return;
+			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
+				setBudgetId((Budget)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -398,8 +410,6 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ITEM_SEQ_ID:
 				return BUDGET_ITEM_SEQ_ID_EDEFAULT == null ? budgetItemSeqId != null : !BUDGET_ITEM_SEQ_ID_EDEFAULT.equals(budgetItemSeqId);
 			case BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_SEQ_ID:
@@ -410,6 +420,8 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 				return REVISED_AMOUNT_EDEFAULT == null ? revisedAmount != null : !REVISED_AMOUNT_EDEFAULT.equals(revisedAmount);
 			case BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_REASON:
 				return REVISION_REASON_EDEFAULT == null ? revisionReason != null : !REVISION_REASON_EDEFAULT.equals(revisionReason);
+			case BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID:
+				return budgetId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -424,9 +436,7 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", budgetItemSeqId: ");
+		result.append(" (budgetItemSeqId: ");
 		result.append(budgetItemSeqId);
 		result.append(", revisionSeqId: ");
 		result.append(revisionSeqId);

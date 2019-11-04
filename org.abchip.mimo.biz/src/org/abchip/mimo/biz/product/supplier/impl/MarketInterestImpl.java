@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.supplier.MarketInterest;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -28,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  * </ul>
  *
@@ -41,26 +42,6 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -101,6 +82,16 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' reference.
@@ -223,7 +214,24 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -233,8 +241,8 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -248,12 +256,13 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				return getFromDate();
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				return getThruDate();
+			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
 				if (resolve) return getPartyClassificationGroupId();
 				return basicGetPartyClassificationGroupId();
@@ -269,14 +278,14 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
 				setPartyClassificationGroupId((PartyClassificationGroup)newValue);
@@ -293,14 +302,14 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
 				return;
 			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
 				setPartyClassificationGroupId((PartyClassificationGroup)null);
@@ -317,12 +326,12 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
 				return partyClassificationGroupId != null;
 		}
@@ -339,9 +348,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

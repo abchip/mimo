@@ -23,7 +23,6 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyMultiRespColId <em>Survey Multi Resp Col Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getAmountBase <em>Amount Base</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getAmountBaseUomId <em>Amount Base Uom Id</em>}</li>
@@ -39,6 +38,7 @@ import org.abchip.mimo.biz.content.content.Content;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyOptionSeqId <em>Survey Option Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getTextResponse <em>Text Response</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getWeightFactor <em>Weight Factor</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getContentId <em>Content Id</em>}</li>
  * </ul>
@@ -440,31 +440,30 @@ public interface SurveyResponseAnswer extends BizEntity {
 	void setSurveyQuestionId(SurveyQuestion value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Response Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Response Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Response Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Response Id</em>' attribute.
-	 * @see #setSurveyResponseId(String)
+	 * @return the value of the '<em>Survey Response Id</em>' reference.
+	 * @see #setSurveyResponseId(SurveyResponse)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyResponseId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="surveyResponseId"
 	 * @generated
 	 */
-	String getSurveyResponseId();
+	SurveyResponse getSurveyResponseId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Response Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Response Id</em>' reference.
 	 * @see #getSurveyResponseId()
 	 * @generated
 	 */
-	void setSurveyResponseId(String value);
+	void setSurveyResponseId(SurveyResponse value);
 
 	/**
 	 * Returns the value of the '<em><b>Text Response</b></em>' attribute.

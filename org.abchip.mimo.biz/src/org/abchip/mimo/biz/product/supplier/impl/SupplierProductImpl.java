@@ -14,6 +14,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.abchip.mimo.biz.product.supplier.SupplierPrefOrder;
 import org.abchip.mimo.biz.product.supplier.SupplierProduct;
@@ -33,7 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getMinimumOrderQuantity <em>Minimum Order Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getAvailableFromDate <em>Available From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getAgreementId <em>Agreement Id</em>}</li>
@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierProductId <em>Supplier Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierProductName <em>Supplier Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getUnitsIncluded <em>Units Included</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}</li>
@@ -62,26 +63,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMinimumOrderQuantity() <em>Minimum Order Quantity</em>}' attribute.
@@ -362,6 +343,16 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @ordered
 	 */
 	protected BigDecimal unitsIncluded = UNITS_INCLUDED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -880,7 +871,24 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -890,8 +898,8 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID, oldProductId, productId));
@@ -985,8 +993,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
-				return getProductId();
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				return getMinimumOrderQuantity();
 			case SupplierPackage.SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE:
@@ -1015,6 +1021,9 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 				return getSupplierProductName();
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				return getUnitsIncluded();
+			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -1042,9 +1051,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				setMinimumOrderQuantity((BigDecimal)newValue);
 				return;
@@ -1087,6 +1093,9 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				setUnitsIncluded((BigDecimal)newValue);
 				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
 				setPartyId((Party)newValue);
 				return;
@@ -1114,9 +1123,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				setMinimumOrderQuantity(MINIMUM_ORDER_QUANTITY_EDEFAULT);
 				return;
@@ -1159,6 +1165,9 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				setUnitsIncluded(UNITS_INCLUDED_EDEFAULT);
 				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
 				setPartyId((Party)null);
 				return;
@@ -1186,8 +1195,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				return MINIMUM_ORDER_QUANTITY_EDEFAULT == null ? minimumOrderQuantity != null : !MINIMUM_ORDER_QUANTITY_EDEFAULT.equals(minimumOrderQuantity);
 			case SupplierPackage.SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE:
@@ -1216,6 +1223,8 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 				return SUPPLIER_PRODUCT_NAME_EDEFAULT == null ? supplierProductName != null : !SUPPLIER_PRODUCT_NAME_EDEFAULT.equals(supplierProductName);
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				return UNITS_INCLUDED_EDEFAULT == null ? unitsIncluded != null : !UNITS_INCLUDED_EDEFAULT.equals(unitsIncluded);
+			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
+				return productId != null;
 			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
 				return partyId != null;
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
@@ -1240,9 +1249,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", minimumOrderQuantity: ");
+		result.append(" (minimumOrderQuantity: ");
 		result.append(minimumOrderQuantity);
 		result.append(", availableFromDate: ");
 		result.append(availableFromDate);

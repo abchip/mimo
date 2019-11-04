@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentKeyword;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getRelevancyWeight <em>Relevancy Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,26 +40,6 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -98,6 +81,16 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	protected long relevancyWeight = RELEVANCY_WEIGHT_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +115,24 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_KEYWORD__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -132,8 +142,8 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_KEYWORD__CONTENT_ID, oldContentId, contentId));
@@ -193,12 +203,13 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
-				return getContentId();
 			case ContentPackage.CONTENT_KEYWORD__KEYWORD:
 				return getKeyword();
 			case ContentPackage.CONTENT_KEYWORD__RELEVANCY_WEIGHT:
 				return getRelevancyWeight();
+			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,14 +222,14 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_KEYWORD__KEYWORD:
 				setKeyword((String)newValue);
 				return;
 			case ContentPackage.CONTENT_KEYWORD__RELEVANCY_WEIGHT:
 				setRelevancyWeight((Long)newValue);
+				return;
+			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,14 +243,14 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_KEYWORD__KEYWORD:
 				setKeyword(KEYWORD_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT_KEYWORD__RELEVANCY_WEIGHT:
 				setRelevancyWeight(RELEVANCY_WEIGHT_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,12 +264,12 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case ContentPackage.CONTENT_KEYWORD__KEYWORD:
 				return KEYWORD_EDEFAULT == null ? keyword != null : !KEYWORD_EDEFAULT.equals(keyword);
 			case ContentPackage.CONTENT_KEYWORD__RELEVANCY_WEIGHT:
 				return relevancyWeight != RELEVANCY_WEIGHT_EDEFAULT;
+			case ContentPackage.CONTENT_KEYWORD__CONTENT_ID:
+				return contentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,9 +284,7 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", keyword: ");
+		result.append(" (keyword: ");
 		result.append(keyword);
 		result.append(", relevancyWeight: ");
 		result.append(relevancyWeight);

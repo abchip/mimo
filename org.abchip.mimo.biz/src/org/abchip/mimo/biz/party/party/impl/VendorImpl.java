@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.Vendor;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,11 +26,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestCompanyName <em>Manifest Company Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestCompanyTitle <em>Manifest Company Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestLogoUrl <em>Manifest Logo Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestPolicies <em>Manifest Policies</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,24 +40,6 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getManifestCompanyName() <em>Manifest Company Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -127,6 +112,15 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 * @ordered
 	 */
 	protected String manifestPolicies = MANIFEST_POLICIES_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,7 +239,24 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.VENDOR__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -255,8 +266,8 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__PARTY_ID, oldPartyId, partyId));
@@ -270,8 +281,6 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PartyPackage.VENDOR__PARTY_ID:
-				return getPartyId();
 			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
 				return getManifestCompanyName();
 			case PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE:
@@ -280,6 +289,9 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 				return getManifestLogoUrl();
 			case PartyPackage.VENDOR__MANIFEST_POLICIES:
 				return getManifestPolicies();
+			case PartyPackage.VENDOR__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,9 +304,6 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PartyPackage.VENDOR__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
 				setManifestCompanyName((String)newValue);
 				return;
@@ -306,6 +315,9 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 				return;
 			case PartyPackage.VENDOR__MANIFEST_POLICIES:
 				setManifestPolicies((String)newValue);
+				return;
+			case PartyPackage.VENDOR__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -319,9 +331,6 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PartyPackage.VENDOR__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
 				setManifestCompanyName(MANIFEST_COMPANY_NAME_EDEFAULT);
 				return;
@@ -333,6 +342,9 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 				return;
 			case PartyPackage.VENDOR__MANIFEST_POLICIES:
 				setManifestPolicies(MANIFEST_POLICIES_EDEFAULT);
+				return;
+			case PartyPackage.VENDOR__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -346,8 +358,6 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PartyPackage.VENDOR__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
 				return MANIFEST_COMPANY_NAME_EDEFAULT == null ? manifestCompanyName != null : !MANIFEST_COMPANY_NAME_EDEFAULT.equals(manifestCompanyName);
 			case PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE:
@@ -356,6 +366,8 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 				return MANIFEST_LOGO_URL_EDEFAULT == null ? manifestLogoUrl != null : !MANIFEST_LOGO_URL_EDEFAULT.equals(manifestLogoUrl);
 			case PartyPackage.VENDOR__MANIFEST_POLICIES:
 				return MANIFEST_POLICIES_EDEFAULT == null ? manifestPolicies != null : !MANIFEST_POLICIES_EDEFAULT.equals(manifestPolicies);
+			case PartyPackage.VENDOR__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -370,9 +382,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", manifestCompanyName: ");
+		result.append(" (manifestCompanyName: ");
 		result.append(manifestCompanyName);
 		result.append(", manifestCompanyTitle: ");
 		result.append(manifestCompanyTitle);

@@ -22,11 +22,11 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getEndingBalance <em>Ending Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getOpeningBalance <em>Opening Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getPostedCredits <em>Posted Credits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getPostedDebits <em>Posted Debits</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  * </ul>
@@ -193,30 +193,29 @@ public interface GlAccountHistory extends BizEntity {
 	void setPostedDebits(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Id</em>' attribute.
-	 * @see #setGlAccountId(String)
+	 * @return the value of the '<em>Gl Account Id</em>' reference.
+	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_GlAccountId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getGlAccountId();
+	GlAccount getGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getGlAccountId <em>Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getGlAccountId <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Id</em>' reference.
 	 * @see #getGlAccountId()
 	 * @generated
 	 */
-	void setGlAccountId(String value);
+	void setGlAccountId(GlAccount value);
 
 } // GlAccountHistory

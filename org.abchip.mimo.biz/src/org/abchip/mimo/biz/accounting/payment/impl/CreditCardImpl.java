@@ -11,7 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.payment.CreditCard;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -354,7 +354,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * @generated
 	 * @ordered
 	 */
-	protected PostalAddress contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -496,10 +496,10 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -513,7 +513,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -523,8 +523,8 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(PostalAddress newContactMechId) {
-		PostalAddress oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -859,7 +859,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				setValidFromDate((String)newValue);
 				return;
 			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -919,7 +919,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				setValidFromDate(VALID_FROM_DATE_EDEFAULT);
 				return;
 			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)null);
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPurpose()
@@ -81,30 +81,29 @@ public interface CommunicationEventPurpose extends BizEntity {
 	void setCommunicationEventId(CommunicationEvent value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Prp Typ Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Communication Event Prp Typ Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Prp Typ Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Prp Typ Id</em>' attribute.
-	 * @see #setCommunicationEventPrpTypId(String)
+	 * @return the value of the '<em>Communication Event Prp Typ Id</em>' reference.
+	 * @see #setCommunicationEventPrpTypId(CommunicationEventPrpTyp)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPurpose_CommunicationEventPrpTypId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="communicationEventPrpTypId"
 	 * @generated
 	 */
-	String getCommunicationEventPrpTypId();
+	CommunicationEventPrpTyp getCommunicationEventPrpTypId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Communication Event Prp Typ Id</em>' attribute.
+	 * @param value the new value of the '<em>Communication Event Prp Typ Id</em>' reference.
 	 * @see #getCommunicationEventPrpTypId()
 	 * @generated
 	 */
-	void setCommunicationEventPrpTypId(String value);
+	void setCommunicationEventPrpTypId(CommunicationEventPrpTyp value);
 
 } // CommunicationEventPurpose

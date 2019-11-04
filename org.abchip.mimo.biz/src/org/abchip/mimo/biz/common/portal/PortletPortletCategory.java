@@ -28,31 +28,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PortletPortletCategory extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Portal Portlet Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Portal Portlet Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Portal Portlet Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portal Portlet Id</em>' attribute.
-	 * @see #setPortalPortletId(String)
+	 * @return the value of the '<em>Portal Portlet Id</em>' reference.
+	 * @see #setPortalPortletId(PortalPortlet)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory_PortalPortletId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="portalPortletId"
 	 * @generated
 	 */
-	String getPortalPortletId();
+	PortalPortlet getPortalPortletId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortalPortletId <em>Portal Portlet Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortalPortletId <em>Portal Portlet Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Portal Portlet Id</em>' attribute.
+	 * @param value the new value of the '<em>Portal Portlet Id</em>' reference.
 	 * @see #getPortalPortletId()
 	 * @generated
 	 */
-	void setPortalPortletId(String value);
+	void setPortalPortletId(PortalPortlet value);
 
 	/**
 	 * Returns the value of the '<em><b>Portlet Category Id</b></em>' reference.

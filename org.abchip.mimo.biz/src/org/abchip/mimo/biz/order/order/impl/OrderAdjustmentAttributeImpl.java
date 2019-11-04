@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.order.order.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,10 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,26 +40,6 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderAdjustmentId() <em>Order Adjustment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderAdjustmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ADJUSTMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderAdjustmentId() <em>Order Adjustment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderAdjustmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderAdjustmentId = ORDER_ADJUSTMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -117,6 +100,16 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderAdjustmentId() <em>Order Adjustment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderAdjustmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderAdjustment orderAdjustmentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +205,24 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 * @generated
 	 */
 	@Override
-	public String getOrderAdjustmentId() {
+	public OrderAdjustment getOrderAdjustmentId() {
+		if (orderAdjustmentId != null && ((EObject)orderAdjustmentId).eIsProxy()) {
+			InternalEObject oldOrderAdjustmentId = (InternalEObject)orderAdjustmentId;
+			orderAdjustmentId = (OrderAdjustment)eResolveProxy(oldOrderAdjustmentId);
+			if (orderAdjustmentId != oldOrderAdjustmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
+			}
+		}
+		return orderAdjustmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderAdjustment basicGetOrderAdjustmentId() {
 		return orderAdjustmentId;
 	}
 
@@ -222,8 +232,8 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 * @generated
 	 */
 	@Override
-	public void setOrderAdjustmentId(String newOrderAdjustmentId) {
-		String oldOrderAdjustmentId = orderAdjustmentId;
+	public void setOrderAdjustmentId(OrderAdjustment newOrderAdjustmentId) {
+		OrderAdjustment oldOrderAdjustmentId = orderAdjustmentId;
 		orderAdjustmentId = newOrderAdjustmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
@@ -237,14 +247,15 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
-				return getOrderAdjustmentId();
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
+				if (resolve) return getOrderAdjustmentId();
+				return basicGetOrderAdjustmentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +268,6 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
-				setOrderAdjustmentId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -268,6 +276,9 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
+				setOrderAdjustmentId((OrderAdjustment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,9 +292,6 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
-				setOrderAdjustmentId(ORDER_ADJUSTMENT_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -292,6 +300,9 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
+				setOrderAdjustmentId((OrderAdjustment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,14 +316,14 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
-				return ORDER_ADJUSTMENT_ID_EDEFAULT == null ? orderAdjustmentId != null : !ORDER_ADJUSTMENT_ID_EDEFAULT.equals(orderAdjustmentId);
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID:
+				return orderAdjustmentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,9 +338,7 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderAdjustmentId: ");
-		result.append(orderAdjustmentId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

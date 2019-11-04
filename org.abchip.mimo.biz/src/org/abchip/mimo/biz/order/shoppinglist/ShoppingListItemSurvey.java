@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.content.survey.SurveyResponse;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getSurveyResponseId <em>Survey Response Id</em>}</li>
  * </ul>
  *
@@ -30,31 +30,30 @@ import org.abchip.mimo.biz.content.survey.SurveyResponse;
  */
 public interface ShoppingListItemSurvey extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Shopping List Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shopping List Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shopping List Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shopping List Id</em>' attribute.
-	 * @see #setShoppingListId(String)
+	 * @return the value of the '<em>Shopping List Id</em>' reference.
+	 * @see #setShoppingListId(ShoppingList)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_ShoppingListId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="shoppingListId"
 	 * @generated
 	 */
-	String getShoppingListId();
+	ShoppingList getShoppingListId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListId <em>Shopping List Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListId <em>Shopping List Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shopping List Id</em>' attribute.
+	 * @param value the new value of the '<em>Shopping List Id</em>' reference.
 	 * @see #getShoppingListId()
 	 * @generated
 	 */
-	void setShoppingListId(String value);
+	void setShoppingListId(ShoppingList value);
 
 	/**
 	 * Returns the value of the '<em><b>Shopping List Item Seq Id</b></em>' attribute.

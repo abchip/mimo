@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.common.theme.impl;
 
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.theme.ThemePackage;
+import org.abchip.mimo.biz.common.theme.VisualTheme;
 import org.abchip.mimo.biz.common.theme.VisualThemeResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
@@ -26,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getVisualThemeId <em>Visual Theme Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getSequenceId <em>Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceValue <em>Resource Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getVisualThemeId <em>Visual Theme Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceTypeEnumId <em>Resource Type Enum Id</em>}</li>
  * </ul>
  *
@@ -39,24 +40,6 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getVisualThemeId() <em>Visual Theme Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisualThemeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISUAL_THEME_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getVisualThemeId() <em>Visual Theme Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisualThemeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visualThemeId = VISUAL_THEME_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getSequenceId() <em>Sequence Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,6 +76,15 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * @ordered
 	 */
 	protected String resourceValue = RESOURCE_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getVisualThemeId() <em>Visual Theme Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisualThemeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected VisualTheme visualThemeId;
 	/**
 	 * The cached value of the '{@link #getResourceTypeEnumId() <em>Resource Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -174,7 +166,24 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * @generated
 	 */
 	@Override
-	public String getVisualThemeId() {
+	public VisualTheme getVisualThemeId() {
+		if (visualThemeId != null && ((EObject)visualThemeId).eIsProxy()) {
+			InternalEObject oldVisualThemeId = (InternalEObject)visualThemeId;
+			visualThemeId = (VisualTheme)eResolveProxy(oldVisualThemeId);
+			if (visualThemeId != oldVisualThemeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID, oldVisualThemeId, visualThemeId));
+			}
+		}
+		return visualThemeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VisualTheme basicGetVisualThemeId() {
 		return visualThemeId;
 	}
 
@@ -184,8 +193,8 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * @generated
 	 */
 	@Override
-	public void setVisualThemeId(String newVisualThemeId) {
-		String oldVisualThemeId = visualThemeId;
+	public void setVisualThemeId(VisualTheme newVisualThemeId) {
+		VisualTheme oldVisualThemeId = visualThemeId;
 		visualThemeId = newVisualThemeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID, oldVisualThemeId, visualThemeId));
@@ -239,12 +248,13 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
-				return getVisualThemeId();
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				return getSequenceId();
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				return getResourceValue();
+			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
+				if (resolve) return getVisualThemeId();
+				return basicGetVisualThemeId();
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
 				if (resolve) return getResourceTypeEnumId();
 				return basicGetResourceTypeEnumId();
@@ -260,14 +270,14 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
-				setVisualThemeId((String)newValue);
-				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				setSequenceId((String)newValue);
 				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				setResourceValue((String)newValue);
+				return;
+			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
+				setVisualThemeId((VisualTheme)newValue);
 				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
 				setResourceTypeEnumId((Enumeration)newValue);
@@ -284,14 +294,14 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
-				setVisualThemeId(VISUAL_THEME_ID_EDEFAULT);
-				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				setSequenceId(SEQUENCE_ID_EDEFAULT);
 				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				setResourceValue(RESOURCE_VALUE_EDEFAULT);
+				return;
+			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
+				setVisualThemeId((VisualTheme)null);
 				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
 				setResourceTypeEnumId((Enumeration)null);
@@ -308,12 +318,12 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
-				return VISUAL_THEME_ID_EDEFAULT == null ? visualThemeId != null : !VISUAL_THEME_ID_EDEFAULT.equals(visualThemeId);
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				return SEQUENCE_ID_EDEFAULT == null ? sequenceId != null : !SEQUENCE_ID_EDEFAULT.equals(sequenceId);
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				return RESOURCE_VALUE_EDEFAULT == null ? resourceValue != null : !RESOURCE_VALUE_EDEFAULT.equals(resourceValue);
+			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
+				return visualThemeId != null;
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
 				return resourceTypeEnumId != null;
 		}
@@ -330,9 +340,7 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (visualThemeId: ");
-		result.append(visualThemeId);
-		result.append(", sequenceId: ");
+		result.append(" (sequenceId: ");
 		result.append(sequenceId);
 		result.append(", resourceValue: ");
 		result.append(resourceValue);

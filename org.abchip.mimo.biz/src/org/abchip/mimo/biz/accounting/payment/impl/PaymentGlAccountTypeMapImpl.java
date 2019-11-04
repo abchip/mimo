@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.accounting.payment.PaymentType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
@@ -40,23 +41,14 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getPaymentTypeId() <em>Payment Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPaymentTypeId() <em>Payment Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPaymentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PAYMENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentTypeId() <em>Payment Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentTypeId = PAYMENT_TYPE_ID_EDEFAULT;
+	protected PaymentType paymentTypeId;
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -141,7 +133,24 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public String getPaymentTypeId() {
+	public PaymentType getPaymentTypeId() {
+		if (paymentTypeId != null && ((EObject)paymentTypeId).eIsProxy()) {
+			InternalEObject oldPaymentTypeId = (InternalEObject)paymentTypeId;
+			paymentTypeId = (PaymentType)eResolveProxy(oldPaymentTypeId);
+			if (paymentTypeId != oldPaymentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
+			}
+		}
+		return paymentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentType basicGetPaymentTypeId() {
 		return paymentTypeId;
 	}
 
@@ -151,8 +160,8 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public void setPaymentTypeId(String newPaymentTypeId) {
-		String oldPaymentTypeId = paymentTypeId;
+	public void setPaymentTypeId(PaymentType newPaymentTypeId) {
+		PaymentType oldPaymentTypeId = paymentTypeId;
 		paymentTypeId = newPaymentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
@@ -207,7 +216,8 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID:
-				return getPaymentTypeId();
+				if (resolve) return getPaymentTypeId();
+				return basicGetPaymentTypeId();
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -227,7 +237,7 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID:
-				setPaymentTypeId((String)newValue);
+				setPaymentTypeId((PaymentType)newValue);
 				return;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -248,7 +258,7 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID:
-				setPaymentTypeId(PAYMENT_TYPE_ID_EDEFAULT);
+				setPaymentTypeId((PaymentType)null);
 				return;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -269,29 +279,13 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID:
-				return PAYMENT_TYPE_ID_EDEFAULT == null ? paymentTypeId != null : !PAYMENT_TYPE_ID_EDEFAULT.equals(paymentTypeId);
+				return paymentTypeId != null;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID:
 				return glAccountTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentTypeId: ");
-		result.append(paymentTypeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PaymentGlAccountTypeMapImpl

@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getCreatedDatetime <em>Created Datetime</em>}</li>
@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getReservedDatetime <em>Reserved Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  * </ul>
  *
@@ -54,26 +55,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShipGroupSeqId() <em>Ship Group Seq Id</em>}' attribute.
@@ -316,6 +297,16 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	protected long sequenceId = SEQUENCE_ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
 	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -482,7 +473,24 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -492,8 +500,8 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID, oldOrderId, orderId));
@@ -691,8 +699,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SHIP_GROUP_SEQ_ID:
 				return getShipGroupSeqId();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID:
@@ -717,6 +723,9 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return getReservedDatetime();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				return getSequenceId();
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
 				if (resolve) return getInventoryItemId();
 				return basicGetInventoryItemId();
@@ -732,9 +741,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId((String)newValue);
 				return;
@@ -771,6 +777,9 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				setSequenceId((Long)newValue);
 				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
 				setInventoryItemId((InventoryItem)newValue);
 				return;
@@ -786,9 +795,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId(SHIP_GROUP_SEQ_ID_EDEFAULT);
 				return;
@@ -825,6 +831,9 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				setSequenceId(SEQUENCE_ID_EDEFAULT);
 				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
 				setInventoryItemId((InventoryItem)null);
 				return;
@@ -840,8 +849,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SHIP_GROUP_SEQ_ID:
 				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID:
@@ -866,6 +873,8 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return RESERVED_DATETIME_EDEFAULT == null ? reservedDatetime != null : !RESERVED_DATETIME_EDEFAULT.equals(reservedDatetime);
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				return sequenceId != SEQUENCE_ID_EDEFAULT;
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID:
+				return orderId != null;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
 				return inventoryItemId != null;
 		}
@@ -882,9 +891,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", shipGroupSeqId: ");
+		result.append(" (shipGroupSeqId: ");
 		result.append(shipGroupSeqId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);

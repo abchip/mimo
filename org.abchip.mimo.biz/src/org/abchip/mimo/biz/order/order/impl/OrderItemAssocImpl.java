@@ -30,13 +30,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getToOrderItemSeqId <em>To Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getToShipGroupSeqId <em>To Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getOrderItemAssocTypeId <em>Order Item Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl#getToOrderId <em>To Order Id</em>}</li>
  * </ul>
  *
@@ -47,26 +47,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -179,6 +159,16 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	protected OrderItemAssocType orderItemAssocTypeId;
 
 	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
 	 * The cached value of the '{@link #getToOrderId() <em>To Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,7 +203,24 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -223,8 +230,8 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID, oldOrderId, orderId));
@@ -433,8 +440,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_ITEM_ASSOC__SHIP_GROUP_SEQ_ID:
@@ -448,6 +453,9 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID:
 				if (resolve) return getOrderItemAssocTypeId();
 				return basicGetOrderItemAssocTypeId();
+			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_ITEM_ASSOC__TO_ORDER_ID:
 				if (resolve) return getToOrderId();
 				return basicGetToOrderId();
@@ -463,9 +471,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -484,6 +489,9 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID:
 				setOrderItemAssocTypeId((OrderItemAssocType)newValue);
 				return;
+			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
 			case OrderPackage.ORDER_ITEM_ASSOC__TO_ORDER_ID:
 				setToOrderId((OrderHeader)newValue);
 				return;
@@ -499,9 +507,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -520,6 +525,9 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID:
 				setOrderItemAssocTypeId((OrderItemAssocType)null);
 				return;
+			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
 			case OrderPackage.ORDER_ITEM_ASSOC__TO_ORDER_ID:
 				setToOrderId((OrderHeader)null);
 				return;
@@ -535,8 +543,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_ITEM_ASSOC__SHIP_GROUP_SEQ_ID:
@@ -549,6 +555,8 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID:
 				return orderItemAssocTypeId != null;
+			case OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID:
+				return orderId != null;
 			case OrderPackage.ORDER_ITEM_ASSOC__TO_ORDER_ID:
 				return toOrderId != null;
 		}
@@ -565,9 +573,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", shipGroupSeqId: ");
 		result.append(shipGroupSeqId);

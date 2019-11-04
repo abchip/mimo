@@ -12,11 +12,13 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -33,6 +35,16 @@ public class PartyCommandProviderImpl implements CommandProvider {
 	@Inject
 	private ResourceManager resourceManager;
 
+	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
+		
+		EntityReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
+		
+		for(Party party: partyReader.find(null, null, 0)) {
+			if(party.getLastModifiedByUserLogin() != null)
+				System.out.println(party.getLastModifiedByUserLogin().getName());
+		}
+	}
+	
 	@SuppressWarnings("unused")
 	private <E extends EntityNameable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
 

@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getAccountCodeLength <em>Account Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getAccountValidDays <em>Account Valid Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#isAllowAuthToNegative <em>Allow Auth To Negative</em>}</li>
@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getReplenishThreshold <em>Replenish Threshold</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#isRequirePinCode <em>Require Pin Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#isValidateGCFinAcct <em>Validate GC Fin Acct</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
@@ -54,26 +55,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAccountCodeLength() <em>Account Code Length</em>}' attribute.
@@ -294,6 +275,16 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @ordered
 	 */
 	protected boolean validateGCFinAcct = VALIDATE_GC_FIN_ACCT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
 
 	/**
 	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' reference.
@@ -723,7 +714,24 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -733,8 +741,8 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -748,8 +756,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				return getAccountCodeLength();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_VALID_DAYS:
@@ -772,6 +778,9 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 				return isRequirePinCode();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				return isValidateGCFinAcct();
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
 				if (resolve) return getFinAccountTypeId();
 				return basicGetFinAccountTypeId();
@@ -793,9 +802,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				setAccountCodeLength((Long)newValue);
 				return;
@@ -829,6 +835,9 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				setValidateGCFinAcct((Boolean)newValue);
 				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
+				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
 				setFinAccountTypeId((FinAccountType)newValue);
 				return;
@@ -850,9 +859,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				setAccountCodeLength(ACCOUNT_CODE_LENGTH_EDEFAULT);
 				return;
@@ -886,6 +892,9 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				setValidateGCFinAcct(VALIDATE_GC_FIN_ACCT_EDEFAULT);
 				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
+				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
 				setFinAccountTypeId((FinAccountType)null);
 				return;
@@ -907,8 +916,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				return accountCodeLength != ACCOUNT_CODE_LENGTH_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_VALID_DAYS:
@@ -931,6 +938,8 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 				return requirePinCode != REQUIRE_PIN_CODE_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				return validateGCFinAcct != VALIDATE_GC_FIN_ACCT_EDEFAULT;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
+				return productStoreId != null;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
 				return finAccountTypeId != null;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
@@ -951,9 +960,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreId: ");
-		result.append(productStoreId);
-		result.append(", accountCodeLength: ");
+		result.append(" (accountCodeLength: ");
 		result.append(accountCodeLength);
 		result.append(", accountValidDays: ");
 		result.append(accountValidDays);

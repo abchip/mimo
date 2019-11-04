@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.order.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderShipment;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
@@ -44,26 +45,6 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -146,6 +127,16 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
 	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,7 +171,24 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SHIPMENT__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -190,8 +198,8 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SHIPMENT__ORDER_ID, oldOrderId, orderId));
@@ -337,8 +345,6 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_SHIPMENT__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_SHIPMENT__SHIP_GROUP_SEQ_ID:
@@ -347,6 +353,9 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 				return getShipmentItemSeqId();
 			case OrderPackage.ORDER_SHIPMENT__QUANTITY:
 				return getQuantity();
+			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_SHIPMENT__SHIPMENT_ID:
 				if (resolve) return getShipmentId();
 				return basicGetShipmentId();
@@ -362,9 +371,6 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_SHIPMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -376,6 +382,9 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 				return;
 			case OrderPackage.ORDER_SHIPMENT__QUANTITY:
 				setQuantity((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case OrderPackage.ORDER_SHIPMENT__SHIPMENT_ID:
 				setShipmentId((Shipment)newValue);
@@ -392,9 +401,6 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_SHIPMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -406,6 +412,9 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 				return;
 			case OrderPackage.ORDER_SHIPMENT__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case OrderPackage.ORDER_SHIPMENT__SHIPMENT_ID:
 				setShipmentId((Shipment)null);
@@ -422,8 +431,6 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_SHIPMENT__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_SHIPMENT__SHIP_GROUP_SEQ_ID:
@@ -432,6 +439,8 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case OrderPackage.ORDER_SHIPMENT__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+			case OrderPackage.ORDER_SHIPMENT__ORDER_ID:
+				return orderId != null;
 			case OrderPackage.ORDER_SHIPMENT__SHIPMENT_ID:
 				return shipmentId != null;
 		}
@@ -448,9 +457,7 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", shipGroupSeqId: ");
 		result.append(shipGroupSeqId);

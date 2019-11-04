@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getSubscriptionId <em>Subscription Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionAttribute()
@@ -82,31 +82,30 @@ public interface SubscriptionAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Subscription Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Id</em>' attribute.
-	 * @see #setSubscriptionId(String)
+	 * @return the value of the '<em>Subscription Id</em>' reference.
+	 * @see #setSubscriptionId(Subscription)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionAttribute_SubscriptionId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="subscriptionId"
 	 * @generated
 	 */
-	String getSubscriptionId();
+	Subscription getSubscriptionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getSubscriptionId <em>Subscription Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getSubscriptionId <em>Subscription Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscription Id</em>' attribute.
+	 * @param value the new value of the '<em>Subscription Id</em>' reference.
 	 * @see #getSubscriptionId()
 	 * @generated
 	 */
-	void setSubscriptionId(String value);
+	void setSubscriptionId(Subscription value);
 
 	/**
 	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.

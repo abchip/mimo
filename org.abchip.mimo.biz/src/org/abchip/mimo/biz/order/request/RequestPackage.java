@@ -415,22 +415,13 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CUST_REQUEST_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -439,7 +430,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CUST_REQUEST_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -448,7 +439,16 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int CUST_REQUEST_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Cust Request Attribute</em>' class.
@@ -588,7 +588,7 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_COMM_EVENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -661,22 +661,13 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUST_REQUEST_CONTENT__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CUST_REQUEST_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -685,7 +676,16 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CUST_REQUEST_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUST_REQUEST_CONTENT__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Content Id</b></em>' reference.
@@ -752,22 +752,13 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_ITEM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUST_REQUEST_ITEM__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Cust Request Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Config Id</b></em>' attribute.
@@ -776,7 +767,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CUST_REQUEST_ITEM__CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -785,7 +776,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int CUST_REQUEST_ITEM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Amount</b></em>' attribute.
@@ -794,7 +785,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__MAXIMUM_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int CUST_REQUEST_ITEM__MAXIMUM_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -803,7 +794,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__PRIORITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int CUST_REQUEST_ITEM__PRIORITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -812,7 +803,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int CUST_REQUEST_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Required By Date</b></em>' attribute.
@@ -821,7 +812,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__REQUIRED_BY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int CUST_REQUEST_ITEM__REQUIRED_BY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Length</b></em>' attribute.
@@ -830,7 +821,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int CUST_REQUEST_ITEM__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Persons</b></em>' attribute.
@@ -839,7 +830,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int CUST_REQUEST_ITEM__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Start</b></em>' attribute.
@@ -848,7 +839,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int CUST_REQUEST_ITEM__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Selected Amount</b></em>' attribute.
@@ -857,7 +848,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int CUST_REQUEST_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -866,7 +857,7 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int CUST_REQUEST_ITEM__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Story</b></em>' attribute.
@@ -875,7 +866,16 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM__STORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int CUST_REQUEST_ITEM__STORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUST_REQUEST_ITEM__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -1051,22 +1051,22 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_ITEM_WORK_EFFORT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Cust Request Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
@@ -1151,7 +1151,7 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_NOTE__NOTE = BizPackage.BIZ_ENTITY_NOTE__NOTE;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1215,22 +1215,13 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_PARTY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUST_REQUEST_PARTY__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_PARTY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CUST_REQUEST_PARTY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1239,7 +1230,16 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_PARTY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CUST_REQUEST_PARTY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUST_REQUEST_PARTY__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -1624,22 +1624,13 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUST_REQUEST_TYPE_ATTR__CUST_REQUEST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CUST_REQUEST_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1648,7 +1639,16 @@ public interface RequestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUST_REQUEST_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CUST_REQUEST_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Cust Request Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUST_REQUEST_TYPE_ATTR__CUST_REQUEST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Cust Request Type Attr</em>' class.
@@ -1706,7 +1706,7 @@ public interface RequestPackage extends EPackage {
 	int CUST_REQUEST_WORK_EFFORT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2162,15 +2162,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestAttribute#getCustRequestId()
 	 * @see #getCustRequestAttribute()
 	 * @generated
 	 */
-	EAttribute getCustRequestAttribute_CustRequestId();
+	EReference getCustRequestAttribute_CustRequestId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getAttrName <em>Attr Name</em>}'.
@@ -2259,15 +2259,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestCommEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestCommEvent#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestCommEvent#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestCommEvent#getCustRequestId()
 	 * @see #getCustRequestCommEvent()
 	 * @generated
 	 */
-	EAttribute getCustRequestCommEvent_CustRequestId();
+	EReference getCustRequestCommEvent_CustRequestId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestCommEvent#getCommunicationEventId <em>Communication Event Id</em>}'.
@@ -2291,15 +2291,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestContent#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestContent#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestContent#getCustRequestId()
 	 * @see #getCustRequestContent()
 	 * @generated
 	 */
-	EAttribute getCustRequestContent_CustRequestId();
+	EReference getCustRequestContent_CustRequestId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestContent#getContentId <em>Content Id</em>}'.
@@ -2345,15 +2345,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestItem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestId()
 	 * @see #getCustRequestItem()
 	 * @generated
 	 */
-	EAttribute getCustRequestItem_CustRequestId();
+	EReference getCustRequestItem_CustRequestId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}'.
@@ -2574,15 +2574,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestItemWorkEffort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestItemWorkEffort#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestItemWorkEffort#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestItemWorkEffort#getCustRequestId()
 	 * @see #getCustRequestItemWorkEffort()
 	 * @generated
 	 */
-	EAttribute getCustRequestItemWorkEffort_CustRequestId();
+	EReference getCustRequestItemWorkEffort_CustRequestId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestItemWorkEffort#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}'.
@@ -2617,15 +2617,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestNote();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestNote#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestNote#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestNote#getCustRequestId()
 	 * @see #getCustRequestNote()
 	 * @generated
 	 */
-	EAttribute getCustRequestNote_CustRequestId();
+	EReference getCustRequestNote_CustRequestId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.request.CustRequestParty <em>Cust Request Party</em>}'.
@@ -2638,15 +2638,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestParty();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestParty#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestParty#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestParty#getCustRequestId()
 	 * @see #getCustRequestParty()
 	 * @generated
 	 */
-	EAttribute getCustRequestParty_CustRequestId();
+	EReference getCustRequestParty_CustRequestId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestParty#getPartyId <em>Party Id</em>}'.
@@ -2898,15 +2898,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getCustRequestTypeId <em>Cust Request Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getCustRequestTypeId <em>Cust Request Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Type Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getCustRequestTypeId()
 	 * @see #getCustRequestTypeAttr()
 	 * @generated
 	 */
-	EAttribute getCustRequestTypeAttr_CustRequestTypeId();
+	EReference getCustRequestTypeAttr_CustRequestTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -2941,15 +2941,15 @@ public interface RequestPackage extends EPackage {
 	EClass getCustRequestWorkEffort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.request.CustRequestWorkEffort#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestWorkEffort#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.request.CustRequestWorkEffort#getCustRequestId()
 	 * @see #getCustRequestWorkEffort()
 	 * @generated
 	 */
-	EAttribute getCustRequestWorkEffort_CustRequestId();
+	EReference getCustRequestWorkEffort_CustRequestId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.request.CustRequestWorkEffort#getWorkEffortId <em>Work Effort Id</em>}'.
@@ -3294,12 +3294,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_ATTRIBUTE = eINSTANCE.getCustRequestAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID = eINSTANCE.getCustRequestAttribute_CustRequestId();
+		EReference CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID = eINSTANCE.getCustRequestAttribute_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -3370,12 +3370,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_COMM_EVENT = eINSTANCE.getCustRequestCommEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_COMM_EVENT__CUST_REQUEST_ID = eINSTANCE.getCustRequestCommEvent_CustRequestId();
+		EReference CUST_REQUEST_COMM_EVENT__CUST_REQUEST_ID = eINSTANCE.getCustRequestCommEvent_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' reference feature.
@@ -3396,12 +3396,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_CONTENT = eINSTANCE.getCustRequestContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_CONTENT__CUST_REQUEST_ID = eINSTANCE.getCustRequestContent_CustRequestId();
+		EReference CUST_REQUEST_CONTENT__CUST_REQUEST_ID = eINSTANCE.getCustRequestContent_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
@@ -3438,12 +3438,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_ITEM = eINSTANCE.getCustRequestItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_ITEM__CUST_REQUEST_ID = eINSTANCE.getCustRequestItem_CustRequestId();
+		EReference CUST_REQUEST_ITEM__CUST_REQUEST_ID = eINSTANCE.getCustRequestItem_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Cust Request Item Seq Id</b></em>' attribute feature.
@@ -3610,12 +3610,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_ITEM_WORK_EFFORT = eINSTANCE.getCustRequestItemWorkEffort();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID = eINSTANCE.getCustRequestItemWorkEffort_CustRequestId();
+		EReference CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID = eINSTANCE.getCustRequestItemWorkEffort_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Cust Request Item Seq Id</b></em>' attribute feature.
@@ -3644,12 +3644,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_NOTE = eINSTANCE.getCustRequestNote();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_NOTE__CUST_REQUEST_ID = eINSTANCE.getCustRequestNote_CustRequestId();
+		EReference CUST_REQUEST_NOTE__CUST_REQUEST_ID = eINSTANCE.getCustRequestNote_CustRequestId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.request.impl.CustRequestPartyImpl <em>Cust Request Party</em>}' class.
@@ -3662,12 +3662,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_PARTY = eINSTANCE.getCustRequestParty();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_PARTY__CUST_REQUEST_ID = eINSTANCE.getCustRequestParty_CustRequestId();
+		EReference CUST_REQUEST_PARTY__CUST_REQUEST_ID = eINSTANCE.getCustRequestParty_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -3862,12 +3862,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_TYPE_ATTR = eINSTANCE.getCustRequestTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_TYPE_ATTR__CUST_REQUEST_TYPE_ID = eINSTANCE.getCustRequestTypeAttr_CustRequestTypeId();
+		EReference CUST_REQUEST_TYPE_ATTR__CUST_REQUEST_TYPE_ID = eINSTANCE.getCustRequestTypeAttr_CustRequestTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -3896,12 +3896,12 @@ public interface RequestPackage extends EPackage {
 		EClass CUST_REQUEST_WORK_EFFORT = eINSTANCE.getCustRequestWorkEffort();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUST_REQUEST_WORK_EFFORT__CUST_REQUEST_ID = eINSTANCE.getCustRequestWorkEffort_CustRequestId();
+		EReference CUST_REQUEST_WORK_EFFORT__CUST_REQUEST_ID = eINSTANCE.getCustRequestWorkEffort_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.

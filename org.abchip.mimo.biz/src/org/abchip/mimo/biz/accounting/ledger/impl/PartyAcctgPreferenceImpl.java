@@ -18,6 +18,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -32,7 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#isEnableAccounting <em>Enable Accounting</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getFiscalYearStartDay <em>Fiscal Year Start Day</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getFiscalYearStartMonth <em>Fiscal Year Start Month</em>}</li>
@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOrderIdPrefix <em>Order Id Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getQuoteIdPrefix <em>Quote Id Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#isUseInvoiceIdForReturns <em>Use Invoice Id For Returns</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getTaxFormId <em>Tax Form Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getCogsMethodId <em>Cogs Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}</li>
@@ -64,24 +65,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isEnableAccounting() <em>Enable Accounting</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -280,6 +263,15 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @ordered
 	 */
 	protected boolean useInvoiceIdForReturns = USE_INVOICE_ID_FOR_RETURNS_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 	/**
 	 * The cached value of the '{@link #getTaxFormId() <em>Tax Form Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -892,7 +884,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -902,8 +911,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID, oldPartyId, partyId));
@@ -1135,8 +1144,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
-				return getPartyId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				return isEnableAccounting();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_DAY:
@@ -1159,6 +1166,9 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return getQuoteIdPrefix();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				return isUseInvoiceIdForReturns();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
 				if (resolve) return getTaxFormId();
 				return basicGetTaxFormId();
@@ -1204,9 +1214,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				setEnableAccounting((Boolean)newValue);
 				return;
@@ -1239,6 +1246,9 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				setUseInvoiceIdForReturns((Boolean)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
 				setTaxFormId((Enumeration)newValue);
@@ -1285,9 +1295,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				setEnableAccounting(ENABLE_ACCOUNTING_EDEFAULT);
 				return;
@@ -1320,6 +1327,9 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				setUseInvoiceIdForReturns(USE_INVOICE_ID_FOR_RETURNS_EDEFAULT);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
 				setTaxFormId((Enumeration)null);
@@ -1366,8 +1376,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				return enableAccounting != ENABLE_ACCOUNTING_EDEFAULT;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_DAY:
@@ -1390,6 +1398,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return QUOTE_ID_PREFIX_EDEFAULT == null ? quoteIdPrefix != null : !QUOTE_ID_PREFIX_EDEFAULT.equals(quoteIdPrefix);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				return useInvoiceIdForReturns != USE_INVOICE_ID_FOR_RETURNS_EDEFAULT;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
+				return partyId != null;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
 				return taxFormId != null;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
@@ -1426,9 +1436,7 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", enableAccounting: ");
+		result.append(" (enableAccounting: ");
 		result.append(enableAccounting);
 		result.append(", fiscalYearStartDay: ");
 		result.append(fiscalYearStartDay);

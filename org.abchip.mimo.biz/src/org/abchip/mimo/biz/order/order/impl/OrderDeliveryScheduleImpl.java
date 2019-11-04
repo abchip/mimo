@@ -15,6 +15,7 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -32,7 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getCartons <em>Cartons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getEstimatedReadyDate <em>Estimated Ready Date</em>}</li>
@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalCubicSize <em>Total Cubic Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalWeight <em>Total Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getUnitsPieces <em>Units Pieces</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalCubicUomId <em>Total Cubic Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalWeightUomId <em>Total Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getStatusId <em>Status Id</em>}</li>
@@ -52,26 +53,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -214,6 +195,16 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	protected BigDecimal unitsPieces = UNITS_PIECES_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
 	 * The cached value of the '{@link #getTotalCubicUomId() <em>Total Cubic Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,7 +305,24 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -324,8 +332,8 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID, oldOrderId, orderId));
@@ -574,8 +582,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS:
@@ -590,6 +596,9 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 				return getTotalWeight();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				return getUnitsPieces();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
 				if (resolve) return getTotalCubicUomId();
 				return basicGetTotalCubicUomId();
@@ -611,9 +620,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -634,6 +640,9 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				setUnitsPieces((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
 				setTotalCubicUomId((Uom)newValue);
@@ -656,9 +665,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -679,6 +685,9 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				setUnitsPieces(UNITS_PIECES_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
 				setTotalCubicUomId((Uom)null);
@@ -701,8 +710,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS:
@@ -717,6 +724,8 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 				return TOTAL_WEIGHT_EDEFAULT == null ? totalWeight != null : !TOTAL_WEIGHT_EDEFAULT.equals(totalWeight);
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				return UNITS_PIECES_EDEFAULT == null ? unitsPieces != null : !UNITS_PIECES_EDEFAULT.equals(unitsPieces);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				return orderId != null;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
 				return totalCubicUomId != null;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
@@ -737,9 +746,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", cartons: ");
 		result.append(cartons);

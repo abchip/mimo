@@ -20,7 +20,6 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getChangeDate <em>Change Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getGroupName <em>Group Name</em>}</li>
@@ -28,6 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPersonalTitle <em>Personal Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getSuffix <em>Suffix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory()
@@ -219,30 +219,29 @@ public interface PartyNameHistory extends BizEntity {
 	void setSuffix(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory_PartyId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 } // PartyNameHistory

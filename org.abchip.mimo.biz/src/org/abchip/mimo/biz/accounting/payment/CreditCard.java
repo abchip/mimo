@@ -8,7 +8,7 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import java.util.Date;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
  * <!-- begin-user-doc -->
@@ -181,12 +181,12 @@ public interface CreditCard extends PaymentMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(PostalAddress)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -196,7 +196,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(PostalAddress value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Expire Date</b></em>' attribute.

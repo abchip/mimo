@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.ProductFacility;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getDaysToShip <em>Days To Ship</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getLastInventoryCount <em>Last Inventory Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getMinimumStock <em>Minimum Stock</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getReorderQuantity <em>Reorder Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  * </ul>
@@ -46,26 +47,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getDaysToShip() <em>Days To Ship</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -145,6 +126,16 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @ordered
 	 */
 	protected BigDecimal reorderQuantity = REORDER_QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
@@ -260,7 +251,24 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -270,8 +278,8 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID, oldProductId, productId));
@@ -388,8 +396,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
-				return getProductId();
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				return getDaysToShip();
 			case FacilityPackage.PRODUCT_FACILITY__LAST_INVENTORY_COUNT:
@@ -398,6 +404,9 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 				return getMinimumStock();
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				return getReorderQuantity();
+			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
 				if (resolve) return getFacilityId();
 				return basicGetFacilityId();
@@ -416,9 +425,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				setDaysToShip((Long)newValue);
 				return;
@@ -430,6 +436,9 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 				return;
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				setReorderQuantity((BigDecimal)newValue);
+				return;
+			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
 				setFacilityId((Facility)newValue);
@@ -449,9 +458,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				setDaysToShip(DAYS_TO_SHIP_EDEFAULT);
 				return;
@@ -463,6 +469,9 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 				return;
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				setReorderQuantity(REORDER_QUANTITY_EDEFAULT);
+				return;
+			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
 				setFacilityId((Facility)null);
@@ -482,8 +491,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				return daysToShip != DAYS_TO_SHIP_EDEFAULT;
 			case FacilityPackage.PRODUCT_FACILITY__LAST_INVENTORY_COUNT:
@@ -492,6 +499,8 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 				return MINIMUM_STOCK_EDEFAULT == null ? minimumStock != null : !MINIMUM_STOCK_EDEFAULT.equals(minimumStock);
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				return REORDER_QUANTITY_EDEFAULT == null ? reorderQuantity != null : !REORDER_QUANTITY_EDEFAULT.equals(reorderQuantity);
+			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
+				return productId != null;
 			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
 				return facilityId != null;
 			case FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID:
@@ -510,9 +519,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", daysToShip: ");
+		result.append(" (daysToShip: ");
 		result.append(daysToShip);
 		result.append(", lastInventoryCount: ");
 		result.append(lastInventoryCount);

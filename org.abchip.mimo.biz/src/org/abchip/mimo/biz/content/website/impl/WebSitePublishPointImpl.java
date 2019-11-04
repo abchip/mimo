@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.website.impl;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.website.WebSitePublishPoint;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getAboutContentId <em>About Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentDept <em>Content Dept</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getLeftBarId <em>Left Bar Id</em>}</li>
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getRightBarId <em>Right Bar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getStyleSheetFile <em>Style Sheet File</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getTemplateTitle <em>Template Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,26 +47,6 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAboutContentId() <em>About Content Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -245,6 +228,16 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	protected String templateTitle = TEMPLATE_TITLE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -315,7 +308,24 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -325,8 +335,8 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID, oldContentId, contentId));
@@ -501,8 +511,6 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
-				return getContentId();
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID:
 				return getAboutContentId();
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_DEPT:
@@ -521,6 +529,9 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 				return getStyleSheetFile();
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__TEMPLATE_TITLE:
 				return getTemplateTitle();
+			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -533,9 +544,6 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID:
 				setAboutContentId((String)newValue);
 				return;
@@ -563,6 +571,9 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__TEMPLATE_TITLE:
 				setTemplateTitle((String)newValue);
 				return;
+			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -575,9 +586,6 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID:
 				setAboutContentId(ABOUT_CONTENT_ID_EDEFAULT);
 				return;
@@ -605,6 +613,9 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__TEMPLATE_TITLE:
 				setTemplateTitle(TEMPLATE_TITLE_EDEFAULT);
 				return;
+			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
+				setContentId((Content)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -617,8 +628,6 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID:
 				return ABOUT_CONTENT_ID_EDEFAULT == null ? aboutContentId != null : !ABOUT_CONTENT_ID_EDEFAULT.equals(aboutContentId);
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_DEPT:
@@ -637,6 +646,8 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 				return STYLE_SHEET_FILE_EDEFAULT == null ? styleSheetFile != null : !STYLE_SHEET_FILE_EDEFAULT.equals(styleSheetFile);
 			case WebsitePackage.WEB_SITE_PUBLISH_POINT__TEMPLATE_TITLE:
 				return TEMPLATE_TITLE_EDEFAULT == null ? templateTitle != null : !TEMPLATE_TITLE_EDEFAULT.equals(templateTitle);
+			case WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID:
+				return contentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -651,9 +662,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", aboutContentId: ");
+		result.append(" (aboutContentId: ");
 		result.append(aboutContentId);
 		result.append(", contentDept: ");
 		result.append(contentDept);

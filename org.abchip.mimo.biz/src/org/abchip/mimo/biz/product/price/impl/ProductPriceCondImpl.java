@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceCond;
+import org.abchip.mimo.biz.product.price.ProductPriceRule;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -26,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceCondImpl#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceCondImpl#getProductPriceCondSeqId <em>Product Price Cond Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceCondImpl#getCondValue <em>Cond Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceCondImpl#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceCondImpl#getInputParamEnumId <em>Input Param Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceCondImpl#getOperatorEnumId <em>Operator Enum Id</em>}</li>
  * </ul>
@@ -40,26 +41,6 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductPriceRuleId() <em>Product Price Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_RULE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPriceRuleId() <em>Product Price Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPriceRuleId = PRODUCT_PRICE_RULE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getProductPriceCondSeqId() <em>Product Price Cond Seq Id</em>}' attribute.
@@ -100,6 +81,16 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * @ordered
 	 */
 	protected String condValue = COND_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductPriceRuleId() <em>Product Price Rule Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPriceRuleId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPriceRule productPriceRuleId;
 
 	/**
 	 * The cached value of the '{@link #getInputParamEnumId() <em>Input Param Enum Id</em>}' reference.
@@ -272,7 +263,24 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * @generated
 	 */
 	@Override
-	public String getProductPriceRuleId() {
+	public ProductPriceRule getProductPriceRuleId() {
+		if (productPriceRuleId != null && ((EObject)productPriceRuleId).eIsProxy()) {
+			InternalEObject oldProductPriceRuleId = (InternalEObject)productPriceRuleId;
+			productPriceRuleId = (ProductPriceRule)eResolveProxy(oldProductPriceRuleId);
+			if (productPriceRuleId != oldProductPriceRuleId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
+			}
+		}
+		return productPriceRuleId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPriceRule basicGetProductPriceRuleId() {
 		return productPriceRuleId;
 	}
 
@@ -282,8 +290,8 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * @generated
 	 */
 	@Override
-	public void setProductPriceRuleId(String newProductPriceRuleId) {
-		String oldProductPriceRuleId = productPriceRuleId;
+	public void setProductPriceRuleId(ProductPriceRule newProductPriceRuleId) {
+		ProductPriceRule oldProductPriceRuleId = productPriceRuleId;
 		productPriceRuleId = newProductPriceRuleId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
@@ -297,12 +305,13 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
-				return getProductPriceRuleId();
 			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_COND_SEQ_ID:
 				return getProductPriceCondSeqId();
 			case PricePackage.PRODUCT_PRICE_COND__COND_VALUE:
 				return getCondValue();
+			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
+				if (resolve) return getProductPriceRuleId();
+				return basicGetProductPriceRuleId();
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
 				if (resolve) return getInputParamEnumId();
 				return basicGetInputParamEnumId();
@@ -321,14 +330,14 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
-				setProductPriceRuleId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_COND_SEQ_ID:
 				setProductPriceCondSeqId((String)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__COND_VALUE:
 				setCondValue((String)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
+				setProductPriceRuleId((ProductPriceRule)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
 				setInputParamEnumId((Enumeration)newValue);
@@ -348,14 +357,14 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
-				setProductPriceRuleId(PRODUCT_PRICE_RULE_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_COND_SEQ_ID:
 				setProductPriceCondSeqId(PRODUCT_PRICE_COND_SEQ_ID_EDEFAULT);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__COND_VALUE:
 				setCondValue(COND_VALUE_EDEFAULT);
+				return;
+			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
+				setProductPriceRuleId((ProductPriceRule)null);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
 				setInputParamEnumId((Enumeration)null);
@@ -375,12 +384,12 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
-				return PRODUCT_PRICE_RULE_ID_EDEFAULT == null ? productPriceRuleId != null : !PRODUCT_PRICE_RULE_ID_EDEFAULT.equals(productPriceRuleId);
 			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_COND_SEQ_ID:
 				return PRODUCT_PRICE_COND_SEQ_ID_EDEFAULT == null ? productPriceCondSeqId != null : !PRODUCT_PRICE_COND_SEQ_ID_EDEFAULT.equals(productPriceCondSeqId);
 			case PricePackage.PRODUCT_PRICE_COND__COND_VALUE:
 				return COND_VALUE_EDEFAULT == null ? condValue != null : !COND_VALUE_EDEFAULT.equals(condValue);
+			case PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID:
+				return productPriceRuleId != null;
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
 				return inputParamEnumId != null;
 			case PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID:
@@ -399,9 +408,7 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productPriceRuleId: ");
-		result.append(productPriceRuleId);
-		result.append(", productPriceCondSeqId: ");
+		result.append(" (productPriceCondSeqId: ");
 		result.append(productPriceCondSeqId);
 		result.append(", condValue: ");
 		result.append(condValue);

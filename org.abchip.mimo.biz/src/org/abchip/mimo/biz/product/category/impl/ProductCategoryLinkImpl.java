@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryLink;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -28,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getLinkSeqId <em>Link Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getComments <em>Comments</em>}</li>
@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getTitleText <em>Title Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getLinkTypeEnumId <em>Link Type Enum Id</em>}</li>
  * </ul>
  *
@@ -51,26 +52,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getLinkSeqId() <em>Link Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -290,6 +271,16 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 * @ordered
 	 */
 	protected String titleText = TITLE_TEXT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * The cached value of the '{@link #getLinkTypeEnumId() <em>Link Type Enum Id</em>}' reference.
@@ -619,7 +610,24 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -629,8 +637,8 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -644,8 +652,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_SEQ_ID:
 				return getLinkSeqId();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__FROM_DATE:
@@ -668,6 +674,9 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 				return getThruDate();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				return getTitleText();
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
 				if (resolve) return getLinkTypeEnumId();
 				return basicGetLinkTypeEnumId();
@@ -683,9 +692,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_SEQ_ID:
 				setLinkSeqId((String)newValue);
 				return;
@@ -719,6 +725,9 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				setTitleText((String)newValue);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
+				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
 				setLinkTypeEnumId((Enumeration)newValue);
 				return;
@@ -734,9 +743,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_SEQ_ID:
 				setLinkSeqId(LINK_SEQ_ID_EDEFAULT);
 				return;
@@ -770,6 +776,9 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				setTitleText(TITLE_TEXT_EDEFAULT);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
+				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
 				setLinkTypeEnumId((Enumeration)null);
 				return;
@@ -785,8 +794,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_SEQ_ID:
 				return LINK_SEQ_ID_EDEFAULT == null ? linkSeqId != null : !LINK_SEQ_ID_EDEFAULT.equals(linkSeqId);
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__FROM_DATE:
@@ -809,6 +816,8 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				return TITLE_TEXT_EDEFAULT == null ? titleText != null : !TITLE_TEXT_EDEFAULT.equals(titleText);
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
 				return linkTypeEnumId != null;
 		}
@@ -825,9 +834,7 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", linkSeqId: ");
+		result.append(" (linkSeqId: ");
 		result.append(linkSeqId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

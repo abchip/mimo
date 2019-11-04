@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
+import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantDataSource;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,11 +27,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getEntityGroupName <em>Entity Group Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getJdbcPassword <em>Jdbc Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getJdbcUri <em>Jdbc Uri</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getJdbcUsername <em>Jdbc Username</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getTenantId <em>Tenant Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,25 +41,6 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TENANT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenantId = TENANT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getEntityGroupName() <em>Entity Group Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -129,6 +113,15 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 * @ordered
 	 */
 	protected String jdbcUsername = JDBC_USERNAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getTenantId() <em>Tenant Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenantId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Tenant tenantId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,7 +240,24 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 * @generated
 	 */
 	@Override
-	public String getTenantId() {
+	public Tenant getTenantId() {
+		if (tenantId != null && ((EObject)tenantId).eIsProxy()) {
+			InternalEObject oldTenantId = (InternalEObject)tenantId;
+			tenantId = (Tenant)eResolveProxy(oldTenantId);
+			if (tenantId != oldTenantId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_DATA_SOURCE__TENANT_ID, oldTenantId, tenantId));
+			}
+		}
+		return tenantId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Tenant basicGetTenantId() {
 		return tenantId;
 	}
 
@@ -257,8 +267,8 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 * @generated
 	 */
 	@Override
-	public void setTenantId(String newTenantId) {
-		String oldTenantId = tenantId;
+	public void setTenantId(Tenant newTenantId) {
+		Tenant oldTenantId = tenantId;
 		tenantId = newTenantId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DATA_SOURCE__TENANT_ID, oldTenantId, tenantId));
@@ -272,8 +282,6 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
-				return getTenantId();
 			case TenantPackage.TENANT_DATA_SOURCE__ENTITY_GROUP_NAME:
 				return getEntityGroupName();
 			case TenantPackage.TENANT_DATA_SOURCE__JDBC_PASSWORD:
@@ -282,6 +290,9 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 				return getJdbcUri();
 			case TenantPackage.TENANT_DATA_SOURCE__JDBC_USERNAME:
 				return getJdbcUsername();
+			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
+				if (resolve) return getTenantId();
+				return basicGetTenantId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -294,9 +305,6 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
-				setTenantId((String)newValue);
-				return;
 			case TenantPackage.TENANT_DATA_SOURCE__ENTITY_GROUP_NAME:
 				setEntityGroupName((String)newValue);
 				return;
@@ -308,6 +316,9 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 				return;
 			case TenantPackage.TENANT_DATA_SOURCE__JDBC_USERNAME:
 				setJdbcUsername((String)newValue);
+				return;
+			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
+				setTenantId((Tenant)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -321,9 +332,6 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
-				setTenantId(TENANT_ID_EDEFAULT);
-				return;
 			case TenantPackage.TENANT_DATA_SOURCE__ENTITY_GROUP_NAME:
 				setEntityGroupName(ENTITY_GROUP_NAME_EDEFAULT);
 				return;
@@ -335,6 +343,9 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 				return;
 			case TenantPackage.TENANT_DATA_SOURCE__JDBC_USERNAME:
 				setJdbcUsername(JDBC_USERNAME_EDEFAULT);
+				return;
+			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
+				setTenantId((Tenant)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -348,8 +359,6 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
-				return TENANT_ID_EDEFAULT == null ? tenantId != null : !TENANT_ID_EDEFAULT.equals(tenantId);
 			case TenantPackage.TENANT_DATA_SOURCE__ENTITY_GROUP_NAME:
 				return ENTITY_GROUP_NAME_EDEFAULT == null ? entityGroupName != null : !ENTITY_GROUP_NAME_EDEFAULT.equals(entityGroupName);
 			case TenantPackage.TENANT_DATA_SOURCE__JDBC_PASSWORD:
@@ -358,6 +367,8 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 				return JDBC_URI_EDEFAULT == null ? jdbcUri != null : !JDBC_URI_EDEFAULT.equals(jdbcUri);
 			case TenantPackage.TENANT_DATA_SOURCE__JDBC_USERNAME:
 				return JDBC_USERNAME_EDEFAULT == null ? jdbcUsername != null : !JDBC_USERNAME_EDEFAULT.equals(jdbcUsername);
+			case TenantPackage.TENANT_DATA_SOURCE__TENANT_ID:
+				return tenantId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,9 +383,7 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (tenantId: ");
-		result.append(tenantId);
-		result.append(", entityGroupName: ");
+		result.append(" (entityGroupName: ");
 		result.append(entityGroupName);
 		result.append(", jdbcPassword: ");
 		result.append(jdbcPassword);

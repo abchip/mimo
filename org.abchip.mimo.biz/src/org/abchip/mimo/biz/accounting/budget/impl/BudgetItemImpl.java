@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetItem;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
@@ -28,11 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemImpl#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemImpl#getJustification <em>Justification</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemImpl#getPurpose <em>Purpose</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemImpl#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  * </ul>
  *
@@ -43,24 +44,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -133,6 +116,15 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 * @ordered
 	 */
 	protected String purpose = PURPOSE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 	/**
 	 * The cached value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -260,7 +252,24 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -270,8 +279,8 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__BUDGET_ID, oldBudgetId, budgetId));
@@ -325,8 +334,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				return getBudgetId();
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
 				return getBudgetItemSeqId();
 			case BudgetPackage.BUDGET_ITEM__AMOUNT:
@@ -335,6 +342,9 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 				return getJustification();
 			case BudgetPackage.BUDGET_ITEM__PURPOSE:
 				return getPurpose();
+			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
 				if (resolve) return getBudgetItemTypeId();
 				return basicGetBudgetItemTypeId();
@@ -350,9 +360,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId((String)newValue);
 				return;
@@ -364,6 +371,9 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 				return;
 			case BudgetPackage.BUDGET_ITEM__PURPOSE:
 				setPurpose((String)newValue);
+				return;
+			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
+				setBudgetId((Budget)newValue);
 				return;
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
 				setBudgetItemTypeId((BudgetItemType)newValue);
@@ -380,9 +390,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId(BUDGET_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -394,6 +401,9 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 				return;
 			case BudgetPackage.BUDGET_ITEM__PURPOSE:
 				setPurpose(PURPOSE_EDEFAULT);
+				return;
+			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
+				setBudgetId((Budget)null);
 				return;
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
 				setBudgetItemTypeId((BudgetItemType)null);
@@ -410,8 +420,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
 				return BUDGET_ITEM_SEQ_ID_EDEFAULT == null ? budgetItemSeqId != null : !BUDGET_ITEM_SEQ_ID_EDEFAULT.equals(budgetItemSeqId);
 			case BudgetPackage.BUDGET_ITEM__AMOUNT:
@@ -420,6 +428,8 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 				return JUSTIFICATION_EDEFAULT == null ? justification != null : !JUSTIFICATION_EDEFAULT.equals(justification);
 			case BudgetPackage.BUDGET_ITEM__PURPOSE:
 				return PURPOSE_EDEFAULT == null ? purpose != null : !PURPOSE_EDEFAULT.equals(purpose);
+			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
+				return budgetId != null;
 			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
 				return budgetItemTypeId != null;
 		}
@@ -436,9 +446,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", budgetItemSeqId: ");
+		result.append(" (budgetItemSeqId: ");
 		result.append(budgetItemSeqId);
 		result.append(", amount: ");
 		result.append(amount);

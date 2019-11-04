@@ -8,7 +8,7 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +19,6 @@ import org.abchip.mimo.biz.party.contact.PostalAddress;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsAddr <em>Avs Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsZip <em>Avs Zip</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getCorrelationId <em>Correlation Id</em>}</li>
@@ -27,6 +26,7 @@ import org.abchip.mimo.biz.party.contact.PostalAddress;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPayerId <em>Payer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPayerStatus <em>Payer Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getTransactionId <em>Transaction Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -44,12 +44,12 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(PostalAddress)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -59,7 +59,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(PostalAddress value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Correlation Id</b></em>' attribute.
@@ -166,31 +166,30 @@ public interface PayPalPaymentMethod extends BizEntity {
 	void setPayerStatus(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Id</em>' attribute.
-	 * @see #setPaymentMethodId(String)
+	 * @return the value of the '<em>Payment Method Id</em>' reference.
+	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_PaymentMethodId()
-	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="paymentMethodId"
 	 * @generated
 	 */
-	String getPaymentMethodId();
+	PaymentMethod getPaymentMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId <em>Payment Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId <em>Payment Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Id</em>' reference.
 	 * @see #getPaymentMethodId()
 	 * @generated
 	 */
-	void setPaymentMethodId(String value);
+	void setPaymentMethodId(PaymentMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>Avs Addr</b></em>' attribute.

@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
@@ -28,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentBudgetAllocationImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentBudgetAllocationImpl#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentBudgetAllocationImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentBudgetAllocationImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentBudgetAllocationImpl#getPaymentId <em>Payment Id</em>}</li>
  * </ul>
  *
@@ -41,24 +42,6 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -95,6 +78,15 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 * @ordered
 	 */
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 	/**
 	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -176,7 +168,24 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -186,8 +195,8 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
@@ -241,12 +250,13 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				return getBudgetId();
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				return getBudgetItemSeqId();
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__AMOUNT:
 				return getAmount();
+			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID:
 				if (resolve) return getPaymentId();
 				return basicGetPaymentId();
@@ -262,14 +272,14 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId((String)newValue);
 				return;
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__AMOUNT:
 				setAmount((BigDecimal)newValue);
+				return;
+			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				setBudgetId((Budget)newValue);
 				return;
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID:
 				setPaymentId((Payment)newValue);
@@ -286,14 +296,14 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId(BUDGET_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
+				return;
+			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				setBudgetId((Budget)null);
 				return;
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID:
 				setPaymentId((Payment)null);
@@ -310,12 +320,12 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				return BUDGET_ITEM_SEQ_ID_EDEFAULT == null ? budgetItemSeqId != null : !BUDGET_ITEM_SEQ_ID_EDEFAULT.equals(budgetItemSeqId);
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
+			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				return budgetId != null;
 			case PaymentPackage.PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID:
 				return paymentId != null;
 		}
@@ -332,9 +342,7 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", budgetItemSeqId: ");
+		result.append(" (budgetItemSeqId: ");
 		result.append(budgetItemSeqId);
 		result.append(", amount: ");
 		result.append(amount);

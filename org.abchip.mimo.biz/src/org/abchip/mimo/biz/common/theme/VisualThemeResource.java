@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getVisualThemeId <em>Visual Theme Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getSequenceId <em>Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>Resource Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getVisualThemeId <em>Visual Theme Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>Resource Type Enum Id</em>}</li>
  * </ul>
  *
@@ -84,31 +84,30 @@ public interface VisualThemeResource extends BizEntity {
 	void setSequenceId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Visual Theme Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Visual Theme Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Visual Theme Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Visual Theme Id</em>' attribute.
-	 * @see #setVisualThemeId(String)
+	 * @return the value of the '<em>Visual Theme Id</em>' reference.
+	 * @see #setVisualThemeId(VisualTheme)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_VisualThemeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="visualThemeId"
 	 * @generated
 	 */
-	String getVisualThemeId();
+	VisualTheme getVisualThemeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getVisualThemeId <em>Visual Theme Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getVisualThemeId <em>Visual Theme Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visual Theme Id</em>' attribute.
+	 * @param value the new value of the '<em>Visual Theme Id</em>' reference.
 	 * @see #getVisualThemeId()
 	 * @generated
 	 */
-	void setVisualThemeId(String value);
+	void setVisualThemeId(VisualTheme value);
 
 	/**
 	 * Returns the value of the '<em><b>Resource Type Enum Id</b></em>' reference.

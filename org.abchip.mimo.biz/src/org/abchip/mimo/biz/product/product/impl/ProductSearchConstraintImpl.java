@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.product.product.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductSearchConstraint;
+import org.abchip.mimo.biz.product.product.ProductSearchResult;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getProductSearchResultId <em>Product Search Result Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#isAnyPrefix <em>Any Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#isAnySuffix <em>Any Suffix</em>}</li>
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#isIsAnd <em>Is And</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getLowValue <em>Low Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#isRemoveStems <em>Remove Stems</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getProductSearchResultId <em>Product Search Result Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,26 +46,6 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductSearchResultId() <em>Product Search Result Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductSearchResultId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_SEARCH_RESULT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductSearchResultId() <em>Product Search Result Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductSearchResultId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productSearchResultId = PRODUCT_SEARCH_RESULT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getConstraintSeqId() <em>Constraint Seq Id</em>}' attribute.
@@ -263,6 +246,16 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected boolean removeStems = REMOVE_STEMS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductSearchResultId() <em>Product Search Result Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductSearchResultId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductSearchResult productSearchResultId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -519,7 +512,24 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public String getProductSearchResultId() {
+	public ProductSearchResult getProductSearchResultId() {
+		if (productSearchResultId != null && ((EObject)productSearchResultId).eIsProxy()) {
+			InternalEObject oldProductSearchResultId = (InternalEObject)productSearchResultId;
+			productSearchResultId = (ProductSearchResult)eResolveProxy(oldProductSearchResultId);
+			if (productSearchResultId != oldProductSearchResultId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID, oldProductSearchResultId, productSearchResultId));
+			}
+		}
+		return productSearchResultId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductSearchResult basicGetProductSearchResultId() {
 		return productSearchResultId;
 	}
 
@@ -529,8 +539,8 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setProductSearchResultId(String newProductSearchResultId) {
-		String oldProductSearchResultId = productSearchResultId;
+	public void setProductSearchResultId(ProductSearchResult newProductSearchResultId) {
+		ProductSearchResult oldProductSearchResultId = productSearchResultId;
 		productSearchResultId = newProductSearchResultId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID, oldProductSearchResultId, productSearchResultId));
@@ -544,8 +554,6 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
-				return getProductSearchResultId();
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				return getConstraintSeqId();
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__ANY_PREFIX:
@@ -566,6 +574,9 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 				return getLowValue();
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				return isRemoveStems();
+			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
+				if (resolve) return getProductSearchResultId();
+				return basicGetProductSearchResultId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -578,9 +589,6 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
-				setProductSearchResultId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				setConstraintSeqId((String)newValue);
 				return;
@@ -611,6 +619,9 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				setRemoveStems((Boolean)newValue);
 				return;
+			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
+				setProductSearchResultId((ProductSearchResult)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -623,9 +634,6 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
-				setProductSearchResultId(PRODUCT_SEARCH_RESULT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				setConstraintSeqId(CONSTRAINT_SEQ_ID_EDEFAULT);
 				return;
@@ -656,6 +664,9 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				setRemoveStems(REMOVE_STEMS_EDEFAULT);
 				return;
+			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
+				setProductSearchResultId((ProductSearchResult)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -668,8 +679,6 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
-				return PRODUCT_SEARCH_RESULT_ID_EDEFAULT == null ? productSearchResultId != null : !PRODUCT_SEARCH_RESULT_ID_EDEFAULT.equals(productSearchResultId);
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				return CONSTRAINT_SEQ_ID_EDEFAULT == null ? constraintSeqId != null : !CONSTRAINT_SEQ_ID_EDEFAULT.equals(constraintSeqId);
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__ANY_PREFIX:
@@ -690,6 +699,8 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 				return LOW_VALUE_EDEFAULT == null ? lowValue != null : !LOW_VALUE_EDEFAULT.equals(lowValue);
 			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				return removeStems != REMOVE_STEMS_EDEFAULT;
+			case ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID:
+				return productSearchResultId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -704,9 +715,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productSearchResultId: ");
-		result.append(productSearchResultId);
-		result.append(", constraintSeqId: ");
+		result.append(" (constraintSeqId: ");
 		result.append(constraintSeqId);
 		result.append(", anyPrefix: ");
 		result.append(anyPrefix);

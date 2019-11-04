@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceContactMech;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -40,23 +41,14 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInvoiceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INVOICE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceId = INVOICE_ID_EDEFAULT;
+	protected Invoice invoiceId;
 	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -181,7 +173,24 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceId() {
+	public Invoice getInvoiceId() {
+		if (invoiceId != null && ((EObject)invoiceId).eIsProxy()) {
+			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
+			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
+			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID, oldInvoiceId, invoiceId));
+			}
+		}
+		return invoiceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoiceId() {
 		return invoiceId;
 	}
 
@@ -191,8 +200,8 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
+	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID, oldInvoiceId, invoiceId));
@@ -207,7 +216,8 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID:
-				return getInvoiceId();
+				if (resolve) return getInvoiceId();
+				return basicGetInvoiceId();
 			case InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -227,7 +237,7 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID:
-				setInvoiceId((String)newValue);
+				setInvoiceId((Invoice)newValue);
 				return;
 			case InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)newValue);
@@ -248,7 +258,7 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID:
-				setInvoiceId(INVOICE_ID_EDEFAULT);
+				setInvoiceId((Invoice)null);
 				return;
 			case InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)null);
@@ -269,29 +279,13 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID:
-				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
+				return invoiceId != null;
 			case InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_ID:
 				return contactMechId != null;
 			case InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID:
 				return contactMechPurposeTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (invoiceId: ");
-		result.append(invoiceId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //InvoiceContactMechImpl

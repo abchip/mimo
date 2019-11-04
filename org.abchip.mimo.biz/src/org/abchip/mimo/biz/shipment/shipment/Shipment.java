@@ -17,9 +17,9 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
-import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
@@ -55,8 +55,8 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getOriginFacilityId <em>Origin Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getDestinationFacilityId <em>Destination Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getDestinationContactMechId <em>Destination Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getDestinationTelecomNumberId <em>Destination Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getPrimaryOrderId <em>Primary Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getPrimaryReturnId <em>Primary Return Id</em>}</li>
@@ -214,12 +214,12 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Destination Contact Mech Id</em>' reference.
-	 * @see #setDestinationContactMechId(PostalAddress)
+	 * @see #setDestinationContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_DestinationContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getDestinationContactMechId();
+	ContactMech getDestinationContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getDestinationContactMechId <em>Destination Contact Mech Id</em>}' reference.
@@ -229,7 +229,7 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #getDestinationContactMechId()
 	 * @generated
 	 */
-	void setDestinationContactMechId(PostalAddress value);
+	void setDestinationContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Destination Facility Id</b></em>' reference.
@@ -552,12 +552,12 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Origin Contact Mech Id</em>' reference.
-	 * @see #setOriginContactMechId(PostalAddress)
+	 * @see #setOriginContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_OriginContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getOriginContactMechId();
+	ContactMech getOriginContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getOriginContactMechId <em>Origin Contact Mech Id</em>}' reference.
@@ -567,7 +567,7 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #getOriginContactMechId()
 	 * @generated
 	 */
-	void setOriginContactMechId(PostalAddress value);
+	void setOriginContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Origin Facility Id</b></em>' reference.
@@ -630,12 +630,12 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Id From</em>' reference.
-	 * @see #setPartyIdFrom(PartyGroup)
+	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_PartyIdFrom()
 	 * @model keys="partyId"
 	 * @generated
 	 */
-	PartyGroup getPartyIdFrom();
+	Party getPartyIdFrom();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getPartyIdFrom <em>Party Id From</em>}' reference.
@@ -645,7 +645,7 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #getPartyIdFrom()
 	 * @generated
 	 */
-	void setPartyIdFrom(PartyGroup value);
+	void setPartyIdFrom(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id To</b></em>' reference.
@@ -656,12 +656,12 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Id To</em>' reference.
-	 * @see #setPartyIdTo(PartyGroup)
+	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_PartyIdTo()
 	 * @model keys="partyId"
 	 * @generated
 	 */
-	PartyGroup getPartyIdTo();
+	Party getPartyIdTo();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getPartyIdTo <em>Party Id To</em>}' reference.
@@ -671,7 +671,7 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #getPartyIdTo()
 	 * @generated
 	 */
-	void setPartyIdTo(PartyGroup value);
+	void setPartyIdTo(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Picklist Bin Id</b></em>' reference.

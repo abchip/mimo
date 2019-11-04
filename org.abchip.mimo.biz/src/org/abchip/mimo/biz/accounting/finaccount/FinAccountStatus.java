@@ -22,9 +22,9 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getStatusEndDate <em>Status End Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
@@ -140,30 +140,29 @@ public interface FinAccountStatus extends BizEntity {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fin Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Id</em>' attribute.
-	 * @see #setFinAccountId(String)
+	 * @return the value of the '<em>Fin Account Id</em>' reference.
+	 * @see #setFinAccountId(FinAccount)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountStatus_FinAccountId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="finAccountId"
 	 * @generated
 	 */
-	String getFinAccountId();
+	FinAccount getFinAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getFinAccountId <em>Fin Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountStatus#getFinAccountId <em>Fin Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fin Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Fin Account Id</em>' reference.
 	 * @see #getFinAccountId()
 	 * @generated
 	 */
-	void setFinAccountId(String value);
+	void setFinAccountId(FinAccount value);
 
 } // FinAccountStatus

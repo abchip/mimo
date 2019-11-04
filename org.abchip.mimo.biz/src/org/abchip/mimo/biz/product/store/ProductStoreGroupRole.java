@@ -83,30 +83,29 @@ public interface ProductStoreGroupRole extends BizEntity {
 	void setRoleTypeId(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Group Id</em>' attribute.
-	 * @see #setProductStoreGroupId(String)
+	 * @return the value of the '<em>Product Store Group Id</em>' reference.
+	 * @see #setProductStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRole_ProductStoreGroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productStoreGroupId"
 	 * @generated
 	 */
-	String getProductStoreGroupId();
+	ProductStoreGroup getProductStoreGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRole#getProductStoreGroupId <em>Product Store Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRole#getProductStoreGroupId <em>Product Store Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Group Id</em>' reference.
 	 * @see #getProductStoreGroupId()
 	 * @generated
 	 */
-	void setProductStoreGroupId(String value);
+	void setProductStoreGroupId(ProductStoreGroup value);
 
 } // ProductStoreGroupRole

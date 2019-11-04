@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.content.content.impl;
 
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentSearchConstraint;
+import org.abchip.mimo.biz.content.content.ContentSearchResult;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getContentSearchResultId <em>Content Search Result Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isAnyPrefix <em>Any Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isAnySuffix <em>Any Suffix</em>}</li>
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isIsAnd <em>Is And</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getLowValue <em>Low Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isRemoveStems <em>Remove Stems</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getContentSearchResultId <em>Content Search Result Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,26 +48,6 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentSearchResultId() <em>Content Search Result Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentSearchResultId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_SEARCH_RESULT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentSearchResultId() <em>Content Search Result Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentSearchResultId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentSearchResultId = CONTENT_SEARCH_RESULT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getConstraintSeqId() <em>Constraint Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -266,6 +249,16 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	protected boolean removeStems = REMOVE_STEMS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentSearchResultId() <em>Content Search Result Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentSearchResultId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentSearchResult contentSearchResultId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -382,7 +375,24 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public String getContentSearchResultId() {
+	public ContentSearchResult getContentSearchResultId() {
+		if (contentSearchResultId != null && ((EObject)contentSearchResultId).eIsProxy()) {
+			InternalEObject oldContentSearchResultId = (InternalEObject)contentSearchResultId;
+			contentSearchResultId = (ContentSearchResult)eResolveProxy(oldContentSearchResultId);
+			if (contentSearchResultId != oldContentSearchResultId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID, oldContentSearchResultId, contentSearchResultId));
+			}
+		}
+		return contentSearchResultId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentSearchResult basicGetContentSearchResultId() {
 		return contentSearchResultId;
 	}
 
@@ -392,8 +402,8 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setContentSearchResultId(String newContentSearchResultId) {
-		String oldContentSearchResultId = contentSearchResultId;
+	public void setContentSearchResultId(ContentSearchResult newContentSearchResultId) {
+		ContentSearchResult oldContentSearchResultId = contentSearchResultId;
 		contentSearchResultId = newContentSearchResultId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID, oldContentSearchResultId, contentSearchResultId));
@@ -545,8 +555,6 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
-				return getContentSearchResultId();
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				return getConstraintSeqId();
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX:
@@ -567,6 +575,9 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 				return getLowValue();
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				return isRemoveStems();
+			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
+				if (resolve) return getContentSearchResultId();
+				return basicGetContentSearchResultId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -579,9 +590,6 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
-				setContentSearchResultId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				setConstraintSeqId((String)newValue);
 				return;
@@ -612,6 +620,9 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				setRemoveStems((Boolean)newValue);
 				return;
+			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
+				setContentSearchResultId((ContentSearchResult)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -624,9 +635,6 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
-				setContentSearchResultId(CONTENT_SEARCH_RESULT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				setConstraintSeqId(CONSTRAINT_SEQ_ID_EDEFAULT);
 				return;
@@ -657,6 +665,9 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				setRemoveStems(REMOVE_STEMS_EDEFAULT);
 				return;
+			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
+				setContentSearchResultId((ContentSearchResult)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -669,8 +680,6 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
-				return CONTENT_SEARCH_RESULT_ID_EDEFAULT == null ? contentSearchResultId != null : !CONTENT_SEARCH_RESULT_ID_EDEFAULT.equals(contentSearchResultId);
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				return CONSTRAINT_SEQ_ID_EDEFAULT == null ? constraintSeqId != null : !CONSTRAINT_SEQ_ID_EDEFAULT.equals(constraintSeqId);
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX:
@@ -691,6 +700,8 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 				return LOW_VALUE_EDEFAULT == null ? lowValue != null : !LOW_VALUE_EDEFAULT.equals(lowValue);
 			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				return removeStems != REMOVE_STEMS_EDEFAULT;
+			case ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID:
+				return contentSearchResultId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -705,9 +716,7 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentSearchResultId: ");
-		result.append(contentSearchResultId);
-		result.append(", constraintSeqId: ");
+		result.append(" (constraintSeqId: ");
 		result.append(constraintSeqId);
 		result.append(", anyPrefix: ");
 		result.append(anyPrefix);

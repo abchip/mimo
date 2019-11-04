@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.ledger;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.inventory.VarianceReason;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,31 +57,30 @@ public interface VarianceReasonGlAccount extends BizEntity {
 	void setOrganizationPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Variance Reason Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Variance Reason Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Variance Reason Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variance Reason Id</em>' attribute.
-	 * @see #setVarianceReasonId(String)
+	 * @return the value of the '<em>Variance Reason Id</em>' reference.
+	 * @see #setVarianceReasonId(VarianceReason)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount_VarianceReasonId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="varianceReasonId"
 	 * @generated
 	 */
-	String getVarianceReasonId();
+	VarianceReason getVarianceReasonId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount#getVarianceReasonId <em>Variance Reason Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount#getVarianceReasonId <em>Variance Reason Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Variance Reason Id</em>' attribute.
+	 * @param value the new value of the '<em>Variance Reason Id</em>' reference.
 	 * @see #getVarianceReasonId()
 	 * @generated
 	 */
-	void setVarianceReasonId(String value);
+	void setVarianceReasonId(VarianceReason value);
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.

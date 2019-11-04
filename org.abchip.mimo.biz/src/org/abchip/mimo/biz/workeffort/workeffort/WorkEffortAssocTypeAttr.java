@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocTypeAttr()
@@ -82,30 +82,29 @@ public interface WorkEffortAssocTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Assoc Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Assoc Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Assoc Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Assoc Type Id</em>' attribute.
-	 * @see #setWorkEffortAssocTypeId(String)
+	 * @return the value of the '<em>Work Effort Assoc Type Id</em>' reference.
+	 * @see #setWorkEffortAssocTypeId(WorkEffortAssocType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocTypeAttr_WorkEffortAssocTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="workEffortAssocTypeId"
 	 * @generated
 	 */
-	String getWorkEffortAssocTypeId();
+	WorkEffortAssocType getWorkEffortAssocTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Assoc Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Assoc Type Id</em>' reference.
 	 * @see #getWorkEffortAssocTypeId()
 	 * @generated
 	 */
-	void setWorkEffortAssocTypeId(String value);
+	void setWorkEffortAssocTypeId(WorkEffortAssocType value);
 
 } // WorkEffortAssocTypeAttr

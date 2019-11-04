@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
+import org.abchip.mimo.biz.entity.test.TestingNode;
 import org.abchip.mimo.biz.entity.test.TestingNodeMember;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,12 +30,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingNodeMemberImpl#getTestingNodeId <em>Testing Node Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingNodeMemberImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingNodeMemberImpl#getExtendFromDate <em>Extend From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingNodeMemberImpl#getExtendThruDate <em>Extend Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingNodeMemberImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingNodeMemberImpl#getTestingId <em>Testing Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingNodeMemberImpl#getTestingNodeId <em>Testing Node Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,25 +45,6 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getTestingNodeId() <em>Testing Node Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingNodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TESTING_NODE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTestingNodeId() <em>Testing Node Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingNodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String testingNodeId = TESTING_NODE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -146,6 +128,15 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 * @ordered
 	 */
 	protected Testing testingId;
+	/**
+	 * The cached value of the '{@link #getTestingNodeId() <em>Testing Node Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTestingNodeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TestingNode testingNodeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,7 +272,24 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 * @generated
 	 */
 	@Override
-	public String getTestingNodeId() {
+	public TestingNode getTestingNodeId() {
+		if (testingNodeId != null && ((EObject)testingNodeId).eIsProxy()) {
+			InternalEObject oldTestingNodeId = (InternalEObject)testingNodeId;
+			testingNodeId = (TestingNode)eResolveProxy(oldTestingNodeId);
+			if (testingNodeId != oldTestingNodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID, oldTestingNodeId, testingNodeId));
+			}
+		}
+		return testingNodeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TestingNode basicGetTestingNodeId() {
 		return testingNodeId;
 	}
 
@@ -291,8 +299,8 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 * @generated
 	 */
 	@Override
-	public void setTestingNodeId(String newTestingNodeId) {
-		String oldTestingNodeId = testingNodeId;
+	public void setTestingNodeId(TestingNode newTestingNodeId) {
+		TestingNode oldTestingNodeId = testingNodeId;
 		testingNodeId = newTestingNodeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID, oldTestingNodeId, testingNodeId));
@@ -329,8 +337,6 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
-				return getTestingNodeId();
 			case TestPackage.TESTING_NODE_MEMBER__FROM_DATE:
 				return getFromDate();
 			case TestPackage.TESTING_NODE_MEMBER__EXTEND_FROM_DATE:
@@ -342,6 +348,9 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 			case TestPackage.TESTING_NODE_MEMBER__TESTING_ID:
 				if (resolve) return getTestingId();
 				return basicGetTestingId();
+			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
+				if (resolve) return getTestingNodeId();
+				return basicGetTestingNodeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,9 +363,6 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
-				setTestingNodeId((String)newValue);
-				return;
 			case TestPackage.TESTING_NODE_MEMBER__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -372,6 +378,9 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 			case TestPackage.TESTING_NODE_MEMBER__TESTING_ID:
 				setTestingId((Testing)newValue);
 				return;
+			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
+				setTestingNodeId((TestingNode)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -384,9 +393,6 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
-				setTestingNodeId(TESTING_NODE_ID_EDEFAULT);
-				return;
 			case TestPackage.TESTING_NODE_MEMBER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -402,6 +408,9 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 			case TestPackage.TESTING_NODE_MEMBER__TESTING_ID:
 				setTestingId((Testing)null);
 				return;
+			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
+				setTestingNodeId((TestingNode)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -414,8 +423,6 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
-				return TESTING_NODE_ID_EDEFAULT == null ? testingNodeId != null : !TESTING_NODE_ID_EDEFAULT.equals(testingNodeId);
 			case TestPackage.TESTING_NODE_MEMBER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case TestPackage.TESTING_NODE_MEMBER__EXTEND_FROM_DATE:
@@ -426,6 +433,8 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case TestPackage.TESTING_NODE_MEMBER__TESTING_ID:
 				return testingId != null;
+			case TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID:
+				return testingNodeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -440,9 +449,7 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (testingNodeId: ");
-		result.append(testingNodeId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", extendFromDate: ");
 		result.append(extendFromDate);

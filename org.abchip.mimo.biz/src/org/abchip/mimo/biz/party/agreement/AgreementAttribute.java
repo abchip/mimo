@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute#getAgreementId <em>Agreement Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementAttribute()
@@ -82,31 +82,30 @@ public interface AgreementAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Id</em>' attribute.
-	 * @see #setAgreementId(String)
+	 * @return the value of the '<em>Agreement Id</em>' reference.
+	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementAttribute_AgreementId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="agreementId"
 	 * @generated
 	 */
-	String getAgreementId();
+	Agreement getAgreementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute#getAgreementId <em>Agreement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute#getAgreementId <em>Agreement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Id</em>' reference.
 	 * @see #getAgreementId()
 	 * @generated
 	 */
-	void setAgreementId(String value);
+	void setAgreementId(Agreement value);
 
 	/**
 	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.

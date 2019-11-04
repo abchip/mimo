@@ -915,8 +915,8 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalesForecastDetail_SalesForecastId() {
-		return (EAttribute)salesForecastDetailEClass.getEStructuralFeatures().get(0);
+	public EReference getSalesForecastDetail_SalesForecastId() {
+		return (EReference)salesForecastDetailEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -926,7 +926,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesForecastDetail_SalesForecastDetailId() {
-		return (EAttribute)salesForecastDetailEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)salesForecastDetailEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -936,7 +936,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesForecastDetail_Amount() {
-		return (EAttribute)salesForecastDetailEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)salesForecastDetailEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -966,7 +966,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesForecastDetail_Quantity() {
-		return (EAttribute)salesForecastDetailEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)salesForecastDetailEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1355,8 +1355,8 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalesOpportunityCompetitor_SalesOpportunityId() {
-		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(0);
+	public EReference getSalesOpportunityCompetitor_SalesOpportunityId() {
+		return (EReference)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1366,7 +1366,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesOpportunityCompetitor_CompetitorPartyId() {
-		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1376,7 +1376,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesOpportunityCompetitor_PositionEnumId() {
-		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1386,7 +1386,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesOpportunityCompetitor_Strengths() {
-		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1396,7 +1396,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesOpportunityCompetitor_Weaknesses() {
-		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)salesOpportunityCompetitorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1545,8 +1545,8 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalesOpportunityQuote_SalesOpportunityId() {
-		return (EAttribute)salesOpportunityQuoteEClass.getEStructuralFeatures().get(0);
+	public EReference getSalesOpportunityQuote_SalesOpportunityId() {
+		return (EReference)salesOpportunityQuoteEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1575,8 +1575,8 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalesOpportunityRole_SalesOpportunityId() {
-		return (EAttribute)salesOpportunityRoleEClass.getEStructuralFeatures().get(0);
+	public EReference getSalesOpportunityRole_SalesOpportunityId() {
+		return (EReference)salesOpportunityRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1665,8 +1665,8 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalesOpportunityTrckCode_SalesOpportunityId() {
-		return (EAttribute)salesOpportunityTrckCodeEClass.getEStructuralFeatures().get(0);
+	public EReference getSalesOpportunityTrckCode_SalesOpportunityId() {
+		return (EReference)salesOpportunityTrckCodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1676,7 +1676,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesOpportunityTrckCode_TrackingCodeId() {
-		return (EAttribute)salesOpportunityTrckCodeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)salesOpportunityTrckCodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1686,7 +1686,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 */
 	@Override
 	public EAttribute getSalesOpportunityTrckCode_ReceivedDate() {
-		return (EAttribute)salesOpportunityTrckCodeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)salesOpportunityTrckCodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1705,8 +1705,8 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalesOpportunityWorkEffort_SalesOpportunityId() {
-		return (EAttribute)salesOpportunityWorkEffortEClass.getEStructuralFeatures().get(0);
+	public EReference getSalesOpportunityWorkEffort_SalesOpportunityId() {
+		return (EReference)salesOpportunityWorkEffortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1767,10 +1767,10 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		createEAttribute(salesForecastEClass, SALES_FORECAST__SALES_FORECAST_DETAILS);
 
 		salesForecastDetailEClass = createEClass(SALES_FORECAST_DETAIL);
-		createEAttribute(salesForecastDetailEClass, SALES_FORECAST_DETAIL__SALES_FORECAST_ID);
 		createEAttribute(salesForecastDetailEClass, SALES_FORECAST_DETAIL__SALES_FORECAST_DETAIL_ID);
 		createEAttribute(salesForecastDetailEClass, SALES_FORECAST_DETAIL__AMOUNT);
 		createEAttribute(salesForecastDetailEClass, SALES_FORECAST_DETAIL__QUANTITY);
+		createEReference(salesForecastDetailEClass, SALES_FORECAST_DETAIL__SALES_FORECAST_ID);
 		createEReference(salesForecastDetailEClass, SALES_FORECAST_DETAIL__QUANTITY_UOM_ID);
 		createEReference(salesForecastDetailEClass, SALES_FORECAST_DETAIL__PRODUCT_ID);
 		createEReference(salesForecastDetailEClass, SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID);
@@ -1814,11 +1814,11 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		createEAttribute(salesOpportunityEClass, SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS);
 
 		salesOpportunityCompetitorEClass = createEClass(SALES_OPPORTUNITY_COMPETITOR);
-		createEAttribute(salesOpportunityCompetitorEClass, SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID);
 		createEAttribute(salesOpportunityCompetitorEClass, SALES_OPPORTUNITY_COMPETITOR__COMPETITOR_PARTY_ID);
 		createEAttribute(salesOpportunityCompetitorEClass, SALES_OPPORTUNITY_COMPETITOR__POSITION_ENUM_ID);
 		createEAttribute(salesOpportunityCompetitorEClass, SALES_OPPORTUNITY_COMPETITOR__STRENGTHS);
 		createEAttribute(salesOpportunityCompetitorEClass, SALES_OPPORTUNITY_COMPETITOR__WEAKNESSES);
+		createEReference(salesOpportunityCompetitorEClass, SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID);
 
 		salesOpportunityHistoryEClass = createEClass(SALES_OPPORTUNITY_HISTORY);
 		createEAttribute(salesOpportunityHistoryEClass, SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_HISTORY_ID);
@@ -1835,11 +1835,11 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		createEReference(salesOpportunityHistoryEClass, SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN);
 
 		salesOpportunityQuoteEClass = createEClass(SALES_OPPORTUNITY_QUOTE);
-		createEAttribute(salesOpportunityQuoteEClass, SALES_OPPORTUNITY_QUOTE__SALES_OPPORTUNITY_ID);
+		createEReference(salesOpportunityQuoteEClass, SALES_OPPORTUNITY_QUOTE__SALES_OPPORTUNITY_ID);
 		createEReference(salesOpportunityQuoteEClass, SALES_OPPORTUNITY_QUOTE__QUOTE_ID);
 
 		salesOpportunityRoleEClass = createEClass(SALES_OPPORTUNITY_ROLE);
-		createEAttribute(salesOpportunityRoleEClass, SALES_OPPORTUNITY_ROLE__SALES_OPPORTUNITY_ID);
+		createEReference(salesOpportunityRoleEClass, SALES_OPPORTUNITY_ROLE__SALES_OPPORTUNITY_ID);
 		createEReference(salesOpportunityRoleEClass, SALES_OPPORTUNITY_ROLE__PARTY_ID);
 		createEReference(salesOpportunityRoleEClass, SALES_OPPORTUNITY_ROLE__ROLE_TYPE_ID);
 
@@ -1850,12 +1850,12 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		createEAttribute(salesOpportunityStageEClass, SALES_OPPORTUNITY_STAGE__SEQUENCE_NUM);
 
 		salesOpportunityTrckCodeEClass = createEClass(SALES_OPPORTUNITY_TRCK_CODE);
-		createEAttribute(salesOpportunityTrckCodeEClass, SALES_OPPORTUNITY_TRCK_CODE__SALES_OPPORTUNITY_ID);
 		createEAttribute(salesOpportunityTrckCodeEClass, SALES_OPPORTUNITY_TRCK_CODE__TRACKING_CODE_ID);
 		createEAttribute(salesOpportunityTrckCodeEClass, SALES_OPPORTUNITY_TRCK_CODE__RECEIVED_DATE);
+		createEReference(salesOpportunityTrckCodeEClass, SALES_OPPORTUNITY_TRCK_CODE__SALES_OPPORTUNITY_ID);
 
 		salesOpportunityWorkEffortEClass = createEClass(SALES_OPPORTUNITY_WORK_EFFORT);
-		createEAttribute(salesOpportunityWorkEffortEClass, SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID);
+		createEReference(salesOpportunityWorkEffortEClass, SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID);
 		createEReference(salesOpportunityWorkEffortEClass, SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID);
 	}
 
@@ -1943,10 +1943,11 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		addEOperation(salesForecastEClass, ecorePackage.getEString(), "salesForecastHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(salesForecastDetailEClass, SalesForecastDetail.class, "SalesForecastDetail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalesForecastDetail_SalesForecastId(), ecorePackage.getEString(), "salesForecastId", null, 1, 1, SalesForecastDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesForecastDetail_SalesForecastDetailId(), ecorePackage.getEString(), "salesForecastDetailId", null, 1, 1, SalesForecastDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesForecastDetail_Amount(), ecorePackage.getEBigDecimal(), "amount", null, 0, 1, SalesForecastDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesForecastDetail_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, SalesForecastDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSalesForecastDetail_SalesForecastId(), this.getSalesForecast(), null, "salesForecastId", null, 0, 1, SalesForecastDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSalesForecastDetail_SalesForecastId().getEKeys().add(this.getSalesForecast_SalesForecastId());
 		initEReference(getSalesForecastDetail_QuantityUomId(), theUomPackage.getUom(), null, "quantityUomId", null, 0, 1, SalesForecastDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSalesForecastDetail_QuantityUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEReference(getSalesForecastDetail_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, SalesForecastDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2010,11 +2011,12 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		addEOperation(salesOpportunityEClass, ecorePackage.getEString(), "salesOpportunityHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(salesOpportunityCompetitorEClass, SalesOpportunityCompetitor.class, "SalesOpportunityCompetitor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalesOpportunityCompetitor_SalesOpportunityId(), ecorePackage.getEString(), "salesOpportunityId", null, 1, 1, SalesOpportunityCompetitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesOpportunityCompetitor_CompetitorPartyId(), ecorePackage.getEString(), "competitorPartyId", null, 1, 1, SalesOpportunityCompetitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesOpportunityCompetitor_PositionEnumId(), ecorePackage.getEString(), "positionEnumId", null, 0, 1, SalesOpportunityCompetitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesOpportunityCompetitor_Strengths(), ecorePackage.getEString(), "strengths", null, 0, 1, SalesOpportunityCompetitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesOpportunityCompetitor_Weaknesses(), ecorePackage.getEString(), "weaknesses", null, 0, 1, SalesOpportunityCompetitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSalesOpportunityCompetitor_SalesOpportunityId(), this.getSalesOpportunity(), null, "salesOpportunityId", null, 0, 1, SalesOpportunityCompetitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSalesOpportunityCompetitor_SalesOpportunityId().getEKeys().add(this.getSalesOpportunity_SalesOpportunityId());
 
 		initEClass(salesOpportunityHistoryEClass, SalesOpportunityHistory.class, "SalesOpportunityHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSalesOpportunityHistory_SalesOpportunityHistoryId(), ecorePackage.getEString(), "salesOpportunityHistoryId", null, 1, 1, SalesOpportunityHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2035,12 +2037,14 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		getSalesOpportunityHistory_ModifiedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
 		initEClass(salesOpportunityQuoteEClass, SalesOpportunityQuote.class, "SalesOpportunityQuote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalesOpportunityQuote_SalesOpportunityId(), ecorePackage.getEString(), "salesOpportunityId", null, 1, 1, SalesOpportunityQuote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSalesOpportunityQuote_SalesOpportunityId(), this.getSalesOpportunity(), null, "salesOpportunityId", null, 0, 1, SalesOpportunityQuote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSalesOpportunityQuote_SalesOpportunityId().getEKeys().add(this.getSalesOpportunity_SalesOpportunityId());
 		initEReference(getSalesOpportunityQuote_QuoteId(), theQuotePackage.getQuote(), null, "quoteId", null, 0, 1, SalesOpportunityQuote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSalesOpportunityQuote_QuoteId().getEKeys().add(theQuotePackage.getQuote_QuoteId());
 
 		initEClass(salesOpportunityRoleEClass, SalesOpportunityRole.class, "SalesOpportunityRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalesOpportunityRole_SalesOpportunityId(), ecorePackage.getEString(), "salesOpportunityId", null, 1, 1, SalesOpportunityRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSalesOpportunityRole_SalesOpportunityId(), this.getSalesOpportunity(), null, "salesOpportunityId", null, 0, 1, SalesOpportunityRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSalesOpportunityRole_SalesOpportunityId().getEKeys().add(this.getSalesOpportunity_SalesOpportunityId());
 		initEReference(getSalesOpportunityRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, SalesOpportunityRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSalesOpportunityRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getSalesOpportunityRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, SalesOpportunityRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2057,12 +2061,14 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		addEOperation(salesOpportunityStageEClass, ecorePackage.getEString(), "salesOpportunityHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(salesOpportunityTrckCodeEClass, SalesOpportunityTrckCode.class, "SalesOpportunityTrckCode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalesOpportunityTrckCode_SalesOpportunityId(), ecorePackage.getEString(), "salesOpportunityId", null, 1, 1, SalesOpportunityTrckCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesOpportunityTrckCode_TrackingCodeId(), ecorePackage.getEString(), "trackingCodeId", null, 1, 1, SalesOpportunityTrckCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalesOpportunityTrckCode_ReceivedDate(), ecorePackage.getEDate(), "receivedDate", null, 0, 1, SalesOpportunityTrckCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSalesOpportunityTrckCode_SalesOpportunityId(), this.getSalesOpportunity(), null, "salesOpportunityId", null, 0, 1, SalesOpportunityTrckCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSalesOpportunityTrckCode_SalesOpportunityId().getEKeys().add(this.getSalesOpportunity_SalesOpportunityId());
 
 		initEClass(salesOpportunityWorkEffortEClass, SalesOpportunityWorkEffort.class, "SalesOpportunityWorkEffort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalesOpportunityWorkEffort_SalesOpportunityId(), ecorePackage.getEString(), "salesOpportunityId", null, 1, 1, SalesOpportunityWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSalesOpportunityWorkEffort_SalesOpportunityId(), this.getSalesOpportunity(), null, "salesOpportunityId", null, 0, 1, SalesOpportunityWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSalesOpportunityWorkEffort_SalesOpportunityId().getEKeys().add(this.getSalesOpportunity_SalesOpportunityId());
 		initEReference(getSalesOpportunityWorkEffort_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, SalesOpportunityWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSalesOpportunityWorkEffort_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
 
@@ -2106,12 +2112,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getSalesForecastDetail_SalesForecastId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (getSalesForecastDetail_SalesForecastDetailId(),
@@ -2174,12 +2174,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getSalesOpportunityCompetitor_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getSalesOpportunityCompetitor_CompetitorPartyId(),
 		   source,
 		   new String[] {
@@ -2187,18 +2181,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		   });
 		addAnnotation
 		  (getSalesOpportunityHistory_SalesOpportunityHistoryId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getSalesOpportunityQuote_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getSalesOpportunityRole_SalesOpportunityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2222,19 +2204,7 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSalesOpportunityTrckCode_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getSalesOpportunityTrckCode_TrackingCodeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getSalesOpportunityWorkEffort_SalesOpportunityId(),
 		   source,
 		   new String[] {
 			   "key", "true"

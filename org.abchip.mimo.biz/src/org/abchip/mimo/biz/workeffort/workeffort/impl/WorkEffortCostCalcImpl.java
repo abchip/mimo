@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -30,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -104,6 +85,16 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getCostComponentTypeId() <em>Cost Component Type Id</em>}' reference.
@@ -276,7 +267,24 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -286,8 +294,8 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -301,12 +309,13 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_TYPE_ID:
 				if (resolve) return getCostComponentTypeId();
 				return basicGetCostComponentTypeId();
@@ -325,14 +334,14 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_TYPE_ID:
 				setCostComponentTypeId((CostComponentType)newValue);
@@ -352,14 +361,14 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_TYPE_ID:
 				setCostComponentTypeId((CostComponentType)null);
@@ -379,12 +388,12 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_TYPE_ID:
 				return costComponentTypeId != null;
 			case WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_CALC_ID:
@@ -403,9 +412,7 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

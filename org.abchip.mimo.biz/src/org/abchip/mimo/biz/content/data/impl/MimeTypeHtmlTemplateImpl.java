@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
+import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl#getTemplateLocation <em>Template Location</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MIME_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String mimeTypeId = MIME_TYPE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getTemplateLocation() <em>Template Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +58,16 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 * @ordered
 	 */
 	protected String templateLocation = TEMPLATE_LOCATION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMimeTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MimeType mimeTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 * @generated
 	 */
 	@Override
-	public String getMimeTypeId() {
+	public MimeType getMimeTypeId() {
+		if (mimeTypeId != null && ((EObject)mimeTypeId).eIsProxy()) {
+			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
+			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
+			if (mimeTypeId != oldMimeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
+			}
+		}
+		return mimeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MimeType basicGetMimeTypeId() {
 		return mimeTypeId;
 	}
 
@@ -111,8 +121,8 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 * @generated
 	 */
 	@Override
-	public void setMimeTypeId(String newMimeTypeId) {
-		String oldMimeTypeId = mimeTypeId;
+	public void setMimeTypeId(MimeType newMimeTypeId) {
+		MimeType oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
@@ -149,10 +159,11 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
-				return getMimeTypeId();
 			case DataPackage.MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION:
 				return getTemplateLocation();
+			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
+				if (resolve) return getMimeTypeId();
+				return basicGetMimeTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,11 +176,11 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
-				setMimeTypeId((String)newValue);
-				return;
 			case DataPackage.MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION:
 				setTemplateLocation((String)newValue);
+				return;
+			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
+				setMimeTypeId((MimeType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,11 +194,11 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
-				setMimeTypeId(MIME_TYPE_ID_EDEFAULT);
-				return;
 			case DataPackage.MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION:
 				setTemplateLocation(TEMPLATE_LOCATION_EDEFAULT);
+				return;
+			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
+				setMimeTypeId((MimeType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -201,10 +212,10 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
-				return MIME_TYPE_ID_EDEFAULT == null ? mimeTypeId != null : !MIME_TYPE_ID_EDEFAULT.equals(mimeTypeId);
 			case DataPackage.MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION:
 				return TEMPLATE_LOCATION_EDEFAULT == null ? templateLocation != null : !TEMPLATE_LOCATION_EDEFAULT.equals(templateLocation);
+			case DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID:
+				return mimeTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,9 +230,7 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (mimeTypeId: ");
-		result.append(mimeTypeId);
-		result.append(", templateLocation: ");
+		result.append(" (templateLocation: ");
 		result.append(templateLocation);
 		result.append(')');
 		return result.toString();

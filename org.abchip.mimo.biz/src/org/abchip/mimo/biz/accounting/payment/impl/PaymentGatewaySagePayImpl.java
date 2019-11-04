@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getAuthenticationTransType <em>Authentication Trans Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getAuthenticationUrl <em>Authentication Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getAuthoriseTransType <em>Authorise Trans Type</em>}</li>
@@ -37,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getTestingHost <em>Testing Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getVendor <em>Vendor</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getVoidUrl <em>Void Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,24 +49,6 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAuthenticationTransType() <em>Authentication Trans Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -298,6 +283,15 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 * @ordered
 	 */
 	protected String voidUrl = VOID_URL_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -416,7 +410,24 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -426,8 +437,8 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -648,8 +659,6 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE:
 				return getAuthenticationTransType();
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_URL:
@@ -676,6 +685,9 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 				return getVendor();
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__VOID_URL:
 				return getVoidUrl();
+			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -688,9 +700,6 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE:
 				setAuthenticationTransType((String)newValue);
 				return;
@@ -730,6 +739,9 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__VOID_URL:
 				setVoidUrl((String)newValue);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -742,9 +754,6 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE:
 				setAuthenticationTransType(AUTHENTICATION_TRANS_TYPE_EDEFAULT);
 				return;
@@ -784,6 +793,9 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__VOID_URL:
 				setVoidUrl(VOID_URL_EDEFAULT);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -796,8 +808,6 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE:
 				return AUTHENTICATION_TRANS_TYPE_EDEFAULT == null ? authenticationTransType != null : !AUTHENTICATION_TRANS_TYPE_EDEFAULT.equals(authenticationTransType);
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_URL:
@@ -824,6 +834,8 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 				return VENDOR_EDEFAULT == null ? vendor != null : !VENDOR_EDEFAULT.equals(vendor);
 			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__VOID_URL:
 				return VOID_URL_EDEFAULT == null ? voidUrl != null : !VOID_URL_EDEFAULT.equals(voidUrl);
+			case PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -838,9 +850,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
-		result.append(", authenticationTransType: ");
+		result.append(" (authenticationTransType: ");
 		result.append(authenticationTransType);
 		result.append(", authenticationUrl: ");
 		result.append(authenticationUrl);

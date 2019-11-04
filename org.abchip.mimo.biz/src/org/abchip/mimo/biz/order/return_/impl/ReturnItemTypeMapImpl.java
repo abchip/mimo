@@ -8,8 +8,8 @@
 package org.abchip.mimo.biz.order.return_.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.return_.ReturnAdjustmentType;
 import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
+import org.abchip.mimo.biz.order.return_.ReturnItemType;
 import org.abchip.mimo.biz.order.return_.ReturnItemTypeMap;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeMapImpl#getReturnItemMapKey <em>Return Item Map Key</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeMapImpl#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeMapImpl#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeMapImpl#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +62,16 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	protected String returnItemMapKey = RETURN_ITEM_MAP_KEY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getReturnItemTypeId() <em>Return Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReturnItemType returnItemTypeId;
+
+	/**
 	 * The cached value of the '{@link #getReturnHeaderTypeId() <em>Return Header Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,16 +80,6 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	 * @ordered
 	 */
 	protected ReturnHeaderType returnHeaderTypeId;
-
-	/**
-	 * The cached value of the '{@link #getReturnItemTypeId() <em>Return Item Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ReturnAdjustmentType returnItemTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,10 +169,10 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	 * @generated
 	 */
 	@Override
-	public ReturnAdjustmentType getReturnItemTypeId() {
+	public ReturnItemType getReturnItemTypeId() {
 		if (returnItemTypeId != null && ((EObject)returnItemTypeId).eIsProxy()) {
 			InternalEObject oldReturnItemTypeId = (InternalEObject)returnItemTypeId;
-			returnItemTypeId = (ReturnAdjustmentType)eResolveProxy(oldReturnItemTypeId);
+			returnItemTypeId = (ReturnItemType)eResolveProxy(oldReturnItemTypeId);
 			if (returnItemTypeId != oldReturnItemTypeId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
@@ -186,7 +186,7 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReturnAdjustmentType basicGetReturnItemTypeId() {
+	public ReturnItemType basicGetReturnItemTypeId() {
 		return returnItemTypeId;
 	}
 
@@ -196,8 +196,8 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	 * @generated
 	 */
 	@Override
-	public void setReturnItemTypeId(ReturnAdjustmentType newReturnItemTypeId) {
-		ReturnAdjustmentType oldReturnItemTypeId = returnItemTypeId;
+	public void setReturnItemTypeId(ReturnItemType newReturnItemTypeId) {
+		ReturnItemType oldReturnItemTypeId = returnItemTypeId;
 		returnItemTypeId = newReturnItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
@@ -213,12 +213,12 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 		switch (featureID) {
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_MAP_KEY:
 				return getReturnItemMapKey();
-			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID:
-				if (resolve) return getReturnHeaderTypeId();
-				return basicGetReturnHeaderTypeId();
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID:
 				if (resolve) return getReturnItemTypeId();
 				return basicGetReturnItemTypeId();
+			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID:
+				if (resolve) return getReturnHeaderTypeId();
+				return basicGetReturnHeaderTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,11 +234,11 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_MAP_KEY:
 				setReturnItemMapKey((String)newValue);
 				return;
+			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID:
+				setReturnItemTypeId((ReturnItemType)newValue);
+				return;
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID:
 				setReturnHeaderTypeId((ReturnHeaderType)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID:
-				setReturnItemTypeId((ReturnAdjustmentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -255,11 +255,11 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_MAP_KEY:
 				setReturnItemMapKey(RETURN_ITEM_MAP_KEY_EDEFAULT);
 				return;
+			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID:
+				setReturnItemTypeId((ReturnItemType)null);
+				return;
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID:
 				setReturnHeaderTypeId((ReturnHeaderType)null);
-				return;
-			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID:
-				setReturnItemTypeId((ReturnAdjustmentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -275,10 +275,10 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 		switch (featureID) {
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_MAP_KEY:
 				return RETURN_ITEM_MAP_KEY_EDEFAULT == null ? returnItemMapKey != null : !RETURN_ITEM_MAP_KEY_EDEFAULT.equals(returnItemMapKey);
-			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID:
-				return returnHeaderTypeId != null;
 			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID:
 				return returnItemTypeId != null;
+			case ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID:
+				return returnHeaderTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}

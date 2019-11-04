@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentPurpose;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getContentPurposeTypeId <em>Content Purpose Type Id</em>}</li>
  * </ul>
  *
@@ -40,26 +41,6 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,6 +60,16 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
 
 	/**
 	 * The cached value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' reference.
@@ -115,7 +106,24 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -125,8 +133,8 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE__CONTENT_ID, oldContentId, contentId));
@@ -203,10 +211,11 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
-				return getContentId();
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				return getSequenceNum();
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
 				if (resolve) return getContentPurposeTypeId();
 				return basicGetContentPurposeTypeId();
@@ -222,11 +231,11 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
 				setContentPurposeTypeId((ContentPurposeType)newValue);
@@ -243,11 +252,11 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
 				setContentPurposeTypeId((ContentPurposeType)null);
@@ -264,10 +273,10 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
+				return contentId != null;
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
 				return contentPurposeTypeId != null;
 		}
@@ -284,9 +293,7 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", sequenceNum: ");
+		result.append(" (sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(')');
 		return result.toString();

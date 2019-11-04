@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.store.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupRole;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -41,24 +42,14 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductStoreGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_STORE_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreGroupId = PRODUCT_STORE_GROUP_ID_EDEFAULT;
+	protected ProductStoreGroup productStoreGroupId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -185,7 +176,24 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreGroupId() {
+	public ProductStoreGroup getProductStoreGroupId() {
+		if (productStoreGroupId != null && ((EObject)productStoreGroupId).eIsProxy()) {
+			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
+			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
+			if (productStoreGroupId != oldProductStoreGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
+			}
+		}
+		return productStoreGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStoreGroup basicGetProductStoreGroupId() {
 		return productStoreGroupId;
 	}
 
@@ -195,8 +203,8 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreGroupId(String newProductStoreGroupId) {
-		String oldProductStoreGroupId = productStoreGroupId;
+	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
+		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
@@ -211,7 +219,8 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID:
-				return getProductStoreGroupId();
+				if (resolve) return getProductStoreGroupId();
+				return basicGetProductStoreGroupId();
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -231,7 +240,7 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId((String)newValue);
+				setProductStoreGroupId((ProductStoreGroup)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -252,7 +261,7 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId(PRODUCT_STORE_GROUP_ID_EDEFAULT);
+				setProductStoreGroupId((ProductStoreGroup)null);
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -273,29 +282,13 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID:
-				return PRODUCT_STORE_GROUP_ID_EDEFAULT == null ? productStoreGroupId != null : !PRODUCT_STORE_GROUP_ID_EDEFAULT.equals(productStoreGroupId);
+				return productStoreGroupId != null;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__PARTY_ID:
 				return partyId != null;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreGroupId: ");
-		result.append(productStoreGroupId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductStoreGroupRoleImpl

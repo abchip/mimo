@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.abchip.mimo.biz.shipment.picklist.PicklistRole;
 import org.eclipse.emf.common.notify.Notification;
@@ -30,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
@@ -46,26 +47,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPicklistId() <em>Picklist Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicklistId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PICKLIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPicklistId() <em>Picklist Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicklistId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String picklistId = PICKLIST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
@@ -126,6 +107,16 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPicklistId() <em>Picklist Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPicklistId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Picklist picklistId;
 
 	/**
 	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
@@ -308,7 +299,24 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public String getPicklistId() {
+	public Picklist getPicklistId() {
+		if (picklistId != null && ((EObject)picklistId).eIsProxy()) {
+			InternalEObject oldPicklistId = (InternalEObject)picklistId;
+			picklistId = (Picklist)eResolveProxy(oldPicklistId);
+			if (picklistId != oldPicklistId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__PICKLIST_ID, oldPicklistId, picklistId));
+			}
+		}
+		return picklistId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Picklist basicGetPicklistId() {
 		return picklistId;
 	}
 
@@ -318,8 +326,8 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public void setPicklistId(String newPicklistId) {
-		String oldPicklistId = picklistId;
+	public void setPicklistId(Picklist newPicklistId) {
+		Picklist oldPicklistId = picklistId;
 		picklistId = newPicklistId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__PICKLIST_ID, oldPicklistId, picklistId));
@@ -396,14 +404,15 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
-				return getPicklistId();
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				return getPartyId();
 			case PicklistPackage.PICKLIST_ROLE__FROM_DATE:
 				return getFromDate();
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				return getThruDate();
+			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
+				if (resolve) return getPicklistId();
+				return basicGetPicklistId();
 			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
 				if (resolve) return getRoleTypeId();
 				return basicGetRoleTypeId();
@@ -425,9 +434,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
-				setPicklistId((String)newValue);
-				return;
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
@@ -436,6 +442,9 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 				return;
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
+				setPicklistId((Picklist)newValue);
 				return;
 			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)newValue);
@@ -458,9 +467,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
-				setPicklistId(PICKLIST_ID_EDEFAULT);
-				return;
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
@@ -469,6 +475,9 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 				return;
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
+				setPicklistId((Picklist)null);
 				return;
 			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)null);
@@ -491,14 +500,14 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
-				return PICKLIST_ID_EDEFAULT == null ? picklistId != null : !PICKLIST_ID_EDEFAULT.equals(picklistId);
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PicklistPackage.PICKLIST_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PicklistPackage.PICKLIST_ROLE__PICKLIST_ID:
+				return picklistId != null;
 			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
 			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
@@ -519,9 +528,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (picklistId: ");
-		result.append(picklistId);
-		result.append(", partyId: ");
+		result.append(" (partyId: ");
 		result.append(partyId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getReconciledAmount <em>Reconciled Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  * </ul>
  *
@@ -85,31 +85,30 @@ public interface GlReconciliationEntry extends BizEntity {
 	void setReconciledAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Reconciliation Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Reconciliation Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Reconciliation Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Reconciliation Id</em>' attribute.
-	 * @see #setGlReconciliationId(String)
+	 * @return the value of the '<em>Gl Reconciliation Id</em>' reference.
+	 * @see #setGlReconciliationId(GlReconciliation)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_GlReconciliationId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="glReconciliationId"
 	 * @generated
 	 */
-	String getGlReconciliationId();
+	GlReconciliation getGlReconciliationId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getGlReconciliationId <em>Gl Reconciliation Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getGlReconciliationId <em>Gl Reconciliation Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Reconciliation Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Reconciliation Id</em>' reference.
 	 * @see #getGlReconciliationId()
 	 * @generated
 	 */
-	void setGlReconciliationId(String value);
+	void setGlReconciliationId(GlReconciliation value);
 
 	/**
 	 * Returns the value of the '<em><b>Acctg Trans Id</b></em>' reference.

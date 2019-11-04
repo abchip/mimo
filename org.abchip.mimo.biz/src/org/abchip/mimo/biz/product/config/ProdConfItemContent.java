@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfItemContentTypeId <em>Conf Item Content Type Id</em>}</li>
  * </ul>
@@ -113,31 +113,30 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Config Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Config Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Config Item Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Config Item Id</em>' attribute.
-	 * @see #setConfigItemId(String)
+	 * @return the value of the '<em>Config Item Id</em>' reference.
+	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ConfigItemId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="configItemId"
 	 * @generated
 	 */
-	String getConfigItemId();
+	ProductConfigItem getConfigItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId <em>Config Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId <em>Config Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Config Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Config Item Id</em>' reference.
 	 * @see #getConfigItemId()
 	 * @generated
 	 */
-	void setConfigItemId(String value);
+	void setConfigItemId(ProductConfigItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Conf Item Content Type Id</b></em>' reference.

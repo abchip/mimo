@@ -380,22 +380,22 @@ public interface ReceiptPackage extends EPackage {
 	int SHIPMENT_RECEIPT_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Receipt Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT_ROLE__RECEIPT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Receipt Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIPMENT_RECEIPT_ROLE__RECEIPT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -645,15 +645,15 @@ public interface ReceiptPackage extends EPackage {
 	EClass getShipmentReceiptRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getReceiptId <em>Receipt Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getReceiptId <em>Receipt Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Receipt Id</em>'.
+	 * @return the meta object for the reference '<em>Receipt Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getReceiptId()
 	 * @see #getShipmentReceiptRole()
 	 * @generated
 	 */
-	EAttribute getShipmentReceiptRole_ReceiptId();
+	EReference getShipmentReceiptRole_ReceiptId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getPartyId <em>Party Id</em>}'.
@@ -874,12 +874,12 @@ public interface ReceiptPackage extends EPackage {
 		EClass SHIPMENT_RECEIPT_ROLE = eINSTANCE.getShipmentReceiptRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Receipt Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Receipt Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_RECEIPT_ROLE__RECEIPT_ID = eINSTANCE.getShipmentReceiptRole_ReceiptId();
+		EReference SHIPMENT_RECEIPT_ROLE__RECEIPT_ID = eINSTANCE.getShipmentReceiptRole_ReceiptId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.

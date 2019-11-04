@@ -811,8 +811,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusValidChange_StatusId() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(0);
+	public EReference getStatusValidChange_StatusId() {
+		return (EReference)statusValidChangeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -832,7 +832,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EAttribute getStatusValidChange_ConditionExpression() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -842,7 +842,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EAttribute getStatusValidChange_TransitionName() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -890,9 +890,9 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		createEReference(statusTypeEClass, STATUS_TYPE__PARENT_TYPE_ID);
 
 		statusValidChangeEClass = createEClass(STATUS_VALID_CHANGE);
-		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID);
 		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__CONDITION_EXPRESSION);
 		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__TRANSITION_NAME);
+		createEReference(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID);
 		createEReference(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID_TO);
 	}
 
@@ -1076,9 +1076,10 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		addEOperation(statusTypeEClass, ecorePackage.getEString(), "statusItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(statusValidChangeEClass, StatusValidChange.class, "StatusValidChange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStatusValidChange_StatusId(), ecorePackage.getEString(), "statusId", null, 1, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusValidChange_ConditionExpression(), ecorePackage.getEString(), "conditionExpression", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusValidChange_TransitionName(), ecorePackage.getEString(), "transitionName", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusValidChange_StatusId(), this.getStatusItem(), null, "statusId", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getStatusValidChange_StatusId().getEKeys().add(this.getStatusItem_StatusId());
 		initEReference(getStatusValidChange_StatusIdTo(), this.getStatusItem(), null, "statusIdTo", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getStatusValidChange_StatusIdTo().getEKeys().add(this.getStatusItem_StatusId());
 
@@ -1501,12 +1502,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   });
 		addAnnotation
 		  (getStatusType_StatusTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getStatusValidChange_StatusId(),
 		   source,
 		   new String[] {
 			   "key", "true"

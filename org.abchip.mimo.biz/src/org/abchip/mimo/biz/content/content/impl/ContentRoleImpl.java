@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.content.content.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRoleImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRoleImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -44,26 +45,6 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -125,6 +106,16 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,7 +150,24 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ROLE__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -169,8 +177,8 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ROLE__CONTENT_ID, oldContentId, contentId));
@@ -293,14 +301,15 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
-				return getContentId();
 			case ContentPackage.CONTENT_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
 			case ContentPackage.CONTENT_ROLE__FROM_DATE:
 				return getFromDate();
 			case ContentPackage.CONTENT_ROLE__THRU_DATE:
 				return getThruDate();
+			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case ContentPackage.CONTENT_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -316,9 +325,6 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
@@ -327,6 +333,9 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 				return;
 			case ContentPackage.CONTENT_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case ContentPackage.CONTENT_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -343,9 +352,6 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 				return;
 			case ContentPackage.CONTENT_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case ContentPackage.CONTENT_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -370,14 +379,14 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case ContentPackage.CONTENT_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case ContentPackage.CONTENT_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ContentPackage.CONTENT_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case ContentPackage.CONTENT_ROLE__CONTENT_ID:
+				return contentId != null;
 			case ContentPackage.CONTENT_ROLE__PARTY_ID:
 				return partyId != null;
 		}
@@ -394,9 +403,7 @@ public class ContentRoleImpl extends BizEntityImpl implements ContentRole {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

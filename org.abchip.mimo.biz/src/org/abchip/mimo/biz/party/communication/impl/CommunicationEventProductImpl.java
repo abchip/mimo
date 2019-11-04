@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -38,23 +39,14 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
+	protected Product productId;
 	/**
 	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -90,7 +82,24 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -100,8 +109,8 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID, oldProductId, productId));
@@ -156,7 +165,8 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				return getProductId();
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
 				if (resolve) return getCommunicationEventId();
 				return basicGetCommunicationEventId();
@@ -173,7 +183,7 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				setProductId((String)newValue);
+				setProductId((Product)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)newValue);
@@ -191,7 +201,7 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
+				setProductId((Product)null);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)null);
@@ -209,27 +219,11 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+				return productId != null;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
 				return communicationEventId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CommunicationEventProductImpl

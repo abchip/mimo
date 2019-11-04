@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getAddressFormat <em>Address Format</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isHasPostalCodeExt <em>Has Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getPostalCodeRegex <em>Postal Code Regex</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isRequirePostalCode <em>Require Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isRequirePostalCodeExt <em>Require Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getRequireStateProvinceId <em>Require State Province Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoAssocTypeId <em>Geo Assoc Type Id</em>}</li>
  * </ul>
  *
@@ -216,30 +216,29 @@ public interface CountryAddressFormat extends BizEntity {
 	void setHasPostalCodeExt(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Id</em>' attribute.
-	 * @see #setGeoId(String)
+	 * @return the value of the '<em>Geo Id</em>' reference.
+	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_GeoId()
-	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getGeoId();
+	Geo getGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Id</em>' reference.
 	 * @see #getGeoId()
 	 * @generated
 	 */
-	void setGeoId(String value);
+	void setGeoId(Geo value);
 
 } // CountryAddressFormat

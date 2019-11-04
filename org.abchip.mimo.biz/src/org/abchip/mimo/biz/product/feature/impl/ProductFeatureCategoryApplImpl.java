@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.feature.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl;
@@ -28,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryApplImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryApplImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryApplImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryApplImpl#getProductFeatureCategoryId <em>Product Feature Category Id</em>}</li>
  * </ul>
  *
@@ -42,26 +43,6 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,6 +82,16 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * The cached value of the '{@link #getProductFeatureCategoryId() <em>Product Feature Category Id</em>}' reference.
@@ -183,7 +174,24 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -193,8 +201,8 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -248,12 +256,13 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__FROM_DATE:
 				return getFromDate();
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__THRU_DATE:
 				return getThruDate();
+			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_FEATURE_CATEGORY_ID:
 				if (resolve) return getProductFeatureCategoryId();
 				return basicGetProductFeatureCategoryId();
@@ -269,14 +278,14 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_FEATURE_CATEGORY_ID:
 				setProductFeatureCategoryId((ProductFeatureCategory)newValue);
@@ -293,14 +302,14 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_FEATURE_CATEGORY_ID:
 				setProductFeatureCategoryId((ProductFeatureCategory)null);
@@ -317,12 +326,12 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_FEATURE_CATEGORY_ID:
 				return productFeatureCategoryId != null;
 		}
@@ -339,9 +348,7 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
-import org.abchip.mimo.biz.accounting.payment.GiftCard;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -59,10 +59,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -444,6 +444,16 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	protected PaymentMethodType paymentMethodTypeId;
 
 	/**
+	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethod paymentMethodId;
+
+	/**
 	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -472,16 +482,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @ordered
 	 */
 	protected UserLogin createdByUserLogin;
-
-	/**
-	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GiftCard paymentMethodId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -881,10 +881,10 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public GiftCard getPaymentMethodId() {
+	public PaymentMethod getPaymentMethodId() {
 		if (paymentMethodId != null && ((EObject)paymentMethodId).eIsProxy()) {
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
-			paymentMethodId = (GiftCard)eResolveProxy(oldPaymentMethodId);
+			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
@@ -898,7 +898,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GiftCard basicGetPaymentMethodId() {
+	public PaymentMethod basicGetPaymentMethodId() {
 		return paymentMethodId;
 	}
 
@@ -908,8 +908,8 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodId(GiftCard newPaymentMethodId) {
-		GiftCard oldPaymentMethodId = paymentMethodId;
+	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
@@ -1272,6 +1272,9 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
 				if (resolve) return getPaymentMethodTypeId();
 				return basicGetPaymentMethodTypeId();
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
+				if (resolve) return getPaymentMethodId();
+				return basicGetPaymentMethodId();
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
 				if (resolve) return getFinAccountId();
 				return basicGetFinAccountId();
@@ -1281,9 +1284,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
 				if (resolve) return getCreatedByUserLogin();
 				return basicGetCreatedByUserLogin();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				if (resolve) return getPaymentMethodId();
-				return basicGetPaymentMethodId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1356,6 +1356,9 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId((PaymentMethodType)newValue);
 				return;
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)newValue);
+				return;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
 				setFinAccountId((FinAccount)newValue);
 				return;
@@ -1364,9 +1367,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 				return;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
 				setCreatedByUserLogin((UserLogin)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				setPaymentMethodId((GiftCard)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1440,6 +1440,9 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId((PaymentMethodType)null);
 				return;
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)null);
+				return;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
 				setFinAccountId((FinAccount)null);
 				return;
@@ -1448,9 +1451,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 				return;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
 				setCreatedByUserLogin((UserLogin)null);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				setPaymentMethodId((GiftCard)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1504,14 +1504,14 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 				return productPricePurposeId != null;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
 				return paymentMethodTypeId != null;
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
+				return paymentMethodId != null;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
 				return finAccountId != null;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID:
 				return statusId != null;
 			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
 				return createdByUserLogin != null;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				return paymentMethodId != null;
 		}
 		return super.eIsSet(featureID);
 	}

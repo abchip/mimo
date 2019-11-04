@@ -10,10 +10,11 @@ package org.abchip.mimo.biz.party.contact.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PartyContactMechPurpose;
-import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -43,24 +44,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -107,6 +90,15 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 */
 	protected ContactMechPurposeType contactMechPurposeTypeId;
 	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,7 +106,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 * @ordered
 	 */
-	protected TelecomNumber contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +156,24 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -174,8 +183,8 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID, oldPartyId, partyId));
@@ -250,10 +259,10 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public TelecomNumber getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (TelecomNumber)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -267,7 +276,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TelecomNumber basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -277,8 +286,8 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(TelecomNumber newContactMechId) {
-		TelecomNumber oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -292,8 +301,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
-				return getPartyId();
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				return getFromDate();
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__THRU_DATE:
@@ -301,6 +308,9 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				if (resolve) return getContactMechPurposeTypeId();
 				return basicGetContactMechPurposeTypeId();
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -316,9 +326,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -328,8 +335,11 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				setContactMechPurposeTypeId((ContactMechPurposeType)newValue);
 				return;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				setContactMechId((TelecomNumber)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -343,9 +353,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -355,8 +362,11 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				setContactMechPurposeTypeId((ContactMechPurposeType)null);
 				return;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				setContactMechId((TelecomNumber)null);
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -370,14 +380,14 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				return contactMechPurposeTypeId != null;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
+				return partyId != null;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
 				return contactMechId != null;
 		}
@@ -394,9 +404,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

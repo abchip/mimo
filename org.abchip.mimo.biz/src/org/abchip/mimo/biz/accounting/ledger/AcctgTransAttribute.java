@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransAttribute()
@@ -82,31 +82,30 @@ public interface AcctgTransAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Acctg Trans Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Acctg Trans Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acctg Trans Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acctg Trans Id</em>' attribute.
-	 * @see #setAcctgTransId(String)
+	 * @return the value of the '<em>Acctg Trans Id</em>' reference.
+	 * @see #setAcctgTransId(AcctgTrans)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransAttribute_AcctgTransId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="acctgTransId"
 	 * @generated
 	 */
-	String getAcctgTransId();
+	AcctgTrans getAcctgTransId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute#getAcctgTransId <em>Acctg Trans Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute#getAcctgTransId <em>Acctg Trans Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Acctg Trans Id</em>' attribute.
+	 * @param value the new value of the '<em>Acctg Trans Id</em>' reference.
 	 * @see #getAcctgTransId()
 	 * @generated
 	 */
-	void setAcctgTransId(String value);
+	void setAcctgTransId(AcctgTrans value);
 
 	/**
 	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.

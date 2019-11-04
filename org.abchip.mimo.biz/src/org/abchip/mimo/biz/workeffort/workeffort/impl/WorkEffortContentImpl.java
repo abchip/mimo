@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContent;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContentType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
@@ -30,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getWorkEffortContentTypeId <em>Work Effort Content Type Id</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -104,6 +85,16 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
@@ -276,7 +267,24 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -286,8 +294,8 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -301,12 +309,13 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
 				if (resolve) return getContentId();
 				return basicGetContentId();
@@ -325,14 +334,14 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
 				setContentId((Content)newValue);
@@ -352,14 +361,14 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
 				setContentId((Content)null);
@@ -379,12 +388,12 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
 				return contentId != null;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
@@ -403,9 +412,7 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

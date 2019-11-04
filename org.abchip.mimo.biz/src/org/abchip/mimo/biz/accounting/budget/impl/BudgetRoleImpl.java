@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.budget.impl;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -26,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -35,27 +36,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,6 +57,15 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 * @ordered
 	 */
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -172,7 +164,24 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ROLE__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -182,8 +191,8 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__BUDGET_ID, oldBudgetId, budgetId));
@@ -197,10 +206,11 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				return getBudgetId();
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
+			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -216,11 +226,11 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
+				return;
+			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
+				setBudgetId((Budget)newValue);
 				return;
 			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -237,11 +247,11 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				return;
+			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
+				setBudgetId((Budget)null);
 				return;
 			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -258,10 +268,10 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
+				return budgetId != null;
 			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
 				return partyId != null;
 		}
@@ -278,9 +288,7 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(')');
 		return result.toString();

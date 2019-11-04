@@ -108,7 +108,7 @@ public interface OrderPackage extends EPackage {
 	int COMMUNICATION_EVENT_ORDER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -560,22 +560,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Adjustment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -584,7 +575,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -593,7 +584,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Order Adjustment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Adjustment Attribute</em>' class.
@@ -651,22 +651,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT_BILLING__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Adjustment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Invoice Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ADJUSTMENT_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ADJUSTMENT_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -675,7 +666,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ADJUSTMENT_BILLING__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ADJUSTMENT_BILLING__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Order Adjustment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Id</b></em>' reference.
@@ -851,22 +851,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Adjustment Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR__ORDER_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ADJUSTMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -875,7 +866,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ADJUSTMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Order Adjustment Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ADJUSTMENT_TYPE_ATTR__ORDER_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Adjustment Type Attr</em>' class.
@@ -933,22 +933,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ATTRIBUTE__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -957,7 +948,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -966,7 +957,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ATTRIBUTE__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -1179,7 +1179,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_CONTACT_MECH__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1261,22 +1261,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_CONTENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int ORDER_CONTENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -1285,7 +1276,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int ORDER_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1294,7 +1285,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int ORDER_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Order Id</b></em>' reference.
@@ -1303,7 +1294,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_CONTENT__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int ORDER_CONTENT__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Order Content Type Id</b></em>' reference.
@@ -1470,22 +1470,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_DELIVERY_SCHEDULE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_DELIVERY_SCHEDULE__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Cartons</b></em>' attribute.
@@ -1494,7 +1485,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_DELIVERY_SCHEDULE__CARTONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_DELIVERY_SCHEDULE__CARTONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Ready Date</b></em>' attribute.
@@ -1503,7 +1494,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Skids Pallets</b></em>' attribute.
@@ -1512,7 +1503,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Total Cubic Size</b></em>' attribute.
@@ -1521,7 +1512,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Total Weight</b></em>' attribute.
@@ -1530,7 +1521,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Units Pieces</b></em>' attribute.
@@ -1539,7 +1530,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_DELIVERY_SCHEDULE__UNITS_PIECES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int ORDER_DELIVERY_SCHEDULE__UNITS_PIECES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_DELIVERY_SCHEDULE__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Total Cubic Uom Id</b></em>' reference.
@@ -2066,22 +2066,22 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER_NOTE__NOTE = BizPackage.BIZ_ENTITY_NOTE__NOTE;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_NOTE__ORDER_ID = BizPackage.BIZ_ENTITY_NOTE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Internal Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_HEADER_NOTE__INTERNAL_NOTE = BizPackage.BIZ_ENTITY_NOTE_FEATURE_COUNT + 1;
+	int ORDER_HEADER_NOTE__INTERNAL_NOTE = BizPackage.BIZ_ENTITY_NOTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_HEADER_NOTE__ORDER_ID = BizPackage.BIZ_ENTITY_NOTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Header Note</em>' class.
@@ -2139,7 +2139,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER_WORK_EFFORT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2212,22 +2212,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int ORDER_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Auto Cancel Date</b></em>' attribute.
@@ -2236,7 +2227,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__AUTO_CANCEL_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int ORDER_ITEM__AUTO_CANCEL_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
@@ -2245,7 +2236,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__BUDGET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int ORDER_ITEM__BUDGET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Budget Item Seq Id</b></em>' attribute.
@@ -2254,7 +2245,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int ORDER_ITEM__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Back Order Date</b></em>' attribute.
@@ -2263,7 +2254,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__CANCEL_BACK_ORDER_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int ORDER_ITEM__CANCEL_BACK_ORDER_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Quantity</b></em>' attribute.
@@ -2272,7 +2263,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__CANCEL_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int ORDER_ITEM__CANCEL_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -2281,7 +2272,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int ORDER_ITEM__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Corresponding Po Id</b></em>' attribute.
@@ -2290,7 +2281,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__CORRESPONDING_PO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int ORDER_ITEM__CORRESPONDING_PO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Deployment Id</b></em>' attribute.
@@ -2299,7 +2290,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__DEPLOYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int ORDER_ITEM__DEPLOYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Dont Cancel Set Date</b></em>' attribute.
@@ -2308,7 +2299,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__DONT_CANCEL_SET_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int ORDER_ITEM__DONT_CANCEL_SET_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Delivery Date</b></em>' attribute.
@@ -2317,7 +2308,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int ORDER_ITEM__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Ship Date</b></em>' attribute.
@@ -2326,7 +2317,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__ESTIMATED_SHIP_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int ORDER_ITEM__ESTIMATED_SHIP_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>External Id</b></em>' attribute.
@@ -2335,7 +2326,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__EXTERNAL_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int ORDER_ITEM__EXTERNAL_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Is Item Group Primary</b></em>' attribute.
@@ -2344,7 +2335,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__IS_ITEM_GROUP_PRIMARY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int ORDER_ITEM__IS_ITEM_GROUP_PRIMARY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Is Modified Price</b></em>' attribute.
@@ -2353,7 +2344,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__IS_MODIFIED_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int ORDER_ITEM__IS_MODIFIED_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Is Promo</b></em>' attribute.
@@ -2362,7 +2353,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__IS_PROMO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int ORDER_ITEM__IS_PROMO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Item Description</b></em>' attribute.
@@ -2371,7 +2362,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__ITEM_DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int ORDER_ITEM__ITEM_DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Order Item Group Seq Id</b></em>' attribute.
@@ -2380,7 +2371,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__ORDER_ITEM_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+	int ORDER_ITEM__ORDER_ITEM_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Prod Catalog Id</b></em>' attribute.
@@ -2389,7 +2380,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__PROD_CATALOG_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
+	int ORDER_ITEM__PROD_CATALOG_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Product Category Id</b></em>' attribute.
@@ -2398,7 +2389,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__PRODUCT_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
+	int ORDER_ITEM__PRODUCT_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Id</b></em>' attribute.
@@ -2407,7 +2398,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
+	int ORDER_ITEM__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -2416,7 +2407,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
+	int ORDER_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
@@ -2425,7 +2416,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__QUOTE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
+	int ORDER_ITEM__QUOTE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Quote Item Seq Id</b></em>' attribute.
@@ -2434,7 +2425,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
+	int ORDER_ITEM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Reserve After Date</b></em>' attribute.
@@ -2443,7 +2434,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__RESERVE_AFTER_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
+	int ORDER_ITEM__RESERVE_AFTER_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Selected Amount</b></em>' attribute.
@@ -2452,7 +2443,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 26;
+	int ORDER_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Ship After Date</b></em>' attribute.
@@ -2461,7 +2452,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__SHIP_AFTER_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 27;
+	int ORDER_ITEM__SHIP_AFTER_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Ship Before Date</b></em>' attribute.
@@ -2470,7 +2461,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__SHIP_BEFORE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 28;
+	int ORDER_ITEM__SHIP_BEFORE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Shopping List Id</b></em>' attribute.
@@ -2479,7 +2470,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__SHOPPING_LIST_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
+	int ORDER_ITEM__SHOPPING_LIST_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Shopping List Item Seq Id</b></em>' attribute.
@@ -2488,7 +2479,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__SHOPPING_LIST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 30;
+	int ORDER_ITEM__SHOPPING_LIST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Subscription Id</b></em>' attribute.
@@ -2497,7 +2488,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__SUBSCRIPTION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 31;
+	int ORDER_ITEM__SUBSCRIPTION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Supplier Product Id</b></em>' attribute.
@@ -2506,7 +2497,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__SUPPLIER_PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 32;
+	int ORDER_ITEM__SUPPLIER_PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Unit Average Cost</b></em>' attribute.
@@ -2515,7 +2506,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__UNIT_AVERAGE_COST = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 33;
+	int ORDER_ITEM__UNIT_AVERAGE_COST = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Unit List Price</b></em>' attribute.
@@ -2524,7 +2515,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__UNIT_LIST_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 34;
+	int ORDER_ITEM__UNIT_LIST_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Unit Price</b></em>' attribute.
@@ -2533,7 +2524,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__UNIT_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 35;
+	int ORDER_ITEM__UNIT_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Unit Recurring Price</b></em>' attribute.
@@ -2542,7 +2533,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM__UNIT_RECURRING_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 36;
+	int ORDER_ITEM__UNIT_RECURRING_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 35;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Order Item Type Id</b></em>' reference.
@@ -2690,22 +2690,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_ASSOC__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int ORDER_ITEM_ASSOC__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -2714,7 +2705,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_ASSOC__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int ORDER_ITEM_ASSOC__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>To Order Item Seq Id</b></em>' attribute.
@@ -2723,7 +2714,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_ASSOC__TO_ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int ORDER_ITEM_ASSOC__TO_ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>To Ship Group Seq Id</b></em>' attribute.
@@ -2732,7 +2723,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_ASSOC__TO_SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int ORDER_ITEM_ASSOC__TO_SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -2741,7 +2732,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_ASSOC__QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int ORDER_ITEM_ASSOC__QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Order Item Assoc Type Id</b></em>' reference.
@@ -2750,7 +2741,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_ASSOC__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>To Order Id</b></em>' reference.
@@ -3017,22 +3017,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_BILLING__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_BILLING__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_BILLING__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_BILLING__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Item Seq Id</b></em>' attribute.
@@ -3041,7 +3032,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ITEM_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -3050,7 +3041,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_BILLING__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_ITEM_BILLING__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -3059,7 +3050,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_BILLING__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ORDER_ITEM_BILLING__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_BILLING__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Id</b></em>' reference.
@@ -3307,22 +3307,22 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_CONTACT_MECH__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CONTACT_MECH__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_CONTACT_MECH__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_CONTACT_MECH__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_CONTACT_MECH__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
@@ -3398,22 +3398,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Group Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_GROUP__ORDER_ITEM_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_GROUP__ORDER_ITEM_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Group Name</b></em>' attribute.
@@ -3422,7 +3413,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_GROUP__GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ITEM_GROUP__GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent Group Seq Id</b></em>' attribute.
@@ -3431,7 +3422,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_GROUP__PARENT_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_ITEM_GROUP__PARENT_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_GROUP__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Item Group</em>' class.
@@ -3698,22 +3698,22 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ROLE__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_ROLE__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -3789,22 +3789,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_SHIP_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_SHIP_GROUP__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Role Type Id</b></em>' attribute.
@@ -3813,7 +3804,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__CARRIER_ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ITEM_SHIP_GROUP__CARRIER_ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Delivery Date</b></em>' attribute.
@@ -3822,7 +3813,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_ITEM_SHIP_GROUP__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Ship Date</b></em>' attribute.
@@ -3831,7 +3822,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__ESTIMATED_SHIP_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ORDER_ITEM_SHIP_GROUP__ESTIMATED_SHIP_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Gift Message</b></em>' attribute.
@@ -3840,7 +3831,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__GIFT_MESSAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int ORDER_ITEM_SHIP_GROUP__GIFT_MESSAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Gift</b></em>' attribute.
@@ -3849,7 +3840,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__IS_GIFT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int ORDER_ITEM_SHIP_GROUP__IS_GIFT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>May Split</b></em>' attribute.
@@ -3858,7 +3849,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__MAY_SPLIT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int ORDER_ITEM_SHIP_GROUP__MAY_SPLIT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Ship After Date</b></em>' attribute.
@@ -3867,7 +3858,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__SHIP_AFTER_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int ORDER_ITEM_SHIP_GROUP__SHIP_AFTER_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Ship By Date</b></em>' attribute.
@@ -3876,7 +3867,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__SHIP_BY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int ORDER_ITEM_SHIP_GROUP__SHIP_BY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Shipping Instructions</b></em>' attribute.
@@ -3885,7 +3876,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__SHIPPING_INSTRUCTIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int ORDER_ITEM_SHIP_GROUP__SHIPPING_INSTRUCTIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Tracking Number</b></em>' attribute.
@@ -3894,7 +3885,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP__TRACKING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int ORDER_ITEM_SHIP_GROUP__TRACKING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_SHIP_GROUP__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Supplier Party Id</b></em>' reference.
@@ -4024,22 +4024,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_SHIP_GROUP_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -4048,7 +4039,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ITEM_SHIP_GROUP_ASSOC__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Quantity</b></em>' attribute.
@@ -4057,7 +4048,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC__CANCEL_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_ITEM_SHIP_GROUP_ASSOC__CANCEL_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -4066,7 +4057,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ORDER_ITEM_SHIP_GROUP_ASSOC__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Item Ship Group Assoc</em>' class.
@@ -4124,22 +4124,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_SHIP_GRP_INV_RES__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -4148,7 +4139,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Created Datetime</b></em>' attribute.
@@ -4157,7 +4148,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__CREATED_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__CREATED_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Current Promised Date</b></em>' attribute.
@@ -4166,7 +4157,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__CURRENT_PROMISED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__CURRENT_PROMISED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Old Pick Start Date</b></em>' attribute.
@@ -4175,7 +4166,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__OLD_PICK_START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__OLD_PICK_START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -4184,7 +4175,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Promised Datetime</b></em>' attribute.
@@ -4193,7 +4184,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__PROMISED_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__PROMISED_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -4202,7 +4193,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Quantity Not Available</b></em>' attribute.
@@ -4211,7 +4202,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__QUANTITY_NOT_AVAILABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__QUANTITY_NOT_AVAILABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Reserve Order Enum Id</b></em>' attribute.
@@ -4220,7 +4211,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__RESERVE_ORDER_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__RESERVE_ORDER_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Reserved Datetime</b></em>' attribute.
@@ -4229,7 +4220,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__RESERVED_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__RESERVED_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Id</b></em>' attribute.
@@ -4238,7 +4229,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Inventory Item Id</b></em>' reference.
@@ -4414,22 +4414,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Item Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_ITEM_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -4438,7 +4429,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_ITEM_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_ITEM_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Order Item Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Item Type Attr</em>' class.
@@ -4776,13 +4776,22 @@ public interface OrderPackage extends EPackage {
 	int ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
 
 	/**
+	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+
+	/**
 	 * The feature id for the '<em><b>Fin Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -4791,7 +4800,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_PAYMENT_PREFERENCE__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+	int ORDER_PAYMENT_PREFERENCE__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
@@ -4800,16 +4809,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
+	int ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
 
 	/**
 	 * The number of structural features of the '<em>Payment Preference</em>' class.
@@ -4867,7 +4867,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_PRODUCT_PROMO_CODE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4940,7 +4940,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5022,22 +5022,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_SHIPMENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SHIPMENT__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_SHIPMENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_SHIPMENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -5046,7 +5037,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_SHIPMENT__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_SHIPMENT__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Item Seq Id</b></em>' attribute.
@@ -5055,7 +5046,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_SHIPMENT__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_SHIPMENT__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -5064,7 +5055,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_SHIPMENT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ORDER_SHIPMENT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_SHIPMENT__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
@@ -5367,22 +5367,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_TERM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Term Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TERM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_TERM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -5391,7 +5382,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Term Days</b></em>' attribute.
@@ -5400,7 +5391,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ORDER_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Term Value</b></em>' attribute.
@@ -5409,7 +5400,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ORDER_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Text Value</b></em>' attribute.
@@ -5418,7 +5409,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int ORDER_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Uom Id</b></em>' reference.
@@ -5427,7 +5418,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int ORDER_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Order Id</b></em>' reference.
@@ -5436,7 +5427,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TERM__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int ORDER_TERM__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Term Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -5712,22 +5712,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE_ATTR__ORDER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ORDER_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -5736,7 +5727,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ORDER_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Order Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDER_TYPE_ATTR__ORDER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Type Attr</em>' class.
@@ -5794,22 +5794,13 @@ public interface OrderPackage extends EPackage {
 	int PRODUCT_ORDER_ITEM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_ORDER_ITEM__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_ORDER_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PRODUCT_ORDER_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Engagement Item Seq Id</b></em>' attribute.
@@ -5818,7 +5809,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_ORDER_ITEM__ENGAGEMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PRODUCT_ORDER_ITEM__ENGAGEMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_ORDER_ITEM__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -5894,22 +5894,13 @@ public interface OrderPackage extends EPackage {
 	int WORK_ORDER_ITEM_FULFILLMENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_ORDER_ITEM_FULFILLMENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int WORK_ORDER_ITEM_FULFILLMENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -5918,7 +5909,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_ORDER_ITEM_FULFILLMENT__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WORK_ORDER_ITEM_FULFILLMENT__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Order Id</b></em>' reference.
@@ -5927,7 +5918,16 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Work Order Item Fulfillment</em>' class.
@@ -5950,15 +5950,15 @@ public interface OrderPackage extends EPackage {
 	EClass getCommunicationEventOrder();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.CommunicationEventOrder#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.CommunicationEventOrder#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.CommunicationEventOrder#getOrderId()
 	 * @see #getCommunicationEventOrder()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventOrder_OrderId();
+	EReference getCommunicationEventOrder_OrderId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.CommunicationEventOrder#getCommunicationEventId <em>Communication Event Id</em>}'.
@@ -6388,15 +6388,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderAdjustmentAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getOrderAdjustmentId <em>Order Adjustment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getOrderAdjustmentId <em>Order Adjustment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Adjustment Id</em>'.
+	 * @return the meta object for the reference '<em>Order Adjustment Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getOrderAdjustmentId()
 	 * @see #getOrderAdjustmentAttribute()
 	 * @generated
 	 */
-	EAttribute getOrderAdjustmentAttribute_OrderAdjustmentId();
+	EReference getOrderAdjustmentAttribute_OrderAdjustmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getAttrName <em>Attr Name</em>}'.
@@ -6442,15 +6442,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderAdjustmentBilling();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Adjustment Id</em>'.
+	 * @return the meta object for the reference '<em>Order Adjustment Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId()
 	 * @see #getOrderAdjustmentBilling()
 	 * @generated
 	 */
-	EAttribute getOrderAdjustmentBilling_OrderAdjustmentId();
+	EReference getOrderAdjustmentBilling_OrderAdjustmentId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceId <em>Invoice Id</em>}'.
@@ -6561,15 +6561,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderAdjustmentTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Adjustment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Order Adjustment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getOrderAdjustmentTypeId()
 	 * @see #getOrderAdjustmentTypeAttr()
 	 * @generated
 	 */
-	EAttribute getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId();
+	EReference getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -6604,15 +6604,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderAttribute#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderAttribute#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderAttribute#getOrderId()
 	 * @see #getOrderAttribute()
 	 * @generated
 	 */
-	EAttribute getOrderAttribute_OrderId();
+	EReference getOrderAttribute_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderAttribute#getAttrName <em>Attr Name</em>}'.
@@ -6722,15 +6722,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderContactMech();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderContactMech#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderContactMech#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderContactMech#getOrderId()
 	 * @see #getOrderContactMech()
 	 * @generated
 	 */
-	EAttribute getOrderContactMech_OrderId();
+	EReference getOrderContactMech_OrderId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderContactMech#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}'.
@@ -6765,15 +6765,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderContent#getContentId <em>Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderContent#getContentId <em>Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content Id</em>'.
+	 * @return the meta object for the reference '<em>Content Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderContent#getContentId()
 	 * @see #getOrderContent()
 	 * @generated
 	 */
-	EAttribute getOrderContent_ContentId();
+	EReference getOrderContent_ContentId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderId <em>Order Id</em>}'.
@@ -6895,15 +6895,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderDeliverySchedule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getOrderId()
 	 * @see #getOrderDeliverySchedule()
 	 * @generated
 	 */
-	EAttribute getOrderDeliverySchedule_OrderId();
+	EReference getOrderDeliverySchedule_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -7487,15 +7487,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderHeaderNote();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeaderNote#getOrderId()
 	 * @see #getOrderHeaderNote()
 	 * @generated
 	 */
-	EAttribute getOrderHeaderNote_OrderId();
+	EReference getOrderHeaderNote_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote#isInternalNote <em>Internal Note</em>}'.
@@ -7519,15 +7519,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderHeaderWorkEffort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort#getOrderId()
 	 * @see #getOrderHeaderWorkEffort()
 	 * @generated
 	 */
-	EAttribute getOrderHeaderWorkEffort_OrderId();
+	EReference getOrderHeaderWorkEffort_OrderId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort#getWorkEffortId <em>Work Effort Id</em>}'.
@@ -7551,15 +7551,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItem#getOrderId()
 	 * @see #getOrderItem()
 	 * @generated
 	 */
-	EAttribute getOrderItem_OrderId();
+	EReference getOrderItem_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -8078,15 +8078,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemAssoc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemAssoc#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemAssoc#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemAssoc#getOrderId()
 	 * @see #getOrderItemAssoc()
 	 * @generated
 	 */
-	EAttribute getOrderItemAssoc_OrderId();
+	EReference getOrderItemAssoc_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemAssoc#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -8295,15 +8295,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemBilling();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemBilling#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemBilling#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemBilling#getOrderId()
 	 * @see #getOrderItemBilling()
 	 * @generated
 	 */
-	EAttribute getOrderItemBilling_OrderId();
+	EReference getOrderItemBilling_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemBilling#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -8535,15 +8535,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemContactMech();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemContactMech#getOrderId()
 	 * @see #getOrderItemContactMech()
 	 * @generated
 	 */
-	EAttribute getOrderItemContactMech_OrderId();
+	EReference getOrderItemContactMech_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -8589,15 +8589,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemGroup();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemGroup#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemGroup#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemGroup#getOrderId()
 	 * @see #getOrderItemGroup()
 	 * @generated
 	 */
-	EAttribute getOrderItemGroup_OrderId();
+	EReference getOrderItemGroup_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemGroup#getOrderItemGroupSeqId <em>Order Item Group Seq Id</em>}'.
@@ -8784,15 +8784,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemRole#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemRole#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemRole#getOrderId()
 	 * @see #getOrderItemRole()
 	 * @generated
 	 */
-	EAttribute getOrderItemRole_OrderId();
+	EReference getOrderItemRole_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemRole#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -8838,15 +8838,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemShipGroup();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId()
 	 * @see #getOrderItemShipGroup()
 	 * @generated
 	 */
-	EAttribute getOrderItemShipGroup_OrderId();
+	EReference getOrderItemShipGroup_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShipGroupSeqId <em>Ship Group Seq Id</em>}'.
@@ -9068,15 +9068,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemShipGroupAssoc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroupAssoc#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroupAssoc#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemShipGroupAssoc#getOrderId()
 	 * @see #getOrderItemShipGroupAssoc()
 	 * @generated
 	 */
-	EAttribute getOrderItemShipGroupAssoc_OrderId();
+	EReference getOrderItemShipGroupAssoc_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroupAssoc#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -9133,15 +9133,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemShipGrpInvRes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId()
 	 * @see #getOrderItemShipGrpInvRes()
 	 * @generated
 	 */
-	EAttribute getOrderItemShipGrpInvRes_OrderId();
+	EReference getOrderItemShipGrpInvRes_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getShipGroupSeqId <em>Ship Group Seq Id</em>}'.
@@ -9362,15 +9362,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderItemTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getOrderItemTypeId <em>Order Item Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getOrderItemTypeId <em>Order Item Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Item Type Id</em>'.
+	 * @return the meta object for the reference '<em>Order Item Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getOrderItemTypeId()
 	 * @see #getOrderItemTypeAttr()
 	 * @generated
 	 */
-	EAttribute getOrderItemTypeAttr_OrderItemTypeId();
+	EReference getOrderItemTypeAttr_OrderItemTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -9744,15 +9744,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderProductPromoCode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderProductPromoCode#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderProductPromoCode#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderProductPromoCode#getOrderId()
 	 * @see #getOrderProductPromoCode()
 	 * @generated
 	 */
-	EAttribute getOrderProductPromoCode_OrderId();
+	EReference getOrderProductPromoCode_OrderId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderProductPromoCode#getProductPromoCodeId <em>Product Promo Code Id</em>}'.
@@ -9776,15 +9776,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderRole#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderRole#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderRole#getOrderId()
 	 * @see #getOrderRole()
 	 * @generated
 	 */
-	EAttribute getOrderRole_OrderId();
+	EReference getOrderRole_OrderId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderRole#getPartyId <em>Party Id</em>}'.
@@ -9819,15 +9819,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderShipment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderShipment#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderShipment#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderShipment#getOrderId()
 	 * @see #getOrderShipment()
 	 * @generated
 	 */
-	EAttribute getOrderShipment_OrderId();
+	EReference getOrderShipment_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderShipment#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -10069,15 +10069,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderTerm();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermTypeId <em>Term Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermTypeId <em>Term Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Term Type Id</em>'.
+	 * @return the meta object for the reference '<em>Term Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderTerm#getTermTypeId()
 	 * @see #getOrderTerm()
 	 * @generated
 	 */
-	EAttribute getOrderTerm_TermTypeId();
+	EReference getOrderTerm_TermTypeId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderId <em>Order Id</em>}'.
@@ -10308,15 +10308,15 @@ public interface OrderPackage extends EPackage {
 	EClass getOrderTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getOrderTypeId <em>Order Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getOrderTypeId <em>Order Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Type Id</em>'.
+	 * @return the meta object for the reference '<em>Order Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderTypeAttr#getOrderTypeId()
 	 * @see #getOrderTypeAttr()
 	 * @generated
 	 */
-	EAttribute getOrderTypeAttr_OrderTypeId();
+	EReference getOrderTypeAttr_OrderTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -10351,15 +10351,15 @@ public interface OrderPackage extends EPackage {
 	EClass getProductOrderItem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.ProductOrderItem#getOrderId()
 	 * @see #getProductOrderItem()
 	 * @generated
 	 */
-	EAttribute getProductOrderItem_OrderId();
+	EReference getProductOrderItem_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -10416,15 +10416,15 @@ public interface OrderPackage extends EPackage {
 	EClass getWorkOrderItemFulfillment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.WorkOrderItemFulfillment#getWorkEffortId <em>Work Effort Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.WorkOrderItemFulfillment#getWorkEffortId <em>Work Effort Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Work Effort Id</em>'.
+	 * @return the meta object for the reference '<em>Work Effort Id</em>'.
 	 * @see org.abchip.mimo.biz.order.order.WorkOrderItemFulfillment#getWorkEffortId()
 	 * @see #getWorkOrderItemFulfillment()
 	 * @generated
 	 */
-	EAttribute getWorkOrderItemFulfillment_WorkEffortId();
+	EReference getWorkOrderItemFulfillment_WorkEffortId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.order.WorkOrderItemFulfillment#getOrderId <em>Order Id</em>}'.
@@ -10492,12 +10492,12 @@ public interface OrderPackage extends EPackage {
 		EClass COMMUNICATION_EVENT_ORDER = eINSTANCE.getCommunicationEventOrder();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_ORDER__ORDER_ID = eINSTANCE.getCommunicationEventOrder_OrderId();
+		EReference COMMUNICATION_EVENT_ORDER__ORDER_ID = eINSTANCE.getCommunicationEventOrder_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' reference feature.
@@ -10816,12 +10816,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ADJUSTMENT_ATTRIBUTE = eINSTANCE.getOrderAdjustmentAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Adjustment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Adjustment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID = eINSTANCE.getOrderAdjustmentAttribute_OrderAdjustmentId();
+		EReference ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID = eINSTANCE.getOrderAdjustmentAttribute_OrderAdjustmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -10858,12 +10858,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ADJUSTMENT_BILLING = eINSTANCE.getOrderAdjustmentBilling();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Adjustment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Adjustment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID = eINSTANCE.getOrderAdjustmentBilling_OrderAdjustmentId();
+		EReference ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID = eINSTANCE.getOrderAdjustmentBilling_OrderAdjustmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Invoice Id</b></em>' reference feature.
@@ -10950,12 +10950,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ADJUSTMENT_TYPE_ATTR = eINSTANCE.getOrderAdjustmentTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Adjustment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Adjustment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ADJUSTMENT_TYPE_ATTR__ORDER_ADJUSTMENT_TYPE_ID = eINSTANCE.getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId();
+		EReference ORDER_ADJUSTMENT_TYPE_ATTR__ORDER_ADJUSTMENT_TYPE_ID = eINSTANCE.getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -10984,12 +10984,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ATTRIBUTE = eINSTANCE.getOrderAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ATTRIBUTE__ORDER_ID = eINSTANCE.getOrderAttribute_OrderId();
+		EReference ORDER_ATTRIBUTE__ORDER_ID = eINSTANCE.getOrderAttribute_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -11078,12 +11078,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_CONTACT_MECH = eINSTANCE.getOrderContactMech();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_CONTACT_MECH__ORDER_ID = eINSTANCE.getOrderContactMech_OrderId();
+		EReference ORDER_CONTACT_MECH__ORDER_ID = eINSTANCE.getOrderContactMech_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Contact Mech Purpose Type Id</b></em>' reference feature.
@@ -11112,12 +11112,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_CONTENT = eINSTANCE.getOrderContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_CONTENT__CONTENT_ID = eINSTANCE.getOrderContent_ContentId();
+		EReference ORDER_CONTENT__CONTENT_ID = eINSTANCE.getOrderContent_ContentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
@@ -11212,12 +11212,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_DELIVERY_SCHEDULE = eINSTANCE.getOrderDeliverySchedule();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_DELIVERY_SCHEDULE__ORDER_ID = eINSTANCE.getOrderDeliverySchedule_OrderId();
+		EReference ORDER_DELIVERY_SCHEDULE__ORDER_ID = eINSTANCE.getOrderDeliverySchedule_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -11648,12 +11648,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_HEADER_NOTE = eINSTANCE.getOrderHeaderNote();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER_NOTE__ORDER_ID = eINSTANCE.getOrderHeaderNote_OrderId();
+		EReference ORDER_HEADER_NOTE__ORDER_ID = eINSTANCE.getOrderHeaderNote_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Internal Note</b></em>' attribute feature.
@@ -11674,12 +11674,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_HEADER_WORK_EFFORT = eINSTANCE.getOrderHeaderWorkEffort();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER_WORK_EFFORT__ORDER_ID = eINSTANCE.getOrderHeaderWorkEffort_OrderId();
+		EReference ORDER_HEADER_WORK_EFFORT__ORDER_ID = eINSTANCE.getOrderHeaderWorkEffort_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.
@@ -11700,12 +11700,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM = eINSTANCE.getOrderItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM__ORDER_ID = eINSTANCE.getOrderItem_OrderId();
+		EReference ORDER_ITEM__ORDER_ID = eINSTANCE.getOrderItem_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -12086,12 +12086,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_ASSOC = eINSTANCE.getOrderItemAssoc();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_ASSOC__ORDER_ID = eINSTANCE.getOrderItemAssoc_OrderId();
+		EReference ORDER_ITEM_ASSOC__ORDER_ID = eINSTANCE.getOrderItemAssoc_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -12252,12 +12252,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_BILLING = eINSTANCE.getOrderItemBilling();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_BILLING__ORDER_ID = eINSTANCE.getOrderItemBilling_OrderId();
+		EReference ORDER_ITEM_BILLING__ORDER_ID = eINSTANCE.getOrderItemBilling_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -12432,12 +12432,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_CONTACT_MECH = eINSTANCE.getOrderItemContactMech();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_CONTACT_MECH__ORDER_ID = eINSTANCE.getOrderItemContactMech_OrderId();
+		EReference ORDER_ITEM_CONTACT_MECH__ORDER_ID = eINSTANCE.getOrderItemContactMech_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -12474,12 +12474,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_GROUP = eINSTANCE.getOrderItemGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_GROUP__ORDER_ID = eINSTANCE.getOrderItemGroup_OrderId();
+		EReference ORDER_ITEM_GROUP__ORDER_ID = eINSTANCE.getOrderItemGroup_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Group Seq Id</b></em>' attribute feature.
@@ -12624,12 +12624,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_ROLE = eINSTANCE.getOrderItemRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_ROLE__ORDER_ID = eINSTANCE.getOrderItemRole_OrderId();
+		EReference ORDER_ITEM_ROLE__ORDER_ID = eINSTANCE.getOrderItemRole_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -12666,12 +12666,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_SHIP_GROUP = eINSTANCE.getOrderItemShipGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_SHIP_GROUP__ORDER_ID = eINSTANCE.getOrderItemShipGroup_OrderId();
+		EReference ORDER_ITEM_SHIP_GROUP__ORDER_ID = eINSTANCE.getOrderItemShipGroup_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Ship Group Seq Id</b></em>' attribute feature.
@@ -12836,12 +12836,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_SHIP_GROUP_ASSOC = eINSTANCE.getOrderItemShipGroupAssoc();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ID = eINSTANCE.getOrderItemShipGroupAssoc_OrderId();
+		EReference ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ID = eINSTANCE.getOrderItemShipGroupAssoc_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -12886,12 +12886,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_SHIP_GRP_INV_RES = eINSTANCE.getOrderItemShipGrpInvRes();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID = eINSTANCE.getOrderItemShipGrpInvRes_OrderId();
+		EReference ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID = eINSTANCE.getOrderItemShipGrpInvRes_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Ship Group Seq Id</b></em>' attribute feature.
@@ -13058,12 +13058,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ITEM_TYPE_ATTR = eINSTANCE.getOrderItemTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Item Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Item Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID = eINSTANCE.getOrderItemTypeAttr_OrderItemTypeId();
+		EReference ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID = eINSTANCE.getOrderItemTypeAttr_OrderItemTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -13344,12 +13344,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_PRODUCT_PROMO_CODE = eINSTANCE.getOrderProductPromoCode();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_PRODUCT_PROMO_CODE__ORDER_ID = eINSTANCE.getOrderProductPromoCode_OrderId();
+		EReference ORDER_PRODUCT_PROMO_CODE__ORDER_ID = eINSTANCE.getOrderProductPromoCode_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Promo Code Id</b></em>' reference feature.
@@ -13370,12 +13370,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_ROLE = eINSTANCE.getOrderRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ROLE__ORDER_ID = eINSTANCE.getOrderRole_OrderId();
+		EReference ORDER_ROLE__ORDER_ID = eINSTANCE.getOrderRole_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -13404,12 +13404,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_SHIPMENT = eINSTANCE.getOrderShipment();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_SHIPMENT__ORDER_ID = eINSTANCE.getOrderShipment_OrderId();
+		EReference ORDER_SHIPMENT__ORDER_ID = eINSTANCE.getOrderShipment_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -13594,12 +13594,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_TERM = eINSTANCE.getOrderTerm();
 
 		/**
-		 * The meta object literal for the '<em><b>Term Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Term Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_TERM__TERM_TYPE_ID = eINSTANCE.getOrderTerm_TermTypeId();
+		EReference ORDER_TERM__TERM_TYPE_ID = eINSTANCE.getOrderTerm_TermTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
@@ -13776,12 +13776,12 @@ public interface OrderPackage extends EPackage {
 		EClass ORDER_TYPE_ATTR = eINSTANCE.getOrderTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_TYPE_ATTR__ORDER_TYPE_ID = eINSTANCE.getOrderTypeAttr_OrderTypeId();
+		EReference ORDER_TYPE_ATTR__ORDER_TYPE_ID = eINSTANCE.getOrderTypeAttr_OrderTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -13810,12 +13810,12 @@ public interface OrderPackage extends EPackage {
 		EClass PRODUCT_ORDER_ITEM = eINSTANCE.getProductOrderItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_ORDER_ITEM__ORDER_ID = eINSTANCE.getProductOrderItem_OrderId();
+		EReference PRODUCT_ORDER_ITEM__ORDER_ID = eINSTANCE.getProductOrderItem_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -13860,12 +13860,12 @@ public interface OrderPackage extends EPackage {
 		EClass WORK_ORDER_ITEM_FULFILLMENT = eINSTANCE.getWorkOrderItemFulfillment();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID = eINSTANCE.getWorkOrderItemFulfillment_WorkEffortId();
+		EReference WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID = eINSTANCE.getWorkOrderItemFulfillment_WorkEffortId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.

@@ -18,11 +18,11 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementImage <em>Agreement Image</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementText <em>Agreement Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  * </ul>
  *
@@ -137,31 +137,30 @@ public interface AgreementItem extends BizEntityTyped<AgreementItemType> {
 	void setCurrencyUomId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Id</em>' attribute.
-	 * @see #setAgreementId(String)
+	 * @return the value of the '<em>Agreement Id</em>' reference.
+	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItem_AgreementId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="agreementId"
 	 * @generated
 	 */
-	String getAgreementId();
+	Agreement getAgreementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementId <em>Agreement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementItem#getAgreementId <em>Agreement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Id</em>' reference.
 	 * @see #getAgreementId()
 	 * @generated
 	 */
-	void setAgreementId(String value);
+	void setAgreementId(Agreement value);
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Item Type Id</b></em>' reference.

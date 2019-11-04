@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
  * </ul>
  *
@@ -85,31 +85,30 @@ public interface SurveyTrigger extends BizEntity {
 	void setSurveyApplTypeId(SurveyApplType value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Id</em>' attribute.
-	 * @see #setSurveyId(String)
+	 * @return the value of the '<em>Survey Id</em>' reference.
+	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger_SurveyId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="surveyId"
 	 * @generated
 	 */
-	String getSurveyId();
+	Survey getSurveyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Id</em>' reference.
 	 * @see #getSurveyId()
 	 * @generated
 	 */
-	void setSurveyId(String value);
+	void setSurveyId(Survey value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

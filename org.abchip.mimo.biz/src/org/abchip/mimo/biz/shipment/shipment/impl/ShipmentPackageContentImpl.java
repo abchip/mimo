@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getSubProductQuantity <em>Sub Product Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getSubProductId <em>Sub Product Id</em>}</li>
  * </ul>
  *
@@ -44,26 +45,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShipmentPackageSeqId() <em>Shipment Package Seq Id</em>}' attribute.
@@ -146,6 +127,16 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	protected BigDecimal subProductQuantity = SUB_PRODUCT_QUANTITY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
+
+	/**
 	 * The cached value of the '{@link #getSubProductId() <em>Sub Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,7 +194,24 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -213,8 +221,8 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -337,8 +345,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
-				return getShipmentId();
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID:
 				return getShipmentPackageSeqId();
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ITEM_SEQ_ID:
@@ -347,6 +353,9 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 				return getQuantity();
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				return getSubProductQuantity();
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
 				if (resolve) return getSubProductId();
 				return basicGetSubProductId();
@@ -362,9 +371,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID:
 				setShipmentPackageSeqId((String)newValue);
 				return;
@@ -376,6 +382,9 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				setSubProductQuantity((BigDecimal)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
 				setSubProductId((Product)newValue);
@@ -392,9 +401,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID:
 				setShipmentPackageSeqId(SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT);
 				return;
@@ -406,6 +412,9 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				setSubProductQuantity(SUB_PRODUCT_QUANTITY_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
 				setSubProductId((Product)null);
@@ -422,8 +431,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID:
 				return SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT == null ? shipmentPackageSeqId != null : !SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT.equals(shipmentPackageSeqId);
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ITEM_SEQ_ID:
@@ -432,6 +439,8 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				return SUB_PRODUCT_QUANTITY_EDEFAULT == null ? subProductQuantity != null : !SUB_PRODUCT_QUANTITY_EDEFAULT.equals(subProductQuantity);
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID:
+				return shipmentId != null;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
 				return subProductId != null;
 		}
@@ -448,9 +457,7 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentId: ");
-		result.append(shipmentId);
-		result.append(", shipmentPackageSeqId: ");
+		result.append(" (shipmentPackageSeqId: ");
 		result.append(shipmentPackageSeqId);
 		result.append(", shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);

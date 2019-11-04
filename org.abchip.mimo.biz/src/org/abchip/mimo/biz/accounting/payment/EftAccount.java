@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,12 +146,12 @@ public interface EftAccount extends PaymentMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(PostalAddress)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -161,7 +161,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(PostalAddress value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Name On Account</b></em>' attribute.

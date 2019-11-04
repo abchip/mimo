@@ -23,10 +23,10 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getPicklistBinId <em>Picklist Bin Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getPicklistBinId <em>Picklist Bin Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getItemStatusId <em>Item Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getInventoryItemId <em>Inventory Item Id</em>}</li>
@@ -143,31 +143,30 @@ public interface PicklistItem extends BizEntity {
 	void setOrderItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Picklist Bin Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Picklist Bin Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Picklist Bin Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Picklist Bin Id</em>' attribute.
-	 * @see #setPicklistBinId(String)
+	 * @return the value of the '<em>Picklist Bin Id</em>' reference.
+	 * @see #setPicklistBinId(PicklistBin)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistItem_PicklistBinId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="picklistBinId"
 	 * @generated
 	 */
-	String getPicklistBinId();
+	PicklistBin getPicklistBinId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getPicklistBinId <em>Picklist Bin Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistItem#getPicklistBinId <em>Picklist Bin Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Picklist Bin Id</em>' attribute.
+	 * @param value the new value of the '<em>Picklist Bin Id</em>' reference.
 	 * @see #getPicklistBinId()
 	 * @generated
 	 */
-	void setPicklistBinId(String value);
+	void setPicklistBinId(PicklistBin value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.

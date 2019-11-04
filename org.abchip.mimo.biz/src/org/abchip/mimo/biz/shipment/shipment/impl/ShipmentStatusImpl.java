@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
@@ -30,8 +31,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
@@ -43,26 +44,6 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
@@ -83,6 +64,16 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @ordered
 	 */
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
@@ -232,7 +223,24 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -242,8 +250,8 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -257,10 +265,11 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
-				return getStatusId();
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				return getStatusDate();
+			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
 				if (resolve) return getShipmentId();
 				return basicGetShipmentId();
@@ -279,11 +288,11 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				setStatusDate((Date)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
 				setShipmentId((Shipment)newValue);
@@ -303,11 +312,11 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				setStatusDate(STATUS_DATE_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
 				setShipmentId((Shipment)null);
@@ -327,10 +336,10 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
+				return statusId != null;
 			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
 				return shipmentId != null;
 			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
@@ -349,9 +358,7 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (statusId: ");
-		result.append(statusId);
-		result.append(", statusDate: ");
+		result.append(" (statusDate: ");
 		result.append(statusDate);
 		result.append(')');
 		return result.toString();

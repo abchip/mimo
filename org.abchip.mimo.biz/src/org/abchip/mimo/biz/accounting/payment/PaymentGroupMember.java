@@ -20,10 +20,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId <em>Payment Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId <em>Payment Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}</li>
  * </ul>
  *
@@ -112,31 +112,30 @@ public interface PaymentGroupMember extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Group Id</em>' attribute.
-	 * @see #setPaymentGroupId(String)
+	 * @return the value of the '<em>Payment Group Id</em>' reference.
+	 * @see #setPaymentGroupId(PaymentGroup)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupMember_PaymentGroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="paymentGroupId"
 	 * @generated
 	 */
-	String getPaymentGroupId();
+	PaymentGroup getPaymentGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId <em>Payment Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId <em>Payment Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Group Id</em>' reference.
 	 * @see #getPaymentGroupId()
 	 * @generated
 	 */
-	void setPaymentGroupId(String value);
+	void setPaymentGroupId(PaymentGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Id</b></em>' reference.

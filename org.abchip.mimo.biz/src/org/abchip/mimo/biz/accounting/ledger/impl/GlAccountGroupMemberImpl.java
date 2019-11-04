@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroup;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType;
@@ -40,23 +41,14 @@ public class GlAccountGroupMemberImpl extends BizEntityImpl implements GlAccount
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
+	protected GlAccount glAccountId;
 	/**
 	 * The cached value of the '{@link #getGlAccountGroupId() <em>Gl Account Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -101,7 +93,24 @@ public class GlAccountGroupMemberImpl extends BizEntityImpl implements GlAccount
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -111,8 +120,8 @@ public class GlAccountGroupMemberImpl extends BizEntityImpl implements GlAccount
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -207,7 +216,8 @@ public class GlAccountGroupMemberImpl extends BizEntityImpl implements GlAccount
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_ID:
-				return getGlAccountId();
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_GROUP_ID:
 				if (resolve) return getGlAccountGroupId();
 				return basicGetGlAccountGroupId();
@@ -227,7 +237,7 @@ public class GlAccountGroupMemberImpl extends BizEntityImpl implements GlAccount
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
+				setGlAccountId((GlAccount)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_GROUP_ID:
 				setGlAccountGroupId((GlAccountGroup)newValue);
@@ -248,7 +258,7 @@ public class GlAccountGroupMemberImpl extends BizEntityImpl implements GlAccount
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
+				setGlAccountId((GlAccount)null);
 				return;
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_GROUP_ID:
 				setGlAccountGroupId((GlAccountGroup)null);
@@ -269,29 +279,13 @@ public class GlAccountGroupMemberImpl extends BizEntityImpl implements GlAccount
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
+				return glAccountId != null;
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_GROUP_ID:
 				return glAccountGroupId != null;
 			case LedgerPackage.GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_GROUP_TYPE_ID:
 				return glAccountGroupTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (glAccountId: ");
-		result.append(glAccountId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GlAccountGroupMemberImpl

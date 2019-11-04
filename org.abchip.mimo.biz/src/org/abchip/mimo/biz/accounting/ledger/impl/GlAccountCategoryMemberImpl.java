@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategory;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -30,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getAmountPercentage <em>Amount Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getGlAccountCategoryId <em>Gl Account Category Id</em>}</li>
  * </ul>
  *
@@ -44,24 +45,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -116,6 +99,15 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount glAccountId;
 	/**
 	 * The cached value of the '{@link #getGlAccountCategoryId() <em>Gl Account Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -220,7 +212,24 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -230,8 +239,8 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -285,14 +294,15 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
-				return getGlAccountId();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				return getFromDate();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__AMOUNT_PERCENTAGE:
 				return getAmountPercentage();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				return getThruDate();
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
 				if (resolve) return getGlAccountCategoryId();
 				return basicGetGlAccountCategoryId();
@@ -308,9 +318,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
-				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -319,6 +326,9 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
 				setGlAccountCategoryId((GlAccountCategory)newValue);
@@ -335,9 +345,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -346,6 +353,9 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)null);
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
 				setGlAccountCategoryId((GlAccountCategory)null);
@@ -362,14 +372,14 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__AMOUNT_PERCENTAGE:
 				return AMOUNT_PERCENTAGE_EDEFAULT == null ? amountPercentage != null : !AMOUNT_PERCENTAGE_EDEFAULT.equals(amountPercentage);
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
+				return glAccountId != null;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
 				return glAccountCategoryId != null;
 		}
@@ -386,9 +396,7 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (glAccountId: ");
-		result.append(glAccountId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", amountPercentage: ");
 		result.append(amountPercentage);

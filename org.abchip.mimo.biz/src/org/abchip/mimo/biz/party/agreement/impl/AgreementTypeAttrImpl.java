@@ -9,10 +9,13 @@ package org.abchip.mimo.biz.party.agreement.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
+import org.abchip.mimo.biz.party.agreement.AgreementType;
 import org.abchip.mimo.biz.party.agreement.AgreementTypeAttr;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,37 +26,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTypeAttrImpl#getAgreementTypeId <em>Agreement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTypeAttrImpl#getAgreementTypeId <em>Agreement Type Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTypeAttr {
 	/**
-	 * The default value of the '{@link #getAgreementTypeId() <em>Agreement Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_TYPE_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getAgreementTypeId() <em>Agreement Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementTypeId = AGREEMENT_TYPE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +74,15 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAgreementTypeId() <em>Agreement Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AgreementType agreementTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +155,24 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	 * @generated
 	 */
 	@Override
-	public String getAgreementTypeId() {
+	public AgreementType getAgreementTypeId() {
+		if (agreementTypeId != null && ((EObject)agreementTypeId).eIsProxy()) {
+			InternalEObject oldAgreementTypeId = (InternalEObject)agreementTypeId;
+			agreementTypeId = (AgreementType)eResolveProxy(oldAgreementTypeId);
+			if (agreementTypeId != oldAgreementTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID, oldAgreementTypeId, agreementTypeId));
+			}
+		}
+		return agreementTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgreementType basicGetAgreementTypeId() {
 		return agreementTypeId;
 	}
 
@@ -172,8 +182,8 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	 * @generated
 	 */
 	@Override
-	public void setAgreementTypeId(String newAgreementTypeId) {
-		String oldAgreementTypeId = agreementTypeId;
+	public void setAgreementTypeId(AgreementType newAgreementTypeId) {
+		AgreementType oldAgreementTypeId = agreementTypeId;
 		agreementTypeId = newAgreementTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID, oldAgreementTypeId, agreementTypeId));
@@ -187,12 +197,13 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
-				return getAgreementTypeId();
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
+				if (resolve) return getAgreementTypeId();
+				return basicGetAgreementTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +216,14 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
-				setAgreementTypeId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
+				setAgreementTypeId((AgreementType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +237,14 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
-				setAgreementTypeId(AGREEMENT_TYPE_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
+				setAgreementTypeId((AgreementType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +258,12 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
-				return AGREEMENT_TYPE_ID_EDEFAULT == null ? agreementTypeId != null : !AGREEMENT_TYPE_ID_EDEFAULT.equals(agreementTypeId);
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case AgreementPackage.AGREEMENT_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID:
+				return agreementTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,9 +278,7 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementTypeId: ");
-		result.append(agreementTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

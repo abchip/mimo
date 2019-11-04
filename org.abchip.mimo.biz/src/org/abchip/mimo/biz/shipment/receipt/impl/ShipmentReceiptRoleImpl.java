@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.receipt.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptRoleImpl#getReceiptId <em>Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptRoleImpl#getReceiptId <em>Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -39,26 +40,6 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getReceiptId() <em>Receipt Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiptId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECEIPT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReceiptId() <em>Receipt Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiptId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String receiptId = RECEIPT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
@@ -79,6 +60,16 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	 * @ordered
 	 */
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getReceiptId() <em>Receipt Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiptId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShipmentReceipt receiptId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -155,7 +146,24 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	 * @generated
 	 */
 	@Override
-	public String getReceiptId() {
+	public ShipmentReceipt getReceiptId() {
+		if (receiptId != null && ((EObject)receiptId).eIsProxy()) {
+			InternalEObject oldReceiptId = (InternalEObject)receiptId;
+			receiptId = (ShipmentReceipt)eResolveProxy(oldReceiptId);
+			if (receiptId != oldReceiptId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID, oldReceiptId, receiptId));
+			}
+		}
+		return receiptId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentReceipt basicGetReceiptId() {
 		return receiptId;
 	}
 
@@ -165,8 +173,8 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	 * @generated
 	 */
 	@Override
-	public void setReceiptId(String newReceiptId) {
-		String oldReceiptId = receiptId;
+	public void setReceiptId(ShipmentReceipt newReceiptId) {
+		ShipmentReceipt oldReceiptId = receiptId;
 		receiptId = newReceiptId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID, oldReceiptId, receiptId));
@@ -203,10 +211,11 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
-				return getReceiptId();
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
+			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
+				if (resolve) return getReceiptId();
+				return basicGetReceiptId();
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -222,11 +231,11 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
-				setReceiptId((String)newValue);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
+				setReceiptId((ShipmentReceipt)newValue);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -243,11 +252,11 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
-				setReceiptId(RECEIPT_ID_EDEFAULT);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
+				setReceiptId((ShipmentReceipt)null);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -264,10 +273,10 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
-				return RECEIPT_ID_EDEFAULT == null ? receiptId != null : !RECEIPT_ID_EDEFAULT.equals(receiptId);
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID:
+				return receiptId != null;
 			case ReceiptPackage.SHIPMENT_RECEIPT_ROLE__PARTY_ID:
 				return partyId != null;
 		}
@@ -284,9 +293,7 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (receiptId: ");
-		result.append(receiptId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(')');
 		return result.toString();

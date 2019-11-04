@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceAttribute;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,10 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,26 +41,6 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,6 +100,16 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataResourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataResource dataResourceId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +205,24 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 * @generated
 	 */
 	@Override
-	public String getDataResourceId() {
+	public DataResource getDataResourceId() {
+		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
+			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
+			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
+			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+			}
+		}
+		return dataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetDataResourceId() {
 		return dataResourceId;
 	}
 
@@ -222,8 +232,8 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(String newDataResourceId) {
-		String oldDataResourceId = dataResourceId;
+	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
@@ -237,14 +247,15 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
-				return getDataResourceId();
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
+				if (resolve) return getDataResourceId();
+				return basicGetDataResourceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +268,6 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
-				setDataResourceId((String)newValue);
-				return;
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -268,6 +276,9 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 				return;
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,9 +292,6 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
-				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
-				return;
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -292,6 +300,9 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 				return;
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,14 +316,14 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
-				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID:
+				return dataResourceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,9 +338,7 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataResourceId: ");
-		result.append(dataResourceId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

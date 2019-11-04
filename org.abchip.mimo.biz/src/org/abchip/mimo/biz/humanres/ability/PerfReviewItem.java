@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.humanres.ability;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,11 +19,11 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeePartyId <em>Employee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeeRoleTypeId <em>Employee Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewId <em>Perf Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewItemSeqId <em>Perf Review Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeePartyId <em>Employee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfRatingTypeId <em>Perf Rating Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewItemTypeId <em>Perf Review Item Type Id</em>}</li>
  * </ul>
@@ -59,31 +60,30 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Employee Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Employee Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Employee Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Employee Party Id</em>' attribute.
-	 * @see #setEmployeePartyId(String)
+	 * @return the value of the '<em>Employee Party Id</em>' reference.
+	 * @see #setEmployeePartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_EmployeePartyId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getEmployeePartyId();
+	Party getEmployeePartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeePartyId <em>Employee Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeePartyId <em>Employee Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Employee Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Employee Party Id</em>' reference.
 	 * @see #getEmployeePartyId()
 	 * @generated
 	 */
-	void setEmployeePartyId(String value);
+	void setEmployeePartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Employee Role Type Id</b></em>' attribute.

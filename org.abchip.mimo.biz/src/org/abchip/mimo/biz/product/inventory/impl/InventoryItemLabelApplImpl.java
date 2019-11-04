@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.inventory.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabel;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabelType;
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelApplImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelApplImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelApplImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelApplImpl#getInventoryItemLabelTypeId <em>Inventory Item Label Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelApplImpl#getInventoryItemLabelId <em>Inventory Item Label Id</em>}</li>
  * </ul>
@@ -41,26 +42,6 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -80,6 +61,16 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
 
 	/**
 	 * The cached value of the '{@link #getInventoryItemLabelTypeId() <em>Inventory Item Label Type Id</em>}' reference.
@@ -149,7 +140,24 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -159,8 +167,8 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -254,10 +262,11 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__SEQUENCE_NUM:
 				return getSequenceNum();
+			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_LABEL_TYPE_ID:
 				if (resolve) return getInventoryItemLabelTypeId();
 				return basicGetInventoryItemLabelTypeId();
@@ -276,11 +285,11 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
 				return;
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_LABEL_TYPE_ID:
 				setInventoryItemLabelTypeId((InventoryItemLabelType)newValue);
@@ -300,11 +309,11 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
 				return;
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_LABEL_TYPE_ID:
 				setInventoryItemLabelTypeId((InventoryItemLabelType)null);
@@ -324,10 +333,10 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_LABEL_TYPE_ID:
 				return inventoryItemLabelTypeId != null;
 			case InventoryPackage.INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_LABEL_ID:
@@ -346,9 +355,7 @@ public class InventoryItemLabelApplImpl extends BizEntityImpl implements Invento
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (inventoryItemId: ");
-		result.append(inventoryItemId);
-		result.append(", sequenceNum: ");
+		result.append(" (sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(')');
 		return result.toString();

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.security.securitygroup.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission;
 import org.abchip.mimo.biz.security.securitygroup.SecurityPermission;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getPermissionId <em>Permission Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 */
 	private static final long serialVersionUID = 1L;
 
-
-	/**
-	 * The default value of the '{@link #getGroupId() <em>Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGroupId() <em>Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String groupId = GROUP_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -104,6 +85,17 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getGroupId() <em>Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SecurityGroup groupId;
 
 
 	/**
@@ -164,7 +156,24 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 * @generated
 	 */
 	@Override
-	public String getGroupId() {
+	public SecurityGroup getGroupId() {
+		if (groupId != null && ((EObject)groupId).eIsProxy()) {
+			InternalEObject oldGroupId = (InternalEObject)groupId;
+			groupId = (SecurityGroup)eResolveProxy(oldGroupId);
+			if (groupId != oldGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID, oldGroupId, groupId));
+			}
+		}
+		return groupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SecurityGroup basicGetGroupId() {
 		return groupId;
 	}
 
@@ -174,8 +183,8 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 * @generated
 	 */
 	@Override
-	public void setGroupId(String newGroupId) {
-		String oldGroupId = groupId;
+	public void setGroupId(SecurityGroup newGroupId) {
+		SecurityGroup oldGroupId = groupId;
 		groupId = newGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID, oldGroupId, groupId));
@@ -252,12 +261,13 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
-				return getGroupId();
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				return getFromDate();
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				return getThruDate();
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
+				if (resolve) return getGroupId();
+				return basicGetGroupId();
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
 				if (resolve) return getPermissionId();
 				return basicGetPermissionId();
@@ -273,14 +283,14 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
-				setGroupId((String)newValue);
-				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
+				setGroupId((SecurityGroup)newValue);
 				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
 				setPermissionId((SecurityPermission)newValue);
@@ -297,14 +307,14 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
-				setGroupId(GROUP_ID_EDEFAULT);
-				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
+				setGroupId((SecurityGroup)null);
 				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
 				setPermissionId((SecurityPermission)null);
@@ -321,12 +331,12 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
-				return GROUP_ID_EDEFAULT == null ? groupId != null : !GROUP_ID_EDEFAULT.equals(groupId);
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
+				return groupId != null;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
 				return permissionId != null;
 		}
@@ -343,9 +353,7 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (groupId: ");
-		result.append(groupId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

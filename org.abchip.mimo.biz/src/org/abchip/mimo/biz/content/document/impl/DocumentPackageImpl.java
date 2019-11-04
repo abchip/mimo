@@ -779,8 +779,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDocumentAttribute_DocumentId() {
-		return (EAttribute)documentAttributeEClass.getEStructuralFeatures().get(0);
+	public EReference getDocumentAttribute_DocumentId() {
+		return (EReference)documentAttributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -790,7 +790,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocumentAttribute_AttrName() {
-		return (EAttribute)documentAttributeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)documentAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -800,7 +800,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocumentAttribute_AttrDescription() {
-		return (EAttribute)documentAttributeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)documentAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -810,7 +810,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocumentAttribute_AttrValue() {
-		return (EAttribute)documentAttributeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)documentAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -889,8 +889,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDocumentTypeAttr_DocumentTypeId() {
-		return (EAttribute)documentTypeAttrEClass.getEStructuralFeatures().get(0);
+	public EReference getDocumentTypeAttr_DocumentTypeId() {
+		return (EReference)documentTypeAttrEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -900,7 +900,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocumentTypeAttr_AttrName() {
-		return (EAttribute)documentTypeAttrEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)documentTypeAttrEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -910,7 +910,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocumentTypeAttr_Description() {
-		return (EAttribute)documentTypeAttrEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)documentTypeAttrEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -953,10 +953,10 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createEAttribute(documentEClass, DOCUMENT__DOCUMENT_ATTRIBUTES);
 
 		documentAttributeEClass = createEClass(DOCUMENT_ATTRIBUTE);
-		createEAttribute(documentAttributeEClass, DOCUMENT_ATTRIBUTE__DOCUMENT_ID);
 		createEAttribute(documentAttributeEClass, DOCUMENT_ATTRIBUTE__ATTR_NAME);
 		createEAttribute(documentAttributeEClass, DOCUMENT_ATTRIBUTE__ATTR_DESCRIPTION);
 		createEAttribute(documentAttributeEClass, DOCUMENT_ATTRIBUTE__ATTR_VALUE);
+		createEReference(documentAttributeEClass, DOCUMENT_ATTRIBUTE__DOCUMENT_ID);
 
 		documentTypeEClass = createEClass(DOCUMENT_TYPE);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__DOCUMENT_TYPE_ID);
@@ -966,9 +966,9 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS);
 
 		documentTypeAttrEClass = createEClass(DOCUMENT_TYPE_ATTR);
-		createEAttribute(documentTypeAttrEClass, DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID);
 		createEAttribute(documentTypeAttrEClass, DOCUMENT_TYPE_ATTR__ATTR_NAME);
 		createEAttribute(documentTypeAttrEClass, DOCUMENT_TYPE_ATTR__DESCRIPTION);
+		createEReference(documentTypeAttrEClass, DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID);
 	}
 
 	/**
@@ -1026,10 +1026,11 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEAttribute(getDocument_DocumentAttributes(), ecorePackage.getEString(), "documentAttributes", null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentAttributeEClass, DocumentAttribute.class, "DocumentAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocumentAttribute_DocumentId(), ecorePackage.getEString(), "documentId", null, 1, 1, DocumentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DocumentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, DocumentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, DocumentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentAttribute_DocumentId(), this.getDocument(), null, "documentId", null, 0, 1, DocumentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDocumentAttribute_DocumentId().getEKeys().add(this.getDocument_DocumentId());
 
 		initEClass(documentTypeEClass, DocumentType.class, "DocumentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentType_DocumentTypeId(), ecorePackage.getEString(), "documentTypeId", null, 1, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1044,9 +1045,10 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		addEOperation(documentTypeEClass, ecorePackage.getEString(), "documents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(documentTypeAttrEClass, DocumentTypeAttr.class, "DocumentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocumentTypeAttr_DocumentTypeId(), ecorePackage.getEString(), "documentTypeId", null, 1, 1, DocumentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DocumentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, DocumentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentTypeAttr_DocumentTypeId(), this.getDocumentType(), null, "documentTypeId", null, 0, 1, DocumentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDocumentTypeAttr_DocumentTypeId().getEKeys().add(this.getDocumentType_DocumentTypeId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1078,12 +1080,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDocumentAttribute_DocumentId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getDocumentAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -1112,12 +1108,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getDocumentTypeAttr_DocumentTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (getDocumentTypeAttr_AttrName(),

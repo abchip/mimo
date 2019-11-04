@@ -14,6 +14,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetAssign;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -32,11 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getAllocatedCost <em>Allocated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl#getAvailabilityStatusId <em>Availability Status Id</em>}</li>
@@ -49,26 +50,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -149,6 +130,16 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
@@ -417,7 +408,24 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -427,8 +435,8 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -442,8 +450,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST:
@@ -452,6 +458,9 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 				return getComments();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
 				if (resolve) return getFixedAssetId();
 				return basicGetFixedAssetId();
@@ -473,9 +482,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -487,6 +493,9 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
 				setFixedAssetId((FixedAsset)newValue);
@@ -509,9 +518,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -523,6 +529,9 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
 				setFixedAssetId((FixedAsset)null);
@@ -545,8 +554,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST:
@@ -555,6 +562,8 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
 				return fixedAssetId != null;
 			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID:
@@ -575,9 +584,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", allocatedCost: ");
 		result.append(allocatedCost);

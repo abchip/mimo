@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.agreement.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementItem;
 import org.abchip.mimo.biz.party.agreement.AgreementItemType;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
@@ -26,11 +27,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementImage <em>Agreement Image</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementText <em>Agreement Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  * </ul>
  *
@@ -38,27 +39,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> implements AgreementItem {
 	/**
-	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementId = AGREEMENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,6 +114,15 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 * @ordered
 	 */
 	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Agreement agreementId;
 	/**
 	 * The cached value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -258,7 +250,24 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getAgreementId() {
+	public Agreement getAgreementId() {
+		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
+			InternalEObject oldAgreementId = (InternalEObject)agreementId;
+			agreementId = (Agreement)eResolveProxy(oldAgreementId);
+			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID, oldAgreementId, agreementId));
+			}
+		}
+		return agreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agreement basicGetAgreementId() {
 		return agreementId;
 	}
 
@@ -268,8 +277,8 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
+	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID, oldAgreementId, agreementId));
@@ -323,8 +332,6 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				return getAgreementId();
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
@@ -333,6 +340,9 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 				return getAgreementText();
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				return getCurrencyUomId();
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
+				if (resolve) return getAgreementId();
+				return basicGetAgreementId();
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
 				if (resolve) return getAgreementItemTypeId();
 				return basicGetAgreementItemTypeId();
@@ -348,9 +358,6 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				setAgreementId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
 				return;
@@ -362,6 +369,9 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 				return;
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				setCurrencyUomId((String)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
+				setAgreementId((Agreement)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
 				setAgreementItemTypeId((AgreementItemType)newValue);
@@ -378,9 +388,6 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				setAgreementId(AGREEMENT_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -392,6 +399,9 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 				return;
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
+				setAgreementId((Agreement)null);
 				return;
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
 				setAgreementItemTypeId((AgreementItemType)null);
@@ -408,8 +418,6 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
@@ -418,6 +426,8 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 				return AGREEMENT_TEXT_EDEFAULT == null ? agreementText != null : !AGREEMENT_TEXT_EDEFAULT.equals(agreementText);
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
+				return agreementId != null;
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
 				return agreementItemTypeId != null;
 		}
@@ -434,9 +444,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementId: ");
-		result.append(agreementId);
-		result.append(", agreementItemSeqId: ");
+		result.append(" (agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
 		result.append(", agreementImage: ");
 		result.append(agreementImage);

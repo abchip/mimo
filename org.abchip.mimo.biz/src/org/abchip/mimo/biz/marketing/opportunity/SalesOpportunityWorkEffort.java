@@ -29,31 +29,30 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  */
 public interface SalesOpportunityWorkEffort extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Sales Opportunity Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Sales Opportunity Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Opportunity Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Opportunity Id</em>' attribute.
-	 * @see #setSalesOpportunityId(String)
+	 * @return the value of the '<em>Sales Opportunity Id</em>' reference.
+	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityWorkEffort_SalesOpportunityId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="salesOpportunityId"
 	 * @generated
 	 */
-	String getSalesOpportunityId();
+	SalesOpportunity getSalesOpportunityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort#getSalesOpportunityId <em>Sales Opportunity Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort#getSalesOpportunityId <em>Sales Opportunity Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sales Opportunity Id</em>' attribute.
+	 * @param value the new value of the '<em>Sales Opportunity Id</em>' reference.
 	 * @see #getSalesOpportunityId()
 	 * @generated
 	 */
-	void setSalesOpportunityId(String value);
+	void setSalesOpportunityId(SalesOpportunity value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.

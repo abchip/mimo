@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.budget.impl;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetAttribute;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,10 +26,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetAttributeImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetAttributeImpl#getBudgetId <em>Budget Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,24 +39,6 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,6 +93,15 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,7 +174,24 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -190,8 +201,8 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID, oldBudgetId, budgetId));
@@ -228,14 +239,15 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
-				return getBudgetId();
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,9 +260,6 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -259,6 +268,9 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 				return;
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
+				setBudgetId((Budget)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -272,9 +284,6 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -283,6 +292,9 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 				return;
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
+				setBudgetId((Budget)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -296,14 +308,14 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case BudgetPackage.BUDGET_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case BudgetPackage.BUDGET_ATTRIBUTE__BUDGET_ID:
+				return budgetId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -318,9 +330,7 @@ public class BudgetAttributeImpl extends BizEntityImpl implements BudgetAttribut
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

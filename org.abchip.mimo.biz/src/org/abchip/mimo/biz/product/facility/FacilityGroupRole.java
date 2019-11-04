@@ -83,30 +83,29 @@ public interface FacilityGroupRole extends BizEntity {
 	void setRoleTypeId(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Group Id</em>' attribute.
-	 * @see #setFacilityGroupId(String)
+	 * @return the value of the '<em>Facility Group Id</em>' reference.
+	 * @see #setFacilityGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRole_FacilityGroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="facilityGroupId"
 	 * @generated
 	 */
-	String getFacilityGroupId();
+	FacilityGroup getFacilityGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroupRole#getFacilityGroupId <em>Facility Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroupRole#getFacilityGroupId <em>Facility Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Group Id</em>' reference.
 	 * @see #getFacilityGroupId()
 	 * @generated
 	 */
-	void setFacilityGroupId(String value);
+	void setFacilityGroupId(FacilityGroup value);
 
 } // FacilityGroupRole

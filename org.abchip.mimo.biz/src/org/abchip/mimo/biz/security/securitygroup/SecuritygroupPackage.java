@@ -108,22 +108,13 @@ public interface SecuritygroupPackage extends EPackage {
 	int PROTECTED_VIEW__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Group Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTECTED_VIEW__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>View Name Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTED_VIEW__VIEW_NAME_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PROTECTED_VIEW__VIEW_NAME_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Hits</b></em>' attribute.
@@ -132,7 +123,7 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTED_VIEW__MAX_HITS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PROTECTED_VIEW__MAX_HITS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Max Hits Duration</b></em>' attribute.
@@ -141,7 +132,7 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTED_VIEW__MAX_HITS_DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PROTECTED_VIEW__MAX_HITS_DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Tarpit Duration</b></em>' attribute.
@@ -150,7 +141,16 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTED_VIEW__TARPIT_DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PROTECTED_VIEW__TARPIT_DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Group Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_VIEW__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Protected View</em>' class.
@@ -299,22 +299,13 @@ public interface SecuritygroupPackage extends EPackage {
 	int SECURITY_GROUP_PERMISSION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Group Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECURITY_GROUP_PERMISSION__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_GROUP_PERMISSION__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SECURITY_GROUP_PERMISSION__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -323,7 +314,16 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_GROUP_PERMISSION__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SECURITY_GROUP_PERMISSION__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Group Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_PERMISSION__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Permission Id</b></em>' reference.
@@ -545,22 +545,13 @@ public interface SecuritygroupPackage extends EPackage {
 	int USER_LOGIN_SECURITY_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>User Login Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SECURITY_GROUP__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int USER_LOGIN_SECURITY_GROUP__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -569,7 +560,16 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SECURITY_GROUP__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int USER_LOGIN_SECURITY_GROUP__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Group Id</b></em>' reference.
@@ -601,15 +601,15 @@ public interface SecuritygroupPackage extends EPackage {
 	EClass getProtectedView();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getGroupId <em>Group Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getGroupId <em>Group Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Group Id</em>'.
+	 * @return the meta object for the reference '<em>Group Id</em>'.
 	 * @see org.abchip.mimo.biz.security.securitygroup.ProtectedView#getGroupId()
 	 * @see #getProtectedView()
 	 * @generated
 	 */
-	EAttribute getProtectedView_GroupId();
+	EReference getProtectedView_GroupId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getViewNameId <em>View Name Id</em>}'.
@@ -720,15 +720,15 @@ public interface SecuritygroupPackage extends EPackage {
 	EClass getSecurityGroupPermission();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Group Id</em>'.
+	 * @return the meta object for the reference '<em>Group Id</em>'.
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId()
 	 * @see #getSecurityGroupPermission()
 	 * @generated
 	 */
-	EAttribute getSecurityGroupPermission_GroupId();
+	EReference getSecurityGroupPermission_GroupId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}'.
@@ -849,15 +849,15 @@ public interface SecuritygroupPackage extends EPackage {
 	EClass getUserLoginSecurityGroup();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Login Id</em>'.
+	 * @return the meta object for the reference '<em>User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId()
 	 * @see #getUserLoginSecurityGroup()
 	 * @generated
 	 */
-	EAttribute getUserLoginSecurityGroup_UserLoginId();
+	EReference getUserLoginSecurityGroup_UserLoginId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}'.
@@ -925,12 +925,12 @@ public interface SecuritygroupPackage extends EPackage {
 		EClass PROTECTED_VIEW = eINSTANCE.getProtectedView();
 
 		/**
-		 * The meta object literal for the '<em><b>Group Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Group Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROTECTED_VIEW__GROUP_ID = eINSTANCE.getProtectedView_GroupId();
+		EReference PROTECTED_VIEW__GROUP_ID = eINSTANCE.getProtectedView_GroupId();
 
 		/**
 		 * The meta object literal for the '<em><b>View Name Id</b></em>' attribute feature.
@@ -1017,12 +1017,12 @@ public interface SecuritygroupPackage extends EPackage {
 		EClass SECURITY_GROUP_PERMISSION = eINSTANCE.getSecurityGroupPermission();
 
 		/**
-		 * The meta object literal for the '<em><b>Group Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Group Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECURITY_GROUP_PERMISSION__GROUP_ID = eINSTANCE.getSecurityGroupPermission_GroupId();
+		EReference SECURITY_GROUP_PERMISSION__GROUP_ID = eINSTANCE.getSecurityGroupPermission_GroupId();
 
 		/**
 		 * The meta object literal for the '<em><b>Permission Id</b></em>' reference feature.
@@ -1119,12 +1119,12 @@ public interface SecuritygroupPackage extends EPackage {
 		EClass USER_LOGIN_SECURITY_GROUP = eINSTANCE.getUserLoginSecurityGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>User Login Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>User Login Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID = eINSTANCE.getUserLoginSecurityGroup_UserLoginId();
+		EReference USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID = eINSTANCE.getUserLoginSecurityGroup_UserLoginId();
 
 		/**
 		 * The meta object literal for the '<em><b>Group Id</b></em>' reference feature.

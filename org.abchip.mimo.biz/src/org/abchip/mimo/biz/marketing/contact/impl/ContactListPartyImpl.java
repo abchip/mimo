@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListParty;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
@@ -31,9 +32,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl#getContactListId <em>Contact List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl#getContactListId <em>Contact List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl#getPreferredContactMechId <em>Preferred Contact Mech Id</em>}</li>
@@ -46,26 +47,6 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_LIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactListId = CONTACT_LIST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -106,6 +87,16 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactList contactListId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -162,7 +153,24 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	 * @generated
 	 */
 	@Override
-	public String getContactListId() {
+	public ContactList getContactListId() {
+		if (contactListId != null && ((EObject)contactListId).eIsProxy()) {
+			InternalEObject oldContactListId = (InternalEObject)contactListId;
+			contactListId = (ContactList)eResolveProxy(oldContactListId);
+			if (contactListId != oldContactListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID, oldContactListId, contactListId));
+			}
+		}
+		return contactListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactList basicGetContactListId() {
 		return contactListId;
 	}
 
@@ -172,8 +180,8 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	 * @generated
 	 */
 	@Override
-	public void setContactListId(String newContactListId) {
-		String oldContactListId = contactListId;
+	public void setContactListId(ContactList newContactListId) {
+		ContactList oldContactListId = contactListId;
 		contactListId = newContactListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID, oldContactListId, contactListId));
@@ -353,12 +361,13 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
-				return getContactListId();
 			case ContactPackage.CONTACT_LIST_PARTY__FROM_DATE:
 				return getFromDate();
 			case ContactPackage.CONTACT_LIST_PARTY__THRU_DATE:
 				return getThruDate();
+			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
+				if (resolve) return getContactListId();
+				return basicGetContactListId();
 			case ContactPackage.CONTACT_LIST_PARTY__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -380,14 +389,14 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
-				setContactListId((String)newValue);
-				return;
 			case ContactPackage.CONTACT_LIST_PARTY__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case ContactPackage.CONTACT_LIST_PARTY__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
+				setContactListId((ContactList)newValue);
 				return;
 			case ContactPackage.CONTACT_LIST_PARTY__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -410,14 +419,14 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
-				setContactListId(CONTACT_LIST_ID_EDEFAULT);
-				return;
 			case ContactPackage.CONTACT_LIST_PARTY__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case ContactPackage.CONTACT_LIST_PARTY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
+				setContactListId((ContactList)null);
 				return;
 			case ContactPackage.CONTACT_LIST_PARTY__PARTY_ID:
 				setPartyId((Party)null);
@@ -440,12 +449,12 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
-				return CONTACT_LIST_ID_EDEFAULT == null ? contactListId != null : !CONTACT_LIST_ID_EDEFAULT.equals(contactListId);
 			case ContactPackage.CONTACT_LIST_PARTY__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ContactPackage.CONTACT_LIST_PARTY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case ContactPackage.CONTACT_LIST_PARTY__CONTACT_LIST_ID:
+				return contactListId != null;
 			case ContactPackage.CONTACT_LIST_PARTY__PARTY_ID:
 				return partyId != null;
 			case ContactPackage.CONTACT_LIST_PARTY__STATUS_ID:
@@ -466,9 +475,7 @@ public class ContactListPartyImpl extends BizEntityImpl implements ContactListPa
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contactListId: ");
-		result.append(contactListId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

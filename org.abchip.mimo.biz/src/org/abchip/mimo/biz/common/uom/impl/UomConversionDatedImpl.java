@@ -30,12 +30,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getConversionFactor <em>Conversion Factor</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getDecimalScale <em>Decimal Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getRoundingMode <em>Rounding Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getUomIdTo <em>Uom Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionDatedImpl#getPurposeEnumId <em>Purpose Enum Id</em>}</li>
@@ -48,24 +48,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomId = UOM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -156,6 +138,15 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom uomId;
 	/**
 	 * The cached value of the '{@link #getUomIdTo() <em>Uom Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -324,7 +315,24 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -334,8 +342,8 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__UOM_ID, oldUomId, uomId));
@@ -469,8 +477,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				return getUomId();
 			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
 				return getFromDate();
 			case UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR:
@@ -481,6 +487,9 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 				return getRoundingMode();
 			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
 				return getThruDate();
+			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
+				if (resolve) return getUomId();
+				return basicGetUomId();
 			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
 				if (resolve) return getUomIdTo();
 				return basicGetUomIdTo();
@@ -502,9 +511,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				setUomId((String)newValue);
-				return;
 			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -519,6 +525,9 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 				return;
 			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
+				setUomId((Uom)newValue);
 				return;
 			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
 				setUomIdTo((Uom)newValue);
@@ -541,9 +550,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
-				return;
 			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -558,6 +564,9 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 				return;
 			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
+				setUomId((Uom)null);
 				return;
 			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
 				setUomIdTo((Uom)null);
@@ -580,8 +589,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
 			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR:
@@ -592,6 +599,8 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 				return ROUNDING_MODE_EDEFAULT == null ? roundingMode != null : !ROUNDING_MODE_EDEFAULT.equals(roundingMode);
 			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
+				return uomId != null;
 			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
 				return uomIdTo != null;
 			case UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID:
@@ -612,9 +621,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (uomId: ");
-		result.append(uomId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", conversionFactor: ");
 		result.append(conversionFactor);

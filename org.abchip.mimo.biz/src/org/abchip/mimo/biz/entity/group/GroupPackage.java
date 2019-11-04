@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -189,22 +190,13 @@ public interface GroupPackage extends EPackage {
 	int ENTITY_GROUP_ENTRY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Entity Group Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Entity Or Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GROUP_ENTRY__ENTITY_OR_PACKAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ENTITY_GROUP_ENTRY__ENTITY_OR_PACKAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Appl Enum Id</b></em>' attribute.
@@ -213,7 +205,16 @@ public interface GroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GROUP_ENTRY__APPL_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ENTITY_GROUP_ENTRY__APPL_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Entity Group Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity Group Entry</em>' class.
@@ -279,15 +280,15 @@ public interface GroupPackage extends EPackage {
 	EClass getEntityGroupEntry();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Entity Group Id</em>'.
+	 * @return the meta object for the reference '<em>Entity Group Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId()
 	 * @see #getEntityGroupEntry()
 	 * @generated
 	 */
-	EAttribute getEntityGroupEntry_EntityGroupId();
+	EReference getEntityGroupEntry_EntityGroupId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityOrPackage <em>Entity Or Package</em>}'.
@@ -378,12 +379,12 @@ public interface GroupPackage extends EPackage {
 		EClass ENTITY_GROUP_ENTRY = eINSTANCE.getEntityGroupEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Group Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Group Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID = eINSTANCE.getEntityGroupEntry_EntityGroupId();
+		EReference ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID = eINSTANCE.getEntityGroupEntry_EntityGroupId();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Or Package</b></em>' attribute feature.

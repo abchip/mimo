@@ -614,22 +614,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ATTRIBUTE__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int QUOTE_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -638,7 +629,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int QUOTE_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -647,7 +638,16 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int QUOTE_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ATTRIBUTE__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -705,22 +705,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_COEFFICIENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_COEFFICIENT__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Coeff Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_COEFFICIENT__COEFF_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int QUOTE_COEFFICIENT__COEFF_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Coeff Value</b></em>' attribute.
@@ -729,7 +720,16 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_COEFFICIENT__COEFF_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int QUOTE_COEFFICIENT__COEFF_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_COEFFICIENT__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Coefficient</em>' class.
@@ -787,22 +787,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_ITEM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ITEM__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Quote Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int QUOTE_ITEM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -811,7 +802,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int QUOTE_ITEM__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Config Id</b></em>' attribute.
@@ -820,7 +811,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int QUOTE_ITEM__CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Cust Request Item Seq Id</b></em>' attribute.
@@ -829,7 +820,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Delivery Date</b></em>' attribute.
@@ -838,7 +829,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int QUOTE_ITEM__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Promo</b></em>' attribute.
@@ -847,7 +838,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__IS_PROMO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int QUOTE_ITEM__IS_PROMO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Lead Time Days</b></em>' attribute.
@@ -856,7 +847,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__LEAD_TIME_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int QUOTE_ITEM__LEAD_TIME_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -865,7 +856,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int QUOTE_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Quote Unit Price</b></em>' attribute.
@@ -874,7 +865,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__QUOTE_UNIT_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int QUOTE_ITEM__QUOTE_UNIT_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Length</b></em>' attribute.
@@ -883,7 +874,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int QUOTE_ITEM__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Persons</b></em>' attribute.
@@ -892,7 +883,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int QUOTE_ITEM__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Start</b></em>' attribute.
@@ -901,7 +892,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int QUOTE_ITEM__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Selected Amount</b></em>' attribute.
@@ -910,7 +901,16 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int QUOTE_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ITEM__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -1049,7 +1049,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_NOTE__NOTE = BizPackage.BIZ_ENTITY_NOTE__NOTE;
 
 	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1113,22 +1113,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ROLE__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int QUOTE_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1137,7 +1128,16 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int QUOTE_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ROLE__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -1213,22 +1213,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_TERM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Term Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Quote Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int QUOTE_TERM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1237,7 +1228,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int QUOTE_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Term Days</b></em>' attribute.
@@ -1246,7 +1237,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int QUOTE_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Term Value</b></em>' attribute.
@@ -1255,7 +1246,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int QUOTE_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Text Value</b></em>' attribute.
@@ -1264,7 +1255,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int QUOTE_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Uom Id</b></em>' attribute.
@@ -1273,7 +1264,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int QUOTE_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
@@ -1282,7 +1273,16 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int QUOTE_TERM__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Term Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -1558,22 +1558,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Quote Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_TYPE_ATTR__QUOTE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int QUOTE_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1582,7 +1573,16 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int QUOTE_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Quote Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_TYPE_ATTR__QUOTE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Type Attr</em>' class.
@@ -1640,7 +1640,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_WORK_EFFORT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2182,15 +2182,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAttribute#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAttribute#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAttribute#getQuoteId()
 	 * @see #getQuoteAttribute()
 	 * @generated
 	 */
-	EAttribute getQuoteAttribute_QuoteId();
+	EReference getQuoteAttribute_QuoteId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAttribute#getAttrName <em>Attr Name</em>}'.
@@ -2236,15 +2236,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteCoefficient();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId()
 	 * @see #getQuoteCoefficient()
 	 * @generated
 	 */
-	EAttribute getQuoteCoefficient_QuoteId();
+	EReference getQuoteCoefficient_QuoteId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getCoeffName <em>Coeff Name</em>}'.
@@ -2279,15 +2279,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteItem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_QuoteId();
+	EReference getQuoteItem_QuoteId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteItemSeqId <em>Quote Item Seq Id</em>}'.
@@ -2520,15 +2520,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteNote();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteNote#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteNote#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteNote#getQuoteId()
 	 * @see #getQuoteNote()
 	 * @generated
 	 */
-	EAttribute getQuoteNote_QuoteId();
+	EReference getQuoteNote_QuoteId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.quote.QuoteRole <em>Role</em>}'.
@@ -2541,15 +2541,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteRole#getQuoteId()
 	 * @see #getQuoteRole()
 	 * @generated
 	 */
-	EAttribute getQuoteRole_QuoteId();
+	EReference getQuoteRole_QuoteId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getPartyId <em>Party Id</em>}'.
@@ -2606,15 +2606,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteTerm();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId <em>Term Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId <em>Term Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Term Type Id</em>'.
+	 * @return the meta object for the reference '<em>Term Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId()
 	 * @see #getQuoteTerm()
 	 * @generated
 	 */
-	EAttribute getQuoteTerm_TermTypeId();
+	EReference getQuoteTerm_TermTypeId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}'.
@@ -2845,15 +2845,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Type Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId()
 	 * @see #getQuoteTypeAttr()
 	 * @generated
 	 */
-	EAttribute getQuoteTypeAttr_QuoteTypeId();
+	EReference getQuoteTypeAttr_QuoteTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -2888,15 +2888,15 @@ public interface QuotePackage extends EPackage {
 	EClass getQuoteWorkEffort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteWorkEffort#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteWorkEffort#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteWorkEffort#getQuoteId()
 	 * @see #getQuoteWorkEffort()
 	 * @generated
 	 */
-	EAttribute getQuoteWorkEffort_QuoteId();
+	EReference getQuoteWorkEffort_QuoteId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteWorkEffort#getWorkEffortId <em>Work Effort Id</em>}'.
@@ -3314,12 +3314,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_ATTRIBUTE = eINSTANCE.getQuoteAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ATTRIBUTE__QUOTE_ID = eINSTANCE.getQuoteAttribute_QuoteId();
+		EReference QUOTE_ATTRIBUTE__QUOTE_ID = eINSTANCE.getQuoteAttribute_QuoteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -3356,12 +3356,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_COEFFICIENT = eINSTANCE.getQuoteCoefficient();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_COEFFICIENT__QUOTE_ID = eINSTANCE.getQuoteCoefficient_QuoteId();
+		EReference QUOTE_COEFFICIENT__QUOTE_ID = eINSTANCE.getQuoteCoefficient_QuoteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Coeff Name</b></em>' attribute feature.
@@ -3390,12 +3390,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_ITEM = eINSTANCE.getQuoteItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__QUOTE_ID = eINSTANCE.getQuoteItem_QuoteId();
+		EReference QUOTE_ITEM__QUOTE_ID = eINSTANCE.getQuoteItem_QuoteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quote Item Seq Id</b></em>' attribute feature.
@@ -3568,12 +3568,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_NOTE = eINSTANCE.getQuoteNote();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_NOTE__QUOTE_ID = eINSTANCE.getQuoteNote_QuoteId();
+		EReference QUOTE_NOTE__QUOTE_ID = eINSTANCE.getQuoteNote_QuoteId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.quote.impl.QuoteRoleImpl <em>Role</em>}' class.
@@ -3586,12 +3586,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_ROLE = eINSTANCE.getQuoteRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ROLE__QUOTE_ID = eINSTANCE.getQuoteRole_QuoteId();
+		EReference QUOTE_ROLE__QUOTE_ID = eINSTANCE.getQuoteRole_QuoteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -3636,12 +3636,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_TERM = eINSTANCE.getQuoteTerm();
 
 		/**
-		 * The meta object literal for the '<em><b>Term Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Term Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_TERM__TERM_TYPE_ID = eINSTANCE.getQuoteTerm_TermTypeId();
+		EReference QUOTE_TERM__TERM_TYPE_ID = eINSTANCE.getQuoteTerm_TermTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
@@ -3818,12 +3818,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_TYPE_ATTR = eINSTANCE.getQuoteTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_TYPE_ATTR__QUOTE_TYPE_ID = eINSTANCE.getQuoteTypeAttr_QuoteTypeId();
+		EReference QUOTE_TYPE_ATTR__QUOTE_TYPE_ID = eINSTANCE.getQuoteTypeAttr_QuoteTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -3852,12 +3852,12 @@ public interface QuotePackage extends EPackage {
 		EClass QUOTE_WORK_EFFORT = eINSTANCE.getQuoteWorkEffort();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_WORK_EFFORT__QUOTE_ID = eINSTANCE.getQuoteWorkEffort_QuoteId();
+		EReference QUOTE_WORK_EFFORT__QUOTE_ID = eINSTANCE.getQuoteWorkEffort_QuoteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.

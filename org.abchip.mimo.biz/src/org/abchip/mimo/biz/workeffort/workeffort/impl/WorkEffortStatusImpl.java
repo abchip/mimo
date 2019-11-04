@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortStatus;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -30,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getReason <em>Reason</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getSetByUserLogin <em>Set By User Login</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatusDatetime() <em>Status Datetime</em>}' attribute.
@@ -104,6 +85,16 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @ordered
 	 */
 	protected String reason = REASON_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
@@ -276,7 +267,24 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -286,8 +294,8 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -301,12 +309,13 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				return getStatusDatetime();
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				return getReason();
+			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
 				if (resolve) return getStatusId();
 				return basicGetStatusId();
@@ -325,14 +334,14 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				setStatusDatetime((Date)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				setReason((String)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
 				setStatusId((StatusItem)newValue);
@@ -352,14 +361,14 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				setStatusDatetime(STATUS_DATETIME_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				setReason(REASON_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
 				setStatusId((StatusItem)null);
@@ -379,12 +388,12 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				return STATUS_DATETIME_EDEFAULT == null ? statusDatetime != null : !STATUS_DATETIME_EDEFAULT.equals(statusDatetime);
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				return REASON_EDEFAULT == null ? reason != null : !REASON_EDEFAULT.equals(reason);
+			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
 				return statusId != null;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN:
@@ -403,9 +412,7 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", statusDatetime: ");
+		result.append(" (statusDatetime: ");
 		result.append(statusDatetime);
 		result.append(", reason: ");
 		result.append(reason);

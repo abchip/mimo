@@ -290,22 +290,13 @@ public interface TenantPackage extends EPackage {
 	int TENANT_COMPONENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Component Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT_COMPONENT__COMPONENT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_COMPONENT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TENANT_COMPONENT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
@@ -314,7 +305,16 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_COMPONENT__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TENANT_COMPONENT__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Component Name</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT_COMPONENT__COMPONENT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -372,22 +372,13 @@ public interface TenantPackage extends EPackage {
 	int TENANT_DATA_SOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT_DATA_SOURCE__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Entity Group Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__ENTITY_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TENANT_DATA_SOURCE__ENTITY_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Jdbc Password</b></em>' attribute.
@@ -396,7 +387,7 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__JDBC_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TENANT_DATA_SOURCE__JDBC_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Jdbc Uri</b></em>' attribute.
@@ -405,7 +396,7 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__JDBC_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TENANT_DATA_SOURCE__JDBC_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Jdbc Username</b></em>' attribute.
@@ -414,7 +405,16 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__JDBC_USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TENANT_DATA_SOURCE__JDBC_USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT_DATA_SOURCE__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.
@@ -545,22 +545,22 @@ public interface TenantPackage extends EPackage {
 	int TENANT_KEY_ENCRYPTING_KEY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Kek Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_KEY_ENCRYPTING_KEY__KEK_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TENANT_KEY_ENCRYPTING_KEY__KEK_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Key Encrypting Key</em>' class.
@@ -691,15 +691,15 @@ public interface TenantPackage extends EPackage {
 	EClass getTenantComponent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Component Name</em>'.
+	 * @return the meta object for the reference '<em>Component Name</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName()
 	 * @see #getTenantComponent()
 	 * @generated
 	 */
-	EAttribute getTenantComponent_ComponentName();
+	EReference getTenantComponent_ComponentName();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}'.
@@ -734,15 +734,15 @@ public interface TenantPackage extends EPackage {
 	EClass getTenantDataSource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getTenantId <em>Tenant Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getTenantId <em>Tenant Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant Id</em>'.
+	 * @return the meta object for the reference '<em>Tenant Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantDataSource#getTenantId()
 	 * @see #getTenantDataSource()
 	 * @generated
 	 */
-	EAttribute getTenantDataSource_TenantId();
+	EReference getTenantDataSource_TenantId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getEntityGroupName <em>Entity Group Name</em>}'.
@@ -831,15 +831,15 @@ public interface TenantPackage extends EPackage {
 	EClass getTenantKeyEncryptingKey();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId <em>Tenant Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId <em>Tenant Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant Id</em>'.
+	 * @return the meta object for the reference '<em>Tenant Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId()
 	 * @see #getTenantKeyEncryptingKey()
 	 * @generated
 	 */
-	EAttribute getTenantKeyEncryptingKey_TenantId();
+	EReference getTenantKeyEncryptingKey_TenantId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getKekText <em>Kek Text</em>}'.
@@ -969,12 +969,12 @@ public interface TenantPackage extends EPackage {
 		EClass TENANT_COMPONENT = eINSTANCE.getTenantComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Component Name</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TENANT_COMPONENT__COMPONENT_NAME = eINSTANCE.getTenantComponent_ComponentName();
+		EReference TENANT_COMPONENT__COMPONENT_NAME = eINSTANCE.getTenantComponent_ComponentName();
 
 		/**
 		 * The meta object literal for the '<em><b>Tenant Id</b></em>' reference feature.
@@ -1003,12 +1003,12 @@ public interface TenantPackage extends EPackage {
 		EClass TENANT_DATA_SOURCE = eINSTANCE.getTenantDataSource();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tenant Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TENANT_DATA_SOURCE__TENANT_ID = eINSTANCE.getTenantDataSource_TenantId();
+		EReference TENANT_DATA_SOURCE__TENANT_ID = eINSTANCE.getTenantDataSource_TenantId();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Group Name</b></em>' attribute feature.
@@ -1079,12 +1079,12 @@ public interface TenantPackage extends EPackage {
 		EClass TENANT_KEY_ENCRYPTING_KEY = eINSTANCE.getTenantKeyEncryptingKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tenant Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = eINSTANCE.getTenantKeyEncryptingKey_TenantId();
+		EReference TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = eINSTANCE.getTenantKeyEncryptingKey_TenantId();
 
 		/**
 		 * The meta object literal for the '<em><b>Kek Text</b></em>' attribute feature.

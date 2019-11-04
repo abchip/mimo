@@ -12,10 +12,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.tax.PartyTaxAuthInfo;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getFromDate <em>From Date</em>}</li>
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#isIsNexus <em>Is Nexus</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getPartyTaxId <em>Party Tax Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,26 +46,6 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getTaxAuthGeoId() <em>Tax Auth Geo Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -194,6 +177,15 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,7 +281,24 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -299,8 +308,8 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID, oldPartyId, partyId));
@@ -406,8 +415,6 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
-				return getPartyId();
 			case TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_GEO_ID:
 				return getTaxAuthGeoId();
 			case TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_PARTY_ID:
@@ -422,6 +429,9 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 				return getPartyTaxId();
 			case TaxPackage.PARTY_TAX_AUTH_INFO__THRU_DATE:
 				return getThruDate();
+			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -434,9 +444,6 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_GEO_ID:
 				setTaxAuthGeoId((String)newValue);
 				return;
@@ -458,6 +465,9 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 			case TaxPackage.PARTY_TAX_AUTH_INFO__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -470,9 +480,6 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_GEO_ID:
 				setTaxAuthGeoId(TAX_AUTH_GEO_ID_EDEFAULT);
 				return;
@@ -494,6 +501,9 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 			case TaxPackage.PARTY_TAX_AUTH_INFO__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -506,8 +516,6 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_GEO_ID:
 				return TAX_AUTH_GEO_ID_EDEFAULT == null ? taxAuthGeoId != null : !TAX_AUTH_GEO_ID_EDEFAULT.equals(taxAuthGeoId);
 			case TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_PARTY_ID:
@@ -522,6 +530,8 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 				return PARTY_TAX_ID_EDEFAULT == null ? partyTaxId != null : !PARTY_TAX_ID_EDEFAULT.equals(partyTaxId);
 			case TaxPackage.PARTY_TAX_AUTH_INFO__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -536,9 +546,7 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", taxAuthGeoId: ");
+		result.append(" (taxAuthGeoId: ");
 		result.append(taxAuthGeoId);
 		result.append(", taxAuthPartyId: ");
 		result.append(taxAuthPartyId);

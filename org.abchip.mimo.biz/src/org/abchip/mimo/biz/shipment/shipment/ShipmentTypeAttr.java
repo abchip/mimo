@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getShipmentTypeId <em>Shipment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getShipmentTypeId <em>Shipment Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTypeAttr()
@@ -82,30 +82,29 @@ public interface ShipmentTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Type Id</em>' attribute.
-	 * @see #setShipmentTypeId(String)
+	 * @return the value of the '<em>Shipment Type Id</em>' reference.
+	 * @see #setShipmentTypeId(ShipmentType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTypeAttr_ShipmentTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="shipmentTypeId"
 	 * @generated
 	 */
-	String getShipmentTypeId();
+	ShipmentType getShipmentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getShipmentTypeId <em>Shipment Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr#getShipmentTypeId <em>Shipment Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Type Id</em>' reference.
 	 * @see #getShipmentTypeId()
 	 * @generated
 	 */
-	void setShipmentTypeId(String value);
+	void setShipmentTypeId(ShipmentType value);
 
 } // ShipmentTypeAttr

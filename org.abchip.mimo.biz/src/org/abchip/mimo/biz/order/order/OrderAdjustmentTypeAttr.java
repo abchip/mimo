@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentTypeAttr()
@@ -82,30 +82,29 @@ public interface OrderAdjustmentTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Adjustment Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Adjustment Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Adjustment Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Adjustment Type Id</em>' attribute.
-	 * @see #setOrderAdjustmentTypeId(String)
+	 * @return the value of the '<em>Order Adjustment Type Id</em>' reference.
+	 * @see #setOrderAdjustmentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="orderAdjustmentTypeId"
 	 * @generated
 	 */
-	String getOrderAdjustmentTypeId();
+	OrderAdjustmentType getOrderAdjustmentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Adjustment Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Adjustment Type Id</em>' reference.
 	 * @see #getOrderAdjustmentTypeId()
 	 * @generated
 	 */
-	void setOrderAdjustmentTypeId(String value);
+	void setOrderAdjustmentTypeId(OrderAdjustmentType value);
 
 } // OrderAdjustmentTypeAttr

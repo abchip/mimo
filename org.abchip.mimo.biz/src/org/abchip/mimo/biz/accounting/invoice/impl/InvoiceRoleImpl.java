@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -31,9 +32,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getDatetimePerformed <em>Datetime Performed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getPercentage <em>Percentage</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
@@ -45,24 +46,6 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceId = INVOICE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDatetimePerformed() <em>Datetime Performed</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -99,6 +82,15 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @ordered
 	 */
 	protected BigDecimal percentage = PERCENTAGE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Invoice invoiceId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -269,7 +261,24 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceId() {
+	public Invoice getInvoiceId() {
+		if (invoiceId != null && ((EObject)invoiceId).eIsProxy()) {
+			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
+			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
+			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ROLE__INVOICE_ID, oldInvoiceId, invoiceId));
+			}
+		}
+		return invoiceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoiceId() {
 		return invoiceId;
 	}
 
@@ -279,8 +288,8 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
+	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__INVOICE_ID, oldInvoiceId, invoiceId));
@@ -294,12 +303,13 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
-				return getInvoiceId();
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				return getDatetimePerformed();
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				return getPercentage();
+			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
+				if (resolve) return getInvoiceId();
+				return basicGetInvoiceId();
 			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -318,14 +328,14 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
-				setInvoiceId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				setDatetimePerformed((Date)newValue);
 				return;
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				setPercentage((BigDecimal)newValue);
+				return;
+			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
+				setInvoiceId((Invoice)newValue);
 				return;
 			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -345,14 +355,14 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
-				setInvoiceId(INVOICE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				setDatetimePerformed(DATETIME_PERFORMED_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				setPercentage(PERCENTAGE_EDEFAULT);
+				return;
+			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
+				setInvoiceId((Invoice)null);
 				return;
 			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -372,12 +382,12 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
-				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				return DATETIME_PERFORMED_EDEFAULT == null ? datetimePerformed != null : !DATETIME_PERFORMED_EDEFAULT.equals(datetimePerformed);
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				return PERCENTAGE_EDEFAULT == null ? percentage != null : !PERCENTAGE_EDEFAULT.equals(percentage);
+			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
+				return invoiceId != null;
 			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
 				return partyId != null;
 			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
@@ -396,9 +406,7 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (invoiceId: ");
-		result.append(invoiceId);
-		result.append(", datetimePerformed: ");
+		result.append(" (datetimePerformed: ");
 		result.append(datetimePerformed);
 		result.append(", percentage: ");
 		result.append(percentage);

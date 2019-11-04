@@ -399,22 +399,13 @@ public interface PassportPackage extends EPackage {
 	int OAUTH2_GIT_HUB__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OAUTH2_GIT_HUB__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int OAUTH2_GIT_HUB__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Client Id</b></em>' attribute.
@@ -423,7 +414,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int OAUTH2_GIT_HUB__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Client Secret</b></em>' attribute.
@@ -432,7 +423,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int OAUTH2_GIT_HUB__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Icon Url</b></em>' attribute.
@@ -441,7 +432,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int OAUTH2_GIT_HUB__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Local Redirect Uri</b></em>' attribute.
@@ -450,7 +441,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int OAUTH2_GIT_HUB__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Return Url</b></em>' attribute.
@@ -459,7 +450,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int OAUTH2_GIT_HUB__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -468,7 +459,16 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int OAUTH2_GIT_HUB__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2_GIT_HUB__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>OAuth2 Git Hub</em>' class.
@@ -526,22 +526,13 @@ public interface PassportPackage extends EPackage {
 	int OAUTH2_GOOGLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OAUTH2_GOOGLE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int OAUTH2_GOOGLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Client Id</b></em>' attribute.
@@ -550,7 +541,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int OAUTH2_GOOGLE__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Client Secret</b></em>' attribute.
@@ -559,7 +550,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int OAUTH2_GOOGLE__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Icon Url</b></em>' attribute.
@@ -568,7 +559,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int OAUTH2_GOOGLE__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Local Redirect Uri</b></em>' attribute.
@@ -577,7 +568,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int OAUTH2_GOOGLE__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Return Url</b></em>' attribute.
@@ -586,7 +577,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int OAUTH2_GOOGLE__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -595,7 +586,16 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int OAUTH2_GOOGLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2_GOOGLE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>OAuth2 Google</em>' class.
@@ -653,22 +653,13 @@ public interface PassportPackage extends EPackage {
 	int OAUTH2_LINKED_IN__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OAUTH2_LINKED_IN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int OAUTH2_LINKED_IN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Api Key</b></em>' attribute.
@@ -677,7 +668,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__API_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int OAUTH2_LINKED_IN__API_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Icon Url</b></em>' attribute.
@@ -686,7 +677,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int OAUTH2_LINKED_IN__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Live Return Url</b></em>' attribute.
@@ -695,7 +686,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__LIVE_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int OAUTH2_LINKED_IN__LIVE_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Local Redirect Uri</b></em>' attribute.
@@ -704,7 +695,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int OAUTH2_LINKED_IN__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Secret Key</b></em>' attribute.
@@ -713,7 +704,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__SECRET_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int OAUTH2_LINKED_IN__SECRET_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Test Return Url</b></em>' attribute.
@@ -722,7 +713,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__TEST_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int OAUTH2_LINKED_IN__TEST_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -731,7 +722,16 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int OAUTH2_LINKED_IN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2_LINKED_IN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>OAuth2 Linked In</em>' class.
@@ -789,22 +789,13 @@ public interface PassportPackage extends EPackage {
 	int THIRD_PARTY_LOGIN__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THIRD_PARTY_LOGIN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Login Meth Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Login Provider Id</b></em>' attribute.
@@ -813,7 +804,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__LOGIN_PROVIDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int THIRD_PARTY_LOGIN__LOGIN_PROVIDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -822,7 +813,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int THIRD_PARTY_LOGIN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -831,7 +822,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int THIRD_PARTY_LOGIN__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -840,7 +831,16 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int THIRD_PARTY_LOGIN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THIRD_PARTY_LOGIN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Third Party Login</em>' class.
@@ -1047,15 +1047,15 @@ public interface PassportPackage extends EPackage {
 	EClass getOAuth2GitHub();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.passport.OAuth2GitHub#getProductStoreId()
 	 * @see #getOAuth2GitHub()
 	 * @generated
 	 */
-	EAttribute getOAuth2GitHub_ProductStoreId();
+	EReference getOAuth2GitHub_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getFromDate <em>From Date</em>}'.
@@ -1145,15 +1145,15 @@ public interface PassportPackage extends EPackage {
 	EClass getOAuth2Google();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.OAuth2Google#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.passport.OAuth2Google#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.passport.OAuth2Google#getProductStoreId()
 	 * @see #getOAuth2Google()
 	 * @generated
 	 */
-	EAttribute getOAuth2Google_ProductStoreId();
+	EReference getOAuth2Google_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.OAuth2Google#getFromDate <em>From Date</em>}'.
@@ -1243,15 +1243,15 @@ public interface PassportPackage extends EPackage {
 	EClass getOAuth2LinkedIn();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.passport.OAuth2LinkedIn#getProductStoreId()
 	 * @see #getOAuth2LinkedIn()
 	 * @generated
 	 */
-	EAttribute getOAuth2LinkedIn_ProductStoreId();
+	EReference getOAuth2LinkedIn_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getFromDate <em>From Date</em>}'.
@@ -1352,15 +1352,15 @@ public interface PassportPackage extends EPackage {
 	EClass getThirdPartyLogin();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId()
 	 * @see #getThirdPartyLogin()
 	 * @generated
 	 */
-	EAttribute getThirdPartyLogin_ProductStoreId();
+	EReference getThirdPartyLogin_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getLoginMethTypeId <em>Login Meth Type Id</em>}'.
@@ -1592,12 +1592,12 @@ public interface PassportPackage extends EPackage {
 		EClass OAUTH2_GIT_HUB = eINSTANCE.getOAuth2GitHub();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OAUTH2_GIT_HUB__PRODUCT_STORE_ID = eINSTANCE.getOAuth2GitHub_ProductStoreId();
+		EReference OAUTH2_GIT_HUB__PRODUCT_STORE_ID = eINSTANCE.getOAuth2GitHub_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1666,12 +1666,12 @@ public interface PassportPackage extends EPackage {
 		EClass OAUTH2_GOOGLE = eINSTANCE.getOAuth2Google();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OAUTH2_GOOGLE__PRODUCT_STORE_ID = eINSTANCE.getOAuth2Google_ProductStoreId();
+		EReference OAUTH2_GOOGLE__PRODUCT_STORE_ID = eINSTANCE.getOAuth2Google_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1740,12 +1740,12 @@ public interface PassportPackage extends EPackage {
 		EClass OAUTH2_LINKED_IN = eINSTANCE.getOAuth2LinkedIn();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OAUTH2_LINKED_IN__PRODUCT_STORE_ID = eINSTANCE.getOAuth2LinkedIn_ProductStoreId();
+		EReference OAUTH2_LINKED_IN__PRODUCT_STORE_ID = eINSTANCE.getOAuth2LinkedIn_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1822,12 +1822,12 @@ public interface PassportPackage extends EPackage {
 		EClass THIRD_PARTY_LOGIN = eINSTANCE.getThirdPartyLogin();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute THIRD_PARTY_LOGIN__PRODUCT_STORE_ID = eINSTANCE.getThirdPartyLogin_ProductStoreId();
+		EReference THIRD_PARTY_LOGIN__PRODUCT_STORE_ID = eINSTANCE.getThirdPartyLogin_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>Login Meth Type Id</b></em>' attribute feature.

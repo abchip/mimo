@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -40,23 +41,14 @@ public class PaymentMethodTypeGlAccountImpl extends BizEntityImpl implements Pay
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPaymentMethodTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PAYMENT_METHOD_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
+	protected PaymentMethodType paymentMethodTypeId;
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -141,7 +133,24 @@ public class PaymentMethodTypeGlAccountImpl extends BizEntityImpl implements Pay
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodTypeId() {
+	public PaymentMethodType getPaymentMethodTypeId() {
+		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
+			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
+			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
+			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+			}
+		}
+		return paymentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethodType basicGetPaymentMethodTypeId() {
 		return paymentMethodTypeId;
 	}
 
@@ -151,8 +160,8 @@ public class PaymentMethodTypeGlAccountImpl extends BizEntityImpl implements Pay
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
+	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
@@ -207,7 +216,8 @@ public class PaymentMethodTypeGlAccountImpl extends BizEntityImpl implements Pay
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID:
-				return getPaymentMethodTypeId();
+				if (resolve) return getPaymentMethodTypeId();
+				return basicGetPaymentMethodTypeId();
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -227,7 +237,7 @@ public class PaymentMethodTypeGlAccountImpl extends BizEntityImpl implements Pay
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((String)newValue);
+				setPaymentMethodTypeId((PaymentMethodType)newValue);
 				return;
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -248,7 +258,7 @@ public class PaymentMethodTypeGlAccountImpl extends BizEntityImpl implements Pay
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
+				setPaymentMethodTypeId((PaymentMethodType)null);
 				return;
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -269,29 +279,13 @@ public class PaymentMethodTypeGlAccountImpl extends BizEntityImpl implements Pay
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID:
-				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
+				return paymentMethodTypeId != null;
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case PaymentPackage.PAYMENT_METHOD_TYPE_GL_ACCOUNT__GL_ACCOUNT_ID:
 				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentMethodTypeId: ");
-		result.append(paymentMethodTypeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PaymentMethodTypeGlAccountImpl

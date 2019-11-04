@@ -15,6 +15,7 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.webapp.visit.ServerHit;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
+import org.abchip.mimo.biz.webapp.visit.Visit;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -32,7 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getHitStartDateTime <em>Hit Start Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getNumOfBytes <em>Num Of Bytes</em>}</li>
@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}</li>
@@ -57,26 +58,6 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISIT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visitId = VISIT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
@@ -289,6 +270,16 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	protected ServerHitType hitTypeId;
 
 	/**
+	 * The cached value of the '{@link #getVisitId() <em>Visit Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisitId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Visit visitId;
+
+	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,7 +344,24 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getVisitId() {
+	public Visit getVisitId() {
+		if (visitId != null && ((EObject)visitId).eIsProxy()) {
+			InternalEObject oldVisitId = (InternalEObject)visitId;
+			visitId = (Visit)eResolveProxy(oldVisitId);
+			if (visitId != oldVisitId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__VISIT_ID, oldVisitId, visitId));
+			}
+		}
+		return visitId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Visit basicGetVisitId() {
 		return visitId;
 	}
 
@@ -363,8 +371,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
+	public void setVisitId(Visit newVisitId) {
+		Visit oldVisitId = visitId;
 		visitId = newVisitId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__VISIT_ID, oldVisitId, visitId));
@@ -808,8 +816,6 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VisitPackage.SERVER_HIT__VISIT_ID:
-				return getVisitId();
 			case VisitPackage.SERVER_HIT__CONTENT_ID:
 				return getContentId();
 			case VisitPackage.SERVER_HIT__HIT_START_DATE_TIME:
@@ -833,6 +839,9 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
 				if (resolve) return getHitTypeId();
 				return basicGetHitTypeId();
+			case VisitPackage.SERVER_HIT__VISIT_ID:
+				if (resolve) return getVisitId();
+				return basicGetVisitId();
 			case VisitPackage.SERVER_HIT__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -857,9 +866,6 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VisitPackage.SERVER_HIT__VISIT_ID:
-				setVisitId((String)newValue);
-				return;
 			case VisitPackage.SERVER_HIT__CONTENT_ID:
 				setContentId((String)newValue);
 				return;
@@ -893,6 +899,9 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
 				setHitTypeId((ServerHitType)newValue);
 				return;
+			case VisitPackage.SERVER_HIT__VISIT_ID:
+				setVisitId((Visit)newValue);
+				return;
 			case VisitPackage.SERVER_HIT__PARTY_ID:
 				setPartyId((Party)newValue);
 				return;
@@ -917,9 +926,6 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VisitPackage.SERVER_HIT__VISIT_ID:
-				setVisitId(VISIT_ID_EDEFAULT);
-				return;
 			case VisitPackage.SERVER_HIT__CONTENT_ID:
 				setContentId(CONTENT_ID_EDEFAULT);
 				return;
@@ -953,6 +959,9 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
 				setHitTypeId((ServerHitType)null);
 				return;
+			case VisitPackage.SERVER_HIT__VISIT_ID:
+				setVisitId((Visit)null);
+				return;
 			case VisitPackage.SERVER_HIT__PARTY_ID:
 				setPartyId((Party)null);
 				return;
@@ -977,8 +986,6 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VisitPackage.SERVER_HIT__VISIT_ID:
-				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
 			case VisitPackage.SERVER_HIT__CONTENT_ID:
 				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case VisitPackage.SERVER_HIT__HIT_START_DATE_TIME:
@@ -1001,6 +1008,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
 			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
 				return hitTypeId != null;
+			case VisitPackage.SERVER_HIT__VISIT_ID:
+				return visitId != null;
 			case VisitPackage.SERVER_HIT__PARTY_ID:
 				return partyId != null;
 			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
@@ -1023,9 +1032,7 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (visitId: ");
-		result.append(visitId);
-		result.append(", contentId: ");
+		result.append(" (contentId: ");
 		result.append(contentId);
 		result.append(", hitStartDateTime: ");
 		result.append(hitStartDateTime);

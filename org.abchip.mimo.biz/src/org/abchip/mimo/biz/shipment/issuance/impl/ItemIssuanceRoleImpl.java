@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.issuance.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.issuance.IssuancePackage;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceRoleImpl#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceRoleImpl#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -39,26 +40,6 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getItemIssuanceId() <em>Item Issuance Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getItemIssuanceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ITEM_ISSUANCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getItemIssuanceId() <em>Item Issuance Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getItemIssuanceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String itemIssuanceId = ITEM_ISSUANCE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
@@ -79,6 +60,16 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	 * @ordered
 	 */
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getItemIssuanceId() <em>Item Issuance Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getItemIssuanceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ItemIssuance itemIssuanceId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -115,7 +106,24 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	 * @generated
 	 */
 	@Override
-	public String getItemIssuanceId() {
+	public ItemIssuance getItemIssuanceId() {
+		if (itemIssuanceId != null && ((EObject)itemIssuanceId).eIsProxy()) {
+			InternalEObject oldItemIssuanceId = (InternalEObject)itemIssuanceId;
+			itemIssuanceId = (ItemIssuance)eResolveProxy(oldItemIssuanceId);
+			if (itemIssuanceId != oldItemIssuanceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
+			}
+		}
+		return itemIssuanceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ItemIssuance basicGetItemIssuanceId() {
 		return itemIssuanceId;
 	}
 
@@ -125,8 +133,8 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	 * @generated
 	 */
 	@Override
-	public void setItemIssuanceId(String newItemIssuanceId) {
-		String oldItemIssuanceId = itemIssuanceId;
+	public void setItemIssuanceId(ItemIssuance newItemIssuanceId) {
+		ItemIssuance oldItemIssuanceId = itemIssuanceId;
 		itemIssuanceId = newItemIssuanceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
@@ -203,10 +211,11 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
-				return getItemIssuanceId();
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
+			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
+				if (resolve) return getItemIssuanceId();
+				return basicGetItemIssuanceId();
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -222,11 +231,11 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
-				setItemIssuanceId((String)newValue);
-				return;
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
+				setItemIssuanceId((ItemIssuance)newValue);
 				return;
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -243,11 +252,11 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
-				setItemIssuanceId(ITEM_ISSUANCE_ID_EDEFAULT);
-				return;
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
+				setItemIssuanceId((ItemIssuance)null);
 				return;
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -264,10 +273,10 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
-				return ITEM_ISSUANCE_ID_EDEFAULT == null ? itemIssuanceId != null : !ITEM_ISSUANCE_ID_EDEFAULT.equals(itemIssuanceId);
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+			case IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID:
+				return itemIssuanceId != null;
 			case IssuancePackage.ITEM_ISSUANCE_ROLE__PARTY_ID:
 				return partyId != null;
 		}
@@ -284,9 +293,7 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (itemIssuanceId: ");
-		result.append(itemIssuanceId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(')');
 		return result.toString();

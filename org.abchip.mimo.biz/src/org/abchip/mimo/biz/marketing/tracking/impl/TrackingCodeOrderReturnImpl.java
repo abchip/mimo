@@ -15,6 +15,7 @@ import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,12 +32,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#isHasExported <em>Has Exported</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#isIsBillable <em>Is Billable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getSiteId <em>Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getTrackingCodeId <em>Tracking Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
@@ -49,26 +50,6 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnId = RETURN_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAffiliateReferredTimeStamp() <em>Affiliate Referred Time Stamp</em>}' attribute.
@@ -169,6 +150,16 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	 * @ordered
 	 */
 	protected String siteId = SITE_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReturnHeader returnId;
 
 	/**
 	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
@@ -357,7 +348,24 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	 * @generated
 	 */
 	@Override
-	public String getReturnId() {
+	public ReturnHeader getReturnId() {
+		if (returnId != null && ((EObject)returnId).eIsProxy()) {
+			InternalEObject oldReturnId = (InternalEObject)returnId;
+			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
+			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID, oldReturnId, returnId));
+			}
+		}
+		return returnId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnHeader basicGetReturnId() {
 		return returnId;
 	}
 
@@ -367,8 +375,8 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	 * @generated
 	 */
 	@Override
-	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
+	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID, oldReturnId, returnId));
@@ -485,8 +493,6 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
-				return getReturnId();
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__AFFILIATE_REFERRED_TIME_STAMP:
 				return getAffiliateReferredTimeStamp();
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__HAS_EXPORTED:
@@ -497,6 +503,9 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 				return getOrderItemSeqId();
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__SITE_ID:
 				return getSiteId();
+			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
+				if (resolve) return getReturnId();
+				return basicGetReturnId();
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__ORDER_ID:
 				if (resolve) return getOrderId();
 				return basicGetOrderId();
@@ -518,9 +527,6 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
-				setReturnId((String)newValue);
-				return;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__AFFILIATE_REFERRED_TIME_STAMP:
 				setAffiliateReferredTimeStamp((Date)newValue);
 				return;
@@ -535,6 +541,9 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__SITE_ID:
 				setSiteId((String)newValue);
+				return;
+			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
+				setReturnId((ReturnHeader)newValue);
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__ORDER_ID:
 				setOrderId((OrderHeader)newValue);
@@ -557,9 +566,6 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
-				setReturnId(RETURN_ID_EDEFAULT);
-				return;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__AFFILIATE_REFERRED_TIME_STAMP:
 				setAffiliateReferredTimeStamp(AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT);
 				return;
@@ -574,6 +580,9 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__SITE_ID:
 				setSiteId(SITE_ID_EDEFAULT);
+				return;
+			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
+				setReturnId((ReturnHeader)null);
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__ORDER_ID:
 				setOrderId((OrderHeader)null);
@@ -596,8 +605,6 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
-				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__AFFILIATE_REFERRED_TIME_STAMP:
 				return AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT == null ? affiliateReferredTimeStamp != null : !AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT.equals(affiliateReferredTimeStamp);
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__HAS_EXPORTED:
@@ -608,6 +615,8 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__SITE_ID:
 				return SITE_ID_EDEFAULT == null ? siteId != null : !SITE_ID_EDEFAULT.equals(siteId);
+			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__RETURN_ID:
+				return returnId != null;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__ORDER_ID:
 				return orderId != null;
 			case TrackingPackage.TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_ID:
@@ -628,9 +637,7 @@ public class TrackingCodeOrderReturnImpl extends BizEntityImpl implements Tracki
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnId: ");
-		result.append(returnId);
-		result.append(", affiliateReferredTimeStamp: ");
+		result.append(" (affiliateReferredTimeStamp: ");
 		result.append(affiliateReferredTimeStamp);
 		result.append(", hasExported: ");
 		result.append(hasExported);

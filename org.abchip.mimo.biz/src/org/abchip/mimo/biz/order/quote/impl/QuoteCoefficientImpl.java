@@ -10,12 +10,15 @@ package org.abchip.mimo.biz.order.quote.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuoteCoefficient;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getCoeffName <em>Coeff Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getCoeffValue <em>Coeff Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getQuoteId <em>Quote Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,26 +41,6 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteId = QUOTE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCoeffName() <em>Coeff Name</em>}' attribute.
@@ -98,6 +81,16 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	 * @ordered
 	 */
 	protected BigDecimal coeffValue = COEFF_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuoteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Quote quoteId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,7 +163,24 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	 * @generated
 	 */
 	@Override
-	public String getQuoteId() {
+	public Quote getQuoteId() {
+		if (quoteId != null && ((EObject)quoteId).eIsProxy()) {
+			InternalEObject oldQuoteId = (InternalEObject)quoteId;
+			quoteId = (Quote)eResolveProxy(oldQuoteId);
+			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID, oldQuoteId, quoteId));
+			}
+		}
+		return quoteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quote basicGetQuoteId() {
 		return quoteId;
 	}
 
@@ -180,8 +190,8 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	 * @generated
 	 */
 	@Override
-	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
+	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID, oldQuoteId, quoteId));
@@ -195,12 +205,13 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
-				return getQuoteId();
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_NAME:
 				return getCoeffName();
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_VALUE:
 				return getCoeffValue();
+			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
+				if (resolve) return getQuoteId();
+				return basicGetQuoteId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,14 +224,14 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
-				setQuoteId((String)newValue);
-				return;
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_NAME:
 				setCoeffName((String)newValue);
 				return;
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_VALUE:
 				setCoeffValue((BigDecimal)newValue);
+				return;
+			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
+				setQuoteId((Quote)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,14 +245,14 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
-				setQuoteId(QUOTE_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_NAME:
 				setCoeffName(COEFF_NAME_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_VALUE:
 				setCoeffValue(COEFF_VALUE_EDEFAULT);
+				return;
+			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
+				setQuoteId((Quote)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -255,12 +266,12 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
-				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_NAME:
 				return COEFF_NAME_EDEFAULT == null ? coeffName != null : !COEFF_NAME_EDEFAULT.equals(coeffName);
 			case QuotePackage.QUOTE_COEFFICIENT__COEFF_VALUE:
 				return COEFF_VALUE_EDEFAULT == null ? coeffValue != null : !COEFF_VALUE_EDEFAULT.equals(coeffValue);
+			case QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID:
+				return quoteId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -275,9 +286,7 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quoteId: ");
-		result.append(quoteId);
-		result.append(", coeffName: ");
+		result.append(" (coeffName: ");
 		result.append(coeffName);
 		result.append(", coeffValue: ");
 		result.append(coeffValue);

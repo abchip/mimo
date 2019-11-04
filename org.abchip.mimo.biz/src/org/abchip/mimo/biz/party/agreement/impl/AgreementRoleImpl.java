@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.agreement.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementRole;
 import org.abchip.mimo.biz.party.party.Party;
@@ -36,27 +37,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class AgreementRoleImpl extends BizEntityImpl implements AgreementRole {
 	/**
-	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
+	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAgreementId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String agreementId = AGREEMENT_ID_EDEFAULT;
+	protected Agreement agreementId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -181,7 +173,24 @@ public class AgreementRoleImpl extends BizEntityImpl implements AgreementRole {
 	 * @generated
 	 */
 	@Override
-	public String getAgreementId() {
+	public Agreement getAgreementId() {
+		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
+			InternalEObject oldAgreementId = (InternalEObject)agreementId;
+			agreementId = (Agreement)eResolveProxy(oldAgreementId);
+			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ROLE__AGREEMENT_ID, oldAgreementId, agreementId));
+			}
+		}
+		return agreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agreement basicGetAgreementId() {
 		return agreementId;
 	}
 
@@ -191,8 +200,8 @@ public class AgreementRoleImpl extends BizEntityImpl implements AgreementRole {
 	 * @generated
 	 */
 	@Override
-	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
+	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ROLE__AGREEMENT_ID, oldAgreementId, agreementId));
@@ -207,7 +216,8 @@ public class AgreementRoleImpl extends BizEntityImpl implements AgreementRole {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AgreementPackage.AGREEMENT_ROLE__AGREEMENT_ID:
-				return getAgreementId();
+				if (resolve) return getAgreementId();
+				return basicGetAgreementId();
 			case AgreementPackage.AGREEMENT_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -227,7 +237,7 @@ public class AgreementRoleImpl extends BizEntityImpl implements AgreementRole {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AgreementPackage.AGREEMENT_ROLE__AGREEMENT_ID:
-				setAgreementId((String)newValue);
+				setAgreementId((Agreement)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -248,7 +258,7 @@ public class AgreementRoleImpl extends BizEntityImpl implements AgreementRole {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AgreementPackage.AGREEMENT_ROLE__AGREEMENT_ID:
-				setAgreementId(AGREEMENT_ID_EDEFAULT);
+				setAgreementId((Agreement)null);
 				return;
 			case AgreementPackage.AGREEMENT_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -269,29 +279,13 @@ public class AgreementRoleImpl extends BizEntityImpl implements AgreementRole {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AgreementPackage.AGREEMENT_ROLE__AGREEMENT_ID:
-				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
+				return agreementId != null;
 			case AgreementPackage.AGREEMENT_ROLE__PARTY_ID:
 				return partyId != null;
 			case AgreementPackage.AGREEMENT_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementId: ");
-		result.append(agreementId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AgreementRoleImpl

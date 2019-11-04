@@ -18,7 +18,6 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isAuthMode <em>Auth Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isFixContact <em>Fix Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideContact <em>Hide Contact</em>}</li>
@@ -29,6 +28,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getRedirectUrl <em>Redirect Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getTestMode <em>Test Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isWithDelivery <em>With Delivery</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay()
@@ -115,31 +115,30 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	void setNoLanguageMenu(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Gateway Config Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Gateway Config Id</em>' attribute.
-	 * @see #setPaymentGatewayConfigId(String)
+	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
+	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_PaymentGatewayConfigId()
-	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="paymentGatewayConfigId"
 	 * @generated
 	 */
-	String getPaymentGatewayConfigId();
+	PaymentGatewayConfig getPaymentGatewayConfigId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #getPaymentGatewayConfigId()
 	 * @generated
 	 */
-	void setPaymentGatewayConfigId(String value);
+	void setPaymentGatewayConfigId(PaymentGatewayConfig value);
 
 	/**
 	 * Returns the value of the '<em><b>Auth Mode</b></em>' attribute.

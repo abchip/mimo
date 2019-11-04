@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.promo.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
@@ -30,12 +31,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getPromoSequenceId <em>Promo Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getQuantityLeftInActions <em>Quantity Left In Actions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getTotalDiscountAmount <em>Total Discount Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -46,26 +47,6 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPromoSequenceId() <em>Promo Sequence Id</em>}' attribute.
@@ -148,6 +129,16 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	protected ProductPromoCode productPromoCodeId;
 
 	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,7 +173,24 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_USE__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -192,8 +200,8 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_USE__ORDER_ID, oldOrderId, orderId));
@@ -396,8 +404,6 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
-				return getOrderId();
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				return getPromoSequenceId();
 			case PromoPackage.PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS:
@@ -410,6 +416,9 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
 				if (resolve) return getProductPromoCodeId();
 				return basicGetProductPromoCodeId();
+			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -425,9 +434,6 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				setPromoSequenceId((String)newValue);
 				return;
@@ -442,6 +448,9 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 				return;
 			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
 				setProductPromoCodeId((ProductPromoCode)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -458,9 +467,6 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				setPromoSequenceId(PROMO_SEQUENCE_ID_EDEFAULT);
 				return;
@@ -475,6 +481,9 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 				return;
 			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
 				setProductPromoCodeId((ProductPromoCode)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
 				setPartyId((Party)null);
@@ -491,8 +500,6 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				return PROMO_SEQUENCE_ID_EDEFAULT == null ? promoSequenceId != null : !PROMO_SEQUENCE_ID_EDEFAULT.equals(promoSequenceId);
 			case PromoPackage.PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS:
@@ -503,6 +510,8 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 				return productPromoId != null;
 			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
 				return productPromoCodeId != null;
+			case PromoPackage.PRODUCT_PROMO_USE__ORDER_ID:
+				return orderId != null;
 			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
 				return partyId != null;
 		}
@@ -519,9 +528,7 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", promoSequenceId: ");
+		result.append(" (promoSequenceId: ");
 		result.append(promoSequenceId);
 		result.append(", quantityLeftInActions: ");
 		result.append(quantityLeftInActions);

@@ -33,7 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
@@ -42,6 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getUpperCoordinate <em>Upper Coordinate</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentIdTo <em>Content Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentAssocTypeId <em>Content Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
@@ -58,26 +58,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -237,6 +217,16 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @ordered
 	 */
 	protected long upperCoordinate = UPPER_COORDINATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
 
 	/**
 	 * The cached value of the '{@link #getContentIdTo() <em>Content Id To</em>}' reference.
@@ -403,7 +393,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -413,8 +420,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ID, oldContentId, contentId));
@@ -772,8 +779,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
-				return getContentId();
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				return getFromDate();
 			case ContentPackage.CONTENT_ASSOC__CREATED_DATE:
@@ -790,6 +795,9 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 				return getThruDate();
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				return getUpperCoordinate();
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
 				if (resolve) return getContentIdTo();
 				return basicGetContentIdTo();
@@ -820,9 +828,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -846,6 +851,9 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 				return;
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				setUpperCoordinate((Long)newValue);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
 				setContentIdTo((Content)newValue);
@@ -877,9 +885,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -903,6 +908,9 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 				return;
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				setUpperCoordinate(UPPER_COORDINATE_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
 				setContentIdTo((Content)null);
@@ -934,8 +942,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ContentPackage.CONTENT_ASSOC__CREATED_DATE:
@@ -952,6 +958,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				return upperCoordinate != UPPER_COORDINATE_EDEFAULT;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
+				return contentId != null;
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
 				return contentIdTo != null;
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
@@ -978,9 +986,7 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", createdDate: ");
 		result.append(createdDate);

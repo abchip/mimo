@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.marketing.campaign.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,24 +40,14 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 
 
 	/**
-	 * The default value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
+	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMarketingCampaignId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MARKETING_CAMPAIGN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String marketingCampaignId = MARKETING_CAMPAIGN_ID_EDEFAULT;
+	protected MarketingCampaign marketingCampaignId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,7 +74,24 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 	 * @generated
 	 */
 	@Override
-	public String getMarketingCampaignId() {
+	public MarketingCampaign getMarketingCampaignId() {
+		if (marketingCampaignId != null && ((EObject)marketingCampaignId).eIsProxy()) {
+			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
+			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
+			if (marketingCampaignId != oldMarketingCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
+			}
+		}
+		return marketingCampaignId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MarketingCampaign basicGetMarketingCampaignId() {
 		return marketingCampaignId;
 	}
 
@@ -91,8 +101,8 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 	 * @generated
 	 */
 	@Override
-	public void setMarketingCampaignId(String newMarketingCampaignId) {
-		String oldMarketingCampaignId = marketingCampaignId;
+	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
+		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
@@ -107,7 +117,8 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID:
-				return getMarketingCampaignId();
+				if (resolve) return getMarketingCampaignId();
+				return basicGetMarketingCampaignId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,7 +132,7 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((String)newValue);
+				setMarketingCampaignId((MarketingCampaign)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,7 +147,7 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId(MARKETING_CAMPAIGN_ID_EDEFAULT);
+				setMarketingCampaignId((MarketingCampaign)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -151,25 +162,9 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID:
-				return MARKETING_CAMPAIGN_ID_EDEFAULT == null ? marketingCampaignId != null : !MARKETING_CAMPAIGN_ID_EDEFAULT.equals(marketingCampaignId);
+				return marketingCampaignId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (marketingCampaignId: ");
-		result.append(marketingCampaignId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //MarketingCampaignNoteImpl

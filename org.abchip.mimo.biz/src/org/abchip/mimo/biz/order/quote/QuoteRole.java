@@ -22,9 +22,9 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteRole#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteRole#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteRole#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteRole#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteRole#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteRole#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
@@ -87,31 +87,30 @@ public interface QuoteRole extends BizEntity {
 	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Id</em>' attribute.
-	 * @see #setQuoteId(String)
+	 * @return the value of the '<em>Quote Id</em>' reference.
+	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteRole_QuoteId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="quoteId"
 	 * @generated
 	 */
-	String getQuoteId();
+	Quote getQuoteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getQuoteId <em>Quote Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getQuoteId <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Id</em>' reference.
 	 * @see #getQuoteId()
 	 * @generated
 	 */
-	void setQuoteId(String value);
+	void setQuoteId(Quote value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.

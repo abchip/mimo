@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteTerm;
+import org.abchip.mimo.biz.party.agreement.TermType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,7 +28,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getTermDays <em>Term Days</em>}</li>
@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getQuoteId <em>Quote Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,26 +45,6 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TERM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String termTypeId = TERM_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuoteItemSeqId() <em>Quote Item Seq Id</em>}' attribute.
@@ -194,6 +175,16 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	 * @ordered
 	 */
 	protected Quote quoteId;
+
+	/**
+	 * The cached value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTermTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TermType termTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,7 +320,24 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	 * @generated
 	 */
 	@Override
-	public String getTermTypeId() {
+	public TermType getTermTypeId() {
+		if (termTypeId != null && ((EObject)termTypeId).eIsProxy()) {
+			InternalEObject oldTermTypeId = (InternalEObject)termTypeId;
+			termTypeId = (TermType)eResolveProxy(oldTermTypeId);
+			if (termTypeId != oldTermTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
+			}
+		}
+		return termTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TermType basicGetTermTypeId() {
 		return termTypeId;
 	}
 
@@ -339,8 +347,8 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	 * @generated
 	 */
 	@Override
-	public void setTermTypeId(String newTermTypeId) {
-		String oldTermTypeId = termTypeId;
+	public void setTermTypeId(TermType newTermTypeId) {
+		TermType oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
@@ -423,8 +431,6 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
-				return getTermTypeId();
 			case QuotePackage.QUOTE_TERM__QUOTE_ITEM_SEQ_ID:
 				return getQuoteItemSeqId();
 			case QuotePackage.QUOTE_TERM__DESCRIPTION:
@@ -440,6 +446,9 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 			case QuotePackage.QUOTE_TERM__QUOTE_ID:
 				if (resolve) return getQuoteId();
 				return basicGetQuoteId();
+			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
+				if (resolve) return getTermTypeId();
+				return basicGetTermTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,9 +461,6 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
-				setTermTypeId((String)newValue);
-				return;
 			case QuotePackage.QUOTE_TERM__QUOTE_ITEM_SEQ_ID:
 				setQuoteItemSeqId((String)newValue);
 				return;
@@ -476,6 +482,9 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 			case QuotePackage.QUOTE_TERM__QUOTE_ID:
 				setQuoteId((Quote)newValue);
 				return;
+			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
+				setTermTypeId((TermType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -488,9 +497,6 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
-				setTermTypeId(TERM_TYPE_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE_TERM__QUOTE_ITEM_SEQ_ID:
 				setQuoteItemSeqId(QUOTE_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -512,6 +518,9 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 			case QuotePackage.QUOTE_TERM__QUOTE_ID:
 				setQuoteId((Quote)null);
 				return;
+			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
+				setTermTypeId((TermType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -524,8 +533,6 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
-				return TERM_TYPE_ID_EDEFAULT == null ? termTypeId != null : !TERM_TYPE_ID_EDEFAULT.equals(termTypeId);
 			case QuotePackage.QUOTE_TERM__QUOTE_ITEM_SEQ_ID:
 				return QUOTE_ITEM_SEQ_ID_EDEFAULT == null ? quoteItemSeqId != null : !QUOTE_ITEM_SEQ_ID_EDEFAULT.equals(quoteItemSeqId);
 			case QuotePackage.QUOTE_TERM__DESCRIPTION:
@@ -540,6 +547,8 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
 			case QuotePackage.QUOTE_TERM__QUOTE_ID:
 				return quoteId != null;
+			case QuotePackage.QUOTE_TERM__TERM_TYPE_ID:
+				return termTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -554,9 +563,7 @@ public class QuoteTermImpl extends BizEntityImpl implements QuoteTerm {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (termTypeId: ");
-		result.append(termTypeId);
-		result.append(", quoteItemSeqId: ");
+		result.append(" (quoteItemSeqId: ");
 		result.append(quoteItemSeqId);
 		result.append(", description: ");
 		result.append(description);

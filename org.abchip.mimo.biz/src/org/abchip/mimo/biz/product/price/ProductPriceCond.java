@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceCondSeqId <em>Product Price Cond Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getCondValue <em>Cond Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getInputParamEnumId <em>Input Param Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getOperatorEnumId <em>Operator Enum Id</em>}</li>
  * </ul>
@@ -137,30 +137,29 @@ public interface ProductPriceCond extends BizEntity {
 	void setProductPriceCondSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Price Rule Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Price Rule Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Price Rule Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Rule Id</em>' attribute.
-	 * @see #setProductPriceRuleId(String)
+	 * @return the value of the '<em>Product Price Rule Id</em>' reference.
+	 * @see #setProductPriceRuleId(ProductPriceRule)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_ProductPriceRuleId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productPriceRuleId"
 	 * @generated
 	 */
-	String getProductPriceRuleId();
+	ProductPriceRule getProductPriceRuleId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceRuleId <em>Product Price Rule Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceRuleId <em>Product Price Rule Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Price Rule Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Price Rule Id</em>' reference.
 	 * @see #getProductPriceRuleId()
 	 * @generated
 	 */
-	void setProductPriceRuleId(String value);
+	void setProductPriceRuleId(ProductPriceRule value);
 
 } // ProductPriceCond

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.agreement.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementPromoAppl;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
@@ -28,39 +29,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getAgreementId <em>Agreement Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPromoAppl {
 	/**
-	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementId = AGREEMENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -142,6 +125,15 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 * @ordered
 	 */
 	protected ProductPromo productPromoId;
+	/**
+	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Agreement agreementId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -300,7 +292,24 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 * @generated
 	 */
 	@Override
-	public String getAgreementId() {
+	public Agreement getAgreementId() {
+		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
+			InternalEObject oldAgreementId = (InternalEObject)agreementId;
+			agreementId = (Agreement)eResolveProxy(oldAgreementId);
+			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
+			}
+		}
+		return agreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agreement basicGetAgreementId() {
 		return agreementId;
 	}
 
@@ -310,8 +319,8 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 * @generated
 	 */
 	@Override
-	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
+	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
@@ -325,8 +334,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
-				return getAgreementId();
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_PROMO_APPL__FROM_DATE:
@@ -338,6 +345,9 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
 				if (resolve) return getProductPromoId();
 				return basicGetProductPromoId();
+			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
+				if (resolve) return getAgreementId();
+				return basicGetAgreementId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -350,9 +360,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
-				setAgreementId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
 				return;
@@ -368,6 +375,9 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
 				setProductPromoId((ProductPromo)newValue);
 				return;
+			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
+				setAgreementId((Agreement)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -380,9 +390,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
-				setAgreementId(AGREEMENT_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -398,6 +405,9 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
 				setProductPromoId((ProductPromo)null);
 				return;
+			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
+				setAgreementId((Agreement)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -410,8 +420,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
-				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_PROMO_APPL__FROM_DATE:
@@ -422,6 +430,8 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
 				return productPromoId != null;
+			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID:
+				return agreementId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -436,9 +446,7 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementId: ");
-		result.append(agreementId);
-		result.append(", agreementItemSeqId: ");
+		result.append(" (agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

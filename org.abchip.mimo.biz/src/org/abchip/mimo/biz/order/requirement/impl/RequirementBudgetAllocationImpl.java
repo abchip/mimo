@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.order.requirement.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementBudgetAllocationImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementBudgetAllocationImpl#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementBudgetAllocationImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementBudgetAllocationImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementBudgetAllocationImpl#getRequirementId <em>Requirement Id</em>}</li>
  * </ul>
  *
@@ -42,26 +43,6 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
@@ -102,6 +83,16 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 * @ordered
 	 */
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 
 	/**
 	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' reference.
@@ -161,7 +152,24 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -171,8 +179,8 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
@@ -249,12 +257,13 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				return getBudgetId();
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				return getBudgetItemSeqId();
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
 				return getAmount();
+			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
 				if (resolve) return getRequirementId();
 				return basicGetRequirementId();
@@ -270,14 +279,14 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId((String)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
 				setAmount((BigDecimal)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				setBudgetId((Budget)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
 				setRequirementId((Requirement)newValue);
@@ -294,14 +303,14 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId(BUDGET_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
+				return;
+			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				setBudgetId((Budget)null);
 				return;
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
 				setRequirementId((Requirement)null);
@@ -318,12 +327,12 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
 				return BUDGET_ITEM_SEQ_ID_EDEFAULT == null ? budgetItemSeqId != null : !BUDGET_ITEM_SEQ_ID_EDEFAULT.equals(budgetItemSeqId);
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
+			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
+				return budgetId != null;
 			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
 				return requirementId != null;
 		}
@@ -340,9 +349,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", budgetItemSeqId: ");
+		result.append(" (budgetItemSeqId: ");
 		result.append(budgetItemSeqId);
 		result.append(", amount: ");
 		result.append(amount);

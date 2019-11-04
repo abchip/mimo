@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute#getFinAccountTransId <em>Fin Account Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute#getFinAccountTransId <em>Fin Account Trans Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransAttribute()
@@ -82,31 +82,30 @@ public interface FinAccountTransAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Trans Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fin Account Trans Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Trans Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Trans Id</em>' attribute.
-	 * @see #setFinAccountTransId(String)
+	 * @return the value of the '<em>Fin Account Trans Id</em>' reference.
+	 * @see #setFinAccountTransId(FinAccountTrans)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransAttribute_FinAccountTransId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="finAccountTransId"
 	 * @generated
 	 */
-	String getFinAccountTransId();
+	FinAccountTrans getFinAccountTransId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute#getFinAccountTransId <em>Fin Account Trans Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute#getFinAccountTransId <em>Fin Account Trans Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fin Account Trans Id</em>' attribute.
+	 * @param value the new value of the '<em>Fin Account Trans Id</em>' reference.
 	 * @see #getFinAccountTransId()
 	 * @generated
 	 */
-	void setFinAccountTransId(String value);
+	void setFinAccountTransId(FinAccountTrans value);
 
 	/**
 	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.

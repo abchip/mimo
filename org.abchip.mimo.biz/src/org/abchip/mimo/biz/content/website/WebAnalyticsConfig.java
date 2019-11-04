@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.content.website;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +19,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsCode <em>Web Analytics Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig()
@@ -81,30 +82,29 @@ public interface WebAnalyticsConfig extends BizEntity {
 	void setWebAnalyticsTypeId(WebAnalyticsType value);
 
 	/**
-	 * Returns the value of the '<em><b>Web Site Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Web Site Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Web Site Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web Site Id</em>' attribute.
-	 * @see #setWebSiteId(String)
+	 * @return the value of the '<em>Web Site Id</em>' reference.
+	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebSiteId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="webSiteId"
 	 * @generated
 	 */
-	String getWebSiteId();
+	WebSite getWebSiteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Web Site Id</em>' attribute.
+	 * @param value the new value of the '<em>Web Site Id</em>' reference.
 	 * @see #getWebSiteId()
 	 * @generated
 	 */
-	void setWebSiteId(String value);
+	void setWebSiteId(WebSite value);
 
 } // WebAnalyticsConfig

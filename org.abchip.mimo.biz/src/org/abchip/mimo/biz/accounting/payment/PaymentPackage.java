@@ -162,22 +162,22 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Account Currency Uom Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int BILLING_ACCOUNT__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Account Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Billing Account</em>' class.
@@ -235,22 +235,13 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Billing Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BILLING_ACCOUNT_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -259,7 +250,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BILLING_ACCOUNT_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Billing Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -453,22 +453,13 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT_TERM_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Billing Account Term Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_TERM_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BILLING_ACCOUNT_TERM_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -477,7 +468,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_TERM_ATTR__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BILLING_ACCOUNT_TERM_ATTR__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Billing Account Term Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Billing Account Term Attr</em>' class.
@@ -535,22 +535,13 @@ public interface PaymentPackage extends EPackage {
 	int CHECK_ACCOUNT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Method Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHECK_ACCOUNT__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Account Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CHECK_ACCOUNT__ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Account Type</b></em>' attribute.
@@ -559,7 +550,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__ACCOUNT_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CHECK_ACCOUNT__ACCOUNT_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Bank Name</b></em>' attribute.
@@ -568,7 +559,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__BANK_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int CHECK_ACCOUNT__BANK_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Branch Code</b></em>' attribute.
@@ -577,7 +568,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__BRANCH_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int CHECK_ACCOUNT__BRANCH_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Company Name On Account</b></em>' attribute.
@@ -586,7 +577,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__COMPANY_NAME_ON_ACCOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int CHECK_ACCOUNT__COMPANY_NAME_ON_ACCOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name On Account</b></em>' attribute.
@@ -595,7 +586,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__NAME_ON_ACCOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int CHECK_ACCOUNT__NAME_ON_ACCOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Routing Number</b></em>' attribute.
@@ -604,7 +595,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int CHECK_ACCOUNT__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_ACCOUNT__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
@@ -1885,22 +1885,13 @@ public interface PaymentPackage extends EPackage {
 	int PAY_PAL_PAYMENT_METHOD__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Method Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Avs Addr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__AVS_ADDR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAY_PAL_PAYMENT_METHOD__AVS_ADDR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Avs Zip</b></em>' attribute.
@@ -1909,7 +1900,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__AVS_ZIP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAY_PAL_PAYMENT_METHOD__AVS_ZIP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Correlation Id</b></em>' attribute.
@@ -1918,7 +1909,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__CORRELATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAY_PAL_PAYMENT_METHOD__CORRELATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Express Checkout Token</b></em>' attribute.
@@ -1927,7 +1918,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__EXPRESS_CHECKOUT_TOKEN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAY_PAL_PAYMENT_METHOD__EXPRESS_CHECKOUT_TOKEN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Payer Id</b></em>' attribute.
@@ -1936,7 +1927,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__PAYER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAY_PAL_PAYMENT_METHOD__PAYER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Payer Status</b></em>' attribute.
@@ -1945,7 +1936,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__PAYER_STATUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAY_PAL_PAYMENT_METHOD__PAYER_STATUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Id</b></em>' attribute.
@@ -1954,7 +1945,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
@@ -2093,13 +2093,22 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int PAYMENT__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Actual Currency Uom Id</b></em>' reference.
@@ -2108,16 +2117,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__ACTUAL_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int PAYMENT__ACTUAL_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Payment Preference Id</b></em>' reference.
@@ -2392,22 +2392,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_ATTRIBUTE__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -2416,7 +2407,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -2425,7 +2416,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_ATTRIBUTE__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -2483,22 +2483,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_BUDGET_ALLOCATION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_BUDGET_ALLOCATION__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Budget Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -2507,7 +2498,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_BUDGET_ALLOCATION__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_BUDGET_ALLOCATION__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_BUDGET_ALLOCATION__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
@@ -2574,22 +2574,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PAYMENT_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -2598,7 +2589,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PAYMENT_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
@@ -2607,7 +2598,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_CONTENT__PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int PAYMENT_CONTENT__PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Payment Content Type Id</b></em>' reference.
@@ -2774,22 +2774,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_AUTHORIZE_NET__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__API_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__API_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Certificate Alias</b></em>' attribute.
@@ -2798,7 +2789,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__CERTIFICATE_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__CERTIFICATE_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Cp Device Type</b></em>' attribute.
@@ -2807,7 +2798,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__CP_DEVICE_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__CP_DEVICE_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Cp Market Type</b></em>' attribute.
@@ -2816,7 +2807,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__CP_MARKET_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__CP_MARKET_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Cp Version</b></em>' attribute.
@@ -2825,7 +2816,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__CP_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__CP_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Delimited Data</b></em>' attribute.
@@ -2834,7 +2825,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__DELIMITED_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__DELIMITED_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Delimiter Char</b></em>' attribute.
@@ -2843,7 +2834,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__DELIMITER_CHAR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__DELIMITER_CHAR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Duplicate Window</b></em>' attribute.
@@ -2852,7 +2843,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__DUPLICATE_WINDOW = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__DUPLICATE_WINDOW = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Email Customer</b></em>' attribute.
@@ -2861,7 +2852,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__EMAIL_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__EMAIL_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Email Merchant</b></em>' attribute.
@@ -2870,7 +2861,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__EMAIL_MERCHANT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__EMAIL_MERCHANT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Method</b></em>' attribute.
@@ -2879,7 +2870,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__METHOD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__METHOD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Pwd</b></em>' attribute.
@@ -2888,7 +2879,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Relay Response</b></em>' attribute.
@@ -2897,7 +2888,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__RELAY_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__RELAY_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Test Mode</b></em>' attribute.
@@ -2906,7 +2897,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__TEST_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__TEST_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Tran Key</b></em>' attribute.
@@ -2915,7 +2906,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__TRAN_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__TRAN_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Trans Description</b></em>' attribute.
@@ -2924,7 +2915,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__TRANS_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__TRANS_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Url</b></em>' attribute.
@@ -2933,7 +2924,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__TRANSACTION_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__TRANSACTION_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>User Id</b></em>' attribute.
@@ -2942,7 +2933,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_AUTHORIZE_NET__USER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__USER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Authorize Net</em>' class.
@@ -3000,22 +3000,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_CLEAR_COMMERCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Client Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Effective Alias</b></em>' attribute.
@@ -3024,7 +3015,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__EFFECTIVE_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__EFFECTIVE_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Enable CVM</b></em>' attribute.
@@ -3033,7 +3024,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__ENABLE_CVM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__ENABLE_CVM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Group Id</b></em>' attribute.
@@ -3042,7 +3033,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Process Mode</b></em>' attribute.
@@ -3051,7 +3042,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Pwd</b></em>' attribute.
@@ -3060,7 +3051,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Server URL</b></em>' attribute.
@@ -3069,7 +3060,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__SERVER_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__SERVER_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Source Id</b></em>' attribute.
@@ -3078,7 +3069,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__SOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__SOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>User Alias</b></em>' attribute.
@@ -3087,7 +3078,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__USER_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__USER_ALIAS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -3096,7 +3087,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CLEAR_COMMERCE__USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Clear Commerce</em>' class.
@@ -3336,22 +3336,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_CYBER_SOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__API_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__API_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Auto Bill</b></em>' attribute.
@@ -3360,7 +3351,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__AUTO_BILL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__AUTO_BILL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Avs Decline Codes</b></em>' attribute.
@@ -3369,7 +3360,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__AVS_DECLINE_CODES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__AVS_DECLINE_CODES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Disable Bill Avs</b></em>' attribute.
@@ -3378,7 +3369,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__DISABLE_BILL_AVS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__DISABLE_BILL_AVS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Enable Dav</b></em>' attribute.
@@ -3387,7 +3378,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__ENABLE_DAV = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__ENABLE_DAV = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Fraud Score</b></em>' attribute.
@@ -3396,7 +3387,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__FRAUD_SCORE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__FRAUD_SCORE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Ignore Avs</b></em>' attribute.
@@ -3405,7 +3396,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__IGNORE_AVS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__IGNORE_AVS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Keys Dir</b></em>' attribute.
@@ -3414,7 +3405,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__KEYS_DIR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__KEYS_DIR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Keys File</b></em>' attribute.
@@ -3423,7 +3414,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__KEYS_FILE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__KEYS_FILE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Log Dir</b></em>' attribute.
@@ -3432,7 +3423,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_DIR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_DIR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Log Enabled</b></em>' attribute.
@@ -3441,7 +3432,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_ENABLED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_ENABLED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Log File</b></em>' attribute.
@@ -3450,7 +3441,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_FILE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_FILE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Log Size</b></em>' attribute.
@@ -3459,7 +3450,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__LOG_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Merchant Contact</b></em>' attribute.
@@ -3468,7 +3459,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_CONTACT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_CONTACT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Merchant Descr</b></em>' attribute.
@@ -3477,7 +3468,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_DESCR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_DESCR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Merchant Id</b></em>' attribute.
@@ -3486,7 +3477,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Production</b></em>' attribute.
@@ -3495,7 +3486,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_CYBER_SOURCE__PRODUCTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int PAYMENT_GATEWAY_CYBER_SOURCE__PRODUCTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CYBER_SOURCE__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Cyber Source</em>' class.
@@ -3553,22 +3553,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_EWAY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Customer Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_EWAY__CUSTOMER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_EWAY__CUSTOMER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Enable Beagle</b></em>' attribute.
@@ -3577,7 +3568,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_EWAY__ENABLE_BEAGLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_EWAY__ENABLE_BEAGLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Enable Cvn</b></em>' attribute.
@@ -3586,7 +3577,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_EWAY__ENABLE_CVN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_EWAY__ENABLE_CVN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Refund Pwd</b></em>' attribute.
@@ -3595,7 +3586,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_EWAY__REFUND_PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_EWAY__REFUND_PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Test Mode</b></em>' attribute.
@@ -3604,7 +3595,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_EWAY__TEST_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_EWAY__TEST_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Eway</em>' class.
@@ -3662,22 +3662,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_ORBITAL__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Authorization URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__AUTHORIZATION_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_ORBITAL__AUTHORIZATION_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Connection Password</b></em>' attribute.
@@ -3686,7 +3677,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__CONNECTION_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_ORBITAL__CONNECTION_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Connection Timeout Seconds</b></em>' attribute.
@@ -3695,7 +3686,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__CONNECTION_TIMEOUT_SECONDS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_ORBITAL__CONNECTION_TIMEOUT_SECONDS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Engine Class</b></em>' attribute.
@@ -3704,7 +3695,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__ENGINE_CLASS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_ORBITAL__ENGINE_CLASS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Host Name</b></em>' attribute.
@@ -3713,7 +3704,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__HOST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_ORBITAL__HOST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Host Name Failover</b></em>' attribute.
@@ -3722,7 +3713,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__HOST_NAME_FAILOVER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_ORBITAL__HOST_NAME_FAILOVER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Merchant Id</b></em>' attribute.
@@ -3731,7 +3722,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__MERCHANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_ORBITAL__MERCHANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -3740,7 +3731,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__PORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_ORBITAL__PORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Port Failover</b></em>' attribute.
@@ -3749,7 +3740,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__PORT_FAILOVER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_ORBITAL__PORT_FAILOVER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Read Timeout Seconds</b></em>' attribute.
@@ -3758,7 +3749,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__READ_TIMEOUT_SECONDS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_ORBITAL__READ_TIMEOUT_SECONDS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Response Type</b></em>' attribute.
@@ -3767,7 +3758,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__RESPONSE_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PAYMENT_GATEWAY_ORBITAL__RESPONSE_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Sdk Version</b></em>' attribute.
@@ -3776,7 +3767,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__SDK_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PAYMENT_GATEWAY_ORBITAL__SDK_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Ssl Socket Factory</b></em>' attribute.
@@ -3785,7 +3776,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__SSL_SOCKET_FACTORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PAYMENT_GATEWAY_ORBITAL__SSL_SOCKET_FACTORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -3794,7 +3785,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_ORBITAL__USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int PAYMENT_GATEWAY_ORBITAL__USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Orbital</em>' class.
@@ -3852,22 +3852,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_PAY_PAL__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Api Environment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__API_ENVIRONMENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_PAY_PAL__API_ENVIRONMENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Api Password</b></em>' attribute.
@@ -3876,7 +3867,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__API_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_PAY_PAL__API_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Api Signature</b></em>' attribute.
@@ -3885,7 +3876,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__API_SIGNATURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_PAY_PAL__API_SIGNATURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Api User Name</b></em>' attribute.
@@ -3894,7 +3885,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__API_USER_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_PAY_PAL__API_USER_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Business Email</b></em>' attribute.
@@ -3903,7 +3894,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__BUSINESS_EMAIL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_PAY_PAL__BUSINESS_EMAIL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Return Url</b></em>' attribute.
@@ -3912,7 +3903,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__CANCEL_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_PAY_PAL__CANCEL_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Template</b></em>' attribute.
@@ -3921,7 +3912,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__CONFIRM_TEMPLATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_PAY_PAL__CONFIRM_TEMPLATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Url</b></em>' attribute.
@@ -3930,7 +3921,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__CONFIRM_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_PAY_PAL__CONFIRM_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Image Url</b></em>' attribute.
@@ -3939,7 +3930,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__IMAGE_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_PAY_PAL__IMAGE_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Notify Url</b></em>' attribute.
@@ -3948,7 +3939,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__NOTIFY_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_PAY_PAL__NOTIFY_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Redirect Url</b></em>' attribute.
@@ -3957,7 +3948,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__REDIRECT_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PAYMENT_GATEWAY_PAY_PAL__REDIRECT_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Require Confirmed Shipping</b></em>' attribute.
@@ -3966,7 +3957,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__REQUIRE_CONFIRMED_SHIPPING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PAYMENT_GATEWAY_PAY_PAL__REQUIRE_CONFIRMED_SHIPPING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Return Url</b></em>' attribute.
@@ -3975,7 +3966,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PAYMENT_GATEWAY_PAY_PAL__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Shipping Callback Url</b></em>' attribute.
@@ -3984,7 +3975,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAY_PAL__SHIPPING_CALLBACK_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int PAYMENT_GATEWAY_PAY_PAL__SHIPPING_CALLBACK_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Pay Pal</em>' class.
@@ -4042,22 +4042,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_PAYFLOW_PRO__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Cancel Return Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__CANCEL_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__CANCEL_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Certs Path</b></em>' attribute.
@@ -4066,7 +4057,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__CERTS_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__CERTS_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Check Avs</b></em>' attribute.
@@ -4075,7 +4066,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__CHECK_AVS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__CHECK_AVS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Check Cvv2</b></em>' attribute.
@@ -4084,7 +4075,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__CHECK_CVV2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__CHECK_CVV2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Enable Transmit</b></em>' attribute.
@@ -4093,7 +4084,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__ENABLE_TRANSMIT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__ENABLE_TRANSMIT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Host Address</b></em>' attribute.
@@ -4102,7 +4093,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__HOST_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__HOST_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Host Port</b></em>' attribute.
@@ -4111,7 +4102,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__HOST_PORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__HOST_PORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Log File Name</b></em>' attribute.
@@ -4120,7 +4111,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__LOG_FILE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__LOG_FILE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Logging Level</b></em>' attribute.
@@ -4129,7 +4120,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__LOGGING_LEVEL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__LOGGING_LEVEL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Max Log File Size</b></em>' attribute.
@@ -4138,7 +4129,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__MAX_LOG_FILE_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__MAX_LOG_FILE_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Partner</b></em>' attribute.
@@ -4147,7 +4138,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PARTNER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PARTNER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Pre Auth</b></em>' attribute.
@@ -4156,7 +4147,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PRE_AUTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PRE_AUTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Proxy Address</b></em>' attribute.
@@ -4165,7 +4156,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Proxy Logon</b></em>' attribute.
@@ -4174,7 +4165,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_LOGON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_LOGON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Proxy Password</b></em>' attribute.
@@ -4183,7 +4174,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Proxy Port</b></em>' attribute.
@@ -4192,7 +4183,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_PORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_PORT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Pwd</b></em>' attribute.
@@ -4201,7 +4192,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Redirect Url</b></em>' attribute.
@@ -4210,7 +4201,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__REDIRECT_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__REDIRECT_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Return Url</b></em>' attribute.
@@ -4219,7 +4210,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Stack Trace On</b></em>' attribute.
@@ -4228,7 +4219,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__STACK_TRACE_ON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__STACK_TRACE_ON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -4237,7 +4228,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__TIMEOUT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__TIMEOUT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>User Id</b></em>' attribute.
@@ -4246,7 +4237,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__USER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__USER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Vendor</b></em>' attribute.
@@ -4255,7 +4246,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_PAYFLOW_PRO__VENDOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__VENDOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Payflow Pro</em>' class.
@@ -4648,22 +4648,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_SAGE_PAY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Authentication Trans Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Authentication Url</b></em>' attribute.
@@ -4672,7 +4663,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Authorise Trans Type</b></em>' attribute.
@@ -4681,7 +4672,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__AUTHORISE_TRANS_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_SAGE_PAY__AUTHORISE_TRANS_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Authorise Url</b></em>' attribute.
@@ -4690,7 +4681,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__AUTHORISE_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_SAGE_PAY__AUTHORISE_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Production Host</b></em>' attribute.
@@ -4699,7 +4690,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__PRODUCTION_HOST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_SAGE_PAY__PRODUCTION_HOST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Protocol Version</b></em>' attribute.
@@ -4708,7 +4699,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__PROTOCOL_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_SAGE_PAY__PROTOCOL_VERSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Refund Url</b></em>' attribute.
@@ -4717,7 +4708,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__REFUND_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_SAGE_PAY__REFUND_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Release Trans Type</b></em>' attribute.
@@ -4726,7 +4717,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__RELEASE_TRANS_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_SAGE_PAY__RELEASE_TRANS_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Release Url</b></em>' attribute.
@@ -4735,7 +4726,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__RELEASE_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_SAGE_PAY__RELEASE_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Sage Pay Mode</b></em>' attribute.
@@ -4744,7 +4735,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__SAGE_PAY_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_SAGE_PAY__SAGE_PAY_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Testing Host</b></em>' attribute.
@@ -4753,7 +4744,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__TESTING_HOST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PAYMENT_GATEWAY_SAGE_PAY__TESTING_HOST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Vendor</b></em>' attribute.
@@ -4762,7 +4753,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__VENDOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PAYMENT_GATEWAY_SAGE_PAY__VENDOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Void Url</b></em>' attribute.
@@ -4771,7 +4762,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SAGE_PAY__VOID_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PAYMENT_GATEWAY_SAGE_PAY__VOID_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Sage Pay</em>' class.
@@ -4829,22 +4829,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_SECURE_PAY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_SECURE_PAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Enable Amount Round</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SECURE_PAY__ENABLE_AMOUNT_ROUND = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_SECURE_PAY__ENABLE_AMOUNT_ROUND = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Merchant Id</b></em>' attribute.
@@ -4853,7 +4844,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SECURE_PAY__MERCHANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_SECURE_PAY__MERCHANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Process Timeout</b></em>' attribute.
@@ -4862,7 +4853,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SECURE_PAY__PROCESS_TIMEOUT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_SECURE_PAY__PROCESS_TIMEOUT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Pwd</b></em>' attribute.
@@ -4871,7 +4862,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SECURE_PAY__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_SECURE_PAY__PWD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Server URL</b></em>' attribute.
@@ -4880,7 +4871,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_SECURE_PAY__SERVER_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_SECURE_PAY__SERVER_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SECURE_PAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Secure Pay</em>' class.
@@ -4938,22 +4938,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_WORLD_PAY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Auth Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Fix Contact</b></em>' attribute.
@@ -4962,7 +4953,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Hide Contact</b></em>' attribute.
@@ -4971,7 +4962,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Hide Currency</b></em>' attribute.
@@ -4980,7 +4971,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Inst Id</b></em>' attribute.
@@ -4989,7 +4980,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__INST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_WORLD_PAY__INST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Lang Id</b></em>' attribute.
@@ -4998,7 +4989,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__LANG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_WORLD_PAY__LANG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>No Language Menu</b></em>' attribute.
@@ -5007,7 +4998,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Redirect Url</b></em>' attribute.
@@ -5016,7 +5007,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Test Mode</b></em>' attribute.
@@ -5025,7 +5016,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>With Delivery</b></em>' attribute.
@@ -5034,7 +5025,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Gateway World Pay</em>' class.
@@ -5092,7 +5092,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GL_ACCOUNT_TYPE_MAP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5256,22 +5256,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GROUP_MEMBER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Group Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GROUP_MEMBER__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_GROUP_MEMBER__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -5280,7 +5271,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GROUP_MEMBER__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GROUP_MEMBER__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -5289,7 +5280,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GROUP_MEMBER__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GROUP_MEMBER__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Payment Group Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
@@ -5556,7 +5556,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_METHOD_TYPE_GL_ACCOUNT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5756,22 +5756,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Payment Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYMENT_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -5780,7 +5771,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Payment Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Type Attr</em>' class.
@@ -6073,15 +6073,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getBillingAccountRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getBillingAccountId <em>Billing Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getBillingAccountId <em>Billing Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Billing Account Id</em>'.
+	 * @return the meta object for the reference '<em>Billing Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getBillingAccountId()
 	 * @see #getBillingAccountRole()
 	 * @generated
 	 */
-	EAttribute getBillingAccountRole_BillingAccountId();
+	EReference getBillingAccountRole_BillingAccountId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getPartyId <em>Party Id</em>}'.
@@ -6225,15 +6225,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getBillingAccountTermAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Billing Account Term Id</em>'.
+	 * @return the meta object for the reference '<em>Billing Account Term Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId()
 	 * @see #getBillingAccountTermAttr()
 	 * @generated
 	 */
-	EAttribute getBillingAccountTermAttr_BillingAccountTermId();
+	EReference getBillingAccountTermAttr_BillingAccountTermId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getAttrName <em>Attr Name</em>}'.
@@ -6268,15 +6268,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getCheckAccount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId()
 	 * @see #getCheckAccount()
 	 * @generated
 	 */
-	EAttribute getCheckAccount_PaymentMethodId();
+	EReference getCheckAccount_PaymentMethodId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getAccountNumber <em>Account Number</em>}'.
@@ -7030,15 +7030,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPayPalPaymentMethod();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId <em>Payment Method Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId <em>Payment Method Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId()
 	 * @see #getPayPalPaymentMethod()
 	 * @generated
 	 */
-	EAttribute getPayPalPaymentMethod_PaymentMethodId();
+	EReference getPayPalPaymentMethod_PaymentMethodId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsAddr <em>Avs Addr</em>}'.
@@ -7478,15 +7478,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentAttribute#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentAttribute#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentAttribute#getPaymentId()
 	 * @see #getPaymentAttribute()
 	 * @generated
 	 */
-	EAttribute getPaymentAttribute_PaymentId();
+	EReference getPaymentAttribute_PaymentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentAttribute#getAttrName <em>Attr Name</em>}'.
@@ -7532,15 +7532,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentBudgetAllocation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getBudgetId()
 	 * @see #getPaymentBudgetAllocation()
 	 * @generated
 	 */
-	EAttribute getPaymentBudgetAllocation_BudgetId();
+	EReference getPaymentBudgetAllocation_BudgetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getBudgetItemSeqId <em>Budget Item Seq Id</em>}'.
@@ -7586,15 +7586,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getContentId <em>Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getContentId <em>Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content Id</em>'.
+	 * @return the meta object for the reference '<em>Content Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentContent#getContentId()
 	 * @see #getPaymentContent()
 	 * @generated
 	 */
-	EAttribute getPaymentContent_ContentId();
+	EReference getPaymentContent_ContentId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}'.
@@ -7705,15 +7705,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayAuthorizeNet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayAuthorizeNet()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayAuthorizeNet_PaymentGatewayConfigId();
+	EReference getPaymentGatewayAuthorizeNet_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getApiVersion <em>Api Version</em>}'.
@@ -7924,15 +7924,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayClearCommerce();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayClearCommerce()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayClearCommerce_PaymentGatewayConfigId();
+	EReference getPaymentGatewayClearCommerce_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getClientId <em>Client Id</em>}'.
@@ -8152,15 +8152,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayCyberSource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayCyberSource()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayCyberSource_PaymentGatewayConfigId();
+	EReference getPaymentGatewayCyberSource_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getApiVersion <em>Api Version</em>}'.
@@ -8360,15 +8360,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayEway();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayEway()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayEway_PaymentGatewayConfigId();
+	EReference getPaymentGatewayEway_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getCustomerId <em>Customer Id</em>}'.
@@ -8436,15 +8436,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayOrbital();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayOrbital#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayOrbital#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayOrbital#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayOrbital()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayOrbital_PaymentGatewayConfigId();
+	EReference getPaymentGatewayOrbital_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayOrbital#getAuthorizationURI <em>Authorization URI</em>}'.
@@ -8611,15 +8611,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayPayPal();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayPayPal()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayPayPal_PaymentGatewayConfigId();
+	EReference getPaymentGatewayPayPal_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getApiEnvironment <em>Api Environment</em>}'.
@@ -8786,15 +8786,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayPayflowPro();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayPayflowPro()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayPayflowPro_PaymentGatewayConfigId();
+	EReference getPaymentGatewayPayflowPro_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getCancelReturnUrl <em>Cancel Return Url</em>}'.
@@ -9355,15 +9355,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewaySagePay();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewaySagePay()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewaySagePay_PaymentGatewayConfigId();
+	EReference getPaymentGatewaySagePay_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthenticationTransType <em>Authentication Trans Type</em>}'.
@@ -9519,15 +9519,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewaySecurePay();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewaySecurePay()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewaySecurePay_PaymentGatewayConfigId();
+	EReference getPaymentGatewaySecurePay_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#isEnableAmountRound <em>Enable Amount Round</em>}'.
@@ -9595,15 +9595,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGatewayWorldPay();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId()
 	 * @see #getPaymentGatewayWorldPay()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayWorldPay_PaymentGatewayConfigId();
+	EReference getPaymentGatewayWorldPay_PaymentGatewayConfigId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isAuthMode <em>Auth Mode</em>}'.
@@ -9726,15 +9726,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGlAccountTypeMap();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getPaymentTypeId <em>Payment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getPaymentTypeId <em>Payment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getPaymentTypeId()
 	 * @see #getPaymentGlAccountTypeMap()
 	 * @generated
 	 */
-	EAttribute getPaymentGlAccountTypeMap_PaymentTypeId();
+	EReference getPaymentGlAccountTypeMap_PaymentTypeId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getOrganizationPartyId <em>Organization Party Id</em>}'.
@@ -9812,15 +9812,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentGroupMember();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId <em>Payment Group Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId <em>Payment Group Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Group Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Group Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId()
 	 * @see #getPaymentGroupMember()
 	 * @generated
 	 */
-	EAttribute getPaymentGroupMember_PaymentGroupId();
+	EReference getPaymentGroupMember_PaymentGroupId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}'.
@@ -10083,15 +10083,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentMethodTypeGlAccount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getPaymentMethodTypeId()
 	 * @see #getPaymentMethodTypeGlAccount()
 	 * @generated
 	 */
-	EAttribute getPaymentMethodTypeGlAccount_PaymentMethodTypeId();
+	EReference getPaymentMethodTypeGlAccount_PaymentMethodTypeId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}'.
@@ -10202,15 +10202,15 @@ public interface PaymentPackage extends EPackage {
 	EClass getPaymentTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr#getPaymentTypeId <em>Payment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr#getPaymentTypeId <em>Payment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr#getPaymentTypeId()
 	 * @see #getPaymentTypeAttr()
 	 * @generated
 	 */
-	EAttribute getPaymentTypeAttr_PaymentTypeId();
+	EReference getPaymentTypeAttr_PaymentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -10494,12 +10494,12 @@ public interface PaymentPackage extends EPackage {
 		EClass BILLING_ACCOUNT_ROLE = eINSTANCE.getBillingAccountRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID = eINSTANCE.getBillingAccountRole_BillingAccountId();
+		EReference BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID = eINSTANCE.getBillingAccountRole_BillingAccountId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -10610,12 +10610,12 @@ public interface PaymentPackage extends EPackage {
 		EClass BILLING_ACCOUNT_TERM_ATTR = eINSTANCE.getBillingAccountTermAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Billing Account Term Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Billing Account Term Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID = eINSTANCE.getBillingAccountTermAttr_BillingAccountTermId();
+		EReference BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID = eINSTANCE.getBillingAccountTermAttr_BillingAccountTermId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -10644,12 +10644,12 @@ public interface PaymentPackage extends EPackage {
 		EClass CHECK_ACCOUNT = eINSTANCE.getCheckAccount();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CHECK_ACCOUNT__PAYMENT_METHOD_ID = eINSTANCE.getCheckAccount_PaymentMethodId();
+		EReference CHECK_ACCOUNT__PAYMENT_METHOD_ID = eINSTANCE.getCheckAccount_PaymentMethodId();
 
 		/**
 		 * The meta object literal for the '<em><b>Account Number</b></em>' attribute feature.
@@ -11220,12 +11220,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAY_PAL_PAYMENT_METHOD = eINSTANCE.getPayPalPaymentMethod();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID = eINSTANCE.getPayPalPaymentMethod_PaymentMethodId();
+		EReference PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID = eINSTANCE.getPayPalPaymentMethod_PaymentMethodId();
 
 		/**
 		 * The meta object literal for the '<em><b>Avs Addr</b></em>' attribute feature.
@@ -11554,12 +11554,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_ATTRIBUTE = eINSTANCE.getPaymentAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_ATTRIBUTE__PAYMENT_ID = eINSTANCE.getPaymentAttribute_PaymentId();
+		EReference PAYMENT_ATTRIBUTE__PAYMENT_ID = eINSTANCE.getPaymentAttribute_PaymentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -11596,12 +11596,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_BUDGET_ALLOCATION = eINSTANCE.getPaymentBudgetAllocation();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_BUDGET_ALLOCATION__BUDGET_ID = eINSTANCE.getPaymentBudgetAllocation_BudgetId();
+		EReference PAYMENT_BUDGET_ALLOCATION__BUDGET_ID = eINSTANCE.getPaymentBudgetAllocation_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Budget Item Seq Id</b></em>' attribute feature.
@@ -11638,12 +11638,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_CONTENT = eINSTANCE.getPaymentContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_CONTENT__CONTENT_ID = eINSTANCE.getPaymentContent_ContentId();
+		EReference PAYMENT_CONTENT__CONTENT_ID = eINSTANCE.getPaymentContent_ContentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
@@ -11730,12 +11730,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_AUTHORIZE_NET = eINSTANCE.getPaymentGatewayAuthorizeNet();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayAuthorizeNet_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayAuthorizeNet_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Api Version</b></em>' attribute feature.
@@ -11892,12 +11892,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_CLEAR_COMMERCE = eINSTANCE.getPaymentGatewayClearCommerce();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayClearCommerce_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayClearCommerce_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Client Id</b></em>' attribute feature.
@@ -12066,12 +12066,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_CYBER_SOURCE = eINSTANCE.getPaymentGatewayCyberSource();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_CYBER_SOURCE__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayCyberSource_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_CYBER_SOURCE__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayCyberSource_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Api Version</b></em>' attribute feature.
@@ -12220,12 +12220,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_EWAY = eINSTANCE.getPaymentGatewayEway();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayEway_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayEway_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Customer Id</b></em>' attribute feature.
@@ -12278,12 +12278,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_ORBITAL = eINSTANCE.getPaymentGatewayOrbital();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayOrbital_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayOrbital_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Authorization URI</b></em>' attribute feature.
@@ -12408,12 +12408,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_PAY_PAL = eINSTANCE.getPaymentGatewayPayPal();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayPayPal_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayPayPal_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Api Environment</b></em>' attribute feature.
@@ -12538,12 +12538,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_PAYFLOW_PRO = eINSTANCE.getPaymentGatewayPayflowPro();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayPayflowPro_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayPayflowPro_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Return Url</b></em>' attribute feature.
@@ -12960,12 +12960,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_SAGE_PAY = eINSTANCE.getPaymentGatewaySagePay();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewaySagePay_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewaySagePay_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Authentication Trans Type</b></em>' attribute feature.
@@ -13082,12 +13082,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_SECURE_PAY = eINSTANCE.getPaymentGatewaySecurePay();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_SECURE_PAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewaySecurePay_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_SECURE_PAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewaySecurePay_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Enable Amount Round</b></em>' attribute feature.
@@ -13140,12 +13140,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GATEWAY_WORLD_PAY = eINSTANCE.getPaymentGatewayWorldPay();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayWorldPay_PaymentGatewayConfigId();
+		EReference PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID = eINSTANCE.getPaymentGatewayWorldPay_PaymentGatewayConfigId();
 
 		/**
 		 * The meta object literal for the '<em><b>Auth Mode</b></em>' attribute feature.
@@ -13238,12 +13238,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GL_ACCOUNT_TYPE_MAP = eINSTANCE.getPaymentGlAccountTypeMap();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID = eINSTANCE.getPaymentGlAccountTypeMap_PaymentTypeId();
+		EReference PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID = eINSTANCE.getPaymentGlAccountTypeMap_PaymentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Organization Party Id</b></em>' reference feature.
@@ -13306,12 +13306,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_GROUP_MEMBER = eINSTANCE.getPaymentGroupMember();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Group Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Group Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID = eINSTANCE.getPaymentGroupMember_PaymentGroupId();
+		EReference PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID = eINSTANCE.getPaymentGroupMember_PaymentGroupId();
 
 		/**
 		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
@@ -13514,12 +13514,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_METHOD_TYPE_GL_ACCOUNT = eINSTANCE.getPaymentMethodTypeGlAccount();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentMethodTypeGlAccount_PaymentMethodTypeId();
+		EReference PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentMethodTypeGlAccount_PaymentMethodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Organization Party Id</b></em>' reference feature.
@@ -13606,12 +13606,12 @@ public interface PaymentPackage extends EPackage {
 		EClass PAYMENT_TYPE_ATTR = eINSTANCE.getPaymentTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID = eINSTANCE.getPaymentTypeAttr_PaymentTypeId();
+		EReference PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID = eINSTANCE.getPaymentTypeAttr_PaymentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.

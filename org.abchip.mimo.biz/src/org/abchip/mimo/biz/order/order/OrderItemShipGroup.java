@@ -11,8 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.party.agreement.Agreement;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
-import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
@@ -26,7 +25,6 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getCarrierRoleTypeId <em>Carrier Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
@@ -38,6 +36,7 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShipByDate <em>Ship By Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShippingInstructions <em>Shipping Instructions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getTrackingNumber <em>Tracking Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getSupplierPartyId <em>Supplier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getSupplierAgreementId <em>Supplier Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getVendorPartyId <em>Vendor Party Id</em>}</li>
@@ -114,12 +113,12 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
-	 * @see #setContactMechId(PostalAddress)
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	PostalAddress getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getContactMechId <em>Contact Mech Id</em>}' reference.
@@ -129,7 +128,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(PostalAddress value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Estimated Delivery Date</b></em>' attribute.
@@ -288,31 +287,30 @@ public interface OrderItemShipGroup extends BizEntity {
 	void setMaySplit(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Id</em>' attribute.
-	 * @see #setOrderId(String)
+	 * @return the value of the '<em>Order Id</em>' reference.
+	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_OrderId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getOrderId();
+	OrderHeader getOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Id</em>' reference.
 	 * @see #getOrderId()
 	 * @generated
 	 */
-	void setOrderId(String value);
+	void setOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Ship After Date</b></em>' attribute.
@@ -506,12 +504,12 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Telecom Contact Mech Id</em>' reference.
-	 * @see #setTelecomContactMechId(TelecomNumber)
+	 * @see #setTelecomContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_TelecomContactMechId()
 	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	TelecomNumber getTelecomContactMechId();
+	ContactMech getTelecomContactMechId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getTelecomContactMechId <em>Telecom Contact Mech Id</em>}' reference.
@@ -521,7 +519,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #getTelecomContactMechId()
 	 * @generated
 	 */
-	void setTelecomContactMechId(TelecomNumber value);
+	void setTelecomContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Tracking Number</b></em>' attribute.

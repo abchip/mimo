@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
+import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.eclipse.emf.common.notify.Notification;
@@ -28,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogInvFacilityImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogInvFacilityImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogInvFacilityImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogInvFacilityImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogInvFacilityImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogInvFacilityImpl#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CATALOG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatalogId = PROD_CATALOG_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,6 +103,16 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProdCatalogId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProdCatalog prodCatalogId;
 
 	/**
 	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
@@ -267,7 +258,24 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	 * @generated
 	 */
 	@Override
-	public String getProdCatalogId() {
+	public ProdCatalog getProdCatalogId() {
+		if (prodCatalogId != null && ((EObject)prodCatalogId).eIsProxy()) {
+			InternalEObject oldProdCatalogId = (InternalEObject)prodCatalogId;
+			prodCatalogId = (ProdCatalog)eResolveProxy(oldProdCatalogId);
+			if (prodCatalogId != oldProdCatalogId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
+			}
+		}
+		return prodCatalogId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProdCatalog basicGetProdCatalogId() {
 		return prodCatalogId;
 	}
 
@@ -277,8 +285,8 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	 * @generated
 	 */
 	@Override
-	public void setProdCatalogId(String newProdCatalogId) {
-		String oldProdCatalogId = prodCatalogId;
+	public void setProdCatalogId(ProdCatalog newProdCatalogId) {
+		ProdCatalog oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
@@ -292,14 +300,15 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
-				return getProdCatalogId();
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FROM_DATE:
 				return getFromDate();
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__THRU_DATE:
 				return getThruDate();
+			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
+				if (resolve) return getProdCatalogId();
+				return basicGetProdCatalogId();
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FACILITY_ID:
 				if (resolve) return getFacilityId();
 				return basicGetFacilityId();
@@ -315,9 +324,6 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
-				setProdCatalogId((String)newValue);
-				return;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -326,6 +332,9 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 				return;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)newValue);
 				return;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FACILITY_ID:
 				setFacilityId((Facility)newValue);
@@ -342,9 +351,6 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
-				setProdCatalogId(PROD_CATALOG_ID_EDEFAULT);
-				return;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -353,6 +359,9 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 				return;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)null);
 				return;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FACILITY_ID:
 				setFacilityId((Facility)null);
@@ -369,14 +378,14 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
-				return PROD_CATALOG_ID_EDEFAULT == null ? prodCatalogId != null : !PROD_CATALOG_ID_EDEFAULT.equals(prodCatalogId);
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CatalogPackage.PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID:
+				return prodCatalogId != null;
 			case CatalogPackage.PROD_CATALOG_INV_FACILITY__FACILITY_ID:
 				return facilityId != null;
 		}
@@ -393,9 +402,7 @@ public class ProdCatalogInvFacilityImpl extends BizEntityImpl implements ProdCat
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (prodCatalogId: ");
-		result.append(prodCatalogId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);

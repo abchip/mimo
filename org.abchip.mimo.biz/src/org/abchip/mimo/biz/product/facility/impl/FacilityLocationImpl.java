@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.facility.impl;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityLocation;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,13 +28,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getAisleId <em>Aisle Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getAreaId <em>Area Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getLevelId <em>Level Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getPositionId <em>Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getSectionId <em>Section Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getLocationTypeEnumId <em>Location Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  * </ul>
@@ -46,26 +47,6 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getLocationSeqId() <em>Location Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -185,6 +166,16 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @ordered
 	 */
 	protected String sectionId = SECTION_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
 
 	/**
 	 * The cached value of the '{@link #getLocationTypeEnumId() <em>Location Type Enum Id</em>}' reference.
@@ -449,7 +440,24 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_LOCATION__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -459,8 +467,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__FACILITY_ID, oldFacilityId, facilityId));
@@ -474,8 +482,6 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
-				return getFacilityId();
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_SEQ_ID:
 				return getLocationSeqId();
 			case FacilityPackage.FACILITY_LOCATION__AISLE_ID:
@@ -488,6 +494,9 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 				return getPositionId();
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				return getSectionId();
+			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
 				if (resolve) return getLocationTypeEnumId();
 				return basicGetLocationTypeEnumId();
@@ -506,9 +515,6 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_SEQ_ID:
 				setLocationSeqId((String)newValue);
 				return;
@@ -526,6 +532,9 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 				return;
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				setSectionId((String)newValue);
+				return;
+			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
+				setFacilityId((Facility)newValue);
 				return;
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
 				setLocationTypeEnumId((Enumeration)newValue);
@@ -545,9 +554,6 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_SEQ_ID:
 				setLocationSeqId(LOCATION_SEQ_ID_EDEFAULT);
 				return;
@@ -565,6 +571,9 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 				return;
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				setSectionId(SECTION_ID_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
+				setFacilityId((Facility)null);
 				return;
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
 				setLocationTypeEnumId((Enumeration)null);
@@ -584,8 +593,6 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_SEQ_ID:
 				return LOCATION_SEQ_ID_EDEFAULT == null ? locationSeqId != null : !LOCATION_SEQ_ID_EDEFAULT.equals(locationSeqId);
 			case FacilityPackage.FACILITY_LOCATION__AISLE_ID:
@@ -598,6 +605,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 				return POSITION_ID_EDEFAULT == null ? positionId != null : !POSITION_ID_EDEFAULT.equals(positionId);
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				return SECTION_ID_EDEFAULT == null ? sectionId != null : !SECTION_ID_EDEFAULT.equals(sectionId);
+			case FacilityPackage.FACILITY_LOCATION__FACILITY_ID:
+				return facilityId != null;
 			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
 				return locationTypeEnumId != null;
 			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
@@ -616,9 +625,7 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (facilityId: ");
-		result.append(facilityId);
-		result.append(", locationSeqId: ");
+		result.append(" (locationSeqId: ");
 		result.append(locationSeqId);
 		result.append(", aisleId: ");
 		result.append(aisleId);

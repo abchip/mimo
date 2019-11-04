@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.marketing.segment.impl;
 
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -40,24 +41,14 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getSegmentGroupId() <em>Segment Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getSegmentGroupId() <em>Segment Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSegmentGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SEGMENT_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSegmentGroupId() <em>Segment Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSegmentGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String segmentGroupId = SEGMENT_GROUP_ID_EDEFAULT;
+	protected SegmentGroup segmentGroupId;
 
 	/**
 	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
@@ -134,7 +125,24 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	 * @generated
 	 */
 	@Override
-	public String getSegmentGroupId() {
+	public SegmentGroup getSegmentGroupId() {
+		if (segmentGroupId != null && ((EObject)segmentGroupId).eIsProxy()) {
+			InternalEObject oldSegmentGroupId = (InternalEObject)segmentGroupId;
+			segmentGroupId = (SegmentGroup)eResolveProxy(oldSegmentGroupId);
+			if (segmentGroupId != oldSegmentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
+			}
+		}
+		return segmentGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SegmentGroup basicGetSegmentGroupId() {
 		return segmentGroupId;
 	}
 
@@ -144,8 +152,8 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	 * @generated
 	 */
 	@Override
-	public void setSegmentGroupId(String newSegmentGroupId) {
-		String oldSegmentGroupId = segmentGroupId;
+	public void setSegmentGroupId(SegmentGroup newSegmentGroupId) {
+		SegmentGroup oldSegmentGroupId = segmentGroupId;
 		segmentGroupId = newSegmentGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
@@ -160,7 +168,8 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID:
-				return getSegmentGroupId();
+				if (resolve) return getSegmentGroupId();
+				return basicGetSegmentGroupId();
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
 				if (resolve) return getGeoId();
 				return basicGetGeoId();
@@ -177,7 +186,7 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID:
-				setSegmentGroupId((String)newValue);
+				setSegmentGroupId((SegmentGroup)newValue);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
 				setGeoId((Geo)newValue);
@@ -195,7 +204,7 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID:
-				setSegmentGroupId(SEGMENT_GROUP_ID_EDEFAULT);
+				setSegmentGroupId((SegmentGroup)null);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
 				setGeoId((Geo)null);
@@ -213,27 +222,11 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID:
-				return SEGMENT_GROUP_ID_EDEFAULT == null ? segmentGroupId != null : !SEGMENT_GROUP_ID_EDEFAULT.equals(segmentGroupId);
+				return segmentGroupId != null;
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
 				return geoId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (segmentGroupId: ");
-		result.append(segmentGroupId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SegmentGroupGeoImpl

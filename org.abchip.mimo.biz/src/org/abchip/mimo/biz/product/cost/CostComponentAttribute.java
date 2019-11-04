@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getCostComponentId <em>Cost Component Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getCostComponentId <em>Cost Component Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute()
@@ -82,31 +82,30 @@ public interface CostComponentAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Cost Component Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cost Component Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost Component Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Component Id</em>' attribute.
-	 * @see #setCostComponentId(String)
+	 * @return the value of the '<em>Cost Component Id</em>' reference.
+	 * @see #setCostComponentId(CostComponent)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_CostComponentId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="costComponentId"
 	 * @generated
 	 */
-	String getCostComponentId();
+	CostComponent getCostComponentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getCostComponentId <em>Cost Component Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getCostComponentId <em>Cost Component Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cost Component Id</em>' attribute.
+	 * @param value the new value of the '<em>Cost Component Id</em>' reference.
 	 * @see #getCostComponentId()
 	 * @generated
 	 */
-	void setCostComponentId(String value);
+	void setCostComponentId(CostComponent value);
 
 	/**
 	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.

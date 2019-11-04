@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.quote;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.agreement.TermType;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +19,6 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermDays <em>Term Days</em>}</li>
@@ -26,6 +26,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId <em>Term Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm()
@@ -139,31 +140,30 @@ public interface QuoteTerm extends BizEntity {
 	void setTermDays(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Term Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Term Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Term Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Term Type Id</em>' attribute.
-	 * @see #setTermTypeId(String)
+	 * @return the value of the '<em>Term Type Id</em>' reference.
+	 * @see #setTermTypeId(TermType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_TermTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="termTypeId"
 	 * @generated
 	 */
-	String getTermTypeId();
+	TermType getTermTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId <em>Term Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId <em>Term Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Term Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Term Type Id</em>' reference.
 	 * @see #getTermTypeId()
 	 * @generated
 	 */
-	void setTermTypeId(String value);
+	void setTermTypeId(TermType value);
 
 	/**
 	 * Returns the value of the '<em><b>Term Value</b></em>' attribute.

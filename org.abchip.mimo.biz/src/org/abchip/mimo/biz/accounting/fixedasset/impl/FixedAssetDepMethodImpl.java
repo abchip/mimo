@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
+import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -28,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  * </ul>
  *
@@ -41,26 +42,6 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getDepreciationCustomMethodId() <em>Depreciation Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDepreciationCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDepreciationCustomMethodId() <em>Depreciation Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDepreciationCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String depreciationCustomMethodId = DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -98,6 +79,15 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 	/**
+	 * The cached value of the '{@link #getDepreciationCustomMethodId() <em>Depreciation Custom Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDepreciationCustomMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod depreciationCustomMethodId;
+	/**
 	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,7 +122,24 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 * @generated
 	 */
 	@Override
-	public String getDepreciationCustomMethodId() {
+	public CustomMethod getDepreciationCustomMethodId() {
+		if (depreciationCustomMethodId != null && ((EObject)depreciationCustomMethodId).eIsProxy()) {
+			InternalEObject oldDepreciationCustomMethodId = (InternalEObject)depreciationCustomMethodId;
+			depreciationCustomMethodId = (CustomMethod)eResolveProxy(oldDepreciationCustomMethodId);
+			if (depreciationCustomMethodId != oldDepreciationCustomMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID, oldDepreciationCustomMethodId, depreciationCustomMethodId));
+			}
+		}
+		return depreciationCustomMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetDepreciationCustomMethodId() {
 		return depreciationCustomMethodId;
 	}
 
@@ -142,8 +149,8 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 * @generated
 	 */
 	@Override
-	public void setDepreciationCustomMethodId(String newDepreciationCustomMethodId) {
-		String oldDepreciationCustomMethodId = depreciationCustomMethodId;
+	public void setDepreciationCustomMethodId(CustomMethod newDepreciationCustomMethodId) {
+		CustomMethod oldDepreciationCustomMethodId = depreciationCustomMethodId;
 		depreciationCustomMethodId = newDepreciationCustomMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID, oldDepreciationCustomMethodId, depreciationCustomMethodId));
@@ -243,12 +250,13 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
-				return getDepreciationCustomMethodId();
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
+				if (resolve) return getDepreciationCustomMethodId();
+				return basicGetDepreciationCustomMethodId();
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
 				if (resolve) return getFixedAssetId();
 				return basicGetFixedAssetId();
@@ -264,14 +272,14 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
-				setDepreciationCustomMethodId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
+				setDepreciationCustomMethodId((CustomMethod)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
 				setFixedAssetId((FixedAsset)newValue);
@@ -288,14 +296,14 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
-				setDepreciationCustomMethodId(DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
+				setDepreciationCustomMethodId((CustomMethod)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
 				setFixedAssetId((FixedAsset)null);
@@ -312,12 +320,12 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
-				return DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT == null ? depreciationCustomMethodId != null : !DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT.equals(depreciationCustomMethodId);
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
+				return depreciationCustomMethodId != null;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
 				return fixedAssetId != null;
 		}
@@ -334,9 +342,7 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (depreciationCustomMethodId: ");
-		result.append(depreciationCustomMethodId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

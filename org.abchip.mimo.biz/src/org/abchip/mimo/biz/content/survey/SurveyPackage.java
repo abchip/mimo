@@ -344,22 +344,13 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_MULTI_RESP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Survey Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SURVEY_MULTI_RESP__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Survey Multi Resp Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Multi Resp Title</b></em>' attribute.
@@ -368,7 +359,16 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_MULTI_RESP__MULTI_RESP_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SURVEY_MULTI_RESP__MULTI_RESP_TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Survey Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Multi Resp</em>' class.
@@ -526,22 +526,13 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_PAGE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Survey Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SURVEY_PAGE__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Survey Page Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_PAGE__SURVEY_PAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SURVEY_PAGE__SURVEY_PAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Page Name</b></em>' attribute.
@@ -550,7 +541,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_PAGE__PAGE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SURVEY_PAGE__PAGE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -559,7 +550,16 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_PAGE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SURVEY_PAGE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Survey Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_PAGE__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -762,22 +762,13 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_QUESTION_APPL__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Survey Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SURVEY_QUESTION_APPL__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SURVEY_QUESTION_APPL__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>External Field Ref</b></em>' attribute.
@@ -786,7 +777,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__EXTERNAL_FIELD_REF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SURVEY_QUESTION_APPL__EXTERNAL_FIELD_REF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Required Field</b></em>' attribute.
@@ -795,7 +786,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__REQUIRED_FIELD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SURVEY_QUESTION_APPL__REQUIRED_FIELD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -804,7 +795,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SURVEY_QUESTION_APPL__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Survey Multi Resp Col Id</b></em>' attribute.
@@ -813,7 +804,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__SURVEY_MULTI_RESP_COL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SURVEY_QUESTION_APPL__SURVEY_MULTI_RESP_COL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Survey Multi Resp Id</b></em>' attribute.
@@ -822,7 +813,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__SURVEY_MULTI_RESP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SURVEY_QUESTION_APPL__SURVEY_MULTI_RESP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Survey Page Seq Id</b></em>' attribute.
@@ -831,7 +822,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__SURVEY_PAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SURVEY_QUESTION_APPL__SURVEY_PAGE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -840,7 +831,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int SURVEY_QUESTION_APPL__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>With Survey Option Seq Id</b></em>' attribute.
@@ -849,7 +840,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__WITH_SURVEY_OPTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int SURVEY_QUESTION_APPL__WITH_SURVEY_OPTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>With Survey Question Id</b></em>' attribute.
@@ -858,7 +849,16 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_APPL__WITH_SURVEY_QUESTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int SURVEY_QUESTION_APPL__WITH_SURVEY_QUESTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Survey Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_APPL__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Survey Question Id</b></em>' reference.
@@ -1007,22 +1007,13 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_QUESTION_OPTION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Survey Question Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Survey Option Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__SURVEY_OPTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SURVEY_QUESTION_OPTION__SURVEY_OPTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Amount Base</b></em>' attribute.
@@ -1031,7 +1022,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__AMOUNT_BASE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SURVEY_QUESTION_OPTION__AMOUNT_BASE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Amount Base Uom Id</b></em>' attribute.
@@ -1040,7 +1031,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__AMOUNT_BASE_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SURVEY_QUESTION_OPTION__AMOUNT_BASE_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1049,7 +1040,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SURVEY_QUESTION_OPTION__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -1058,7 +1049,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SURVEY_QUESTION_OPTION__DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Duration Uom Id</b></em>' attribute.
@@ -1067,7 +1058,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__DURATION_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SURVEY_QUESTION_OPTION__DURATION_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -1076,7 +1067,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SURVEY_QUESTION_OPTION__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Weight Factor</b></em>' attribute.
@@ -1085,7 +1076,16 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_QUESTION_OPTION__WEIGHT_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int SURVEY_QUESTION_OPTION__WEIGHT_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Survey Question Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Question Option</em>' class.
@@ -1370,22 +1370,13 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_RESPONSE_ANSWER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Survey Response Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Survey Multi Resp Col Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_COL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_COL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Amount Base</b></em>' attribute.
@@ -1394,7 +1385,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__AMOUNT_BASE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SURVEY_RESPONSE_ANSWER__AMOUNT_BASE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Amount Base Uom Id</b></em>' attribute.
@@ -1403,7 +1394,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__AMOUNT_BASE_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SURVEY_RESPONSE_ANSWER__AMOUNT_BASE_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Answered Date</b></em>' attribute.
@@ -1412,7 +1403,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__ANSWERED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SURVEY_RESPONSE_ANSWER__ANSWERED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Response</b></em>' attribute.
@@ -1421,7 +1412,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__BOOLEAN_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SURVEY_RESPONSE_ANSWER__BOOLEAN_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Currency Response</b></em>' attribute.
@@ -1430,7 +1421,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__CURRENCY_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SURVEY_RESPONSE_ANSWER__CURRENCY_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -1439,7 +1430,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SURVEY_RESPONSE_ANSWER__DURATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Duration Uom Id</b></em>' attribute.
@@ -1448,7 +1439,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__DURATION_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int SURVEY_RESPONSE_ANSWER__DURATION_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Float Response</b></em>' attribute.
@@ -1457,7 +1448,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__FLOAT_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int SURVEY_RESPONSE_ANSWER__FLOAT_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Numeric Response</b></em>' attribute.
@@ -1466,7 +1457,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__NUMERIC_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int SURVEY_RESPONSE_ANSWER__NUMERIC_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -1475,7 +1466,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int SURVEY_RESPONSE_ANSWER__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Survey Multi Resp Id</b></em>' attribute.
@@ -1484,7 +1475,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Survey Option Seq Id</b></em>' attribute.
@@ -1493,7 +1484,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__SURVEY_OPTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int SURVEY_RESPONSE_ANSWER__SURVEY_OPTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Text Response</b></em>' attribute.
@@ -1502,7 +1493,7 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__TEXT_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int SURVEY_RESPONSE_ANSWER__TEXT_RESPONSE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Weight Factor</b></em>' attribute.
@@ -1511,7 +1502,16 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_RESPONSE_ANSWER__WEIGHT_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int SURVEY_RESPONSE_ANSWER__WEIGHT_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Survey Response Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Survey Question Id</b></em>' reference.
@@ -1587,22 +1587,13 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_TRIGGER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Survey Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SURVEY_TRIGGER__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_TRIGGER__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SURVEY_TRIGGER__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1611,7 +1602,16 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SURVEY_TRIGGER__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SURVEY_TRIGGER__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Survey Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_TRIGGER__SURVEY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Survey Appl Type Id</b></em>' reference.
@@ -1817,15 +1817,15 @@ public interface SurveyPackage extends EPackage {
 	EClass getSurveyMultiResp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp#getSurveyId <em>Survey Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp#getSurveyId <em>Survey Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Survey Id</em>'.
+	 * @return the meta object for the reference '<em>Survey Id</em>'.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyMultiResp#getSurveyId()
 	 * @see #getSurveyMultiResp()
 	 * @generated
 	 */
-	EAttribute getSurveyMultiResp_SurveyId();
+	EReference getSurveyMultiResp_SurveyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp#getSurveyMultiRespId <em>Survey Multi Resp Id</em>}'.
@@ -1925,15 +1925,15 @@ public interface SurveyPackage extends EPackage {
 	EClass getSurveyPage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyPage#getSurveyId <em>Survey Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyPage#getSurveyId <em>Survey Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Survey Id</em>'.
+	 * @return the meta object for the reference '<em>Survey Id</em>'.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPage#getSurveyId()
 	 * @see #getSurveyPage()
 	 * @generated
 	 */
-	EAttribute getSurveyPage_SurveyId();
+	EReference getSurveyPage_SurveyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyPage#getSurveyPageSeqId <em>Survey Page Seq Id</em>}'.
@@ -2099,15 +2099,15 @@ public interface SurveyPackage extends EPackage {
 	EClass getSurveyQuestionAppl();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyId <em>Survey Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyId <em>Survey Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Survey Id</em>'.
+	 * @return the meta object for the reference '<em>Survey Id</em>'.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyId()
 	 * @see #getSurveyQuestionAppl()
 	 * @generated
 	 */
-	EAttribute getSurveyQuestionAppl_SurveyId();
+	EReference getSurveyQuestionAppl_SurveyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyQuestionId <em>Survey Question Id</em>}'.
@@ -2284,15 +2284,15 @@ public interface SurveyPackage extends EPackage {
 	EClass getSurveyQuestionOption();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSurveyQuestionId <em>Survey Question Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSurveyQuestionId <em>Survey Question Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Survey Question Id</em>'.
+	 * @return the meta object for the reference '<em>Survey Question Id</em>'.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSurveyQuestionId()
 	 * @see #getSurveyQuestionOption()
 	 * @generated
 	 */
-	EAttribute getSurveyQuestionOption_SurveyQuestionId();
+	EReference getSurveyQuestionOption_SurveyQuestionId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSurveyOptionSeqId <em>Survey Option Seq Id</em>}'.
@@ -2545,15 +2545,15 @@ public interface SurveyPackage extends EPackage {
 	EClass getSurveyResponseAnswer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Survey Response Id</em>'.
+	 * @return the meta object for the reference '<em>Survey Response Id</em>'.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId()
 	 * @see #getSurveyResponseAnswer()
 	 * @generated
 	 */
-	EAttribute getSurveyResponseAnswer_SurveyResponseId();
+	EReference getSurveyResponseAnswer_SurveyResponseId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyQuestionId <em>Survey Question Id</em>}'.
@@ -2753,15 +2753,15 @@ public interface SurveyPackage extends EPackage {
 	EClass getSurveyTrigger();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Survey Id</em>'.
+	 * @return the meta object for the reference '<em>Survey Id</em>'.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId()
 	 * @see #getSurveyTrigger()
 	 * @generated
 	 */
-	EAttribute getSurveyTrigger_SurveyId();
+	EReference getSurveyTrigger_SurveyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyApplTypeId <em>Survey Appl Type Id</em>}'.
@@ -2961,12 +2961,12 @@ public interface SurveyPackage extends EPackage {
 		EClass SURVEY_MULTI_RESP = eINSTANCE.getSurveyMultiResp();
 
 		/**
-		 * The meta object literal for the '<em><b>Survey Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Survey Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SURVEY_MULTI_RESP__SURVEY_ID = eINSTANCE.getSurveyMultiResp_SurveyId();
+		EReference SURVEY_MULTI_RESP__SURVEY_ID = eINSTANCE.getSurveyMultiResp_SurveyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Survey Multi Resp Id</b></em>' attribute feature.
@@ -3045,12 +3045,12 @@ public interface SurveyPackage extends EPackage {
 		EClass SURVEY_PAGE = eINSTANCE.getSurveyPage();
 
 		/**
-		 * The meta object literal for the '<em><b>Survey Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Survey Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SURVEY_PAGE__SURVEY_ID = eINSTANCE.getSurveyPage_SurveyId();
+		EReference SURVEY_PAGE__SURVEY_ID = eINSTANCE.getSurveyPage_SurveyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Survey Page Seq Id</b></em>' attribute feature.
@@ -3177,12 +3177,12 @@ public interface SurveyPackage extends EPackage {
 		EClass SURVEY_QUESTION_APPL = eINSTANCE.getSurveyQuestionAppl();
 
 		/**
-		 * The meta object literal for the '<em><b>Survey Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Survey Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SURVEY_QUESTION_APPL__SURVEY_ID = eINSTANCE.getSurveyQuestionAppl_SurveyId();
+		EReference SURVEY_QUESTION_APPL__SURVEY_ID = eINSTANCE.getSurveyQuestionAppl_SurveyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Survey Question Id</b></em>' reference feature.
@@ -3317,12 +3317,12 @@ public interface SurveyPackage extends EPackage {
 		EClass SURVEY_QUESTION_OPTION = eINSTANCE.getSurveyQuestionOption();
 
 		/**
-		 * The meta object literal for the '<em><b>Survey Question Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Survey Question Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID = eINSTANCE.getSurveyQuestionOption_SurveyQuestionId();
+		EReference SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID = eINSTANCE.getSurveyQuestionOption_SurveyQuestionId();
 
 		/**
 		 * The meta object literal for the '<em><b>Survey Option Seq Id</b></em>' attribute feature.
@@ -3515,12 +3515,12 @@ public interface SurveyPackage extends EPackage {
 		EClass SURVEY_RESPONSE_ANSWER = eINSTANCE.getSurveyResponseAnswer();
 
 		/**
-		 * The meta object literal for the '<em><b>Survey Response Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Survey Response Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID = eINSTANCE.getSurveyResponseAnswer_SurveyResponseId();
+		EReference SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID = eINSTANCE.getSurveyResponseAnswer_SurveyResponseId();
 
 		/**
 		 * The meta object literal for the '<em><b>Survey Question Id</b></em>' reference feature.
@@ -3669,12 +3669,12 @@ public interface SurveyPackage extends EPackage {
 		EClass SURVEY_TRIGGER = eINSTANCE.getSurveyTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Survey Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Survey Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SURVEY_TRIGGER__SURVEY_ID = eINSTANCE.getSurveyTrigger_SurveyId();
+		EReference SURVEY_TRIGGER__SURVEY_ID = eINSTANCE.getSurveyTrigger_SurveyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Survey Appl Type Id</b></em>' reference feature.

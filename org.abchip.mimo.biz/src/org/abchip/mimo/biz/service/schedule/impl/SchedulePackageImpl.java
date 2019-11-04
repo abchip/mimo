@@ -1442,8 +1442,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTemporalExpressionAssoc_FromTempExprId() {
-		return (EAttribute)temporalExpressionAssocEClass.getEStructuralFeatures().get(0);
+	public EReference getTemporalExpressionAssoc_FromTempExprId() {
+		return (EReference)temporalExpressionAssocEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1463,7 +1463,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 */
 	@Override
 	public EAttribute getTemporalExpressionAssoc_ExprAssocType() {
-		return (EAttribute)temporalExpressionAssocEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)temporalExpressionAssocEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1575,8 +1575,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS);
 
 		temporalExpressionAssocEClass = createEClass(TEMPORAL_EXPRESSION_ASSOC);
-		createEAttribute(temporalExpressionAssocEClass, TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID);
 		createEAttribute(temporalExpressionAssocEClass, TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE);
+		createEReference(temporalExpressionAssocEClass, TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID);
 		createEReference(temporalExpressionAssocEClass, TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID);
 	}
 
@@ -1738,8 +1738,9 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		addEOperation(temporalExpressionEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(temporalExpressionAssocEClass, TemporalExpressionAssoc.class, "TemporalExpressionAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTemporalExpressionAssoc_FromTempExprId(), ecorePackage.getEString(), "fromTempExprId", null, 1, 1, TemporalExpressionAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpressionAssoc_ExprAssocType(), ecorePackage.getEString(), "exprAssocType", null, 0, 1, TemporalExpressionAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTemporalExpressionAssoc_FromTempExprId(), this.getTemporalExpression(), null, "fromTempExprId", null, 0, 1, TemporalExpressionAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTemporalExpressionAssoc_FromTempExprId().getEKeys().add(this.getTemporalExpression_TempExprId());
 		initEReference(getTemporalExpressionAssoc_ToTempExprId(), this.getTemporalExpression(), null, "toTempExprId", null, 0, 1, TemporalExpressionAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTemporalExpressionAssoc_ToTempExprId().getEKeys().add(this.getTemporalExpression_TempExprId());
 
@@ -1885,12 +1886,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getTemporalExpressionAssoc_FromTempExprId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.order.return_.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.ReturnContactMech;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
@@ -42,24 +43,14 @@ public class ReturnContactMechImpl extends BizEntityImpl implements ReturnContac
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReturnId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RETURN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnId = RETURN_ID_EDEFAULT;
+	protected ReturnHeader returnId;
 
 	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
@@ -186,7 +177,24 @@ public class ReturnContactMechImpl extends BizEntityImpl implements ReturnContac
 	 * @generated
 	 */
 	@Override
-	public String getReturnId() {
+	public ReturnHeader getReturnId() {
+		if (returnId != null && ((EObject)returnId).eIsProxy()) {
+			InternalEObject oldReturnId = (InternalEObject)returnId;
+			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
+			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_CONTACT_MECH__RETURN_ID, oldReturnId, returnId));
+			}
+		}
+		return returnId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnHeader basicGetReturnId() {
 		return returnId;
 	}
 
@@ -196,8 +204,8 @@ public class ReturnContactMechImpl extends BizEntityImpl implements ReturnContac
 	 * @generated
 	 */
 	@Override
-	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
+	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_CONTACT_MECH__RETURN_ID, oldReturnId, returnId));
@@ -212,7 +220,8 @@ public class ReturnContactMechImpl extends BizEntityImpl implements ReturnContac
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ReturnPackage.RETURN_CONTACT_MECH__RETURN_ID:
-				return getReturnId();
+				if (resolve) return getReturnId();
+				return basicGetReturnId();
 			case ReturnPackage.RETURN_CONTACT_MECH__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -232,7 +241,7 @@ public class ReturnContactMechImpl extends BizEntityImpl implements ReturnContac
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ReturnPackage.RETURN_CONTACT_MECH__RETURN_ID:
-				setReturnId((String)newValue);
+				setReturnId((ReturnHeader)newValue);
 				return;
 			case ReturnPackage.RETURN_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)newValue);
@@ -253,7 +262,7 @@ public class ReturnContactMechImpl extends BizEntityImpl implements ReturnContac
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ReturnPackage.RETURN_CONTACT_MECH__RETURN_ID:
-				setReturnId(RETURN_ID_EDEFAULT);
+				setReturnId((ReturnHeader)null);
 				return;
 			case ReturnPackage.RETURN_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)null);
@@ -274,29 +283,13 @@ public class ReturnContactMechImpl extends BizEntityImpl implements ReturnContac
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ReturnPackage.RETURN_CONTACT_MECH__RETURN_ID:
-				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
+				return returnId != null;
 			case ReturnPackage.RETURN_CONTACT_MECH__CONTACT_MECH_ID:
 				return contactMechId != null;
 			case ReturnPackage.RETURN_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID:
 				return contactMechPurposeTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnId: ");
-		result.append(returnId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ReturnContactMechImpl

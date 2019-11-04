@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -30,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#isHasExported <em>Has Exported</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#isIsBillable <em>Is Billable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getSiteId <em>Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getTrackingCodeId <em>Tracking Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  * </ul>
@@ -46,26 +47,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAffiliateReferredTimeStamp() <em>Affiliate Referred Time Stamp</em>}' attribute.
@@ -146,6 +127,16 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @ordered
 	 */
 	protected String siteId = SITE_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
 
 	/**
 	 * The cached value of the '{@link #getTrackingCodeId() <em>Tracking Code Id</em>}' reference.
@@ -261,7 +252,24 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -271,8 +279,8 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID, oldOrderId, orderId));
@@ -389,8 +397,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
-				return getOrderId();
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				return getAffiliateReferredTimeStamp();
 			case TrackingPackage.TRACKING_CODE_ORDER__HAS_EXPORTED:
@@ -399,6 +405,9 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 				return isIsBillable();
 			case TrackingPackage.TRACKING_CODE_ORDER__SITE_ID:
 				return getSiteId();
+			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
 				if (resolve) return getTrackingCodeId();
 				return basicGetTrackingCodeId();
@@ -417,9 +426,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				setAffiliateReferredTimeStamp((Date)newValue);
 				return;
@@ -431,6 +437,9 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__SITE_ID:
 				setSiteId((String)newValue);
+				return;
+			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
 				setTrackingCodeId((TrackingCode)newValue);
@@ -450,9 +459,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				setAffiliateReferredTimeStamp(AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT);
 				return;
@@ -464,6 +470,9 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__SITE_ID:
 				setSiteId(SITE_ID_EDEFAULT);
+				return;
+			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
 				setTrackingCodeId((TrackingCode)null);
@@ -483,8 +492,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				return AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT == null ? affiliateReferredTimeStamp != null : !AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT.equals(affiliateReferredTimeStamp);
 			case TrackingPackage.TRACKING_CODE_ORDER__HAS_EXPORTED:
@@ -493,6 +500,8 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 				return isBillable != IS_BILLABLE_EDEFAULT;
 			case TrackingPackage.TRACKING_CODE_ORDER__SITE_ID:
 				return SITE_ID_EDEFAULT == null ? siteId != null : !SITE_ID_EDEFAULT.equals(siteId);
+			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
+				return orderId != null;
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
 				return trackingCodeId != null;
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
@@ -511,9 +520,7 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", affiliateReferredTimeStamp: ");
+		result.append(" (affiliateReferredTimeStamp: ");
 		result.append(affiliateReferredTimeStamp);
 		result.append(", hasExported: ");
 		result.append(hasExported);

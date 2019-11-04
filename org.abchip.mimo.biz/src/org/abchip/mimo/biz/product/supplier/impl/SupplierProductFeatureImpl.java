@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.product.supplier.impl;
 
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getIdCode <em>Id Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getUomId <em>Uom Id</em>}</li>
  * </ul>
@@ -41,26 +42,6 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -101,6 +82,16 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @ordered
 	 */
 	protected String idCode = ID_CODE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
@@ -193,7 +184,24 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -203,8 +211,8 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID, oldPartyId, partyId));
@@ -298,12 +306,13 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
-				return getPartyId();
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				return getDescription();
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				return getIdCode();
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
 				if (resolve) return getProductFeatureId();
 				return basicGetProductFeatureId();
@@ -322,14 +331,14 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				setIdCode((String)newValue);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
 				setProductFeatureId((ProductFeature)newValue);
@@ -349,14 +358,14 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				setIdCode(ID_CODE_EDEFAULT);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
 				setProductFeatureId((ProductFeature)null);
@@ -376,12 +385,12 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				return ID_CODE_EDEFAULT == null ? idCode != null : !ID_CODE_EDEFAULT.equals(idCode);
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
+				return partyId != null;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
 				return productFeatureId != null;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID:
@@ -400,9 +409,7 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", description: ");
+		result.append(" (description: ");
 		result.append(description);
 		result.append(", idCode: ");
 		result.append(idCode);

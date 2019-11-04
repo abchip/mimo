@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#getApiEnvironment <em>Api Environment</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#getApiPassword <em>Api Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#getApiSignature <em>Api Signature</em>}</li>
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#isRequireConfirmedShipping <em>Require Confirmed Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#getReturnUrl <em>Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#getShippingCallbackUrl <em>Shipping Callback Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,24 +50,6 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getApiEnvironment() <em>Api Environment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -317,6 +302,15 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 * @ordered
 	 */
 	protected String shippingCallbackUrl = SHIPPING_CALLBACK_URL_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -573,7 +567,24 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -583,8 +594,8 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -690,8 +701,6 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_ENVIRONMENT:
 				return getApiEnvironment();
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_PASSWORD:
@@ -720,6 +729,9 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 				return getReturnUrl();
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__SHIPPING_CALLBACK_URL:
 				return getShippingCallbackUrl();
+			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -732,9 +744,6 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_ENVIRONMENT:
 				setApiEnvironment((String)newValue);
 				return;
@@ -777,6 +786,9 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__SHIPPING_CALLBACK_URL:
 				setShippingCallbackUrl((String)newValue);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -789,9 +801,6 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_ENVIRONMENT:
 				setApiEnvironment(API_ENVIRONMENT_EDEFAULT);
 				return;
@@ -834,6 +843,9 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__SHIPPING_CALLBACK_URL:
 				setShippingCallbackUrl(SHIPPING_CALLBACK_URL_EDEFAULT);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -846,8 +858,6 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_ENVIRONMENT:
 				return API_ENVIRONMENT_EDEFAULT == null ? apiEnvironment != null : !API_ENVIRONMENT_EDEFAULT.equals(apiEnvironment);
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_PASSWORD:
@@ -876,6 +886,8 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 				return RETURN_URL_EDEFAULT == null ? returnUrl != null : !RETURN_URL_EDEFAULT.equals(returnUrl);
 			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__SHIPPING_CALLBACK_URL:
 				return SHIPPING_CALLBACK_URL_EDEFAULT == null ? shippingCallbackUrl != null : !SHIPPING_CALLBACK_URL_EDEFAULT.equals(shippingCallbackUrl);
+			case PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -890,9 +902,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
-		result.append(", apiEnvironment: ");
+		result.append(" (apiEnvironment: ");
 		result.append(apiEnvironment);
 		result.append(", apiPassword: ");
 		result.append(apiPassword);

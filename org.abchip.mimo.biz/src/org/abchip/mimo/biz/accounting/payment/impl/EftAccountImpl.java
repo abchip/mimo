@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.EftAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -186,7 +186,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 * @generated
 	 * @ordered
 	 */
-	protected PostalAddress contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -305,10 +305,10 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -322,7 +322,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -332,8 +332,8 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(PostalAddress newContactMechId) {
-		PostalAddress oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -467,7 +467,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 				setYearsAtBank((Long)newValue);
 				return;
 			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -503,7 +503,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 				setYearsAtBank(YEARS_AT_BANK_EDEFAULT);
 				return;
 			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)null);
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);

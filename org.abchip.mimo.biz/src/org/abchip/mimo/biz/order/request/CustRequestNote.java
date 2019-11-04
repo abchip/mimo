@@ -27,30 +27,29 @@ import org.abchip.mimo.biz.BizEntityNote;
  */
 public interface CustRequestNote extends BizEntityNote {
 	/**
-	 * Returns the value of the '<em><b>Cust Request Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cust Request Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Id</em>' attribute.
-	 * @see #setCustRequestId(String)
+	 * @return the value of the '<em>Cust Request Id</em>' reference.
+	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestNote_CustRequestId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="custRequestId"
 	 * @generated
 	 */
-	String getCustRequestId();
+	CustRequest getCustRequestId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestNote#getCustRequestId <em>Cust Request Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestNote#getCustRequestId <em>Cust Request Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cust Request Id</em>' attribute.
+	 * @param value the new value of the '<em>Cust Request Id</em>' reference.
 	 * @see #getCustRequestId()
 	 * @generated
 	 */
-	void setCustRequestId(String value);
+	void setCustRequestId(CustRequest value);
 
 } // CustRequestNote

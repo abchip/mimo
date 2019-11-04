@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetReview;
 import org.abchip.mimo.biz.accounting.budget.BudgetReviewResultType;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetReviewImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetReviewImpl#getBudgetReviewId <em>Budget Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetReviewImpl#getReviewDate <em>Review Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetReviewImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetReviewImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetReviewImpl#getBudgetReviewResultTypeId <em>Budget Review Result Type Id</em>}</li>
  * </ul>
@@ -40,27 +41,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getBudgetReviewId() <em>Budget Review Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -97,6 +80,15 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 * @ordered
 	 */
 	protected Date reviewDate = REVIEW_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -227,7 +219,24 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_REVIEW__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -237,8 +246,8 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW__BUDGET_ID, oldBudgetId, budgetId));
@@ -292,12 +301,13 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
-				return getBudgetId();
 			case BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_ID:
 				return getBudgetReviewId();
 			case BudgetPackage.BUDGET_REVIEW__REVIEW_DATE:
 				return getReviewDate();
+			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 			case BudgetPackage.BUDGET_REVIEW__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -316,14 +326,14 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_ID:
 				setBudgetReviewId((String)newValue);
 				return;
 			case BudgetPackage.BUDGET_REVIEW__REVIEW_DATE:
 				setReviewDate((Date)newValue);
+				return;
+			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
+				setBudgetId((Budget)newValue);
 				return;
 			case BudgetPackage.BUDGET_REVIEW__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -343,14 +353,14 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_ID:
 				setBudgetReviewId(BUDGET_REVIEW_ID_EDEFAULT);
 				return;
 			case BudgetPackage.BUDGET_REVIEW__REVIEW_DATE:
 				setReviewDate(REVIEW_DATE_EDEFAULT);
+				return;
+			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
+				setBudgetId((Budget)null);
 				return;
 			case BudgetPackage.BUDGET_REVIEW__PARTY_ID:
 				setPartyId((Party)null);
@@ -370,12 +380,12 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_ID:
 				return BUDGET_REVIEW_ID_EDEFAULT == null ? budgetReviewId != null : !BUDGET_REVIEW_ID_EDEFAULT.equals(budgetReviewId);
 			case BudgetPackage.BUDGET_REVIEW__REVIEW_DATE:
 				return REVIEW_DATE_EDEFAULT == null ? reviewDate != null : !REVIEW_DATE_EDEFAULT.equals(reviewDate);
+			case BudgetPackage.BUDGET_REVIEW__BUDGET_ID:
+				return budgetId != null;
 			case BudgetPackage.BUDGET_REVIEW__PARTY_ID:
 				return partyId != null;
 			case BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_RESULT_TYPE_ID:
@@ -394,9 +404,7 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", budgetReviewId: ");
+		result.append(" (budgetReviewId: ");
 		result.append(budgetReviewId);
 		result.append(", reviewDate: ");
 		result.append(reviewDate);

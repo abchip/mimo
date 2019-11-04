@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryRole;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -29,12 +30,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRoleImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRoleImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRoleImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRoleImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,26 +46,6 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -144,6 +125,16 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	 * @ordered
 	 */
 	protected RoleType roleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -319,7 +310,24 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -329,8 +337,8 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -344,8 +352,6 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__FROM_DATE:
 				return getFromDate();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__COMMENTS:
@@ -358,6 +364,9 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__ROLE_TYPE_ID:
 				if (resolve) return getRoleTypeId();
 				return basicGetRoleTypeId();
+			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -370,9 +379,6 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -388,6 +394,9 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)newValue);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -400,9 +409,6 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -418,6 +424,9 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)null);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -430,8 +439,6 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__COMMENTS:
@@ -442,6 +449,8 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 				return partyId != null;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
+			case CategoryPackage.PRODUCT_CATEGORY_ROLE__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -456,9 +465,7 @@ public class ProductCategoryRoleImpl extends BizEntityImpl implements ProductCat
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

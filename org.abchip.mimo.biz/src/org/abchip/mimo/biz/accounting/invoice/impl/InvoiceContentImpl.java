@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceContent;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceContentType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceContentImpl#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceContentImpl#getInvoiceContentTypeId <em>Invoice Content Type Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,6 +90,15 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 */
 	protected Invoice invoiceId;
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+	/**
 	 * The cached value of the '{@link #getInvoiceContentTypeId() <em>Invoice Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -143,7 +133,24 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -153,8 +160,8 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -294,8 +301,6 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
-				return getContentId();
 			case InvoicePackage.INVOICE_CONTENT__FROM_DATE:
 				return getFromDate();
 			case InvoicePackage.INVOICE_CONTENT__THRU_DATE:
@@ -303,6 +308,9 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_ID:
 				if (resolve) return getInvoiceId();
 				return basicGetInvoiceId();
+			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_CONTENT_TYPE_ID:
 				if (resolve) return getInvoiceContentTypeId();
 				return basicGetInvoiceContentTypeId();
@@ -318,9 +326,6 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -329,6 +334,9 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 				return;
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_ID:
 				setInvoiceId((Invoice)newValue);
+				return;
+			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_CONTENT_TYPE_ID:
 				setInvoiceContentTypeId((InvoiceContentType)newValue);
@@ -345,9 +353,6 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -356,6 +361,9 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 				return;
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_ID:
 				setInvoiceId((Invoice)null);
+				return;
+			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_CONTENT_TYPE_ID:
 				setInvoiceContentTypeId((InvoiceContentType)null);
@@ -372,14 +380,14 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case InvoicePackage.INVOICE_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case InvoicePackage.INVOICE_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_ID:
 				return invoiceId != null;
+			case InvoicePackage.INVOICE_CONTENT__CONTENT_ID:
+				return contentId != null;
 			case InvoicePackage.INVOICE_CONTENT__INVOICE_CONTENT_TYPE_ID:
 				return invoiceContentTypeId != null;
 		}
@@ -396,9 +404,7 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

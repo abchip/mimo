@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.order.order.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderContent;
 import org.abchip.mimo.biz.order.order.OrderContentType;
@@ -30,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl#getOrderContentTypeId <em>Order Content Type Id</em>}</li>
  * </ul>
  *
@@ -45,26 +46,6 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -137,6 +118,16 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	protected OrderHeader orderId;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
 	 * The cached value of the '{@link #getOrderContentTypeId() <em>Order Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,7 +162,24 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -181,8 +189,8 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -345,8 +353,6 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
-				return getContentId();
 			case OrderPackage.ORDER_CONTENT__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_CONTENT__FROM_DATE:
@@ -356,6 +362,9 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 			case OrderPackage.ORDER_CONTENT__ORDER_ID:
 				if (resolve) return getOrderId();
 				return basicGetOrderId();
+			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case OrderPackage.ORDER_CONTENT__ORDER_CONTENT_TYPE_ID:
 				if (resolve) return getOrderContentTypeId();
 				return basicGetOrderContentTypeId();
@@ -371,9 +380,6 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case OrderPackage.ORDER_CONTENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -385,6 +391,9 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 				return;
 			case OrderPackage.ORDER_CONTENT__ORDER_ID:
 				setOrderId((OrderHeader)newValue);
+				return;
+			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case OrderPackage.ORDER_CONTENT__ORDER_CONTENT_TYPE_ID:
 				setOrderContentTypeId((OrderContentType)newValue);
@@ -401,9 +410,6 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_CONTENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -415,6 +421,9 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 				return;
 			case OrderPackage.ORDER_CONTENT__ORDER_ID:
 				setOrderId((OrderHeader)null);
+				return;
+			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case OrderPackage.ORDER_CONTENT__ORDER_CONTENT_TYPE_ID:
 				setOrderContentTypeId((OrderContentType)null);
@@ -431,8 +440,6 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case OrderPackage.ORDER_CONTENT__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_CONTENT__FROM_DATE:
@@ -441,6 +448,8 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case OrderPackage.ORDER_CONTENT__ORDER_ID:
 				return orderId != null;
+			case OrderPackage.ORDER_CONTENT__CONTENT_ID:
+				return contentId != null;
 			case OrderPackage.ORDER_CONTENT__ORDER_CONTENT_TYPE_ID:
 				return orderContentTypeId != null;
 		}
@@ -457,9 +466,7 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

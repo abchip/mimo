@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.common.geo.GeoPoint;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint#getContainerId <em>Container Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint#getContainerId <em>Container Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
  * </ul>
  *
@@ -112,30 +112,29 @@ public interface ContainerGeoPoint extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Container Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Container Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Container Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Container Id</em>' attribute.
-	 * @see #setContainerId(String)
+	 * @return the value of the '<em>Container Id</em>' reference.
+	 * @see #setContainerId(Container)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerGeoPoint_ContainerId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="containerId"
 	 * @generated
 	 */
-	String getContainerId();
+	Container getContainerId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint#getContainerId <em>Container Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint#getContainerId <em>Container Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Container Id</em>' attribute.
+	 * @param value the new value of the '<em>Container Id</em>' reference.
 	 * @see #getContainerId()
 	 * @generated
 	 */
-	void setContainerId(String value);
+	void setContainerId(Container value);
 
 } // ContainerGeoPoint

@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeAttrImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeAttrImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,25 +38,6 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceTypeId = INVOICE_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +74,15 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InvoiceType invoiceTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +155,24 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceTypeId() {
+	public InvoiceType getInvoiceTypeId() {
+		if (invoiceTypeId != null && ((EObject)invoiceTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceTypeId = (InternalEObject)invoiceTypeId;
+			invoiceTypeId = (InvoiceType)eResolveProxy(oldInvoiceTypeId);
+			if (invoiceTypeId != oldInvoiceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
+			}
+		}
+		return invoiceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceType basicGetInvoiceTypeId() {
 		return invoiceTypeId;
 	}
 
@@ -172,8 +182,8 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceTypeId(String newInvoiceTypeId) {
-		String oldInvoiceTypeId = invoiceTypeId;
+	public void setInvoiceTypeId(InvoiceType newInvoiceTypeId) {
+		InvoiceType oldInvoiceTypeId = invoiceTypeId;
 		invoiceTypeId = newInvoiceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
@@ -187,12 +197,13 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
-				return getInvoiceTypeId();
 			case InvoicePackage.INVOICE_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case InvoicePackage.INVOICE_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
+				if (resolve) return getInvoiceTypeId();
+				return basicGetInvoiceTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +216,14 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
-				setInvoiceTypeId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case InvoicePackage.INVOICE_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
+				setInvoiceTypeId((InvoiceType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +237,14 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
-				setInvoiceTypeId(INVOICE_TYPE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
+				setInvoiceTypeId((InvoiceType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +258,12 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
-				return INVOICE_TYPE_ID_EDEFAULT == null ? invoiceTypeId != null : !INVOICE_TYPE_ID_EDEFAULT.equals(invoiceTypeId);
 			case InvoicePackage.INVOICE_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case InvoicePackage.INVOICE_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID:
+				return invoiceTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,9 +278,7 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (invoiceTypeId: ");
-		result.append(invoiceTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

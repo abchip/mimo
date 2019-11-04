@@ -14,6 +14,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +25,6 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getMinimumOrderQuantity <em>Minimum Order Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAvailableFromDate <em>Available From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAgreementId <em>Agreement Id</em>}</li>
@@ -39,6 +39,7 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierProductId <em>Supplier Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierProductName <em>Supplier Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getUnitsIncluded <em>Units Included</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}</li>
@@ -496,31 +497,30 @@ public interface SupplierProduct extends BizEntity {
 	void setUnitsIncluded(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_ProductId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Supplier Pref Order Id</b></em>' reference.

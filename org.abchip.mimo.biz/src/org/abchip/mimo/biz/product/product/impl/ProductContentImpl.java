@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductContent;
 import org.abchip.mimo.biz.product.product.ProductContentType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseTime <em>Use Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getProductContentTypeId <em>Product Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
@@ -52,26 +53,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -212,6 +193,16 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @ordered
 	 */
 	protected long useTime = USE_TIME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
@@ -559,7 +550,24 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -569,8 +577,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__PRODUCT_ID, oldProductId, productId));
@@ -624,8 +632,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				return getFromDate();
 			case ProductPackage.PRODUCT_CONTENT__PURCHASE_FROM_DATE:
@@ -640,6 +646,9 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 				return getUseCountLimit();
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				return getUseTime();
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
 				if (resolve) return getContentId();
 				return basicGetContentId();
@@ -664,9 +673,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -687,6 +693,9 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 				return;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				setUseTime((Long)newValue);
+				return;
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
 				setContentId((Content)newValue);
@@ -712,9 +721,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -735,6 +741,9 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 				return;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				setUseTime(USE_TIME_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
 				setContentId((Content)null);
@@ -760,8 +769,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ProductPackage.PRODUCT_CONTENT__PURCHASE_FROM_DATE:
@@ -776,6 +783,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 				return useCountLimit != USE_COUNT_LIMIT_EDEFAULT;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				return useTime != USE_TIME_EDEFAULT;
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
+				return productId != null;
 			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
 				return contentId != null;
 			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
@@ -798,9 +807,7 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", purchaseFromDate: ");
 		result.append(purchaseFromDate);

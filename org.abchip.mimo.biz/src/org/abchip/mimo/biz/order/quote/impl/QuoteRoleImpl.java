@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.quote.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteRole;
 import org.abchip.mimo.biz.party.party.Party;
@@ -30,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteRoleImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteRoleImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteId = QUOTE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -104,6 +85,16 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuoteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Quote quoteId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -213,7 +204,24 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 * @generated
 	 */
 	@Override
-	public String getQuoteId() {
+	public Quote getQuoteId() {
+		if (quoteId != null && ((EObject)quoteId).eIsProxy()) {
+			InternalEObject oldQuoteId = (InternalEObject)quoteId;
+			quoteId = (Quote)eResolveProxy(oldQuoteId);
+			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ROLE__QUOTE_ID, oldQuoteId, quoteId));
+			}
+		}
+		return quoteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quote basicGetQuoteId() {
 		return quoteId;
 	}
 
@@ -223,8 +231,8 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 * @generated
 	 */
 	@Override
-	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
+	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ROLE__QUOTE_ID, oldQuoteId, quoteId));
@@ -301,12 +309,13 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
-				return getQuoteId();
 			case QuotePackage.QUOTE_ROLE__FROM_DATE:
 				return getFromDate();
 			case QuotePackage.QUOTE_ROLE__THRU_DATE:
 				return getThruDate();
+			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
+				if (resolve) return getQuoteId();
+				return basicGetQuoteId();
 			case QuotePackage.QUOTE_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -325,14 +334,14 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
-				setQuoteId((String)newValue);
-				return;
 			case QuotePackage.QUOTE_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case QuotePackage.QUOTE_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
+				setQuoteId((Quote)newValue);
 				return;
 			case QuotePackage.QUOTE_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -352,14 +361,14 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
-				setQuoteId(QUOTE_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
+				setQuoteId((Quote)null);
 				return;
 			case QuotePackage.QUOTE_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -379,12 +388,12 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
-				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
 			case QuotePackage.QUOTE_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case QuotePackage.QUOTE_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case QuotePackage.QUOTE_ROLE__QUOTE_ID:
+				return quoteId != null;
 			case QuotePackage.QUOTE_ROLE__PARTY_ID:
 				return partyId != null;
 			case QuotePackage.QUOTE_ROLE__ROLE_TYPE_ID:
@@ -403,9 +412,7 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quoteId: ");
-		result.append(quoteId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

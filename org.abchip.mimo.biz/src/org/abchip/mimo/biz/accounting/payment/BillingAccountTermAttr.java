@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr()
@@ -82,30 +82,29 @@ public interface BillingAccountTermAttr extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Billing Account Term Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Billing Account Term Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Billing Account Term Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Billing Account Term Id</em>' attribute.
-	 * @see #setBillingAccountTermId(String)
+	 * @return the value of the '<em>Billing Account Term Id</em>' reference.
+	 * @see #setBillingAccountTermId(BillingAccountTerm)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr_BillingAccountTermId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="billingAccountTermId"
 	 * @generated
 	 */
-	String getBillingAccountTermId();
+	BillingAccountTerm getBillingAccountTermId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Billing Account Term Id</em>' attribute.
+	 * @param value the new value of the '<em>Billing Account Term Id</em>' reference.
 	 * @see #getBillingAccountTermId()
 	 * @generated
 	 */
-	void setBillingAccountTermId(String value);
+	void setBillingAccountTermId(BillingAccountTerm value);
 
 } // BillingAccountTermAttr

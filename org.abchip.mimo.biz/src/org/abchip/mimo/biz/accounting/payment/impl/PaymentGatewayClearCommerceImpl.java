@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getClientId <em>Client Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getEffectiveAlias <em>Effective Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#isEnableCVM <em>Enable CVM</em>}</li>
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getSourceId <em>Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getUserAlias <em>User Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getUsername <em>Username</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,24 +46,6 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getClientId() <em>Client Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -241,6 +226,15 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * @ordered
 	 */
 	protected String username = USERNAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -382,7 +376,24 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -392,8 +403,8 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -522,8 +533,6 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__CLIENT_ID:
 				return getClientId();
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__EFFECTIVE_ALIAS:
@@ -544,6 +553,9 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 				return getUserAlias();
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__USERNAME:
 				return getUsername();
+			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -556,9 +568,6 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__CLIENT_ID:
 				setClientId((String)newValue);
 				return;
@@ -589,6 +598,9 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__USERNAME:
 				setUsername((String)newValue);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -601,9 +613,6 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__CLIENT_ID:
 				setClientId(CLIENT_ID_EDEFAULT);
 				return;
@@ -634,6 +643,9 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__USERNAME:
 				setUsername(USERNAME_EDEFAULT);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -646,8 +658,6 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__CLIENT_ID:
 				return CLIENT_ID_EDEFAULT == null ? clientId != null : !CLIENT_ID_EDEFAULT.equals(clientId);
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__EFFECTIVE_ALIAS:
@@ -668,6 +678,8 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 				return USER_ALIAS_EDEFAULT == null ? userAlias != null : !USER_ALIAS_EDEFAULT.equals(userAlias);
 			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__USERNAME:
 				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
+			case PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -682,9 +694,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
-		result.append(", clientId: ");
+		result.append(" (clientId: ");
 		result.append(clientId);
 		result.append(", effectiveAlias: ");
 		result.append(effectiveAlias);

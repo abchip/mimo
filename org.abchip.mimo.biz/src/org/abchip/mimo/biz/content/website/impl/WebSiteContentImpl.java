@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.content.website.WebSiteContent;
 import org.abchip.mimo.biz.content.website.WebSiteContentType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -30,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSiteContentImpl#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSiteContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSiteContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSiteContentImpl#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSiteContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSiteContentImpl#getWebSiteContentTypeId <em>Web Site Content Type Id</em>}</li>
  * </ul>
@@ -45,26 +46,6 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WEB_SITE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -104,6 +85,16 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebSiteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WebSite webSiteId;
 
 	/**
 	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
@@ -276,7 +267,24 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getWebSiteId() {
+	public WebSite getWebSiteId() {
+		if (webSiteId != null && ((EObject)webSiteId).eIsProxy()) {
+			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
+			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
+			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID, oldWebSiteId, webSiteId));
+			}
+		}
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebSite basicGetWebSiteId() {
 		return webSiteId;
 	}
 
@@ -286,8 +294,8 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
+	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID, oldWebSiteId, webSiteId));
@@ -301,12 +309,13 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
-				return getWebSiteId();
 			case WebsitePackage.WEB_SITE_CONTENT__FROM_DATE:
 				return getFromDate();
 			case WebsitePackage.WEB_SITE_CONTENT__THRU_DATE:
 				return getThruDate();
+			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
+				if (resolve) return getWebSiteId();
+				return basicGetWebSiteId();
 			case WebsitePackage.WEB_SITE_CONTENT__CONTENT_ID:
 				if (resolve) return getContentId();
 				return basicGetContentId();
@@ -325,14 +334,14 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
-				setWebSiteId((String)newValue);
-				return;
 			case WebsitePackage.WEB_SITE_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case WebsitePackage.WEB_SITE_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
+				setWebSiteId((WebSite)newValue);
 				return;
 			case WebsitePackage.WEB_SITE_CONTENT__CONTENT_ID:
 				setContentId((Content)newValue);
@@ -352,14 +361,14 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
-				setWebSiteId(WEB_SITE_ID_EDEFAULT);
-				return;
 			case WebsitePackage.WEB_SITE_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case WebsitePackage.WEB_SITE_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
+				setWebSiteId((WebSite)null);
 				return;
 			case WebsitePackage.WEB_SITE_CONTENT__CONTENT_ID:
 				setContentId((Content)null);
@@ -379,12 +388,12 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
-				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
 			case WebsitePackage.WEB_SITE_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WebsitePackage.WEB_SITE_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID:
+				return webSiteId != null;
 			case WebsitePackage.WEB_SITE_CONTENT__CONTENT_ID:
 				return contentId != null;
 			case WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_CONTENT_TYPE_ID:
@@ -403,9 +412,7 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (webSiteId: ");
-		result.append(webSiteId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

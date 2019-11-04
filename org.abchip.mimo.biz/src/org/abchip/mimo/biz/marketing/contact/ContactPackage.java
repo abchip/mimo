@@ -316,22 +316,22 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_LIST_COMM_STATUS__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Contact List Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Message Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTACT_LIST_COMM_STATUS__MESSAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CONTACT_LIST_COMM_STATUS__MESSAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Contact List Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Communication Event Id</b></em>' reference.
@@ -434,22 +434,13 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_LIST_PARTY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Contact List Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY__CONTACT_LIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTACT_LIST_PARTY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CONTACT_LIST_PARTY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -458,7 +449,16 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTACT_LIST_PARTY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CONTACT_LIST_PARTY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Contact List Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_LIST_PARTY__CONTACT_LIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -743,22 +743,13 @@ public interface ContactPackage extends EPackage {
 	int WEB_SITE_CONTACT_LIST__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Web Site Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_CONTACT_LIST__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_CONTACT_LIST__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int WEB_SITE_CONTACT_LIST__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -767,7 +758,16 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_CONTACT_LIST__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WEB_SITE_CONTACT_LIST__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Web Site Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE_CONTACT_LIST__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Contact List Id</b></em>' reference.
@@ -996,15 +996,15 @@ public interface ContactPackage extends EPackage {
 	EClass getContactListCommStatus();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.contact.ContactListCommStatus#getContactListId <em>Contact List Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.contact.ContactListCommStatus#getContactListId <em>Contact List Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact List Id</em>'.
+	 * @return the meta object for the reference '<em>Contact List Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactListCommStatus#getContactListId()
 	 * @see #getContactListCommStatus()
 	 * @generated
 	 */
-	EAttribute getContactListCommStatus_ContactListId();
+	EReference getContactListCommStatus_ContactListId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.contact.ContactListCommStatus#getCommunicationEventId <em>Communication Event Id</em>}'.
@@ -1083,15 +1083,15 @@ public interface ContactPackage extends EPackage {
 	EClass getContactListParty();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getContactListId <em>Contact List Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getContactListId <em>Contact List Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact List Id</em>'.
+	 * @return the meta object for the reference '<em>Contact List Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactListParty#getContactListId()
 	 * @see #getContactListParty()
 	 * @generated
 	 */
-	EAttribute getContactListParty_ContactListId();
+	EReference getContactListParty_ContactListId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPartyId <em>Party Id</em>}'.
@@ -1278,15 +1278,15 @@ public interface ContactPackage extends EPackage {
 	EClass getWebSiteContactList();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getWebSiteId <em>Web Site Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getWebSiteId <em>Web Site Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Web Site Id</em>'.
+	 * @return the meta object for the reference '<em>Web Site Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getWebSiteId()
 	 * @see #getWebSiteContactList()
 	 * @generated
 	 */
-	EAttribute getWebSiteContactList_WebSiteId();
+	EReference getWebSiteContactList_WebSiteId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getContactListId <em>Contact List Id</em>}'.
@@ -1500,12 +1500,12 @@ public interface ContactPackage extends EPackage {
 		EClass CONTACT_LIST_COMM_STATUS = eINSTANCE.getContactListCommStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact List Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact List Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID = eINSTANCE.getContactListCommStatus_ContactListId();
+		EReference CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID = eINSTANCE.getContactListCommStatus_ContactListId();
 
 		/**
 		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' reference feature.
@@ -1566,12 +1566,12 @@ public interface ContactPackage extends EPackage {
 		EClass CONTACT_LIST_PARTY = eINSTANCE.getContactListParty();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact List Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact List Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_LIST_PARTY__CONTACT_LIST_ID = eINSTANCE.getContactListParty_ContactListId();
+		EReference CONTACT_LIST_PARTY__CONTACT_LIST_ID = eINSTANCE.getContactListParty_ContactListId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -1716,12 +1716,12 @@ public interface ContactPackage extends EPackage {
 		EClass WEB_SITE_CONTACT_LIST = eINSTANCE.getWebSiteContactList();
 
 		/**
-		 * The meta object literal for the '<em><b>Web Site Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Web Site Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE_CONTACT_LIST__WEB_SITE_ID = eINSTANCE.getWebSiteContactList_WebSiteId();
+		EReference WEB_SITE_CONTACT_LIST__WEB_SITE_ID = eINSTANCE.getWebSiteContactList_WebSiteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Contact List Id</b></em>' reference feature.

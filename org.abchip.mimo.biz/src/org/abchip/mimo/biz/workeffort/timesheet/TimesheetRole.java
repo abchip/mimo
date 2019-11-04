@@ -83,30 +83,29 @@ public interface TimesheetRole extends BizEntity {
 	void setRoleTypeId(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Timesheet Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Timesheet Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Timesheet Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Timesheet Id</em>' attribute.
-	 * @see #setTimesheetId(String)
+	 * @return the value of the '<em>Timesheet Id</em>' reference.
+	 * @see #setTimesheetId(Timesheet)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheetRole_TimesheetId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="timesheetId"
 	 * @generated
 	 */
-	String getTimesheetId();
+	Timesheet getTimesheetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getTimesheetId <em>Timesheet Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getTimesheetId <em>Timesheet Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Timesheet Id</em>' attribute.
+	 * @param value the new value of the '<em>Timesheet Id</em>' reference.
 	 * @see #getTimesheetId()
 	 * @generated
 	 */
-	void setTimesheetId(String value);
+	void setTimesheetId(Timesheet value);
 
 } // TimesheetRole

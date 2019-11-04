@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.humanres.ability.PersonTraining;
 import org.abchip.mimo.biz.humanres.ability.TrainingClassType;
 import org.abchip.mimo.biz.humanres.trainings.TrainingRequest;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
@@ -32,11 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getApprovalStatus <em>Approval Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getApproverId <em>Approver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getTrainingClassTypeId <em>Training Class Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
@@ -50,26 +51,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -150,6 +131,16 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getApproverId() <em>Approver Id</em>}' reference.
@@ -302,7 +293,24 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERSON_TRAINING__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -312,8 +320,8 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__PARTY_ID, oldPartyId, partyId));
@@ -493,8 +501,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
-				return getPartyId();
 			case AbilityPackage.PERSON_TRAINING__FROM_DATE:
 				return getFromDate();
 			case AbilityPackage.PERSON_TRAINING__APPROVAL_STATUS:
@@ -503,6 +509,9 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 				return getReason();
 			case AbilityPackage.PERSON_TRAINING__THRU_DATE:
 				return getThruDate();
+			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case AbilityPackage.PERSON_TRAINING__APPROVER_ID:
 				if (resolve) return getApproverId();
 				return basicGetApproverId();
@@ -527,9 +536,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case AbilityPackage.PERSON_TRAINING__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -541,6 +547,9 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 				return;
 			case AbilityPackage.PERSON_TRAINING__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 			case AbilityPackage.PERSON_TRAINING__APPROVER_ID:
 				setApproverId((Person)newValue);
@@ -566,9 +575,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case AbilityPackage.PERSON_TRAINING__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -580,6 +586,9 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 				return;
 			case AbilityPackage.PERSON_TRAINING__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 			case AbilityPackage.PERSON_TRAINING__APPROVER_ID:
 				setApproverId((Person)null);
@@ -605,8 +614,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case AbilityPackage.PERSON_TRAINING__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case AbilityPackage.PERSON_TRAINING__APPROVAL_STATUS:
@@ -615,6 +622,8 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 				return REASON_EDEFAULT == null ? reason != null : !REASON_EDEFAULT.equals(reason);
 			case AbilityPackage.PERSON_TRAINING__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case AbilityPackage.PERSON_TRAINING__PARTY_ID:
+				return partyId != null;
 			case AbilityPackage.PERSON_TRAINING__APPROVER_ID:
 				return approverId != null;
 			case AbilityPackage.PERSON_TRAINING__TRAINING_CLASS_TYPE_ID:
@@ -637,9 +646,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", approvalStatus: ");
 		result.append(approvalStatus);

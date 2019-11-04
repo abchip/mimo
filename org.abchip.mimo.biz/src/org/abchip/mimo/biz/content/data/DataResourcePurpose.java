@@ -55,30 +55,29 @@ public interface DataResourcePurpose extends BizEntity {
 	void setContentPurposeTypeId(ContentPurposeType value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Id</em>' attribute.
-	 * @see #setDataResourceId(String)
+	 * @return the value of the '<em>Data Resource Id</em>' reference.
+	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourcePurpose_DataResourceId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="dataResourceId"
 	 * @generated
 	 */
-	String getDataResourceId();
+	DataResource getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourcePurpose#getDataResourceId <em>Data Resource Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourcePurpose#getDataResourceId <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Resource Id</em>' reference.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */
-	void setDataResourceId(String value);
+	void setDataResourceId(DataResource value);
 
 } // DataResourcePurpose

@@ -280,22 +280,22 @@ public interface IssuancePackage extends EPackage {
 	int ITEM_ISSUANCE_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Item Issuance Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Item Issuance Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -480,15 +480,15 @@ public interface IssuancePackage extends EPackage {
 	EClass getItemIssuanceRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Item Issuance Id</em>'.
+	 * @return the meta object for the reference '<em>Item Issuance Id</em>'.
 	 * @see org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId()
 	 * @see #getItemIssuanceRole()
 	 * @generated
 	 */
-	EAttribute getItemIssuanceRole_ItemIssuanceId();
+	EReference getItemIssuanceRole_ItemIssuanceId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getPartyId <em>Party Id</em>}'.
@@ -659,12 +659,12 @@ public interface IssuancePackage extends EPackage {
 		EClass ITEM_ISSUANCE_ROLE = eINSTANCE.getItemIssuanceRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Item Issuance Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Item Issuance Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID = eINSTANCE.getItemIssuanceRole_ItemIssuanceId();
+		EReference ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID = eINSTANCE.getItemIssuanceRole_ItemIssuanceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.

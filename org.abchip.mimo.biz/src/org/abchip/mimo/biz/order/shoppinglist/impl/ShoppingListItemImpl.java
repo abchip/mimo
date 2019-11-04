@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.abchip.mimo.biz.product.product.Product;
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getModifiedPrice <em>Modified Price</em>}</li>
@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getReservLength <em>Reserv Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getReservStart <em>Reserv Start</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
@@ -50,26 +51,6 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShoppingListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHOPPING_LIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShoppingListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shoppingListId = SHOPPING_LIST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShoppingListItemSeqId() <em>Shopping List Item Seq Id</em>}' attribute.
@@ -230,6 +211,16 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 * @ordered
 	 */
 	protected Date reservStart = RESERV_START_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShoppingListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShoppingList shoppingListId;
 
 	/**
 	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
@@ -467,7 +458,24 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 * @generated
 	 */
 	@Override
-	public String getShoppingListId() {
+	public ShoppingList getShoppingListId() {
+		if (shoppingListId != null && ((EObject)shoppingListId).eIsProxy()) {
+			InternalEObject oldShoppingListId = (InternalEObject)shoppingListId;
+			shoppingListId = (ShoppingList)eResolveProxy(oldShoppingListId);
+			if (shoppingListId != oldShoppingListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
+			}
+		}
+		return shoppingListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShoppingList basicGetShoppingListId() {
 		return shoppingListId;
 	}
 
@@ -477,8 +485,8 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 * @generated
 	 */
 	@Override
-	public void setShoppingListId(String newShoppingListId) {
-		String oldShoppingListId = shoppingListId;
+	public void setShoppingListId(ShoppingList newShoppingListId) {
+		ShoppingList oldShoppingListId = shoppingListId;
 		shoppingListId = newShoppingListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
@@ -515,8 +523,6 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
-				return getShoppingListId();
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				return getShoppingListItemSeqId();
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__CONFIG_ID:
@@ -533,6 +539,9 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 				return getReservPersons();
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__RESERV_START:
 				return getReservStart();
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
+				if (resolve) return getShoppingListId();
+				return basicGetShoppingListId();
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__PRODUCT_ID:
 				if (resolve) return getProductId();
 				return basicGetProductId();
@@ -548,9 +557,6 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
-				setShoppingListId((String)newValue);
-				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				setShoppingListItemSeqId((String)newValue);
 				return;
@@ -575,6 +581,9 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__RESERV_START:
 				setReservStart((Date)newValue);
 				return;
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
+				setShoppingListId((ShoppingList)newValue);
+				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__PRODUCT_ID:
 				setProductId((Product)newValue);
 				return;
@@ -590,9 +599,6 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
-				setShoppingListId(SHOPPING_LIST_ID_EDEFAULT);
-				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				setShoppingListItemSeqId(SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -617,6 +623,9 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__RESERV_START:
 				setReservStart(RESERV_START_EDEFAULT);
 				return;
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
+				setShoppingListId((ShoppingList)null);
+				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__PRODUCT_ID:
 				setProductId((Product)null);
 				return;
@@ -632,8 +641,6 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
-				return SHOPPING_LIST_ID_EDEFAULT == null ? shoppingListId != null : !SHOPPING_LIST_ID_EDEFAULT.equals(shoppingListId);
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				return SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT == null ? shoppingListItemSeqId != null : !SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT.equals(shoppingListItemSeqId);
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__CONFIG_ID:
@@ -650,6 +657,8 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 				return RESERV_PERSONS_EDEFAULT == null ? reservPersons != null : !RESERV_PERSONS_EDEFAULT.equals(reservPersons);
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__RESERV_START:
 				return RESERV_START_EDEFAULT == null ? reservStart != null : !RESERV_START_EDEFAULT.equals(reservStart);
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID:
+				return shoppingListId != null;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM__PRODUCT_ID:
 				return productId != null;
 		}
@@ -666,9 +675,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shoppingListId: ");
-		result.append(shoppingListId);
-		result.append(", shoppingListItemSeqId: ");
+		result.append(" (shoppingListItemSeqId: ");
 		result.append(shoppingListItemSeqId);
 		result.append(", configId: ");
 		result.append(configId);

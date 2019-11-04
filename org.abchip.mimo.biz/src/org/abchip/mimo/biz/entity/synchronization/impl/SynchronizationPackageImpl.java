@@ -876,8 +876,8 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEntitySyncHistory_EntitySyncId() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(0);
+	public EReference getEntitySyncHistory_EntitySyncId() {
+		return (EReference)entitySyncHistoryEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -887,7 +887,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_StartDate() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -897,7 +897,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_BeginningSynchTime() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -907,7 +907,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_LastCandidateEndTime() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -917,7 +917,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_LastSplitStartTime() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -927,7 +927,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_LastSuccessfulSynchTime() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -937,7 +937,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_PerSplitMaxItems() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -947,7 +947,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_PerSplitMaxMillis() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -957,7 +957,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_PerSplitMinItems() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -967,7 +967,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_PerSplitMinMillis() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -977,7 +977,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_RunStatusId() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -987,7 +987,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_RunningTimeMillis() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -997,7 +997,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToCreateInserted() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1007,7 +1007,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToCreateNotUpdated() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1017,7 +1017,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToCreateUpdated() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1027,7 +1027,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToRemoveAlreadyDeleted() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1037,7 +1037,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToRemoveDeleted() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1047,7 +1047,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToStoreInserted() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1057,7 +1057,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToStoreNotUpdated() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -1067,7 +1067,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_ToStoreUpdated() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(19);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1077,7 +1077,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_TotalRowsExported() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1087,7 +1087,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_TotalRowsToCreate() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(21);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -1097,7 +1097,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_TotalRowsToRemove() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(22);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -1107,7 +1107,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_TotalRowsToStore() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1117,7 +1117,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_TotalSplits() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1127,7 +1127,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncHistory_TotalStoreCalls() {
-		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(25);
+		return (EAttribute)entitySyncHistoryEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -1146,8 +1146,8 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEntitySyncInclude_EntitySyncId() {
-		return (EAttribute)entitySyncIncludeEClass.getEStructuralFeatures().get(0);
+	public EReference getEntitySyncInclude_EntitySyncId() {
+		return (EReference)entitySyncIncludeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1157,7 +1157,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncInclude_EntityOrPackage() {
-		return (EAttribute)entitySyncIncludeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)entitySyncIncludeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1167,7 +1167,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySyncInclude_ApplEnumId() {
-		return (EAttribute)entitySyncIncludeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)entitySyncIncludeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1186,8 +1186,8 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEntitySyncIncludeGroup_EntitySyncId() {
-		return (EAttribute)entitySyncIncludeGroupEClass.getEStructuralFeatures().get(0);
+	public EReference getEntitySyncIncludeGroup_EntitySyncId() {
+		return (EReference)entitySyncIncludeGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1197,7 +1197,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EReference getEntitySyncIncludeGroup_EntityGroupId() {
-		return (EReference)entitySyncIncludeGroupEClass.getEStructuralFeatures().get(1);
+		return (EReference)entitySyncIncludeGroupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1279,7 +1279,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		createEAttribute(entitySyncEClass, ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS);
 
 		entitySyncHistoryEClass = createEClass(ENTITY_SYNC_HISTORY);
-		createEAttribute(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID);
 		createEAttribute(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__START_DATE);
 		createEAttribute(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__BEGINNING_SYNCH_TIME);
 		createEAttribute(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__LAST_CANDIDATE_END_TIME);
@@ -1305,15 +1304,16 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		createEAttribute(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_STORE);
 		createEAttribute(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__TOTAL_SPLITS);
 		createEAttribute(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS);
+		createEReference(entitySyncHistoryEClass, ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID);
 
 		entitySyncIncludeEClass = createEClass(ENTITY_SYNC_INCLUDE);
-		createEAttribute(entitySyncIncludeEClass, ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID);
 		createEAttribute(entitySyncIncludeEClass, ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE);
 		createEAttribute(entitySyncIncludeEClass, ENTITY_SYNC_INCLUDE__APPL_ENUM_ID);
+		createEReference(entitySyncIncludeEClass, ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID);
 
 		entitySyncIncludeGroupEClass = createEClass(ENTITY_SYNC_INCLUDE_GROUP);
-		createEAttribute(entitySyncIncludeGroupEClass, ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID);
 		createEReference(entitySyncIncludeGroupEClass, ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID);
+		createEReference(entitySyncIncludeGroupEClass, ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID);
 
 		entitySyncRemoveEClass = createEClass(ENTITY_SYNC_REMOVE);
 		createEAttribute(entitySyncRemoveEClass, ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID);
@@ -1379,7 +1379,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		initEAttribute(getEntitySync_EntitySyncIncludeGroups(), ecorePackage.getEString(), "entitySyncIncludeGroups", null, 0, -1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entitySyncHistoryEClass, EntitySyncHistory.class, "EntitySyncHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntitySyncHistory_EntitySyncId(), ecorePackage.getEString(), "entitySyncId", null, 1, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySyncHistory_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySyncHistory_BeginningSynchTime(), ecorePackage.getEDate(), "beginningSynchTime", null, 0, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySyncHistory_LastCandidateEndTime(), ecorePackage.getEDate(), "lastCandidateEndTime", null, 0, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1405,16 +1404,20 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		initEAttribute(getEntitySyncHistory_TotalRowsToStore(), ecorePackage.getELong(), "totalRowsToStore", null, 0, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySyncHistory_TotalSplits(), ecorePackage.getELong(), "totalSplits", null, 0, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySyncHistory_TotalStoreCalls(), ecorePackage.getELong(), "totalStoreCalls", null, 0, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntitySyncHistory_EntitySyncId(), this.getEntitySync(), null, "entitySyncId", null, 0, 1, EntitySyncHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEntitySyncHistory_EntitySyncId().getEKeys().add(this.getEntitySync_EntitySyncId());
 
 		initEClass(entitySyncIncludeEClass, EntitySyncInclude.class, "EntitySyncInclude", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntitySyncInclude_EntitySyncId(), ecorePackage.getEString(), "entitySyncId", null, 1, 1, EntitySyncInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySyncInclude_EntityOrPackage(), ecorePackage.getEString(), "entityOrPackage", null, 1, 1, EntitySyncInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySyncInclude_ApplEnumId(), ecorePackage.getEString(), "applEnumId", null, 0, 1, EntitySyncInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntitySyncInclude_EntitySyncId(), this.getEntitySync(), null, "entitySyncId", null, 0, 1, EntitySyncInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEntitySyncInclude_EntitySyncId().getEKeys().add(this.getEntitySync_EntitySyncId());
 
 		initEClass(entitySyncIncludeGroupEClass, EntitySyncIncludeGroup.class, "EntitySyncIncludeGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntitySyncIncludeGroup_EntitySyncId(), ecorePackage.getEString(), "entitySyncId", null, 1, 1, EntitySyncIncludeGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntitySyncIncludeGroup_EntityGroupId(), theGroupPackage.getEntityGroup(), null, "entityGroupId", null, 0, 1, EntitySyncIncludeGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEntitySyncIncludeGroup_EntityGroupId().getEKeys().add(theGroupPackage.getEntityGroup_EntityGroupId());
+		initEReference(getEntitySyncIncludeGroup_EntitySyncId(), this.getEntitySync(), null, "entitySyncId", null, 0, 1, EntitySyncIncludeGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEntitySyncIncludeGroup_EntitySyncId().getEKeys().add(this.getEntitySync_EntitySyncId());
 
 		initEClass(entitySyncRemoveEClass, EntitySyncRemove.class, "EntitySyncRemove", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntitySyncRemove_EntitySyncRemoveId(), ecorePackage.getEString(), "entitySyncRemoveId", null, 1, 1, EntitySyncRemove.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1460,31 +1463,13 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEntitySyncHistory_EntitySyncId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getEntitySyncHistory_StartDate(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getEntitySyncInclude_EntitySyncId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getEntitySyncInclude_EntityOrPackage(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getEntitySyncIncludeGroup_EntitySyncId(),
 		   source,
 		   new String[] {
 			   "key", "true"

@@ -23,7 +23,6 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCreatedDatetime <em>Created Datetime</em>}</li>
@@ -36,6 +35,7 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReservedDatetime <em>Reserved Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getInventoryItemId <em>Inventory Item Id</em>}</li>
  * </ul>
  *
@@ -175,31 +175,30 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	void setPriority(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Id</em>' attribute.
-	 * @see #setOrderId(String)
+	 * @return the value of the '<em>Order Id</em>' reference.
+	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OrderId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getOrderId();
+	OrderHeader getOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Id</em>' reference.
 	 * @see #getOrderId()
 	 * @generated
 	 */
-	void setOrderId(String value);
+	void setOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.

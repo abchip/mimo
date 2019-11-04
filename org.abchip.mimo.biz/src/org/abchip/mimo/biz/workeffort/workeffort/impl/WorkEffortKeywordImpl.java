@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortKeyword;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortKeywordImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortKeywordImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortKeywordImpl#getRelevancyWeight <em>Relevancy Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortKeywordImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
@@ -96,6 +79,16 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 * @ordered
 	 */
 	protected long relevancyWeight = RELEVANCY_WEIGHT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -178,8 +188,8 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -193,12 +203,13 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
 				return getKeyword();
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
 				return getRelevancyWeight();
+			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,14 +222,14 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
 				setKeyword((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
 				setRelevancyWeight((Long)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,14 +243,14 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
 				setKeyword(KEYWORD_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
 				setRelevancyWeight(RELEVANCY_WEIGHT_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,12 +264,12 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
 				return KEYWORD_EDEFAULT == null ? keyword != null : !KEYWORD_EDEFAULT.equals(keyword);
 			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
 				return relevancyWeight != RELEVANCY_WEIGHT_EDEFAULT;
+			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
+				return workEffortId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,9 +284,7 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", keyword: ");
+		result.append(" (keyword: ");
 		result.append(keyword);
 		result.append(", relevancyWeight: ");
 		result.append(relevancyWeight);

@@ -1007,8 +1007,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTestingItem_TestingId() {
-		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(0);
+	public EReference getTestingItem_TestingId() {
+		return (EReference)testingItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1018,7 +1018,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingItem_TestingSeqId() {
-		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1028,7 +1028,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingItem_TestingHistory() {
-		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1087,17 +1087,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTestingNodeMember_TestingNodeId() {
-		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTestingNodeMember_TestingId() {
+	public EReference getTestingNodeMember_TestingNodeId() {
 		return (EReference)testingNodeMemberEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1107,8 +1097,18 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getTestingNodeMember_TestingId() {
+		return (EReference)testingNodeMemberEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getTestingNodeMember_FromDate() {
-		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1118,7 +1118,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingNodeMember_ExtendFromDate() {
-		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1128,7 +1128,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingNodeMember_ExtendThruDate() {
-		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1138,7 +1138,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingNodeMember_ThruDate() {
-		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1351,9 +1351,9 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testingCryptoEClass, TESTING_CRYPTO__UNENCRYPTED_VALUE);
 
 		testingItemEClass = createEClass(TESTING_ITEM);
-		createEAttribute(testingItemEClass, TESTING_ITEM__TESTING_ID);
 		createEAttribute(testingItemEClass, TESTING_ITEM__TESTING_SEQ_ID);
 		createEAttribute(testingItemEClass, TESTING_ITEM__TESTING_HISTORY);
+		createEReference(testingItemEClass, TESTING_ITEM__TESTING_ID);
 
 		testingNodeEClass = createEClass(TESTING_NODE);
 		createEAttribute(testingNodeEClass, TESTING_NODE__TESTING_NODE_ID);
@@ -1361,12 +1361,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEReference(testingNodeEClass, TESTING_NODE__PRIMARY_PARENT_NODE_ID);
 
 		testingNodeMemberEClass = createEClass(TESTING_NODE_MEMBER);
-		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__TESTING_NODE_ID);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__FROM_DATE);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__EXTEND_FROM_DATE);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__EXTEND_THRU_DATE);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__THRU_DATE);
 		createEReference(testingNodeMemberEClass, TESTING_NODE_MEMBER__TESTING_ID);
+		createEReference(testingNodeMemberEClass, TESTING_NODE_MEMBER__TESTING_NODE_ID);
 
 		testingRemoveAllEClass = createEClass(TESTING_REMOVE_ALL);
 		createEAttribute(testingRemoveAllEClass, TESTING_REMOVE_ALL__TESTING_REMOVE_ALL_ID);
@@ -1471,9 +1471,10 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTestingCrypto_UnencryptedValue(), ecorePackage.getEString(), "unencryptedValue", null, 0, 1, TestingCrypto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testingItemEClass, TestingItem.class, "TestingItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTestingItem_TestingId(), ecorePackage.getEString(), "testingId", null, 1, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingItem_TestingSeqId(), ecorePackage.getEString(), "testingSeqId", null, 1, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingItem_TestingHistory(), ecorePackage.getEString(), "testingHistory", null, 0, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTestingItem_TestingId(), this.getTesting(), null, "testingId", null, 0, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTestingItem_TestingId().getEKeys().add(this.getTesting_TestingId());
 
 		initEClass(testingNodeEClass, TestingNode.class, "TestingNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingNode_TestingNodeId(), ecorePackage.getEString(), "testingNodeId", null, 1, 1, TestingNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1484,13 +1485,14 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		addEOperation(testingNodeEClass, ecorePackage.getEString(), "primaryChildTestingNodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(testingNodeMemberEClass, TestingNodeMember.class, "TestingNodeMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTestingNodeMember_TestingNodeId(), ecorePackage.getEString(), "testingNodeId", null, 1, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingNodeMember_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingNodeMember_ExtendFromDate(), ecorePackage.getEDate(), "extendFromDate", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingNodeMember_ExtendThruDate(), ecorePackage.getEDate(), "extendThruDate", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingNodeMember_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestingNodeMember_TestingId(), this.getTesting(), null, "testingId", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTestingNodeMember_TestingId().getEKeys().add(this.getTesting_TestingId());
+		initEReference(getTestingNodeMember_TestingNodeId(), this.getTestingNode(), null, "testingNodeId", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTestingNodeMember_TestingNodeId().getEKeys().add(this.getTestingNode_TestingNodeId());
 
 		initEClass(testingRemoveAllEClass, TestingRemoveAll.class, "TestingRemoveAll", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingRemoveAll_TestingRemoveAllId(), ecorePackage.getEString(), "testingRemoveAllId", null, 1, 1, TestingRemoveAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1557,12 +1559,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getTestingItem_TestingId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getTestingItem_TestingSeqId(),
 		   source,
 		   new String[] {
@@ -1576,12 +1572,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   });
 		addAnnotation
 		  (getTestingNode_TestingNodeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTestingNodeMember_TestingNodeId(),
 		   source,
 		   new String[] {
 			   "key", "true"

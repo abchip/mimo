@@ -18,7 +18,6 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getApiEnvironment <em>Api Environment</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getApiPassword <em>Api Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getApiSignature <em>Api Signature</em>}</li>
@@ -33,6 +32,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#isRequireConfirmedShipping <em>Require Confirmed Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getReturnUrl <em>Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getShippingCallbackUrl <em>Shipping Callback Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal()
@@ -301,31 +301,30 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	void setNotifyUrl(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Gateway Config Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Gateway Config Id</em>' attribute.
-	 * @see #setPaymentGatewayConfigId(String)
+	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
+	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_PaymentGatewayConfigId()
-	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="paymentGatewayConfigId"
 	 * @generated
 	 */
-	String getPaymentGatewayConfigId();
+	PaymentGatewayConfig getPaymentGatewayConfigId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #getPaymentGatewayConfigId()
 	 * @generated
 	 */
-	void setPaymentGatewayConfigId(String value);
+	void setPaymentGatewayConfigId(PaymentGatewayConfig value);
 
 	/**
 	 * Returns the value of the '<em><b>Redirect Url</b></em>' attribute.

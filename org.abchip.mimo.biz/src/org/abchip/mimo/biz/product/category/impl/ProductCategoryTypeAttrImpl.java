@@ -9,10 +9,13 @@ package org.abchip.mimo.biz.product.category.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
+import org.abchip.mimo.biz.product.category.ProductCategoryType;
 import org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeAttrImpl#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeAttrImpl#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductCategoryTypeId() <em>Product Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryTypeId() <em>Product Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryTypeId = PRODUCT_CATEGORY_TYPE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -95,6 +78,16 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryTypeId() <em>Product Category Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategoryType productCategoryTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +160,24 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryTypeId() {
+	public ProductCategoryType getProductCategoryTypeId() {
+		if (productCategoryTypeId != null && ((EObject)productCategoryTypeId).eIsProxy()) {
+			InternalEObject oldProductCategoryTypeId = (InternalEObject)productCategoryTypeId;
+			productCategoryTypeId = (ProductCategoryType)eResolveProxy(oldProductCategoryTypeId);
+			if (productCategoryTypeId != oldProductCategoryTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
+			}
+		}
+		return productCategoryTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategoryType basicGetProductCategoryTypeId() {
 		return productCategoryTypeId;
 	}
 
@@ -177,8 +187,8 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryTypeId(String newProductCategoryTypeId) {
-		String oldProductCategoryTypeId = productCategoryTypeId;
+	public void setProductCategoryTypeId(ProductCategoryType newProductCategoryTypeId) {
+		ProductCategoryType oldProductCategoryTypeId = productCategoryTypeId;
 		productCategoryTypeId = newProductCategoryTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
@@ -192,12 +202,13 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				return getProductCategoryTypeId();
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
+				if (resolve) return getProductCategoryTypeId();
+				return basicGetProductCategoryTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,14 +221,14 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				setProductCategoryTypeId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
+				setProductCategoryTypeId((ProductCategoryType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,14 +242,14 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				setProductCategoryTypeId(PRODUCT_CATEGORY_TYPE_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
+				setProductCategoryTypeId((ProductCategoryType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -252,12 +263,12 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				return PRODUCT_CATEGORY_TYPE_ID_EDEFAULT == null ? productCategoryTypeId != null : !PRODUCT_CATEGORY_TYPE_ID_EDEFAULT.equals(productCategoryTypeId);
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
+				return productCategoryTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,9 +283,7 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryTypeId: ");
-		result.append(productCategoryTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

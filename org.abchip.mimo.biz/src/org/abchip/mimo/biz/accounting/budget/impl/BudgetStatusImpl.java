@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetStatus;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetStatusImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetStatusImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetStatusImpl#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetStatusImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
@@ -40,27 +41,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	/**
-	 * The default value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -97,6 +80,15 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 * @ordered
 	 */
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Budget budgetId;
 	/**
 	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -267,7 +259,24 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 * @generated
 	 */
 	@Override
-	public String getBudgetId() {
+	public Budget getBudgetId() {
+		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
+			InternalEObject oldBudgetId = (InternalEObject)budgetId;
+			budgetId = (Budget)eResolveProxy(oldBudgetId);
+			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_STATUS__BUDGET_ID, oldBudgetId, budgetId));
+			}
+		}
+		return budgetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Budget basicGetBudgetId() {
 		return budgetId;
 	}
 
@@ -277,8 +286,8 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 * @generated
 	 */
 	@Override
-	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
+	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_STATUS__BUDGET_ID, oldBudgetId, budgetId));
@@ -292,12 +301,13 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
-				return getBudgetId();
 			case BudgetPackage.BUDGET_STATUS__COMMENTS:
 				return getComments();
 			case BudgetPackage.BUDGET_STATUS__STATUS_DATE:
 				return getStatusDate();
+			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
+				if (resolve) return getBudgetId();
+				return basicGetBudgetId();
 			case BudgetPackage.BUDGET_STATUS__STATUS_ID:
 				if (resolve) return getStatusId();
 				return basicGetStatusId();
@@ -316,14 +326,14 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
-				setBudgetId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_STATUS__COMMENTS:
 				setComments((String)newValue);
 				return;
 			case BudgetPackage.BUDGET_STATUS__STATUS_DATE:
 				setStatusDate((Date)newValue);
+				return;
+			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
+				setBudgetId((Budget)newValue);
 				return;
 			case BudgetPackage.BUDGET_STATUS__STATUS_ID:
 				setStatusId((StatusItem)newValue);
@@ -343,14 +353,14 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
-				setBudgetId(BUDGET_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_STATUS__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
 			case BudgetPackage.BUDGET_STATUS__STATUS_DATE:
 				setStatusDate(STATUS_DATE_EDEFAULT);
+				return;
+			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
+				setBudgetId((Budget)null);
 				return;
 			case BudgetPackage.BUDGET_STATUS__STATUS_ID:
 				setStatusId((StatusItem)null);
@@ -370,12 +380,12 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
-				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case BudgetPackage.BUDGET_STATUS__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case BudgetPackage.BUDGET_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case BudgetPackage.BUDGET_STATUS__BUDGET_ID:
+				return budgetId != null;
 			case BudgetPackage.BUDGET_STATUS__STATUS_ID:
 				return statusId != null;
 			case BudgetPackage.BUDGET_STATUS__CHANGE_BY_USER_LOGIN_ID:
@@ -394,9 +404,7 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetId: ");
-		result.append(budgetId);
-		result.append(", comments: ");
+		result.append(" (comments: ");
 		result.append(comments);
 		result.append(", statusDate: ");
 		result.append(statusDate);

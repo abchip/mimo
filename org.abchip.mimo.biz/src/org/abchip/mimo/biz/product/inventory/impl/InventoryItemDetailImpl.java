@@ -13,6 +13,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
@@ -34,7 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getInventoryItemDetailSeqId <em>Inventory Item Detail Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getAccountingQuantityDiff <em>Accounting Quantity Diff</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getAvailableToPromiseDiff <em>Available To Promise Diff</em>}</li>
@@ -51,6 +51,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getUnitCost <em>Unit Cost</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl#getReceiptId <em>Receipt Id</em>}</li>
@@ -66,26 +67,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getInventoryItemDetailSeqId() <em>Inventory Item Detail Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -405,6 +386,16 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 * @ordered
 	 */
 	protected BigDecimal unitCost = UNIT_COST_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
 
 	/**
 	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
@@ -1009,7 +1000,24 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -1019,8 +1027,8 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -1074,8 +1082,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_DETAIL_SEQ_ID:
 				return getInventoryItemDetailSeqId();
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__ACCOUNTING_QUANTITY_DIFF:
@@ -1108,6 +1114,9 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 				return getShipmentItemSeqId();
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__UNIT_COST:
 				return getUnitCost();
+			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__WORK_EFFORT_ID:
 				if (resolve) return getWorkEffortId();
 				return basicGetWorkEffortId();
@@ -1135,9 +1144,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_DETAIL_SEQ_ID:
 				setInventoryItemDetailSeqId((String)newValue);
 				return;
@@ -1186,6 +1192,9 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__UNIT_COST:
 				setUnitCost((BigDecimal)newValue);
 				return;
+			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)newValue);
 				return;
@@ -1213,9 +1222,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_DETAIL_SEQ_ID:
 				setInventoryItemDetailSeqId(INVENTORY_ITEM_DETAIL_SEQ_ID_EDEFAULT);
 				return;
@@ -1264,6 +1270,9 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__UNIT_COST:
 				setUnitCost(UNIT_COST_EDEFAULT);
 				return;
+			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)null);
 				return;
@@ -1291,8 +1300,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_DETAIL_SEQ_ID:
 				return INVENTORY_ITEM_DETAIL_SEQ_ID_EDEFAULT == null ? inventoryItemDetailSeqId != null : !INVENTORY_ITEM_DETAIL_SEQ_ID_EDEFAULT.equals(inventoryItemDetailSeqId);
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__ACCOUNTING_QUANTITY_DIFF:
@@ -1325,6 +1332,8 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__UNIT_COST:
 				return UNIT_COST_EDEFAULT == null ? unitCost != null : !UNIT_COST_EDEFAULT.equals(unitCost);
+			case InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__WORK_EFFORT_ID:
 				return workEffortId != null;
 			case InventoryPackage.INVENTORY_ITEM_DETAIL__ITEM_ISSUANCE_ID:
@@ -1349,9 +1358,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (inventoryItemId: ");
-		result.append(inventoryItemId);
-		result.append(", inventoryItemDetailSeqId: ");
+		result.append(" (inventoryItemDetailSeqId: ");
 		result.append(inventoryItemDetailSeqId);
 		result.append(", accountingQuantityDiff: ");
 		result.append(accountingQuantityDiff);

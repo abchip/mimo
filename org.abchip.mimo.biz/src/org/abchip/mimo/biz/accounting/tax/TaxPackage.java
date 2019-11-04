@@ -108,22 +108,13 @@ public interface TaxPackage extends EPackage {
 	int PARTY_TAX_AUTH_INFO__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_TAX_AUTH_INFO__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TAX_AUTH_INFO__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_TAX_AUTH_INFO__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Tax Auth Party Id</b></em>' attribute.
@@ -132,7 +123,7 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TAX_AUTH_INFO__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_TAX_AUTH_INFO__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -141,7 +132,7 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TAX_AUTH_INFO__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_TAX_AUTH_INFO__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Exempt</b></em>' attribute.
@@ -150,7 +141,7 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TAX_AUTH_INFO__IS_EXEMPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_TAX_AUTH_INFO__IS_EXEMPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Nexus</b></em>' attribute.
@@ -159,7 +150,7 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TAX_AUTH_INFO__IS_NEXUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PARTY_TAX_AUTH_INFO__IS_NEXUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Party Tax Id</b></em>' attribute.
@@ -168,7 +159,7 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TAX_AUTH_INFO__PARTY_TAX_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PARTY_TAX_AUTH_INFO__PARTY_TAX_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -177,7 +168,16 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_TAX_AUTH_INFO__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PARTY_TAX_AUTH_INFO__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_TAX_AUTH_INFO__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Party Tax Auth Info</em>' class.
@@ -235,22 +235,13 @@ public interface TaxPackage extends EPackage {
 	int TAX_AUTHORITY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Include Tax In Price</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Require Tax Id For Exemption</b></em>' attribute.
@@ -259,7 +250,7 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAX_AUTHORITY__REQUIRE_TAX_ID_FOR_EXEMPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TAX_AUTHORITY__REQUIRE_TAX_ID_FOR_EXEMPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Tax Id Format Pattern</b></em>' attribute.
@@ -268,7 +259,16 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAX_AUTHORITY__TAX_ID_FORMAT_PATTERN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TAX_AUTHORITY__TAX_ID_FORMAT_PATTERN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAX_AUTHORITY__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Tax Auth Party Id</b></em>' reference.
@@ -1316,15 +1316,15 @@ public interface TaxPackage extends EPackage {
 	EClass getPartyTaxAuthInfo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.PartyTaxAuthInfo#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.tax.PartyTaxAuthInfo#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.tax.PartyTaxAuthInfo#getPartyId()
 	 * @see #getPartyTaxAuthInfo()
 	 * @generated
 	 */
-	EAttribute getPartyTaxAuthInfo_PartyId();
+	EReference getPartyTaxAuthInfo_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.PartyTaxAuthInfo#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}'.
@@ -1414,15 +1414,15 @@ public interface TaxPackage extends EPackage {
 	EClass getTaxAuthority();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tax Auth Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Tax Auth Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthGeoId()
 	 * @see #getTaxAuthority()
 	 * @generated
 	 */
-	EAttribute getTaxAuthority_TaxAuthGeoId();
+	EReference getTaxAuthority_TaxAuthGeoId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthPartyId <em>Tax Auth Party Id</em>}'.
@@ -2274,12 +2274,12 @@ public interface TaxPackage extends EPackage {
 		EClass PARTY_TAX_AUTH_INFO = eINSTANCE.getPartyTaxAuthInfo();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_TAX_AUTH_INFO__PARTY_ID = eINSTANCE.getPartyTaxAuthInfo_PartyId();
+		EReference PARTY_TAX_AUTH_INFO__PARTY_ID = eINSTANCE.getPartyTaxAuthInfo_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Tax Auth Geo Id</b></em>' attribute feature.
@@ -2348,12 +2348,12 @@ public interface TaxPackage extends EPackage {
 		EClass TAX_AUTHORITY = eINSTANCE.getTaxAuthority();
 
 		/**
-		 * The meta object literal for the '<em><b>Tax Auth Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tax Auth Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TAX_AUTHORITY__TAX_AUTH_GEO_ID = eINSTANCE.getTaxAuthority_TaxAuthGeoId();
+		EReference TAX_AUTHORITY__TAX_AUTH_GEO_ID = eINSTANCE.getTaxAuthority_TaxAuthGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Tax Auth Party Id</b></em>' reference feature.

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.requirement.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
 import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
@@ -42,24 +43,14 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getRequirementId() <em>Requirement Id</em>}' attribute.
+	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequirementId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REQUIREMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String requirementId = REQUIREMENT_ID_EDEFAULT;
+	protected Requirement requirementId;
 
 	/**
 	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
@@ -106,7 +97,24 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 * @generated
 	 */
 	@Override
-	public String getRequirementId() {
+	public Requirement getRequirementId() {
+		if (requirementId != null && ((EObject)requirementId).eIsProxy()) {
+			InternalEObject oldRequirementId = (InternalEObject)requirementId;
+			requirementId = (Requirement)eResolveProxy(oldRequirementId);
+			if (requirementId != oldRequirementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID, oldRequirementId, requirementId));
+			}
+		}
+		return requirementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requirement basicGetRequirementId() {
 		return requirementId;
 	}
 
@@ -116,8 +124,8 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 * @generated
 	 */
 	@Override
-	public void setRequirementId(String newRequirementId) {
-		String oldRequirementId = requirementId;
+	public void setRequirementId(Requirement newRequirementId) {
+		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID, oldRequirementId, requirementId));
@@ -212,7 +220,8 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID:
-				return getRequirementId();
+				if (resolve) return getRequirementId();
+				return basicGetRequirementId();
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
 				if (resolve) return getWorkEffortId();
 				return basicGetWorkEffortId();
@@ -232,7 +241,7 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID:
-				setRequirementId((String)newValue);
+				setRequirementId((Requirement)newValue);
 				return;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)newValue);
@@ -253,7 +262,7 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID:
-				setRequirementId(REQUIREMENT_ID_EDEFAULT);
+				setRequirementId((Requirement)null);
 				return;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)null);
@@ -274,29 +283,13 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID:
-				return REQUIREMENT_ID_EDEFAULT == null ? requirementId != null : !REQUIREMENT_ID_EDEFAULT.equals(requirementId);
+				return requirementId != null;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
 				return workEffortId != null;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID:
 				return workReqFulfTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (requirementId: ");
-		result.append(requirementId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //WorkRequirementFulfillmentImpl

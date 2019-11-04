@@ -14,11 +14,12 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
-import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.shipment.Delivery;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getShipmentRouteSegmentId <em>Shipment Route Segment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getActualArrivalDate <em>Actual Arrival Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getActualCost <em>Actual Cost</em>}</li>
@@ -62,14 +62,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getTrackingIdNumber <em>Tracking Id Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getUpdatedByUserLoginId <em>Updated By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getUpsHighValueReport <em>Ups High Value Report</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDeliveryId <em>Delivery Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestFacilityId <em>Dest Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestContactMechId <em>Dest Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
@@ -83,26 +84,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShipmentRouteSegmentId() <em>Shipment Route Segment Id</em>}' attribute.
@@ -565,6 +546,16 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	protected byte[] upsHighValueReport = UPS_HIGH_VALUE_REPORT_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
+
+	/**
 	 * The cached value of the '{@link #getDeliveryId() <em>Delivery Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -582,7 +573,7 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 * @ordered
 	 */
-	protected PartyGroup carrierPartyId;
+	protected Party carrierPartyId;
 
 	/**
 	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
@@ -622,7 +613,17 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 * @ordered
 	 */
-	protected PostalAddress originContactMechId;
+	protected ContactMech originContactMechId;
+
+	/**
+	 * The cached value of the '{@link #getDestContactMechId() <em>Dest Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech destContactMechId;
 
 	/**
 	 * The cached value of the '{@link #getOriginTelecomNumberId() <em>Origin Telecom Number Id</em>}' reference.
@@ -633,16 +634,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @ordered
 	 */
 	protected TelecomNumber originTelecomNumberId;
-
-	/**
-	 * The cached value of the '{@link #getDestContactMechId() <em>Dest Contact Mech Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PostalAddress destContactMechId;
 
 	/**
 	 * The cached value of the '{@link #getDestTelecomNumberId() <em>Dest Telecom Number Id</em>}' reference.
@@ -933,10 +924,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public PartyGroup getCarrierPartyId() {
+	public Party getCarrierPartyId() {
 		if (carrierPartyId != null && ((EObject)carrierPartyId).eIsProxy()) {
 			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
-			carrierPartyId = (PartyGroup)eResolveProxy(oldCarrierPartyId);
+			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
 			if (carrierPartyId != oldCarrierPartyId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
@@ -950,7 +941,7 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PartyGroup basicGetCarrierPartyId() {
+	public Party basicGetCarrierPartyId() {
 		return carrierPartyId;
 	}
 
@@ -960,8 +951,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setCarrierPartyId(PartyGroup newCarrierPartyId) {
-		PartyGroup oldCarrierPartyId = carrierPartyId;
+	public void setCarrierPartyId(Party newCarrierPartyId) {
+		Party oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
@@ -1139,10 +1130,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getDestContactMechId() {
+	public ContactMech getDestContactMechId() {
 		if (destContactMechId != null && ((EObject)destContactMechId).eIsProxy()) {
 			InternalEObject oldDestContactMechId = (InternalEObject)destContactMechId;
-			destContactMechId = (PostalAddress)eResolveProxy(oldDestContactMechId);
+			destContactMechId = (ContactMech)eResolveProxy(oldDestContactMechId);
 			if (destContactMechId != oldDestContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID, oldDestContactMechId, destContactMechId));
@@ -1156,7 +1147,7 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetDestContactMechId() {
+	public ContactMech basicGetDestContactMechId() {
 		return destContactMechId;
 	}
 
@@ -1166,8 +1157,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setDestContactMechId(PostalAddress newDestContactMechId) {
-		PostalAddress oldDestContactMechId = destContactMechId;
+	public void setDestContactMechId(ContactMech newDestContactMechId) {
+		ContactMech oldDestContactMechId = destContactMechId;
 		destContactMechId = newDestContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID, oldDestContactMechId, destContactMechId));
@@ -1374,10 +1365,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getOriginContactMechId() {
+	public ContactMech getOriginContactMechId() {
 		if (originContactMechId != null && ((EObject)originContactMechId).eIsProxy()) {
 			InternalEObject oldOriginContactMechId = (InternalEObject)originContactMechId;
-			originContactMechId = (PostalAddress)eResolveProxy(oldOriginContactMechId);
+			originContactMechId = (ContactMech)eResolveProxy(oldOriginContactMechId);
 			if (originContactMechId != oldOriginContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
@@ -1391,7 +1382,7 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetOriginContactMechId() {
+	public ContactMech basicGetOriginContactMechId() {
 		return originContactMechId;
 	}
 
@@ -1401,8 +1392,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setOriginContactMechId(PostalAddress newOriginContactMechId) {
-		PostalAddress oldOriginContactMechId = originContactMechId;
+	public void setOriginContactMechId(ContactMech newOriginContactMechId) {
+		ContactMech oldOriginContactMechId = originContactMechId;
 		originContactMechId = newOriginContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
@@ -1494,7 +1485,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -1504,8 +1512,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -1743,8 +1751,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
-				return getShipmentId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ROUTE_SEGMENT_ID:
 				return getShipmentRouteSegmentId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_ARRIVAL_DATE:
@@ -1791,6 +1797,9 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return getUpdatedByUserLoginId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				return getUpsHighValueReport();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
 				if (resolve) return getDeliveryId();
 				return basicGetDeliveryId();
@@ -1809,12 +1818,12 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
 				if (resolve) return getOriginContactMechId();
 				return basicGetOriginContactMechId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
-				if (resolve) return getOriginTelecomNumberId();
-				return basicGetOriginTelecomNumberId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
 				if (resolve) return getDestContactMechId();
 				return basicGetDestContactMechId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
+				if (resolve) return getOriginTelecomNumberId();
+				return basicGetOriginTelecomNumberId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
 				if (resolve) return getDestTelecomNumberId();
 				return basicGetDestTelecomNumberId();
@@ -1839,9 +1848,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ROUTE_SEGMENT_ID:
 				setShipmentRouteSegmentId((String)newValue);
 				return;
@@ -1911,11 +1917,14 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				setUpsHighValueReport((byte[])newValue);
 				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
+				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
 				setDeliveryId((Delivery)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
-				setCarrierPartyId((PartyGroup)newValue);
+				setCarrierPartyId((Party)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
 				setShipmentMethodTypeId((ShipmentMethodType)newValue);
@@ -1927,13 +1936,13 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				setDestFacilityId((Facility)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId((PostalAddress)newValue);
+				setOriginContactMechId((ContactMech)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
+				setDestContactMechId((ContactMech)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
 				setOriginTelecomNumberId((TelecomNumber)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
-				setDestContactMechId((PostalAddress)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
 				setDestTelecomNumberId((TelecomNumber)newValue);
@@ -1959,9 +1968,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ROUTE_SEGMENT_ID:
 				setShipmentRouteSegmentId(SHIPMENT_ROUTE_SEGMENT_ID_EDEFAULT);
 				return;
@@ -2031,11 +2037,14 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				setUpsHighValueReport(UPS_HIGH_VALUE_REPORT_EDEFAULT);
 				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
+				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
 				setDeliveryId((Delivery)null);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
-				setCarrierPartyId((PartyGroup)null);
+				setCarrierPartyId((Party)null);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
 				setShipmentMethodTypeId((ShipmentMethodType)null);
@@ -2047,13 +2056,13 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				setDestFacilityId((Facility)null);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId((PostalAddress)null);
+				setOriginContactMechId((ContactMech)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
+				setDestContactMechId((ContactMech)null);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
 				setOriginTelecomNumberId((TelecomNumber)null);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
-				setDestContactMechId((PostalAddress)null);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
 				setDestTelecomNumberId((TelecomNumber)null);
@@ -2079,8 +2088,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ROUTE_SEGMENT_ID:
 				return SHIPMENT_ROUTE_SEGMENT_ID_EDEFAULT == null ? shipmentRouteSegmentId != null : !SHIPMENT_ROUTE_SEGMENT_ID_EDEFAULT.equals(shipmentRouteSegmentId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_ARRIVAL_DATE:
@@ -2127,6 +2134,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return UPDATED_BY_USER_LOGIN_ID_EDEFAULT == null ? updatedByUserLoginId != null : !UPDATED_BY_USER_LOGIN_ID_EDEFAULT.equals(updatedByUserLoginId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				return UPS_HIGH_VALUE_REPORT_EDEFAULT == null ? upsHighValueReport != null : !UPS_HIGH_VALUE_REPORT_EDEFAULT.equals(upsHighValueReport);
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID:
+				return shipmentId != null;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
 				return deliveryId != null;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
@@ -2139,10 +2148,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return destFacilityId != null;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
 				return originContactMechId != null;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
-				return originTelecomNumberId != null;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
 				return destContactMechId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
+				return originTelecomNumberId != null;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
 				return destTelecomNumberId != null;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
@@ -2165,9 +2174,7 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentId: ");
-		result.append(shipmentId);
-		result.append(", shipmentRouteSegmentId: ");
+		result.append(" (shipmentRouteSegmentId: ");
 		result.append(shipmentRouteSegmentId);
 		result.append(", actualArrivalDate: ");
 		result.append(actualArrivalDate);

@@ -22,9 +22,9 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
@@ -139,30 +139,29 @@ public interface BudgetStatus extends BizEntity {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Id</em>' attribute.
-	 * @see #setBudgetId(String)
+	 * @return the value of the '<em>Budget Id</em>' reference.
+	 * @see #setBudgetId(Budget)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetStatus_BudgetId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="budgetId"
 	 * @generated
 	 */
-	String getBudgetId();
+	Budget getBudgetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getBudgetId <em>Budget Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getBudgetId <em>Budget Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Id</em>' reference.
 	 * @see #getBudgetId()
 	 * @generated
 	 */
-	void setBudgetId(String value);
+	void setBudgetId(Budget value);
 
 } // BudgetStatus

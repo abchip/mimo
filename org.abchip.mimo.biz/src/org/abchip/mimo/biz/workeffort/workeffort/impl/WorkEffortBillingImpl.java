@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortBillingImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortBillingImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortBillingImpl#getPercentage <em>Percentage</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortBillingImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortBillingImpl#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
@@ -40,26 +41,6 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInvoiceItemSeqId() <em>Invoice Item Seq Id</em>}' attribute.
@@ -100,6 +81,16 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	 * @ordered
 	 */
 	protected double percentage = PERCENTAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
@@ -222,7 +213,24 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -232,8 +240,8 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -247,12 +255,13 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ITEM_SEQ_ID:
 				return getInvoiceItemSeqId();
 			case WorkeffortPackage.WORK_EFFORT_BILLING__PERCENTAGE:
 				return getPercentage();
+			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ID:
 				if (resolve) return getInvoiceId();
 				return basicGetInvoiceId();
@@ -268,14 +277,14 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_BILLING__PERCENTAGE:
 				setPercentage((Double)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)newValue);
@@ -292,14 +301,14 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId(INVOICE_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_BILLING__PERCENTAGE:
 				setPercentage(PERCENTAGE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)null);
@@ -316,12 +325,12 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ITEM_SEQ_ID:
 				return INVOICE_ITEM_SEQ_ID_EDEFAULT == null ? invoiceItemSeqId != null : !INVOICE_ITEM_SEQ_ID_EDEFAULT.equals(invoiceItemSeqId);
 			case WorkeffortPackage.WORK_EFFORT_BILLING__PERCENTAGE:
 				return percentage != PERCENTAGE_EDEFAULT;
+			case WorkeffortPackage.WORK_EFFORT_BILLING__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_BILLING__INVOICE_ID:
 				return invoiceId != null;
 		}
@@ -338,9 +347,7 @@ public class WorkEffortBillingImpl extends BizEntityImpl implements WorkEffortBi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", invoiceItemSeqId: ");
+		result.append(" (invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);
 		result.append(", percentage: ");
 		result.append(percentage);

@@ -15,7 +15,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
-import org.abchip.mimo.biz.accounting.payment.GiftCard;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
@@ -50,10 +50,10 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodId <em>Payment Method Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference()
@@ -435,12 +435,12 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Payment Method Id</em>' reference.
-	 * @see #setPaymentMethodId(GiftCard)
+	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_PaymentMethodId()
 	 * @model keys="paymentMethodId"
 	 * @generated
 	 */
-	GiftCard getPaymentMethodId();
+	PaymentMethod getPaymentMethodId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodId <em>Payment Method Id</em>}' reference.
@@ -450,7 +450,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @see #getPaymentMethodId()
 	 * @generated
 	 */
-	void setPaymentMethodId(GiftCard value);
+	void setPaymentMethodId(PaymentMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.

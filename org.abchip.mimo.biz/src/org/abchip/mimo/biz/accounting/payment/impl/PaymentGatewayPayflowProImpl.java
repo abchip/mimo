@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getCancelReturnUrl <em>Cancel Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getCertsPath <em>Certs Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#isCheckAvs <em>Check Avs</em>}</li>
@@ -47,6 +49,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getTimeout <em>Timeout</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getUserId <em>User Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getVendor <em>Vendor</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,24 +59,6 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getCancelReturnUrl() <em>Cancel Return Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -488,6 +473,15 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 * @ordered
 	 */
 	protected String vendor = VENDOR_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -790,7 +784,24 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -800,8 +811,8 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -1068,8 +1079,6 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CANCEL_RETURN_URL:
 				return getCancelReturnUrl();
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CERTS_PATH:
@@ -1116,6 +1125,9 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 				return getUserId();
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__VENDOR:
 				return getVendor();
+			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1128,9 +1140,6 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CANCEL_RETURN_URL:
 				setCancelReturnUrl((String)newValue);
 				return;
@@ -1200,6 +1209,9 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__VENDOR:
 				setVendor((String)newValue);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1212,9 +1224,6 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CANCEL_RETURN_URL:
 				setCancelReturnUrl(CANCEL_RETURN_URL_EDEFAULT);
 				return;
@@ -1284,6 +1293,9 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__VENDOR:
 				setVendor(VENDOR_EDEFAULT);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1296,8 +1308,6 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CANCEL_RETURN_URL:
 				return CANCEL_RETURN_URL_EDEFAULT == null ? cancelReturnUrl != null : !CANCEL_RETURN_URL_EDEFAULT.equals(cancelReturnUrl);
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CERTS_PATH:
@@ -1344,6 +1354,8 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 				return USER_ID_EDEFAULT == null ? userId != null : !USER_ID_EDEFAULT.equals(userId);
 			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__VENDOR:
 				return VENDOR_EDEFAULT == null ? vendor != null : !VENDOR_EDEFAULT.equals(vendor);
+			case PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1358,9 +1370,7 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
-		result.append(", cancelReturnUrl: ");
+		result.append(" (cancelReturnUrl: ");
 		result.append(cancelReturnUrl);
 		result.append(", certsPath: ");
 		result.append(certsPath);

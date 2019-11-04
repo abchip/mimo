@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAgreementTermId <em>Agreement Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAgreementTermId <em>Agreement Term Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTermAttribute()
@@ -109,30 +109,29 @@ public interface AgreementTermAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Term Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Term Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Term Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Term Id</em>' attribute.
-	 * @see #setAgreementTermId(String)
+	 * @return the value of the '<em>Agreement Term Id</em>' reference.
+	 * @see #setAgreementTermId(AgreementTerm)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTermAttribute_AgreementTermId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="agreementTermId"
 	 * @generated
 	 */
-	String getAgreementTermId();
+	AgreementTerm getAgreementTermId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAgreementTermId <em>Agreement Term Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAgreementTermId <em>Agreement Term Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Term Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Term Id</em>' reference.
 	 * @see #getAgreementTermId()
 	 * @generated
 	 */
-	void setAgreementTermId(String value);
+	void setAgreementTermId(AgreementTerm value);
 
 } // AgreementTermAttribute

@@ -702,8 +702,8 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserPreference_UserLoginId() {
-		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(0);
+	public EReference getUserPreference_UserLoginId() {
+		return (EReference)userPreferenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -713,7 +713,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 */
 	@Override
 	public EAttribute getUserPreference_UserPrefTypeId() {
-		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -723,7 +723,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 */
 	@Override
 	public EAttribute getUserPreference_UserPrefDataType() {
-		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -743,7 +743,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 */
 	@Override
 	public EAttribute getUserPreference_UserPrefValue() {
-		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -780,10 +780,10 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		createEAttribute(userPrefGroupTypeEClass, USER_PREF_GROUP_TYPE__DESCRIPTION);
 
 		userPreferenceEClass = createEClass(USER_PREFERENCE);
-		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_LOGIN_ID);
 		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_TYPE_ID);
 		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_DATA_TYPE);
 		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_VALUE);
+		createEReference(userPreferenceEClass, USER_PREFERENCE__USER_LOGIN_ID);
 		createEReference(userPreferenceEClass, USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID);
 	}
 
@@ -812,6 +812,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -829,10 +830,11 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		addEOperation(userPrefGroupTypeEClass, ecorePackage.getEString(), "userPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userPreferenceEClass, UserPreference.class, "UserPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserPreference_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 1, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserPreference_UserPrefTypeId(), ecorePackage.getEString(), "userPrefTypeId", null, 1, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserPreference_UserPrefDataType(), ecorePackage.getEString(), "userPrefDataType", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserPreference_UserPrefValue(), ecorePackage.getEString(), "userPrefValue", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserPreference_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserPreference_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 		initEReference(getUserPreference_UserPrefGroupTypeId(), this.getUserPrefGroupType(), null, "userPrefGroupTypeId", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserPreference_UserPrefGroupTypeId().getEKeys().add(this.getUserPrefGroupType_UserPrefGroupTypeId());
 
@@ -877,12 +879,6 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		   });
 		addAnnotation
 		  (getUserPrefGroupType_UserPrefGroupTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getUserPreference_UserLoginId(),
 		   source,
 		   new String[] {
 			   "key", "true"

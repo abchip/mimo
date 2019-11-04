@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.marketing.opportunity.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,11 +27,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl#getCompetitorPartyId <em>Competitor Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl#getPositionEnumId <em>Position Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl#getStrengths <em>Strengths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl#getWeaknesses <em>Weaknesses</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,26 +41,6 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SALES_OPPORTUNITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String salesOpportunityId = SALES_OPPORTUNITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCompetitorPartyId() <em>Competitor Party Id</em>}' attribute.
@@ -140,6 +123,16 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	protected String weaknesses = WEAKNESSES_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesOpportunityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SalesOpportunity salesOpportunityId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -210,7 +203,24 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	 * @generated
 	 */
 	@Override
-	public String getSalesOpportunityId() {
+	public SalesOpportunity getSalesOpportunityId() {
+		if (salesOpportunityId != null && ((EObject)salesOpportunityId).eIsProxy()) {
+			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
+			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
+			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
+			}
+		}
+		return salesOpportunityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesOpportunity basicGetSalesOpportunityId() {
 		return salesOpportunityId;
 	}
 
@@ -220,8 +230,8 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	 * @generated
 	 */
 	@Override
-	public void setSalesOpportunityId(String newSalesOpportunityId) {
-		String oldSalesOpportunityId = salesOpportunityId;
+	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
@@ -281,8 +291,6 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
-				return getSalesOpportunityId();
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__COMPETITOR_PARTY_ID:
 				return getCompetitorPartyId();
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__POSITION_ENUM_ID:
@@ -291,6 +299,9 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 				return getStrengths();
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__WEAKNESSES:
 				return getWeaknesses();
+			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
+				if (resolve) return getSalesOpportunityId();
+				return basicGetSalesOpportunityId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -303,9 +314,6 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId((String)newValue);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__COMPETITOR_PARTY_ID:
 				setCompetitorPartyId((String)newValue);
 				return;
@@ -317,6 +325,9 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__WEAKNESSES:
 				setWeaknesses((String)newValue);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
+				setSalesOpportunityId((SalesOpportunity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -330,9 +341,6 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId(SALES_OPPORTUNITY_ID_EDEFAULT);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__COMPETITOR_PARTY_ID:
 				setCompetitorPartyId(COMPETITOR_PARTY_ID_EDEFAULT);
 				return;
@@ -344,6 +352,9 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__WEAKNESSES:
 				setWeaknesses(WEAKNESSES_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
+				setSalesOpportunityId((SalesOpportunity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -357,8 +368,6 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
-				return SALES_OPPORTUNITY_ID_EDEFAULT == null ? salesOpportunityId != null : !SALES_OPPORTUNITY_ID_EDEFAULT.equals(salesOpportunityId);
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__COMPETITOR_PARTY_ID:
 				return COMPETITOR_PARTY_ID_EDEFAULT == null ? competitorPartyId != null : !COMPETITOR_PARTY_ID_EDEFAULT.equals(competitorPartyId);
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__POSITION_ENUM_ID:
@@ -367,6 +376,8 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 				return STRENGTHS_EDEFAULT == null ? strengths != null : !STRENGTHS_EDEFAULT.equals(strengths);
 			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__WEAKNESSES:
 				return WEAKNESSES_EDEFAULT == null ? weaknesses != null : !WEAKNESSES_EDEFAULT.equals(weaknesses);
+			case OpportunityPackage.SALES_OPPORTUNITY_COMPETITOR__SALES_OPPORTUNITY_ID:
+				return salesOpportunityId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -381,9 +392,7 @@ public class SalesOpportunityCompetitorImpl extends BizEntityImpl implements Sal
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (salesOpportunityId: ");
-		result.append(salesOpportunityId);
-		result.append(", competitorPartyId: ");
+		result.append(" (competitorPartyId: ");
 		result.append(competitorPartyId);
 		result.append(", positionEnumId: ");
 		result.append(positionEnumId);

@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getOversizeCode <em>Oversize Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getPackagingTypeCode <em>Packaging Type Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -109,30 +109,29 @@ public interface CarrierShipmentBoxType extends BizEntity {
 	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Box Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Box Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Box Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Box Type Id</em>' attribute.
-	 * @see #setShipmentBoxTypeId(String)
+	 * @return the value of the '<em>Shipment Box Type Id</em>' reference.
+	 * @see #setShipmentBoxTypeId(ShipmentBoxType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getCarrierShipmentBoxType_ShipmentBoxTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="shipmentBoxTypeId"
 	 * @generated
 	 */
-	String getShipmentBoxTypeId();
+	ShipmentBoxType getShipmentBoxTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Box Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Box Type Id</em>' reference.
 	 * @see #getShipmentBoxTypeId()
 	 * @generated
 	 */
-	void setShipmentBoxTypeId(String value);
+	void setShipmentBoxTypeId(ShipmentBoxType value);
 
 } // CarrierShipmentBoxType

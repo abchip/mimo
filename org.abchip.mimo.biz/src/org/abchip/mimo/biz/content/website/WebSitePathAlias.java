@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,12 +22,12 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getPathAlias <em>Path Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getAliasTo <em>Alias To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getMapKey <em>Map Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
@@ -194,30 +195,29 @@ public interface WebSitePathAlias extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Web Site Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Web Site Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Web Site Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web Site Id</em>' attribute.
-	 * @see #setWebSiteId(String)
+	 * @return the value of the '<em>Web Site Id</em>' reference.
+	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_WebSiteId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="webSiteId"
 	 * @generated
 	 */
-	String getWebSiteId();
+	WebSite getWebSiteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Web Site Id</em>' attribute.
+	 * @param value the new value of the '<em>Web Site Id</em>' reference.
 	 * @see #getWebSiteId()
 	 * @generated
 	 */
-	void setWebSiteId(String value);
+	void setWebSiteId(WebSite value);
 
 } // WebSitePathAlias

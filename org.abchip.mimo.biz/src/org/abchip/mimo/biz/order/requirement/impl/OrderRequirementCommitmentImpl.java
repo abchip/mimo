@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.requirement.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.OrderRequirementCommitmentImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.OrderRequirementCommitmentImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.OrderRequirementCommitmentImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.OrderRequirementCommitmentImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.OrderRequirementCommitmentImpl#getRequirementId <em>Requirement Id</em>}</li>
  * </ul>
  *
@@ -42,26 +43,6 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -104,6 +85,16 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
 	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,7 +129,24 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -148,8 +156,8 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID, oldOrderId, orderId));
@@ -249,12 +257,13 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
-				return getOrderId();
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__QUANTITY:
 				return getQuantity();
+			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__REQUIREMENT_ID:
 				if (resolve) return getRequirementId();
 				return basicGetRequirementId();
@@ -270,14 +279,14 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__QUANTITY:
 				setQuantity((BigDecimal)newValue);
+				return;
+			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__REQUIREMENT_ID:
 				setRequirementId((Requirement)newValue);
@@ -294,14 +303,14 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__REQUIREMENT_ID:
 				setRequirementId((Requirement)null);
@@ -318,12 +327,12 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID:
+				return orderId != null;
 			case RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__REQUIREMENT_ID:
 				return requirementId != null;
 		}
@@ -340,9 +349,7 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", quantity: ");
 		result.append(quantity);

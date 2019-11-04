@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.order.request.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
+import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestNote;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,24 +39,14 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCustRequestId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
+	protected CustRequest custRequestId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +73,24 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -90,8 +100,8 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -106,7 +116,8 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID:
-				return getCustRequestId();
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,7 +131,7 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
+				setCustRequestId((CustRequest)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +146,7 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
+				setCustRequestId((CustRequest)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,25 +161,9 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
+				return custRequestId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (custRequestId: ");
-		result.append(custRequestId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CustRequestNoteImpl

@@ -9,10 +9,13 @@ package org.abchip.mimo.biz.product.subscription.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
+import org.abchip.mimo.biz.product.subscription.SubscriptionType;
 import org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeAttrImpl#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeAttrImpl#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,26 +38,6 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getSubscriptionTypeId() <em>Subscription Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBSCRIPTION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubscriptionTypeId() <em>Subscription Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subscriptionTypeId = SUBSCRIPTION_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -95,6 +78,16 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSubscriptionTypeId() <em>Subscription Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubscriptionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SubscriptionType subscriptionTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +160,24 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public String getSubscriptionTypeId() {
+	public SubscriptionType getSubscriptionTypeId() {
+		if (subscriptionTypeId != null && ((EObject)subscriptionTypeId).eIsProxy()) {
+			InternalEObject oldSubscriptionTypeId = (InternalEObject)subscriptionTypeId;
+			subscriptionTypeId = (SubscriptionType)eResolveProxy(oldSubscriptionTypeId);
+			if (subscriptionTypeId != oldSubscriptionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
+			}
+		}
+		return subscriptionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubscriptionType basicGetSubscriptionTypeId() {
 		return subscriptionTypeId;
 	}
 
@@ -177,8 +187,8 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public void setSubscriptionTypeId(String newSubscriptionTypeId) {
-		String oldSubscriptionTypeId = subscriptionTypeId;
+	public void setSubscriptionTypeId(SubscriptionType newSubscriptionTypeId) {
+		SubscriptionType oldSubscriptionTypeId = subscriptionTypeId;
 		subscriptionTypeId = newSubscriptionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
@@ -192,12 +202,13 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
-				return getSubscriptionTypeId();
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
+				if (resolve) return getSubscriptionTypeId();
+				return basicGetSubscriptionTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,14 +221,14 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
-				setSubscriptionTypeId((String)newValue);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
+				setSubscriptionTypeId((SubscriptionType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,14 +242,14 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
-				setSubscriptionTypeId(SUBSCRIPTION_TYPE_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
+				setSubscriptionTypeId((SubscriptionType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -252,12 +263,12 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
-				return SUBSCRIPTION_TYPE_ID_EDEFAULT == null ? subscriptionTypeId != null : !SUBSCRIPTION_TYPE_ID_EDEFAULT.equals(subscriptionTypeId);
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID:
+				return subscriptionTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,9 +283,7 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (subscriptionTypeId: ");
-		result.append(subscriptionTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

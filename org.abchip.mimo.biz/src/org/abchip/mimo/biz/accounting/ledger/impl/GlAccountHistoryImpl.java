@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountHistory;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getEndingBalance <em>Ending Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getOpeningBalance <em>Opening Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getPostedCredits <em>Posted Credits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getPostedDebits <em>Posted Debits</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  * </ul>
@@ -45,24 +46,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getEndingBalance() <em>Ending Balance</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -135,6 +118,15 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 * @ordered
 	 */
 	protected BigDecimal postedDebits = POSTED_DEBITS_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount glAccountId;
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -351,7 +343,24 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -361,8 +370,8 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -376,8 +385,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
-				return getGlAccountId();
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ENDING_BALANCE:
 				return getEndingBalance();
 			case LedgerPackage.GL_ACCOUNT_HISTORY__OPENING_BALANCE:
@@ -386,6 +393,9 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 				return getPostedCredits();
 			case LedgerPackage.GL_ACCOUNT_HISTORY__POSTED_DEBITS:
 				return getPostedDebits();
+			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -404,9 +414,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
-				return;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ENDING_BALANCE:
 				setEndingBalance((BigDecimal)newValue);
 				return;
@@ -418,6 +425,9 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 				return;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__POSTED_DEBITS:
 				setPostedDebits((BigDecimal)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -437,9 +447,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ENDING_BALANCE:
 				setEndingBalance(ENDING_BALANCE_EDEFAULT);
 				return;
@@ -451,6 +458,9 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 				return;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__POSTED_DEBITS:
 				setPostedDebits(POSTED_DEBITS_EDEFAULT);
+				return;
+			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)null);
 				return;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -470,8 +480,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ENDING_BALANCE:
 				return ENDING_BALANCE_EDEFAULT == null ? endingBalance != null : !ENDING_BALANCE_EDEFAULT.equals(endingBalance);
 			case LedgerPackage.GL_ACCOUNT_HISTORY__OPENING_BALANCE:
@@ -480,6 +488,8 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 				return POSTED_CREDITS_EDEFAULT == null ? postedCredits != null : !POSTED_CREDITS_EDEFAULT.equals(postedCredits);
 			case LedgerPackage.GL_ACCOUNT_HISTORY__POSTED_DEBITS:
 				return POSTED_DEBITS_EDEFAULT == null ? postedDebits != null : !POSTED_DEBITS_EDEFAULT.equals(postedDebits);
+			case LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID:
+				return glAccountId != null;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case LedgerPackage.GL_ACCOUNT_HISTORY__CUSTOM_TIME_PERIOD_ID:
@@ -498,9 +508,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (glAccountId: ");
-		result.append(glAccountId);
-		result.append(", endingBalance: ");
+		result.append(" (endingBalance: ");
 		result.append(endingBalance);
 		result.append(", openingBalance: ");
 		result.append(openingBalance);

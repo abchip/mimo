@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.order.quote.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
+import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuoteNote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,24 +39,14 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
+	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getQuoteId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String QUOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteId = QUOTE_ID_EDEFAULT;
+	protected Quote quoteId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +73,24 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	 * @generated
 	 */
 	@Override
-	public String getQuoteId() {
+	public Quote getQuoteId() {
+		if (quoteId != null && ((EObject)quoteId).eIsProxy()) {
+			InternalEObject oldQuoteId = (InternalEObject)quoteId;
+			quoteId = (Quote)eResolveProxy(oldQuoteId);
+			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_NOTE__QUOTE_ID, oldQuoteId, quoteId));
+			}
+		}
+		return quoteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quote basicGetQuoteId() {
 		return quoteId;
 	}
 
@@ -90,8 +100,8 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	 * @generated
 	 */
 	@Override
-	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
+	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_NOTE__QUOTE_ID, oldQuoteId, quoteId));
@@ -106,7 +116,8 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				return getQuoteId();
+				if (resolve) return getQuoteId();
+				return basicGetQuoteId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,7 +131,7 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				setQuoteId((String)newValue);
+				setQuoteId((Quote)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +146,7 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				setQuoteId(QUOTE_ID_EDEFAULT);
+				setQuoteId((Quote)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,25 +161,9 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
+				return quoteId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quoteId: ");
-		result.append(quoteId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //QuoteNoteImpl

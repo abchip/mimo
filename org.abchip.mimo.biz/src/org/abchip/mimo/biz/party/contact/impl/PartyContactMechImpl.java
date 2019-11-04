@@ -10,9 +10,10 @@ package org.abchip.mimo.biz.party.contact.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PartyContactMech;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#isAllowSolicitation <em>Allow Solicitation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getComments <em>Comments</em>}</li>
@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#isVerified <em>Verified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getYearsWithContactMech <em>Years With Contact Mech</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
@@ -49,24 +50,6 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -212,6 +195,15 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	protected long yearsWithContactMech = YEARS_WITH_CONTACT_MECH_EDEFAULT;
 	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
 	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -228,7 +220,7 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 * @generated
 	 * @ordered
 	 */
-	protected PostalAddress contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -370,7 +362,24 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -380,8 +389,8 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__PARTY_ID, oldPartyId, partyId));
@@ -502,10 +511,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -519,7 +528,7 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -529,8 +538,8 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(PostalAddress newContactMechId) {
-		PostalAddress oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -544,8 +553,6 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
-				return getPartyId();
 			case ContactPackage.PARTY_CONTACT_MECH__FROM_DATE:
 				return getFromDate();
 			case ContactPackage.PARTY_CONTACT_MECH__ALLOW_SOLICITATION:
@@ -562,6 +569,9 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 				return isVerified();
 			case ContactPackage.PARTY_CONTACT_MECH__YEARS_WITH_CONTACT_MECH:
 				return getYearsWithContactMech();
+			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case ContactPackage.PARTY_CONTACT_MECH__ROLE_TYPE_ID:
 				if (resolve) return getRoleTypeId();
 				return basicGetRoleTypeId();
@@ -580,9 +590,6 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case ContactPackage.PARTY_CONTACT_MECH__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -607,11 +614,14 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 			case ContactPackage.PARTY_CONTACT_MECH__YEARS_WITH_CONTACT_MECH:
 				setYearsWithContactMech((Long)newValue);
 				return;
+			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 			case ContactPackage.PARTY_CONTACT_MECH__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)newValue);
 				return;
 			case ContactPackage.PARTY_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -625,9 +635,6 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case ContactPackage.PARTY_CONTACT_MECH__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -652,11 +659,14 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 			case ContactPackage.PARTY_CONTACT_MECH__YEARS_WITH_CONTACT_MECH:
 				setYearsWithContactMech(YEARS_WITH_CONTACT_MECH_EDEFAULT);
 				return;
+			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 			case ContactPackage.PARTY_CONTACT_MECH__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)null);
 				return;
 			case ContactPackage.PARTY_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)null);
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -670,8 +680,6 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case ContactPackage.PARTY_CONTACT_MECH__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ContactPackage.PARTY_CONTACT_MECH__ALLOW_SOLICITATION:
@@ -688,6 +696,8 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 				return verified != VERIFIED_EDEFAULT;
 			case ContactPackage.PARTY_CONTACT_MECH__YEARS_WITH_CONTACT_MECH:
 				return yearsWithContactMech != YEARS_WITH_CONTACT_MECH_EDEFAULT;
+			case ContactPackage.PARTY_CONTACT_MECH__PARTY_ID:
+				return partyId != null;
 			case ContactPackage.PARTY_CONTACT_MECH__ROLE_TYPE_ID:
 				return roleTypeId != null;
 			case ContactPackage.PARTY_CONTACT_MECH__CONTACT_MECH_ID:
@@ -706,9 +716,7 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", allowSolicitation: ");
 		result.append(allowSolicitation);

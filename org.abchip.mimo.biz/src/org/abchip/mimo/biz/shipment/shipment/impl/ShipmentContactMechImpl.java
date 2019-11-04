@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMechType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -42,24 +43,14 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getShipmentId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
+	protected Shipment shipmentId;
 
 	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
@@ -186,7 +177,24 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -196,8 +204,8 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -212,7 +220,8 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				return getShipmentId();
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -232,7 +241,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				setShipmentId((String)newValue);
+				setShipmentId((Shipment)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)newValue);
@@ -253,7 +262,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
+				setShipmentId((Shipment)null);
 				return;
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((ContactMech)null);
@@ -274,29 +283,13 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
+				return shipmentId != null;
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
 				return contactMechId != null;
 			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID:
 				return shipmentContactMechTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentId: ");
-		result.append(shipmentId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ShipmentContactMechImpl

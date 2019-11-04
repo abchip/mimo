@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PartySkill;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl#getRating <em>Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl#getSkillLevel <em>Skill Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl#getStartedUsingDate <em>Started Using Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl#getYearsExperience <em>Years Experience</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl#getSkillTypeId <em>Skill Type Id</em>}</li>
  * </ul>
  *
@@ -44,26 +45,6 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRating() <em>Rating</em>}' attribute.
@@ -146,6 +127,16 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	protected long yearsExperience = YEARS_EXPERIENCE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
 	 * The cached value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,7 +171,24 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_SKILL__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -190,8 +198,8 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_SKILL__PARTY_ID, oldPartyId, partyId));
@@ -337,8 +345,6 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AbilityPackage.PARTY_SKILL__PARTY_ID:
-				return getPartyId();
 			case AbilityPackage.PARTY_SKILL__RATING:
 				return getRating();
 			case AbilityPackage.PARTY_SKILL__SKILL_LEVEL:
@@ -347,6 +353,9 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 				return getStartedUsingDate();
 			case AbilityPackage.PARTY_SKILL__YEARS_EXPERIENCE:
 				return getYearsExperience();
+			case AbilityPackage.PARTY_SKILL__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case AbilityPackage.PARTY_SKILL__SKILL_TYPE_ID:
 				if (resolve) return getSkillTypeId();
 				return basicGetSkillTypeId();
@@ -362,9 +371,6 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AbilityPackage.PARTY_SKILL__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case AbilityPackage.PARTY_SKILL__RATING:
 				setRating((Long)newValue);
 				return;
@@ -376,6 +382,9 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 				return;
 			case AbilityPackage.PARTY_SKILL__YEARS_EXPERIENCE:
 				setYearsExperience((Long)newValue);
+				return;
+			case AbilityPackage.PARTY_SKILL__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 			case AbilityPackage.PARTY_SKILL__SKILL_TYPE_ID:
 				setSkillTypeId((SkillType)newValue);
@@ -392,9 +401,6 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AbilityPackage.PARTY_SKILL__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case AbilityPackage.PARTY_SKILL__RATING:
 				setRating(RATING_EDEFAULT);
 				return;
@@ -406,6 +412,9 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 				return;
 			case AbilityPackage.PARTY_SKILL__YEARS_EXPERIENCE:
 				setYearsExperience(YEARS_EXPERIENCE_EDEFAULT);
+				return;
+			case AbilityPackage.PARTY_SKILL__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 			case AbilityPackage.PARTY_SKILL__SKILL_TYPE_ID:
 				setSkillTypeId((SkillType)null);
@@ -422,8 +431,6 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AbilityPackage.PARTY_SKILL__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case AbilityPackage.PARTY_SKILL__RATING:
 				return rating != RATING_EDEFAULT;
 			case AbilityPackage.PARTY_SKILL__SKILL_LEVEL:
@@ -432,6 +439,8 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 				return STARTED_USING_DATE_EDEFAULT == null ? startedUsingDate != null : !STARTED_USING_DATE_EDEFAULT.equals(startedUsingDate);
 			case AbilityPackage.PARTY_SKILL__YEARS_EXPERIENCE:
 				return yearsExperience != YEARS_EXPERIENCE_EDEFAULT;
+			case AbilityPackage.PARTY_SKILL__PARTY_ID:
+				return partyId != null;
 			case AbilityPackage.PARTY_SKILL__SKILL_TYPE_ID:
 				return skillTypeId != null;
 		}
@@ -448,9 +457,7 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", rating: ");
+		result.append(" (rating: ");
 		result.append(rating);
 		result.append(", skillLevel: ");
 		result.append(skillLevel);

@@ -56,31 +56,30 @@ public interface GlAccountTypeDefault extends BizEntity {
 	void setOrganizationPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Type Id</em>' attribute.
-	 * @see #setGlAccountTypeId(String)
+	 * @return the value of the '<em>Gl Account Type Id</em>' reference.
+	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountTypeDefault_GlAccountTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="glAccountTypeId"
 	 * @generated
 	 */
-	String getGlAccountTypeId();
+	GlAccountType getGlAccountTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault#getGlAccountTypeId <em>Gl Account Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault#getGlAccountTypeId <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Type Id</em>' reference.
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 */
-	void setGlAccountTypeId(String value);
+	void setGlAccountTypeId(GlAccountType value);
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.

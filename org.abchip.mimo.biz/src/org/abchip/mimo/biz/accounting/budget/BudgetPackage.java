@@ -235,22 +235,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_ATTRIBUTE__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -259,7 +250,7 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -268,7 +259,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int BUDGET_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_ATTRIBUTE__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -326,22 +326,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_ITEM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_ITEM__BUDGET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Budget Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ITEM__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int BUDGET_ITEM__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -350,7 +341,7 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ITEM__AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int BUDGET_ITEM__AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Justification</b></em>' attribute.
@@ -359,7 +350,7 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ITEM__JUSTIFICATION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int BUDGET_ITEM__JUSTIFICATION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Purpose</b></em>' attribute.
@@ -368,7 +359,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ITEM__PURPOSE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int BUDGET_ITEM__PURPOSE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_ITEM__BUDGET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Budget Item Type Id</b></em>' reference.
@@ -644,22 +644,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_ITEM_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Item Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_ITEM_TYPE_ATTR__BUDGET_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ITEM_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_ITEM_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -668,7 +659,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ITEM_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_ITEM_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Budget Item Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_ITEM_TYPE_ATTR__BUDGET_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Item Type Attr</em>' class.
@@ -726,22 +726,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_REVIEW__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_REVIEW__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Budget Review Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVIEW__BUDGET_REVIEW_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_REVIEW__BUDGET_REVIEW_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Review Date</b></em>' attribute.
@@ -750,7 +741,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVIEW__REVIEW_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_REVIEW__REVIEW_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_REVIEW__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -908,22 +908,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_REVISION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_REVISION__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Revision Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVISION__REVISION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_REVISION__REVISION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Date Revised</b></em>' attribute.
@@ -932,7 +923,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVISION__DATE_REVISED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_REVISION__DATE_REVISED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_REVISION__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Revision</em>' class.
@@ -990,22 +990,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_REVISION_IMPACT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_REVISION_IMPACT__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Budget Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVISION_IMPACT__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_REVISION_IMPACT__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Revision Seq Id</b></em>' attribute.
@@ -1014,7 +1005,7 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVISION_IMPACT__REVISION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_REVISION_IMPACT__REVISION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Add Delete Flag</b></em>' attribute.
@@ -1023,7 +1014,7 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVISION_IMPACT__ADD_DELETE_FLAG = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int BUDGET_REVISION_IMPACT__ADD_DELETE_FLAG = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Revised Amount</b></em>' attribute.
@@ -1032,7 +1023,7 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVISION_IMPACT__REVISED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int BUDGET_REVISION_IMPACT__REVISED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Revision Reason</b></em>' attribute.
@@ -1041,7 +1032,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_REVISION_IMPACT__REVISION_REASON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int BUDGET_REVISION_IMPACT__REVISION_REASON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_REVISION_IMPACT__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Revision Impact</em>' class.
@@ -1099,22 +1099,22 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_ROLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_ROLE__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_ROLE__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -1372,22 +1372,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_SCENARIO_RULE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Scenario Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Amount Change</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_SCENARIO_RULE__AMOUNT_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_SCENARIO_RULE__AMOUNT_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Percentage Change</b></em>' attribute.
@@ -1396,7 +1387,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_SCENARIO_RULE__PERCENTAGE_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_SCENARIO_RULE__PERCENTAGE_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Budget Scenario Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Budget Item Type Id</b></em>' reference.
@@ -1463,22 +1463,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_STATUS__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_STATUS__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_STATUS__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_STATUS__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Status Date</b></em>' attribute.
@@ -1487,7 +1478,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_STATUS__STATUS_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_STATUS__STATUS_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Budget Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_STATUS__BUDGET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -1672,22 +1672,13 @@ public interface BudgetPackage extends EPackage {
 	int BUDGET_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Budget Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUDGET_TYPE_ATTR__BUDGET_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BUDGET_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1696,7 +1687,16 @@ public interface BudgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUDGET_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BUDGET_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Budget Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUDGET_TYPE_ATTR__BUDGET_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Type Attr</em>' class.
@@ -1817,15 +1817,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getBudgetId()
 	 * @see #getBudgetAttribute()
 	 * @generated
 	 */
-	EAttribute getBudgetAttribute_BudgetId();
+	EReference getBudgetAttribute_BudgetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute#getAttrName <em>Attr Name</em>}'.
@@ -1871,15 +1871,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetItem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetId()
 	 * @see #getBudgetItem()
 	 * @generated
 	 */
-	EAttribute getBudgetItem_BudgetId();
+	EReference getBudgetItem_BudgetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetItemSeqId <em>Budget Item Seq Id</em>}'.
@@ -2077,15 +2077,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetItemTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetItemTypeAttr#getBudgetItemTypeId <em>Budget Item Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetItemTypeAttr#getBudgetItemTypeId <em>Budget Item Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Item Type Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Item Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetItemTypeAttr#getBudgetItemTypeId()
 	 * @see #getBudgetItemTypeAttr()
 	 * @generated
 	 */
-	EAttribute getBudgetItemTypeAttr_BudgetItemTypeId();
+	EReference getBudgetItemTypeAttr_BudgetItemTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetItemTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -2120,15 +2120,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetReview();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetId()
 	 * @see #getBudgetReview()
 	 * @generated
 	 */
-	EAttribute getBudgetReview_BudgetId();
+	EReference getBudgetReview_BudgetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetReviewId <em>Budget Review Id</em>}'.
@@ -2228,15 +2228,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetRevision();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetRevision#getBudgetId()
 	 * @see #getBudgetRevision()
 	 * @generated
 	 */
-	EAttribute getBudgetRevision_BudgetId();
+	EReference getBudgetRevision_BudgetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getRevisionSeqId <em>Revision Seq Id</em>}'.
@@ -2271,15 +2271,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetRevisionImpact();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getBudgetId()
 	 * @see #getBudgetRevisionImpact()
 	 * @generated
 	 */
-	EAttribute getBudgetRevisionImpact_BudgetId();
+	EReference getBudgetRevisionImpact_BudgetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getBudgetItemSeqId <em>Budget Item Seq Id</em>}'.
@@ -2347,15 +2347,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetRole#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetRole#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetRole#getBudgetId()
 	 * @see #getBudgetRole()
 	 * @generated
 	 */
-	EAttribute getBudgetRole_BudgetId();
+	EReference getBudgetRole_BudgetId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetRole#getPartyId <em>Party Id</em>}'.
@@ -2509,15 +2509,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetScenarioRule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId <em>Budget Scenario Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId <em>Budget Scenario Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Scenario Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Scenario Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId()
 	 * @see #getBudgetScenarioRule()
 	 * @generated
 	 */
-	EAttribute getBudgetScenarioRule_BudgetScenarioId();
+	EReference getBudgetScenarioRule_BudgetScenarioId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetItemTypeId <em>Budget Item Type Id</em>}'.
@@ -2563,15 +2563,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetStatus();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getBudgetId <em>Budget Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getBudgetId <em>Budget Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetStatus#getBudgetId()
 	 * @see #getBudgetStatus()
 	 * @generated
 	 */
-	EAttribute getBudgetStatus_BudgetId();
+	EReference getBudgetStatus_BudgetId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetStatus#getStatusId <em>Status Id</em>}'.
@@ -2693,15 +2693,15 @@ public interface BudgetPackage extends EPackage {
 	EClass getBudgetTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Budget Type Id</em>'.
+	 * @return the meta object for the reference '<em>Budget Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId()
 	 * @see #getBudgetTypeAttr()
 	 * @generated
 	 */
-	EAttribute getBudgetTypeAttr_BudgetTypeId();
+	EReference getBudgetTypeAttr_BudgetTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -2832,12 +2832,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_ATTRIBUTE = eINSTANCE.getBudgetAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_ATTRIBUTE__BUDGET_ID = eINSTANCE.getBudgetAttribute_BudgetId();
+		EReference BUDGET_ATTRIBUTE__BUDGET_ID = eINSTANCE.getBudgetAttribute_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -2874,12 +2874,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_ITEM = eINSTANCE.getBudgetItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_ITEM__BUDGET_ID = eINSTANCE.getBudgetItem_BudgetId();
+		EReference BUDGET_ITEM__BUDGET_ID = eINSTANCE.getBudgetItem_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Budget Item Seq Id</b></em>' attribute feature.
@@ -3032,12 +3032,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_ITEM_TYPE_ATTR = eINSTANCE.getBudgetItemTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Item Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Item Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_ITEM_TYPE_ATTR__BUDGET_ITEM_TYPE_ID = eINSTANCE.getBudgetItemTypeAttr_BudgetItemTypeId();
+		EReference BUDGET_ITEM_TYPE_ATTR__BUDGET_ITEM_TYPE_ID = eINSTANCE.getBudgetItemTypeAttr_BudgetItemTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -3066,12 +3066,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_REVIEW = eINSTANCE.getBudgetReview();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_REVIEW__BUDGET_ID = eINSTANCE.getBudgetReview_BudgetId();
+		EReference BUDGET_REVIEW__BUDGET_ID = eINSTANCE.getBudgetReview_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Budget Review Id</b></em>' attribute feature.
@@ -3150,12 +3150,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_REVISION = eINSTANCE.getBudgetRevision();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_REVISION__BUDGET_ID = eINSTANCE.getBudgetRevision_BudgetId();
+		EReference BUDGET_REVISION__BUDGET_ID = eINSTANCE.getBudgetRevision_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Revision Seq Id</b></em>' attribute feature.
@@ -3184,12 +3184,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_REVISION_IMPACT = eINSTANCE.getBudgetRevisionImpact();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_REVISION_IMPACT__BUDGET_ID = eINSTANCE.getBudgetRevisionImpact_BudgetId();
+		EReference BUDGET_REVISION_IMPACT__BUDGET_ID = eINSTANCE.getBudgetRevisionImpact_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Budget Item Seq Id</b></em>' attribute feature.
@@ -3242,12 +3242,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_ROLE = eINSTANCE.getBudgetRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_ROLE__BUDGET_ID = eINSTANCE.getBudgetRole_BudgetId();
+		EReference BUDGET_ROLE__BUDGET_ID = eINSTANCE.getBudgetRole_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -3368,12 +3368,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_SCENARIO_RULE = eINSTANCE.getBudgetScenarioRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Scenario Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Scenario Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID = eINSTANCE.getBudgetScenarioRule_BudgetScenarioId();
+		EReference BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID = eINSTANCE.getBudgetScenarioRule_BudgetScenarioId();
 
 		/**
 		 * The meta object literal for the '<em><b>Budget Item Type Id</b></em>' reference feature.
@@ -3410,12 +3410,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_STATUS = eINSTANCE.getBudgetStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_STATUS__BUDGET_ID = eINSTANCE.getBudgetStatus_BudgetId();
+		EReference BUDGET_STATUS__BUDGET_ID = eINSTANCE.getBudgetStatus_BudgetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
@@ -3510,12 +3510,12 @@ public interface BudgetPackage extends EPackage {
 		EClass BUDGET_TYPE_ATTR = eINSTANCE.getBudgetTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Budget Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Budget Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUDGET_TYPE_ATTR__BUDGET_TYPE_ID = eINSTANCE.getBudgetTypeAttr_BudgetTypeId();
+		EReference BUDGET_TYPE_ATTR__BUDGET_TYPE_ID = eINSTANCE.getBudgetTypeAttr_BudgetTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.

@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceTypeAttr()
@@ -56,31 +56,30 @@ public interface DataResourceTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Resource Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Type Id</em>' attribute.
-	 * @see #setDataResourceTypeId(String)
+	 * @return the value of the '<em>Data Resource Type Id</em>' reference.
+	 * @see #setDataResourceTypeId(DataResourceType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceTypeAttr_DataResourceTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="dataResourceTypeId"
 	 * @generated
 	 */
-	String getDataResourceTypeId();
+	DataResourceType getDataResourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data Resource Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Resource Type Id</em>' reference.
 	 * @see #getDataResourceTypeId()
 	 * @generated
 	 */
-	void setDataResourceTypeId(String value);
+	void setDataResourceTypeId(DataResourceType value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

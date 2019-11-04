@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.content.data.DataPackage;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceMetaData;
 import org.abchip.mimo.biz.content.data.MetaDataPredicate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -28,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getMetaDataValue <em>Meta Data Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
@@ -42,26 +43,6 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getMetaDataValue() <em>Meta Data Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +62,16 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @ordered
 	 */
 	protected String metaDataValue = META_DATA_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataResourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataResource dataResourceId;
 
 	/**
 	 * The cached value of the '{@link #getMetaDataPredicateId() <em>Meta Data Predicate Id</em>}' reference.
@@ -127,7 +118,24 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @generated
 	 */
 	@Override
-	public String getDataResourceId() {
+	public DataResource getDataResourceId() {
+		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
+			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
+			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
+			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+			}
+		}
+		return dataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetDataResourceId() {
 		return dataResourceId;
 	}
 
@@ -137,8 +145,8 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(String newDataResourceId) {
-		String oldDataResourceId = dataResourceId;
+	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
@@ -255,10 +263,11 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				return getDataResourceId();
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				return getMetaDataValue();
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
+				if (resolve) return getDataResourceId();
+				return basicGetDataResourceId();
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
 				if (resolve) return getMetaDataPredicateId();
 				return basicGetMetaDataPredicateId();
@@ -277,11 +286,11 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				setDataResourceId((String)newValue);
-				return;
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				setMetaDataValue((String)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
 				setMetaDataPredicateId((MetaDataPredicate)newValue);
@@ -301,11 +310,11 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
-				return;
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				setMetaDataValue(META_DATA_VALUE_EDEFAULT);
+				return;
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)null);
 				return;
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
 				setMetaDataPredicateId((MetaDataPredicate)null);
@@ -325,10 +334,10 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				return META_DATA_VALUE_EDEFAULT == null ? metaDataValue != null : !META_DATA_VALUE_EDEFAULT.equals(metaDataValue);
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
+				return dataResourceId != null;
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
 				return metaDataPredicateId != null;
 			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
@@ -347,9 +356,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataResourceId: ");
-		result.append(dataResourceId);
-		result.append(", metaDataValue: ");
+		result.append(" (metaDataValue: ");
 		result.append(metaDataValue);
 		result.append(')');
 		return result.toString();

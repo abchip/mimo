@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.entity.synchronization.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.entity.synchronization.EntitySync;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getBeginningSynchTime <em>Beginning Synch Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getLastCandidateEndTime <em>Last Candidate End Time</em>}</li>
@@ -52,6 +54,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getTotalRowsToStore <em>Total Rows To Store</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getTotalSplits <em>Total Splits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getTotalStoreCalls <em>Total Store Calls</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,26 +64,6 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getEntitySyncId() <em>Entity Sync Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntitySyncId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENTITY_SYNC_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEntitySyncId() <em>Entity Sync Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntitySyncId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String entitySyncId = ENTITY_SYNC_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -560,6 +543,15 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 * @ordered
 	 */
 	protected long totalStoreCalls = TOTAL_STORE_CALLS_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getEntitySyncId() <em>Entity Sync Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntitySyncId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntitySync entitySyncId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -609,7 +601,24 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 * @generated
 	 */
 	@Override
-	public String getEntitySyncId() {
+	public EntitySync getEntitySyncId() {
+		if (entitySyncId != null && ((EObject)entitySyncId).eIsProxy()) {
+			InternalEObject oldEntitySyncId = (InternalEObject)entitySyncId;
+			entitySyncId = (EntitySync)eResolveProxy(oldEntitySyncId);
+			if (entitySyncId != oldEntitySyncId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
+			}
+		}
+		return entitySyncId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntitySync basicGetEntitySyncId() {
 		return entitySyncId;
 	}
 
@@ -619,8 +628,8 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 * @generated
 	 */
 	@Override
-	public void setEntitySyncId(String newEntitySyncId) {
-		String oldEntitySyncId = entitySyncId;
+	public void setEntitySyncId(EntitySync newEntitySyncId) {
+		EntitySync oldEntitySyncId = entitySyncId;
 		entitySyncId = newEntitySyncId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
@@ -1186,8 +1195,6 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
-				return getEntitySyncId();
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__START_DATE:
 				return getStartDate();
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__BEGINNING_SYNCH_TIME:
@@ -1238,6 +1245,9 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 				return getTotalSplits();
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS:
 				return getTotalStoreCalls();
+			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
+				if (resolve) return getEntitySyncId();
+				return basicGetEntitySyncId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1250,9 +1260,6 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
-				setEntitySyncId((String)newValue);
-				return;
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__START_DATE:
 				setStartDate((Date)newValue);
 				return;
@@ -1328,6 +1335,9 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS:
 				setTotalStoreCalls((Long)newValue);
 				return;
+			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
+				setEntitySyncId((EntitySync)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1340,9 +1350,6 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
-				setEntitySyncId(ENTITY_SYNC_ID_EDEFAULT);
-				return;
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__START_DATE:
 				setStartDate(START_DATE_EDEFAULT);
 				return;
@@ -1418,6 +1425,9 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS:
 				setTotalStoreCalls(TOTAL_STORE_CALLS_EDEFAULT);
 				return;
+			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
+				setEntitySyncId((EntitySync)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1430,8 +1440,6 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
-				return ENTITY_SYNC_ID_EDEFAULT == null ? entitySyncId != null : !ENTITY_SYNC_ID_EDEFAULT.equals(entitySyncId);
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__START_DATE:
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__BEGINNING_SYNCH_TIME:
@@ -1482,6 +1490,8 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 				return totalSplits != TOTAL_SPLITS_EDEFAULT;
 			case SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS:
 				return totalStoreCalls != TOTAL_STORE_CALLS_EDEFAULT;
+			case SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID:
+				return entitySyncId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1496,9 +1506,7 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (entitySyncId: ");
-		result.append(entitySyncId);
-		result.append(", startDate: ");
+		result.append(" (startDate: ");
 		result.append(startDate);
 		result.append(", beginningSynchTime: ");
 		result.append(beginningSynchTime);

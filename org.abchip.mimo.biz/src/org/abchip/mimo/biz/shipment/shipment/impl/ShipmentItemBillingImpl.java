@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
@@ -40,26 +41,6 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShipmentItemSeqId() <em>Shipment Item Seq Id</em>}' attribute.
@@ -100,6 +81,16 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	 * @ordered
 	 */
 	protected String invoiceItemSeqId = INVOICE_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
@@ -199,7 +190,24 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -209,8 +217,8 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -247,12 +255,13 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
-				return getShipmentId();
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				return getShipmentItemSeqId();
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				return getInvoiceItemSeqId();
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
 				if (resolve) return getInvoiceId();
 				return basicGetInvoiceId();
@@ -268,14 +277,14 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId((String)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)newValue);
@@ -292,14 +301,14 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId(INVOICE_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)null);
@@ -316,12 +325,12 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				return INVOICE_ITEM_SEQ_ID_EDEFAULT == null ? invoiceItemSeqId != null : !INVOICE_ITEM_SEQ_ID_EDEFAULT.equals(invoiceItemSeqId);
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ID:
+				return shipmentId != null;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
 				return invoiceId != null;
 		}
@@ -338,9 +347,7 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentId: ");
-		result.append(shipmentId);
-		result.append(", shipmentItemSeqId: ");
+		result.append(" (shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);
 		result.append(", invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);

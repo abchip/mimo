@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnItemBilling;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
@@ -30,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl#getShipmentReceiptId <em>Shipment Receipt Id</em>}</li>
  * </ul>
@@ -46,26 +47,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnId = RETURN_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReturnItemSeqId() <em>Return Item Seq Id</em>}' attribute.
@@ -146,6 +127,16 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 * @ordered
 	 */
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReturnHeader returnId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
@@ -301,7 +292,24 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 * @generated
 	 */
 	@Override
-	public String getReturnId() {
+	public ReturnHeader getReturnId() {
+		if (returnId != null && ((EObject)returnId).eIsProxy()) {
+			InternalEObject oldReturnId = (InternalEObject)returnId;
+			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
+			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID, oldReturnId, returnId));
+			}
+		}
+		return returnId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnHeader basicGetReturnId() {
 		return returnId;
 	}
 
@@ -311,8 +319,8 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 * @generated
 	 */
 	@Override
-	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
+	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID, oldReturnId, returnId));
@@ -389,8 +397,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
-				return getReturnId();
 			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ITEM_SEQ_ID:
 				return getReturnItemSeqId();
 			case ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
@@ -399,6 +405,9 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 				return getAmount();
 			case ReturnPackage.RETURN_ITEM_BILLING__QUANTITY:
 				return getQuantity();
+			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
+				if (resolve) return getReturnId();
+				return basicGetReturnId();
 			case ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ID:
 				if (resolve) return getInvoiceId();
 				return basicGetInvoiceId();
@@ -417,9 +426,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
-				setReturnId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId((String)newValue);
 				return;
@@ -431,6 +437,9 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 				return;
 			case ReturnPackage.RETURN_ITEM_BILLING__QUANTITY:
 				setQuantity((BigDecimal)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
+				setReturnId((ReturnHeader)newValue);
 				return;
 			case ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)newValue);
@@ -450,9 +459,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
-				setReturnId(RETURN_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId(RETURN_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -464,6 +470,9 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 				return;
 			case ReturnPackage.RETURN_ITEM_BILLING__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
+				setReturnId((ReturnHeader)null);
 				return;
 			case ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)null);
@@ -483,8 +492,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
-				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
 			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ITEM_SEQ_ID:
 				return RETURN_ITEM_SEQ_ID_EDEFAULT == null ? returnItemSeqId != null : !RETURN_ITEM_SEQ_ID_EDEFAULT.equals(returnItemSeqId);
 			case ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
@@ -493,6 +500,8 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
 			case ReturnPackage.RETURN_ITEM_BILLING__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+			case ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID:
+				return returnId != null;
 			case ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ID:
 				return invoiceId != null;
 			case ReturnPackage.RETURN_ITEM_BILLING__SHIPMENT_RECEIPT_ID:
@@ -511,9 +520,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnId: ");
-		result.append(returnId);
-		result.append(", returnItemSeqId: ");
+		result.append(" (returnItemSeqId: ");
 		result.append(returnItemSeqId);
 		result.append(", invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);

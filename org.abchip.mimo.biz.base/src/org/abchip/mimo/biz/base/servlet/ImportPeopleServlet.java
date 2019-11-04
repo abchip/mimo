@@ -96,13 +96,13 @@ public class ImportPeopleServlet extends BaseServlet {
 
 						// Party Role
 						PartyRole partyRole = frameManager.createEntity(PartyRole.class);
-						partyRole.setPartyId(id);
+						partyRole.setPartyId(person);
 						partyRole.setRoleTypeId(frameManager.createProxy(RoleType.class, "CUSTOMER"));
 						partyRoleWriter.create(partyRole, true);
 
 						// PartyTaxAuthInfo
 						PartyTaxAuthInfo partyTaxAuthInfo = frameManager.createEntity(PartyTaxAuthInfo.class);
-						partyTaxAuthInfo.setPartyId(id);
+						partyTaxAuthInfo.setPartyId(person);
 						partyTaxAuthInfo.setFromDate(new Date());
 						partyTaxAuthInfo.setTaxAuthGeoId("ITA");
 						partyTaxAuthInfo.setTaxAuthPartyId("ITA_ADE");

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentBoxTypeImpl#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentBoxTypeImpl#getOversizeCode <em>Oversize Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentBoxTypeImpl#getPackagingTypeCode <em>Packaging Type Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentBoxTypeImpl#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentBoxTypeImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -40,26 +41,6 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentBoxTypeId() <em>Shipment Box Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentBoxTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_BOX_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentBoxTypeId() <em>Shipment Box Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentBoxTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentBoxTypeId = SHIPMENT_BOX_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOversizeCode() <em>Oversize Code</em>}' attribute.
@@ -100,6 +81,16 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 * @ordered
 	 */
 	protected String packagingTypeCode = PACKAGING_TYPE_CODE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentBoxTypeId() <em>Shipment Box Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentBoxTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShipmentBoxType shipmentBoxTypeId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -222,7 +213,24 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 * @generated
 	 */
 	@Override
-	public String getShipmentBoxTypeId() {
+	public ShipmentBoxType getShipmentBoxTypeId() {
+		if (shipmentBoxTypeId != null && ((EObject)shipmentBoxTypeId).eIsProxy()) {
+			InternalEObject oldShipmentBoxTypeId = (InternalEObject)shipmentBoxTypeId;
+			shipmentBoxTypeId = (ShipmentBoxType)eResolveProxy(oldShipmentBoxTypeId);
+			if (shipmentBoxTypeId != oldShipmentBoxTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
+			}
+		}
+		return shipmentBoxTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentBoxType basicGetShipmentBoxTypeId() {
 		return shipmentBoxTypeId;
 	}
 
@@ -232,8 +240,8 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 * @generated
 	 */
 	@Override
-	public void setShipmentBoxTypeId(String newShipmentBoxTypeId) {
-		String oldShipmentBoxTypeId = shipmentBoxTypeId;
+	public void setShipmentBoxTypeId(ShipmentBoxType newShipmentBoxTypeId) {
+		ShipmentBoxType oldShipmentBoxTypeId = shipmentBoxTypeId;
 		shipmentBoxTypeId = newShipmentBoxTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
@@ -247,12 +255,13 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
-				return getShipmentBoxTypeId();
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE:
 				return getOversizeCode();
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE:
 				return getPackagingTypeCode();
+			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
+				if (resolve) return getShipmentBoxTypeId();
+				return basicGetShipmentBoxTypeId();
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -268,14 +277,14 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
-				setShipmentBoxTypeId((String)newValue);
-				return;
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE:
 				setOversizeCode((String)newValue);
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE:
 				setPackagingTypeCode((String)newValue);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
+				setShipmentBoxTypeId((ShipmentBoxType)newValue);
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -292,14 +301,14 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
-				setShipmentBoxTypeId(SHIPMENT_BOX_TYPE_ID_EDEFAULT);
-				return;
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE:
 				setOversizeCode(OVERSIZE_CODE_EDEFAULT);
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE:
 				setPackagingTypeCode(PACKAGING_TYPE_CODE_EDEFAULT);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
+				setShipmentBoxTypeId((ShipmentBoxType)null);
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID:
 				setPartyId((Party)null);
@@ -316,12 +325,12 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
-				return SHIPMENT_BOX_TYPE_ID_EDEFAULT == null ? shipmentBoxTypeId != null : !SHIPMENT_BOX_TYPE_ID_EDEFAULT.equals(shipmentBoxTypeId);
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE:
 				return OVERSIZE_CODE_EDEFAULT == null ? oversizeCode != null : !OVERSIZE_CODE_EDEFAULT.equals(oversizeCode);
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE:
 				return PACKAGING_TYPE_CODE_EDEFAULT == null ? packagingTypeCode != null : !PACKAGING_TYPE_CODE_EDEFAULT.equals(packagingTypeCode);
+			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID:
+				return shipmentBoxTypeId != null;
 			case Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID:
 				return partyId != null;
 		}
@@ -338,9 +347,7 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentBoxTypeId: ");
-		result.append(shipmentBoxTypeId);
-		result.append(", oversizeCode: ");
+		result.append(" (oversizeCode: ");
 		result.append(oversizeCode);
 		result.append(", packagingTypeCode: ");
 		result.append(packagingTypeCode);

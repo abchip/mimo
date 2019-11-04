@@ -60,31 +60,30 @@ public interface ContentPurposeOperation extends BizEntity {
 	void setContentOperationId(ContentOperation value);
 
 	/**
-	 * Returns the value of the '<em><b>Content Purpose Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Purpose Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Purpose Type Id</em>' attribute.
-	 * @see #setContentPurposeTypeId(String)
+	 * @return the value of the '<em>Content Purpose Type Id</em>' reference.
+	 * @see #setContentPurposeTypeId(ContentPurposeType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_ContentPurposeTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="contentPurposeTypeId"
 	 * @generated
 	 */
-	String getContentPurposeTypeId();
+	ContentPurposeType getContentPurposeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentPurposeOperation#getContentPurposeTypeId <em>Content Purpose Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentPurposeOperation#getContentPurposeTypeId <em>Content Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content Purpose Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Content Purpose Type Id</em>' reference.
 	 * @see #getContentPurposeTypeId()
 	 * @generated
 	 */
-	void setContentPurposeTypeId(String value);
+	void setContentPurposeTypeId(ContentPurposeType value);
 
 	/**
 	 * Returns the value of the '<em><b>Privilege Enum Id</b></em>' reference.

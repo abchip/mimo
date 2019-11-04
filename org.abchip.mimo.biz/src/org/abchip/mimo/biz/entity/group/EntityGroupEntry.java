@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityOrPackage <em>Entity Or Package</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getApplEnumId <em>Appl Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroupEntry()
@@ -55,31 +55,30 @@ public interface EntityGroupEntry extends BizEntity {
 	void setApplEnumId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Entity Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Entity Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Group Id</em>' attribute.
-	 * @see #setEntityGroupId(String)
+	 * @return the value of the '<em>Entity Group Id</em>' reference.
+	 * @see #setEntityGroupId(EntityGroup)
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroupEntry_EntityGroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="entityGroupId"
 	 * @generated
 	 */
-	String getEntityGroupId();
+	EntityGroup getEntityGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entity Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Entity Group Id</em>' reference.
 	 * @see #getEntityGroupId()
 	 * @generated
 	 */
-	void setEntityGroupId(String value);
+	void setEntityGroupId(EntityGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Entity Or Package</b></em>' attribute.

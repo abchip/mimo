@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.website.WebSitePathAlias;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -29,12 +30,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getPathAlias <em>Path Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getAliasTo <em>Alias To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getMapKey <em>Map Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePathAliasImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
@@ -46,26 +47,6 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WEB_SITE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getPathAlias() <em>Path Alias</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -165,6 +146,16 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebSiteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WebSite webSiteId;
 
 	/**
 	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
@@ -356,7 +347,24 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 * @generated
 	 */
 	@Override
-	public String getWebSiteId() {
+	public WebSite getWebSiteId() {
+		if (webSiteId != null && ((EObject)webSiteId).eIsProxy()) {
+			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
+			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
+			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID, oldWebSiteId, webSiteId));
+			}
+		}
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebSite basicGetWebSiteId() {
 		return webSiteId;
 	}
 
@@ -366,8 +374,8 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 * @generated
 	 */
 	@Override
-	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
+	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID, oldWebSiteId, webSiteId));
@@ -381,8 +389,6 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
-				return getWebSiteId();
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__PATH_ALIAS:
 				return getPathAlias();
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__FROM_DATE:
@@ -393,6 +399,9 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 				return getMapKey();
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__THRU_DATE:
 				return getThruDate();
+			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
+				if (resolve) return getWebSiteId();
+				return basicGetWebSiteId();
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__CONTENT_ID:
 				if (resolve) return getContentId();
 				return basicGetContentId();
@@ -408,9 +417,6 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
-				setWebSiteId((String)newValue);
-				return;
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__PATH_ALIAS:
 				setPathAlias((String)newValue);
 				return;
@@ -425,6 +431,9 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 				return;
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
+				setWebSiteId((WebSite)newValue);
 				return;
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__CONTENT_ID:
 				setContentId((Content)newValue);
@@ -441,9 +450,6 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
-				setWebSiteId(WEB_SITE_ID_EDEFAULT);
-				return;
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__PATH_ALIAS:
 				setPathAlias(PATH_ALIAS_EDEFAULT);
 				return;
@@ -458,6 +464,9 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 				return;
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
+				setWebSiteId((WebSite)null);
 				return;
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__CONTENT_ID:
 				setContentId((Content)null);
@@ -474,8 +483,6 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
-				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__PATH_ALIAS:
 				return PATH_ALIAS_EDEFAULT == null ? pathAlias != null : !PATH_ALIAS_EDEFAULT.equals(pathAlias);
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__FROM_DATE:
@@ -486,6 +493,8 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 				return MAP_KEY_EDEFAULT == null ? mapKey != null : !MAP_KEY_EDEFAULT.equals(mapKey);
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID:
+				return webSiteId != null;
 			case WebsitePackage.WEB_SITE_PATH_ALIAS__CONTENT_ID:
 				return contentId != null;
 		}
@@ -502,9 +511,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (webSiteId: ");
-		result.append(webSiteId);
-		result.append(", pathAlias: ");
+		result.append(" (pathAlias: ");
 		result.append(pathAlias);
 		result.append(", fromDate: ");
 		result.append(fromDate);

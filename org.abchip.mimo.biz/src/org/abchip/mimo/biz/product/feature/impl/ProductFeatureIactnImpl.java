@@ -27,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureIactnImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureIactnImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureIactnImpl#getProductFeatureIactnTypeId <em>Product Feature Iactn Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureIactnImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureIactnImpl#getProductFeatureIdTo <em>Product Feature Id To</em>}</li>
  * </ul>
  *
@@ -41,26 +41,6 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +70,16 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 * @ordered
 	 */
 	protected ProductFeatureIactnType productFeatureIactnTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeatureId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeature productFeatureId;
 
 	/**
 	 * The cached value of the '{@link #getProductFeatureIdTo() <em>Product Feature Id To</em>}' reference.
@@ -189,7 +179,24 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -199,8 +206,8 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -254,13 +261,14 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_ID:
 				return getProductId();
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_IACTN_TYPE_ID:
 				if (resolve) return getProductFeatureIactnTypeId();
 				return basicGetProductFeatureIactnTypeId();
+			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID_TO:
 				if (resolve) return getProductFeatureIdTo();
 				return basicGetProductFeatureIdTo();
@@ -276,14 +284,14 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_IACTN_TYPE_ID:
 				setProductFeatureIactnTypeId((ProductFeatureIactnType)newValue);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID_TO:
 				setProductFeatureIdTo((ProductFeature)newValue);
@@ -300,14 +308,14 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_IACTN_TYPE_ID:
 				setProductFeatureIactnTypeId((ProductFeatureIactnType)null);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)null);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID_TO:
 				setProductFeatureIdTo((ProductFeature)null);
@@ -324,12 +332,12 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_IACTN_TYPE_ID:
 				return productFeatureIactnTypeId != null;
+			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID:
+				return productFeatureId != null;
 			case FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID_TO:
 				return productFeatureIdTo != null;
 		}
@@ -346,9 +354,7 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productFeatureId: ");
-		result.append(productFeatureId);
-		result.append(", productId: ");
+		result.append(" (productId: ");
 		result.append(productId);
 		result.append(')');
 		return result.toString();

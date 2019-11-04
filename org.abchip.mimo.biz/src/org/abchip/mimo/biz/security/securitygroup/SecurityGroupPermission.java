@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}</li>
  * </ul>
  *
@@ -59,31 +59,30 @@ public interface SecurityGroupPermission extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Group Id</em>' attribute.
-	 * @see #setGroupId(String)
+	 * @return the value of the '<em>Group Id</em>' reference.
+	 * @see #setGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_GroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="groupId"
 	 * @generated
 	 */
-	String getGroupId();
+	SecurityGroup getGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Group Id</em>' reference.
 	 * @see #getGroupId()
 	 * @generated
 	 */
-	void setGroupId(String value);
+	void setGroupId(SecurityGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Permission Id</b></em>' reference.

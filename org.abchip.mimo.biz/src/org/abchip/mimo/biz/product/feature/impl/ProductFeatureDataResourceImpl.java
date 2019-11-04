@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.feature.impl;
 
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
@@ -39,24 +40,14 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATA_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
+	protected DataResource dataResourceId;
 
 	/**
 	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
@@ -93,7 +84,24 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getDataResourceId() {
+	public DataResource getDataResourceId() {
+		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
+			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
+			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
+			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+			}
+		}
+		return dataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetDataResourceId() {
 		return dataResourceId;
 	}
 
@@ -103,8 +111,8 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(String newDataResourceId) {
-		String oldDataResourceId = dataResourceId;
+	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
@@ -159,7 +167,8 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return getDataResourceId();
+				if (resolve) return getDataResourceId();
+				return basicGetDataResourceId();
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
 				if (resolve) return getProductFeatureId();
 				return basicGetProductFeatureId();
@@ -176,7 +185,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((String)newValue);
+				setDataResourceId((DataResource)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
 				setProductFeatureId((ProductFeature)newValue);
@@ -194,7 +203,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
+				setDataResourceId((DataResource)null);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
 				setProductFeatureId((ProductFeature)null);
@@ -212,27 +221,11 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
+				return dataResourceId != null;
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
 				return productFeatureId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataResourceId: ");
-		result.append(dataResourceId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductFeatureDataResourceImpl

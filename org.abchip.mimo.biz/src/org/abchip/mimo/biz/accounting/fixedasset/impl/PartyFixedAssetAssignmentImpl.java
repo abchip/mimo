@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.PartyFixedAssetAssignment;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -30,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getAllocatedDate <em>Allocated Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getStatusId <em>Status Id</em>}</li>
@@ -47,24 +48,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -137,6 +120,15 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 	/**
 	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -259,7 +251,24 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -269,8 +278,8 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
@@ -427,8 +436,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
-				return getPartyId();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ALLOCATED_DATE:
@@ -437,6 +444,9 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 				return getComments();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
 				if (resolve) return getRoleTypeId();
 				return basicGetRoleTypeId();
@@ -458,9 +468,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -472,6 +479,9 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)newValue);
@@ -494,9 +504,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -508,6 +515,9 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
 				setRoleTypeId((RoleType)null);
@@ -530,8 +540,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ALLOCATED_DATE:
@@ -540,6 +548,8 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
+				return partyId != null;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
 				return roleTypeId != null;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
@@ -560,9 +570,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", allocatedDate: ");
 		result.append(allocatedDate);

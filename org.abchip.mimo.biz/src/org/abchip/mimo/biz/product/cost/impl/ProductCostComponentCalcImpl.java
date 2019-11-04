@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.abchip.mimo.biz.product.cost.ProductCostComponentCalc;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.cost.impl.ProductCostComponentCalcImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.ProductCostComponentCalcImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.ProductCostComponentCalcImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.ProductCostComponentCalcImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.impl.ProductCostComponentCalcImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.ProductCostComponentCalcImpl#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.ProductCostComponentCalcImpl#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
  * </ul>
@@ -45,26 +46,6 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,6 +105,16 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getCostComponentTypeId() <em>Cost Component Type Id</em>}' reference.
@@ -193,7 +184,24 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -203,8 +211,8 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID, oldProductId, productId));
@@ -344,14 +352,15 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
-				return getProductId();
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__FROM_DATE:
 				return getFromDate();
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__THRU_DATE:
 				return getThruDate();
+			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_TYPE_ID:
 				if (resolve) return getCostComponentTypeId();
 				return basicGetCostComponentTypeId();
@@ -370,9 +379,6 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -381,6 +387,9 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 				return;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_TYPE_ID:
 				setCostComponentTypeId((CostComponentType)newValue);
@@ -400,9 +409,6 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -411,6 +417,9 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 				return;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_TYPE_ID:
 				setCostComponentTypeId((CostComponentType)null);
@@ -430,14 +439,14 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID:
+				return productId != null;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_TYPE_ID:
 				return costComponentTypeId != null;
 			case CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID:
@@ -456,9 +465,7 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);

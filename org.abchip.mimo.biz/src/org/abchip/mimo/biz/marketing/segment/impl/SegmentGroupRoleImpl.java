@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.marketing.segment.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupRole;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.abchip.mimo.biz.party.party.Party;
@@ -42,24 +43,14 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getSegmentGroupId() <em>Segment Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getSegmentGroupId() <em>Segment Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSegmentGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SEGMENT_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSegmentGroupId() <em>Segment Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSegmentGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String segmentGroupId = SEGMENT_GROUP_ID_EDEFAULT;
+	protected SegmentGroup segmentGroupId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -186,7 +177,24 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	 * @generated
 	 */
 	@Override
-	public String getSegmentGroupId() {
+	public SegmentGroup getSegmentGroupId() {
+		if (segmentGroupId != null && ((EObject)segmentGroupId).eIsProxy()) {
+			InternalEObject oldSegmentGroupId = (InternalEObject)segmentGroupId;
+			segmentGroupId = (SegmentGroup)eResolveProxy(oldSegmentGroupId);
+			if (segmentGroupId != oldSegmentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
+			}
+		}
+		return segmentGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SegmentGroup basicGetSegmentGroupId() {
 		return segmentGroupId;
 	}
 
@@ -196,8 +204,8 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	 * @generated
 	 */
 	@Override
-	public void setSegmentGroupId(String newSegmentGroupId) {
-		String oldSegmentGroupId = segmentGroupId;
+	public void setSegmentGroupId(SegmentGroup newSegmentGroupId) {
+		SegmentGroup oldSegmentGroupId = segmentGroupId;
 		segmentGroupId = newSegmentGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
@@ -212,7 +220,8 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID:
-				return getSegmentGroupId();
+				if (resolve) return getSegmentGroupId();
+				return basicGetSegmentGroupId();
 			case SegmentPackage.SEGMENT_GROUP_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -232,7 +241,7 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID:
-				setSegmentGroupId((String)newValue);
+				setSegmentGroupId((SegmentGroup)newValue);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -253,7 +262,7 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID:
-				setSegmentGroupId(SEGMENT_GROUP_ID_EDEFAULT);
+				setSegmentGroupId((SegmentGroup)null);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -274,29 +283,13 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID:
-				return SEGMENT_GROUP_ID_EDEFAULT == null ? segmentGroupId != null : !SEGMENT_GROUP_ID_EDEFAULT.equals(segmentGroupId);
+				return segmentGroupId != null;
 			case SegmentPackage.SEGMENT_GROUP_ROLE__PARTY_ID:
 				return partyId != null;
 			case SegmentPackage.SEGMENT_GROUP_ROLE__ROLE_TYPE_ID:
 				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (segmentGroupId: ");
-		result.append(segmentGroupId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SegmentGroupRoleImpl

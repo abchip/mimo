@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.quote.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteWorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
@@ -40,24 +41,14 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
+	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getQuoteId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String QUOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteId = QUOTE_ID_EDEFAULT;
+	protected Quote quoteId;
 
 	/**
 	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
@@ -94,7 +85,24 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	 * @generated
 	 */
 	@Override
-	public String getQuoteId() {
+	public Quote getQuoteId() {
+		if (quoteId != null && ((EObject)quoteId).eIsProxy()) {
+			InternalEObject oldQuoteId = (InternalEObject)quoteId;
+			quoteId = (Quote)eResolveProxy(oldQuoteId);
+			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID, oldQuoteId, quoteId));
+			}
+		}
+		return quoteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quote basicGetQuoteId() {
 		return quoteId;
 	}
 
@@ -104,8 +112,8 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	 * @generated
 	 */
 	@Override
-	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
+	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID, oldQuoteId, quoteId));
@@ -160,7 +168,8 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID:
-				return getQuoteId();
+				if (resolve) return getQuoteId();
+				return basicGetQuoteId();
 			case QuotePackage.QUOTE_WORK_EFFORT__WORK_EFFORT_ID:
 				if (resolve) return getWorkEffortId();
 				return basicGetWorkEffortId();
@@ -177,7 +186,7 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID:
-				setQuoteId((String)newValue);
+				setQuoteId((Quote)newValue);
 				return;
 			case QuotePackage.QUOTE_WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)newValue);
@@ -195,7 +204,7 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID:
-				setQuoteId(QUOTE_ID_EDEFAULT);
+				setQuoteId((Quote)null);
 				return;
 			case QuotePackage.QUOTE_WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId((WorkEffort)null);
@@ -213,27 +222,11 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID:
-				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
+				return quoteId != null;
 			case QuotePackage.QUOTE_WORK_EFFORT__WORK_EFFORT_ID:
 				return workEffortId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quoteId: ");
-		result.append(quoteId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //QuoteWorkEffortImpl

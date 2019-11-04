@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyTypeAttr()
@@ -82,30 +82,29 @@ public interface PartyTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Type Id</em>' attribute.
-	 * @see #setPartyTypeId(String)
+	 * @return the value of the '<em>Party Type Id</em>' reference.
+	 * @see #setPartyTypeId(PartyType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyTypeAttr_PartyTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="partyTypeId"
 	 * @generated
 	 */
-	String getPartyTypeId();
+	PartyType getPartyTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Type Id</em>' reference.
 	 * @see #getPartyTypeId()
 	 * @generated
 	 */
-	void setPartyTypeId(String value);
+	void setPartyTypeId(PartyType value);
 
 } // PartyTypeAttr

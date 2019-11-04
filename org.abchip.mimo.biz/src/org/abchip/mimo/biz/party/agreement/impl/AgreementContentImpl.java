@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.party.agreement.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementContent;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementContentImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementContentImpl#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementContentImpl#getAgreementContentTypeId <em>Agreement Content Type Id</em>}</li>
  * </ul>
  *
@@ -44,24 +45,6 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -126,6 +109,15 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	 */
 	protected Agreement agreementId;
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+	/**
 	 * The cached value of the '{@link #getAgreementContentTypeId() <em>Agreement Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,7 +175,24 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -193,8 +202,8 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -334,8 +343,6 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
-				return getContentId();
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_CONTENT__FROM_DATE:
@@ -345,6 +352,9 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ID:
 				if (resolve) return getAgreementId();
 				return basicGetAgreementId();
+			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_CONTENT_TYPE_ID:
 				if (resolve) return getAgreementContentTypeId();
 				return basicGetAgreementContentTypeId();
@@ -360,9 +370,6 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
 				return;
@@ -374,6 +381,9 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 				return;
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ID:
 				setAgreementId((Agreement)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_CONTENT_TYPE_ID:
 				setAgreementContentTypeId((AgreementContentType)newValue);
@@ -390,9 +400,6 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -404,6 +411,9 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 				return;
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ID:
 				setAgreementId((Agreement)null);
+				return;
+			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_CONTENT_TYPE_ID:
 				setAgreementContentTypeId((AgreementContentType)null);
@@ -420,8 +430,6 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_CONTENT__FROM_DATE:
@@ -430,6 +438,8 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_ID:
 				return agreementId != null;
+			case AgreementPackage.AGREEMENT_CONTENT__CONTENT_ID:
+				return contentId != null;
 			case AgreementPackage.AGREEMENT_CONTENT__AGREEMENT_CONTENT_TYPE_ID:
 				return agreementContentTypeId != null;
 		}
@@ -446,9 +456,7 @@ public class AgreementContentImpl extends BizEntityTypedImpl<AgreementContentTyp
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", agreementItemSeqId: ");
+		result.append(" (agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

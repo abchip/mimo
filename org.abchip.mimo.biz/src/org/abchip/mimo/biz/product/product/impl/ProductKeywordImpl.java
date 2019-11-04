@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.product.impl;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductKeyword;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductKeywordImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductKeywordImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductKeywordImpl#getRelevancyWeight <em>Relevancy Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductKeywordImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductKeywordImpl#getKeywordTypeId <em>Keyword Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductKeywordImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
@@ -41,26 +42,6 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
@@ -101,6 +82,16 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 * @ordered
 	 */
 	protected long relevancyWeight = RELEVANCY_WEIGHT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getKeywordTypeId() <em>Keyword Type Id</em>}' reference.
@@ -273,7 +264,24 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -283,8 +291,8 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID, oldProductId, productId));
@@ -298,12 +306,13 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD:
 				return getKeyword();
 			case ProductPackage.PRODUCT_KEYWORD__RELEVANCY_WEIGHT:
 				return getRelevancyWeight();
+			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD_TYPE_ID:
 				if (resolve) return getKeywordTypeId();
 				return basicGetKeywordTypeId();
@@ -322,14 +331,14 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD:
 				setKeyword((String)newValue);
 				return;
 			case ProductPackage.PRODUCT_KEYWORD__RELEVANCY_WEIGHT:
 				setRelevancyWeight((Long)newValue);
+				return;
+			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD_TYPE_ID:
 				setKeywordTypeId((Enumeration)newValue);
@@ -349,14 +358,14 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD:
 				setKeyword(KEYWORD_EDEFAULT);
 				return;
 			case ProductPackage.PRODUCT_KEYWORD__RELEVANCY_WEIGHT:
 				setRelevancyWeight(RELEVANCY_WEIGHT_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD_TYPE_ID:
 				setKeywordTypeId((Enumeration)null);
@@ -376,12 +385,12 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD:
 				return KEYWORD_EDEFAULT == null ? keyword != null : !KEYWORD_EDEFAULT.equals(keyword);
 			case ProductPackage.PRODUCT_KEYWORD__RELEVANCY_WEIGHT:
 				return relevancyWeight != RELEVANCY_WEIGHT_EDEFAULT;
+			case ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID:
+				return productId != null;
 			case ProductPackage.PRODUCT_KEYWORD__KEYWORD_TYPE_ID:
 				return keywordTypeId != null;
 			case ProductPackage.PRODUCT_KEYWORD__STATUS_ID:
@@ -400,9 +409,7 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", keyword: ");
+		result.append(" (keyword: ");
 		result.append(keyword);
 		result.append(", relevancyWeight: ");
 		result.append(relevancyWeight);

@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
 import org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermAttrImpl#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermAttrImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermAttrImpl#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,24 +38,6 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getBillingAccountTermId() <em>Billing Account Term Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountTermId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BILLING_ACCOUNT_TERM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBillingAccountTermId() <em>Billing Account Term Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountTermId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billingAccountTermId = BILLING_ACCOUNT_TERM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,6 +74,15 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBillingAccountTermId() <em>Billing Account Term Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBillingAccountTermId()
+	 * @generated
+	 * @ordered
+	 */
+	protected BillingAccountTerm billingAccountTermId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +155,24 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	 * @generated
 	 */
 	@Override
-	public String getBillingAccountTermId() {
+	public BillingAccountTerm getBillingAccountTermId() {
+		if (billingAccountTermId != null && ((EObject)billingAccountTermId).eIsProxy()) {
+			InternalEObject oldBillingAccountTermId = (InternalEObject)billingAccountTermId;
+			billingAccountTermId = (BillingAccountTerm)eResolveProxy(oldBillingAccountTermId);
+			if (billingAccountTermId != oldBillingAccountTermId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID, oldBillingAccountTermId, billingAccountTermId));
+			}
+		}
+		return billingAccountTermId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BillingAccountTerm basicGetBillingAccountTermId() {
 		return billingAccountTermId;
 	}
 
@@ -171,8 +182,8 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	 * @generated
 	 */
 	@Override
-	public void setBillingAccountTermId(String newBillingAccountTermId) {
-		String oldBillingAccountTermId = billingAccountTermId;
+	public void setBillingAccountTermId(BillingAccountTerm newBillingAccountTermId) {
+		BillingAccountTerm oldBillingAccountTermId = billingAccountTermId;
 		billingAccountTermId = newBillingAccountTermId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID, oldBillingAccountTermId, billingAccountTermId));
@@ -186,12 +197,13 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
-				return getBillingAccountTermId();
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_NAME:
 				return getAttrName();
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_VALUE:
 				return getAttrValue();
+			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
+				if (resolve) return getBillingAccountTermId();
+				return basicGetBillingAccountTermId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,14 +216,14 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
-				setBillingAccountTermId((String)newValue);
-				return;
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
+				setBillingAccountTermId((BillingAccountTerm)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,14 +237,14 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
-				setBillingAccountTermId(BILLING_ACCOUNT_TERM_ID_EDEFAULT);
-				return;
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
+				setBillingAccountTermId((BillingAccountTerm)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -246,12 +258,12 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
-				return BILLING_ACCOUNT_TERM_ID_EDEFAULT == null ? billingAccountTermId != null : !BILLING_ACCOUNT_TERM_ID_EDEFAULT.equals(billingAccountTermId);
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID:
+				return billingAccountTermId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -266,9 +278,7 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (billingAccountTermId: ");
-		result.append(billingAccountTermId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrValue: ");
 		result.append(attrValue);

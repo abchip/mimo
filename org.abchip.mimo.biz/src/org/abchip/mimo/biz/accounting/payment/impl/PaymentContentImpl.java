@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentContent;
 import org.abchip.mimo.biz.accounting.payment.PaymentContentType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentImpl#getPaymentId <em>Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentImpl#getPaymentContentTypeId <em>Payment Content Type Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,6 +90,15 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 */
 	protected Payment paymentId;
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+	/**
 	 * The cached value of the '{@link #getPaymentContentTypeId() <em>Payment Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -143,7 +133,24 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -153,8 +160,8 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -294,8 +301,6 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
-				return getContentId();
 			case PaymentPackage.PAYMENT_CONTENT__FROM_DATE:
 				return getFromDate();
 			case PaymentPackage.PAYMENT_CONTENT__THRU_DATE:
@@ -303,6 +308,9 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_ID:
 				if (resolve) return getPaymentId();
 				return basicGetPaymentId();
+			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID:
 				if (resolve) return getPaymentContentTypeId();
 				return basicGetPaymentContentTypeId();
@@ -318,9 +326,6 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -329,6 +334,9 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 				return;
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_ID:
 				setPaymentId((Payment)newValue);
+				return;
+			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID:
 				setPaymentContentTypeId((PaymentContentType)newValue);
@@ -345,9 +353,6 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -356,6 +361,9 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 				return;
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_ID:
 				setPaymentId((Payment)null);
+				return;
+			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID:
 				setPaymentContentTypeId((PaymentContentType)null);
@@ -372,14 +380,14 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case PaymentPackage.PAYMENT_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PaymentPackage.PAYMENT_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_ID:
 				return paymentId != null;
+			case PaymentPackage.PAYMENT_CONTENT__CONTENT_ID:
+				return contentId != null;
 			case PaymentPackage.PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID:
 				return paymentContentTypeId != null;
 		}
@@ -396,9 +404,7 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

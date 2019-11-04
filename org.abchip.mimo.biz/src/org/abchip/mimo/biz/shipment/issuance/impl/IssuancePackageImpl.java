@@ -813,8 +813,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getItemIssuanceRole_ItemIssuanceId() {
-		return (EAttribute)itemIssuanceRoleEClass.getEStructuralFeatures().get(0);
+	public EReference getItemIssuanceRole_ItemIssuanceId() {
+		return (EReference)itemIssuanceRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -834,7 +834,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuanceRole_RoleTypeId() {
-		return (EAttribute)itemIssuanceRoleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)itemIssuanceRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -882,8 +882,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID);
 
 		itemIssuanceRoleEClass = createEClass(ITEM_ISSUANCE_ROLE);
-		createEAttribute(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID);
 		createEAttribute(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID);
+		createEReference(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID);
 		createEReference(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__PARTY_ID);
 	}
 
@@ -951,8 +951,9 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		addEOperation(itemIssuanceEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(itemIssuanceRoleEClass, ItemIssuanceRole.class, "ItemIssuanceRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getItemIssuanceRole_ItemIssuanceId(), ecorePackage.getEString(), "itemIssuanceId", null, 1, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuanceRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItemIssuanceRole_ItemIssuanceId(), this.getItemIssuance(), null, "itemIssuanceId", null, 0, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getItemIssuanceRole_ItemIssuanceId().getEKeys().add(this.getItemIssuance_ItemIssuanceId());
 		initEReference(getItemIssuanceRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getItemIssuanceRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
@@ -985,12 +986,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		   });
 		addAnnotation
 		  (getItemIssuance_ItemIssuanceId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getItemIssuanceRole_ItemIssuanceId(),
 		   source,
 		   new String[] {
 			   "key", "true"

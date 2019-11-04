@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemTypeAttr()
@@ -82,30 +82,29 @@ public interface AgreementItemTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Item Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Item Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Item Type Id</em>' attribute.
-	 * @see #setAgreementItemTypeId(String)
+	 * @return the value of the '<em>Agreement Item Type Id</em>' reference.
+	 * @see #setAgreementItemTypeId(AgreementItemType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemTypeAttr_AgreementItemTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="agreementItemTypeId"
 	 * @generated
 	 */
-	String getAgreementItemTypeId();
+	AgreementItemType getAgreementItemTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr#getAgreementItemTypeId <em>Agreement Item Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr#getAgreementItemTypeId <em>Agreement Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Item Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Item Type Id</em>' reference.
 	 * @see #getAgreementItemTypeId()
 	 * @generated
 	 */
-	void setAgreementItemTypeId(String value);
+	void setAgreementItemTypeId(AgreementItemType value);
 
 } // AgreementItemTypeAttr

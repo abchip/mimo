@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getShipmentRouteSegmentId <em>Shipment Route Segment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getBoxNumber <em>Box Number</em>}</li>
@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getPackageServiceCost <em>Package Service Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getPackageTransportCost <em>Package Transport Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getTrackingCode <em>Tracking Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  * </ul>
  *
@@ -54,26 +55,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShipmentPackageSeqId() <em>Shipment Package Seq Id</em>}' attribute.
@@ -354,6 +335,16 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 * @ordered
 	 */
 	protected String trackingCode = TRACKING_CODE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
 
 	/**
 	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
@@ -683,7 +674,24 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -693,8 +701,8 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -777,8 +785,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
-				return getShipmentId();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_PACKAGE_SEQ_ID:
 				return getShipmentPackageSeqId();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ROUTE_SEGMENT_ID:
@@ -807,6 +813,9 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return getPackageTransportCost();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				return getTrackingCode();
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
 				if (resolve) return getCurrencyUomId();
 				return basicGetCurrencyUomId();
@@ -822,9 +831,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_PACKAGE_SEQ_ID:
 				setShipmentPackageSeqId((String)newValue);
 				return;
@@ -867,6 +873,9 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				setTrackingCode((String)newValue);
 				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
+				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
 				setCurrencyUomId((Uom)newValue);
 				return;
@@ -882,9 +891,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_PACKAGE_SEQ_ID:
 				setShipmentPackageSeqId(SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT);
 				return;
@@ -927,6 +933,9 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				setTrackingCode(TRACKING_CODE_EDEFAULT);
 				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
+				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
 				setCurrencyUomId((Uom)null);
 				return;
@@ -942,8 +951,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_PACKAGE_SEQ_ID:
 				return SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT == null ? shipmentPackageSeqId != null : !SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT.equals(shipmentPackageSeqId);
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ROUTE_SEGMENT_ID:
@@ -972,6 +979,8 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return PACKAGE_TRANSPORT_COST_EDEFAULT == null ? packageTransportCost != null : !PACKAGE_TRANSPORT_COST_EDEFAULT.equals(packageTransportCost);
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				return TRACKING_CODE_EDEFAULT == null ? trackingCode != null : !TRACKING_CODE_EDEFAULT.equals(trackingCode);
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID:
+				return shipmentId != null;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
 				return currencyUomId != null;
 		}
@@ -988,9 +997,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentId: ");
-		result.append(shipmentId);
-		result.append(", shipmentPackageSeqId: ");
+		result.append(" (shipmentPackageSeqId: ");
 		result.append(shipmentPackageSeqId);
 		result.append(", shipmentRouteSegmentId: ");
 		result.append(shipmentRouteSegmentId);

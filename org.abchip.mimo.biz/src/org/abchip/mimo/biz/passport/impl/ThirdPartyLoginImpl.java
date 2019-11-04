@@ -12,10 +12,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.PassportPackage;
 import org.abchip.mimo.biz.passport.ThirdPartyLogin;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,12 +29,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.ThirdPartyLoginImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.ThirdPartyLoginImpl#getLoginMethTypeId <em>Login Meth Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.ThirdPartyLoginImpl#getLoginProviderId <em>Login Provider Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.ThirdPartyLoginImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.ThirdPartyLoginImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.ThirdPartyLoginImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.ThirdPartyLoginImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,26 +44,6 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLoginMethTypeId() <em>Login Meth Type Id</em>}' attribute.
@@ -163,6 +146,16 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +180,24 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -197,8 +207,8 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -327,8 +337,6 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case PassportPackage.THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID:
 				return getLoginMethTypeId();
 			case PassportPackage.THIRD_PARTY_LOGIN__LOGIN_PROVIDER_ID:
@@ -339,6 +347,9 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 				return getSequenceNum();
 			case PassportPackage.THIRD_PARTY_LOGIN__THRU_DATE:
 				return getThruDate();
+			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -351,9 +362,6 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case PassportPackage.THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID:
 				setLoginMethTypeId((String)newValue);
 				return;
@@ -369,6 +377,9 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 			case PassportPackage.THIRD_PARTY_LOGIN__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -381,9 +392,6 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case PassportPackage.THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID:
 				setLoginMethTypeId(LOGIN_METH_TYPE_ID_EDEFAULT);
 				return;
@@ -399,6 +407,9 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 			case PassportPackage.THIRD_PARTY_LOGIN__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -411,8 +422,6 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case PassportPackage.THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID:
 				return LOGIN_METH_TYPE_ID_EDEFAULT == null ? loginMethTypeId != null : !LOGIN_METH_TYPE_ID_EDEFAULT.equals(loginMethTypeId);
 			case PassportPackage.THIRD_PARTY_LOGIN__LOGIN_PROVIDER_ID:
@@ -423,6 +432,8 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case PassportPackage.THIRD_PARTY_LOGIN__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID:
+				return productStoreId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -437,9 +448,7 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreId: ");
-		result.append(productStoreId);
-		result.append(", loginMethTypeId: ");
+		result.append(" (loginMethTypeId: ");
 		result.append(loginMethTypeId);
 		result.append(", loginProviderId: ");
 		result.append(loginProviderId);

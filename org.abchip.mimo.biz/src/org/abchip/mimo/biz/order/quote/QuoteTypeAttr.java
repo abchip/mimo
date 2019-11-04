@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr()
@@ -82,30 +82,29 @@ public interface QuoteTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Type Id</em>' attribute.
-	 * @see #setQuoteTypeId(String)
+	 * @return the value of the '<em>Quote Type Id</em>' reference.
+	 * @see #setQuoteTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr_QuoteTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="quoteTypeId"
 	 * @generated
 	 */
-	String getQuoteTypeId();
+	QuoteType getQuoteTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Type Id</em>' reference.
 	 * @see #getQuoteTypeId()
 	 * @generated
 	 */
-	void setQuoteTypeId(String value);
+	void setQuoteTypeId(QuoteType value);
 
 } // QuoteTypeAttr

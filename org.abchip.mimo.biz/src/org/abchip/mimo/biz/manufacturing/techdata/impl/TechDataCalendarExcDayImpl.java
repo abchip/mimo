@@ -12,12 +12,15 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl#getCalendarId <em>Calendar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl#getExceptionDateStartTime <em>Exception Date Start Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl#getExceptionCapacity <em>Exception Capacity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl#getUsedCapacity <em>Used Capacity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl#getCalendarId <em>Calendar Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,26 +45,6 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getCalendarId() <em>Calendar Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CALENDAR_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCalendarId() <em>Calendar Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String calendarId = CALENDAR_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getExceptionDateStartTime() <em>Exception Date Start Time</em>}' attribute.
@@ -144,6 +127,16 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	protected BigDecimal usedCapacity = USED_CAPACITY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getCalendarId() <em>Calendar Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCalendarId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TechDataCalendar calendarId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -168,7 +161,24 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 * @generated
 	 */
 	@Override
-	public String getCalendarId() {
+	public TechDataCalendar getCalendarId() {
+		if (calendarId != null && ((EObject)calendarId).eIsProxy()) {
+			InternalEObject oldCalendarId = (InternalEObject)calendarId;
+			calendarId = (TechDataCalendar)eResolveProxy(oldCalendarId);
+			if (calendarId != oldCalendarId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID, oldCalendarId, calendarId));
+			}
+		}
+		return calendarId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TechDataCalendar basicGetCalendarId() {
 		return calendarId;
 	}
 
@@ -178,8 +188,8 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 * @generated
 	 */
 	@Override
-	public void setCalendarId(String newCalendarId) {
-		String oldCalendarId = calendarId;
+	public void setCalendarId(TechDataCalendar newCalendarId) {
+		TechDataCalendar oldCalendarId = calendarId;
 		calendarId = newCalendarId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID, oldCalendarId, calendarId));
@@ -285,8 +295,6 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
-				return getCalendarId();
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_DATE_START_TIME:
 				return getExceptionDateStartTime();
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__DESCRIPTION:
@@ -295,6 +303,9 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 				return getExceptionCapacity();
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__USED_CAPACITY:
 				return getUsedCapacity();
+			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
+				if (resolve) return getCalendarId();
+				return basicGetCalendarId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,9 +318,6 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
-				setCalendarId((String)newValue);
-				return;
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_DATE_START_TIME:
 				setExceptionDateStartTime((Date)newValue);
 				return;
@@ -321,6 +329,9 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 				return;
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__USED_CAPACITY:
 				setUsedCapacity((BigDecimal)newValue);
+				return;
+			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
+				setCalendarId((TechDataCalendar)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,9 +345,6 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
-				setCalendarId(CALENDAR_ID_EDEFAULT);
-				return;
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_DATE_START_TIME:
 				setExceptionDateStartTime(EXCEPTION_DATE_START_TIME_EDEFAULT);
 				return;
@@ -348,6 +356,9 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 				return;
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__USED_CAPACITY:
 				setUsedCapacity(USED_CAPACITY_EDEFAULT);
+				return;
+			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
+				setCalendarId((TechDataCalendar)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,8 +372,6 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
-				return CALENDAR_ID_EDEFAULT == null ? calendarId != null : !CALENDAR_ID_EDEFAULT.equals(calendarId);
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_DATE_START_TIME:
 				return EXCEPTION_DATE_START_TIME_EDEFAULT == null ? exceptionDateStartTime != null : !EXCEPTION_DATE_START_TIME_EDEFAULT.equals(exceptionDateStartTime);
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__DESCRIPTION:
@@ -371,6 +380,8 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 				return EXCEPTION_CAPACITY_EDEFAULT == null ? exceptionCapacity != null : !EXCEPTION_CAPACITY_EDEFAULT.equals(exceptionCapacity);
 			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__USED_CAPACITY:
 				return USED_CAPACITY_EDEFAULT == null ? usedCapacity != null : !USED_CAPACITY_EDEFAULT.equals(usedCapacity);
+			case TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID:
+				return calendarId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,9 +396,7 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (calendarId: ");
-		result.append(calendarId);
-		result.append(", exceptionDateStartTime: ");
+		result.append(" (exceptionDateStartTime: ");
 		result.append(exceptionDateStartTime);
 		result.append(", description: ");
 		result.append(description);

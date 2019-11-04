@@ -83,30 +83,29 @@ public interface InvoiceItemTypeGlAccount extends BizEntity {
 	void setOrganizationPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Item Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Item Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Item Type Id</em>' attribute.
-	 * @see #setInvoiceItemTypeId(String)
+	 * @return the value of the '<em>Invoice Item Type Id</em>' reference.
+	 * @see #setInvoiceItemTypeId(InvoiceItemType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemTypeGlAccount_InvoiceItemTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="invoiceItemTypeId"
 	 * @generated
 	 */
-	String getInvoiceItemTypeId();
+	InvoiceItemType getInvoiceItemTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Item Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Item Type Id</em>' reference.
 	 * @see #getInvoiceItemTypeId()
 	 * @generated
 	 */
-	void setInvoiceItemTypeId(String value);
+	void setInvoiceItemTypeId(InvoiceItemType value);
 
 } // InvoiceItemTypeGlAccount

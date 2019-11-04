@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getReceiptId <em>Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getReceiptId <em>Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -56,31 +56,30 @@ public interface ShipmentReceiptRole extends BizEntity {
 	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Receipt Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Receipt Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Receipt Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Receipt Id</em>' attribute.
-	 * @see #setReceiptId(String)
+	 * @return the value of the '<em>Receipt Id</em>' reference.
+	 * @see #setReceiptId(ShipmentReceipt)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceiptRole_ReceiptId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="receiptId"
 	 * @generated
 	 */
-	String getReceiptId();
+	ShipmentReceipt getReceiptId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getReceiptId <em>Receipt Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole#getReceiptId <em>Receipt Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receipt Id</em>' attribute.
+	 * @param value the new value of the '<em>Receipt Id</em>' reference.
 	 * @see #getReceiptId()
 	 * @generated
 	 */
-	void setReceiptId(String value);
+	void setReceiptId(ShipmentReceipt value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.

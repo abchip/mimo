@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount.impl;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
@@ -36,27 +37,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FinAccountTypeGlAccountImpl extends BizEntityImpl implements FinAccountTypeGlAccount {
 	/**
-	 * The default value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_TYPE_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFinAccountTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String finAccountTypeId = FIN_ACCOUNT_TYPE_ID_EDEFAULT;
+	protected FinAccountType finAccountTypeId;
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -181,7 +173,24 @@ public class FinAccountTypeGlAccountImpl extends BizEntityImpl implements FinAcc
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountTypeId() {
+	public FinAccountType getFinAccountTypeId() {
+		if (finAccountTypeId != null && ((EObject)finAccountTypeId).eIsProxy()) {
+			InternalEObject oldFinAccountTypeId = (InternalEObject)finAccountTypeId;
+			finAccountTypeId = (FinAccountType)eResolveProxy(oldFinAccountTypeId);
+			if (finAccountTypeId != oldFinAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
+			}
+		}
+		return finAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccountType basicGetFinAccountTypeId() {
 		return finAccountTypeId;
 	}
 
@@ -191,8 +200,8 @@ public class FinAccountTypeGlAccountImpl extends BizEntityImpl implements FinAcc
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountTypeId(String newFinAccountTypeId) {
-		String oldFinAccountTypeId = finAccountTypeId;
+	public void setFinAccountTypeId(FinAccountType newFinAccountTypeId) {
+		FinAccountType oldFinAccountTypeId = finAccountTypeId;
 		finAccountTypeId = newFinAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
@@ -207,7 +216,8 @@ public class FinAccountTypeGlAccountImpl extends BizEntityImpl implements FinAcc
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				return getFinAccountTypeId();
+				if (resolve) return getFinAccountTypeId();
+				return basicGetFinAccountTypeId();
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -227,7 +237,7 @@ public class FinAccountTypeGlAccountImpl extends BizEntityImpl implements FinAcc
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId((String)newValue);
+				setFinAccountTypeId((FinAccountType)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -248,7 +258,7 @@ public class FinAccountTypeGlAccountImpl extends BizEntityImpl implements FinAcc
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId(FIN_ACCOUNT_TYPE_ID_EDEFAULT);
+				setFinAccountTypeId((FinAccountType)null);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -269,29 +279,13 @@ public class FinAccountTypeGlAccountImpl extends BizEntityImpl implements FinAcc
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				return FIN_ACCOUNT_TYPE_ID_EDEFAULT == null ? finAccountTypeId != null : !FIN_ACCOUNT_TYPE_ID_EDEFAULT.equals(finAccountTypeId);
+				return finAccountTypeId != null;
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case FinaccountPackage.FIN_ACCOUNT_TYPE_GL_ACCOUNT__GL_ACCOUNT_ID:
 				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (finAccountTypeId: ");
-		result.append(finAccountTypeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //FinAccountTypeGlAccountImpl

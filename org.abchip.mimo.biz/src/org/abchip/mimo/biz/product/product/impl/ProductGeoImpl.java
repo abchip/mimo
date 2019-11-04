@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.product.impl;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductGeo;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGeoImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGeoImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGeoImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGeoImpl#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGeoImpl#getProductGeoEnumId <em>Product Geo Enum Id</em>}</li>
  * </ul>
@@ -40,26 +41,6 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -80,6 +61,16 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
@@ -229,7 +220,24 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GEO__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -239,8 +247,8 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GEO__PRODUCT_ID, oldProductId, productId));
@@ -254,10 +262,11 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
 				return getDescription();
+			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.PRODUCT_GEO__GEO_ID:
 				if (resolve) return getGeoId();
 				return basicGetGeoId();
@@ -276,11 +285,11 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.PRODUCT_GEO__GEO_ID:
 				setGeoId((Geo)newValue);
@@ -300,11 +309,11 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case ProductPackage.PRODUCT_GEO__GEO_ID:
 				setGeoId((Geo)null);
@@ -324,10 +333,10 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
+				return productId != null;
 			case ProductPackage.PRODUCT_GEO__GEO_ID:
 				return geoId != null;
 			case ProductPackage.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID:
@@ -346,9 +355,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", description: ");
+		result.append(" (description: ");
 		result.append(description);
 		result.append(')');
 		return result.toString();

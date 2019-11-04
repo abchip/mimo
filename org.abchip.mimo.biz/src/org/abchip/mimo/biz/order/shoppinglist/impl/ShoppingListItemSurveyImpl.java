@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.order.shoppinglist.impl;
 
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemSurveyImpl#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemSurveyImpl#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemSurveyImpl#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemSurveyImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
  * </ul>
  *
@@ -39,26 +40,6 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShoppingListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHOPPING_LIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShoppingListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shoppingListId = SHOPPING_LIST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShoppingListItemSeqId() <em>Shopping List Item Seq Id</em>}' attribute.
@@ -79,6 +60,16 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 * @ordered
 	 */
 	protected String shoppingListItemSeqId = SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShoppingListId() <em>Shopping List Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShoppingListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShoppingList shoppingListId;
 
 	/**
 	 * The cached value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' reference.
@@ -115,7 +106,24 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 * @generated
 	 */
 	@Override
-	public String getShoppingListId() {
+	public ShoppingList getShoppingListId() {
+		if (shoppingListId != null && ((EObject)shoppingListId).eIsProxy()) {
+			InternalEObject oldShoppingListId = (InternalEObject)shoppingListId;
+			shoppingListId = (ShoppingList)eResolveProxy(oldShoppingListId);
+			if (shoppingListId != oldShoppingListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
+			}
+		}
+		return shoppingListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShoppingList basicGetShoppingListId() {
 		return shoppingListId;
 	}
 
@@ -125,8 +133,8 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 * @generated
 	 */
 	@Override
-	public void setShoppingListId(String newShoppingListId) {
-		String oldShoppingListId = shoppingListId;
+	public void setShoppingListId(ShoppingList newShoppingListId) {
+		ShoppingList oldShoppingListId = shoppingListId;
 		shoppingListId = newShoppingListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
@@ -203,10 +211,11 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
-				return getShoppingListId();
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ITEM_SEQ_ID:
 				return getShoppingListItemSeqId();
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
+				if (resolve) return getShoppingListId();
+				return basicGetShoppingListId();
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
 				if (resolve) return getSurveyResponseId();
 				return basicGetSurveyResponseId();
@@ -222,11 +231,11 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
-				setShoppingListId((String)newValue);
-				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ITEM_SEQ_ID:
 				setShoppingListItemSeqId((String)newValue);
+				return;
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
+				setShoppingListId((ShoppingList)newValue);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
 				setSurveyResponseId((SurveyResponse)newValue);
@@ -243,11 +252,11 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
-				setShoppingListId(SHOPPING_LIST_ID_EDEFAULT);
-				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ITEM_SEQ_ID:
 				setShoppingListItemSeqId(SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
+				setShoppingListId((ShoppingList)null);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
 				setSurveyResponseId((SurveyResponse)null);
@@ -264,10 +273,10 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
-				return SHOPPING_LIST_ID_EDEFAULT == null ? shoppingListId != null : !SHOPPING_LIST_ID_EDEFAULT.equals(shoppingListId);
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ITEM_SEQ_ID:
 				return SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT == null ? shoppingListItemSeqId != null : !SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT.equals(shoppingListItemSeqId);
+			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID:
+				return shoppingListId != null;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
 				return surveyResponseId != null;
 		}
@@ -284,9 +293,7 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shoppingListId: ");
-		result.append(shoppingListId);
-		result.append(", shoppingListItemSeqId: ");
+		result.append(" (shoppingListItemSeqId: ");
 		result.append(shoppingListItemSeqId);
 		result.append(')');
 		return result.toString();

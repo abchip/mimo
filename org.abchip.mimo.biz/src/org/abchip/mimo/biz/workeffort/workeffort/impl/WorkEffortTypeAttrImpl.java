@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeAttrImpl#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeAttrImpl#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortTypeId() <em>Work Effort Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortTypeId() <em>Work Effort Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortTypeId = WORK_EFFORT_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -96,6 +79,16 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortTypeId() <em>Work Effort Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffortType workEffortTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortTypeId() {
+	public WorkEffortType getWorkEffortTypeId() {
+		if (workEffortTypeId != null && ((EObject)workEffortTypeId).eIsProxy()) {
+			InternalEObject oldWorkEffortTypeId = (InternalEObject)workEffortTypeId;
+			workEffortTypeId = (WorkEffortType)eResolveProxy(oldWorkEffortTypeId);
+			if (workEffortTypeId != oldWorkEffortTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
+			}
+		}
+		return workEffortTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortType basicGetWorkEffortTypeId() {
 		return workEffortTypeId;
 	}
 
@@ -178,8 +188,8 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortTypeId(String newWorkEffortTypeId) {
-		String oldWorkEffortTypeId = workEffortTypeId;
+	public void setWorkEffortTypeId(WorkEffortType newWorkEffortTypeId) {
+		WorkEffortType oldWorkEffortTypeId = workEffortTypeId;
 		workEffortTypeId = newWorkEffortTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
@@ -193,12 +203,13 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
-				return getWorkEffortTypeId();
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
+				if (resolve) return getWorkEffortTypeId();
+				return basicGetWorkEffortTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,14 +222,14 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
-				setWorkEffortTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
+				setWorkEffortTypeId((WorkEffortType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,14 +243,14 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
-				setWorkEffortTypeId(WORK_EFFORT_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
+				setWorkEffortTypeId((WorkEffortType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,12 +264,12 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
-				return WORK_EFFORT_TYPE_ID_EDEFAULT == null ? workEffortTypeId != null : !WORK_EFFORT_TYPE_ID_EDEFAULT.equals(workEffortTypeId);
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID:
+				return workEffortTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,9 +284,7 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortTypeId: ");
-		result.append(workEffortTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

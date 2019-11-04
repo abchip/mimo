@@ -316,22 +316,13 @@ public interface SynchronizationPackage extends EPackage {
 	int ENTITY_SYNC_HISTORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Entity Sync Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ENTITY_SYNC_HISTORY__START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Beginning Synch Time</b></em>' attribute.
@@ -340,7 +331,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__BEGINNING_SYNCH_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ENTITY_SYNC_HISTORY__BEGINNING_SYNCH_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last Candidate End Time</b></em>' attribute.
@@ -349,7 +340,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__LAST_CANDIDATE_END_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ENTITY_SYNC_HISTORY__LAST_CANDIDATE_END_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Split Start Time</b></em>' attribute.
@@ -358,7 +349,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__LAST_SPLIT_START_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ENTITY_SYNC_HISTORY__LAST_SPLIT_START_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Last Successful Synch Time</b></em>' attribute.
@@ -367,7 +358,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__LAST_SUCCESSFUL_SYNCH_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int ENTITY_SYNC_HISTORY__LAST_SUCCESSFUL_SYNCH_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Per Split Max Items</b></em>' attribute.
@@ -376,7 +367,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__PER_SPLIT_MAX_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int ENTITY_SYNC_HISTORY__PER_SPLIT_MAX_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Per Split Max Millis</b></em>' attribute.
@@ -385,7 +376,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__PER_SPLIT_MAX_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int ENTITY_SYNC_HISTORY__PER_SPLIT_MAX_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Per Split Min Items</b></em>' attribute.
@@ -394,7 +385,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__PER_SPLIT_MIN_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int ENTITY_SYNC_HISTORY__PER_SPLIT_MIN_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Per Split Min Millis</b></em>' attribute.
@@ -403,7 +394,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__PER_SPLIT_MIN_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int ENTITY_SYNC_HISTORY__PER_SPLIT_MIN_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Run Status Id</b></em>' attribute.
@@ -412,7 +403,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__RUN_STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int ENTITY_SYNC_HISTORY__RUN_STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Running Time Millis</b></em>' attribute.
@@ -421,7 +412,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__RUNNING_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int ENTITY_SYNC_HISTORY__RUNNING_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>To Create Inserted</b></em>' attribute.
@@ -430,7 +421,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_CREATE_INSERTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int ENTITY_SYNC_HISTORY__TO_CREATE_INSERTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>To Create Not Updated</b></em>' attribute.
@@ -439,7 +430,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_CREATE_NOT_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int ENTITY_SYNC_HISTORY__TO_CREATE_NOT_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>To Create Updated</b></em>' attribute.
@@ -448,7 +439,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_CREATE_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int ENTITY_SYNC_HISTORY__TO_CREATE_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>To Remove Already Deleted</b></em>' attribute.
@@ -457,7 +448,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_REMOVE_ALREADY_DELETED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int ENTITY_SYNC_HISTORY__TO_REMOVE_ALREADY_DELETED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>To Remove Deleted</b></em>' attribute.
@@ -466,7 +457,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_REMOVE_DELETED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int ENTITY_SYNC_HISTORY__TO_REMOVE_DELETED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>To Store Inserted</b></em>' attribute.
@@ -475,7 +466,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_STORE_INSERTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int ENTITY_SYNC_HISTORY__TO_STORE_INSERTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>To Store Not Updated</b></em>' attribute.
@@ -484,7 +475,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_STORE_NOT_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int ENTITY_SYNC_HISTORY__TO_STORE_NOT_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>To Store Updated</b></em>' attribute.
@@ -493,7 +484,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TO_STORE_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+	int ENTITY_SYNC_HISTORY__TO_STORE_UPDATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Total Rows Exported</b></em>' attribute.
@@ -502,7 +493,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_EXPORTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_EXPORTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Total Rows To Create</b></em>' attribute.
@@ -511,7 +502,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_CREATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_CREATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Total Rows To Remove</b></em>' attribute.
@@ -520,7 +511,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_REMOVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_REMOVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Total Rows To Store</b></em>' attribute.
@@ -529,7 +520,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_STORE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
+	int ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_STORE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Total Splits</b></em>' attribute.
@@ -538,7 +529,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TOTAL_SPLITS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
+	int ENTITY_SYNC_HISTORY__TOTAL_SPLITS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Total Store Calls</b></em>' attribute.
@@ -547,7 +538,16 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 25;
+	int ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
+
+	/**
+	 * The feature id for the '<em><b>Entity Sync Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of structural features of the '<em>Entity Sync History</em>' class.
@@ -605,22 +605,13 @@ public interface SynchronizationPackage extends EPackage {
 	int ENTITY_SYNC_INCLUDE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Entity Sync Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Entity Or Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Appl Enum Id</b></em>' attribute.
@@ -629,7 +620,16 @@ public interface SynchronizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_INCLUDE__APPL_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ENTITY_SYNC_INCLUDE__APPL_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Entity Sync Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity Sync Include</em>' class.
@@ -687,22 +687,22 @@ public interface SynchronizationPackage extends EPackage {
 	int ENTITY_SYNC_INCLUDE_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Entity Sync Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Entity Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity Sync Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Entity Sync Include Group</em>' class.
@@ -995,15 +995,15 @@ public interface SynchronizationPackage extends EPackage {
 	EClass getEntitySyncHistory();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Entity Sync Id</em>'.
+	 * @return the meta object for the reference '<em>Entity Sync Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId()
 	 * @see #getEntitySyncHistory()
 	 * @generated
 	 */
-	EAttribute getEntitySyncHistory_EntitySyncId();
+	EReference getEntitySyncHistory_EntitySyncId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getStartDate <em>Start Date</em>}'.
@@ -1291,15 +1291,15 @@ public interface SynchronizationPackage extends EPackage {
 	EClass getEntitySyncInclude();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getEntitySyncId <em>Entity Sync Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getEntitySyncId <em>Entity Sync Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Entity Sync Id</em>'.
+	 * @return the meta object for the reference '<em>Entity Sync Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getEntitySyncId()
 	 * @see #getEntitySyncInclude()
 	 * @generated
 	 */
-	EAttribute getEntitySyncInclude_EntitySyncId();
+	EReference getEntitySyncInclude_EntitySyncId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getEntityOrPackage <em>Entity Or Package</em>}'.
@@ -1334,15 +1334,15 @@ public interface SynchronizationPackage extends EPackage {
 	EClass getEntitySyncIncludeGroup();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup#getEntitySyncId <em>Entity Sync Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup#getEntitySyncId <em>Entity Sync Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Entity Sync Id</em>'.
+	 * @return the meta object for the reference '<em>Entity Sync Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup#getEntitySyncId()
 	 * @see #getEntitySyncIncludeGroup()
 	 * @generated
 	 */
-	EAttribute getEntitySyncIncludeGroup_EntitySyncId();
+	EReference getEntitySyncIncludeGroup_EntitySyncId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup#getEntityGroupId <em>Entity Group Id</em>}'.
@@ -1566,12 +1566,12 @@ public interface SynchronizationPackage extends EPackage {
 		EClass ENTITY_SYNC_HISTORY = eINSTANCE.getEntitySyncHistory();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Sync Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Sync Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID = eINSTANCE.getEntitySyncHistory_EntitySyncId();
+		EReference ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID = eINSTANCE.getEntitySyncHistory_EntitySyncId();
 
 		/**
 		 * The meta object literal for the '<em><b>Start Date</b></em>' attribute feature.
@@ -1784,12 +1784,12 @@ public interface SynchronizationPackage extends EPackage {
 		EClass ENTITY_SYNC_INCLUDE = eINSTANCE.getEntitySyncInclude();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Sync Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Sync Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID = eINSTANCE.getEntitySyncInclude_EntitySyncId();
+		EReference ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID = eINSTANCE.getEntitySyncInclude_EntitySyncId();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Or Package</b></em>' attribute feature.
@@ -1818,12 +1818,12 @@ public interface SynchronizationPackage extends EPackage {
 		EClass ENTITY_SYNC_INCLUDE_GROUP = eINSTANCE.getEntitySyncIncludeGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Sync Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Sync Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID = eINSTANCE.getEntitySyncIncludeGroup_EntitySyncId();
+		EReference ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID = eINSTANCE.getEntitySyncIncludeGroup_EntitySyncId();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Group Id</b></em>' reference feature.

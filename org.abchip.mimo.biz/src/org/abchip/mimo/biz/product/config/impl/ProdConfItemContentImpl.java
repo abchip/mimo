@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProdConfItemContent;
 import org.abchip.mimo.biz.product.config.ProdConfItemContentType;
+import org.abchip.mimo.biz.product.config.ProductConfigItem;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProdConfItemContentImpl#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProdConfItemContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProdConfItemContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProdConfItemContentImpl#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProdConfItemContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProdConfItemContentImpl#getConfItemContentTypeId <em>Conf Item Content Type Id</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getConfigItemId() <em>Config Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONFIG_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConfigItemId() <em>Config Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String configItemId = CONFIG_ITEM_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -103,6 +84,16 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConfigItemId() <em>Config Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfigItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductConfigItem configItemId;
 
 	/**
 	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
@@ -235,7 +226,24 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 * @generated
 	 */
 	@Override
-	public String getConfigItemId() {
+	public ProductConfigItem getConfigItemId() {
+		if (configItemId != null && ((EObject)configItemId).eIsProxy()) {
+			InternalEObject oldConfigItemId = (InternalEObject)configItemId;
+			configItemId = (ProductConfigItem)eResolveProxy(oldConfigItemId);
+			if (configItemId != oldConfigItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
+			}
+		}
+		return configItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductConfigItem basicGetConfigItemId() {
 		return configItemId;
 	}
 
@@ -245,8 +253,8 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 * @generated
 	 */
 	@Override
-	public void setConfigItemId(String newConfigItemId) {
-		String oldConfigItemId = configItemId;
+	public void setConfigItemId(ProductConfigItem newConfigItemId) {
+		ProductConfigItem oldConfigItemId = configItemId;
 		configItemId = newConfigItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
@@ -300,12 +308,13 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
-				return getConfigItemId();
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__FROM_DATE:
 				return getFromDate();
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__THRU_DATE:
 				return getThruDate();
+			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
+				if (resolve) return getConfigItemId();
+				return basicGetConfigItemId();
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONTENT_ID:
 				if (resolve) return getContentId();
 				return basicGetContentId();
@@ -324,14 +333,14 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
-				setConfigItemId((String)newValue);
-				return;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
+				setConfigItemId((ProductConfigItem)newValue);
 				return;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONTENT_ID:
 				setContentId((Content)newValue);
@@ -351,14 +360,14 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
-				setConfigItemId(CONFIG_ITEM_ID_EDEFAULT);
-				return;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
+				setConfigItemId((ProductConfigItem)null);
 				return;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONTENT_ID:
 				setContentId((Content)null);
@@ -378,12 +387,12 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
-				return CONFIG_ITEM_ID_EDEFAULT == null ? configItemId != null : !CONFIG_ITEM_ID_EDEFAULT.equals(configItemId);
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID:
+				return configItemId != null;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONTENT_ID:
 				return contentId != null;
 			case ConfigPackage.PROD_CONF_ITEM_CONTENT__CONF_ITEM_CONTENT_TYPE_ID:
@@ -402,9 +411,7 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (configItemId: ");
-		result.append(configItemId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

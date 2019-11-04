@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
@@ -31,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductMaintSeqId <em>Product Maint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getIntervalQuantity <em>Interval Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getMaintName <em>Maint Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getRepeatCount <em>Repeat Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getIntervalUomId <em>Interval Uom Id</em>}</li>
@@ -49,26 +50,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getProductMaintSeqId() <em>Product Maint Seq Id</em>}' attribute.
@@ -149,6 +130,16 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @ordered
 	 */
 	protected long repeatCount = REPEAT_COUNT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' reference.
@@ -387,7 +378,24 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -397,8 +405,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__PRODUCT_ID, oldProductId, productId));
@@ -492,8 +500,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return getProductMaintSeqId();
 			case ProductPackage.PRODUCT_MAINT__INTERVAL_QUANTITY:
@@ -502,6 +508,9 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 				return getMaintName();
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				return getRepeatCount();
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
 				if (resolve) return getProductMaintTypeId();
 				return basicGetProductMaintTypeId();
@@ -526,9 +535,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId((String)newValue);
 				return;
@@ -540,6 +546,9 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 				return;
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				setRepeatCount((Long)newValue);
+				return;
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
 				setProductMaintTypeId((ProductMaintType)newValue);
@@ -565,9 +574,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId(PRODUCT_MAINT_SEQ_ID_EDEFAULT);
 				return;
@@ -579,6 +585,9 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 				return;
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				setRepeatCount(REPEAT_COUNT_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
 				setProductMaintTypeId((ProductMaintType)null);
@@ -604,8 +613,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return PRODUCT_MAINT_SEQ_ID_EDEFAULT == null ? productMaintSeqId != null : !PRODUCT_MAINT_SEQ_ID_EDEFAULT.equals(productMaintSeqId);
 			case ProductPackage.PRODUCT_MAINT__INTERVAL_QUANTITY:
@@ -614,6 +621,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 				return MAINT_NAME_EDEFAULT == null ? maintName != null : !MAINT_NAME_EDEFAULT.equals(maintName);
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				return repeatCount != REPEAT_COUNT_EDEFAULT;
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_ID:
+				return productId != null;
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
 				return productMaintTypeId != null;
 			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
@@ -636,9 +645,7 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", productMaintSeqId: ");
+		result.append(" (productMaintSeqId: ");
 		result.append(productMaintSeqId);
 		result.append(", intervalQuantity: ");
 		result.append(intervalQuantity);

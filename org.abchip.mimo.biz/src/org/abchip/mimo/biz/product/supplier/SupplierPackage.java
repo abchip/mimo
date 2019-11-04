@@ -108,22 +108,13 @@ public interface SupplierPackage extends EPackage {
 	int MARKET_INTEREST__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Product Category Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKET_INTEREST__PRODUCT_CATEGORY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MARKET_INTEREST__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int MARKET_INTEREST__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -132,7 +123,16 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKET_INTEREST__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int MARKET_INTEREST__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Product Category Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKET_INTEREST__PRODUCT_CATEGORY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Classification Group Id</b></em>' reference.
@@ -417,22 +417,13 @@ public interface SupplierPackage extends EPackage {
 	int SUPPLIER_PRODUCT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLIER_PRODUCT__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Minimum Order Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Available From Date</b></em>' attribute.
@@ -441,7 +432,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Agreement Id</b></em>' attribute.
@@ -450,7 +441,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__AGREEMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SUPPLIER_PRODUCT__AGREEMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Agreement Item Seq Id</b></em>' attribute.
@@ -459,7 +450,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__AGREEMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SUPPLIER_PRODUCT__AGREEMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Available Thru Date</b></em>' attribute.
@@ -468,7 +459,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__AVAILABLE_THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SUPPLIER_PRODUCT__AVAILABLE_THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Can Drop Ship</b></em>' attribute.
@@ -477,7 +468,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__CAN_DROP_SHIP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SUPPLIER_PRODUCT__CAN_DROP_SHIP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -486,7 +477,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SUPPLIER_PRODUCT__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Last Price</b></em>' attribute.
@@ -495,7 +486,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__LAST_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int SUPPLIER_PRODUCT__LAST_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Order Qty Increments</b></em>' attribute.
@@ -504,7 +495,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Shipping Price</b></em>' attribute.
@@ -513,7 +504,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__SHIPPING_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int SUPPLIER_PRODUCT__SHIPPING_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Standard Lead Time Days</b></em>' attribute.
@@ -522,7 +513,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Supplier Product Id</b></em>' attribute.
@@ -531,7 +522,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Supplier Product Name</b></em>' attribute.
@@ -540,7 +531,7 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Units Included</b></em>' attribute.
@@ -549,7 +540,16 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT__UNITS_INCLUDED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int SUPPLIER_PRODUCT__UNITS_INCLUDED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Product Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_PRODUCT__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -652,22 +652,13 @@ public interface SupplierPackage extends EPackage {
 	int SUPPLIER_PRODUCT_FEATURE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLIER_PRODUCT_FEATURE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT_FEATURE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int SUPPLIER_PRODUCT_FEATURE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Id Code</b></em>' attribute.
@@ -676,7 +667,16 @@ public interface SupplierPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPLIER_PRODUCT_FEATURE__ID_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SUPPLIER_PRODUCT_FEATURE__ID_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_PRODUCT_FEATURE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Id</b></em>' reference.
@@ -790,15 +790,15 @@ public interface SupplierPackage extends EPackage {
 	EClass getMarketInterest();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getProductCategoryId <em>Product Category Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getProductCategoryId <em>Product Category Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Category Id</em>'.
+	 * @return the meta object for the reference '<em>Product Category Id</em>'.
 	 * @see org.abchip.mimo.biz.product.supplier.MarketInterest#getProductCategoryId()
 	 * @see #getMarketInterest()
 	 * @generated
 	 */
-	EAttribute getMarketInterest_ProductCategoryId();
+	EReference getMarketInterest_ProductCategoryId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getPartyClassificationGroupId <em>Party Classification Group Id</em>}'.
@@ -996,15 +996,15 @@ public interface SupplierPackage extends EPackage {
 	EClass getSupplierProduct();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id</em>'.
+	 * @return the meta object for the reference '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId()
 	 * @see #getSupplierProduct()
 	 * @generated
 	 */
-	EAttribute getSupplierProduct_ProductId();
+	EReference getSupplierProduct_ProductId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}'.
@@ -1226,15 +1226,15 @@ public interface SupplierPackage extends EPackage {
 	EClass getSupplierProductFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getPartyId()
 	 * @see #getSupplierProductFeature()
 	 * @generated
 	 */
-	EAttribute getSupplierProductFeature_PartyId();
+	EReference getSupplierProductFeature_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getProductFeatureId <em>Product Feature Id</em>}'.
@@ -1345,12 +1345,12 @@ public interface SupplierPackage extends EPackage {
 		EClass MARKET_INTEREST = eINSTANCE.getMarketInterest();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Category Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Category Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKET_INTEREST__PRODUCT_CATEGORY_ID = eINSTANCE.getMarketInterest_ProductCategoryId();
+		EReference MARKET_INTEREST__PRODUCT_CATEGORY_ID = eINSTANCE.getMarketInterest_ProductCategoryId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Classification Group Id</b></em>' reference feature.
@@ -1503,12 +1503,12 @@ public interface SupplierPackage extends EPackage {
 		EClass SUPPLIER_PRODUCT = eINSTANCE.getSupplierProduct();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUPPLIER_PRODUCT__PRODUCT_ID = eINSTANCE.getSupplierProduct_ProductId();
+		EReference SUPPLIER_PRODUCT__PRODUCT_ID = eINSTANCE.getSupplierProduct_ProductId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
@@ -1673,12 +1673,12 @@ public interface SupplierPackage extends EPackage {
 		EClass SUPPLIER_PRODUCT_FEATURE = eINSTANCE.getSupplierProductFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUPPLIER_PRODUCT_FEATURE__PARTY_ID = eINSTANCE.getSupplierProductFeature_PartyId();
+		EReference SUPPLIER_PRODUCT_FEATURE__PARTY_ID = eINSTANCE.getSupplierProductFeature_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Feature Id</b></em>' reference feature.

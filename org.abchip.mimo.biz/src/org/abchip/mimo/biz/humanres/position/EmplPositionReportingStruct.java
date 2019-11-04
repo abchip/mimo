@@ -20,11 +20,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#isPrimaryFlag <em>Primary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
  * </ul>
  *
@@ -112,31 +112,30 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	void setEmplPositionIdManagedBy(EmplPosition value);
 
 	/**
-	 * Returns the value of the '<em><b>Empl Position Id Reporting To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Empl Position Id Reporting To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Empl Position Id Reporting To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Empl Position Id Reporting To</em>' attribute.
-	 * @see #setEmplPositionIdReportingTo(String)
+	 * @return the value of the '<em>Empl Position Id Reporting To</em>' reference.
+	 * @see #setEmplPositionIdReportingTo(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_EmplPositionIdReportingTo()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="emplPositionId"
 	 * @generated
 	 */
-	String getEmplPositionIdReportingTo();
+	EmplPosition getEmplPositionIdReportingTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Empl Position Id Reporting To</em>' attribute.
+	 * @param value the new value of the '<em>Empl Position Id Reporting To</em>' reference.
 	 * @see #getEmplPositionIdReportingTo()
 	 * @generated
 	 */
-	void setEmplPositionIdReportingTo(String value);
+	void setEmplPositionIdReportingTo(EmplPosition value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.

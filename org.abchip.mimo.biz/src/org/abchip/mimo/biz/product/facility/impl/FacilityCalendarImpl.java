@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.facility.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityCalendar;
 import org.abchip.mimo.biz.product.facility.FacilityCalendarType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
@@ -28,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getCalendarId <em>Calendar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getCalendarId() <em>Calendar Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,6 +103,16 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
 
 	/**
 	 * The cached value of the '{@link #getFacilityCalendarTypeId() <em>Facility Calendar Type Id</em>}' reference.
@@ -227,7 +218,24 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CALENDAR__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -237,8 +245,8 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR__FACILITY_ID, oldFacilityId, facilityId));
@@ -292,14 +300,15 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
-				return getFacilityId();
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				return getCalendarId();
 			case FacilityPackage.FACILITY_CALENDAR__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
 				if (resolve) return getFacilityCalendarTypeId();
 				return basicGetFacilityCalendarTypeId();
@@ -315,9 +324,6 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				setCalendarId((String)newValue);
 				return;
@@ -326,6 +332,9 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 				return;
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
+				setFacilityId((Facility)newValue);
 				return;
 			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
 				setFacilityCalendarTypeId((FacilityCalendarType)newValue);
@@ -342,9 +351,6 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				setCalendarId(CALENDAR_ID_EDEFAULT);
 				return;
@@ -353,6 +359,9 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 				return;
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
+				setFacilityId((Facility)null);
 				return;
 			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
 				setFacilityCalendarTypeId((FacilityCalendarType)null);
@@ -369,14 +378,14 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				return CALENDAR_ID_EDEFAULT == null ? calendarId != null : !CALENDAR_ID_EDEFAULT.equals(calendarId);
 			case FacilityPackage.FACILITY_CALENDAR__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_ID:
+				return facilityId != null;
 			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
 				return facilityCalendarTypeId != null;
 		}
@@ -393,9 +402,7 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (facilityId: ");
-		result.append(facilityId);
-		result.append(", calendarId: ");
+		result.append(" (calendarId: ");
 		result.append(calendarId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

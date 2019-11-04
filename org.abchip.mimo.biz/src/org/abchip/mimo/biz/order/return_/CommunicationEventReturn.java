@@ -55,30 +55,29 @@ public interface CommunicationEventReturn extends BizEntity {
 	void setCommunicationEventId(CommunicationEvent value);
 
 	/**
-	 * Returns the value of the '<em><b>Return Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Return Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Id</em>' attribute.
-	 * @see #setReturnId(String)
+	 * @return the value of the '<em>Return Id</em>' reference.
+	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getCommunicationEventReturn_ReturnId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="returnId"
 	 * @generated
 	 */
-	String getReturnId();
+	ReturnHeader getReturnId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.CommunicationEventReturn#getReturnId <em>Return Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.CommunicationEventReturn#getReturnId <em>Return Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Id</em>' attribute.
+	 * @param value the new value of the '<em>Return Id</em>' reference.
 	 * @see #getReturnId()
 	 * @generated
 	 */
-	void setReturnId(String value);
+	void setReturnId(ReturnHeader value);
 
 } // CommunicationEventReturn

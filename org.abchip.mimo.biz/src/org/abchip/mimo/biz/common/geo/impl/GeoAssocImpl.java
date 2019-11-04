@@ -40,23 +40,14 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
+	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGeoId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoId = GEO_ID_EDEFAULT;
+	protected Geo geoId;
 	/**
 	 * The cached value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -101,7 +92,24 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 * @generated
 	 */
 	@Override
-	public String getGeoId() {
+	public Geo getGeoId() {
+		if (geoId != null && ((EObject)geoId).eIsProxy()) {
+			InternalEObject oldGeoId = (InternalEObject)geoId;
+			geoId = (Geo)eResolveProxy(oldGeoId);
+			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_ASSOC__GEO_ID, oldGeoId, geoId));
+			}
+		}
+		return geoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoId() {
 		return geoId;
 	}
 
@@ -111,8 +119,8 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 * @generated
 	 */
 	@Override
-	public void setGeoId(String newGeoId) {
-		String oldGeoId = geoId;
+	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC__GEO_ID, oldGeoId, geoId));
@@ -207,7 +215,8 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GeoPackage.GEO_ASSOC__GEO_ID:
-				return getGeoId();
+				if (resolve) return getGeoId();
+				return basicGetGeoId();
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
 				if (resolve) return getGeoIdTo();
 				return basicGetGeoIdTo();
@@ -227,7 +236,7 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GeoPackage.GEO_ASSOC__GEO_ID:
-				setGeoId((String)newValue);
+				setGeoId((Geo)newValue);
 				return;
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
 				setGeoIdTo((Geo)newValue);
@@ -248,7 +257,7 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GeoPackage.GEO_ASSOC__GEO_ID:
-				setGeoId(GEO_ID_EDEFAULT);
+				setGeoId((Geo)null);
 				return;
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
 				setGeoIdTo((Geo)null);
@@ -269,29 +278,13 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GeoPackage.GEO_ASSOC__GEO_ID:
-				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
+				return geoId != null;
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
 				return geoIdTo != null;
 			case GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID:
 				return geoAssocTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (geoId: ");
-		result.append(geoId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GeoAssocImpl

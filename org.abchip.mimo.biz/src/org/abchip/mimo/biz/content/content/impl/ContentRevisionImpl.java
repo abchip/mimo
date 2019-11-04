@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentRevision;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getCommittedByPartyId <em>Committed By Party Id</em>}</li>
  * </ul>
  *
@@ -41,26 +42,6 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getContentRevisionSeqId() <em>Content Revision Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -100,6 +81,16 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 * @ordered
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
 
 	/**
 	 * The cached value of the '{@link #getCommittedByPartyId() <em>Committed By Party Id</em>}' reference.
@@ -199,7 +190,24 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -209,8 +217,8 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION__CONTENT_ID, oldContentId, contentId));
@@ -247,12 +255,13 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
-				return getContentId();
 			case ContentPackage.CONTENT_REVISION__CONTENT_REVISION_SEQ_ID:
 				return getContentRevisionSeqId();
 			case ContentPackage.CONTENT_REVISION__COMMENTS:
 				return getComments();
+			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
 				if (resolve) return getCommittedByPartyId();
 				return basicGetCommittedByPartyId();
@@ -268,14 +277,14 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_REVISION__CONTENT_REVISION_SEQ_ID:
 				setContentRevisionSeqId((String)newValue);
 				return;
 			case ContentPackage.CONTENT_REVISION__COMMENTS:
 				setComments((String)newValue);
+				return;
+			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
 				setCommittedByPartyId((Party)newValue);
@@ -292,14 +301,14 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_REVISION__CONTENT_REVISION_SEQ_ID:
 				setContentRevisionSeqId(CONTENT_REVISION_SEQ_ID_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT_REVISION__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
 				setCommittedByPartyId((Party)null);
@@ -316,12 +325,12 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case ContentPackage.CONTENT_REVISION__CONTENT_REVISION_SEQ_ID:
 				return CONTENT_REVISION_SEQ_ID_EDEFAULT == null ? contentRevisionSeqId != null : !CONTENT_REVISION_SEQ_ID_EDEFAULT.equals(contentRevisionSeqId);
 			case ContentPackage.CONTENT_REVISION__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
+			case ContentPackage.CONTENT_REVISION__CONTENT_ID:
+				return contentId != null;
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
 				return committedByPartyId != null;
 		}
@@ -338,9 +347,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", contentRevisionSeqId: ");
+		result.append(" (contentRevisionSeqId: ");
 		result.append(contentRevisionSeqId);
 		result.append(", comments: ");
 		result.append(comments);

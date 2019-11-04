@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getAmountChange <em>Amount Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getPercentageChange <em>Percentage Change</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  * </ul>
  *
@@ -84,31 +84,30 @@ public interface BudgetScenarioRule extends BizEntity {
 	void setPercentageChange(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Scenario Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Scenario Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Scenario Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Scenario Id</em>' attribute.
-	 * @see #setBudgetScenarioId(String)
+	 * @return the value of the '<em>Budget Scenario Id</em>' reference.
+	 * @see #setBudgetScenarioId(BudgetScenario)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule_BudgetScenarioId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="budgetScenarioId"
 	 * @generated
 	 */
-	String getBudgetScenarioId();
+	BudgetScenario getBudgetScenarioId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId <em>Budget Scenario Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId <em>Budget Scenario Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Scenario Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Scenario Id</em>' reference.
 	 * @see #getBudgetScenarioId()
 	 * @generated
 	 */
-	void setBudgetScenarioId(String value);
+	void setBudgetScenarioId(BudgetScenario value);
 
 	/**
 	 * Returns the value of the '<em><b>Budget Item Type Id</b></em>' reference.

@@ -10,12 +10,15 @@ package org.abchip.mimo.biz.content.survey.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
+import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionOption;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getSurveyOptionSeqId <em>Survey Option Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getAmountBase <em>Amount Base</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getAmountBaseUomId <em>Amount Base Uom Id</em>}</li>
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getDurationUomId <em>Duration Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getWeightFactor <em>Weight Factor</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,26 +48,6 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getSurveyQuestionId() <em>Survey Question Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_QUESTION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyQuestionId() <em>Survey Question Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyQuestionId = SURVEY_QUESTION_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSurveyOptionSeqId() <em>Survey Option Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -224,6 +207,16 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 * @ordered
 	 */
 	protected double weightFactor = WEIGHT_FACTOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSurveyQuestionId() <em>Survey Question Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSurveyQuestionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SurveyQuestion surveyQuestionId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -411,7 +404,24 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 * @generated
 	 */
 	@Override
-	public String getSurveyQuestionId() {
+	public SurveyQuestion getSurveyQuestionId() {
+		if (surveyQuestionId != null && ((EObject)surveyQuestionId).eIsProxy()) {
+			InternalEObject oldSurveyQuestionId = (InternalEObject)surveyQuestionId;
+			surveyQuestionId = (SurveyQuestion)eResolveProxy(oldSurveyQuestionId);
+			if (surveyQuestionId != oldSurveyQuestionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
+			}
+		}
+		return surveyQuestionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyQuestion basicGetSurveyQuestionId() {
 		return surveyQuestionId;
 	}
 
@@ -421,8 +431,8 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 * @generated
 	 */
 	@Override
-	public void setSurveyQuestionId(String newSurveyQuestionId) {
-		String oldSurveyQuestionId = surveyQuestionId;
+	public void setSurveyQuestionId(SurveyQuestion newSurveyQuestionId) {
+		SurveyQuestion oldSurveyQuestionId = surveyQuestionId;
 		surveyQuestionId = newSurveyQuestionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
@@ -459,8 +469,6 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
-				return getSurveyQuestionId();
 			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_OPTION_SEQ_ID:
 				return getSurveyOptionSeqId();
 			case SurveyPackage.SURVEY_QUESTION_OPTION__AMOUNT_BASE:
@@ -477,6 +485,9 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 				return getSequenceNum();
 			case SurveyPackage.SURVEY_QUESTION_OPTION__WEIGHT_FACTOR:
 				return getWeightFactor();
+			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
+				if (resolve) return getSurveyQuestionId();
+				return basicGetSurveyQuestionId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -489,9 +500,6 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
-				setSurveyQuestionId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_OPTION_SEQ_ID:
 				setSurveyOptionSeqId((String)newValue);
 				return;
@@ -516,6 +524,9 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 			case SurveyPackage.SURVEY_QUESTION_OPTION__WEIGHT_FACTOR:
 				setWeightFactor((Double)newValue);
 				return;
+			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
+				setSurveyQuestionId((SurveyQuestion)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -528,9 +539,6 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
-				setSurveyQuestionId(SURVEY_QUESTION_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_OPTION_SEQ_ID:
 				setSurveyOptionSeqId(SURVEY_OPTION_SEQ_ID_EDEFAULT);
 				return;
@@ -555,6 +563,9 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 			case SurveyPackage.SURVEY_QUESTION_OPTION__WEIGHT_FACTOR:
 				setWeightFactor(WEIGHT_FACTOR_EDEFAULT);
 				return;
+			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
+				setSurveyQuestionId((SurveyQuestion)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -567,8 +578,6 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
-				return SURVEY_QUESTION_ID_EDEFAULT == null ? surveyQuestionId != null : !SURVEY_QUESTION_ID_EDEFAULT.equals(surveyQuestionId);
 			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_OPTION_SEQ_ID:
 				return SURVEY_OPTION_SEQ_ID_EDEFAULT == null ? surveyOptionSeqId != null : !SURVEY_OPTION_SEQ_ID_EDEFAULT.equals(surveyOptionSeqId);
 			case SurveyPackage.SURVEY_QUESTION_OPTION__AMOUNT_BASE:
@@ -585,6 +594,8 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case SurveyPackage.SURVEY_QUESTION_OPTION__WEIGHT_FACTOR:
 				return weightFactor != WEIGHT_FACTOR_EDEFAULT;
+			case SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID:
+				return surveyQuestionId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -599,9 +610,7 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (surveyQuestionId: ");
-		result.append(surveyQuestionId);
-		result.append(", surveyOptionSeqId: ");
+		result.append(" (surveyOptionSeqId: ");
 		result.append(surveyOptionSeqId);
 		result.append(", amountBase: ");
 		result.append(amountBase);

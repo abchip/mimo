@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getOrderTypeId <em>Order Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTypeAttr()
@@ -82,30 +82,29 @@ public interface OrderTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Type Id</em>' attribute.
-	 * @see #setOrderTypeId(String)
+	 * @return the value of the '<em>Order Type Id</em>' reference.
+	 * @see #setOrderTypeId(OrderType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTypeAttr_OrderTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="orderTypeId"
 	 * @generated
 	 */
-	String getOrderTypeId();
+	OrderType getOrderTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getOrderTypeId <em>Order Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTypeAttr#getOrderTypeId <em>Order Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Type Id</em>' reference.
 	 * @see #getOrderTypeId()
 	 * @generated
 	 */
-	void setOrderTypeId(String value);
+	void setOrderTypeId(OrderType value);
 
 } // OrderTypeAttr

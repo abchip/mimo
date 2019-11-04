@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
+import org.abchip.mimo.biz.content.survey.Survey;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getSurveyId <em>Survey Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSurveyAppl()
@@ -68,12 +68,12 @@ public interface WorkEffortSurveyAppl extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Survey Id</em>' reference.
-	 * @see #setSurveyId(ProductStoreSurveyAppl)
+	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSurveyAppl_SurveyId()
-	 * @model keys="productStoreSurveyId"
+	 * @model keys="surveyId"
 	 * @generated
 	 */
-	ProductStoreSurveyAppl getSurveyId();
+	Survey getSurveyId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getSurveyId <em>Survey Id</em>}' reference.
@@ -83,7 +83,7 @@ public interface WorkEffortSurveyAppl extends BizEntity {
 	 * @see #getSurveyId()
 	 * @generated
 	 */
-	void setSurveyId(ProductStoreSurveyAppl value);
+	void setSurveyId(Survey value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -112,30 +112,29 @@ public interface WorkEffortSurveyAppl extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Id</em>' attribute.
-	 * @see #setWorkEffortId(String)
+	 * @return the value of the '<em>Work Effort Id</em>' reference.
+	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSurveyAppl_WorkEffortId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortId();
+	WorkEffort getWorkEffortId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl#getWorkEffortId <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Id</em>' reference.
 	 * @see #getWorkEffortId()
 	 * @generated
 	 */
-	void setWorkEffortId(String value);
+	void setWorkEffortId(WorkEffort value);
 
 } // WorkEffortSurveyAppl

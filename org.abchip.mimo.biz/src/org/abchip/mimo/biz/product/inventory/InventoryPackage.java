@@ -451,22 +451,13 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_ATTRIBUTE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int INVENTORY_ITEM_ATTRIBUTE__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attr Description</b></em>' attribute.
@@ -475,7 +466,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int INVENTORY_ITEM_ATTRIBUTE__ATTR_DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attr Value</b></em>' attribute.
@@ -484,7 +475,16 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int INVENTORY_ITEM_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Inventory Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Item Attribute</em>' class.
@@ -542,22 +542,13 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_DETAIL__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Inventory Item Detail Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_DETAIL_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_DETAIL_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Accounting Quantity Diff</b></em>' attribute.
@@ -566,7 +557,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__ACCOUNTING_QUANTITY_DIFF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int INVENTORY_ITEM_DETAIL__ACCOUNTING_QUANTITY_DIFF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Available To Promise Diff</b></em>' attribute.
@@ -575,7 +566,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__AVAILABLE_TO_PROMISE_DIFF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int INVENTORY_ITEM_DETAIL__AVAILABLE_TO_PROMISE_DIFF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -584,7 +575,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int INVENTORY_ITEM_DETAIL__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Effective Date</b></em>' attribute.
@@ -593,7 +584,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__EFFECTIVE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int INVENTORY_ITEM_DETAIL__EFFECTIVE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Id</b></em>' attribute.
@@ -602,7 +593,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int INVENTORY_ITEM_DETAIL__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Maint Hist Seq Id</b></em>' attribute.
@@ -611,7 +602,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__MAINT_HIST_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int INVENTORY_ITEM_DETAIL__MAINT_HIST_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
@@ -620,7 +611,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int INVENTORY_ITEM_DETAIL__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -629,7 +620,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int INVENTORY_ITEM_DETAIL__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Quantity On Hand Diff</b></em>' attribute.
@@ -638,7 +629,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__QUANTITY_ON_HAND_DIFF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int INVENTORY_ITEM_DETAIL__QUANTITY_ON_HAND_DIFF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Return Id</b></em>' attribute.
@@ -647,7 +638,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__RETURN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int INVENTORY_ITEM_DETAIL__RETURN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Return Item Seq Id</b></em>' attribute.
@@ -656,7 +647,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int INVENTORY_ITEM_DETAIL__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -665,7 +656,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int INVENTORY_ITEM_DETAIL__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
@@ -674,7 +665,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int INVENTORY_ITEM_DETAIL__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Item Seq Id</b></em>' attribute.
@@ -683,7 +674,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int INVENTORY_ITEM_DETAIL__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Unit Cost</b></em>' attribute.
@@ -692,7 +683,16 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_DETAIL__UNIT_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int INVENTORY_ITEM_DETAIL__UNIT_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Inventory Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
@@ -877,22 +877,22 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_LABEL_APPL__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_LABEL_APPL__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int INVENTORY_ITEM_LABEL_APPL__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Inventory Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Inventory Item Label Type Id</b></em>' reference.
@@ -1068,22 +1068,13 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_STATUS__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Status Datetime</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_STATUS__STATUS_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int INVENTORY_ITEM_STATUS__STATUS_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Owner Party Id</b></em>' attribute.
@@ -1092,7 +1083,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_STATUS__OWNER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int INVENTORY_ITEM_STATUS__OWNER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1101,7 +1092,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_STATUS__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int INVENTORY_ITEM_STATUS__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Status End Datetime</b></em>' attribute.
@@ -1110,7 +1101,16 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_STATUS__STATUS_END_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int INVENTORY_ITEM_STATUS__STATUS_END_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Inventory Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -1395,22 +1395,13 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_TYPE_ATTR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE_ATTR__INVENTORY_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int INVENTORY_ITEM_TYPE_ATTR__ATTR_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1419,7 +1410,16 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int INVENTORY_ITEM_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Inventory Item Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_ITEM_TYPE_ATTR__INVENTORY_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Item Type Attr</em>' class.
@@ -1477,22 +1477,13 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_VARIANCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Available To Promise Var</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_VARIANCE__AVAILABLE_TO_PROMISE_VAR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int INVENTORY_ITEM_VARIANCE__AVAILABLE_TO_PROMISE_VAR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1501,7 +1492,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_VARIANCE__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int INVENTORY_ITEM_VARIANCE__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Quantity On Hand Var</b></em>' attribute.
@@ -1510,7 +1501,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_VARIANCE__QUANTITY_ON_HAND_VAR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int INVENTORY_ITEM_VARIANCE__QUANTITY_ON_HAND_VAR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Physical Inventory Id</b></em>' reference.
@@ -1519,7 +1510,7 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_VARIANCE__PHYSICAL_INVENTORY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int INVENTORY_ITEM_VARIANCE__PHYSICAL_INVENTORY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Variance Reason Id</b></em>' reference.
@@ -1528,7 +1519,16 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Inventory Item Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Item Variance</em>' class.
@@ -2349,15 +2349,15 @@ public interface InventoryPackage extends EPackage {
 	EClass getInventoryItemAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute#getInventoryItemId <em>Inventory Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute#getInventoryItemId <em>Inventory Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inventory Item Id</em>'.
+	 * @return the meta object for the reference '<em>Inventory Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemAttribute#getInventoryItemId()
 	 * @see #getInventoryItemAttribute()
 	 * @generated
 	 */
-	EAttribute getInventoryItemAttribute_InventoryItemId();
+	EReference getInventoryItemAttribute_InventoryItemId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute#getAttrName <em>Attr Name</em>}'.
@@ -2403,15 +2403,15 @@ public interface InventoryPackage extends EPackage {
 	EClass getInventoryItemDetail();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemId <em>Inventory Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemId <em>Inventory Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inventory Item Id</em>'.
+	 * @return the meta object for the reference '<em>Inventory Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemId()
 	 * @see #getInventoryItemDetail()
 	 * @generated
 	 */
-	EAttribute getInventoryItemDetail_InventoryItemId();
+	EReference getInventoryItemDetail_InventoryItemId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail#getInventoryItemDetailSeqId <em>Inventory Item Detail Seq Id</em>}'.
@@ -2698,15 +2698,15 @@ public interface InventoryPackage extends EPackage {
 	EClass getInventoryItemLabelAppl();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemId <em>Inventory Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemId <em>Inventory Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inventory Item Id</em>'.
+	 * @return the meta object for the reference '<em>Inventory Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemId()
 	 * @see #getInventoryItemLabelAppl()
 	 * @generated
 	 */
-	EAttribute getInventoryItemLabelAppl_InventoryItemId();
+	EReference getInventoryItemLabelAppl_InventoryItemId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelTypeId <em>Inventory Item Label Type Id</em>}'.
@@ -2806,15 +2806,15 @@ public interface InventoryPackage extends EPackage {
 	EClass getInventoryItemStatus();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getInventoryItemId <em>Inventory Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getInventoryItemId <em>Inventory Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inventory Item Id</em>'.
+	 * @return the meta object for the reference '<em>Inventory Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getInventoryItemId()
 	 * @see #getInventoryItemStatus()
 	 * @generated
 	 */
-	EAttribute getInventoryItemStatus_InventoryItemId();
+	EReference getInventoryItemStatus_InventoryItemId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getStatusId <em>Status Id</em>}'.
@@ -3023,15 +3023,15 @@ public interface InventoryPackage extends EPackage {
 	EClass getInventoryItemTypeAttr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getInventoryItemTypeId <em>Inventory Item Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getInventoryItemTypeId <em>Inventory Item Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inventory Item Type Id</em>'.
+	 * @return the meta object for the reference '<em>Inventory Item Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getInventoryItemTypeId()
 	 * @see #getInventoryItemTypeAttr()
 	 * @generated
 	 */
-	EAttribute getInventoryItemTypeAttr_InventoryItemTypeId();
+	EReference getInventoryItemTypeAttr_InventoryItemTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getAttrName <em>Attr Name</em>}'.
@@ -3066,15 +3066,15 @@ public interface InventoryPackage extends EPackage {
 	EClass getInventoryItemVariance();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getInventoryItemId <em>Inventory Item Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getInventoryItemId <em>Inventory Item Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Inventory Item Id</em>'.
+	 * @return the meta object for the reference '<em>Inventory Item Id</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getInventoryItemId()
 	 * @see #getInventoryItemVariance()
 	 * @generated
 	 */
-	EAttribute getInventoryItemVariance_InventoryItemId();
+	EReference getInventoryItemVariance_InventoryItemId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getPhysicalInventoryId <em>Physical Inventory Id</em>}'.
@@ -3734,12 +3734,12 @@ public interface InventoryPackage extends EPackage {
 		EClass INVENTORY_ITEM_ATTRIBUTE = eINSTANCE.getInventoryItemAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemAttribute_InventoryItemId();
+		EReference INVENTORY_ITEM_ATTRIBUTE__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemAttribute_InventoryItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -3776,12 +3776,12 @@ public interface InventoryPackage extends EPackage {
 		EClass INVENTORY_ITEM_DETAIL = eINSTANCE.getInventoryItemDetail();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemDetail_InventoryItemId();
+		EReference INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemDetail_InventoryItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Inventory Item Detail Seq Id</b></em>' attribute feature.
@@ -3996,12 +3996,12 @@ public interface InventoryPackage extends EPackage {
 		EClass INVENTORY_ITEM_LABEL_APPL = eINSTANCE.getInventoryItemLabelAppl();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemLabelAppl_InventoryItemId();
+		EReference INVENTORY_ITEM_LABEL_APPL__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemLabelAppl_InventoryItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Inventory Item Label Type Id</b></em>' reference feature.
@@ -4080,12 +4080,12 @@ public interface InventoryPackage extends EPackage {
 		EClass INVENTORY_ITEM_STATUS = eINSTANCE.getInventoryItemStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemStatus_InventoryItemId();
+		EReference INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemStatus_InventoryItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
@@ -4246,12 +4246,12 @@ public interface InventoryPackage extends EPackage {
 		EClass INVENTORY_ITEM_TYPE_ATTR = eINSTANCE.getInventoryItemTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inventory Item Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM_TYPE_ATTR__INVENTORY_ITEM_TYPE_ID = eINSTANCE.getInventoryItemTypeAttr_InventoryItemTypeId();
+		EReference INVENTORY_ITEM_TYPE_ATTR__INVENTORY_ITEM_TYPE_ID = eINSTANCE.getInventoryItemTypeAttr_InventoryItemTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
@@ -4280,12 +4280,12 @@ public interface InventoryPackage extends EPackage {
 		EClass INVENTORY_ITEM_VARIANCE = eINSTANCE.getInventoryItemVariance();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inventory Item Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemVariance_InventoryItemId();
+		EReference INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID = eINSTANCE.getInventoryItemVariance_InventoryItemId();
 
 		/**
 		 * The meta object literal for the '<em><b>Physical Inventory Id</b></em>' reference feature.

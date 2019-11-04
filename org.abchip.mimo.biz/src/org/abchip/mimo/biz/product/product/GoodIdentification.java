@@ -18,8 +18,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getIdValue <em>Id Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
@@ -55,31 +55,30 @@ public interface GoodIdentification extends BizEntityTyped<GoodIdentificationTyp
 	void setIdValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Good Identification Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Good Identification Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Good Identification Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Good Identification Type Id</em>' attribute.
-	 * @see #setGoodIdentificationTypeId(String)
+	 * @return the value of the '<em>Good Identification Type Id</em>' reference.
+	 * @see #setGoodIdentificationTypeId(GoodIdentificationType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentification_GoodIdentificationTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="goodIdentificationTypeId"
 	 * @generated
 	 */
-	String getGoodIdentificationTypeId();
+	GoodIdentificationType getGoodIdentificationTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.GoodIdentification#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.GoodIdentification#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Good Identification Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Good Identification Type Id</em>' reference.
 	 * @see #getGoodIdentificationTypeId()
 	 * @generated
 	 */
-	void setGoodIdentificationTypeId(String value);
+	void setGoodIdentificationTypeId(GoodIdentificationType value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' reference.

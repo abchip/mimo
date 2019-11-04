@@ -8,9 +8,10 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.CheckAccount;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getBankName <em>Bank Name</em>}</li>
@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getCompanyNameOnAccount <em>Company Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getNameOnAccount <em>Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getRoutingNumber <em>Routing Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
@@ -44,24 +45,6 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodId = PAYMENT_METHOD_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAccountNumber() <em>Account Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -189,6 +172,15 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	protected String routingNumber = ROUTING_NUMBER_EDEFAULT;
 	/**
+	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethod paymentMethodId;
+	/**
 	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,7 +188,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * @generated
 	 * @ordered
 	 */
-	protected PostalAddress contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -338,10 +330,10 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -355,7 +347,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -365,8 +357,8 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(PostalAddress newContactMechId) {
-		PostalAddress oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -401,7 +393,24 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodId() {
+	public PaymentMethod getPaymentMethodId() {
+		if (paymentMethodId != null && ((EObject)paymentMethodId).eIsProxy()) {
+			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
+			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
+			if (paymentMethodId != oldPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
+			}
+		}
+		return paymentMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethod basicGetPaymentMethodId() {
 		return paymentMethodId;
 	}
 
@@ -411,8 +420,8 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodId(String newPaymentMethodId) {
-		String oldPaymentMethodId = paymentMethodId;
+	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
@@ -449,8 +458,6 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
-				return getPaymentMethodId();
 			case PaymentPackage.CHECK_ACCOUNT__ACCOUNT_NUMBER:
 				return getAccountNumber();
 			case PaymentPackage.CHECK_ACCOUNT__ACCOUNT_TYPE:
@@ -465,6 +472,9 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 				return getNameOnAccount();
 			case PaymentPackage.CHECK_ACCOUNT__ROUTING_NUMBER:
 				return getRoutingNumber();
+			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
+				if (resolve) return getPaymentMethodId();
+				return basicGetPaymentMethodId();
 			case PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID:
 				if (resolve) return getContactMechId();
 				return basicGetContactMechId();
@@ -480,9 +490,6 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
-				setPaymentMethodId((String)newValue);
-				return;
 			case PaymentPackage.CHECK_ACCOUNT__ACCOUNT_NUMBER:
 				setAccountNumber((String)newValue);
 				return;
@@ -504,8 +511,11 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 			case PaymentPackage.CHECK_ACCOUNT__ROUTING_NUMBER:
 				setRoutingNumber((String)newValue);
 				return;
+			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)newValue);
+				return;
 			case PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -519,9 +529,6 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
-				setPaymentMethodId(PAYMENT_METHOD_ID_EDEFAULT);
-				return;
 			case PaymentPackage.CHECK_ACCOUNT__ACCOUNT_NUMBER:
 				setAccountNumber(ACCOUNT_NUMBER_EDEFAULT);
 				return;
@@ -543,8 +550,11 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 			case PaymentPackage.CHECK_ACCOUNT__ROUTING_NUMBER:
 				setRoutingNumber(ROUTING_NUMBER_EDEFAULT);
 				return;
+			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)null);
+				return;
 			case PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)null);
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -558,8 +568,6 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
-				return PAYMENT_METHOD_ID_EDEFAULT == null ? paymentMethodId != null : !PAYMENT_METHOD_ID_EDEFAULT.equals(paymentMethodId);
 			case PaymentPackage.CHECK_ACCOUNT__ACCOUNT_NUMBER:
 				return ACCOUNT_NUMBER_EDEFAULT == null ? accountNumber != null : !ACCOUNT_NUMBER_EDEFAULT.equals(accountNumber);
 			case PaymentPackage.CHECK_ACCOUNT__ACCOUNT_TYPE:
@@ -574,6 +582,8 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 				return NAME_ON_ACCOUNT_EDEFAULT == null ? nameOnAccount != null : !NAME_ON_ACCOUNT_EDEFAULT.equals(nameOnAccount);
 			case PaymentPackage.CHECK_ACCOUNT__ROUTING_NUMBER:
 				return ROUTING_NUMBER_EDEFAULT == null ? routingNumber != null : !ROUTING_NUMBER_EDEFAULT.equals(routingNumber);
+			case PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID:
+				return paymentMethodId != null;
 			case PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID:
 				return contactMechId != null;
 		}
@@ -590,9 +600,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentMethodId: ");
-		result.append(paymentMethodId);
-		result.append(", accountNumber: ");
+		result.append(" (accountNumber: ");
 		result.append(accountNumber);
 		result.append(", accountType: ");
 		result.append(accountType);

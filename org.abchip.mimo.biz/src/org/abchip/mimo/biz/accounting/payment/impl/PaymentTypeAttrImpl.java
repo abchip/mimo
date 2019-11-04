@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.accounting.payment.PaymentType;
 import org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeAttrImpl#getPaymentTypeId <em>Payment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeAttrImpl#getPaymentTypeId <em>Payment Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,25 +38,6 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentTypeId() <em>Payment Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentTypeId() <em>Payment Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentTypeId = PAYMENT_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +74,15 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentTypeId() <em>Payment Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentType paymentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +155,24 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	 * @generated
 	 */
 	@Override
-	public String getPaymentTypeId() {
+	public PaymentType getPaymentTypeId() {
+		if (paymentTypeId != null && ((EObject)paymentTypeId).eIsProxy()) {
+			InternalEObject oldPaymentTypeId = (InternalEObject)paymentTypeId;
+			paymentTypeId = (PaymentType)eResolveProxy(oldPaymentTypeId);
+			if (paymentTypeId != oldPaymentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
+			}
+		}
+		return paymentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentType basicGetPaymentTypeId() {
 		return paymentTypeId;
 	}
 
@@ -172,8 +182,8 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	 * @generated
 	 */
 	@Override
-	public void setPaymentTypeId(String newPaymentTypeId) {
-		String oldPaymentTypeId = paymentTypeId;
+	public void setPaymentTypeId(PaymentType newPaymentTypeId) {
+		PaymentType oldPaymentTypeId = paymentTypeId;
 		paymentTypeId = newPaymentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
@@ -187,12 +197,13 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
-				return getPaymentTypeId();
 			case PaymentPackage.PAYMENT_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case PaymentPackage.PAYMENT_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
+				if (resolve) return getPaymentTypeId();
+				return basicGetPaymentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +216,14 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
-				setPaymentTypeId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case PaymentPackage.PAYMENT_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
+				setPaymentTypeId((PaymentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +237,14 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
-				setPaymentTypeId(PAYMENT_TYPE_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case PaymentPackage.PAYMENT_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
+				setPaymentTypeId((PaymentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +258,12 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
-				return PAYMENT_TYPE_ID_EDEFAULT == null ? paymentTypeId != null : !PAYMENT_TYPE_ID_EDEFAULT.equals(paymentTypeId);
 			case PaymentPackage.PAYMENT_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case PaymentPackage.PAYMENT_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID:
+				return paymentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,9 +278,7 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentTypeId: ");
-		result.append(paymentTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

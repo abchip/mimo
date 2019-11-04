@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#isDebitCreditFlag <em>Debit Credit Flag</em>}</li>
@@ -56,6 +56,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getAcctgTransEntryTypeId <em>Acctg Trans Entry Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getOrigCurrencyUomId <em>Orig Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getRoleTypeId <em>Role Type Id</em>}</li>
@@ -72,24 +73,6 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getAcctgTransId() <em>Acctg Trans Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcctgTransId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCTG_TRANS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAcctgTransId() <em>Acctg Trans Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcctgTransId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String acctgTransId = ACCTG_TRANS_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAcctgTransEntrySeqId() <em>Acctg Trans Entry Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -369,6 +352,15 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * @ordered
 	 */
 	protected Uom origCurrencyUomId;
+	/**
+	 * The cached value of the '{@link #getAcctgTransId() <em>Acctg Trans Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAcctgTransId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AcctgTrans acctgTransId;
 	/**
 	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -1060,7 +1052,24 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * @generated
 	 */
 	@Override
-	public String getAcctgTransId() {
+	public AcctgTrans getAcctgTransId() {
+		if (acctgTransId != null && ((EObject)acctgTransId).eIsProxy()) {
+			InternalEObject oldAcctgTransId = (InternalEObject)acctgTransId;
+			acctgTransId = (AcctgTrans)eResolveProxy(oldAcctgTransId);
+			if (acctgTransId != oldAcctgTransId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID, oldAcctgTransId, acctgTransId));
+			}
+		}
+		return acctgTransId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AcctgTrans basicGetAcctgTransId() {
 		return acctgTransId;
 	}
 
@@ -1070,8 +1079,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * @generated
 	 */
 	@Override
-	public void setAcctgTransId(String newAcctgTransId) {
-		String oldAcctgTransId = acctgTransId;
+	public void setAcctgTransId(AcctgTrans newAcctgTransId) {
+		AcctgTrans oldAcctgTransId = acctgTransId;
 		acctgTransId = newAcctgTransId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID, oldAcctgTransId, acctgTransId));
@@ -1205,8 +1214,6 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
-				return getAcctgTransId();
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				return getAcctgTransEntrySeqId();
 			case LedgerPackage.ACCTG_TRANS_ENTRY__AMOUNT:
@@ -1244,6 +1251,9 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ORIG_CURRENCY_UOM_ID:
 				if (resolve) return getOrigCurrencyUomId();
 				return basicGetOrigCurrencyUomId();
+			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
+				if (resolve) return getAcctgTransId();
+				return basicGetAcctgTransId();
 			case LedgerPackage.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID:
 				if (resolve) return getInventoryItemId();
 				return basicGetInventoryItemId();
@@ -1277,9 +1287,6 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
-				setAcctgTransId((String)newValue);
-				return;
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				setAcctgTransEntrySeqId((String)newValue);
 				return;
@@ -1331,6 +1338,9 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ORIG_CURRENCY_UOM_ID:
 				setOrigCurrencyUomId((Uom)newValue);
 				return;
+			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
+				setAcctgTransId((AcctgTrans)newValue);
+				return;
 			case LedgerPackage.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID:
 				setInventoryItemId((InventoryItem)newValue);
 				return;
@@ -1364,9 +1374,6 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
-				setAcctgTransId(ACCTG_TRANS_ID_EDEFAULT);
-				return;
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				setAcctgTransEntrySeqId(ACCTG_TRANS_ENTRY_SEQ_ID_EDEFAULT);
 				return;
@@ -1418,6 +1425,9 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ORIG_CURRENCY_UOM_ID:
 				setOrigCurrencyUomId((Uom)null);
 				return;
+			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
+				setAcctgTransId((AcctgTrans)null);
+				return;
 			case LedgerPackage.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID:
 				setInventoryItemId((InventoryItem)null);
 				return;
@@ -1451,8 +1461,6 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
-				return ACCTG_TRANS_ID_EDEFAULT == null ? acctgTransId != null : !ACCTG_TRANS_ID_EDEFAULT.equals(acctgTransId);
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				return ACCTG_TRANS_ENTRY_SEQ_ID_EDEFAULT == null ? acctgTransEntrySeqId != null : !ACCTG_TRANS_ENTRY_SEQ_ID_EDEFAULT.equals(acctgTransEntrySeqId);
 			case LedgerPackage.ACCTG_TRANS_ENTRY__AMOUNT:
@@ -1487,6 +1495,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 				return currencyUomId != null;
 			case LedgerPackage.ACCTG_TRANS_ENTRY__ORIG_CURRENCY_UOM_ID:
 				return origCurrencyUomId != null;
+			case LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID:
+				return acctgTransId != null;
 			case LedgerPackage.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID:
 				return inventoryItemId != null;
 			case LedgerPackage.ACCTG_TRANS_ENTRY__PARTY_ID:
@@ -1515,9 +1525,7 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (acctgTransId: ");
-		result.append(acctgTransId);
-		result.append(", acctgTransEntrySeqId: ");
+		result.append(" (acctgTransEntrySeqId: ");
 		result.append(acctgTransEntrySeqId);
 		result.append(", amount: ");
 		result.append(amount);

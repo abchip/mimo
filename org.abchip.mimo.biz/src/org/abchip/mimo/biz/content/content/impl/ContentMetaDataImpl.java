@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.content.content.impl;
 
 import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentMetaData;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.data.MetaDataPredicate;
@@ -28,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentMetaDataImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentMetaDataImpl#getMetaDataValue <em>Meta Data Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentMetaDataImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentMetaDataImpl#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentMetaDataImpl#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
@@ -42,26 +43,6 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getMetaDataValue() <em>Meta Data Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +62,16 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 * @ordered
 	 */
 	protected String metaDataValue = META_DATA_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
 
 	/**
 	 * The cached value of the '{@link #getMetaDataPredicateId() <em>Meta Data Predicate Id</em>}' reference.
@@ -127,7 +118,24 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_META_DATA__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -137,8 +145,8 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_META_DATA__CONTENT_ID, oldContentId, contentId));
@@ -255,10 +263,11 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
-				return getContentId();
 			case ContentPackage.CONTENT_META_DATA__META_DATA_VALUE:
 				return getMetaDataValue();
+			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case ContentPackage.CONTENT_META_DATA__META_DATA_PREDICATE_ID:
 				if (resolve) return getMetaDataPredicateId();
 				return basicGetMetaDataPredicateId();
@@ -277,11 +286,11 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_META_DATA__META_DATA_VALUE:
 				setMetaDataValue((String)newValue);
+				return;
+			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 			case ContentPackage.CONTENT_META_DATA__META_DATA_PREDICATE_ID:
 				setMetaDataPredicateId((MetaDataPredicate)newValue);
@@ -301,11 +310,11 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_META_DATA__META_DATA_VALUE:
 				setMetaDataValue(META_DATA_VALUE_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 			case ContentPackage.CONTENT_META_DATA__META_DATA_PREDICATE_ID:
 				setMetaDataPredicateId((MetaDataPredicate)null);
@@ -325,10 +334,10 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case ContentPackage.CONTENT_META_DATA__META_DATA_VALUE:
 				return META_DATA_VALUE_EDEFAULT == null ? metaDataValue != null : !META_DATA_VALUE_EDEFAULT.equals(metaDataValue);
+			case ContentPackage.CONTENT_META_DATA__CONTENT_ID:
+				return contentId != null;
 			case ContentPackage.CONTENT_META_DATA__META_DATA_PREDICATE_ID:
 				return metaDataPredicateId != null;
 			case ContentPackage.CONTENT_META_DATA__DATA_SOURCE_ID:
@@ -347,9 +356,7 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contentId: ");
-		result.append(contentId);
-		result.append(", metaDataValue: ");
+		result.append(" (metaDataValue: ");
 		result.append(metaDataValue);
 		result.append(')');
 		return result.toString();

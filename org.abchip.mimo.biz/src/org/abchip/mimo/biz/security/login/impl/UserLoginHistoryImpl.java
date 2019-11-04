@@ -30,12 +30,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getPasswordUsed <em>Password Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#isSuccessfulLogin <em>Successful Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getOriginUserLoginId <em>Origin User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
@@ -47,27 +47,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-
-	/**
-	 * The default value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
 
 
 	/**
@@ -176,6 +155,17 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 * @ordered
 	 */
 	protected String visitId = VISIT_ID_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin userLoginId;
 
 
 	/**
@@ -396,7 +386,24 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 * @generated
 	 */
 	@Override
-	public String getUserLoginId() {
+	public UserLogin getUserLoginId() {
+		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
+			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
+			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
+			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+			}
+		}
+		return userLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetUserLoginId() {
 		return userLoginId;
 	}
 
@@ -406,8 +413,8 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 * @generated
 	 */
 	@Override
-	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
+	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID, oldUserLoginId, userLoginId));
@@ -444,8 +451,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
-				return getUserLoginId();
 			case LoginPackage.USER_LOGIN_HISTORY__FROM_DATE:
 				return getFromDate();
 			case LoginPackage.USER_LOGIN_HISTORY__PASSWORD_USED:
@@ -456,6 +461,9 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 				return getThruDate();
 			case LoginPackage.USER_LOGIN_HISTORY__VISIT_ID:
 				return getVisitId();
+			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
+				if (resolve) return getUserLoginId();
+				return basicGetUserLoginId();
 			case LoginPackage.USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID:
 				if (resolve) return getOriginUserLoginId();
 				return basicGetOriginUserLoginId();
@@ -474,9 +482,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
-				setUserLoginId((String)newValue);
-				return;
 			case LoginPackage.USER_LOGIN_HISTORY__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -491,6 +496,9 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 				return;
 			case LoginPackage.USER_LOGIN_HISTORY__VISIT_ID:
 				setVisitId((String)newValue);
+				return;
+			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)newValue);
 				return;
 			case LoginPackage.USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID:
 				setOriginUserLoginId((UserLogin)newValue);
@@ -510,9 +518,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
-				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
-				return;
 			case LoginPackage.USER_LOGIN_HISTORY__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -527,6 +532,9 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 				return;
 			case LoginPackage.USER_LOGIN_HISTORY__VISIT_ID:
 				setVisitId(VISIT_ID_EDEFAULT);
+				return;
+			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)null);
 				return;
 			case LoginPackage.USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID:
 				setOriginUserLoginId((UserLogin)null);
@@ -546,8 +554,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
-				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
 			case LoginPackage.USER_LOGIN_HISTORY__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case LoginPackage.USER_LOGIN_HISTORY__PASSWORD_USED:
@@ -558,6 +564,8 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case LoginPackage.USER_LOGIN_HISTORY__VISIT_ID:
 				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
+			case LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID:
+				return userLoginId != null;
 			case LoginPackage.USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID:
 				return originUserLoginId != null;
 			case LoginPackage.USER_LOGIN_HISTORY__PARTY_ID:
@@ -576,9 +584,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (userLoginId: ");
-		result.append(userLoginId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", passwordUsed: ");
 		result.append(passwordUsed);

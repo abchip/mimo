@@ -83,30 +83,29 @@ public interface SegmentGroupRole extends BizEntity {
 	void setRoleTypeId(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Segment Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Segment Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Segment Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Segment Group Id</em>' attribute.
-	 * @see #setSegmentGroupId(String)
+	 * @return the value of the '<em>Segment Group Id</em>' reference.
+	 * @see #setSegmentGroupId(SegmentGroup)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupRole_SegmentGroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="segmentGroupId"
 	 * @generated
 	 */
-	String getSegmentGroupId();
+	SegmentGroup getSegmentGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroupRole#getSegmentGroupId <em>Segment Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroupRole#getSegmentGroupId <em>Segment Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Segment Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Segment Group Id</em>' reference.
 	 * @see #getSegmentGroupId()
 	 * @generated
 	 */
-	void setSegmentGroupId(String value);
+	void setSegmentGroupId(SegmentGroup value);
 
 } // SegmentGroupRole

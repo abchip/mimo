@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getFacilityGroupId <em>Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getFacilityGroupId <em>Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getParentFacilityGroupId <em>Parent Facility Group Id</em>}</li>
  * </ul>
  *
@@ -43,26 +43,6 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityGroupId = FACILITY_GROUP_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,6 +102,16 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FacilityGroup facilityGroupId;
 
 	/**
 	 * The cached value of the '{@link #getParentFacilityGroupId() <em>Parent Facility Group Id</em>}' reference.
@@ -227,7 +217,24 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	 * @generated
 	 */
 	@Override
-	public String getFacilityGroupId() {
+	public FacilityGroup getFacilityGroupId() {
+		if (facilityGroupId != null && ((EObject)facilityGroupId).eIsProxy()) {
+			InternalEObject oldFacilityGroupId = (InternalEObject)facilityGroupId;
+			facilityGroupId = (FacilityGroup)eResolveProxy(oldFacilityGroupId);
+			if (facilityGroupId != oldFacilityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID, oldFacilityGroupId, facilityGroupId));
+			}
+		}
+		return facilityGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityGroup basicGetFacilityGroupId() {
 		return facilityGroupId;
 	}
 
@@ -237,8 +244,8 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	 * @generated
 	 */
 	@Override
-	public void setFacilityGroupId(String newFacilityGroupId) {
-		String oldFacilityGroupId = facilityGroupId;
+	public void setFacilityGroupId(FacilityGroup newFacilityGroupId) {
+		FacilityGroup oldFacilityGroupId = facilityGroupId;
 		facilityGroupId = newFacilityGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID, oldFacilityGroupId, facilityGroupId));
@@ -292,14 +299,15 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
-				return getFacilityGroupId();
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__SEQUENCE_NUM:
 				return getSequenceNum();
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
+				if (resolve) return getFacilityGroupId();
+				return basicGetFacilityGroupId();
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__PARENT_FACILITY_GROUP_ID:
 				if (resolve) return getParentFacilityGroupId();
 				return basicGetParentFacilityGroupId();
@@ -315,9 +323,6 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
-				setFacilityGroupId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -326,6 +331,9 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 				return;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
+				setFacilityGroupId((FacilityGroup)newValue);
 				return;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__PARENT_FACILITY_GROUP_ID:
 				setParentFacilityGroupId((FacilityGroup)newValue);
@@ -342,9 +350,6 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
-				setFacilityGroupId(FACILITY_GROUP_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -353,6 +358,9 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 				return;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
+				setFacilityGroupId((FacilityGroup)null);
 				return;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__PARENT_FACILITY_GROUP_ID:
 				setParentFacilityGroupId((FacilityGroup)null);
@@ -369,14 +377,14 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
-				return FACILITY_GROUP_ID_EDEFAULT == null ? facilityGroupId != null : !FACILITY_GROUP_ID_EDEFAULT.equals(facilityGroupId);
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.FACILITY_GROUP_ROLLUP__FACILITY_GROUP_ID:
+				return facilityGroupId != null;
 			case FacilityPackage.FACILITY_GROUP_ROLLUP__PARENT_FACILITY_GROUP_ID:
 				return parentFacilityGroupId != null;
 		}
@@ -393,9 +401,7 @@ public class FacilityGroupRollupImpl extends BizEntityImpl implements FacilityGr
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (facilityGroupId: ");
-		result.append(facilityGroupId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);

@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getCustRequestId <em>Cust Request Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestAttribute()
@@ -109,30 +109,29 @@ public interface CustRequestAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cust Request Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Id</em>' attribute.
-	 * @see #setCustRequestId(String)
+	 * @return the value of the '<em>Cust Request Id</em>' reference.
+	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestAttribute_CustRequestId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="custRequestId"
 	 * @generated
 	 */
-	String getCustRequestId();
+	CustRequest getCustRequestId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getCustRequestId <em>Cust Request Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestAttribute#getCustRequestId <em>Cust Request Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cust Request Id</em>' attribute.
+	 * @param value the new value of the '<em>Cust Request Id</em>' reference.
 	 * @see #getCustRequestId()
 	 * @generated
 	 */
-	void setCustRequestId(String value);
+	void setCustRequestId(CustRequest value);
 
 } // CustRequestAttribute

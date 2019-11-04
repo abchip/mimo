@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute#getFinAccountId <em>Fin Account Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAttribute()
@@ -82,31 +82,30 @@ public interface FinAccountAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fin Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Id</em>' attribute.
-	 * @see #setFinAccountId(String)
+	 * @return the value of the '<em>Fin Account Id</em>' reference.
+	 * @see #setFinAccountId(FinAccount)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAttribute_FinAccountId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="finAccountId"
 	 * @generated
 	 */
-	String getFinAccountId();
+	FinAccount getFinAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute#getFinAccountId <em>Fin Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute#getFinAccountId <em>Fin Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fin Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Fin Account Id</em>' reference.
 	 * @see #getFinAccountId()
 	 * @generated
 	 */
-	void setFinAccountId(String value);
+	void setFinAccountId(FinAccount value);
 
 	/**
 	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.

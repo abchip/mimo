@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.WorkOrderItemFulfillment;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,10 +28,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.WorkOrderItemFulfillmentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.WorkOrderItemFulfillmentImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.WorkOrderItemFulfillmentImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.WorkOrderItemFulfillmentImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.WorkOrderItemFulfillmentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,26 +41,6 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -110,6 +91,16 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 * @ordered
 	 */
 	protected OrderHeader orderId;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +213,24 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -232,8 +240,8 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -247,8 +255,6 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__SHIP_GROUP_SEQ_ID:
@@ -256,6 +262,9 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID:
 				if (resolve) return getOrderId();
 				return basicGetOrderId();
+			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,9 +277,6 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -279,6 +285,9 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 				return;
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID:
 				setOrderId((OrderHeader)newValue);
+				return;
+			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -292,9 +301,6 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -303,6 +309,9 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 				return;
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID:
 				setOrderId((OrderHeader)null);
+				return;
+			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -316,14 +325,14 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__SHIP_GROUP_SEQ_ID:
 				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
 			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID:
 				return orderId != null;
+			case OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID:
+				return workEffortId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -338,9 +347,7 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", shipGroupSeqId: ");
 		result.append(shipGroupSeqId);

@@ -1041,22 +1041,22 @@ public interface SchedulePackage extends EPackage {
 	int TEMPORAL_EXPRESSION_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>From Temp Expr Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Expr Assoc Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>From Temp Expr Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>To Temp Expr Id</b></em>' reference.
@@ -1885,15 +1885,15 @@ public interface SchedulePackage extends EPackage {
 	EClass getTemporalExpressionAssoc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId <em>From Temp Expr Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId <em>From Temp Expr Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>From Temp Expr Id</em>'.
+	 * @return the meta object for the reference '<em>From Temp Expr Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId()
 	 * @see #getTemporalExpressionAssoc()
 	 * @generated
 	 */
-	EAttribute getTemporalExpressionAssoc_FromTempExprId();
+	EReference getTemporalExpressionAssoc_FromTempExprId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getToTempExprId <em>To Temp Expr Id</em>}'.
@@ -2546,12 +2546,12 @@ public interface SchedulePackage extends EPackage {
 		EClass TEMPORAL_EXPRESSION_ASSOC = eINSTANCE.getTemporalExpressionAssoc();
 
 		/**
-		 * The meta object literal for the '<em><b>From Temp Expr Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>From Temp Expr Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = eINSTANCE.getTemporalExpressionAssoc_FromTempExprId();
+		EReference TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = eINSTANCE.getTemporalExpressionAssoc_FromTempExprId();
 
 		/**
 		 * The meta object literal for the '<em><b>To Temp Expr Id</b></em>' reference feature.

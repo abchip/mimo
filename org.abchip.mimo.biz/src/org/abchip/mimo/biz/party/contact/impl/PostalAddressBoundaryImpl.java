@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.contact.impl;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.abchip.mimo.biz.party.contact.PostalAddressBoundary;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -34,27 +35,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAddressBoundary {
 	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContactMechId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
+	protected PostalAddress contactMechId;
 	/**
 	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -130,7 +122,24 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public PostalAddress getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -140,8 +149,8 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(PostalAddress newContactMechId) {
+		PostalAddress oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -156,7 +165,8 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID:
-				return getContactMechId();
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
 				if (resolve) return getGeoId();
 				return basicGetGeoId();
@@ -173,7 +183,7 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
+				setContactMechId((PostalAddress)newValue);
 				return;
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
 				setGeoId((Geo)newValue);
@@ -191,7 +201,7 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
+				setContactMechId((PostalAddress)null);
 				return;
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
 				setGeoId((Geo)null);
@@ -209,27 +219,11 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
+				return contactMechId != null;
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
 				return geoId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contactMechId: ");
-		result.append(contactMechId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PostalAddressBoundaryImpl

@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemBilling;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
@@ -31,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getShipmentReceiptId <em>Shipment Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl#getItemIssuanceId <em>Item Issuance Id</em>}</li>
@@ -48,26 +49,6 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -148,6 +129,16 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 * @ordered
 	 */
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
@@ -330,7 +321,24 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_BILLING__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -340,8 +348,8 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__ORDER_ID, oldOrderId, orderId));
@@ -441,8 +449,6 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
@@ -451,6 +457,9 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 				return getAmount();
 			case OrderPackage.ORDER_ITEM_BILLING__QUANTITY:
 				return getQuantity();
+			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case OrderPackage.ORDER_ITEM_BILLING__INVOICE_ID:
 				if (resolve) return getInvoiceId();
 				return basicGetInvoiceId();
@@ -472,9 +481,6 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
@@ -486,6 +492,9 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 				return;
 			case OrderPackage.ORDER_ITEM_BILLING__QUANTITY:
 				setQuantity((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)newValue);
@@ -508,9 +517,6 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -522,6 +528,9 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 				return;
 			case OrderPackage.ORDER_ITEM_BILLING__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case OrderPackage.ORDER_ITEM_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)null);
@@ -544,8 +553,6 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
@@ -554,6 +561,8 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
 			case OrderPackage.ORDER_ITEM_BILLING__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+			case OrderPackage.ORDER_ITEM_BILLING__ORDER_ID:
+				return orderId != null;
 			case OrderPackage.ORDER_ITEM_BILLING__INVOICE_ID:
 				return invoiceId != null;
 			case OrderPackage.ORDER_ITEM_BILLING__SHIPMENT_RECEIPT_ID:
@@ -574,9 +583,7 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderId: ");
-		result.append(orderId);
-		result.append(", orderItemSeqId: ");
+		result.append(" (orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);

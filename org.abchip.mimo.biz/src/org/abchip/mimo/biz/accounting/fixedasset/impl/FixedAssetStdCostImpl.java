@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
@@ -31,10 +32,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getAmountUomId <em>Amount Uom Id</em>}</li>
  * </ul>
@@ -46,25 +47,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -119,6 +101,15 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
 	/**
 	 * The cached value of the '{@link #getFixedAssetStdCostTypeId() <em>Fixed Asset Std Cost Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -272,7 +263,24 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -282,8 +290,8 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -337,14 +345,15 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT:
 				return getAmount();
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
 				if (resolve) return getFixedAssetStdCostTypeId();
 				return basicGetFixedAssetStdCostTypeId();
@@ -363,9 +372,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -374,6 +380,9 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
 				setFixedAssetStdCostTypeId((FixedAssetStdCostType)newValue);
@@ -393,9 +402,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -404,6 +410,9 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
 				setFixedAssetStdCostTypeId((FixedAssetStdCostType)null);
@@ -423,14 +432,14 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
+				return fixedAssetId != null;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
 				return fixedAssetStdCostTypeId != null;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
@@ -449,9 +458,7 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fixedAssetId: ");
-		result.append(fixedAssetId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", amount: ");
 		result.append(amount);

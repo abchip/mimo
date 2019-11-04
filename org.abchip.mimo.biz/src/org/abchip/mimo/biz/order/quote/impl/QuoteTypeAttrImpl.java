@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.order.quote.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
+import org.abchip.mimo.biz.order.quote.QuoteType;
 import org.abchip.mimo.biz.order.quote.QuoteTypeAttr;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTypeAttrImpl#getQuoteTypeId <em>Quote Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteTypeAttrImpl#getQuoteTypeId <em>Quote Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,26 +39,6 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getQuoteTypeId() <em>Quote Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUOTE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteTypeId() <em>Quote Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteTypeId = QUOTE_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
@@ -96,6 +79,16 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getQuoteTypeId() <em>Quote Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuoteTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected QuoteType quoteTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	 * @generated
 	 */
 	@Override
-	public String getQuoteTypeId() {
+	public QuoteType getQuoteTypeId() {
+		if (quoteTypeId != null && ((EObject)quoteTypeId).eIsProxy()) {
+			InternalEObject oldQuoteTypeId = (InternalEObject)quoteTypeId;
+			quoteTypeId = (QuoteType)eResolveProxy(oldQuoteTypeId);
+			if (quoteTypeId != oldQuoteTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
+			}
+		}
+		return quoteTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QuoteType basicGetQuoteTypeId() {
 		return quoteTypeId;
 	}
 
@@ -178,8 +188,8 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	 * @generated
 	 */
 	@Override
-	public void setQuoteTypeId(String newQuoteTypeId) {
-		String oldQuoteTypeId = quoteTypeId;
+	public void setQuoteTypeId(QuoteType newQuoteTypeId) {
+		QuoteType oldQuoteTypeId = quoteTypeId;
 		quoteTypeId = newQuoteTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
@@ -193,12 +203,13 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
-				return getQuoteTypeId();
 			case QuotePackage.QUOTE_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case QuotePackage.QUOTE_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
+				if (resolve) return getQuoteTypeId();
+				return basicGetQuoteTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,14 +222,14 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
-				setQuoteTypeId((String)newValue);
-				return;
 			case QuotePackage.QUOTE_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case QuotePackage.QUOTE_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
+				setQuoteTypeId((QuoteType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,14 +243,14 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
-				setQuoteTypeId(QUOTE_TYPE_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
+				setQuoteTypeId((QuoteType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,12 +264,12 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
-				return QUOTE_TYPE_ID_EDEFAULT == null ? quoteTypeId != null : !QUOTE_TYPE_ID_EDEFAULT.equals(quoteTypeId);
 			case QuotePackage.QUOTE_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case QuotePackage.QUOTE_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID:
+				return quoteTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,9 +284,7 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quoteTypeId: ");
-		result.append(quoteTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

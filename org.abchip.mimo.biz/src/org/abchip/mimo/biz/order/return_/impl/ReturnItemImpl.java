@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.return_.ReturnItemType;
@@ -35,13 +36,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReceivedQuantity <em>Received Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnPrice <em>Return Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnQuantity <em>Return Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnReasonId <em>Return Reason Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnTypeId <em>Return Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
@@ -59,26 +60,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnId = RETURN_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReturnItemSeqId() <em>Return Item Seq Id</em>}' attribute.
@@ -199,6 +180,16 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @ordered
 	 */
 	protected BigDecimal returnQuantity = RETURN_QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReturnHeader returnId;
 
 	/**
 	 * The cached value of the '{@link #getReturnReasonId() <em>Return Reason Id</em>}' reference.
@@ -494,7 +485,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getReturnId() {
+	public ReturnHeader getReturnId() {
+		if (returnId != null && ((EObject)returnId).eIsProxy()) {
+			InternalEObject oldReturnId = (InternalEObject)returnId;
+			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
+			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_ID, oldReturnId, returnId));
+			}
+		}
+		return returnId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnHeader basicGetReturnId() {
 		return returnId;
 	}
 
@@ -504,8 +512,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
+	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_ID, oldReturnId, returnId));
@@ -788,8 +796,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM__RETURN_ID:
-				return getReturnId();
 			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_SEQ_ID:
 				return getReturnItemSeqId();
 			case ReturnPackage.RETURN_ITEM__DESCRIPTION:
@@ -802,6 +808,9 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				return getReturnPrice();
 			case ReturnPackage.RETURN_ITEM__RETURN_QUANTITY:
 				return getReturnQuantity();
+			case ReturnPackage.RETURN_ITEM__RETURN_ID:
+				if (resolve) return getReturnId();
+				return basicGetReturnId();
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
 				if (resolve) return getReturnReasonId();
 				return basicGetReturnReasonId();
@@ -838,9 +847,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM__RETURN_ID:
-				setReturnId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId((String)newValue);
 				return;
@@ -858,6 +864,9 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_QUANTITY:
 				setReturnQuantity((BigDecimal)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM__RETURN_ID:
+				setReturnId((ReturnHeader)newValue);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
 				setReturnReasonId((ReturnReason)newValue);
@@ -895,9 +904,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM__RETURN_ID:
-				setReturnId(RETURN_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId(RETURN_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -915,6 +921,9 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_QUANTITY:
 				setReturnQuantity(RETURN_QUANTITY_EDEFAULT);
+				return;
+			case ReturnPackage.RETURN_ITEM__RETURN_ID:
+				setReturnId((ReturnHeader)null);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
 				setReturnReasonId((ReturnReason)null);
@@ -952,8 +961,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM__RETURN_ID:
-				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
 			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_SEQ_ID:
 				return RETURN_ITEM_SEQ_ID_EDEFAULT == null ? returnItemSeqId != null : !RETURN_ITEM_SEQ_ID_EDEFAULT.equals(returnItemSeqId);
 			case ReturnPackage.RETURN_ITEM__DESCRIPTION:
@@ -966,6 +973,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				return RETURN_PRICE_EDEFAULT == null ? returnPrice != null : !RETURN_PRICE_EDEFAULT.equals(returnPrice);
 			case ReturnPackage.RETURN_ITEM__RETURN_QUANTITY:
 				return RETURN_QUANTITY_EDEFAULT == null ? returnQuantity != null : !RETURN_QUANTITY_EDEFAULT.equals(returnQuantity);
+			case ReturnPackage.RETURN_ITEM__RETURN_ID:
+				return returnId != null;
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
 				return returnReasonId != null;
 			case ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID:
@@ -996,9 +1005,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnId: ");
-		result.append(returnId);
-		result.append(", returnItemSeqId: ");
+		result.append(" (returnItemSeqId: ");
 		result.append(returnItemSeqId);
 		result.append(", description: ");
 		result.append(description);

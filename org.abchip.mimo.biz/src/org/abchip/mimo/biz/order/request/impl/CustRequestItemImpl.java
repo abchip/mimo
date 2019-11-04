@@ -13,6 +13,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestItem;
 import org.abchip.mimo.biz.order.request.CustRequestResolution;
 import org.abchip.mimo.biz.order.request.RequestPackage;
@@ -33,7 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getDescription <em>Description</em>}</li>
@@ -47,6 +47,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getSelectedAmount <em>Selected Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getStory <em>Story</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getCustRequestResolutionId <em>Cust Request Resolution Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestItemImpl#getProductId <em>Product Id</em>}</li>
@@ -59,26 +60,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCustRequestItemSeqId() <em>Cust Request Item Seq Id</em>}' attribute.
@@ -341,6 +322,16 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	protected String story = STORY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustRequestId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustRequest custRequestId;
+
+	/**
 	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,7 +409,24 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -428,8 +436,8 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -839,8 +847,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				return getCustRequestId();
 			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				return getCustRequestItemSeqId();
 			case RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID:
@@ -867,6 +873,9 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 				return getSequenceNum();
 			case RequestPackage.CUST_REQUEST_ITEM__STORY:
 				return getStory();
+			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
 			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
 				if (resolve) return getStatusId();
 				return basicGetStatusId();
@@ -888,9 +897,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
-				return;
 			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId((String)newValue);
 				return;
@@ -930,6 +936,9 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 			case RequestPackage.CUST_REQUEST_ITEM__STORY:
 				setStory((String)newValue);
 				return;
+			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)newValue);
+				return;
 			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
 				setStatusId((StatusItem)newValue);
 				return;
@@ -951,9 +960,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
-				return;
 			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId(CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -993,6 +999,9 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 			case RequestPackage.CUST_REQUEST_ITEM__STORY:
 				setStory(STORY_EDEFAULT);
 				return;
+			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)null);
+				return;
 			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
 				setStatusId((StatusItem)null);
 				return;
@@ -1014,8 +1023,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				return CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT == null ? custRequestItemSeqId != null : !CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT.equals(custRequestItemSeqId);
 			case RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID:
@@ -1042,6 +1049,8 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case RequestPackage.CUST_REQUEST_ITEM__STORY:
 				return STORY_EDEFAULT == null ? story != null : !STORY_EDEFAULT.equals(story);
+			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
+				return custRequestId != null;
 			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
 				return statusId != null;
 			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID:
@@ -1062,9 +1071,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (custRequestId: ");
-		result.append(custRequestId);
-		result.append(", custRequestItemSeqId: ");
+		result.append(" (custRequestItemSeqId: ");
 		result.append(custRequestItemSeqId);
 		result.append(", configId: ");
 		result.append(configId);

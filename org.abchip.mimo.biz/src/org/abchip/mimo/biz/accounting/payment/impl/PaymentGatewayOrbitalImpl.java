@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayOrbital;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getAuthorizationURI <em>Authorization URI</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getConnectionPassword <em>Connection Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getConnectionTimeoutSeconds <em>Connection Timeout Seconds</em>}</li>
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getSdkVersion <em>Sdk Version</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getSslSocketFactory <em>Ssl Socket Factory</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getUsername <em>Username</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,24 +50,6 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAuthorizationURI() <em>Authorization URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -317,6 +302,15 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 * @ordered
 	 */
 	protected String username = USERNAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -504,7 +498,24 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -514,8 +525,8 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -690,8 +701,6 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__AUTHORIZATION_URI:
 				return getAuthorizationURI();
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__CONNECTION_PASSWORD:
@@ -720,6 +729,9 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 				return getSslSocketFactory();
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__USERNAME:
 				return getUsername();
+			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -732,9 +744,6 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__AUTHORIZATION_URI:
 				setAuthorizationURI((String)newValue);
 				return;
@@ -777,6 +786,9 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__USERNAME:
 				setUsername((String)newValue);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -789,9 +801,6 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__AUTHORIZATION_URI:
 				setAuthorizationURI(AUTHORIZATION_URI_EDEFAULT);
 				return;
@@ -834,6 +843,9 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__USERNAME:
 				setUsername(USERNAME_EDEFAULT);
 				return;
+			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -846,8 +858,6 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__AUTHORIZATION_URI:
 				return AUTHORIZATION_URI_EDEFAULT == null ? authorizationURI != null : !AUTHORIZATION_URI_EDEFAULT.equals(authorizationURI);
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__CONNECTION_PASSWORD:
@@ -876,6 +886,8 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 				return SSL_SOCKET_FACTORY_EDEFAULT == null ? sslSocketFactory != null : !SSL_SOCKET_FACTORY_EDEFAULT.equals(sslSocketFactory);
 			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__USERNAME:
 				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
+			case PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -890,9 +902,7 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
-		result.append(", authorizationURI: ");
+		result.append(" (authorizationURI: ");
 		result.append(authorizationURI);
 		result.append(", connectionPassword: ");
 		result.append(connectionPassword);

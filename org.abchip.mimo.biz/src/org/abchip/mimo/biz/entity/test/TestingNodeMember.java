@@ -20,12 +20,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingNodeId <em>Testing Node Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getExtendFromDate <em>Extend From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getExtendThruDate <em>Extend Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingId <em>Testing Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingNodeId <em>Testing Node Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember()
@@ -139,31 +139,30 @@ public interface TestingNodeMember extends BizEntity {
 	void setTestingId(Testing value);
 
 	/**
-	 * Returns the value of the '<em><b>Testing Node Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Testing Node Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Testing Node Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Testing Node Id</em>' attribute.
-	 * @see #setTestingNodeId(String)
+	 * @return the value of the '<em>Testing Node Id</em>' reference.
+	 * @see #setTestingNodeId(TestingNode)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_TestingNodeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="testingNodeId"
 	 * @generated
 	 */
-	String getTestingNodeId();
+	TestingNode getTestingNodeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingNodeId <em>Testing Node Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingNodeId <em>Testing Node Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Testing Node Id</em>' attribute.
+	 * @param value the new value of the '<em>Testing Node Id</em>' reference.
 	 * @see #getTestingNodeId()
 	 * @generated
 	 */
-	void setTestingNodeId(String value);
+	void setTestingNodeId(TestingNode value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

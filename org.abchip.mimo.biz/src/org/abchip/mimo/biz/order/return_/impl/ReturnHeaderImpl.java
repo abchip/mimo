@@ -20,7 +20,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -227,7 +227,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 * @ordered
 	 */
-	protected PostalAddress originContactMechId;
+	protected ContactMech originContactMechId;
 
 	/**
 	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
@@ -590,10 +590,10 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getOriginContactMechId() {
+	public ContactMech getOriginContactMechId() {
 		if (originContactMechId != null && ((EObject)originContactMechId).eIsProxy()) {
 			InternalEObject oldOriginContactMechId = (InternalEObject)originContactMechId;
-			originContactMechId = (PostalAddress)eResolveProxy(oldOriginContactMechId);
+			originContactMechId = (ContactMech)eResolveProxy(oldOriginContactMechId);
 			if (originContactMechId != oldOriginContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
@@ -607,7 +607,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetOriginContactMechId() {
+	public ContactMech basicGetOriginContactMechId() {
 		return originContactMechId;
 	}
 
@@ -617,8 +617,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setOriginContactMechId(PostalAddress newOriginContactMechId) {
-		PostalAddress oldOriginContactMechId = originContactMechId;
+	public void setOriginContactMechId(ContactMech newOriginContactMechId) {
+		ContactMech oldOriginContactMechId = originContactMechId;
 		originContactMechId = newOriginContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
@@ -992,7 +992,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 				setDestinationFacilityId((Facility)newValue);
 				return;
 			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId((PostalAddress)newValue);
+				setOriginContactMechId((ContactMech)newValue);
 				return;
 			case ReturnPackage.RETURN_HEADER__STATUS_ID:
 				setStatusId((StatusItem)newValue);
@@ -1057,7 +1057,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 				setDestinationFacilityId((Facility)null);
 				return;
 			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId((PostalAddress)null);
+				setOriginContactMechId((ContactMech)null);
 				return;
 			case ReturnPackage.RETURN_HEADER__STATUS_ID:
 				setStatusId((StatusItem)null);

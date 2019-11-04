@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getParentProductCategoryId <em>Parent Product Category Id</em>}</li>
  * </ul>
  *
@@ -43,26 +43,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,6 +102,16 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * The cached value of the '{@link #getParentProductCategoryId() <em>Parent Product Category Id</em>}' reference.
@@ -227,7 +217,24 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -237,8 +244,8 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -292,14 +299,15 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				return getFromDate();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				return getThruDate();
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
 				if (resolve) return getParentProductCategoryId();
 				return basicGetParentProductCategoryId();
@@ -315,9 +323,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -326,6 +331,9 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
 				setParentProductCategoryId((ProductCategory)newValue);
@@ -342,9 +350,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -353,6 +358,9 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
 				setParentProductCategoryId((ProductCategory)null);
@@ -369,14 +377,14 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
 				return parentProductCategoryId != null;
 		}
@@ -393,9 +401,7 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);

@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getRevisionSeqId <em>Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getDateRevised <em>Date Revised</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getBudgetId <em>Budget Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevision()
@@ -84,30 +84,29 @@ public interface BudgetRevision extends BizEntity {
 	void setRevisionSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Id</em>' attribute.
-	 * @see #setBudgetId(String)
+	 * @return the value of the '<em>Budget Id</em>' reference.
+	 * @see #setBudgetId(Budget)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevision_BudgetId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="budgetId"
 	 * @generated
 	 */
-	String getBudgetId();
+	Budget getBudgetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getBudgetId <em>Budget Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetRevision#getBudgetId <em>Budget Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Id</em>' reference.
 	 * @see #getBudgetId()
 	 * @generated
 	 */
-	void setBudgetId(String value);
+	void setBudgetId(Budget value);
 
 } // BudgetRevision

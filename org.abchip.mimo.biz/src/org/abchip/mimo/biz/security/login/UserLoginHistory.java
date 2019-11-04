@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPasswordUsed <em>Password Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#isSuccessfulLogin <em>Successful Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}</li>
  * </ul>
@@ -194,31 +194,30 @@ public interface UserLoginHistory extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Login Id</em>' attribute.
-	 * @see #setUserLoginId(String)
+	 * @return the value of the '<em>User Login Id</em>' reference.
+	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_UserLoginId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getUserLoginId();
+	UserLogin getUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>User Login Id</em>' reference.
 	 * @see #getUserLoginId()
 	 * @generated
 	 */
-	void setUserLoginId(String value);
+	void setUserLoginId(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Visit Id</b></em>' attribute.

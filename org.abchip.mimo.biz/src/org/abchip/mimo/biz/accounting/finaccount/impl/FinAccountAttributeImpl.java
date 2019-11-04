@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount.impl;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,10 +26,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,24 +39,6 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountId = FIN_ACCOUNT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,6 +93,15 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccount finAccountId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,7 +174,24 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountId() {
+	public FinAccount getFinAccountId() {
+		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
+			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
+			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
+			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
+			}
+		}
+		return finAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccount basicGetFinAccountId() {
 		return finAccountId;
 	}
 
@@ -190,8 +201,8 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountId(String newFinAccountId) {
-		String oldFinAccountId = finAccountId;
+	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
@@ -228,14 +239,15 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
-				return getFinAccountId();
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
+				if (resolve) return getFinAccountId();
+				return basicGetFinAccountId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,9 +260,6 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
-				setFinAccountId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -259,6 +268,9 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -272,9 +284,6 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
-				setFinAccountId(FIN_ACCOUNT_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -283,6 +292,9 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -296,14 +308,14 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
-				return FIN_ACCOUNT_ID_EDEFAULT == null ? finAccountId != null : !FIN_ACCOUNT_ID_EDEFAULT.equals(finAccountId);
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID:
+				return finAccountId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -318,9 +330,7 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (finAccountId: ");
-		result.append(finAccountId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

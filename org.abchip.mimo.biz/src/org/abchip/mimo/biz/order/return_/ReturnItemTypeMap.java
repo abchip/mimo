@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemMapKey <em>Return Item Map Key</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap()
@@ -90,12 +90,12 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Return Item Type Id</em>' reference.
-	 * @see #setReturnItemTypeId(ReturnAdjustmentType)
+	 * @see #setReturnItemTypeId(ReturnItemType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnItemTypeId()
-	 * @model keys="returnAdjustmentTypeId"
+	 * @model keys="returnItemTypeId"
 	 * @generated
 	 */
-	ReturnAdjustmentType getReturnItemTypeId();
+	ReturnItemType getReturnItemTypeId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId <em>Return Item Type Id</em>}' reference.
@@ -105,6 +105,6 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * @see #getReturnItemTypeId()
 	 * @generated
 	 */
-	void setReturnItemTypeId(ReturnAdjustmentType value);
+	void setReturnItemTypeId(ReturnItemType value);
 
 } // ReturnItemTypeMap

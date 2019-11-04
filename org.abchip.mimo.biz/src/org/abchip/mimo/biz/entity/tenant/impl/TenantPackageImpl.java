@@ -804,17 +804,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTenantComponent_ComponentName() {
-		return (EAttribute)tenantComponentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTenantComponent_TenantId() {
+	public EReference getTenantComponent_ComponentName() {
 		return (EReference)tenantComponentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -824,8 +814,18 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getTenantComponent_TenantId() {
+		return (EReference)tenantComponentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getTenantComponent_SequenceNum() {
-		return (EAttribute)tenantComponentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)tenantComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -844,8 +844,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTenantDataSource_TenantId() {
-		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(0);
+	public EReference getTenantDataSource_TenantId() {
+		return (EReference)tenantDataSourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -855,7 +855,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 */
 	@Override
 	public EAttribute getTenantDataSource_EntityGroupName() {
-		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -865,7 +865,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 */
 	@Override
 	public EAttribute getTenantDataSource_JdbcPassword() {
-		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -875,7 +875,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 */
 	@Override
 	public EAttribute getTenantDataSource_JdbcUri() {
-		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -885,7 +885,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 */
 	@Override
 	public EAttribute getTenantDataSource_JdbcUsername() {
-		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)tenantDataSourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -934,8 +934,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTenantKeyEncryptingKey_TenantId() {
-		return (EAttribute)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(0);
+	public EReference getTenantKeyEncryptingKey_TenantId() {
+		return (EReference)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -945,7 +945,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 */
 	@Override
 	public EAttribute getTenantKeyEncryptingKey_KekText() {
-		return (EAttribute)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -990,24 +990,24 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		createEAttribute(tenantEClass, TENANT__TENANT_DATA_SOURCES);
 
 		tenantComponentEClass = createEClass(TENANT_COMPONENT);
-		createEAttribute(tenantComponentEClass, TENANT_COMPONENT__COMPONENT_NAME);
 		createEAttribute(tenantComponentEClass, TENANT_COMPONENT__SEQUENCE_NUM);
 		createEReference(tenantComponentEClass, TENANT_COMPONENT__TENANT_ID);
+		createEReference(tenantComponentEClass, TENANT_COMPONENT__COMPONENT_NAME);
 
 		tenantDataSourceEClass = createEClass(TENANT_DATA_SOURCE);
-		createEAttribute(tenantDataSourceEClass, TENANT_DATA_SOURCE__TENANT_ID);
 		createEAttribute(tenantDataSourceEClass, TENANT_DATA_SOURCE__ENTITY_GROUP_NAME);
 		createEAttribute(tenantDataSourceEClass, TENANT_DATA_SOURCE__JDBC_PASSWORD);
 		createEAttribute(tenantDataSourceEClass, TENANT_DATA_SOURCE__JDBC_URI);
 		createEAttribute(tenantDataSourceEClass, TENANT_DATA_SOURCE__JDBC_USERNAME);
+		createEReference(tenantDataSourceEClass, TENANT_DATA_SOURCE__TENANT_ID);
 
 		tenantDomainNameEClass = createEClass(TENANT_DOMAIN_NAME);
 		createEAttribute(tenantDomainNameEClass, TENANT_DOMAIN_NAME__DOMAIN_NAME);
 		createEReference(tenantDomainNameEClass, TENANT_DOMAIN_NAME__TENANT_ID);
 
 		tenantKeyEncryptingKeyEClass = createEClass(TENANT_KEY_ENCRYPTING_KEY);
-		createEAttribute(tenantKeyEncryptingKeyEClass, TENANT_KEY_ENCRYPTING_KEY__TENANT_ID);
 		createEAttribute(tenantKeyEncryptingKeyEClass, TENANT_KEY_ENCRYPTING_KEY__KEK_TEXT);
+		createEReference(tenantKeyEncryptingKeyEClass, TENANT_KEY_ENCRYPTING_KEY__TENANT_ID);
 	}
 
 	/**
@@ -1066,17 +1066,19 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		addEOperation(tenantEClass, ecorePackage.getEString(), "tenantDomainNames", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tenantComponentEClass, TenantComponent.class, "TenantComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTenantComponent_ComponentName(), ecorePackage.getEString(), "componentName", null, 1, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantComponent_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTenantComponent_TenantId(), this.getTenant(), null, "tenantId", null, 0, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTenantComponent_TenantId().getEKeys().add(this.getTenant_TenantId());
+		initEReference(getTenantComponent_ComponentName(), this.getComponent(), null, "componentName", null, 0, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTenantComponent_ComponentName().getEKeys().add(this.getComponent_ComponentName());
 
 		initEClass(tenantDataSourceEClass, TenantDataSource.class, "TenantDataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTenantDataSource_TenantId(), ecorePackage.getEString(), "tenantId", null, 1, 1, TenantDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantDataSource_EntityGroupName(), ecorePackage.getEString(), "entityGroupName", null, 1, 1, TenantDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantDataSource_JdbcPassword(), ecorePackage.getEString(), "jdbcPassword", null, 0, 1, TenantDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantDataSource_JdbcUri(), ecorePackage.getEString(), "jdbcUri", null, 0, 1, TenantDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantDataSource_JdbcUsername(), ecorePackage.getEString(), "jdbcUsername", null, 0, 1, TenantDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTenantDataSource_TenantId(), this.getTenant(), null, "tenantId", null, 0, 1, TenantDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTenantDataSource_TenantId().getEKeys().add(this.getTenant_TenantId());
 
 		initEClass(tenantDomainNameEClass, TenantDomainName.class, "TenantDomainName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTenantDomainName_DomainName(), ecorePackage.getEString(), "domainName", null, 1, 1, TenantDomainName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1084,8 +1086,9 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		getTenantDomainName_TenantId().getEKeys().add(this.getTenant_TenantId());
 
 		initEClass(tenantKeyEncryptingKeyEClass, TenantKeyEncryptingKey.class, "TenantKeyEncryptingKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTenantKeyEncryptingKey_TenantId(), ecorePackage.getEString(), "tenantId", null, 1, 1, TenantKeyEncryptingKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantKeyEncryptingKey_KekText(), ecorePackage.getEString(), "kekText", null, 0, 1, TenantKeyEncryptingKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTenantKeyEncryptingKey_TenantId(), this.getTenant(), null, "tenantId", null, 0, 1, TenantKeyEncryptingKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTenantKeyEncryptingKey_TenantId().getEKeys().add(this.getTenant_TenantId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1139,18 +1142,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getTenantComponent_ComponentName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTenantDataSource_TenantId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getTenantDataSource_EntityGroupName(),
 		   source,
 		   new String[] {
@@ -1158,12 +1149,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		   });
 		addAnnotation
 		  (getTenantDomainName_DomainName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTenantKeyEncryptingKey_TenantId(),
 		   source,
 		   new String[] {
 			   "key", "true"

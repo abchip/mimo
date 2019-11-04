@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent()
@@ -29,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface TenantComponent extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Component Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Component Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Component Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Name</em>' attribute.
-	 * @see #setComponentName(String)
+	 * @return the value of the '<em>Component Name</em>' reference.
+	 * @see #setComponentName(Component)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent_ComponentName()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="componentName"
 	 * @generated
 	 */
-	String getComponentName();
+	Component getComponentName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Name</em>' attribute.
+	 * @param value the new value of the '<em>Component Name</em>' reference.
 	 * @see #getComponentName()
 	 * @generated
 	 */
-	void setComponentName(String value);
+	void setComponentName(Component value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.

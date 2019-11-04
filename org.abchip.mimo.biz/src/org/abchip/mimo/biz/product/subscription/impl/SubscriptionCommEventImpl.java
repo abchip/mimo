@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.product.subscription.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -26,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionCommEventImpl#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionCommEventImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionCommEventImpl#getSubscriptionId <em>Subscription Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,26 +40,6 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getSubscriptionId() <em>Subscription Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBSCRIPTION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubscriptionId() <em>Subscription Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subscriptionId = SUBSCRIPTION_ID_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,6 +48,16 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	 * @ordered
 	 */
 	protected CommunicationEvent communicationEventId;
+
+	/**
+	 * The cached value of the '{@link #getSubscriptionId() <em>Subscription Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubscriptionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Subscription subscriptionId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,7 +124,24 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	 * @generated
 	 */
 	@Override
-	public String getSubscriptionId() {
+	public Subscription getSubscriptionId() {
+		if (subscriptionId != null && ((EObject)subscriptionId).eIsProxy()) {
+			InternalEObject oldSubscriptionId = (InternalEObject)subscriptionId;
+			subscriptionId = (Subscription)eResolveProxy(oldSubscriptionId);
+			if (subscriptionId != oldSubscriptionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
+			}
+		}
+		return subscriptionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Subscription basicGetSubscriptionId() {
 		return subscriptionId;
 	}
 
@@ -143,8 +151,8 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	 * @generated
 	 */
 	@Override
-	public void setSubscriptionId(String newSubscriptionId) {
-		String oldSubscriptionId = subscriptionId;
+	public void setSubscriptionId(Subscription newSubscriptionId) {
+		Subscription oldSubscriptionId = subscriptionId;
 		subscriptionId = newSubscriptionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
@@ -158,11 +166,12 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
-				return getSubscriptionId();
 			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__COMMUNICATION_EVENT_ID:
 				if (resolve) return getCommunicationEventId();
 				return basicGetCommunicationEventId();
+			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
+				if (resolve) return getSubscriptionId();
+				return basicGetSubscriptionId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,11 +184,11 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
-				setSubscriptionId((String)newValue);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
+				setSubscriptionId((Subscription)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,11 +202,11 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
-				setSubscriptionId(SUBSCRIPTION_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
+				setSubscriptionId((Subscription)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -211,28 +220,12 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
-				return SUBSCRIPTION_ID_EDEFAULT == null ? subscriptionId != null : !SUBSCRIPTION_ID_EDEFAULT.equals(subscriptionId);
 			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__COMMUNICATION_EVENT_ID:
 				return communicationEventId != null;
+			case SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID:
+				return subscriptionId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (subscriptionId: ");
-		result.append(subscriptionId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SubscriptionCommEventImpl

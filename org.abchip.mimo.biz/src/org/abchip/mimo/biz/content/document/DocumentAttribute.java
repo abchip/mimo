@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getDocumentId <em>Document Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getDocumentId <em>Document Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentAttribute()
@@ -109,30 +109,29 @@ public interface DocumentAttribute extends BizEntity {
 	void setAttrValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Document Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Document Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Document Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Document Id</em>' attribute.
-	 * @see #setDocumentId(String)
+	 * @return the value of the '<em>Document Id</em>' reference.
+	 * @see #setDocumentId(Document)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentAttribute_DocumentId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="documentId"
 	 * @generated
 	 */
-	String getDocumentId();
+	Document getDocumentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getDocumentId <em>Document Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.document.DocumentAttribute#getDocumentId <em>Document Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Document Id</em>' attribute.
+	 * @param value the new value of the '<em>Document Id</em>' reference.
 	 * @see #getDocumentId()
 	 * @generated
 	 */
-	void setDocumentId(String value);
+	void setDocumentId(Document value);
 
 } // DocumentAttribute

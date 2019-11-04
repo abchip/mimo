@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.product.product.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductCalculatedInfo;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,10 +28,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getAverageCustomerRating <em>Average Customer Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getTotalQuantityOrdered <em>Total Quantity Ordered</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getTotalTimesViewed <em>Total Times Viewed</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,26 +41,6 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAverageCustomerRating() <em>Average Customer Rating</em>}' attribute.
@@ -120,6 +103,16 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	protected long totalTimesViewed = TOTAL_TIMES_VIEWED_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -167,7 +160,24 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -177,8 +187,8 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID, oldProductId, productId));
@@ -238,14 +248,15 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_CALCULATED_INFO__AVERAGE_CUSTOMER_RATING:
 				return getAverageCustomerRating();
 			case ProductPackage.PRODUCT_CALCULATED_INFO__TOTAL_QUANTITY_ORDERED:
 				return getTotalQuantityOrdered();
 			case ProductPackage.PRODUCT_CALCULATED_INFO__TOTAL_TIMES_VIEWED:
 				return getTotalTimesViewed();
+			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,9 +269,6 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_CALCULATED_INFO__AVERAGE_CUSTOMER_RATING:
 				setAverageCustomerRating((BigDecimal)newValue);
 				return;
@@ -269,6 +277,9 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 				return;
 			case ProductPackage.PRODUCT_CALCULATED_INFO__TOTAL_TIMES_VIEWED:
 				setTotalTimesViewed((Long)newValue);
+				return;
+			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -282,9 +293,6 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_CALCULATED_INFO__AVERAGE_CUSTOMER_RATING:
 				setAverageCustomerRating(AVERAGE_CUSTOMER_RATING_EDEFAULT);
 				return;
@@ -293,6 +301,9 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 				return;
 			case ProductPackage.PRODUCT_CALCULATED_INFO__TOTAL_TIMES_VIEWED:
 				setTotalTimesViewed(TOTAL_TIMES_VIEWED_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -306,14 +317,14 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_CALCULATED_INFO__AVERAGE_CUSTOMER_RATING:
 				return AVERAGE_CUSTOMER_RATING_EDEFAULT == null ? averageCustomerRating != null : !AVERAGE_CUSTOMER_RATING_EDEFAULT.equals(averageCustomerRating);
 			case ProductPackage.PRODUCT_CALCULATED_INFO__TOTAL_QUANTITY_ORDERED:
 				return TOTAL_QUANTITY_ORDERED_EDEFAULT == null ? totalQuantityOrdered != null : !TOTAL_QUANTITY_ORDERED_EDEFAULT.equals(totalQuantityOrdered);
 			case ProductPackage.PRODUCT_CALCULATED_INFO__TOTAL_TIMES_VIEWED:
 				return totalTimesViewed != TOTAL_TIMES_VIEWED_EDEFAULT;
+			case ProductPackage.PRODUCT_CALCULATED_INFO__PRODUCT_ID:
+				return productId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,9 +339,7 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(", averageCustomerRating: ");
+		result.append(" (averageCustomerRating: ");
 		result.append(averageCustomerRating);
 		result.append(", totalQuantityOrdered: ");
 		result.append(totalQuantityOrdered);

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.security.login;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,8 +19,8 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getQuestionEnumId <em>Question Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getSecurityAnswer <em>Security Answer</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getQuestionEnumId <em>Question Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
@@ -29,31 +30,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface UserLoginSecurityQuestion extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Question Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Question Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Question Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Question Enum Id</em>' attribute.
-	 * @see #setQuestionEnumId(String)
+	 * @return the value of the '<em>Question Enum Id</em>' reference.
+	 * @see #setQuestionEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSecurityQuestion_QuestionEnumId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getQuestionEnumId();
+	Enumeration getQuestionEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getQuestionEnumId <em>Question Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getQuestionEnumId <em>Question Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Question Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Question Enum Id</em>' reference.
 	 * @see #getQuestionEnumId()
 	 * @generated
 	 */
-	void setQuestionEnumId(String value);
+	void setQuestionEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Security Answer</b></em>' attribute.

@@ -23,7 +23,6 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitStartDateTime <em>Hit Start Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getNumOfBytes <em>Num Of Bytes</em>}</li>
@@ -35,6 +34,7 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}</li>
@@ -47,31 +47,30 @@ import org.abchip.mimo.biz.party.party.Party;
  */
 public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	/**
-	 * Returns the value of the '<em><b>Visit Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Visit Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Visit Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Visit Id</em>' attribute.
-	 * @see #setVisitId(String)
+	 * @return the value of the '<em>Visit Id</em>' reference.
+	 * @see #setVisitId(Visit)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_VisitId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="visitId"
 	 * @generated
 	 */
-	String getVisitId();
+	Visit getVisitId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visit Id</em>' attribute.
+	 * @param value the new value of the '<em>Visit Id</em>' reference.
 	 * @see #getVisitId()
 	 * @generated
 	 */
-	void setVisitId(String value);
+	void setVisitId(Visit value);
 
 	/**
 	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.

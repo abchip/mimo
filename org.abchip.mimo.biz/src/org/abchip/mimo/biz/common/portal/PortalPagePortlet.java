@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortletSeqId <em>Portlet Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getColumnSeqId <em>Column Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  * </ul>
  *
@@ -110,31 +110,30 @@ public interface PortalPagePortlet extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Portal Page Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Portal Page Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Portal Page Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portal Page Id</em>' attribute.
-	 * @see #setPortalPageId(String)
+	 * @return the value of the '<em>Portal Page Id</em>' reference.
+	 * @see #setPortalPageId(PortalPage)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_PortalPageId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="portalPageId"
 	 * @generated
 	 */
-	String getPortalPageId();
+	PortalPage getPortalPageId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Portal Page Id</em>' attribute.
+	 * @param value the new value of the '<em>Portal Page Id</em>' reference.
 	 * @see #getPortalPageId()
 	 * @generated
 	 */
-	void setPortalPageId(String value);
+	void setPortalPageId(PortalPage value);
 
 	/**
 	 * Returns the value of the '<em><b>Portal Portlet Id</b></em>' reference.

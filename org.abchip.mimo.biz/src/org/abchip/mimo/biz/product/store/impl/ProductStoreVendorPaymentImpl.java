@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreVendorPayment;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -43,24 +44,14 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductStoreId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
+	protected ProductStore productStoreId;
 
 	/**
 	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' reference.
@@ -237,7 +228,24 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -247,8 +255,8 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -263,7 +271,8 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID:
-				return getProductStoreId();
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
 				if (resolve) return getVendorPartyId();
 				return basicGetVendorPartyId();
@@ -286,7 +295,7 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
+				setProductStoreId((ProductStore)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
 				setVendorPartyId((Party)newValue);
@@ -310,7 +319,7 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
+				setProductStoreId((ProductStore)null);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
 				setVendorPartyId((Party)null);
@@ -334,7 +343,7 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
+				return productStoreId != null;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
 				return vendorPartyId != null;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID:
@@ -343,22 +352,6 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 				return creditCardEnumId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreId: ");
-		result.append(productStoreId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductStoreVendorPaymentImpl

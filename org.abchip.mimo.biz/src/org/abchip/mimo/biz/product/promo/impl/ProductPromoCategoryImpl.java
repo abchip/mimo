@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.promo.impl;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCategory;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,12 +28,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getProductPromoCondSeqId <em>Product Promo Cond Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getAndGroupId <em>And Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#isIncludeSubCategories <em>Include Sub Categories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCategoryImpl#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}</li>
  * </ul>
@@ -44,26 +45,6 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getProductPromoRuleId() <em>Product Promo Rule Id</em>}' attribute.
@@ -164,6 +145,16 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 * @ordered
 	 */
 	protected boolean includeSubCategories = INCLUDE_SUB_CATEGORIES_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
 
 	/**
 	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
@@ -365,7 +356,24 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -375,8 +383,8 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -430,8 +438,6 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_RULE_ID:
 				return getProductPromoRuleId();
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ACTION_SEQ_ID:
@@ -442,6 +448,9 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 				return getAndGroupId();
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES:
 				return isIncludeSubCategories();
+			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID:
 				if (resolve) return getProductCategoryId();
 				return basicGetProductCategoryId();
@@ -460,9 +469,6 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_RULE_ID:
 				setProductPromoRuleId((String)newValue);
 				return;
@@ -477,6 +483,9 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 				return;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES:
 				setIncludeSubCategories((Boolean)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID:
 				setProductCategoryId((ProductCategory)newValue);
@@ -496,9 +505,6 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_RULE_ID:
 				setProductPromoRuleId(PRODUCT_PROMO_RULE_ID_EDEFAULT);
 				return;
@@ -513,6 +519,9 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 				return;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES:
 				setIncludeSubCategories(INCLUDE_SUB_CATEGORIES_EDEFAULT);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID:
 				setProductCategoryId((ProductCategory)null);
@@ -532,8 +541,6 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_RULE_ID:
 				return PRODUCT_PROMO_RULE_ID_EDEFAULT == null ? productPromoRuleId != null : !PRODUCT_PROMO_RULE_ID_EDEFAULT.equals(productPromoRuleId);
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ACTION_SEQ_ID:
@@ -544,6 +551,8 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 				return AND_GROUP_ID_EDEFAULT == null ? andGroupId != null : !AND_GROUP_ID_EDEFAULT.equals(andGroupId);
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES:
 				return includeSubCategories != INCLUDE_SUB_CATEGORIES_EDEFAULT;
+			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID:
+				return productPromoId != null;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID:
 				return productCategoryId != null;
 			case PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_APPL_ENUM_ID:
@@ -562,9 +571,7 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productPromoId: ");
-		result.append(productPromoId);
-		result.append(", productPromoRuleId: ");
+		result.append(" (productPromoRuleId: ");
 		result.append(productPromoRuleId);
 		result.append(", productPromoActionSeqId: ");
 		result.append(productPromoActionSeqId);

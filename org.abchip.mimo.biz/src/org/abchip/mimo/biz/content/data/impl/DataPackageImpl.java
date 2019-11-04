@@ -809,8 +809,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAudioDataResource_DataResourceId() {
-		return (EAttribute)audioDataResourceEClass.getEStructuralFeatures().get(0);
+	public EReference getAudioDataResource_DataResourceId() {
+		return (EReference)audioDataResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -820,7 +820,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getAudioDataResource_AudioData() {
-		return (EAttribute)audioDataResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)audioDataResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1149,8 +1149,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResourceAttribute_DataResourceId() {
-		return (EAttribute)dataResourceAttributeEClass.getEStructuralFeatures().get(0);
+	public EReference getDataResourceAttribute_DataResourceId() {
+		return (EReference)dataResourceAttributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1160,7 +1160,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceAttribute_AttrName() {
-		return (EAttribute)dataResourceAttributeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dataResourceAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1170,7 +1170,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceAttribute_AttrDescription() {
-		return (EAttribute)dataResourceAttributeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)dataResourceAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1180,7 +1180,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceAttribute_AttrValue() {
-		return (EAttribute)dataResourceAttributeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)dataResourceAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1199,8 +1199,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResourceMetaData_DataResourceId() {
-		return (EAttribute)dataResourceMetaDataEClass.getEStructuralFeatures().get(0);
+	public EReference getDataResourceMetaData_DataResourceId() {
+		return (EReference)dataResourceMetaDataEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1230,7 +1230,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceMetaData_MetaDataValue() {
-		return (EAttribute)dataResourceMetaDataEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dataResourceMetaDataEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1249,8 +1249,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResourcePurpose_DataResourceId() {
-		return (EAttribute)dataResourcePurposeEClass.getEStructuralFeatures().get(0);
+	public EReference getDataResourcePurpose_DataResourceId() {
+		return (EReference)dataResourcePurposeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1279,8 +1279,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResourceRole_DataResourceId() {
-		return (EAttribute)dataResourceRoleEClass.getEStructuralFeatures().get(0);
+	public EReference getDataResourceRole_DataResourceId() {
+		return (EReference)dataResourceRoleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1300,7 +1300,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceRole_RoleTypeId() {
-		return (EAttribute)dataResourceRoleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dataResourceRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1310,7 +1310,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceRole_FromDate() {
-		return (EAttribute)dataResourceRoleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)dataResourceRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1320,7 +1320,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceRole_ThruDate() {
-		return (EAttribute)dataResourceRoleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)dataResourceRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1399,8 +1399,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResourceTypeAttr_DataResourceTypeId() {
-		return (EAttribute)dataResourceTypeAttrEClass.getEStructuralFeatures().get(0);
+	public EReference getDataResourceTypeAttr_DataResourceTypeId() {
+		return (EReference)dataResourceTypeAttrEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1410,7 +1410,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceTypeAttr_AttrName() {
-		return (EAttribute)dataResourceTypeAttrEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dataResourceTypeAttrEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1420,7 +1420,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getDataResourceTypeAttr_Description() {
-		return (EAttribute)dataResourceTypeAttrEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)dataResourceTypeAttrEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1529,8 +1529,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getImageDataResource_DataResourceId() {
-		return (EAttribute)imageDataResourceEClass.getEStructuralFeatures().get(0);
+	public EReference getImageDataResource_DataResourceId() {
+		return (EReference)imageDataResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1540,7 +1540,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getImageDataResource_ImageData() {
-		return (EAttribute)imageDataResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)imageDataResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1619,8 +1619,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMimeTypeHtmlTemplate_MimeTypeId() {
-		return (EAttribute)mimeTypeHtmlTemplateEClass.getEStructuralFeatures().get(0);
+	public EReference getMimeTypeHtmlTemplate_MimeTypeId() {
+		return (EReference)mimeTypeHtmlTemplateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1630,7 +1630,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getMimeTypeHtmlTemplate_TemplateLocation() {
-		return (EAttribute)mimeTypeHtmlTemplateEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)mimeTypeHtmlTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1649,8 +1649,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getOtherDataResource_DataResourceId() {
-		return (EAttribute)otherDataResourceEClass.getEStructuralFeatures().get(0);
+	public EReference getOtherDataResource_DataResourceId() {
+		return (EReference)otherDataResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1660,7 +1660,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getOtherDataResource_DataResourceContent() {
-		return (EAttribute)otherDataResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)otherDataResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1679,8 +1679,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVideoDataResource_DataResourceId() {
-		return (EAttribute)videoDataResourceEClass.getEStructuralFeatures().get(0);
+	public EReference getVideoDataResource_DataResourceId() {
+		return (EReference)videoDataResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1690,7 +1690,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EAttribute getVideoDataResource_VideoData() {
-		return (EAttribute)videoDataResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)videoDataResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1723,8 +1723,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		// Create classes and their features
 		audioDataResourceEClass = createEClass(AUDIO_DATA_RESOURCE);
-		createEAttribute(audioDataResourceEClass, AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID);
 		createEAttribute(audioDataResourceEClass, AUDIO_DATA_RESOURCE__AUDIO_DATA);
+		createEReference(audioDataResourceEClass, AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID);
 
 		characterSetEClass = createEClass(CHARACTER_SET);
 		createEAttribute(characterSetEClass, CHARACTER_SET__CHARACTER_SET_ID);
@@ -1761,26 +1761,26 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES);
 
 		dataResourceAttributeEClass = createEClass(DATA_RESOURCE_ATTRIBUTE);
-		createEAttribute(dataResourceAttributeEClass, DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID);
 		createEAttribute(dataResourceAttributeEClass, DATA_RESOURCE_ATTRIBUTE__ATTR_NAME);
 		createEAttribute(dataResourceAttributeEClass, DATA_RESOURCE_ATTRIBUTE__ATTR_DESCRIPTION);
 		createEAttribute(dataResourceAttributeEClass, DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE);
+		createEReference(dataResourceAttributeEClass, DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID);
 
 		dataResourceMetaDataEClass = createEClass(DATA_RESOURCE_META_DATA);
-		createEAttribute(dataResourceMetaDataEClass, DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID);
 		createEAttribute(dataResourceMetaDataEClass, DATA_RESOURCE_META_DATA__META_DATA_VALUE);
+		createEReference(dataResourceMetaDataEClass, DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID);
 		createEReference(dataResourceMetaDataEClass, DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID);
 		createEReference(dataResourceMetaDataEClass, DATA_RESOURCE_META_DATA__DATA_SOURCE_ID);
 
 		dataResourcePurposeEClass = createEClass(DATA_RESOURCE_PURPOSE);
-		createEAttribute(dataResourcePurposeEClass, DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID);
+		createEReference(dataResourcePurposeEClass, DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID);
 		createEReference(dataResourcePurposeEClass, DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID);
 
 		dataResourceRoleEClass = createEClass(DATA_RESOURCE_ROLE);
-		createEAttribute(dataResourceRoleEClass, DATA_RESOURCE_ROLE__DATA_RESOURCE_ID);
 		createEAttribute(dataResourceRoleEClass, DATA_RESOURCE_ROLE__ROLE_TYPE_ID);
 		createEAttribute(dataResourceRoleEClass, DATA_RESOURCE_ROLE__FROM_DATE);
 		createEAttribute(dataResourceRoleEClass, DATA_RESOURCE_ROLE__THRU_DATE);
+		createEReference(dataResourceRoleEClass, DATA_RESOURCE_ROLE__DATA_RESOURCE_ID);
 		createEReference(dataResourceRoleEClass, DATA_RESOURCE_ROLE__PARTY_ID);
 
 		dataResourceTypeEClass = createEClass(DATA_RESOURCE_TYPE);
@@ -1791,9 +1791,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(dataResourceTypeEClass, DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS);
 
 		dataResourceTypeAttrEClass = createEClass(DATA_RESOURCE_TYPE_ATTR);
-		createEAttribute(dataResourceTypeAttrEClass, DATA_RESOURCE_TYPE_ATTR__DATA_RESOURCE_TYPE_ID);
 		createEAttribute(dataResourceTypeAttrEClass, DATA_RESOURCE_TYPE_ATTR__ATTR_NAME);
 		createEAttribute(dataResourceTypeAttrEClass, DATA_RESOURCE_TYPE_ATTR__DESCRIPTION);
+		createEReference(dataResourceTypeAttrEClass, DATA_RESOURCE_TYPE_ATTR__DATA_RESOURCE_TYPE_ID);
 
 		dataTemplateTypeEClass = createEClass(DATA_TEMPLATE_TYPE);
 		createEAttribute(dataTemplateTypeEClass, DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID);
@@ -1808,8 +1808,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEReference(fileExtensionEClass, FILE_EXTENSION__MIME_TYPE_ID);
 
 		imageDataResourceEClass = createEClass(IMAGE_DATA_RESOURCE);
-		createEAttribute(imageDataResourceEClass, IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID);
 		createEAttribute(imageDataResourceEClass, IMAGE_DATA_RESOURCE__IMAGE_DATA);
+		createEReference(imageDataResourceEClass, IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID);
 
 		metaDataPredicateEClass = createEClass(META_DATA_PREDICATE);
 		createEAttribute(metaDataPredicateEClass, META_DATA_PREDICATE__META_DATA_PREDICATE_ID);
@@ -1820,16 +1820,16 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(mimeTypeEClass, MIME_TYPE__DESCRIPTION);
 
 		mimeTypeHtmlTemplateEClass = createEClass(MIME_TYPE_HTML_TEMPLATE);
-		createEAttribute(mimeTypeHtmlTemplateEClass, MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID);
 		createEAttribute(mimeTypeHtmlTemplateEClass, MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION);
+		createEReference(mimeTypeHtmlTemplateEClass, MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID);
 
 		otherDataResourceEClass = createEClass(OTHER_DATA_RESOURCE);
-		createEAttribute(otherDataResourceEClass, OTHER_DATA_RESOURCE__DATA_RESOURCE_ID);
 		createEAttribute(otherDataResourceEClass, OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT);
+		createEReference(otherDataResourceEClass, OTHER_DATA_RESOURCE__DATA_RESOURCE_ID);
 
 		videoDataResourceEClass = createEClass(VIDEO_DATA_RESOURCE);
-		createEAttribute(videoDataResourceEClass, VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID);
 		createEAttribute(videoDataResourceEClass, VIDEO_DATA_RESOURCE__VIDEO_DATA);
+		createEReference(videoDataResourceEClass, VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID);
 	}
 
 	/**
@@ -1897,8 +1897,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(audioDataResourceEClass, AudioDataResource.class, "AudioDataResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAudioDataResource_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, AudioDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAudioDataResource_AudioData(), ecorePackage.getEByteArray(), "audioData", null, 0, 1, AudioDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAudioDataResource_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, AudioDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAudioDataResource_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 
 		initEClass(characterSetEClass, CharacterSet.class, "CharacterSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCharacterSet_CharacterSetId(), ecorePackage.getEString(), "characterSetId", null, 1, 1, CharacterSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1959,29 +1960,33 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		addEOperation(dataResourceEClass, ecorePackage.getEString(), "templateContents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataResourceAttributeEClass, DataResourceAttribute.class, "DataResourceAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataResourceAttribute_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, DataResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DataResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, DataResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, DataResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResourceAttribute_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, DataResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDataResourceAttribute_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 
 		initEClass(dataResourceMetaDataEClass, DataResourceMetaData.class, "DataResourceMetaData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataResourceMetaData_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, DataResourceMetaData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceMetaData_MetaDataValue(), ecorePackage.getEString(), "metaDataValue", null, 0, 1, DataResourceMetaData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResourceMetaData_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, DataResourceMetaData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDataResourceMetaData_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 		initEReference(getDataResourceMetaData_MetaDataPredicateId(), this.getMetaDataPredicate(), null, "metaDataPredicateId", null, 0, 1, DataResourceMetaData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResourceMetaData_MetaDataPredicateId().getEKeys().add(this.getMetaDataPredicate_MetaDataPredicateId());
 		initEReference(getDataResourceMetaData_DataSourceId(), theDatasourcePackage.getDataSource(), null, "dataSourceId", null, 0, 1, DataResourceMetaData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResourceMetaData_DataSourceId().getEKeys().add(theDatasourcePackage.getDataSource_DataSourceId());
 
 		initEClass(dataResourcePurposeEClass, DataResourcePurpose.class, "DataResourcePurpose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataResourcePurpose_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, DataResourcePurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResourcePurpose_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, DataResourcePurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDataResourcePurpose_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 		initEReference(getDataResourcePurpose_ContentPurposeTypeId(), theContentPackage.getContentPurposeType(), null, "contentPurposeTypeId", null, 0, 1, DataResourcePurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResourcePurpose_ContentPurposeTypeId().getEKeys().add(theContentPackage.getContentPurposeType_ContentPurposeTypeId());
 
 		initEClass(dataResourceRoleEClass, DataResourceRole.class, "DataResourceRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataResourceRole_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, DataResourceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, DataResourceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, DataResourceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceRole_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, DataResourceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResourceRole_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, DataResourceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDataResourceRole_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 		initEReference(getDataResourceRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, DataResourceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResourceRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
@@ -1998,9 +2003,10 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		addEOperation(dataResourceTypeEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataResourceTypeAttrEClass, DataResourceTypeAttr.class, "DataResourceTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataResourceTypeAttr_DataResourceTypeId(), ecorePackage.getEString(), "dataResourceTypeId", null, 1, 1, DataResourceTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DataResourceTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataResourceTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResourceTypeAttr_DataResourceTypeId(), this.getDataResourceType(), null, "dataResourceTypeId", null, 0, 1, DataResourceTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDataResourceTypeAttr_DataResourceTypeId().getEKeys().add(this.getDataResourceType_DataResourceTypeId());
 
 		initEClass(dataTemplateTypeEClass, DataTemplateType.class, "DataTemplateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataTemplateType_DataTemplateTypeId(), ecorePackage.getEString(), "dataTemplateTypeId", null, 1, 1, DataTemplateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2018,8 +2024,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		getFileExtension_MimeTypeId().getEKeys().add(this.getMimeType_MimeTypeId());
 
 		initEClass(imageDataResourceEClass, ImageDataResource.class, "ImageDataResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getImageDataResource_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, ImageDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageDataResource_ImageData(), ecorePackage.getEByteArray(), "imageData", null, 0, 1, ImageDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageDataResource_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, ImageDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getImageDataResource_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 
 		initEClass(metaDataPredicateEClass, MetaDataPredicate.class, "MetaDataPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMetaDataPredicate_MetaDataPredicateId(), ecorePackage.getEString(), "metaDataPredicateId", null, 1, 1, MetaDataPredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2042,22 +2049,25 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		addEOperation(mimeTypeEClass, ecorePackage.getEString(), "fileExtensions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mimeTypeHtmlTemplateEClass, MimeTypeHtmlTemplate.class, "MimeTypeHtmlTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMimeTypeHtmlTemplate_MimeTypeId(), ecorePackage.getEString(), "mimeTypeId", null, 1, 1, MimeTypeHtmlTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMimeTypeHtmlTemplate_TemplateLocation(), ecorePackage.getEString(), "templateLocation", null, 0, 1, MimeTypeHtmlTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMimeTypeHtmlTemplate_MimeTypeId(), this.getMimeType(), null, "mimeTypeId", null, 0, 1, MimeTypeHtmlTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMimeTypeHtmlTemplate_MimeTypeId().getEKeys().add(this.getMimeType_MimeTypeId());
 
 		initEClass(otherDataResourceEClass, OtherDataResource.class, "OtherDataResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOtherDataResource_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, OtherDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOtherDataResource_DataResourceContent(), ecorePackage.getEByteArray(), "dataResourceContent", null, 0, 1, OtherDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOtherDataResource_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, OtherDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getOtherDataResource_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 
 		initEClass(videoDataResourceEClass, VideoDataResource.class, "VideoDataResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVideoDataResource_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, VideoDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVideoDataResource_VideoData(), ecorePackage.getEByteArray(), "videoData", null, 0, 1, VideoDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVideoDataResource_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, VideoDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVideoDataResource_DataResourceId().getEKeys().add(this.getDataResource_DataResourceId());
 
 		// Create annotations
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 	}
@@ -2070,12 +2080,6 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getAudioDataResource_DataResourceId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 		addAnnotation
 		  (characterSetEClass.getEOperations().get(0),
 		   source,
@@ -2155,31 +2159,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDataResourceAttribute_DataResourceId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getDataResourceAttribute_AttrName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getDataResourceMetaData_DataResourceId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getDataResourcePurpose_DataResourceId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getDataResourceRole_DataResourceId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2221,12 +2201,6 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDataResourceTypeAttr_DataResourceTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getDataResourceTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -2246,12 +2220,6 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		   });
 		addAnnotation
 		  (getFileExtension_FileExtensionId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getImageDataResource_DataResourceId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2300,24 +2268,6 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		   });
 		addAnnotation
 		  (getMimeType_MimeTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getMimeTypeHtmlTemplate_MimeTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getOtherDataResource_DataResourceId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getVideoDataResource_DataResourceId(),
 		   source,
 		   new String[] {
 			   "key", "true"

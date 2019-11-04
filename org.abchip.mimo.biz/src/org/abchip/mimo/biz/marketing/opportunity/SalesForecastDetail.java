@@ -23,10 +23,10 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getSalesForecastId <em>Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getSalesForecastDetailId <em>Sales Forecast Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getSalesForecastId <em>Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductCategoryId <em>Product Category Id</em>}</li>
@@ -195,30 +195,29 @@ public interface SalesForecastDetail extends BizEntity {
 	void setSalesForecastDetailId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Sales Forecast Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Sales Forecast Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Forecast Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Forecast Id</em>' attribute.
-	 * @see #setSalesForecastId(String)
+	 * @return the value of the '<em>Sales Forecast Id</em>' reference.
+	 * @see #setSalesForecastId(SalesForecast)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastDetail_SalesForecastId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="salesForecastId"
 	 * @generated
 	 */
-	String getSalesForecastId();
+	SalesForecast getSalesForecastId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getSalesForecastId <em>Sales Forecast Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getSalesForecastId <em>Sales Forecast Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sales Forecast Id</em>' attribute.
+	 * @param value the new value of the '<em>Sales Forecast Id</em>' reference.
 	 * @see #getSalesForecastId()
 	 * @generated
 	 */
-	void setSalesForecastId(String value);
+	void setSalesForecastId(SalesForecast value);
 
 } // SalesForecastDetail

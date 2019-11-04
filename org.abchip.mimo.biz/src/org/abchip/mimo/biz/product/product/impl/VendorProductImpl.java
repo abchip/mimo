@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.VendorProduct;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
@@ -41,24 +42,14 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
+	protected Product productId;
 
 	/**
 	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' reference.
@@ -185,7 +176,24 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.VENDOR_PRODUCT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -195,8 +203,8 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.VENDOR_PRODUCT__PRODUCT_ID, oldProductId, productId));
@@ -211,7 +219,8 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ProductPackage.VENDOR_PRODUCT__PRODUCT_ID:
-				return getProductId();
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.VENDOR_PRODUCT__VENDOR_PARTY_ID:
 				if (resolve) return getVendorPartyId();
 				return basicGetVendorPartyId();
@@ -231,7 +240,7 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ProductPackage.VENDOR_PRODUCT__PRODUCT_ID:
-				setProductId((String)newValue);
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.VENDOR_PRODUCT__VENDOR_PARTY_ID:
 				setVendorPartyId((Party)newValue);
@@ -252,7 +261,7 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ProductPackage.VENDOR_PRODUCT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
+				setProductId((Product)null);
 				return;
 			case ProductPackage.VENDOR_PRODUCT__VENDOR_PARTY_ID:
 				setVendorPartyId((Party)null);
@@ -273,29 +282,13 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ProductPackage.VENDOR_PRODUCT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+				return productId != null;
 			case ProductPackage.VENDOR_PRODUCT__VENDOR_PARTY_ID:
 				return vendorPartyId != null;
 			case ProductPackage.VENDOR_PRODUCT__PRODUCT_STORE_GROUP_ID:
 				return productStoreGroupId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productId: ");
-		result.append(productId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //VendorProductImpl

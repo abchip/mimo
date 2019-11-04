@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRollupImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRollupImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRollupImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRollupImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRollupImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRollupImpl#getParentGroupId <em>Parent Group Id</em>}</li>
  * </ul>
  *
@@ -42,26 +42,6 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreGroupId = PRODUCT_STORE_GROUP_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -122,6 +102,16 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStoreGroup productStoreGroupId;
 
 	/**
 	 * The cached value of the '{@link #getParentGroupId() <em>Parent Group Id</em>}' reference.
@@ -227,7 +217,24 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreGroupId() {
+	public ProductStoreGroup getProductStoreGroupId() {
+		if (productStoreGroupId != null && ((EObject)productStoreGroupId).eIsProxy()) {
+			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
+			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
+			if (productStoreGroupId != oldProductStoreGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
+			}
+		}
+		return productStoreGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStoreGroup basicGetProductStoreGroupId() {
 		return productStoreGroupId;
 	}
 
@@ -237,8 +244,8 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreGroupId(String newProductStoreGroupId) {
-		String oldProductStoreGroupId = productStoreGroupId;
+	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
+		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
@@ -292,14 +299,15 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
-				return getProductStoreGroupId();
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__FROM_DATE:
 				return getFromDate();
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__SEQUENCE_NUM:
 				return getSequenceNum();
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__THRU_DATE:
 				return getThruDate();
+			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
+				if (resolve) return getProductStoreGroupId();
+				return basicGetProductStoreGroupId();
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PARENT_GROUP_ID:
 				if (resolve) return getParentGroupId();
 				return basicGetParentGroupId();
@@ -315,9 +323,6 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -326,6 +331,9 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
+				setProductStoreGroupId((ProductStoreGroup)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PARENT_GROUP_ID:
 				setParentGroupId((ProductStoreGroup)newValue);
@@ -342,9 +350,6 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId(PRODUCT_STORE_GROUP_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -353,6 +358,9 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
+				setProductStoreGroupId((ProductStoreGroup)null);
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PARENT_GROUP_ID:
 				setParentGroupId((ProductStoreGroup)null);
@@ -369,14 +377,14 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
-				return PRODUCT_STORE_GROUP_ID_EDEFAULT == null ? productStoreGroupId != null : !PRODUCT_STORE_GROUP_ID_EDEFAULT.equals(productStoreGroupId);
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID:
+				return productStoreGroupId != null;
 			case StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PARENT_GROUP_ID:
 				return parentGroupId != null;
 		}
@@ -393,9 +401,7 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreGroupId: ");
-		result.append(productStoreGroupId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);

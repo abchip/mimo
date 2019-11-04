@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.accounting.payment.BillingAccountRole;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountRoleImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountRoleImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
@@ -40,27 +41,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAccountRole {
 	/**
-	 * The default value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BILLING_ACCOUNT_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billingAccountId = BILLING_ACCOUNT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -97,6 +80,15 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBillingAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected BillingAccount billingAccountId;
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -267,7 +259,24 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 * @generated
 	 */
 	@Override
-	public String getBillingAccountId() {
+	public BillingAccount getBillingAccountId() {
+		if (billingAccountId != null && ((EObject)billingAccountId).eIsProxy()) {
+			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
+			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
+			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
+			}
+		}
+		return billingAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BillingAccount basicGetBillingAccountId() {
 		return billingAccountId;
 	}
 
@@ -277,8 +286,8 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 * @generated
 	 */
 	@Override
-	public void setBillingAccountId(String newBillingAccountId) {
-		String oldBillingAccountId = billingAccountId;
+	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
@@ -292,12 +301,13 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
-				return getBillingAccountId();
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__FROM_DATE:
 				return getFromDate();
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__THRU_DATE:
 				return getThruDate();
+			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
+				if (resolve) return getBillingAccountId();
+				return basicGetBillingAccountId();
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -316,14 +326,14 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
-				setBillingAccountId((String)newValue);
-				return;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)newValue);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -343,14 +353,14 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
-				setBillingAccountId(BILLING_ACCOUNT_ID_EDEFAULT);
-				return;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)null);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -370,12 +380,12 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
-				return BILLING_ACCOUNT_ID_EDEFAULT == null ? billingAccountId != null : !BILLING_ACCOUNT_ID_EDEFAULT.equals(billingAccountId);
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID:
+				return billingAccountId != null;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__PARTY_ID:
 				return partyId != null;
 			case PaymentPackage.BILLING_ACCOUNT_ROLE__ROLE_TYPE_ID:
@@ -394,9 +404,7 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (billingAccountId: ");
-		result.append(billingAccountId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");
 		result.append(thruDate);

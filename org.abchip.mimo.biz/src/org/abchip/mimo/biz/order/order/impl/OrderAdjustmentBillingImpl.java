@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentBilling;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentBillingImpl#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentBillingImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentBillingImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentBillingImpl#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentBillingImpl#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
@@ -42,26 +43,6 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderAdjustmentId() <em>Order Adjustment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderAdjustmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ADJUSTMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderAdjustmentId() <em>Order Adjustment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderAdjustmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderAdjustmentId = ORDER_ADJUSTMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInvoiceItemSeqId() <em>Invoice Item Seq Id</em>}' attribute.
@@ -102,6 +83,16 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 * @ordered
 	 */
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderAdjustmentId() <em>Order Adjustment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderAdjustmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderAdjustment orderAdjustmentId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
@@ -224,7 +215,24 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 * @generated
 	 */
 	@Override
-	public String getOrderAdjustmentId() {
+	public OrderAdjustment getOrderAdjustmentId() {
+		if (orderAdjustmentId != null && ((EObject)orderAdjustmentId).eIsProxy()) {
+			InternalEObject oldOrderAdjustmentId = (InternalEObject)orderAdjustmentId;
+			orderAdjustmentId = (OrderAdjustment)eResolveProxy(oldOrderAdjustmentId);
+			if (orderAdjustmentId != oldOrderAdjustmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
+			}
+		}
+		return orderAdjustmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderAdjustment basicGetOrderAdjustmentId() {
 		return orderAdjustmentId;
 	}
 
@@ -234,8 +242,8 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 * @generated
 	 */
 	@Override
-	public void setOrderAdjustmentId(String newOrderAdjustmentId) {
-		String oldOrderAdjustmentId = orderAdjustmentId;
+	public void setOrderAdjustmentId(OrderAdjustment newOrderAdjustmentId) {
+		OrderAdjustment oldOrderAdjustmentId = orderAdjustmentId;
 		orderAdjustmentId = newOrderAdjustmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
@@ -249,12 +257,13 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
-				return getOrderAdjustmentId();
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ITEM_SEQ_ID:
 				return getInvoiceItemSeqId();
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__AMOUNT:
 				return getAmount();
+			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
+				if (resolve) return getOrderAdjustmentId();
+				return basicGetOrderAdjustmentId();
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ID:
 				if (resolve) return getInvoiceId();
 				return basicGetInvoiceId();
@@ -270,14 +279,14 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
-				setOrderAdjustmentId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__AMOUNT:
 				setAmount((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
+				setOrderAdjustmentId((OrderAdjustment)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)newValue);
@@ -294,14 +303,14 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
-				setOrderAdjustmentId(ORDER_ADJUSTMENT_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId(INVOICE_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
+				setOrderAdjustmentId((OrderAdjustment)null);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ID:
 				setInvoiceId((Invoice)null);
@@ -318,12 +327,12 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
-				return ORDER_ADJUSTMENT_ID_EDEFAULT == null ? orderAdjustmentId != null : !ORDER_ADJUSTMENT_ID_EDEFAULT.equals(orderAdjustmentId);
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ITEM_SEQ_ID:
 				return INVOICE_ITEM_SEQ_ID_EDEFAULT == null ? invoiceItemSeqId != null : !INVOICE_ITEM_SEQ_ID_EDEFAULT.equals(invoiceItemSeqId);
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
+			case OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID:
+				return orderAdjustmentId != null;
 			case OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ID:
 				return invoiceId != null;
 		}
@@ -340,9 +349,7 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderAdjustmentId: ");
-		result.append(orderAdjustmentId);
-		result.append(", invoiceItemSeqId: ");
+		result.append(" (invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);
 		result.append(", amount: ");
 		result.append(amount);

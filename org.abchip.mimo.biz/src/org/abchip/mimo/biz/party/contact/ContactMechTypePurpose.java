@@ -28,31 +28,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ContactMechTypePurpose extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Type Id</em>' attribute.
-	 * @see #setContactMechTypeId(String)
+	 * @return the value of the '<em>Contact Mech Type Id</em>' reference.
+	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypePurpose_ContactMechTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="contactMechTypeId"
 	 * @generated
 	 */
-	String getContactMechTypeId();
+	ContactMechType getContactMechTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose#getContactMechTypeId <em>Contact Mech Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose#getContactMechTypeId <em>Contact Mech Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Type Id</em>' reference.
 	 * @see #getContactMechTypeId()
 	 * @generated
 	 */
-	void setContactMechTypeId(String value);
+	void setContactMechTypeId(ContactMechType value);
 
 	/**
 	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' reference.

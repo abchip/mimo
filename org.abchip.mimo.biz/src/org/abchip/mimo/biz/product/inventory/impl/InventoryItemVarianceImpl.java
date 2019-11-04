@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.inventory.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemVariance;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
@@ -29,12 +30,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl#getAvailableToPromiseVar <em>Available To Promise Var</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl#getQuantityOnHandVar <em>Quantity On Hand Var</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl#getPhysicalInventoryId <em>Physical Inventory Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl#getVarianceReasonId <em>Variance Reason Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,26 +46,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAvailableToPromiseVar() <em>Available To Promise Var</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -144,6 +125,16 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 * @ordered
 	 */
 	protected VarianceReason varianceReasonId;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -319,7 +310,24 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -329,8 +337,8 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -344,8 +352,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__AVAILABLE_TO_PROMISE_VAR:
 				return getAvailableToPromiseVar();
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__COMMENTS:
@@ -358,6 +364,9 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID:
 				if (resolve) return getVarianceReasonId();
 				return basicGetVarianceReasonId();
+			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -370,9 +379,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__AVAILABLE_TO_PROMISE_VAR:
 				setAvailableToPromiseVar((BigDecimal)newValue);
 				return;
@@ -388,6 +394,9 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID:
 				setVarianceReasonId((VarianceReason)newValue);
 				return;
+			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -400,9 +409,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__AVAILABLE_TO_PROMISE_VAR:
 				setAvailableToPromiseVar(AVAILABLE_TO_PROMISE_VAR_EDEFAULT);
 				return;
@@ -418,6 +424,9 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID:
 				setVarianceReasonId((VarianceReason)null);
 				return;
+			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -430,8 +439,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__AVAILABLE_TO_PROMISE_VAR:
 				return AVAILABLE_TO_PROMISE_VAR_EDEFAULT == null ? availableToPromiseVar != null : !AVAILABLE_TO_PROMISE_VAR_EDEFAULT.equals(availableToPromiseVar);
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__COMMENTS:
@@ -442,6 +449,8 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 				return physicalInventoryId != null;
 			case InventoryPackage.INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID:
 				return varianceReasonId != null;
+			case InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -456,9 +465,7 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (inventoryItemId: ");
-		result.append(inventoryItemId);
-		result.append(", availableToPromiseVar: ");
+		result.append(" (availableToPromiseVar: ");
 		result.append(availableToPromiseVar);
 		result.append(", comments: ");
 		result.append(comments);

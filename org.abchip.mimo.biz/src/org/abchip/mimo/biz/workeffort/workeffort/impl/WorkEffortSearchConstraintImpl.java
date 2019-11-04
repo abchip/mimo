@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getWorkEffortSearchResultId <em>Work Effort Search Result Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#isAnyPrefix <em>Any Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#isAnySuffix <em>Any Suffix</em>}</li>
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#isIsAnd <em>Is And</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getLowValue <em>Low Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#isRemoveStems <em>Remove Stems</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getWorkEffortSearchResultId <em>Work Effort Search Result Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,26 +47,6 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortSearchResultId() <em>Work Effort Search Result Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortSearchResultId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_SEARCH_RESULT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortSearchResultId() <em>Work Effort Search Result Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortSearchResultId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortSearchResultId = WORK_EFFORT_SEARCH_RESULT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getConstraintSeqId() <em>Constraint Seq Id</em>}' attribute.
@@ -264,6 +247,16 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @ordered
 	 */
 	protected boolean removeStems = REMOVE_STEMS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortSearchResultId() <em>Work Effort Search Result Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortSearchResultId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffortSearchResult workEffortSearchResultId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -520,7 +513,24 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortSearchResultId() {
+	public WorkEffortSearchResult getWorkEffortSearchResultId() {
+		if (workEffortSearchResultId != null && ((EObject)workEffortSearchResultId).eIsProxy()) {
+			InternalEObject oldWorkEffortSearchResultId = (InternalEObject)workEffortSearchResultId;
+			workEffortSearchResultId = (WorkEffortSearchResult)eResolveProxy(oldWorkEffortSearchResultId);
+			if (workEffortSearchResultId != oldWorkEffortSearchResultId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID, oldWorkEffortSearchResultId, workEffortSearchResultId));
+			}
+		}
+		return workEffortSearchResultId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortSearchResult basicGetWorkEffortSearchResultId() {
 		return workEffortSearchResultId;
 	}
 
@@ -530,8 +540,8 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortSearchResultId(String newWorkEffortSearchResultId) {
-		String oldWorkEffortSearchResultId = workEffortSearchResultId;
+	public void setWorkEffortSearchResultId(WorkEffortSearchResult newWorkEffortSearchResultId) {
+		WorkEffortSearchResult oldWorkEffortSearchResultId = workEffortSearchResultId;
 		workEffortSearchResultId = newWorkEffortSearchResultId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID, oldWorkEffortSearchResultId, workEffortSearchResultId));
@@ -545,8 +555,6 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
-				return getWorkEffortSearchResultId();
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				return getConstraintSeqId();
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX:
@@ -567,6 +575,9 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 				return getLowValue();
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				return isRemoveStems();
+			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
+				if (resolve) return getWorkEffortSearchResultId();
+				return basicGetWorkEffortSearchResultId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -579,9 +590,6 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
-				setWorkEffortSearchResultId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				setConstraintSeqId((String)newValue);
 				return;
@@ -612,6 +620,9 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				setRemoveStems((Boolean)newValue);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
+				setWorkEffortSearchResultId((WorkEffortSearchResult)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -624,9 +635,6 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
-				setWorkEffortSearchResultId(WORK_EFFORT_SEARCH_RESULT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				setConstraintSeqId(CONSTRAINT_SEQ_ID_EDEFAULT);
 				return;
@@ -657,6 +665,9 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				setRemoveStems(REMOVE_STEMS_EDEFAULT);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
+				setWorkEffortSearchResultId((WorkEffortSearchResult)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -669,8 +680,6 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
-				return WORK_EFFORT_SEARCH_RESULT_ID_EDEFAULT == null ? workEffortSearchResultId != null : !WORK_EFFORT_SEARCH_RESULT_ID_EDEFAULT.equals(workEffortSearchResultId);
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID:
 				return CONSTRAINT_SEQ_ID_EDEFAULT == null ? constraintSeqId != null : !CONSTRAINT_SEQ_ID_EDEFAULT.equals(constraintSeqId);
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX:
@@ -691,6 +700,8 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 				return LOW_VALUE_EDEFAULT == null ? lowValue != null : !LOW_VALUE_EDEFAULT.equals(lowValue);
 			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__REMOVE_STEMS:
 				return removeStems != REMOVE_STEMS_EDEFAULT;
+			case WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID:
+				return workEffortSearchResultId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -705,9 +716,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortSearchResultId: ");
-		result.append(workEffortSearchResultId);
-		result.append(", constraintSeqId: ");
+		result.append(" (constraintSeqId: ");
 		result.append(constraintSeqId);
 		result.append(", anyPrefix: ");
 		result.append(anyPrefix);

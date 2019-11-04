@@ -345,22 +345,13 @@ public interface VisitPackage extends EPackage {
 	int SERVER_HIT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Visit Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT__VISIT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int SERVER_HIT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Hit Start Date Time</b></em>' attribute.
@@ -369,7 +360,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__HIT_START_DATE_TIME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int SERVER_HIT__HIT_START_DATE_TIME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Num Of Bytes</b></em>' attribute.
@@ -378,7 +369,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__NUM_OF_BYTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int SERVER_HIT__NUM_OF_BYTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Referrer Url</b></em>' attribute.
@@ -387,7 +378,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__REFERRER_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int SERVER_HIT__REFERRER_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Request Url</b></em>' attribute.
@@ -396,7 +387,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__REQUEST_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int SERVER_HIT__REQUEST_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Running Time Millis</b></em>' attribute.
@@ -405,7 +396,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__RUNNING_TIME_MILLIS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int SERVER_HIT__RUNNING_TIME_MILLIS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Server Host Name</b></em>' attribute.
@@ -414,7 +405,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__SERVER_HOST_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int SERVER_HIT__SERVER_HOST_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Server Ip Address</b></em>' attribute.
@@ -423,7 +414,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__SERVER_IP_ADDRESS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int SERVER_HIT__SERVER_IP_ADDRESS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
@@ -432,7 +423,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int SERVER_HIT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>User Login Id</b></em>' attribute.
@@ -441,7 +432,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int SERVER_HIT__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Hit Type Id</b></em>' reference.
@@ -450,7 +441,16 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__HIT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int SERVER_HIT__HIT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Visit Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT__VISIT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -1507,15 +1507,15 @@ public interface VisitPackage extends EPackage {
 	EClass getServerHit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Visit Id</em>'.
+	 * @return the meta object for the reference '<em>Visit Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId()
 	 * @see #getServerHit()
 	 * @generated
 	 */
-	EAttribute getServerHit_VisitId();
+	EReference getServerHit_VisitId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getContentId <em>Content Id</em>}'.
@@ -2462,12 +2462,12 @@ public interface VisitPackage extends EPackage {
 		EClass SERVER_HIT = eINSTANCE.getServerHit();
 
 		/**
-		 * The meta object literal for the '<em><b>Visit Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Visit Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT__VISIT_ID = eINSTANCE.getServerHit_VisitId();
+		EReference SERVER_HIT__VISIT_ID = eINSTANCE.getServerHit_VisitId();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.

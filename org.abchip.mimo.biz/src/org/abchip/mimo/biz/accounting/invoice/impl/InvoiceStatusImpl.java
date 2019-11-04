@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceStatus;
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
@@ -42,24 +43,6 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -78,6 +61,15 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * @ordered
 	 */
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 	/**
 	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -185,7 +177,24 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -195,8 +204,8 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -250,10 +259,11 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
-				return getStatusId();
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				return getStatusDate();
+			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
 				if (resolve) return getInvoiceId();
 				return basicGetInvoiceId();
@@ -272,11 +282,11 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				setStatusDate((Date)newValue);
+				return;
+			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
 				setInvoiceId((Invoice)newValue);
@@ -296,11 +306,11 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				setStatusDate(STATUS_DATE_EDEFAULT);
+				return;
+			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
 				setInvoiceId((Invoice)null);
@@ -320,10 +330,10 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
+				return statusId != null;
 			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
 				return invoiceId != null;
 			case InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID:
@@ -342,9 +352,7 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (statusId: ");
-		result.append(statusId);
-		result.append(", statusDate: ");
+		result.append(" (statusDate: ");
 		result.append(statusDate);
 		result.append(')');
 		return result.toString();

@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.accounting.invoice.Invoice;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
@@ -112,30 +112,29 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	void setInvoiceItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Adjustment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Adjustment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Adjustment Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Adjustment Id</em>' attribute.
-	 * @see #setOrderAdjustmentId(String)
+	 * @return the value of the '<em>Order Adjustment Id</em>' reference.
+	 * @see #setOrderAdjustmentId(OrderAdjustment)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_OrderAdjustmentId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="orderAdjustmentId"
 	 * @generated
 	 */
-	String getOrderAdjustmentId();
+	OrderAdjustment getOrderAdjustmentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Adjustment Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Adjustment Id</em>' reference.
 	 * @see #getOrderAdjustmentId()
 	 * @generated
 	 */
-	void setOrderAdjustmentId(String value);
+	void setOrderAdjustmentId(OrderAdjustment value);
 
 } // OrderAdjustmentBilling

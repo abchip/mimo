@@ -20,7 +20,6 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getBeginningSynchTime <em>Beginning Synch Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getLastCandidateEndTime <em>Last Candidate End Time</em>}</li>
@@ -46,6 +45,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getTotalRowsToStore <em>Total Rows To Store</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getTotalSplits <em>Total Splits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getTotalStoreCalls <em>Total Store Calls</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory()
@@ -80,31 +80,30 @@ public interface EntitySyncHistory extends BizEntity {
 	void setBeginningSynchTime(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Entity Sync Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Entity Sync Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Sync Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Sync Id</em>' attribute.
-	 * @see #setEntitySyncId(String)
+	 * @return the value of the '<em>Entity Sync Id</em>' reference.
+	 * @see #setEntitySyncId(EntitySync)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_EntitySyncId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="entitySyncId"
 	 * @generated
 	 */
-	String getEntitySyncId();
+	EntitySync getEntitySyncId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entity Sync Id</em>' attribute.
+	 * @param value the new value of the '<em>Entity Sync Id</em>' reference.
 	 * @see #getEntitySyncId()
 	 * @generated
 	 */
-	void setEntitySyncId(String value);
+	void setEntitySyncId(EntitySync value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Candidate End Time</b></em>' attribute.

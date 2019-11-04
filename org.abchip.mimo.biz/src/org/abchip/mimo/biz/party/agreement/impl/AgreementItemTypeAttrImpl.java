@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.party.agreement.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.agreement.AgreementItemType;
 import org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,37 +26,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeAttrImpl#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeAttrImpl#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AgreementItemTypeAttrImpl extends BizEntityImpl implements AgreementItemTypeAttr {
 	/**
-	 * The default value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementItemTypeId = AGREEMENT_ITEM_TYPE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +74,15 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AgreementItemType agreementItemTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +155,24 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 	 * @generated
 	 */
 	@Override
-	public String getAgreementItemTypeId() {
+	public AgreementItemType getAgreementItemTypeId() {
+		if (agreementItemTypeId != null && ((EObject)agreementItemTypeId).eIsProxy()) {
+			InternalEObject oldAgreementItemTypeId = (InternalEObject)agreementItemTypeId;
+			agreementItemTypeId = (AgreementItemType)eResolveProxy(oldAgreementItemTypeId);
+			if (agreementItemTypeId != oldAgreementItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
+			}
+		}
+		return agreementItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgreementItemType basicGetAgreementItemTypeId() {
 		return agreementItemTypeId;
 	}
 
@@ -172,8 +182,8 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 	 * @generated
 	 */
 	@Override
-	public void setAgreementItemTypeId(String newAgreementItemTypeId) {
-		String oldAgreementItemTypeId = agreementItemTypeId;
+	public void setAgreementItemTypeId(AgreementItemType newAgreementItemTypeId) {
+		AgreementItemType oldAgreementItemTypeId = agreementItemTypeId;
 		agreementItemTypeId = newAgreementItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
@@ -187,12 +197,13 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
-				return getAgreementItemTypeId();
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
+				if (resolve) return getAgreementItemTypeId();
+				return basicGetAgreementItemTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +216,14 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
-				setAgreementItemTypeId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
+				setAgreementItemTypeId((AgreementItemType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +237,14 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
-				setAgreementItemTypeId(AGREEMENT_ITEM_TYPE_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
+				setAgreementItemTypeId((AgreementItemType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +258,12 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
-				return AGREEMENT_ITEM_TYPE_ID_EDEFAULT == null ? agreementItemTypeId != null : !AGREEMENT_ITEM_TYPE_ID_EDEFAULT.equals(agreementItemTypeId);
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case AgreementPackage.AGREEMENT_ITEM_TYPE_ATTR__AGREEMENT_ITEM_TYPE_ID:
+				return agreementItemTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,9 +278,7 @@ public class AgreementItemTypeAttrImpl extends BizEntityImpl implements Agreemen
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementItemTypeId: ");
-		result.append(agreementItemTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

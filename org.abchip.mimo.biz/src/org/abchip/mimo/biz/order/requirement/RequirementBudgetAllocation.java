@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.requirement;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.budget.Budget;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getRequirementId <em>Requirement Id</em>}</li>
  * </ul>
  *
@@ -58,31 +59,30 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	void setAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Id</em>' attribute.
-	 * @see #setBudgetId(String)
+	 * @return the value of the '<em>Budget Id</em>' reference.
+	 * @see #setBudgetId(Budget)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_BudgetId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="budgetId"
 	 * @generated
 	 */
-	String getBudgetId();
+	Budget getBudgetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetId <em>Budget Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetId <em>Budget Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Id</em>' reference.
 	 * @see #getBudgetId()
 	 * @generated
 	 */
-	void setBudgetId(String value);
+	void setBudgetId(Budget value);
 
 	/**
 	 * Returns the value of the '<em><b>Budget Item Seq Id</b></em>' attribute.

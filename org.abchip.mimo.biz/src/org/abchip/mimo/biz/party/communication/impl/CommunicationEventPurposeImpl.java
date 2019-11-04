@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.party.communication.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPurpose;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -26,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,24 +39,6 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getCommunicationEventPrpTypId() <em>Communication Event Prp Typ Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventPrpTypId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMUNICATION_EVENT_PRP_TYP_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCommunicationEventPrpTypId() <em>Communication Event Prp Typ Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventPrpTypId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String communicationEventPrpTypId = COMMUNICATION_EVENT_PRP_TYP_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,6 +66,15 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	 * @ordered
 	 */
 	protected CommunicationEvent communicationEventId;
+	/**
+	 * The cached value of the '{@link #getCommunicationEventPrpTypId() <em>Communication Event Prp Typ Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationEventPrpTypId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommunicationEventPrpTyp communicationEventPrpTypId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,7 +164,24 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventPrpTypId() {
+	public CommunicationEventPrpTyp getCommunicationEventPrpTypId() {
+		if (communicationEventPrpTypId != null && ((EObject)communicationEventPrpTypId).eIsProxy()) {
+			InternalEObject oldCommunicationEventPrpTypId = (InternalEObject)communicationEventPrpTypId;
+			communicationEventPrpTypId = (CommunicationEventPrpTyp)eResolveProxy(oldCommunicationEventPrpTypId);
+			if (communicationEventPrpTypId != oldCommunicationEventPrpTypId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID, oldCommunicationEventPrpTypId, communicationEventPrpTypId));
+			}
+		}
+		return communicationEventPrpTypId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEventPrpTyp basicGetCommunicationEventPrpTypId() {
 		return communicationEventPrpTypId;
 	}
 
@@ -182,8 +191,8 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventPrpTypId(String newCommunicationEventPrpTypId) {
-		String oldCommunicationEventPrpTypId = communicationEventPrpTypId;
+	public void setCommunicationEventPrpTypId(CommunicationEventPrpTyp newCommunicationEventPrpTypId) {
+		CommunicationEventPrpTyp oldCommunicationEventPrpTypId = communicationEventPrpTypId;
 		communicationEventPrpTypId = newCommunicationEventPrpTypId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID, oldCommunicationEventPrpTypId, communicationEventPrpTypId));
@@ -197,13 +206,14 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
-				return getCommunicationEventPrpTypId();
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__DESCRIPTION:
 				return getDescription();
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID:
 				if (resolve) return getCommunicationEventId();
 				return basicGetCommunicationEventId();
+			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
+				if (resolve) return getCommunicationEventPrpTypId();
+				return basicGetCommunicationEventPrpTypId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,14 +226,14 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
-				setCommunicationEventPrpTypId((String)newValue);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
+				setCommunicationEventPrpTypId((CommunicationEventPrpTyp)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -237,14 +247,14 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
-				setCommunicationEventPrpTypId(COMMUNICATION_EVENT_PRP_TYP_ID_EDEFAULT);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
+				setCommunicationEventPrpTypId((CommunicationEventPrpTyp)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -258,12 +268,12 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
-				return COMMUNICATION_EVENT_PRP_TYP_ID_EDEFAULT == null ? communicationEventPrpTypId != null : !COMMUNICATION_EVENT_PRP_TYP_ID_EDEFAULT.equals(communicationEventPrpTypId);
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID:
 				return communicationEventId != null;
+			case CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID:
+				return communicationEventPrpTypId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -278,9 +288,7 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (communicationEventPrpTypId: ");
-		result.append(communicationEventPrpTypId);
-		result.append(", description: ");
+		result.append(" (description: ");
 		result.append(description);
 		result.append(')');
 		return result.toString();

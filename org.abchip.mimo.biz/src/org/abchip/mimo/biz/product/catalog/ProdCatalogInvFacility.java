@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.product.facility.Facility;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
@@ -139,30 +139,29 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Prod Catalog Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Prod Catalog Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Prod Catalog Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
-	 * @see #setProdCatalogId(String)
+	 * @return the value of the '<em>Prod Catalog Id</em>' reference.
+	 * @see #setProdCatalogId(ProdCatalog)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_ProdCatalogId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="prodCatalogId"
 	 * @generated
 	 */
-	String getProdCatalogId();
+	ProdCatalog getProdCatalogId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getProdCatalogId <em>Prod Catalog Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getProdCatalogId <em>Prod Catalog Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prod Catalog Id</em>' attribute.
+	 * @param value the new value of the '<em>Prod Catalog Id</em>' reference.
 	 * @see #getProdCatalogId()
 	 * @generated
 	 */
-	void setProdCatalogId(String value);
+	void setProdCatalogId(ProdCatalog value);
 
 } // ProdCatalogInvFacility

@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortReview;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -30,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#getReviewDate <em>Review Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#isPostedAnonymous <em>Posted Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#getRating <em>Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#getReviewText <em>Review Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
@@ -46,26 +47,6 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReviewDate() <em>Review Date</em>}' attribute.
@@ -146,6 +127,16 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 * @ordered
 	 */
 	protected String reviewText = REVIEW_TEXT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
@@ -364,7 +355,24 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -374,8 +382,8 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -389,8 +397,6 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
 				return getReviewDate();
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS:
@@ -399,6 +405,9 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 				return getRating();
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
 				return getReviewText();
+			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
 				if (resolve) return getUserLoginId();
 				return basicGetUserLoginId();
@@ -417,9 +426,6 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
 				setReviewDate((Date)newValue);
 				return;
@@ -431,6 +437,9 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 				return;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
 				setReviewText((String)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
 				setUserLoginId((UserLogin)newValue);
@@ -450,9 +459,6 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
 				setReviewDate(REVIEW_DATE_EDEFAULT);
 				return;
@@ -464,6 +470,9 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 				return;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
 				setReviewText(REVIEW_TEXT_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
 				setUserLoginId((UserLogin)null);
@@ -483,8 +492,6 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
 				return REVIEW_DATE_EDEFAULT == null ? reviewDate != null : !REVIEW_DATE_EDEFAULT.equals(reviewDate);
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS:
@@ -493,6 +500,8 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 				return rating != RATING_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
 				return REVIEW_TEXT_EDEFAULT == null ? reviewText != null : !REVIEW_TEXT_EDEFAULT.equals(reviewText);
+			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
 				return userLoginId != null;
 			case WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID:
@@ -511,9 +520,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", reviewDate: ");
+		result.append(" (reviewDate: ");
 		result.append(reviewDate);
 		result.append(", postedAnonymous: ");
 		result.append(postedAnonymous);

@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigOptionId <em>Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
@@ -139,30 +139,29 @@ public interface ProductConfigProduct extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Config Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Config Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Config Item Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Config Item Id</em>' attribute.
-	 * @see #setConfigItemId(String)
+	 * @return the value of the '<em>Config Item Id</em>' reference.
+	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_ConfigItemId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="configItemId"
 	 * @generated
 	 */
-	String getConfigItemId();
+	ProductConfigItem getConfigItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Config Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Config Item Id</em>' reference.
 	 * @see #getConfigItemId()
 	 * @generated
 	 */
-	void setConfigItemId(String value);
+	void setConfigItemId(ProductConfigItem value);
 
 } // ProductConfigProduct

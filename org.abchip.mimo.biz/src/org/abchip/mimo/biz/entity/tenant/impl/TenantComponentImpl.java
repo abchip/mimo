@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
+import org.abchip.mimo.biz.entity.tenant.Component;
 import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantComponent;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getComponentName <em>Component Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getTenantId <em>Tenant Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getComponentName <em>Component Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,26 +40,6 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMPONENT_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String componentName = COMPONENT_NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,6 +67,15 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 * @ordered
 	 */
 	protected Tenant tenantId;
+	/**
+	 * The cached value of the '{@link #getComponentName() <em>Component Name</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentName()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component componentName;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,7 +102,24 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 * @generated
 	 */
 	@Override
-	public String getComponentName() {
+	public Component getComponentName() {
+		if (componentName != null && ((EObject)componentName).eIsProxy()) {
+			InternalEObject oldComponentName = (InternalEObject)componentName;
+			componentName = (Component)eResolveProxy(oldComponentName);
+			if (componentName != oldComponentName) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_COMPONENT__COMPONENT_NAME, oldComponentName, componentName));
+			}
+		}
+		return componentName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetComponentName() {
 		return componentName;
 	}
 
@@ -122,8 +129,8 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 * @generated
 	 */
 	@Override
-	public void setComponentName(String newComponentName) {
-		String oldComponentName = componentName;
+	public void setComponentName(Component newComponentName) {
+		Component oldComponentName = componentName;
 		componentName = newComponentName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_COMPONENT__COMPONENT_NAME, oldComponentName, componentName));
@@ -200,13 +207,14 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
-				return getComponentName();
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				return getSequenceNum();
 			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
 				if (resolve) return getTenantId();
 				return basicGetTenantId();
+			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
+				if (resolve) return getComponentName();
+				return basicGetComponentName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,14 +227,14 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
-				setComponentName((String)newValue);
-				return;
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
 				return;
 			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
 				setTenantId((Tenant)newValue);
+				return;
+			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
+				setComponentName((Component)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -240,14 +248,14 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
-				setComponentName(COMPONENT_NAME_EDEFAULT);
-				return;
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
 				return;
 			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
 				setTenantId((Tenant)null);
+				return;
+			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
+				setComponentName((Component)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -261,12 +269,12 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
-				return COMPONENT_NAME_EDEFAULT == null ? componentName != null : !COMPONENT_NAME_EDEFAULT.equals(componentName);
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
 				return tenantId != null;
+			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
+				return componentName != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -281,9 +289,7 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (componentName: ");
-		result.append(componentName);
-		result.append(", sequenceNum: ");
+		result.append(" (sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(')');
 		return result.toString();

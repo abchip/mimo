@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionTypeAttr()
@@ -82,30 +82,29 @@ public interface SubscriptionTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Subscription Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Type Id</em>' attribute.
-	 * @see #setSubscriptionTypeId(String)
+	 * @return the value of the '<em>Subscription Type Id</em>' reference.
+	 * @see #setSubscriptionTypeId(SubscriptionType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionTypeAttr_SubscriptionTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="subscriptionTypeId"
 	 * @generated
 	 */
-	String getSubscriptionTypeId();
+	SubscriptionType getSubscriptionTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr#getSubscriptionTypeId <em>Subscription Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr#getSubscriptionTypeId <em>Subscription Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscription Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Subscription Type Id</em>' reference.
 	 * @see #getSubscriptionTypeId()
 	 * @generated
 	 */
-	void setSubscriptionTypeId(String value);
+	void setSubscriptionTypeId(SubscriptionType value);
 
 } // SubscriptionTypeAttr

@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr#getFacilityTypeId <em>Facility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr#getFacilityTypeId <em>Facility Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityTypeAttr()
@@ -82,30 +82,29 @@ public interface FacilityTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Type Id</em>' attribute.
-	 * @see #setFacilityTypeId(String)
+	 * @return the value of the '<em>Facility Type Id</em>' reference.
+	 * @see #setFacilityTypeId(FacilityType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityTypeAttr_FacilityTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="facilityTypeId"
 	 * @generated
 	 */
-	String getFacilityTypeId();
+	FacilityType getFacilityTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr#getFacilityTypeId <em>Facility Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr#getFacilityTypeId <em>Facility Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Type Id</em>' reference.
 	 * @see #getFacilityTypeId()
 	 * @generated
 	 */
-	void setFacilityTypeId(String value);
+	void setFacilityTypeId(FacilityType value);
 
 } // FacilityTypeAttr

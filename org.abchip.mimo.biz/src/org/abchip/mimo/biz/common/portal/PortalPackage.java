@@ -253,22 +253,13 @@ public interface PortalPackage extends EPackage {
 	int PORTAL_PAGE_COLUMN__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Portal Page Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Column Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Column Width Percentage</b></em>' attribute.
@@ -277,7 +268,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Column Width Pixels</b></em>' attribute.
@@ -286,7 +277,16 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Portal Page Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Page Column</em>' class.
@@ -344,22 +344,13 @@ public interface PortalPackage extends EPackage {
 	int PORTAL_PAGE_PORTLET__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Portal Page Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Portlet Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Column Seq Id</b></em>' attribute.
@@ -368,7 +359,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE_PORTLET__COLUMN_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PORTAL_PAGE_PORTLET__COLUMN_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -377,7 +368,16 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE_PORTLET__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PORTAL_PAGE_PORTLET__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Portal Page Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Portal Portlet Id</b></em>' reference.
@@ -789,7 +789,7 @@ public interface PortalPackage extends EPackage {
 	int PORTLET_PORTLET_CATEGORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Portal Portlet Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Portal Portlet Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -947,15 +947,15 @@ public interface PortalPackage extends EPackage {
 	EClass getPortalPageColumn();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getPortalPageId <em>Portal Page Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getPortalPageId <em>Portal Page Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Portal Page Id</em>'.
+	 * @return the meta object for the reference '<em>Portal Page Id</em>'.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPageColumn#getPortalPageId()
 	 * @see #getPortalPageColumn()
 	 * @generated
 	 */
-	EAttribute getPortalPageColumn_PortalPageId();
+	EReference getPortalPageColumn_PortalPageId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getColumnSeqId <em>Column Seq Id</em>}'.
@@ -1001,15 +1001,15 @@ public interface PortalPackage extends EPackage {
 	EClass getPortalPagePortlet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Portal Page Id</em>'.
+	 * @return the meta object for the reference '<em>Portal Page Id</em>'.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId()
 	 * @see #getPortalPagePortlet()
 	 * @generated
 	 */
-	EAttribute getPortalPagePortlet_PortalPageId();
+	EReference getPortalPagePortlet_PortalPageId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPortletId <em>Portal Portlet Id</em>}'.
@@ -1316,15 +1316,15 @@ public interface PortalPackage extends EPackage {
 	EClass getPortletPortletCategory();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortalPortletId <em>Portal Portlet Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortalPortletId <em>Portal Portlet Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Portal Portlet Id</em>'.
+	 * @return the meta object for the reference '<em>Portal Portlet Id</em>'.
 	 * @see org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortalPortletId()
 	 * @see #getPortletPortletCategory()
 	 * @generated
 	 */
-	EAttribute getPortletPortletCategory_PortalPortletId();
+	EReference getPortletPortletCategory_PortalPortletId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortletCategoryId <em>Portlet Category Id</em>}'.
@@ -1460,12 +1460,12 @@ public interface PortalPackage extends EPackage {
 		EClass PORTAL_PAGE_COLUMN = eINSTANCE.getPortalPageColumn();
 
 		/**
-		 * The meta object literal for the '<em><b>Portal Page Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Portal Page Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID = eINSTANCE.getPortalPageColumn_PortalPageId();
+		EReference PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID = eINSTANCE.getPortalPageColumn_PortalPageId();
 
 		/**
 		 * The meta object literal for the '<em><b>Column Seq Id</b></em>' attribute feature.
@@ -1502,12 +1502,12 @@ public interface PortalPackage extends EPackage {
 		EClass PORTAL_PAGE_PORTLET = eINSTANCE.getPortalPagePortlet();
 
 		/**
-		 * The meta object literal for the '<em><b>Portal Page Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Portal Page Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID = eINSTANCE.getPortalPagePortlet_PortalPageId();
+		EReference PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID = eINSTANCE.getPortalPagePortlet_PortalPageId();
 
 		/**
 		 * The meta object literal for the '<em><b>Portal Portlet Id</b></em>' reference feature.
@@ -1742,12 +1742,12 @@ public interface PortalPackage extends EPackage {
 		EClass PORTLET_PORTLET_CATEGORY = eINSTANCE.getPortletPortletCategory();
 
 		/**
-		 * The meta object literal for the '<em><b>Portal Portlet Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Portal Portlet Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID = eINSTANCE.getPortletPortletCategory_PortalPortletId();
+		EReference PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID = eINSTANCE.getPortletPortletCategory_PortalPortletId();
 
 		/**
 		 * The meta object literal for the '<em><b>Portlet Category Id</b></em>' reference feature.

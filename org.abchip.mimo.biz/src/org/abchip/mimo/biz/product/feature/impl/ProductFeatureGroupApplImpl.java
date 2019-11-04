@@ -12,6 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.feature.ProductFeatureGroup;
 import org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -28,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupApplImpl#getProductFeatureGroupId <em>Product Feature Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupApplImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupApplImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupApplImpl#getProductFeatureGroupId <em>Product Feature Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupApplImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductFeatureGroupId() <em>Product Feature Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureGroupId() <em>Product Feature Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureGroupId = PRODUCT_FEATURE_GROUP_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -122,6 +103,16 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductFeatureGroupId() <em>Product Feature Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeatureGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeatureGroup productFeatureGroupId;
 
 	/**
 	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
@@ -227,7 +218,24 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureGroupId() {
+	public ProductFeatureGroup getProductFeatureGroupId() {
+		if (productFeatureGroupId != null && ((EObject)productFeatureGroupId).eIsProxy()) {
+			InternalEObject oldProductFeatureGroupId = (InternalEObject)productFeatureGroupId;
+			productFeatureGroupId = (ProductFeatureGroup)eResolveProxy(oldProductFeatureGroupId);
+			if (productFeatureGroupId != oldProductFeatureGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID, oldProductFeatureGroupId, productFeatureGroupId));
+			}
+		}
+		return productFeatureGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeatureGroup basicGetProductFeatureGroupId() {
 		return productFeatureGroupId;
 	}
 
@@ -237,8 +245,8 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureGroupId(String newProductFeatureGroupId) {
-		String oldProductFeatureGroupId = productFeatureGroupId;
+	public void setProductFeatureGroupId(ProductFeatureGroup newProductFeatureGroupId) {
+		ProductFeatureGroup oldProductFeatureGroupId = productFeatureGroupId;
 		productFeatureGroupId = newProductFeatureGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID, oldProductFeatureGroupId, productFeatureGroupId));
@@ -292,14 +300,15 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
-				return getProductFeatureGroupId();
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__FROM_DATE:
 				return getFromDate();
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__SEQUENCE_NUM:
 				return getSequenceNum();
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__THRU_DATE:
 				return getThruDate();
+			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
+				if (resolve) return getProductFeatureGroupId();
+				return basicGetProductFeatureGroupId();
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_ID:
 				if (resolve) return getProductFeatureId();
 				return basicGetProductFeatureId();
@@ -315,9 +324,6 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
-				setProductFeatureGroupId((String)newValue);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -326,6 +332,9 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
+				setProductFeatureGroupId((ProductFeatureGroup)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_ID:
 				setProductFeatureId((ProductFeature)newValue);
@@ -342,9 +351,6 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
-				setProductFeatureGroupId(PRODUCT_FEATURE_GROUP_ID_EDEFAULT);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -353,6 +359,9 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
+				setProductFeatureGroupId((ProductFeatureGroup)null);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_ID:
 				setProductFeatureId((ProductFeature)null);
@@ -369,14 +378,14 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
-				return PRODUCT_FEATURE_GROUP_ID_EDEFAULT == null ? productFeatureGroupId != null : !PRODUCT_FEATURE_GROUP_ID_EDEFAULT.equals(productFeatureGroupId);
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID:
+				return productFeatureGroupId != null;
 			case FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_ID:
 				return productFeatureId != null;
 		}
@@ -393,9 +402,7 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productFeatureGroupId: ");
-		result.append(productFeatureGroupId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);

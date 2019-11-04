@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.requirement.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementRole;
 import org.abchip.mimo.biz.party.party.Party;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getRequirementId() <em>Requirement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REQUIREMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String requirementId = REQUIREMENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
@@ -123,6 +104,16 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Requirement requirementId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -222,7 +213,24 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	 * @generated
 	 */
 	@Override
-	public String getRequirementId() {
+	public Requirement getRequirementId() {
+		if (requirementId != null && ((EObject)requirementId).eIsProxy()) {
+			InternalEObject oldRequirementId = (InternalEObject)requirementId;
+			requirementId = (Requirement)eResolveProxy(oldRequirementId);
+			if (requirementId != oldRequirementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID, oldRequirementId, requirementId));
+			}
+		}
+		return requirementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requirement basicGetRequirementId() {
 		return requirementId;
 	}
 
@@ -232,8 +240,8 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	 * @generated
 	 */
 	@Override
-	public void setRequirementId(String newRequirementId) {
-		String oldRequirementId = requirementId;
+	public void setRequirementId(Requirement newRequirementId) {
+		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID, oldRequirementId, requirementId));
@@ -293,14 +301,15 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
-				return getRequirementId();
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
 			case RequirementPackage.REQUIREMENT_ROLE__FROM_DATE:
 				return getFromDate();
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				return getThruDate();
+			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
+				if (resolve) return getRequirementId();
+				return basicGetRequirementId();
 			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -316,9 +325,6 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
-				setRequirementId((String)newValue);
-				return;
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
@@ -327,6 +333,9 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 				return;
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
+				setRequirementId((Requirement)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -343,9 +352,6 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
-				setRequirementId(REQUIREMENT_ID_EDEFAULT);
-				return;
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 				return;
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
+				setRequirementId((Requirement)null);
 				return;
 			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -370,14 +379,14 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
-				return REQUIREMENT_ID_EDEFAULT == null ? requirementId != null : !REQUIREMENT_ID_EDEFAULT.equals(requirementId);
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case RequirementPackage.REQUIREMENT_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
+				return requirementId != null;
 			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
 				return partyId != null;
 		}
@@ -394,9 +403,7 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (requirementId: ");
-		result.append(requirementId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

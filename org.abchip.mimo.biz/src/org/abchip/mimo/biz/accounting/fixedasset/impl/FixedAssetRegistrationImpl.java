@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -28,12 +29,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getLicenseNumber <em>License Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getRegistrationDate <em>Registration Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getRegistrationNumber <em>Registration Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl#getGovAgencyPartyId <em>Gov Agency Party Id</em>}</li>
  * </ul>
  *
@@ -41,27 +42,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAssetRegistration {
 	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -152,6 +135,15 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
 	/**
 	 * The cached value of the '{@link #getGovAgencyPartyId() <em>Gov Agency Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -342,7 +334,24 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -352,8 +361,8 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -367,8 +376,6 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__LICENSE_NUMBER:
@@ -379,6 +386,9 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 				return getRegistrationNumber();
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__GOV_AGENCY_PARTY_ID:
 				if (resolve) return getGovAgencyPartyId();
 				return basicGetGovAgencyPartyId();
@@ -394,9 +404,6 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -411,6 +418,9 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 				return;
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__GOV_AGENCY_PARTY_ID:
 				setGovAgencyPartyId((Party)newValue);
@@ -427,9 +437,6 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -444,6 +451,9 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 				return;
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__GOV_AGENCY_PARTY_ID:
 				setGovAgencyPartyId((Party)null);
@@ -460,8 +470,6 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__LICENSE_NUMBER:
@@ -472,6 +480,8 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 				return REGISTRATION_NUMBER_EDEFAULT == null ? registrationNumber != null : !REGISTRATION_NUMBER_EDEFAULT.equals(registrationNumber);
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID:
+				return fixedAssetId != null;
 			case FixedassetPackage.FIXED_ASSET_REGISTRATION__GOV_AGENCY_PARTY_ID:
 				return govAgencyPartyId != null;
 		}
@@ -488,9 +498,7 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fixedAssetId: ");
-		result.append(fixedAssetId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", licenseNumber: ");
 		result.append(licenseNumber);

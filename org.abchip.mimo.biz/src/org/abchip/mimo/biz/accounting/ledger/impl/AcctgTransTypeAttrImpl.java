@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransType;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,37 +26,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeAttrImpl#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeAttrImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeAttrImpl#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransTypeAttr {
 	/**
-	 * The default value of the '{@link #getAcctgTransTypeId() <em>Acctg Trans Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcctgTransTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCTG_TRANS_TYPE_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getAcctgTransTypeId() <em>Acctg Trans Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcctgTransTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String acctgTransTypeId = ACCTG_TRANS_TYPE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +74,15 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAcctgTransTypeId() <em>Acctg Trans Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAcctgTransTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AcctgTransType acctgTransTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +155,24 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	 * @generated
 	 */
 	@Override
-	public String getAcctgTransTypeId() {
+	public AcctgTransType getAcctgTransTypeId() {
+		if (acctgTransTypeId != null && ((EObject)acctgTransTypeId).eIsProxy()) {
+			InternalEObject oldAcctgTransTypeId = (InternalEObject)acctgTransTypeId;
+			acctgTransTypeId = (AcctgTransType)eResolveProxy(oldAcctgTransTypeId);
+			if (acctgTransTypeId != oldAcctgTransTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID, oldAcctgTransTypeId, acctgTransTypeId));
+			}
+		}
+		return acctgTransTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AcctgTransType basicGetAcctgTransTypeId() {
 		return acctgTransTypeId;
 	}
 
@@ -172,8 +182,8 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	 * @generated
 	 */
 	@Override
-	public void setAcctgTransTypeId(String newAcctgTransTypeId) {
-		String oldAcctgTransTypeId = acctgTransTypeId;
+	public void setAcctgTransTypeId(AcctgTransType newAcctgTransTypeId) {
+		AcctgTransType oldAcctgTransTypeId = acctgTransTypeId;
 		acctgTransTypeId = newAcctgTransTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID, oldAcctgTransTypeId, acctgTransTypeId));
@@ -187,12 +197,13 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
-				return getAcctgTransTypeId();
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ATTR_NAME:
 				return getAttrName();
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__DESCRIPTION:
 				return getDescription();
+			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
+				if (resolve) return getAcctgTransTypeId();
+				return basicGetAcctgTransTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +216,14 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
-				setAcctgTransTypeId((String)newValue);
-				return;
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
+				setAcctgTransTypeId((AcctgTransType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +237,14 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
-				setAcctgTransTypeId(ACCTG_TRANS_TYPE_ID_EDEFAULT);
-				return;
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
+				setAcctgTransTypeId((AcctgTransType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +258,12 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
-				return ACCTG_TRANS_TYPE_ID_EDEFAULT == null ? acctgTransTypeId != null : !ACCTG_TRANS_TYPE_ID_EDEFAULT.equals(acctgTransTypeId);
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID:
+				return acctgTransTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,9 +278,7 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (acctgTransTypeId: ");
-		result.append(acctgTransTypeId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", description: ");
 		result.append(description);

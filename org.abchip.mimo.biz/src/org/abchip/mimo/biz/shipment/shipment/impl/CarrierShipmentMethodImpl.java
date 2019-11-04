@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentMethod;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,10 +28,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getCarrierServiceCode <em>Carrier Service Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getSequenceNumber <em>Sequence Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -41,26 +42,6 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentMethodTypeId = SHIPMENT_METHOD_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
@@ -121,6 +102,16 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 * @ordered
 	 */
 	protected long sequenceNumber = SEQUENCE_NUMBER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShipmentMethodType shipmentMethodTypeId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -266,7 +257,24 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 * @generated
 	 */
 	@Override
-	public String getShipmentMethodTypeId() {
+	public ShipmentMethodType getShipmentMethodTypeId() {
+		if (shipmentMethodTypeId != null && ((EObject)shipmentMethodTypeId).eIsProxy()) {
+			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
+			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
+			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+			}
+		}
+		return shipmentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentMethodType basicGetShipmentMethodTypeId() {
 		return shipmentMethodTypeId;
 	}
 
@@ -276,8 +284,8 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 * @generated
 	 */
 	@Override
-	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
-		String oldShipmentMethodTypeId = shipmentMethodTypeId;
+	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
@@ -291,14 +299,15 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
-				return getShipmentMethodTypeId();
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
 				return getRoleTypeId();
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE:
 				return getCarrierServiceCode();
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
 				return getSequenceNumber();
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				if (resolve) return getShipmentMethodTypeId();
+				return basicGetShipmentMethodTypeId();
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -314,9 +323,6 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((String)newValue);
-				return;
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
@@ -325,6 +331,9 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
 				setSequenceNumber((Long)newValue);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId((ShipmentMethodType)newValue);
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -341,9 +350,6 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId(SHIPMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
@@ -352,6 +358,9 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
 				setSequenceNumber(SEQUENCE_NUMBER_EDEFAULT);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId((ShipmentMethodType)null);
 				return;
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
 				setPartyId((Party)null);
@@ -368,14 +377,14 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
-				return SHIPMENT_METHOD_TYPE_ID_EDEFAULT == null ? shipmentMethodTypeId != null : !SHIPMENT_METHOD_TYPE_ID_EDEFAULT.equals(shipmentMethodTypeId);
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE:
 				return CARRIER_SERVICE_CODE_EDEFAULT == null ? carrierServiceCode != null : !CARRIER_SERVICE_CODE_EDEFAULT.equals(carrierServiceCode);
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
 				return sequenceNumber != SEQUENCE_NUMBER_EDEFAULT;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				return shipmentMethodTypeId != null;
 			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
 				return partyId != null;
 		}
@@ -392,9 +401,7 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentMethodTypeId: ");
-		result.append(shipmentMethodTypeId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(", carrierServiceCode: ");
 		result.append(carrierServiceCode);

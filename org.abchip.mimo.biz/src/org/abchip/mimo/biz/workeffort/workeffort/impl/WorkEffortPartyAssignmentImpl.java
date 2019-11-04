@@ -16,6 +16,7 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -34,12 +35,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#isMustRsvp <em>Must Rsvp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getStatusDateTime <em>Status Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getAssignedByUserLoginId <em>Assigned By User Login Id</em>}</li>
@@ -57,26 +58,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -177,6 +158,16 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
 
 	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
@@ -718,7 +709,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -728,8 +736,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -743,8 +751,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
-				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__COMMENTS:
@@ -755,6 +761,9 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 				return getStatusDateTime();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -791,9 +800,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -808,6 +814,9 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -845,9 +854,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -862,6 +868,9 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
 				setPartyId((Party)null);
@@ -899,8 +908,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__COMMENTS:
@@ -911,6 +918,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 				return STATUS_DATE_TIME_EDEFAULT == null ? statusDateTime != null : !STATUS_DATE_TIME_EDEFAULT.equals(statusDateTime);
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
+				return workEffortId != null;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
 				return partyId != null;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
@@ -941,9 +950,7 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workEffortId: ");
-		result.append(workEffortId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

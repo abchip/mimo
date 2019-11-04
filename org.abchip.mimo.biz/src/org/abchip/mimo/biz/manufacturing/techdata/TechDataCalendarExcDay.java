@@ -22,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getCalendarId <em>Calendar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getExceptionDateStartTime <em>Exception Date Start Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getExceptionCapacity <em>Exception Capacity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getUsedCapacity <em>Used Capacity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getCalendarId <em>Calendar Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay()
@@ -35,31 +35,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface TechDataCalendarExcDay extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Calendar Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Calendar Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Calendar Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Calendar Id</em>' attribute.
-	 * @see #setCalendarId(String)
+	 * @return the value of the '<em>Calendar Id</em>' reference.
+	 * @see #setCalendarId(TechDataCalendar)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay_CalendarId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="calendarId"
 	 * @generated
 	 */
-	String getCalendarId();
+	TechDataCalendar getCalendarId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getCalendarId <em>Calendar Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay#getCalendarId <em>Calendar Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Calendar Id</em>' attribute.
+	 * @param value the new value of the '<em>Calendar Id</em>' reference.
 	 * @see #getCalendarId()
 	 * @generated
 	 */
-	void setCalendarId(String value);
+	void setCalendarId(TechDataCalendar value);
 
 	/**
 	 * Returns the value of the '<em><b>Exception Date Start Time</b></em>' attribute.

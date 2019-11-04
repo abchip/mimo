@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.method.CustomMethod;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  * </ul>
  *
@@ -32,31 +33,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface FixedAssetDepMethod extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Depreciation Custom Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Depreciation Custom Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Depreciation Custom Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Depreciation Custom Method Id</em>' attribute.
-	 * @see #setDepreciationCustomMethodId(String)
+	 * @return the value of the '<em>Depreciation Custom Method Id</em>' reference.
+	 * @see #setDepreciationCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetDepMethod_DepreciationCustomMethodId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="customMethodId"
 	 * @generated
 	 */
-	String getDepreciationCustomMethodId();
+	CustomMethod getDepreciationCustomMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Depreciation Custom Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Depreciation Custom Method Id</em>' reference.
 	 * @see #getDepreciationCustomMethodId()
 	 * @generated
 	 */
-	void setDepreciationCustomMethodId(String value);
+	void setDepreciationCustomMethodId(CustomMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.

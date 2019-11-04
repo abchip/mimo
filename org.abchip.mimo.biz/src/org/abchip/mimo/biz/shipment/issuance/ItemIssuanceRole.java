@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -30,31 +30,30 @@ import org.abchip.mimo.biz.party.party.Party;
  */
 public interface ItemIssuanceRole extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Item Issuance Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Item Issuance Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Item Issuance Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Item Issuance Id</em>' attribute.
-	 * @see #setItemIssuanceId(String)
+	 * @return the value of the '<em>Item Issuance Id</em>' reference.
+	 * @see #setItemIssuanceId(ItemIssuance)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole_ItemIssuanceId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="itemIssuanceId"
 	 * @generated
 	 */
-	String getItemIssuanceId();
+	ItemIssuance getItemIssuanceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Item Issuance Id</em>' attribute.
+	 * @param value the new value of the '<em>Item Issuance Id</em>' reference.
 	 * @see #getItemIssuanceId()
 	 * @generated
 	 */
-	void setItemIssuanceId(String value);
+	void setItemIssuanceId(ItemIssuance value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' reference.

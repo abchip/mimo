@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.position.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.rate.RateType;
+import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl#getPayGradeId <em>Pay Grade Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl#getRateTypeId <em>Rate Type Id</em>}</li>
  * </ul>
  *
@@ -44,26 +45,6 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionTypeId = EMPL_POSITION_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -146,6 +127,16 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPositionType emplPositionTypeId;
+
+	/**
 	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,7 +171,24 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionTypeId() {
+	public EmplPositionType getEmplPositionTypeId() {
+		if (emplPositionTypeId != null && ((EObject)emplPositionTypeId).eIsProxy()) {
+			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
+			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
+			if (emplPositionTypeId != oldEmplPositionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
+			}
+		}
+		return emplPositionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPositionType basicGetEmplPositionTypeId() {
 		return emplPositionTypeId;
 	}
 
@@ -190,8 +198,8 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionTypeId(String newEmplPositionTypeId) {
-		String oldEmplPositionTypeId = emplPositionTypeId;
+	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
+		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
@@ -337,8 +345,6 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
-				return getEmplPositionTypeId();
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__FROM_DATE:
 				return getFromDate();
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__PAY_GRADE_ID:
@@ -347,6 +353,9 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 				return getSalaryStepSeqId();
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__THRU_DATE:
 				return getThruDate();
+			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
+				if (resolve) return getEmplPositionTypeId();
+				return basicGetEmplPositionTypeId();
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID:
 				if (resolve) return getRateTypeId();
 				return basicGetRateTypeId();
@@ -362,9 +371,6 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -376,6 +382,9 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)newValue);
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID:
 				setRateTypeId((RateType)newValue);
@@ -392,9 +401,6 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId(EMPL_POSITION_TYPE_ID_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -406,6 +412,9 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)null);
 				return;
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID:
 				setRateTypeId((RateType)null);
@@ -422,8 +431,6 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
-				return EMPL_POSITION_TYPE_ID_EDEFAULT == null ? emplPositionTypeId != null : !EMPL_POSITION_TYPE_ID_EDEFAULT.equals(emplPositionTypeId);
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__PAY_GRADE_ID:
@@ -432,6 +439,8 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 				return SALARY_STEP_SEQ_ID_EDEFAULT == null ? salaryStepSeqId != null : !SALARY_STEP_SEQ_ID_EDEFAULT.equals(salaryStepSeqId);
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID:
+				return emplPositionTypeId != null;
 			case PositionPackage.EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID:
 				return rateTypeId != null;
 		}
@@ -448,9 +457,7 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (emplPositionTypeId: ");
-		result.append(emplPositionTypeId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", payGradeId: ");
 		result.append(payGradeId);

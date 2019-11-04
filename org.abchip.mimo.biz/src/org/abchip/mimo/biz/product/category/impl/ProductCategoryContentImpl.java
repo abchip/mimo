@@ -14,6 +14,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryContent;
 import org.abchip.mimo.biz.product.category.ProductCategoryContentType;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,13 +32,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getUseDaysLimit <em>Use Days Limit</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getProdCatContentTypeId <em>Prod Cat Content Type Id</em>}</li>
  * </ul>
@@ -50,26 +51,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -189,6 +170,16 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @ordered
 	 */
 	protected BigDecimal useDaysLimit = USE_DAYS_LIMIT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
@@ -413,7 +404,24 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -423,8 +431,8 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -478,8 +486,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				return getFromDate();
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PURCHASE_FROM_DATE:
@@ -492,6 +498,9 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 				return getUseCountLimit();
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				return getUseDaysLimit();
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
 				if (resolve) return getContentId();
 				return basicGetContentId();
@@ -510,9 +519,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -530,6 +536,9 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				setUseDaysLimit((BigDecimal)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
 				setContentId((Content)newValue);
@@ -549,9 +558,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -569,6 +575,9 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				setUseDaysLimit(USE_DAYS_LIMIT_EDEFAULT);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
 				setContentId((Content)null);
@@ -588,8 +597,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PURCHASE_FROM_DATE:
@@ -602,6 +609,8 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 				return useCountLimit != USE_COUNT_LIMIT_EDEFAULT;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				return USE_DAYS_LIMIT_EDEFAULT == null ? useDaysLimit != null : !USE_DAYS_LIMIT_EDEFAULT.equals(useDaysLimit);
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
 				return contentId != null;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
@@ -620,9 +629,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", purchaseFromDate: ");
 		result.append(purchaseFromDate);

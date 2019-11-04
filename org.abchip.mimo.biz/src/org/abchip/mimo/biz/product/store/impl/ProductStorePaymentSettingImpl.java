@@ -12,6 +12,7 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStorePaymentSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#isApplyToAllProducts <em>Apply To All Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentPropertiesPath <em>Payment Properties Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentService <em>Payment Service</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
@@ -46,26 +47,6 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isApplyToAllProducts() <em>Apply To All Products</em>}' attribute.
@@ -126,6 +107,16 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @ordered
 	 */
 	protected String paymentService = PAYMENT_SERVICE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
 
 	/**
 	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
@@ -421,7 +412,24 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -431,8 +439,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -446,14 +454,15 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				return isApplyToAllProducts();
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_PROPERTIES_PATH:
 				return getPaymentPropertiesPath();
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				return getPaymentService();
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
 				if (resolve) return getPaymentMethodTypeId();
 				return basicGetPaymentMethodTypeId();
@@ -478,9 +487,6 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				setApplyToAllProducts((Boolean)newValue);
 				return;
@@ -489,6 +495,9 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				setPaymentService((String)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId((PaymentMethodType)newValue);
@@ -514,9 +523,6 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				setApplyToAllProducts(APPLY_TO_ALL_PRODUCTS_EDEFAULT);
 				return;
@@ -525,6 +531,9 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				setPaymentService(PAYMENT_SERVICE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId((PaymentMethodType)null);
@@ -550,14 +559,14 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				return applyToAllProducts != APPLY_TO_ALL_PRODUCTS_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_PROPERTIES_PATH:
 				return PAYMENT_PROPERTIES_PATH_EDEFAULT == null ? paymentPropertiesPath != null : !PAYMENT_PROPERTIES_PATH_EDEFAULT.equals(paymentPropertiesPath);
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				return PAYMENT_SERVICE_EDEFAULT == null ? paymentService != null : !PAYMENT_SERVICE_EDEFAULT.equals(paymentService);
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
+				return productStoreId != null;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
 				return paymentMethodTypeId != null;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
@@ -580,9 +589,7 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreId: ");
-		result.append(productStoreId);
-		result.append(", applyToAllProducts: ");
+		result.append(" (applyToAllProducts: ");
 		result.append(applyToAllProducts);
 		result.append(", paymentPropertiesPath: ");
 		result.append(paymentPropertiesPath);

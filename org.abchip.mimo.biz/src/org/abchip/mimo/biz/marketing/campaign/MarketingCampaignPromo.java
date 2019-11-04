@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
@@ -60,31 +60,30 @@ public interface MarketingCampaignPromo extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Marketing Campaign Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Marketing Campaign Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Marketing Campaign Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Marketing Campaign Id</em>' attribute.
-	 * @see #setMarketingCampaignId(String)
+	 * @return the value of the '<em>Marketing Campaign Id</em>' reference.
+	 * @see #setMarketingCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPromo_MarketingCampaignId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="marketingCampaignId"
 	 * @generated
 	 */
-	String getMarketingCampaignId();
+	MarketingCampaign getMarketingCampaignId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getMarketingCampaignId <em>Marketing Campaign Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getMarketingCampaignId <em>Marketing Campaign Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Marketing Campaign Id</em>' attribute.
+	 * @param value the new value of the '<em>Marketing Campaign Id</em>' reference.
 	 * @see #getMarketingCampaignId()
 	 * @generated
 	 */
-	void setMarketingCampaignId(String value);
+	void setMarketingCampaignId(MarketingCampaign value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.

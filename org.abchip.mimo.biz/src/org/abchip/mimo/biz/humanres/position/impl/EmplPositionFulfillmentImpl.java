@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.humanres.position.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionId = EMPL_POSITION_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -125,6 +106,16 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPosition emplPositionId;
+
+	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,7 +173,24 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionId() {
+	public EmplPosition getEmplPositionId() {
+		if (emplPositionId != null && ((EObject)emplPositionId).eIsProxy()) {
+			InternalEObject oldEmplPositionId = (InternalEObject)emplPositionId;
+			emplPositionId = (EmplPosition)eResolveProxy(oldEmplPositionId);
+			if (emplPositionId != oldEmplPositionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
+			}
+		}
+		return emplPositionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPosition basicGetEmplPositionId() {
 		return emplPositionId;
 	}
 
@@ -192,8 +200,8 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionId(String newEmplPositionId) {
-		String oldEmplPositionId = emplPositionId;
+	public void setEmplPositionId(EmplPosition newEmplPositionId) {
+		EmplPosition oldEmplPositionId = emplPositionId;
 		emplPositionId = newEmplPositionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
@@ -293,14 +301,15 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
-				return getEmplPositionId();
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__FROM_DATE:
 				return getFromDate();
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__COMMENTS:
 				return getComments();
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__THRU_DATE:
 				return getThruDate();
+			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
+				if (resolve) return getEmplPositionId();
+				return basicGetEmplPositionId();
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -316,9 +325,6 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
-				setEmplPositionId((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -327,6 +333,9 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 				return;
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
+				setEmplPositionId((EmplPosition)newValue);
 				return;
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -343,9 +352,6 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
-				setEmplPositionId(EMPL_POSITION_ID_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 				return;
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
+				setEmplPositionId((EmplPosition)null);
 				return;
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__PARTY_ID:
 				setPartyId((Party)null);
@@ -370,14 +379,14 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
-				return EMPL_POSITION_ID_EDEFAULT == null ? emplPositionId != null : !EMPL_POSITION_ID_EDEFAULT.equals(emplPositionId);
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID:
+				return emplPositionId != null;
 			case PositionPackage.EMPL_POSITION_FULFILLMENT__PARTY_ID:
 				return partyId != null;
 		}
@@ -394,9 +403,7 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (emplPositionId: ");
-		result.append(emplPositionId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

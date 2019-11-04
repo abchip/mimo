@@ -12,6 +12,7 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryGlAccount;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -43,24 +44,14 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductCategoryId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
@@ -237,7 +228,24 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -247,8 +255,8 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -263,7 +271,8 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				if (resolve) return getOrganizationPartyId();
 				return basicGetOrganizationPartyId();
@@ -286,7 +295,7 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)newValue);
@@ -310,7 +319,7 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
+				setProductCategoryId((ProductCategory)null);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				setOrganizationPartyId((Party)null);
@@ -334,7 +343,7 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
+				return productCategoryId != null;
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				return organizationPartyId != null;
 			case CategoryPackage.PRODUCT_CATEGORY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
@@ -343,22 +352,6 @@ public class ProductCategoryGlAccountImpl extends BizEntityImpl implements Produ
 				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductCategoryGlAccountImpl

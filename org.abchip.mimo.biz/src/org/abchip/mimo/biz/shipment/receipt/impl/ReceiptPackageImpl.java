@@ -881,8 +881,8 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentReceiptRole_ReceiptId() {
-		return (EAttribute)shipmentReceiptRoleEClass.getEStructuralFeatures().get(0);
+	public EReference getShipmentReceiptRole_ReceiptId() {
+		return (EReference)shipmentReceiptRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -902,7 +902,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	 */
 	@Override
 	public EAttribute getShipmentReceiptRole_RoleTypeId() {
-		return (EAttribute)shipmentReceiptRoleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)shipmentReceiptRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -957,8 +957,8 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		createEReference(shipmentReceiptEClass, SHIPMENT_RECEIPT__SHIPMENT_ID);
 
 		shipmentReceiptRoleEClass = createEClass(SHIPMENT_RECEIPT_ROLE);
-		createEAttribute(shipmentReceiptRoleEClass, SHIPMENT_RECEIPT_ROLE__RECEIPT_ID);
 		createEAttribute(shipmentReceiptRoleEClass, SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID);
+		createEReference(shipmentReceiptRoleEClass, SHIPMENT_RECEIPT_ROLE__RECEIPT_ID);
 		createEReference(shipmentReceiptRoleEClass, SHIPMENT_RECEIPT_ROLE__PARTY_ID);
 	}
 
@@ -1039,8 +1039,9 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		addEOperation(shipmentReceiptEClass, ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentReceiptRoleEClass, ShipmentReceiptRole.class, "ShipmentReceiptRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentReceiptRole_ReceiptId(), ecorePackage.getEString(), "receiptId", null, 1, 1, ShipmentReceiptRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentReceiptRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, ShipmentReceiptRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentReceiptRole_ReceiptId(), this.getShipmentReceipt(), null, "receiptId", null, 0, 1, ShipmentReceiptRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentReceiptRole_ReceiptId().getEKeys().add(this.getShipmentReceipt_ReceiptId());
 		initEReference(getShipmentReceiptRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ShipmentReceiptRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getShipmentReceiptRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
@@ -1103,12 +1104,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		   });
 		addAnnotation
 		  (getShipmentReceipt_ReceiptId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getShipmentReceiptRole_ReceiptId(),
 		   source,
 		   new String[] {
 			   "key", "true"

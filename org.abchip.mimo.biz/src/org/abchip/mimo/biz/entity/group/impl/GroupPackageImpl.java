@@ -198,6 +198,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -711,8 +712,8 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEntityGroupEntry_EntityGroupId() {
-		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(0);
+	public EReference getEntityGroupEntry_EntityGroupId() {
+		return (EReference)entityGroupEntryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -722,7 +723,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 */
 	@Override
 	public EAttribute getEntityGroupEntry_EntityOrPackage() {
-		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -732,7 +733,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 */
 	@Override
 	public EAttribute getEntityGroupEntry_ApplEnumId() {
-		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -770,9 +771,9 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ENTRIES);
 
 		entityGroupEntryEClass = createEClass(ENTITY_GROUP_ENTRY);
-		createEAttribute(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID);
 		createEAttribute(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_OR_PACKAGE);
 		createEAttribute(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__APPL_ENUM_ID);
+		createEReference(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID);
 	}
 
 	/**
@@ -818,9 +819,10 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		addEOperation(entityGroupEClass, ecorePackage.getEString(), "entitySyncIncludeGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityGroupEntryEClass, EntityGroupEntry.class, "EntityGroupEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntityGroupEntry_EntityGroupId(), ecorePackage.getEString(), "entityGroupId", null, 1, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroupEntry_EntityOrPackage(), ecorePackage.getEString(), "entityOrPackage", null, 1, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroupEntry_ApplEnumId(), ecorePackage.getEString(), "applEnumId", null, 0, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityGroupEntry_EntityGroupId(), this.getEntityGroup(), null, "entityGroupId", null, 0, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEntityGroupEntry_EntityGroupId().getEKeys().add(this.getEntityGroup_EntityGroupId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -854,12 +856,6 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getEntityGroupEntry_EntityGroupId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (getEntityGroupEntry_EntityOrPackage(),

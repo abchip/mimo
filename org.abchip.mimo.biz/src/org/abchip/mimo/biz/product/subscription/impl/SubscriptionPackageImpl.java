@@ -729,8 +729,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductSubscriptionResource_ProductId() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(0);
+	public EReference getProductSubscriptionResource_ProductId() {
+		return (EReference)productSubscriptionResourceEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -750,7 +750,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_FromDate() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -760,7 +760,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_AutomaticExtend() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -770,7 +770,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_AvailableTime() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -790,7 +790,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_CanclAutmExtTime() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -810,7 +810,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_GracePeriodOnExpiry() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -830,7 +830,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_MaxLifeTime() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -850,7 +850,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_PurchaseFromDate() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -860,7 +860,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_PurchaseThruDate() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -870,7 +870,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_ThruDate() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -880,7 +880,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_UseCountLimit() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -900,7 +900,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getProductSubscriptionResource_UseTime() {
-		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)productSubscriptionResourceEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1359,8 +1359,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscriptionAttribute_SubscriptionId() {
-		return (EAttribute)subscriptionAttributeEClass.getEStructuralFeatures().get(0);
+	public EReference getSubscriptionAttribute_SubscriptionId() {
+		return (EReference)subscriptionAttributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1370,7 +1370,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getSubscriptionAttribute_AttrName() {
-		return (EAttribute)subscriptionAttributeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)subscriptionAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1380,7 +1380,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getSubscriptionAttribute_AttrDescription() {
-		return (EAttribute)subscriptionAttributeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)subscriptionAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1390,7 +1390,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getSubscriptionAttribute_AttrValue() {
-		return (EAttribute)subscriptionAttributeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)subscriptionAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1409,8 +1409,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscriptionCommEvent_SubscriptionId() {
-		return (EAttribute)subscriptionCommEventEClass.getEStructuralFeatures().get(0);
+	public EReference getSubscriptionCommEvent_SubscriptionId() {
+		return (EReference)subscriptionCommEventEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1420,7 +1420,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EReference getSubscriptionCommEvent_CommunicationEventId() {
-		return (EReference)subscriptionCommEventEClass.getEStructuralFeatures().get(1);
+		return (EReference)subscriptionCommEventEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1439,8 +1439,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscriptionFulfillmentPiece_SubscriptionActivityId() {
-		return (EAttribute)subscriptionFulfillmentPieceEClass.getEStructuralFeatures().get(0);
+	public EReference getSubscriptionFulfillmentPiece_SubscriptionActivityId() {
+		return (EReference)subscriptionFulfillmentPieceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1450,7 +1450,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EReference getSubscriptionFulfillmentPiece_SubscriptionId() {
-		return (EReference)subscriptionFulfillmentPieceEClass.getEStructuralFeatures().get(1);
+		return (EReference)subscriptionFulfillmentPieceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1599,8 +1599,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscriptionTypeAttr_SubscriptionTypeId() {
-		return (EAttribute)subscriptionTypeAttrEClass.getEStructuralFeatures().get(0);
+	public EReference getSubscriptionTypeAttr_SubscriptionTypeId() {
+		return (EReference)subscriptionTypeAttrEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1610,7 +1610,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getSubscriptionTypeAttr_AttrName() {
-		return (EAttribute)subscriptionTypeAttrEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)subscriptionTypeAttrEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1620,7 +1620,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	@Override
 	public EAttribute getSubscriptionTypeAttr_Description() {
-		return (EAttribute)subscriptionTypeAttrEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)subscriptionTypeAttrEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1653,7 +1653,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 
 		// Create classes and their features
 		productSubscriptionResourceEClass = createEClass(PRODUCT_SUBSCRIPTION_RESOURCE);
-		createEAttribute(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID);
 		createEAttribute(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE);
 		createEAttribute(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__AUTOMATIC_EXTEND);
 		createEAttribute(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME);
@@ -1665,6 +1664,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		createEAttribute(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__THRU_DATE);
 		createEAttribute(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__USE_COUNT_LIMIT);
 		createEAttribute(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME);
+		createEReference(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID);
 		createEReference(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID);
 		createEReference(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID);
 		createEReference(productSubscriptionResourceEClass, PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID);
@@ -1719,18 +1719,18 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		createEAttribute(subscriptionActivityEClass, SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES);
 
 		subscriptionAttributeEClass = createEClass(SUBSCRIPTION_ATTRIBUTE);
-		createEAttribute(subscriptionAttributeEClass, SUBSCRIPTION_ATTRIBUTE__SUBSCRIPTION_ID);
 		createEAttribute(subscriptionAttributeEClass, SUBSCRIPTION_ATTRIBUTE__ATTR_NAME);
 		createEAttribute(subscriptionAttributeEClass, SUBSCRIPTION_ATTRIBUTE__ATTR_DESCRIPTION);
 		createEAttribute(subscriptionAttributeEClass, SUBSCRIPTION_ATTRIBUTE__ATTR_VALUE);
+		createEReference(subscriptionAttributeEClass, SUBSCRIPTION_ATTRIBUTE__SUBSCRIPTION_ID);
 
 		subscriptionCommEventEClass = createEClass(SUBSCRIPTION_COMM_EVENT);
-		createEAttribute(subscriptionCommEventEClass, SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID);
 		createEReference(subscriptionCommEventEClass, SUBSCRIPTION_COMM_EVENT__COMMUNICATION_EVENT_ID);
+		createEReference(subscriptionCommEventEClass, SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID);
 
 		subscriptionFulfillmentPieceEClass = createEClass(SUBSCRIPTION_FULFILLMENT_PIECE);
-		createEAttribute(subscriptionFulfillmentPieceEClass, SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ACTIVITY_ID);
 		createEReference(subscriptionFulfillmentPieceEClass, SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID);
+		createEReference(subscriptionFulfillmentPieceEClass, SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ACTIVITY_ID);
 
 		subscriptionResourceEClass = createEClass(SUBSCRIPTION_RESOURCE);
 		createEAttribute(subscriptionResourceEClass, SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID);
@@ -1748,9 +1748,9 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		createEAttribute(subscriptionTypeEClass, SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS);
 
 		subscriptionTypeAttrEClass = createEClass(SUBSCRIPTION_TYPE_ATTR);
-		createEAttribute(subscriptionTypeAttrEClass, SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID);
 		createEAttribute(subscriptionTypeAttrEClass, SUBSCRIPTION_TYPE_ATTR__ATTR_NAME);
 		createEAttribute(subscriptionTypeAttrEClass, SUBSCRIPTION_TYPE_ATTR__DESCRIPTION);
+		createEReference(subscriptionTypeAttrEClass, SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID);
 	}
 
 	/**
@@ -1778,12 +1778,12 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
 		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
 		NeedPackage theNeedPackage = (NeedPackage)EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
 		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
 		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -1813,7 +1813,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(productSubscriptionResourceEClass, ProductSubscriptionResource.class, "ProductSubscriptionResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductSubscriptionResource_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSubscriptionResource_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSubscriptionResource_AutomaticExtend(), ecorePackage.getEBoolean(), "automaticExtend", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSubscriptionResource_AvailableTime(), ecorePackage.getELong(), "availableTime", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1825,6 +1824,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		initEAttribute(getProductSubscriptionResource_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSubscriptionResource_UseCountLimit(), ecorePackage.getELong(), "useCountLimit", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSubscriptionResource_UseTime(), ecorePackage.getELong(), "useTime", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductSubscriptionResource_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductSubscriptionResource_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 		initEReference(getProductSubscriptionResource_SubscriptionResourceId(), this.getSubscriptionResource(), null, "subscriptionResourceId", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductSubscriptionResource_SubscriptionResourceId().getEKeys().add(this.getSubscriptionResource_SubscriptionResourceId());
 		initEReference(getProductSubscriptionResource_UseRoleTypeId(), thePartyPackage.getRoleType(), null, "useRoleTypeId", null, 0, 1, ProductSubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1905,20 +1906,23 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		initEAttribute(getSubscriptionActivity_SubscriptionFulfillmentPieces(), ecorePackage.getEString(), "subscriptionFulfillmentPieces", null, 0, -1, SubscriptionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(subscriptionAttributeEClass, SubscriptionAttribute.class, "SubscriptionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSubscriptionAttribute_SubscriptionId(), ecorePackage.getEString(), "subscriptionId", null, 1, 1, SubscriptionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, SubscriptionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, SubscriptionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, SubscriptionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriptionAttribute_SubscriptionId(), this.getSubscription(), null, "subscriptionId", null, 0, 1, SubscriptionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSubscriptionAttribute_SubscriptionId().getEKeys().add(this.getSubscription_SubscriptionId());
 
 		initEClass(subscriptionCommEventEClass, SubscriptionCommEvent.class, "SubscriptionCommEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSubscriptionCommEvent_SubscriptionId(), ecorePackage.getEString(), "subscriptionId", null, 1, 1, SubscriptionCommEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubscriptionCommEvent_CommunicationEventId(), theCommunicationPackage.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, SubscriptionCommEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSubscriptionCommEvent_CommunicationEventId().getEKeys().add(theCommunicationPackage.getCommunicationEvent_CommunicationEventId());
+		initEReference(getSubscriptionCommEvent_SubscriptionId(), this.getSubscription(), null, "subscriptionId", null, 0, 1, SubscriptionCommEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSubscriptionCommEvent_SubscriptionId().getEKeys().add(this.getSubscription_SubscriptionId());
 
 		initEClass(subscriptionFulfillmentPieceEClass, SubscriptionFulfillmentPiece.class, "SubscriptionFulfillmentPiece", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSubscriptionFulfillmentPiece_SubscriptionActivityId(), ecorePackage.getEString(), "subscriptionActivityId", null, 1, 1, SubscriptionFulfillmentPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubscriptionFulfillmentPiece_SubscriptionId(), this.getSubscription(), null, "subscriptionId", null, 0, 1, SubscriptionFulfillmentPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSubscriptionFulfillmentPiece_SubscriptionId().getEKeys().add(this.getSubscription_SubscriptionId());
+		initEReference(getSubscriptionFulfillmentPiece_SubscriptionActivityId(), this.getSubscriptionActivity(), null, "subscriptionActivityId", null, 0, 1, SubscriptionFulfillmentPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSubscriptionFulfillmentPiece_SubscriptionActivityId().getEKeys().add(this.getSubscriptionActivity_SubscriptionActivityId());
 
 		initEClass(subscriptionResourceEClass, SubscriptionResource.class, "SubscriptionResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubscriptionResource_SubscriptionResourceId(), ecorePackage.getEString(), "subscriptionResourceId", null, 1, 1, SubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1948,9 +1952,10 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		addEOperation(subscriptionTypeEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(subscriptionTypeAttrEClass, SubscriptionTypeAttr.class, "SubscriptionTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSubscriptionTypeAttr_SubscriptionTypeId(), ecorePackage.getEString(), "subscriptionTypeId", null, 1, 1, SubscriptionTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, SubscriptionTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, SubscriptionTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriptionTypeAttr_SubscriptionTypeId(), this.getSubscriptionType(), null, "subscriptionTypeId", null, 0, 1, SubscriptionTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSubscriptionTypeAttr_SubscriptionTypeId().getEKeys().add(this.getSubscriptionType_SubscriptionTypeId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1969,12 +1974,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getProductSubscriptionResource_ProductId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 		addAnnotation
 		  (getProductSubscriptionResource_FromDate(),
 		   source,
@@ -2018,25 +2017,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getSubscriptionAttribute_SubscriptionId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getSubscriptionAttribute_AttrName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getSubscriptionCommEvent_SubscriptionId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getSubscriptionFulfillmentPiece_SubscriptionActivityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2082,12 +2063,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getSubscriptionTypeAttr_SubscriptionTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (getSubscriptionTypeAttr_AttrName(),

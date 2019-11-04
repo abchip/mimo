@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr()
@@ -82,30 +82,29 @@ public interface RequirementTypeAttr extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Type Id</em>' attribute.
-	 * @see #setRequirementTypeId(String)
+	 * @return the value of the '<em>Requirement Type Id</em>' reference.
+	 * @see #setRequirementTypeId(RequirementType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr_RequirementTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="requirementTypeId"
 	 * @generated
 	 */
-	String getRequirementTypeId();
+	RequirementType getRequirementTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getRequirementTypeId <em>Requirement Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getRequirementTypeId <em>Requirement Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Type Id</em>' reference.
 	 * @see #getRequirementTypeId()
 	 * @generated
 	 */
-	void setRequirementTypeId(String value);
+	void setRequirementTypeId(RequirementType value);
 
 } // RequirementTypeAttr

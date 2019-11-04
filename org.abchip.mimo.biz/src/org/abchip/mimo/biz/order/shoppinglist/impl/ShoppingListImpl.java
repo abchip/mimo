@@ -16,7 +16,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListType;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.store.ProductStore;
@@ -359,7 +359,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 * @generated
 	 * @ordered
 	 */
-	protected PostalAddress contactMechId;
+	protected ContactMech contactMechId;
 
 	/**
 	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
@@ -482,10 +482,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 * @generated
 	 */
 	@Override
-	public PostalAddress getContactMechId() {
+	public ContactMech getContactMechId() {
 		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -499,7 +499,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PostalAddress basicGetContactMechId() {
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -509,8 +509,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(PostalAddress newContactMechId) {
-		PostalAddress oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -1198,7 +1198,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 				setPartyId((Party)newValue);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)newValue);
+				setContactMechId((ContactMech)newValue);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST__PAYMENT_METHOD_ID:
 				setPaymentMethodId((PaymentMethod)newValue);
@@ -1278,7 +1278,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 				setPartyId((Party)null);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST__CONTACT_MECH_ID:
-				setContactMechId((PostalAddress)null);
+				setContactMechId((ContactMech)null);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST__PAYMENT_METHOD_ID:
 				setPaymentMethodId((PaymentMethod)null);

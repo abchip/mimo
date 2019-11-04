@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -318,12 +318,12 @@ public interface UserLogin extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Id</em>' reference.
-	 * @see #setPartyId(PartyGroup)
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_PartyId()
 	 * @model keys="partyId"
 	 * @generated
 	 */
-	PartyGroup getPartyId();
+	Party getPartyId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}' reference.
@@ -333,7 +333,7 @@ public interface UserLogin extends BizEntity {
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(PartyGroup value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Password Hint</b></em>' attribute.

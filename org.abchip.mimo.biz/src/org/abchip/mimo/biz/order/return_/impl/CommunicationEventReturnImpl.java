@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.order.return_.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.eclipse.emf.common.notify.Notification;
@@ -40,24 +41,14 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReturnId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RETURN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnId = RETURN_ID_EDEFAULT;
+	protected ReturnHeader returnId;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
@@ -134,7 +125,24 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 * @generated
 	 */
 	@Override
-	public String getReturnId() {
+	public ReturnHeader getReturnId() {
+		if (returnId != null && ((EObject)returnId).eIsProxy()) {
+			InternalEObject oldReturnId = (InternalEObject)returnId;
+			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
+			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID, oldReturnId, returnId));
+			}
+		}
+		return returnId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnHeader basicGetReturnId() {
 		return returnId;
 	}
 
@@ -144,8 +152,8 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 * @generated
 	 */
 	@Override
-	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
+	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID, oldReturnId, returnId));
@@ -160,7 +168,8 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				return getReturnId();
+				if (resolve) return getReturnId();
+				return basicGetReturnId();
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
 				if (resolve) return getCommunicationEventId();
 				return basicGetCommunicationEventId();
@@ -177,7 +186,7 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				setReturnId((String)newValue);
+				setReturnId((ReturnHeader)newValue);
 				return;
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)newValue);
@@ -195,7 +204,7 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				setReturnId(RETURN_ID_EDEFAULT);
+				setReturnId((ReturnHeader)null);
 				return;
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((CommunicationEvent)null);
@@ -213,27 +222,11 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
+				return returnId != null;
 			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
 				return communicationEventId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnId: ");
-		result.append(returnId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CommunicationEventReturnImpl

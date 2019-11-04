@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.common.portal.impl;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
+import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.common.portal.PortalPagePortlet;
 import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -26,10 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPagePortletImpl#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPagePortletImpl#getPortletSeqId <em>Portlet Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPagePortletImpl#getColumnSeqId <em>Column Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPagePortletImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPagePortletImpl#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPagePortletImpl#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  * </ul>
  *
@@ -40,25 +41,6 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPortalPageId() <em>Portal Page Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PORTAL_PAGE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPortalPageId() <em>Portal Page Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String portalPageId = PORTAL_PAGE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getPortletSeqId() <em>Portlet Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -113,6 +95,15 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPortalPageId() <em>Portal Page Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortalPageId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PortalPage portalPageId;
 	/**
 	 * The cached value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -217,7 +208,24 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 * @generated
 	 */
 	@Override
-	public String getPortalPageId() {
+	public PortalPage getPortalPageId() {
+		if (portalPageId != null && ((EObject)portalPageId).eIsProxy()) {
+			InternalEObject oldPortalPageId = (InternalEObject)portalPageId;
+			portalPageId = (PortalPage)eResolveProxy(oldPortalPageId);
+			if (portalPageId != oldPortalPageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
+			}
+		}
+		return portalPageId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortalPage basicGetPortalPageId() {
 		return portalPageId;
 	}
 
@@ -227,8 +235,8 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 * @generated
 	 */
 	@Override
-	public void setPortalPageId(String newPortalPageId) {
-		String oldPortalPageId = portalPageId;
+	public void setPortalPageId(PortalPage newPortalPageId) {
+		PortalPage oldPortalPageId = portalPageId;
 		portalPageId = newPortalPageId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
@@ -282,14 +290,15 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
-				return getPortalPageId();
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID:
 				return getPortletSeqId();
 			case PortalPackage.PORTAL_PAGE_PORTLET__COLUMN_SEQ_ID:
 				return getColumnSeqId();
 			case PortalPackage.PORTAL_PAGE_PORTLET__SEQUENCE_NUM:
 				return getSequenceNum();
+			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
+				if (resolve) return getPortalPageId();
+				return basicGetPortalPageId();
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID:
 				if (resolve) return getPortalPortletId();
 				return basicGetPortalPortletId();
@@ -305,9 +314,6 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
-				setPortalPageId((String)newValue);
-				return;
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID:
 				setPortletSeqId((String)newValue);
 				return;
@@ -316,6 +322,9 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 				return;
 			case PortalPackage.PORTAL_PAGE_PORTLET__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
+				setPortalPageId((PortalPage)newValue);
 				return;
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID:
 				setPortalPortletId((PortalPortlet)newValue);
@@ -332,9 +341,6 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
-				setPortalPageId(PORTAL_PAGE_ID_EDEFAULT);
-				return;
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID:
 				setPortletSeqId(PORTLET_SEQ_ID_EDEFAULT);
 				return;
@@ -343,6 +349,9 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 				return;
 			case PortalPackage.PORTAL_PAGE_PORTLET__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
+				setPortalPageId((PortalPage)null);
 				return;
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID:
 				setPortalPortletId((PortalPortlet)null);
@@ -359,14 +368,14 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
-				return PORTAL_PAGE_ID_EDEFAULT == null ? portalPageId != null : !PORTAL_PAGE_ID_EDEFAULT.equals(portalPageId);
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID:
 				return PORTLET_SEQ_ID_EDEFAULT == null ? portletSeqId != null : !PORTLET_SEQ_ID_EDEFAULT.equals(portletSeqId);
 			case PortalPackage.PORTAL_PAGE_PORTLET__COLUMN_SEQ_ID:
 				return COLUMN_SEQ_ID_EDEFAULT == null ? columnSeqId != null : !COLUMN_SEQ_ID_EDEFAULT.equals(columnSeqId);
 			case PortalPackage.PORTAL_PAGE_PORTLET__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID:
+				return portalPageId != null;
 			case PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID:
 				return portalPortletId != null;
 		}
@@ -383,9 +392,7 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (portalPageId: ");
-		result.append(portalPageId);
-		result.append(", portletSeqId: ");
+		result.append(" (portletSeqId: ");
 		result.append(portletSeqId);
 		result.append(", columnSeqId: ");
 		result.append(columnSeqId);

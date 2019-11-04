@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.product.cost.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.cost.CostComponentAttribute;
 import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,10 +26,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl#getCostComponentId <em>Cost Component Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl#getCostComponentId <em>Cost Component Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,26 +40,6 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getCostComponentId() <em>Cost Component Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostComponentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COST_COMPONENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCostComponentId() <em>Cost Component Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostComponentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String costComponentId = COST_COMPONENT_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -116,6 +99,16 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCostComponentId() <em>Cost Component Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCostComponentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CostComponent costComponentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,7 +181,24 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	 * @generated
 	 */
 	@Override
-	public String getCostComponentId() {
+	public CostComponent getCostComponentId() {
+		if (costComponentId != null && ((EObject)costComponentId).eIsProxy()) {
+			InternalEObject oldCostComponentId = (InternalEObject)costComponentId;
+			costComponentId = (CostComponent)eResolveProxy(oldCostComponentId);
+			if (costComponentId != oldCostComponentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID, oldCostComponentId, costComponentId));
+			}
+		}
+		return costComponentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CostComponent basicGetCostComponentId() {
 		return costComponentId;
 	}
 
@@ -198,8 +208,8 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	 * @generated
 	 */
 	@Override
-	public void setCostComponentId(String newCostComponentId) {
-		String oldCostComponentId = costComponentId;
+	public void setCostComponentId(CostComponent newCostComponentId) {
+		CostComponent oldCostComponentId = costComponentId;
 		costComponentId = newCostComponentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID, oldCostComponentId, costComponentId));
@@ -236,14 +246,15 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
-				return getCostComponentId();
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_NAME:
 				return getAttrName();
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return getAttrDescription();
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
+				if (resolve) return getCostComponentId();
+				return basicGetCostComponentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,9 +267,6 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
-				setCostComponentId((String)newValue);
-				return;
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_NAME:
 				setAttrName((String)newValue);
 				return;
@@ -267,6 +275,9 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 				return;
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
+				setCostComponentId((CostComponent)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,9 +291,6 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
-				setCostComponentId(COST_COMPONENT_ID_EDEFAULT);
-				return;
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_NAME:
 				setAttrName(ATTR_NAME_EDEFAULT);
 				return;
@@ -291,6 +299,9 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 				return;
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
+				setCostComponentId((CostComponent)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -304,14 +315,14 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
-				return COST_COMPONENT_ID_EDEFAULT == null ? costComponentId != null : !COST_COMPONENT_ID_EDEFAULT.equals(costComponentId);
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_DESCRIPTION:
 				return ATTR_DESCRIPTION_EDEFAULT == null ? attrDescription != null : !ATTR_DESCRIPTION_EDEFAULT.equals(attrDescription);
 			case CostPackage.COST_COMPONENT_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case CostPackage.COST_COMPONENT_ATTRIBUTE__COST_COMPONENT_ID:
+				return costComponentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -326,9 +337,7 @@ public class CostComponentAttributeImpl extends BizEntityImpl implements CostCom
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (costComponentId: ");
-		result.append(costComponentId);
-		result.append(", attrName: ");
+		result.append(" (attrName: ");
 		result.append(attrName);
 		result.append(", attrDescription: ");
 		result.append(attrDescription);

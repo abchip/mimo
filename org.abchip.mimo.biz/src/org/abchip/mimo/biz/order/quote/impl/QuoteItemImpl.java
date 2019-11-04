@@ -14,6 +14,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuoteItem;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.request.CustRequest;
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getConfigId <em>Config Id</em>}</li>
@@ -51,6 +51,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getReservStart <em>Reserv Start</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getSelectedAmount <em>Selected Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
@@ -67,26 +68,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteId = QUOTE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuoteItemSeqId() <em>Quote Item Seq Id</em>}' attribute.
@@ -347,6 +328,16 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @ordered
 	 */
 	protected BigDecimal selectedAmount = SELECTED_AMOUNT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuoteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Quote quoteId;
 
 	/**
 	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
@@ -764,7 +755,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getQuoteId() {
+	public Quote getQuoteId() {
+		if (quoteId != null && ((EObject)quoteId).eIsProxy()) {
+			InternalEObject oldQuoteId = (InternalEObject)quoteId;
+			quoteId = (Quote)eResolveProxy(oldQuoteId);
+			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__QUOTE_ID, oldQuoteId, quoteId));
+			}
+		}
+		return quoteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quote basicGetQuoteId() {
 		return quoteId;
 	}
 
@@ -774,8 +782,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
+	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__QUOTE_ID, oldQuoteId, quoteId));
@@ -1047,8 +1055,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
-				return getQuoteId();
 			case QuotePackage.QUOTE_ITEM__QUOTE_ITEM_SEQ_ID:
 				return getQuoteItemSeqId();
 			case QuotePackage.QUOTE_ITEM__COMMENTS:
@@ -1075,6 +1081,9 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return getReservStart();
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				return getSelectedAmount();
+			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
+				if (resolve) return getQuoteId();
+				return basicGetQuoteId();
 			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
 				if (resolve) return getProductId();
 				return basicGetProductId();
@@ -1108,9 +1117,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
-				setQuoteId((String)newValue);
-				return;
 			case QuotePackage.QUOTE_ITEM__QUOTE_ITEM_SEQ_ID:
 				setQuoteItemSeqId((String)newValue);
 				return;
@@ -1150,6 +1156,9 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				setSelectedAmount((BigDecimal)newValue);
 				return;
+			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
+				setQuoteId((Quote)newValue);
+				return;
 			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
 				setProductId((Product)newValue);
 				return;
@@ -1183,9 +1192,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
-				setQuoteId(QUOTE_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE_ITEM__QUOTE_ITEM_SEQ_ID:
 				setQuoteItemSeqId(QUOTE_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -1225,6 +1231,9 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				setSelectedAmount(SELECTED_AMOUNT_EDEFAULT);
 				return;
+			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
+				setQuoteId((Quote)null);
+				return;
 			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
 				setProductId((Product)null);
 				return;
@@ -1258,8 +1267,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
-				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
 			case QuotePackage.QUOTE_ITEM__QUOTE_ITEM_SEQ_ID:
 				return QUOTE_ITEM_SEQ_ID_EDEFAULT == null ? quoteItemSeqId != null : !QUOTE_ITEM_SEQ_ID_EDEFAULT.equals(quoteItemSeqId);
 			case QuotePackage.QUOTE_ITEM__COMMENTS:
@@ -1286,6 +1293,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return RESERV_START_EDEFAULT == null ? reservStart != null : !RESERV_START_EDEFAULT.equals(reservStart);
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				return SELECTED_AMOUNT_EDEFAULT == null ? selectedAmount != null : !SELECTED_AMOUNT_EDEFAULT.equals(selectedAmount);
+			case QuotePackage.QUOTE_ITEM__QUOTE_ID:
+				return quoteId != null;
 			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
 				return productId != null;
 			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
@@ -1314,9 +1323,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quoteId: ");
-		result.append(quoteId);
-		result.append(", quoteItemSeqId: ");
+		result.append(" (quoteItemSeqId: ");
 		result.append(quoteItemSeqId);
 		result.append(", comments: ");
 		result.append(comments);

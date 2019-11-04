@@ -18,12 +18,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#isEnableAmountRound <em>Enable Amount Round</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getMerchantId <em>Merchant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getProcessTimeout <em>Process Timeout</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPwd <em>Pwd</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getServerURL <em>Server URL</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay()
@@ -58,31 +58,30 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	void setMerchantId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Gateway Config Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Gateway Config Id</em>' attribute.
-	 * @see #setPaymentGatewayConfigId(String)
+	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
+	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_PaymentGatewayConfigId()
-	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="paymentGatewayConfigId"
 	 * @generated
 	 */
-	String getPaymentGatewayConfigId();
+	PaymentGatewayConfig getPaymentGatewayConfigId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #getPaymentGatewayConfigId()
 	 * @generated
 	 */
-	void setPaymentGatewayConfigId(String value);
+	void setPaymentGatewayConfigId(PaymentGatewayConfig value);
 
 	/**
 	 * Returns the value of the '<em><b>Enable Amount Round</b></em>' attribute.

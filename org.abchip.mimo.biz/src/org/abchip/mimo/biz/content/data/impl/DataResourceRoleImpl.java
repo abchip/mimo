@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.content.data.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -44,26 +45,6 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -125,6 +106,16 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataResourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataResource dataResourceId;
+
+	/**
 	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,7 +150,24 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	 * @generated
 	 */
 	@Override
-	public String getDataResourceId() {
+	public DataResource getDataResourceId() {
+		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
+			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
+			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
+			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+			}
+		}
+		return dataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetDataResourceId() {
 		return dataResourceId;
 	}
 
@@ -169,8 +177,8 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(String newDataResourceId) {
-		String oldDataResourceId = dataResourceId;
+	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
@@ -293,14 +301,15 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
-				return getDataResourceId();
 			case DataPackage.DATA_RESOURCE_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
 			case DataPackage.DATA_RESOURCE_ROLE__FROM_DATE:
 				return getFromDate();
 			case DataPackage.DATA_RESOURCE_ROLE__THRU_DATE:
 				return getThruDate();
+			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
+				if (resolve) return getDataResourceId();
+				return basicGetDataResourceId();
 			case DataPackage.DATA_RESOURCE_ROLE__PARTY_ID:
 				if (resolve) return getPartyId();
 				return basicGetPartyId();
@@ -316,9 +325,6 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
-				setDataResourceId((String)newValue);
-				return;
 			case DataPackage.DATA_RESOURCE_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
@@ -327,6 +333,9 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 				return;
 			case DataPackage.DATA_RESOURCE_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE_ROLE__PARTY_ID:
 				setPartyId((Party)newValue);
@@ -343,9 +352,6 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
-				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
-				return;
 			case DataPackage.DATA_RESOURCE_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 				return;
 			case DataPackage.DATA_RESOURCE_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)null);
 				return;
 			case DataPackage.DATA_RESOURCE_ROLE__PARTY_ID:
 				setPartyId((Party)null);
@@ -370,14 +379,14 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
-				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
 			case DataPackage.DATA_RESOURCE_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case DataPackage.DATA_RESOURCE_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case DataPackage.DATA_RESOURCE_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case DataPackage.DATA_RESOURCE_ROLE__DATA_RESOURCE_ID:
+				return dataResourceId != null;
 			case DataPackage.DATA_RESOURCE_ROLE__PARTY_ID:
 				return partyId != null;
 		}
@@ -394,9 +403,7 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataResourceId: ");
-		result.append(dataResourceId);
-		result.append(", roleTypeId: ");
+		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);

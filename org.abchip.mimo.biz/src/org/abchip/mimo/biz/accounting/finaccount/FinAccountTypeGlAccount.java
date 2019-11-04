@@ -83,30 +83,29 @@ public interface FinAccountTypeGlAccount extends BizEntity {
 	void setOrganizationPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fin Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Type Id</em>' attribute.
-	 * @see #setFinAccountTypeId(String)
+	 * @return the value of the '<em>Fin Account Type Id</em>' reference.
+	 * @see #setFinAccountTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTypeGlAccount_FinAccountTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="finAccountTypeId"
 	 * @generated
 	 */
-	String getFinAccountTypeId();
+	FinAccountType getFinAccountTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount#getFinAccountTypeId <em>Fin Account Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount#getFinAccountTypeId <em>Fin Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fin Account Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Fin Account Type Id</em>' reference.
 	 * @see #getFinAccountTypeId()
 	 * @generated
 	 */
-	void setFinAccountTypeId(String value);
+	void setFinAccountTypeId(FinAccountType value);
 
 } // FinAccountTypeGlAccount

@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.party.contact.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
+import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactMechTypePurpose;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -38,23 +39,14 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContactMechTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTACT_MECH_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechTypeId = CONTACT_MECH_TYPE_ID_EDEFAULT;
+	protected ContactMechType contactMechTypeId;
 	/**
 	 * The cached value of the '{@link #getContactMechPurposeTypeId() <em>Contact Mech Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -90,7 +82,24 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	 * @generated
 	 */
 	@Override
-	public String getContactMechTypeId() {
+	public ContactMechType getContactMechTypeId() {
+		if (contactMechTypeId != null && ((EObject)contactMechTypeId).eIsProxy()) {
+			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
+			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
+			if (contactMechTypeId != oldContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
+			}
+		}
+		return contactMechTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechType basicGetContactMechTypeId() {
 		return contactMechTypeId;
 	}
 
@@ -100,8 +109,8 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	 * @generated
 	 */
 	@Override
-	public void setContactMechTypeId(String newContactMechTypeId) {
-		String oldContactMechTypeId = contactMechTypeId;
+	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
+		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
@@ -156,7 +165,8 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID:
-				return getContactMechTypeId();
+				if (resolve) return getContactMechTypeId();
+				return basicGetContactMechTypeId();
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				if (resolve) return getContactMechPurposeTypeId();
 				return basicGetContactMechPurposeTypeId();
@@ -173,7 +183,7 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((String)newValue);
+				setContactMechTypeId((ContactMechType)newValue);
 				return;
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				setContactMechPurposeTypeId((ContactMechPurposeType)newValue);
@@ -191,7 +201,7 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId(CONTACT_MECH_TYPE_ID_EDEFAULT);
+				setContactMechTypeId((ContactMechType)null);
 				return;
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				setContactMechPurposeTypeId((ContactMechPurposeType)null);
@@ -209,27 +219,11 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID:
-				return CONTACT_MECH_TYPE_ID_EDEFAULT == null ? contactMechTypeId != null : !CONTACT_MECH_TYPE_ID_EDEFAULT.equals(contactMechTypeId);
+				return contactMechTypeId != null;
 			case ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
 				return contactMechPurposeTypeId != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contactMechTypeId: ");
-		result.append(contactMechTypeId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ContactMechTypePurposeImpl

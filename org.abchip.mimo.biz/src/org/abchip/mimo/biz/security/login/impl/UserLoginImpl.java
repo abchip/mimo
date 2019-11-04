@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
@@ -401,7 +401,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 * @ordered
 	 */
-	protected PartyGroup partyId;
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getUserLoginHistories() <em>User Login Histories</em>}' attribute list.
@@ -690,10 +690,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public PartyGroup getPartyId() {
+	public Party getPartyId() {
 		if (partyId != null && ((EObject)partyId).eIsProxy()) {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (PartyGroup)eResolveProxy(oldPartyId);
+			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN__PARTY_ID, oldPartyId, partyId));
@@ -707,7 +707,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PartyGroup basicGetPartyId() {
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -717,8 +717,8 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(PartyGroup newPartyId) {
-		PartyGroup oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__PARTY_ID, oldPartyId, partyId));
@@ -1524,7 +1524,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				setUserLdapDn((String)newValue);
 				return;
 			case LoginPackage.USER_LOGIN__PARTY_ID:
-				setPartyId((PartyGroup)newValue);
+				setPartyId((Party)newValue);
 				return;
 			case LoginPackage.USER_LOGIN__USER_LOGIN_HISTORIES:
 				getUserLoginHistories().clear();
@@ -1596,7 +1596,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				setUserLdapDn(USER_LDAP_DN_EDEFAULT);
 				return;
 			case LoginPackage.USER_LOGIN__PARTY_ID:
-				setPartyId((PartyGroup)null);
+				setPartyId((Party)null);
 				return;
 			case LoginPackage.USER_LOGIN__USER_LOGIN_HISTORIES:
 				getUserLoginHistories().clear();

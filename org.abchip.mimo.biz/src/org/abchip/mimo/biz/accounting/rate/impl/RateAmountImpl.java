@@ -13,6 +13,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.rate.RateAmount;
 import org.abchip.mimo.biz.accounting.rate.RatePackage;
+import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.humanres.position.EmplPositionType;
@@ -34,10 +35,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateTypeId <em>Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateAmount <em>Rate Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateTypeId <em>Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateCurrencyUomId <em>Rate Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getPartyId <em>Party Id</em>}</li>
@@ -52,24 +53,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RATE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String rateTypeId = RATE_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,6 +107,15 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRateTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RateType rateTypeId;
 	/**
 	 * The cached value of the '{@link #getRateCurrencyUomId() <em>Rate Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -464,7 +456,24 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public String getRateTypeId() {
+	public RateType getRateTypeId() {
+		if (rateTypeId != null && ((EObject)rateTypeId).eIsProxy()) {
+			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
+			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
+			if (rateTypeId != oldRateTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
+			}
+		}
+		return rateTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RateType basicGetRateTypeId() {
 		return rateTypeId;
 	}
 
@@ -474,8 +483,8 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public void setRateTypeId(String newRateTypeId) {
-		String oldRateTypeId = rateTypeId;
+	public void setRateTypeId(RateType newRateTypeId) {
+		RateType oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
@@ -489,14 +498,15 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
-				return getRateTypeId();
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				return getFromDate();
 			case RatePackage.RATE_AMOUNT__RATE_AMOUNT:
 				return getRateAmount();
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				return getThruDate();
+			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
+				if (resolve) return getRateTypeId();
+				return basicGetRateTypeId();
 			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
 				if (resolve) return getRateCurrencyUomId();
 				return basicGetRateCurrencyUomId();
@@ -524,9 +534,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
-				setRateTypeId((String)newValue);
-				return;
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -535,6 +542,9 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 				return;
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
+				setRateTypeId((RateType)newValue);
 				return;
 			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
 				setRateCurrencyUomId((Uom)newValue);
@@ -563,9 +573,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
-				setRateTypeId(RATE_TYPE_ID_EDEFAULT);
-				return;
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -574,6 +581,9 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 				return;
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
+				setRateTypeId((RateType)null);
 				return;
 			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
 				setRateCurrencyUomId((Uom)null);
@@ -602,14 +612,14 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
-				return RATE_TYPE_ID_EDEFAULT == null ? rateTypeId != null : !RATE_TYPE_ID_EDEFAULT.equals(rateTypeId);
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RatePackage.RATE_AMOUNT__RATE_AMOUNT:
 				return RATE_AMOUNT_EDEFAULT == null ? rateAmount != null : !RATE_AMOUNT_EDEFAULT.equals(rateAmount);
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
+				return rateTypeId != null;
 			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
 				return rateCurrencyUomId != null;
 			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
@@ -634,9 +644,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (rateTypeId: ");
-		result.append(rateTypeId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", rateAmount: ");
 		result.append(rateAmount);

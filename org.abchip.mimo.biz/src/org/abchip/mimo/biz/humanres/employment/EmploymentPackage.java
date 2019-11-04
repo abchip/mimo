@@ -217,22 +217,13 @@ public interface EmploymentPackage extends EPackage {
 	int EMPL_LEAVE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_LEAVE__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_LEAVE__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int EMPL_LEAVE__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -241,7 +232,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_LEAVE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int EMPL_LEAVE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -250,7 +241,16 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_LEAVE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int EMPL_LEAVE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_LEAVE__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Leave Type Id</b></em>' reference.
@@ -1279,22 +1279,13 @@ public interface EmploymentPackage extends EPackage {
 	int PAYROLL_PREFERENCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYROLL_PREFERENCE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PAYROLL_PREFERENCE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Payroll Preference Seq Id</b></em>' attribute.
@@ -1303,7 +1294,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__PAYROLL_PREFERENCE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYROLL_PREFERENCE__PAYROLL_PREFERENCE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Account Number</b></em>' attribute.
@@ -1312,7 +1303,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYROLL_PREFERENCE__ACCOUNT_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Bank Name</b></em>' attribute.
@@ -1321,7 +1312,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__BANK_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYROLL_PREFERENCE__BANK_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Flat Amount</b></em>' attribute.
@@ -1330,7 +1321,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__FLAT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYROLL_PREFERENCE__FLAT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -1339,7 +1330,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYROLL_PREFERENCE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Percentage</b></em>' attribute.
@@ -1348,7 +1339,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYROLL_PREFERENCE__PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Routing Number</b></em>' attribute.
@@ -1357,7 +1348,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYROLL_PREFERENCE__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1366,7 +1357,16 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAYROLL_PREFERENCE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYROLL_PREFERENCE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Deduction Type Id</b></em>' reference.
@@ -1928,15 +1928,15 @@ public interface EmploymentPackage extends EPackage {
 	EClass getEmplLeave();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmplLeave#getPartyId()
 	 * @see #getEmplLeave()
 	 * @generated
 	 */
-	EAttribute getEmplLeave_PartyId();
+	EReference getEmplLeave_PartyId();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveTypeId <em>Leave Type Id</em>}'.
@@ -2700,15 +2700,15 @@ public interface EmploymentPackage extends EPackage {
 	EClass getPayrollPreference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPartyId()
 	 * @see #getPayrollPreference()
 	 * @generated
 	 */
-	EAttribute getPayrollPreference_PartyId();
+	EReference getPayrollPreference_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getRoleTypeId <em>Role Type Id</em>}'.
@@ -3237,12 +3237,12 @@ public interface EmploymentPackage extends EPackage {
 		EClass EMPL_LEAVE = eINSTANCE.getEmplLeave();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_LEAVE__PARTY_ID = eINSTANCE.getEmplLeave_PartyId();
+		EReference EMPL_LEAVE__PARTY_ID = eINSTANCE.getEmplLeave_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Leave Type Id</b></em>' reference feature.
@@ -3823,12 +3823,12 @@ public interface EmploymentPackage extends EPackage {
 		EClass PAYROLL_PREFERENCE = eINSTANCE.getPayrollPreference();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYROLL_PREFERENCE__PARTY_ID = eINSTANCE.getPayrollPreference_PartyId();
+		EReference PAYROLL_PREFERENCE__PARTY_ID = eINSTANCE.getPayrollPreference_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.

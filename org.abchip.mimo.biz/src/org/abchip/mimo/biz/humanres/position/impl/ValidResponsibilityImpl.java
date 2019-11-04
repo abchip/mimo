@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.position.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.humanres.ability.ResponsibilityType;
+import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.humanres.position.ValidResponsibility;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.ValidResponsibilityImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.ValidResponsibilityImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.ValidResponsibilityImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.ValidResponsibilityImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.ValidResponsibilityImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.ValidResponsibilityImpl#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  * </ul>
  *
@@ -43,26 +44,6 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionTypeId = EMPL_POSITION_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -125,6 +106,16 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPositionType emplPositionTypeId;
+
+	/**
 	 * The cached value of the '{@link #getResponsibilityTypeId() <em>Responsibility Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,7 +173,24 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionTypeId() {
+	public EmplPositionType getEmplPositionTypeId() {
+		if (emplPositionTypeId != null && ((EObject)emplPositionTypeId).eIsProxy()) {
+			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
+			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
+			if (emplPositionTypeId != oldEmplPositionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
+			}
+		}
+		return emplPositionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPositionType basicGetEmplPositionTypeId() {
 		return emplPositionTypeId;
 	}
 
@@ -192,8 +200,8 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionTypeId(String newEmplPositionTypeId) {
-		String oldEmplPositionTypeId = emplPositionTypeId;
+	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
+		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
@@ -293,14 +301,15 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
-				return getEmplPositionTypeId();
 			case PositionPackage.VALID_RESPONSIBILITY__FROM_DATE:
 				return getFromDate();
 			case PositionPackage.VALID_RESPONSIBILITY__COMMENTS:
 				return getComments();
 			case PositionPackage.VALID_RESPONSIBILITY__THRU_DATE:
 				return getThruDate();
+			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
+				if (resolve) return getEmplPositionTypeId();
+				return basicGetEmplPositionTypeId();
 			case PositionPackage.VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
 				if (resolve) return getResponsibilityTypeId();
 				return basicGetResponsibilityTypeId();
@@ -316,9 +325,6 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId((String)newValue);
-				return;
 			case PositionPackage.VALID_RESPONSIBILITY__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -327,6 +333,9 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 				return;
 			case PositionPackage.VALID_RESPONSIBILITY__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)newValue);
 				return;
 			case PositionPackage.VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
 				setResponsibilityTypeId((ResponsibilityType)newValue);
@@ -343,9 +352,6 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId(EMPL_POSITION_TYPE_ID_EDEFAULT);
-				return;
 			case PositionPackage.VALID_RESPONSIBILITY__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -354,6 +360,9 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 				return;
 			case PositionPackage.VALID_RESPONSIBILITY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)null);
 				return;
 			case PositionPackage.VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
 				setResponsibilityTypeId((ResponsibilityType)null);
@@ -370,14 +379,14 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
-				return EMPL_POSITION_TYPE_ID_EDEFAULT == null ? emplPositionTypeId != null : !EMPL_POSITION_TYPE_ID_EDEFAULT.equals(emplPositionTypeId);
 			case PositionPackage.VALID_RESPONSIBILITY__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PositionPackage.VALID_RESPONSIBILITY__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case PositionPackage.VALID_RESPONSIBILITY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID:
+				return emplPositionTypeId != null;
 			case PositionPackage.VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
 				return responsibilityTypeId != null;
 		}
@@ -394,9 +403,7 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (emplPositionTypeId: ");
-		result.append(emplPositionTypeId);
-		result.append(", fromDate: ");
+		result.append(" (fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);

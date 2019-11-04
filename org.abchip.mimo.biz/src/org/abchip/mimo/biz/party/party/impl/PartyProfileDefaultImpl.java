@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyProfileDefault;
 import org.abchip.mimo.biz.product.store.ProductStore;
@@ -26,11 +27,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl#getDefaultBillAddr <em>Default Bill Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl#getDefaultPayMeth <em>Default Pay Meth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl#getDefaultShipAddr <em>Default Ship Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl#getDefaultShipMeth <em>Default Ship Meth</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyProfileDefaultImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
@@ -41,24 +42,6 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDefaultBillAddr() <em>Default Bill Addr</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,6 +114,15 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 * @ordered
 	 */
 	protected String defaultShipMeth = DEFAULT_SHIP_METH_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 	/**
 	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -298,7 +290,24 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -308,8 +317,8 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID, oldPartyId, partyId));
@@ -323,8 +332,6 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
-				return getPartyId();
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_BILL_ADDR:
 				return getDefaultBillAddr();
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_PAY_METH:
@@ -333,6 +340,9 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 				return getDefaultShipAddr();
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_METH:
 				return getDefaultShipMeth();
+			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case PartyPackage.PARTY_PROFILE_DEFAULT__PRODUCT_STORE_ID:
 				if (resolve) return getProductStoreId();
 				return basicGetProductStoreId();
@@ -348,9 +358,6 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_BILL_ADDR:
 				setDefaultBillAddr((String)newValue);
 				return;
@@ -362,6 +369,9 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 				return;
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_METH:
 				setDefaultShipMeth((String)newValue);
+				return;
+			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 			case PartyPackage.PARTY_PROFILE_DEFAULT__PRODUCT_STORE_ID:
 				setProductStoreId((ProductStore)newValue);
@@ -378,9 +388,6 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_BILL_ADDR:
 				setDefaultBillAddr(DEFAULT_BILL_ADDR_EDEFAULT);
 				return;
@@ -392,6 +399,9 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 				return;
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_METH:
 				setDefaultShipMeth(DEFAULT_SHIP_METH_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 			case PartyPackage.PARTY_PROFILE_DEFAULT__PRODUCT_STORE_ID:
 				setProductStoreId((ProductStore)null);
@@ -408,8 +418,6 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_BILL_ADDR:
 				return DEFAULT_BILL_ADDR_EDEFAULT == null ? defaultBillAddr != null : !DEFAULT_BILL_ADDR_EDEFAULT.equals(defaultBillAddr);
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_PAY_METH:
@@ -418,6 +426,8 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 				return DEFAULT_SHIP_ADDR_EDEFAULT == null ? defaultShipAddr != null : !DEFAULT_SHIP_ADDR_EDEFAULT.equals(defaultShipAddr);
 			case PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_METH:
 				return DEFAULT_SHIP_METH_EDEFAULT == null ? defaultShipMeth != null : !DEFAULT_SHIP_METH_EDEFAULT.equals(defaultShipMeth);
+			case PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID:
+				return partyId != null;
 			case PartyPackage.PARTY_PROFILE_DEFAULT__PRODUCT_STORE_ID:
 				return productStoreId != null;
 		}
@@ -434,9 +444,7 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyId: ");
-		result.append(partyId);
-		result.append(", defaultBillAddr: ");
+		result.append(" (defaultBillAddr: ");
 		result.append(defaultBillAddr);
 		result.append(", defaultPayMeth: ");
 		result.append(defaultPayMeth);

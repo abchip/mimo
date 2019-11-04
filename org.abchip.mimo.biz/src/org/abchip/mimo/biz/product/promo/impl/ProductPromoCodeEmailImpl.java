@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.product.promo.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,8 +26,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeEmailImpl#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeEmailImpl#getEmailAddress <em>Email Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeEmailImpl#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,26 +37,6 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_CODE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoCodeId = PRODUCT_PROMO_CODE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEmailAddress() <em>Email Address</em>}' attribute.
@@ -74,6 +57,16 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	 * @ordered
 	 */
 	protected String emailAddress = EMAIL_ADDRESS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoCodeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromoCode productPromoCodeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,7 +116,24 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoCodeId() {
+	public ProductPromoCode getProductPromoCodeId() {
+		if (productPromoCodeId != null && ((EObject)productPromoCodeId).eIsProxy()) {
+			InternalEObject oldProductPromoCodeId = (InternalEObject)productPromoCodeId;
+			productPromoCodeId = (ProductPromoCode)eResolveProxy(oldProductPromoCodeId);
+			if (productPromoCodeId != oldProductPromoCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
+			}
+		}
+		return productPromoCodeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromoCode basicGetProductPromoCodeId() {
 		return productPromoCodeId;
 	}
 
@@ -133,8 +143,8 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoCodeId(String newProductPromoCodeId) {
-		String oldProductPromoCodeId = productPromoCodeId;
+	public void setProductPromoCodeId(ProductPromoCode newProductPromoCodeId) {
+		ProductPromoCode oldProductPromoCodeId = productPromoCodeId;
 		productPromoCodeId = newProductPromoCodeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
@@ -148,10 +158,11 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
-				return getProductPromoCodeId();
 			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__EMAIL_ADDRESS:
 				return getEmailAddress();
+			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
+				if (resolve) return getProductPromoCodeId();
+				return basicGetProductPromoCodeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,11 +175,11 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__EMAIL_ADDRESS:
 				setEmailAddress((String)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
+				setProductPromoCodeId((ProductPromoCode)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,11 +193,11 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId(PRODUCT_PROMO_CODE_ID_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__EMAIL_ADDRESS:
 				setEmailAddress(EMAIL_ADDRESS_EDEFAULT);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
+				setProductPromoCodeId((ProductPromoCode)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,10 +211,10 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
-				return PRODUCT_PROMO_CODE_ID_EDEFAULT == null ? productPromoCodeId != null : !PRODUCT_PROMO_CODE_ID_EDEFAULT.equals(productPromoCodeId);
 			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__EMAIL_ADDRESS:
 				return EMAIL_ADDRESS_EDEFAULT == null ? emailAddress != null : !EMAIL_ADDRESS_EDEFAULT.equals(emailAddress);
+			case PromoPackage.PRODUCT_PROMO_CODE_EMAIL__PRODUCT_PROMO_CODE_ID:
+				return productPromoCodeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,9 +229,7 @@ public class ProductPromoCodeEmailImpl extends BizEntityImpl implements ProductP
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productPromoCodeId: ");
-		result.append(productPromoCodeId);
-		result.append(", emailAddress: ");
+		result.append(" (emailAddress: ");
 		result.append(emailAddress);
 		result.append(')');
 		return result.toString();

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.survey.impl;
 
+import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyPage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,10 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSurveyPageSeqId <em>Survey Page Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getPageName <em>Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,26 +41,6 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyId = SURVEY_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSurveyPageSeqId() <em>Survey Page Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,6 +100,16 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSurveyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Survey surveyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,7 +182,24 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 * @generated
 	 */
 	@Override
-	public String getSurveyId() {
+	public Survey getSurveyId() {
+		if (surveyId != null && ((EObject)surveyId).eIsProxy()) {
+			InternalEObject oldSurveyId = (InternalEObject)surveyId;
+			surveyId = (Survey)eResolveProxy(oldSurveyId);
+			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_PAGE__SURVEY_ID, oldSurveyId, surveyId));
+			}
+		}
+		return surveyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Survey basicGetSurveyId() {
 		return surveyId;
 	}
 
@@ -199,8 +209,8 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 * @generated
 	 */
 	@Override
-	public void setSurveyId(String newSurveyId) {
-		String oldSurveyId = surveyId;
+	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_PAGE__SURVEY_ID, oldSurveyId, surveyId));
@@ -237,14 +247,15 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
-				return getSurveyId();
 			case SurveyPackage.SURVEY_PAGE__SURVEY_PAGE_SEQ_ID:
 				return getSurveyPageSeqId();
 			case SurveyPackage.SURVEY_PAGE__PAGE_NAME:
 				return getPageName();
 			case SurveyPackage.SURVEY_PAGE__SEQUENCE_NUM:
 				return getSequenceNum();
+			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
+				if (resolve) return getSurveyId();
+				return basicGetSurveyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +268,6 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
-				setSurveyId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_PAGE__SURVEY_PAGE_SEQ_ID:
 				setSurveyPageSeqId((String)newValue);
 				return;
@@ -268,6 +276,9 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 				return;
 			case SurveyPackage.SURVEY_PAGE__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
+				setSurveyId((Survey)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,9 +292,6 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
-				setSurveyId(SURVEY_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_PAGE__SURVEY_PAGE_SEQ_ID:
 				setSurveyPageSeqId(SURVEY_PAGE_SEQ_ID_EDEFAULT);
 				return;
@@ -292,6 +300,9 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 				return;
 			case SurveyPackage.SURVEY_PAGE__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
+				setSurveyId((Survey)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,14 +316,14 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
-				return SURVEY_ID_EDEFAULT == null ? surveyId != null : !SURVEY_ID_EDEFAULT.equals(surveyId);
 			case SurveyPackage.SURVEY_PAGE__SURVEY_PAGE_SEQ_ID:
 				return SURVEY_PAGE_SEQ_ID_EDEFAULT == null ? surveyPageSeqId != null : !SURVEY_PAGE_SEQ_ID_EDEFAULT.equals(surveyPageSeqId);
 			case SurveyPackage.SURVEY_PAGE__PAGE_NAME:
 				return PAGE_NAME_EDEFAULT == null ? pageName != null : !PAGE_NAME_EDEFAULT.equals(pageName);
 			case SurveyPackage.SURVEY_PAGE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case SurveyPackage.SURVEY_PAGE__SURVEY_ID:
+				return surveyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,9 +338,7 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (surveyId: ");
-		result.append(surveyId);
-		result.append(", surveyPageSeqId: ");
+		result.append(" (surveyPageSeqId: ");
 		result.append(surveyPageSeqId);
 		result.append(", pageName: ");
 		result.append(pageName);

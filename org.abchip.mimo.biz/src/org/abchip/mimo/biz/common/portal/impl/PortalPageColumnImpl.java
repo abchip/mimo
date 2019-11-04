@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.common.portal.impl;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
+import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.common.portal.PortalPageColumn;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,10 +26,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl#getColumnSeqId <em>Column Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl#getColumnWidthPercentage <em>Column Width Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl#getColumnWidthPixels <em>Column Width Pixels</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl#getPortalPageId <em>Portal Page Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,24 +39,6 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPortalPageId() <em>Portal Page Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PORTAL_PAGE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPortalPageId() <em>Portal Page Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String portalPageId = PORTAL_PAGE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getColumnSeqId() <em>Column Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,6 +93,15 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 * @ordered
 	 */
 	protected long columnWidthPixels = COLUMN_WIDTH_PIXELS_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPortalPageId() <em>Portal Page Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortalPageId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PortalPage portalPageId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,7 +197,24 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 * @generated
 	 */
 	@Override
-	public String getPortalPageId() {
+	public PortalPage getPortalPageId() {
+		if (portalPageId != null && ((EObject)portalPageId).eIsProxy()) {
+			InternalEObject oldPortalPageId = (InternalEObject)portalPageId;
+			portalPageId = (PortalPage)eResolveProxy(oldPortalPageId);
+			if (portalPageId != oldPortalPageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
+			}
+		}
+		return portalPageId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortalPage basicGetPortalPageId() {
 		return portalPageId;
 	}
 
@@ -213,8 +224,8 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 * @generated
 	 */
 	@Override
-	public void setPortalPageId(String newPortalPageId) {
-		String oldPortalPageId = portalPageId;
+	public void setPortalPageId(PortalPage newPortalPageId) {
+		PortalPage oldPortalPageId = portalPageId;
 		portalPageId = newPortalPageId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
@@ -228,14 +239,15 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
-				return getPortalPageId();
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID:
 				return getColumnSeqId();
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PERCENTAGE:
 				return getColumnWidthPercentage();
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS:
 				return getColumnWidthPixels();
+			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
+				if (resolve) return getPortalPageId();
+				return basicGetPortalPageId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,9 +260,6 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
-				setPortalPageId((String)newValue);
-				return;
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID:
 				setColumnSeqId((String)newValue);
 				return;
@@ -259,6 +268,9 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 				return;
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS:
 				setColumnWidthPixels((Long)newValue);
+				return;
+			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
+				setPortalPageId((PortalPage)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -272,9 +284,6 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
-				setPortalPageId(PORTAL_PAGE_ID_EDEFAULT);
-				return;
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID:
 				setColumnSeqId(COLUMN_SEQ_ID_EDEFAULT);
 				return;
@@ -283,6 +292,9 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 				return;
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS:
 				setColumnWidthPixels(COLUMN_WIDTH_PIXELS_EDEFAULT);
+				return;
+			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
+				setPortalPageId((PortalPage)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -296,14 +308,14 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
-				return PORTAL_PAGE_ID_EDEFAULT == null ? portalPageId != null : !PORTAL_PAGE_ID_EDEFAULT.equals(portalPageId);
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID:
 				return COLUMN_SEQ_ID_EDEFAULT == null ? columnSeqId != null : !COLUMN_SEQ_ID_EDEFAULT.equals(columnSeqId);
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PERCENTAGE:
 				return columnWidthPercentage != COLUMN_WIDTH_PERCENTAGE_EDEFAULT;
 			case PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS:
 				return columnWidthPixels != COLUMN_WIDTH_PIXELS_EDEFAULT;
+			case PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID:
+				return portalPageId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -318,9 +330,7 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (portalPageId: ");
-		result.append(portalPageId);
-		result.append(", columnSeqId: ");
+		result.append(" (columnSeqId: ");
 		result.append(columnSeqId);
 		result.append(", columnWidthPercentage: ");
 		result.append(columnWidthPercentage);

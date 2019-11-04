@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getTrackingCodeId <em>Tracking Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getTrackingCodeId <em>Tracking Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getSourceEnumId <em>Source Enum Id</em>}</li>
  * </ul>
  *
@@ -86,31 +86,30 @@ public interface TrackingCodeVisit extends BizEntity {
 	void setSourceEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Tracking Code Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tracking Code Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tracking Code Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tracking Code Id</em>' attribute.
-	 * @see #setTrackingCodeId(String)
+	 * @return the value of the '<em>Tracking Code Id</em>' reference.
+	 * @see #setTrackingCodeId(TrackingCode)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_TrackingCodeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="trackingCodeId"
 	 * @generated
 	 */
-	String getTrackingCodeId();
+	TrackingCode getTrackingCodeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getTrackingCodeId <em>Tracking Code Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getTrackingCodeId <em>Tracking Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tracking Code Id</em>' attribute.
+	 * @param value the new value of the '<em>Tracking Code Id</em>' reference.
 	 * @see #getTrackingCodeId()
 	 * @generated
 	 */
-	void setTrackingCodeId(String value);
+	void setTrackingCodeId(TrackingCode value);
 
 	/**
 	 * Returns the value of the '<em><b>Visit Id</b></em>' attribute.

@@ -27,30 +27,29 @@ import org.abchip.mimo.biz.BizEntityNote;
  */
 public interface MarketingCampaignNote extends BizEntityNote {
 	/**
-	 * Returns the value of the '<em><b>Marketing Campaign Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Marketing Campaign Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Marketing Campaign Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Marketing Campaign Id</em>' attribute.
-	 * @see #setMarketingCampaignId(String)
+	 * @return the value of the '<em>Marketing Campaign Id</em>' reference.
+	 * @see #setMarketingCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignNote_MarketingCampaignId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="marketingCampaignId"
 	 * @generated
 	 */
-	String getMarketingCampaignId();
+	MarketingCampaign getMarketingCampaignId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote#getMarketingCampaignId <em>Marketing Campaign Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote#getMarketingCampaignId <em>Marketing Campaign Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Marketing Campaign Id</em>' attribute.
+	 * @param value the new value of the '<em>Marketing Campaign Id</em>' reference.
 	 * @see #getMarketingCampaignId()
 	 * @generated
 	 */
-	void setMarketingCampaignId(String value);
+	void setMarketingCampaignId(MarketingCampaign value);
 
 } // MarketingCampaignNote

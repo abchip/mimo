@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationImpl#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationImpl#getIdValue <em>Id Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationImpl#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
@@ -39,26 +39,6 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getGoodIdentificationTypeId() <em>Good Identification Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGoodIdentificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GOOD_IDENTIFICATION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGoodIdentificationTypeId() <em>Good Identification Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGoodIdentificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String goodIdentificationTypeId = GOOD_IDENTIFICATION_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getIdValue() <em>Id Value</em>}' attribute.
@@ -79,6 +59,16 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 * @ordered
 	 */
 	protected String idValue = ID_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGoodIdentificationTypeId() <em>Good Identification Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoodIdentificationTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GoodIdentificationType goodIdentificationTypeId;
 
 	/**
 	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
@@ -138,7 +128,24 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 * @generated
 	 */
 	@Override
-	public String getGoodIdentificationTypeId() {
+	public GoodIdentificationType getGoodIdentificationTypeId() {
+		if (goodIdentificationTypeId != null && ((EObject)goodIdentificationTypeId).eIsProxy()) {
+			InternalEObject oldGoodIdentificationTypeId = (InternalEObject)goodIdentificationTypeId;
+			goodIdentificationTypeId = (GoodIdentificationType)eResolveProxy(oldGoodIdentificationTypeId);
+			if (goodIdentificationTypeId != oldGoodIdentificationTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, oldGoodIdentificationTypeId, goodIdentificationTypeId));
+			}
+		}
+		return goodIdentificationTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GoodIdentificationType basicGetGoodIdentificationTypeId() {
 		return goodIdentificationTypeId;
 	}
 
@@ -148,8 +155,8 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 * @generated
 	 */
 	@Override
-	public void setGoodIdentificationTypeId(String newGoodIdentificationTypeId) {
-		String oldGoodIdentificationTypeId = goodIdentificationTypeId;
+	public void setGoodIdentificationTypeId(GoodIdentificationType newGoodIdentificationTypeId) {
+		GoodIdentificationType oldGoodIdentificationTypeId = goodIdentificationTypeId;
 		goodIdentificationTypeId = newGoodIdentificationTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, oldGoodIdentificationTypeId, goodIdentificationTypeId));
@@ -203,10 +210,11 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				return getGoodIdentificationTypeId();
 			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
 				return getIdValue();
+			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
+				if (resolve) return getGoodIdentificationTypeId();
+				return basicGetGoodIdentificationTypeId();
 			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
 				if (resolve) return getProductId();
 				return basicGetProductId();
@@ -222,11 +230,11 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				setGoodIdentificationTypeId((String)newValue);
-				return;
 			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
 				setIdValue((String)newValue);
+				return;
+			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
+				setGoodIdentificationTypeId((GoodIdentificationType)newValue);
 				return;
 			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
 				setProductId((Product)newValue);
@@ -243,11 +251,11 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				setGoodIdentificationTypeId(GOOD_IDENTIFICATION_TYPE_ID_EDEFAULT);
-				return;
 			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
 				setIdValue(ID_VALUE_EDEFAULT);
+				return;
+			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
+				setGoodIdentificationTypeId((GoodIdentificationType)null);
 				return;
 			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
 				setProductId((Product)null);
@@ -264,10 +272,10 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				return GOOD_IDENTIFICATION_TYPE_ID_EDEFAULT == null ? goodIdentificationTypeId != null : !GOOD_IDENTIFICATION_TYPE_ID_EDEFAULT.equals(goodIdentificationTypeId);
 			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
 				return ID_VALUE_EDEFAULT == null ? idValue != null : !ID_VALUE_EDEFAULT.equals(idValue);
+			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
+				return goodIdentificationTypeId != null;
 			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
 				return productId != null;
 		}
@@ -284,9 +292,7 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (goodIdentificationTypeId: ");
-		result.append(goodIdentificationTypeId);
-		result.append(", idValue: ");
+		result.append(" (idValue: ");
 		result.append(idValue);
 		result.append(')');
 		return result.toString();
