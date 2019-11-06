@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.content.content.ContentPurposeOperation;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,8 +123,6 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 			InternalEObject oldContentOperationId = (InternalEObject)contentOperationId;
 			contentOperationId = (ContentOperation)eResolveProxy(oldContentOperationId);
 			if (contentOperationId != oldContentOperationId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID, oldContentOperationId, contentOperationId));
 			}
 		}
 		return contentOperationId;
@@ -149,10 +144,7 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setContentOperationId(ContentOperation newContentOperationId) {
-		ContentOperation oldContentOperationId = contentOperationId;
 		contentOperationId = newContentOperationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID, oldContentOperationId, contentOperationId));
 	}
 
 	/**
@@ -166,8 +158,6 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 			InternalEObject oldContentPurposeTypeId = (InternalEObject)contentPurposeTypeId;
 			contentPurposeTypeId = (ContentPurposeType)eResolveProxy(oldContentPurposeTypeId);
 			if (contentPurposeTypeId != oldContentPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
 			}
 		}
 		return contentPurposeTypeId;
@@ -189,10 +179,7 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setContentPurposeTypeId(ContentPurposeType newContentPurposeTypeId) {
-		ContentPurposeType oldContentPurposeTypeId = contentPurposeTypeId;
 		contentPurposeTypeId = newContentPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
 	}
 
 	/**
@@ -206,8 +193,6 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 			InternalEObject oldPrivilegeEnumId = (InternalEObject)privilegeEnumId;
 			privilegeEnumId = (Enumeration)eResolveProxy(oldPrivilegeEnumId);
 			if (privilegeEnumId != oldPrivilegeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
 			}
 		}
 		return privilegeEnumId;
@@ -229,10 +214,7 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setPrivilegeEnumId(Enumeration newPrivilegeEnumId) {
-		Enumeration oldPrivilegeEnumId = privilegeEnumId;
 		privilegeEnumId = newPrivilegeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
 	}
 
 	/**
@@ -246,8 +228,6 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -269,10 +249,7 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -286,8 +263,6 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -309,10 +284,7 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

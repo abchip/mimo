@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -268,10 +265,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
-		String oldConfigId = configId;
 		configId = newConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__CONFIG_ID, oldConfigId, configId));
 	}
 
 	/**
@@ -291,10 +285,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setModifiedPrice(BigDecimal newModifiedPrice) {
-		BigDecimal oldModifiedPrice = modifiedPrice;
 		modifiedPrice = newModifiedPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__MODIFIED_PRICE, oldModifiedPrice, modifiedPrice));
 	}
 
 	/**
@@ -308,8 +299,6 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -331,10 +320,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -354,10 +340,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -377,10 +360,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setQuantityPurchased(BigDecimal newQuantityPurchased) {
-		BigDecimal oldQuantityPurchased = quantityPurchased;
 		quantityPurchased = newQuantityPurchased;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__QUANTITY_PURCHASED, oldQuantityPurchased, quantityPurchased));
 	}
 
 	/**
@@ -400,10 +380,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setReservLength(BigDecimal newReservLength) {
-		BigDecimal oldReservLength = reservLength;
 		reservLength = newReservLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__RESERV_LENGTH, oldReservLength, reservLength));
 	}
 
 	/**
@@ -423,10 +400,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setReservPersons(BigDecimal newReservPersons) {
-		BigDecimal oldReservPersons = reservPersons;
 		reservPersons = newReservPersons;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__RESERV_PERSONS, oldReservPersons, reservPersons));
 	}
 
 	/**
@@ -446,10 +420,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setReservStart(Date newReservStart) {
-		Date oldReservStart = reservStart;
 		reservStart = newReservStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__RESERV_START, oldReservStart, reservStart));
 	}
 
 	/**
@@ -463,8 +434,6 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 			InternalEObject oldShoppingListId = (InternalEObject)shoppingListId;
 			shoppingListId = (ShoppingList)eResolveProxy(oldShoppingListId);
 			if (shoppingListId != oldShoppingListId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
 			}
 		}
 		return shoppingListId;
@@ -486,10 +455,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setShoppingListId(ShoppingList newShoppingListId) {
-		ShoppingList oldShoppingListId = shoppingListId;
 		shoppingListId = newShoppingListId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
 	}
 
 	/**
@@ -509,10 +475,7 @@ public class ShoppingListItemImpl extends BizEntityImpl implements ShoppingListI
 	 */
 	@Override
 	public void setShoppingListItemSeqId(String newShoppingListItemSeqId) {
-		String oldShoppingListItemSeqId = shoppingListItemSeqId;
 		shoppingListItemSeqId = newShoppingListItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM__SHOPPING_LIST_ITEM_SEQ_ID, oldShoppingListItemSeqId, shoppingListItemSeqId));
 	}
 
 	/**

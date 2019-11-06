@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.content.content.ContentMetaData;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.data.MetaDataPredicate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,8 +120,6 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_META_DATA__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -146,10 +141,7 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_META_DATA__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -163,8 +155,6 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
 			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
 			if (dataSourceId != oldDataSourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_META_DATA__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 			}
 		}
 		return dataSourceId;
@@ -186,10 +176,7 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
-		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_META_DATA__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -203,8 +190,6 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 			InternalEObject oldMetaDataPredicateId = (InternalEObject)metaDataPredicateId;
 			metaDataPredicateId = (MetaDataPredicate)eResolveProxy(oldMetaDataPredicateId);
 			if (metaDataPredicateId != oldMetaDataPredicateId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_META_DATA__META_DATA_PREDICATE_ID, oldMetaDataPredicateId, metaDataPredicateId));
 			}
 		}
 		return metaDataPredicateId;
@@ -226,10 +211,7 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 */
 	@Override
 	public void setMetaDataPredicateId(MetaDataPredicate newMetaDataPredicateId) {
-		MetaDataPredicate oldMetaDataPredicateId = metaDataPredicateId;
 		metaDataPredicateId = newMetaDataPredicateId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_META_DATA__META_DATA_PREDICATE_ID, oldMetaDataPredicateId, metaDataPredicateId));
 	}
 
 	/**
@@ -249,10 +231,7 @@ public class ContentMetaDataImpl extends BizEntityImpl implements ContentMetaDat
 	 */
 	@Override
 	public void setMetaDataValue(String newMetaDataValue) {
-		String oldMetaDataValue = metaDataValue;
 		metaDataValue = newMetaDataValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_META_DATA__META_DATA_VALUE, oldMetaDataValue, metaDataValue));
 	}
 
 	/**

@@ -17,12 +17,9 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -165,10 +162,7 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -182,8 +176,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 			InternalEObject oldAmountUomId = (InternalEObject)amountUomId;
 			amountUomId = (Uom)eResolveProxy(oldAmountUomId);
 			if (amountUomId != oldAmountUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID, oldAmountUomId, amountUomId));
 			}
 		}
 		return amountUomId;
@@ -205,10 +197,7 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	@Override
 	public void setAmountUomId(Uom newAmountUomId) {
-		Uom oldAmountUomId = amountUomId;
 		amountUomId = newAmountUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID, oldAmountUomId, amountUomId));
 	}
 
 	/**
@@ -228,10 +217,7 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -251,10 +237,7 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -268,8 +251,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -291,10 +272,7 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -308,8 +286,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 			InternalEObject oldFixedAssetStdCostTypeId = (InternalEObject)fixedAssetStdCostTypeId;
 			fixedAssetStdCostTypeId = (FixedAssetStdCostType)eResolveProxy(oldFixedAssetStdCostTypeId);
 			if (fixedAssetStdCostTypeId != oldFixedAssetStdCostTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID, oldFixedAssetStdCostTypeId, fixedAssetStdCostTypeId));
 			}
 		}
 		return fixedAssetStdCostTypeId;
@@ -331,10 +307,7 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	@Override
 	public void setFixedAssetStdCostTypeId(FixedAssetStdCostType newFixedAssetStdCostTypeId) {
-		FixedAssetStdCostType oldFixedAssetStdCostTypeId = fixedAssetStdCostTypeId;
 		fixedAssetStdCostTypeId = newFixedAssetStdCostTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID, oldFixedAssetStdCostTypeId, fixedAssetStdCostTypeId));
 	}
 
 	/**

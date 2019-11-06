@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,10 +125,7 @@ public class SalesOpportunityTrckCodeImpl extends BizEntityImpl implements Sales
 	 */
 	@Override
 	public void setReceivedDate(Date newReceivedDate) {
-		Date oldReceivedDate = receivedDate;
 		receivedDate = newReceivedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_TRCK_CODE__RECEIVED_DATE, oldReceivedDate, receivedDate));
 	}
 
 	/**
@@ -145,8 +139,6 @@ public class SalesOpportunityTrckCodeImpl extends BizEntityImpl implements Sales
 			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
 			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
 			if (salesOpportunityId != oldSalesOpportunityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_TRCK_CODE__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 			}
 		}
 		return salesOpportunityId;
@@ -168,10 +160,7 @@ public class SalesOpportunityTrckCodeImpl extends BizEntityImpl implements Sales
 	 */
 	@Override
 	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
-		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_TRCK_CODE__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 	}
 
 	/**
@@ -191,10 +180,7 @@ public class SalesOpportunityTrckCodeImpl extends BizEntityImpl implements Sales
 	 */
 	@Override
 	public void setTrackingCodeId(String newTrackingCodeId) {
-		String oldTrackingCodeId = trackingCodeId;
 		trackingCodeId = newTrackingCodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_TRCK_CODE__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
 	}
 
 	/**

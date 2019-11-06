@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -258,10 +255,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -275,8 +269,6 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 			InternalEObject oldGeoIdFrom = (InternalEObject)geoIdFrom;
 			geoIdFrom = (Geo)eResolveProxy(oldGeoIdFrom);
 			if (geoIdFrom != oldGeoIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
 			}
 		}
 		return geoIdFrom;
@@ -298,10 +290,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setGeoIdFrom(Geo newGeoIdFrom) {
-		Geo oldGeoIdFrom = geoIdFrom;
 		geoIdFrom = newGeoIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
 	}
 
 	/**
@@ -315,8 +304,6 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 			InternalEObject oldGeoIdTo = (InternalEObject)geoIdTo;
 			geoIdTo = (Geo)eResolveProxy(oldGeoIdTo);
 			if (geoIdTo != oldGeoIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
 			}
 		}
 		return geoIdTo;
@@ -338,10 +325,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setGeoIdTo(Geo newGeoIdTo) {
-		Geo oldGeoIdTo = geoIdTo;
 		geoIdTo = newGeoIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
 	}
 
 	/**
@@ -361,10 +345,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setLeadTime(BigDecimal newLeadTime) {
-		BigDecimal oldLeadTime = leadTime;
 		leadTime = newLeadTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME, oldLeadTime, leadTime));
 	}
 
 	/**
@@ -378,8 +359,6 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 			InternalEObject oldLeadTimeUomId = (InternalEObject)leadTimeUomId;
 			leadTimeUomId = (Uom)eResolveProxy(oldLeadTimeUomId);
 			if (leadTimeUomId != oldLeadTimeUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID, oldLeadTimeUomId, leadTimeUomId));
 			}
 		}
 		return leadTimeUomId;
@@ -401,10 +380,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setLeadTimeUomId(Uom newLeadTimeUomId) {
-		Uom oldLeadTimeUomId = leadTimeUomId;
 		leadTimeUomId = newLeadTimeUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID, oldLeadTimeUomId, leadTimeUomId));
 	}
 
 	/**
@@ -424,10 +400,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -447,10 +420,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -470,10 +440,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setSequenceNumber(long newSequenceNumber) {
-		long oldSequenceNumber = sequenceNumber;
 		sequenceNumber = newSequenceNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__SEQUENCE_NUMBER, oldSequenceNumber, sequenceNumber));
 	}
 
 	/**
@@ -493,10 +460,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
-		String oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -516,10 +480,7 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

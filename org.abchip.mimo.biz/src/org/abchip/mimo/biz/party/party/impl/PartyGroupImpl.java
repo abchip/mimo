@@ -11,10 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -236,10 +233,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setAnnualRevenue(BigDecimal newAnnualRevenue) {
-		BigDecimal oldAnnualRevenue = annualRevenue;
 		annualRevenue = newAnnualRevenue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__ANNUAL_REVENUE, oldAnnualRevenue, annualRevenue));
 	}
 
 	/**
@@ -259,10 +253,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -282,10 +273,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setGroupName(String newGroupName) {
-		String oldGroupName = groupName;
 		groupName = newGroupName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__GROUP_NAME, oldGroupName, groupName));
 	}
 
 	/**
@@ -305,10 +293,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setGroupNameLocal(String newGroupNameLocal) {
-		String oldGroupNameLocal = groupNameLocal;
 		groupNameLocal = newGroupNameLocal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__GROUP_NAME_LOCAL, oldGroupNameLocal, groupNameLocal));
 	}
 
 	/**
@@ -328,10 +313,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setLogoImageUrl(String newLogoImageUrl) {
-		String oldLogoImageUrl = logoImageUrl;
 		logoImageUrl = newLogoImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__LOGO_IMAGE_URL, oldLogoImageUrl, logoImageUrl));
 	}
 
 	/**
@@ -351,10 +333,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setNumEmployees(long newNumEmployees) {
-		long oldNumEmployees = numEmployees;
 		numEmployees = newNumEmployees;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__NUM_EMPLOYEES, oldNumEmployees, numEmployees));
 	}
 
 	/**
@@ -374,10 +353,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setOfficeSiteName(String newOfficeSiteName) {
-		String oldOfficeSiteName = officeSiteName;
 		officeSiteName = newOfficeSiteName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__OFFICE_SITE_NAME, oldOfficeSiteName, officeSiteName));
 	}
 
 	/**
@@ -397,10 +373,7 @@ public class PartyGroupImpl extends PartyImpl implements PartyGroup {
 	 */
 	@Override
 	public void setTickerSymbol(String newTickerSymbol) {
-		String oldTickerSymbol = tickerSymbol;
 		tickerSymbol = newTickerSymbol;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GROUP__TICKER_SYMBOL, oldTickerSymbol, tickerSymbol));
 	}
 
 	/**

@@ -16,9 +16,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -171,10 +169,7 @@ public abstract class BizEntityTypeImpl<E extends BizEntityTyped<?>> extends Ent
 	 */
 	@Override
 	public void setCreatedStamp(Date newCreatedStamp) {
-		Date oldCreatedStamp = createdStamp;
 		createdStamp = newCreatedStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -194,10 +189,7 @@ public abstract class BizEntityTypeImpl<E extends BizEntityTyped<?>> extends Ent
 	 */
 	@Override
 	public void setCreatedTxStamp(Date newCreatedTxStamp) {
-		Date oldCreatedTxStamp = createdTxStamp;
 		createdTxStamp = newCreatedTxStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
 	}
 
 	/**
@@ -217,10 +209,7 @@ public abstract class BizEntityTypeImpl<E extends BizEntityTyped<?>> extends Ent
 	 */
 	@Override
 	public void setLastUpdatedStamp(Date newLastUpdatedStamp) {
-		Date oldLastUpdatedStamp = lastUpdatedStamp;
 		lastUpdatedStamp = newLastUpdatedStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
 	}
 
 	/**
@@ -240,10 +229,7 @@ public abstract class BizEntityTypeImpl<E extends BizEntityTyped<?>> extends Ent
 	 */
 	@Override
 	public void setLastUpdatedTxStamp(Date newLastUpdatedTxStamp) {
-		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
 		lastUpdatedTxStamp = newLastUpdatedTxStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
 	}
 
 	/**

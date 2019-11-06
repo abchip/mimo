@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.product.inventory.InventoryItemTempRes;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -157,8 +154,6 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -180,10 +175,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -197,8 +189,6 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -220,10 +210,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -243,10 +230,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -266,10 +250,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setReservedDate(Date newReservedDate) {
-		Date oldReservedDate = reservedDate;
 		reservedDate = newReservedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE, oldReservedDate, reservedDate));
 	}
 
 	/**
@@ -289,10 +270,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
 		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**

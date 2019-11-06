@@ -17,11 +17,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -194,10 +192,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -217,10 +212,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -234,8 +226,6 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -257,10 +247,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -280,10 +267,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -381,8 +365,6 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -404,10 +386,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
-		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -421,8 +400,6 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -444,10 +421,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
-		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**
@@ -461,8 +435,6 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
 			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
 			if (finAccountId != oldFinAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 			}
 		}
 		return finAccountId;
@@ -484,10 +456,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
-		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 	}
 
 	/**
@@ -507,10 +476,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	@Override
 	public void setPaymentMethodId(String newPaymentMethodId) {
-		String oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**

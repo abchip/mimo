@@ -17,13 +17,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -218,10 +215,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setApprovalStatus(String newApprovalStatus) {
-		String oldApprovalStatus = approvalStatus;
 		approvalStatus = newApprovalStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__APPROVAL_STATUS, oldApprovalStatus, approvalStatus));
 	}
 
 	/**
@@ -235,8 +229,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 			InternalEObject oldApproverId = (InternalEObject)approverId;
 			approverId = (Person)eResolveProxy(oldApproverId);
 			if (approverId != oldApproverId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERSON_TRAINING__APPROVER_ID, oldApproverId, approverId));
 			}
 		}
 		return approverId;
@@ -258,10 +250,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setApproverId(Person newApproverId) {
-		Person oldApproverId = approverId;
 		approverId = newApproverId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__APPROVER_ID, oldApproverId, approverId));
 	}
 
 	/**
@@ -281,10 +270,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -298,8 +284,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERSON_TRAINING__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -321,10 +305,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -344,10 +325,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setReason(String newReason) {
-		String oldReason = reason;
 		reason = newReason;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__REASON, oldReason, reason));
 	}
 
 	/**
@@ -367,10 +345,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -384,8 +359,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 			InternalEObject oldTrainingClassTypeId = (InternalEObject)trainingClassTypeId;
 			trainingClassTypeId = (TrainingClassType)eResolveProxy(oldTrainingClassTypeId);
 			if (trainingClassTypeId != oldTrainingClassTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERSON_TRAINING__TRAINING_CLASS_TYPE_ID, oldTrainingClassTypeId, trainingClassTypeId));
 			}
 		}
 		return trainingClassTypeId;
@@ -407,10 +380,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setTrainingClassTypeId(TrainingClassType newTrainingClassTypeId) {
-		TrainingClassType oldTrainingClassTypeId = trainingClassTypeId;
 		trainingClassTypeId = newTrainingClassTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__TRAINING_CLASS_TYPE_ID, oldTrainingClassTypeId, trainingClassTypeId));
 	}
 
 	/**
@@ -424,8 +394,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 			InternalEObject oldTrainingRequestId = (InternalEObject)trainingRequestId;
 			trainingRequestId = (TrainingRequest)eResolveProxy(oldTrainingRequestId);
 			if (trainingRequestId != oldTrainingRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERSON_TRAINING__TRAINING_REQUEST_ID, oldTrainingRequestId, trainingRequestId));
 			}
 		}
 		return trainingRequestId;
@@ -447,10 +415,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setTrainingRequestId(TrainingRequest newTrainingRequestId) {
-		TrainingRequest oldTrainingRequestId = trainingRequestId;
 		trainingRequestId = newTrainingRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__TRAINING_REQUEST_ID, oldTrainingRequestId, trainingRequestId));
 	}
 
 	/**
@@ -464,8 +429,6 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERSON_TRAINING__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -487,10 +450,7 @@ public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining 
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERSON_TRAINING__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

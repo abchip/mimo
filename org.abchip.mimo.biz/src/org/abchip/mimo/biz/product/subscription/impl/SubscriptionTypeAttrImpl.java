@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
 import org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,10 +122,7 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -148,10 +142,7 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -165,8 +156,6 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 			InternalEObject oldSubscriptionTypeId = (InternalEObject)subscriptionTypeId;
 			subscriptionTypeId = (SubscriptionType)eResolveProxy(oldSubscriptionTypeId);
 			if (subscriptionTypeId != oldSubscriptionTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
 			}
 		}
 		return subscriptionTypeId;
@@ -188,10 +177,7 @@ public class SubscriptionTypeAttrImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setSubscriptionTypeId(SubscriptionType newSubscriptionTypeId) {
-		SubscriptionType oldSubscriptionTypeId = subscriptionTypeId;
 		subscriptionTypeId = newSubscriptionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
 	}
 
 	/**

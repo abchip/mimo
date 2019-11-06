@@ -18,13 +18,10 @@ import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -503,10 +500,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setJobId(String newJobId) {
-		String oldJobId = jobId;
 		jobId = newJobId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__JOB_ID, oldJobId, jobId));
 	}
 
 	/**
@@ -520,8 +514,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			InternalEObject oldAuthUserLoginId = (InternalEObject)authUserLoginId;
 			authUserLoginId = (UserLogin)eResolveProxy(oldAuthUserLoginId);
 			if (authUserLoginId != oldAuthUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID, oldAuthUserLoginId, authUserLoginId));
 			}
 		}
 		return authUserLoginId;
@@ -543,10 +535,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setAuthUserLoginId(UserLogin newAuthUserLoginId) {
-		UserLogin oldAuthUserLoginId = authUserLoginId;
 		authUserLoginId = newAuthUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID, oldAuthUserLoginId, authUserLoginId));
 	}
 
 	/**
@@ -566,10 +555,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setCancelDateTime(Date newCancelDateTime) {
-		Date oldCancelDateTime = cancelDateTime;
 		cancelDateTime = newCancelDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__CANCEL_DATE_TIME, oldCancelDateTime, cancelDateTime));
 	}
 
 	/**
@@ -589,10 +575,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setCurrentRecurrenceCount(long newCurrentRecurrenceCount) {
-		long oldCurrentRecurrenceCount = currentRecurrenceCount;
 		currentRecurrenceCount = newCurrentRecurrenceCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__CURRENT_RECURRENCE_COUNT, oldCurrentRecurrenceCount, currentRecurrenceCount));
 	}
 
 	/**
@@ -612,10 +595,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setCurrentRetryCount(long newCurrentRetryCount) {
-		long oldCurrentRetryCount = currentRetryCount;
 		currentRetryCount = newCurrentRetryCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__CURRENT_RETRY_COUNT, oldCurrentRetryCount, currentRetryCount));
 	}
 
 	/**
@@ -635,10 +615,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setFinishDateTime(Date newFinishDateTime) {
-		Date oldFinishDateTime = finishDateTime;
 		finishDateTime = newFinishDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__FINISH_DATE_TIME, oldFinishDateTime, finishDateTime));
 	}
 
 	/**
@@ -658,10 +635,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setJobName(String newJobName) {
-		String oldJobName = jobName;
 		jobName = newJobName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__JOB_NAME, oldJobName, jobName));
 	}
 
 	/**
@@ -681,10 +655,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setJobResult(String newJobResult) {
-		String oldJobResult = jobResult;
 		jobResult = newJobResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__JOB_RESULT, oldJobResult, jobResult));
 	}
 
 	/**
@@ -704,10 +675,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setLoaderName(String newLoaderName) {
-		String oldLoaderName = loaderName;
 		loaderName = newLoaderName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__LOADER_NAME, oldLoaderName, loaderName));
 	}
 
 	/**
@@ -727,10 +695,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setMaxRecurrenceCount(long newMaxRecurrenceCount) {
-		long oldMaxRecurrenceCount = maxRecurrenceCount;
 		maxRecurrenceCount = newMaxRecurrenceCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__MAX_RECURRENCE_COUNT, oldMaxRecurrenceCount, maxRecurrenceCount));
 	}
 
 	/**
@@ -750,10 +715,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setMaxRetry(long newMaxRetry) {
-		long oldMaxRetry = maxRetry;
 		maxRetry = newMaxRetry;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__MAX_RETRY, oldMaxRetry, maxRetry));
 	}
 
 	/**
@@ -773,10 +735,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setParentJobId(String newParentJobId) {
-		String oldParentJobId = parentJobId;
 		parentJobId = newParentJobId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__PARENT_JOB_ID, oldParentJobId, parentJobId));
 	}
 
 	/**
@@ -796,10 +755,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setPoolId(String newPoolId) {
-		String oldPoolId = poolId;
 		poolId = newPoolId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__POOL_ID, oldPoolId, poolId));
 	}
 
 	/**
@@ -819,10 +775,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setPreviousJobId(String newPreviousJobId) {
-		String oldPreviousJobId = previousJobId;
 		previousJobId = newPreviousJobId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__PREVIOUS_JOB_ID, oldPreviousJobId, previousJobId));
 	}
 
 	/**
@@ -836,8 +789,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
 			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
 			if (recurrenceInfoId != oldRecurrenceInfoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 			}
 		}
 		return recurrenceInfoId;
@@ -859,10 +810,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
-		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 	}
 
 	/**
@@ -876,8 +824,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			InternalEObject oldRunAsUser = (InternalEObject)runAsUser;
 			runAsUser = (UserLogin)eResolveProxy(oldRunAsUser);
 			if (runAsUser != oldRunAsUser) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__RUN_AS_USER, oldRunAsUser, runAsUser));
 			}
 		}
 		return runAsUser;
@@ -899,10 +845,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setRunAsUser(UserLogin newRunAsUser) {
-		UserLogin oldRunAsUser = runAsUser;
 		runAsUser = newRunAsUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RUN_AS_USER, oldRunAsUser, runAsUser));
 	}
 
 	/**
@@ -922,10 +865,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setRunByInstanceId(String newRunByInstanceId) {
-		String oldRunByInstanceId = runByInstanceId;
 		runByInstanceId = newRunByInstanceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RUN_BY_INSTANCE_ID, oldRunByInstanceId, runByInstanceId));
 	}
 
 	/**
@@ -945,10 +885,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setRunTime(Date newRunTime) {
-		Date oldRunTime = runTime;
 		runTime = newRunTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RUN_TIME, oldRunTime, runTime));
 	}
 
 	/**
@@ -962,8 +899,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			InternalEObject oldRuntimeDataId = (InternalEObject)runtimeDataId;
 			runtimeDataId = (RuntimeData)eResolveProxy(oldRuntimeDataId);
 			if (runtimeDataId != oldRuntimeDataId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
 			}
 		}
 		return runtimeDataId;
@@ -985,10 +920,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setRuntimeDataId(RuntimeData newRuntimeDataId) {
-		RuntimeData oldRuntimeDataId = runtimeDataId;
 		runtimeDataId = newRuntimeDataId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
 	}
 
 	/**
@@ -1008,10 +940,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setServiceName(String newServiceName) {
-		String oldServiceName = serviceName;
 		serviceName = newServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__SERVICE_NAME, oldServiceName, serviceName));
 	}
 
 	/**
@@ -1031,10 +960,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setStartDateTime(Date newStartDateTime) {
-		Date oldStartDateTime = startDateTime;
 		startDateTime = newStartDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__START_DATE_TIME, oldStartDateTime, startDateTime));
 	}
 
 	/**
@@ -1048,8 +974,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1071,10 +995,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1088,8 +1009,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			InternalEObject oldTempExprId = (InternalEObject)tempExprId;
 			tempExprId = (TemporalExpression)eResolveProxy(oldTempExprId);
 			if (tempExprId != oldTempExprId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID, oldTempExprId, tempExprId));
 			}
 		}
 		return tempExprId;
@@ -1111,10 +1030,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 */
 	@Override
 	public void setTempExprId(TemporalExpression newTempExprId) {
-		TemporalExpression oldTempExprId = tempExprId;
 		tempExprId = newTempExprId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID, oldTempExprId, tempExprId));
 	}
 
 	/**

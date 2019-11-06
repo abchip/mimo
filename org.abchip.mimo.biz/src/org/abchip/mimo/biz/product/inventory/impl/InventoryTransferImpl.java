@@ -16,12 +16,9 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -280,10 +277,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -303,10 +297,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setInventoryTransferId(String newInventoryTransferId) {
-		String oldInventoryTransferId = inventoryTransferId;
 		inventoryTransferId = newInventoryTransferId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID, oldInventoryTransferId, inventoryTransferId));
 	}
 
 	/**
@@ -320,8 +311,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 			InternalEObject oldItemIssuanceId = (InternalEObject)itemIssuanceId;
 			itemIssuanceId = (ItemIssuance)eResolveProxy(oldItemIssuanceId);
 			if (itemIssuanceId != oldItemIssuanceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 			}
 		}
 		return itemIssuanceId;
@@ -343,10 +332,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setItemIssuanceId(ItemIssuance newItemIssuanceId) {
-		ItemIssuance oldItemIssuanceId = itemIssuanceId;
 		itemIssuanceId = newItemIssuanceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 	}
 
 	/**
@@ -366,10 +352,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setLocationSeqId(String newLocationSeqId) {
-		String oldLocationSeqId = locationSeqId;
 		locationSeqId = newLocationSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID, oldLocationSeqId, locationSeqId));
 	}
 
 	/**
@@ -389,10 +372,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setLocationSeqIdTo(String newLocationSeqIdTo) {
-		String oldLocationSeqIdTo = locationSeqIdTo;
 		locationSeqIdTo = newLocationSeqIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO, oldLocationSeqIdTo, locationSeqIdTo));
 	}
 
 	/**
@@ -412,10 +392,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setReceiveDate(Date newReceiveDate) {
-		Date oldReceiveDate = receiveDate;
 		receiveDate = newReceiveDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__RECEIVE_DATE, oldReceiveDate, receiveDate));
 	}
 
 	/**
@@ -435,10 +412,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setSendDate(Date newSendDate) {
-		Date oldSendDate = sendDate;
 		sendDate = newSendDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__SEND_DATE, oldSendDate, sendDate));
 	}
 
 	/**
@@ -452,8 +426,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -475,10 +447,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -492,8 +461,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -515,10 +482,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -532,8 +496,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -555,10 +517,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -572,8 +531,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 			InternalEObject oldContainerId = (InternalEObject)containerId;
 			containerId = (org.abchip.mimo.biz.product.facility.Container)eResolveProxy(oldContainerId);
 			if (containerId != oldContainerId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID, oldContainerId, containerId));
 			}
 		}
 		return containerId;
@@ -595,10 +552,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setContainerId(org.abchip.mimo.biz.product.facility.Container newContainerId) {
-		org.abchip.mimo.biz.product.facility.Container oldContainerId = containerId;
 		containerId = newContainerId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID, oldContainerId, containerId));
 	}
 
 	/**
@@ -612,8 +566,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 			InternalEObject oldFacilityIdTo = (InternalEObject)facilityIdTo;
 			facilityIdTo = (Facility)eResolveProxy(oldFacilityIdTo);
 			if (facilityIdTo != oldFacilityIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO, oldFacilityIdTo, facilityIdTo));
 			}
 		}
 		return facilityIdTo;
@@ -635,10 +587,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setFacilityIdTo(Facility newFacilityIdTo) {
-		Facility oldFacilityIdTo = facilityIdTo;
 		facilityIdTo = newFacilityIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO, oldFacilityIdTo, facilityIdTo));
 	}
 
 	/**
@@ -652,8 +601,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 			InternalEObject oldContainerIdTo = (InternalEObject)containerIdTo;
 			containerIdTo = (org.abchip.mimo.biz.product.facility.Container)eResolveProxy(oldContainerIdTo);
 			if (containerIdTo != oldContainerIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO, oldContainerIdTo, containerIdTo));
 			}
 		}
 		return containerIdTo;
@@ -675,10 +622,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setContainerIdTo(org.abchip.mimo.biz.product.facility.Container newContainerIdTo) {
-		org.abchip.mimo.biz.product.facility.Container oldContainerIdTo = containerIdTo;
 		containerIdTo = newContainerIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO, oldContainerIdTo, containerIdTo));
 	}
 
 	/**

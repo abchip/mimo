@@ -17,13 +17,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemChange;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -291,10 +288,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setCancelQuantity(BigDecimal newCancelQuantity) {
-		BigDecimal oldCancelQuantity = cancelQuantity;
 		cancelQuantity = newCancelQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__CANCEL_QUANTITY, oldCancelQuantity, cancelQuantity));
 	}
 
 	/**
@@ -314,10 +308,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setChangeComments(String newChangeComments) {
-		String oldChangeComments = changeComments;
 		changeComments = newChangeComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__CHANGE_COMMENTS, oldChangeComments, changeComments));
 	}
 
 	/**
@@ -337,10 +328,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setChangeDatetime(Date newChangeDatetime) {
-		Date oldChangeDatetime = changeDatetime;
 		changeDatetime = newChangeDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__CHANGE_DATETIME, oldChangeDatetime, changeDatetime));
 	}
 
 	/**
@@ -354,8 +342,6 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 			InternalEObject oldChangeTypeEnumId = (InternalEObject)changeTypeEnumId;
 			changeTypeEnumId = (Enumeration)eResolveProxy(oldChangeTypeEnumId);
 			if (changeTypeEnumId != oldChangeTypeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CHANGE__CHANGE_TYPE_ENUM_ID, oldChangeTypeEnumId, changeTypeEnumId));
 			}
 		}
 		return changeTypeEnumId;
@@ -377,10 +363,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setChangeTypeEnumId(Enumeration newChangeTypeEnumId) {
-		Enumeration oldChangeTypeEnumId = changeTypeEnumId;
 		changeTypeEnumId = newChangeTypeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__CHANGE_TYPE_ENUM_ID, oldChangeTypeEnumId, changeTypeEnumId));
 	}
 
 	/**
@@ -394,8 +377,6 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 			InternalEObject oldChangeUserLogin = (InternalEObject)changeUserLogin;
 			changeUserLogin = (UserLogin)eResolveProxy(oldChangeUserLogin);
 			if (changeUserLogin != oldChangeUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CHANGE__CHANGE_USER_LOGIN, oldChangeUserLogin, changeUserLogin));
 			}
 		}
 		return changeUserLogin;
@@ -417,10 +398,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setChangeUserLogin(UserLogin newChangeUserLogin) {
-		UserLogin oldChangeUserLogin = changeUserLogin;
 		changeUserLogin = newChangeUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__CHANGE_USER_LOGIN, oldChangeUserLogin, changeUserLogin));
 	}
 
 	/**
@@ -440,10 +418,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setItemDescription(String newItemDescription) {
-		String oldItemDescription = itemDescription;
 		itemDescription = newItemDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__ITEM_DESCRIPTION, oldItemDescription, itemDescription));
 	}
 
 	/**
@@ -457,8 +432,6 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CHANGE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -480,10 +453,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -503,10 +473,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setOrderItemChangeId(String newOrderItemChangeId) {
-		String oldOrderItemChangeId = orderItemChangeId;
 		orderItemChangeId = newOrderItemChangeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__ORDER_ITEM_CHANGE_ID, oldOrderItemChangeId, orderItemChangeId));
 	}
 
 	/**
@@ -526,10 +493,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -549,10 +513,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -566,8 +527,6 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 			InternalEObject oldReasonEnumId = (InternalEObject)reasonEnumId;
 			reasonEnumId = (Enumeration)eResolveProxy(oldReasonEnumId);
 			if (reasonEnumId != oldReasonEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CHANGE__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 			}
 		}
 		return reasonEnumId;
@@ -589,10 +548,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setReasonEnumId(Enumeration newReasonEnumId) {
-		Enumeration oldReasonEnumId = reasonEnumId;
 		reasonEnumId = newReasonEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 	}
 
 	/**
@@ -612,10 +568,7 @@ public class OrderItemChangeImpl extends BizEntityImpl implements OrderItemChang
 	 */
 	@Override
 	public void setUnitPrice(BigDecimal newUnitPrice) {
-		BigDecimal oldUnitPrice = unitPrice;
 		unitPrice = newUnitPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CHANGE__UNIT_PRICE, oldUnitPrice, unitPrice));
 	}
 
 	/**

@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTransBox;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,8 +117,6 @@ public class WorkEffortTransBoxImpl extends BizEntityImpl implements WorkEffortT
 			InternalEObject oldProcessWorkEffortId = (InternalEObject)processWorkEffortId;
 			processWorkEffortId = (WorkEffort)eResolveProxy(oldProcessWorkEffortId);
 			if (processWorkEffortId != oldProcessWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_TRANS_BOX__PROCESS_WORK_EFFORT_ID, oldProcessWorkEffortId, processWorkEffortId));
 			}
 		}
 		return processWorkEffortId;
@@ -143,10 +138,7 @@ public class WorkEffortTransBoxImpl extends BizEntityImpl implements WorkEffortT
 	 */
 	@Override
 	public void setProcessWorkEffortId(WorkEffort newProcessWorkEffortId) {
-		WorkEffort oldProcessWorkEffortId = processWorkEffortId;
 		processWorkEffortId = newProcessWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TRANS_BOX__PROCESS_WORK_EFFORT_ID, oldProcessWorkEffortId, processWorkEffortId));
 	}
 
 	/**
@@ -166,10 +158,7 @@ public class WorkEffortTransBoxImpl extends BizEntityImpl implements WorkEffortT
 	 */
 	@Override
 	public void setToActivityId(String newToActivityId) {
-		String oldToActivityId = toActivityId;
 		toActivityId = newToActivityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TRANS_BOX__TO_ACTIVITY_ID, oldToActivityId, toActivityId));
 	}
 
 	/**
@@ -189,10 +178,7 @@ public class WorkEffortTransBoxImpl extends BizEntityImpl implements WorkEffortT
 	 */
 	@Override
 	public void setTransitionId(String newTransitionId) {
-		String oldTransitionId = transitionId;
 		transitionId = newTransitionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TRANS_BOX__TRANSITION_ID, oldTransitionId, transitionId));
 	}
 
 	/**

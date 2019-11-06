@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.issuance.IssuancePackage;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,8 +108,6 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 			InternalEObject oldItemIssuanceId = (InternalEObject)itemIssuanceId;
 			itemIssuanceId = (ItemIssuance)eResolveProxy(oldItemIssuanceId);
 			if (itemIssuanceId != oldItemIssuanceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 			}
 		}
 		return itemIssuanceId;
@@ -134,10 +129,7 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	 */
 	@Override
 	public void setItemIssuanceId(ItemIssuance newItemIssuanceId) {
-		ItemIssuance oldItemIssuanceId = itemIssuanceId;
 		itemIssuanceId = newItemIssuanceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 	}
 
 	/**
@@ -151,8 +143,6 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -174,10 +164,7 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -197,10 +184,7 @@ public class ItemIssuanceRoleImpl extends BizEntityImpl implements ItemIssuanceR
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**

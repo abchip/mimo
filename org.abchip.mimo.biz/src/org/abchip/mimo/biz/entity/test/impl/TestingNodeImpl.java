@@ -12,13 +12,10 @@ import java.util.List;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingNode;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,10 +120,7 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -140,8 +134,6 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 			InternalEObject oldPrimaryParentNodeId = (InternalEObject)primaryParentNodeId;
 			primaryParentNodeId = (TestingNode)eResolveProxy(oldPrimaryParentNodeId);
 			if (primaryParentNodeId != oldPrimaryParentNodeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID, oldPrimaryParentNodeId, primaryParentNodeId));
 			}
 		}
 		return primaryParentNodeId;
@@ -163,10 +155,7 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	 */
 	@Override
 	public void setPrimaryParentNodeId(TestingNode newPrimaryParentNodeId) {
-		TestingNode oldPrimaryParentNodeId = primaryParentNodeId;
 		primaryParentNodeId = newPrimaryParentNodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID, oldPrimaryParentNodeId, primaryParentNodeId));
 	}
 
 	/**
@@ -198,10 +187,7 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	 */
 	@Override
 	public void setTestingNodeId(String newTestingNodeId) {
-		String oldTestingNodeId = testingNodeId;
 		testingNodeId = newTestingNodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE__TESTING_NODE_ID, oldTestingNodeId, testingNodeId));
 	}
 
 	/**

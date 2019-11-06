@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.login.UserLoginHistory;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -225,10 +222,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -242,8 +236,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 			InternalEObject oldOriginUserLoginId = (InternalEObject)originUserLoginId;
 			originUserLoginId = (UserLogin)eResolveProxy(oldOriginUserLoginId);
 			if (originUserLoginId != oldOriginUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID, oldOriginUserLoginId, originUserLoginId));
 			}
 		}
 		return originUserLoginId;
@@ -265,10 +257,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setOriginUserLoginId(UserLogin newOriginUserLoginId) {
-		UserLogin oldOriginUserLoginId = originUserLoginId;
 		originUserLoginId = newOriginUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID, oldOriginUserLoginId, originUserLoginId));
 	}
 
 	/**
@@ -282,8 +271,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_HISTORY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -305,10 +292,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -328,10 +312,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setPasswordUsed(String newPasswordUsed) {
-		String oldPasswordUsed = passwordUsed;
 		passwordUsed = newPasswordUsed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__PASSWORD_USED, oldPasswordUsed, passwordUsed));
 	}
 
 	/**
@@ -351,10 +332,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setSuccessfulLogin(boolean newSuccessfulLogin) {
-		boolean oldSuccessfulLogin = successfulLogin;
 		successfulLogin = newSuccessfulLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__SUCCESSFUL_LOGIN, oldSuccessfulLogin, successfulLogin));
 	}
 
 	/**
@@ -374,10 +352,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -391,8 +366,6 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -414,10 +387,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
-		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -437,10 +407,7 @@ public class UserLoginHistoryImpl extends BizEntityImpl implements UserLoginHist
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
 		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_HISTORY__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**

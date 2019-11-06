@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,10 +123,7 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -149,10 +143,7 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -166,8 +157,6 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 			InternalEObject oldWorkEffortTypeId = (InternalEObject)workEffortTypeId;
 			workEffortTypeId = (WorkEffortType)eResolveProxy(oldWorkEffortTypeId);
 			if (workEffortTypeId != oldWorkEffortTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
 			}
 		}
 		return workEffortTypeId;
@@ -189,10 +178,7 @@ public class WorkEffortTypeAttrImpl extends BizEntityImpl implements WorkEffortT
 	 */
 	@Override
 	public void setWorkEffortTypeId(WorkEffortType newWorkEffortTypeId) {
-		WorkEffortType oldWorkEffortTypeId = workEffortTypeId;
 		workEffortTypeId = newWorkEffortTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE_ATTR__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
 	}
 
 	/**

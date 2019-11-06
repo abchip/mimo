@@ -24,14 +24,11 @@ import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.Lot;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -609,10 +606,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setAccountingQuantityTotal(BigDecimal newAccountingQuantityTotal) {
-		BigDecimal oldAccountingQuantityTotal = accountingQuantityTotal;
 		accountingQuantityTotal = newAccountingQuantityTotal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__ACCOUNTING_QUANTITY_TOTAL, oldAccountingQuantityTotal, accountingQuantityTotal));
 	}
 
 	/**
@@ -632,10 +626,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setActivationNumber(String newActivationNumber) {
-		String oldActivationNumber = activationNumber;
 		activationNumber = newActivationNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__ACTIVATION_NUMBER, oldActivationNumber, activationNumber));
 	}
 
 	/**
@@ -655,10 +646,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setActivationValidThru(Date newActivationValidThru) {
-		Date oldActivationValidThru = activationValidThru;
 		activationValidThru = newActivationValidThru;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__ACTIVATION_VALID_THRU, oldActivationValidThru, activationValidThru));
 	}
 
 	/**
@@ -678,10 +666,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setAvailableToPromiseTotal(BigDecimal newAvailableToPromiseTotal) {
-		BigDecimal oldAvailableToPromiseTotal = availableToPromiseTotal;
 		availableToPromiseTotal = newAvailableToPromiseTotal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__AVAILABLE_TO_PROMISE_TOTAL, oldAvailableToPromiseTotal, availableToPromiseTotal));
 	}
 
 	/**
@@ -701,10 +686,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setBinNumber(String newBinNumber) {
-		String oldBinNumber = binNumber;
 		binNumber = newBinNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__BIN_NUMBER, oldBinNumber, binNumber));
 	}
 
 	/**
@@ -724,10 +706,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -741,8 +720,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -764,10 +741,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -787,10 +761,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setDatetimeManufactured(Date newDatetimeManufactured) {
-		Date oldDatetimeManufactured = datetimeManufactured;
 		datetimeManufactured = newDatetimeManufactured;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__DATETIME_MANUFACTURED, oldDatetimeManufactured, datetimeManufactured));
 	}
 
 	/**
@@ -810,10 +781,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setDatetimeReceived(Date newDatetimeReceived) {
-		Date oldDatetimeReceived = datetimeReceived;
 		datetimeReceived = newDatetimeReceived;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__DATETIME_RECEIVED, oldDatetimeReceived, datetimeReceived));
 	}
 
 	/**
@@ -833,10 +801,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setExpireDate(Date newExpireDate) {
-		Date oldExpireDate = expireDate;
 		expireDate = newExpireDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__EXPIRE_DATE, oldExpireDate, expireDate));
 	}
 
 	/**
@@ -850,8 +815,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -873,10 +836,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -896,10 +856,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setLocationSeqId(String newLocationSeqId) {
-		String oldLocationSeqId = locationSeqId;
 		locationSeqId = newLocationSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__LOCATION_SEQ_ID, oldLocationSeqId, locationSeqId));
 	}
 
 	/**
@@ -919,10 +876,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setOldAvailableToPromise(BigDecimal newOldAvailableToPromise) {
-		BigDecimal oldOldAvailableToPromise = oldAvailableToPromise;
 		oldAvailableToPromise = newOldAvailableToPromise;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__OLD_AVAILABLE_TO_PROMISE, oldOldAvailableToPromise, oldAvailableToPromise));
 	}
 
 	/**
@@ -942,10 +896,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setOldQuantityOnHand(BigDecimal newOldQuantityOnHand) {
-		BigDecimal oldOldQuantityOnHand = oldQuantityOnHand;
 		oldQuantityOnHand = newOldQuantityOnHand;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__OLD_QUANTITY_ON_HAND, oldOldQuantityOnHand, oldQuantityOnHand));
 	}
 
 	/**
@@ -959,8 +910,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldOwnerPartyId = (InternalEObject)ownerPartyId;
 			ownerPartyId = (Party)eResolveProxy(oldOwnerPartyId);
 			if (ownerPartyId != oldOwnerPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
 			}
 		}
 		return ownerPartyId;
@@ -982,10 +931,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setOwnerPartyId(Party newOwnerPartyId) {
-		Party oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
 	}
 
 	/**
@@ -999,8 +945,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -1022,10 +966,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -1039,8 +980,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -1062,10 +1001,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -1085,10 +1021,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setQuantityOnHandTotal(BigDecimal newQuantityOnHandTotal) {
-		BigDecimal oldQuantityOnHandTotal = quantityOnHandTotal;
 		quantityOnHandTotal = newQuantityOnHandTotal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__QUANTITY_ON_HAND_TOTAL, oldQuantityOnHandTotal, quantityOnHandTotal));
 	}
 
 	/**
@@ -1108,10 +1041,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setSerialNumber(String newSerialNumber) {
-		String oldSerialNumber = serialNumber;
 		serialNumber = newSerialNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__SERIAL_NUMBER, oldSerialNumber, serialNumber));
 	}
 
 	/**
@@ -1131,10 +1061,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setSoftIdentifier(String newSoftIdentifier) {
-		String oldSoftIdentifier = softIdentifier;
 		softIdentifier = newSoftIdentifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__SOFT_IDENTIFIER, oldSoftIdentifier, softIdentifier));
 	}
 
 	/**
@@ -1148,8 +1075,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1171,10 +1096,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1194,10 +1116,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setUnitCost(BigDecimal newUnitCost) {
-		BigDecimal oldUnitCost = unitCost;
 		unitCost = newUnitCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__UNIT_COST, oldUnitCost, unitCost));
 	}
 
 	/**
@@ -1211,8 +1130,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -1234,10 +1151,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
-		Uom oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -1248,7 +1162,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	@Override
 	public List<String> getInventoryItemAttributes() {
 		if (inventoryItemAttributes == null) {
-			inventoryItemAttributes = new EDataTypeUniqueEList<String>(String.class, this, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES);
+			inventoryItemAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return inventoryItemAttributes;
 	}
@@ -1261,7 +1175,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	@Override
 	public List<String> getInventoryItemDetails() {
 		if (inventoryItemDetails == null) {
-			inventoryItemDetails = new EDataTypeUniqueEList<String>(String.class, this, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_DETAILS);
+			inventoryItemDetails = new BasicInternalEList<String>(String.class);
 		}
 		return inventoryItemDetails;
 	}
@@ -1274,7 +1188,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	@Override
 	public List<String> getInventoryItemLabelAppls() {
 		if (inventoryItemLabelAppls == null) {
-			inventoryItemLabelAppls = new EDataTypeUniqueEList<String>(String.class, this, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_LABEL_APPLS);
+			inventoryItemLabelAppls = new BasicInternalEList<String>(String.class);
 		}
 		return inventoryItemLabelAppls;
 	}
@@ -1287,7 +1201,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	@Override
 	public List<String> getInventoryItemVariances() {
 		if (inventoryItemVariances == null) {
-			inventoryItemVariances = new EDataTypeUniqueEList<String>(String.class, this, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_VARIANCES);
+			inventoryItemVariances = new BasicInternalEList<String>(String.class);
 		}
 		return inventoryItemVariances;
 	}
@@ -1423,8 +1337,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldInventoryItemTypeId = (InternalEObject)inventoryItemTypeId;
 			inventoryItemTypeId = (InventoryItemType)eResolveProxy(oldInventoryItemTypeId);
 			if (inventoryItemTypeId != oldInventoryItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
 			}
 		}
 		return inventoryItemTypeId;
@@ -1446,10 +1358,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setInventoryItemTypeId(InventoryItemType newInventoryItemTypeId) {
-		InventoryItemType oldInventoryItemTypeId = inventoryItemTypeId;
 		inventoryItemTypeId = newInventoryItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
 	}
 
 	/**
@@ -1463,8 +1372,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -1486,10 +1393,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -1503,8 +1407,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldContainerId = (InternalEObject)containerId;
 			containerId = (org.abchip.mimo.biz.product.facility.Container)eResolveProxy(oldContainerId);
 			if (containerId != oldContainerId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__CONTAINER_ID, oldContainerId, containerId));
 			}
 		}
 		return containerId;
@@ -1526,10 +1428,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setContainerId(org.abchip.mimo.biz.product.facility.Container newContainerId) {
-		org.abchip.mimo.biz.product.facility.Container oldContainerId = containerId;
 		containerId = newContainerId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__CONTAINER_ID, oldContainerId, containerId));
 	}
 
 	/**
@@ -1543,8 +1442,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			InternalEObject oldLotId = (InternalEObject)lotId;
 			lotId = (Lot)eResolveProxy(oldLotId);
 			if (lotId != oldLotId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__LOT_ID, oldLotId, lotId));
 			}
 		}
 		return lotId;
@@ -1566,10 +1463,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setLotId(Lot newLotId) {
-		Lot oldLotId = lotId;
 		lotId = newLotId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__LOT_ID, oldLotId, lotId));
 	}
 
 	/**
@@ -1589,10 +1483,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@Override
 	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**

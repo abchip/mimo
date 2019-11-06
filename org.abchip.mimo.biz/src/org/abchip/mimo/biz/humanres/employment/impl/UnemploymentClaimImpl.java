@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.UnemploymentClaim;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -275,10 +272,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -298,10 +292,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -321,10 +312,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -344,10 +332,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setPartyIdTo(String newPartyIdTo) {
-		String oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -367,10 +352,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setRoleTypeIdFrom(String newRoleTypeIdFrom) {
-		String oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -390,10 +372,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setRoleTypeIdTo(String newRoleTypeIdTo) {
-		String oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -407,8 +386,6 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -430,10 +407,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -453,10 +427,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -476,10 +447,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setUnemploymentClaimDate(Date newUnemploymentClaimDate) {
-		Date oldUnemploymentClaimDate = unemploymentClaimDate;
 		unemploymentClaimDate = newUnemploymentClaimDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE, oldUnemploymentClaimDate, unemploymentClaimDate));
 	}
 
 	/**
@@ -499,10 +467,7 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 */
 	@Override
 	public void setUnemploymentClaimId(String newUnemploymentClaimId) {
-		String oldUnemploymentClaimId = unemploymentClaimId;
 		unemploymentClaimId = newUnemploymentClaimId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_ID, oldUnemploymentClaimId, unemploymentClaimId));
 	}
 
 	/**

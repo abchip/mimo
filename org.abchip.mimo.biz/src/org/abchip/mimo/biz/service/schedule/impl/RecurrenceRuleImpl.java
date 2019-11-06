@@ -13,11 +13,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -409,10 +405,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setRecurrenceRuleId(String newRecurrenceRuleId) {
-		String oldRecurrenceRuleId = recurrenceRuleId;
 		recurrenceRuleId = newRecurrenceRuleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__RECURRENCE_RULE_ID, oldRecurrenceRuleId, recurrenceRuleId));
 	}
 
 	/**
@@ -432,10 +425,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setByDayList(String newByDayList) {
-		String oldByDayList = byDayList;
 		byDayList = newByDayList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_DAY_LIST, oldByDayList, byDayList));
 	}
 
 	/**
@@ -455,10 +445,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setByHourList(String newByHourList) {
-		String oldByHourList = byHourList;
 		byHourList = newByHourList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_HOUR_LIST, oldByHourList, byHourList));
 	}
 
 	/**
@@ -478,10 +465,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setByMinuteList(String newByMinuteList) {
-		String oldByMinuteList = byMinuteList;
 		byMinuteList = newByMinuteList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_MINUTE_LIST, oldByMinuteList, byMinuteList));
 	}
 
 	/**
@@ -501,10 +485,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setByMonthDayList(String newByMonthDayList) {
-		String oldByMonthDayList = byMonthDayList;
 		byMonthDayList = newByMonthDayList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_MONTH_DAY_LIST, oldByMonthDayList, byMonthDayList));
 	}
 
 	/**
@@ -524,10 +505,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setByMonthList(String newByMonthList) {
-		String oldByMonthList = byMonthList;
 		byMonthList = newByMonthList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_MONTH_LIST, oldByMonthList, byMonthList));
 	}
 
 	/**
@@ -547,10 +525,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setBySecondList(String newBySecondList) {
-		String oldBySecondList = bySecondList;
 		bySecondList = newBySecondList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_SECOND_LIST, oldBySecondList, bySecondList));
 	}
 
 	/**
@@ -570,10 +545,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setBySetPosList(String newBySetPosList) {
-		String oldBySetPosList = bySetPosList;
 		bySetPosList = newBySetPosList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_SET_POS_LIST, oldBySetPosList, bySetPosList));
 	}
 
 	/**
@@ -593,10 +565,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setByWeekNoList(String newByWeekNoList) {
-		String oldByWeekNoList = byWeekNoList;
 		byWeekNoList = newByWeekNoList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_WEEK_NO_LIST, oldByWeekNoList, byWeekNoList));
 	}
 
 	/**
@@ -616,10 +585,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setByYearDayList(String newByYearDayList) {
-		String oldByYearDayList = byYearDayList;
 		byYearDayList = newByYearDayList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__BY_YEAR_DAY_LIST, oldByYearDayList, byYearDayList));
 	}
 
 	/**
@@ -639,10 +605,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setCountNumber(long newCountNumber) {
-		long oldCountNumber = countNumber;
 		countNumber = newCountNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__COUNT_NUMBER, oldCountNumber, countNumber));
 	}
 
 	/**
@@ -662,10 +625,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setFrequency(String newFrequency) {
-		String oldFrequency = frequency;
 		frequency = newFrequency;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__FREQUENCY, oldFrequency, frequency));
 	}
 
 	/**
@@ -685,10 +645,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setIntervalNumber(long newIntervalNumber) {
-		long oldIntervalNumber = intervalNumber;
 		intervalNumber = newIntervalNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__INTERVAL_NUMBER, oldIntervalNumber, intervalNumber));
 	}
 
 	/**
@@ -708,10 +665,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setUntilDateTime(Date newUntilDateTime) {
-		Date oldUntilDateTime = untilDateTime;
 		untilDateTime = newUntilDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__UNTIL_DATE_TIME, oldUntilDateTime, untilDateTime));
 	}
 
 	/**
@@ -731,10 +685,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setWeekStart(String newWeekStart) {
-		String oldWeekStart = weekStart;
 		weekStart = newWeekStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__WEEK_START, oldWeekStart, weekStart));
 	}
 
 	/**
@@ -754,10 +705,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 */
 	@Override
 	public void setXName(String newXName) {
-		String oldXName = xName;
 		xName = newXName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_RULE__XNAME, oldXName, xName));
 	}
 
 	/**

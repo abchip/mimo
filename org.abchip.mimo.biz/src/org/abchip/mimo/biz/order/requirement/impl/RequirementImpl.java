@@ -22,15 +22,12 @@ import org.abchip.mimo.biz.order.requirement.RequirementType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -437,10 +434,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -460,10 +454,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -477,8 +468,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			InternalEObject oldDeliverableId = (InternalEObject)deliverableId;
 			deliverableId = (Deliverable)eResolveProxy(oldDeliverableId);
 			if (deliverableId != oldDeliverableId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__DELIVERABLE_ID, oldDeliverableId, deliverableId));
 			}
 		}
 		return deliverableId;
@@ -500,10 +489,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setDeliverableId(Deliverable newDeliverableId) {
-		Deliverable oldDeliverableId = deliverableId;
 		deliverableId = newDeliverableId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__DELIVERABLE_ID, oldDeliverableId, deliverableId));
 	}
 
 	/**
@@ -523,10 +509,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -546,10 +529,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setEstimatedBudget(BigDecimal newEstimatedBudget) {
-		BigDecimal oldEstimatedBudget = estimatedBudget;
 		estimatedBudget = newEstimatedBudget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__ESTIMATED_BUDGET, oldEstimatedBudget, estimatedBudget));
 	}
 
 	/**
@@ -563,8 +543,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -586,10 +564,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -603,8 +578,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -626,10 +599,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -649,10 +619,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -672,10 +639,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -689,8 +653,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -712,10 +674,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -735,10 +694,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -758,10 +714,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setReason(String newReason) {
-		String oldReason = reason;
 		reason = newReason;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__REASON, oldReason, reason));
 	}
 
 	/**
@@ -781,10 +734,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setRequiredByDate(Date newRequiredByDate) {
-		Date oldRequiredByDate = requiredByDate;
 		requiredByDate = newRequiredByDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__REQUIRED_BY_DATE, oldRequiredByDate, requiredByDate));
 	}
 
 	/**
@@ -804,10 +754,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setRequirementId(String newRequirementId) {
-		String oldRequirementId = requirementId;
 		requirementId = newRequirementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__REQUIREMENT_ID, oldRequirementId, requirementId));
 	}
 
 	/**
@@ -827,10 +774,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setRequirementStartDate(Date newRequirementStartDate) {
-		Date oldRequirementStartDate = requirementStartDate;
 		requirementStartDate = newRequirementStartDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__REQUIREMENT_START_DATE, oldRequirementStartDate, requirementStartDate));
 	}
 
 	/**
@@ -844,8 +788,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			InternalEObject oldRequirementTypeId = (InternalEObject)requirementTypeId;
 			requirementTypeId = (RequirementType)eResolveProxy(oldRequirementTypeId);
 			if (requirementTypeId != oldRequirementTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID, oldRequirementTypeId, requirementTypeId));
 			}
 		}
 		return requirementTypeId;
@@ -867,10 +809,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setRequirementTypeId(RequirementType newRequirementTypeId) {
-		RequirementType oldRequirementTypeId = requirementTypeId;
 		requirementTypeId = newRequirementTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID, oldRequirementTypeId, requirementTypeId));
 	}
 
 	/**
@@ -884,8 +823,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -907,10 +844,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -930,10 +864,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@Override
 	public void setUseCase(String newUseCase) {
-		String oldUseCase = useCase;
 		useCase = newUseCase;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__USE_CASE, oldUseCase, useCase));
 	}
 
 	/**
@@ -944,7 +875,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	@Override
 	public List<String> getRequirementAttributes() {
 		if (requirementAttributes == null) {
-			requirementAttributes = new EDataTypeUniqueEList<String>(String.class, this, RequirementPackage.REQUIREMENT__REQUIREMENT_ATTRIBUTES);
+			requirementAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return requirementAttributes;
 	}
@@ -957,7 +888,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	@Override
 	public List<String> getRequirementStatuss() {
 		if (requirementStatuss == null) {
-			requirementStatuss = new EDataTypeUniqueEList<String>(String.class, this, RequirementPackage.REQUIREMENT__REQUIREMENT_STATUSS);
+			requirementStatuss = new BasicInternalEList<String>(String.class);
 		}
 		return requirementStatuss;
 	}
@@ -970,7 +901,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	@Override
 	public List<String> getWorkRequirementFulfillments() {
 		if (workRequirementFulfillments == null) {
-			workRequirementFulfillments = new EDataTypeUniqueEList<String>(String.class, this, RequirementPackage.REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS);
+			workRequirementFulfillments = new BasicInternalEList<String>(String.class);
 		}
 		return workRequirementFulfillments;
 	}

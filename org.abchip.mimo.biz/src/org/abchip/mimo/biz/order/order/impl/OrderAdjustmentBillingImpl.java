@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentBilling;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,10 +137,7 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_BILLING__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -157,8 +151,6 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -180,10 +172,7 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
-		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -203,10 +192,7 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
-		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_BILLING__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -220,8 +206,6 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 			InternalEObject oldOrderAdjustmentId = (InternalEObject)orderAdjustmentId;
 			orderAdjustmentId = (OrderAdjustment)eResolveProxy(oldOrderAdjustmentId);
 			if (orderAdjustmentId != oldOrderAdjustmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
 			}
 		}
 		return orderAdjustmentId;
@@ -243,10 +227,7 @@ public class OrderAdjustmentBillingImpl extends BizEntityImpl implements OrderAd
 	 */
 	@Override
 	public void setOrderAdjustmentId(OrderAdjustment newOrderAdjustmentId) {
-		OrderAdjustment oldOrderAdjustmentId = orderAdjustmentId;
 		orderAdjustmentId = newOrderAdjustmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_BILLING__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
 	}
 
 	/**

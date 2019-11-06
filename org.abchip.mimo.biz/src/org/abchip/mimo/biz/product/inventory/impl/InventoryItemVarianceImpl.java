@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.product.inventory.InventoryItemVariance;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
 import org.abchip.mimo.biz.product.inventory.VarianceReason;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,10 +169,7 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setAvailableToPromiseVar(BigDecimal newAvailableToPromiseVar) {
-		BigDecimal oldAvailableToPromiseVar = availableToPromiseVar;
 		availableToPromiseVar = newAvailableToPromiseVar;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_VARIANCE__AVAILABLE_TO_PROMISE_VAR, oldAvailableToPromiseVar, availableToPromiseVar));
 	}
 
 	/**
@@ -195,10 +189,7 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_VARIANCE__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -218,10 +209,7 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setQuantityOnHandVar(BigDecimal newQuantityOnHandVar) {
-		BigDecimal oldQuantityOnHandVar = quantityOnHandVar;
 		quantityOnHandVar = newQuantityOnHandVar;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_VARIANCE__QUANTITY_ON_HAND_VAR, oldQuantityOnHandVar, quantityOnHandVar));
 	}
 
 	/**
@@ -235,8 +223,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 			InternalEObject oldPhysicalInventoryId = (InternalEObject)physicalInventoryId;
 			physicalInventoryId = (PhysicalInventory)eResolveProxy(oldPhysicalInventoryId);
 			if (physicalInventoryId != oldPhysicalInventoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_VARIANCE__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
 			}
 		}
 		return physicalInventoryId;
@@ -258,10 +244,7 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setPhysicalInventoryId(PhysicalInventory newPhysicalInventoryId) {
-		PhysicalInventory oldPhysicalInventoryId = physicalInventoryId;
 		physicalInventoryId = newPhysicalInventoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_VARIANCE__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
 	}
 
 	/**
@@ -275,8 +258,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 			InternalEObject oldVarianceReasonId = (InternalEObject)varianceReasonId;
 			varianceReasonId = (VarianceReason)eResolveProxy(oldVarianceReasonId);
 			if (varianceReasonId != oldVarianceReasonId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID, oldVarianceReasonId, varianceReasonId));
 			}
 		}
 		return varianceReasonId;
@@ -298,10 +279,7 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setVarianceReasonId(VarianceReason newVarianceReasonId) {
-		VarianceReason oldVarianceReasonId = varianceReasonId;
 		varianceReasonId = newVarianceReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_VARIANCE__VARIANCE_REASON_ID, oldVarianceReasonId, varianceReasonId));
 	}
 
 	/**
@@ -315,8 +293,6 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -338,10 +314,7 @@ public class InventoryItemVarianceImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_VARIANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**

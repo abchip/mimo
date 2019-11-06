@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreRole;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,10 +169,7 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -189,8 +183,6 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -212,10 +204,7 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -229,8 +218,6 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -252,10 +239,7 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -275,10 +259,7 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -298,10 +279,7 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -315,8 +293,6 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -338,10 +314,7 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

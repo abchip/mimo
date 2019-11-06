@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,10 +111,7 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	 */
 	@Override
 	public void setInvoiceItemMapKey(String newInvoiceItemMapKey) {
-		String oldInvoiceItemMapKey = invoiceItemMapKey;
 		invoiceItemMapKey = newInvoiceItemMapKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_MAP_KEY, oldInvoiceItemMapKey, invoiceItemMapKey));
 	}
 
 	/**
@@ -131,8 +125,6 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 			InternalEObject oldInvoiceTypeId = (InternalEObject)invoiceTypeId;
 			invoiceTypeId = (InvoiceType)eResolveProxy(oldInvoiceTypeId);
 			if (invoiceTypeId != oldInvoiceTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 			}
 		}
 		return invoiceTypeId;
@@ -154,10 +146,7 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	 */
 	@Override
 	public void setInvoiceTypeId(InvoiceType newInvoiceTypeId) {
-		InvoiceType oldInvoiceTypeId = invoiceTypeId;
 		invoiceTypeId = newInvoiceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 	}
 
 	/**
@@ -171,8 +160,6 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 			InternalEObject oldInvoiceItemTypeId = (InternalEObject)invoiceItemTypeId;
 			invoiceItemTypeId = (InvoiceItemType)eResolveProxy(oldInvoiceItemTypeId);
 			if (invoiceItemTypeId != oldInvoiceItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
 			}
 		}
 		return invoiceItemTypeId;
@@ -194,10 +181,7 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	 */
 	@Override
 	public void setInvoiceItemTypeId(InvoiceItemType newInvoiceItemTypeId) {
-		InvoiceItemType oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
 	}
 
 	/**

@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteRole;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,10 +149,7 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -169,8 +163,6 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -192,10 +184,7 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -209,8 +198,6 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ROLE__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -232,10 +219,7 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
-		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ROLE__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**
@@ -249,8 +233,6 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -272,10 +254,7 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -295,10 +274,7 @@ public class QuoteRoleImpl extends BizEntityImpl implements QuoteRole {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

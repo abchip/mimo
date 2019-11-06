@@ -17,13 +17,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -270,10 +267,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setCartons(long newCartons) {
-		long oldCartons = cartons;
 		cartons = newCartons;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS, oldCartons, cartons));
 	}
 
 	/**
@@ -293,10 +287,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setEstimatedReadyDate(Date newEstimatedReadyDate) {
-		Date oldEstimatedReadyDate = estimatedReadyDate;
 		estimatedReadyDate = newEstimatedReadyDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE, oldEstimatedReadyDate, estimatedReadyDate));
 	}
 
 	/**
@@ -310,8 +301,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -333,10 +322,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -356,10 +342,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -379,10 +362,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setSkidsPallets(long newSkidsPallets) {
-		long oldSkidsPallets = skidsPallets;
 		skidsPallets = newSkidsPallets;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS, oldSkidsPallets, skidsPallets));
 	}
 
 	/**
@@ -396,8 +376,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -419,10 +397,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -442,10 +417,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setTotalCubicSize(BigDecimal newTotalCubicSize) {
-		BigDecimal oldTotalCubicSize = totalCubicSize;
 		totalCubicSize = newTotalCubicSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE, oldTotalCubicSize, totalCubicSize));
 	}
 
 	/**
@@ -459,8 +431,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 			InternalEObject oldTotalCubicUomId = (InternalEObject)totalCubicUomId;
 			totalCubicUomId = (Uom)eResolveProxy(oldTotalCubicUomId);
 			if (totalCubicUomId != oldTotalCubicUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID, oldTotalCubicUomId, totalCubicUomId));
 			}
 		}
 		return totalCubicUomId;
@@ -482,10 +452,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setTotalCubicUomId(Uom newTotalCubicUomId) {
-		Uom oldTotalCubicUomId = totalCubicUomId;
 		totalCubicUomId = newTotalCubicUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID, oldTotalCubicUomId, totalCubicUomId));
 	}
 
 	/**
@@ -505,10 +472,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setTotalWeight(BigDecimal newTotalWeight) {
-		BigDecimal oldTotalWeight = totalWeight;
 		totalWeight = newTotalWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT, oldTotalWeight, totalWeight));
 	}
 
 	/**
@@ -522,8 +486,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 			InternalEObject oldTotalWeightUomId = (InternalEObject)totalWeightUomId;
 			totalWeightUomId = (Uom)eResolveProxy(oldTotalWeightUomId);
 			if (totalWeightUomId != oldTotalWeightUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID, oldTotalWeightUomId, totalWeightUomId));
 			}
 		}
 		return totalWeightUomId;
@@ -545,10 +507,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setTotalWeightUomId(Uom newTotalWeightUomId) {
-		Uom oldTotalWeightUomId = totalWeightUomId;
 		totalWeightUomId = newTotalWeightUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID, oldTotalWeightUomId, totalWeightUomId));
 	}
 
 	/**
@@ -568,10 +527,7 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 */
 	@Override
 	public void setUnitsPieces(BigDecimal newUnitsPieces) {
-		BigDecimal oldUnitsPieces = unitsPieces;
 		unitsPieces = newUnitsPieces;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES, oldUnitsPieces, unitsPieces));
 	}
 
 	/**

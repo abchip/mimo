@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.product.cost.CostComponentTypeAttr;
 import org.abchip.mimo.biz.product.cost.CostPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,10 +122,7 @@ public class CostComponentTypeAttrImpl extends BizEntityImpl implements CostComp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -148,10 +142,7 @@ public class CostComponentTypeAttrImpl extends BizEntityImpl implements CostComp
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -165,8 +156,6 @@ public class CostComponentTypeAttrImpl extends BizEntityImpl implements CostComp
 			InternalEObject oldCostComponentTypeId = (InternalEObject)costComponentTypeId;
 			costComponentTypeId = (CostComponentType)eResolveProxy(oldCostComponentTypeId);
 			if (costComponentTypeId != oldCostComponentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_TYPE_ATTR__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 			}
 		}
 		return costComponentTypeId;
@@ -188,10 +177,7 @@ public class CostComponentTypeAttrImpl extends BizEntityImpl implements CostComp
 	 */
 	@Override
 	public void setCostComponentTypeId(CostComponentType newCostComponentTypeId) {
-		CostComponentType oldCostComponentTypeId = costComponentTypeId;
 		costComponentTypeId = newCostComponentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE_ATTR__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 	}
 
 	/**

@@ -14,11 +14,9 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -153,8 +151,6 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
 			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
 			if (contactMechTypeId != oldContactMechTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 			}
 		}
 		return contactMechTypeId;
@@ -176,10 +172,7 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 */
 	@Override
 	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
-		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 	}
 
 	/**
@@ -199,10 +192,7 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -222,10 +212,7 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -239,8 +226,6 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (CommunicationEventType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -262,10 +247,7 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 */
 	@Override
 	public void setParentTypeId(CommunicationEventType newParentTypeId) {
-		CommunicationEventType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -309,10 +291,7 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 */
 	@Override
 	public void setCommunicationEventTypeId(String newCommunicationEventTypeId) {
-		String oldCommunicationEventTypeId = communicationEventTypeId;
 		communicationEventTypeId = newCommunicationEventTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_TYPE__COMMUNICATION_EVENT_TYPE_ID, oldCommunicationEventTypeId, communicationEventTypeId));
 	}
 
 	/**

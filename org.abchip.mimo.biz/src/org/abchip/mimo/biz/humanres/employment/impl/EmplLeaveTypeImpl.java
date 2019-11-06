@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.humanres.employment.EmplLeave;
 import org.abchip.mimo.biz.humanres.employment.EmplLeaveType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,10 +146,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -172,10 +166,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -195,10 +186,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setLeaveTypeId(String newLeaveTypeId) {
-		String oldLeaveTypeId = leaveTypeId;
 		leaveTypeId = newLeaveTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID, oldLeaveTypeId, leaveTypeId));
 	}
 
 	/**
@@ -212,8 +200,6 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (EmplLeaveType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -235,10 +221,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setParentTypeId(EmplLeaveType newParentTypeId) {
-		EmplLeaveType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**

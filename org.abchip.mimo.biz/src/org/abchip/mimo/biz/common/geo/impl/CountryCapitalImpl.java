@@ -9,10 +9,7 @@ package org.abchip.mimo.biz.common.geo.impl;
 
 import org.abchip.mimo.biz.common.geo.CountryCapital;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -88,10 +85,7 @@ public class CountryCapitalImpl extends CountryCodeImpl implements CountryCapita
 	 */
 	@Override
 	public void setCountryCapital(String newCountryCapital) {
-		String oldCountryCapital = countryCapital;
 		countryCapital = newCountryCapital;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_CAPITAL__COUNTRY_CAPITAL, oldCountryCapital, countryCapital));
 	}
 
 	/**

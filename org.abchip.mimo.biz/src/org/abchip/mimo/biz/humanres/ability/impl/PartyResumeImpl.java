@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PartyResume;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,8 +152,6 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_RESUME__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -178,10 +173,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -195,8 +187,6 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_RESUME__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -218,10 +208,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -241,10 +228,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setResumeDate(Date newResumeDate) {
-		Date oldResumeDate = resumeDate;
 		resumeDate = newResumeDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__RESUME_DATE, oldResumeDate, resumeDate));
 	}
 
 	/**
@@ -264,10 +248,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setResumeId(String newResumeId) {
-		String oldResumeId = resumeId;
 		resumeId = newResumeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__RESUME_ID, oldResumeId, resumeId));
 	}
 
 	/**
@@ -287,10 +268,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setResumeText(String newResumeText) {
-		String oldResumeText = resumeText;
 		resumeText = newResumeText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__RESUME_TEXT, oldResumeText, resumeText));
 	}
 
 	/**

@@ -13,12 +13,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.VarianceReason;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,10 +124,7 @@ public class VarianceReasonImpl extends BizEntityImpl implements VarianceReason 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.VARIANCE_REASON__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -150,10 +144,7 @@ public class VarianceReasonImpl extends BizEntityImpl implements VarianceReason 
 	 */
 	@Override
 	public void setVarianceReasonId(String newVarianceReasonId) {
-		String oldVarianceReasonId = varianceReasonId;
 		varianceReasonId = newVarianceReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.VARIANCE_REASON__VARIANCE_REASON_ID, oldVarianceReasonId, varianceReasonId));
 	}
 
 	/**
@@ -164,7 +155,7 @@ public class VarianceReasonImpl extends BizEntityImpl implements VarianceReason 
 	@Override
 	public List<String> getVarianceReasonGlAccounts() {
 		if (varianceReasonGlAccounts == null) {
-			varianceReasonGlAccounts = new EDataTypeUniqueEList<String>(String.class, this, InventoryPackage.VARIANCE_REASON__VARIANCE_REASON_GL_ACCOUNTS);
+			varianceReasonGlAccounts = new BasicInternalEList<String>(String.class);
 		}
 		return varianceReasonGlAccounts;
 	}

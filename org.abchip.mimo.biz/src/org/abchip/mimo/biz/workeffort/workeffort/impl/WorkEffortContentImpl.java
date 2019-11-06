@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContent;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContentType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,8 +143,6 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -169,10 +164,7 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -192,10 +184,7 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -215,10 +204,7 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -232,8 +218,6 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 			InternalEObject oldWorkEffortContentTypeId = (InternalEObject)workEffortContentTypeId;
 			workEffortContentTypeId = (WorkEffortContentType)eResolveProxy(oldWorkEffortContentTypeId);
 			if (workEffortContentTypeId != oldWorkEffortContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID, oldWorkEffortContentTypeId, workEffortContentTypeId));
 			}
 		}
 		return workEffortContentTypeId;
@@ -255,10 +239,7 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 */
 	@Override
 	public void setWorkEffortContentTypeId(WorkEffortContentType newWorkEffortContentTypeId) {
-		WorkEffortContentType oldWorkEffortContentTypeId = workEffortContentTypeId;
 		workEffortContentTypeId = newWorkEffortContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID, oldWorkEffortContentTypeId, workEffortContentTypeId));
 	}
 
 	/**
@@ -272,8 +253,6 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -295,10 +274,7 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

@@ -19,14 +19,11 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -1688,10 +1685,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAuthDeclinedMessage(String newAuthDeclinedMessage) {
-		String oldAuthDeclinedMessage = authDeclinedMessage;
 		authDeclinedMessage = newAuthDeclinedMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTH_DECLINED_MESSAGE, oldAuthDeclinedMessage, authDeclinedMessage));
 	}
 
 	/**
@@ -1711,10 +1705,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAuthErrorMessage(String newAuthErrorMessage) {
-		String oldAuthErrorMessage = authErrorMessage;
 		authErrorMessage = newAuthErrorMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTH_ERROR_MESSAGE, oldAuthErrorMessage, authErrorMessage));
 	}
 
 	/**
@@ -1734,10 +1725,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAuthFraudMessage(String newAuthFraudMessage) {
-		String oldAuthFraudMessage = authFraudMessage;
 		authFraudMessage = newAuthFraudMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTH_FRAUD_MESSAGE, oldAuthFraudMessage, authFraudMessage));
 	}
 
 	/**
@@ -1757,10 +1745,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoApproveInvoice(boolean newAutoApproveInvoice) {
-		boolean oldAutoApproveInvoice = autoApproveInvoice;
 		autoApproveInvoice = newAutoApproveInvoice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_APPROVE_INVOICE, oldAutoApproveInvoice, autoApproveInvoice));
 	}
 
 	/**
@@ -1780,10 +1765,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoApproveOrder(boolean newAutoApproveOrder) {
-		boolean oldAutoApproveOrder = autoApproveOrder;
 		autoApproveOrder = newAutoApproveOrder;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_APPROVE_ORDER, oldAutoApproveOrder, autoApproveOrder));
 	}
 
 	/**
@@ -1803,10 +1785,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoApproveReviews(boolean newAutoApproveReviews) {
-		boolean oldAutoApproveReviews = autoApproveReviews;
 		autoApproveReviews = newAutoApproveReviews;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_APPROVE_REVIEWS, oldAutoApproveReviews, autoApproveReviews));
 	}
 
 	/**
@@ -1826,10 +1805,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoInvoiceDigitalItems(boolean newAutoInvoiceDigitalItems) {
-		boolean oldAutoInvoiceDigitalItems = autoInvoiceDigitalItems;
 		autoInvoiceDigitalItems = newAutoInvoiceDigitalItems;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_INVOICE_DIGITAL_ITEMS, oldAutoInvoiceDigitalItems, autoInvoiceDigitalItems));
 	}
 
 	/**
@@ -1849,10 +1825,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoOrderCcTryExp(boolean newAutoOrderCcTryExp) {
-		boolean oldAutoOrderCcTryExp = autoOrderCcTryExp;
 		autoOrderCcTryExp = newAutoOrderCcTryExp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_ORDER_CC_TRY_EXP, oldAutoOrderCcTryExp, autoOrderCcTryExp));
 	}
 
 	/**
@@ -1872,10 +1845,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoOrderCcTryLaterMax(long newAutoOrderCcTryLaterMax) {
-		long oldAutoOrderCcTryLaterMax = autoOrderCcTryLaterMax;
 		autoOrderCcTryLaterMax = newAutoOrderCcTryLaterMax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_ORDER_CC_TRY_LATER_MAX, oldAutoOrderCcTryLaterMax, autoOrderCcTryLaterMax));
 	}
 
 	/**
@@ -1895,10 +1865,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoOrderCcTryLaterNsf(boolean newAutoOrderCcTryLaterNsf) {
-		boolean oldAutoOrderCcTryLaterNsf = autoOrderCcTryLaterNsf;
 		autoOrderCcTryLaterNsf = newAutoOrderCcTryLaterNsf;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_ORDER_CC_TRY_LATER_NSF, oldAutoOrderCcTryLaterNsf, autoOrderCcTryLaterNsf));
 	}
 
 	/**
@@ -1918,10 +1885,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoOrderCcTryOtherCards(boolean newAutoOrderCcTryOtherCards) {
-		boolean oldAutoOrderCcTryOtherCards = autoOrderCcTryOtherCards;
 		autoOrderCcTryOtherCards = newAutoOrderCcTryOtherCards;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_ORDER_CC_TRY_OTHER_CARDS, oldAutoOrderCcTryOtherCards, autoOrderCcTryOtherCards));
 	}
 
 	/**
@@ -1941,10 +1905,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAutoSaveCart(boolean newAutoSaveCart) {
-		boolean oldAutoSaveCart = autoSaveCart;
 		autoSaveCart = newAutoSaveCart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__AUTO_SAVE_CART, oldAutoSaveCart, autoSaveCart));
 	}
 
 	/**
@@ -1964,10 +1925,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setBalanceResOnOrderCreation(boolean newBalanceResOnOrderCreation) {
-		boolean oldBalanceResOnOrderCreation = balanceResOnOrderCreation;
 		balanceResOnOrderCreation = newBalanceResOnOrderCreation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__BALANCE_RES_ON_ORDER_CREATION, oldBalanceResOnOrderCreation, balanceResOnOrderCreation));
 	}
 
 	/**
@@ -1987,10 +1945,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setCheckGcBalance(boolean newCheckGcBalance) {
-		boolean oldCheckGcBalance = checkGcBalance;
 		checkGcBalance = newCheckGcBalance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__CHECK_GC_BALANCE, oldCheckGcBalance, checkGcBalance));
 	}
 
 	/**
@@ -2010,10 +1965,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setCheckInventory(boolean newCheckInventory) {
-		boolean oldCheckInventory = checkInventory;
 		checkInventory = newCheckInventory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__CHECK_INVENTORY, oldCheckInventory, checkInventory));
 	}
 
 	/**
@@ -2033,10 +1985,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setCompanyName(String newCompanyName) {
-		String oldCompanyName = companyName;
 		companyName = newCompanyName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__COMPANY_NAME, oldCompanyName, companyName));
 	}
 
 	/**
@@ -2056,10 +2005,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDaysToCancelNonPay(long newDaysToCancelNonPay) {
-		long oldDaysToCancelNonPay = daysToCancelNonPay;
 		daysToCancelNonPay = newDaysToCancelNonPay;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DAYS_TO_CANCEL_NON_PAY, oldDaysToCancelNonPay, daysToCancelNonPay));
 	}
 
 	/**
@@ -2073,8 +2019,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldDefaultCurrencyUomId = (InternalEObject)defaultCurrencyUomId;
 			defaultCurrencyUomId = (Uom)eResolveProxy(oldDefaultCurrencyUomId);
 			if (defaultCurrencyUomId != oldDefaultCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__DEFAULT_CURRENCY_UOM_ID, oldDefaultCurrencyUomId, defaultCurrencyUomId));
 			}
 		}
 		return defaultCurrencyUomId;
@@ -2096,10 +2040,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDefaultCurrencyUomId(Uom newDefaultCurrencyUomId) {
-		Uom oldDefaultCurrencyUomId = defaultCurrencyUomId;
 		defaultCurrencyUomId = newDefaultCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DEFAULT_CURRENCY_UOM_ID, oldDefaultCurrencyUomId, defaultCurrencyUomId));
 	}
 
 	/**
@@ -2119,10 +2060,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDefaultLocaleString(String newDefaultLocaleString) {
-		String oldDefaultLocaleString = defaultLocaleString;
 		defaultLocaleString = newDefaultLocaleString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DEFAULT_LOCALE_STRING, oldDefaultLocaleString, defaultLocaleString));
 	}
 
 	/**
@@ -2142,10 +2080,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDefaultPassword(String newDefaultPassword) {
-		String oldDefaultPassword = defaultPassword;
 		defaultPassword = newDefaultPassword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DEFAULT_PASSWORD, oldDefaultPassword, defaultPassword));
 	}
 
 	/**
@@ -2159,8 +2094,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldDefaultSalesChannelEnumId = (InternalEObject)defaultSalesChannelEnumId;
 			defaultSalesChannelEnumId = (Enumeration)eResolveProxy(oldDefaultSalesChannelEnumId);
 			if (defaultSalesChannelEnumId != oldDefaultSalesChannelEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__DEFAULT_SALES_CHANNEL_ENUM_ID, oldDefaultSalesChannelEnumId, defaultSalesChannelEnumId));
 			}
 		}
 		return defaultSalesChannelEnumId;
@@ -2182,10 +2115,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDefaultSalesChannelEnumId(Enumeration newDefaultSalesChannelEnumId) {
-		Enumeration oldDefaultSalesChannelEnumId = defaultSalesChannelEnumId;
 		defaultSalesChannelEnumId = newDefaultSalesChannelEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DEFAULT_SALES_CHANNEL_ENUM_ID, oldDefaultSalesChannelEnumId, defaultSalesChannelEnumId));
 	}
 
 	/**
@@ -2205,10 +2135,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDefaultTimeZoneString(String newDefaultTimeZoneString) {
-		String oldDefaultTimeZoneString = defaultTimeZoneString;
 		defaultTimeZoneString = newDefaultTimeZoneString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DEFAULT_TIME_ZONE_STRING, oldDefaultTimeZoneString, defaultTimeZoneString));
 	}
 
 	/**
@@ -2228,10 +2155,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDigProdUploadCategoryId(String newDigProdUploadCategoryId) {
-		String oldDigProdUploadCategoryId = digProdUploadCategoryId;
 		digProdUploadCategoryId = newDigProdUploadCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DIG_PROD_UPLOAD_CATEGORY_ID, oldDigProdUploadCategoryId, digProdUploadCategoryId));
 	}
 
 	/**
@@ -2245,8 +2169,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldDigitalItemApprovedStatus = (InternalEObject)digitalItemApprovedStatus;
 			digitalItemApprovedStatus = (StatusItem)eResolveProxy(oldDigitalItemApprovedStatus);
 			if (digitalItemApprovedStatus != oldDigitalItemApprovedStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__DIGITAL_ITEM_APPROVED_STATUS, oldDigitalItemApprovedStatus, digitalItemApprovedStatus));
 			}
 		}
 		return digitalItemApprovedStatus;
@@ -2268,10 +2190,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setDigitalItemApprovedStatus(StatusItem newDigitalItemApprovedStatus) {
-		StatusItem oldDigitalItemApprovedStatus = digitalItemApprovedStatus;
 		digitalItemApprovedStatus = newDigitalItemApprovedStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__DIGITAL_ITEM_APPROVED_STATUS, oldDigitalItemApprovedStatus, digitalItemApprovedStatus));
 	}
 
 	/**
@@ -2291,10 +2210,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setEnableAutoSuggestionList(boolean newEnableAutoSuggestionList) {
-		boolean oldEnableAutoSuggestionList = enableAutoSuggestionList;
 		enableAutoSuggestionList = newEnableAutoSuggestionList;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ENABLE_AUTO_SUGGESTION_LIST, oldEnableAutoSuggestionList, enableAutoSuggestionList));
 	}
 
 	/**
@@ -2314,10 +2230,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setEnableDigProdUpload(boolean newEnableDigProdUpload) {
-		boolean oldEnableDigProdUpload = enableDigProdUpload;
 		enableDigProdUpload = newEnableDigProdUpload;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ENABLE_DIG_PROD_UPLOAD, oldEnableDigProdUpload, enableDigProdUpload));
 	}
 
 	/**
@@ -2337,10 +2250,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setExplodeOrderItems(boolean newExplodeOrderItems) {
-		boolean oldExplodeOrderItems = explodeOrderItems;
 		explodeOrderItems = newExplodeOrderItems;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__EXPLODE_ORDER_ITEMS, oldExplodeOrderItems, explodeOrderItems));
 	}
 
 	/**
@@ -2354,8 +2264,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldHeaderApprovedStatus = (InternalEObject)headerApprovedStatus;
 			headerApprovedStatus = (StatusItem)eResolveProxy(oldHeaderApprovedStatus);
 			if (headerApprovedStatus != oldHeaderApprovedStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__HEADER_APPROVED_STATUS, oldHeaderApprovedStatus, headerApprovedStatus));
 			}
 		}
 		return headerApprovedStatus;
@@ -2377,10 +2285,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setHeaderApprovedStatus(StatusItem newHeaderApprovedStatus) {
-		StatusItem oldHeaderApprovedStatus = headerApprovedStatus;
 		headerApprovedStatus = newHeaderApprovedStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__HEADER_APPROVED_STATUS, oldHeaderApprovedStatus, headerApprovedStatus));
 	}
 
 	/**
@@ -2394,8 +2299,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldHeaderCancelStatus = (InternalEObject)headerCancelStatus;
 			headerCancelStatus = (StatusItem)eResolveProxy(oldHeaderCancelStatus);
 			if (headerCancelStatus != oldHeaderCancelStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__HEADER_CANCEL_STATUS, oldHeaderCancelStatus, headerCancelStatus));
 			}
 		}
 		return headerCancelStatus;
@@ -2417,10 +2320,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setHeaderCancelStatus(StatusItem newHeaderCancelStatus) {
-		StatusItem oldHeaderCancelStatus = headerCancelStatus;
 		headerCancelStatus = newHeaderCancelStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__HEADER_CANCEL_STATUS, oldHeaderCancelStatus, headerCancelStatus));
 	}
 
 	/**
@@ -2434,8 +2334,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldHeaderDeclinedStatus = (InternalEObject)headerDeclinedStatus;
 			headerDeclinedStatus = (StatusItem)eResolveProxy(oldHeaderDeclinedStatus);
 			if (headerDeclinedStatus != oldHeaderDeclinedStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__HEADER_DECLINED_STATUS, oldHeaderDeclinedStatus, headerDeclinedStatus));
 			}
 		}
 		return headerDeclinedStatus;
@@ -2457,10 +2355,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setHeaderDeclinedStatus(StatusItem newHeaderDeclinedStatus) {
-		StatusItem oldHeaderDeclinedStatus = headerDeclinedStatus;
 		headerDeclinedStatus = newHeaderDeclinedStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__HEADER_DECLINED_STATUS, oldHeaderDeclinedStatus, headerDeclinedStatus));
 	}
 
 	/**
@@ -2474,8 +2369,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldItemApprovedStatus = (InternalEObject)itemApprovedStatus;
 			itemApprovedStatus = (StatusItem)eResolveProxy(oldItemApprovedStatus);
 			if (itemApprovedStatus != oldItemApprovedStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__ITEM_APPROVED_STATUS, oldItemApprovedStatus, itemApprovedStatus));
 			}
 		}
 		return itemApprovedStatus;
@@ -2497,10 +2390,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setItemApprovedStatus(StatusItem newItemApprovedStatus) {
-		StatusItem oldItemApprovedStatus = itemApprovedStatus;
 		itemApprovedStatus = newItemApprovedStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ITEM_APPROVED_STATUS, oldItemApprovedStatus, itemApprovedStatus));
 	}
 
 	/**
@@ -2514,8 +2404,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldItemCancelStatus = (InternalEObject)itemCancelStatus;
 			itemCancelStatus = (StatusItem)eResolveProxy(oldItemCancelStatus);
 			if (itemCancelStatus != oldItemCancelStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__ITEM_CANCEL_STATUS, oldItemCancelStatus, itemCancelStatus));
 			}
 		}
 		return itemCancelStatus;
@@ -2537,10 +2425,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setItemCancelStatus(StatusItem newItemCancelStatus) {
-		StatusItem oldItemCancelStatus = itemCancelStatus;
 		itemCancelStatus = newItemCancelStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ITEM_CANCEL_STATUS, oldItemCancelStatus, itemCancelStatus));
 	}
 
 	/**
@@ -2554,8 +2439,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldItemDeclinedStatus = (InternalEObject)itemDeclinedStatus;
 			itemDeclinedStatus = (StatusItem)eResolveProxy(oldItemDeclinedStatus);
 			if (itemDeclinedStatus != oldItemDeclinedStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__ITEM_DECLINED_STATUS, oldItemDeclinedStatus, itemDeclinedStatus));
 			}
 		}
 		return itemDeclinedStatus;
@@ -2577,10 +2460,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setItemDeclinedStatus(StatusItem newItemDeclinedStatus) {
-		StatusItem oldItemDeclinedStatus = itemDeclinedStatus;
 		itemDeclinedStatus = newItemDeclinedStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ITEM_DECLINED_STATUS, oldItemDeclinedStatus, itemDeclinedStatus));
 	}
 
 	/**
@@ -2600,10 +2480,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setManagedByLot(boolean newManagedByLot) {
-		boolean oldManagedByLot = managedByLot;
 		managedByLot = newManagedByLot;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__MANAGED_BY_LOT, oldManagedByLot, managedByLot));
 	}
 
 	/**
@@ -2623,10 +2500,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setManualAuthIsCapture(boolean newManualAuthIsCapture) {
-		boolean oldManualAuthIsCapture = manualAuthIsCapture;
 		manualAuthIsCapture = newManualAuthIsCapture;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE, oldManualAuthIsCapture, manualAuthIsCapture));
 	}
 
 	/**
@@ -2646,10 +2520,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setOldHeaderLogo(String newOldHeaderLogo) {
-		String oldOldHeaderLogo = oldHeaderLogo;
 		oldHeaderLogo = newOldHeaderLogo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__OLD_HEADER_LOGO, oldOldHeaderLogo, oldHeaderLogo));
 	}
 
 	/**
@@ -2669,10 +2540,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setOldHeaderMiddleBackground(String newOldHeaderMiddleBackground) {
-		String oldOldHeaderMiddleBackground = oldHeaderMiddleBackground;
 		oldHeaderMiddleBackground = newOldHeaderMiddleBackground;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__OLD_HEADER_MIDDLE_BACKGROUND, oldOldHeaderMiddleBackground, oldHeaderMiddleBackground));
 	}
 
 	/**
@@ -2692,10 +2560,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setOldHeaderRightBackground(String newOldHeaderRightBackground) {
-		String oldOldHeaderRightBackground = oldHeaderRightBackground;
 		oldHeaderRightBackground = newOldHeaderRightBackground;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__OLD_HEADER_RIGHT_BACKGROUND, oldOldHeaderRightBackground, oldHeaderRightBackground));
 	}
 
 	/**
@@ -2715,10 +2580,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setOldStyleSheet(String newOldStyleSheet) {
-		String oldOldStyleSheet = oldStyleSheet;
 		oldStyleSheet = newOldStyleSheet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__OLD_STYLE_SHEET, oldOldStyleSheet, oldStyleSheet));
 	}
 
 	/**
@@ -2738,10 +2600,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setOneInventoryFacility(boolean newOneInventoryFacility) {
-		boolean oldOneInventoryFacility = oneInventoryFacility;
 		oneInventoryFacility = newOneInventoryFacility;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ONE_INVENTORY_FACILITY, oldOneInventoryFacility, oneInventoryFacility));
 	}
 
 	/**
@@ -2761,10 +2620,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setOrderDecimalQuantity(boolean newOrderDecimalQuantity) {
-		boolean oldOrderDecimalQuantity = orderDecimalQuantity;
 		orderDecimalQuantity = newOrderDecimalQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ORDER_DECIMAL_QUANTITY, oldOrderDecimalQuantity, orderDecimalQuantity));
 	}
 
 	/**
@@ -2784,10 +2640,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setOrderNumberPrefix(String newOrderNumberPrefix) {
-		String oldOrderNumberPrefix = orderNumberPrefix;
 		orderNumberPrefix = newOrderNumberPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ORDER_NUMBER_PREFIX, oldOrderNumberPrefix, orderNumberPrefix));
 	}
 
 	/**
@@ -2801,8 +2654,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldPayToPartyId = (InternalEObject)payToPartyId;
 			payToPartyId = (Party)eResolveProxy(oldPayToPartyId);
 			if (payToPartyId != oldPayToPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__PAY_TO_PARTY_ID, oldPayToPartyId, payToPartyId));
 			}
 		}
 		return payToPartyId;
@@ -2824,10 +2675,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setPayToPartyId(Party newPayToPartyId) {
-		Party oldPayToPartyId = payToPartyId;
 		payToPartyId = newPayToPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__PAY_TO_PARTY_ID, oldPayToPartyId, payToPartyId));
 	}
 
 	/**
@@ -2841,8 +2689,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldRequirementMethodEnumId = (InternalEObject)requirementMethodEnumId;
 			requirementMethodEnumId = (Enumeration)eResolveProxy(oldRequirementMethodEnumId);
 			if (requirementMethodEnumId != oldRequirementMethodEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
 			}
 		}
 		return requirementMethodEnumId;
@@ -2864,10 +2710,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setRequirementMethodEnumId(Enumeration newRequirementMethodEnumId) {
-		Enumeration oldRequirementMethodEnumId = requirementMethodEnumId;
 		requirementMethodEnumId = newRequirementMethodEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
 	}
 
 	/**
@@ -2887,10 +2730,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setReserveInventory(boolean newReserveInventory) {
-		boolean oldReserveInventory = reserveInventory;
 		reserveInventory = newReserveInventory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__RESERVE_INVENTORY, oldReserveInventory, reserveInventory));
 	}
 
 	/**
@@ -2904,8 +2744,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldReserveOrderEnumId = (InternalEObject)reserveOrderEnumId;
 			reserveOrderEnumId = (Enumeration)eResolveProxy(oldReserveOrderEnumId);
 			if (reserveOrderEnumId != oldReserveOrderEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__RESERVE_ORDER_ENUM_ID, oldReserveOrderEnumId, reserveOrderEnumId));
 			}
 		}
 		return reserveOrderEnumId;
@@ -2927,10 +2765,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setReserveOrderEnumId(Enumeration newReserveOrderEnumId) {
-		Enumeration oldReserveOrderEnumId = reserveOrderEnumId;
 		reserveOrderEnumId = newReserveOrderEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__RESERVE_ORDER_ENUM_ID, oldReserveOrderEnumId, reserveOrderEnumId));
 	}
 
 	/**
@@ -2950,10 +2785,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setRetryFailedAuths(boolean newRetryFailedAuths) {
-		boolean oldRetryFailedAuths = retryFailedAuths;
 		retryFailedAuths = newRetryFailedAuths;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__RETRY_FAILED_AUTHS, oldRetryFailedAuths, retryFailedAuths));
 	}
 
 	/**
@@ -2973,10 +2805,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setSelectPaymentTypePerItem(boolean newSelectPaymentTypePerItem) {
-		boolean oldSelectPaymentTypePerItem = selectPaymentTypePerItem;
 		selectPaymentTypePerItem = newSelectPaymentTypePerItem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SELECT_PAYMENT_TYPE_PER_ITEM, oldSelectPaymentTypePerItem, selectPaymentTypePerItem));
 	}
 
 	/**
@@ -2996,10 +2825,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setSetOwnerUponIssuance(boolean newSetOwnerUponIssuance) {
-		boolean oldSetOwnerUponIssuance = setOwnerUponIssuance;
 		setOwnerUponIssuance = newSetOwnerUponIssuance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SET_OWNER_UPON_ISSUANCE, oldSetOwnerUponIssuance, setOwnerUponIssuance));
 	}
 
 	/**
@@ -3019,10 +2845,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setShipIfCaptureFails(boolean newShipIfCaptureFails) {
-		boolean oldShipIfCaptureFails = shipIfCaptureFails;
 		shipIfCaptureFails = newShipIfCaptureFails;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SHIP_IF_CAPTURE_FAILS, oldShipIfCaptureFails, shipIfCaptureFails));
 	}
 
 	/**
@@ -3042,10 +2865,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setShowCheckoutGiftOptions(boolean newShowCheckoutGiftOptions) {
-		boolean oldShowCheckoutGiftOptions = showCheckoutGiftOptions;
 		showCheckoutGiftOptions = newShowCheckoutGiftOptions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SHOW_CHECKOUT_GIFT_OPTIONS, oldShowCheckoutGiftOptions, showCheckoutGiftOptions));
 	}
 
 	/**
@@ -3065,10 +2885,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setShowOutOfStockProducts(boolean newShowOutOfStockProducts) {
-		boolean oldShowOutOfStockProducts = showOutOfStockProducts;
 		showOutOfStockProducts = newShowOutOfStockProducts;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SHOW_OUT_OF_STOCK_PRODUCTS, oldShowOutOfStockProducts, showOutOfStockProducts));
 	}
 
 	/**
@@ -3088,10 +2905,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setShowPricesWithVatTax(boolean newShowPricesWithVatTax) {
-		boolean oldShowPricesWithVatTax = showPricesWithVatTax;
 		showPricesWithVatTax = newShowPricesWithVatTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SHOW_PRICES_WITH_VAT_TAX, oldShowPricesWithVatTax, showPricesWithVatTax));
 	}
 
 	/**
@@ -3111,10 +2925,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setShowTaxIsExempt(boolean newShowTaxIsExempt) {
-		boolean oldShowTaxIsExempt = showTaxIsExempt;
 		showTaxIsExempt = newShowTaxIsExempt;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SHOW_TAX_IS_EXEMPT, oldShowTaxIsExempt, showTaxIsExempt));
 	}
 
 	/**
@@ -3134,10 +2945,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setSplitPayPrefPerShpGrp(boolean newSplitPayPrefPerShpGrp) {
-		boolean oldSplitPayPrefPerShpGrp = splitPayPrefPerShpGrp;
 		splitPayPrefPerShpGrp = newSplitPayPrefPerShpGrp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SPLIT_PAY_PREF_PER_SHP_GRP, oldSplitPayPrefPerShpGrp, splitPayPrefPerShpGrp));
 	}
 
 	/**
@@ -3151,8 +2959,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldStoreCreditAccountEnumId = (InternalEObject)storeCreditAccountEnumId;
 			storeCreditAccountEnumId = (Enumeration)eResolveProxy(oldStoreCreditAccountEnumId);
 			if (storeCreditAccountEnumId != oldStoreCreditAccountEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__STORE_CREDIT_ACCOUNT_ENUM_ID, oldStoreCreditAccountEnumId, storeCreditAccountEnumId));
 			}
 		}
 		return storeCreditAccountEnumId;
@@ -3174,10 +2980,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setStoreCreditAccountEnumId(Enumeration newStoreCreditAccountEnumId) {
-		Enumeration oldStoreCreditAccountEnumId = storeCreditAccountEnumId;
 		storeCreditAccountEnumId = newStoreCreditAccountEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__STORE_CREDIT_ACCOUNT_ENUM_ID, oldStoreCreditAccountEnumId, storeCreditAccountEnumId));
 	}
 
 	/**
@@ -3197,10 +3000,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setStoreCreditValidDays(long newStoreCreditValidDays) {
-		long oldStoreCreditValidDays = storeCreditValidDays;
 		storeCreditValidDays = newStoreCreditValidDays;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__STORE_CREDIT_VALID_DAYS, oldStoreCreditValidDays, storeCreditValidDays));
 	}
 
 	/**
@@ -3220,10 +3020,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setStoreName(String newStoreName) {
-		String oldStoreName = storeName;
 		storeName = newStoreName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__STORE_NAME, oldStoreName, storeName));
 	}
 
 	/**
@@ -3243,10 +3040,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setSubtitle(String newSubtitle) {
-		String oldSubtitle = subtitle;
 		subtitle = newSubtitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__SUBTITLE, oldSubtitle, subtitle));
 	}
 
 	/**
@@ -3266,10 +3060,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setTitle(String newTitle) {
-		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -3289,10 +3080,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setUsePrimaryEmailUsername(boolean newUsePrimaryEmailUsername) {
-		boolean oldUsePrimaryEmailUsername = usePrimaryEmailUsername;
 		usePrimaryEmailUsername = newUsePrimaryEmailUsername;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__USE_PRIMARY_EMAIL_USERNAME, oldUsePrimaryEmailUsername, usePrimaryEmailUsername));
 	}
 
 	/**
@@ -3312,10 +3100,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setVatTaxAuthGeoId(String newVatTaxAuthGeoId) {
-		String oldVatTaxAuthGeoId = vatTaxAuthGeoId;
 		vatTaxAuthGeoId = newVatTaxAuthGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__VAT_TAX_AUTH_GEO_ID, oldVatTaxAuthGeoId, vatTaxAuthGeoId));
 	}
 
 	/**
@@ -3335,10 +3120,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setVatTaxAuthPartyId(String newVatTaxAuthPartyId) {
-		String oldVatTaxAuthPartyId = vatTaxAuthPartyId;
 		vatTaxAuthPartyId = newVatTaxAuthPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__VAT_TAX_AUTH_PARTY_ID, oldVatTaxAuthPartyId, vatTaxAuthPartyId));
 	}
 
 	/**
@@ -3358,10 +3140,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setViewCartOnAdd(boolean newViewCartOnAdd) {
-		boolean oldViewCartOnAdd = viewCartOnAdd;
 		viewCartOnAdd = newViewCartOnAdd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__VIEW_CART_ON_ADD, oldViewCartOnAdd, viewCartOnAdd));
 	}
 
 	/**
@@ -3381,10 +3160,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setVisualThemeId(String newVisualThemeId) {
-		String oldVisualThemeId = visualThemeId;
 		visualThemeId = newVisualThemeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__VISUAL_THEME_ID, oldVisualThemeId, visualThemeId));
 	}
 
 	/**
@@ -3395,7 +3171,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public List<String> getOAuth2GitHubs() {
 		if (oAuth2GitHubs == null) {
-			oAuth2GitHubs = new EDataTypeUniqueEList<String>(String.class, this, StorePackage.PRODUCT_STORE__OAUTH2_GIT_HUBS);
+			oAuth2GitHubs = new BasicInternalEList<String>(String.class);
 		}
 		return oAuth2GitHubs;
 	}
@@ -3408,7 +3184,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public List<String> getOAuth2Googles() {
 		if (oAuth2Googles == null) {
-			oAuth2Googles = new EDataTypeUniqueEList<String>(String.class, this, StorePackage.PRODUCT_STORE__OAUTH2_GOOGLES);
+			oAuth2Googles = new BasicInternalEList<String>(String.class);
 		}
 		return oAuth2Googles;
 	}
@@ -3421,7 +3197,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public List<String> getOAuth2LinkedIns() {
 		if (oAuth2LinkedIns == null) {
-			oAuth2LinkedIns = new EDataTypeUniqueEList<String>(String.class, this, StorePackage.PRODUCT_STORE__OAUTH2_LINKED_INS);
+			oAuth2LinkedIns = new BasicInternalEList<String>(String.class);
 		}
 		return oAuth2LinkedIns;
 	}
@@ -3434,7 +3210,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public List<String> getProductStoreEmailSettings() {
 		if (productStoreEmailSettings == null) {
-			productStoreEmailSettings = new EDataTypeUniqueEList<String>(String.class, this, StorePackage.PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS);
+			productStoreEmailSettings = new BasicInternalEList<String>(String.class);
 		}
 		return productStoreEmailSettings;
 	}
@@ -3447,7 +3223,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public List<String> getProductStoreFinActSettings() {
 		if (productStoreFinActSettings == null) {
-			productStoreFinActSettings = new EDataTypeUniqueEList<String>(String.class, this, StorePackage.PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS);
+			productStoreFinActSettings = new BasicInternalEList<String>(String.class);
 		}
 		return productStoreFinActSettings;
 	}
@@ -3619,8 +3395,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldPrimaryStoreGroupId = (InternalEObject)primaryStoreGroupId;
 			primaryStoreGroupId = (ProductStoreGroup)eResolveProxy(oldPrimaryStoreGroupId);
 			if (primaryStoreGroupId != oldPrimaryStoreGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__PRIMARY_STORE_GROUP_ID, oldPrimaryStoreGroupId, primaryStoreGroupId));
 			}
 		}
 		return primaryStoreGroupId;
@@ -3642,10 +3416,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setPrimaryStoreGroupId(ProductStoreGroup newPrimaryStoreGroupId) {
-		ProductStoreGroup oldPrimaryStoreGroupId = primaryStoreGroupId;
 		primaryStoreGroupId = newPrimaryStoreGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__PRIMARY_STORE_GROUP_ID, oldPrimaryStoreGroupId, primaryStoreGroupId));
 	}
 
 	/**
@@ -3665,10 +3436,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setProdSearchExcludeVariants(boolean newProdSearchExcludeVariants) {
-		boolean oldProdSearchExcludeVariants = prodSearchExcludeVariants;
 		prodSearchExcludeVariants = newProdSearchExcludeVariants;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, oldProdSearchExcludeVariants, prodSearchExcludeVariants));
 	}
 
 	/**
@@ -3688,10 +3456,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setProrateShipping(boolean newProrateShipping) {
-		boolean oldProrateShipping = prorateShipping;
 		prorateShipping = newProrateShipping;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__PRORATE_SHIPPING, oldProrateShipping, prorateShipping));
 	}
 
 	/**
@@ -3711,10 +3476,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setProrateTaxes(boolean newProrateTaxes) {
-		boolean oldProrateTaxes = prorateTaxes;
 		prorateTaxes = newProrateTaxes;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__PRORATE_TAXES, oldProrateTaxes, prorateTaxes));
 	}
 
 	/**
@@ -3734,10 +3496,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setReqReturnInventoryReceive(boolean newReqReturnInventoryReceive) {
-		boolean oldReqReturnInventoryReceive = reqReturnInventoryReceive;
 		reqReturnInventoryReceive = newReqReturnInventoryReceive;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__REQ_RETURN_INVENTORY_RECEIVE, oldReqReturnInventoryReceive, reqReturnInventoryReceive));
 	}
 
 	/**
@@ -3757,10 +3516,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setReqShipAddrForDigItems(boolean newReqShipAddrForDigItems) {
-		boolean oldReqShipAddrForDigItems = reqShipAddrForDigItems;
 		reqShipAddrForDigItems = newReqShipAddrForDigItems;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__REQ_SHIP_ADDR_FOR_DIG_ITEMS, oldReqShipAddrForDigItems, reqShipAddrForDigItems));
 	}
 
 	/**
@@ -3780,10 +3536,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setRequireCustomerRole(boolean newRequireCustomerRole) {
-		boolean oldRequireCustomerRole = requireCustomerRole;
 		requireCustomerRole = newRequireCustomerRole;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__REQUIRE_CUSTOMER_ROLE, oldRequireCustomerRole, requireCustomerRole));
 	}
 
 	/**
@@ -3803,10 +3556,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setRequireInventory(boolean newRequireInventory) {
-		boolean oldRequireInventory = requireInventory;
 		requireInventory = newRequireInventory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__REQUIRE_INVENTORY, oldRequireInventory, requireInventory));
 	}
 
 	/**
@@ -3820,8 +3570,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 			InternalEObject oldInventoryFacilityId = (InternalEObject)inventoryFacilityId;
 			inventoryFacilityId = (Facility)eResolveProxy(oldInventoryFacilityId);
 			if (inventoryFacilityId != oldInventoryFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE__INVENTORY_FACILITY_ID, oldInventoryFacilityId, inventoryFacilityId));
 			}
 		}
 		return inventoryFacilityId;
@@ -3843,10 +3591,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setInventoryFacilityId(Facility newInventoryFacilityId) {
-		Facility oldInventoryFacilityId = inventoryFacilityId;
 		inventoryFacilityId = newInventoryFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__INVENTORY_FACILITY_ID, oldInventoryFacilityId, inventoryFacilityId));
 	}
 
 	/**
@@ -3866,10 +3611,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setIsDemoStore(boolean newIsDemoStore) {
-		boolean oldIsDemoStore = isDemoStore;
 		isDemoStore = newIsDemoStore;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__IS_DEMO_STORE, oldIsDemoStore, isDemoStore));
 	}
 
 	/**
@@ -3889,10 +3631,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setIsImmediatelyFulfilled(boolean newIsImmediatelyFulfilled) {
-		boolean oldIsImmediatelyFulfilled = isImmediatelyFulfilled;
 		isImmediatelyFulfilled = newIsImmediatelyFulfilled;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__IS_IMMEDIATELY_FULFILLED, oldIsImmediatelyFulfilled, isImmediatelyFulfilled));
 	}
 
 	/**
@@ -3912,10 +3651,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -3935,10 +3671,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAddToCartRemoveIncompat(boolean newAddToCartRemoveIncompat) {
-		boolean oldAddToCartRemoveIncompat = addToCartRemoveIncompat;
 		addToCartRemoveIncompat = newAddToCartRemoveIncompat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ADD_TO_CART_REMOVE_INCOMPAT, oldAddToCartRemoveIncompat, addToCartRemoveIncompat));
 	}
 
 	/**
@@ -3958,10 +3691,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAddToCartReplaceUpsell(boolean newAddToCartReplaceUpsell) {
-		boolean oldAddToCartReplaceUpsell = addToCartReplaceUpsell;
 		addToCartReplaceUpsell = newAddToCartReplaceUpsell;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ADD_TO_CART_REPLACE_UPSELL, oldAddToCartReplaceUpsell, addToCartReplaceUpsell));
 	}
 
 	/**
@@ -3981,10 +3711,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAllowComment(boolean newAllowComment) {
-		boolean oldAllowComment = allowComment;
 		allowComment = newAllowComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ALLOW_COMMENT, oldAllowComment, allowComment));
 	}
 
 	/**
@@ -4004,10 +3731,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@Override
 	public void setAllowPassword(boolean newAllowPassword) {
-		boolean oldAllowPassword = allowPassword;
 		allowPassword = newAllowPassword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE__ALLOW_PASSWORD, oldAllowPassword, allowPassword));
 	}
 
 	/**

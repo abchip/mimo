@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.entity.sequence.impl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.SequenceValueItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -129,10 +125,7 @@ public class SequenceValueItemImpl extends BizEntityImpl implements SequenceValu
 	 */
 	@Override
 	public void setSeqId(long newSeqId) {
-		long oldSeqId = seqId;
 		seqId = newSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SequencePackage.SEQUENCE_VALUE_ITEM__SEQ_ID, oldSeqId, seqId));
 	}
 
 	/**
@@ -152,10 +145,7 @@ public class SequenceValueItemImpl extends BizEntityImpl implements SequenceValu
 	 */
 	@Override
 	public void setSequencePolicy(String newSequencePolicy) {
-		String oldSequencePolicy = sequencePolicy;
 		sequencePolicy = newSequencePolicy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SequencePackage.SEQUENCE_VALUE_ITEM__SEQUENCE_POLICY, oldSequencePolicy, sequencePolicy));
 	}
 
 	/**
@@ -175,10 +165,7 @@ public class SequenceValueItemImpl extends BizEntityImpl implements SequenceValu
 	 */
 	@Override
 	public void setSeqName(String newSeqName) {
-		String oldSeqName = seqName;
 		seqName = newSeqName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SequencePackage.SEQUENCE_VALUE_ITEM__SEQ_NAME, oldSeqName, seqName));
 	}
 
 	/**

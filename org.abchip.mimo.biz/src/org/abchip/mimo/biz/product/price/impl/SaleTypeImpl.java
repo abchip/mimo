@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.product.price.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.SaleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,10 +108,7 @@ public class SaleTypeImpl extends BizEntityImpl implements SaleType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.SALE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -135,10 +128,7 @@ public class SaleTypeImpl extends BizEntityImpl implements SaleType {
 	 */
 	@Override
 	public void setSaleTypeId(String newSaleTypeId) {
-		String oldSaleTypeId = saleTypeId;
 		saleTypeId = newSaleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.SALE_TYPE__SALE_TYPE_ID, oldSaleTypeId, saleTypeId));
 	}
 
 	/**

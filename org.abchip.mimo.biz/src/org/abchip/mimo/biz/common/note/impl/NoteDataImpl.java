@@ -14,11 +14,9 @@ import org.abchip.mimo.biz.common.note.NoteData;
 import org.abchip.mimo.biz.common.note.NotePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -216,10 +214,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setNoteId(String newNoteId) {
-		String oldNoteId = noteId;
 		noteId = newNoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__NOTE_ID, oldNoteId, noteId));
 	}
 
 	/**
@@ -239,10 +234,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setMoreInfoItemId(String newMoreInfoItemId) {
-		String oldMoreInfoItemId = moreInfoItemId;
 		moreInfoItemId = newMoreInfoItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__MORE_INFO_ITEM_ID, oldMoreInfoItemId, moreInfoItemId));
 	}
 
 	/**
@@ -262,10 +254,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setMoreInfoItemName(String newMoreInfoItemName) {
-		String oldMoreInfoItemName = moreInfoItemName;
 		moreInfoItemName = newMoreInfoItemName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__MORE_INFO_ITEM_NAME, oldMoreInfoItemName, moreInfoItemName));
 	}
 
 	/**
@@ -285,10 +274,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setMoreInfoUrl(String newMoreInfoUrl) {
-		String oldMoreInfoUrl = moreInfoUrl;
 		moreInfoUrl = newMoreInfoUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__MORE_INFO_URL, oldMoreInfoUrl, moreInfoUrl));
 	}
 
 	/**
@@ -308,10 +294,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setNoteDateTime(Date newNoteDateTime) {
-		Date oldNoteDateTime = noteDateTime;
 		noteDateTime = newNoteDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__NOTE_DATE_TIME, oldNoteDateTime, noteDateTime));
 	}
 
 	/**
@@ -331,10 +314,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setNoteInfo(String newNoteInfo) {
-		String oldNoteInfo = noteInfo;
 		noteInfo = newNoteInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__NOTE_INFO, oldNoteInfo, noteInfo));
 	}
 
 	/**
@@ -354,10 +334,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setNoteName(String newNoteName) {
-		String oldNoteName = noteName;
 		noteName = newNoteName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__NOTE_NAME, oldNoteName, noteName));
 	}
 
 	/**
@@ -371,8 +348,6 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 			InternalEObject oldNoteParty = (InternalEObject)noteParty;
 			noteParty = (Party)eResolveProxy(oldNoteParty);
 			if (noteParty != oldNoteParty) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NotePackage.NOTE_DATA__NOTE_PARTY, oldNoteParty, noteParty));
 			}
 		}
 		return noteParty;
@@ -394,10 +369,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	@Override
 	public void setNoteParty(Party newNoteParty) {
-		Party oldNoteParty = noteParty;
 		noteParty = newNoteParty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__NOTE_PARTY, oldNoteParty, noteParty));
 	}
 
 	/**

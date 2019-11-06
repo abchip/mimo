@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,10 +110,7 @@ public class RuntimeDataImpl extends BizEntityImpl implements RuntimeData {
 	 */
 	@Override
 	public void setRuntimeDataId(String newRuntimeDataId) {
-		String oldRuntimeDataId = runtimeDataId;
 		runtimeDataId = newRuntimeDataId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RUNTIME_DATA__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
 	}
 
 	/**
@@ -137,10 +130,7 @@ public class RuntimeDataImpl extends BizEntityImpl implements RuntimeData {
 	 */
 	@Override
 	public void setRuntimeInfo(String newRuntimeInfo) {
-		String oldRuntimeInfo = runtimeInfo;
 		runtimeInfo = newRuntimeInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RUNTIME_DATA__RUNTIME_INFO, oldRuntimeInfo, runtimeInfo));
 	}
 
 	/**

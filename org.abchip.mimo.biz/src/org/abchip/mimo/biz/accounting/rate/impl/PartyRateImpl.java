@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.accounting.rate.RatePackage;
 import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -171,10 +168,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -194,10 +188,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setDefaultRate(boolean newDefaultRate) {
-		boolean oldDefaultRate = defaultRate;
 		defaultRate = newDefaultRate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__DEFAULT_RATE, oldDefaultRate, defaultRate));
 	}
 
 	/**
@@ -211,8 +202,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.PARTY_RATE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -234,10 +223,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -257,10 +243,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setPercentageUsed(double newPercentageUsed) {
-		double oldPercentageUsed = percentageUsed;
 		percentageUsed = newPercentageUsed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__PERCENTAGE_USED, oldPercentageUsed, percentageUsed));
 	}
 
 	/**
@@ -280,10 +263,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -297,8 +277,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
 			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
 			if (rateTypeId != oldRateTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.PARTY_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 			}
 		}
 		return rateTypeId;
@@ -320,10 +298,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setRateTypeId(RateType newRateTypeId) {
-		RateType oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 	}
 
 	/**

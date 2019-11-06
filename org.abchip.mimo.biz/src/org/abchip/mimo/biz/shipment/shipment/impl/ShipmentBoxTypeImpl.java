@@ -16,15 +16,12 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -239,10 +236,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setBoxHeight(BigDecimal newBoxHeight) {
-		BigDecimal oldBoxHeight = boxHeight;
 		boxHeight = newBoxHeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__BOX_HEIGHT, oldBoxHeight, boxHeight));
 	}
 
 	/**
@@ -262,10 +256,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setBoxLength(BigDecimal newBoxLength) {
-		BigDecimal oldBoxLength = boxLength;
 		boxLength = newBoxLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__BOX_LENGTH, oldBoxLength, boxLength));
 	}
 
 	/**
@@ -285,10 +276,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setBoxWeight(BigDecimal newBoxWeight) {
-		BigDecimal oldBoxWeight = boxWeight;
 		boxWeight = newBoxWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__BOX_WEIGHT, oldBoxWeight, boxWeight));
 	}
 
 	/**
@@ -308,10 +296,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setBoxWidth(BigDecimal newBoxWidth) {
-		BigDecimal oldBoxWidth = boxWidth;
 		boxWidth = newBoxWidth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__BOX_WIDTH, oldBoxWidth, boxWidth));
 	}
 
 	/**
@@ -331,10 +316,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -348,8 +330,6 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 			InternalEObject oldDimensionUomId = (InternalEObject)dimensionUomId;
 			dimensionUomId = (Uom)eResolveProxy(oldDimensionUomId);
 			if (dimensionUomId != oldDimensionUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
 			}
 		}
 		return dimensionUomId;
@@ -371,10 +351,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setDimensionUomId(Uom newDimensionUomId) {
-		Uom oldDimensionUomId = dimensionUomId;
 		dimensionUomId = newDimensionUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
 	}
 
 	/**
@@ -394,10 +371,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setShipmentBoxTypeId(String newShipmentBoxTypeId) {
-		String oldShipmentBoxTypeId = shipmentBoxTypeId;
 		shipmentBoxTypeId = newShipmentBoxTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
 	}
 
 	/**
@@ -411,8 +385,6 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 			InternalEObject oldWeightUomId = (InternalEObject)weightUomId;
 			weightUomId = (Uom)eResolveProxy(oldWeightUomId);
 			if (weightUomId != oldWeightUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 			}
 		}
 		return weightUomId;
@@ -434,10 +406,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@Override
 	public void setWeightUomId(Uom newWeightUomId) {
-		Uom oldWeightUomId = weightUomId;
 		weightUomId = newWeightUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 	}
 
 	/**
@@ -448,7 +417,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	@Override
 	public List<String> getCarrierShipmentBoxTypes() {
 		if (carrierShipmentBoxTypes == null) {
-			carrierShipmentBoxTypes = new EDataTypeUniqueEList<String>(String.class, this, Shipment_Package.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES);
+			carrierShipmentBoxTypes = new BasicInternalEList<String>(String.class);
 		}
 		return carrierShipmentBoxTypes;
 	}

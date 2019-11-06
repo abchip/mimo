@@ -14,14 +14,11 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -185,10 +182,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -208,10 +202,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
-		String oldSequenceId = sequenceId;
 		sequenceId = newSequenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__SEQUENCE_ID, oldSequenceId, sequenceId));
 	}
 
 	/**
@@ -231,10 +222,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setStatusCode(String newStatusCode) {
-		String oldStatusCode = statusCode;
 		statusCode = newStatusCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__STATUS_CODE, oldStatusCode, statusCode));
 	}
 
 	/**
@@ -248,8 +236,6 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 			InternalEObject oldStatusTypeId = (InternalEObject)statusTypeId;
 			statusTypeId = (StatusType)eResolveProxy(oldStatusTypeId);
 			if (statusTypeId != oldStatusTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatusPackage.STATUS_ITEM__STATUS_TYPE_ID, oldStatusTypeId, statusTypeId));
 			}
 		}
 		return statusTypeId;
@@ -271,10 +257,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setStatusTypeId(StatusType newStatusTypeId) {
-		StatusType oldStatusTypeId = statusTypeId;
 		statusTypeId = newStatusTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__STATUS_TYPE_ID, oldStatusTypeId, statusTypeId));
 	}
 
 	/**
@@ -285,7 +268,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	@Override
 	public List<String> getShipmentStatuss() {
 		if (shipmentStatuss == null) {
-			shipmentStatuss = new EDataTypeUniqueEList<String>(String.class, this, StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS);
+			shipmentStatuss = new BasicInternalEList<String>(String.class);
 		}
 		return shipmentStatuss;
 	}
@@ -298,7 +281,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	@Override
 	public List<String> getMainStatusValidChanges() {
 		if (mainStatusValidChanges == null) {
-			mainStatusValidChanges = new EDataTypeUniqueEList<String>(String.class, this, StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
+			mainStatusValidChanges = new BasicInternalEList<String>(String.class);
 		}
 		return mainStatusValidChanges;
 	}
@@ -1016,10 +999,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

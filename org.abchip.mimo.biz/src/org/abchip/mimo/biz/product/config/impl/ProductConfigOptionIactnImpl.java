@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfigItem;
 import org.abchip.mimo.biz.product.config.ProductConfigOptionIactn;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -199,10 +196,7 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setConfigIactnTypeId(String newConfigIactnTypeId) {
-		String oldConfigIactnTypeId = configIactnTypeId;
 		configIactnTypeId = newConfigIactnTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_IACTN_TYPE_ID, oldConfigIactnTypeId, configIactnTypeId));
 	}
 
 	/**
@@ -222,10 +216,7 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setConfigOptionId(String newConfigOptionId) {
-		String oldConfigOptionId = configOptionId;
 		configOptionId = newConfigOptionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID, oldConfigOptionId, configOptionId));
 	}
 
 	/**
@@ -245,10 +236,7 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setConfigOptionIdTo(String newConfigOptionIdTo) {
-		String oldConfigOptionIdTo = configOptionIdTo;
 		configOptionIdTo = newConfigOptionIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID_TO, oldConfigOptionIdTo, configOptionIdTo));
 	}
 
 	/**
@@ -268,10 +256,7 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -291,10 +276,7 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -308,8 +290,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 			InternalEObject oldConfigItemId = (InternalEObject)configItemId;
 			configItemId = (ProductConfigItem)eResolveProxy(oldConfigItemId);
 			if (configItemId != oldConfigItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 			}
 		}
 		return configItemId;
@@ -331,10 +311,7 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setConfigItemId(ProductConfigItem newConfigItemId) {
-		ProductConfigItem oldConfigItemId = configItemId;
 		configItemId = newConfigItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 	}
 
 	/**
@@ -348,8 +325,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 			InternalEObject oldConfigItemIdTo = (InternalEObject)configItemIdTo;
 			configItemIdTo = (ProductConfigItem)eResolveProxy(oldConfigItemIdTo);
 			if (configItemIdTo != oldConfigItemIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO, oldConfigItemIdTo, configItemIdTo));
 			}
 		}
 		return configItemIdTo;
@@ -371,10 +346,7 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setConfigItemIdTo(ProductConfigItem newConfigItemIdTo) {
-		ProductConfigItem oldConfigItemIdTo = configItemIdTo;
 		configItemIdTo = newConfigItemIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO, oldConfigItemIdTo, configItemIdTo));
 	}
 
 	/**

@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.entity.test.impl;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingSubtype;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,10 +105,7 @@ public class TestingSubtypeImpl extends BizEntityImpl implements TestingSubtype 
 	 */
 	@Override
 	public void setSubtypeDescription(String newSubtypeDescription) {
-		String oldSubtypeDescription = subtypeDescription;
 		subtypeDescription = newSubtypeDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION, oldSubtypeDescription, subtypeDescription));
 	}
 
 	/**
@@ -132,10 +125,7 @@ public class TestingSubtypeImpl extends BizEntityImpl implements TestingSubtype 
 	 */
 	@Override
 	public void setTestingTypeId(String newTestingTypeId) {
-		String oldTestingTypeId = testingTypeId;
 		testingTypeId = newTestingTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_SUBTYPE__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
 	}
 
 	/**

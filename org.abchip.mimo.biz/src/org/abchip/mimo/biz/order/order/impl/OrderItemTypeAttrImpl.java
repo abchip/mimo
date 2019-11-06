@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderItemType;
 import org.abchip.mimo.biz.order.order.OrderItemTypeAttr;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,10 +123,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -149,10 +143,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -166,8 +157,6 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 			InternalEObject oldOrderItemTypeId = (InternalEObject)orderItemTypeId;
 			orderItemTypeId = (OrderItemType)eResolveProxy(oldOrderItemTypeId);
 			if (orderItemTypeId != oldOrderItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
 			}
 		}
 		return orderItemTypeId;
@@ -189,10 +178,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public void setOrderItemTypeId(OrderItemType newOrderItemTypeId) {
-		OrderItemType oldOrderItemTypeId = orderItemTypeId;
 		orderItemTypeId = newOrderItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
 	}
 
 	/**

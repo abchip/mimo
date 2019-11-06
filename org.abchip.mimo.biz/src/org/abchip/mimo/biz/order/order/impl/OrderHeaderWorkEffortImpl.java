@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +87,6 @@ public class OrderHeaderWorkEffortImpl extends BizEntityImpl implements OrderHea
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER_WORK_EFFORT__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -113,10 +108,7 @@ public class OrderHeaderWorkEffortImpl extends BizEntityImpl implements OrderHea
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER_WORK_EFFORT__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -130,8 +122,6 @@ public class OrderHeaderWorkEffortImpl extends BizEntityImpl implements OrderHea
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -153,10 +143,7 @@ public class OrderHeaderWorkEffortImpl extends BizEntityImpl implements OrderHea
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

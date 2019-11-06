@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfig;
 import org.abchip.mimo.biz.product.config.ProductConfigItem;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -265,10 +262,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setConfigTypeId(String newConfigTypeId) {
-		String oldConfigTypeId = configTypeId;
 		configTypeId = newConfigTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__CONFIG_TYPE_ID, oldConfigTypeId, configTypeId));
 	}
 
 	/**
@@ -288,10 +282,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setDefaultConfigOptionId(String newDefaultConfigOptionId) {
-		String oldDefaultConfigOptionId = defaultConfigOptionId;
 		defaultConfigOptionId = newDefaultConfigOptionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__DEFAULT_CONFIG_OPTION_ID, oldDefaultConfigOptionId, defaultConfigOptionId));
 	}
 
 	/**
@@ -311,10 +302,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -334,10 +322,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setIsMandatory(boolean newIsMandatory) {
-		boolean oldIsMandatory = isMandatory;
 		isMandatory = newIsMandatory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__IS_MANDATORY, oldIsMandatory, isMandatory));
 	}
 
 	/**
@@ -357,10 +342,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -380,10 +362,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setLongDescription(String newLongDescription) {
-		String oldLongDescription = longDescription;
 		longDescription = newLongDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__LONG_DESCRIPTION, oldLongDescription, longDescription));
 	}
 
 	/**
@@ -397,8 +376,6 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -420,10 +397,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -443,10 +417,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -466,10 +437,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -483,8 +451,6 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 			InternalEObject oldConfigItemId = (InternalEObject)configItemId;
 			configItemId = (ProductConfigItem)eResolveProxy(oldConfigItemId);
 			if (configItemId != oldConfigItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 			}
 		}
 		return configItemId;
@@ -506,10 +472,7 @@ public class ProductConfigImpl extends BizEntityImpl implements ProductConfig {
 	 */
 	@Override
 	public void setConfigItemId(ProductConfigItem newConfigItemId) {
-		ProductConfigItem oldConfigItemId = configItemId;
 		configItemId = newConfigItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 	}
 
 	/**

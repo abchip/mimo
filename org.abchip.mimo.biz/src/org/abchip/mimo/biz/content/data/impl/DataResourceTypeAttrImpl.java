@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResourceType;
 import org.abchip.mimo.biz.content.data.DataResourceTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,10 +123,7 @@ public class DataResourceTypeAttrImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -143,8 +137,6 @@ public class DataResourceTypeAttrImpl extends BizEntityImpl implements DataResou
 			InternalEObject oldDataResourceTypeId = (InternalEObject)dataResourceTypeId;
 			dataResourceTypeId = (DataResourceType)eResolveProxy(oldDataResourceTypeId);
 			if (dataResourceTypeId != oldDataResourceTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_TYPE_ATTR__DATA_RESOURCE_TYPE_ID, oldDataResourceTypeId, dataResourceTypeId));
 			}
 		}
 		return dataResourceTypeId;
@@ -166,10 +158,7 @@ public class DataResourceTypeAttrImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public void setDataResourceTypeId(DataResourceType newDataResourceTypeId) {
-		DataResourceType oldDataResourceTypeId = dataResourceTypeId;
 		dataResourceTypeId = newDataResourceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_TYPE_ATTR__DATA_RESOURCE_TYPE_ID, oldDataResourceTypeId, dataResourceTypeId));
 	}
 
 	/**
@@ -189,10 +178,7 @@ public class DataResourceTypeAttrImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityCalendar;
 import org.abchip.mimo.biz.product.facility.FacilityCalendarType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,10 +157,7 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 */
 	@Override
 	public void setCalendarId(String newCalendarId) {
-		String oldCalendarId = calendarId;
 		calendarId = newCalendarId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID, oldCalendarId, calendarId));
 	}
 
 	/**
@@ -183,10 +177,7 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -206,10 +197,7 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -223,8 +211,6 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CALENDAR__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -246,10 +232,7 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -263,8 +246,6 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 			InternalEObject oldFacilityCalendarTypeId = (InternalEObject)facilityCalendarTypeId;
 			facilityCalendarTypeId = (FacilityCalendarType)eResolveProxy(oldFacilityCalendarTypeId);
 			if (facilityCalendarTypeId != oldFacilityCalendarTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID, oldFacilityCalendarTypeId, facilityCalendarTypeId));
 			}
 		}
 		return facilityCalendarTypeId;
@@ -286,10 +267,7 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 */
 	@Override
 	public void setFacilityCalendarTypeId(FacilityCalendarType newFacilityCalendarTypeId) {
-		FacilityCalendarType oldFacilityCalendarTypeId = facilityCalendarTypeId;
 		facilityCalendarTypeId = newFacilityCalendarTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID, oldFacilityCalendarTypeId, facilityCalendarTypeId));
 	}
 
 	/**

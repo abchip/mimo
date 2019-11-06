@@ -12,11 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.EntityAuditLog;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -261,10 +257,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setAuditHistorySeqId(String newAuditHistorySeqId) {
-		String oldAuditHistorySeqId = auditHistorySeqId;
 		auditHistorySeqId = newAuditHistorySeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__AUDIT_HISTORY_SEQ_ID, oldAuditHistorySeqId, auditHistorySeqId));
 	}
 
 	/**
@@ -284,10 +277,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setChangedByInfo(String newChangedByInfo) {
-		String oldChangedByInfo = changedByInfo;
 		changedByInfo = newChangedByInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__CHANGED_BY_INFO, oldChangedByInfo, changedByInfo));
 	}
 
 	/**
@@ -307,10 +297,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setChangedDate(Date newChangedDate) {
-		Date oldChangedDate = changedDate;
 		changedDate = newChangedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__CHANGED_DATE, oldChangedDate, changedDate));
 	}
 
 	/**
@@ -330,10 +317,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setChangedEntityName(String newChangedEntityName) {
-		String oldChangedEntityName = changedEntityName;
 		changedEntityName = newChangedEntityName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__CHANGED_ENTITY_NAME, oldChangedEntityName, changedEntityName));
 	}
 
 	/**
@@ -353,10 +337,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setChangedFieldName(String newChangedFieldName) {
-		String oldChangedFieldName = changedFieldName;
 		changedFieldName = newChangedFieldName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__CHANGED_FIELD_NAME, oldChangedFieldName, changedFieldName));
 	}
 
 	/**
@@ -376,10 +357,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setChangedSessionInfo(String newChangedSessionInfo) {
-		String oldChangedSessionInfo = changedSessionInfo;
 		changedSessionInfo = newChangedSessionInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__CHANGED_SESSION_INFO, oldChangedSessionInfo, changedSessionInfo));
 	}
 
 	/**
@@ -399,10 +377,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setNewValueText(String newNewValueText) {
-		String oldNewValueText = newValueText;
 		newValueText = newNewValueText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__NEW_VALUE_TEXT, oldNewValueText, newValueText));
 	}
 
 	/**
@@ -422,10 +397,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setOldValueText(String newOldValueText) {
-		String oldOldValueText = oldValueText;
 		oldValueText = newOldValueText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__OLD_VALUE_TEXT, oldOldValueText, oldValueText));
 	}
 
 	/**
@@ -445,10 +417,7 @@ public class EntityAuditLogImpl extends BizEntityImpl implements EntityAuditLog 
 	 */
 	@Override
 	public void setPkCombinedValueText(String newPkCombinedValueText) {
-		String oldPkCombinedValueText = pkCombinedValueText;
 		pkCombinedValueText = newPkCombinedValueText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AuditPackage.ENTITY_AUDIT_LOG__PK_COMBINED_VALUE_TEXT, oldPkCombinedValueText, pkCombinedValueText));
 	}
 
 	/**

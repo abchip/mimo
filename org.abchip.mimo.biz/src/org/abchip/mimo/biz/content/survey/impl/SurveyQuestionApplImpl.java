@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionAppl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -308,10 +305,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setExternalFieldRef(String newExternalFieldRef) {
-		String oldExternalFieldRef = externalFieldRef;
 		externalFieldRef = newExternalFieldRef;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__EXTERNAL_FIELD_REF, oldExternalFieldRef, externalFieldRef));
 	}
 
 	/**
@@ -331,10 +325,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setRequiredField(boolean newRequiredField) {
-		boolean oldRequiredField = requiredField;
 		requiredField = newRequiredField;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__REQUIRED_FIELD, oldRequiredField, requiredField));
 	}
 
 	/**
@@ -354,10 +345,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -377,10 +365,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -394,8 +379,6 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -417,10 +400,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
-		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -440,10 +420,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setSurveyMultiRespColId(String newSurveyMultiRespColId) {
-		String oldSurveyMultiRespColId = surveyMultiRespColId;
 		surveyMultiRespColId = newSurveyMultiRespColId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_MULTI_RESP_COL_ID, oldSurveyMultiRespColId, surveyMultiRespColId));
 	}
 
 	/**
@@ -463,10 +440,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setSurveyMultiRespId(String newSurveyMultiRespId) {
-		String oldSurveyMultiRespId = surveyMultiRespId;
 		surveyMultiRespId = newSurveyMultiRespId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_MULTI_RESP_ID, oldSurveyMultiRespId, surveyMultiRespId));
 	}
 
 	/**
@@ -486,10 +460,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setSurveyPageSeqId(String newSurveyPageSeqId) {
-		String oldSurveyPageSeqId = surveyPageSeqId;
 		surveyPageSeqId = newSurveyPageSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_PAGE_SEQ_ID, oldSurveyPageSeqId, surveyPageSeqId));
 	}
 
 	/**
@@ -503,8 +474,6 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 			InternalEObject oldSurveyQuestionId = (InternalEObject)surveyQuestionId;
 			surveyQuestionId = (SurveyQuestion)eResolveProxy(oldSurveyQuestionId);
 			if (surveyQuestionId != oldSurveyQuestionId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
 			}
 		}
 		return surveyQuestionId;
@@ -526,10 +495,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setSurveyQuestionId(SurveyQuestion newSurveyQuestionId) {
-		SurveyQuestion oldSurveyQuestionId = surveyQuestionId;
 		surveyQuestionId = newSurveyQuestionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
 	}
 
 	/**
@@ -549,10 +515,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -572,10 +535,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setWithSurveyOptionSeqId(String newWithSurveyOptionSeqId) {
-		String oldWithSurveyOptionSeqId = withSurveyOptionSeqId;
 		withSurveyOptionSeqId = newWithSurveyOptionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__WITH_SURVEY_OPTION_SEQ_ID, oldWithSurveyOptionSeqId, withSurveyOptionSeqId));
 	}
 
 	/**
@@ -595,10 +555,7 @@ public class SurveyQuestionApplImpl extends BizEntityImpl implements SurveyQuest
 	 */
 	@Override
 	public void setWithSurveyQuestionId(String newWithSurveyQuestionId) {
-		String oldWithSurveyQuestionId = withSurveyQuestionId;
 		withSurveyQuestionId = newWithSurveyQuestionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_APPL__WITH_SURVEY_QUESTION_ID, oldWithSurveyQuestionId, withSurveyQuestionId));
 	}
 
 	/**

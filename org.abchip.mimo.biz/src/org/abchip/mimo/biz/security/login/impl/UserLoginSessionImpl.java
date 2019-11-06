@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.login.UserLoginSession;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,10 +130,7 @@ public class UserLoginSessionImpl extends BizEntityImpl implements UserLoginSess
 	 */
 	@Override
 	public void setSavedDate(Date newSavedDate) {
-		Date oldSavedDate = savedDate;
 		savedDate = newSavedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_SESSION__SAVED_DATE, oldSavedDate, savedDate));
 	}
 
 	/**
@@ -156,10 +150,7 @@ public class UserLoginSessionImpl extends BizEntityImpl implements UserLoginSess
 	 */
 	@Override
 	public void setSessionData(String newSessionData) {
-		String oldSessionData = sessionData;
 		sessionData = newSessionData;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_SESSION__SESSION_DATA, oldSessionData, sessionData));
 	}
 
 	/**
@@ -173,8 +164,6 @@ public class UserLoginSessionImpl extends BizEntityImpl implements UserLoginSess
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_SESSION__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -196,10 +185,7 @@ public class UserLoginSessionImpl extends BizEntityImpl implements UserLoginSess
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
-		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_SESSION__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**

@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,10 +141,7 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -161,8 +155,6 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -184,10 +176,7 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -201,8 +190,6 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -224,10 +211,7 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -247,10 +231,7 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -264,8 +245,6 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_ROLE__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -287,10 +266,7 @@ public class GlAccountRoleImpl extends BizEntityImpl implements GlAccountRole {
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
-		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ROLE__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**

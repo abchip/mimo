@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.website.WebSitePublishPoint;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -273,10 +270,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setAboutContentId(String newAboutContentId) {
-		String oldAboutContentId = aboutContentId;
 		aboutContentId = newAboutContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID, oldAboutContentId, aboutContentId));
 	}
 
 	/**
@@ -296,10 +290,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setContentDept(String newContentDept) {
-		String oldContentDept = contentDept;
 		contentDept = newContentDept;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_DEPT, oldContentDept, contentDept));
 	}
 
 	/**
@@ -313,8 +304,6 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -336,10 +325,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -359,10 +345,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setLeftBarId(String newLeftBarId) {
-		String oldLeftBarId = leftBarId;
 		leftBarId = newLeftBarId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__LEFT_BAR_ID, oldLeftBarId, leftBarId));
 	}
 
 	/**
@@ -382,10 +365,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setLineLogo(String newLineLogo) {
-		String oldLineLogo = lineLogo;
 		lineLogo = newLineLogo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__LINE_LOGO, oldLineLogo, lineLogo));
 	}
 
 	/**
@@ -405,10 +385,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setLogo(String newLogo) {
-		String oldLogo = logo;
 		logo = newLogo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__LOGO, oldLogo, logo));
 	}
 
 	/**
@@ -428,10 +405,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setMedallionLogo(String newMedallionLogo) {
-		String oldMedallionLogo = medallionLogo;
 		medallionLogo = newMedallionLogo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__MEDALLION_LOGO, oldMedallionLogo, medallionLogo));
 	}
 
 	/**
@@ -451,10 +425,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setRightBarId(String newRightBarId) {
-		String oldRightBarId = rightBarId;
 		rightBarId = newRightBarId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__RIGHT_BAR_ID, oldRightBarId, rightBarId));
 	}
 
 	/**
@@ -474,10 +445,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setStyleSheetFile(String newStyleSheetFile) {
-		String oldStyleSheetFile = styleSheetFile;
 		styleSheetFile = newStyleSheetFile;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__STYLE_SHEET_FILE, oldStyleSheetFile, styleSheetFile));
 	}
 
 	/**
@@ -497,10 +465,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 */
 	@Override
 	public void setTemplateTitle(String newTemplateTitle) {
-		String oldTemplateTitle = templateTitle;
 		templateTitle = newTemplateTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PUBLISH_POINT__TEMPLATE_TITLE, oldTemplateTitle, templateTitle));
 	}
 
 	/**

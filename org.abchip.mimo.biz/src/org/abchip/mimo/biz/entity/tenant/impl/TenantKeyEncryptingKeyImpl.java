@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,10 +99,7 @@ public class TenantKeyEncryptingKeyImpl extends BizEntityImpl implements TenantK
 	 */
 	@Override
 	public void setKekText(String newKekText) {
-		String oldKekText = kekText;
 		kekText = newKekText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_KEY_ENCRYPTING_KEY__KEK_TEXT, oldKekText, kekText));
 	}
 
 	/**
@@ -119,8 +113,6 @@ public class TenantKeyEncryptingKeyImpl extends BizEntityImpl implements TenantK
 			InternalEObject oldTenantId = (InternalEObject)tenantId;
 			tenantId = (Tenant)eResolveProxy(oldTenantId);
 			if (tenantId != oldTenantId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_KEY_ENCRYPTING_KEY__TENANT_ID, oldTenantId, tenantId));
 			}
 		}
 		return tenantId;
@@ -142,10 +134,7 @@ public class TenantKeyEncryptingKeyImpl extends BizEntityImpl implements TenantK
 	 */
 	@Override
 	public void setTenantId(Tenant newTenantId) {
-		Tenant oldTenantId = tenantId;
 		tenantId = newTenantId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_KEY_ENCRYPTING_KEY__TENANT_ID, oldTenantId, tenantId));
 	}
 
 	/**

@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.common.portal.PortletCategory;
 import org.abchip.mimo.biz.common.portal.PortletPortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -88,8 +85,6 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 			InternalEObject oldPortalPortletId = (InternalEObject)portalPortletId;
 			portalPortletId = (PortalPortlet)eResolveProxy(oldPortalPortletId);
 			if (portalPortletId != oldPortalPortletId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
 			}
 		}
 		return portalPortletId;
@@ -111,10 +106,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 */
 	@Override
 	public void setPortalPortletId(PortalPortlet newPortalPortletId) {
-		PortalPortlet oldPortalPortletId = portalPortletId;
 		portalPortletId = newPortalPortletId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
 	}
 
 	/**
@@ -128,8 +120,6 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 			InternalEObject oldPortletCategoryId = (InternalEObject)portletCategoryId;
 			portletCategoryId = (PortletCategory)eResolveProxy(oldPortletCategoryId);
 			if (portletCategoryId != oldPortletCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID, oldPortletCategoryId, portletCategoryId));
 			}
 		}
 		return portletCategoryId;
@@ -151,10 +141,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 */
 	@Override
 	public void setPortletCategoryId(PortletCategory newPortletCategoryId) {
-		PortletCategory oldPortletCategoryId = portletCategoryId;
 		portletCategoryId = newPortletCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID, oldPortletCategoryId, portletCategoryId));
 	}
 
 	/**

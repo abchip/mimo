@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyContent;
 import org.abchip.mimo.biz.party.party.PartyContentType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,8 +135,6 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -161,10 +156,7 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -184,10 +176,7 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -207,10 +196,7 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -224,8 +210,6 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CONTENT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -247,10 +231,7 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -264,8 +245,6 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 			InternalEObject oldPartyContentTypeId = (InternalEObject)partyContentTypeId;
 			partyContentTypeId = (PartyContentType)eResolveProxy(oldPartyContentTypeId);
 			if (partyContentTypeId != oldPartyContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID, oldPartyContentTypeId, partyContentTypeId));
 			}
 		}
 		return partyContentTypeId;
@@ -287,10 +266,7 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 */
 	@Override
 	public void setPartyContentTypeId(PartyContentType newPartyContentTypeId) {
-		PartyContentType oldPartyContentTypeId = partyContentTypeId;
 		partyContentTypeId = newPartyContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID, oldPartyContentTypeId, partyContentTypeId));
 	}
 
 	/**

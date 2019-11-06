@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote;
 import org.abchip.mimo.biz.order.quote.Quote;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +87,6 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -113,10 +108,7 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
-		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**
@@ -130,8 +122,6 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
 			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
 			if (salesOpportunityId != oldSalesOpportunityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_QUOTE__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 			}
 		}
 		return salesOpportunityId;
@@ -153,10 +143,7 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 	 */
 	@Override
 	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
-		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_QUOTE__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 	}
 
 	/**

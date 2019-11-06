@@ -14,15 +14,12 @@ import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,10 +160,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -186,10 +180,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -209,10 +200,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setDocumentTypeId(String newDocumentTypeId) {
-		String oldDocumentTypeId = documentTypeId;
 		documentTypeId = newDocumentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
 	}
 
 	/**
@@ -226,8 +214,6 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (DocumentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -249,10 +235,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setParentTypeId(DocumentType newParentTypeId) {
-		DocumentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -263,7 +246,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	@Override
 	public List<String> getDocumentTypeAttrs() {
 		if (documentTypeAttrs == null) {
-			documentTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS);
+			documentTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return documentTypeAttrs;
 	}

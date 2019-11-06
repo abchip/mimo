@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategory;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,10 +124,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -144,8 +138,6 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ProdCatalogCategoryType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -167,10 +159,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public void setParentTypeId(ProdCatalogCategoryType newParentTypeId) {
-		ProdCatalogCategoryType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -202,10 +191,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public void setProdCatalogCategoryTypeId(String newProdCatalogCategoryTypeId) {
-		String oldProdCatalogCategoryTypeId = prodCatalogCategoryTypeId;
 		prodCatalogCategoryTypeId = newProdCatalogCategoryTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID, oldProdCatalogCategoryTypeId, prodCatalogCategoryTypeId));
 	}
 
 	/**

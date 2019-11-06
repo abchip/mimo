@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.entity.test.impl;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingRemoveAll;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,10 +105,7 @@ public class TestingRemoveAllImpl extends BizEntityImpl implements TestingRemove
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_REMOVE_ALL__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -132,10 +125,7 @@ public class TestingRemoveAllImpl extends BizEntityImpl implements TestingRemove
 	 */
 	@Override
 	public void setTestingRemoveAllId(String newTestingRemoveAllId) {
-		String oldTestingRemoveAllId = testingRemoveAllId;
 		testingRemoveAllId = newTestingRemoveAllId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_REMOVE_ALL__TESTING_REMOVE_ALL_ID, oldTestingRemoveAllId, testingRemoveAllId));
 	}
 
 	/**

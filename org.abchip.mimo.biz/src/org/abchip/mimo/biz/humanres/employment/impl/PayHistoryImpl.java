@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PayGrade;
 import org.abchip.mimo.biz.humanres.employment.PayHistory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -289,10 +286,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -312,10 +306,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -335,10 +326,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -358,10 +346,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -381,10 +366,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setPartyIdTo(String newPartyIdTo) {
-		String oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -398,8 +380,6 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 			InternalEObject oldPayGradeId = (InternalEObject)payGradeId;
 			payGradeId = (PayGrade)eResolveProxy(oldPayGradeId);
 			if (payGradeId != oldPayGradeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID, oldPayGradeId, payGradeId));
 			}
 		}
 		return payGradeId;
@@ -421,10 +401,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setPayGradeId(PayGrade newPayGradeId) {
-		PayGrade oldPayGradeId = payGradeId;
 		payGradeId = newPayGradeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID, oldPayGradeId, payGradeId));
 	}
 
 	/**
@@ -438,8 +415,6 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
 			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
 			if (periodTypeId != oldPeriodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 			}
 		}
 		return periodTypeId;
@@ -461,10 +436,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
-		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 	}
 
 	/**
@@ -484,10 +456,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setRoleTypeIdFrom(String newRoleTypeIdFrom) {
-		String oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -507,10 +476,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setRoleTypeIdTo(String newRoleTypeIdTo) {
-		String oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -530,10 +496,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setSalaryStepSeqId(String newSalaryStepSeqId) {
-		String oldSalaryStepSeqId = salaryStepSeqId;
 		salaryStepSeqId = newSalaryStepSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__SALARY_STEP_SEQ_ID, oldSalaryStepSeqId, salaryStepSeqId));
 	}
 
 	/**
@@ -553,10 +516,7 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

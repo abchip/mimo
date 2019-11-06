@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.humanres.ability.PerfReview;
 import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -247,10 +244,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -264,8 +258,6 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 			InternalEObject oldEmplPositionId = (InternalEObject)emplPositionId;
 			emplPositionId = (EmplPosition)eResolveProxy(oldEmplPositionId);
 			if (emplPositionId != oldEmplPositionId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
 			}
 		}
 		return emplPositionId;
@@ -287,10 +279,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setEmplPositionId(EmplPosition newEmplPositionId) {
-		EmplPosition oldEmplPositionId = emplPositionId;
 		emplPositionId = newEmplPositionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
 	}
 
 	/**
@@ -304,8 +293,6 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 			InternalEObject oldEmployeePartyId = (InternalEObject)employeePartyId;
 			employeePartyId = (Party)eResolveProxy(oldEmployeePartyId);
 			if (employeePartyId != oldEmployeePartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW__EMPLOYEE_PARTY_ID, oldEmployeePartyId, employeePartyId));
 			}
 		}
 		return employeePartyId;
@@ -327,10 +314,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setEmployeePartyId(Party newEmployeePartyId) {
-		Party oldEmployeePartyId = employeePartyId;
 		employeePartyId = newEmployeePartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__EMPLOYEE_PARTY_ID, oldEmployeePartyId, employeePartyId));
 	}
 
 	/**
@@ -350,10 +334,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setEmployeeRoleTypeId(String newEmployeeRoleTypeId) {
-		String oldEmployeeRoleTypeId = employeeRoleTypeId;
 		employeeRoleTypeId = newEmployeeRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__EMPLOYEE_ROLE_TYPE_ID, oldEmployeeRoleTypeId, employeeRoleTypeId));
 	}
 
 	/**
@@ -373,10 +354,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -390,8 +368,6 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 			InternalEObject oldManagerPartyId = (InternalEObject)managerPartyId;
 			managerPartyId = (Party)eResolveProxy(oldManagerPartyId);
 			if (managerPartyId != oldManagerPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID, oldManagerPartyId, managerPartyId));
 			}
 		}
 		return managerPartyId;
@@ -413,10 +389,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setManagerPartyId(Party newManagerPartyId) {
-		Party oldManagerPartyId = managerPartyId;
 		managerPartyId = newManagerPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID, oldManagerPartyId, managerPartyId));
 	}
 
 	/**
@@ -436,10 +409,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setManagerRoleTypeId(String newManagerRoleTypeId) {
-		String oldManagerRoleTypeId = managerRoleTypeId;
 		managerRoleTypeId = newManagerRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__MANAGER_ROLE_TYPE_ID, oldManagerRoleTypeId, managerRoleTypeId));
 	}
 
 	/**
@@ -453,8 +423,6 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -476,10 +444,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
-		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**
@@ -499,10 +464,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setPerfReviewId(String newPerfReviewId) {
-		String oldPerfReviewId = perfReviewId;
 		perfReviewId = newPerfReviewId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__PERF_REVIEW_ID, oldPerfReviewId, perfReviewId));
 	}
 
 	/**
@@ -522,10 +484,7 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

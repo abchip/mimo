@@ -19,14 +19,11 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -378,10 +375,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setBillbackFactor(BigDecimal newBillbackFactor) {
-		BigDecimal oldBillbackFactor = billbackFactor;
 		billbackFactor = newBillbackFactor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__BILLBACK_FACTOR, oldBillbackFactor, billbackFactor));
 	}
 
 	/**
@@ -395,8 +389,6 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -418,10 +410,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -441,10 +430,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -458,8 +444,6 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -481,10 +465,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -504,10 +485,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -521,8 +499,6 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 			InternalEObject oldOverrideOrgPartyId = (InternalEObject)overrideOrgPartyId;
 			overrideOrgPartyId = (Party)eResolveProxy(oldOverrideOrgPartyId);
 			if (overrideOrgPartyId != oldOverrideOrgPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
 			}
 		}
 		return overrideOrgPartyId;
@@ -544,10 +520,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setOverrideOrgPartyId(Party newOverrideOrgPartyId) {
-		Party oldOverrideOrgPartyId = overrideOrgPartyId;
 		overrideOrgPartyId = newOverrideOrgPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
 	}
 
 	/**
@@ -567,10 +540,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setPromoName(String newPromoName) {
-		String oldPromoName = promoName;
 		promoName = newPromoName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__PROMO_NAME, oldPromoName, promoName));
 	}
 
 	/**
@@ -590,10 +560,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setPromoText(String newPromoText) {
-		String oldPromoText = promoText;
 		promoText = newPromoText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__PROMO_TEXT, oldPromoText, promoText));
 	}
 
 	/**
@@ -613,10 +580,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setRequireCode(boolean newRequireCode) {
-		boolean oldRequireCode = requireCode;
 		requireCode = newRequireCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__REQUIRE_CODE, oldRequireCode, requireCode));
 	}
 
 	/**
@@ -636,10 +600,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setShowToCustomer(boolean newShowToCustomer) {
-		boolean oldShowToCustomer = showToCustomer;
 		showToCustomer = newShowToCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__SHOW_TO_CUSTOMER, oldShowToCustomer, showToCustomer));
 	}
 
 	/**
@@ -659,10 +620,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setUseLimitPerCustomer(long newUseLimitPerCustomer) {
-		long oldUseLimitPerCustomer = useLimitPerCustomer;
 		useLimitPerCustomer = newUseLimitPerCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__USE_LIMIT_PER_CUSTOMER, oldUseLimitPerCustomer, useLimitPerCustomer));
 	}
 
 	/**
@@ -682,10 +640,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setUseLimitPerOrder(long newUseLimitPerOrder) {
-		long oldUseLimitPerOrder = useLimitPerOrder;
 		useLimitPerOrder = newUseLimitPerOrder;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__USE_LIMIT_PER_ORDER, oldUseLimitPerOrder, useLimitPerOrder));
 	}
 
 	/**
@@ -705,10 +660,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setUseLimitPerPromotion(long newUseLimitPerPromotion) {
-		long oldUseLimitPerPromotion = useLimitPerPromotion;
 		useLimitPerPromotion = newUseLimitPerPromotion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__USE_LIMIT_PER_PROMOTION, oldUseLimitPerPromotion, useLimitPerPromotion));
 	}
 
 	/**
@@ -728,10 +680,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setUserEntered(boolean newUserEntered) {
-		boolean oldUserEntered = userEntered;
 		userEntered = newUserEntered;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__USER_ENTERED, oldUserEntered, userEntered));
 	}
 
 	/**
@@ -742,7 +691,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	@Override
 	public List<String> getProductPromoRules() {
 		if (productPromoRules == null) {
-			productPromoRules = new EDataTypeUniqueEList<String>(String.class, this, PromoPackage.PRODUCT_PROMO__PRODUCT_PROMO_RULES);
+			productPromoRules = new BasicInternalEList<String>(String.class);
 		}
 		return productPromoRules;
 	}
@@ -824,10 +773,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@Override
 	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**

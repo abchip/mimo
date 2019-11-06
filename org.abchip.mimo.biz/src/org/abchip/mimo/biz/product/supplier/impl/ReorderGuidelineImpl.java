@@ -18,12 +18,9 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -249,10 +246,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -266,8 +260,6 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -289,10 +281,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
-		Geo oldGeoId = geoId;
 		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**
@@ -306,8 +295,6 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -329,10 +316,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -352,10 +336,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setReorderGuidelineId(String newReorderGuidelineId) {
-		String oldReorderGuidelineId = reorderGuidelineId;
 		reorderGuidelineId = newReorderGuidelineId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__REORDER_GUIDELINE_ID, oldReorderGuidelineId, reorderGuidelineId));
 	}
 
 	/**
@@ -375,10 +356,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setReorderLevel(BigDecimal newReorderLevel) {
-		BigDecimal oldReorderLevel = reorderLevel;
 		reorderLevel = newReorderLevel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__REORDER_LEVEL, oldReorderLevel, reorderLevel));
 	}
 
 	/**
@@ -398,10 +376,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setReorderQuantity(BigDecimal newReorderQuantity) {
-		BigDecimal oldReorderQuantity = reorderQuantity;
 		reorderQuantity = newReorderQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__REORDER_QUANTITY, oldReorderQuantity, reorderQuantity));
 	}
 
 	/**
@@ -421,10 +396,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -444,10 +416,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -461,8 +430,6 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -484,10 +451,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -501,8 +465,6 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -524,10 +486,7 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

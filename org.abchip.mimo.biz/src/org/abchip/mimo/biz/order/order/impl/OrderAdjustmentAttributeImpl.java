@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,10 +144,7 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -170,10 +164,7 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -193,10 +184,7 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -210,8 +198,6 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 			InternalEObject oldOrderAdjustmentId = (InternalEObject)orderAdjustmentId;
 			orderAdjustmentId = (OrderAdjustment)eResolveProxy(oldOrderAdjustmentId);
 			if (orderAdjustmentId != oldOrderAdjustmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
 			}
 		}
 		return orderAdjustmentId;
@@ -233,10 +219,7 @@ public class OrderAdjustmentAttributeImpl extends BizEntityImpl implements Order
 	 */
 	@Override
 	public void setOrderAdjustmentId(OrderAdjustment newOrderAdjustmentId) {
-		OrderAdjustment oldOrderAdjustmentId = orderAdjustmentId;
 		orderAdjustmentId = newOrderAdjustmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_ATTRIBUTE__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
 	}
 
 	/**

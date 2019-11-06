@@ -12,10 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalog;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -260,10 +257,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setCatalogName(String newCatalogName) {
-		String oldCatalogName = catalogName;
 		catalogName = newCatalogName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__CATALOG_NAME, oldCatalogName, catalogName));
 	}
 
 	/**
@@ -283,10 +277,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setContentPathPrefix(String newContentPathPrefix) {
-		String oldContentPathPrefix = contentPathPrefix;
 		contentPathPrefix = newContentPathPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__CONTENT_PATH_PREFIX, oldContentPathPrefix, contentPathPrefix));
 	}
 
 	/**
@@ -306,10 +297,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setHeaderLogo(String newHeaderLogo) {
-		String oldHeaderLogo = headerLogo;
 		headerLogo = newHeaderLogo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__HEADER_LOGO, oldHeaderLogo, headerLogo));
 	}
 
 	/**
@@ -329,10 +317,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setPurchaseAllowPermReqd(boolean newPurchaseAllowPermReqd) {
-		boolean oldPurchaseAllowPermReqd = purchaseAllowPermReqd;
 		purchaseAllowPermReqd = newPurchaseAllowPermReqd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__PURCHASE_ALLOW_PERM_REQD, oldPurchaseAllowPermReqd, purchaseAllowPermReqd));
 	}
 
 	/**
@@ -352,10 +337,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setStyleSheet(String newStyleSheet) {
-		String oldStyleSheet = styleSheet;
 		styleSheet = newStyleSheet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__STYLE_SHEET, oldStyleSheet, styleSheet));
 	}
 
 	/**
@@ -375,10 +357,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setTemplatePathPrefix(String newTemplatePathPrefix) {
-		String oldTemplatePathPrefix = templatePathPrefix;
 		templatePathPrefix = newTemplatePathPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__TEMPLATE_PATH_PREFIX, oldTemplatePathPrefix, templatePathPrefix));
 	}
 
 	/**
@@ -398,10 +377,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setUseQuickAdd(boolean newUseQuickAdd) {
-		boolean oldUseQuickAdd = useQuickAdd;
 		useQuickAdd = newUseQuickAdd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__USE_QUICK_ADD, oldUseQuickAdd, useQuickAdd));
 	}
 
 	/**
@@ -421,10 +397,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setViewAllowPermReqd(boolean newViewAllowPermReqd) {
-		boolean oldViewAllowPermReqd = viewAllowPermReqd;
 		viewAllowPermReqd = newViewAllowPermReqd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__VIEW_ALLOW_PERM_REQD, oldViewAllowPermReqd, viewAllowPermReqd));
 	}
 
 	/**
@@ -456,10 +429,7 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	 */
 	@Override
 	public void setProdCatalogId(String newProdCatalogId) {
-		String oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 	}
 
 	/**

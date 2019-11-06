@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductKeyword;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,10 +146,7 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 */
 	@Override
 	public void setKeyword(String newKeyword) {
-		String oldKeyword = keyword;
 		keyword = newKeyword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_KEYWORD__KEYWORD, oldKeyword, keyword));
 	}
 
 	/**
@@ -166,8 +160,6 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 			InternalEObject oldKeywordTypeId = (InternalEObject)keywordTypeId;
 			keywordTypeId = (Enumeration)eResolveProxy(oldKeywordTypeId);
 			if (keywordTypeId != oldKeywordTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_KEYWORD__KEYWORD_TYPE_ID, oldKeywordTypeId, keywordTypeId));
 			}
 		}
 		return keywordTypeId;
@@ -189,10 +181,7 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 */
 	@Override
 	public void setKeywordTypeId(Enumeration newKeywordTypeId) {
-		Enumeration oldKeywordTypeId = keywordTypeId;
 		keywordTypeId = newKeywordTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_KEYWORD__KEYWORD_TYPE_ID, oldKeywordTypeId, keywordTypeId));
 	}
 
 	/**
@@ -212,10 +201,7 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 */
 	@Override
 	public void setRelevancyWeight(long newRelevancyWeight) {
-		long oldRelevancyWeight = relevancyWeight;
 		relevancyWeight = newRelevancyWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_KEYWORD__RELEVANCY_WEIGHT, oldRelevancyWeight, relevancyWeight));
 	}
 
 	/**
@@ -229,8 +215,6 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_KEYWORD__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -252,10 +236,7 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_KEYWORD__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -269,8 +250,6 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -292,10 +271,7 @@ public class ProductKeywordImpl extends BizEntityImpl implements ProductKeyword 
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_KEYWORD__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

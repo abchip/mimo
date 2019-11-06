@@ -16,12 +16,9 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -193,10 +190,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setAllocatedDate(Date newAllocatedDate) {
-		Date oldAllocatedDate = allocatedDate;
 		allocatedDate = newAllocatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ALLOCATED_DATE, oldAllocatedDate, allocatedDate));
 	}
 
 	/**
@@ -216,10 +210,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -239,10 +230,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -256,8 +244,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -279,10 +265,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -296,8 +279,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -319,10 +300,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -336,8 +314,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -359,10 +335,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -382,10 +355,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -399,8 +369,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -422,10 +390,7 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

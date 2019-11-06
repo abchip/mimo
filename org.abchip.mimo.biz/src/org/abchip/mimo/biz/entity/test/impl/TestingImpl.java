@@ -15,15 +15,12 @@ import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
 import org.abchip.mimo.biz.entity.test.TestingType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -220,10 +217,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -243,10 +237,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -266,10 +257,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingDate(Date newTestingDate) {
-		Date oldTestingDate = testingDate;
 		testingDate = newTestingDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_DATE, oldTestingDate, testingDate));
 	}
 
 	/**
@@ -289,10 +277,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingId(String newTestingId) {
-		String oldTestingId = testingId;
 		testingId = newTestingId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_ID, oldTestingId, testingId));
 	}
 
 	/**
@@ -312,10 +297,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingName(String newTestingName) {
-		String oldTestingName = testingName;
 		testingName = newTestingName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_NAME, oldTestingName, testingName));
 	}
 
 	/**
@@ -335,10 +317,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingSize(long newTestingSize) {
-		long oldTestingSize = testingSize;
 		testingSize = newTestingSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_SIZE, oldTestingSize, testingSize));
 	}
 
 	/**
@@ -352,8 +331,6 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 			InternalEObject oldTestingTypeId = (InternalEObject)testingTypeId;
 			testingTypeId = (TestingType)eResolveProxy(oldTestingTypeId);
 			if (testingTypeId != oldTestingTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
 			}
 		}
 		return testingTypeId;
@@ -375,10 +352,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingTypeId(TestingType newTestingTypeId) {
-		TestingType oldTestingTypeId = testingTypeId;
 		testingTypeId = newTestingTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
 	}
 
 	/**
@@ -389,7 +363,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	@Override
 	public List<String> getTestingItems() {
 		if (testingItems == null) {
-			testingItems = new EDataTypeUniqueEList<String>(String.class, this, TestPackage.TESTING__TESTING_ITEMS);
+			testingItems = new BasicInternalEList<String>(String.class);
 		}
 		return testingItems;
 	}

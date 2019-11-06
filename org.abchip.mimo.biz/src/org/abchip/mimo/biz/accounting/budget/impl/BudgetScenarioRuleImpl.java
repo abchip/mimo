@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenario;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,10 +130,7 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 */
 	@Override
 	public void setAmountChange(BigDecimal newAmountChange) {
-		BigDecimal oldAmountChange = amountChange;
 		amountChange = newAmountChange;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_RULE__AMOUNT_CHANGE, oldAmountChange, amountChange));
 	}
 
 	/**
@@ -156,10 +150,7 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 */
 	@Override
 	public void setPercentageChange(BigDecimal newPercentageChange) {
-		BigDecimal oldPercentageChange = percentageChange;
 		percentageChange = newPercentageChange;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_RULE__PERCENTAGE_CHANGE, oldPercentageChange, percentageChange));
 	}
 
 	/**
@@ -173,8 +164,6 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 			InternalEObject oldBudgetScenarioId = (InternalEObject)budgetScenarioId;
 			budgetScenarioId = (BudgetScenario)eResolveProxy(oldBudgetScenarioId);
 			if (budgetScenarioId != oldBudgetScenarioId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID, oldBudgetScenarioId, budgetScenarioId));
 			}
 		}
 		return budgetScenarioId;
@@ -196,10 +185,7 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 */
 	@Override
 	public void setBudgetScenarioId(BudgetScenario newBudgetScenarioId) {
-		BudgetScenario oldBudgetScenarioId = budgetScenarioId;
 		budgetScenarioId = newBudgetScenarioId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID, oldBudgetScenarioId, budgetScenarioId));
 	}
 
 	/**
@@ -213,8 +199,6 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 			InternalEObject oldBudgetItemTypeId = (InternalEObject)budgetItemTypeId;
 			budgetItemTypeId = (BudgetItemType)eResolveProxy(oldBudgetItemTypeId);
 			if (budgetItemTypeId != oldBudgetItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 			}
 		}
 		return budgetItemTypeId;
@@ -236,10 +220,7 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 */
 	@Override
 	public void setBudgetItemTypeId(BudgetItemType newBudgetItemTypeId) {
-		BudgetItemType oldBudgetItemTypeId = budgetItemTypeId;
 		budgetItemTypeId = newBudgetItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 	}
 
 	/**

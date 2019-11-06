@@ -24,15 +24,12 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -309,8 +306,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
 			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
 			if (billingAccountId != oldBillingAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 			}
 		}
 		return billingAccountId;
@@ -332,10 +327,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
-		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**
@@ -349,8 +341,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldCreatedBy = (InternalEObject)createdBy;
 			createdBy = (UserLogin)eResolveProxy(oldCreatedBy);
 			if (createdBy != oldCreatedBy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__CREATED_BY, oldCreatedBy, createdBy));
 			}
 		}
 		return createdBy;
@@ -372,10 +362,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setCreatedBy(UserLogin newCreatedBy) {
-		UserLogin oldCreatedBy = createdBy;
 		createdBy = newCreatedBy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__CREATED_BY, oldCreatedBy, createdBy));
 	}
 
 	/**
@@ -389,8 +376,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -412,10 +397,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -429,8 +411,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldDestinationFacilityId = (InternalEObject)destinationFacilityId;
 			destinationFacilityId = (Facility)eResolveProxy(oldDestinationFacilityId);
 			if (destinationFacilityId != oldDestinationFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID, oldDestinationFacilityId, destinationFacilityId));
 			}
 		}
 		return destinationFacilityId;
@@ -452,10 +432,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setDestinationFacilityId(Facility newDestinationFacilityId) {
-		Facility oldDestinationFacilityId = destinationFacilityId;
 		destinationFacilityId = newDestinationFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID, oldDestinationFacilityId, destinationFacilityId));
 	}
 
 	/**
@@ -475,10 +452,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setEntryDate(Date newEntryDate) {
-		Date oldEntryDate = entryDate;
 		entryDate = newEntryDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__ENTRY_DATE, oldEntryDate, entryDate));
 	}
 
 	/**
@@ -492,8 +466,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
 			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
 			if (finAccountId != oldFinAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 			}
 		}
 		return finAccountId;
@@ -515,10 +487,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
-		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 	}
 
 	/**
@@ -532,8 +501,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldFromPartyId = (InternalEObject)fromPartyId;
 			fromPartyId = (Party)eResolveProxy(oldFromPartyId);
 			if (fromPartyId != oldFromPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__FROM_PARTY_ID, oldFromPartyId, fromPartyId));
 			}
 		}
 		return fromPartyId;
@@ -555,10 +522,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setFromPartyId(Party newFromPartyId) {
-		Party oldFromPartyId = fromPartyId;
 		fromPartyId = newFromPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__FROM_PARTY_ID, oldFromPartyId, fromPartyId));
 	}
 
 	/**
@@ -578,10 +542,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setNeedsInventoryReceive(boolean newNeedsInventoryReceive) {
-		boolean oldNeedsInventoryReceive = needsInventoryReceive;
 		needsInventoryReceive = newNeedsInventoryReceive;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE, oldNeedsInventoryReceive, needsInventoryReceive));
 	}
 
 	/**
@@ -595,8 +556,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldOriginContactMechId = (InternalEObject)originContactMechId;
 			originContactMechId = (ContactMech)eResolveProxy(oldOriginContactMechId);
 			if (originContactMechId != oldOriginContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
 			}
 		}
 		return originContactMechId;
@@ -618,10 +577,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setOriginContactMechId(ContactMech newOriginContactMechId) {
-		ContactMech oldOriginContactMechId = originContactMechId;
 		originContactMechId = newOriginContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
 	}
 
 	/**
@@ -635,8 +591,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
 			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 			}
 		}
 		return paymentMethodId;
@@ -658,10 +612,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
-		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**
@@ -675,8 +626,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldReturnHeaderTypeId = (InternalEObject)returnHeaderTypeId;
 			returnHeaderTypeId = (ReturnHeaderType)eResolveProxy(oldReturnHeaderTypeId);
 			if (returnHeaderTypeId != oldReturnHeaderTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID, oldReturnHeaderTypeId, returnHeaderTypeId));
 			}
 		}
 		return returnHeaderTypeId;
@@ -698,10 +647,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setReturnHeaderTypeId(ReturnHeaderType newReturnHeaderTypeId) {
-		ReturnHeaderType oldReturnHeaderTypeId = returnHeaderTypeId;
 		returnHeaderTypeId = newReturnHeaderTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID, oldReturnHeaderTypeId, returnHeaderTypeId));
 	}
 
 	/**
@@ -721,10 +667,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
 		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -738,8 +681,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -761,10 +702,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -784,10 +722,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setSupplierRmaId(String newSupplierRmaId) {
-		String oldSupplierRmaId = supplierRmaId;
 		supplierRmaId = newSupplierRmaId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__SUPPLIER_RMA_ID, oldSupplierRmaId, supplierRmaId));
 	}
 
 	/**
@@ -801,8 +736,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			InternalEObject oldToPartyId = (InternalEObject)toPartyId;
 			toPartyId = (Party)eResolveProxy(oldToPartyId);
 			if (toPartyId != oldToPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__TO_PARTY_ID, oldToPartyId, toPartyId));
 			}
 		}
 		return toPartyId;
@@ -824,10 +757,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@Override
 	public void setToPartyId(Party newToPartyId) {
-		Party oldToPartyId = toPartyId;
 		toPartyId = newToPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__TO_PARTY_ID, oldToPartyId, toPartyId));
 	}
 
 	/**
@@ -838,7 +768,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	@Override
 	public List<String> getCommunicationEventReturns() {
 		if (communicationEventReturns == null) {
-			communicationEventReturns = new EDataTypeUniqueEList<String>(String.class, this, ReturnPackage.RETURN_HEADER__COMMUNICATION_EVENT_RETURNS);
+			communicationEventReturns = new BasicInternalEList<String>(String.class);
 		}
 		return communicationEventReturns;
 	}
@@ -851,7 +781,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	@Override
 	public List<String> getReturnItems() {
 		if (returnItems == null) {
-			returnItems = new EDataTypeUniqueEList<String>(String.class, this, ReturnPackage.RETURN_HEADER__RETURN_ITEMS);
+			returnItems = new BasicInternalEList<String>(String.class);
 		}
 		return returnItems;
 	}

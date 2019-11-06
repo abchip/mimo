@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
 import org.abchip.mimo.biz.marketing.contact.WebSiteContactList;
 import org.abchip.mimo.biz.webapp.website.WebSite;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,8 +137,6 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 			InternalEObject oldContactListId = (InternalEObject)contactListId;
 			contactListId = (ContactList)eResolveProxy(oldContactListId);
 			if (contactListId != oldContactListId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID, oldContactListId, contactListId));
 			}
 		}
 		return contactListId;
@@ -163,10 +158,7 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 */
 	@Override
 	public void setContactListId(ContactList newContactListId) {
-		ContactList oldContactListId = contactListId;
 		contactListId = newContactListId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID, oldContactListId, contactListId));
 	}
 
 	/**
@@ -186,10 +178,7 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.WEB_SITE_CONTACT_LIST__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -209,10 +198,7 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.WEB_SITE_CONTACT_LIST__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -226,8 +212,6 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.WEB_SITE_CONTACT_LIST__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -249,10 +233,7 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
-		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.WEB_SITE_CONTACT_LIST__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**

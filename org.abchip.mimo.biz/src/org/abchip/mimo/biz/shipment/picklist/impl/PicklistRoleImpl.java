@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.abchip.mimo.biz.shipment.picklist.PicklistRole;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -178,8 +175,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -201,10 +196,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -224,10 +216,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -241,8 +230,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -264,10 +251,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -287,10 +271,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -304,8 +285,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 			InternalEObject oldPicklistId = (InternalEObject)picklistId;
 			picklistId = (Picklist)eResolveProxy(oldPicklistId);
 			if (picklistId != oldPicklistId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__PICKLIST_ID, oldPicklistId, picklistId));
 			}
 		}
 		return picklistId;
@@ -327,10 +306,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 */
 	@Override
 	public void setPicklistId(Picklist newPicklistId) {
-		Picklist oldPicklistId = picklistId;
 		picklistId = newPicklistId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__PICKLIST_ID, oldPicklistId, picklistId));
 	}
 
 	/**
@@ -344,8 +320,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -367,10 +341,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -390,10 +361,7 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.ProductFacilityLocation;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,10 +157,7 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setLocationSeqId(String newLocationSeqId) {
-		String oldLocationSeqId = locationSeqId;
 		locationSeqId = newLocationSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY_LOCATION__LOCATION_SEQ_ID, oldLocationSeqId, locationSeqId));
 	}
 
 	/**
@@ -183,10 +177,7 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setMinimumStock(BigDecimal newMinimumStock) {
-		BigDecimal oldMinimumStock = minimumStock;
 		minimumStock = newMinimumStock;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY_LOCATION__MINIMUM_STOCK, oldMinimumStock, minimumStock));
 	}
 
 	/**
@@ -206,10 +197,7 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setMoveQuantity(BigDecimal newMoveQuantity) {
-		BigDecimal oldMoveQuantity = moveQuantity;
 		moveQuantity = newMoveQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY_LOCATION__MOVE_QUANTITY, oldMoveQuantity, moveQuantity));
 	}
 
 	/**
@@ -223,8 +211,6 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -246,10 +232,7 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY_LOCATION__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -263,8 +246,6 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY_LOCATION__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -286,10 +267,7 @@ public class ProductFacilityLocationImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY_LOCATION__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

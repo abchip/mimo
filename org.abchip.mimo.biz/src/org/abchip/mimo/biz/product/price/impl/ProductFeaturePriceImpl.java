@@ -17,12 +17,9 @@ import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductFeaturePrice;
 import org.abchip.mimo.biz.product.price.ProductPriceType;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -242,8 +239,6 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -265,10 +260,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -288,10 +280,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -305,8 +294,6 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -328,10 +315,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -351,10 +335,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -368,8 +349,6 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -391,10 +370,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -414,10 +390,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -437,10 +410,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setPrice(BigDecimal newPrice) {
-		BigDecimal oldPrice = price;
 		price = newPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__PRICE, oldPrice, price));
 	}
 
 	/**
@@ -460,10 +430,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -483,10 +450,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -500,8 +464,6 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 			InternalEObject oldProductPriceTypeId = (InternalEObject)productPriceTypeId;
 			productPriceTypeId = (ProductPriceType)eResolveProxy(oldProductPriceTypeId);
 			if (productPriceTypeId != oldProductPriceTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
 			}
 		}
 		return productPriceTypeId;
@@ -523,10 +485,7 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setProductPriceTypeId(ProductPriceType newProductPriceTypeId) {
-		ProductPriceType oldProductPriceTypeId = productPriceTypeId;
 		productPriceTypeId = newProductPriceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
 	}
 
 	/**

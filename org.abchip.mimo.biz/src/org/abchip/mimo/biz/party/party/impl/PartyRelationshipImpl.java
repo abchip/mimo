@@ -18,12 +18,9 @@ import org.abchip.mimo.biz.party.party.PartyRelationshipType;
 import org.abchip.mimo.biz.party.party.PriorityType;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -273,10 +270,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -296,10 +290,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -319,10 +310,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setPermissionsEnumId(String newPermissionsEnumId) {
-		String oldPermissionsEnumId = permissionsEnumId;
 		permissionsEnumId = newPermissionsEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__PERMISSIONS_ENUM_ID, oldPermissionsEnumId, permissionsEnumId));
 	}
 
 	/**
@@ -342,10 +330,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setPositionTitle(String newPositionTitle) {
-		String oldPositionTitle = positionTitle;
 		positionTitle = newPositionTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__POSITION_TITLE, oldPositionTitle, positionTitle));
 	}
 
 	/**
@@ -365,10 +350,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setRelationshipName(String newRelationshipName) {
-		String oldRelationshipName = relationshipName;
 		relationshipName = newRelationshipName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__RELATIONSHIP_NAME, oldRelationshipName, relationshipName));
 	}
 
 	/**
@@ -382,8 +364,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldSecurityGroupId = (InternalEObject)securityGroupId;
 			securityGroupId = (SecurityGroup)eResolveProxy(oldSecurityGroupId);
 			if (securityGroupId != oldSecurityGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__SECURITY_GROUP_ID, oldSecurityGroupId, securityGroupId));
 			}
 		}
 		return securityGroupId;
@@ -405,10 +385,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setSecurityGroupId(SecurityGroup newSecurityGroupId) {
-		SecurityGroup oldSecurityGroupId = securityGroupId;
 		securityGroupId = newSecurityGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__SECURITY_GROUP_ID, oldSecurityGroupId, securityGroupId));
 	}
 
 	/**
@@ -422,8 +399,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -445,10 +420,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -468,10 +440,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -485,8 +454,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -508,10 +475,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
-		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -525,8 +489,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -548,10 +510,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
-		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -565,8 +524,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldRoleTypeIdFrom = (InternalEObject)roleTypeIdFrom;
 			roleTypeIdFrom = (RoleType)eResolveProxy(oldRoleTypeIdFrom);
 			if (roleTypeIdFrom != oldRoleTypeIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 			}
 		}
 		return roleTypeIdFrom;
@@ -588,10 +545,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setRoleTypeIdFrom(RoleType newRoleTypeIdFrom) {
-		RoleType oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -605,8 +559,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldRoleTypeIdTo = (InternalEObject)roleTypeIdTo;
 			roleTypeIdTo = (RoleType)eResolveProxy(oldRoleTypeIdTo);
 			if (roleTypeIdTo != oldRoleTypeIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 			}
 		}
 		return roleTypeIdTo;
@@ -628,10 +580,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setRoleTypeIdTo(RoleType newRoleTypeIdTo) {
-		RoleType oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -645,8 +594,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldPriorityTypeId = (InternalEObject)priorityTypeId;
 			priorityTypeId = (PriorityType)eResolveProxy(oldPriorityTypeId);
 			if (priorityTypeId != oldPriorityTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__PRIORITY_TYPE_ID, oldPriorityTypeId, priorityTypeId));
 			}
 		}
 		return priorityTypeId;
@@ -668,10 +615,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setPriorityTypeId(PriorityType newPriorityTypeId) {
-		PriorityType oldPriorityTypeId = priorityTypeId;
 		priorityTypeId = newPriorityTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__PRIORITY_TYPE_ID, oldPriorityTypeId, priorityTypeId));
 	}
 
 	/**
@@ -685,8 +629,6 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 			InternalEObject oldPartyRelationshipTypeId = (InternalEObject)partyRelationshipTypeId;
 			partyRelationshipTypeId = (PartyRelationshipType)eResolveProxy(oldPartyRelationshipTypeId);
 			if (partyRelationshipTypeId != oldPartyRelationshipTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP__PARTY_RELATIONSHIP_TYPE_ID, oldPartyRelationshipTypeId, partyRelationshipTypeId));
 			}
 		}
 		return partyRelationshipTypeId;
@@ -708,10 +650,7 @@ public class PartyRelationshipImpl extends BizEntityTypedImpl<PartyRelationshipT
 	 */
 	@Override
 	public void setPartyRelationshipTypeId(PartyRelationshipType newPartyRelationshipTypeId) {
-		PartyRelationshipType oldPartyRelationshipTypeId = partyRelationshipTypeId;
 		partyRelationshipTypeId = newPartyRelationshipTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP__PARTY_RELATIONSHIP_TYPE_ID, oldPartyRelationshipTypeId, partyRelationshipTypeId));
 	}
 
 	/**

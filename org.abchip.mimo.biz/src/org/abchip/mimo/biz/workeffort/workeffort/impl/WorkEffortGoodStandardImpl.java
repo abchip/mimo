@@ -18,13 +18,10 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandardType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -208,10 +205,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setEstimatedCost(BigDecimal newEstimatedCost) {
-		BigDecimal oldEstimatedCost = estimatedCost;
 		estimatedCost = newEstimatedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_COST, oldEstimatedCost, estimatedCost));
 	}
 
 	/**
@@ -231,10 +225,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setEstimatedQuantity(double newEstimatedQuantity) {
-		double oldEstimatedQuantity = estimatedQuantity;
 		estimatedQuantity = newEstimatedQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_QUANTITY, oldEstimatedQuantity, estimatedQuantity));
 	}
 
 	/**
@@ -254,10 +245,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -271,8 +259,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -294,10 +280,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -311,8 +294,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -334,10 +315,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -357,10 +335,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -374,8 +349,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			InternalEObject oldWorkEffortGoodStdTypeId = (InternalEObject)workEffortGoodStdTypeId;
 			workEffortGoodStdTypeId = (WorkEffortGoodStandardType)eResolveProxy(oldWorkEffortGoodStdTypeId);
 			if (workEffortGoodStdTypeId != oldWorkEffortGoodStdTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID, oldWorkEffortGoodStdTypeId, workEffortGoodStdTypeId));
 			}
 		}
 		return workEffortGoodStdTypeId;
@@ -397,10 +370,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setWorkEffortGoodStdTypeId(WorkEffortGoodStandardType newWorkEffortGoodStdTypeId) {
-		WorkEffortGoodStandardType oldWorkEffortGoodStdTypeId = workEffortGoodStdTypeId;
 		workEffortGoodStdTypeId = newWorkEffortGoodStdTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID, oldWorkEffortGoodStdTypeId, workEffortGoodStdTypeId));
 	}
 
 	/**
@@ -414,8 +384,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -437,10 +405,7 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

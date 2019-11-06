@@ -13,12 +13,9 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenario;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,10 +120,7 @@ public class BudgetScenarioImpl extends BizEntityImpl implements BudgetScenario 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -137,7 +131,7 @@ public class BudgetScenarioImpl extends BizEntityImpl implements BudgetScenario 
 	@Override
 	public List<String> getBudgetScenarioRules() {
 		if (budgetScenarioRules == null) {
-			budgetScenarioRules = new EDataTypeUniqueEList<String>(String.class, this, BudgetPackage.BUDGET_SCENARIO__BUDGET_SCENARIO_RULES);
+			budgetScenarioRules = new BasicInternalEList<String>(String.class);
 		}
 		return budgetScenarioRules;
 	}
@@ -171,10 +165,7 @@ public class BudgetScenarioImpl extends BizEntityImpl implements BudgetScenario 
 	 */
 	@Override
 	public void setBudgetScenarioId(String newBudgetScenarioId) {
-		String oldBudgetScenarioId = budgetScenarioId;
 		budgetScenarioId = newBudgetScenarioId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO__BUDGET_SCENARIO_ID, oldBudgetScenarioId, budgetScenarioId));
 	}
 
 	/**

@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyIdentification;
 import org.abchip.mimo.biz.party.party.PartyIdentificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,10 +109,7 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 	 */
 	@Override
 	public void setIdValue(String newIdValue) {
-		String oldIdValue = idValue;
 		idValue = newIdValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION__ID_VALUE, oldIdValue, idValue));
 	}
 
 	/**
@@ -129,8 +123,6 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 			InternalEObject oldPartyIdentificationTypeId = (InternalEObject)partyIdentificationTypeId;
 			partyIdentificationTypeId = (PartyIdentificationType)eResolveProxy(oldPartyIdentificationTypeId);
 			if (partyIdentificationTypeId != oldPartyIdentificationTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID, oldPartyIdentificationTypeId, partyIdentificationTypeId));
 			}
 		}
 		return partyIdentificationTypeId;
@@ -152,10 +144,7 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 	 */
 	@Override
 	public void setPartyIdentificationTypeId(PartyIdentificationType newPartyIdentificationTypeId) {
-		PartyIdentificationType oldPartyIdentificationTypeId = partyIdentificationTypeId;
 		partyIdentificationTypeId = newPartyIdentificationTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID, oldPartyIdentificationTypeId, partyIdentificationTypeId));
 	}
 
 	/**
@@ -169,8 +158,6 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_IDENTIFICATION__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -192,10 +179,7 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

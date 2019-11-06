@@ -14,15 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,10 +160,7 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -186,10 +180,7 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -203,8 +194,6 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (WorkEffortType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -226,10 +215,7 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	 */
 	@Override
 	public void setParentTypeId(WorkEffortType newParentTypeId) {
-		WorkEffortType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -249,10 +235,7 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	 */
 	@Override
 	public void setWorkEffortTypeId(String newWorkEffortTypeId) {
-		String oldWorkEffortTypeId = workEffortTypeId;
 		workEffortTypeId = newWorkEffortTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
 	}
 
 	/**
@@ -263,7 +246,7 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	@Override
 	public List<String> getWorkEffortTypeAttrs() {
 		if (workEffortTypeAttrs == null) {
-			workEffortTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS);
+			workEffortTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortTypeAttrs;
 	}

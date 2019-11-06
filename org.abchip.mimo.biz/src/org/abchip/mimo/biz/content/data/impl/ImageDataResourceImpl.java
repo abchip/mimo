@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.ImageDataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,8 +96,6 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
 			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
 			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 			}
 		}
 		return dataResourceId;
@@ -122,10 +117,7 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 	}
 
 	/**
@@ -145,10 +137,7 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	 */
 	@Override
 	public void setImageData(byte[] newImageData) {
-		byte[] oldImageData = imageData;
 		imageData = newImageData;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.IMAGE_DATA_RESOURCE__IMAGE_DATA, oldImageData, imageData));
 	}
 
 	/**

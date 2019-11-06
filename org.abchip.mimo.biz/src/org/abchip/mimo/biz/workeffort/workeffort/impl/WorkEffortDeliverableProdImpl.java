@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +87,6 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 			InternalEObject oldDeliverableId = (InternalEObject)deliverableId;
 			deliverableId = (Deliverable)eResolveProxy(oldDeliverableId);
 			if (deliverableId != oldDeliverableId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID, oldDeliverableId, deliverableId));
 			}
 		}
 		return deliverableId;
@@ -113,10 +108,7 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setDeliverableId(Deliverable newDeliverableId) {
-		Deliverable oldDeliverableId = deliverableId;
 		deliverableId = newDeliverableId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID, oldDeliverableId, deliverableId));
 	}
 
 	/**
@@ -130,8 +122,6 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -153,10 +143,7 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

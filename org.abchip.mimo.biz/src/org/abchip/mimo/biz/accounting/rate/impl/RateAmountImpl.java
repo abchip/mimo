@@ -20,12 +20,9 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -192,8 +189,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
 			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
 			if (emplPositionTypeId != oldEmplPositionTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 			}
 		}
 		return emplPositionTypeId;
@@ -215,10 +210,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
-		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 	}
 
 	/**
@@ -238,10 +230,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -255,8 +244,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -278,10 +265,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -295,8 +279,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
 			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
 			if (periodTypeId != oldPeriodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 			}
 		}
 		return periodTypeId;
@@ -318,10 +300,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
-		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 	}
 
 	/**
@@ -341,10 +320,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setRateAmount(BigDecimal newRateAmount) {
-		BigDecimal oldRateAmount = rateAmount;
 		rateAmount = newRateAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__RATE_AMOUNT, oldRateAmount, rateAmount));
 	}
 
 	/**
@@ -358,8 +334,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			InternalEObject oldRateCurrencyUomId = (InternalEObject)rateCurrencyUomId;
 			rateCurrencyUomId = (Uom)eResolveProxy(oldRateCurrencyUomId);
 			if (rateCurrencyUomId != oldRateCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID, oldRateCurrencyUomId, rateCurrencyUomId));
 			}
 		}
 		return rateCurrencyUomId;
@@ -381,10 +355,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setRateCurrencyUomId(Uom newRateCurrencyUomId) {
-		Uom oldRateCurrencyUomId = rateCurrencyUomId;
 		rateCurrencyUomId = newRateCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID, oldRateCurrencyUomId, rateCurrencyUomId));
 	}
 
 	/**
@@ -404,10 +375,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -421,8 +389,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -444,10 +410,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**
@@ -461,8 +424,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
 			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
 			if (rateTypeId != oldRateTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 			}
 		}
 		return rateTypeId;
@@ -484,10 +445,7 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 */
 	@Override
 	public void setRateTypeId(RateType newRateTypeId) {
-		RateType oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 	}
 
 	/**

@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +87,6 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 			InternalEObject oldPartyClassificationGroupId = (InternalEObject)partyClassificationGroupId;
 			partyClassificationGroupId = (PartyClassificationGroup)eResolveProxy(oldPartyClassificationGroupId);
 			if (partyClassificationGroupId != oldPartyClassificationGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
 			}
 		}
 		return partyClassificationGroupId;
@@ -113,10 +108,7 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 	 */
 	@Override
 	public void setPartyClassificationGroupId(PartyClassificationGroup newPartyClassificationGroupId) {
-		PartyClassificationGroup oldPartyClassificationGroupId = partyClassificationGroupId;
 		partyClassificationGroupId = newPartyClassificationGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
 	}
 
 	/**
@@ -130,8 +122,6 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 			InternalEObject oldSegmentGroupId = (InternalEObject)segmentGroupId;
 			segmentGroupId = (SegmentGroup)eResolveProxy(oldSegmentGroupId);
 			if (segmentGroupId != oldSegmentGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
 			}
 		}
 		return segmentGroupId;
@@ -153,10 +143,7 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 	 */
 	@Override
 	public void setSegmentGroupId(SegmentGroup newSegmentGroupId) {
-		SegmentGroup oldSegmentGroupId = segmentGroupId;
 		segmentGroupId = newSegmentGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
 	}
 
 	/**

@@ -19,11 +19,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -443,10 +441,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setAltReference(String newAltReference) {
-		String oldAltReference = altReference;
 		altReference = newAltReference;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE, oldAltReference, altReference));
 	}
 
 	/**
@@ -466,10 +461,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -483,8 +475,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -506,10 +496,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -529,10 +516,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayAvsResult(String newGatewayAvsResult) {
-		String oldGatewayAvsResult = gatewayAvsResult;
 		gatewayAvsResult = newGatewayAvsResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT, oldGatewayAvsResult, gatewayAvsResult));
 	}
 
 	/**
@@ -552,10 +536,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayCode(String newGatewayCode) {
-		String oldGatewayCode = gatewayCode;
 		gatewayCode = newGatewayCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE, oldGatewayCode, gatewayCode));
 	}
 
 	/**
@@ -575,10 +556,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayCvResult(String newGatewayCvResult) {
-		String oldGatewayCvResult = gatewayCvResult;
 		gatewayCvResult = newGatewayCvResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT, oldGatewayCvResult, gatewayCvResult));
 	}
 
 	/**
@@ -598,10 +576,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayFlag(String newGatewayFlag) {
-		String oldGatewayFlag = gatewayFlag;
 		gatewayFlag = newGatewayFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG, oldGatewayFlag, gatewayFlag));
 	}
 
 	/**
@@ -621,10 +596,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayMessage(String newGatewayMessage) {
-		String oldGatewayMessage = gatewayMessage;
 		gatewayMessage = newGatewayMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE, oldGatewayMessage, gatewayMessage));
 	}
 
 	/**
@@ -644,10 +616,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayScoreResult(String newGatewayScoreResult) {
-		String oldGatewayScoreResult = gatewayScoreResult;
 		gatewayScoreResult = newGatewayScoreResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT, oldGatewayScoreResult, gatewayScoreResult));
 	}
 
 	/**
@@ -661,8 +630,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			InternalEObject oldOrderPaymentPreferenceId = (InternalEObject)orderPaymentPreferenceId;
 			orderPaymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldOrderPaymentPreferenceId);
 			if (orderPaymentPreferenceId != oldOrderPaymentPreferenceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
 			}
 		}
 		return orderPaymentPreferenceId;
@@ -684,10 +651,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setOrderPaymentPreferenceId(OrderPaymentPreference newOrderPaymentPreferenceId) {
-		OrderPaymentPreference oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
 		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
 	}
 
 	/**
@@ -701,8 +665,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			InternalEObject oldPaymentServiceTypeEnumId = (InternalEObject)paymentServiceTypeEnumId;
 			paymentServiceTypeEnumId = (Enumeration)eResolveProxy(oldPaymentServiceTypeEnumId);
 			if (paymentServiceTypeEnumId != oldPaymentServiceTypeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
 			}
 		}
 		return paymentServiceTypeEnumId;
@@ -724,10 +686,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentServiceTypeEnumId(Enumeration newPaymentServiceTypeEnumId) {
-		Enumeration oldPaymentServiceTypeEnumId = paymentServiceTypeEnumId;
 		paymentServiceTypeEnumId = newPaymentServiceTypeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
 	}
 
 	/**
@@ -747,10 +706,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setReferenceNum(String newReferenceNum) {
-		String oldReferenceNum = referenceNum;
 		referenceNum = newReferenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM, oldReferenceNum, referenceNum));
 	}
 
 	/**
@@ -770,10 +726,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultBadCardNumber(boolean newResultBadCardNumber) {
-		boolean oldResultBadCardNumber = resultBadCardNumber;
 		resultBadCardNumber = newResultBadCardNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER, oldResultBadCardNumber, resultBadCardNumber));
 	}
 
 	/**
@@ -793,10 +746,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultBadExpire(boolean newResultBadExpire) {
-		boolean oldResultBadExpire = resultBadExpire;
 		resultBadExpire = newResultBadExpire;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE, oldResultBadExpire, resultBadExpire));
 	}
 
 	/**
@@ -816,10 +766,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultDeclined(boolean newResultDeclined) {
-		boolean oldResultDeclined = resultDeclined;
 		resultDeclined = newResultDeclined;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED, oldResultDeclined, resultDeclined));
 	}
 
 	/**
@@ -839,10 +786,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultNsf(boolean newResultNsf) {
-		boolean oldResultNsf = resultNsf;
 		resultNsf = newResultNsf;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF, oldResultNsf, resultNsf));
 	}
 
 	/**
@@ -862,10 +806,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setSubReference(String newSubReference) {
-		String oldSubReference = subReference;
 		subReference = newSubReference;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE, oldSubReference, subReference));
 	}
 
 	/**
@@ -879,8 +820,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			InternalEObject oldTransCodeEnumId = (InternalEObject)transCodeEnumId;
 			transCodeEnumId = (Enumeration)eResolveProxy(oldTransCodeEnumId);
 			if (transCodeEnumId != oldTransCodeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, oldTransCodeEnumId, transCodeEnumId));
 			}
 		}
 		return transCodeEnumId;
@@ -902,10 +841,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setTransCodeEnumId(Enumeration newTransCodeEnumId) {
-		Enumeration oldTransCodeEnumId = transCodeEnumId;
 		transCodeEnumId = newTransCodeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, oldTransCodeEnumId, transCodeEnumId));
 	}
 
 	/**
@@ -925,10 +861,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setTransactionDate(Date newTransactionDate) {
-		Date oldTransactionDate = transactionDate;
 		transactionDate = newTransactionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE, oldTransactionDate, transactionDate));
 	}
 
 	/**
@@ -966,8 +899,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -989,10 +920,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
-		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -1006,8 +934,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
 			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 			}
 		}
 		return paymentMethodId;
@@ -1029,10 +955,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
-		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**
@@ -1052,10 +975,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentGatewayResponseId(String newPaymentGatewayResponseId) {
-		String oldPaymentGatewayResponseId = paymentGatewayResponseId;
 		paymentGatewayResponseId = newPaymentGatewayResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
 	}
 
 	/**

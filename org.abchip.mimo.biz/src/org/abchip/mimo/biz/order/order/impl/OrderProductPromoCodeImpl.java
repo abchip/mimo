@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderProductPromoCode;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +87,6 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PRODUCT_PROMO_CODE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -113,10 +108,7 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PRODUCT_PROMO_CODE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -130,8 +122,6 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 			InternalEObject oldProductPromoCodeId = (InternalEObject)productPromoCodeId;
 			productPromoCodeId = (ProductPromoCode)eResolveProxy(oldProductPromoCodeId);
 			if (productPromoCodeId != oldProductPromoCodeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
 			}
 		}
 		return productPromoCodeId;
@@ -153,10 +143,7 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 	 */
 	@Override
 	public void setProductPromoCodeId(ProductPromoCode newProductPromoCodeId) {
-		ProductPromoCode oldProductPromoCodeId = productPromoCodeId;
 		productPromoCodeId = newProductPromoCodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
 	}
 
 	/**

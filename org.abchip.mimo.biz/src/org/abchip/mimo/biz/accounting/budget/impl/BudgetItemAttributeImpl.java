@@ -10,10 +10,7 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemAttribute;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -164,10 +161,7 @@ public class BudgetItemAttributeImpl extends BizEntityImpl implements BudgetItem
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -187,10 +181,7 @@ public class BudgetItemAttributeImpl extends BizEntityImpl implements BudgetItem
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -210,10 +201,7 @@ public class BudgetItemAttributeImpl extends BizEntityImpl implements BudgetItem
 	 */
 	@Override
 	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_ATTRIBUTE__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**
@@ -233,10 +221,7 @@ public class BudgetItemAttributeImpl extends BizEntityImpl implements BudgetItem
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
-		String oldBudgetItemSeqId = budgetItemSeqId;
 		budgetItemSeqId = newBudgetItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_ATTRIBUTE__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
 	}
 
 	/**
@@ -256,10 +241,7 @@ public class BudgetItemAttributeImpl extends BizEntityImpl implements BudgetItem
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**

@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -392,10 +389,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setBoxNumber(String newBoxNumber) {
-		String oldBoxNumber = boxNumber;
 		boxNumber = newBoxNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__BOX_NUMBER, oldBoxNumber, boxNumber));
 	}
 
 	/**
@@ -415,10 +409,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setCodAmount(BigDecimal newCodAmount) {
-		BigDecimal oldCodAmount = codAmount;
 		codAmount = newCodAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT, oldCodAmount, codAmount));
 	}
 
 	/**
@@ -432,8 +423,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -455,10 +444,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -478,10 +464,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setInsuredAmount(BigDecimal newInsuredAmount) {
-		BigDecimal oldInsuredAmount = insuredAmount;
 		insuredAmount = newInsuredAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT, oldInsuredAmount, insuredAmount));
 	}
 
 	/**
@@ -501,10 +484,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setInternationalInvoice(byte[] newInternationalInvoice) {
-		byte[] oldInternationalInvoice = internationalInvoice;
 		internationalInvoice = newInternationalInvoice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INTERNATIONAL_INVOICE, oldInternationalInvoice, internationalInvoice));
 	}
 
 	/**
@@ -524,10 +504,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setLabelHtml(String newLabelHtml) {
-		String oldLabelHtml = labelHtml;
 		labelHtml = newLabelHtml;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_HTML, oldLabelHtml, labelHtml));
 	}
 
 	/**
@@ -547,10 +524,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setLabelImage(byte[] newLabelImage) {
-		byte[] oldLabelImage = labelImage;
 		labelImage = newLabelImage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_IMAGE, oldLabelImage, labelImage));
 	}
 
 	/**
@@ -570,10 +544,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setLabelIntlSignImage(byte[] newLabelIntlSignImage) {
-		byte[] oldLabelIntlSignImage = labelIntlSignImage;
 		labelIntlSignImage = newLabelIntlSignImage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_INTL_SIGN_IMAGE, oldLabelIntlSignImage, labelIntlSignImage));
 	}
 
 	/**
@@ -593,10 +564,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setLabelPrinted(boolean newLabelPrinted) {
-		boolean oldLabelPrinted = labelPrinted;
 		labelPrinted = newLabelPrinted;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_PRINTED, oldLabelPrinted, labelPrinted));
 	}
 
 	/**
@@ -616,10 +584,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setPackageOtherCost(BigDecimal newPackageOtherCost) {
-		BigDecimal oldPackageOtherCost = packageOtherCost;
 		packageOtherCost = newPackageOtherCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_OTHER_COST, oldPackageOtherCost, packageOtherCost));
 	}
 
 	/**
@@ -639,10 +604,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setPackageServiceCost(BigDecimal newPackageServiceCost) {
-		BigDecimal oldPackageServiceCost = packageServiceCost;
 		packageServiceCost = newPackageServiceCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_SERVICE_COST, oldPackageServiceCost, packageServiceCost));
 	}
 
 	/**
@@ -662,10 +624,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setPackageTransportCost(BigDecimal newPackageTransportCost) {
-		BigDecimal oldPackageTransportCost = packageTransportCost;
 		packageTransportCost = newPackageTransportCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_TRANSPORT_COST, oldPackageTransportCost, packageTransportCost));
 	}
 
 	/**
@@ -679,8 +638,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -702,10 +659,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
-		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -725,10 +679,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setShipmentPackageSeqId(String newShipmentPackageSeqId) {
-		String oldShipmentPackageSeqId = shipmentPackageSeqId;
 		shipmentPackageSeqId = newShipmentPackageSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_PACKAGE_SEQ_ID, oldShipmentPackageSeqId, shipmentPackageSeqId));
 	}
 
 	/**
@@ -748,10 +699,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setShipmentRouteSegmentId(String newShipmentRouteSegmentId) {
-		String oldShipmentRouteSegmentId = shipmentRouteSegmentId;
 		shipmentRouteSegmentId = newShipmentRouteSegmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ROUTE_SEGMENT_ID, oldShipmentRouteSegmentId, shipmentRouteSegmentId));
 	}
 
 	/**
@@ -771,10 +719,7 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 */
 	@Override
 	public void setTrackingCode(String newTrackingCode) {
-		String oldTrackingCode = trackingCode;
 		trackingCode = newTrackingCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE, oldTrackingCode, trackingCode));
 	}
 
 	/**

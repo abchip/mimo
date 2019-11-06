@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnReason;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,10 +131,7 @@ public class ReturnReasonImpl extends BizEntityImpl implements ReturnReason {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_REASON__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -158,10 +151,7 @@ public class ReturnReasonImpl extends BizEntityImpl implements ReturnReason {
 	 */
 	@Override
 	public void setReturnReasonId(String newReturnReasonId) {
-		String oldReturnReasonId = returnReasonId;
 		returnReasonId = newReturnReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_REASON__RETURN_REASON_ID, oldReturnReasonId, returnReasonId));
 	}
 
 	/**
@@ -181,10 +171,7 @@ public class ReturnReasonImpl extends BizEntityImpl implements ReturnReason {
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
-		String oldSequenceId = sequenceId;
 		sequenceId = newSequenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_REASON__SEQUENCE_ID, oldSequenceId, sequenceId));
 	}
 
 	/**

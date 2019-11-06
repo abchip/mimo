@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.request.CustRequestCategory;
 import org.abchip.mimo.biz.order.request.CustRequestType;
 import org.abchip.mimo.biz.order.request.RequestPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,10 +125,7 @@ public class CustRequestCategoryImpl extends BizEntityImpl implements CustReques
 	 */
 	@Override
 	public void setCustRequestCategoryId(String newCustRequestCategoryId) {
-		String oldCustRequestCategoryId = custRequestCategoryId;
 		custRequestCategoryId = newCustRequestCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CATEGORY__CUST_REQUEST_CATEGORY_ID, oldCustRequestCategoryId, custRequestCategoryId));
 	}
 
 	/**
@@ -145,8 +139,6 @@ public class CustRequestCategoryImpl extends BizEntityImpl implements CustReques
 			InternalEObject oldCustRequestTypeId = (InternalEObject)custRequestTypeId;
 			custRequestTypeId = (CustRequestType)eResolveProxy(oldCustRequestTypeId);
 			if (custRequestTypeId != oldCustRequestTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_CATEGORY__CUST_REQUEST_TYPE_ID, oldCustRequestTypeId, custRequestTypeId));
 			}
 		}
 		return custRequestTypeId;
@@ -168,10 +160,7 @@ public class CustRequestCategoryImpl extends BizEntityImpl implements CustReques
 	 */
 	@Override
 	public void setCustRequestTypeId(CustRequestType newCustRequestTypeId) {
-		CustRequestType oldCustRequestTypeId = custRequestTypeId;
 		custRequestTypeId = newCustRequestTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CATEGORY__CUST_REQUEST_TYPE_ID, oldCustRequestTypeId, custRequestTypeId));
 	}
 
 	/**
@@ -191,10 +180,7 @@ public class CustRequestCategoryImpl extends BizEntityImpl implements CustReques
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CATEGORY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

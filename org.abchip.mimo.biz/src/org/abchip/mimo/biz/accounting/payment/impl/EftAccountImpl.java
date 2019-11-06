@@ -10,12 +10,9 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import org.abchip.mimo.biz.accounting.payment.EftAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -224,10 +221,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setAccountNumber(String newAccountNumber) {
-		String oldAccountNumber = accountNumber;
 		accountNumber = newAccountNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__ACCOUNT_NUMBER, oldAccountNumber, accountNumber));
 	}
 
 	/**
@@ -247,10 +241,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setAccountType(String newAccountType) {
-		String oldAccountType = accountType;
 		accountType = newAccountType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__ACCOUNT_TYPE, oldAccountType, accountType));
 	}
 
 	/**
@@ -270,10 +261,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setBankName(String newBankName) {
-		String oldBankName = bankName;
 		bankName = newBankName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__BANK_NAME, oldBankName, bankName));
 	}
 
 	/**
@@ -293,10 +281,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setCompanyNameOnAccount(String newCompanyNameOnAccount) {
-		String oldCompanyNameOnAccount = companyNameOnAccount;
 		companyNameOnAccount = newCompanyNameOnAccount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__COMPANY_NAME_ON_ACCOUNT, oldCompanyNameOnAccount, companyNameOnAccount));
 	}
 
 	/**
@@ -310,8 +295,6 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -333,10 +316,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -356,10 +336,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setNameOnAccount(String newNameOnAccount) {
-		String oldNameOnAccount = nameOnAccount;
 		nameOnAccount = newNameOnAccount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__NAME_ON_ACCOUNT, oldNameOnAccount, nameOnAccount));
 	}
 
 	/**
@@ -379,10 +356,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setRoutingNumber(String newRoutingNumber) {
-		String oldRoutingNumber = routingNumber;
 		routingNumber = newRoutingNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__ROUTING_NUMBER, oldRoutingNumber, routingNumber));
 	}
 
 	/**
@@ -402,10 +376,7 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 */
 	@Override
 	public void setYearsAtBank(long newYearsAtBank) {
-		long oldYearsAtBank = yearsAtBank;
 		yearsAtBank = newYearsAtBank;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__YEARS_AT_BANK, oldYearsAtBank, yearsAtBank));
 	}
 
 	/**

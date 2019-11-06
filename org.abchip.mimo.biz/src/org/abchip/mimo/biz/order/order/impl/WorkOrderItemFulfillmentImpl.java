@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.WorkOrderItemFulfillment;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,8 +129,6 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -155,10 +150,7 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -178,10 +170,7 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -201,10 +190,7 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
-		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -218,8 +204,6 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -241,10 +225,7 @@ public class WorkOrderItemFulfillmentImpl extends BizEntityImpl implements WorkO
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.WORK_ORDER_ITEM_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

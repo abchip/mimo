@@ -15,15 +15,12 @@ import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -165,10 +162,7 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -182,8 +176,6 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -205,10 +197,7 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -228,10 +217,7 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 */
 	@Override
 	public void setSegmentGroupId(String newSegmentGroupId) {
-		String oldSegmentGroupId = segmentGroupId;
 		segmentGroupId = newSegmentGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
 	}
 
 	/**
@@ -245,8 +231,6 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 			InternalEObject oldSegmentGroupTypeId = (InternalEObject)segmentGroupTypeId;
 			segmentGroupTypeId = (SegmentGroupType)eResolveProxy(oldSegmentGroupTypeId);
 			if (segmentGroupTypeId != oldSegmentGroupTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID, oldSegmentGroupTypeId, segmentGroupTypeId));
 			}
 		}
 		return segmentGroupTypeId;
@@ -268,10 +252,7 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 */
 	@Override
 	public void setSegmentGroupTypeId(SegmentGroupType newSegmentGroupTypeId) {
-		SegmentGroupType oldSegmentGroupTypeId = segmentGroupTypeId;
 		segmentGroupTypeId = newSegmentGroupTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID, oldSegmentGroupTypeId, segmentGroupTypeId));
 	}
 
 	/**
@@ -282,7 +263,7 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	@Override
 	public List<String> getSegmentGroupClassifications() {
 		if (segmentGroupClassifications == null) {
-			segmentGroupClassifications = new EDataTypeUniqueEList<String>(String.class, this, SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS);
+			segmentGroupClassifications = new BasicInternalEList<String>(String.class);
 		}
 		return segmentGroupClassifications;
 	}
@@ -295,7 +276,7 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	@Override
 	public List<String> getSegmentGroupGeos() {
 		if (segmentGroupGeos == null) {
-			segmentGroupGeos = new EDataTypeUniqueEList<String>(String.class, this, SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_GEOS);
+			segmentGroupGeos = new BasicInternalEList<String>(String.class);
 		}
 		return segmentGroupGeos;
 	}

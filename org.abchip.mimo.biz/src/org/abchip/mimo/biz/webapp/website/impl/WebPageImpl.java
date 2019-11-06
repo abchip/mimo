@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.website.WebPage;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.abchip.mimo.biz.webapp.website.WebsitePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,10 +135,7 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 */
 	@Override
 	public void setWebPageId(String newWebPageId) {
-		String oldWebPageId = webPageId;
 		webPageId = newWebPageId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_PAGE__WEB_PAGE_ID, oldWebPageId, webPageId));
 	}
 
 	/**
@@ -155,8 +149,6 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_PAGE__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -178,10 +170,7 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_PAGE__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -201,10 +190,7 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 */
 	@Override
 	public void setPageName(String newPageName) {
-		String oldPageName = pageName;
 		pageName = newPageName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_PAGE__PAGE_NAME, oldPageName, pageName));
 	}
 
 	/**
@@ -218,8 +204,6 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_PAGE__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -241,10 +225,7 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
-		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_PAGE__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**

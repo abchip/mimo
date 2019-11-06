@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyInvitation;
 import org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,8 +84,6 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (PartyGroup)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -110,10 +105,7 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setPartyIdTo(PartyGroup newPartyIdTo) {
-		PartyGroup oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -127,8 +119,6 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 			InternalEObject oldPartyInvitationId = (InternalEObject)partyInvitationId;
 			partyInvitationId = (PartyInvitation)eResolveProxy(oldPartyInvitationId);
 			if (partyInvitationId != oldPartyInvitationId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID, oldPartyInvitationId, partyInvitationId));
 			}
 		}
 		return partyInvitationId;
@@ -150,10 +140,7 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 	 */
 	@Override
 	public void setPartyInvitationId(PartyInvitation newPartyInvitationId) {
-		PartyInvitation oldPartyInvitationId = partyInvitationId;
 		partyInvitationId = newPartyInvitationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID, oldPartyInvitationId, partyInvitationId));
 	}
 
 	/**

@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentRevision;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,10 +135,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -155,8 +149,6 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 			InternalEObject oldCommittedByPartyId = (InternalEObject)committedByPartyId;
 			committedByPartyId = (Party)eResolveProxy(oldCommittedByPartyId);
 			if (committedByPartyId != oldCommittedByPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID, oldCommittedByPartyId, committedByPartyId));
 			}
 		}
 		return committedByPartyId;
@@ -178,10 +170,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 */
 	@Override
 	public void setCommittedByPartyId(Party newCommittedByPartyId) {
-		Party oldCommittedByPartyId = committedByPartyId;
 		committedByPartyId = newCommittedByPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID, oldCommittedByPartyId, committedByPartyId));
 	}
 
 	/**
@@ -195,8 +184,6 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -218,10 +205,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -241,10 +225,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 */
 	@Override
 	public void setContentRevisionSeqId(String newContentRevisionSeqId) {
-		String oldContentRevisionSeqId = contentRevisionSeqId;
 		contentRevisionSeqId = newContentRevisionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION__CONTENT_REVISION_SEQ_ID, oldContentRevisionSeqId, contentRevisionSeqId));
 	}
 
 	/**

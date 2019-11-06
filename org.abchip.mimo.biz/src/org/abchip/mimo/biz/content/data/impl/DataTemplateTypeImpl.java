@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataTemplateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,10 +131,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public void setDataTemplateTypeId(String newDataTemplateTypeId) {
-		String oldDataTemplateTypeId = dataTemplateTypeId;
 		dataTemplateTypeId = newDataTemplateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID, oldDataTemplateTypeId, dataTemplateTypeId));
 	}
 
 	/**
@@ -158,10 +151,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_TEMPLATE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -181,10 +171,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public void setExtension(String newExtension) {
-		String oldExtension = extension;
 		extension = newExtension;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_TEMPLATE_TYPE__EXTENSION, oldExtension, extension));
 	}
 
 	/**

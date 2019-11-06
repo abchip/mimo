@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyCarrierAccount;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,10 +148,7 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 */
 	@Override
 	public void setAccountNumber(String newAccountNumber) {
-		String oldAccountNumber = accountNumber;
 		accountNumber = newAccountNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CARRIER_ACCOUNT__ACCOUNT_NUMBER, oldAccountNumber, accountNumber));
 	}
 
 	/**
@@ -174,10 +168,7 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CARRIER_ACCOUNT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -197,10 +188,7 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CARRIER_ACCOUNT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -214,8 +202,6 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CARRIER_ACCOUNT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -237,10 +223,7 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CARRIER_ACCOUNT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -254,8 +237,6 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
 			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
 			if (carrierPartyId != oldCarrierPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 			}
 		}
 		return carrierPartyId;
@@ -277,10 +258,7 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 */
 	@Override
 	public void setCarrierPartyId(Party newCarrierPartyId) {
-		Party oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 	}
 
 	/**

@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,8 +131,6 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 			InternalEObject oldCalendarId = (InternalEObject)calendarId;
 			calendarId = (TechDataCalendar)eResolveProxy(oldCalendarId);
 			if (calendarId != oldCalendarId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID, oldCalendarId, calendarId));
 			}
 		}
 		return calendarId;
@@ -157,10 +152,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setCalendarId(TechDataCalendar newCalendarId) {
-		TechDataCalendar oldCalendarId = calendarId;
 		calendarId = newCalendarId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID, oldCalendarId, calendarId));
 	}
 
 	/**
@@ -180,10 +172,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setExceptionDateStart(Date newExceptionDateStart) {
-		Date oldExceptionDateStart = exceptionDateStart;
 		exceptionDateStart = newExceptionDateStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START, oldExceptionDateStart, exceptionDateStart));
 	}
 
 	/**
@@ -197,8 +186,6 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 			InternalEObject oldCalendarWeekId = (InternalEObject)calendarWeekId;
 			calendarWeekId = (TechDataCalendarWeek)eResolveProxy(oldCalendarWeekId);
 			if (calendarWeekId != oldCalendarWeekId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
 			}
 		}
 		return calendarWeekId;
@@ -220,10 +207,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setCalendarWeekId(TechDataCalendarWeek newCalendarWeekId) {
-		TechDataCalendarWeek oldCalendarWeekId = calendarWeekId;
 		calendarWeekId = newCalendarWeekId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
 	}
 
 	/**
@@ -243,10 +227,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

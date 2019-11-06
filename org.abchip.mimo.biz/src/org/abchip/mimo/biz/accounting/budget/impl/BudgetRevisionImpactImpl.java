@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -179,10 +176,7 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
-		String oldBudgetItemSeqId = budgetItemSeqId;
 		budgetItemSeqId = newBudgetItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
 	}
 
 	/**
@@ -202,10 +196,7 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 */
 	@Override
 	public void setRevisedAmount(BigDecimal newRevisedAmount) {
-		BigDecimal oldRevisedAmount = revisedAmount;
 		revisedAmount = newRevisedAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION_IMPACT__REVISED_AMOUNT, oldRevisedAmount, revisedAmount));
 	}
 
 	/**
@@ -225,10 +216,7 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 */
 	@Override
 	public void setRevisionReason(String newRevisionReason) {
-		String oldRevisionReason = revisionReason;
 		revisionReason = newRevisionReason;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_REASON, oldRevisionReason, revisionReason));
 	}
 
 	/**
@@ -248,10 +236,7 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 */
 	@Override
 	public void setRevisionSeqId(String newRevisionSeqId) {
-		String oldRevisionSeqId = revisionSeqId;
 		revisionSeqId = newRevisionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION_IMPACT__REVISION_SEQ_ID, oldRevisionSeqId, revisionSeqId));
 	}
 
 	/**
@@ -271,10 +256,7 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 */
 	@Override
 	public void setAddDeleteFlag(boolean newAddDeleteFlag) {
-		boolean oldAddDeleteFlag = addDeleteFlag;
 		addDeleteFlag = newAddDeleteFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION_IMPACT__ADD_DELETE_FLAG, oldAddDeleteFlag, addDeleteFlag));
 	}
 
 	/**
@@ -288,8 +270,6 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -311,10 +291,7 @@ public class BudgetRevisionImpactImpl extends BizEntityImpl implements BudgetRev
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION_IMPACT__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**

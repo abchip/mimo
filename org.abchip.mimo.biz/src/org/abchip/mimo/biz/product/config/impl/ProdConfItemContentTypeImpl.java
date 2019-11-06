@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProdConfItemContent;
 import org.abchip.mimo.biz.product.config.ProdConfItemContentType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,10 +145,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -171,10 +165,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -188,8 +179,6 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ProdConfItemContentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -211,10 +200,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setParentTypeId(ProdConfItemContentType newParentTypeId) {
-		ProdConfItemContentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -246,10 +232,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setConfItemContentTypeId(String newConfItemContentTypeId) {
-		String oldConfItemContentTypeId = confItemContentTypeId;
 		confItemContentTypeId = newConfItemContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID, oldConfItemContentTypeId, confItemContentTypeId));
 	}
 
 	/**

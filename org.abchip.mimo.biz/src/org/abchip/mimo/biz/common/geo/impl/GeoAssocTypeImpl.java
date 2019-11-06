@@ -13,10 +13,7 @@ import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,10 +107,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -157,10 +151,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 */
 	@Override
 	public void setGeoAssocTypeId(String newGeoAssocTypeId) {
-		String oldGeoAssocTypeId = geoAssocTypeId;
 		geoAssocTypeId = newGeoAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
 	}
 
 	/**

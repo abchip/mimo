@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfigType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,10 +125,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -145,8 +139,6 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 			InternalEObject oldShipmentGatewayConfTypeId = (InternalEObject)shipmentGatewayConfTypeId;
 			shipmentGatewayConfTypeId = (ShipmentGatewayConfigType)eResolveProxy(oldShipmentGatewayConfTypeId);
 			if (shipmentGatewayConfTypeId != oldShipmentGatewayConfTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID, oldShipmentGatewayConfTypeId, shipmentGatewayConfTypeId));
 			}
 		}
 		return shipmentGatewayConfTypeId;
@@ -168,10 +160,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public void setShipmentGatewayConfTypeId(ShipmentGatewayConfigType newShipmentGatewayConfTypeId) {
-		ShipmentGatewayConfigType oldShipmentGatewayConfTypeId = shipmentGatewayConfTypeId;
 		shipmentGatewayConfTypeId = newShipmentGatewayConfTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID, oldShipmentGatewayConfTypeId, shipmentGatewayConfTypeId));
 	}
 
 	/**
@@ -203,10 +192,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public void setShipmentGatewayConfigId(String newShipmentGatewayConfigId) {
-		String oldShipmentGatewayConfigId = shipmentGatewayConfigId;
 		shipmentGatewayConfigId = newShipmentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID, oldShipmentGatewayConfigId, shipmentGatewayConfigId));
 	}
 
 	/**

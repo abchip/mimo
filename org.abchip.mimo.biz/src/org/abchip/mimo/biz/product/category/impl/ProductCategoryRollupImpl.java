@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryRollup;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,10 +156,7 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -182,10 +176,7 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -205,10 +196,7 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -222,8 +210,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -245,10 +231,7 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -262,8 +245,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 			InternalEObject oldParentProductCategoryId = (InternalEObject)parentProductCategoryId;
 			parentProductCategoryId = (ProductCategory)eResolveProxy(oldParentProductCategoryId);
 			if (parentProductCategoryId != oldParentProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID, oldParentProductCategoryId, parentProductCategoryId));
 			}
 		}
 		return parentProductCategoryId;
@@ -285,10 +266,7 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setParentProductCategoryId(ProductCategory newParentProductCategoryId) {
-		ProductCategory oldParentProductCategoryId = parentProductCategoryId;
 		parentProductCategoryId = newParentProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID, oldParentProductCategoryId, parentProductCategoryId));
 	}
 
 	/**

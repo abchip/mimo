@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.common.screen.CustomScreen;
 import org.abchip.mimo.biz.common.screen.CustomScreenType;
 import org.abchip.mimo.biz.common.screen.ScreenPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -157,10 +153,7 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 	 */
 	@Override
 	public void setCustomScreenTypeId(String newCustomScreenTypeId) {
-		String oldCustomScreenTypeId = customScreenTypeId;
 		customScreenTypeId = newCustomScreenTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN_TYPE__CUSTOM_SCREEN_TYPE_ID, oldCustomScreenTypeId, customScreenTypeId));
 	}
 
 	/**
@@ -180,10 +173,7 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -203,10 +193,7 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -226,10 +213,7 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 	 */
 	@Override
 	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**

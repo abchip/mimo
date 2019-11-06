@@ -14,14 +14,11 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,10 +152,7 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -178,10 +172,7 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -195,8 +186,6 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (FinAccountTransType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -218,10 +207,7 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	 */
 	@Override
 	public void setParentTypeId(FinAccountTransType newParentTypeId) {
-		FinAccountTransType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -232,7 +218,7 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	@Override
 	public List<String> getFinAccountTransTypeAttrs() {
 		if (finAccountTransTypeAttrs == null) {
-			finAccountTransTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS);
+			finAccountTransTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return finAccountTransTypeAttrs;
 	}
@@ -278,10 +264,7 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	 */
 	@Override
 	public void setFinAccountTransTypeId(String newFinAccountTransTypeId) {
-		String oldFinAccountTransTypeId = finAccountTransTypeId;
 		finAccountTransTypeId = newFinAccountTransTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ID, oldFinAccountTransTypeId, finAccountTransTypeId));
 	}
 
 	/**

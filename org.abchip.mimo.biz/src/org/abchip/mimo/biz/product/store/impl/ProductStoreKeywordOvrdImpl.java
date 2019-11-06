@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -181,10 +178,7 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -204,10 +198,7 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setKeyword(String newKeyword) {
-		String oldKeyword = keyword;
 		keyword = newKeyword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__KEYWORD, oldKeyword, keyword));
 	}
 
 	/**
@@ -227,10 +218,7 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setTarget(String newTarget) {
-		String oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -244,8 +232,6 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 			InternalEObject oldTargetTypeEnumId = (InternalEObject)targetTypeEnumId;
 			targetTypeEnumId = (Enumeration)eResolveProxy(oldTargetTypeEnumId);
 			if (targetTypeEnumId != oldTargetTypeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID, oldTargetTypeEnumId, targetTypeEnumId));
 			}
 		}
 		return targetTypeEnumId;
@@ -267,10 +253,7 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setTargetTypeEnumId(Enumeration newTargetTypeEnumId) {
-		Enumeration oldTargetTypeEnumId = targetTypeEnumId;
 		targetTypeEnumId = newTargetTypeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID, oldTargetTypeEnumId, targetTypeEnumId));
 	}
 
 	/**
@@ -290,10 +273,7 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -307,8 +287,6 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -330,10 +308,7 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

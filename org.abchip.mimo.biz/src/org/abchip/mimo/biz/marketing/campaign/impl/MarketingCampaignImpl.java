@@ -19,15 +19,12 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -491,10 +488,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setActualCost(BigDecimal newActualCost) {
-		BigDecimal oldActualCost = actualCost;
 		actualCost = newActualCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__ACTUAL_COST, oldActualCost, actualCost));
 	}
 
 	/**
@@ -514,10 +508,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setBudgetedCost(BigDecimal newBudgetedCost) {
-		BigDecimal oldBudgetedCost = budgetedCost;
 		budgetedCost = newBudgetedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__BUDGETED_COST, oldBudgetedCost, budgetedCost));
 	}
 
 	/**
@@ -537,10 +528,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setCampaignName(String newCampaignName) {
-		String oldCampaignName = campaignName;
 		campaignName = newCampaignName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__CAMPAIGN_NAME, oldCampaignName, campaignName));
 	}
 
 	/**
@@ -560,10 +548,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setCampaignSummary(String newCampaignSummary) {
-		String oldCampaignSummary = campaignSummary;
 		campaignSummary = newCampaignSummary;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__CAMPAIGN_SUMMARY, oldCampaignSummary, campaignSummary));
 	}
 
 	/**
@@ -583,10 +568,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setConvertedLeads(String newConvertedLeads) {
-		String oldConvertedLeads = convertedLeads;
 		convertedLeads = newConvertedLeads;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__CONVERTED_LEADS, oldConvertedLeads, convertedLeads));
 	}
 
 	/**
@@ -606,10 +588,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -623,8 +602,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -646,10 +623,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -669,10 +643,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setEstimatedCost(BigDecimal newEstimatedCost) {
-		BigDecimal oldEstimatedCost = estimatedCost;
 		estimatedCost = newEstimatedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__ESTIMATED_COST, oldEstimatedCost, estimatedCost));
 	}
 
 	/**
@@ -692,10 +663,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setExpectedResponsePercent(double newExpectedResponsePercent) {
-		double oldExpectedResponsePercent = expectedResponsePercent;
 		expectedResponsePercent = newExpectedResponsePercent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__EXPECTED_RESPONSE_PERCENT, oldExpectedResponsePercent, expectedResponsePercent));
 	}
 
 	/**
@@ -715,10 +683,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setExpectedRevenue(BigDecimal newExpectedRevenue) {
-		BigDecimal oldExpectedRevenue = expectedRevenue;
 		expectedRevenue = newExpectedRevenue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__EXPECTED_REVENUE, oldExpectedRevenue, expectedRevenue));
 	}
 
 	/**
@@ -738,10 +703,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -761,10 +723,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setIsActive(boolean newIsActive) {
-		boolean oldIsActive = isActive;
 		isActive = newIsActive;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__IS_ACTIVE, oldIsActive, isActive));
 	}
 
 	/**
@@ -784,10 +743,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -807,10 +763,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setMarketingCampaignId(String newMarketingCampaignId) {
-		String oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 	}
 
 	/**
@@ -830,10 +783,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setNumSent(long newNumSent) {
-		long oldNumSent = numSent;
 		numSent = newNumSent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__NUM_SENT, oldNumSent, numSent));
 	}
 
 	/**
@@ -847,8 +797,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 			InternalEObject oldParentCampaignId = (InternalEObject)parentCampaignId;
 			parentCampaignId = (MarketingCampaign)eResolveProxy(oldParentCampaignId);
 			if (parentCampaignId != oldParentCampaignId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID, oldParentCampaignId, parentCampaignId));
 			}
 		}
 		return parentCampaignId;
@@ -870,10 +818,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setParentCampaignId(MarketingCampaign newParentCampaignId) {
-		MarketingCampaign oldParentCampaignId = parentCampaignId;
 		parentCampaignId = newParentCampaignId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID, oldParentCampaignId, parentCampaignId));
 	}
 
 	/**
@@ -893,10 +838,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setStartDate(Date newStartDate) {
-		Date oldStartDate = startDate;
 		startDate = newStartDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__START_DATE, oldStartDate, startDate));
 	}
 
 	/**
@@ -910,8 +852,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -933,10 +873,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -956,10 +893,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -970,7 +904,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	@Override
 	public List<String> getMarketingCampaignNotes() {
 		if (marketingCampaignNotes == null) {
-			marketingCampaignNotes = new EDataTypeUniqueEList<String>(String.class, this, CampaignPackage.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES);
+			marketingCampaignNotes = new BasicInternalEList<String>(String.class);
 		}
 		return marketingCampaignNotes;
 	}

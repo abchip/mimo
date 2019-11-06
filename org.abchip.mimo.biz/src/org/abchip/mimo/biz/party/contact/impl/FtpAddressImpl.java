@@ -9,11 +9,7 @@ package org.abchip.mimo.biz.party.contact.impl;
 
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.FtpAddress;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -258,10 +254,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setBinaryTransfer(boolean newBinaryTransfer) {
-		boolean oldBinaryTransfer = binaryTransfer;
 		binaryTransfer = newBinaryTransfer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__BINARY_TRANSFER, oldBinaryTransfer, binaryTransfer));
 	}
 
 	/**
@@ -281,10 +274,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setDefaultTimeout(long newDefaultTimeout) {
-		long oldDefaultTimeout = defaultTimeout;
 		defaultTimeout = newDefaultTimeout;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__DEFAULT_TIMEOUT, oldDefaultTimeout, defaultTimeout));
 	}
 
 	/**
@@ -304,10 +294,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setFilePath(String newFilePath) {
-		String oldFilePath = filePath;
 		filePath = newFilePath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__FILE_PATH, oldFilePath, filePath));
 	}
 
 	/**
@@ -327,10 +314,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setFtpPassword(String newFtpPassword) {
-		String oldFtpPassword = ftpPassword;
 		ftpPassword = newFtpPassword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__FTP_PASSWORD, oldFtpPassword, ftpPassword));
 	}
 
 	/**
@@ -350,10 +334,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setHostname(String newHostname) {
-		String oldHostname = hostname;
 		hostname = newHostname;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__HOSTNAME, oldHostname, hostname));
 	}
 
 	/**
@@ -373,10 +354,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setPassiveMode(boolean newPassiveMode) {
-		boolean oldPassiveMode = passiveMode;
 		passiveMode = newPassiveMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__PASSIVE_MODE, oldPassiveMode, passiveMode));
 	}
 
 	/**
@@ -396,10 +374,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setPort(long newPort) {
-		long oldPort = port;
 		port = newPort;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__PORT, oldPort, port));
 	}
 
 	/**
@@ -419,10 +394,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setUsername(String newUsername) {
-		String oldUsername = username;
 		username = newUsername;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__USERNAME, oldUsername, username));
 	}
 
 	/**
@@ -442,10 +414,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 */
 	@Override
 	public void setZipFile(boolean newZipFile) {
-		boolean oldZipFile = zipFile;
 		zipFile = newZipFile;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.FTP_ADDRESS__ZIP_FILE, oldZipFile, zipFile));
 	}
 
 	/**

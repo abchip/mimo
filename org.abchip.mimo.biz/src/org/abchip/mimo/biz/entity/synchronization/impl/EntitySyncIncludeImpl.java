@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.entity.synchronization.EntitySync;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,10 +118,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public void setApplEnumId(String newApplEnumId) {
-		String oldApplEnumId = applEnumId;
 		applEnumId = newApplEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID, oldApplEnumId, applEnumId));
 	}
 
 	/**
@@ -144,10 +138,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public void setEntityOrPackage(String newEntityOrPackage) {
-		String oldEntityOrPackage = entityOrPackage;
 		entityOrPackage = newEntityOrPackage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE, oldEntityOrPackage, entityOrPackage));
 	}
 
 	/**
@@ -161,8 +152,6 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 			InternalEObject oldEntitySyncId = (InternalEObject)entitySyncId;
 			entitySyncId = (EntitySync)eResolveProxy(oldEntitySyncId);
 			if (entitySyncId != oldEntitySyncId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
 			}
 		}
 		return entitySyncId;
@@ -184,10 +173,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public void setEntitySyncId(EntitySync newEntitySyncId) {
-		EntitySync oldEntitySyncId = entitySyncId;
 		entitySyncId = newEntitySyncId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
 	}
 
 	/**

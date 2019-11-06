@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,8 +131,6 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -157,10 +152,7 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -180,10 +172,7 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -203,10 +192,7 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -220,8 +206,6 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 			InternalEObject oldRequirementId = (InternalEObject)requirementId;
 			requirementId = (Requirement)eResolveProxy(oldRequirementId);
 			if (requirementId != oldRequirementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__REQUIREMENT_ID, oldRequirementId, requirementId));
 			}
 		}
 		return requirementId;
@@ -243,10 +227,7 @@ public class OrderRequirementCommitmentImpl extends BizEntityImpl implements Ord
 	 */
 	@Override
 	public void setRequirementId(Requirement newRequirementId) {
-		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.ORDER_REQUIREMENT_COMMITMENT__REQUIREMENT_ID, oldRequirementId, requirementId));
 	}
 
 	/**

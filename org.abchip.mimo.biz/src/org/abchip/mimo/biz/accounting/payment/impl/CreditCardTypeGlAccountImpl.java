@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import org.abchip.mimo.biz.accounting.payment.CreditCardTypeGlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,10 +126,7 @@ public class CreditCardTypeGlAccountImpl extends BizEntityImpl implements Credit
 	 */
 	@Override
 	public void setCardType(String newCardType) {
-		String oldCardType = cardType;
 		cardType = newCardType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD_TYPE_GL_ACCOUNT__CARD_TYPE, oldCardType, cardType));
 	}
 
 	/**
@@ -153,10 +146,7 @@ public class CreditCardTypeGlAccountImpl extends BizEntityImpl implements Credit
 	 */
 	@Override
 	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD_TYPE_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**
@@ -176,10 +166,7 @@ public class CreditCardTypeGlAccountImpl extends BizEntityImpl implements Credit
 	 */
 	@Override
 	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**

@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestAttribute;
 import org.abchip.mimo.biz.order.request.RequestPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,10 +144,7 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -170,10 +164,7 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -193,10 +184,7 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -210,8 +198,6 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -233,10 +219,7 @@ public class CustRequestAttributeImpl extends BizEntityImpl implements CustReque
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ATTRIBUTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**

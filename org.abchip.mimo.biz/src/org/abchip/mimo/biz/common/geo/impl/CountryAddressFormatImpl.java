@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -207,10 +204,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setAddressFormat(String newAddressFormat) {
-		String oldAddressFormat = addressFormat;
 		addressFormat = newAddressFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT, oldAddressFormat, addressFormat));
 	}
 
 	/**
@@ -230,10 +224,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setPostalCodeRegex(String newPostalCodeRegex) {
-		String oldPostalCodeRegex = postalCodeRegex;
 		postalCodeRegex = newPostalCodeRegex;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX, oldPostalCodeRegex, postalCodeRegex));
 	}
 
 	/**
@@ -253,10 +244,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setRequirePostalCode(boolean newRequirePostalCode) {
-		boolean oldRequirePostalCode = requirePostalCode;
 		requirePostalCode = newRequirePostalCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE, oldRequirePostalCode, requirePostalCode));
 	}
 
 	/**
@@ -276,10 +264,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setRequirePostalCodeExt(boolean newRequirePostalCodeExt) {
-		boolean oldRequirePostalCodeExt = requirePostalCodeExt;
 		requirePostalCodeExt = newRequirePostalCodeExt;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE_EXT, oldRequirePostalCodeExt, requirePostalCodeExt));
 	}
 
 	/**
@@ -299,10 +284,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setRequireStateProvinceId(String newRequireStateProvinceId) {
-		String oldRequireStateProvinceId = requireStateProvinceId;
 		requireStateProvinceId = newRequireStateProvinceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID, oldRequireStateProvinceId, requireStateProvinceId));
 	}
 
 	/**
@@ -316,8 +298,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 			InternalEObject oldGeoAssocTypeId = (InternalEObject)geoAssocTypeId;
 			geoAssocTypeId = (GeoAssocType)eResolveProxy(oldGeoAssocTypeId);
 			if (geoAssocTypeId != oldGeoAssocTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
 			}
 		}
 		return geoAssocTypeId;
@@ -339,10 +319,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setGeoAssocTypeId(GeoAssocType newGeoAssocTypeId) {
-		GeoAssocType oldGeoAssocTypeId = geoAssocTypeId;
 		geoAssocTypeId = newGeoAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
 	}
 
 	/**
@@ -362,10 +339,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setHasPostalCodeExt(boolean newHasPostalCodeExt) {
-		boolean oldHasPostalCodeExt = hasPostalCodeExt;
 		hasPostalCodeExt = newHasPostalCodeExt;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT, oldHasPostalCodeExt, hasPostalCodeExt));
 	}
 
 	/**
@@ -379,8 +353,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -402,10 +374,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
-		Geo oldGeoId = geoId;
 		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**

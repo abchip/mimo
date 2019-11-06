@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,10 +107,7 @@ public class AccommodationMapTypeImpl extends BizEntityTypeImpl<AccommodationMap
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_MAP_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -144,10 +139,7 @@ public class AccommodationMapTypeImpl extends BizEntityTypeImpl<AccommodationMap
 	 */
 	@Override
 	public void setAccommodationMapTypeId(String newAccommodationMapTypeId) {
-		String oldAccommodationMapTypeId = accommodationMapTypeId;
 		accommodationMapTypeId = newAccommodationMapTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_MAP_TYPE__ACCOMMODATION_MAP_TYPE_ID, oldAccommodationMapTypeId, accommodationMapTypeId));
 	}
 
 	/**

@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContent;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContentType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,10 +125,7 @@ public class WorkEffortContentTypeImpl extends BizEntityTypeImpl<WorkEffortConte
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -145,8 +139,6 @@ public class WorkEffortContentTypeImpl extends BizEntityTypeImpl<WorkEffortConte
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (WorkEffortContentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -168,10 +160,7 @@ public class WorkEffortContentTypeImpl extends BizEntityTypeImpl<WorkEffortConte
 	 */
 	@Override
 	public void setParentTypeId(WorkEffortContentType newParentTypeId) {
-		WorkEffortContentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -203,10 +192,7 @@ public class WorkEffortContentTypeImpl extends BizEntityTypeImpl<WorkEffortConte
 	 */
 	@Override
 	public void setWorkEffortContentTypeId(String newWorkEffortContentTypeId) {
-		String oldWorkEffortContentTypeId = workEffortContentTypeId;
 		workEffortContentTypeId = newWorkEffortContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT_TYPE__WORK_EFFORT_CONTENT_TYPE_ID, oldWorkEffortContentTypeId, workEffortContentTypeId));
 	}
 
 	/**

@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderNotification;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -161,10 +158,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -178,8 +172,6 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 			InternalEObject oldEmailType = (InternalEObject)emailType;
 			emailType = (Enumeration)eResolveProxy(oldEmailType);
 			if (emailType != oldEmailType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE, oldEmailType, emailType));
 			}
 		}
 		return emailType;
@@ -201,10 +193,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setEmailType(Enumeration newEmailType) {
-		Enumeration oldEmailType = emailType;
 		emailType = newEmailType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE, oldEmailType, emailType));
 	}
 
 	/**
@@ -224,10 +213,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setNotificationDate(Date newNotificationDate) {
-		Date oldNotificationDate = notificationDate;
 		notificationDate = newNotificationDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__NOTIFICATION_DATE, oldNotificationDate, notificationDate));
 	}
 
 	/**
@@ -241,8 +227,6 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_NOTIFICATION__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -264,10 +248,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -287,10 +268,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setOrderNotificationId(String newOrderNotificationId) {
-		String oldOrderNotificationId = orderNotificationId;
 		orderNotificationId = newOrderNotificationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID, oldOrderNotificationId, orderNotificationId));
 	}
 
 	/**

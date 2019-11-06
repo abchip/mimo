@@ -22,13 +22,10 @@ import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
 import org.abchip.mimo.biz.shipment.receipt.RejectionReason;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -360,10 +357,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setDatetimeReceived(Date newDatetimeReceived) {
-		Date oldDatetimeReceived = datetimeReceived;
 		datetimeReceived = newDatetimeReceived;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__DATETIME_RECEIVED, oldDatetimeReceived, datetimeReceived));
 	}
 
 	/**
@@ -377,8 +371,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -400,10 +392,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -423,10 +412,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setItemDescription(String newItemDescription) {
-		String oldItemDescription = itemDescription;
 		itemDescription = newItemDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__ITEM_DESCRIPTION, oldItemDescription, itemDescription));
 	}
 
 	/**
@@ -440,8 +426,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -463,10 +447,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -486,10 +467,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -503,8 +481,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -526,10 +502,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -549,10 +522,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setQuantityAccepted(BigDecimal newQuantityAccepted) {
-		BigDecimal oldQuantityAccepted = quantityAccepted;
 		quantityAccepted = newQuantityAccepted;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_ACCEPTED, oldQuantityAccepted, quantityAccepted));
 	}
 
 	/**
@@ -572,10 +542,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setQuantityRejected(BigDecimal newQuantityRejected) {
-		BigDecimal oldQuantityRejected = quantityRejected;
 		quantityRejected = newQuantityRejected;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_REJECTED, oldQuantityRejected, quantityRejected));
 	}
 
 	/**
@@ -595,10 +562,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setReceiptId(String newReceiptId) {
-		String oldReceiptId = receiptId;
 		receiptId = newReceiptId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__RECEIPT_ID, oldReceiptId, receiptId));
 	}
 
 	/**
@@ -612,8 +576,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			InternalEObject oldReceivedByUserLoginId = (InternalEObject)receivedByUserLoginId;
 			receivedByUserLoginId = (UserLogin)eResolveProxy(oldReceivedByUserLoginId);
 			if (receivedByUserLoginId != oldReceivedByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID, oldReceivedByUserLoginId, receivedByUserLoginId));
 			}
 		}
 		return receivedByUserLoginId;
@@ -635,10 +597,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setReceivedByUserLoginId(UserLogin newReceivedByUserLoginId) {
-		UserLogin oldReceivedByUserLoginId = receivedByUserLoginId;
 		receivedByUserLoginId = newReceivedByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID, oldReceivedByUserLoginId, receivedByUserLoginId));
 	}
 
 	/**
@@ -652,8 +611,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			InternalEObject oldRejectionId = (InternalEObject)rejectionId;
 			rejectionId = (RejectionReason)eResolveProxy(oldRejectionId);
 			if (rejectionId != oldRejectionId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID, oldRejectionId, rejectionId));
 			}
 		}
 		return rejectionId;
@@ -675,10 +632,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setRejectionId(RejectionReason newRejectionId) {
-		RejectionReason oldRejectionId = rejectionId;
 		rejectionId = newRejectionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID, oldRejectionId, rejectionId));
 	}
 
 	/**
@@ -698,10 +652,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
 		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -721,10 +672,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
-		String oldReturnItemSeqId = returnItemSeqId;
 		returnItemSeqId = newReturnItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
 	}
 
 	/**
@@ -738,8 +686,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -761,10 +707,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
-		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -784,10 +727,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
-		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**
@@ -807,10 +747,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 */
 	@Override
 	public void setShipmentPackageSeqId(String newShipmentPackageSeqId) {
-		String oldShipmentPackageSeqId = shipmentPackageSeqId;
 		shipmentPackageSeqId = newShipmentPackageSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_PACKAGE_SEQ_ID, oldShipmentPackageSeqId, shipmentPackageSeqId));
 	}
 
 	/**

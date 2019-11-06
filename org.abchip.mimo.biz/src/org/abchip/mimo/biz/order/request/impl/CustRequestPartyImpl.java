@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.order.request.CustRequestParty;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,8 +143,6 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -169,10 +164,7 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -192,10 +184,7 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_PARTY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -209,8 +198,6 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_PARTY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -232,10 +219,7 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_PARTY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -249,8 +233,6 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_PARTY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -272,10 +254,7 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_PARTY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -295,10 +274,7 @@ public class CustRequestPartyImpl extends BizEntityImpl implements CustRequestPa
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_PARTY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

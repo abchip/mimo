@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactMechTypePurpose;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,8 +84,6 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
 			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
 			if (contactMechTypeId != oldContactMechTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 			}
 		}
 		return contactMechTypeId;
@@ -110,10 +105,7 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
-		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 	}
 
 	/**
@@ -127,8 +119,6 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 			InternalEObject oldContactMechPurposeTypeId = (InternalEObject)contactMechPurposeTypeId;
 			contactMechPurposeTypeId = (ContactMechPurposeType)eResolveProxy(oldContactMechPurposeTypeId);
 			if (contactMechPurposeTypeId != oldContactMechPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 			}
 		}
 		return contactMechPurposeTypeId;
@@ -150,10 +140,7 @@ public class ContactMechTypePurposeImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setContactMechPurposeTypeId(ContactMechPurposeType newContactMechPurposeTypeId) {
-		ContactMechPurposeType oldContactMechPurposeTypeId = contactMechPurposeTypeId;
 		contactMechPurposeTypeId = newContactMechPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 	}
 
 	/**

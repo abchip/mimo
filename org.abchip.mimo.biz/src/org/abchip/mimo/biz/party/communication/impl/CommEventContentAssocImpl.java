@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.party.communication.CommContentAssocType;
 import org.abchip.mimo.biz.party.communication.CommEventContentAssoc;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -157,8 +154,6 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -180,10 +175,7 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -203,10 +195,7 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -226,10 +215,7 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -249,10 +235,7 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -266,8 +249,6 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -289,10 +270,7 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
-		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -306,8 +284,6 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 			InternalEObject oldCommContentAssocTypeId = (InternalEObject)commContentAssocTypeId;
 			commContentAssocTypeId = (CommContentAssocType)eResolveProxy(oldCommContentAssocTypeId);
 			if (commContentAssocTypeId != oldCommContentAssocTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID, oldCommContentAssocTypeId, commContentAssocTypeId));
 			}
 		}
 		return commContentAssocTypeId;
@@ -329,10 +305,7 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 */
 	@Override
 	public void setCommContentAssocTypeId(CommContentAssocType newCommContentAssocTypeId) {
-		CommContentAssocType oldCommContentAssocTypeId = commContentAssocTypeId;
 		commContentAssocTypeId = newCommContentAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID, oldCommContentAssocTypeId, commContentAssocTypeId));
 	}
 
 	/**

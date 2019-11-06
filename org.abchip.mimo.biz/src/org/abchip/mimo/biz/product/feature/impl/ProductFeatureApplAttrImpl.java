@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,10 +157,7 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -183,10 +177,7 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -206,10 +197,7 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -223,8 +211,6 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -246,10 +232,7 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -263,8 +246,6 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -286,10 +267,7 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
-		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**

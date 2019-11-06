@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
 import org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 			InternalEObject oldBillingAccountTermId = (InternalEObject)billingAccountTermId;
 			billingAccountTermId = (BillingAccountTerm)eResolveProxy(oldBillingAccountTermId);
 			if (billingAccountTermId != oldBillingAccountTermId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID, oldBillingAccountTermId, billingAccountTermId));
 			}
 		}
 		return billingAccountTermId;
@@ -183,10 +172,7 @@ public class BillingAccountTermAttrImpl extends BizEntityImpl implements Billing
 	 */
 	@Override
 	public void setBillingAccountTermId(BillingAccountTerm newBillingAccountTermId) {
-		BillingAccountTerm oldBillingAccountTermId = billingAccountTermId;
 		billingAccountTermId = newBillingAccountTermId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM_ATTR__BILLING_ACCOUNT_TERM_ID, oldBillingAccountTermId, billingAccountTermId));
 	}
 
 	/**

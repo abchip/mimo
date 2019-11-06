@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandardType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,10 +146,7 @@ public class WorkEffortGoodStandardTypeImpl extends BizEntityTypeImpl<WorkEffort
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -172,10 +166,7 @@ public class WorkEffortGoodStandardTypeImpl extends BizEntityTypeImpl<WorkEffort
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -189,8 +180,6 @@ public class WorkEffortGoodStandardTypeImpl extends BizEntityTypeImpl<WorkEffort
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (WorkEffortGoodStandardType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -212,10 +201,7 @@ public class WorkEffortGoodStandardTypeImpl extends BizEntityTypeImpl<WorkEffort
 	 */
 	@Override
 	public void setParentTypeId(WorkEffortGoodStandardType newParentTypeId) {
-		WorkEffortGoodStandardType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -247,10 +233,7 @@ public class WorkEffortGoodStandardTypeImpl extends BizEntityTypeImpl<WorkEffort
 	 */
 	@Override
 	public void setWorkEffortGoodStdTypeId(String newWorkEffortGoodStdTypeId) {
-		String oldWorkEffortGoodStdTypeId = workEffortGoodStdTypeId;
 		workEffortGoodStdTypeId = newWorkEffortGoodStdTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD_TYPE__WORK_EFFORT_GOOD_STD_TYPE_ID, oldWorkEffortGoodStdTypeId, workEffortGoodStdTypeId));
 	}
 
 	/**

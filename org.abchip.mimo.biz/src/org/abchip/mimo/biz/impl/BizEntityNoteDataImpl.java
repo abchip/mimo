@@ -11,11 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityNoteData;
 import org.abchip.mimo.biz.BizPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -239,10 +235,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteId(String newNoteId) {
-		String oldNoteId = noteId;
 		noteId = newNoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_ID, oldNoteId, noteId));
 	}
 
 	/**
@@ -262,10 +255,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setMoreInfoItemId(String newMoreInfoItemId) {
-		String oldMoreInfoItemId = moreInfoItemId;
 		moreInfoItemId = newMoreInfoItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID, oldMoreInfoItemId, moreInfoItemId));
 	}
 
 	/**
@@ -285,10 +275,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setMoreInfoItemName(String newMoreInfoItemName) {
-		String oldMoreInfoItemName = moreInfoItemName;
 		moreInfoItemName = newMoreInfoItemName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME, oldMoreInfoItemName, moreInfoItemName));
 	}
 
 	/**
@@ -308,10 +295,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setMoreInfoUrl(String newMoreInfoUrl) {
-		String oldMoreInfoUrl = moreInfoUrl;
 		moreInfoUrl = newMoreInfoUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL, oldMoreInfoUrl, moreInfoUrl));
 	}
 
 	/**
@@ -331,10 +315,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteDateTime(Date newNoteDateTime) {
-		Date oldNoteDateTime = noteDateTime;
 		noteDateTime = newNoteDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME, oldNoteDateTime, noteDateTime));
 	}
 
 	/**
@@ -354,10 +335,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteInfo(String newNoteInfo) {
-		String oldNoteInfo = noteInfo;
 		noteInfo = newNoteInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_INFO, oldNoteInfo, noteInfo));
 	}
 
 	/**
@@ -377,10 +355,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteName(String newNoteName) {
-		String oldNoteName = noteName;
 		noteName = newNoteName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_NAME, oldNoteName, noteName));
 	}
 
 	/**
@@ -400,10 +375,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteParty(String newNoteParty) {
-		String oldNoteParty = noteParty;
 		noteParty = newNoteParty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY, oldNoteParty, noteParty));
 	}
 
 	/**

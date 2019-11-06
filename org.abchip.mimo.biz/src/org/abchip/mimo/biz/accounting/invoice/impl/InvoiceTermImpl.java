@@ -17,14 +17,11 @@ import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.TermType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -245,10 +242,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -268,10 +262,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
-		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -291,10 +282,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setTermDays(long newTermDays) {
-		long oldTermDays = termDays;
 		termDays = newTermDays;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__TERM_DAYS, oldTermDays, termDays));
 	}
 
 	/**
@@ -308,8 +296,6 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 			InternalEObject oldTermTypeId = (InternalEObject)termTypeId;
 			termTypeId = (TermType)eResolveProxy(oldTermTypeId);
 			if (termTypeId != oldTermTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 			}
 		}
 		return termTypeId;
@@ -331,10 +317,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setTermTypeId(TermType newTermTypeId) {
-		TermType oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 	}
 
 	/**
@@ -354,10 +337,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setTermValue(BigDecimal newTermValue) {
-		BigDecimal oldTermValue = termValue;
 		termValue = newTermValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__TERM_VALUE, oldTermValue, termValue));
 	}
 
 	/**
@@ -377,10 +357,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setTextValue(String newTextValue) {
-		String oldTextValue = textValue;
 		textValue = newTextValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__TEXT_VALUE, oldTextValue, textValue));
 	}
 
 	/**
@@ -400,10 +377,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -414,7 +388,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	@Override
 	public List<String> getInvoiceTermAttributes() {
 		if (invoiceTermAttributes == null) {
-			invoiceTermAttributes = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES);
+			invoiceTermAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return invoiceTermAttributes;
 	}
@@ -430,8 +404,6 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_TERM__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -453,10 +425,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
-		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -476,10 +445,7 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@Override
 	public void setInvoiceTermId(String newInvoiceTermId) {
-		String oldInvoiceTermId = invoiceTermId;
 		invoiceTermId = newInvoiceTermId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__INVOICE_TERM_ID, oldInvoiceTermId, invoiceTermId));
 	}
 
 	/**

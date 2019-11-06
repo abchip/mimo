@@ -12,9 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.SettlementTerm;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,10 +144,7 @@ public class SettlementTermImpl extends BizEntityImpl implements SettlementTerm 
 	 */
 	@Override
 	public void setTermName(String newTermName) {
-		String oldTermName = termName;
 		termName = newTermName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.SETTLEMENT_TERM__TERM_NAME, oldTermName, termName));
 	}
 
 	/**
@@ -169,10 +164,7 @@ public class SettlementTermImpl extends BizEntityImpl implements SettlementTerm 
 	 */
 	@Override
 	public void setTermValue(long newTermValue) {
-		long oldTermValue = termValue;
 		termValue = newTermValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.SETTLEMENT_TERM__TERM_VALUE, oldTermValue, termValue));
 	}
 
 	/**
@@ -192,10 +184,7 @@ public class SettlementTermImpl extends BizEntityImpl implements SettlementTerm 
 	 */
 	@Override
 	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.SETTLEMENT_TERM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -227,10 +216,7 @@ public class SettlementTermImpl extends BizEntityImpl implements SettlementTerm 
 	 */
 	@Override
 	public void setSettlementTermId(String newSettlementTermId) {
-		String oldSettlementTermId = settlementTermId;
 		settlementTermId = newSettlementTermId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.SETTLEMENT_TERM__SETTLEMENT_TERM_ID, oldSettlementTermId, settlementTermId));
 	}
 
 	/**

@@ -17,13 +17,10 @@ import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.content.survey.SurveyResponseAnswer;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -427,10 +424,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setAmountBase(BigDecimal newAmountBase) {
-		BigDecimal oldAmountBase = amountBase;
 		amountBase = newAmountBase;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__AMOUNT_BASE, oldAmountBase, amountBase));
 	}
 
 	/**
@@ -450,10 +444,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setAmountBaseUomId(String newAmountBaseUomId) {
-		String oldAmountBaseUomId = amountBaseUomId;
 		amountBaseUomId = newAmountBaseUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__AMOUNT_BASE_UOM_ID, oldAmountBaseUomId, amountBaseUomId));
 	}
 
 	/**
@@ -473,10 +464,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setAnsweredDate(Date newAnsweredDate) {
-		Date oldAnsweredDate = answeredDate;
 		answeredDate = newAnsweredDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__ANSWERED_DATE, oldAnsweredDate, answeredDate));
 	}
 
 	/**
@@ -496,10 +484,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setBooleanResponse(boolean newBooleanResponse) {
-		boolean oldBooleanResponse = booleanResponse;
 		booleanResponse = newBooleanResponse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__BOOLEAN_RESPONSE, oldBooleanResponse, booleanResponse));
 	}
 
 	/**
@@ -513,8 +498,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -536,10 +519,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -559,10 +539,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setCurrencyResponse(BigDecimal newCurrencyResponse) {
-		BigDecimal oldCurrencyResponse = currencyResponse;
 		currencyResponse = newCurrencyResponse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__CURRENCY_RESPONSE, oldCurrencyResponse, currencyResponse));
 	}
 
 	/**
@@ -582,10 +559,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setDuration(long newDuration) {
-		long oldDuration = duration;
 		duration = newDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__DURATION, oldDuration, duration));
 	}
 
 	/**
@@ -605,10 +579,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setDurationUomId(String newDurationUomId) {
-		String oldDurationUomId = durationUomId;
 		durationUomId = newDurationUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__DURATION_UOM_ID, oldDurationUomId, durationUomId));
 	}
 
 	/**
@@ -628,10 +599,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setFloatResponse(double newFloatResponse) {
-		double oldFloatResponse = floatResponse;
 		floatResponse = newFloatResponse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__FLOAT_RESPONSE, oldFloatResponse, floatResponse));
 	}
 
 	/**
@@ -651,10 +619,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setNumericResponse(long newNumericResponse) {
-		long oldNumericResponse = numericResponse;
 		numericResponse = newNumericResponse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__NUMERIC_RESPONSE, oldNumericResponse, numericResponse));
 	}
 
 	/**
@@ -674,10 +639,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -697,10 +659,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setSurveyMultiRespColId(String newSurveyMultiRespColId) {
-		String oldSurveyMultiRespColId = surveyMultiRespColId;
 		surveyMultiRespColId = newSurveyMultiRespColId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_COL_ID, oldSurveyMultiRespColId, surveyMultiRespColId));
 	}
 
 	/**
@@ -720,10 +679,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setSurveyMultiRespId(String newSurveyMultiRespId) {
-		String oldSurveyMultiRespId = surveyMultiRespId;
 		surveyMultiRespId = newSurveyMultiRespId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_ID, oldSurveyMultiRespId, surveyMultiRespId));
 	}
 
 	/**
@@ -743,10 +699,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setSurveyOptionSeqId(String newSurveyOptionSeqId) {
-		String oldSurveyOptionSeqId = surveyOptionSeqId;
 		surveyOptionSeqId = newSurveyOptionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_OPTION_SEQ_ID, oldSurveyOptionSeqId, surveyOptionSeqId));
 	}
 
 	/**
@@ -760,8 +713,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 			InternalEObject oldSurveyQuestionId = (InternalEObject)surveyQuestionId;
 			surveyQuestionId = (SurveyQuestion)eResolveProxy(oldSurveyQuestionId);
 			if (surveyQuestionId != oldSurveyQuestionId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
 			}
 		}
 		return surveyQuestionId;
@@ -783,10 +734,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setSurveyQuestionId(SurveyQuestion newSurveyQuestionId) {
-		SurveyQuestion oldSurveyQuestionId = surveyQuestionId;
 		surveyQuestionId = newSurveyQuestionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
 	}
 
 	/**
@@ -800,8 +748,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 			InternalEObject oldSurveyResponseId = (InternalEObject)surveyResponseId;
 			surveyResponseId = (SurveyResponse)eResolveProxy(oldSurveyResponseId);
 			if (surveyResponseId != oldSurveyResponseId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 			}
 		}
 		return surveyResponseId;
@@ -823,10 +769,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
-		SurveyResponse oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 	}
 
 	/**
@@ -846,10 +789,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setTextResponse(String newTextResponse) {
-		String oldTextResponse = textResponse;
 		textResponse = newTextResponse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__TEXT_RESPONSE, oldTextResponse, textResponse));
 	}
 
 	/**
@@ -869,10 +809,7 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 */
 	@Override
 	public void setWeightFactor(double newWeightFactor) {
-		double oldWeightFactor = weightFactor;
 		weightFactor = newWeightFactor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__WEIGHT_FACTOR, oldWeightFactor, weightFactor));
 	}
 
 	/**

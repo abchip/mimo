@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,10 +138,7 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -164,10 +158,7 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -181,8 +172,6 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (StatusType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatusPackage.STATUS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -204,10 +193,7 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 	 */
 	@Override
 	public void setParentTypeId(StatusType newParentTypeId) {
-		StatusType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -251,10 +237,7 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 	 */
 	@Override
 	public void setStatusTypeId(String newStatusTypeId) {
-		String oldStatusTypeId = statusTypeId;
 		statusTypeId = newStatusTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_TYPE__STATUS_TYPE_ID, oldStatusTypeId, statusTypeId));
 	}
 
 	/**

@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.Visit;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.abchip.mimo.biz.webapp.visit.Visitor;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -602,10 +599,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
 		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**
@@ -625,10 +619,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setClientHostName(String newClientHostName) {
-		String oldClientHostName = clientHostName;
 		clientHostName = newClientHostName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CLIENT_HOST_NAME, oldClientHostName, clientHostName));
 	}
 
 	/**
@@ -648,10 +639,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setClientIpAddress(String newClientIpAddress) {
-		String oldClientIpAddress = clientIpAddress;
 		clientIpAddress = newClientIpAddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CLIENT_IP_ADDRESS, oldClientIpAddress, clientIpAddress));
 	}
 
 	/**
@@ -671,10 +659,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setClientIpCountryGeoId(String newClientIpCountryGeoId) {
-		String oldClientIpCountryGeoId = clientIpCountryGeoId;
 		clientIpCountryGeoId = newClientIpCountryGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CLIENT_IP_COUNTRY_GEO_ID, oldClientIpCountryGeoId, clientIpCountryGeoId));
 	}
 
 	/**
@@ -694,10 +679,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setClientIpIspName(String newClientIpIspName) {
-		String oldClientIpIspName = clientIpIspName;
 		clientIpIspName = newClientIpIspName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CLIENT_IP_ISP_NAME, oldClientIpIspName, clientIpIspName));
 	}
 
 	/**
@@ -717,10 +699,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setClientIpPostalCode(String newClientIpPostalCode) {
-		String oldClientIpPostalCode = clientIpPostalCode;
 		clientIpPostalCode = newClientIpPostalCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CLIENT_IP_POSTAL_CODE, oldClientIpPostalCode, clientIpPostalCode));
 	}
 
 	/**
@@ -740,10 +719,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setClientIpStateProvGeoId(String newClientIpStateProvGeoId) {
-		String oldClientIpStateProvGeoId = clientIpStateProvGeoId;
 		clientIpStateProvGeoId = newClientIpStateProvGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CLIENT_IP_STATE_PROV_GEO_ID, oldClientIpStateProvGeoId, clientIpStateProvGeoId));
 	}
 
 	/**
@@ -763,10 +739,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setClientUser(String newClientUser) {
-		String oldClientUser = clientUser;
 		clientUser = newClientUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CLIENT_USER, oldClientUser, clientUser));
 	}
 
 	/**
@@ -786,10 +759,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -809,10 +779,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setCookie(String newCookie) {
-		String oldCookie = cookie;
 		cookie = newCookie;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__COOKIE, oldCookie, cookie));
 	}
 
 	/**
@@ -832,10 +799,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -855,10 +819,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setInitialLocale(String newInitialLocale) {
-		String oldInitialLocale = initialLocale;
 		initialLocale = newInitialLocale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__INITIAL_LOCALE, oldInitialLocale, initialLocale));
 	}
 
 	/**
@@ -878,10 +839,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setInitialReferrer(String newInitialReferrer) {
-		String oldInitialReferrer = initialReferrer;
 		initialReferrer = newInitialReferrer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__INITIAL_REFERRER, oldInitialReferrer, initialReferrer));
 	}
 
 	/**
@@ -901,10 +859,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setInitialRequest(String newInitialRequest) {
-		String oldInitialRequest = initialRequest;
 		initialRequest = newInitialRequest;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__INITIAL_REQUEST, oldInitialRequest, initialRequest));
 	}
 
 	/**
@@ -924,10 +879,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setInitialUserAgent(String newInitialUserAgent) {
-		String oldInitialUserAgent = initialUserAgent;
 		initialUserAgent = newInitialUserAgent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__INITIAL_USER_AGENT, oldInitialUserAgent, initialUserAgent));
 	}
 
 	/**
@@ -947,10 +899,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -970,10 +919,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -993,10 +939,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setServerHostName(String newServerHostName) {
-		String oldServerHostName = serverHostName;
 		serverHostName = newServerHostName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__SERVER_HOST_NAME, oldServerHostName, serverHostName));
 	}
 
 	/**
@@ -1016,10 +959,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setServerIpAddress(String newServerIpAddress) {
-		String oldServerIpAddress = serverIpAddress;
 		serverIpAddress = newServerIpAddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__SERVER_IP_ADDRESS, oldServerIpAddress, serverIpAddress));
 	}
 
 	/**
@@ -1039,10 +979,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setSessionId(String newSessionId) {
-		String oldSessionId = sessionId;
 		sessionId = newSessionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__SESSION_ID, oldSessionId, sessionId));
 	}
 
 	/**
@@ -1062,10 +999,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -1079,8 +1013,6 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 			InternalEObject oldUserAgentId = (InternalEObject)userAgentId;
 			userAgentId = (UserAgent)eResolveProxy(oldUserAgentId);
 			if (userAgentId != oldUserAgentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.VISIT__USER_AGENT_ID, oldUserAgentId, userAgentId));
 			}
 		}
 		return userAgentId;
@@ -1102,10 +1034,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setUserAgentId(UserAgent newUserAgentId) {
-		UserAgent oldUserAgentId = userAgentId;
 		userAgentId = newUserAgentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__USER_AGENT_ID, oldUserAgentId, userAgentId));
 	}
 
 	/**
@@ -1125,10 +1054,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setUserCreated(boolean newUserCreated) {
-		boolean oldUserCreated = userCreated;
 		userCreated = newUserCreated;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__USER_CREATED, oldUserCreated, userCreated));
 	}
 
 	/**
@@ -1148,10 +1074,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -1165,8 +1088,6 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 			InternalEObject oldVisitorId = (InternalEObject)visitorId;
 			visitorId = (Visitor)eResolveProxy(oldVisitorId);
 			if (visitorId != oldVisitorId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.VISIT__VISITOR_ID, oldVisitorId, visitorId));
 			}
 		}
 		return visitorId;
@@ -1188,10 +1109,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setVisitorId(Visitor newVisitorId) {
-		Visitor oldVisitorId = visitorId;
 		visitorId = newVisitorId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__VISITOR_ID, oldVisitorId, visitorId));
 	}
 
 	/**
@@ -1211,10 +1129,7 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 */
 	@Override
 	public void setWebappName(String newWebappName) {
-		String oldWebappName = webappName;
 		webappName = newWebappName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__WEBAPP_NAME, oldWebappName, webappName));
 	}
 
 	/**

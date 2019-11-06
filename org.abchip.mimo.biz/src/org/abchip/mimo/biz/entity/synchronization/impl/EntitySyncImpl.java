@@ -15,13 +15,9 @@ import java.util.List;
 import org.abchip.mimo.biz.entity.synchronization.EntitySync;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -401,10 +397,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setEntitySyncId(String newEntitySyncId) {
-		String oldEntitySyncId = entitySyncId;
 		entitySyncId = newEntitySyncId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
 	}
 
 	/**
@@ -424,10 +417,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setForPullOnly(boolean newForPullOnly) {
-		boolean oldForPullOnly = forPullOnly;
 		forPullOnly = newForPullOnly;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__FOR_PULL_ONLY, oldForPullOnly, forPullOnly));
 	}
 
 	/**
@@ -447,10 +437,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setForPushOnly(boolean newForPushOnly) {
-		boolean oldForPushOnly = forPushOnly;
 		forPushOnly = newForPushOnly;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__FOR_PUSH_ONLY, oldForPushOnly, forPushOnly));
 	}
 
 	/**
@@ -470,10 +457,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setKeepRemoveInfoHours(double newKeepRemoveInfoHours) {
-		double oldKeepRemoveInfoHours = keepRemoveInfoHours;
 		keepRemoveInfoHours = newKeepRemoveInfoHours;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__KEEP_REMOVE_INFO_HOURS, oldKeepRemoveInfoHours, keepRemoveInfoHours));
 	}
 
 	/**
@@ -493,10 +477,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setLastHistoryStartDate(Date newLastHistoryStartDate) {
-		Date oldLastHistoryStartDate = lastHistoryStartDate;
 		lastHistoryStartDate = newLastHistoryStartDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__LAST_HISTORY_START_DATE, oldLastHistoryStartDate, lastHistoryStartDate));
 	}
 
 	/**
@@ -516,10 +497,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setLastSuccessfulSynchTime(Date newLastSuccessfulSynchTime) {
-		Date oldLastSuccessfulSynchTime = lastSuccessfulSynchTime;
 		lastSuccessfulSynchTime = newLastSuccessfulSynchTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__LAST_SUCCESSFUL_SYNCH_TIME, oldLastSuccessfulSynchTime, lastSuccessfulSynchTime));
 	}
 
 	/**
@@ -539,10 +517,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setMaxRunningNoUpdateMillis(long newMaxRunningNoUpdateMillis) {
-		long oldMaxRunningNoUpdateMillis = maxRunningNoUpdateMillis;
 		maxRunningNoUpdateMillis = newMaxRunningNoUpdateMillis;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__MAX_RUNNING_NO_UPDATE_MILLIS, oldMaxRunningNoUpdateMillis, maxRunningNoUpdateMillis));
 	}
 
 	/**
@@ -562,10 +537,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setOfflineSyncSplitMillis(long newOfflineSyncSplitMillis) {
-		long oldOfflineSyncSplitMillis = offlineSyncSplitMillis;
 		offlineSyncSplitMillis = newOfflineSyncSplitMillis;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__OFFLINE_SYNC_SPLIT_MILLIS, oldOfflineSyncSplitMillis, offlineSyncSplitMillis));
 	}
 
 	/**
@@ -585,10 +557,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setPreOfflineSynchTime(Date newPreOfflineSynchTime) {
-		Date oldPreOfflineSynchTime = preOfflineSynchTime;
 		preOfflineSynchTime = newPreOfflineSynchTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__PRE_OFFLINE_SYNCH_TIME, oldPreOfflineSynchTime, preOfflineSynchTime));
 	}
 
 	/**
@@ -608,10 +577,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setRunStatusId(String newRunStatusId) {
-		String oldRunStatusId = runStatusId;
 		runStatusId = newRunStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__RUN_STATUS_ID, oldRunStatusId, runStatusId));
 	}
 
 	/**
@@ -631,10 +597,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setSyncEndBufferMillis(long newSyncEndBufferMillis) {
-		long oldSyncEndBufferMillis = syncEndBufferMillis;
 		syncEndBufferMillis = newSyncEndBufferMillis;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__SYNC_END_BUFFER_MILLIS, oldSyncEndBufferMillis, syncEndBufferMillis));
 	}
 
 	/**
@@ -654,10 +617,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setSyncSplitMillis(long newSyncSplitMillis) {
-		long oldSyncSplitMillis = syncSplitMillis;
 		syncSplitMillis = newSyncSplitMillis;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__SYNC_SPLIT_MILLIS, oldSyncSplitMillis, syncSplitMillis));
 	}
 
 	/**
@@ -677,10 +637,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setTargetDelegatorName(String newTargetDelegatorName) {
-		String oldTargetDelegatorName = targetDelegatorName;
 		targetDelegatorName = newTargetDelegatorName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__TARGET_DELEGATOR_NAME, oldTargetDelegatorName, targetDelegatorName));
 	}
 
 	/**
@@ -700,10 +657,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@Override
 	public void setTargetServiceName(String newTargetServiceName) {
-		String oldTargetServiceName = targetServiceName;
 		targetServiceName = newTargetServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC__TARGET_SERVICE_NAME, oldTargetServiceName, targetServiceName));
 	}
 
 	/**
@@ -714,7 +668,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	@Override
 	public List<String> getEntitySyncHistories() {
 		if (entitySyncHistories == null) {
-			entitySyncHistories = new EDataTypeUniqueEList<String>(String.class, this, SynchronizationPackage.ENTITY_SYNC__ENTITY_SYNC_HISTORIES);
+			entitySyncHistories = new BasicInternalEList<String>(String.class);
 		}
 		return entitySyncHistories;
 	}
@@ -727,7 +681,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	@Override
 	public List<String> getEntitySyncIncludes() {
 		if (entitySyncIncludes == null) {
-			entitySyncIncludes = new EDataTypeUniqueEList<String>(String.class, this, SynchronizationPackage.ENTITY_SYNC__ENTITY_SYNC_INCLUDES);
+			entitySyncIncludes = new BasicInternalEList<String>(String.class);
 		}
 		return entitySyncIncludes;
 	}
@@ -740,7 +694,7 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	@Override
 	public List<String> getEntitySyncIncludeGroups() {
 		if (entitySyncIncludeGroups == null) {
-			entitySyncIncludeGroups = new EDataTypeUniqueEList<String>(String.class, this, SynchronizationPackage.ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS);
+			entitySyncIncludeGroups = new BasicInternalEList<String>(String.class);
 		}
 		return entitySyncIncludeGroups;
 	}

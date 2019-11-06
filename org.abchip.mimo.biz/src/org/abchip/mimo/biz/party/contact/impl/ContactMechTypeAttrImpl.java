@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactMechTypeAttr;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class ContactMechTypeAttrImpl extends BizEntityImpl implements ContactMec
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class ContactMechTypeAttrImpl extends BizEntityImpl implements ContactMec
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class ContactMechTypeAttrImpl extends BizEntityImpl implements ContactMec
 			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
 			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
 			if (contactMechTypeId != oldContactMechTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_TYPE_ATTR__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 			}
 		}
 		return contactMechTypeId;
@@ -183,10 +172,7 @@ public class ContactMechTypeAttrImpl extends BizEntityImpl implements ContactMec
 	 */
 	@Override
 	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
-		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE_ATTR__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 	}
 
 	/**

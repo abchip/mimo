@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestItemWorkEffort;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,8 +108,6 @@ public class CustRequestItemWorkEffortImpl extends BizEntityImpl implements Cust
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -134,10 +129,7 @@ public class CustRequestItemWorkEffortImpl extends BizEntityImpl implements Cust
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -157,10 +149,7 @@ public class CustRequestItemWorkEffortImpl extends BizEntityImpl implements Cust
 	 */
 	@Override
 	public void setCustRequestItemSeqId(String newCustRequestItemSeqId) {
-		String oldCustRequestItemSeqId = custRequestItemSeqId;
 		custRequestItemSeqId = newCustRequestItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM_WORK_EFFORT__CUST_REQUEST_ITEM_SEQ_ID, oldCustRequestItemSeqId, custRequestItemSeqId));
 	}
 
 	/**
@@ -174,8 +163,6 @@ public class CustRequestItemWorkEffortImpl extends BizEntityImpl implements Cust
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -197,10 +184,7 @@ public class CustRequestItemWorkEffortImpl extends BizEntityImpl implements Cust
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

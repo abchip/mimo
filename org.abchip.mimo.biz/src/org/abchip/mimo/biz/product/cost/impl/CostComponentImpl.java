@@ -25,14 +25,11 @@ import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -282,10 +279,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setCost(BigDecimal newCost) {
-		BigDecimal oldCost = cost;
 		cost = newCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__COST, oldCost, cost));
 	}
 
 	/**
@@ -299,8 +293,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldCostUomId = (InternalEObject)costUomId;
 			costUomId = (Uom)eResolveProxy(oldCostUomId);
 			if (costUomId != oldCostUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__COST_UOM_ID, oldCostUomId, costUomId));
 			}
 		}
 		return costUomId;
@@ -322,10 +314,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setCostUomId(Uom newCostUomId) {
-		Uom oldCostUomId = costUomId;
 		costUomId = newCostUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__COST_UOM_ID, oldCostUomId, costUomId));
 	}
 
 	/**
@@ -339,8 +328,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -362,10 +349,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -385,10 +369,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -402,8 +383,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -425,10 +404,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
-		Geo oldGeoId = geoId;
 		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**
@@ -442,8 +418,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -465,10 +439,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -482,8 +453,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -505,10 +474,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
-		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -522,8 +488,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -545,10 +509,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -568,10 +529,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -585,8 +543,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -608,10 +564,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**
@@ -622,7 +575,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	@Override
 	public List<String> getCostComponentAttributes() {
 		if (costComponentAttributes == null) {
-			costComponentAttributes = new EDataTypeUniqueEList<String>(String.class, this, CostPackage.COST_COMPONENT__COST_COMPONENT_ATTRIBUTES);
+			costComponentAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return costComponentAttributes;
 	}
@@ -638,8 +591,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldCostComponentTypeId = (InternalEObject)costComponentTypeId;
 			costComponentTypeId = (CostComponentType)eResolveProxy(oldCostComponentTypeId);
 			if (costComponentTypeId != oldCostComponentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 			}
 		}
 		return costComponentTypeId;
@@ -661,10 +612,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setCostComponentTypeId(CostComponentType newCostComponentTypeId) {
-		CostComponentType oldCostComponentTypeId = costComponentTypeId;
 		costComponentTypeId = newCostComponentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 	}
 
 	/**
@@ -678,8 +626,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 			InternalEObject oldCostComponentCalcId = (InternalEObject)costComponentCalcId;
 			costComponentCalcId = (CostComponentCalc)eResolveProxy(oldCostComponentCalcId);
 			if (costComponentCalcId != oldCostComponentCalcId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT__COST_COMPONENT_CALC_ID, oldCostComponentCalcId, costComponentCalcId));
 			}
 		}
 		return costComponentCalcId;
@@ -701,10 +647,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setCostComponentCalcId(CostComponentCalc newCostComponentCalcId) {
-		CostComponentCalc oldCostComponentCalcId = costComponentCalcId;
 		costComponentCalcId = newCostComponentCalcId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__COST_COMPONENT_CALC_ID, oldCostComponentCalcId, costComponentCalcId));
 	}
 
 	/**
@@ -724,10 +667,7 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@Override
 	public void setCostComponentId(String newCostComponentId) {
-		String oldCostComponentId = costComponentId;
 		costComponentId = newCostComponentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT__COST_COMPONENT_ID, oldCostComponentId, costComponentId));
 	}
 
 	/**

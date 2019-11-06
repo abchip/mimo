@@ -15,14 +15,11 @@ import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetType;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -178,10 +175,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -195,8 +189,6 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 			InternalEObject oldCustomTimePeriodId = (InternalEObject)customTimePeriodId;
 			customTimePeriodId = (CustomTimePeriod)eResolveProxy(oldCustomTimePeriodId);
 			if (customTimePeriodId != oldCustomTimePeriodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 			}
 		}
 		return customTimePeriodId;
@@ -218,10 +210,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@Override
 	public void setCustomTimePeriodId(CustomTimePeriod newCustomTimePeriodId) {
-		CustomTimePeriod oldCustomTimePeriodId = customTimePeriodId;
 		customTimePeriodId = newCustomTimePeriodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 	}
 
 	/**
@@ -232,7 +221,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	@Override
 	public List<String> getBudgetAttributes() {
 		if (budgetAttributes == null) {
-			budgetAttributes = new EDataTypeUniqueEList<String>(String.class, this, BudgetPackage.BUDGET__BUDGET_ATTRIBUTES);
+			budgetAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return budgetAttributes;
 	}
@@ -245,7 +234,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	@Override
 	public List<String> getBudgetItems() {
 		if (budgetItems == null) {
-			budgetItems = new EDataTypeUniqueEList<String>(String.class, this, BudgetPackage.BUDGET__BUDGET_ITEMS);
+			budgetItems = new BasicInternalEList<String>(String.class);
 		}
 		return budgetItems;
 	}
@@ -258,7 +247,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	@Override
 	public List<String> getBudgetRevisions() {
 		if (budgetRevisions == null) {
-			budgetRevisions = new EDataTypeUniqueEList<String>(String.class, this, BudgetPackage.BUDGET__BUDGET_REVISIONS);
+			budgetRevisions = new BasicInternalEList<String>(String.class);
 		}
 		return budgetRevisions;
 	}
@@ -271,7 +260,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	@Override
 	public List<String> getBudgetStatuss() {
 		if (budgetStatuss == null) {
-			budgetStatuss = new EDataTypeUniqueEList<String>(String.class, this, BudgetPackage.BUDGET__BUDGET_STATUSS);
+			budgetStatuss = new BasicInternalEList<String>(String.class);
 		}
 		return budgetStatuss;
 	}
@@ -299,8 +288,6 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 			InternalEObject oldBudgetTypeId = (InternalEObject)budgetTypeId;
 			budgetTypeId = (BudgetType)eResolveProxy(oldBudgetTypeId);
 			if (budgetTypeId != oldBudgetTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET__BUDGET_TYPE_ID, oldBudgetTypeId, budgetTypeId));
 			}
 		}
 		return budgetTypeId;
@@ -322,10 +309,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@Override
 	public void setBudgetTypeId(BudgetType newBudgetTypeId) {
-		BudgetType oldBudgetTypeId = budgetTypeId;
 		budgetTypeId = newBudgetTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET__BUDGET_TYPE_ID, oldBudgetTypeId, budgetTypeId));
 	}
 
 	/**
@@ -345,10 +329,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@Override
 	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**

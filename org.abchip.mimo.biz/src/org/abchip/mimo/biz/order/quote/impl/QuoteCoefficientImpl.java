@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuoteCoefficient;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,10 +125,7 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	 */
 	@Override
 	public void setCoeffName(String newCoeffName) {
-		String oldCoeffName = coeffName;
 		coeffName = newCoeffName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_COEFFICIENT__COEFF_NAME, oldCoeffName, coeffName));
 	}
 
 	/**
@@ -151,10 +145,7 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	 */
 	@Override
 	public void setCoeffValue(BigDecimal newCoeffValue) {
-		BigDecimal oldCoeffValue = coeffValue;
 		coeffValue = newCoeffValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_COEFFICIENT__COEFF_VALUE, oldCoeffValue, coeffValue));
 	}
 
 	/**
@@ -168,8 +159,6 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -191,10 +180,7 @@ public class QuoteCoefficientImpl extends BizEntityImpl implements QuoteCoeffici
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
-		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_COEFFICIENT__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**

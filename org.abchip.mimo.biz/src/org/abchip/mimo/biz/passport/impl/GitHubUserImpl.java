@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.GitHubUser;
 import org.abchip.mimo.biz.passport.PassportPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,10 +165,7 @@ public class GitHubUserImpl extends BizEntityImpl implements GitHubUser {
 	 */
 	@Override
 	public void setGitHubUserId(String newGitHubUserId) {
-		String oldGitHubUserId = gitHubUserId;
 		gitHubUserId = newGitHubUserId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.GIT_HUB_USER__GIT_HUB_USER_ID, oldGitHubUserId, gitHubUserId));
 	}
 
 	/**
@@ -191,10 +185,7 @@ public class GitHubUserImpl extends BizEntityImpl implements GitHubUser {
 	 */
 	@Override
 	public void setAccessToken(String newAccessToken) {
-		String oldAccessToken = accessToken;
 		accessToken = newAccessToken;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.GIT_HUB_USER__ACCESS_TOKEN, oldAccessToken, accessToken));
 	}
 
 	/**
@@ -214,10 +205,7 @@ public class GitHubUserImpl extends BizEntityImpl implements GitHubUser {
 	 */
 	@Override
 	public void setEnvPrefix(String newEnvPrefix) {
-		String oldEnvPrefix = envPrefix;
 		envPrefix = newEnvPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.GIT_HUB_USER__ENV_PREFIX, oldEnvPrefix, envPrefix));
 	}
 
 	/**
@@ -231,8 +219,6 @@ public class GitHubUserImpl extends BizEntityImpl implements GitHubUser {
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.GIT_HUB_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -254,10 +240,7 @@ public class GitHubUserImpl extends BizEntityImpl implements GitHubUser {
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.GIT_HUB_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -277,10 +260,7 @@ public class GitHubUserImpl extends BizEntityImpl implements GitHubUser {
 	 */
 	@Override
 	public void setTokenType(String newTokenType) {
-		String oldTokenType = tokenType;
 		tokenType = newTokenType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.GIT_HUB_USER__TOKEN_TYPE, oldTokenType, tokenType));
 	}
 
 	/**

@@ -14,15 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.order.order.OrderItemType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,10 +160,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -186,10 +180,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -209,10 +200,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setOrderItemTypeId(String newOrderItemTypeId) {
-		String oldOrderItemTypeId = orderItemTypeId;
 		orderItemTypeId = newOrderItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
 	}
 
 	/**
@@ -226,8 +214,6 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (OrderItemType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -249,10 +235,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setParentTypeId(OrderItemType newParentTypeId) {
-		OrderItemType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -263,7 +246,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	@Override
 	public List<String> getOrderItemTypeAttrs() {
 		if (orderItemTypeAttrs == null) {
-			orderItemTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS);
+			orderItemTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return orderItemTypeAttrs;
 	}

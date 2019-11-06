@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceContentType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,8 +135,6 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -161,10 +156,7 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -184,10 +176,7 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -207,10 +196,7 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -224,8 +210,6 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTENT__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -247,10 +231,7 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
-		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTENT__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -264,8 +245,6 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 			InternalEObject oldInvoiceContentTypeId = (InternalEObject)invoiceContentTypeId;
 			invoiceContentTypeId = (InvoiceContentType)eResolveProxy(oldInvoiceContentTypeId);
 			if (invoiceContentTypeId != oldInvoiceContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTENT__INVOICE_CONTENT_TYPE_ID, oldInvoiceContentTypeId, invoiceContentTypeId));
 			}
 		}
 		return invoiceContentTypeId;
@@ -287,10 +266,7 @@ public class InvoiceContentImpl extends BizEntityTypedImpl<InvoiceContentType> i
 	 */
 	@Override
 	public void setInvoiceContentTypeId(InvoiceContentType newInvoiceContentTypeId) {
-		InvoiceContentType oldInvoiceContentTypeId = invoiceContentTypeId;
 		invoiceContentTypeId = newInvoiceContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTENT__INVOICE_CONTENT_TYPE_ID, oldInvoiceContentTypeId, invoiceContentTypeId));
 	}
 
 	/**

@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.accounting.budget.BudgetStatus;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,8 +135,6 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -161,10 +156,7 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
-		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -184,10 +176,7 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_STATUS__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -207,10 +196,7 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
-		Date oldStatusDate = statusDate;
 		statusDate = newStatusDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_STATUS__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**
@@ -224,8 +210,6 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -247,10 +231,7 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -264,8 +245,6 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_STATUS__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -287,10 +266,7 @@ public class BudgetStatusImpl extends BizEntityImpl implements BudgetStatus {
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_STATUS__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**

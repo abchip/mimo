@@ -19,13 +19,11 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -329,8 +327,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -352,10 +348,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -375,10 +368,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -392,8 +382,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
 			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
 			if (dataSourceId != oldDataSourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 			}
 		}
 		return dataSourceId;
@@ -415,10 +403,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
-		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -438,10 +423,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -461,10 +443,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setExternalId(String newExternalId) {
-		String oldExternalId = externalId;
 		externalId = newExternalId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__EXTERNAL_ID, oldExternalId, externalId));
 	}
 
 	/**
@@ -484,10 +463,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setIsUnread(boolean newIsUnread) {
-		boolean oldIsUnread = isUnread;
 		isUnread = newIsUnread;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__IS_UNREAD, oldIsUnread, isUnread));
 	}
 
 	/**
@@ -501,8 +477,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -524,10 +498,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -547,10 +518,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -564,8 +532,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			InternalEObject oldPreferredCurrencyUomId = (InternalEObject)preferredCurrencyUomId;
 			preferredCurrencyUomId = (Uom)eResolveProxy(oldPreferredCurrencyUomId);
 			if (preferredCurrencyUomId != oldPreferredCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID, oldPreferredCurrencyUomId, preferredCurrencyUomId));
 			}
 		}
 		return preferredCurrencyUomId;
@@ -587,10 +553,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setPreferredCurrencyUomId(Uom newPreferredCurrencyUomId) {
-		Uom oldPreferredCurrencyUomId = preferredCurrencyUomId;
 		preferredCurrencyUomId = newPreferredCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID, oldPreferredCurrencyUomId, preferredCurrencyUomId));
 	}
 
 	/**
@@ -604,8 +567,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -627,10 +588,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -641,7 +599,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getPartyAttributes() {
 		if (partyAttributes == null) {
-			partyAttributes = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_ATTRIBUTES);
+			partyAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return partyAttributes;
 	}
@@ -654,7 +612,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getPartyIdentifications() {
 		if (partyIdentifications == null) {
-			partyIdentifications = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_IDENTIFICATIONS);
+			partyIdentifications = new BasicInternalEList<String>(String.class);
 		}
 		return partyIdentifications;
 	}
@@ -667,7 +625,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getPartyNameHistories() {
 		if (partyNameHistories == null) {
-			partyNameHistories = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_NAME_HISTORIES);
+			partyNameHistories = new BasicInternalEList<String>(String.class);
 		}
 		return partyNameHistories;
 	}
@@ -680,7 +638,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getPartyNotes() {
 		if (partyNotes == null) {
-			partyNotes = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_NOTES);
+			partyNotes = new BasicInternalEList<String>(String.class);
 		}
 		return partyNotes;
 	}
@@ -693,7 +651,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getPartyProfileDefaults() {
 		if (partyProfileDefaults == null) {
-			partyProfileDefaults = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_PROFILE_DEFAULTS);
+			partyProfileDefaults = new BasicInternalEList<String>(String.class);
 		}
 		return partyProfileDefaults;
 	}
@@ -706,7 +664,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getPartyRoles() {
 		if (partyRoles == null) {
-			partyRoles = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_ROLES);
+			partyRoles = new BasicInternalEList<String>(String.class);
 		}
 		return partyRoles;
 	}
@@ -719,7 +677,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getPartySkills() {
 		if (partySkills == null) {
-			partySkills = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_SKILLS);
+			partySkills = new BasicInternalEList<String>(String.class);
 		}
 		return partySkills;
 	}
@@ -732,7 +690,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	@Override
 	public List<String> getSupplierProductFeatures() {
 		if (supplierProductFeatures == null) {
-			supplierProductFeatures = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__SUPPLIER_PRODUCT_FEATURES);
+			supplierProductFeatures = new BasicInternalEList<String>(String.class);
 		}
 		return supplierProductFeatures;
 	}
@@ -1732,8 +1690,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			InternalEObject oldPartyTypeId = (InternalEObject)partyTypeId;
 			partyTypeId = (PartyType)eResolveProxy(oldPartyTypeId);
 			if (partyTypeId != oldPartyTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
 			}
 		}
 		return partyTypeId;
@@ -1755,10 +1711,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setPartyTypeId(PartyType newPartyTypeId) {
-		PartyType oldPartyTypeId = partyTypeId;
 		partyTypeId = newPartyTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
 	}
 
 	/**
@@ -1778,10 +1731,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

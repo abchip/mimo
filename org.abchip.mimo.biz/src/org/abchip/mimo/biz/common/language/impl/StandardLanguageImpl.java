@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.common.language.impl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
 import org.abchip.mimo.biz.common.language.StandardLanguage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -204,10 +200,7 @@ public class StandardLanguageImpl extends BizEntityImpl implements StandardLangu
 	 */
 	@Override
 	public void setLangCharset(String newLangCharset) {
-		String oldLangCharset = langCharset;
 		langCharset = newLangCharset;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STANDARD_LANGUAGE__LANG_CHARSET, oldLangCharset, langCharset));
 	}
 
 	/**
@@ -227,10 +220,7 @@ public class StandardLanguageImpl extends BizEntityImpl implements StandardLangu
 	 */
 	@Override
 	public void setLangCode2(String newLangCode2) {
-		String oldLangCode2 = langCode2;
 		langCode2 = newLangCode2;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STANDARD_LANGUAGE__LANG_CODE2, oldLangCode2, langCode2));
 	}
 
 	/**
@@ -250,10 +240,7 @@ public class StandardLanguageImpl extends BizEntityImpl implements StandardLangu
 	 */
 	@Override
 	public void setLangCode3b(String newLangCode3b) {
-		String oldLangCode3b = langCode3b;
 		langCode3b = newLangCode3b;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STANDARD_LANGUAGE__LANG_CODE3B, oldLangCode3b, langCode3b));
 	}
 
 	/**
@@ -273,10 +260,7 @@ public class StandardLanguageImpl extends BizEntityImpl implements StandardLangu
 	 */
 	@Override
 	public void setLangCode3t(String newLangCode3t) {
-		String oldLangCode3t = langCode3t;
 		langCode3t = newLangCode3t;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STANDARD_LANGUAGE__LANG_CODE3T, oldLangCode3t, langCode3t));
 	}
 
 	/**
@@ -296,10 +280,7 @@ public class StandardLanguageImpl extends BizEntityImpl implements StandardLangu
 	 */
 	@Override
 	public void setLangFamily(String newLangFamily) {
-		String oldLangFamily = langFamily;
 		langFamily = newLangFamily;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STANDARD_LANGUAGE__LANG_FAMILY, oldLangFamily, langFamily));
 	}
 
 	/**
@@ -319,10 +300,7 @@ public class StandardLanguageImpl extends BizEntityImpl implements StandardLangu
 	 */
 	@Override
 	public void setLangName(String newLangName) {
-		String oldLangName = langName;
 		langName = newLangName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STANDARD_LANGUAGE__LANG_NAME, oldLangName, langName));
 	}
 
 	/**
@@ -342,10 +320,7 @@ public class StandardLanguageImpl extends BizEntityImpl implements StandardLangu
 	 */
 	@Override
 	public void setStandardLanguageId(String newStandardLanguageId) {
-		String oldStandardLanguageId = standardLanguageId;
 		standardLanguageId = newStandardLanguageId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STANDARD_LANGUAGE__STANDARD_LANGUAGE_ID, oldStandardLanguageId, standardLanguageId));
 	}
 
 	/**

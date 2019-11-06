@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.common.period.PeriodPackage;
 import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,10 +138,7 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.PERIOD_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -164,10 +158,7 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	 */
 	@Override
 	public void setPeriodLength(long newPeriodLength) {
-		long oldPeriodLength = periodLength;
 		periodLength = newPeriodLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.PERIOD_TYPE__PERIOD_LENGTH, oldPeriodLength, periodLength));
 	}
 
 	/**
@@ -181,8 +172,6 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.PERIOD_TYPE__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -204,10 +193,7 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
-		Uom oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.PERIOD_TYPE__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -239,10 +225,7 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	 */
 	@Override
 	public void setPeriodTypeId(String newPeriodTypeId) {
-		String oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.PERIOD_TYPE__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 	}
 
 	/**

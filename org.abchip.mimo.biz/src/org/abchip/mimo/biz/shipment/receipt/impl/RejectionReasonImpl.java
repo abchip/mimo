@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
 import org.abchip.mimo.biz.shipment.receipt.RejectionReason;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,10 +110,7 @@ public class RejectionReasonImpl extends BizEntityImpl implements RejectionReaso
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.REJECTION_REASON__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -149,10 +142,7 @@ public class RejectionReasonImpl extends BizEntityImpl implements RejectionReaso
 	 */
 	@Override
 	public void setRejectionId(String newRejectionId) {
-		String oldRejectionId = rejectionId;
 		rejectionId = newRejectionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.REJECTION_REASON__REJECTION_ID, oldRejectionId, rejectionId));
 	}
 
 	/**

@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayPal;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -348,10 +345,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setApiEnvironment(String newApiEnvironment) {
-		String oldApiEnvironment = apiEnvironment;
 		apiEnvironment = newApiEnvironment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_ENVIRONMENT, oldApiEnvironment, apiEnvironment));
 	}
 
 	/**
@@ -371,10 +365,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setApiPassword(String newApiPassword) {
-		String oldApiPassword = apiPassword;
 		apiPassword = newApiPassword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_PASSWORD, oldApiPassword, apiPassword));
 	}
 
 	/**
@@ -394,10 +385,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setApiSignature(String newApiSignature) {
-		String oldApiSignature = apiSignature;
 		apiSignature = newApiSignature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_SIGNATURE, oldApiSignature, apiSignature));
 	}
 
 	/**
@@ -417,10 +405,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setApiUserName(String newApiUserName) {
-		String oldApiUserName = apiUserName;
 		apiUserName = newApiUserName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__API_USER_NAME, oldApiUserName, apiUserName));
 	}
 
 	/**
@@ -440,10 +425,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setBusinessEmail(String newBusinessEmail) {
-		String oldBusinessEmail = businessEmail;
 		businessEmail = newBusinessEmail;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__BUSINESS_EMAIL, oldBusinessEmail, businessEmail));
 	}
 
 	/**
@@ -463,10 +445,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setCancelReturnUrl(String newCancelReturnUrl) {
-		String oldCancelReturnUrl = cancelReturnUrl;
 		cancelReturnUrl = newCancelReturnUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__CANCEL_RETURN_URL, oldCancelReturnUrl, cancelReturnUrl));
 	}
 
 	/**
@@ -486,10 +465,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setConfirmTemplate(String newConfirmTemplate) {
-		String oldConfirmTemplate = confirmTemplate;
 		confirmTemplate = newConfirmTemplate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__CONFIRM_TEMPLATE, oldConfirmTemplate, confirmTemplate));
 	}
 
 	/**
@@ -509,10 +485,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setConfirmUrl(String newConfirmUrl) {
-		String oldConfirmUrl = confirmUrl;
 		confirmUrl = newConfirmUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__CONFIRM_URL, oldConfirmUrl, confirmUrl));
 	}
 
 	/**
@@ -532,10 +505,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setImageUrl(String newImageUrl) {
-		String oldImageUrl = imageUrl;
 		imageUrl = newImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__IMAGE_URL, oldImageUrl, imageUrl));
 	}
 
 	/**
@@ -555,10 +525,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setNotifyUrl(String newNotifyUrl) {
-		String oldNotifyUrl = notifyUrl;
 		notifyUrl = newNotifyUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__NOTIFY_URL, oldNotifyUrl, notifyUrl));
 	}
 
 	/**
@@ -572,8 +539,6 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -595,10 +560,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
-		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -618,10 +580,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setRedirectUrl(String newRedirectUrl) {
-		String oldRedirectUrl = redirectUrl;
 		redirectUrl = newRedirectUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__REDIRECT_URL, oldRedirectUrl, redirectUrl));
 	}
 
 	/**
@@ -641,10 +600,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setRequireConfirmedShipping(boolean newRequireConfirmedShipping) {
-		boolean oldRequireConfirmedShipping = requireConfirmedShipping;
 		requireConfirmedShipping = newRequireConfirmedShipping;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__REQUIRE_CONFIRMED_SHIPPING, oldRequireConfirmedShipping, requireConfirmedShipping));
 	}
 
 	/**
@@ -664,10 +620,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setReturnUrl(String newReturnUrl) {
-		String oldReturnUrl = returnUrl;
 		returnUrl = newReturnUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__RETURN_URL, oldReturnUrl, returnUrl));
 	}
 
 	/**
@@ -687,10 +640,7 @@ public class PaymentGatewayPayPalImpl extends BizEntityImpl implements PaymentGa
 	 */
 	@Override
 	public void setShippingCallbackUrl(String newShippingCallbackUrl) {
-		String oldShippingCallbackUrl = shippingCallbackUrl;
 		shippingCallbackUrl = newShippingCallbackUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAY_PAL__SHIPPING_CALLBACK_URL, oldShippingCallbackUrl, shippingCallbackUrl));
 	}
 
 	/**

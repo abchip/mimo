@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementAttribute;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,10 +137,7 @@ public class AgreementAttributeImpl extends BizEntityImpl implements AgreementAt
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -163,10 +157,7 @@ public class AgreementAttributeImpl extends BizEntityImpl implements AgreementAt
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -180,8 +171,6 @@ public class AgreementAttributeImpl extends BizEntityImpl implements AgreementAt
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ATTRIBUTE__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -203,10 +192,7 @@ public class AgreementAttributeImpl extends BizEntityImpl implements AgreementAt
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
-		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ATTRIBUTE__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**
@@ -226,10 +212,7 @@ public class AgreementAttributeImpl extends BizEntityImpl implements AgreementAt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**

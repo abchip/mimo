@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,10 +137,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -157,8 +151,6 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -180,10 +172,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**
@@ -203,10 +192,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
-		String oldBudgetItemSeqId = budgetItemSeqId;
 		budgetItemSeqId = newBudgetItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
 	}
 
 	/**
@@ -220,8 +206,6 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 			InternalEObject oldRequirementId = (InternalEObject)requirementId;
 			requirementId = (Requirement)eResolveProxy(oldRequirementId);
 			if (requirementId != oldRequirementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID, oldRequirementId, requirementId));
 			}
 		}
 		return requirementId;
@@ -243,10 +227,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setRequirementId(Requirement newRequirementId) {
-		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID, oldRequirementId, requirementId));
 	}
 
 	/**

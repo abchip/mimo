@@ -14,14 +14,11 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.method.CustomMethodType;
 import org.abchip.mimo.biz.common.method.MethodPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,10 +156,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 */
 	@Override
 	public void setCustomMethodId(String newCustomMethodId) {
-		String oldCustomMethodId = customMethodId;
 		customMethodId = newCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
 	}
 
 	/**
@@ -182,10 +176,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 */
 	@Override
 	public void setCustomMethodName(String newCustomMethodName) {
-		String oldCustomMethodName = customMethodName;
 		customMethodName = newCustomMethodName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_NAME, oldCustomMethodName, customMethodName));
 	}
 
 	/**
@@ -205,10 +196,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -219,7 +207,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	@Override
 	public List<String> getFixedAssetDepMethods() {
 		if (fixedAssetDepMethods == null) {
-			fixedAssetDepMethods = new EDataTypeUniqueEList<String>(String.class, this, MethodPackage.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
+			fixedAssetDepMethods = new BasicInternalEList<String>(String.class);
 		}
 		return fixedAssetDepMethods;
 	}
@@ -331,8 +319,6 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 			InternalEObject oldCustomMethodTypeId = (InternalEObject)customMethodTypeId;
 			customMethodTypeId = (CustomMethodType)eResolveProxy(oldCustomMethodTypeId);
 			if (customMethodTypeId != oldCustomMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID, oldCustomMethodTypeId, customMethodTypeId));
 			}
 		}
 		return customMethodTypeId;
@@ -354,10 +340,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 */
 	@Override
 	public void setCustomMethodTypeId(CustomMethodType newCustomMethodTypeId) {
-		CustomMethodType oldCustomMethodTypeId = customMethodTypeId;
 		customMethodTypeId = newCustomMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID, oldCustomMethodTypeId, customMethodTypeId));
 	}
 
 	/**

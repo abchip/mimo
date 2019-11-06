@@ -17,13 +17,10 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -343,10 +340,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setActualFromDate(Date newActualFromDate) {
-		Date oldActualFromDate = actualFromDate;
 		actualFromDate = newActualFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__ACTUAL_FROM_DATE, oldActualFromDate, actualFromDate));
 	}
 
 	/**
@@ -366,10 +360,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setActualThruDate(Date newActualThruDate) {
-		Date oldActualThruDate = actualThruDate;
 		actualThruDate = newActualThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__ACTUAL_THRU_DATE, oldActualThruDate, actualThruDate));
 	}
 
 	/**
@@ -389,10 +380,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setBudgetId(String newBudgetId) {
-		String oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**
@@ -412,10 +400,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
-		String oldBudgetItemSeqId = budgetItemSeqId;
 		budgetItemSeqId = newBudgetItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
 	}
 
 	/**
@@ -435,10 +420,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setEmplPositionId(String newEmplPositionId) {
-		String oldEmplPositionId = emplPositionId;
 		emplPositionId = newEmplPositionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
 	}
 
 	/**
@@ -452,8 +434,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
 			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
 			if (emplPositionTypeId != oldEmplPositionTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 			}
 		}
 		return emplPositionTypeId;
@@ -475,10 +455,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
-		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 	}
 
 	/**
@@ -498,10 +475,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setEstimatedFromDate(Date newEstimatedFromDate) {
-		Date oldEstimatedFromDate = estimatedFromDate;
 		estimatedFromDate = newEstimatedFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__ESTIMATED_FROM_DATE, oldEstimatedFromDate, estimatedFromDate));
 	}
 
 	/**
@@ -521,10 +495,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setEstimatedThruDate(Date newEstimatedThruDate) {
-		Date oldEstimatedThruDate = estimatedThruDate;
 		estimatedThruDate = newEstimatedThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__ESTIMATED_THRU_DATE, oldEstimatedThruDate, estimatedThruDate));
 	}
 
 	/**
@@ -544,10 +515,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setExemptFlag(boolean newExemptFlag) {
-		boolean oldExemptFlag = exemptFlag;
 		exemptFlag = newExemptFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__EXEMPT_FLAG, oldExemptFlag, exemptFlag));
 	}
 
 	/**
@@ -567,10 +535,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setFulltimeFlag(boolean newFulltimeFlag) {
-		boolean oldFulltimeFlag = fulltimeFlag;
 		fulltimeFlag = newFulltimeFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__FULLTIME_FLAG, oldFulltimeFlag, fulltimeFlag));
 	}
 
 	/**
@@ -584,8 +549,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -607,10 +570,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -630,10 +590,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setSalaryFlag(boolean newSalaryFlag) {
-		boolean oldSalaryFlag = salaryFlag;
 		salaryFlag = newSalaryFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__SALARY_FLAG, oldSalaryFlag, salaryFlag));
 	}
 
 	/**
@@ -647,8 +604,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -670,10 +625,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -693,10 +645,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 */
 	@Override
 	public void setTemporaryFlag(boolean newTemporaryFlag) {
-		boolean oldTemporaryFlag = temporaryFlag;
 		temporaryFlag = newTemporaryFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__TEMPORARY_FLAG, oldTemporaryFlag, temporaryFlag));
 	}
 
 	/**

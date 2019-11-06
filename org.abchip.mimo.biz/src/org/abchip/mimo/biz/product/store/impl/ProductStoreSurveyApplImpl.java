@@ -17,12 +17,9 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -280,10 +277,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -303,10 +297,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setGroupName(String newGroupName) {
-		String oldGroupName = groupName;
 		groupName = newGroupName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__GROUP_NAME, oldGroupName, groupName));
 	}
 
 	/**
@@ -326,10 +317,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductStoreSurveyId(String newProductStoreSurveyId) {
-		String oldProductStoreSurveyId = productStoreSurveyId;
 		productStoreSurveyId = newProductStoreSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__PRODUCT_STORE_SURVEY_ID, oldProductStoreSurveyId, productStoreSurveyId));
 	}
 
 	/**
@@ -349,10 +337,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setResultTemplate(String newResultTemplate) {
-		String oldResultTemplate = resultTemplate;
 		resultTemplate = newResultTemplate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__RESULT_TEMPLATE, oldResultTemplate, resultTemplate));
 	}
 
 	/**
@@ -372,10 +357,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -389,8 +371,6 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 			InternalEObject oldSurveyApplTypeId = (InternalEObject)surveyApplTypeId;
 			surveyApplTypeId = (SurveyApplType)eResolveProxy(oldSurveyApplTypeId);
 			if (surveyApplTypeId != oldSurveyApplTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SURVEY_APPL__SURVEY_APPL_TYPE_ID, oldSurveyApplTypeId, surveyApplTypeId));
 			}
 		}
 		return surveyApplTypeId;
@@ -412,10 +392,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setSurveyApplTypeId(SurveyApplType newSurveyApplTypeId) {
-		SurveyApplType oldSurveyApplTypeId = surveyApplTypeId;
 		surveyApplTypeId = newSurveyApplTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__SURVEY_APPL_TYPE_ID, oldSurveyApplTypeId, surveyApplTypeId));
 	}
 
 	/**
@@ -429,8 +406,6 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SURVEY_APPL__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -452,10 +427,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
-		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -475,10 +447,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setSurveyTemplate(String newSurveyTemplate) {
-		String oldSurveyTemplate = surveyTemplate;
 		surveyTemplate = newSurveyTemplate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__SURVEY_TEMPLATE, oldSurveyTemplate, surveyTemplate));
 	}
 
 	/**
@@ -498,10 +467,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -515,8 +481,6 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SURVEY_APPL__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -538,10 +502,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -555,8 +516,6 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SURVEY_APPL__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -578,10 +537,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -595,8 +551,6 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SURVEY_APPL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -618,10 +572,7 @@ public class ProductStoreSurveyApplImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SURVEY_APPL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**

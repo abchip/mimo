@@ -14,15 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,10 +160,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -186,10 +180,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -209,10 +200,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 */
 	@Override
 	public void setOrderAdjustmentTypeId(String newOrderAdjustmentTypeId) {
-		String oldOrderAdjustmentTypeId = orderAdjustmentTypeId;
 		orderAdjustmentTypeId = newOrderAdjustmentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ID, oldOrderAdjustmentTypeId, orderAdjustmentTypeId));
 	}
 
 	/**
@@ -226,8 +214,6 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (OrderAdjustmentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -249,10 +235,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 */
 	@Override
 	public void setParentTypeId(OrderAdjustmentType newParentTypeId) {
-		OrderAdjustmentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -263,7 +246,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	@Override
 	public List<String> getOrderAdjustmentTypeAttrs() {
 		if (orderAdjustmentTypeAttrs == null) {
-			orderAdjustmentTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS);
+			orderAdjustmentTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return orderAdjustmentTypeAttrs;
 	}

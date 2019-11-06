@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGroup;
 import org.abchip.mimo.biz.accounting.payment.PaymentGroupMember;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,10 +149,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -175,10 +169,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -198,10 +189,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -215,8 +203,6 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 			InternalEObject oldPaymentGroupId = (InternalEObject)paymentGroupId;
 			paymentGroupId = (PaymentGroup)eResolveProxy(oldPaymentGroupId);
 			if (paymentGroupId != oldPaymentGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID, oldPaymentGroupId, paymentGroupId));
 			}
 		}
 		return paymentGroupId;
@@ -238,10 +224,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setPaymentGroupId(PaymentGroup newPaymentGroupId) {
-		PaymentGroup oldPaymentGroupId = paymentGroupId;
 		paymentGroupId = newPaymentGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID, oldPaymentGroupId, paymentGroupId));
 	}
 
 	/**
@@ -255,8 +238,6 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -278,10 +259,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
-		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**

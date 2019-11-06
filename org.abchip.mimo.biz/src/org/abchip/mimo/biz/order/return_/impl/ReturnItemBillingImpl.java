@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnItemBilling;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -194,10 +191,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -211,8 +205,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -234,10 +226,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
-		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -257,10 +246,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
-		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -280,10 +266,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -297,8 +280,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 			InternalEObject oldReturnId = (InternalEObject)returnId;
 			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
 			if (returnId != oldReturnId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID, oldReturnId, returnId));
 			}
 		}
 		return returnId;
@@ -320,10 +301,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
-		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -343,10 +321,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
-		String oldReturnItemSeqId = returnItemSeqId;
 		returnItemSeqId = newReturnItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
 	}
 
 	/**
@@ -360,8 +335,6 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 			InternalEObject oldShipmentReceiptId = (InternalEObject)shipmentReceiptId;
 			shipmentReceiptId = (ShipmentReceipt)eResolveProxy(oldShipmentReceiptId);
 			if (shipmentReceiptId != oldShipmentReceiptId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_BILLING__SHIPMENT_RECEIPT_ID, oldShipmentReceiptId, shipmentReceiptId));
 			}
 		}
 		return shipmentReceiptId;
@@ -383,10 +356,7 @@ public class ReturnItemBillingImpl extends BizEntityImpl implements ReturnItemBi
 	 */
 	@Override
 	public void setShipmentReceiptId(ShipmentReceipt newShipmentReceiptId) {
-		ShipmentReceipt oldShipmentReceiptId = shipmentReceiptId;
 		shipmentReceiptId = newShipmentReceiptId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_BILLING__SHIPMENT_RECEIPT_ID, oldShipmentReceiptId, shipmentReceiptId));
 	}
 
 	/**

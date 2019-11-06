@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -182,10 +179,7 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -199,8 +193,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -222,10 +214,7 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
-		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -245,10 +234,7 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
-		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**
@@ -268,10 +254,7 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 */
 	@Override
 	public void setShipmentPackageSeqId(String newShipmentPackageSeqId) {
-		String oldShipmentPackageSeqId = shipmentPackageSeqId;
 		shipmentPackageSeqId = newShipmentPackageSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID, oldShipmentPackageSeqId, shipmentPackageSeqId));
 	}
 
 	/**
@@ -285,8 +268,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 			InternalEObject oldSubProductId = (InternalEObject)subProductId;
 			subProductId = (Product)eResolveProxy(oldSubProductId);
 			if (subProductId != oldSubProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID, oldSubProductId, subProductId));
 			}
 		}
 		return subProductId;
@@ -308,10 +289,7 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 */
 	@Override
 	public void setSubProductId(Product newSubProductId) {
-		Product oldSubProductId = subProductId;
 		subProductId = newSubProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID, oldSubProductId, subProductId));
 	}
 
 	/**
@@ -331,10 +309,7 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 */
 	@Override
 	public void setSubProductQuantity(BigDecimal newSubProductQuantity) {
-		BigDecimal oldSubProductQuantity = subProductQuantity;
 		subProductQuantity = newSubProductQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY, oldSubProductQuantity, subProductQuantity));
 	}
 
 	/**

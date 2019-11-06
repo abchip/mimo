@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,8 +144,6 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 			InternalEObject oldTaxAuthGeoId = (InternalEObject)taxAuthGeoId;
 			taxAuthGeoId = (Geo)eResolveProxy(oldTaxAuthGeoId);
 			if (taxAuthGeoId != oldTaxAuthGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 			}
 		}
 		return taxAuthGeoId;
@@ -170,10 +165,7 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 */
 	@Override
 	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
-		Geo oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -187,8 +179,6 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 			InternalEObject oldTaxAuthPartyId = (InternalEObject)taxAuthPartyId;
 			taxAuthPartyId = (Party)eResolveProxy(oldTaxAuthPartyId);
 			if (taxAuthPartyId != oldTaxAuthPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 			}
 		}
 		return taxAuthPartyId;
@@ -210,10 +200,7 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 */
 	@Override
 	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
-		Party oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -233,10 +220,7 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 */
 	@Override
 	public void setIncludeTaxInPrice(boolean newIncludeTaxInPrice) {
-		boolean oldIncludeTaxInPrice = includeTaxInPrice;
 		includeTaxInPrice = newIncludeTaxInPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE, oldIncludeTaxInPrice, includeTaxInPrice));
 	}
 
 	/**
@@ -256,10 +240,7 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 */
 	@Override
 	public void setRequireTaxIdForExemption(boolean newRequireTaxIdForExemption) {
-		boolean oldRequireTaxIdForExemption = requireTaxIdForExemption;
 		requireTaxIdForExemption = newRequireTaxIdForExemption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY__REQUIRE_TAX_ID_FOR_EXEMPTION, oldRequireTaxIdForExemption, requireTaxIdForExemption));
 	}
 
 	/**
@@ -279,10 +260,7 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 */
 	@Override
 	public void setTaxIdFormatPattern(String newTaxIdFormatPattern) {
-		String oldTaxIdFormatPattern = taxIdFormatPattern;
 		taxIdFormatPattern = newTaxIdFormatPattern;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY__TAX_ID_FORMAT_PATTERN, oldTaxIdFormatPattern, taxIdFormatPattern));
 	}
 
 	/**

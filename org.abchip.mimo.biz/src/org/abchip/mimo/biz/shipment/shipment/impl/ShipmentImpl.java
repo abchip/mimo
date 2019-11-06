@@ -27,15 +27,12 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -616,10 +613,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setAdditionalShippingCharge(BigDecimal newAdditionalShippingCharge) {
-		BigDecimal oldAdditionalShippingCharge = additionalShippingCharge;
 		additionalShippingCharge = newAdditionalShippingCharge;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ADDITIONAL_SHIPPING_CHARGE, oldAdditionalShippingCharge, additionalShippingCharge));
 	}
 
 	/**
@@ -639,10 +633,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setAddtlShippingChargeDesc(String newAddtlShippingChargeDesc) {
-		String oldAddtlShippingChargeDesc = addtlShippingChargeDesc;
 		addtlShippingChargeDesc = newAddtlShippingChargeDesc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ADDTL_SHIPPING_CHARGE_DESC, oldAddtlShippingChargeDesc, addtlShippingChargeDesc));
 	}
 
 	/**
@@ -662,10 +653,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -685,10 +673,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -702,8 +687,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -725,10 +708,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -742,8 +722,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldDestinationContactMechId = (InternalEObject)destinationContactMechId;
 			destinationContactMechId = (ContactMech)eResolveProxy(oldDestinationContactMechId);
 			if (destinationContactMechId != oldDestinationContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__DESTINATION_CONTACT_MECH_ID, oldDestinationContactMechId, destinationContactMechId));
 			}
 		}
 		return destinationContactMechId;
@@ -765,10 +743,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setDestinationContactMechId(ContactMech newDestinationContactMechId) {
-		ContactMech oldDestinationContactMechId = destinationContactMechId;
 		destinationContactMechId = newDestinationContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__DESTINATION_CONTACT_MECH_ID, oldDestinationContactMechId, destinationContactMechId));
 	}
 
 	/**
@@ -782,8 +757,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldDestinationFacilityId = (InternalEObject)destinationFacilityId;
 			destinationFacilityId = (Facility)eResolveProxy(oldDestinationFacilityId);
 			if (destinationFacilityId != oldDestinationFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__DESTINATION_FACILITY_ID, oldDestinationFacilityId, destinationFacilityId));
 			}
 		}
 		return destinationFacilityId;
@@ -805,10 +778,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setDestinationFacilityId(Facility newDestinationFacilityId) {
-		Facility oldDestinationFacilityId = destinationFacilityId;
 		destinationFacilityId = newDestinationFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__DESTINATION_FACILITY_ID, oldDestinationFacilityId, destinationFacilityId));
 	}
 
 	/**
@@ -822,8 +792,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldDestinationTelecomNumberId = (InternalEObject)destinationTelecomNumberId;
 			destinationTelecomNumberId = (TelecomNumber)eResolveProxy(oldDestinationTelecomNumberId);
 			if (destinationTelecomNumberId != oldDestinationTelecomNumberId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__DESTINATION_TELECOM_NUMBER_ID, oldDestinationTelecomNumberId, destinationTelecomNumberId));
 			}
 		}
 		return destinationTelecomNumberId;
@@ -845,10 +813,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setDestinationTelecomNumberId(TelecomNumber newDestinationTelecomNumberId) {
-		TelecomNumber oldDestinationTelecomNumberId = destinationTelecomNumberId;
 		destinationTelecomNumberId = newDestinationTelecomNumberId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__DESTINATION_TELECOM_NUMBER_ID, oldDestinationTelecomNumberId, destinationTelecomNumberId));
 	}
 
 	/**
@@ -868,10 +833,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setEstimatedArrivalDate(Date newEstimatedArrivalDate) {
-		Date oldEstimatedArrivalDate = estimatedArrivalDate;
 		estimatedArrivalDate = newEstimatedArrivalDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ESTIMATED_ARRIVAL_DATE, oldEstimatedArrivalDate, estimatedArrivalDate));
 	}
 
 	/**
@@ -885,8 +847,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldEstimatedArrivalWorkEffId = (InternalEObject)estimatedArrivalWorkEffId;
 			estimatedArrivalWorkEffId = (WorkEffort)eResolveProxy(oldEstimatedArrivalWorkEffId);
 			if (estimatedArrivalWorkEffId != oldEstimatedArrivalWorkEffId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__ESTIMATED_ARRIVAL_WORK_EFF_ID, oldEstimatedArrivalWorkEffId, estimatedArrivalWorkEffId));
 			}
 		}
 		return estimatedArrivalWorkEffId;
@@ -908,10 +868,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setEstimatedArrivalWorkEffId(WorkEffort newEstimatedArrivalWorkEffId) {
-		WorkEffort oldEstimatedArrivalWorkEffId = estimatedArrivalWorkEffId;
 		estimatedArrivalWorkEffId = newEstimatedArrivalWorkEffId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ESTIMATED_ARRIVAL_WORK_EFF_ID, oldEstimatedArrivalWorkEffId, estimatedArrivalWorkEffId));
 	}
 
 	/**
@@ -931,10 +888,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setEstimatedReadyDate(Date newEstimatedReadyDate) {
-		Date oldEstimatedReadyDate = estimatedReadyDate;
 		estimatedReadyDate = newEstimatedReadyDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ESTIMATED_READY_DATE, oldEstimatedReadyDate, estimatedReadyDate));
 	}
 
 	/**
@@ -954,10 +908,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setEstimatedShipCost(BigDecimal newEstimatedShipCost) {
-		BigDecimal oldEstimatedShipCost = estimatedShipCost;
 		estimatedShipCost = newEstimatedShipCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ESTIMATED_SHIP_COST, oldEstimatedShipCost, estimatedShipCost));
 	}
 
 	/**
@@ -977,10 +928,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setEstimatedShipDate(Date newEstimatedShipDate) {
-		Date oldEstimatedShipDate = estimatedShipDate;
 		estimatedShipDate = newEstimatedShipDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ESTIMATED_SHIP_DATE, oldEstimatedShipDate, estimatedShipDate));
 	}
 
 	/**
@@ -994,8 +942,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldEstimatedShipWorkEffId = (InternalEObject)estimatedShipWorkEffId;
 			estimatedShipWorkEffId = (WorkEffort)eResolveProxy(oldEstimatedShipWorkEffId);
 			if (estimatedShipWorkEffId != oldEstimatedShipWorkEffId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__ESTIMATED_SHIP_WORK_EFF_ID, oldEstimatedShipWorkEffId, estimatedShipWorkEffId));
 			}
 		}
 		return estimatedShipWorkEffId;
@@ -1017,10 +963,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setEstimatedShipWorkEffId(WorkEffort newEstimatedShipWorkEffId) {
-		WorkEffort oldEstimatedShipWorkEffId = estimatedShipWorkEffId;
 		estimatedShipWorkEffId = newEstimatedShipWorkEffId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ESTIMATED_SHIP_WORK_EFF_ID, oldEstimatedShipWorkEffId, estimatedShipWorkEffId));
 	}
 
 	/**
@@ -1040,10 +983,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setHandlingInstructions(String newHandlingInstructions) {
-		String oldHandlingInstructions = handlingInstructions;
 		handlingInstructions = newHandlingInstructions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__HANDLING_INSTRUCTIONS, oldHandlingInstructions, handlingInstructions));
 	}
 
 	/**
@@ -1063,10 +1003,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -1086,10 +1023,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -1109,10 +1043,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setLatestCancelDate(Date newLatestCancelDate) {
-		Date oldLatestCancelDate = latestCancelDate;
 		latestCancelDate = newLatestCancelDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__LATEST_CANCEL_DATE, oldLatestCancelDate, latestCancelDate));
 	}
 
 	/**
@@ -1126,8 +1057,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldOriginContactMechId = (InternalEObject)originContactMechId;
 			originContactMechId = (ContactMech)eResolveProxy(oldOriginContactMechId);
 			if (originContactMechId != oldOriginContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
 			}
 		}
 		return originContactMechId;
@@ -1149,10 +1078,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setOriginContactMechId(ContactMech newOriginContactMechId) {
-		ContactMech oldOriginContactMechId = originContactMechId;
 		originContactMechId = newOriginContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
 	}
 
 	/**
@@ -1166,8 +1092,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldOriginFacilityId = (InternalEObject)originFacilityId;
 			originFacilityId = (Facility)eResolveProxy(oldOriginFacilityId);
 			if (originFacilityId != oldOriginFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 			}
 		}
 		return originFacilityId;
@@ -1189,10 +1113,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setOriginFacilityId(Facility newOriginFacilityId) {
-		Facility oldOriginFacilityId = originFacilityId;
 		originFacilityId = newOriginFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 	}
 
 	/**
@@ -1206,8 +1127,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldOriginTelecomNumberId = (InternalEObject)originTelecomNumberId;
 			originTelecomNumberId = (TelecomNumber)eResolveProxy(oldOriginTelecomNumberId);
 			if (originTelecomNumberId != oldOriginTelecomNumberId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__ORIGIN_TELECOM_NUMBER_ID, oldOriginTelecomNumberId, originTelecomNumberId));
 			}
 		}
 		return originTelecomNumberId;
@@ -1229,10 +1148,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setOriginTelecomNumberId(TelecomNumber newOriginTelecomNumberId) {
-		TelecomNumber oldOriginTelecomNumberId = originTelecomNumberId;
 		originTelecomNumberId = newOriginTelecomNumberId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__ORIGIN_TELECOM_NUMBER_ID, oldOriginTelecomNumberId, originTelecomNumberId));
 	}
 
 	/**
@@ -1246,8 +1162,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -1269,10 +1183,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
-		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -1286,8 +1197,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -1309,10 +1218,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
-		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -1326,8 +1232,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldPicklistBinId = (InternalEObject)picklistBinId;
 			picklistBinId = (PicklistBin)eResolveProxy(oldPicklistBinId);
 			if (picklistBinId != oldPicklistBinId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__PICKLIST_BIN_ID, oldPicklistBinId, picklistBinId));
 			}
 		}
 		return picklistBinId;
@@ -1349,10 +1253,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setPicklistBinId(PicklistBin newPicklistBinId) {
-		PicklistBin oldPicklistBinId = picklistBinId;
 		picklistBinId = newPicklistBinId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__PICKLIST_BIN_ID, oldPicklistBinId, picklistBinId));
 	}
 
 	/**
@@ -1366,8 +1267,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldPrimaryOrderId = (InternalEObject)primaryOrderId;
 			primaryOrderId = (OrderHeader)eResolveProxy(oldPrimaryOrderId);
 			if (primaryOrderId != oldPrimaryOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__PRIMARY_ORDER_ID, oldPrimaryOrderId, primaryOrderId));
 			}
 		}
 		return primaryOrderId;
@@ -1389,10 +1288,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setPrimaryOrderId(OrderHeader newPrimaryOrderId) {
-		OrderHeader oldPrimaryOrderId = primaryOrderId;
 		primaryOrderId = newPrimaryOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__PRIMARY_ORDER_ID, oldPrimaryOrderId, primaryOrderId));
 	}
 
 	/**
@@ -1406,8 +1302,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldPrimaryReturnId = (InternalEObject)primaryReturnId;
 			primaryReturnId = (ReturnHeader)eResolveProxy(oldPrimaryReturnId);
 			if (primaryReturnId != oldPrimaryReturnId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__PRIMARY_RETURN_ID, oldPrimaryReturnId, primaryReturnId));
 			}
 		}
 		return primaryReturnId;
@@ -1429,10 +1323,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setPrimaryReturnId(ReturnHeader newPrimaryReturnId) {
-		ReturnHeader oldPrimaryReturnId = primaryReturnId;
 		primaryReturnId = newPrimaryReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__PRIMARY_RETURN_ID, oldPrimaryReturnId, primaryReturnId));
 	}
 
 	/**
@@ -1452,10 +1343,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setPrimaryShipGroupSeqId(String newPrimaryShipGroupSeqId) {
-		String oldPrimaryShipGroupSeqId = primaryShipGroupSeqId;
 		primaryShipGroupSeqId = newPrimaryShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__PRIMARY_SHIP_GROUP_SEQ_ID, oldPrimaryShipGroupSeqId, primaryShipGroupSeqId));
 	}
 
 	/**
@@ -1475,10 +1363,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -1492,8 +1377,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldShipmentTypeId = (InternalEObject)shipmentTypeId;
 			shipmentTypeId = (ShipmentType)eResolveProxy(oldShipmentTypeId);
 			if (shipmentTypeId != oldShipmentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
 			}
 		}
 		return shipmentTypeId;
@@ -1515,10 +1398,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setShipmentTypeId(ShipmentType newShipmentTypeId) {
-		ShipmentType oldShipmentTypeId = shipmentTypeId;
 		shipmentTypeId = newShipmentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
 	}
 
 	/**
@@ -1532,8 +1412,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1555,10 +1433,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1569,7 +1444,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	@Override
 	public List<String> getShipmentAttributes() {
 		if (shipmentAttributes == null) {
-			shipmentAttributes = new EDataTypeUniqueEList<String>(String.class, this, Shipment_Package.SHIPMENT__SHIPMENT_ATTRIBUTES);
+			shipmentAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return shipmentAttributes;
 	}
@@ -1582,7 +1457,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	@Override
 	public List<String> getShipmentContactMechs() {
 		if (shipmentContactMechs == null) {
-			shipmentContactMechs = new EDataTypeUniqueEList<String>(String.class, this, Shipment_Package.SHIPMENT__SHIPMENT_CONTACT_MECHS);
+			shipmentContactMechs = new BasicInternalEList<String>(String.class);
 		}
 		return shipmentContactMechs;
 	}
@@ -1595,7 +1470,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	@Override
 	public List<String> getShipmentItems() {
 		if (shipmentItems == null) {
-			shipmentItems = new EDataTypeUniqueEList<String>(String.class, this, Shipment_Package.SHIPMENT__SHIPMENT_ITEMS);
+			shipmentItems = new BasicInternalEList<String>(String.class);
 		}
 		return shipmentItems;
 	}
@@ -1608,7 +1483,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	@Override
 	public List<String> getShipmentPackages() {
 		if (shipmentPackages == null) {
-			shipmentPackages = new EDataTypeUniqueEList<String>(String.class, this, Shipment_Package.SHIPMENT__SHIPMENT_PACKAGES);
+			shipmentPackages = new BasicInternalEList<String>(String.class);
 		}
 		return shipmentPackages;
 	}
@@ -1621,7 +1496,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	@Override
 	public List<String> getShipmentRouteSegments() {
 		if (shipmentRouteSegments == null) {
-			shipmentRouteSegments = new EDataTypeUniqueEList<String>(String.class, this, Shipment_Package.SHIPMENT__SHIPMENT_ROUTE_SEGMENTS);
+			shipmentRouteSegments = new BasicInternalEList<String>(String.class);
 		}
 		return shipmentRouteSegments;
 	}

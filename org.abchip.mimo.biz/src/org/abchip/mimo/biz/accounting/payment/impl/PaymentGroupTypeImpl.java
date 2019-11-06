@@ -13,11 +13,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGroup;
 import org.abchip.mimo.biz.accounting.payment.PaymentGroupType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,10 +138,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -163,10 +158,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -180,8 +172,6 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (PaymentGroupType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -203,10 +193,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 */
 	@Override
 	public void setParentTypeId(PaymentGroupType newParentTypeId) {
-		PaymentGroupType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -250,10 +237,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 */
 	@Override
 	public void setPaymentGroupTypeId(String newPaymentGroupTypeId) {
-		String oldPaymentGroupTypeId = paymentGroupTypeId;
 		paymentGroupTypeId = newPaymentGroupTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_TYPE__PAYMENT_GROUP_TYPE_ID, oldPaymentGroupTypeId, paymentGroupTypeId));
 	}
 
 	/**

@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductSearchConstraint;
 import org.abchip.mimo.biz.product.product.ProductSearchResult;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -293,10 +290,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setConstraintName(String newConstraintName) {
-		String oldConstraintName = constraintName;
 		constraintName = newConstraintName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__CONSTRAINT_NAME, oldConstraintName, constraintName));
 	}
 
 	/**
@@ -316,10 +310,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setConstraintSeqId(String newConstraintSeqId) {
-		String oldConstraintSeqId = constraintSeqId;
 		constraintSeqId = newConstraintSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID, oldConstraintSeqId, constraintSeqId));
 	}
 
 	/**
@@ -339,10 +330,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setAnyPrefix(boolean newAnyPrefix) {
-		boolean oldAnyPrefix = anyPrefix;
 		anyPrefix = newAnyPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__ANY_PREFIX, oldAnyPrefix, anyPrefix));
 	}
 
 	/**
@@ -362,10 +350,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setAnySuffix(boolean newAnySuffix) {
-		boolean oldAnySuffix = anySuffix;
 		anySuffix = newAnySuffix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__ANY_SUFFIX, oldAnySuffix, anySuffix));
 	}
 
 	/**
@@ -385,10 +370,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setHighValue(String newHighValue) {
-		String oldHighValue = highValue;
 		highValue = newHighValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__HIGH_VALUE, oldHighValue, highValue));
 	}
 
 	/**
@@ -408,10 +390,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setIncludeSubCategories(boolean newIncludeSubCategories) {
-		boolean oldIncludeSubCategories = includeSubCategories;
 		includeSubCategories = newIncludeSubCategories;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__INCLUDE_SUB_CATEGORIES, oldIncludeSubCategories, includeSubCategories));
 	}
 
 	/**
@@ -431,10 +410,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setInfoString(String newInfoString) {
-		String oldInfoString = infoString;
 		infoString = newInfoString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__INFO_STRING, oldInfoString, infoString));
 	}
 
 	/**
@@ -454,10 +430,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setIsAnd(boolean newIsAnd) {
-		boolean oldIsAnd = isAnd;
 		isAnd = newIsAnd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__IS_AND, oldIsAnd, isAnd));
 	}
 
 	/**
@@ -477,10 +450,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setLowValue(String newLowValue) {
-		String oldLowValue = lowValue;
 		lowValue = newLowValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__LOW_VALUE, oldLowValue, lowValue));
 	}
 
 	/**
@@ -500,10 +470,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setRemoveStems(boolean newRemoveStems) {
-		boolean oldRemoveStems = removeStems;
 		removeStems = newRemoveStems;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__REMOVE_STEMS, oldRemoveStems, removeStems));
 	}
 
 	/**
@@ -517,8 +484,6 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 			InternalEObject oldProductSearchResultId = (InternalEObject)productSearchResultId;
 			productSearchResultId = (ProductSearchResult)eResolveProxy(oldProductSearchResultId);
 			if (productSearchResultId != oldProductSearchResultId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID, oldProductSearchResultId, productSearchResultId));
 			}
 		}
 		return productSearchResultId;
@@ -540,10 +505,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductSearchResultId(ProductSearchResult newProductSearchResultId) {
-		ProductSearchResult oldProductSearchResultId = productSearchResultId;
 		productSearchResultId = newProductSearchResultId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID, oldProductSearchResultId, productSearchResultId));
 	}
 
 	/**

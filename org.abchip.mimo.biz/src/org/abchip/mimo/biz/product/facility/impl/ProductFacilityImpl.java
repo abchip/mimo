@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.ProductFacility;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -193,10 +190,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	@Override
 	public void setDaysToShip(long newDaysToShip) {
-		long oldDaysToShip = daysToShip;
 		daysToShip = newDaysToShip;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP, oldDaysToShip, daysToShip));
 	}
 
 	/**
@@ -216,10 +210,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	@Override
 	public void setLastInventoryCount(BigDecimal newLastInventoryCount) {
-		BigDecimal oldLastInventoryCount = lastInventoryCount;
 		lastInventoryCount = newLastInventoryCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__LAST_INVENTORY_COUNT, oldLastInventoryCount, lastInventoryCount));
 	}
 
 	/**
@@ -239,10 +230,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	@Override
 	public void setMinimumStock(BigDecimal newMinimumStock) {
-		BigDecimal oldMinimumStock = minimumStock;
 		minimumStock = newMinimumStock;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__MINIMUM_STOCK, oldMinimumStock, minimumStock));
 	}
 
 	/**
@@ -256,8 +244,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -279,10 +265,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -302,10 +285,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	@Override
 	public void setReorderQuantity(BigDecimal newReorderQuantity) {
-		BigDecimal oldReorderQuantity = reorderQuantity;
 		reorderQuantity = newReorderQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY, oldReorderQuantity, reorderQuantity));
 	}
 
 	/**
@@ -319,8 +299,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 			InternalEObject oldRequirementMethodEnumId = (InternalEObject)requirementMethodEnumId;
 			requirementMethodEnumId = (Enumeration)eResolveProxy(oldRequirementMethodEnumId);
 			if (requirementMethodEnumId != oldRequirementMethodEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
 			}
 		}
 		return requirementMethodEnumId;
@@ -342,10 +320,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	@Override
 	public void setRequirementMethodEnumId(Enumeration newRequirementMethodEnumId) {
-		Enumeration oldRequirementMethodEnumId = requirementMethodEnumId;
 		requirementMethodEnumId = newRequirementMethodEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
 	}
 
 	/**
@@ -359,8 +334,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -382,10 +355,7 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

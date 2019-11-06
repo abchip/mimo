@@ -11,11 +11,7 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayUps;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -491,10 +487,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setAccessLicenseNumber(String newAccessLicenseNumber) {
-		String oldAccessLicenseNumber = accessLicenseNumber;
 		accessLicenseNumber = newAccessLicenseNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__ACCESS_LICENSE_NUMBER, oldAccessLicenseNumber, accessLicenseNumber));
 	}
 
 	/**
@@ -514,10 +507,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setAccessPassword(String newAccessPassword) {
-		String oldAccessPassword = accessPassword;
 		accessPassword = newAccessPassword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__ACCESS_PASSWORD, oldAccessPassword, accessPassword));
 	}
 
 	/**
@@ -537,10 +527,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setAccessUserId(String newAccessUserId) {
-		String oldAccessUserId = accessUserId;
 		accessUserId = newAccessUserId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__ACCESS_USER_ID, oldAccessUserId, accessUserId));
 	}
 
 	/**
@@ -560,10 +547,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setBillShipperAccountNumber(String newBillShipperAccountNumber) {
-		String oldBillShipperAccountNumber = billShipperAccountNumber;
 		billShipperAccountNumber = newBillShipperAccountNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__BILL_SHIPPER_ACCOUNT_NUMBER, oldBillShipperAccountNumber, billShipperAccountNumber));
 	}
 
 	/**
@@ -583,10 +567,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setCodAllowCod(String newCodAllowCod) {
-		String oldCodAllowCod = codAllowCod;
 		codAllowCod = newCodAllowCod;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__COD_ALLOW_COD, oldCodAllowCod, codAllowCod));
 	}
 
 	/**
@@ -606,10 +587,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setCodFundsCode(String newCodFundsCode) {
-		String oldCodFundsCode = codFundsCode;
 		codFundsCode = newCodFundsCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__COD_FUNDS_CODE, oldCodFundsCode, codFundsCode));
 	}
 
 	/**
@@ -629,10 +607,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setCodSurchargeAmount(BigDecimal newCodSurchargeAmount) {
-		BigDecimal oldCodSurchargeAmount = codSurchargeAmount;
 		codSurchargeAmount = newCodSurchargeAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__COD_SURCHARGE_AMOUNT, oldCodSurchargeAmount, codSurchargeAmount));
 	}
 
 	/**
@@ -652,10 +627,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setCodSurchargeApplyToPackage(String newCodSurchargeApplyToPackage) {
-		String oldCodSurchargeApplyToPackage = codSurchargeApplyToPackage;
 		codSurchargeApplyToPackage = newCodSurchargeApplyToPackage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__COD_SURCHARGE_APPLY_TO_PACKAGE, oldCodSurchargeApplyToPackage, codSurchargeApplyToPackage));
 	}
 
 	/**
@@ -675,10 +647,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setCodSurchargeCurrencyUomId(String newCodSurchargeCurrencyUomId) {
-		String oldCodSurchargeCurrencyUomId = codSurchargeCurrencyUomId;
 		codSurchargeCurrencyUomId = newCodSurchargeCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__COD_SURCHARGE_CURRENCY_UOM_ID, oldCodSurchargeCurrencyUomId, codSurchargeCurrencyUomId));
 	}
 
 	/**
@@ -698,10 +667,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setConnectTimeout(long newConnectTimeout) {
-		long oldConnectTimeout = connectTimeout;
 		connectTimeout = newConnectTimeout;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__CONNECT_TIMEOUT, oldConnectTimeout, connectTimeout));
 	}
 
 	/**
@@ -721,10 +687,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setConnectUrl(String newConnectUrl) {
-		String oldConnectUrl = connectUrl;
 		connectUrl = newConnectUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__CONNECT_URL, oldConnectUrl, connectUrl));
 	}
 
 	/**
@@ -744,10 +707,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setCustomerClassification(String newCustomerClassification) {
-		String oldCustomerClassification = customerClassification;
 		customerClassification = newCustomerClassification;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__CUSTOMER_CLASSIFICATION, oldCustomerClassification, customerClassification));
 	}
 
 	/**
@@ -767,10 +727,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setDefaultReturnLabelMemo(String newDefaultReturnLabelMemo) {
-		String oldDefaultReturnLabelMemo = defaultReturnLabelMemo;
 		defaultReturnLabelMemo = newDefaultReturnLabelMemo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__DEFAULT_RETURN_LABEL_MEMO, oldDefaultReturnLabelMemo, defaultReturnLabelMemo));
 	}
 
 	/**
@@ -790,10 +747,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setDefaultReturnLabelSubject(String newDefaultReturnLabelSubject) {
-		String oldDefaultReturnLabelSubject = defaultReturnLabelSubject;
 		defaultReturnLabelSubject = newDefaultReturnLabelSubject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__DEFAULT_RETURN_LABEL_SUBJECT, oldDefaultReturnLabelSubject, defaultReturnLabelSubject));
 	}
 
 	/**
@@ -813,10 +767,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setMaxEstimateWeight(BigDecimal newMaxEstimateWeight) {
-		BigDecimal oldMaxEstimateWeight = maxEstimateWeight;
 		maxEstimateWeight = newMaxEstimateWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__MAX_ESTIMATE_WEIGHT, oldMaxEstimateWeight, maxEstimateWeight));
 	}
 
 	/**
@@ -836,10 +787,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setMinEstimateWeight(BigDecimal newMinEstimateWeight) {
-		BigDecimal oldMinEstimateWeight = minEstimateWeight;
 		minEstimateWeight = newMinEstimateWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__MIN_ESTIMATE_WEIGHT, oldMinEstimateWeight, minEstimateWeight));
 	}
 
 	/**
@@ -859,10 +807,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setSaveCertInfo(String newSaveCertInfo) {
-		String oldSaveCertInfo = saveCertInfo;
 		saveCertInfo = newSaveCertInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__SAVE_CERT_INFO, oldSaveCertInfo, saveCertInfo));
 	}
 
 	/**
@@ -882,10 +827,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setSaveCertPath(String newSaveCertPath) {
-		String oldSaveCertPath = saveCertPath;
 		saveCertPath = newSaveCertPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__SAVE_CERT_PATH, oldSaveCertPath, saveCertPath));
 	}
 
 	/**
@@ -905,10 +847,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setShipperNumber(String newShipperNumber) {
-		String oldShipperNumber = shipperNumber;
 		shipperNumber = newShipperNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__SHIPPER_NUMBER, oldShipperNumber, shipperNumber));
 	}
 
 	/**
@@ -928,10 +867,7 @@ public class ShipmentGatewayUpsImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setShipperPickupType(String newShipperPickupType) {
-		String oldShipperPickupType = shipperPickupType;
 		shipperPickupType = newShipperPickupType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_UPS__SHIPPER_PICKUP_TYPE, oldShipperPickupType, shipperPickupType));
 	}
 
 	/**

@@ -12,13 +12,10 @@ import java.util.List;
 import org.abchip.mimo.biz.content.website.WebAnalyticsType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,10 +145,7 @@ public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -171,10 +165,7 @@ public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsT
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -188,8 +179,6 @@ public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsT
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (WebAnalyticsType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_ANALYTICS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -211,10 +200,7 @@ public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsT
 	 */
 	@Override
 	public void setParentTypeId(WebAnalyticsType newParentTypeId) {
-		WebAnalyticsType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -258,10 +244,7 @@ public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsT
 	 */
 	@Override
 	public void setWebAnalyticsTypeId(String newWebAnalyticsTypeId) {
-		String oldWebAnalyticsTypeId = webAnalyticsTypeId;
 		webAnalyticsTypeId = newWebAnalyticsTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_TYPE__WEB_ANALYTICS_TYPE_ID, oldWebAnalyticsTypeId, webAnalyticsTypeId));
 	}
 
 	/**

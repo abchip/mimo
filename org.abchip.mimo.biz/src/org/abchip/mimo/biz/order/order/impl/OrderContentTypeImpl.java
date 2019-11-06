@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderContent;
 import org.abchip.mimo.biz.order.order.OrderContentType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,10 +146,7 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -172,10 +166,7 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -195,10 +186,7 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 	 */
 	@Override
 	public void setOrderContentTypeId(String newOrderContentTypeId) {
-		String oldOrderContentTypeId = orderContentTypeId;
 		orderContentTypeId = newOrderContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT_TYPE__ORDER_CONTENT_TYPE_ID, oldOrderContentTypeId, orderContentTypeId));
 	}
 
 	/**
@@ -212,8 +200,6 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (OrderContentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -235,10 +221,7 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 	 */
 	@Override
 	public void setParentTypeId(OrderContentType newParentTypeId) {
-		OrderContentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**

@@ -14,14 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,10 +144,7 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	 */
 	@Override
 	public void setInfoString(String newInfoString) {
-		String oldInfoString = infoString;
 		infoString = newInfoString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH__INFO_STRING, oldInfoString, infoString));
 	}
 
 	/**
@@ -161,7 +155,7 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	@Override
 	public List<String> getContactMechAttributes() {
 		if (contactMechAttributes == null) {
-			contactMechAttributes = new EDataTypeUniqueEList<String>(String.class, this, ContactPackage.CONTACT_MECH__CONTACT_MECH_ATTRIBUTES);
+			contactMechAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return contactMechAttributes;
 	}
@@ -174,7 +168,7 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	@Override
 	public List<String> getFromContactMechLinks() {
 		if (fromContactMechLinks == null) {
-			fromContactMechLinks = new EDataTypeUniqueEList<String>(String.class, this, ContactPackage.CONTACT_MECH__FROM_CONTACT_MECH_LINKS);
+			fromContactMechLinks = new BasicInternalEList<String>(String.class);
 		}
 		return fromContactMechLinks;
 	}
@@ -454,8 +448,6 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
 			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
 			if (contactMechTypeId != oldContactMechTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 			}
 		}
 		return contactMechTypeId;
@@ -477,10 +469,7 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	 */
 	@Override
 	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
-		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 	}
 
 	/**
@@ -500,10 +489,7 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	 */
 	@Override
 	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**

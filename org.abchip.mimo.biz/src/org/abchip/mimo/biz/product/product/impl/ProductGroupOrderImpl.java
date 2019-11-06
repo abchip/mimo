@@ -17,12 +17,9 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductGroupOrder;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.service.schedule.JobSandbox;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -216,10 +213,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -239,10 +233,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setGroupOrderId(String newGroupOrderId) {
-		String oldGroupOrderId = groupOrderId;
 		groupOrderId = newGroupOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__GROUP_ORDER_ID, oldGroupOrderId, groupOrderId));
 	}
 
 	/**
@@ -256,8 +247,6 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 			InternalEObject oldJobId = (InternalEObject)jobId;
 			jobId = (JobSandbox)eResolveProxy(oldJobId);
 			if (jobId != oldJobId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GROUP_ORDER__JOB_ID, oldJobId, jobId));
 			}
 		}
 		return jobId;
@@ -279,10 +268,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setJobId(JobSandbox newJobId) {
-		JobSandbox oldJobId = jobId;
 		jobId = newJobId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__JOB_ID, oldJobId, jobId));
 	}
 
 	/**
@@ -302,10 +288,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setReqOrderQty(BigDecimal newReqOrderQty) {
-		BigDecimal oldReqOrderQty = reqOrderQty;
 		reqOrderQty = newReqOrderQty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__REQ_ORDER_QTY, oldReqOrderQty, reqOrderQty));
 	}
 
 	/**
@@ -325,10 +308,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setSoldOrderQty(BigDecimal newSoldOrderQty) {
-		BigDecimal oldSoldOrderQty = soldOrderQty;
 		soldOrderQty = newSoldOrderQty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__SOLD_ORDER_QTY, oldSoldOrderQty, soldOrderQty));
 	}
 
 	/**
@@ -342,8 +322,6 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GROUP_ORDER__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -365,10 +343,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -388,10 +363,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -405,8 +377,6 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GROUP_ORDER__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -428,10 +398,7 @@ public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroup
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.TerminationReason;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,10 +108,7 @@ public class TerminationReasonImpl extends BizEntityImpl implements TerminationR
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.TERMINATION_REASON__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -135,10 +128,7 @@ public class TerminationReasonImpl extends BizEntityImpl implements TerminationR
 	 */
 	@Override
 	public void setTerminationReasonId(String newTerminationReasonId) {
-		String oldTerminationReasonId = terminationReasonId;
 		terminationReasonId = newTerminationReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.TERMINATION_REASON__TERMINATION_REASON_ID, oldTerminationReasonId, terminationReasonId));
 	}
 
 	/**

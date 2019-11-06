@@ -24,15 +24,12 @@ import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -480,8 +477,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldCharacterSetId = (InternalEObject)characterSetId;
 			characterSetId = (CharacterSet)eResolveProxy(oldCharacterSetId);
 			if (characterSetId != oldCharacterSetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
 			}
 		}
 		return characterSetId;
@@ -503,10 +498,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setCharacterSetId(CharacterSet newCharacterSetId) {
-		CharacterSet oldCharacterSetId = characterSetId;
 		characterSetId = newCharacterSetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
 	}
 
 	/**
@@ -526,10 +518,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setChildBranchCount(long newChildBranchCount) {
-		long oldChildBranchCount = childBranchCount;
 		childBranchCount = newChildBranchCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CHILD_BRANCH_COUNT, oldChildBranchCount, childBranchCount));
 	}
 
 	/**
@@ -549,10 +538,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setChildLeafCount(long newChildLeafCount) {
-		long oldChildLeafCount = childLeafCount;
 		childLeafCount = newChildLeafCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CHILD_LEAF_COUNT, oldChildLeafCount, childLeafCount));
 	}
 
 	/**
@@ -572,10 +558,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -595,10 +578,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setContentName(String newContentName) {
-		String oldContentName = contentName;
 		contentName = newContentName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CONTENT_NAME, oldContentName, contentName));
 	}
 
 	/**
@@ -612,8 +592,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldContentTypeId = (InternalEObject)contentTypeId;
 			contentTypeId = (ContentType)eResolveProxy(oldContentTypeId);
 			if (contentTypeId != oldContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
 			}
 		}
 		return contentTypeId;
@@ -635,10 +613,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setContentTypeId(ContentType newContentTypeId) {
-		ContentType oldContentTypeId = contentTypeId;
 		contentTypeId = newContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
 	}
 
 	/**
@@ -652,8 +627,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -675,10 +648,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -698,10 +668,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -715,8 +682,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldCustomMethodId = (InternalEObject)customMethodId;
 			customMethodId = (CustomMethod)eResolveProxy(oldCustomMethodId);
 			if (customMethodId != oldCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
 			}
 		}
 		return customMethodId;
@@ -738,10 +703,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setCustomMethodId(CustomMethod newCustomMethodId) {
-		CustomMethod oldCustomMethodId = customMethodId;
 		customMethodId = newCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
 	}
 
 	/**
@@ -755,8 +717,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
 			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
 			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 			}
 		}
 		return dataResourceId;
@@ -778,10 +738,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 	}
 
 	/**
@@ -795,8 +752,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
 			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
 			if (dataSourceId != oldDataSourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 			}
 		}
 		return dataSourceId;
@@ -818,10 +773,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
-		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -835,8 +787,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldDecoratorContentId = (InternalEObject)decoratorContentId;
 			decoratorContentId = (Content)eResolveProxy(oldDecoratorContentId);
 			if (decoratorContentId != oldDecoratorContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__DECORATOR_CONTENT_ID, oldDecoratorContentId, decoratorContentId));
 			}
 		}
 		return decoratorContentId;
@@ -858,10 +808,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setDecoratorContentId(Content newDecoratorContentId) {
-		Content oldDecoratorContentId = decoratorContentId;
 		decoratorContentId = newDecoratorContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__DECORATOR_CONTENT_ID, oldDecoratorContentId, decoratorContentId));
 	}
 
 	/**
@@ -881,10 +828,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -898,8 +842,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldInstanceOfContentId = (InternalEObject)instanceOfContentId;
 			instanceOfContentId = (Content)eResolveProxy(oldInstanceOfContentId);
 			if (instanceOfContentId != oldInstanceOfContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID, oldInstanceOfContentId, instanceOfContentId));
 			}
 		}
 		return instanceOfContentId;
@@ -921,10 +863,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setInstanceOfContentId(Content newInstanceOfContentId) {
-		Content oldInstanceOfContentId = instanceOfContentId;
 		instanceOfContentId = newInstanceOfContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID, oldInstanceOfContentId, instanceOfContentId));
 	}
 
 	/**
@@ -938,8 +877,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -961,10 +898,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -984,10 +918,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -1007,10 +938,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setLocaleString(String newLocaleString) {
-		String oldLocaleString = localeString;
 		localeString = newLocaleString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__LOCALE_STRING, oldLocaleString, localeString));
 	}
 
 	/**
@@ -1024,8 +952,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
 			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
 			if (mimeTypeId != oldMimeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 			}
 		}
 		return mimeTypeId;
@@ -1047,10 +973,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setMimeTypeId(MimeType newMimeTypeId) {
-		MimeType oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 	}
 
 	/**
@@ -1064,8 +987,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldOwnerContentId = (InternalEObject)ownerContentId;
 			ownerContentId = (Content)eResolveProxy(oldOwnerContentId);
 			if (ownerContentId != oldOwnerContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__OWNER_CONTENT_ID, oldOwnerContentId, ownerContentId));
 			}
 		}
 		return ownerContentId;
@@ -1087,10 +1008,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setOwnerContentId(Content newOwnerContentId) {
-		Content oldOwnerContentId = ownerContentId;
 		ownerContentId = newOwnerContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__OWNER_CONTENT_ID, oldOwnerContentId, ownerContentId));
 	}
 
 	/**
@@ -1104,8 +1022,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldPrivilegeEnumId = (InternalEObject)privilegeEnumId;
 			privilegeEnumId = (Enumeration)eResolveProxy(oldPrivilegeEnumId);
 			if (privilegeEnumId != oldPrivilegeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
 			}
 		}
 		return privilegeEnumId;
@@ -1127,10 +1043,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setPrivilegeEnumId(Enumeration newPrivilegeEnumId) {
-		Enumeration oldPrivilegeEnumId = privilegeEnumId;
 		privilegeEnumId = newPrivilegeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
 	}
 
 	/**
@@ -1150,10 +1063,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setServiceName(String newServiceName) {
-		String oldServiceName = serviceName;
 		serviceName = newServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__SERVICE_NAME, oldServiceName, serviceName));
 	}
 
 	/**
@@ -1167,8 +1077,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1190,10 +1098,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1207,8 +1112,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			InternalEObject oldTemplateDataResourceId = (InternalEObject)templateDataResourceId;
 			templateDataResourceId = (DataResource)eResolveProxy(oldTemplateDataResourceId);
 			if (templateDataResourceId != oldTemplateDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID, oldTemplateDataResourceId, templateDataResourceId));
 			}
 		}
 		return templateDataResourceId;
@@ -1230,10 +1133,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@Override
 	public void setTemplateDataResourceId(DataResource newTemplateDataResourceId) {
-		DataResource oldTemplateDataResourceId = templateDataResourceId;
 		templateDataResourceId = newTemplateDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID, oldTemplateDataResourceId, templateDataResourceId));
 	}
 
 	/**
@@ -1244,7 +1144,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	@Override
 	public List<String> getContentAttributes() {
 		if (contentAttributes == null) {
-			contentAttributes = new EDataTypeUniqueEList<String>(String.class, this, ContentPackage.CONTENT__CONTENT_ATTRIBUTES);
+			contentAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return contentAttributes;
 	}
@@ -1257,7 +1157,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	@Override
 	public List<String> getContentKeywords() {
 		if (contentKeywords == null) {
-			contentKeywords = new EDataTypeUniqueEList<String>(String.class, this, ContentPackage.CONTENT__CONTENT_KEYWORDS);
+			contentKeywords = new BasicInternalEList<String>(String.class);
 		}
 		return contentKeywords;
 	}
@@ -1270,7 +1170,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	@Override
 	public List<String> getContentMetaDatas() {
 		if (contentMetaDatas == null) {
-			contentMetaDatas = new EDataTypeUniqueEList<String>(String.class, this, ContentPackage.CONTENT__CONTENT_META_DATAS);
+			contentMetaDatas = new BasicInternalEList<String>(String.class);
 		}
 		return contentMetaDatas;
 	}
@@ -1283,7 +1183,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	@Override
 	public List<String> getContentPurposes() {
 		if (contentPurposes == null) {
-			contentPurposes = new EDataTypeUniqueEList<String>(String.class, this, ContentPackage.CONTENT__CONTENT_PURPOSES);
+			contentPurposes = new BasicInternalEList<String>(String.class);
 		}
 		return contentPurposes;
 	}
@@ -1296,7 +1196,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	@Override
 	public List<String> getContentRevisions() {
 		if (contentRevisions == null) {
-			contentRevisions = new EDataTypeUniqueEList<String>(String.class, this, ContentPackage.CONTENT__CONTENT_REVISIONS);
+			contentRevisions = new BasicInternalEList<String>(String.class);
 		}
 		return contentRevisions;
 	}

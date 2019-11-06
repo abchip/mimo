@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestStatus;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,8 +164,6 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -190,10 +185,7 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
-		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -207,8 +199,6 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -230,10 +220,7 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -253,10 +240,7 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 */
 	@Override
 	public void setCustRequestItemSeqId(String newCustRequestItemSeqId) {
-		String oldCustRequestItemSeqId = custRequestItemSeqId;
 		custRequestItemSeqId = newCustRequestItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ITEM_SEQ_ID, oldCustRequestItemSeqId, custRequestItemSeqId));
 	}
 
 	/**
@@ -276,10 +260,7 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 */
 	@Override
 	public void setCustRequestStatusId(String newCustRequestStatusId) {
-		String oldCustRequestStatusId = custRequestStatusId;
 		custRequestStatusId = newCustRequestStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_STATUS_ID, oldCustRequestStatusId, custRequestStatusId));
 	}
 
 	/**
@@ -299,10 +280,7 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
-		Date oldStatusDate = statusDate;
 		statusDate = newStatusDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**
@@ -316,8 +294,6 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -339,10 +315,7 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

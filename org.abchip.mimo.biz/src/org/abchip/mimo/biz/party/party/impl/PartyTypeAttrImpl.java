@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.PartyTypeAttr;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 			InternalEObject oldPartyTypeId = (InternalEObject)partyTypeId;
 			partyTypeId = (PartyType)eResolveProxy(oldPartyTypeId);
 			if (partyTypeId != oldPartyTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
 			}
 		}
 		return partyTypeId;
@@ -183,10 +172,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public void setPartyTypeId(PartyType newPartyTypeId) {
-		PartyType oldPartyTypeId = partyTypeId;
 		partyTypeId = newPartyTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
 	}
 
 	/**

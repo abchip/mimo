@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,8 +94,6 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_ASSOC__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -120,10 +115,7 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
-		Geo oldGeoId = geoId;
 		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**
@@ -137,8 +129,6 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 			InternalEObject oldGeoIdTo = (InternalEObject)geoIdTo;
 			geoIdTo = (Geo)eResolveProxy(oldGeoIdTo);
 			if (geoIdTo != oldGeoIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_ASSOC__GEO_ID_TO, oldGeoIdTo, geoIdTo));
 			}
 		}
 		return geoIdTo;
@@ -160,10 +150,7 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 */
 	@Override
 	public void setGeoIdTo(Geo newGeoIdTo) {
-		Geo oldGeoIdTo = geoIdTo;
 		geoIdTo = newGeoIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC__GEO_ID_TO, oldGeoIdTo, geoIdTo));
 	}
 
 	/**
@@ -177,8 +164,6 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 			InternalEObject oldGeoAssocTypeId = (InternalEObject)geoAssocTypeId;
 			geoAssocTypeId = (GeoAssocType)eResolveProxy(oldGeoAssocTypeId);
 			if (geoAssocTypeId != oldGeoAssocTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
 			}
 		}
 		return geoAssocTypeId;
@@ -200,10 +185,7 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 */
 	@Override
 	public void setGeoAssocTypeId(GeoAssocType newGeoAssocTypeId) {
-		GeoAssocType oldGeoAssocTypeId = geoAssocTypeId;
 		geoAssocTypeId = newGeoAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
 	}
 
 	/**

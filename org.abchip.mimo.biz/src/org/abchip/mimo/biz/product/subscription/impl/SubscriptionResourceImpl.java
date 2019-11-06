@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.webapp.website.WebSite;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -165,8 +162,6 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -188,10 +183,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -211,10 +203,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -234,10 +223,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setServiceNameOnExpiry(String newServiceNameOnExpiry) {
-		String oldServiceNameOnExpiry = serviceNameOnExpiry;
 		serviceNameOnExpiry = newServiceNameOnExpiry;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__SERVICE_NAME_ON_EXPIRY, oldServiceNameOnExpiry, serviceNameOnExpiry));
 	}
 
 	/**
@@ -251,8 +237,6 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -274,10 +258,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
-		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**
@@ -315,8 +296,6 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 			InternalEObject oldParentResourceId = (InternalEObject)parentResourceId;
 			parentResourceId = (SubscriptionResource)eResolveProxy(oldParentResourceId);
 			if (parentResourceId != oldParentResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID, oldParentResourceId, parentResourceId));
 			}
 		}
 		return parentResourceId;
@@ -338,10 +317,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setParentResourceId(SubscriptionResource newParentResourceId) {
-		SubscriptionResource oldParentResourceId = parentResourceId;
 		parentResourceId = newParentResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID, oldParentResourceId, parentResourceId));
 	}
 
 	/**
@@ -361,10 +337,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setSubscriptionResourceId(String newSubscriptionResourceId) {
-		String oldSubscriptionResourceId = subscriptionResourceId;
 		subscriptionResourceId = newSubscriptionResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
 	}
 
 	/**

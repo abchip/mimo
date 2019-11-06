@@ -12,12 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.payment.CreditCard;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -392,10 +389,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setCardNumber(String newCardNumber) {
-		String oldCardNumber = cardNumber;
 		cardNumber = newCardNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__CARD_NUMBER, oldCardNumber, cardNumber));
 	}
 
 	/**
@@ -415,10 +409,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setCardType(String newCardType) {
-		String oldCardType = cardType;
 		cardType = newCardType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__CARD_TYPE, oldCardType, cardType));
 	}
 
 	/**
@@ -438,10 +429,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setCompanyNameOnCard(String newCompanyNameOnCard) {
-		String oldCompanyNameOnCard = companyNameOnCard;
 		companyNameOnCard = newCompanyNameOnCard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__COMPANY_NAME_ON_CARD, oldCompanyNameOnCard, companyNameOnCard));
 	}
 
 	/**
@@ -461,10 +449,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setConsecutiveFailedAuths(long newConsecutiveFailedAuths) {
-		long oldConsecutiveFailedAuths = consecutiveFailedAuths;
 		consecutiveFailedAuths = newConsecutiveFailedAuths;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__CONSECUTIVE_FAILED_AUTHS, oldConsecutiveFailedAuths, consecutiveFailedAuths));
 	}
 
 	/**
@@ -484,10 +469,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setConsecutiveFailedNsf(long newConsecutiveFailedNsf) {
-		long oldConsecutiveFailedNsf = consecutiveFailedNsf;
 		consecutiveFailedNsf = newConsecutiveFailedNsf;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__CONSECUTIVE_FAILED_NSF, oldConsecutiveFailedNsf, consecutiveFailedNsf));
 	}
 
 	/**
@@ -501,8 +483,6 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -524,10 +504,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -547,10 +524,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setExpireDate(String newExpireDate) {
-		String oldExpireDate = expireDate;
 		expireDate = newExpireDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__EXPIRE_DATE, oldExpireDate, expireDate));
 	}
 
 	/**
@@ -570,10 +544,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setFirstNameOnCard(String newFirstNameOnCard) {
-		String oldFirstNameOnCard = firstNameOnCard;
 		firstNameOnCard = newFirstNameOnCard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__FIRST_NAME_ON_CARD, oldFirstNameOnCard, firstNameOnCard));
 	}
 
 	/**
@@ -593,10 +564,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setIssueNumber(String newIssueNumber) {
-		String oldIssueNumber = issueNumber;
 		issueNumber = newIssueNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__ISSUE_NUMBER, oldIssueNumber, issueNumber));
 	}
 
 	/**
@@ -616,10 +584,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setLastFailedAuthDate(Date newLastFailedAuthDate) {
-		Date oldLastFailedAuthDate = lastFailedAuthDate;
 		lastFailedAuthDate = newLastFailedAuthDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__LAST_FAILED_AUTH_DATE, oldLastFailedAuthDate, lastFailedAuthDate));
 	}
 
 	/**
@@ -639,10 +604,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setLastFailedNsfDate(Date newLastFailedNsfDate) {
-		Date oldLastFailedNsfDate = lastFailedNsfDate;
 		lastFailedNsfDate = newLastFailedNsfDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__LAST_FAILED_NSF_DATE, oldLastFailedNsfDate, lastFailedNsfDate));
 	}
 
 	/**
@@ -662,10 +624,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setLastNameOnCard(String newLastNameOnCard) {
-		String oldLastNameOnCard = lastNameOnCard;
 		lastNameOnCard = newLastNameOnCard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__LAST_NAME_ON_CARD, oldLastNameOnCard, lastNameOnCard));
 	}
 
 	/**
@@ -685,10 +644,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setMiddleNameOnCard(String newMiddleNameOnCard) {
-		String oldMiddleNameOnCard = middleNameOnCard;
 		middleNameOnCard = newMiddleNameOnCard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__MIDDLE_NAME_ON_CARD, oldMiddleNameOnCard, middleNameOnCard));
 	}
 
 	/**
@@ -708,10 +664,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setSuffixOnCard(String newSuffixOnCard) {
-		String oldSuffixOnCard = suffixOnCard;
 		suffixOnCard = newSuffixOnCard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__SUFFIX_ON_CARD, oldSuffixOnCard, suffixOnCard));
 	}
 
 	/**
@@ -731,10 +684,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setTitleOnCard(String newTitleOnCard) {
-		String oldTitleOnCard = titleOnCard;
 		titleOnCard = newTitleOnCard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__TITLE_ON_CARD, oldTitleOnCard, titleOnCard));
 	}
 
 	/**
@@ -754,10 +704,7 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 */
 	@Override
 	public void setValidFromDate(String newValidFromDate) {
-		String oldValidFromDate = validFromDate;
 		validFromDate = newValidFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__VALID_FROM_DATE, oldValidFromDate, validFromDate));
 	}
 
 	/**

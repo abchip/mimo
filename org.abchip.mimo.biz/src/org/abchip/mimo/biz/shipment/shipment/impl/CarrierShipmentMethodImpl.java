@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentMethod;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,10 +156,7 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 */
 	@Override
 	public void setCarrierServiceCode(String newCarrierServiceCode) {
-		String oldCarrierServiceCode = carrierServiceCode;
 		carrierServiceCode = newCarrierServiceCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE, oldCarrierServiceCode, carrierServiceCode));
 	}
 
 	/**
@@ -176,8 +170,6 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -199,10 +191,7 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -222,10 +211,7 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -245,10 +231,7 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 */
 	@Override
 	public void setSequenceNumber(long newSequenceNumber) {
-		long oldSequenceNumber = sequenceNumber;
 		sequenceNumber = newSequenceNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER, oldSequenceNumber, sequenceNumber));
 	}
 
 	/**
@@ -262,8 +245,6 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
 			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
 			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 			}
 		}
 		return shipmentMethodTypeId;
@@ -285,10 +266,7 @@ public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierS
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
-		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**

@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.datasource.DataSourceType;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,10 +121,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -147,10 +141,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -236,8 +227,6 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 			InternalEObject oldDataSourceTypeId = (InternalEObject)dataSourceTypeId;
 			dataSourceTypeId = (DataSourceType)eResolveProxy(oldDataSourceTypeId);
 			if (dataSourceTypeId != oldDataSourceTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID, oldDataSourceTypeId, dataSourceTypeId));
 			}
 		}
 		return dataSourceTypeId;
@@ -259,10 +248,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public void setDataSourceTypeId(DataSourceType newDataSourceTypeId) {
-		DataSourceType oldDataSourceTypeId = dataSourceTypeId;
 		dataSourceTypeId = newDataSourceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID, oldDataSourceTypeId, dataSourceTypeId));
 	}
 
 	/**

@@ -10,10 +10,7 @@ package org.abchip.mimo.biz.party.communication.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.communication.CommContentAssocType;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,10 +104,7 @@ public class CommContentAssocTypeImpl extends BizEntityImpl implements CommConte
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_CONTENT_ASSOC_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -130,10 +124,7 @@ public class CommContentAssocTypeImpl extends BizEntityImpl implements CommConte
 	 */
 	@Override
 	public void setCommContentAssocTypeId(String newCommContentAssocTypeId) {
-		String oldCommContentAssocTypeId = commContentAssocTypeId;
 		commContentAssocTypeId = newCommContentAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_CONTENT_ASSOC_TYPE__COMM_CONTENT_ASSOC_TYPE_ID, oldCommContentAssocTypeId, commContentAssocTypeId));
 	}
 
 	/**

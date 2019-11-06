@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -161,10 +158,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedCost(BigDecimal newEstimatedCost) {
-		BigDecimal oldEstimatedCost = estimatedCost;
 		estimatedCost = newEstimatedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST, oldEstimatedCost, estimatedCost));
 	}
 
 	/**
@@ -184,10 +178,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedDuration(double newEstimatedDuration) {
-		double oldEstimatedDuration = estimatedDuration;
 		estimatedDuration = newEstimatedDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION, oldEstimatedDuration, estimatedDuration));
 	}
 
 	/**
@@ -207,10 +198,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedQuantity(double newEstimatedQuantity) {
-		double oldEstimatedQuantity = estimatedQuantity;
 		estimatedQuantity = newEstimatedQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY, oldEstimatedQuantity, estimatedQuantity));
 	}
 
 	/**
@@ -224,8 +212,6 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
 			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
 			if (fixedAssetTypeId != oldFixedAssetTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 			}
 		}
 		return fixedAssetTypeId;
@@ -247,10 +233,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
-		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
 		fixedAssetTypeId = newFixedAssetTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 	}
 
 	/**
@@ -264,8 +247,6 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -287,10 +268,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

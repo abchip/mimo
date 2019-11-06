@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.abchip.mimo.biz.webapp.visit.Visitor;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,10 +125,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public void setVisitorId(String newVisitorId) {
-		String oldVisitorId = visitorId;
 		visitorId = newVisitorId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISITOR__VISITOR_ID, oldVisitorId, visitorId));
 	}
 
 	/**
@@ -151,10 +145,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISITOR__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -168,8 +159,6 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.VISITOR__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -191,10 +180,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
-		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISITOR__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**

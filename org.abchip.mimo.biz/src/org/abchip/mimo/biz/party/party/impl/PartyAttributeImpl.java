@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyAttribute;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,10 +136,7 @@ public class PartyAttributeImpl extends BizEntityImpl implements PartyAttribute 
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -162,10 +156,7 @@ public class PartyAttributeImpl extends BizEntityImpl implements PartyAttribute 
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -179,8 +170,6 @@ public class PartyAttributeImpl extends BizEntityImpl implements PartyAttribute 
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_ATTRIBUTE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -202,10 +191,7 @@ public class PartyAttributeImpl extends BizEntityImpl implements PartyAttribute 
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_ATTRIBUTE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -225,10 +211,7 @@ public class PartyAttributeImpl extends BizEntityImpl implements PartyAttribute 
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**

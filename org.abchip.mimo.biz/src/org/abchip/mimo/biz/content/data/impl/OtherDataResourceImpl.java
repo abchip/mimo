@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.OtherDataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,10 +102,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 */
 	@Override
 	public void setDataResourceContent(byte[] newDataResourceContent) {
-		byte[] oldDataResourceContent = dataResourceContent;
 		dataResourceContent = newDataResourceContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT, oldDataResourceContent, dataResourceContent));
 	}
 
 	/**
@@ -122,8 +116,6 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
 			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
 			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 			}
 		}
 		return dataResourceId;
@@ -145,10 +137,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 	}
 
 	/**

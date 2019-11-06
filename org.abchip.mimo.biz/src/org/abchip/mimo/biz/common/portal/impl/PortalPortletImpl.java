@@ -13,12 +13,9 @@ import java.util.List;
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -275,10 +272,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -298,10 +292,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setEditFormLocation(String newEditFormLocation) {
-		String oldEditFormLocation = editFormLocation;
 		editFormLocation = newEditFormLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__EDIT_FORM_LOCATION, oldEditFormLocation, editFormLocation));
 	}
 
 	/**
@@ -321,10 +312,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setEditFormName(String newEditFormName) {
-		String oldEditFormName = editFormName;
 		editFormName = newEditFormName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__EDIT_FORM_NAME, oldEditFormName, editFormName));
 	}
 
 	/**
@@ -344,10 +332,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setPortletName(String newPortletName) {
-		String oldPortletName = portletName;
 		portletName = newPortletName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__PORTLET_NAME, oldPortletName, portletName));
 	}
 
 	/**
@@ -367,10 +352,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setScreenLocation(String newScreenLocation) {
-		String oldScreenLocation = screenLocation;
 		screenLocation = newScreenLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__SCREEN_LOCATION, oldScreenLocation, screenLocation));
 	}
 
 	/**
@@ -390,10 +372,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setScreenName(String newScreenName) {
-		String oldScreenName = screenName;
 		screenName = newScreenName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__SCREEN_NAME, oldScreenName, screenName));
 	}
 
 	/**
@@ -413,10 +392,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setScreenshot(String newScreenshot) {
-		String oldScreenshot = screenshot;
 		screenshot = newScreenshot;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__SCREENSHOT, oldScreenshot, screenshot));
 	}
 
 	/**
@@ -436,10 +412,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setSecurityMainAction(String newSecurityMainAction) {
-		String oldSecurityMainAction = securityMainAction;
 		securityMainAction = newSecurityMainAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__SECURITY_MAIN_ACTION, oldSecurityMainAction, securityMainAction));
 	}
 
 	/**
@@ -459,10 +432,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setSecurityServiceName(String newSecurityServiceName) {
-		String oldSecurityServiceName = securityServiceName;
 		securityServiceName = newSecurityServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__SECURITY_SERVICE_NAME, oldSecurityServiceName, securityServiceName));
 	}
 
 	/**
@@ -473,7 +443,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	@Override
 	public List<String> getPortletPortletCategories() {
 		if (portletPortletCategories == null) {
-			portletPortletCategories = new EDataTypeUniqueEList<String>(String.class, this, PortalPackage.PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES);
+			portletPortletCategories = new BasicInternalEList<String>(String.class);
 		}
 		return portletPortletCategories;
 	}
@@ -495,10 +465,7 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@Override
 	public void setPortalPortletId(String newPortalPortletId) {
-		String oldPortalPortletId = portalPortletId;
 		portalPortletId = newPortalPortletId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PORTLET__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
 	}
 
 	/**

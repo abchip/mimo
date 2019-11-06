@@ -13,11 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyContent;
 import org.abchip.mimo.biz.party.party.PartyContentType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,10 +119,7 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,8 +133,6 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (PartyContentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -161,10 +154,7 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 	 */
 	@Override
 	public void setParentTypeId(PartyContentType newParentTypeId) {
-		PartyContentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -196,10 +186,7 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 	 */
 	@Override
 	public void setPartyContentTypeId(String newPartyContentTypeId) {
-		String oldPartyContentTypeId = partyContentTypeId;
 		partyContentTypeId = newPartyContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT_TYPE__PARTY_CONTENT_TYPE_ID, oldPartyContentTypeId, partyContentTypeId));
 	}
 
 	/**

@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,10 +146,7 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -172,10 +166,7 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -195,10 +186,7 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 	 */
 	@Override
 	public void setEmplPositionTypeId(String newEmplPositionTypeId) {
-		String oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 	}
 
 	/**
@@ -212,8 +200,6 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (EmplPositionType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -235,10 +221,7 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 	 */
 	@Override
 	public void setParentTypeId(EmplPositionType newParentTypeId) {
-		EmplPositionType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**

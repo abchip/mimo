@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.VendorProduct;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,8 +98,6 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
 			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
 			if (productStoreGroupId != oldProductStoreGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.VENDOR_PRODUCT__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 			}
 		}
 		return productStoreGroupId;
@@ -124,10 +119,7 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	 */
 	@Override
 	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
-		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.VENDOR_PRODUCT__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 	}
 
 	/**
@@ -141,8 +133,6 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 			InternalEObject oldVendorPartyId = (InternalEObject)vendorPartyId;
 			vendorPartyId = (Party)eResolveProxy(oldVendorPartyId);
 			if (vendorPartyId != oldVendorPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.VENDOR_PRODUCT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 			}
 		}
 		return vendorPartyId;
@@ -164,10 +154,7 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	 */
 	@Override
 	public void setVendorPartyId(Party newVendorPartyId) {
-		Party oldVendorPartyId = vendorPartyId;
 		vendorPartyId = newVendorPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.VENDOR_PRODUCT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 	}
 
 	/**
@@ -181,8 +168,6 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.VENDOR_PRODUCT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -204,10 +189,7 @@ public class VendorProductImpl extends BizEntityImpl implements VendorProduct {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.VENDOR_PRODUCT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

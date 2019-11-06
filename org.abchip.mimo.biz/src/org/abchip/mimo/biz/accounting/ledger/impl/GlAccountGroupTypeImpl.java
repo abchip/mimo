@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccountGroup;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,10 +107,7 @@ public class GlAccountGroupTypeImpl extends BizEntityTypeImpl<GlAccountGroup> im
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_GROUP_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -156,10 +151,7 @@ public class GlAccountGroupTypeImpl extends BizEntityTypeImpl<GlAccountGroup> im
 	 */
 	@Override
 	public void setGlAccountGroupTypeId(String newGlAccountGroupTypeId) {
-		String oldGlAccountGroupTypeId = glAccountGroupTypeId;
 		glAccountGroupTypeId = newGlAccountGroupTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_GROUP_TYPE__GL_ACCOUNT_GROUP_TYPE_ID, oldGlAccountGroupTypeId, glAccountGroupTypeId));
 	}
 
 	/**

@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,10 +107,7 @@ public class FixedAssetIdentTypeImpl extends BizEntityTypeImpl<FixedAssetIdent> 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -144,10 +139,7 @@ public class FixedAssetIdentTypeImpl extends BizEntityTypeImpl<FixedAssetIdent> 
 	 */
 	@Override
 	public void setFixedAssetIdentTypeId(String newFixedAssetIdentTypeId) {
-		String oldFixedAssetIdentTypeId = fixedAssetIdentTypeId;
 		fixedAssetIdentTypeId = newFixedAssetIdentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID, oldFixedAssetIdentTypeId, fixedAssetIdentTypeId));
 	}
 
 	/**

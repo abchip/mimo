@@ -12,13 +12,10 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,10 +124,7 @@ public class WorkEffortPurposeTypeImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PURPOSE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -144,8 +138,6 @@ public class WorkEffortPurposeTypeImpl extends BizEntityImpl implements WorkEffo
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (WorkEffortPurposeType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PURPOSE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -167,10 +159,7 @@ public class WorkEffortPurposeTypeImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setParentTypeId(WorkEffortPurposeType newParentTypeId) {
-		WorkEffortPurposeType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PURPOSE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -214,10 +203,7 @@ public class WorkEffortPurposeTypeImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setWorkEffortPurposeTypeId(String newWorkEffortPurposeTypeId) {
-		String oldWorkEffortPurposeTypeId = workEffortPurposeTypeId;
 		workEffortPurposeTypeId = newWorkEffortPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PURPOSE_TYPE__WORK_EFFORT_PURPOSE_TYPE_ID, oldWorkEffortPurposeTypeId, workEffortPurposeTypeId));
 	}
 
 	/**

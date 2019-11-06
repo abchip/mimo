@@ -10,11 +10,9 @@ package org.abchip.mimo.biz.impl;
 import org.abchip.mimo.biz.BizEntityNote;
 import org.abchip.mimo.biz.BizEntityNoteData;
 import org.abchip.mimo.biz.BizPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,10 +97,7 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 	 */
 	@Override
 	public void setNoteId(String newNoteId) {
-		String oldNoteId = noteId;
 		noteId = newNoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE__NOTE_ID, oldNoteId, noteId));
 	}
 
 	/**
@@ -123,10 +118,6 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 	public NotificationChain basicSetNote(BizEntityNoteData newNote, NotificationChain msgs) {
 		BizEntityNoteData oldNote = note;
 		note = newNote;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE__NOTE, oldNote, newNote);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
 		return msgs;
 	}
 
@@ -146,8 +137,6 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 			msgs = basicSetNote(newNote, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE__NOTE, newNote, newNote));
 	}
 
 	/**

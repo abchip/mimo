@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -272,10 +269,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setClientId(String newClientId) {
-		String oldClientId = clientId;
 		clientId = newClientId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__CLIENT_ID, oldClientId, clientId));
 	}
 
 	/**
@@ -295,10 +289,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setEffectiveAlias(String newEffectiveAlias) {
-		String oldEffectiveAlias = effectiveAlias;
 		effectiveAlias = newEffectiveAlias;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__EFFECTIVE_ALIAS, oldEffectiveAlias, effectiveAlias));
 	}
 
 	/**
@@ -318,10 +309,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setEnableCVM(boolean newEnableCVM) {
-		boolean oldEnableCVM = enableCVM;
 		enableCVM = newEnableCVM;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__ENABLE_CVM, oldEnableCVM, enableCVM));
 	}
 
 	/**
@@ -341,10 +329,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setGroupId(String newGroupId) {
-		String oldGroupId = groupId;
 		groupId = newGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__GROUP_ID, oldGroupId, groupId));
 	}
 
 	/**
@@ -364,10 +349,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setProcessMode(boolean newProcessMode) {
-		boolean oldProcessMode = processMode;
 		processMode = newProcessMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE, oldProcessMode, processMode));
 	}
 
 	/**
@@ -381,8 +363,6 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -404,10 +384,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
-		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -427,10 +404,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setPwd(String newPwd) {
-		String oldPwd = pwd;
 		pwd = newPwd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__PWD, oldPwd, pwd));
 	}
 
 	/**
@@ -450,10 +424,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setServerURL(String newServerURL) {
-		String oldServerURL = serverURL;
 		serverURL = newServerURL;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__SERVER_URL, oldServerURL, serverURL));
 	}
 
 	/**
@@ -473,10 +444,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setSourceId(String newSourceId) {
-		String oldSourceId = sourceId;
 		sourceId = newSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__SOURCE_ID, oldSourceId, sourceId));
 	}
 
 	/**
@@ -496,10 +464,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setUserAlias(String newUserAlias) {
-		String oldUserAlias = userAlias;
 		userAlias = newUserAlias;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__USER_ALIAS, oldUserAlias, userAlias));
 	}
 
 	/**
@@ -519,10 +484,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 */
 	@Override
 	public void setUsername(String newUsername) {
-		String oldUsername = username;
 		username = newUsername;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CLEAR_COMMERCE__USERNAME, oldUsername, username));
 	}
 
 	/**

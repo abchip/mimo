@@ -30,14 +30,11 @@ import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -512,10 +509,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -535,10 +529,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -558,10 +549,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -575,8 +563,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldGroupStatusId = (InternalEObject)groupStatusId;
 			groupStatusId = (StatusItem)eResolveProxy(oldGroupStatusId);
 			if (groupStatusId != oldGroupStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__GROUP_STATUS_ID, oldGroupStatusId, groupStatusId));
 			}
 		}
 		return groupStatusId;
@@ -598,10 +584,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setGroupStatusId(StatusItem newGroupStatusId) {
-		StatusItem oldGroupStatusId = groupStatusId;
 		groupStatusId = newGroupStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__GROUP_STATUS_ID, oldGroupStatusId, groupStatusId));
 	}
 
 	/**
@@ -615,8 +598,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -638,10 +619,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -661,10 +639,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -684,10 +659,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -701,8 +673,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -724,10 +694,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -741,8 +708,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -764,10 +729,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
-		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**
@@ -781,8 +743,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldPhysicalInventoryId = (InternalEObject)physicalInventoryId;
 			physicalInventoryId = (PhysicalInventory)eResolveProxy(oldPhysicalInventoryId);
 			if (physicalInventoryId != oldPhysicalInventoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
 			}
 		}
 		return physicalInventoryId;
@@ -804,10 +764,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setPhysicalInventoryId(PhysicalInventory newPhysicalInventoryId) {
-		PhysicalInventory oldPhysicalInventoryId = physicalInventoryId;
 		physicalInventoryId = newPhysicalInventoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
 	}
 
 	/**
@@ -827,10 +784,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setPostedDate(Date newPostedDate) {
-		Date oldPostedDate = postedDate;
 		postedDate = newPostedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__POSTED_DATE, oldPostedDate, postedDate));
 	}
 
 	/**
@@ -844,8 +798,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldReceiptId = (InternalEObject)receiptId;
 			receiptId = (ShipmentReceipt)eResolveProxy(oldReceiptId);
 			if (receiptId != oldReceiptId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__RECEIPT_ID, oldReceiptId, receiptId));
 			}
 		}
 		return receiptId;
@@ -867,10 +819,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setReceiptId(ShipmentReceipt newReceiptId) {
-		ShipmentReceipt oldReceiptId = receiptId;
 		receiptId = newReceiptId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__RECEIPT_ID, oldReceiptId, receiptId));
 	}
 
 	/**
@@ -884,8 +833,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -907,10 +854,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -930,10 +874,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setScheduledPostingDate(Date newScheduledPostingDate) {
-		Date oldScheduledPostingDate = scheduledPostingDate;
 		scheduledPostingDate = newScheduledPostingDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__SCHEDULED_POSTING_DATE, oldScheduledPostingDate, scheduledPostingDate));
 	}
 
 	/**
@@ -947,8 +888,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -970,10 +909,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
-		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -993,10 +929,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setTheirAcctgTransId(String newTheirAcctgTransId) {
-		String oldTheirAcctgTransId = theirAcctgTransId;
 		theirAcctgTransId = newTheirAcctgTransId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__THEIR_ACCTG_TRANS_ID, oldTheirAcctgTransId, theirAcctgTransId));
 	}
 
 	/**
@@ -1016,10 +949,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setTransactionDate(Date newTransactionDate) {
-		Date oldTransactionDate = transactionDate;
 		transactionDate = newTransactionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__TRANSACTION_DATE, oldTransactionDate, transactionDate));
 	}
 
 	/**
@@ -1039,10 +969,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setVoucherDate(Date newVoucherDate) {
-		Date oldVoucherDate = voucherDate;
 		voucherDate = newVoucherDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__VOUCHER_DATE, oldVoucherDate, voucherDate));
 	}
 
 	/**
@@ -1062,10 +989,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setVoucherRef(String newVoucherRef) {
-		String oldVoucherRef = voucherRef;
 		voucherRef = newVoucherRef;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__VOUCHER_REF, oldVoucherRef, voucherRef));
 	}
 
 	/**
@@ -1079,8 +1003,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -1102,10 +1024,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**
@@ -1116,7 +1035,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	@Override
 	public List<String> getAcctgTransAttributes() {
 		if (acctgTransAttributes == null) {
-			acctgTransAttributes = new EDataTypeUniqueEList<String>(String.class, this, LedgerPackage.ACCTG_TRANS__ACCTG_TRANS_ATTRIBUTES);
+			acctgTransAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return acctgTransAttributes;
 	}
@@ -1129,7 +1048,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	@Override
 	public List<String> getAcctgTransEntries() {
 		if (acctgTransEntries == null) {
-			acctgTransEntries = new EDataTypeUniqueEList<String>(String.class, this, LedgerPackage.ACCTG_TRANS__ACCTG_TRANS_ENTRIES);
+			acctgTransEntries = new BasicInternalEList<String>(String.class);
 		}
 		return acctgTransEntries;
 	}
@@ -1145,8 +1064,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldGlJournalId = (InternalEObject)glJournalId;
 			glJournalId = (GlJournal)eResolveProxy(oldGlJournalId);
 			if (glJournalId != oldGlJournalId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__GL_JOURNAL_ID, oldGlJournalId, glJournalId));
 			}
 		}
 		return glJournalId;
@@ -1168,10 +1085,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setGlJournalId(GlJournal newGlJournalId) {
-		GlJournal oldGlJournalId = glJournalId;
 		glJournalId = newGlJournalId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__GL_JOURNAL_ID, oldGlJournalId, glJournalId));
 	}
 
 	/**
@@ -1185,8 +1099,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldGlFiscalTypeId = (InternalEObject)glFiscalTypeId;
 			glFiscalTypeId = (GlFiscalType)eResolveProxy(oldGlFiscalTypeId);
 			if (glFiscalTypeId != oldGlFiscalTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__GL_FISCAL_TYPE_ID, oldGlFiscalTypeId, glFiscalTypeId));
 			}
 		}
 		return glFiscalTypeId;
@@ -1208,10 +1120,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setGlFiscalTypeId(GlFiscalType newGlFiscalTypeId) {
-		GlFiscalType oldGlFiscalTypeId = glFiscalTypeId;
 		glFiscalTypeId = newGlFiscalTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__GL_FISCAL_TYPE_ID, oldGlFiscalTypeId, glFiscalTypeId));
 	}
 
 	/**
@@ -1225,8 +1134,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -1248,10 +1155,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -1265,8 +1169,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -1288,10 +1190,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
-		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -1311,10 +1210,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setIsPosted(boolean newIsPosted) {
-		boolean oldIsPosted = isPosted;
 		isPosted = newIsPosted;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__IS_POSTED, oldIsPosted, isPosted));
 	}
 
 	/**
@@ -1328,8 +1224,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldFinAccountTransId = (InternalEObject)finAccountTransId;
 			finAccountTransId = (FinAccountTrans)eResolveProxy(oldFinAccountTransId);
 			if (finAccountTransId != oldFinAccountTransId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
 			}
 		}
 		return finAccountTransId;
@@ -1351,10 +1245,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setFinAccountTransId(FinAccountTrans newFinAccountTransId) {
-		FinAccountTrans oldFinAccountTransId = finAccountTransId;
 		finAccountTransId = newFinAccountTransId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
 	}
 
 	/**
@@ -1368,8 +1259,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 			InternalEObject oldAcctgTransTypeId = (InternalEObject)acctgTransTypeId;
 			acctgTransTypeId = (AcctgTransType)eResolveProxy(oldAcctgTransTypeId);
 			if (acctgTransTypeId != oldAcctgTransTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS__ACCTG_TRANS_TYPE_ID, oldAcctgTransTypeId, acctgTransTypeId));
 			}
 		}
 		return acctgTransTypeId;
@@ -1391,10 +1280,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setAcctgTransTypeId(AcctgTransType newAcctgTransTypeId) {
-		AcctgTransType oldAcctgTransTypeId = acctgTransTypeId;
 		acctgTransTypeId = newAcctgTransTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__ACCTG_TRANS_TYPE_ID, oldAcctgTransTypeId, acctgTransTypeId));
 	}
 
 	/**
@@ -1414,10 +1300,7 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@Override
 	public void setAcctgTransId(String newAcctgTransId) {
-		String oldAcctgTransId = acctgTransId;
 		acctgTransId = newAcctgTransId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS__ACCTG_TRANS_ID, oldAcctgTransId, acctgTransId));
 	}
 
 	/**

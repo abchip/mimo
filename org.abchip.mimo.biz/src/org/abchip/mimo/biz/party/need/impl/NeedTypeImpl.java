@@ -12,9 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.need.NeedPackage;
 import org.abchip.mimo.biz.party.need.NeedType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,10 +106,7 @@ public class NeedTypeImpl extends BizEntityImpl implements NeedType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.NEED_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +138,7 @@ public class NeedTypeImpl extends BizEntityImpl implements NeedType {
 	 */
 	@Override
 	public void setNeedTypeId(String newNeedTypeId) {
-		String oldNeedTypeId = needTypeId;
 		needTypeId = newNeedTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.NEED_TYPE__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
 	}
 
 	/**

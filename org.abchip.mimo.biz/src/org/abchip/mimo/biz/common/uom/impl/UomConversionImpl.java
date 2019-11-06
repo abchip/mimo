@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomConversion;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,10 +157,7 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 */
 	@Override
 	public void setConversionFactor(double newConversionFactor) {
-		double oldConversionFactor = conversionFactor;
 		conversionFactor = newConversionFactor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__CONVERSION_FACTOR, oldConversionFactor, conversionFactor));
 	}
 
 	/**
@@ -183,10 +177,7 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 */
 	@Override
 	public void setDecimalScale(long newDecimalScale) {
-		long oldDecimalScale = decimalScale;
 		decimalScale = newDecimalScale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__DECIMAL_SCALE, oldDecimalScale, decimalScale));
 	}
 
 	/**
@@ -206,10 +197,7 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 */
 	@Override
 	public void setRoundingMode(String newRoundingMode) {
-		String oldRoundingMode = roundingMode;
 		roundingMode = newRoundingMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__ROUNDING_MODE, oldRoundingMode, roundingMode));
 	}
 
 	/**
@@ -223,8 +211,6 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -246,10 +232,7 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
-		Uom oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -263,8 +246,6 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 			InternalEObject oldUomIdTo = (InternalEObject)uomIdTo;
 			uomIdTo = (Uom)eResolveProxy(oldUomIdTo);
 			if (uomIdTo != oldUomIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION__UOM_ID_TO, oldUomIdTo, uomIdTo));
 			}
 		}
 		return uomIdTo;
@@ -286,10 +267,7 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 */
 	@Override
 	public void setUomIdTo(Uom newUomIdTo) {
-		Uom oldUomIdTo = uomIdTo;
 		uomIdTo = newUomIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__UOM_ID_TO, oldUomIdTo, uomIdTo));
 	}
 
 	/**
@@ -303,8 +281,6 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 			InternalEObject oldCustomMethodId = (InternalEObject)customMethodId;
 			customMethodId = (CustomMethod)eResolveProxy(oldCustomMethodId);
 			if (customMethodId != oldCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
 			}
 		}
 		return customMethodId;
@@ -326,10 +302,7 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 */
 	@Override
 	public void setCustomMethodId(CustomMethod newCustomMethodId) {
-		CustomMethod oldCustomMethodId = customMethodId;
 		customMethodId = newCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
 	}
 
 	/**

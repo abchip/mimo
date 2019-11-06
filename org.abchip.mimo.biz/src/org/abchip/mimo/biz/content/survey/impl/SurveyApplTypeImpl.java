@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.survey.SurveyApplType;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,10 +110,7 @@ public class SurveyApplTypeImpl extends BizEntityImpl implements SurveyApplType 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_APPL_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -149,10 +142,7 @@ public class SurveyApplTypeImpl extends BizEntityImpl implements SurveyApplType 
 	 */
 	@Override
 	public void setSurveyApplTypeId(String newSurveyApplTypeId) {
-		String oldSurveyApplTypeId = surveyApplTypeId;
 		surveyApplTypeId = newSurveyApplTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_APPL_TYPE__SURVEY_APPL_TYPE_ID, oldSurveyApplTypeId, surveyApplTypeId));
 	}
 
 	/**

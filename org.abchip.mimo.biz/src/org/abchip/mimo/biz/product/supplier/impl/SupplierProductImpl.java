@@ -19,12 +19,9 @@ import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.abchip.mimo.biz.product.supplier.SupplierPrefOrder;
 import org.abchip.mimo.biz.product.supplier.SupplierProduct;
 import org.abchip.mimo.biz.product.supplier.SupplierRatingType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -440,10 +437,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
 		agreementId = newAgreementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**
@@ -463,10 +457,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
-		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -486,10 +477,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setAvailableFromDate(Date newAvailableFromDate) {
-		Date oldAvailableFromDate = availableFromDate;
 		availableFromDate = newAvailableFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE, oldAvailableFromDate, availableFromDate));
 	}
 
 	/**
@@ -509,10 +497,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setAvailableThruDate(Date newAvailableThruDate) {
-		Date oldAvailableThruDate = availableThruDate;
 		availableThruDate = newAvailableThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__AVAILABLE_THRU_DATE, oldAvailableThruDate, availableThruDate));
 	}
 
 	/**
@@ -532,10 +517,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setCanDropShip(boolean newCanDropShip) {
-		boolean oldCanDropShip = canDropShip;
 		canDropShip = newCanDropShip;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__CAN_DROP_SHIP, oldCanDropShip, canDropShip));
 	}
 
 	/**
@@ -555,10 +537,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -572,8 +551,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -595,10 +572,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -618,10 +592,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setLastPrice(BigDecimal newLastPrice) {
-		BigDecimal oldLastPrice = lastPrice;
 		lastPrice = newLastPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__LAST_PRICE, oldLastPrice, lastPrice));
 	}
 
 	/**
@@ -641,10 +612,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setMinimumOrderQuantity(BigDecimal newMinimumOrderQuantity) {
-		BigDecimal oldMinimumOrderQuantity = minimumOrderQuantity;
 		minimumOrderQuantity = newMinimumOrderQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY, oldMinimumOrderQuantity, minimumOrderQuantity));
 	}
 
 	/**
@@ -664,10 +632,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setOrderQtyIncrements(BigDecimal newOrderQtyIncrements) {
-		BigDecimal oldOrderQtyIncrements = orderQtyIncrements;
 		orderQtyIncrements = newOrderQtyIncrements;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS, oldOrderQtyIncrements, orderQtyIncrements));
 	}
 
 	/**
@@ -681,8 +646,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -704,10 +667,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -721,8 +681,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
 			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
 			if (quantityUomId != oldQuantityUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 			}
 		}
 		return quantityUomId;
@@ -744,10 +702,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setQuantityUomId(Uom newQuantityUomId) {
-		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 	}
 
 	/**
@@ -767,10 +722,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setShippingPrice(BigDecimal newShippingPrice) {
-		BigDecimal oldShippingPrice = shippingPrice;
 		shippingPrice = newShippingPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__SHIPPING_PRICE, oldShippingPrice, shippingPrice));
 	}
 
 	/**
@@ -790,10 +742,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setStandardLeadTimeDays(BigDecimal newStandardLeadTimeDays) {
-		BigDecimal oldStandardLeadTimeDays = standardLeadTimeDays;
 		standardLeadTimeDays = newStandardLeadTimeDays;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS, oldStandardLeadTimeDays, standardLeadTimeDays));
 	}
 
 	/**
@@ -813,10 +762,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setSupplierProductId(String newSupplierProductId) {
-		String oldSupplierProductId = supplierProductId;
 		supplierProductId = newSupplierProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID, oldSupplierProductId, supplierProductId));
 	}
 
 	/**
@@ -836,10 +782,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setSupplierProductName(String newSupplierProductName) {
-		String oldSupplierProductName = supplierProductName;
 		supplierProductName = newSupplierProductName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME, oldSupplierProductName, supplierProductName));
 	}
 
 	/**
@@ -859,10 +802,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setUnitsIncluded(BigDecimal newUnitsIncluded) {
-		BigDecimal oldUnitsIncluded = unitsIncluded;
 		unitsIncluded = newUnitsIncluded;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED, oldUnitsIncluded, unitsIncluded));
 	}
 
 	/**
@@ -876,8 +816,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -899,10 +837,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -916,8 +851,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			InternalEObject oldSupplierPrefOrderId = (InternalEObject)supplierPrefOrderId;
 			supplierPrefOrderId = (SupplierPrefOrder)eResolveProxy(oldSupplierPrefOrderId);
 			if (supplierPrefOrderId != oldSupplierPrefOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID, oldSupplierPrefOrderId, supplierPrefOrderId));
 			}
 		}
 		return supplierPrefOrderId;
@@ -939,10 +872,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setSupplierPrefOrderId(SupplierPrefOrder newSupplierPrefOrderId) {
-		SupplierPrefOrder oldSupplierPrefOrderId = supplierPrefOrderId;
 		supplierPrefOrderId = newSupplierPrefOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID, oldSupplierPrefOrderId, supplierPrefOrderId));
 	}
 
 	/**
@@ -956,8 +886,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			InternalEObject oldSupplierRatingTypeId = (InternalEObject)supplierRatingTypeId;
 			supplierRatingTypeId = (SupplierRatingType)eResolveProxy(oldSupplierRatingTypeId);
 			if (supplierRatingTypeId != oldSupplierRatingTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID, oldSupplierRatingTypeId, supplierRatingTypeId));
 			}
 		}
 		return supplierRatingTypeId;
@@ -979,10 +907,7 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 */
 	@Override
 	public void setSupplierRatingTypeId(SupplierRatingType newSupplierRatingTypeId) {
-		SupplierRatingType oldSupplierRatingTypeId = supplierRatingTypeId;
 		supplierRatingTypeId = newSupplierRatingTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID, oldSupplierRatingTypeId, supplierRatingTypeId));
 	}
 
 	/**

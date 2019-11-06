@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.entity.synchronization.impl;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncRemove;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,10 +107,7 @@ public class EntitySyncRemoveImpl extends BizEntityImpl implements EntitySyncRem
 	 */
 	@Override
 	public void setEntitySyncRemoveId(String newEntitySyncRemoveId) {
-		String oldEntitySyncRemoveId = entitySyncRemoveId;
 		entitySyncRemoveId = newEntitySyncRemoveId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID, oldEntitySyncRemoveId, entitySyncRemoveId));
 	}
 
 	/**
@@ -134,10 +127,7 @@ public class EntitySyncRemoveImpl extends BizEntityImpl implements EntitySyncRem
 	 */
 	@Override
 	public void setPrimaryKeyRemoved(String newPrimaryKeyRemoved) {
-		String oldPrimaryKeyRemoved = primaryKeyRemoved;
 		primaryKeyRemoved = newPrimaryKeyRemoved;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED, oldPrimaryKeyRemoved, primaryKeyRemoved));
 	}
 
 	/**

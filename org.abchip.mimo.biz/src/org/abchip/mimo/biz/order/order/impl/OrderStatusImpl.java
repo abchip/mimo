@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.order.order.OrderStatus;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -206,10 +203,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setChangeReason(String newChangeReason) {
-		String oldChangeReason = changeReason;
 		changeReason = newChangeReason;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__CHANGE_REASON, oldChangeReason, changeReason));
 	}
 
 	/**
@@ -223,8 +217,6 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -246,10 +238,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -269,10 +258,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -286,8 +272,6 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 			InternalEObject oldOrderPaymentPreferenceId = (InternalEObject)orderPaymentPreferenceId;
 			orderPaymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldOrderPaymentPreferenceId);
 			if (orderPaymentPreferenceId != oldOrderPaymentPreferenceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
 			}
 		}
 		return orderPaymentPreferenceId;
@@ -309,10 +293,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setOrderPaymentPreferenceId(OrderPaymentPreference newOrderPaymentPreferenceId) {
-		OrderPaymentPreference oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
 		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
 	}
 
 	/**
@@ -332,10 +313,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setOrderStatusId(String newOrderStatusId) {
-		String oldOrderStatusId = orderStatusId;
 		orderStatusId = newOrderStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__ORDER_STATUS_ID, oldOrderStatusId, orderStatusId));
 	}
 
 	/**
@@ -355,10 +333,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setStatusDatetime(Date newStatusDatetime) {
-		Date oldStatusDatetime = statusDatetime;
 		statusDatetime = newStatusDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__STATUS_DATETIME, oldStatusDatetime, statusDatetime));
 	}
 
 	/**
@@ -372,8 +347,6 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -395,10 +368,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -412,8 +382,6 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 			InternalEObject oldStatusUserLogin = (InternalEObject)statusUserLogin;
 			statusUserLogin = (UserLogin)eResolveProxy(oldStatusUserLogin);
 			if (statusUserLogin != oldStatusUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN, oldStatusUserLogin, statusUserLogin));
 			}
 		}
 		return statusUserLogin;
@@ -435,10 +403,7 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 */
 	@Override
 	public void setStatusUserLogin(UserLogin newStatusUserLogin) {
-		UserLogin oldStatusUserLogin = statusUserLogin;
 		statusUserLogin = newStatusUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN, oldStatusUserLogin, statusUserLogin));
 	}
 
 	/**

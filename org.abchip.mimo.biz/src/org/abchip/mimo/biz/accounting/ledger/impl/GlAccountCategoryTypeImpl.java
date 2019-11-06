@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccountCategory;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,10 +107,7 @@ public class GlAccountCategoryTypeImpl extends BizEntityTypeImpl<GlAccountCatego
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -144,10 +139,7 @@ public class GlAccountCategoryTypeImpl extends BizEntityTypeImpl<GlAccountCatego
 	 */
 	@Override
 	public void setGlAccountCategoryTypeId(String newGlAccountCategoryTypeId) {
-		String oldGlAccountCategoryTypeId = glAccountCategoryTypeId;
 		glAccountCategoryTypeId = newGlAccountCategoryTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_TYPE__GL_ACCOUNT_CATEGORY_TYPE_ID, oldGlAccountCategoryTypeId, glAccountCategoryTypeId));
 	}
 
 	/**

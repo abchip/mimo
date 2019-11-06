@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetRevision;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,10 +119,7 @@ public class BudgetRevisionImpl extends BizEntityImpl implements BudgetRevision 
 	 */
 	@Override
 	public void setDateRevised(Date newDateRevised) {
-		Date oldDateRevised = dateRevised;
 		dateRevised = newDateRevised;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION__DATE_REVISED, oldDateRevised, dateRevised));
 	}
 
 	/**
@@ -145,10 +139,7 @@ public class BudgetRevisionImpl extends BizEntityImpl implements BudgetRevision 
 	 */
 	@Override
 	public void setRevisionSeqId(String newRevisionSeqId) {
-		String oldRevisionSeqId = revisionSeqId;
 		revisionSeqId = newRevisionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION__REVISION_SEQ_ID, oldRevisionSeqId, revisionSeqId));
 	}
 
 	/**
@@ -162,8 +153,6 @@ public class BudgetRevisionImpl extends BizEntityImpl implements BudgetRevision 
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_REVISION__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -185,10 +174,7 @@ public class BudgetRevisionImpl extends BizEntityImpl implements BudgetRevision 
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVISION__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**

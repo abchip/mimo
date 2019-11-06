@@ -25,15 +25,12 @@ import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -416,8 +413,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldCharacterSetId = (InternalEObject)characterSetId;
 			characterSetId = (CharacterSet)eResolveProxy(oldCharacterSetId);
 			if (characterSetId != oldCharacterSetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
 			}
 		}
 		return characterSetId;
@@ -439,10 +434,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setCharacterSetId(CharacterSet newCharacterSetId) {
-		CharacterSet oldCharacterSetId = characterSetId;
 		characterSetId = newCharacterSetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
 	}
 
 	/**
@@ -456,8 +448,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -479,10 +469,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -502,10 +489,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -519,8 +503,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldDataCategoryId = (InternalEObject)dataCategoryId;
 			dataCategoryId = (DataCategory)eResolveProxy(oldDataCategoryId);
 			if (dataCategoryId != oldDataCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID, oldDataCategoryId, dataCategoryId));
 			}
 		}
 		return dataCategoryId;
@@ -542,10 +524,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setDataCategoryId(DataCategory newDataCategoryId) {
-		DataCategory oldDataCategoryId = dataCategoryId;
 		dataCategoryId = newDataCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID, oldDataCategoryId, dataCategoryId));
 	}
 
 	/**
@@ -565,10 +544,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setDataResourceId(String newDataResourceId) {
-		String oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 	}
 
 	/**
@@ -588,10 +564,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setDataResourceName(String newDataResourceName) {
-		String oldDataResourceName = dataResourceName;
 		dataResourceName = newDataResourceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_RESOURCE_NAME, oldDataResourceName, dataResourceName));
 	}
 
 	/**
@@ -605,8 +578,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldDataResourceTypeId = (InternalEObject)dataResourceTypeId;
 			dataResourceTypeId = (DataResourceType)eResolveProxy(oldDataResourceTypeId);
 			if (dataResourceTypeId != oldDataResourceTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID, oldDataResourceTypeId, dataResourceTypeId));
 			}
 		}
 		return dataResourceTypeId;
@@ -628,10 +599,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setDataResourceTypeId(DataResourceType newDataResourceTypeId) {
-		DataResourceType oldDataResourceTypeId = dataResourceTypeId;
 		dataResourceTypeId = newDataResourceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID, oldDataResourceTypeId, dataResourceTypeId));
 	}
 
 	/**
@@ -645,8 +613,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
 			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
 			if (dataSourceId != oldDataSourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 			}
 		}
 		return dataSourceId;
@@ -668,10 +634,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
-		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -685,8 +648,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldDataTemplateTypeId = (InternalEObject)dataTemplateTypeId;
 			dataTemplateTypeId = (DataTemplateType)eResolveProxy(oldDataTemplateTypeId);
 			if (dataTemplateTypeId != oldDataTemplateTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID, oldDataTemplateTypeId, dataTemplateTypeId));
 			}
 		}
 		return dataTemplateTypeId;
@@ -708,10 +669,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setDataTemplateTypeId(DataTemplateType newDataTemplateTypeId) {
-		DataTemplateType oldDataTemplateTypeId = dataTemplateTypeId;
 		dataTemplateTypeId = newDataTemplateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID, oldDataTemplateTypeId, dataTemplateTypeId));
 	}
 
 	/**
@@ -731,10 +689,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setIsPublic(boolean newIsPublic) {
-		boolean oldIsPublic = isPublic;
 		isPublic = newIsPublic;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__IS_PUBLIC, oldIsPublic, isPublic));
 	}
 
 	/**
@@ -748,8 +703,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -771,10 +724,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -794,10 +744,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -817,10 +764,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setLocaleString(String newLocaleString) {
-		String oldLocaleString = localeString;
 		localeString = newLocaleString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__LOCALE_STRING, oldLocaleString, localeString));
 	}
 
 	/**
@@ -834,8 +778,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
 			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
 			if (mimeTypeId != oldMimeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 			}
 		}
 		return mimeTypeId;
@@ -857,10 +799,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setMimeTypeId(MimeType newMimeTypeId) {
-		MimeType oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 	}
 
 	/**
@@ -880,10 +819,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setObjectInfo(String newObjectInfo) {
-		String oldObjectInfo = objectInfo;
 		objectInfo = newObjectInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__OBJECT_INFO, oldObjectInfo, objectInfo));
 	}
 
 	/**
@@ -903,10 +839,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setRelatedDetailId(String newRelatedDetailId) {
-		String oldRelatedDetailId = relatedDetailId;
 		relatedDetailId = newRelatedDetailId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__RELATED_DETAIL_ID, oldRelatedDetailId, relatedDetailId));
 	}
 
 	/**
@@ -920,8 +853,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -943,10 +874,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -960,8 +888,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -983,10 +909,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
-		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -1000,8 +923,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			InternalEObject oldSurveyResponseId = (InternalEObject)surveyResponseId;
 			surveyResponseId = (SurveyResponse)eResolveProxy(oldSurveyResponseId);
 			if (surveyResponseId != oldSurveyResponseId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 			}
 		}
 		return surveyResponseId;
@@ -1023,10 +944,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 */
 	@Override
 	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
-		SurveyResponse oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 	}
 
 	/**
@@ -1037,7 +955,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	@Override
 	public List<String> getDataResourceAttributes() {
 		if (dataResourceAttributes == null) {
-			dataResourceAttributes = new EDataTypeUniqueEList<String>(String.class, this, DataPackage.DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES);
+			dataResourceAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return dataResourceAttributes;
 	}
@@ -1050,7 +968,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	@Override
 	public List<String> getDataResourceMetaDatas() {
 		if (dataResourceMetaDatas == null) {
-			dataResourceMetaDatas = new EDataTypeUniqueEList<String>(String.class, this, DataPackage.DATA_RESOURCE__DATA_RESOURCE_META_DATAS);
+			dataResourceMetaDatas = new BasicInternalEList<String>(String.class);
 		}
 		return dataResourceMetaDatas;
 	}
@@ -1063,7 +981,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	@Override
 	public List<String> getDataResourcePurposes() {
 		if (dataResourcePurposes == null) {
-			dataResourcePurposes = new EDataTypeUniqueEList<String>(String.class, this, DataPackage.DATA_RESOURCE__DATA_RESOURCE_PURPOSES);
+			dataResourcePurposes = new BasicInternalEList<String>(String.class);
 		}
 		return dataResourcePurposes;
 	}
@@ -1076,7 +994,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	@Override
 	public List<String> getProductFeatureDataResources() {
 		if (productFeatureDataResources == null) {
-			productFeatureDataResources = new EDataTypeUniqueEList<String>(String.class, this, DataPackage.DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES);
+			productFeatureDataResources = new BasicInternalEList<String>(String.class);
 		}
 		return productFeatureDataResources;
 	}

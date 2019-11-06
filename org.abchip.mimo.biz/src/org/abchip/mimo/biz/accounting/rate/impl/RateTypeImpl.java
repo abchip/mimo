@@ -12,9 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.rate.RatePackage;
 import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,10 +106,7 @@ public class RateTypeImpl extends BizEntityImpl implements RateType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +138,7 @@ public class RateTypeImpl extends BizEntityImpl implements RateType {
 	 */
 	@Override
 	public void setRateTypeId(String newRateTypeId) {
-		String oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_TYPE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 	}
 
 	/**

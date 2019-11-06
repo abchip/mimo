@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -176,8 +173,6 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
 			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
 			if (emplPositionTypeId != oldEmplPositionTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 			}
 		}
 		return emplPositionTypeId;
@@ -199,10 +194,7 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 */
 	@Override
 	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
-		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 	}
 
 	/**
@@ -222,10 +214,7 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_RATE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -245,10 +234,7 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 */
 	@Override
 	public void setPayGradeId(String newPayGradeId) {
-		String oldPayGradeId = payGradeId;
 		payGradeId = newPayGradeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_RATE__PAY_GRADE_ID, oldPayGradeId, payGradeId));
 	}
 
 	/**
@@ -262,8 +248,6 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
 			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
 			if (rateTypeId != oldRateTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 			}
 		}
 		return rateTypeId;
@@ -285,10 +269,7 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 */
 	@Override
 	public void setRateTypeId(RateType newRateTypeId) {
-		RateType oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 	}
 
 	/**
@@ -308,10 +289,7 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 */
 	@Override
 	public void setSalaryStepSeqId(String newSalaryStepSeqId) {
-		String oldSalaryStepSeqId = salaryStepSeqId;
 		salaryStepSeqId = newSalaryStepSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_RATE__SALARY_STEP_SEQ_ID, oldSalaryStepSeqId, salaryStepSeqId));
 	}
 
 	/**
@@ -331,10 +309,7 @@ public class EmplPositionTypeRateImpl extends BizEntityImpl implements EmplPosit
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_RATE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

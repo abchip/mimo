@@ -18,12 +18,9 @@ import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductReview;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -228,10 +225,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setPostedDateTime(Date newPostedDateTime) {
-		Date oldPostedDateTime = postedDateTime;
 		postedDateTime = newPostedDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__POSTED_DATE_TIME, oldPostedDateTime, postedDateTime));
 	}
 
 	/**
@@ -251,10 +245,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setProductRating(BigDecimal newProductRating) {
-		BigDecimal oldProductRating = productRating;
 		productRating = newProductRating;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__PRODUCT_RATING, oldProductRating, productRating));
 	}
 
 	/**
@@ -274,10 +265,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setProductReview(String newProductReview) {
-		String oldProductReview = productReview;
 		productReview = newProductReview;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__PRODUCT_REVIEW, oldProductReview, productReview));
 	}
 
 	/**
@@ -297,10 +285,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setProductReviewId(String newProductReviewId) {
-		String oldProductReviewId = productReviewId;
 		productReviewId = newProductReviewId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__PRODUCT_REVIEW_ID, oldProductReviewId, productReviewId));
 	}
 
 	/**
@@ -320,10 +305,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setPostedAnonymous(boolean newPostedAnonymous) {
-		boolean oldPostedAnonymous = postedAnonymous;
 		postedAnonymous = newPostedAnonymous;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__POSTED_ANONYMOUS, oldPostedAnonymous, postedAnonymous));
 	}
 
 	/**
@@ -337,8 +319,6 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -360,10 +340,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -377,8 +354,6 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -400,10 +375,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -417,8 +389,6 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -440,10 +410,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
-		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -457,8 +424,6 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -480,10 +445,7 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

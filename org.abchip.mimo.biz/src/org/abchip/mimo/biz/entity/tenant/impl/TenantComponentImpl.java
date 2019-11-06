@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantComponent;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,8 +104,6 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 			InternalEObject oldComponentName = (InternalEObject)componentName;
 			componentName = (Component)eResolveProxy(oldComponentName);
 			if (componentName != oldComponentName) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_COMPONENT__COMPONENT_NAME, oldComponentName, componentName));
 			}
 		}
 		return componentName;
@@ -130,10 +125,7 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 */
 	@Override
 	public void setComponentName(Component newComponentName) {
-		Component oldComponentName = componentName;
 		componentName = newComponentName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_COMPONENT__COMPONENT_NAME, oldComponentName, componentName));
 	}
 
 	/**
@@ -153,10 +145,7 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -170,8 +159,6 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 			InternalEObject oldTenantId = (InternalEObject)tenantId;
 			tenantId = (Tenant)eResolveProxy(oldTenantId);
 			if (tenantId != oldTenantId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_COMPONENT__TENANT_ID, oldTenantId, tenantId));
 			}
 		}
 		return tenantId;
@@ -193,10 +180,7 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 */
 	@Override
 	public void setTenantId(Tenant newTenantId) {
-		Tenant oldTenantId = tenantId;
 		tenantId = newTenantId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_COMPONENT__TENANT_ID, oldTenantId, tenantId));
 	}
 
 	/**

@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTermAttribute;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,10 +136,7 @@ public class InvoiceTermAttributeImpl extends BizEntityImpl implements InvoiceTe
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -162,10 +156,7 @@ public class InvoiceTermAttributeImpl extends BizEntityImpl implements InvoiceTe
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -185,10 +176,7 @@ public class InvoiceTermAttributeImpl extends BizEntityImpl implements InvoiceTe
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -202,8 +190,6 @@ public class InvoiceTermAttributeImpl extends BizEntityImpl implements InvoiceTe
 			InternalEObject oldInvoiceTermId = (InternalEObject)invoiceTermId;
 			invoiceTermId = (InvoiceTerm)eResolveProxy(oldInvoiceTermId);
 			if (invoiceTermId != oldInvoiceTermId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_TERM_ATTRIBUTE__INVOICE_TERM_ID, oldInvoiceTermId, invoiceTermId));
 			}
 		}
 		return invoiceTermId;
@@ -225,10 +211,7 @@ public class InvoiceTermAttributeImpl extends BizEntityImpl implements InvoiceTe
 	 */
 	@Override
 	public void setInvoiceTermId(InvoiceTerm newInvoiceTermId) {
-		InvoiceTerm oldInvoiceTermId = invoiceTermId;
 		invoiceTermId = newInvoiceTermId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM_ATTRIBUTE__INVOICE_TERM_ID, oldInvoiceTermId, invoiceTermId));
 	}
 
 	/**

@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListType;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,10 +112,7 @@ public class ContactListTypeImpl extends BizEntityTypeImpl<ContactList> implemen
 	 */
 	@Override
 	public void setContactListTypeId(String newContactListTypeId) {
-		String oldContactListTypeId = contactListTypeId;
 		contactListTypeId = newContactListTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_TYPE__CONTACT_LIST_TYPE_ID, oldContactListTypeId, contactListTypeId));
 	}
 
 	/**
@@ -139,10 +132,7 @@ public class ContactListTypeImpl extends BizEntityTypeImpl<ContactList> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

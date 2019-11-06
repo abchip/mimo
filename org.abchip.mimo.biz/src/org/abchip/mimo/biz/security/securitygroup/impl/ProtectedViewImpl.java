@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.ProtectedView;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -170,8 +167,6 @@ public class ProtectedViewImpl extends BizEntityImpl implements ProtectedView {
 			InternalEObject oldGroupId = (InternalEObject)groupId;
 			groupId = (SecurityGroup)eResolveProxy(oldGroupId);
 			if (groupId != oldGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.PROTECTED_VIEW__GROUP_ID, oldGroupId, groupId));
 			}
 		}
 		return groupId;
@@ -193,10 +188,7 @@ public class ProtectedViewImpl extends BizEntityImpl implements ProtectedView {
 	 */
 	@Override
 	public void setGroupId(SecurityGroup newGroupId) {
-		SecurityGroup oldGroupId = groupId;
 		groupId = newGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.PROTECTED_VIEW__GROUP_ID, oldGroupId, groupId));
 	}
 
 	/**
@@ -216,10 +208,7 @@ public class ProtectedViewImpl extends BizEntityImpl implements ProtectedView {
 	 */
 	@Override
 	public void setMaxHits(long newMaxHits) {
-		long oldMaxHits = maxHits;
 		maxHits = newMaxHits;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.PROTECTED_VIEW__MAX_HITS, oldMaxHits, maxHits));
 	}
 
 	/**
@@ -239,10 +228,7 @@ public class ProtectedViewImpl extends BizEntityImpl implements ProtectedView {
 	 */
 	@Override
 	public void setMaxHitsDuration(long newMaxHitsDuration) {
-		long oldMaxHitsDuration = maxHitsDuration;
 		maxHitsDuration = newMaxHitsDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.PROTECTED_VIEW__MAX_HITS_DURATION, oldMaxHitsDuration, maxHitsDuration));
 	}
 
 	/**
@@ -262,10 +248,7 @@ public class ProtectedViewImpl extends BizEntityImpl implements ProtectedView {
 	 */
 	@Override
 	public void setTarpitDuration(long newTarpitDuration) {
-		long oldTarpitDuration = tarpitDuration;
 		tarpitDuration = newTarpitDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.PROTECTED_VIEW__TARPIT_DURATION, oldTarpitDuration, tarpitDuration));
 	}
 
 	/**
@@ -285,10 +268,7 @@ public class ProtectedViewImpl extends BizEntityImpl implements ProtectedView {
 	 */
 	@Override
 	public void setViewNameId(String newViewNameId) {
-		String oldViewNameId = viewNameId;
 		viewNameId = newViewNameId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.PROTECTED_VIEW__VIEW_NAME_ID, oldViewNameId, viewNameId));
 	}
 
 	/**

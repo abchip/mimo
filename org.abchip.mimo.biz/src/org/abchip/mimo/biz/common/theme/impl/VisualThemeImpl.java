@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.common.theme.ThemePackage;
 import org.abchip.mimo.biz.common.theme.VisualTheme;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,10 +118,7 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,8 +132,6 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 			InternalEObject oldVisualThemeSetId = (InternalEObject)visualThemeSetId;
 			visualThemeSetId = (VisualThemeSet)eResolveProxy(oldVisualThemeSetId);
 			if (visualThemeSetId != oldVisualThemeSetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
 			}
 		}
 		return visualThemeSetId;
@@ -161,10 +153,7 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 	 */
 	@Override
 	public void setVisualThemeSetId(VisualThemeSet newVisualThemeSetId) {
-		VisualThemeSet oldVisualThemeSetId = visualThemeSetId;
 		visualThemeSetId = newVisualThemeSetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
 	}
 
 	/**
@@ -184,10 +173,7 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 	 */
 	@Override
 	public void setVisualThemeId(String newVisualThemeId) {
-		String oldVisualThemeId = visualThemeId;
 		visualThemeId = newVisualThemeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME__VISUAL_THEME_ID, oldVisualThemeId, visualThemeId));
 	}
 
 	/**

@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,10 +136,7 @@ public class FinAccountTypeAttrImpl extends BizEntityImpl implements FinAccountT
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE_ATTR__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -162,10 +156,7 @@ public class FinAccountTypeAttrImpl extends BizEntityImpl implements FinAccountT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -185,10 +176,7 @@ public class FinAccountTypeAttrImpl extends BizEntityImpl implements FinAccountT
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -202,8 +190,6 @@ public class FinAccountTypeAttrImpl extends BizEntityImpl implements FinAccountT
 			InternalEObject oldFinAccountTypeId = (InternalEObject)finAccountTypeId;
 			finAccountTypeId = (FinAccountType)eResolveProxy(oldFinAccountTypeId);
 			if (finAccountTypeId != oldFinAccountTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TYPE_ATTR__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
 			}
 		}
 		return finAccountTypeId;
@@ -225,10 +211,7 @@ public class FinAccountTypeAttrImpl extends BizEntityImpl implements FinAccountT
 	 */
 	@Override
 	public void setFinAccountTypeId(FinAccountType newFinAccountTypeId) {
-		FinAccountType oldFinAccountTypeId = finAccountTypeId;
 		finAccountTypeId = newFinAccountTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE_ATTR__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
 	}
 
 	/**

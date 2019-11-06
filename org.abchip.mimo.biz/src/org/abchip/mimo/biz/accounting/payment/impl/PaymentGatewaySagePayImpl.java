@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -329,10 +326,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setAuthenticationTransType(String newAuthenticationTransType) {
-		String oldAuthenticationTransType = authenticationTransType;
 		authenticationTransType = newAuthenticationTransType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE, oldAuthenticationTransType, authenticationTransType));
 	}
 
 	/**
@@ -352,10 +346,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setAuthenticationUrl(String newAuthenticationUrl) {
-		String oldAuthenticationUrl = authenticationUrl;
 		authenticationUrl = newAuthenticationUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_URL, oldAuthenticationUrl, authenticationUrl));
 	}
 
 	/**
@@ -375,10 +366,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setAuthoriseTransType(String newAuthoriseTransType) {
-		String oldAuthoriseTransType = authoriseTransType;
 		authoriseTransType = newAuthoriseTransType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHORISE_TRANS_TYPE, oldAuthoriseTransType, authoriseTransType));
 	}
 
 	/**
@@ -398,10 +386,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setAuthoriseUrl(String newAuthoriseUrl) {
-		String oldAuthoriseUrl = authoriseUrl;
 		authoriseUrl = newAuthoriseUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__AUTHORISE_URL, oldAuthoriseUrl, authoriseUrl));
 	}
 
 	/**
@@ -415,8 +400,6 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -438,10 +421,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
-		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -461,10 +441,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setProductionHost(String newProductionHost) {
-		String oldProductionHost = productionHost;
 		productionHost = newProductionHost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PRODUCTION_HOST, oldProductionHost, productionHost));
 	}
 
 	/**
@@ -484,10 +461,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setProtocolVersion(String newProtocolVersion) {
-		String oldProtocolVersion = protocolVersion;
 		protocolVersion = newProtocolVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__PROTOCOL_VERSION, oldProtocolVersion, protocolVersion));
 	}
 
 	/**
@@ -507,10 +481,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setRefundUrl(String newRefundUrl) {
-		String oldRefundUrl = refundUrl;
 		refundUrl = newRefundUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__REFUND_URL, oldRefundUrl, refundUrl));
 	}
 
 	/**
@@ -530,10 +501,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setReleaseTransType(String newReleaseTransType) {
-		String oldReleaseTransType = releaseTransType;
 		releaseTransType = newReleaseTransType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__RELEASE_TRANS_TYPE, oldReleaseTransType, releaseTransType));
 	}
 
 	/**
@@ -553,10 +521,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setReleaseUrl(String newReleaseUrl) {
-		String oldReleaseUrl = releaseUrl;
 		releaseUrl = newReleaseUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__RELEASE_URL, oldReleaseUrl, releaseUrl));
 	}
 
 	/**
@@ -576,10 +541,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setSagePayMode(String newSagePayMode) {
-		String oldSagePayMode = sagePayMode;
 		sagePayMode = newSagePayMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__SAGE_PAY_MODE, oldSagePayMode, sagePayMode));
 	}
 
 	/**
@@ -599,10 +561,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setTestingHost(String newTestingHost) {
-		String oldTestingHost = testingHost;
 		testingHost = newTestingHost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__TESTING_HOST, oldTestingHost, testingHost));
 	}
 
 	/**
@@ -622,10 +581,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setVendor(String newVendor) {
-		String oldVendor = vendor;
 		vendor = newVendor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__VENDOR, oldVendor, vendor));
 	}
 
 	/**
@@ -645,10 +601,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setVoidUrl(String newVoidUrl) {
-		String oldVoidUrl = voidUrl;
 		voidUrl = newVoidUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SAGE_PAY__VOID_URL, oldVoidUrl, voidUrl));
 	}
 
 	/**

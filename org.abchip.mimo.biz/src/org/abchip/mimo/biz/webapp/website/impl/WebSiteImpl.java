@@ -15,17 +15,13 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.abchip.mimo.biz.webapp.website.WebsitePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -429,10 +425,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**
@@ -452,10 +445,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setAllowProductStoreChange(boolean newAllowProductStoreChange) {
-		boolean oldAllowProductStoreChange = allowProductStoreChange;
 		allowProductStoreChange = newAllowProductStoreChange;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__ALLOW_PRODUCT_STORE_CHANGE, oldAllowProductStoreChange, allowProductStoreChange));
 	}
 
 	/**
@@ -475,10 +465,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setCookieDomain(String newCookieDomain) {
-		String oldCookieDomain = cookieDomain;
 		cookieDomain = newCookieDomain;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__COOKIE_DOMAIN, oldCookieDomain, cookieDomain));
 	}
 
 	/**
@@ -498,10 +485,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setDisplayMaintenancePage(boolean newDisplayMaintenancePage) {
-		boolean oldDisplayMaintenancePage = displayMaintenancePage;
 		displayMaintenancePage = newDisplayMaintenancePage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__DISPLAY_MAINTENANCE_PAGE, oldDisplayMaintenancePage, displayMaintenancePage));
 	}
 
 	/**
@@ -521,10 +505,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setEnableHttps(boolean newEnableHttps) {
-		boolean oldEnableHttps = enableHttps;
 		enableHttps = newEnableHttps;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__ENABLE_HTTPS, oldEnableHttps, enableHttps));
 	}
 
 	/**
@@ -544,10 +525,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setHostedPathAlias(String newHostedPathAlias) {
-		String oldHostedPathAlias = hostedPathAlias;
 		hostedPathAlias = newHostedPathAlias;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__HOSTED_PATH_ALIAS, oldHostedPathAlias, hostedPathAlias));
 	}
 
 	/**
@@ -567,10 +545,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setHttpHost(String newHttpHost) {
-		String oldHttpHost = httpHost;
 		httpHost = newHttpHost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__HTTP_HOST, oldHttpHost, httpHost));
 	}
 
 	/**
@@ -590,10 +565,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setHttpPort(String newHttpPort) {
-		String oldHttpPort = httpPort;
 		httpPort = newHttpPort;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__HTTP_PORT, oldHttpPort, httpPort));
 	}
 
 	/**
@@ -613,10 +585,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setHttpsHost(String newHttpsHost) {
-		String oldHttpsHost = httpsHost;
 		httpsHost = newHttpsHost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__HTTPS_HOST, oldHttpsHost, httpsHost));
 	}
 
 	/**
@@ -636,10 +605,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setHttpsPort(String newHttpsPort) {
-		String oldHttpsPort = httpsPort;
 		httpsPort = newHttpsPort;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__HTTPS_PORT, oldHttpsPort, httpsPort));
 	}
 
 	/**
@@ -659,10 +625,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setIsDefault(boolean newIsDefault) {
-		boolean oldIsDefault = isDefault;
 		isDefault = newIsDefault;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__IS_DEFAULT, oldIsDefault, isDefault));
 	}
 
 	/**
@@ -676,8 +639,6 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -699,10 +660,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -722,10 +680,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setSecureContentPrefix(String newSecureContentPrefix) {
-		String oldSecureContentPrefix = secureContentPrefix;
 		secureContentPrefix = newSecureContentPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__SECURE_CONTENT_PREFIX, oldSecureContentPrefix, secureContentPrefix));
 	}
 
 	/**
@@ -745,10 +700,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setSiteName(String newSiteName) {
-		String oldSiteName = siteName;
 		siteName = newSiteName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__SITE_NAME, oldSiteName, siteName));
 	}
 
 	/**
@@ -768,10 +720,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setStandardContentPrefix(String newStandardContentPrefix) {
-		String oldStandardContentPrefix = standardContentPrefix;
 		standardContentPrefix = newStandardContentPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__STANDARD_CONTENT_PREFIX, oldStandardContentPrefix, standardContentPrefix));
 	}
 
 	/**
@@ -785,8 +734,6 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 			InternalEObject oldVisualThemeSetId = (InternalEObject)visualThemeSetId;
 			visualThemeSetId = (VisualThemeSet)eResolveProxy(oldVisualThemeSetId);
 			if (visualThemeSetId != oldVisualThemeSetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
 			}
 		}
 		return visualThemeSetId;
@@ -808,10 +755,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setVisualThemeSetId(VisualThemeSet newVisualThemeSetId) {
-		VisualThemeSet oldVisualThemeSetId = visualThemeSetId;
 		visualThemeSetId = newVisualThemeSetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
 	}
 
 	/**
@@ -831,10 +775,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@Override
 	public void setWebappPath(String newWebappPath) {
-		String oldWebappPath = webappPath;
 		webappPath = newWebappPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__WEBAPP_PATH, oldWebappPath, webappPath));
 	}
 
 	/**
@@ -845,7 +786,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	@Override
 	public List<String> getWebAnalyticsConfigs() {
 		if (webAnalyticsConfigs == null) {
-			webAnalyticsConfigs = new EDataTypeUniqueEList<String>(String.class, this, WebsitePackage.WEB_SITE__WEB_ANALYTICS_CONFIGS);
+			webAnalyticsConfigs = new BasicInternalEList<String>(String.class);
 		}
 		return webAnalyticsConfigs;
 	}

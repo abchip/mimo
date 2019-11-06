@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -166,8 +163,6 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 			InternalEObject oldCalendarId = (InternalEObject)calendarId;
 			calendarId = (TechDataCalendar)eResolveProxy(oldCalendarId);
 			if (calendarId != oldCalendarId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID, oldCalendarId, calendarId));
 			}
 		}
 		return calendarId;
@@ -189,10 +184,7 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 */
 	@Override
 	public void setCalendarId(TechDataCalendar newCalendarId) {
-		TechDataCalendar oldCalendarId = calendarId;
 		calendarId = newCalendarId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID, oldCalendarId, calendarId));
 	}
 
 	/**
@@ -212,10 +204,7 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 */
 	@Override
 	public void setExceptionDateStartTime(Date newExceptionDateStartTime) {
-		Date oldExceptionDateStartTime = exceptionDateStartTime;
 		exceptionDateStartTime = newExceptionDateStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_DATE_START_TIME, oldExceptionDateStartTime, exceptionDateStartTime));
 	}
 
 	/**
@@ -235,10 +224,7 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -258,10 +244,7 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 */
 	@Override
 	public void setExceptionCapacity(BigDecimal newExceptionCapacity) {
-		BigDecimal oldExceptionCapacity = exceptionCapacity;
 		exceptionCapacity = newExceptionCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_CAPACITY, oldExceptionCapacity, exceptionCapacity));
 	}
 
 	/**
@@ -281,10 +264,7 @@ public class TechDataCalendarExcDayImpl extends BizEntityImpl implements TechDat
 	 */
 	@Override
 	public void setUsedCapacity(BigDecimal newUsedCapacity) {
-		BigDecimal oldUsedCapacity = usedCapacity;
 		usedCapacity = newUsedCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_DAY__USED_CAPACITY, oldUsedCapacity, usedCapacity));
 	}
 
 	/**

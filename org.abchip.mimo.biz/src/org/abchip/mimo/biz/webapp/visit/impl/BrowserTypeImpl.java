@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.BrowserType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,10 +131,7 @@ public class BrowserTypeImpl extends BizEntityImpl implements BrowserType {
 	 */
 	@Override
 	public void setBrowserTypeId(String newBrowserTypeId) {
-		String oldBrowserTypeId = browserTypeId;
 		browserTypeId = newBrowserTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.BROWSER_TYPE__BROWSER_TYPE_ID, oldBrowserTypeId, browserTypeId));
 	}
 
 	/**
@@ -158,10 +151,7 @@ public class BrowserTypeImpl extends BizEntityImpl implements BrowserType {
 	 */
 	@Override
 	public void setBrowserName(String newBrowserName) {
-		String oldBrowserName = browserName;
 		browserName = newBrowserName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.BROWSER_TYPE__BROWSER_NAME, oldBrowserName, browserName));
 	}
 
 	/**
@@ -181,10 +171,7 @@ public class BrowserTypeImpl extends BizEntityImpl implements BrowserType {
 	 */
 	@Override
 	public void setBrowserVersion(String newBrowserVersion) {
-		String oldBrowserVersion = browserVersion;
 		browserVersion = newBrowserVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.BROWSER_TYPE__BROWSER_VERSION, oldBrowserVersion, browserVersion));
 	}
 
 	/**

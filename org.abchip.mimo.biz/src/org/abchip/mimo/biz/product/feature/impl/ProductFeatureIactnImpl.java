@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureIactn;
 import org.abchip.mimo.biz.product.feature.ProductFeatureIactnType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,10 +124,7 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 */
 	@Override
 	public void setProductId(String newProductId) {
-		String oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -144,8 +138,6 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 			InternalEObject oldProductFeatureIactnTypeId = (InternalEObject)productFeatureIactnTypeId;
 			productFeatureIactnTypeId = (ProductFeatureIactnType)eResolveProxy(oldProductFeatureIactnTypeId);
 			if (productFeatureIactnTypeId != oldProductFeatureIactnTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_IACTN_TYPE_ID, oldProductFeatureIactnTypeId, productFeatureIactnTypeId));
 			}
 		}
 		return productFeatureIactnTypeId;
@@ -167,10 +159,7 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 */
 	@Override
 	public void setProductFeatureIactnTypeId(ProductFeatureIactnType newProductFeatureIactnTypeId) {
-		ProductFeatureIactnType oldProductFeatureIactnTypeId = productFeatureIactnTypeId;
 		productFeatureIactnTypeId = newProductFeatureIactnTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_IACTN_TYPE_ID, oldProductFeatureIactnTypeId, productFeatureIactnTypeId));
 	}
 
 	/**
@@ -184,8 +173,6 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -207,10 +194,7 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
-		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -224,8 +208,6 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 			InternalEObject oldProductFeatureIdTo = (InternalEObject)productFeatureIdTo;
 			productFeatureIdTo = (ProductFeature)eResolveProxy(oldProductFeatureIdTo);
 			if (productFeatureIdTo != oldProductFeatureIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID_TO, oldProductFeatureIdTo, productFeatureIdTo));
 			}
 		}
 		return productFeatureIdTo;
@@ -247,10 +229,7 @@ public class ProductFeatureIactnImpl extends BizEntityTypedImpl<ProductFeatureIa
 	 */
 	@Override
 	public void setProductFeatureIdTo(ProductFeature newProductFeatureIdTo) {
-		ProductFeature oldProductFeatureIdTo = productFeatureIdTo;
 		productFeatureIdTo = newProductFeatureIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_IACTN__PRODUCT_FEATURE_ID_TO, oldProductFeatureIdTo, productFeatureIdTo));
 	}
 
 	/**

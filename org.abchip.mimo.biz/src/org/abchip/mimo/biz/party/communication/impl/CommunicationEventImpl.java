@@ -22,11 +22,9 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -488,10 +486,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setBccString(String newBccString) {
-		String oldBccString = bccString;
 		bccString = newBccString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__BCC_STRING, oldBccString, bccString));
 	}
 
 	/**
@@ -511,10 +506,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setCcString(String newCcString) {
-		String oldCcString = ccString;
 		ccString = newCcString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CC_STRING, oldCcString, ccString));
 	}
 
 	/**
@@ -528,8 +520,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldContactListId = (InternalEObject)contactListId;
 			contactListId = (ContactList)eResolveProxy(oldContactListId);
 			if (contactListId != oldContactListId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID, oldContactListId, contactListId));
 			}
 		}
 		return contactListId;
@@ -551,10 +541,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setContactListId(ContactList newContactListId) {
-		ContactList oldContactListId = contactListId;
 		contactListId = newContactListId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID, oldContactListId, contactListId));
 	}
 
 	/**
@@ -568,8 +555,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldContactMechIdFrom = (InternalEObject)contactMechIdFrom;
 			contactMechIdFrom = (ContactMech)eResolveProxy(oldContactMechIdFrom);
 			if (contactMechIdFrom != oldContactMechIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
 			}
 		}
 		return contactMechIdFrom;
@@ -591,10 +576,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setContactMechIdFrom(ContactMech newContactMechIdFrom) {
-		ContactMech oldContactMechIdFrom = contactMechIdFrom;
 		contactMechIdFrom = newContactMechIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
 	}
 
 	/**
@@ -608,8 +590,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldContactMechIdTo = (InternalEObject)contactMechIdTo;
 			contactMechIdTo = (ContactMech)eResolveProxy(oldContactMechIdTo);
 			if (contactMechIdTo != oldContactMechIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
 			}
 		}
 		return contactMechIdTo;
@@ -631,10 +611,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setContactMechIdTo(ContactMech newContactMechIdTo) {
-		ContactMech oldContactMechIdTo = contactMechIdTo;
 		contactMechIdTo = newContactMechIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
 	}
 
 	/**
@@ -648,8 +625,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
 			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
 			if (contactMechTypeId != oldContactMechTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 			}
 		}
 		return contactMechTypeId;
@@ -671,10 +646,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
-		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 	}
 
 	/**
@@ -694,10 +666,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setContent(String newContent) {
-		String oldContent = content;
 		content = newContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTENT, oldContent, content));
 	}
 
 	/**
@@ -711,8 +680,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldContentMimeTypeId = (InternalEObject)contentMimeTypeId;
 			contentMimeTypeId = (MimeType)eResolveProxy(oldContentMimeTypeId);
 			if (contentMimeTypeId != oldContentMimeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID, oldContentMimeTypeId, contentMimeTypeId));
 			}
 		}
 		return contentMimeTypeId;
@@ -734,10 +701,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setContentMimeTypeId(MimeType newContentMimeTypeId) {
-		MimeType oldContentMimeTypeId = contentMimeTypeId;
 		contentMimeTypeId = newContentMimeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID, oldContentMimeTypeId, contentMimeTypeId));
 	}
 
 	/**
@@ -757,10 +721,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setDatetimeEnded(Date newDatetimeEnded) {
-		Date oldDatetimeEnded = datetimeEnded;
 		datetimeEnded = newDatetimeEnded;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__DATETIME_ENDED, oldDatetimeEnded, datetimeEnded));
 	}
 
 	/**
@@ -780,10 +741,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setDatetimeStarted(Date newDatetimeStarted) {
-		Date oldDatetimeStarted = datetimeStarted;
 		datetimeStarted = newDatetimeStarted;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__DATETIME_STARTED, oldDatetimeStarted, datetimeStarted));
 	}
 
 	/**
@@ -803,10 +761,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setEntryDate(Date newEntryDate) {
-		Date oldEntryDate = entryDate;
 		entryDate = newEntryDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__ENTRY_DATE, oldEntryDate, entryDate));
 	}
 
 	/**
@@ -826,10 +781,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setFromString(String newFromString) {
-		String oldFromString = fromString;
 		fromString = newFromString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__FROM_STRING, oldFromString, fromString));
 	}
 
 	/**
@@ -849,10 +801,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setHeaderString(String newHeaderString) {
-		String oldHeaderString = headerString;
 		headerString = newHeaderString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__HEADER_STRING, oldHeaderString, headerString));
 	}
 
 	/**
@@ -872,10 +821,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setMessageId(String newMessageId) {
-		String oldMessageId = messageId;
 		messageId = newMessageId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__MESSAGE_ID, oldMessageId, messageId));
 	}
 
 	/**
@@ -895,10 +841,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setNote(String newNote) {
-		String oldNote = note;
 		note = newNote;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__NOTE, oldNote, note));
 	}
 
 	/**
@@ -918,10 +861,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setOrigCommEventId(String newOrigCommEventId) {
-		String oldOrigCommEventId = origCommEventId;
 		origCommEventId = newOrigCommEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__ORIG_COMM_EVENT_ID, oldOrigCommEventId, origCommEventId));
 	}
 
 	/**
@@ -941,10 +881,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setParentCommEventId(String newParentCommEventId) {
-		String oldParentCommEventId = parentCommEventId;
 		parentCommEventId = newParentCommEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID, oldParentCommEventId, parentCommEventId));
 	}
 
 	/**
@@ -958,8 +895,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -981,10 +916,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
-		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -998,8 +930,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -1021,10 +951,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
-		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -1038,8 +965,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldReasonEnumId = (InternalEObject)reasonEnumId;
 			reasonEnumId = (Enumeration)eResolveProxy(oldReasonEnumId);
 			if (reasonEnumId != oldReasonEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 			}
 		}
 		return reasonEnumId;
@@ -1061,10 +986,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setReasonEnumId(Enumeration newReasonEnumId) {
-		Enumeration oldReasonEnumId = reasonEnumId;
 		reasonEnumId = newReasonEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 	}
 
 	/**
@@ -1078,8 +1000,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldRoleTypeIdFrom = (InternalEObject)roleTypeIdFrom;
 			roleTypeIdFrom = (RoleType)eResolveProxy(oldRoleTypeIdFrom);
 			if (roleTypeIdFrom != oldRoleTypeIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 			}
 		}
 		return roleTypeIdFrom;
@@ -1101,10 +1021,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setRoleTypeIdFrom(RoleType newRoleTypeIdFrom) {
-		RoleType oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -1118,8 +1035,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldRoleTypeIdTo = (InternalEObject)roleTypeIdTo;
 			roleTypeIdTo = (RoleType)eResolveProxy(oldRoleTypeIdTo);
 			if (roleTypeIdTo != oldRoleTypeIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 			}
 		}
 		return roleTypeIdTo;
@@ -1141,10 +1056,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setRoleTypeIdTo(RoleType newRoleTypeIdTo) {
-		RoleType oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -1158,8 +1070,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1181,10 +1091,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1204,10 +1111,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setSubject(String newSubject) {
-		String oldSubject = subject;
 		subject = newSubject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__SUBJECT, oldSubject, subject));
 	}
 
 	/**
@@ -1227,10 +1131,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setToString(String newToString) {
-		String oldToString = toString;
 		toString = newToString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__TO_STRING, oldToString, toString));
 	}
 
 	/**
@@ -1328,8 +1229,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			InternalEObject oldCommunicationEventTypeId = (InternalEObject)communicationEventTypeId;
 			communicationEventTypeId = (CommunicationEventType)eResolveProxy(oldCommunicationEventTypeId);
 			if (communicationEventTypeId != oldCommunicationEventTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID, oldCommunicationEventTypeId, communicationEventTypeId));
 			}
 		}
 		return communicationEventTypeId;
@@ -1351,10 +1250,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setCommunicationEventTypeId(CommunicationEventType newCommunicationEventTypeId) {
-		CommunicationEventType oldCommunicationEventTypeId = communicationEventTypeId;
 		communicationEventTypeId = newCommunicationEventTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID, oldCommunicationEventTypeId, communicationEventTypeId));
 	}
 
 	/**
@@ -1374,10 +1270,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	@Override
 	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**

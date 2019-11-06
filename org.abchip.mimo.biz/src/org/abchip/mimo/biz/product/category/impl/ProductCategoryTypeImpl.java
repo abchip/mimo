@@ -14,14 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -162,10 +159,7 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -185,10 +179,7 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -202,8 +193,6 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ProductCategoryType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -225,10 +214,7 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	 */
 	@Override
 	public void setParentTypeId(ProductCategoryType newParentTypeId) {
-		ProductCategoryType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -248,10 +234,7 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	 */
 	@Override
 	public void setProductCategoryTypeId(String newProductCategoryTypeId) {
-		String oldProductCategoryTypeId = productCategoryTypeId;
 		productCategoryTypeId = newProductCategoryTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
 	}
 
 	/**
@@ -262,7 +245,7 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	@Override
 	public List<String> getProductCategoryTypeAttrs() {
 		if (productCategoryTypeAttrs == null) {
-			productCategoryTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, CategoryPackage.PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ATTRS);
+			productCategoryTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return productCategoryTypeAttrs;
 	}

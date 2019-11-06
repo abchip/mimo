@@ -20,13 +20,10 @@ import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnReason;
 import org.abchip.mimo.biz.order.return_.ReturnType;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -307,10 +304,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -324,8 +318,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldExpectedItemStatus = (InternalEObject)expectedItemStatus;
 			expectedItemStatus = (StatusItem)eResolveProxy(oldExpectedItemStatus);
 			if (expectedItemStatus != oldExpectedItemStatus) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS, oldExpectedItemStatus, expectedItemStatus));
 			}
 		}
 		return expectedItemStatus;
@@ -347,10 +339,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setExpectedItemStatus(StatusItem newExpectedItemStatus) {
-		StatusItem oldExpectedItemStatus = expectedItemStatus;
 		expectedItemStatus = newExpectedItemStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS, oldExpectedItemStatus, expectedItemStatus));
 	}
 
 	/**
@@ -364,8 +353,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -387,10 +374,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -410,10 +394,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -427,8 +408,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -450,10 +429,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -473,10 +449,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReceivedQuantity(BigDecimal newReceivedQuantity) {
-		BigDecimal oldReceivedQuantity = receivedQuantity;
 		receivedQuantity = newReceivedQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RECEIVED_QUANTITY, oldReceivedQuantity, receivedQuantity));
 	}
 
 	/**
@@ -490,8 +463,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldReturnId = (InternalEObject)returnId;
 			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
 			if (returnId != oldReturnId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_ID, oldReturnId, returnId));
 			}
 		}
 		return returnId;
@@ -513,10 +484,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
-		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -530,8 +498,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldReturnItemResponseId = (InternalEObject)returnItemResponseId;
 			returnItemResponseId = (ReturnItemResponse)eResolveProxy(oldReturnItemResponseId);
 			if (returnItemResponseId != oldReturnItemResponseId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID, oldReturnItemResponseId, returnItemResponseId));
 			}
 		}
 		return returnItemResponseId;
@@ -553,10 +519,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnItemResponseId(ReturnItemResponse newReturnItemResponseId) {
-		ReturnItemResponse oldReturnItemResponseId = returnItemResponseId;
 		returnItemResponseId = newReturnItemResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID, oldReturnItemResponseId, returnItemResponseId));
 	}
 
 	/**
@@ -576,10 +539,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
-		String oldReturnItemSeqId = returnItemSeqId;
 		returnItemSeqId = newReturnItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
 	}
 
 	/**
@@ -593,8 +553,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldReturnItemTypeId = (InternalEObject)returnItemTypeId;
 			returnItemTypeId = (ReturnItemType)eResolveProxy(oldReturnItemTypeId);
 			if (returnItemTypeId != oldReturnItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
 			}
 		}
 		return returnItemTypeId;
@@ -616,10 +574,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnItemTypeId(ReturnItemType newReturnItemTypeId) {
-		ReturnItemType oldReturnItemTypeId = returnItemTypeId;
 		returnItemTypeId = newReturnItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
 	}
 
 	/**
@@ -639,10 +594,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnPrice(BigDecimal newReturnPrice) {
-		BigDecimal oldReturnPrice = returnPrice;
 		returnPrice = newReturnPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_PRICE, oldReturnPrice, returnPrice));
 	}
 
 	/**
@@ -662,10 +614,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnQuantity(BigDecimal newReturnQuantity) {
-		BigDecimal oldReturnQuantity = returnQuantity;
 		returnQuantity = newReturnQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_QUANTITY, oldReturnQuantity, returnQuantity));
 	}
 
 	/**
@@ -679,8 +628,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldReturnReasonId = (InternalEObject)returnReasonId;
 			returnReasonId = (ReturnReason)eResolveProxy(oldReturnReasonId);
 			if (returnReasonId != oldReturnReasonId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_REASON_ID, oldReturnReasonId, returnReasonId));
 			}
 		}
 		return returnReasonId;
@@ -702,10 +649,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnReasonId(ReturnReason newReturnReasonId) {
-		ReturnReason oldReturnReasonId = returnReasonId;
 		returnReasonId = newReturnReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_REASON_ID, oldReturnReasonId, returnReasonId));
 	}
 
 	/**
@@ -719,8 +663,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldReturnTypeId = (InternalEObject)returnTypeId;
 			returnTypeId = (ReturnType)eResolveProxy(oldReturnTypeId);
 			if (returnTypeId != oldReturnTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
 			}
 		}
 		return returnTypeId;
@@ -742,10 +684,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setReturnTypeId(ReturnType newReturnTypeId) {
-		ReturnType oldReturnTypeId = returnTypeId;
 		returnTypeId = newReturnTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
 	}
 
 	/**
@@ -759,8 +698,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -782,10 +719,7 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

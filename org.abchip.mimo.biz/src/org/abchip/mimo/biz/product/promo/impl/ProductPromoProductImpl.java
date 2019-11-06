@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoProduct;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -170,10 +167,7 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductPromoActionSeqId(String newProductPromoActionSeqId) {
-		String oldProductPromoActionSeqId = productPromoActionSeqId;
 		productPromoActionSeqId = newProductPromoActionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_ACTION_SEQ_ID, oldProductPromoActionSeqId, productPromoActionSeqId));
 	}
 
 	/**
@@ -187,8 +181,6 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 			InternalEObject oldProductPromoApplEnumId = (InternalEObject)productPromoApplEnumId;
 			productPromoApplEnumId = (Enumeration)eResolveProxy(oldProductPromoApplEnumId);
 			if (productPromoApplEnumId != oldProductPromoApplEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID, oldProductPromoApplEnumId, productPromoApplEnumId));
 			}
 		}
 		return productPromoApplEnumId;
@@ -210,10 +202,7 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductPromoApplEnumId(Enumeration newProductPromoApplEnumId) {
-		Enumeration oldProductPromoApplEnumId = productPromoApplEnumId;
 		productPromoApplEnumId = newProductPromoApplEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID, oldProductPromoApplEnumId, productPromoApplEnumId));
 	}
 
 	/**
@@ -233,10 +222,7 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductPromoCondSeqId(String newProductPromoCondSeqId) {
-		String oldProductPromoCondSeqId = productPromoCondSeqId;
 		productPromoCondSeqId = newProductPromoCondSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_COND_SEQ_ID, oldProductPromoCondSeqId, productPromoCondSeqId));
 	}
 
 	/**
@@ -256,10 +242,7 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductPromoRuleId(String newProductPromoRuleId) {
-		String oldProductPromoRuleId = productPromoRuleId;
 		productPromoRuleId = newProductPromoRuleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_RULE_ID, oldProductPromoRuleId, productPromoRuleId));
 	}
 
 	/**
@@ -273,8 +256,6 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -296,10 +277,7 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
-		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**
@@ -313,8 +291,6 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -336,10 +312,7 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

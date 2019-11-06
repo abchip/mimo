@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.humanres.ability.PartySkill;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -176,8 +173,6 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_SKILL__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -199,10 +194,7 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_SKILL__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -222,10 +214,7 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 */
 	@Override
 	public void setRating(long newRating) {
-		long oldRating = rating;
 		rating = newRating;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_SKILL__RATING, oldRating, rating));
 	}
 
 	/**
@@ -245,10 +234,7 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 */
 	@Override
 	public void setSkillLevel(long newSkillLevel) {
-		long oldSkillLevel = skillLevel;
 		skillLevel = newSkillLevel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_SKILL__SKILL_LEVEL, oldSkillLevel, skillLevel));
 	}
 
 	/**
@@ -262,8 +248,6 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 			InternalEObject oldSkillTypeId = (InternalEObject)skillTypeId;
 			skillTypeId = (SkillType)eResolveProxy(oldSkillTypeId);
 			if (skillTypeId != oldSkillTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_SKILL__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 			}
 		}
 		return skillTypeId;
@@ -285,10 +269,7 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 */
 	@Override
 	public void setSkillTypeId(SkillType newSkillTypeId) {
-		SkillType oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_SKILL__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 	}
 
 	/**
@@ -308,10 +289,7 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 */
 	@Override
 	public void setStartedUsingDate(Date newStartedUsingDate) {
-		Date oldStartedUsingDate = startedUsingDate;
 		startedUsingDate = newStartedUsingDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_SKILL__STARTED_USING_DATE, oldStartedUsingDate, startedUsingDate));
 	}
 
 	/**
@@ -331,10 +309,7 @@ public class PartySkillImpl extends BizEntityImpl implements PartySkill {
 	 */
 	@Override
 	public void setYearsExperience(long newYearsExperience) {
-		long oldYearsExperience = yearsExperience;
 		yearsExperience = newYearsExperience;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_SKILL__YEARS_EXPERIENCE, oldYearsExperience, yearsExperience));
 	}
 
 	/**

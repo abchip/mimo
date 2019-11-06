@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.ledger.AcctgTransType;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 			InternalEObject oldAcctgTransTypeId = (InternalEObject)acctgTransTypeId;
 			acctgTransTypeId = (AcctgTransType)eResolveProxy(oldAcctgTransTypeId);
 			if (acctgTransTypeId != oldAcctgTransTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID, oldAcctgTransTypeId, acctgTransTypeId));
 			}
 		}
 		return acctgTransTypeId;
@@ -183,10 +172,7 @@ public class AcctgTransTypeAttrImpl extends BizEntityImpl implements AcctgTransT
 	 */
 	@Override
 	public void setAcctgTransTypeId(AcctgTransType newAcctgTransTypeId) {
-		AcctgTransType oldAcctgTransTypeId = acctgTransTypeId;
 		acctgTransTypeId = newAcctgTransTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_TYPE_ATTR__ACCTG_TRANS_TYPE_ID, oldAcctgTransTypeId, acctgTransTypeId));
 	}
 
 	/**

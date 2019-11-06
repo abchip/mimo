@@ -20,12 +20,9 @@ import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -483,10 +480,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setAccountingQuantityDiff(BigDecimal newAccountingQuantityDiff) {
-		BigDecimal oldAccountingQuantityDiff = accountingQuantityDiff;
 		accountingQuantityDiff = newAccountingQuantityDiff;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__ACCOUNTING_QUANTITY_DIFF, oldAccountingQuantityDiff, accountingQuantityDiff));
 	}
 
 	/**
@@ -506,10 +500,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setAvailableToPromiseDiff(BigDecimal newAvailableToPromiseDiff) {
-		BigDecimal oldAvailableToPromiseDiff = availableToPromiseDiff;
 		availableToPromiseDiff = newAvailableToPromiseDiff;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__AVAILABLE_TO_PROMISE_DIFF, oldAvailableToPromiseDiff, availableToPromiseDiff));
 	}
 
 	/**
@@ -529,10 +520,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -552,10 +540,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setEffectiveDate(Date newEffectiveDate) {
-		Date oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
 	}
 
 	/**
@@ -575,10 +560,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -598,10 +580,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setInventoryItemDetailSeqId(String newInventoryItemDetailSeqId) {
-		String oldInventoryItemDetailSeqId = inventoryItemDetailSeqId;
 		inventoryItemDetailSeqId = newInventoryItemDetailSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_DETAIL_SEQ_ID, oldInventoryItemDetailSeqId, inventoryItemDetailSeqId));
 	}
 
 	/**
@@ -615,8 +594,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldItemIssuanceId = (InternalEObject)itemIssuanceId;
 			itemIssuanceId = (ItemIssuance)eResolveProxy(oldItemIssuanceId);
 			if (itemIssuanceId != oldItemIssuanceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_DETAIL__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 			}
 		}
 		return itemIssuanceId;
@@ -638,10 +615,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setItemIssuanceId(ItemIssuance newItemIssuanceId) {
-		ItemIssuance oldItemIssuanceId = itemIssuanceId;
 		itemIssuanceId = newItemIssuanceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 	}
 
 	/**
@@ -661,10 +635,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setMaintHistSeqId(String newMaintHistSeqId) {
-		String oldMaintHistSeqId = maintHistSeqId;
 		maintHistSeqId = newMaintHistSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__MAINT_HIST_SEQ_ID, oldMaintHistSeqId, maintHistSeqId));
 	}
 
 	/**
@@ -684,10 +655,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -707,10 +675,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -730,10 +695,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setQuantityOnHandDiff(BigDecimal newQuantityOnHandDiff) {
-		BigDecimal oldQuantityOnHandDiff = quantityOnHandDiff;
 		quantityOnHandDiff = newQuantityOnHandDiff;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__QUANTITY_ON_HAND_DIFF, oldQuantityOnHandDiff, quantityOnHandDiff));
 	}
 
 	/**
@@ -747,8 +709,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldReasonEnumId = (InternalEObject)reasonEnumId;
 			reasonEnumId = (Enumeration)eResolveProxy(oldReasonEnumId);
 			if (reasonEnumId != oldReasonEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_DETAIL__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 			}
 		}
 		return reasonEnumId;
@@ -770,10 +730,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setReasonEnumId(Enumeration newReasonEnumId) {
-		Enumeration oldReasonEnumId = reasonEnumId;
 		reasonEnumId = newReasonEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 	}
 
 	/**
@@ -787,8 +744,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldReceiptId = (InternalEObject)receiptId;
 			receiptId = (ShipmentReceipt)eResolveProxy(oldReceiptId);
 			if (receiptId != oldReceiptId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_DETAIL__RECEIPT_ID, oldReceiptId, receiptId));
 			}
 		}
 		return receiptId;
@@ -810,10 +765,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setReceiptId(ShipmentReceipt newReceiptId) {
-		ShipmentReceipt oldReceiptId = receiptId;
 		receiptId = newReceiptId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__RECEIPT_ID, oldReceiptId, receiptId));
 	}
 
 	/**
@@ -833,10 +785,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
 		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -856,10 +805,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
-		String oldReturnItemSeqId = returnItemSeqId;
 		returnItemSeqId = newReturnItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
 	}
 
 	/**
@@ -879,10 +825,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
-		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -902,10 +845,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -925,10 +865,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
-		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**
@@ -948,10 +885,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setUnitCost(BigDecimal newUnitCost) {
-		BigDecimal oldUnitCost = unitCost;
 		unitCost = newUnitCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__UNIT_COST, oldUnitCost, unitCost));
 	}
 
 	/**
@@ -965,8 +899,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_DETAIL__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -988,10 +920,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**
@@ -1005,8 +934,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -1028,10 +955,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -1045,8 +969,6 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldPhysicalInventoryId = (InternalEObject)physicalInventoryId;
 			physicalInventoryId = (PhysicalInventory)eResolveProxy(oldPhysicalInventoryId);
 			if (physicalInventoryId != oldPhysicalInventoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_DETAIL__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
 			}
 		}
 		return physicalInventoryId;
@@ -1068,10 +990,7 @@ public class InventoryItemDetailImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setPhysicalInventoryId(PhysicalInventory newPhysicalInventoryId) {
-		PhysicalInventory oldPhysicalInventoryId = physicalInventoryId;
 		physicalInventoryId = newPhysicalInventoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_DETAIL__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
 	}
 
 	/**

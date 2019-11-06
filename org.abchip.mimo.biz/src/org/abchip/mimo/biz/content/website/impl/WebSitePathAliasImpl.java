@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.content.website.WebSitePathAlias;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.website.WebSite;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -203,10 +200,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	@Override
 	public void setAliasTo(String newAliasTo) {
-		String oldAliasTo = aliasTo;
 		aliasTo = newAliasTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__ALIAS_TO, oldAliasTo, aliasTo));
 	}
 
 	/**
@@ -220,8 +214,6 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_PATH_ALIAS__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -243,10 +235,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -266,10 +255,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -289,10 +275,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	@Override
 	public void setMapKey(String newMapKey) {
-		String oldMapKey = mapKey;
 		mapKey = newMapKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__MAP_KEY, oldMapKey, mapKey));
 	}
 
 	/**
@@ -312,10 +295,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	@Override
 	public void setPathAlias(String newPathAlias) {
-		String oldPathAlias = pathAlias;
 		pathAlias = newPathAlias;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__PATH_ALIAS, oldPathAlias, pathAlias));
 	}
 
 	/**
@@ -335,10 +315,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -352,8 +329,6 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -375,10 +350,7 @@ public class WebSitePathAliasImpl extends BizEntityImpl implements WebSitePathAl
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
-		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_PATH_ALIAS__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**

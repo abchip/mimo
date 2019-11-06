@@ -19,12 +19,9 @@ import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -226,10 +223,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setDatetimeRecorded(Date newDatetimeRecorded) {
-		Date oldDatetimeRecorded = datetimeRecorded;
 		datetimeRecorded = newDatetimeRecorded;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__DATETIME_RECORDED, oldDatetimeRecorded, datetimeRecorded));
 	}
 
 	/**
@@ -249,10 +243,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -266,8 +257,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -289,10 +278,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -312,10 +298,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setPartyNeedId(String newPartyNeedId) {
-		String oldPartyNeedId = partyNeedId;
 		partyNeedId = newPartyNeedId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_NEED_ID, oldPartyNeedId, partyNeedId));
 	}
 
 	/**
@@ -329,8 +312,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			InternalEObject oldPartyTypeId = (InternalEObject)partyTypeId;
 			partyTypeId = (PartyType)eResolveProxy(oldPartyTypeId);
 			if (partyTypeId != oldPartyTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
 			}
 		}
 		return partyTypeId;
@@ -352,10 +333,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setPartyTypeId(PartyType newPartyTypeId) {
-		PartyType oldPartyTypeId = partyTypeId;
 		partyTypeId = newPartyTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
 	}
 
 	/**
@@ -369,8 +347,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -392,10 +368,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -409,8 +382,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -432,10 +403,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -449,8 +417,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -472,10 +438,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -495,10 +458,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
 		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**
@@ -512,8 +472,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			InternalEObject oldNeedTypeId = (InternalEObject)needTypeId;
 			needTypeId = (NeedType)eResolveProxy(oldNeedTypeId);
 			if (needTypeId != oldNeedTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
 			}
 		}
 		return needTypeId;
@@ -535,10 +493,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setNeedTypeId(NeedType newNeedTypeId) {
-		NeedType oldNeedTypeId = needTypeId;
 		needTypeId = newNeedTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
 	}
 
 	/**
@@ -552,8 +507,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -575,10 +528,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
-		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**

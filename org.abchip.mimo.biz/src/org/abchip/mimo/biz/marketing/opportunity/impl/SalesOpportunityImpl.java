@@ -22,15 +22,12 @@ import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -368,8 +365,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -391,10 +386,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -408,8 +400,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -431,10 +421,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -454,10 +441,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -477,10 +461,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -500,10 +481,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setEstimatedAmount(BigDecimal newEstimatedAmount) {
-		BigDecimal oldEstimatedAmount = estimatedAmount;
 		estimatedAmount = newEstimatedAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__ESTIMATED_AMOUNT, oldEstimatedAmount, estimatedAmount));
 	}
 
 	/**
@@ -523,10 +501,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setEstimatedCloseDate(Date newEstimatedCloseDate) {
-		Date oldEstimatedCloseDate = estimatedCloseDate;
 		estimatedCloseDate = newEstimatedCloseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__ESTIMATED_CLOSE_DATE, oldEstimatedCloseDate, estimatedCloseDate));
 	}
 
 	/**
@@ -546,10 +521,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setEstimatedProbability(BigDecimal newEstimatedProbability) {
-		BigDecimal oldEstimatedProbability = estimatedProbability;
 		estimatedProbability = newEstimatedProbability;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__ESTIMATED_PROBABILITY, oldEstimatedProbability, estimatedProbability));
 	}
 
 	/**
@@ -563,8 +535,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
 			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
 			if (marketingCampaignId != oldMarketingCampaignId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 			}
 		}
 		return marketingCampaignId;
@@ -586,10 +556,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
-		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 	}
 
 	/**
@@ -609,10 +576,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setNextStep(String newNextStep) {
-		String oldNextStep = nextStep;
 		nextStep = newNextStep;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP, oldNextStep, nextStep));
 	}
 
 	/**
@@ -632,10 +596,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setNextStepDate(Date newNextStepDate) {
-		Date oldNextStepDate = nextStepDate;
 		nextStepDate = newNextStepDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP_DATE, oldNextStepDate, nextStepDate));
 	}
 
 	/**
@@ -655,10 +616,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setOpportunityName(String newOpportunityName) {
-		String oldOpportunityName = opportunityName;
 		opportunityName = newOpportunityName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_NAME, oldOpportunityName, opportunityName));
 	}
 
 	/**
@@ -672,8 +630,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			InternalEObject oldOpportunityStageId = (InternalEObject)opportunityStageId;
 			opportunityStageId = (SalesOpportunityStage)eResolveProxy(oldOpportunityStageId);
 			if (opportunityStageId != oldOpportunityStageId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
 			}
 		}
 		return opportunityStageId;
@@ -695,10 +651,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setOpportunityStageId(SalesOpportunityStage newOpportunityStageId) {
-		SalesOpportunityStage oldOpportunityStageId = opportunityStageId;
 		opportunityStageId = newOpportunityStageId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
 	}
 
 	/**
@@ -718,10 +671,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setSalesOpportunityId(String newSalesOpportunityId) {
-		String oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 	}
 
 	/**
@@ -735,8 +685,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			InternalEObject oldTypeEnumId = (InternalEObject)typeEnumId;
 			typeEnumId = (Enumeration)eResolveProxy(oldTypeEnumId);
 			if (typeEnumId != oldTypeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
 			}
 		}
 		return typeEnumId;
@@ -758,10 +706,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@Override
 	public void setTypeEnumId(Enumeration newTypeEnumId) {
-		Enumeration oldTypeEnumId = typeEnumId;
 		typeEnumId = newTypeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
 	}
 
 	/**
@@ -772,7 +717,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	@Override
 	public List<String> getSalesOpportunityCompetitors() {
 		if (salesOpportunityCompetitors == null) {
-			salesOpportunityCompetitors = new EDataTypeUniqueEList<String>(String.class, this, OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS);
+			salesOpportunityCompetitors = new BasicInternalEList<String>(String.class);
 		}
 		return salesOpportunityCompetitors;
 	}
@@ -785,7 +730,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	@Override
 	public List<String> getSalesOpportunityQuotes() {
 		if (salesOpportunityQuotes == null) {
-			salesOpportunityQuotes = new EDataTypeUniqueEList<String>(String.class, this, OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES);
+			salesOpportunityQuotes = new BasicInternalEList<String>(String.class);
 		}
 		return salesOpportunityQuotes;
 	}
@@ -798,7 +743,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	@Override
 	public List<String> getSalesOpportunityTrckCodes() {
 		if (salesOpportunityTrckCodes == null) {
-			salesOpportunityTrckCodes = new EDataTypeUniqueEList<String>(String.class, this, OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_TRCK_CODES);
+			salesOpportunityTrckCodes = new BasicInternalEList<String>(String.class);
 		}
 		return salesOpportunityTrckCodes;
 	}
@@ -811,7 +756,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	@Override
 	public List<String> getSalesOpportunityWorkEfforts() {
 		if (salesOpportunityWorkEfforts == null) {
-			salesOpportunityWorkEfforts = new EDataTypeUniqueEList<String>(String.class, this, OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS);
+			salesOpportunityWorkEfforts = new BasicInternalEList<String>(String.class);
 		}
 		return salesOpportunityWorkEfforts;
 	}

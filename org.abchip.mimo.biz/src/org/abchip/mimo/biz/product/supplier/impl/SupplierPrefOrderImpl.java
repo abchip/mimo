@@ -10,10 +10,7 @@ package org.abchip.mimo.biz.product.supplier.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.abchip.mimo.biz.product.supplier.SupplierPrefOrder;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,10 +108,7 @@ public class SupplierPrefOrderImpl extends BizEntityImpl implements SupplierPref
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PREF_ORDER__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -134,10 +128,7 @@ public class SupplierPrefOrderImpl extends BizEntityImpl implements SupplierPref
 	 */
 	@Override
 	public void setSupplierPrefOrderId(String newSupplierPrefOrderId) {
-		String oldSupplierPrefOrderId = supplierPrefOrderId;
 		supplierPrefOrderId = newSupplierPrefOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PREF_ORDER__SUPPLIER_PREF_ORDER_ID, oldSupplierPrefOrderId, supplierPrefOrderId));
 	}
 
 	/**

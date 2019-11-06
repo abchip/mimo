@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentKeyword;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,8 +117,6 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_KEYWORD__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -143,10 +138,7 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_KEYWORD__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -166,10 +158,7 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	 */
 	@Override
 	public void setKeyword(String newKeyword) {
-		String oldKeyword = keyword;
 		keyword = newKeyword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_KEYWORD__KEYWORD, oldKeyword, keyword));
 	}
 
 	/**
@@ -189,10 +178,7 @@ public class ContentKeywordImpl extends BizEntityImpl implements ContentKeyword 
 	 */
 	@Override
 	public void setRelevancyWeight(long newRelevancyWeight) {
-		long oldRelevancyWeight = relevancyWeight;
 		relevancyWeight = newRelevancyWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_KEYWORD__RELEVANCY_WEIGHT, oldRelevancyWeight, relevancyWeight));
 	}
 
 	/**

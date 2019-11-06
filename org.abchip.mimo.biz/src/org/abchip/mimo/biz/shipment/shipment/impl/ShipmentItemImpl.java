@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentItem;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,8 +152,6 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -178,10 +173,7 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -201,10 +193,7 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -224,10 +213,7 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 */
 	@Override
 	public void setShipmentContentDescription(String newShipmentContentDescription) {
-		String oldShipmentContentDescription = shipmentContentDescription;
 		shipmentContentDescription = newShipmentContentDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION, oldShipmentContentDescription, shipmentContentDescription));
 	}
 
 	/**
@@ -241,8 +227,6 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -264,10 +248,7 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
-		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -287,10 +268,7 @@ public class ShipmentItemImpl extends BizEntityImpl implements ShipmentItem {
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
-		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**

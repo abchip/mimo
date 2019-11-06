@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
 import org.abchip.mimo.biz.content.document.DocumentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,10 +123,7 @@ public class DocumentTypeAttrImpl extends BizEntityImpl implements DocumentTypeA
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -149,10 +143,7 @@ public class DocumentTypeAttrImpl extends BizEntityImpl implements DocumentTypeA
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -166,8 +157,6 @@ public class DocumentTypeAttrImpl extends BizEntityImpl implements DocumentTypeA
 			InternalEObject oldDocumentTypeId = (InternalEObject)documentTypeId;
 			documentTypeId = (DocumentType)eResolveProxy(oldDocumentTypeId);
 			if (documentTypeId != oldDocumentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
 			}
 		}
 		return documentTypeId;
@@ -189,10 +178,7 @@ public class DocumentTypeAttrImpl extends BizEntityImpl implements DocumentTypeA
 	 */
 	@Override
 	public void setDocumentTypeId(DocumentType newDocumentTypeId) {
-		DocumentType oldDocumentTypeId = documentTypeId;
 		documentTypeId = newDocumentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE_ATTR__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
 	}
 
 	/**

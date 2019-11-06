@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomConversionDated;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -211,10 +208,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setConversionFactor(double newConversionFactor) {
-		double oldConversionFactor = conversionFactor;
 		conversionFactor = newConversionFactor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR, oldConversionFactor, conversionFactor));
 	}
 
 	/**
@@ -234,10 +228,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setDecimalScale(long newDecimalScale) {
-		long oldDecimalScale = decimalScale;
 		decimalScale = newDecimalScale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__DECIMAL_SCALE, oldDecimalScale, decimalScale));
 	}
 
 	/**
@@ -257,10 +248,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -280,10 +268,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setRoundingMode(String newRoundingMode) {
-		String oldRoundingMode = roundingMode;
 		roundingMode = newRoundingMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__ROUNDING_MODE, oldRoundingMode, roundingMode));
 	}
 
 	/**
@@ -303,10 +288,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -320,8 +302,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -343,10 +323,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
-		Uom oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -360,8 +337,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 			InternalEObject oldUomIdTo = (InternalEObject)uomIdTo;
 			uomIdTo = (Uom)eResolveProxy(oldUomIdTo);
 			if (uomIdTo != oldUomIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO, oldUomIdTo, uomIdTo));
 			}
 		}
 		return uomIdTo;
@@ -383,10 +358,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setUomIdTo(Uom newUomIdTo) {
-		Uom oldUomIdTo = uomIdTo;
 		uomIdTo = newUomIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO, oldUomIdTo, uomIdTo));
 	}
 
 	/**
@@ -400,8 +372,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 			InternalEObject oldCustomMethodId = (InternalEObject)customMethodId;
 			customMethodId = (CustomMethod)eResolveProxy(oldCustomMethodId);
 			if (customMethodId != oldCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
 			}
 		}
 		return customMethodId;
@@ -423,10 +393,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setCustomMethodId(CustomMethod newCustomMethodId) {
-		CustomMethod oldCustomMethodId = customMethodId;
 		customMethodId = newCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
 	}
 
 	/**
@@ -440,8 +407,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 			InternalEObject oldPurposeEnumId = (InternalEObject)purposeEnumId;
 			purposeEnumId = (Enumeration)eResolveProxy(oldPurposeEnumId);
 			if (purposeEnumId != oldPurposeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID, oldPurposeEnumId, purposeEnumId));
 			}
 		}
 		return purposeEnumId;
@@ -463,10 +428,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setPurposeEnumId(Enumeration newPurposeEnumId) {
-		Enumeration oldPurposeEnumId = purposeEnumId;
 		purposeEnumId = newPurposeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID, oldPurposeEnumId, purposeEnumId));
 	}
 
 	/**

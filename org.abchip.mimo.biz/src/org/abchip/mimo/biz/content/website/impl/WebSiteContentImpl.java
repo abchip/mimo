@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.content.website.WebSiteContentType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.webapp.website.WebSite;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,8 +143,6 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -169,10 +164,7 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -192,10 +184,7 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -215,10 +204,7 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -232,8 +218,6 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 			InternalEObject oldWebSiteContentTypeId = (InternalEObject)webSiteContentTypeId;
 			webSiteContentTypeId = (WebSiteContentType)eResolveProxy(oldWebSiteContentTypeId);
 			if (webSiteContentTypeId != oldWebSiteContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_CONTENT_TYPE_ID, oldWebSiteContentTypeId, webSiteContentTypeId));
 			}
 		}
 		return webSiteContentTypeId;
@@ -255,10 +239,7 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 */
 	@Override
 	public void setWebSiteContentTypeId(WebSiteContentType newWebSiteContentTypeId) {
-		WebSiteContentType oldWebSiteContentTypeId = webSiteContentTypeId;
 		webSiteContentTypeId = newWebSiteContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_CONTENT_TYPE_ID, oldWebSiteContentTypeId, webSiteContentTypeId));
 	}
 
 	/**
@@ -272,8 +253,6 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -295,10 +274,7 @@ public class WebSiteContentImpl extends BizEntityTypedImpl<WebSiteContentType> i
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
-		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE_CONTENT__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**

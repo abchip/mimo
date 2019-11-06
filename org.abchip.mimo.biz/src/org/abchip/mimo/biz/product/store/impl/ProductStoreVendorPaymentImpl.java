@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreVendorPayment;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,8 +110,6 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 			InternalEObject oldCreditCardEnumId = (InternalEObject)creditCardEnumId;
 			creditCardEnumId = (Enumeration)eResolveProxy(oldCreditCardEnumId);
 			if (creditCardEnumId != oldCreditCardEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID, oldCreditCardEnumId, creditCardEnumId));
 			}
 		}
 		return creditCardEnumId;
@@ -136,10 +131,7 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setCreditCardEnumId(Enumeration newCreditCardEnumId) {
-		Enumeration oldCreditCardEnumId = creditCardEnumId;
 		creditCardEnumId = newCreditCardEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID, oldCreditCardEnumId, creditCardEnumId));
 	}
 
 	/**
@@ -153,8 +145,6 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -176,10 +166,7 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
-		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -193,8 +180,6 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 			InternalEObject oldVendorPartyId = (InternalEObject)vendorPartyId;
 			vendorPartyId = (Party)eResolveProxy(oldVendorPartyId);
 			if (vendorPartyId != oldVendorPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 			}
 		}
 		return vendorPartyId;
@@ -216,10 +201,7 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setVendorPartyId(Party newVendorPartyId) {
-		Party oldVendorPartyId = vendorPartyId;
 		vendorPartyId = newVendorPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 	}
 
 	/**
@@ -233,8 +215,6 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -256,10 +236,7 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

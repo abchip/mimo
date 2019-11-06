@@ -14,11 +14,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,10 +154,7 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 	 */
 	@Override
 	public void setDefaultProbability(BigDecimal newDefaultProbability) {
-		BigDecimal oldDefaultProbability = defaultProbability;
 		defaultProbability = newDefaultProbability;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_STAGE__DEFAULT_PROBABILITY, oldDefaultProbability, defaultProbability));
 	}
 
 	/**
@@ -181,10 +174,7 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_STAGE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -204,10 +194,7 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 	 */
 	@Override
 	public void setOpportunityStageId(String newOpportunityStageId) {
-		String oldOpportunityStageId = opportunityStageId;
 		opportunityStageId = newOpportunityStageId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_STAGE__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
 	}
 
 	/**
@@ -227,10 +214,7 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_STAGE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**

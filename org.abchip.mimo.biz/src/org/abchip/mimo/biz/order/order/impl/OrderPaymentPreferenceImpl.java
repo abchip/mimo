@@ -23,13 +23,10 @@ import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -519,10 +516,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setBillingPostalCode(String newBillingPostalCode) {
-		String oldBillingPostalCode = billingPostalCode;
 		billingPostalCode = newBillingPostalCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE, oldBillingPostalCode, billingPostalCode));
 	}
 
 	/**
@@ -536,8 +530,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -559,10 +551,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -582,10 +571,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -599,8 +585,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
 			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
 			if (finAccountId != oldFinAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 			}
 		}
 		return finAccountId;
@@ -622,10 +606,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
-		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 	}
 
 	/**
@@ -645,10 +626,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -668,10 +646,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -691,10 +666,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setManualAuthCode(String newManualAuthCode) {
-		String oldManualAuthCode = manualAuthCode;
 		manualAuthCode = newManualAuthCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE, oldManualAuthCode, manualAuthCode));
 	}
 
 	/**
@@ -714,10 +686,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setManualRefNum(String newManualRefNum) {
-		String oldManualRefNum = manualRefNum;
 		manualRefNum = newManualRefNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM, oldManualRefNum, manualRefNum));
 	}
 
 	/**
@@ -737,10 +706,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setMaxAmount(BigDecimal newMaxAmount) {
-		BigDecimal oldMaxAmount = maxAmount;
 		maxAmount = newMaxAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT, oldMaxAmount, maxAmount));
 	}
 
 	/**
@@ -760,10 +726,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setNeedsNsfRetry(boolean newNeedsNsfRetry) {
-		boolean oldNeedsNsfRetry = needsNsfRetry;
 		needsNsfRetry = newNeedsNsfRetry;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY, oldNeedsNsfRetry, needsNsfRetry));
 	}
 
 	/**
@@ -777,8 +740,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -800,10 +761,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -823,10 +781,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -846,10 +801,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOverflowFlag(boolean newOverflowFlag) {
-		boolean oldOverflowFlag = overflowFlag;
 		overflowFlag = newOverflowFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG, oldOverflowFlag, overflowFlag));
 	}
 
 	/**
@@ -869,10 +821,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOrderPaymentPreferenceId(String newOrderPaymentPreferenceId) {
-		String oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
 		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
 	}
 
 	/**
@@ -886,8 +835,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
 			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 			}
 		}
 		return paymentMethodId;
@@ -909,10 +856,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
-		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**
@@ -926,8 +870,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -949,10 +891,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
-		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -972,10 +911,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setPresentFlag(boolean newPresentFlag) {
-		boolean oldPresentFlag = presentFlag;
 		presentFlag = newPresentFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, oldPresentFlag, presentFlag));
 	}
 
 	/**
@@ -995,10 +931,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setProcessAttempt(long newProcessAttempt) {
-		long oldProcessAttempt = processAttempt;
 		processAttempt = newProcessAttempt;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT, oldProcessAttempt, processAttempt));
 	}
 
 	/**
@@ -1012,8 +945,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			InternalEObject oldProductPricePurposeId = (InternalEObject)productPricePurposeId;
 			productPricePurposeId = (ProductPricePurpose)eResolveProxy(oldProductPricePurposeId);
 			if (productPricePurposeId != oldProductPricePurposeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 			}
 		}
 		return productPricePurposeId;
@@ -1035,10 +966,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setProductPricePurposeId(ProductPricePurpose newProductPricePurposeId) {
-		ProductPricePurpose oldProductPricePurposeId = productPricePurposeId;
 		productPricePurposeId = newProductPricePurposeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 	}
 
 	/**
@@ -1058,10 +986,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setSecurityCode(String newSecurityCode) {
-		String oldSecurityCode = securityCode;
 		securityCode = newSecurityCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE, oldSecurityCode, securityCode));
 	}
 
 	/**
@@ -1081,10 +1006,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
-		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -1098,8 +1020,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1121,10 +1041,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1144,10 +1061,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setSwipedFlag(boolean newSwipedFlag) {
-		boolean oldSwipedFlag = swipedFlag;
 		swipedFlag = newSwipedFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, oldSwipedFlag, swipedFlag));
 	}
 
 	/**
@@ -1167,10 +1081,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setTrack2(String newTrack2) {
-		String oldTrack2 = track2;
 		track2 = newTrack2;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__TRACK2, oldTrack2, track2));
 	}
 
 	/**

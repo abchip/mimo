@@ -16,12 +16,9 @@ import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryMember;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -204,10 +201,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -227,10 +221,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -244,8 +235,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -267,10 +256,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -290,10 +276,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -313,10 +296,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -336,10 +316,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -353,8 +330,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -376,10 +351,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**

@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -227,10 +224,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setApprovalDate(Date newApprovalDate) {
-		Date oldApprovalDate = approvalDate;
 		approvalDate = newApprovalDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__APPROVAL_DATE, oldApprovalDate, approvalDate));
 	}
 
 	/**
@@ -244,8 +238,6 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 			InternalEObject oldApprovalStatusId = (InternalEObject)approvalStatusId;
 			approvalStatusId = (StatusItem)eResolveProxy(oldApprovalStatusId);
 			if (approvalStatusId != oldApprovalStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID, oldApprovalStatusId, approvalStatusId));
 			}
 		}
 		return approvalStatusId;
@@ -267,10 +259,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setApprovalStatusId(StatusItem newApprovalStatusId) {
-		StatusItem oldApprovalStatusId = approvalStatusId;
 		approvalStatusId = newApprovalStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID, oldApprovalStatusId, approvalStatusId));
 	}
 
 	/**
@@ -290,10 +279,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -313,10 +299,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setContentApprovalId(String newContentApprovalId) {
-		String oldContentApprovalId = contentApprovalId;
 		contentApprovalId = newContentApprovalId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__CONTENT_APPROVAL_ID, oldContentApprovalId, contentApprovalId));
 	}
 
 	/**
@@ -330,8 +313,6 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -353,10 +334,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -376,10 +354,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setContentRevisionSeqId(String newContentRevisionSeqId) {
-		String oldContentRevisionSeqId = contentRevisionSeqId;
 		contentRevisionSeqId = newContentRevisionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__CONTENT_REVISION_SEQ_ID, oldContentRevisionSeqId, contentRevisionSeqId));
 	}
 
 	/**
@@ -393,8 +368,6 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -416,10 +389,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -433,8 +403,6 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -456,10 +424,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -479,10 +444,7 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**

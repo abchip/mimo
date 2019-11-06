@@ -13,11 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyClassification;
 import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,10 +138,7 @@ public class PartyClassificationTypeImpl extends BizEntityTypeImpl<PartyClassifi
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -163,10 +158,7 @@ public class PartyClassificationTypeImpl extends BizEntityTypeImpl<PartyClassifi
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -180,8 +172,6 @@ public class PartyClassificationTypeImpl extends BizEntityTypeImpl<PartyClassifi
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (PartyClassificationType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -203,10 +193,7 @@ public class PartyClassificationTypeImpl extends BizEntityTypeImpl<PartyClassifi
 	 */
 	@Override
 	public void setParentTypeId(PartyClassificationType newParentTypeId) {
-		PartyClassificationType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -250,10 +237,7 @@ public class PartyClassificationTypeImpl extends BizEntityTypeImpl<PartyClassifi
 	 */
 	@Override
 	public void setPartyClassificationTypeId(String newPartyClassificationTypeId) {
-		String oldPartyClassificationTypeId = partyClassificationTypeId;
 		partyClassificationTypeId = newPartyClassificationTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_TYPE__PARTY_CLASSIFICATION_TYPE_ID, oldPartyClassificationTypeId, partyClassificationTypeId));
 	}
 
 	/**

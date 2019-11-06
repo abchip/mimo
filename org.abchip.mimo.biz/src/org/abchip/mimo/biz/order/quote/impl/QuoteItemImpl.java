@@ -22,13 +22,10 @@ import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -445,10 +442,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -468,10 +462,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
-		String oldConfigId = configId;
 		configId = newConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__CONFIG_ID, oldConfigId, configId));
 	}
 
 	/**
@@ -485,8 +476,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -508,10 +497,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -531,10 +517,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setCustRequestItemSeqId(String newCustRequestItemSeqId) {
-		String oldCustRequestItemSeqId = custRequestItemSeqId;
 		custRequestItemSeqId = newCustRequestItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID, oldCustRequestItemSeqId, custRequestItemSeqId));
 	}
 
 	/**
@@ -548,8 +531,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldDeliverableTypeId = (InternalEObject)deliverableTypeId;
 			deliverableTypeId = (DeliverableType)eResolveProxy(oldDeliverableTypeId);
 			if (deliverableTypeId != oldDeliverableTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
 			}
 		}
 		return deliverableTypeId;
@@ -571,10 +552,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setDeliverableTypeId(DeliverableType newDeliverableTypeId) {
-		DeliverableType oldDeliverableTypeId = deliverableTypeId;
 		deliverableTypeId = newDeliverableTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
 	}
 
 	/**
@@ -594,10 +572,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setEstimatedDeliveryDate(Date newEstimatedDeliveryDate) {
-		Date oldEstimatedDeliveryDate = estimatedDeliveryDate;
 		estimatedDeliveryDate = newEstimatedDeliveryDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__ESTIMATED_DELIVERY_DATE, oldEstimatedDeliveryDate, estimatedDeliveryDate));
 	}
 
 	/**
@@ -617,10 +592,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setIsPromo(boolean newIsPromo) {
-		boolean oldIsPromo = isPromo;
 		isPromo = newIsPromo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__IS_PROMO, oldIsPromo, isPromo));
 	}
 
 	/**
@@ -640,10 +612,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setLeadTimeDays(long newLeadTimeDays) {
-		long oldLeadTimeDays = leadTimeDays;
 		leadTimeDays = newLeadTimeDays;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__LEAD_TIME_DAYS, oldLeadTimeDays, leadTimeDays));
 	}
 
 	/**
@@ -657,8 +626,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -680,10 +647,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
-		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -697,8 +661,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -720,10 +682,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -743,10 +702,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -760,8 +716,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -783,10 +737,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
-		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**
@@ -806,10 +757,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setQuoteItemSeqId(String newQuoteItemSeqId) {
-		String oldQuoteItemSeqId = quoteItemSeqId;
 		quoteItemSeqId = newQuoteItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__QUOTE_ITEM_SEQ_ID, oldQuoteItemSeqId, quoteItemSeqId));
 	}
 
 	/**
@@ -829,10 +777,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setQuoteUnitPrice(BigDecimal newQuoteUnitPrice) {
-		BigDecimal oldQuoteUnitPrice = quoteUnitPrice;
 		quoteUnitPrice = newQuoteUnitPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__QUOTE_UNIT_PRICE, oldQuoteUnitPrice, quoteUnitPrice));
 	}
 
 	/**
@@ -852,10 +797,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setReservLength(BigDecimal newReservLength) {
-		BigDecimal oldReservLength = reservLength;
 		reservLength = newReservLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__RESERV_LENGTH, oldReservLength, reservLength));
 	}
 
 	/**
@@ -875,10 +817,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setReservPersons(BigDecimal newReservPersons) {
-		BigDecimal oldReservPersons = reservPersons;
 		reservPersons = newReservPersons;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__RESERV_PERSONS, oldReservPersons, reservPersons));
 	}
 
 	/**
@@ -898,10 +837,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setReservStart(Date newReservStart) {
-		Date oldReservStart = reservStart;
 		reservStart = newReservStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__RESERV_START, oldReservStart, reservStart));
 	}
 
 	/**
@@ -921,10 +857,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setSelectedAmount(BigDecimal newSelectedAmount) {
-		BigDecimal oldSelectedAmount = selectedAmount;
 		selectedAmount = newSelectedAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT, oldSelectedAmount, selectedAmount));
 	}
 
 	/**
@@ -938,8 +871,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldSkillTypeId = (InternalEObject)skillTypeId;
 			skillTypeId = (SkillType)eResolveProxy(oldSkillTypeId);
 			if (skillTypeId != oldSkillTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 			}
 		}
 		return skillTypeId;
@@ -961,10 +892,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setSkillTypeId(SkillType newSkillTypeId) {
-		SkillType oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 	}
 
 	/**
@@ -978,8 +906,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -1001,10 +927,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
-		Uom oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -1018,8 +941,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -1041,10 +962,7 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

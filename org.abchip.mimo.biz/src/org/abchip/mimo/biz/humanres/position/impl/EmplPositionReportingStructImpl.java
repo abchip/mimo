@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -181,10 +178,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -204,10 +198,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 */
 	@Override
 	public void setPrimaryFlag(boolean newPrimaryFlag) {
-		boolean oldPrimaryFlag = primaryFlag;
 		primaryFlag = newPrimaryFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG, oldPrimaryFlag, primaryFlag));
 	}
 
 	/**
@@ -221,8 +212,6 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 			InternalEObject oldEmplPositionIdManagedBy = (InternalEObject)emplPositionIdManagedBy;
 			emplPositionIdManagedBy = (EmplPosition)eResolveProxy(oldEmplPositionIdManagedBy);
 			if (emplPositionIdManagedBy != oldEmplPositionIdManagedBy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY, oldEmplPositionIdManagedBy, emplPositionIdManagedBy));
 			}
 		}
 		return emplPositionIdManagedBy;
@@ -244,10 +233,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 */
 	@Override
 	public void setEmplPositionIdManagedBy(EmplPosition newEmplPositionIdManagedBy) {
-		EmplPosition oldEmplPositionIdManagedBy = emplPositionIdManagedBy;
 		emplPositionIdManagedBy = newEmplPositionIdManagedBy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY, oldEmplPositionIdManagedBy, emplPositionIdManagedBy));
 	}
 
 	/**
@@ -261,8 +247,6 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 			InternalEObject oldEmplPositionIdReportingTo = (InternalEObject)emplPositionIdReportingTo;
 			emplPositionIdReportingTo = (EmplPosition)eResolveProxy(oldEmplPositionIdReportingTo);
 			if (emplPositionIdReportingTo != oldEmplPositionIdReportingTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO, oldEmplPositionIdReportingTo, emplPositionIdReportingTo));
 			}
 		}
 		return emplPositionIdReportingTo;
@@ -284,10 +268,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 */
 	@Override
 	public void setEmplPositionIdReportingTo(EmplPosition newEmplPositionIdReportingTo) {
-		EmplPosition oldEmplPositionIdReportingTo = emplPositionIdReportingTo;
 		emplPositionIdReportingTo = newEmplPositionIdReportingTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO, oldEmplPositionIdReportingTo, emplPositionIdReportingTo));
 	}
 
 	/**
@@ -307,10 +288,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -330,10 +308,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_REPORTING_STRUCT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

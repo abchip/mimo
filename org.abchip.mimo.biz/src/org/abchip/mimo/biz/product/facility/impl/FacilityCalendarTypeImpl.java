@@ -11,10 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.FacilityCalendar;
 import org.abchip.mimo.biz.product.facility.FacilityCalendarType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,10 +130,7 @@ public class FacilityCalendarTypeImpl extends BizEntityTypeImpl<FacilityCalendar
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -156,10 +150,7 @@ public class FacilityCalendarTypeImpl extends BizEntityTypeImpl<FacilityCalendar
 	 */
 	@Override
 	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -179,10 +170,7 @@ public class FacilityCalendarTypeImpl extends BizEntityTypeImpl<FacilityCalendar
 	 */
 	@Override
 	public void setFacilityCalendarTypeId(String newFacilityCalendarTypeId) {
-		String oldFacilityCalendarTypeId = facilityCalendarTypeId;
 		facilityCalendarTypeId = newFacilityCalendarTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR_TYPE__FACILITY_CALENDAR_TYPE_ID, oldFacilityCalendarTypeId, facilityCalendarTypeId));
 	}
 
 	/**

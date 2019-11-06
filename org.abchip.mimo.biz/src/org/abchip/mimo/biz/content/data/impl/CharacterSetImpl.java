@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.CharacterSet;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,10 +110,7 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 	 */
 	@Override
 	public void setCharacterSetId(String newCharacterSetId) {
-		String oldCharacterSetId = characterSetId;
 		characterSetId = newCharacterSetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.CHARACTER_SET__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
 	}
 
 	/**
@@ -137,10 +130,7 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.CHARACTER_SET__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

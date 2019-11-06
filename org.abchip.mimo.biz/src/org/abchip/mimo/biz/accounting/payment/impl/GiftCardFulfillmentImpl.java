@@ -18,13 +18,10 @@ import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -322,10 +319,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -345,10 +339,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setAuthCode(String newAuthCode) {
-		String oldAuthCode = authCode;
 		authCode = newAuthCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__AUTH_CODE, oldAuthCode, authCode));
 	}
 
 	/**
@@ -368,10 +359,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setCardNumber(String newCardNumber) {
-		String oldCardNumber = cardNumber;
 		cardNumber = newCardNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__CARD_NUMBER, oldCardNumber, cardNumber));
 	}
 
 	/**
@@ -391,10 +379,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setFulfillmentDate(Date newFulfillmentDate) {
-		Date oldFulfillmentDate = fulfillmentDate;
 		fulfillmentDate = newFulfillmentDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__FULFILLMENT_DATE, oldFulfillmentDate, fulfillmentDate));
 	}
 
 	/**
@@ -414,10 +399,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setFulfillmentId(String newFulfillmentId) {
-		String oldFulfillmentId = fulfillmentId;
 		fulfillmentId = newFulfillmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__FULFILLMENT_ID, oldFulfillmentId, fulfillmentId));
 	}
 
 	/**
@@ -437,10 +419,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setMerchantId(String newMerchantId) {
-		String oldMerchantId = merchantId;
 		merchantId = newMerchantId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__MERCHANT_ID, oldMerchantId, merchantId));
 	}
 
 	/**
@@ -454,8 +433,6 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -477,10 +454,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -500,10 +474,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -517,8 +488,6 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -540,10 +509,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -563,10 +529,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setPinNumber(String newPinNumber) {
-		String oldPinNumber = pinNumber;
 		pinNumber = newPinNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__PIN_NUMBER, oldPinNumber, pinNumber));
 	}
 
 	/**
@@ -586,10 +549,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setReferenceNum(String newReferenceNum) {
-		String oldReferenceNum = referenceNum;
 		referenceNum = newReferenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__REFERENCE_NUM, oldReferenceNum, referenceNum));
 	}
 
 	/**
@@ -609,10 +569,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setResponseCode(String newResponseCode) {
-		String oldResponseCode = responseCode;
 		responseCode = newResponseCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__RESPONSE_CODE, oldResponseCode, responseCode));
 	}
 
 	/**
@@ -626,8 +583,6 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			InternalEObject oldSurveyResponseId = (InternalEObject)surveyResponseId;
 			surveyResponseId = (SurveyResponse)eResolveProxy(oldSurveyResponseId);
 			if (surveyResponseId != oldSurveyResponseId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 			}
 		}
 		return surveyResponseId;
@@ -649,10 +604,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
-		SurveyResponse oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 	}
 
 	/**
@@ -666,8 +618,6 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			InternalEObject oldTypeEnumId = (InternalEObject)typeEnumId;
 			typeEnumId = (Enumeration)eResolveProxy(oldTypeEnumId);
 			if (typeEnumId != oldTypeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
 			}
 		}
 		return typeEnumId;
@@ -689,10 +639,7 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 */
 	@Override
 	public void setTypeEnumId(Enumeration newTypeEnumId) {
-		Enumeration oldTypeEnumId = typeEnumId;
 		typeEnumId = newTypeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
 	}
 
 	/**

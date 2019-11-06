@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMechType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,10 +111,7 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -150,10 +143,7 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 */
 	@Override
 	public void setShipmentContactMechTypeId(String newShipmentContactMechTypeId) {
-		String oldShipmentContactMechTypeId = shipmentContactMechTypeId;
 		shipmentContactMechTypeId = newShipmentContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID, oldShipmentContactMechTypeId, shipmentContactMechTypeId));
 	}
 
 	/**

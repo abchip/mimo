@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.order.order.OrderItemContactMech;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,8 +120,6 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -146,10 +141,7 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -163,8 +155,6 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 			InternalEObject oldContactMechPurposeTypeId = (InternalEObject)contactMechPurposeTypeId;
 			contactMechPurposeTypeId = (ContactMechPurposeType)eResolveProxy(oldContactMechPurposeTypeId);
 			if (contactMechPurposeTypeId != oldContactMechPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 			}
 		}
 		return contactMechPurposeTypeId;
@@ -186,10 +176,7 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 */
 	@Override
 	public void setContactMechPurposeTypeId(ContactMechPurposeType newContactMechPurposeTypeId) {
-		ContactMechPurposeType oldContactMechPurposeTypeId = contactMechPurposeTypeId;
 		contactMechPurposeTypeId = newContactMechPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 	}
 
 	/**
@@ -203,8 +190,6 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -226,10 +211,7 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -249,10 +231,7 @@ public class OrderItemContactMechImpl extends BizEntityImpl implements OrderItem
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_CONTACT_MECH__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**

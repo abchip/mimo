@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 import org.abchip.mimo.biz.order.reservations.ReservationsPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,8 +152,6 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 			InternalEObject oldAccommodationClassId = (InternalEObject)accommodationClassId;
 			accommodationClassId = (AccommodationClass)eResolveProxy(oldAccommodationClassId);
 			if (accommodationClassId != oldAccommodationClassId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID, oldAccommodationClassId, accommodationClassId));
 			}
 		}
 		return accommodationClassId;
@@ -178,10 +173,7 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 */
 	@Override
 	public void setAccommodationClassId(AccommodationClass newAccommodationClassId) {
-		AccommodationClass oldAccommodationClassId = accommodationClassId;
 		accommodationClassId = newAccommodationClassId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID, oldAccommodationClassId, accommodationClassId));
 	}
 
 	/**
@@ -201,10 +193,7 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 */
 	@Override
 	public void setAccommodationSpotId(String newAccommodationSpotId) {
-		String oldAccommodationSpotId = accommodationSpotId;
 		accommodationSpotId = newAccommodationSpotId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID, oldAccommodationSpotId, accommodationSpotId));
 	}
 
 	/**
@@ -224,10 +213,7 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReservationsPackage.ACCOMMODATION_SPOT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -241,8 +227,6 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -264,10 +248,7 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -287,10 +268,7 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 */
 	@Override
 	public void setNumberOfSpaces(long newNumberOfSpaces) {
-		long oldNumberOfSpaces = numberOfSpaces;
 		numberOfSpaces = newNumberOfSpaces;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReservationsPackage.ACCOMMODATION_SPOT__NUMBER_OF_SPACES, oldNumberOfSpaces, numberOfSpaces));
 	}
 
 	/**

@@ -16,12 +16,9 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccountCategory;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -154,10 +151,7 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 */
 	@Override
 	public void setAmountPercentage(BigDecimal newAmountPercentage) {
-		BigDecimal oldAmountPercentage = amountPercentage;
 		amountPercentage = newAmountPercentage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__AMOUNT_PERCENTAGE, oldAmountPercentage, amountPercentage));
 	}
 
 	/**
@@ -177,10 +171,7 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -200,10 +191,7 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -217,8 +205,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -240,10 +226,7 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
-		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**
@@ -257,8 +240,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 			InternalEObject oldGlAccountCategoryId = (InternalEObject)glAccountCategoryId;
 			glAccountCategoryId = (GlAccountCategory)eResolveProxy(oldGlAccountCategoryId);
 			if (glAccountCategoryId != oldGlAccountCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID, oldGlAccountCategoryId, glAccountCategoryId));
 			}
 		}
 		return glAccountCategoryId;
@@ -280,10 +261,7 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 */
 	@Override
 	public void setGlAccountCategoryId(GlAccountCategory newGlAccountCategoryId) {
-		GlAccountCategory oldGlAccountCategoryId = glAccountCategoryId;
 		glAccountCategoryId = newGlAccountCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID, oldGlAccountCategoryId, glAccountCategoryId));
 	}
 
 	/**

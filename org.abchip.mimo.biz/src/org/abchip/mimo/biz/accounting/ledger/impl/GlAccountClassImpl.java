@@ -12,11 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountClass;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,10 +156,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -181,10 +176,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setIsAssetClass(boolean newIsAssetClass) {
-		boolean oldIsAssetClass = isAssetClass;
 		isAssetClass = newIsAssetClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__IS_ASSET_CLASS, oldIsAssetClass, isAssetClass));
 	}
 
 	/**
@@ -198,8 +190,6 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 			InternalEObject oldParentClassId = (InternalEObject)parentClassId;
 			parentClassId = (GlAccountClass)eResolveProxy(oldParentClassId);
 			if (parentClassId != oldParentClassId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
 			}
 		}
 		return parentClassId;
@@ -221,10 +211,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setParentClassId(GlAccountClass newParentClassId) {
-		GlAccountClass oldParentClassId = parentClassId;
 		parentClassId = newParentClassId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
 	}
 
 	/**
@@ -244,10 +231,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -291,10 +275,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setGlAccountClassId(String newGlAccountClassId) {
-		String oldGlAccountClassId = glAccountClassId;
 		glAccountClassId = newGlAccountClassId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID, oldGlAccountClassId, glAccountClassId));
 	}
 
 	/**

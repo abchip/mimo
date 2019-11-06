@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemAssoc;
 import org.abchip.mimo.biz.order.order.OrderItemAssocType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -208,8 +205,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -231,10 +226,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -248,8 +240,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 			InternalEObject oldOrderItemAssocTypeId = (InternalEObject)orderItemAssocTypeId;
 			orderItemAssocTypeId = (OrderItemAssocType)eResolveProxy(oldOrderItemAssocTypeId);
 			if (orderItemAssocTypeId != oldOrderItemAssocTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID, oldOrderItemAssocTypeId, orderItemAssocTypeId));
 			}
 		}
 		return orderItemAssocTypeId;
@@ -271,10 +261,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setOrderItemAssocTypeId(OrderItemAssocType newOrderItemAssocTypeId) {
-		OrderItemAssocType oldOrderItemAssocTypeId = orderItemAssocTypeId;
 		orderItemAssocTypeId = newOrderItemAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_ASSOC_TYPE_ID, oldOrderItemAssocTypeId, orderItemAssocTypeId));
 	}
 
 	/**
@@ -294,10 +281,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -317,10 +301,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -340,10 +321,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
-		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -357,8 +335,6 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 			InternalEObject oldToOrderId = (InternalEObject)toOrderId;
 			toOrderId = (OrderHeader)eResolveProxy(oldToOrderId);
 			if (toOrderId != oldToOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ASSOC__TO_ORDER_ID, oldToOrderId, toOrderId));
 			}
 		}
 		return toOrderId;
@@ -380,10 +356,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setToOrderId(OrderHeader newToOrderId) {
-		OrderHeader oldToOrderId = toOrderId;
 		toOrderId = newToOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__TO_ORDER_ID, oldToOrderId, toOrderId));
 	}
 
 	/**
@@ -403,10 +376,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setToOrderItemSeqId(String newToOrderItemSeqId) {
-		String oldToOrderItemSeqId = toOrderItemSeqId;
 		toOrderItemSeqId = newToOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__TO_ORDER_ITEM_SEQ_ID, oldToOrderItemSeqId, toOrderItemSeqId));
 	}
 
 	/**
@@ -426,10 +396,7 @@ public class OrderItemAssocImpl extends BizEntityTypedImpl<OrderItemAssocType> i
 	 */
 	@Override
 	public void setToShipGroupSeqId(String newToShipGroupSeqId) {
-		String oldToShipGroupSeqId = toShipGroupSeqId;
 		toShipGroupSeqId = newToShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ASSOC__TO_SHIP_GROUP_SEQ_ID, oldToShipGroupSeqId, toShipGroupSeqId));
 	}
 
 	/**

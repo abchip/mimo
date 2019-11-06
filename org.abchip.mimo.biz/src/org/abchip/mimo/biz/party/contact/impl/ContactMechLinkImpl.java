@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechLink;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,8 +84,6 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 			InternalEObject oldContactMechIdFrom = (InternalEObject)contactMechIdFrom;
 			contactMechIdFrom = (ContactMech)eResolveProxy(oldContactMechIdFrom);
 			if (contactMechIdFrom != oldContactMechIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
 			}
 		}
 		return contactMechIdFrom;
@@ -110,10 +105,7 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	 */
 	@Override
 	public void setContactMechIdFrom(ContactMech newContactMechIdFrom) {
-		ContactMech oldContactMechIdFrom = contactMechIdFrom;
 		contactMechIdFrom = newContactMechIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
 	}
 
 	/**
@@ -127,8 +119,6 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 			InternalEObject oldContactMechIdTo = (InternalEObject)contactMechIdTo;
 			contactMechIdTo = (ContactMech)eResolveProxy(oldContactMechIdTo);
 			if (contactMechIdTo != oldContactMechIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
 			}
 		}
 		return contactMechIdTo;
@@ -150,10 +140,7 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	 */
 	@Override
 	public void setContactMechIdTo(ContactMech newContactMechIdTo) {
-		ContactMech oldContactMechIdTo = contactMechIdTo;
 		contactMechIdTo = newContactMechIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
 	}
 
 	/**

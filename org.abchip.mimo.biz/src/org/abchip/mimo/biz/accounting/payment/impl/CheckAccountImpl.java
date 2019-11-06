@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -226,10 +223,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setAccountNumber(String newAccountNumber) {
-		String oldAccountNumber = accountNumber;
 		accountNumber = newAccountNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__ACCOUNT_NUMBER, oldAccountNumber, accountNumber));
 	}
 
 	/**
@@ -249,10 +243,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setAccountType(String newAccountType) {
-		String oldAccountType = accountType;
 		accountType = newAccountType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__ACCOUNT_TYPE, oldAccountType, accountType));
 	}
 
 	/**
@@ -272,10 +263,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setBankName(String newBankName) {
-		String oldBankName = bankName;
 		bankName = newBankName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__BANK_NAME, oldBankName, bankName));
 	}
 
 	/**
@@ -295,10 +283,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setBranchCode(String newBranchCode) {
-		String oldBranchCode = branchCode;
 		branchCode = newBranchCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__BRANCH_CODE, oldBranchCode, branchCode));
 	}
 
 	/**
@@ -318,10 +303,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setCompanyNameOnAccount(String newCompanyNameOnAccount) {
-		String oldCompanyNameOnAccount = companyNameOnAccount;
 		companyNameOnAccount = newCompanyNameOnAccount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__COMPANY_NAME_ON_ACCOUNT, oldCompanyNameOnAccount, companyNameOnAccount));
 	}
 
 	/**
@@ -335,8 +317,6 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -358,10 +338,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -381,10 +358,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setNameOnAccount(String newNameOnAccount) {
-		String oldNameOnAccount = nameOnAccount;
 		nameOnAccount = newNameOnAccount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__NAME_ON_ACCOUNT, oldNameOnAccount, nameOnAccount));
 	}
 
 	/**
@@ -398,8 +372,6 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
 			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 			}
 		}
 		return paymentMethodId;
@@ -421,10 +393,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
-		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**
@@ -444,10 +413,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 */
 	@Override
 	public void setRoutingNumber(String newRoutingNumber) {
-		String oldRoutingNumber = routingNumber;
 		routingNumber = newRoutingNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CHECK_ACCOUNT__ROUTING_NUMBER, oldRoutingNumber, routingNumber));
 	}
 
 	/**

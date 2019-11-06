@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuoteNote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,8 +75,6 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_NOTE__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -101,10 +96,7 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
-		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_NOTE__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**

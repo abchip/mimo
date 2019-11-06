@@ -31,15 +31,12 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -1120,8 +1117,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldAccommodationMapId = (InternalEObject)accommodationMapId;
 			accommodationMapId = (AccommodationMap)eResolveProxy(oldAccommodationMapId);
 			if (accommodationMapId != oldAccommodationMapId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID, oldAccommodationMapId, accommodationMapId));
 			}
 		}
 		return accommodationMapId;
@@ -1143,10 +1138,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setAccommodationMapId(AccommodationMap newAccommodationMapId) {
-		AccommodationMap oldAccommodationMapId = accommodationMapId;
 		accommodationMapId = newAccommodationMapId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID, oldAccommodationMapId, accommodationMapId));
 	}
 
 	/**
@@ -1160,8 +1152,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldAccommodationSpotId = (InternalEObject)accommodationSpotId;
 			accommodationSpotId = (AccommodationSpot)eResolveProxy(oldAccommodationSpotId);
 			if (accommodationSpotId != oldAccommodationSpotId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID, oldAccommodationSpotId, accommodationSpotId));
 			}
 		}
 		return accommodationSpotId;
@@ -1183,10 +1173,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setAccommodationSpotId(AccommodationSpot newAccommodationSpotId) {
-		AccommodationSpot oldAccommodationSpotId = accommodationSpotId;
 		accommodationSpotId = newAccommodationSpotId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID, oldAccommodationSpotId, accommodationSpotId));
 	}
 
 	/**
@@ -1206,10 +1193,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setActualCompletionDate(Date newActualCompletionDate) {
-		Date oldActualCompletionDate = actualCompletionDate;
 		actualCompletionDate = newActualCompletionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACTUAL_COMPLETION_DATE, oldActualCompletionDate, actualCompletionDate));
 	}
 
 	/**
@@ -1229,10 +1213,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setActualMilliSeconds(double newActualMilliSeconds) {
-		double oldActualMilliSeconds = actualMilliSeconds;
 		actualMilliSeconds = newActualMilliSeconds;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACTUAL_MILLI_SECONDS, oldActualMilliSeconds, actualMilliSeconds));
 	}
 
 	/**
@@ -1252,10 +1233,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setActualSetupMillis(double newActualSetupMillis) {
-		double oldActualSetupMillis = actualSetupMillis;
 		actualSetupMillis = newActualSetupMillis;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACTUAL_SETUP_MILLIS, oldActualSetupMillis, actualSetupMillis));
 	}
 
 	/**
@@ -1275,10 +1253,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setActualStartDate(Date newActualStartDate) {
-		Date oldActualStartDate = actualStartDate;
 		actualStartDate = newActualStartDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACTUAL_START_DATE, oldActualStartDate, actualStartDate));
 	}
 
 	/**
@@ -1298,10 +1273,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -1321,10 +1293,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -1338,8 +1307,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldCurrentStatusId = (InternalEObject)currentStatusId;
 			currentStatusId = (StatusItem)eResolveProxy(oldCurrentStatusId);
 			if (currentStatusId != oldCurrentStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID, oldCurrentStatusId, currentStatusId));
 			}
 		}
 		return currentStatusId;
@@ -1361,10 +1328,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setCurrentStatusId(StatusItem newCurrentStatusId) {
-		StatusItem oldCurrentStatusId = currentStatusId;
 		currentStatusId = newCurrentStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID, oldCurrentStatusId, currentStatusId));
 	}
 
 	/**
@@ -1384,10 +1348,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -1401,8 +1362,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldEstimateCalcMethod = (InternalEObject)estimateCalcMethod;
 			estimateCalcMethod = (CustomMethod)eResolveProxy(oldEstimateCalcMethod);
 			if (estimateCalcMethod != oldEstimateCalcMethod) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
 			}
 		}
 		return estimateCalcMethod;
@@ -1424,10 +1383,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setEstimateCalcMethod(CustomMethod newEstimateCalcMethod) {
-		CustomMethod oldEstimateCalcMethod = estimateCalcMethod;
 		estimateCalcMethod = newEstimateCalcMethod;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
 	}
 
 	/**
@@ -1447,10 +1403,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setEstimatedCompletionDate(Date newEstimatedCompletionDate) {
-		Date oldEstimatedCompletionDate = estimatedCompletionDate;
 		estimatedCompletionDate = newEstimatedCompletionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ESTIMATED_COMPLETION_DATE, oldEstimatedCompletionDate, estimatedCompletionDate));
 	}
 
 	/**
@@ -1470,10 +1423,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setEstimatedMilliSeconds(double newEstimatedMilliSeconds) {
-		double oldEstimatedMilliSeconds = estimatedMilliSeconds;
 		estimatedMilliSeconds = newEstimatedMilliSeconds;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ESTIMATED_MILLI_SECONDS, oldEstimatedMilliSeconds, estimatedMilliSeconds));
 	}
 
 	/**
@@ -1493,10 +1443,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setEstimatedSetupMillis(double newEstimatedSetupMillis) {
-		double oldEstimatedSetupMillis = estimatedSetupMillis;
 		estimatedSetupMillis = newEstimatedSetupMillis;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ESTIMATED_SETUP_MILLIS, oldEstimatedSetupMillis, estimatedSetupMillis));
 	}
 
 	/**
@@ -1516,10 +1463,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setEstimatedStartDate(Date newEstimatedStartDate) {
-		Date oldEstimatedStartDate = estimatedStartDate;
 		estimatedStartDate = newEstimatedStartDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ESTIMATED_START_DATE, oldEstimatedStartDate, estimatedStartDate));
 	}
 
 	/**
@@ -1533,8 +1477,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -1556,10 +1498,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -1573,8 +1512,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -1596,10 +1533,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -1619,10 +1553,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setInfoUrl(String newInfoUrl) {
-		String oldInfoUrl = infoUrl;
 		infoUrl = newInfoUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__INFO_URL, oldInfoUrl, infoUrl));
 	}
 
 	/**
@@ -1642,10 +1573,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -1665,10 +1593,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -1688,10 +1613,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setLastStatusUpdate(Date newLastStatusUpdate) {
-		Date oldLastStatusUpdate = lastStatusUpdate;
 		lastStatusUpdate = newLastStatusUpdate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__LAST_STATUS_UPDATE, oldLastStatusUpdate, lastStatusUpdate));
 	}
 
 	/**
@@ -1711,10 +1633,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setLocationDesc(String newLocationDesc) {
-		String oldLocationDesc = locationDesc;
 		locationDesc = newLocationDesc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__LOCATION_DESC, oldLocationDesc, locationDesc));
 	}
 
 	/**
@@ -1728,8 +1647,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldMoneyUomId = (InternalEObject)moneyUomId;
 			moneyUomId = (Uom)eResolveProxy(oldMoneyUomId);
 			if (moneyUomId != oldMoneyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID, oldMoneyUomId, moneyUomId));
 			}
 		}
 		return moneyUomId;
@@ -1751,10 +1668,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setMoneyUomId(Uom newMoneyUomId) {
-		Uom oldMoneyUomId = moneyUomId;
 		moneyUomId = newMoneyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID, oldMoneyUomId, moneyUomId));
 	}
 
 	/**
@@ -1768,8 +1682,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldNoteId = (InternalEObject)noteId;
 			noteId = (NoteData)eResolveProxy(oldNoteId);
 			if (noteId != oldNoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__NOTE_ID, oldNoteId, noteId));
 			}
 		}
 		return noteId;
@@ -1791,10 +1703,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setNoteId(NoteData newNoteId) {
-		NoteData oldNoteId = noteId;
 		noteId = newNoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__NOTE_ID, oldNoteId, noteId));
 	}
 
 	/**
@@ -1814,10 +1723,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setPercentComplete(long newPercentComplete) {
-		long oldPercentComplete = percentComplete;
 		percentComplete = newPercentComplete;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__PERCENT_COMPLETE, oldPercentComplete, percentComplete));
 	}
 
 	/**
@@ -1837,10 +1743,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setPriority(long newPriority) {
-		long oldPriority = priority;
 		priority = newPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -1860,10 +1763,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setQuantityProduced(BigDecimal newQuantityProduced) {
-		BigDecimal oldQuantityProduced = quantityProduced;
 		quantityProduced = newQuantityProduced;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__QUANTITY_PRODUCED, oldQuantityProduced, quantityProduced));
 	}
 
 	/**
@@ -1883,10 +1783,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setQuantityRejected(BigDecimal newQuantityRejected) {
-		BigDecimal oldQuantityRejected = quantityRejected;
 		quantityRejected = newQuantityRejected;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__QUANTITY_REJECTED, oldQuantityRejected, quantityRejected));
 	}
 
 	/**
@@ -1906,10 +1803,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setQuantityToProduce(BigDecimal newQuantityToProduce) {
-		BigDecimal oldQuantityToProduce = quantityToProduce;
 		quantityToProduce = newQuantityToProduce;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__QUANTITY_TO_PRODUCE, oldQuantityToProduce, quantityToProduce));
 	}
 
 	/**
@@ -1923,8 +1817,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
 			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
 			if (recurrenceInfoId != oldRecurrenceInfoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 			}
 		}
 		return recurrenceInfoId;
@@ -1946,10 +1838,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
-		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 	}
 
 	/**
@@ -1969,10 +1858,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setReserv2ndPPPerc(BigDecimal newReserv2ndPPPerc) {
-		BigDecimal oldReserv2ndPPPerc = reserv2ndPPPerc;
 		reserv2ndPPPerc = newReserv2ndPPPerc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__RESERV2ND_PP_PERC, oldReserv2ndPPPerc, reserv2ndPPPerc));
 	}
 
 	/**
@@ -1992,10 +1878,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setReservNthPPPerc(BigDecimal newReservNthPPPerc) {
-		BigDecimal oldReservNthPPPerc = reservNthPPPerc;
 		reservNthPPPerc = newReservNthPPPerc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__RESERV_NTH_PP_PERC, oldReservNthPPPerc, reservNthPPPerc));
 	}
 
 	/**
@@ -2015,10 +1898,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setReservPersons(BigDecimal newReservPersons) {
-		BigDecimal oldReservPersons = reservPersons;
 		reservPersons = newReservPersons;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__RESERV_PERSONS, oldReservPersons, reservPersons));
 	}
 
 	/**
@@ -2038,10 +1918,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setRevisionNumber(long newRevisionNumber) {
-		long oldRevisionNumber = revisionNumber;
 		revisionNumber = newRevisionNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__REVISION_NUMBER, oldRevisionNumber, revisionNumber));
 	}
 
 	/**
@@ -2055,8 +1932,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldRuntimeDataId = (InternalEObject)runtimeDataId;
 			runtimeDataId = (RuntimeData)eResolveProxy(oldRuntimeDataId);
 			if (runtimeDataId != oldRuntimeDataId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
 			}
 		}
 		return runtimeDataId;
@@ -2078,10 +1953,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setRuntimeDataId(RuntimeData newRuntimeDataId) {
-		RuntimeData oldRuntimeDataId = runtimeDataId;
 		runtimeDataId = newRuntimeDataId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
 	}
 
 	/**
@@ -2095,8 +1967,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldScopeEnumId = (InternalEObject)scopeEnumId;
 			scopeEnumId = (Enumeration)eResolveProxy(oldScopeEnumId);
 			if (scopeEnumId != oldScopeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID, oldScopeEnumId, scopeEnumId));
 			}
 		}
 		return scopeEnumId;
@@ -2118,10 +1988,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setScopeEnumId(Enumeration newScopeEnumId) {
-		Enumeration oldScopeEnumId = scopeEnumId;
 		scopeEnumId = newScopeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID, oldScopeEnumId, scopeEnumId));
 	}
 
 	/**
@@ -2141,10 +2008,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setSendNotificationEmail(boolean newSendNotificationEmail) {
-		boolean oldSendNotificationEmail = sendNotificationEmail;
 		sendNotificationEmail = newSendNotificationEmail;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__SEND_NOTIFICATION_EMAIL, oldSendNotificationEmail, sendNotificationEmail));
 	}
 
 	/**
@@ -2164,10 +2028,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setServiceLoaderName(String newServiceLoaderName) {
-		String oldServiceLoaderName = serviceLoaderName;
 		serviceLoaderName = newServiceLoaderName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__SERVICE_LOADER_NAME, oldServiceLoaderName, serviceLoaderName));
 	}
 
 	/**
@@ -2187,10 +2048,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setShowAsEnumId(String newShowAsEnumId) {
-		String oldShowAsEnumId = showAsEnumId;
 		showAsEnumId = newShowAsEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__SHOW_AS_ENUM_ID, oldShowAsEnumId, showAsEnumId));
 	}
 
 	/**
@@ -2210,10 +2068,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setSourceReferenceId(String newSourceReferenceId) {
-		String oldSourceReferenceId = sourceReferenceId;
 		sourceReferenceId = newSourceReferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__SOURCE_REFERENCE_ID, oldSourceReferenceId, sourceReferenceId));
 	}
 
 	/**
@@ -2233,10 +2088,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setSpecialTerms(String newSpecialTerms) {
-		String oldSpecialTerms = specialTerms;
 		specialTerms = newSpecialTerms;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__SPECIAL_TERMS, oldSpecialTerms, specialTerms));
 	}
 
 	/**
@@ -2250,8 +2102,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldTempExprId = (InternalEObject)tempExprId;
 			tempExprId = (TemporalExpression)eResolveProxy(oldTempExprId);
 			if (tempExprId != oldTempExprId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID, oldTempExprId, tempExprId));
 			}
 		}
 		return tempExprId;
@@ -2273,10 +2123,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setTempExprId(TemporalExpression newTempExprId) {
-		TemporalExpression oldTempExprId = tempExprId;
 		tempExprId = newTempExprId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID, oldTempExprId, tempExprId));
 	}
 
 	/**
@@ -2296,10 +2143,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setTimeTransparency(long newTimeTransparency) {
-		long oldTimeTransparency = timeTransparency;
 		timeTransparency = newTimeTransparency;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__TIME_TRANSPARENCY, oldTimeTransparency, timeTransparency));
 	}
 
 	/**
@@ -2319,10 +2163,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setTotalMilliSecondsAllowed(double newTotalMilliSecondsAllowed) {
-		double oldTotalMilliSecondsAllowed = totalMilliSecondsAllowed;
 		totalMilliSecondsAllowed = newTotalMilliSecondsAllowed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__TOTAL_MILLI_SECONDS_ALLOWED, oldTotalMilliSecondsAllowed, totalMilliSecondsAllowed));
 	}
 
 	/**
@@ -2342,10 +2183,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setTotalMoneyAllowed(BigDecimal newTotalMoneyAllowed) {
-		BigDecimal oldTotalMoneyAllowed = totalMoneyAllowed;
 		totalMoneyAllowed = newTotalMoneyAllowed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__TOTAL_MONEY_ALLOWED, oldTotalMoneyAllowed, totalMoneyAllowed));
 	}
 
 	/**
@@ -2365,10 +2203,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setUniversalId(String newUniversalId) {
-		String oldUniversalId = universalId;
 		universalId = newUniversalId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__UNIVERSAL_ID, oldUniversalId, universalId));
 	}
 
 	/**
@@ -2388,10 +2223,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**
@@ -2411,10 +2243,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setWorkEffortName(String newWorkEffortName) {
-		String oldWorkEffortName = workEffortName;
 		workEffortName = newWorkEffortName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_NAME, oldWorkEffortName, workEffortName));
 	}
 
 	/**
@@ -2428,8 +2257,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldWorkEffortParentId = (InternalEObject)workEffortParentId;
 			workEffortParentId = (WorkEffort)eResolveProxy(oldWorkEffortParentId);
 			if (workEffortParentId != oldWorkEffortParentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID, oldWorkEffortParentId, workEffortParentId));
 			}
 		}
 		return workEffortParentId;
@@ -2451,10 +2278,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setWorkEffortParentId(WorkEffort newWorkEffortParentId) {
-		WorkEffort oldWorkEffortParentId = workEffortParentId;
 		workEffortParentId = newWorkEffortParentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID, oldWorkEffortParentId, workEffortParentId));
 	}
 
 	/**
@@ -2468,8 +2292,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldWorkEffortPurposeTypeId = (InternalEObject)workEffortPurposeTypeId;
 			workEffortPurposeTypeId = (WorkEffortPurposeType)eResolveProxy(oldWorkEffortPurposeTypeId);
 			if (workEffortPurposeTypeId != oldWorkEffortPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID, oldWorkEffortPurposeTypeId, workEffortPurposeTypeId));
 			}
 		}
 		return workEffortPurposeTypeId;
@@ -2491,10 +2313,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setWorkEffortPurposeTypeId(WorkEffortPurposeType newWorkEffortPurposeTypeId) {
-		WorkEffortPurposeType oldWorkEffortPurposeTypeId = workEffortPurposeTypeId;
 		workEffortPurposeTypeId = newWorkEffortPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID, oldWorkEffortPurposeTypeId, workEffortPurposeTypeId));
 	}
 
 	/**
@@ -2508,8 +2327,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			InternalEObject oldWorkEffortTypeId = (InternalEObject)workEffortTypeId;
 			workEffortTypeId = (WorkEffortType)eResolveProxy(oldWorkEffortTypeId);
 			if (workEffortTypeId != oldWorkEffortTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
 			}
 		}
 		return workEffortTypeId;
@@ -2531,10 +2348,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@Override
 	public void setWorkEffortTypeId(WorkEffortType newWorkEffortTypeId) {
-		WorkEffortType oldWorkEffortTypeId = workEffortTypeId;
 		workEffortTypeId = newWorkEffortTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
 	}
 
 	/**
@@ -2545,7 +2359,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getCommunicationEventWorkEffs() {
 		if (communicationEventWorkEffs == null) {
-			communicationEventWorkEffs = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS);
+			communicationEventWorkEffs = new BasicInternalEList<String>(String.class);
 		}
 		return communicationEventWorkEffs;
 	}
@@ -2558,7 +2372,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortAttributes() {
 		if (workEffortAttributes == null) {
-			workEffortAttributes = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ATTRIBUTES);
+			workEffortAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortAttributes;
 	}
@@ -2571,7 +2385,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortDeliverableProds() {
 		if (workEffortDeliverableProds == null) {
-			workEffortDeliverableProds = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_DELIVERABLE_PRODS);
+			workEffortDeliverableProds = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortDeliverableProds;
 	}
@@ -2584,7 +2398,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortEventReminders() {
 		if (workEffortEventReminders == null) {
-			workEffortEventReminders = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_EVENT_REMINDERS);
+			workEffortEventReminders = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortEventReminders;
 	}
@@ -2597,7 +2411,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortFixedAssetStds() {
 		if (workEffortFixedAssetStds == null) {
-			workEffortFixedAssetStds = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_FIXED_ASSET_STDS);
+			workEffortFixedAssetStds = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortFixedAssetStds;
 	}
@@ -2610,7 +2424,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortInventoryAssigns() {
 		if (workEffortInventoryAssigns == null) {
-			workEffortInventoryAssigns = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_INVENTORY_ASSIGNS);
+			workEffortInventoryAssigns = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortInventoryAssigns;
 	}
@@ -2623,7 +2437,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortInventoryProduceds() {
 		if (workEffortInventoryProduceds == null) {
-			workEffortInventoryProduceds = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_INVENTORY_PRODUCEDS);
+			workEffortInventoryProduceds = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortInventoryProduceds;
 	}
@@ -2636,7 +2450,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortKeywords() {
 		if (workEffortKeywords == null) {
-			workEffortKeywords = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_KEYWORDS);
+			workEffortKeywords = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortKeywords;
 	}
@@ -2649,7 +2463,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortNotes() {
 		if (workEffortNotes == null) {
-			workEffortNotes = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_NOTES);
+			workEffortNotes = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortNotes;
 	}
@@ -2662,7 +2476,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public List<String> getWorkEffortSkillStandards() {
 		if (workEffortSkillStandards == null) {
-			workEffortSkillStandards = new EDataTypeUniqueEList<String>(String.class, this, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS);
+			workEffortSkillStandards = new BasicInternalEList<String>(String.class);
 		}
 		return workEffortSkillStandards;
 	}

@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceCond;
 import org.abchip.mimo.biz.product.price.ProductPriceRule;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,10 +145,7 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 */
 	@Override
 	public void setCondValue(String newCondValue) {
-		String oldCondValue = condValue;
 		condValue = newCondValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__COND_VALUE, oldCondValue, condValue));
 	}
 
 	/**
@@ -165,8 +159,6 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 			InternalEObject oldInputParamEnumId = (InternalEObject)inputParamEnumId;
 			inputParamEnumId = (Enumeration)eResolveProxy(oldInputParamEnumId);
 			if (inputParamEnumId != oldInputParamEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID, oldInputParamEnumId, inputParamEnumId));
 			}
 		}
 		return inputParamEnumId;
@@ -188,10 +180,7 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 */
 	@Override
 	public void setInputParamEnumId(Enumeration newInputParamEnumId) {
-		Enumeration oldInputParamEnumId = inputParamEnumId;
 		inputParamEnumId = newInputParamEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID, oldInputParamEnumId, inputParamEnumId));
 	}
 
 	/**
@@ -205,8 +194,6 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 			InternalEObject oldOperatorEnumId = (InternalEObject)operatorEnumId;
 			operatorEnumId = (Enumeration)eResolveProxy(oldOperatorEnumId);
 			if (operatorEnumId != oldOperatorEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID, oldOperatorEnumId, operatorEnumId));
 			}
 		}
 		return operatorEnumId;
@@ -228,10 +215,7 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 */
 	@Override
 	public void setOperatorEnumId(Enumeration newOperatorEnumId) {
-		Enumeration oldOperatorEnumId = operatorEnumId;
 		operatorEnumId = newOperatorEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID, oldOperatorEnumId, operatorEnumId));
 	}
 
 	/**
@@ -251,10 +235,7 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 */
 	@Override
 	public void setProductPriceCondSeqId(String newProductPriceCondSeqId) {
-		String oldProductPriceCondSeqId = productPriceCondSeqId;
 		productPriceCondSeqId = newProductPriceCondSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_COND_SEQ_ID, oldProductPriceCondSeqId, productPriceCondSeqId));
 	}
 
 	/**
@@ -268,8 +249,6 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 			InternalEObject oldProductPriceRuleId = (InternalEObject)productPriceRuleId;
 			productPriceRuleId = (ProductPriceRule)eResolveProxy(oldProductPriceRuleId);
 			if (productPriceRuleId != oldProductPriceRuleId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
 			}
 		}
 		return productPriceRuleId;
@@ -291,10 +270,7 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 */
 	@Override
 	public void setProductPriceRuleId(ProductPriceRule newProductPriceRuleId) {
-		ProductPriceRule oldProductPriceRuleId = productPriceRuleId;
 		productPriceRuleId = newProductPriceRuleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
 	}
 
 	/**

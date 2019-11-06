@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.common.portal.PortalPageColumn;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,10 +136,7 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 */
 	@Override
 	public void setColumnSeqId(String newColumnSeqId) {
-		String oldColumnSeqId = columnSeqId;
 		columnSeqId = newColumnSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID, oldColumnSeqId, columnSeqId));
 	}
 
 	/**
@@ -162,10 +156,7 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 */
 	@Override
 	public void setColumnWidthPercentage(long newColumnWidthPercentage) {
-		long oldColumnWidthPercentage = columnWidthPercentage;
 		columnWidthPercentage = newColumnWidthPercentage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PERCENTAGE, oldColumnWidthPercentage, columnWidthPercentage));
 	}
 
 	/**
@@ -185,10 +176,7 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 */
 	@Override
 	public void setColumnWidthPixels(long newColumnWidthPixels) {
-		long oldColumnWidthPixels = columnWidthPixels;
 		columnWidthPixels = newColumnWidthPixels;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS, oldColumnWidthPixels, columnWidthPixels));
 	}
 
 	/**
@@ -202,8 +190,6 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 			InternalEObject oldPortalPageId = (InternalEObject)portalPageId;
 			portalPageId = (PortalPage)eResolveProxy(oldPortalPageId);
 			if (portalPageId != oldPortalPageId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
 			}
 		}
 		return portalPageId;
@@ -225,10 +211,7 @@ public class PortalPageColumnImpl extends BizEntityImpl implements PortalPageCol
 	 */
 	@Override
 	public void setPortalPageId(PortalPage newPortalPageId) {
-		PortalPage oldPortalPageId = portalPageId;
 		portalPageId = newPortalPageId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
 	}
 
 	/**

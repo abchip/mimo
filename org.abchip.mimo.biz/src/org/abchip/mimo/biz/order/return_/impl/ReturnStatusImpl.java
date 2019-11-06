@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnStatus;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,8 +164,6 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -190,10 +185,7 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
-		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -207,8 +199,6 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 			InternalEObject oldReturnId = (InternalEObject)returnId;
 			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
 			if (returnId != oldReturnId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_STATUS__RETURN_ID, oldReturnId, returnId));
 			}
 		}
 		return returnId;
@@ -230,10 +220,7 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
-		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -253,10 +240,7 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
-		String oldReturnItemSeqId = returnItemSeqId;
 		returnItemSeqId = newReturnItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
 	}
 
 	/**
@@ -276,10 +260,7 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 */
 	@Override
 	public void setReturnStatusId(String newReturnStatusId) {
-		String oldReturnStatusId = returnStatusId;
 		returnStatusId = newReturnStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__RETURN_STATUS_ID, oldReturnStatusId, returnStatusId));
 	}
 
 	/**
@@ -299,10 +280,7 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 */
 	@Override
 	public void setStatusDatetime(Date newStatusDatetime) {
-		Date oldStatusDatetime = statusDatetime;
 		statusDatetime = newStatusDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__STATUS_DATETIME, oldStatusDatetime, statusDatetime));
 	}
 
 	/**
@@ -316,8 +294,6 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -339,10 +315,7 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

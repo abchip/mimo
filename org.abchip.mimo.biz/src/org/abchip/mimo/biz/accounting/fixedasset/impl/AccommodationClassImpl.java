@@ -12,11 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +118,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_CLASS__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -137,8 +132,6 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 			InternalEObject oldParentClassId = (InternalEObject)parentClassId;
 			parentClassId = (AccommodationClass)eResolveProxy(oldParentClassId);
 			if (parentClassId != oldParentClassId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
 			}
 		}
 		return parentClassId;
@@ -160,10 +153,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 */
 	@Override
 	public void setParentClassId(AccommodationClass newParentClassId) {
-		AccommodationClass oldParentClassId = parentClassId;
 		parentClassId = newParentClassId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
 	}
 
 	/**
@@ -219,10 +209,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 */
 	@Override
 	public void setAccommodationClassId(String newAccommodationClassId) {
-		String oldAccommodationClassId = accommodationClassId;
 		accommodationClassId = newAccommodationClassId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_CLASS__ACCOMMODATION_CLASS_ID, oldAccommodationClassId, accommodationClassId));
 	}
 
 	/**

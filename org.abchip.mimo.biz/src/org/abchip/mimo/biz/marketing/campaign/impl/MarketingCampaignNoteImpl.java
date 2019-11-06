@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,8 +76,6 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
 			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
 			if (marketingCampaignId != oldMarketingCampaignId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 			}
 		}
 		return marketingCampaignId;
@@ -102,10 +97,7 @@ public class MarketingCampaignNoteImpl extends BizEntityNoteImpl implements Mark
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
-		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 	}
 
 	/**

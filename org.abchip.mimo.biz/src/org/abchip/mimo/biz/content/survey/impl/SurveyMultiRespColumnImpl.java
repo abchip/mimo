@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.content.survey.impl;
 import org.abchip.mimo.biz.content.survey.SurveyMultiRespColumn;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -175,10 +171,7 @@ public class SurveyMultiRespColumnImpl extends BizEntityImpl implements SurveyMu
 	 */
 	@Override
 	public void setColumnTitle(String newColumnTitle) {
-		String oldColumnTitle = columnTitle;
 		columnTitle = newColumnTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP_COLUMN__COLUMN_TITLE, oldColumnTitle, columnTitle));
 	}
 
 	/**
@@ -198,10 +191,7 @@ public class SurveyMultiRespColumnImpl extends BizEntityImpl implements SurveyMu
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP_COLUMN__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -221,10 +211,7 @@ public class SurveyMultiRespColumnImpl extends BizEntityImpl implements SurveyMu
 	 */
 	@Override
 	public void setSurveyId(String newSurveyId) {
-		String oldSurveyId = surveyId;
 		surveyId = newSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP_COLUMN__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -244,10 +231,7 @@ public class SurveyMultiRespColumnImpl extends BizEntityImpl implements SurveyMu
 	 */
 	@Override
 	public void setSurveyMultiRespColId(String newSurveyMultiRespColId) {
-		String oldSurveyMultiRespColId = surveyMultiRespColId;
 		surveyMultiRespColId = newSurveyMultiRespColId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP_COLUMN__SURVEY_MULTI_RESP_COL_ID, oldSurveyMultiRespColId, surveyMultiRespColId));
 	}
 
 	/**
@@ -267,10 +251,7 @@ public class SurveyMultiRespColumnImpl extends BizEntityImpl implements SurveyMu
 	 */
 	@Override
 	public void setSurveyMultiRespId(String newSurveyMultiRespId) {
-		String oldSurveyMultiRespId = surveyMultiRespId;
 		surveyMultiRespId = newSurveyMultiRespId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP_COLUMN__SURVEY_MULTI_RESP_ID, oldSurveyMultiRespId, surveyMultiRespId));
 	}
 
 	/**

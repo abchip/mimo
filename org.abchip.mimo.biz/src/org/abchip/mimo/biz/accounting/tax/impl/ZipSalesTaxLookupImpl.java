@@ -14,11 +14,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -493,10 +489,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCity(String newCity) {
-		String oldCity = city;
 		city = newCity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__CITY, oldCity, city));
 	}
 
 	/**
@@ -516,10 +509,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCityLocalSalesTax(BigDecimal newCityLocalSalesTax) {
-		BigDecimal oldCityLocalSalesTax = cityLocalSalesTax;
 		cityLocalSalesTax = newCityLocalSalesTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__CITY_LOCAL_SALES_TAX, oldCityLocalSalesTax, cityLocalSalesTax));
 	}
 
 	/**
@@ -539,10 +529,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCityLocalUseTax(BigDecimal newCityLocalUseTax) {
-		BigDecimal oldCityLocalUseTax = cityLocalUseTax;
 		cityLocalUseTax = newCityLocalUseTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__CITY_LOCAL_USE_TAX, oldCityLocalUseTax, cityLocalUseTax));
 	}
 
 	/**
@@ -562,10 +549,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCitySalesTax(BigDecimal newCitySalesTax) {
-		BigDecimal oldCitySalesTax = citySalesTax;
 		citySalesTax = newCitySalesTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__CITY_SALES_TAX, oldCitySalesTax, citySalesTax));
 	}
 
 	/**
@@ -585,10 +569,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCityUseTax(BigDecimal newCityUseTax) {
-		BigDecimal oldCityUseTax = cityUseTax;
 		cityUseTax = newCityUseTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__CITY_USE_TAX, oldCityUseTax, cityUseTax));
 	}
 
 	/**
@@ -608,10 +589,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setComboSalesTax(BigDecimal newComboSalesTax) {
-		BigDecimal oldComboSalesTax = comboSalesTax;
 		comboSalesTax = newComboSalesTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COMBO_SALES_TAX, oldComboSalesTax, comboSalesTax));
 	}
 
 	/**
@@ -631,10 +609,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setComboUseTax(BigDecimal newComboUseTax) {
-		BigDecimal oldComboUseTax = comboUseTax;
 		comboUseTax = newComboUseTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COMBO_USE_TAX, oldComboUseTax, comboUseTax));
 	}
 
 	/**
@@ -654,10 +629,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCountyDefault(boolean newCountyDefault) {
-		boolean oldCountyDefault = countyDefault;
 		countyDefault = newCountyDefault;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COUNTY_DEFAULT, oldCountyDefault, countyDefault));
 	}
 
 	/**
@@ -677,10 +649,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCounty(String newCounty) {
-		String oldCounty = county;
 		county = newCounty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COUNTY, oldCounty, county));
 	}
 
 	/**
@@ -700,10 +669,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCountyFips(String newCountyFips) {
-		String oldCountyFips = countyFips;
 		countyFips = newCountyFips;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COUNTY_FIPS, oldCountyFips, countyFips));
 	}
 
 	/**
@@ -723,10 +689,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCountyLocalSalesTax(BigDecimal newCountyLocalSalesTax) {
-		BigDecimal oldCountyLocalSalesTax = countyLocalSalesTax;
 		countyLocalSalesTax = newCountyLocalSalesTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COUNTY_LOCAL_SALES_TAX, oldCountyLocalSalesTax, countyLocalSalesTax));
 	}
 
 	/**
@@ -746,10 +709,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCountyLocalUseTax(BigDecimal newCountyLocalUseTax) {
-		BigDecimal oldCountyLocalUseTax = countyLocalUseTax;
 		countyLocalUseTax = newCountyLocalUseTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COUNTY_LOCAL_USE_TAX, oldCountyLocalUseTax, countyLocalUseTax));
 	}
 
 	/**
@@ -769,10 +729,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCountySalesTax(BigDecimal newCountySalesTax) {
-		BigDecimal oldCountySalesTax = countySalesTax;
 		countySalesTax = newCountySalesTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COUNTY_SALES_TAX, oldCountySalesTax, countySalesTax));
 	}
 
 	/**
@@ -792,10 +749,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setCountyUseTax(BigDecimal newCountyUseTax) {
-		BigDecimal oldCountyUseTax = countyUseTax;
 		countyUseTax = newCountyUseTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__COUNTY_USE_TAX, oldCountyUseTax, countyUseTax));
 	}
 
 	/**
@@ -815,10 +769,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setGeneralDefault(boolean newGeneralDefault) {
-		boolean oldGeneralDefault = generalDefault;
 		generalDefault = newGeneralDefault;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__GENERAL_DEFAULT, oldGeneralDefault, generalDefault));
 	}
 
 	/**
@@ -838,10 +789,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -861,10 +809,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setGeoCode(String newGeoCode) {
-		String oldGeoCode = geoCode;
 		geoCode = newGeoCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__GEO_CODE, oldGeoCode, geoCode));
 	}
 
 	/**
@@ -884,10 +829,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setInsideCity(boolean newInsideCity) {
-		boolean oldInsideCity = insideCity;
 		insideCity = newInsideCity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__INSIDE_CITY, oldInsideCity, insideCity));
 	}
 
 	/**
@@ -907,10 +849,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setStateCode(String newStateCode) {
-		String oldStateCode = stateCode;
 		stateCode = newStateCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__STATE_CODE, oldStateCode, stateCode));
 	}
 
 	/**
@@ -930,10 +869,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setStateSalesTax(BigDecimal newStateSalesTax) {
-		BigDecimal oldStateSalesTax = stateSalesTax;
 		stateSalesTax = newStateSalesTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__STATE_SALES_TAX, oldStateSalesTax, stateSalesTax));
 	}
 
 	/**
@@ -953,10 +889,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setStateUseTax(BigDecimal newStateUseTax) {
-		BigDecimal oldStateUseTax = stateUseTax;
 		stateUseTax = newStateUseTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__STATE_USE_TAX, oldStateUseTax, stateUseTax));
 	}
 
 	/**
@@ -976,10 +909,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 */
 	@Override
 	public void setZipCode(String newZipCode) {
-		String oldZipCode = zipCode;
 		zipCode = newZipCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_TAX_LOOKUP__ZIP_CODE, oldZipCode, zipCode));
 	}
 
 	/**

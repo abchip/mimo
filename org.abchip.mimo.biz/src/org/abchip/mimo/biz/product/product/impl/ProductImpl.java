@@ -26,14 +26,11 @@ import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -1439,8 +1436,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldAmountUomTypeId = (InternalEObject)amountUomTypeId;
 			amountUomTypeId = (UomType)eResolveProxy(oldAmountUomTypeId);
 			if (amountUomTypeId != oldAmountUomTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__AMOUNT_UOM_TYPE_ID, oldAmountUomTypeId, amountUomTypeId));
 			}
 		}
 		return amountUomTypeId;
@@ -1462,10 +1457,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setAmountUomTypeId(UomType newAmountUomTypeId) {
-		UomType oldAmountUomTypeId = amountUomTypeId;
 		amountUomTypeId = newAmountUomTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__AMOUNT_UOM_TYPE_ID, oldAmountUomTypeId, amountUomTypeId));
 	}
 
 	/**
@@ -1485,10 +1477,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setAutoCreateKeywords(boolean newAutoCreateKeywords) {
-		boolean oldAutoCreateKeywords = autoCreateKeywords;
 		autoCreateKeywords = newAutoCreateKeywords;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__AUTO_CREATE_KEYWORDS, oldAutoCreateKeywords, autoCreateKeywords));
 	}
 
 	/**
@@ -1508,10 +1497,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setBillOfMaterialLevel(long newBillOfMaterialLevel) {
-		long oldBillOfMaterialLevel = billOfMaterialLevel;
 		billOfMaterialLevel = newBillOfMaterialLevel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__BILL_OF_MATERIAL_LEVEL, oldBillOfMaterialLevel, billOfMaterialLevel));
 	}
 
 	/**
@@ -1531,10 +1517,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setBrandName(String newBrandName) {
-		String oldBrandName = brandName;
 		brandName = newBrandName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__BRAND_NAME, oldBrandName, brandName));
 	}
 
 	/**
@@ -1554,10 +1537,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setChargeShipping(boolean newChargeShipping) {
-		boolean oldChargeShipping = chargeShipping;
 		chargeShipping = newChargeShipping;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__CHARGE_SHIPPING, oldChargeShipping, chargeShipping));
 	}
 
 	/**
@@ -1577,10 +1557,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -1600,10 +1577,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
-		String oldConfigId = configId;
 		configId = newConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__CONFIG_ID, oldConfigId, configId));
 	}
 
 	/**
@@ -1617,8 +1591,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -1640,10 +1612,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -1663,10 +1632,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -1680,8 +1646,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldDefaultShipmentBoxTypeId = (InternalEObject)defaultShipmentBoxTypeId;
 			defaultShipmentBoxTypeId = (ShipmentBoxType)eResolveProxy(oldDefaultShipmentBoxTypeId);
 			if (defaultShipmentBoxTypeId != oldDefaultShipmentBoxTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__DEFAULT_SHIPMENT_BOX_TYPE_ID, oldDefaultShipmentBoxTypeId, defaultShipmentBoxTypeId));
 			}
 		}
 		return defaultShipmentBoxTypeId;
@@ -1703,10 +1667,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setDefaultShipmentBoxTypeId(ShipmentBoxType newDefaultShipmentBoxTypeId) {
-		ShipmentBoxType oldDefaultShipmentBoxTypeId = defaultShipmentBoxTypeId;
 		defaultShipmentBoxTypeId = newDefaultShipmentBoxTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__DEFAULT_SHIPMENT_BOX_TYPE_ID, oldDefaultShipmentBoxTypeId, defaultShipmentBoxTypeId));
 	}
 
 	/**
@@ -1720,8 +1681,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldDepthUomId = (InternalEObject)depthUomId;
 			depthUomId = (Uom)eResolveProxy(oldDepthUomId);
 			if (depthUomId != oldDepthUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__DEPTH_UOM_ID, oldDepthUomId, depthUomId));
 			}
 		}
 		return depthUomId;
@@ -1743,10 +1702,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setDepthUomId(Uom newDepthUomId) {
-		Uom oldDepthUomId = depthUomId;
 		depthUomId = newDepthUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__DEPTH_UOM_ID, oldDepthUomId, depthUomId));
 	}
 
 	/**
@@ -1766,10 +1722,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -1789,10 +1742,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setDetailImageUrl(String newDetailImageUrl) {
-		String oldDetailImageUrl = detailImageUrl;
 		detailImageUrl = newDetailImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__DETAIL_IMAGE_URL, oldDetailImageUrl, detailImageUrl));
 	}
 
 	/**
@@ -1812,10 +1762,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setDetailScreen(String newDetailScreen) {
-		String oldDetailScreen = detailScreen;
 		detailScreen = newDetailScreen;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__DETAIL_SCREEN, oldDetailScreen, detailScreen));
 	}
 
 	/**
@@ -1829,8 +1776,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldDiameterUomId = (InternalEObject)diameterUomId;
 			diameterUomId = (Uom)eResolveProxy(oldDiameterUomId);
 			if (diameterUomId != oldDiameterUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__DIAMETER_UOM_ID, oldDiameterUomId, diameterUomId));
 			}
 		}
 		return diameterUomId;
@@ -1852,10 +1797,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setDiameterUomId(Uom newDiameterUomId) {
-		Uom oldDiameterUomId = diameterUomId;
 		diameterUomId = newDiameterUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__DIAMETER_UOM_ID, oldDiameterUomId, diameterUomId));
 	}
 
 	/**
@@ -1875,10 +1817,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setFixedAmount(BigDecimal newFixedAmount) {
-		BigDecimal oldFixedAmount = fixedAmount;
 		fixedAmount = newFixedAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__FIXED_AMOUNT, oldFixedAmount, fixedAmount));
 	}
 
 	/**
@@ -1892,8 +1831,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldHeightUomId = (InternalEObject)heightUomId;
 			heightUomId = (Uom)eResolveProxy(oldHeightUomId);
 			if (heightUomId != oldHeightUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__HEIGHT_UOM_ID, oldHeightUomId, heightUomId));
 			}
 		}
 		return heightUomId;
@@ -1915,10 +1852,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setHeightUomId(Uom newHeightUomId) {
-		Uom oldHeightUomId = heightUomId;
 		heightUomId = newHeightUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__HEIGHT_UOM_ID, oldHeightUomId, heightUomId));
 	}
 
 	/**
@@ -1938,10 +1872,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setInShippingBox(boolean newInShippingBox) {
-		boolean oldInShippingBox = inShippingBox;
 		inShippingBox = newInShippingBox;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__IN_SHIPPING_BOX, oldInShippingBox, inShippingBox));
 	}
 
 	/**
@@ -1961,10 +1892,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setIncludeInPromotions(boolean newIncludeInPromotions) {
-		boolean oldIncludeInPromotions = includeInPromotions;
 		includeInPromotions = newIncludeInPromotions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__INCLUDE_IN_PROMOTIONS, oldIncludeInPromotions, includeInPromotions));
 	}
 
 	/**
@@ -1984,10 +1912,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setInternalName(String newInternalName) {
-		String oldInternalName = internalName;
 		internalName = newInternalName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__INTERNAL_NAME, oldInternalName, internalName));
 	}
 
 	/**
@@ -2007,10 +1932,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setIntroductionDate(Date newIntroductionDate) {
-		Date oldIntroductionDate = introductionDate;
 		introductionDate = newIntroductionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__INTRODUCTION_DATE, oldIntroductionDate, introductionDate));
 	}
 
 	/**
@@ -2030,10 +1952,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setInventoryMessage(String newInventoryMessage) {
-		String oldInventoryMessage = inventoryMessage;
 		inventoryMessage = newInventoryMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__INVENTORY_MESSAGE, oldInventoryMessage, inventoryMessage));
 	}
 
 	/**
@@ -2053,10 +1972,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setIsVariant(boolean newIsVariant) {
-		boolean oldIsVariant = isVariant;
 		isVariant = newIsVariant;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__IS_VARIANT, oldIsVariant, isVariant));
 	}
 
 	/**
@@ -2076,10 +1992,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setIsVirtual(boolean newIsVirtual) {
-		boolean oldIsVirtual = isVirtual;
 		isVirtual = newIsVirtual;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__IS_VIRTUAL, oldIsVirtual, isVirtual));
 	}
 
 	/**
@@ -2099,10 +2012,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setLargeImageUrl(String newLargeImageUrl) {
-		String oldLargeImageUrl = largeImageUrl;
 		largeImageUrl = newLargeImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__LARGE_IMAGE_URL, oldLargeImageUrl, largeImageUrl));
 	}
 
 	/**
@@ -2116,8 +2026,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -2139,10 +2047,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -2162,10 +2067,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -2185,10 +2087,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setLongDescription(String newLongDescription) {
-		String oldLongDescription = longDescription;
 		longDescription = newLongDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__LONG_DESCRIPTION, oldLongDescription, longDescription));
 	}
 
 	/**
@@ -2208,10 +2107,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setLotIdFilledIn(String newLotIdFilledIn) {
-		String oldLotIdFilledIn = lotIdFilledIn;
 		lotIdFilledIn = newLotIdFilledIn;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__LOT_ID_FILLED_IN, oldLotIdFilledIn, lotIdFilledIn));
 	}
 
 	/**
@@ -2231,10 +2127,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setMediumImageUrl(String newMediumImageUrl) {
-		String oldMediumImageUrl = mediumImageUrl;
 		mediumImageUrl = newMediumImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__MEDIUM_IMAGE_URL, oldMediumImageUrl, mediumImageUrl));
 	}
 
 	/**
@@ -2254,10 +2147,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setOrderDecimalQuantity(boolean newOrderDecimalQuantity) {
-		boolean oldOrderDecimalQuantity = orderDecimalQuantity;
 		orderDecimalQuantity = newOrderDecimalQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__ORDER_DECIMAL_QUANTITY, oldOrderDecimalQuantity, orderDecimalQuantity));
 	}
 
 	/**
@@ -2271,8 +2161,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldOriginGeoId = (InternalEObject)originGeoId;
 			originGeoId = (Geo)eResolveProxy(oldOriginGeoId);
 			if (originGeoId != oldOriginGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__ORIGIN_GEO_ID, oldOriginGeoId, originGeoId));
 			}
 		}
 		return originGeoId;
@@ -2294,10 +2182,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setOriginGeoId(Geo newOriginGeoId) {
-		Geo oldOriginGeoId = originGeoId;
 		originGeoId = newOriginGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__ORIGIN_GEO_ID, oldOriginGeoId, originGeoId));
 	}
 
 	/**
@@ -2317,10 +2202,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setOriginalImageUrl(String newOriginalImageUrl) {
-		String oldOriginalImageUrl = originalImageUrl;
 		originalImageUrl = newOriginalImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__ORIGINAL_IMAGE_URL, oldOriginalImageUrl, originalImageUrl));
 	}
 
 	/**
@@ -2340,10 +2222,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setPiecesIncluded(long newPiecesIncluded) {
-		long oldPiecesIncluded = piecesIncluded;
 		piecesIncluded = newPiecesIncluded;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PIECES_INCLUDED, oldPiecesIncluded, piecesIncluded));
 	}
 
 	/**
@@ -2363,10 +2242,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setPriceDetailText(String newPriceDetailText) {
-		String oldPriceDetailText = priceDetailText;
 		priceDetailText = newPriceDetailText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRICE_DETAIL_TEXT, oldPriceDetailText, priceDetailText));
 	}
 
 	/**
@@ -2386,10 +2262,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductDepth(BigDecimal newProductDepth) {
-		BigDecimal oldProductDepth = productDepth;
 		productDepth = newProductDepth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_DEPTH, oldProductDepth, productDepth));
 	}
 
 	/**
@@ -2409,10 +2282,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductDiameter(BigDecimal newProductDiameter) {
-		BigDecimal oldProductDiameter = productDiameter;
 		productDiameter = newProductDiameter;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_DIAMETER, oldProductDiameter, productDiameter));
 	}
 
 	/**
@@ -2432,10 +2302,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductHeight(BigDecimal newProductHeight) {
-		BigDecimal oldProductHeight = productHeight;
 		productHeight = newProductHeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_HEIGHT, oldProductHeight, productHeight));
 	}
 
 	/**
@@ -2455,10 +2322,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductName(String newProductName) {
-		String oldProductName = productName;
 		productName = newProductName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_NAME, oldProductName, productName));
 	}
 
 	/**
@@ -2478,10 +2342,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductRating(BigDecimal newProductRating) {
-		BigDecimal oldProductRating = productRating;
 		productRating = newProductRating;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_RATING, oldProductRating, productRating));
 	}
 
 	/**
@@ -2501,10 +2362,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductWeight(BigDecimal newProductWeight) {
-		BigDecimal oldProductWeight = productWeight;
 		productWeight = newProductWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_WEIGHT, oldProductWeight, productWeight));
 	}
 
 	/**
@@ -2524,10 +2382,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductWidth(BigDecimal newProductWidth) {
-		BigDecimal oldProductWidth = productWidth;
 		productWidth = newProductWidth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_WIDTH, oldProductWidth, productWidth));
 	}
 
 	/**
@@ -2547,10 +2402,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setQuantityIncluded(BigDecimal newQuantityIncluded) {
-		BigDecimal oldQuantityIncluded = quantityIncluded;
 		quantityIncluded = newQuantityIncluded;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__QUANTITY_INCLUDED, oldQuantityIncluded, quantityIncluded));
 	}
 
 	/**
@@ -2564,8 +2416,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
 			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
 			if (quantityUomId != oldQuantityUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 			}
 		}
 		return quantityUomId;
@@ -2587,10 +2437,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setQuantityUomId(Uom newQuantityUomId) {
-		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 	}
 
 	/**
@@ -2604,8 +2451,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldRatingTypeEnum = (InternalEObject)ratingTypeEnum;
 			ratingTypeEnum = (Enumeration)eResolveProxy(oldRatingTypeEnum);
 			if (ratingTypeEnum != oldRatingTypeEnum) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__RATING_TYPE_ENUM, oldRatingTypeEnum, ratingTypeEnum));
 			}
 		}
 		return ratingTypeEnum;
@@ -2627,10 +2472,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setRatingTypeEnum(Enumeration newRatingTypeEnum) {
-		Enumeration oldRatingTypeEnum = ratingTypeEnum;
 		ratingTypeEnum = newRatingTypeEnum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__RATING_TYPE_ENUM, oldRatingTypeEnum, ratingTypeEnum));
 	}
 
 	/**
@@ -2650,10 +2492,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setReleaseDate(Date newReleaseDate) {
-		Date oldReleaseDate = releaseDate;
 		releaseDate = newReleaseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__RELEASE_DATE, oldReleaseDate, releaseDate));
 	}
 
 	/**
@@ -2673,10 +2512,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setRequireAmount(boolean newRequireAmount) {
-		boolean oldRequireAmount = requireAmount;
 		requireAmount = newRequireAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__REQUIRE_AMOUNT, oldRequireAmount, requireAmount));
 	}
 
 	/**
@@ -2696,10 +2532,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setRequireInventory(boolean newRequireInventory) {
-		boolean oldRequireInventory = requireInventory;
 		requireInventory = newRequireInventory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__REQUIRE_INVENTORY, oldRequireInventory, requireInventory));
 	}
 
 	/**
@@ -2713,8 +2546,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldRequirementMethodEnumId = (InternalEObject)requirementMethodEnumId;
 			requirementMethodEnumId = (Enumeration)eResolveProxy(oldRequirementMethodEnumId);
 			if (requirementMethodEnumId != oldRequirementMethodEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
 			}
 		}
 		return requirementMethodEnumId;
@@ -2736,10 +2567,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setRequirementMethodEnumId(Enumeration newRequirementMethodEnumId) {
-		Enumeration oldRequirementMethodEnumId = requirementMethodEnumId;
 		requirementMethodEnumId = newRequirementMethodEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
 	}
 
 	/**
@@ -2759,10 +2587,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setReserv2ndPPPerc(BigDecimal newReserv2ndPPPerc) {
-		BigDecimal oldReserv2ndPPPerc = reserv2ndPPPerc;
 		reserv2ndPPPerc = newReserv2ndPPPerc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__RESERV2ND_PP_PERC, oldReserv2ndPPPerc, reserv2ndPPPerc));
 	}
 
 	/**
@@ -2782,10 +2607,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setReservMaxPersons(BigDecimal newReservMaxPersons) {
-		BigDecimal oldReservMaxPersons = reservMaxPersons;
 		reservMaxPersons = newReservMaxPersons;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__RESERV_MAX_PERSONS, oldReservMaxPersons, reservMaxPersons));
 	}
 
 	/**
@@ -2805,10 +2627,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setReservNthPPPerc(BigDecimal newReservNthPPPerc) {
-		BigDecimal oldReservNthPPPerc = reservNthPPPerc;
 		reservNthPPPerc = newReservNthPPPerc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__RESERV_NTH_PP_PERC, oldReservNthPPPerc, reservNthPPPerc));
 	}
 
 	/**
@@ -2828,10 +2647,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setReturnable(boolean newReturnable) {
-		boolean oldReturnable = returnable;
 		returnable = newReturnable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__RETURNABLE, oldReturnable, returnable));
 	}
 
 	/**
@@ -2851,10 +2667,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setSalesDiscWhenNotAvail(boolean newSalesDiscWhenNotAvail) {
-		boolean oldSalesDiscWhenNotAvail = salesDiscWhenNotAvail;
 		salesDiscWhenNotAvail = newSalesDiscWhenNotAvail;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SALES_DISC_WHEN_NOT_AVAIL, oldSalesDiscWhenNotAvail, salesDiscWhenNotAvail));
 	}
 
 	/**
@@ -2874,10 +2687,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setSalesDiscontinuationDate(Date newSalesDiscontinuationDate) {
-		Date oldSalesDiscontinuationDate = salesDiscontinuationDate;
 		salesDiscontinuationDate = newSalesDiscontinuationDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SALES_DISCONTINUATION_DATE, oldSalesDiscontinuationDate, salesDiscontinuationDate));
 	}
 
 	/**
@@ -2897,10 +2707,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setShippingDepth(BigDecimal newShippingDepth) {
-		BigDecimal oldShippingDepth = shippingDepth;
 		shippingDepth = newShippingDepth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SHIPPING_DEPTH, oldShippingDepth, shippingDepth));
 	}
 
 	/**
@@ -2920,10 +2727,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setShippingHeight(BigDecimal newShippingHeight) {
-		BigDecimal oldShippingHeight = shippingHeight;
 		shippingHeight = newShippingHeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SHIPPING_HEIGHT, oldShippingHeight, shippingHeight));
 	}
 
 	/**
@@ -2943,10 +2747,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setShippingWeight(BigDecimal newShippingWeight) {
-		BigDecimal oldShippingWeight = shippingWeight;
 		shippingWeight = newShippingWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SHIPPING_WEIGHT, oldShippingWeight, shippingWeight));
 	}
 
 	/**
@@ -2966,10 +2767,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setShippingWidth(BigDecimal newShippingWidth) {
-		BigDecimal oldShippingWidth = shippingWidth;
 		shippingWidth = newShippingWidth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SHIPPING_WIDTH, oldShippingWidth, shippingWidth));
 	}
 
 	/**
@@ -2989,10 +2787,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setSmallImageUrl(String newSmallImageUrl) {
-		String oldSmallImageUrl = smallImageUrl;
 		smallImageUrl = newSmallImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SMALL_IMAGE_URL, oldSmallImageUrl, smallImageUrl));
 	}
 
 	/**
@@ -3012,10 +2807,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setSupportDiscontinuationDate(Date newSupportDiscontinuationDate) {
-		Date oldSupportDiscontinuationDate = supportDiscontinuationDate;
 		supportDiscontinuationDate = newSupportDiscontinuationDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__SUPPORT_DISCONTINUATION_DATE, oldSupportDiscontinuationDate, supportDiscontinuationDate));
 	}
 
 	/**
@@ -3035,10 +2827,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setTaxable(boolean newTaxable) {
-		boolean oldTaxable = taxable;
 		taxable = newTaxable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__TAXABLE, oldTaxable, taxable));
 	}
 
 	/**
@@ -3052,8 +2841,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldVirtualVariantMethodEnum = (InternalEObject)virtualVariantMethodEnum;
 			virtualVariantMethodEnum = (Enumeration)eResolveProxy(oldVirtualVariantMethodEnum);
 			if (virtualVariantMethodEnum != oldVirtualVariantMethodEnum) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__VIRTUAL_VARIANT_METHOD_ENUM, oldVirtualVariantMethodEnum, virtualVariantMethodEnum));
 			}
 		}
 		return virtualVariantMethodEnum;
@@ -3075,10 +2862,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setVirtualVariantMethodEnum(Enumeration newVirtualVariantMethodEnum) {
-		Enumeration oldVirtualVariantMethodEnum = virtualVariantMethodEnum;
 		virtualVariantMethodEnum = newVirtualVariantMethodEnum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__VIRTUAL_VARIANT_METHOD_ENUM, oldVirtualVariantMethodEnum, virtualVariantMethodEnum));
 	}
 
 	/**
@@ -3092,8 +2876,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldWeightUomId = (InternalEObject)weightUomId;
 			weightUomId = (Uom)eResolveProxy(oldWeightUomId);
 			if (weightUomId != oldWeightUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 			}
 		}
 		return weightUomId;
@@ -3115,10 +2897,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setWeightUomId(Uom newWeightUomId) {
-		Uom oldWeightUomId = weightUomId;
 		weightUomId = newWeightUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 	}
 
 	/**
@@ -3132,8 +2911,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldWidthUomId = (InternalEObject)widthUomId;
 			widthUomId = (Uom)eResolveProxy(oldWidthUomId);
 			if (widthUomId != oldWidthUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__WIDTH_UOM_ID, oldWidthUomId, widthUomId));
 			}
 		}
 		return widthUomId;
@@ -3155,10 +2932,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setWidthUomId(Uom newWidthUomId) {
-		Uom oldWidthUomId = widthUomId;
 		widthUomId = newWidthUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__WIDTH_UOM_ID, oldWidthUomId, widthUomId));
 	}
 
 	/**
@@ -3169,7 +2943,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public List<String> getCommunicationEventProducts() {
 		if (communicationEventProducts == null) {
-			communicationEventProducts = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT__COMMUNICATION_EVENT_PRODUCTS);
+			communicationEventProducts = new BasicInternalEList<String>(String.class);
 		}
 		return communicationEventProducts;
 	}
@@ -3182,7 +2956,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public List<String> getProductAttributes() {
 		if (productAttributes == null) {
-			productAttributes = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT__PRODUCT_ATTRIBUTES);
+			productAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return productAttributes;
 	}
@@ -3195,7 +2969,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public List<String> getProductFacilities() {
 		if (productFacilities == null) {
-			productFacilities = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT__PRODUCT_FACILITIES);
+			productFacilities = new BasicInternalEList<String>(String.class);
 		}
 		return productFacilities;
 	}
@@ -3208,7 +2982,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public List<String> getProductGeos() {
 		if (productGeos == null) {
-			productGeos = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT__PRODUCT_GEOS);
+			productGeos = new BasicInternalEList<String>(String.class);
 		}
 		return productGeos;
 	}
@@ -3221,7 +2995,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public List<String> getProductMaints() {
 		if (productMaints == null) {
-			productMaints = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT__PRODUCT_MAINTS);
+			productMaints = new BasicInternalEList<String>(String.class);
 		}
 		return productMaints;
 	}
@@ -3234,7 +3008,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public List<String> getProductMeters() {
 		if (productMeters == null) {
-			productMeters = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT__PRODUCT_METERS);
+			productMeters = new BasicInternalEList<String>(String.class);
 		}
 		return productMeters;
 	}
@@ -3562,8 +3336,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldProductTypeId = (InternalEObject)productTypeId;
 			productTypeId = (ProductType)eResolveProxy(oldProductTypeId);
 			if (productTypeId != oldProductTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__PRODUCT_TYPE_ID, oldProductTypeId, productTypeId));
 			}
 		}
 		return productTypeId;
@@ -3585,10 +3357,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductTypeId(ProductType newProductTypeId) {
-		ProductType oldProductTypeId = productTypeId;
 		productTypeId = newProductTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_TYPE_ID, oldProductTypeId, productTypeId));
 	}
 
 	/**
@@ -3602,8 +3371,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldPrimaryProductCategoryId = (InternalEObject)primaryProductCategoryId;
 			primaryProductCategoryId = (ProductCategory)eResolveProxy(oldPrimaryProductCategoryId);
 			if (primaryProductCategoryId != oldPrimaryProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__PRIMARY_PRODUCT_CATEGORY_ID, oldPrimaryProductCategoryId, primaryProductCategoryId));
 			}
 		}
 		return primaryProductCategoryId;
@@ -3625,10 +3392,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setPrimaryProductCategoryId(ProductCategory newPrimaryProductCategoryId) {
-		ProductCategory oldPrimaryProductCategoryId = primaryProductCategoryId;
 		primaryProductCategoryId = newPrimaryProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRIMARY_PRODUCT_CATEGORY_ID, oldPrimaryProductCategoryId, primaryProductCategoryId));
 	}
 
 	/**
@@ -3642,8 +3406,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -3665,10 +3427,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -3682,8 +3441,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 			InternalEObject oldInventoryItemTypeId = (InternalEObject)inventoryItemTypeId;
 			inventoryItemTypeId = (InventoryItemType)eResolveProxy(oldInventoryItemTypeId);
 			if (inventoryItemTypeId != oldInventoryItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
 			}
 		}
 		return inventoryItemTypeId;
@@ -3705,10 +3462,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setInventoryItemTypeId(InventoryItemType newInventoryItemTypeId) {
-		InventoryItemType oldInventoryItemTypeId = inventoryItemTypeId;
 		inventoryItemTypeId = newInventoryItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
 	}
 
 	/**
@@ -3728,10 +3482,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@Override
 	public void setProductId(String newProductId) {
-		String oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

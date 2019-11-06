@@ -13,10 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,10 +111,7 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -149,10 +143,7 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 */
 	@Override
 	public void setQuantityBreakTypeId(String newQuantityBreakTypeId) {
-		String oldQuantityBreakTypeId = quantityBreakTypeId;
 		quantityBreakTypeId = newQuantityBreakTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID, oldQuantityBreakTypeId, quantityBreakTypeId));
 	}
 
 	/**

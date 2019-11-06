@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentType;
 import org.abchip.mimo.biz.content.content.ContentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,10 +123,7 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -143,8 +137,6 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 			InternalEObject oldContentTypeId = (InternalEObject)contentTypeId;
 			contentTypeId = (ContentType)eResolveProxy(oldContentTypeId);
 			if (contentTypeId != oldContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
 			}
 		}
 		return contentTypeId;
@@ -166,10 +158,7 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	 */
 	@Override
 	public void setContentTypeId(ContentType newContentTypeId) {
-		ContentType oldContentTypeId = contentTypeId;
 		contentTypeId = newContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE_ATTR__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
 	}
 
 	/**
@@ -189,10 +178,7 @@ public class ContentTypeAttrImpl extends BizEntityImpl implements ContentTypeAtt
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

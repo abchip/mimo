@@ -13,11 +13,9 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccountGroup;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,10 +120,7 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_GROUP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -139,8 +134,6 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 			InternalEObject oldGlAccountGroupTypeId = (InternalEObject)glAccountGroupTypeId;
 			glAccountGroupTypeId = (GlAccountGroupType)eResolveProxy(oldGlAccountGroupTypeId);
 			if (glAccountGroupTypeId != oldGlAccountGroupTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID, oldGlAccountGroupTypeId, glAccountGroupTypeId));
 			}
 		}
 		return glAccountGroupTypeId;
@@ -162,10 +155,7 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 	 */
 	@Override
 	public void setGlAccountGroupTypeId(GlAccountGroupType newGlAccountGroupTypeId) {
-		GlAccountGroupType oldGlAccountGroupTypeId = glAccountGroupTypeId;
 		glAccountGroupTypeId = newGlAccountGroupTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID, oldGlAccountGroupTypeId, glAccountGroupTypeId));
 	}
 
 	/**
@@ -197,10 +187,7 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 	 */
 	@Override
 	public void setGlAccountGroupId(String newGlAccountGroupId) {
-		String oldGlAccountGroupId = glAccountGroupId;
 		glAccountGroupId = newGlAccountGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_ID, oldGlAccountGroupId, glAccountGroupId));
 	}
 
 	/**

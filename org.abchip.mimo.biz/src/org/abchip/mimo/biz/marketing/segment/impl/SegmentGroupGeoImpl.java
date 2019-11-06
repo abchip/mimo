@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +87,6 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -113,10 +108,7 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
-		Geo oldGeoId = geoId;
 		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**
@@ -130,8 +122,6 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 			InternalEObject oldSegmentGroupId = (InternalEObject)segmentGroupId;
 			segmentGroupId = (SegmentGroup)eResolveProxy(oldSegmentGroupId);
 			if (segmentGroupId != oldSegmentGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
 			}
 		}
 		return segmentGroupId;
@@ -153,10 +143,7 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	 */
 	@Override
 	public void setSegmentGroupId(SegmentGroup newSegmentGroupId) {
-		SegmentGroup oldSegmentGroupId = segmentGroupId;
 		segmentGroupId = newSegmentGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
 	}
 
 	/**

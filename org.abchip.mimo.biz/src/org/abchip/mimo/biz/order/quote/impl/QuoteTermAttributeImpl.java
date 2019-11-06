@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.order.quote.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteTermAttribute;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -196,10 +192,7 @@ public class QuoteTermAttributeImpl extends BizEntityImpl implements QuoteTermAt
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TERM_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -219,10 +212,7 @@ public class QuoteTermAttributeImpl extends BizEntityImpl implements QuoteTermAt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TERM_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -242,10 +232,7 @@ public class QuoteTermAttributeImpl extends BizEntityImpl implements QuoteTermAt
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TERM_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -265,10 +252,7 @@ public class QuoteTermAttributeImpl extends BizEntityImpl implements QuoteTermAt
 	 */
 	@Override
 	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TERM_ATTRIBUTE__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**
@@ -288,10 +272,7 @@ public class QuoteTermAttributeImpl extends BizEntityImpl implements QuoteTermAt
 	 */
 	@Override
 	public void setQuoteItemSeqId(String newQuoteItemSeqId) {
-		String oldQuoteItemSeqId = quoteItemSeqId;
 		quoteItemSeqId = newQuoteItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TERM_ATTRIBUTE__QUOTE_ITEM_SEQ_ID, oldQuoteItemSeqId, quoteItemSeqId));
 	}
 
 	/**
@@ -311,10 +292,7 @@ public class QuoteTermAttributeImpl extends BizEntityImpl implements QuoteTermAt
 	 */
 	@Override
 	public void setTermTypeId(String newTermTypeId) {
-		String oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TERM_ATTRIBUTE__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 	}
 
 	/**

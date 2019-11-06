@@ -16,12 +16,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -352,10 +349,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setAccountCodeLength(long newAccountCodeLength) {
-		long oldAccountCodeLength = accountCodeLength;
 		accountCodeLength = newAccountCodeLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH, oldAccountCodeLength, accountCodeLength));
 	}
 
 	/**
@@ -375,10 +369,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setAccountValidDays(long newAccountValidDays) {
-		long oldAccountValidDays = accountValidDays;
 		accountValidDays = newAccountValidDays;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_VALID_DAYS, oldAccountValidDays, accountValidDays));
 	}
 
 	/**
@@ -398,10 +389,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setAllowAuthToNegative(boolean newAllowAuthToNegative) {
-		boolean oldAllowAuthToNegative = allowAuthToNegative;
 		allowAuthToNegative = newAllowAuthToNegative;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ALLOW_AUTH_TO_NEGATIVE, oldAllowAuthToNegative, allowAuthToNegative));
 	}
 
 	/**
@@ -421,10 +409,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setAuthValidDays(long newAuthValidDays) {
-		long oldAuthValidDays = authValidDays;
 		authValidDays = newAuthValidDays;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__AUTH_VALID_DAYS, oldAuthValidDays, authValidDays));
 	}
 
 	/**
@@ -438,8 +423,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			InternalEObject oldFinAccountTypeId = (InternalEObject)finAccountTypeId;
 			finAccountTypeId = (FinAccountType)eResolveProxy(oldFinAccountTypeId);
 			if (finAccountTypeId != oldFinAccountTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
 			}
 		}
 		return finAccountTypeId;
@@ -461,10 +444,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setFinAccountTypeId(FinAccountType newFinAccountTypeId) {
-		FinAccountType oldFinAccountTypeId = finAccountTypeId;
 		finAccountTypeId = newFinAccountTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
 	}
 
 	/**
@@ -484,10 +464,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setMinBalance(BigDecimal newMinBalance) {
-		BigDecimal oldMinBalance = minBalance;
 		minBalance = newMinBalance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__MIN_BALANCE, oldMinBalance, minBalance));
 	}
 
 	/**
@@ -507,10 +484,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setPinCodeLength(long newPinCodeLength) {
-		long oldPinCodeLength = pinCodeLength;
 		pinCodeLength = newPinCodeLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PIN_CODE_LENGTH, oldPinCodeLength, pinCodeLength));
 	}
 
 	/**
@@ -530,10 +504,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setPurchSurveyCopyMe(String newPurchSurveyCopyMe) {
-		String oldPurchSurveyCopyMe = purchSurveyCopyMe;
 		purchSurveyCopyMe = newPurchSurveyCopyMe;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCH_SURVEY_COPY_ME, oldPurchSurveyCopyMe, purchSurveyCopyMe));
 	}
 
 	/**
@@ -553,10 +524,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setPurchSurveySendTo(String newPurchSurveySendTo) {
-		String oldPurchSurveySendTo = purchSurveySendTo;
 		purchSurveySendTo = newPurchSurveySendTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCH_SURVEY_SEND_TO, oldPurchSurveySendTo, purchSurveySendTo));
 	}
 
 	/**
@@ -570,8 +538,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			InternalEObject oldPurchaseSurveyId = (InternalEObject)purchaseSurveyId;
 			purchaseSurveyId = (Survey)eResolveProxy(oldPurchaseSurveyId);
 			if (purchaseSurveyId != oldPurchaseSurveyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID, oldPurchaseSurveyId, purchaseSurveyId));
 			}
 		}
 		return purchaseSurveyId;
@@ -593,10 +559,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setPurchaseSurveyId(Survey newPurchaseSurveyId) {
-		Survey oldPurchaseSurveyId = purchaseSurveyId;
 		purchaseSurveyId = newPurchaseSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID, oldPurchaseSurveyId, purchaseSurveyId));
 	}
 
 	/**
@@ -610,8 +573,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			InternalEObject oldReplenishMethodEnumId = (InternalEObject)replenishMethodEnumId;
 			replenishMethodEnumId = (Enumeration)eResolveProxy(oldReplenishMethodEnumId);
 			if (replenishMethodEnumId != oldReplenishMethodEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID, oldReplenishMethodEnumId, replenishMethodEnumId));
 			}
 		}
 		return replenishMethodEnumId;
@@ -633,10 +594,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setReplenishMethodEnumId(Enumeration newReplenishMethodEnumId) {
-		Enumeration oldReplenishMethodEnumId = replenishMethodEnumId;
 		replenishMethodEnumId = newReplenishMethodEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID, oldReplenishMethodEnumId, replenishMethodEnumId));
 	}
 
 	/**
@@ -656,10 +614,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setReplenishThreshold(BigDecimal newReplenishThreshold) {
-		BigDecimal oldReplenishThreshold = replenishThreshold;
 		replenishThreshold = newReplenishThreshold;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_THRESHOLD, oldReplenishThreshold, replenishThreshold));
 	}
 
 	/**
@@ -679,10 +634,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setRequirePinCode(boolean newRequirePinCode) {
-		boolean oldRequirePinCode = requirePinCode;
 		requirePinCode = newRequirePinCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REQUIRE_PIN_CODE, oldRequirePinCode, requirePinCode));
 	}
 
 	/**
@@ -702,10 +654,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setValidateGCFinAcct(boolean newValidateGCFinAcct) {
-		boolean oldValidateGCFinAcct = validateGCFinAcct;
 		validateGCFinAcct = newValidateGCFinAcct;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT, oldValidateGCFinAcct, validateGCFinAcct));
 	}
 
 	/**
@@ -719,8 +668,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -742,10 +689,7 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

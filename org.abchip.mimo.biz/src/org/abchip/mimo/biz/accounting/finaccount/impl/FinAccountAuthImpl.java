@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountAuth;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -202,10 +199,7 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -225,10 +219,7 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 */
 	@Override
 	public void setAuthorizationDate(Date newAuthorizationDate) {
-		Date oldAuthorizationDate = authorizationDate;
 		authorizationDate = newAuthorizationDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__AUTHORIZATION_DATE, oldAuthorizationDate, authorizationDate));
 	}
 
 	/**
@@ -248,10 +239,7 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 */
 	@Override
 	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -271,10 +259,7 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 */
 	@Override
 	public void setFinAccountAuthId(String newFinAccountAuthId) {
-		String oldFinAccountAuthId = finAccountAuthId;
 		finAccountAuthId = newFinAccountAuthId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_AUTH_ID, oldFinAccountAuthId, finAccountAuthId));
 	}
 
 	/**
@@ -294,10 +279,7 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -317,10 +299,7 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -334,8 +313,6 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
 			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
 			if (finAccountId != oldFinAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 			}
 		}
 		return finAccountId;
@@ -357,10 +334,7 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
-		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 	}
 
 	/**

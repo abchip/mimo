@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,10 +135,7 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -155,8 +149,6 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 			InternalEObject oldContainerTypeId = (InternalEObject)containerTypeId;
 			containerTypeId = (ContainerType)eResolveProxy(oldContainerTypeId);
 			if (containerTypeId != oldContainerTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.CONTAINER__CONTAINER_TYPE_ID, oldContainerTypeId, containerTypeId));
 			}
 		}
 		return containerTypeId;
@@ -178,10 +170,7 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 */
 	@Override
 	public void setContainerTypeId(ContainerType newContainerTypeId) {
-		ContainerType oldContainerTypeId = containerTypeId;
 		containerTypeId = newContainerTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER__CONTAINER_TYPE_ID, oldContainerTypeId, containerTypeId));
 	}
 
 	/**
@@ -195,8 +184,6 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.CONTAINER__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -218,10 +205,7 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -277,10 +261,7 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 */
 	@Override
 	public void setContainerId(String newContainerId) {
-		String oldContainerId = containerId;
 		containerId = newContainerId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER__CONTAINER_ID, oldContainerId, containerId));
 	}
 
 	/**

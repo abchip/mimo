@@ -18,13 +18,10 @@ import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -608,10 +605,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setAllowancePercent(BigDecimal newAllowancePercent) {
-		BigDecimal oldAllowancePercent = allowancePercent;
 		allowancePercent = newAllowancePercent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT, oldAllowancePercent, allowancePercent));
 	}
 
 	/**
@@ -625,8 +619,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 			InternalEObject oldCompanyPartyId = (InternalEObject)companyPartyId;
 			companyPartyId = (Party)eResolveProxy(oldCompanyPartyId);
 			if (companyPartyId != oldCompanyPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID, oldCompanyPartyId, companyPartyId));
 			}
 		}
 		return companyPartyId;
@@ -648,10 +640,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setCompanyPartyId(Party newCompanyPartyId) {
-		Party oldCompanyPartyId = companyPartyId;
 		companyPartyId = newCompanyPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID, oldCompanyPartyId, companyPartyId));
 	}
 
 	/**
@@ -671,10 +660,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setConfigProps(String newConfigProps) {
-		String oldConfigProps = configProps;
 		configProps = newConfigProps;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS, oldConfigProps, configProps));
 	}
 
 	/**
@@ -694,10 +680,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setExcludeFeatureGroup(String newExcludeFeatureGroup) {
-		String oldExcludeFeatureGroup = excludeFeatureGroup;
 		excludeFeatureGroup = newExcludeFeatureGroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP, oldExcludeFeatureGroup, excludeFeatureGroup));
 	}
 
 	/**
@@ -711,8 +694,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 			InternalEObject oldExcludeGeoId = (InternalEObject)excludeGeoId;
 			excludeGeoId = (Geo)eResolveProxy(oldExcludeGeoId);
 			if (excludeGeoId != oldExcludeGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID, oldExcludeGeoId, excludeGeoId));
 			}
 		}
 		return excludeGeoId;
@@ -734,10 +715,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setExcludeGeoId(Geo newExcludeGeoId) {
-		Geo oldExcludeGeoId = excludeGeoId;
 		excludeGeoId = newExcludeGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID, oldExcludeGeoId, excludeGeoId));
 	}
 
 	/**
@@ -757,10 +735,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setIncludeFeatureGroup(String newIncludeFeatureGroup) {
-		String oldIncludeFeatureGroup = includeFeatureGroup;
 		includeFeatureGroup = newIncludeFeatureGroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP, oldIncludeFeatureGroup, includeFeatureGroup));
 	}
 
 	/**
@@ -774,8 +749,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 			InternalEObject oldIncludeGeoId = (InternalEObject)includeGeoId;
 			includeGeoId = (Geo)eResolveProxy(oldIncludeGeoId);
 			if (includeGeoId != oldIncludeGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, oldIncludeGeoId, includeGeoId));
 			}
 		}
 		return includeGeoId;
@@ -797,10 +770,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setIncludeGeoId(Geo newIncludeGeoId) {
-		Geo oldIncludeGeoId = includeGeoId;
 		includeGeoId = newIncludeGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, oldIncludeGeoId, includeGeoId));
 	}
 
 	/**
@@ -820,10 +790,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setIncludeNoChargeItems(boolean newIncludeNoChargeItems) {
-		boolean oldIncludeNoChargeItems = includeNoChargeItems;
 		includeNoChargeItems = newIncludeNoChargeItems;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS, oldIncludeNoChargeItems, includeNoChargeItems));
 	}
 
 	/**
@@ -843,10 +810,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMaxSize(BigDecimal newMaxSize) {
-		BigDecimal oldMaxSize = maxSize;
 		maxSize = newMaxSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE, oldMaxSize, maxSize));
 	}
 
 	/**
@@ -866,10 +830,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMaxTotal(BigDecimal newMaxTotal) {
-		BigDecimal oldMaxTotal = maxTotal;
 		maxTotal = newMaxTotal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL, oldMaxTotal, maxTotal));
 	}
 
 	/**
@@ -889,10 +850,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMaxWeight(BigDecimal newMaxWeight) {
-		BigDecimal oldMaxWeight = maxWeight;
 		maxWeight = newMaxWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT, oldMaxWeight, maxWeight));
 	}
 
 	/**
@@ -912,10 +870,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinSize(BigDecimal newMinSize) {
-		BigDecimal oldMinSize = minSize;
 		minSize = newMinSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE, oldMinSize, minSize));
 	}
 
 	/**
@@ -935,10 +890,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinTotal(BigDecimal newMinTotal) {
-		BigDecimal oldMinTotal = minTotal;
 		minTotal = newMinTotal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL, oldMinTotal, minTotal));
 	}
 
 	/**
@@ -958,10 +910,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinWeight(BigDecimal newMinWeight) {
-		BigDecimal oldMinWeight = minWeight;
 		minWeight = newMinWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT, oldMinWeight, minWeight));
 	}
 
 	/**
@@ -981,10 +930,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinimumPrice(BigDecimal newMinimumPrice) {
-		BigDecimal oldMinimumPrice = minimumPrice;
 		minimumPrice = newMinimumPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE, oldMinimumPrice, minimumPrice));
 	}
 
 	/**
@@ -1004,10 +950,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -1027,10 +970,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -1050,10 +990,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRequireCompanyAddr(boolean newRequireCompanyAddr) {
-		boolean oldRequireCompanyAddr = requireCompanyAddr;
 		requireCompanyAddr = newRequireCompanyAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR, oldRequireCompanyAddr, requireCompanyAddr));
 	}
 
 	/**
@@ -1073,10 +1010,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRequireUspsAddr(boolean newRequireUspsAddr) {
-		boolean oldRequireUspsAddr = requireUspsAddr;
 		requireUspsAddr = newRequireUspsAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR, oldRequireUspsAddr, requireUspsAddr));
 	}
 
 	/**
@@ -1096,10 +1030,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductStoreShipMethId(String newProductStoreShipMethId) {
-		String oldProductStoreShipMethId = productStoreShipMethId;
 		productStoreShipMethId = newProductStoreShipMethId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID, oldProductStoreShipMethId, productStoreShipMethId));
 	}
 
 	/**
@@ -1119,10 +1050,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setAllowCompanyAddr(boolean newAllowCompanyAddr) {
-		boolean oldAllowCompanyAddr = allowCompanyAddr;
 		allowCompanyAddr = newAllowCompanyAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR, oldAllowCompanyAddr, allowCompanyAddr));
 	}
 
 	/**
@@ -1142,10 +1070,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setAllowUspsAddr(boolean newAllowUspsAddr) {
-		boolean oldAllowUspsAddr = allowUspsAddr;
 		allowUspsAddr = newAllowUspsAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR, oldAllowUspsAddr, allowUspsAddr));
 	}
 
 	/**
@@ -1165,10 +1090,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -1188,10 +1110,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setSequenceNumber(long newSequenceNumber) {
-		long oldSequenceNumber = sequenceNumber;
 		sequenceNumber = newSequenceNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER, oldSequenceNumber, sequenceNumber));
 	}
 
 	/**
@@ -1211,10 +1130,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setServiceName(String newServiceName) {
-		String oldServiceName = serviceName;
 		serviceName = newServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME, oldServiceName, serviceName));
 	}
 
 	/**
@@ -1228,8 +1144,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 			InternalEObject oldShipmentCustomMethodId = (InternalEObject)shipmentCustomMethodId;
 			shipmentCustomMethodId = (CustomMethod)eResolveProxy(oldShipmentCustomMethodId);
 			if (shipmentCustomMethodId != oldShipmentCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID, oldShipmentCustomMethodId, shipmentCustomMethodId));
 			}
 		}
 		return shipmentCustomMethodId;
@@ -1251,10 +1165,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setShipmentCustomMethodId(CustomMethod newShipmentCustomMethodId) {
-		CustomMethod oldShipmentCustomMethodId = shipmentCustomMethodId;
 		shipmentCustomMethodId = newShipmentCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID, oldShipmentCustomMethodId, shipmentCustomMethodId));
 	}
 
 	/**
@@ -1268,8 +1179,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 			InternalEObject oldShipmentGatewayConfigId = (InternalEObject)shipmentGatewayConfigId;
 			shipmentGatewayConfigId = (ShipmentGatewayConfig)eResolveProxy(oldShipmentGatewayConfigId);
 			if (shipmentGatewayConfigId != oldShipmentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID, oldShipmentGatewayConfigId, shipmentGatewayConfigId));
 			}
 		}
 		return shipmentGatewayConfigId;
@@ -1291,10 +1200,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setShipmentGatewayConfigId(ShipmentGatewayConfig newShipmentGatewayConfigId) {
-		ShipmentGatewayConfig oldShipmentGatewayConfigId = shipmentGatewayConfigId;
 		shipmentGatewayConfigId = newShipmentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID, oldShipmentGatewayConfigId, shipmentGatewayConfigId));
 	}
 
 	/**
@@ -1308,8 +1214,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
 			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
 			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 			}
 		}
 		return shipmentMethodTypeId;
@@ -1331,10 +1235,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
-		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**

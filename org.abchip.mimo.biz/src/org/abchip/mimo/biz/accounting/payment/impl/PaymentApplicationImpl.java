@@ -17,12 +17,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -195,10 +192,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setAmountApplied(BigDecimal newAmountApplied) {
-		BigDecimal oldAmountApplied = amountApplied;
 		amountApplied = newAmountApplied;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__AMOUNT_APPLIED, oldAmountApplied, amountApplied));
 	}
 
 	/**
@@ -218,10 +212,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
-		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -241,10 +232,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setPaymentApplicationId(String newPaymentApplicationId) {
-		String oldPaymentApplicationId = paymentApplicationId;
 		paymentApplicationId = newPaymentApplicationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__PAYMENT_APPLICATION_ID, oldPaymentApplicationId, paymentApplicationId));
 	}
 
 	/**
@@ -258,8 +246,6 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 			InternalEObject oldTaxAuthGeoId = (InternalEObject)taxAuthGeoId;
 			taxAuthGeoId = (Geo)eResolveProxy(oldTaxAuthGeoId);
 			if (taxAuthGeoId != oldTaxAuthGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_APPLICATION__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 			}
 		}
 		return taxAuthGeoId;
@@ -281,10 +267,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
-		Geo oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -298,8 +281,6 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_APPLICATION__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -321,10 +302,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
-		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**
@@ -338,8 +316,6 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_APPLICATION__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -361,10 +337,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
-		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -378,8 +351,6 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
 			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
 			if (billingAccountId != oldBillingAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_APPLICATION__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 			}
 		}
 		return billingAccountId;
@@ -401,10 +372,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
-		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**
@@ -418,8 +386,6 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 			InternalEObject oldToPaymentId = (InternalEObject)toPaymentId;
 			toPaymentId = (Payment)eResolveProxy(oldToPaymentId);
 			if (toPaymentId != oldToPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_APPLICATION__TO_PAYMENT_ID, oldToPaymentId, toPaymentId));
 			}
 		}
 		return toPaymentId;
@@ -441,10 +407,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setToPaymentId(Payment newToPaymentId) {
-		Payment oldToPaymentId = toPaymentId;
 		toPaymentId = newToPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__TO_PAYMENT_ID, oldToPaymentId, toPaymentId));
 	}
 
 	/**
@@ -458,8 +421,6 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
 			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
 			if (overrideGlAccountId != oldOverrideGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_APPLICATION__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 			}
 		}
 		return overrideGlAccountId;
@@ -481,10 +442,7 @@ public class PaymentApplicationImpl extends BizEntityImpl implements PaymentAppl
 	 */
 	@Override
 	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
-		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_APPLICATION__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 	}
 
 	/**

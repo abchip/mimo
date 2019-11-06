@@ -12,11 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.EmailAddressVerification;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,10 +130,7 @@ public class EmailAddressVerificationImpl extends BizEntityImpl implements Email
 	 */
 	@Override
 	public void setEmailAddress(String newEmailAddress) {
-		String oldEmailAddress = emailAddress;
 		emailAddress = newEmailAddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.EMAIL_ADDRESS_VERIFICATION__EMAIL_ADDRESS, oldEmailAddress, emailAddress));
 	}
 
 	/**
@@ -157,10 +150,7 @@ public class EmailAddressVerificationImpl extends BizEntityImpl implements Email
 	 */
 	@Override
 	public void setExpireDate(Date newExpireDate) {
-		Date oldExpireDate = expireDate;
 		expireDate = newExpireDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.EMAIL_ADDRESS_VERIFICATION__EXPIRE_DATE, oldExpireDate, expireDate));
 	}
 
 	/**
@@ -180,10 +170,7 @@ public class EmailAddressVerificationImpl extends BizEntityImpl implements Email
 	 */
 	@Override
 	public void setVerifyHash(String newVerifyHash) {
-		String oldVerifyHash = verifyHash;
 		verifyHash = newVerifyHash;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.EMAIL_ADDRESS_VERIFICATION__VERIFY_HASH, oldVerifyHash, verifyHash));
 	}
 
 	/**

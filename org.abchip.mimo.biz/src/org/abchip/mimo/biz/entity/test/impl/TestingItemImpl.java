@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
 import org.abchip.mimo.biz.entity.test.TestingItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,10 +119,7 @@ public class TestingItemImpl extends BizEntityImpl implements TestingItem {
 	 */
 	@Override
 	public void setTestingHistory(String newTestingHistory) {
-		String oldTestingHistory = testingHistory;
 		testingHistory = newTestingHistory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_ITEM__TESTING_HISTORY, oldTestingHistory, testingHistory));
 	}
 
 	/**
@@ -139,8 +133,6 @@ public class TestingItemImpl extends BizEntityImpl implements TestingItem {
 			InternalEObject oldTestingId = (InternalEObject)testingId;
 			testingId = (Testing)eResolveProxy(oldTestingId);
 			if (testingId != oldTestingId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_ITEM__TESTING_ID, oldTestingId, testingId));
 			}
 		}
 		return testingId;
@@ -162,10 +154,7 @@ public class TestingItemImpl extends BizEntityImpl implements TestingItem {
 	 */
 	@Override
 	public void setTestingId(Testing newTestingId) {
-		Testing oldTestingId = testingId;
 		testingId = newTestingId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_ITEM__TESTING_ID, oldTestingId, testingId));
 	}
 
 	/**
@@ -185,10 +174,7 @@ public class TestingItemImpl extends BizEntityImpl implements TestingItem {
 	 */
 	@Override
 	public void setTestingSeqId(String newTestingSeqId) {
-		String oldTestingSeqId = testingSeqId;
 		testingSeqId = newTestingSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_ITEM__TESTING_SEQ_ID, oldTestingSeqId, testingSeqId));
 	}
 
 	/**

@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementPartyApplic;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,10 +109,7 @@ public class AgreementPartyApplicImpl extends BizEntityImpl implements Agreement
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
-		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PARTY_APPLIC__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -129,8 +123,6 @@ public class AgreementPartyApplicImpl extends BizEntityImpl implements Agreement
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PARTY_APPLIC__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -152,10 +144,7 @@ public class AgreementPartyApplicImpl extends BizEntityImpl implements Agreement
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PARTY_APPLIC__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -169,8 +158,6 @@ public class AgreementPartyApplicImpl extends BizEntityImpl implements Agreement
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PARTY_APPLIC__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -192,10 +179,7 @@ public class AgreementPartyApplicImpl extends BizEntityImpl implements Agreement
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
-		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PARTY_APPLIC__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**

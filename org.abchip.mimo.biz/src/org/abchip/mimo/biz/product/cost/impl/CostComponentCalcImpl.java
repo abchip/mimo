@@ -16,12 +16,9 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -220,8 +217,6 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 			InternalEObject oldCostCustomMethodId = (InternalEObject)costCustomMethodId;
 			costCustomMethodId = (CustomMethod)eResolveProxy(oldCostCustomMethodId);
 			if (costCustomMethodId != oldCostCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID, oldCostCustomMethodId, costCustomMethodId));
 			}
 		}
 		return costCustomMethodId;
@@ -243,10 +238,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setCostCustomMethodId(CustomMethod newCostCustomMethodId) {
-		CustomMethod oldCostCustomMethodId = costCustomMethodId;
 		costCustomMethodId = newCostCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID, oldCostCustomMethodId, costCustomMethodId));
 	}
 
 	/**
@@ -260,8 +252,6 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 			InternalEObject oldCostGlAccountTypeId = (InternalEObject)costGlAccountTypeId;
 			costGlAccountTypeId = (GlAccountType)eResolveProxy(oldCostGlAccountTypeId);
 			if (costGlAccountTypeId != oldCostGlAccountTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID, oldCostGlAccountTypeId, costGlAccountTypeId));
 			}
 		}
 		return costGlAccountTypeId;
@@ -283,10 +273,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setCostGlAccountTypeId(GlAccountType newCostGlAccountTypeId) {
-		GlAccountType oldCostGlAccountTypeId = costGlAccountTypeId;
 		costGlAccountTypeId = newCostGlAccountTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID, oldCostGlAccountTypeId, costGlAccountTypeId));
 	}
 
 	/**
@@ -300,8 +287,6 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -323,10 +308,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -346,10 +328,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -369,10 +348,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setFixedCost(BigDecimal newFixedCost) {
-		BigDecimal oldFixedCost = fixedCost;
 		fixedCost = newFixedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__FIXED_COST, oldFixedCost, fixedCost));
 	}
 
 	/**
@@ -386,8 +362,6 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 			InternalEObject oldOffsettingGlAccountTypeId = (InternalEObject)offsettingGlAccountTypeId;
 			offsettingGlAccountTypeId = (GlAccountType)eResolveProxy(oldOffsettingGlAccountTypeId);
 			if (offsettingGlAccountTypeId != oldOffsettingGlAccountTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID, oldOffsettingGlAccountTypeId, offsettingGlAccountTypeId));
 			}
 		}
 		return offsettingGlAccountTypeId;
@@ -409,10 +383,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setOffsettingGlAccountTypeId(GlAccountType newOffsettingGlAccountTypeId) {
-		GlAccountType oldOffsettingGlAccountTypeId = offsettingGlAccountTypeId;
 		offsettingGlAccountTypeId = newOffsettingGlAccountTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID, oldOffsettingGlAccountTypeId, offsettingGlAccountTypeId));
 	}
 
 	/**
@@ -432,10 +403,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setPerMilliSecond(long newPerMilliSecond) {
-		long oldPerMilliSecond = perMilliSecond;
 		perMilliSecond = newPerMilliSecond;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__PER_MILLI_SECOND, oldPerMilliSecond, perMilliSecond));
 	}
 
 	/**
@@ -455,10 +423,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setVariableCost(BigDecimal newVariableCost) {
-		BigDecimal oldVariableCost = variableCost;
 		variableCost = newVariableCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__VARIABLE_COST, oldVariableCost, variableCost));
 	}
 
 	/**
@@ -490,10 +455,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 */
 	@Override
 	public void setCostComponentCalcId(String newCostComponentCalcId) {
-		String oldCostComponentCalcId = costComponentCalcId;
 		costComponentCalcId = newCostComponentCalcId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID, oldCostComponentCalcId, costComponentCalcId));
 	}
 
 	/**

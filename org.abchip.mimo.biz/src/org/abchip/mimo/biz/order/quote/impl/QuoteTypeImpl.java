@@ -14,15 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,10 +160,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -186,10 +180,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -203,8 +194,6 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (QuoteType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -226,10 +215,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 */
 	@Override
 	public void setParentTypeId(QuoteType newParentTypeId) {
-		QuoteType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -249,10 +235,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 */
 	@Override
 	public void setQuoteTypeId(String newQuoteTypeId) {
-		String oldQuoteTypeId = quoteTypeId;
 		quoteTypeId = newQuoteTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
 	}
 
 	/**
@@ -263,7 +246,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	@Override
 	public List<String> getQuoteTypeAttrs() {
 		if (quoteTypeAttrs == null) {
-			quoteTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, QuotePackage.QUOTE_TYPE__QUOTE_TYPE_ATTRS);
+			quoteTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return quoteTypeAttrs;
 	}

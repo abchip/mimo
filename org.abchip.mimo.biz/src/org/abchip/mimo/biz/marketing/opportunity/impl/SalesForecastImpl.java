@@ -19,15 +19,12 @@ import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -339,10 +336,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setBestCaseAmount(BigDecimal newBestCaseAmount) {
-		BigDecimal oldBestCaseAmount = bestCaseAmount;
 		bestCaseAmount = newBestCaseAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__BEST_CASE_AMOUNT, oldBestCaseAmount, bestCaseAmount));
 	}
 
 	/**
@@ -362,10 +356,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setClosedAmount(BigDecimal newClosedAmount) {
-		BigDecimal oldClosedAmount = closedAmount;
 		closedAmount = newClosedAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__CLOSED_AMOUNT, oldClosedAmount, closedAmount));
 	}
 
 	/**
@@ -379,8 +370,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			InternalEObject oldCreatedByUserLoginId = (InternalEObject)createdByUserLoginId;
 			createdByUserLoginId = (UserLogin)eResolveProxy(oldCreatedByUserLoginId);
 			if (createdByUserLoginId != oldCreatedByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID, oldCreatedByUserLoginId, createdByUserLoginId));
 			}
 		}
 		return createdByUserLoginId;
@@ -402,10 +391,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setCreatedByUserLoginId(UserLogin newCreatedByUserLoginId) {
-		UserLogin oldCreatedByUserLoginId = createdByUserLoginId;
 		createdByUserLoginId = newCreatedByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID, oldCreatedByUserLoginId, createdByUserLoginId));
 	}
 
 	/**
@@ -419,8 +405,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -442,10 +426,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -459,8 +440,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			InternalEObject oldCustomTimePeriodId = (InternalEObject)customTimePeriodId;
 			customTimePeriodId = (CustomTimePeriod)eResolveProxy(oldCustomTimePeriodId);
 			if (customTimePeriodId != oldCustomTimePeriodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 			}
 		}
 		return customTimePeriodId;
@@ -482,10 +461,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setCustomTimePeriodId(CustomTimePeriod newCustomTimePeriodId) {
-		CustomTimePeriod oldCustomTimePeriodId = customTimePeriodId;
 		customTimePeriodId = newCustomTimePeriodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 	}
 
 	/**
@@ -505,10 +481,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setForecastAmount(BigDecimal newForecastAmount) {
-		BigDecimal oldForecastAmount = forecastAmount;
 		forecastAmount = newForecastAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__FORECAST_AMOUNT, oldForecastAmount, forecastAmount));
 	}
 
 	/**
@@ -522,8 +495,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			InternalEObject oldInternalPartyId = (InternalEObject)internalPartyId;
 			internalPartyId = (Party)eResolveProxy(oldInternalPartyId);
 			if (internalPartyId != oldInternalPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID, oldInternalPartyId, internalPartyId));
 			}
 		}
 		return internalPartyId;
@@ -545,10 +516,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setInternalPartyId(Party newInternalPartyId) {
-		Party oldInternalPartyId = internalPartyId;
 		internalPartyId = newInternalPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID, oldInternalPartyId, internalPartyId));
 	}
 
 	/**
@@ -562,8 +530,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			InternalEObject oldModifiedByUserLoginId = (InternalEObject)modifiedByUserLoginId;
 			modifiedByUserLoginId = (UserLogin)eResolveProxy(oldModifiedByUserLoginId);
 			if (modifiedByUserLoginId != oldModifiedByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID, oldModifiedByUserLoginId, modifiedByUserLoginId));
 			}
 		}
 		return modifiedByUserLoginId;
@@ -585,10 +551,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setModifiedByUserLoginId(UserLogin newModifiedByUserLoginId) {
-		UserLogin oldModifiedByUserLoginId = modifiedByUserLoginId;
 		modifiedByUserLoginId = newModifiedByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID, oldModifiedByUserLoginId, modifiedByUserLoginId));
 	}
 
 	/**
@@ -602,8 +565,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -625,10 +586,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
-		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -642,8 +600,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			InternalEObject oldParentSalesForecastId = (InternalEObject)parentSalesForecastId;
 			parentSalesForecastId = (SalesForecast)eResolveProxy(oldParentSalesForecastId);
 			if (parentSalesForecastId != oldParentSalesForecastId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID, oldParentSalesForecastId, parentSalesForecastId));
 			}
 		}
 		return parentSalesForecastId;
@@ -665,10 +621,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setParentSalesForecastId(SalesForecast newParentSalesForecastId) {
-		SalesForecast oldParentSalesForecastId = parentSalesForecastId;
 		parentSalesForecastId = newParentSalesForecastId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID, oldParentSalesForecastId, parentSalesForecastId));
 	}
 
 	/**
@@ -688,10 +641,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setPercentOfQuotaClosed(BigDecimal newPercentOfQuotaClosed) {
-		BigDecimal oldPercentOfQuotaClosed = percentOfQuotaClosed;
 		percentOfQuotaClosed = newPercentOfQuotaClosed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_CLOSED, oldPercentOfQuotaClosed, percentOfQuotaClosed));
 	}
 
 	/**
@@ -711,10 +661,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setPercentOfQuotaForecast(BigDecimal newPercentOfQuotaForecast) {
-		BigDecimal oldPercentOfQuotaForecast = percentOfQuotaForecast;
 		percentOfQuotaForecast = newPercentOfQuotaForecast;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_FORECAST, oldPercentOfQuotaForecast, percentOfQuotaForecast));
 	}
 
 	/**
@@ -734,10 +681,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setPipelineAmount(BigDecimal newPipelineAmount) {
-		BigDecimal oldPipelineAmount = pipelineAmount;
 		pipelineAmount = newPipelineAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__PIPELINE_AMOUNT, oldPipelineAmount, pipelineAmount));
 	}
 
 	/**
@@ -757,10 +701,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setQuotaAmount(BigDecimal newQuotaAmount) {
-		BigDecimal oldQuotaAmount = quotaAmount;
 		quotaAmount = newQuotaAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__QUOTA_AMOUNT, oldQuotaAmount, quotaAmount));
 	}
 
 	/**
@@ -780,10 +721,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@Override
 	public void setSalesForecastId(String newSalesForecastId) {
-		String oldSalesForecastId = salesForecastId;
 		salesForecastId = newSalesForecastId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__SALES_FORECAST_ID, oldSalesForecastId, salesForecastId));
 	}
 
 	/**
@@ -794,7 +732,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	@Override
 	public List<String> getSalesForecastDetails() {
 		if (salesForecastDetails == null) {
-			salesForecastDetails = new EDataTypeUniqueEList<String>(String.class, this, OpportunityPackage.SALES_FORECAST__SALES_FORECAST_DETAILS);
+			salesForecastDetails = new BasicInternalEList<String>(String.class);
 		}
 		return salesForecastDetails;
 	}

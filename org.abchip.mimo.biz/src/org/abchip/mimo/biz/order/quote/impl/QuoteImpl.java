@@ -20,15 +20,12 @@ import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -325,8 +322,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -348,10 +343,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -371,10 +363,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -394,10 +383,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setIssueDate(Date newIssueDate) {
-		Date oldIssueDate = issueDate;
 		issueDate = newIssueDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__ISSUE_DATE, oldIssueDate, issueDate));
 	}
 
 	/**
@@ -411,8 +397,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -434,10 +418,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -451,8 +432,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -474,10 +453,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -497,10 +473,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**
@@ -520,10 +493,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setQuoteName(String newQuoteName) {
-		String oldQuoteName = quoteName;
 		quoteName = newQuoteName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__QUOTE_NAME, oldQuoteName, quoteName));
 	}
 
 	/**
@@ -537,8 +507,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			InternalEObject oldQuoteTypeId = (InternalEObject)quoteTypeId;
 			quoteTypeId = (QuoteType)eResolveProxy(oldQuoteTypeId);
 			if (quoteTypeId != oldQuoteTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
 			}
 		}
 		return quoteTypeId;
@@ -560,10 +528,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setQuoteTypeId(QuoteType newQuoteTypeId) {
-		QuoteType oldQuoteTypeId = quoteTypeId;
 		quoteTypeId = newQuoteTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
 	}
 
 	/**
@@ -577,8 +542,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			InternalEObject oldSalesChannelEnumId = (InternalEObject)salesChannelEnumId;
 			salesChannelEnumId = (Enumeration)eResolveProxy(oldSalesChannelEnumId);
 			if (salesChannelEnumId != oldSalesChannelEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
 			}
 		}
 		return salesChannelEnumId;
@@ -600,10 +563,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setSalesChannelEnumId(Enumeration newSalesChannelEnumId) {
-		Enumeration oldSalesChannelEnumId = salesChannelEnumId;
 		salesChannelEnumId = newSalesChannelEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
 	}
 
 	/**
@@ -617,8 +577,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -640,10 +598,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -663,10 +618,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setValidFromDate(Date newValidFromDate) {
-		Date oldValidFromDate = validFromDate;
 		validFromDate = newValidFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__VALID_FROM_DATE, oldValidFromDate, validFromDate));
 	}
 
 	/**
@@ -686,10 +638,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@Override
 	public void setValidThruDate(Date newValidThruDate) {
-		Date oldValidThruDate = validThruDate;
 		validThruDate = newValidThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__VALID_THRU_DATE, oldValidThruDate, validThruDate));
 	}
 
 	/**
@@ -700,7 +649,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	@Override
 	public List<String> getQuoteAttributes() {
 		if (quoteAttributes == null) {
-			quoteAttributes = new EDataTypeUniqueEList<String>(String.class, this, QuotePackage.QUOTE__QUOTE_ATTRIBUTES);
+			quoteAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return quoteAttributes;
 	}
@@ -713,7 +662,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	@Override
 	public List<String> getQuoteCoefficients() {
 		if (quoteCoefficients == null) {
-			quoteCoefficients = new EDataTypeUniqueEList<String>(String.class, this, QuotePackage.QUOTE__QUOTE_COEFFICIENTS);
+			quoteCoefficients = new BasicInternalEList<String>(String.class);
 		}
 		return quoteCoefficients;
 	}
@@ -726,7 +675,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	@Override
 	public List<String> getQuoteItems() {
 		if (quoteItems == null) {
-			quoteItems = new EDataTypeUniqueEList<String>(String.class, this, QuotePackage.QUOTE__QUOTE_ITEMS);
+			quoteItems = new BasicInternalEList<String>(String.class);
 		}
 		return quoteItems;
 	}
@@ -739,7 +688,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	@Override
 	public List<String> getQuoteNotes() {
 		if (quoteNotes == null) {
-			quoteNotes = new EDataTypeUniqueEList<String>(String.class, this, QuotePackage.QUOTE__QUOTE_NOTES);
+			quoteNotes = new BasicInternalEList<String>(String.class);
 		}
 		return quoteNotes;
 	}
@@ -752,7 +701,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	@Override
 	public List<String> getQuoteWorkEfforts() {
 		if (quoteWorkEfforts == null) {
-			quoteWorkEfforts = new EDataTypeUniqueEList<String>(String.class, this, QuotePackage.QUOTE__QUOTE_WORK_EFFORTS);
+			quoteWorkEfforts = new BasicInternalEList<String>(String.class);
 		}
 		return quoteWorkEfforts;
 	}

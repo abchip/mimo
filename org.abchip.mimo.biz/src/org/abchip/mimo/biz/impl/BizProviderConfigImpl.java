@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.BizPackage;
 import org.abchip.mimo.biz.BizProviderConfig;
 import org.abchip.mimo.biz.BizProviderUser;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,10 +135,7 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 */
 	@Override
 	public void setUrl(String newUrl) {
-		String oldUrl = url;
 		url = newUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__URL, oldUrl, url));
 	}
 
 	/**
@@ -162,10 +156,6 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	public NotificationChain basicSetPublicUser(BizProviderUser newPublicUser, NotificationChain msgs) {
 		BizProviderUser oldPublicUser = publicUser;
 		publicUser = newPublicUser;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, oldPublicUser, newPublicUser);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
 		return msgs;
 	}
 
@@ -185,8 +175,6 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 			msgs = basicSetPublicUser(newPublicUser, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, newPublicUser, newPublicUser));
 	}
 
 	/**
@@ -207,10 +195,6 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	public NotificationChain basicSetSystemUser(BizProviderUser newSystemUser, NotificationChain msgs) {
 		BizProviderUser oldSystemUser = systemUser;
 		systemUser = newSystemUser;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, oldSystemUser, newSystemUser);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
 		return msgs;
 	}
 
@@ -230,8 +214,6 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 			msgs = basicSetSystemUser(newSystemUser, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, newSystemUser, newSystemUser));
 	}
 
 	/**
@@ -267,10 +249,7 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 */
 	@Override
 	public void setLoginType(BizLoginType newLoginType) {
-		BizLoginType oldLoginType = loginType;
 		loginType = newLoginType == null ? LOGIN_TYPE_EDEFAULT : newLoginType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__LOGIN_TYPE, oldLoginType, loginType));
 	}
 
 	/**

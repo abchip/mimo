@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.abchip.mimo.biz.product.cost.ProductCostComponentCalc;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,10 +169,7 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.PRODUCT_COST_COMPONENT_CALC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -189,8 +183,6 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -212,10 +204,7 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.PRODUCT_COST_COMPONENT_CALC__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -235,10 +224,7 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.PRODUCT_COST_COMPONENT_CALC__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -258,10 +244,7 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.PRODUCT_COST_COMPONENT_CALC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -275,8 +258,6 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 			InternalEObject oldCostComponentTypeId = (InternalEObject)costComponentTypeId;
 			costComponentTypeId = (CostComponentType)eResolveProxy(oldCostComponentTypeId);
 			if (costComponentTypeId != oldCostComponentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 			}
 		}
 		return costComponentTypeId;
@@ -298,10 +279,7 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setCostComponentTypeId(CostComponentType newCostComponentTypeId) {
-		CostComponentType oldCostComponentTypeId = costComponentTypeId;
 		costComponentTypeId = newCostComponentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 	}
 
 	/**
@@ -315,8 +293,6 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 			InternalEObject oldCostComponentCalcId = (InternalEObject)costComponentCalcId;
 			costComponentCalcId = (CostComponentCalc)eResolveProxy(oldCostComponentCalcId);
 			if (costComponentCalcId != oldCostComponentCalcId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID, oldCostComponentCalcId, costComponentCalcId));
 			}
 		}
 		return costComponentCalcId;
@@ -338,10 +314,7 @@ public class ProductCostComponentCalcImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setCostComponentCalcId(CostComponentCalc newCostComponentCalcId) {
-		CostComponentCalc oldCostComponentCalcId = costComponentCalcId;
 		costComponentCalcId = newCostComponentCalcId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.PRODUCT_COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID, oldCostComponentCalcId, costComponentCalcId));
 	}
 
 	/**

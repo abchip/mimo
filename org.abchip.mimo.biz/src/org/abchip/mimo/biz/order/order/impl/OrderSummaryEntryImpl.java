@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderSummaryEntry;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -184,10 +181,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setEntryDate(Date newEntryDate) {
-		Date oldEntryDate = entryDate;
 		entryDate = newEntryDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE, oldEntryDate, entryDate));
 	}
 
 	/**
@@ -201,8 +195,6 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -224,10 +216,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -247,10 +236,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setGrossSales(BigDecimal newGrossSales) {
-		BigDecimal oldGrossSales = grossSales;
 		grossSales = newGrossSales;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES, oldGrossSales, grossSales));
 	}
 
 	/**
@@ -270,10 +256,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setProductCost(BigDecimal newProductCost) {
-		BigDecimal oldProductCost = productCost;
 		productCost = newProductCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST, oldProductCost, productCost));
 	}
 
 	/**
@@ -287,8 +270,6 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -310,10 +291,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -333,10 +311,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setTotalQuantity(BigDecimal newTotalQuantity) {
-		BigDecimal oldTotalQuantity = totalQuantity;
 		totalQuantity = newTotalQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY, oldTotalQuantity, totalQuantity));
 	}
 
 	/**

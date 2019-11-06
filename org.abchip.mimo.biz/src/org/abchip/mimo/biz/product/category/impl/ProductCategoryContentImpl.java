@@ -17,12 +17,9 @@ import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryContent;
 import org.abchip.mimo.biz.product.category.ProductCategoryContentType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -231,8 +228,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -254,10 +249,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -277,10 +269,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -300,10 +289,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setPurchaseFromDate(Date newPurchaseFromDate) {
-		Date oldPurchaseFromDate = purchaseFromDate;
 		purchaseFromDate = newPurchaseFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PURCHASE_FROM_DATE, oldPurchaseFromDate, purchaseFromDate));
 	}
 
 	/**
@@ -323,10 +309,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setPurchaseThruDate(Date newPurchaseThruDate) {
-		Date oldPurchaseThruDate = purchaseThruDate;
 		purchaseThruDate = newPurchaseThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PURCHASE_THRU_DATE, oldPurchaseThruDate, purchaseThruDate));
 	}
 
 	/**
@@ -346,10 +329,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -369,10 +349,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setUseCountLimit(long newUseCountLimit) {
-		long oldUseCountLimit = useCountLimit;
 		useCountLimit = newUseCountLimit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_COUNT_LIMIT, oldUseCountLimit, useCountLimit));
 	}
 
 	/**
@@ -392,10 +369,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setUseDaysLimit(BigDecimal newUseDaysLimit) {
-		BigDecimal oldUseDaysLimit = useDaysLimit;
 		useDaysLimit = newUseDaysLimit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT, oldUseDaysLimit, useDaysLimit));
 	}
 
 	/**
@@ -409,8 +383,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -432,10 +404,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -449,8 +418,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 			InternalEObject oldProdCatContentTypeId = (InternalEObject)prodCatContentTypeId;
 			prodCatContentTypeId = (ProductCategoryContentType)eResolveProxy(oldProdCatContentTypeId);
 			if (prodCatContentTypeId != oldProdCatContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID, oldProdCatContentTypeId, prodCatContentTypeId));
 			}
 		}
 		return prodCatContentTypeId;
@@ -472,10 +439,7 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 */
 	@Override
 	public void setProdCatContentTypeId(ProductCategoryContentType newProdCatContentTypeId) {
-		ProductCategoryContentType oldProdCatContentTypeId = prodCatContentTypeId;
 		prodCatContentTypeId = newProdCatContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID, oldProdCatContentTypeId, prodCatContentTypeId));
 	}
 
 	/**

@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.entity.test.Testing;
 import org.abchip.mimo.biz.entity.test.TestingNode;
 import org.abchip.mimo.biz.entity.test.TestingNodeMember;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -174,10 +171,7 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 */
 	@Override
 	public void setExtendFromDate(Date newExtendFromDate) {
-		Date oldExtendFromDate = extendFromDate;
 		extendFromDate = newExtendFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE_MEMBER__EXTEND_FROM_DATE, oldExtendFromDate, extendFromDate));
 	}
 
 	/**
@@ -197,10 +191,7 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 */
 	@Override
 	public void setExtendThruDate(Date newExtendThruDate) {
-		Date oldExtendThruDate = extendThruDate;
 		extendThruDate = newExtendThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE_MEMBER__EXTEND_THRU_DATE, oldExtendThruDate, extendThruDate));
 	}
 
 	/**
@@ -220,10 +211,7 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE_MEMBER__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -237,8 +225,6 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 			InternalEObject oldTestingId = (InternalEObject)testingId;
 			testingId = (Testing)eResolveProxy(oldTestingId);
 			if (testingId != oldTestingId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_NODE_MEMBER__TESTING_ID, oldTestingId, testingId));
 			}
 		}
 		return testingId;
@@ -260,10 +246,7 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 */
 	@Override
 	public void setTestingId(Testing newTestingId) {
-		Testing oldTestingId = testingId;
 		testingId = newTestingId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE_MEMBER__TESTING_ID, oldTestingId, testingId));
 	}
 
 	/**
@@ -277,8 +260,6 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 			InternalEObject oldTestingNodeId = (InternalEObject)testingNodeId;
 			testingNodeId = (TestingNode)eResolveProxy(oldTestingNodeId);
 			if (testingNodeId != oldTestingNodeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID, oldTestingNodeId, testingNodeId));
 			}
 		}
 		return testingNodeId;
@@ -300,10 +281,7 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 */
 	@Override
 	public void setTestingNodeId(TestingNode newTestingNodeId) {
-		TestingNode oldTestingNodeId = testingNodeId;
 		testingNodeId = newTestingNodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE_MEMBER__TESTING_NODE_ID, oldTestingNodeId, testingNodeId));
 	}
 
 	/**
@@ -323,10 +301,7 @@ public class TestingNodeMemberImpl extends BizEntityImpl implements TestingNodeM
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE_MEMBER__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

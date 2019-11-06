@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemTypeAttr;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class BudgetItemTypeAttrImpl extends BizEntityImpl implements BudgetItemT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class BudgetItemTypeAttrImpl extends BizEntityImpl implements BudgetItemT
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class BudgetItemTypeAttrImpl extends BizEntityImpl implements BudgetItemT
 			InternalEObject oldBudgetItemTypeId = (InternalEObject)budgetItemTypeId;
 			budgetItemTypeId = (BudgetItemType)eResolveProxy(oldBudgetItemTypeId);
 			if (budgetItemTypeId != oldBudgetItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM_TYPE_ATTR__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 			}
 		}
 		return budgetItemTypeId;
@@ -183,10 +172,7 @@ public class BudgetItemTypeAttrImpl extends BizEntityImpl implements BudgetItemT
 	 */
 	@Override
 	public void setBudgetItemTypeId(BudgetItemType newBudgetItemTypeId) {
-		BudgetItemType oldBudgetItemTypeId = budgetItemTypeId;
 		budgetItemTypeId = newBudgetItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE_ATTR__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 	}
 
 	/**

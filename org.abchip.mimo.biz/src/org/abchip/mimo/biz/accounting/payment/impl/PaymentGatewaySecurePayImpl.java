@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -177,10 +174,7 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setMerchantId(String newMerchantId) {
-		String oldMerchantId = merchantId;
 		merchantId = newMerchantId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SECURE_PAY__MERCHANT_ID, oldMerchantId, merchantId));
 	}
 
 	/**
@@ -194,8 +188,6 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_SECURE_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -217,10 +209,7 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
-		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SECURE_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -240,10 +229,7 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setEnableAmountRound(boolean newEnableAmountRound) {
-		boolean oldEnableAmountRound = enableAmountRound;
 		enableAmountRound = newEnableAmountRound;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SECURE_PAY__ENABLE_AMOUNT_ROUND, oldEnableAmountRound, enableAmountRound));
 	}
 
 	/**
@@ -263,10 +249,7 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setProcessTimeout(long newProcessTimeout) {
-		long oldProcessTimeout = processTimeout;
 		processTimeout = newProcessTimeout;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SECURE_PAY__PROCESS_TIMEOUT, oldProcessTimeout, processTimeout));
 	}
 
 	/**
@@ -286,10 +269,7 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setPwd(String newPwd) {
-		String oldPwd = pwd;
 		pwd = newPwd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SECURE_PAY__PWD, oldPwd, pwd));
 	}
 
 	/**
@@ -309,10 +289,7 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setServerURL(String newServerURL) {
-		String oldServerURL = serverURL;
 		serverURL = newServerURL;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_SECURE_PAY__SERVER_URL, oldServerURL, serverURL));
 	}
 
 	/**

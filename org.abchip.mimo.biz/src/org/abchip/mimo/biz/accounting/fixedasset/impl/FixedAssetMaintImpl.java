@@ -19,12 +19,9 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -201,8 +198,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			InternalEObject oldIntervalMeterTypeId = (InternalEObject)intervalMeterTypeId;
 			intervalMeterTypeId = (ProductMeterType)eResolveProxy(oldIntervalMeterTypeId);
 			if (intervalMeterTypeId != oldIntervalMeterTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
 			}
 		}
 		return intervalMeterTypeId;
@@ -224,10 +219,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setIntervalMeterTypeId(ProductMeterType newIntervalMeterTypeId) {
-		ProductMeterType oldIntervalMeterTypeId = intervalMeterTypeId;
 		intervalMeterTypeId = newIntervalMeterTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
 	}
 
 	/**
@@ -247,10 +239,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setIntervalQuantity(BigDecimal newIntervalQuantity) {
-		BigDecimal oldIntervalQuantity = intervalQuantity;
 		intervalQuantity = newIntervalQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_QUANTITY, oldIntervalQuantity, intervalQuantity));
 	}
 
 	/**
@@ -264,8 +253,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			InternalEObject oldIntervalUomId = (InternalEObject)intervalUomId;
 			intervalUomId = (Uom)eResolveProxy(oldIntervalUomId);
 			if (intervalUomId != oldIntervalUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
 			}
 		}
 		return intervalUomId;
@@ -287,10 +274,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setIntervalUomId(Uom newIntervalUomId) {
-		Uom oldIntervalUomId = intervalUomId;
 		intervalUomId = newIntervalUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
 	}
 
 	/**
@@ -310,10 +294,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setMaintHistSeqId(String newMaintHistSeqId) {
-		String oldMaintHistSeqId = maintHistSeqId;
 		maintHistSeqId = newMaintHistSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID, oldMaintHistSeqId, maintHistSeqId));
 	}
 
 	/**
@@ -333,10 +314,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setProductMaintSeqId(String newProductMaintSeqId) {
-		String oldProductMaintSeqId = productMaintSeqId;
 		productMaintSeqId = newProductMaintSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID, oldProductMaintSeqId, productMaintSeqId));
 	}
 
 	/**
@@ -350,8 +328,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			InternalEObject oldProductMaintTypeId = (InternalEObject)productMaintTypeId;
 			productMaintTypeId = (ProductMaintType)eResolveProxy(oldProductMaintTypeId);
 			if (productMaintTypeId != oldProductMaintTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
 			}
 		}
 		return productMaintTypeId;
@@ -373,10 +349,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setProductMaintTypeId(ProductMaintType newProductMaintTypeId) {
-		ProductMaintType oldProductMaintTypeId = productMaintTypeId;
 		productMaintTypeId = newProductMaintTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
 	}
 
 	/**
@@ -390,8 +363,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			InternalEObject oldPurchaseOrderId = (InternalEObject)purchaseOrderId;
 			purchaseOrderId = (OrderHeader)eResolveProxy(oldPurchaseOrderId);
 			if (purchaseOrderId != oldPurchaseOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID, oldPurchaseOrderId, purchaseOrderId));
 			}
 		}
 		return purchaseOrderId;
@@ -413,10 +384,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setPurchaseOrderId(OrderHeader newPurchaseOrderId) {
-		OrderHeader oldPurchaseOrderId = purchaseOrderId;
 		purchaseOrderId = newPurchaseOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID, oldPurchaseOrderId, purchaseOrderId));
 	}
 
 	/**
@@ -430,8 +398,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			InternalEObject oldScheduleWorkEffortId = (InternalEObject)scheduleWorkEffortId;
 			scheduleWorkEffortId = (WorkEffort)eResolveProxy(oldScheduleWorkEffortId);
 			if (scheduleWorkEffortId != oldScheduleWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID, oldScheduleWorkEffortId, scheduleWorkEffortId));
 			}
 		}
 		return scheduleWorkEffortId;
@@ -453,10 +419,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setScheduleWorkEffortId(WorkEffort newScheduleWorkEffortId) {
-		WorkEffort oldScheduleWorkEffortId = scheduleWorkEffortId;
 		scheduleWorkEffortId = newScheduleWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID, oldScheduleWorkEffortId, scheduleWorkEffortId));
 	}
 
 	/**
@@ -470,8 +433,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -493,10 +454,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -510,8 +468,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -533,10 +489,7 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

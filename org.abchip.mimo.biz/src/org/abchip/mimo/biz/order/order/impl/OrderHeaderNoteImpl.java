@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderHeaderNote;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,8 +96,6 @@ public class OrderHeaderNoteImpl extends BizEntityNoteImpl implements OrderHeade
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER_NOTE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -122,10 +117,7 @@ public class OrderHeaderNoteImpl extends BizEntityNoteImpl implements OrderHeade
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER_NOTE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -145,10 +137,7 @@ public class OrderHeaderNoteImpl extends BizEntityNoteImpl implements OrderHeade
 	 */
 	@Override
 	public void setInternalNote(boolean newInternalNote) {
-		boolean oldInternalNote = internalNote;
 		internalNote = newInternalNote;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER_NOTE__INTERNAL_NOTE, oldInternalNote, internalNote));
 	}
 
 	/**

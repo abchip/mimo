@@ -12,10 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,10 +110,7 @@ public class ProductPricePurposeImpl extends BizEntityImpl implements ProductPri
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_PURPOSE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -148,10 +142,7 @@ public class ProductPricePurposeImpl extends BizEntityImpl implements ProductPri
 	 */
 	@Override
 	public void setProductPricePurposeId(String newProductPricePurposeId) {
-		String oldProductPricePurposeId = productPricePurposeId;
 		productPricePurposeId = newProductPricePurposeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_PURPOSE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 	}
 
 	/**

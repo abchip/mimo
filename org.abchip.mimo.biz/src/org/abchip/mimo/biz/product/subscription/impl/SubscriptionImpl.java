@@ -25,14 +25,11 @@ import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -675,10 +672,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setAvailableTime(long newAvailableTime) {
-		long oldAvailableTime = availableTime;
 		availableTime = newAvailableTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME, oldAvailableTime, availableTime));
 	}
 
 	/**
@@ -692,8 +686,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldAvailableTimeUomId = (InternalEObject)availableTimeUomId;
 			availableTimeUomId = (Uom)eResolveProxy(oldAvailableTimeUomId);
 			if (availableTimeUomId != oldAvailableTimeUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
 			}
 		}
 		return availableTimeUomId;
@@ -715,10 +707,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setAvailableTimeUomId(Uom newAvailableTimeUomId) {
-		Uom oldAvailableTimeUomId = availableTimeUomId;
 		availableTimeUomId = newAvailableTimeUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
 	}
 
 	/**
@@ -738,10 +727,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setCanclAutmExtTime(long newCanclAutmExtTime) {
-		long oldCanclAutmExtTime = canclAutmExtTime;
 		canclAutmExtTime = newCanclAutmExtTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME, oldCanclAutmExtTime, canclAutmExtTime));
 	}
 
 	/**
@@ -755,8 +741,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldCanclAutmExtTimeUomId = (InternalEObject)canclAutmExtTimeUomId;
 			canclAutmExtTimeUomId = (Uom)eResolveProxy(oldCanclAutmExtTimeUomId);
 			if (canclAutmExtTimeUomId != oldCanclAutmExtTimeUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
 			}
 		}
 		return canclAutmExtTimeUomId;
@@ -778,10 +762,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setCanclAutmExtTimeUomId(Uom newCanclAutmExtTimeUomId) {
-		Uom oldCanclAutmExtTimeUomId = canclAutmExtTimeUomId;
 		canclAutmExtTimeUomId = newCanclAutmExtTimeUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
 	}
 
 	/**
@@ -801,10 +782,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -818,8 +796,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -841,10 +817,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -864,10 +837,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -887,10 +857,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setExpirationCompletedDate(Date newExpirationCompletedDate) {
-		Date oldExpirationCompletedDate = expirationCompletedDate;
 		expirationCompletedDate = newExpirationCompletedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__EXPIRATION_COMPLETED_DATE, oldExpirationCompletedDate, expirationCompletedDate));
 	}
 
 	/**
@@ -910,10 +877,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setExternalSubscriptionId(String newExternalSubscriptionId) {
-		String oldExternalSubscriptionId = externalSubscriptionId;
 		externalSubscriptionId = newExternalSubscriptionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__EXTERNAL_SUBSCRIPTION_ID, oldExternalSubscriptionId, externalSubscriptionId));
 	}
 
 	/**
@@ -933,10 +897,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -956,10 +917,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setGracePeriodOnExpiry(long newGracePeriodOnExpiry) {
-		long oldGracePeriodOnExpiry = gracePeriodOnExpiry;
 		gracePeriodOnExpiry = newGracePeriodOnExpiry;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY, oldGracePeriodOnExpiry, gracePeriodOnExpiry));
 	}
 
 	/**
@@ -973,8 +931,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldGracePeriodOnExpiryUomId = (InternalEObject)gracePeriodOnExpiryUomId;
 			gracePeriodOnExpiryUomId = (Uom)eResolveProxy(oldGracePeriodOnExpiryUomId);
 			if (gracePeriodOnExpiryUomId != oldGracePeriodOnExpiryUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
 			}
 		}
 		return gracePeriodOnExpiryUomId;
@@ -996,10 +952,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setGracePeriodOnExpiryUomId(Uom newGracePeriodOnExpiryUomId) {
-		Uom oldGracePeriodOnExpiryUomId = gracePeriodOnExpiryUomId;
 		gracePeriodOnExpiryUomId = newGracePeriodOnExpiryUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
 	}
 
 	/**
@@ -1019,10 +972,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setMaxLifeTime(long newMaxLifeTime) {
-		long oldMaxLifeTime = maxLifeTime;
 		maxLifeTime = newMaxLifeTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME, oldMaxLifeTime, maxLifeTime));
 	}
 
 	/**
@@ -1036,8 +986,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldMaxLifeTimeUomId = (InternalEObject)maxLifeTimeUomId;
 			maxLifeTimeUomId = (Uom)eResolveProxy(oldMaxLifeTimeUomId);
 			if (maxLifeTimeUomId != oldMaxLifeTimeUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
 			}
 		}
 		return maxLifeTimeUomId;
@@ -1059,10 +1007,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setMaxLifeTimeUomId(Uom newMaxLifeTimeUomId) {
-		Uom oldMaxLifeTimeUomId = maxLifeTimeUomId;
 		maxLifeTimeUomId = newMaxLifeTimeUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
 	}
 
 	/**
@@ -1076,8 +1021,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldNeedTypeId = (InternalEObject)needTypeId;
 			needTypeId = (NeedType)eResolveProxy(oldNeedTypeId);
 			if (needTypeId != oldNeedTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
 			}
 		}
 		return needTypeId;
@@ -1099,10 +1042,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setNeedTypeId(NeedType newNeedTypeId) {
-		NeedType oldNeedTypeId = needTypeId;
 		needTypeId = newNeedTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
 	}
 
 	/**
@@ -1116,8 +1056,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -1139,10 +1077,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -1162,10 +1097,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -1179,8 +1111,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldOriginatedFromPartyId = (InternalEObject)originatedFromPartyId;
 			originatedFromPartyId = (Party)eResolveProxy(oldOriginatedFromPartyId);
 			if (originatedFromPartyId != oldOriginatedFromPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID, oldOriginatedFromPartyId, originatedFromPartyId));
 			}
 		}
 		return originatedFromPartyId;
@@ -1202,10 +1132,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setOriginatedFromPartyId(Party newOriginatedFromPartyId) {
-		Party oldOriginatedFromPartyId = originatedFromPartyId;
 		originatedFromPartyId = newOriginatedFromPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID, oldOriginatedFromPartyId, originatedFromPartyId));
 	}
 
 	/**
@@ -1219,8 +1146,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldOriginatedFromRoleTypeId = (InternalEObject)originatedFromRoleTypeId;
 			originatedFromRoleTypeId = (RoleType)eResolveProxy(oldOriginatedFromRoleTypeId);
 			if (originatedFromRoleTypeId != oldOriginatedFromRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID, oldOriginatedFromRoleTypeId, originatedFromRoleTypeId));
 			}
 		}
 		return originatedFromRoleTypeId;
@@ -1242,10 +1167,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setOriginatedFromRoleTypeId(RoleType newOriginatedFromRoleTypeId) {
-		RoleType oldOriginatedFromRoleTypeId = originatedFromRoleTypeId;
 		originatedFromRoleTypeId = newOriginatedFromRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID, oldOriginatedFromRoleTypeId, originatedFromRoleTypeId));
 	}
 
 	/**
@@ -1259,8 +1181,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -1282,10 +1202,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -1305,10 +1222,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setPartyNeedId(String newPartyNeedId) {
-		String oldPartyNeedId = partyNeedId;
 		partyNeedId = newPartyNeedId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PARTY_NEED_ID, oldPartyNeedId, partyNeedId));
 	}
 
 	/**
@@ -1328,10 +1242,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setPurchaseFromDate(Date newPurchaseFromDate) {
-		Date oldPurchaseFromDate = purchaseFromDate;
 		purchaseFromDate = newPurchaseFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PURCHASE_FROM_DATE, oldPurchaseFromDate, purchaseFromDate));
 	}
 
 	/**
@@ -1351,10 +1262,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setPurchaseThruDate(Date newPurchaseThruDate) {
-		Date oldPurchaseThruDate = purchaseThruDate;
 		purchaseThruDate = newPurchaseThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PURCHASE_THRU_DATE, oldPurchaseThruDate, purchaseThruDate));
 	}
 
 	/**
@@ -1368,8 +1276,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -1391,10 +1297,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -1414,10 +1317,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -1437,10 +1337,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setUseCountLimit(long newUseCountLimit) {
-		long oldUseCountLimit = useCountLimit;
 		useCountLimit = newUseCountLimit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__USE_COUNT_LIMIT, oldUseCountLimit, useCountLimit));
 	}
 
 	/**
@@ -1460,10 +1357,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setUseTime(long newUseTime) {
-		long oldUseTime = useTime;
 		useTime = newUseTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__USE_TIME, oldUseTime, useTime));
 	}
 
 	/**
@@ -1477,8 +1371,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldUseTimeUomId = (InternalEObject)useTimeUomId;
 			useTimeUomId = (Uom)eResolveProxy(oldUseTimeUomId);
 			if (useTimeUomId != oldUseTimeUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
 			}
 		}
 		return useTimeUomId;
@@ -1500,10 +1392,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setUseTimeUomId(Uom newUseTimeUomId) {
-		Uom oldUseTimeUomId = useTimeUomId;
 		useTimeUomId = newUseTimeUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
 	}
 
 	/**
@@ -1514,7 +1403,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	@Override
 	public List<String> getSubscriptionAttributes() {
 		if (subscriptionAttributes == null) {
-			subscriptionAttributes = new EDataTypeUniqueEList<String>(String.class, this, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES);
+			subscriptionAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return subscriptionAttributes;
 	}
@@ -1527,7 +1416,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	@Override
 	public List<String> getSubscriptionCommEvents() {
 		if (subscriptionCommEvents == null) {
-			subscriptionCommEvents = new EDataTypeUniqueEList<String>(String.class, this, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS);
+			subscriptionCommEvents = new BasicInternalEList<String>(String.class);
 		}
 		return subscriptionCommEvents;
 	}
@@ -1555,8 +1444,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldSubscriptionResourceId = (InternalEObject)subscriptionResourceId;
 			subscriptionResourceId = (SubscriptionResource)eResolveProxy(oldSubscriptionResourceId);
 			if (subscriptionResourceId != oldSubscriptionResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
 			}
 		}
 		return subscriptionResourceId;
@@ -1578,10 +1465,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setSubscriptionResourceId(SubscriptionResource newSubscriptionResourceId) {
-		SubscriptionResource oldSubscriptionResourceId = subscriptionResourceId;
 		subscriptionResourceId = newSubscriptionResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
 	}
 
 	/**
@@ -1595,8 +1479,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -1618,10 +1500,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -1635,8 +1514,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -1658,10 +1535,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -1675,8 +1549,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -1698,10 +1570,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -1715,8 +1584,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			InternalEObject oldSubscriptionTypeId = (InternalEObject)subscriptionTypeId;
 			subscriptionTypeId = (SubscriptionType)eResolveProxy(oldSubscriptionTypeId);
 			if (subscriptionTypeId != oldSubscriptionTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
 			}
 		}
 		return subscriptionTypeId;
@@ -1738,10 +1605,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setSubscriptionTypeId(SubscriptionType newSubscriptionTypeId) {
-		SubscriptionType oldSubscriptionTypeId = subscriptionTypeId;
 		subscriptionTypeId = newSubscriptionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
 	}
 
 	/**
@@ -1761,10 +1625,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setSubscriptionId(String newSubscriptionId) {
-		String oldSubscriptionId = subscriptionId;
 		subscriptionId = newSubscriptionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
 	}
 
 	/**
@@ -1784,10 +1645,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@Override
 	public void setAutomaticExtend(boolean newAutomaticExtend) {
-		boolean oldAutomaticExtend = automaticExtend;
 		automaticExtend = newAutomaticExtend;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__AUTOMATIC_EXTEND, oldAutomaticExtend, automaticExtend));
 	}
 
 	/**

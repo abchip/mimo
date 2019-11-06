@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.entity.test.impl;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingCrypto;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -170,10 +166,7 @@ public class TestingCryptoImpl extends BizEntityImpl implements TestingCrypto {
 	 */
 	@Override
 	public void setEncryptedValue(String newEncryptedValue) {
-		String oldEncryptedValue = encryptedValue;
 		encryptedValue = newEncryptedValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_CRYPTO__ENCRYPTED_VALUE, oldEncryptedValue, encryptedValue));
 	}
 
 	/**
@@ -193,10 +186,7 @@ public class TestingCryptoImpl extends BizEntityImpl implements TestingCrypto {
 	 */
 	@Override
 	public void setSaltedEncryptedValue(String newSaltedEncryptedValue) {
-		String oldSaltedEncryptedValue = saltedEncryptedValue;
 		saltedEncryptedValue = newSaltedEncryptedValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_CRYPTO__SALTED_ENCRYPTED_VALUE, oldSaltedEncryptedValue, saltedEncryptedValue));
 	}
 
 	/**
@@ -216,10 +206,7 @@ public class TestingCryptoImpl extends BizEntityImpl implements TestingCrypto {
 	 */
 	@Override
 	public void setTestingCryptoId(String newTestingCryptoId) {
-		String oldTestingCryptoId = testingCryptoId;
 		testingCryptoId = newTestingCryptoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_CRYPTO__TESTING_CRYPTO_ID, oldTestingCryptoId, testingCryptoId));
 	}
 
 	/**
@@ -239,10 +226,7 @@ public class TestingCryptoImpl extends BizEntityImpl implements TestingCrypto {
 	 */
 	@Override
 	public void setTestingCryptoTypeId(String newTestingCryptoTypeId) {
-		String oldTestingCryptoTypeId = testingCryptoTypeId;
 		testingCryptoTypeId = newTestingCryptoTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_CRYPTO__TESTING_CRYPTO_TYPE_ID, oldTestingCryptoTypeId, testingCryptoTypeId));
 	}
 
 	/**
@@ -262,10 +246,7 @@ public class TestingCryptoImpl extends BizEntityImpl implements TestingCrypto {
 	 */
 	@Override
 	public void setUnencryptedValue(String newUnencryptedValue) {
-		String oldUnencryptedValue = unencryptedValue;
 		unencryptedValue = newUnencryptedValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_CRYPTO__UNENCRYPTED_VALUE, oldUnencryptedValue, unencryptedValue));
 	}
 
 	/**

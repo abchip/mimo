@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPaymentMethodType;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,10 +169,7 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -189,8 +183,6 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -212,10 +204,7 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
-		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -229,8 +218,6 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -252,10 +239,7 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -275,10 +259,7 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -298,10 +279,7 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -315,8 +293,6 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductPricePurposeId = (InternalEObject)productPricePurposeId;
 			productPricePurposeId = (ProductPricePurpose)eResolveProxy(oldProductPricePurposeId);
 			if (productPricePurposeId != oldProductPricePurposeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 			}
 		}
 		return productPricePurposeId;
@@ -338,10 +314,7 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductPricePurposeId(ProductPricePurpose newProductPricePurposeId) {
-		ProductPricePurpose oldProductPricePurposeId = productPricePurposeId;
 		productPricePurposeId = newProductPricePurposeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 	}
 
 	/**

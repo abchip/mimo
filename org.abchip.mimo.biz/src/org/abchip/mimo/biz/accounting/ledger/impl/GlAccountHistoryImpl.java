@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -176,8 +173,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 			InternalEObject oldCustomTimePeriodId = (InternalEObject)customTimePeriodId;
 			customTimePeriodId = (CustomTimePeriod)eResolveProxy(oldCustomTimePeriodId);
 			if (customTimePeriodId != oldCustomTimePeriodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_HISTORY__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 			}
 		}
 		return customTimePeriodId;
@@ -199,10 +194,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 */
 	@Override
 	public void setCustomTimePeriodId(CustomTimePeriod newCustomTimePeriodId) {
-		CustomTimePeriod oldCustomTimePeriodId = customTimePeriodId;
 		customTimePeriodId = newCustomTimePeriodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 	}
 
 	/**
@@ -222,10 +214,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 */
 	@Override
 	public void setEndingBalance(BigDecimal newEndingBalance) {
-		BigDecimal oldEndingBalance = endingBalance;
 		endingBalance = newEndingBalance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__ENDING_BALANCE, oldEndingBalance, endingBalance));
 	}
 
 	/**
@@ -245,10 +234,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 */
 	@Override
 	public void setOpeningBalance(BigDecimal newOpeningBalance) {
-		BigDecimal oldOpeningBalance = openingBalance;
 		openingBalance = newOpeningBalance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__OPENING_BALANCE, oldOpeningBalance, openingBalance));
 	}
 
 	/**
@@ -262,8 +248,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_HISTORY__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -285,10 +269,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
-		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -308,10 +289,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 */
 	@Override
 	public void setPostedCredits(BigDecimal newPostedCredits) {
-		BigDecimal oldPostedCredits = postedCredits;
 		postedCredits = newPostedCredits;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__POSTED_CREDITS, oldPostedCredits, postedCredits));
 	}
 
 	/**
@@ -331,10 +309,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 */
 	@Override
 	public void setPostedDebits(BigDecimal newPostedDebits) {
-		BigDecimal oldPostedDebits = postedDebits;
 		postedDebits = newPostedDebits;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__POSTED_DEBITS, oldPostedDebits, postedDebits));
 	}
 
 	/**
@@ -348,8 +323,6 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -371,10 +344,7 @@ public class GlAccountHistoryImpl extends BizEntityImpl implements GlAccountHist
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
-		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_HISTORY__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**

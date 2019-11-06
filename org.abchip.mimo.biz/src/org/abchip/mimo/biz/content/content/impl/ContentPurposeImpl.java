@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentPurpose;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,8 +108,6 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -134,10 +129,7 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -151,8 +143,6 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 			InternalEObject oldContentPurposeTypeId = (InternalEObject)contentPurposeTypeId;
 			contentPurposeTypeId = (ContentPurposeType)eResolveProxy(oldContentPurposeTypeId);
 			if (contentPurposeTypeId != oldContentPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
 			}
 		}
 		return contentPurposeTypeId;
@@ -174,10 +164,7 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 */
 	@Override
 	public void setContentPurposeTypeId(ContentPurposeType newContentPurposeTypeId) {
-		ContentPurposeType oldContentPurposeTypeId = contentPurposeTypeId;
 		contentPurposeTypeId = newContentPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
 	}
 
 	/**
@@ -197,10 +184,7 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**

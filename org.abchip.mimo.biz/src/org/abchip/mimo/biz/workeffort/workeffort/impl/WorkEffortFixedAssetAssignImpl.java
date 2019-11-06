@@ -17,13 +17,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetAssign;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -207,10 +204,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setAllocatedCost(BigDecimal newAllocatedCost) {
-		BigDecimal oldAllocatedCost = allocatedCost;
 		allocatedCost = newAllocatedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST, oldAllocatedCost, allocatedCost));
 	}
 
 	/**
@@ -224,8 +218,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 			InternalEObject oldAvailabilityStatusId = (InternalEObject)availabilityStatusId;
 			availabilityStatusId = (StatusItem)eResolveProxy(oldAvailabilityStatusId);
 			if (availabilityStatusId != oldAvailabilityStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
 			}
 		}
 		return availabilityStatusId;
@@ -247,10 +239,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setAvailabilityStatusId(StatusItem newAvailabilityStatusId) {
-		StatusItem oldAvailabilityStatusId = availabilityStatusId;
 		availabilityStatusId = newAvailabilityStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
 	}
 
 	/**
@@ -270,10 +259,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -287,8 +273,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -310,10 +294,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -333,10 +314,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -350,8 +328,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -373,10 +349,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -396,10 +369,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -413,8 +383,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -436,10 +404,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

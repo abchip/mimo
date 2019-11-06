@@ -209,23 +209,22 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		}
 
 		if (eFeature instanceof EReference) {
-			EReference eReference = (EReference)eFeature;
+			EReference eReference = (EReference) eFeature;
 			EClassifier eClassifier = eReference.getEType();
-			if(eClassifier instanceof EClass) {
-				EClass eClass = (EClass)eClassifier;
+			if (eClassifier instanceof EClass) {
+				EClass eClass = (EClass) eClassifier;
 				InternalEObject eValue = (InternalEObject) EcoreUtil.create(eClass);
-				eValue.eSetProxyURI(org.eclipse.emf.common.util.URI.createURI(value.toString()));
-				if(eValue instanceof EntityNameable) {
-					Entity entity = (Entity)eValue;
+				eValue.eSetProxyURI(org.eclipse.emf.common.util.URI.createURI("#" + value.toString()));
+				if (eValue instanceof EntityNameable) {
+					Entity entity = (Entity) eValue;
 					Frame<?> domainFrame = entity.isa();
-					for(String key: domainFrame.getKeys()) {
+					for (String key : domainFrame.getKeys()) {
 						domainFrame.setValue(entity, key, value.toString());
 						break;
-					}					
+					}
 				}
 				eObject.eSet(eFeature, eValue);
-			}
-			else
+			} else
 				"".toString();
 		} else {
 			try {

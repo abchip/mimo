@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.ProductPromoCodeParty;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,8 +86,6 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -112,10 +107,7 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -129,8 +121,6 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 			InternalEObject oldProductPromoCodeId = (InternalEObject)productPromoCodeId;
 			productPromoCodeId = (ProductPromoCode)eResolveProxy(oldProductPromoCodeId);
 			if (productPromoCodeId != oldProductPromoCodeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
 			}
 		}
 		return productPromoCodeId;
@@ -152,10 +142,7 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	 */
 	@Override
 	public void setProductPromoCodeId(ProductPromoCode newProductPromoCodeId) {
-		ProductPromoCode oldProductPromoCodeId = productPromoCodeId;
 		productPromoCodeId = newProductPromoCodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
 	}
 
 	/**

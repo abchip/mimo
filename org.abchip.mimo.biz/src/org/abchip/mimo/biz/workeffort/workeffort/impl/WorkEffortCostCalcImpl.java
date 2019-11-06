@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,8 +143,6 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 			InternalEObject oldCostComponentCalcId = (InternalEObject)costComponentCalcId;
 			costComponentCalcId = (CostComponentCalc)eResolveProxy(oldCostComponentCalcId);
 			if (costComponentCalcId != oldCostComponentCalcId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_CALC_ID, oldCostComponentCalcId, costComponentCalcId));
 			}
 		}
 		return costComponentCalcId;
@@ -169,10 +164,7 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 */
 	@Override
 	public void setCostComponentCalcId(CostComponentCalc newCostComponentCalcId) {
-		CostComponentCalc oldCostComponentCalcId = costComponentCalcId;
 		costComponentCalcId = newCostComponentCalcId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_CALC_ID, oldCostComponentCalcId, costComponentCalcId));
 	}
 
 	/**
@@ -186,8 +178,6 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 			InternalEObject oldCostComponentTypeId = (InternalEObject)costComponentTypeId;
 			costComponentTypeId = (CostComponentType)eResolveProxy(oldCostComponentTypeId);
 			if (costComponentTypeId != oldCostComponentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 			}
 		}
 		return costComponentTypeId;
@@ -209,10 +199,7 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 */
 	@Override
 	public void setCostComponentTypeId(CostComponentType newCostComponentTypeId) {
-		CostComponentType oldCostComponentTypeId = costComponentTypeId;
 		costComponentTypeId = newCostComponentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_COST_CALC__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
 	}
 
 	/**
@@ -232,10 +219,7 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_COST_CALC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -255,10 +239,7 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_COST_CALC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -272,8 +253,6 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -295,10 +274,7 @@ public class WorkEffortCostCalcImpl extends BizEntityImpl implements WorkEffortC
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_COST_CALC__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

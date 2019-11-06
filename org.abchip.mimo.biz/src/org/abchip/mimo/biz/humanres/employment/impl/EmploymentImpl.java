@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.humanres.employment.TerminationReason;
 import org.abchip.mimo.biz.humanres.employment.TerminationType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -205,10 +202,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -222,8 +216,6 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -245,10 +237,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
-		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -262,8 +251,6 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -285,10 +272,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
-		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -308,10 +292,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setRoleTypeIdFrom(String newRoleTypeIdFrom) {
-		String oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -331,10 +312,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setRoleTypeIdTo(String newRoleTypeIdTo) {
-		String oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -348,8 +326,6 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 			InternalEObject oldTerminationReasonId = (InternalEObject)terminationReasonId;
 			terminationReasonId = (TerminationReason)eResolveProxy(oldTerminationReasonId);
 			if (terminationReasonId != oldTerminationReasonId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT__TERMINATION_REASON_ID, oldTerminationReasonId, terminationReasonId));
 			}
 		}
 		return terminationReasonId;
@@ -371,10 +347,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setTerminationReasonId(TerminationReason newTerminationReasonId) {
-		TerminationReason oldTerminationReasonId = terminationReasonId;
 		terminationReasonId = newTerminationReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__TERMINATION_REASON_ID, oldTerminationReasonId, terminationReasonId));
 	}
 
 	/**
@@ -388,8 +361,6 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 			InternalEObject oldTerminationTypeId = (InternalEObject)terminationTypeId;
 			terminationTypeId = (TerminationType)eResolveProxy(oldTerminationTypeId);
 			if (terminationTypeId != oldTerminationTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT__TERMINATION_TYPE_ID, oldTerminationTypeId, terminationTypeId));
 			}
 		}
 		return terminationTypeId;
@@ -411,10 +382,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setTerminationTypeId(TerminationType newTerminationTypeId) {
-		TerminationType oldTerminationTypeId = terminationTypeId;
 		terminationTypeId = newTerminationTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__TERMINATION_TYPE_ID, oldTerminationTypeId, terminationTypeId));
 	}
 
 	/**
@@ -434,10 +402,7 @@ public class EmploymentImpl extends BizEntityImpl implements Employment {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

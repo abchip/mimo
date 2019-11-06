@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -424,10 +421,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setApiVersion(String newApiVersion) {
-		String oldApiVersion = apiVersion;
 		apiVersion = newApiVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__API_VERSION, oldApiVersion, apiVersion));
 	}
 
 	/**
@@ -447,10 +441,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setCertificateAlias(String newCertificateAlias) {
-		String oldCertificateAlias = certificateAlias;
 		certificateAlias = newCertificateAlias;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__CERTIFICATE_ALIAS, oldCertificateAlias, certificateAlias));
 	}
 
 	/**
@@ -470,10 +461,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setCpDeviceType(String newCpDeviceType) {
-		String oldCpDeviceType = cpDeviceType;
 		cpDeviceType = newCpDeviceType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__CP_DEVICE_TYPE, oldCpDeviceType, cpDeviceType));
 	}
 
 	/**
@@ -493,10 +481,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setCpMarketType(String newCpMarketType) {
-		String oldCpMarketType = cpMarketType;
 		cpMarketType = newCpMarketType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__CP_MARKET_TYPE, oldCpMarketType, cpMarketType));
 	}
 
 	/**
@@ -516,10 +501,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setCpVersion(String newCpVersion) {
-		String oldCpVersion = cpVersion;
 		cpVersion = newCpVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__CP_VERSION, oldCpVersion, cpVersion));
 	}
 
 	/**
@@ -539,10 +521,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setDelimitedData(String newDelimitedData) {
-		String oldDelimitedData = delimitedData;
 		delimitedData = newDelimitedData;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__DELIMITED_DATA, oldDelimitedData, delimitedData));
 	}
 
 	/**
@@ -562,10 +541,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setDelimiterChar(String newDelimiterChar) {
-		String oldDelimiterChar = delimiterChar;
 		delimiterChar = newDelimiterChar;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__DELIMITER_CHAR, oldDelimiterChar, delimiterChar));
 	}
 
 	/**
@@ -585,10 +561,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setDuplicateWindow(long newDuplicateWindow) {
-		long oldDuplicateWindow = duplicateWindow;
 		duplicateWindow = newDuplicateWindow;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__DUPLICATE_WINDOW, oldDuplicateWindow, duplicateWindow));
 	}
 
 	/**
@@ -608,10 +581,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setEmailCustomer(String newEmailCustomer) {
-		String oldEmailCustomer = emailCustomer;
 		emailCustomer = newEmailCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__EMAIL_CUSTOMER, oldEmailCustomer, emailCustomer));
 	}
 
 	/**
@@ -631,10 +601,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setEmailMerchant(String newEmailMerchant) {
-		String oldEmailMerchant = emailMerchant;
 		emailMerchant = newEmailMerchant;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__EMAIL_MERCHANT, oldEmailMerchant, emailMerchant));
 	}
 
 	/**
@@ -654,10 +621,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setMethod(String newMethod) {
-		String oldMethod = method;
 		method = newMethod;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__METHOD, oldMethod, method));
 	}
 
 	/**
@@ -671,8 +635,6 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -694,10 +656,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
-		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -717,10 +676,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setPwd(String newPwd) {
-		String oldPwd = pwd;
 		pwd = newPwd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__PWD, oldPwd, pwd));
 	}
 
 	/**
@@ -740,10 +696,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setRelayResponse(String newRelayResponse) {
-		String oldRelayResponse = relayResponse;
 		relayResponse = newRelayResponse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__RELAY_RESPONSE, oldRelayResponse, relayResponse));
 	}
 
 	/**
@@ -763,10 +716,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setTestMode(String newTestMode) {
-		String oldTestMode = testMode;
 		testMode = newTestMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__TEST_MODE, oldTestMode, testMode));
 	}
 
 	/**
@@ -786,10 +736,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setTranKey(String newTranKey) {
-		String oldTranKey = tranKey;
 		tranKey = newTranKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__TRAN_KEY, oldTranKey, tranKey));
 	}
 
 	/**
@@ -809,10 +756,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setTransDescription(String newTransDescription) {
-		String oldTransDescription = transDescription;
 		transDescription = newTransDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__TRANS_DESCRIPTION, oldTransDescription, transDescription));
 	}
 
 	/**
@@ -832,10 +776,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setTransactionUrl(String newTransactionUrl) {
-		String oldTransactionUrl = transactionUrl;
 		transactionUrl = newTransactionUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__TRANSACTION_URL, oldTransactionUrl, transactionUrl));
 	}
 
 	/**
@@ -855,10 +796,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 */
 	@Override
 	public void setUserId(String newUserId) {
-		String oldUserId = userId;
 		userId = newUserId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_AUTHORIZE_NET__USER_ID, oldUserId, userId));
 	}
 
 	/**

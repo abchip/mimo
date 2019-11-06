@@ -9,11 +9,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayFedex;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -342,10 +338,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setAccessAccountNbr(String newAccessAccountNbr) {
-		String oldAccessAccountNbr = accessAccountNbr;
 		accessAccountNbr = newAccessAccountNbr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__ACCESS_ACCOUNT_NBR, oldAccessAccountNbr, accessAccountNbr));
 	}
 
 	/**
@@ -365,10 +358,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setAccessMeterNumber(String newAccessMeterNumber) {
-		String oldAccessMeterNumber = accessMeterNumber;
 		accessMeterNumber = newAccessMeterNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__ACCESS_METER_NUMBER, oldAccessMeterNumber, accessMeterNumber));
 	}
 
 	/**
@@ -388,10 +378,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setAccessUserKey(String newAccessUserKey) {
-		String oldAccessUserKey = accessUserKey;
 		accessUserKey = newAccessUserKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__ACCESS_USER_KEY, oldAccessUserKey, accessUserKey));
 	}
 
 	/**
@@ -411,10 +398,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setAccessUserPwd(String newAccessUserPwd) {
-		String oldAccessUserPwd = accessUserPwd;
 		accessUserPwd = newAccessUserPwd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__ACCESS_USER_PWD, oldAccessUserPwd, accessUserPwd));
 	}
 
 	/**
@@ -434,10 +418,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setConnectSoapUrl(String newConnectSoapUrl) {
-		String oldConnectSoapUrl = connectSoapUrl;
 		connectSoapUrl = newConnectSoapUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__CONNECT_SOAP_URL, oldConnectSoapUrl, connectSoapUrl));
 	}
 
 	/**
@@ -457,10 +438,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setConnectTimeout(long newConnectTimeout) {
-		long oldConnectTimeout = connectTimeout;
 		connectTimeout = newConnectTimeout;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__CONNECT_TIMEOUT, oldConnectTimeout, connectTimeout));
 	}
 
 	/**
@@ -480,10 +458,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setConnectUrl(String newConnectUrl) {
-		String oldConnectUrl = connectUrl;
 		connectUrl = newConnectUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__CONNECT_URL, oldConnectUrl, connectUrl));
 	}
 
 	/**
@@ -503,10 +478,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setDefaultDropoffType(String newDefaultDropoffType) {
-		String oldDefaultDropoffType = defaultDropoffType;
 		defaultDropoffType = newDefaultDropoffType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__DEFAULT_DROPOFF_TYPE, oldDefaultDropoffType, defaultDropoffType));
 	}
 
 	/**
@@ -526,10 +498,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setDefaultPackagingType(String newDefaultPackagingType) {
-		String oldDefaultPackagingType = defaultPackagingType;
 		defaultPackagingType = newDefaultPackagingType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__DEFAULT_PACKAGING_TYPE, oldDefaultPackagingType, defaultPackagingType));
 	}
 
 	/**
@@ -549,10 +518,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setLabelImageType(String newLabelImageType) {
-		String oldLabelImageType = labelImageType;
 		labelImageType = newLabelImageType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__LABEL_IMAGE_TYPE, oldLabelImageType, labelImageType));
 	}
 
 	/**
@@ -572,10 +538,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setRateEstimateTemplate(String newRateEstimateTemplate) {
-		String oldRateEstimateTemplate = rateEstimateTemplate;
 		rateEstimateTemplate = newRateEstimateTemplate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__RATE_ESTIMATE_TEMPLATE, oldRateEstimateTemplate, rateEstimateTemplate));
 	}
 
 	/**
@@ -595,10 +558,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setTemplateShipment(String newTemplateShipment) {
-		String oldTemplateShipment = templateShipment;
 		templateShipment = newTemplateShipment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__TEMPLATE_SHIPMENT, oldTemplateShipment, templateShipment));
 	}
 
 	/**
@@ -618,10 +578,7 @@ public class ShipmentGatewayFedexImpl extends ShipmentGatewayConfigImpl implemen
 	 */
 	@Override
 	public void setTemplateSubscription(String newTemplateSubscription) {
-		String oldTemplateSubscription = templateSubscription;
 		templateSubscription = newTemplateSubscription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_FEDEX__TEMPLATE_SUBSCRIPTION, oldTemplateSubscription, templateSubscription));
 	}
 
 	/**

@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,8 +108,6 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 			InternalEObject oldShoppingListId = (InternalEObject)shoppingListId;
 			shoppingListId = (ShoppingList)eResolveProxy(oldShoppingListId);
 			if (shoppingListId != oldShoppingListId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
 			}
 		}
 		return shoppingListId;
@@ -134,10 +129,7 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 */
 	@Override
 	public void setShoppingListId(ShoppingList newShoppingListId) {
-		ShoppingList oldShoppingListId = shoppingListId;
 		shoppingListId = newShoppingListId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
 	}
 
 	/**
@@ -157,10 +149,7 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 */
 	@Override
 	public void setShoppingListItemSeqId(String newShoppingListItemSeqId) {
-		String oldShoppingListItemSeqId = shoppingListItemSeqId;
 		shoppingListItemSeqId = newShoppingListItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ITEM_SEQ_ID, oldShoppingListItemSeqId, shoppingListItemSeqId));
 	}
 
 	/**
@@ -174,8 +163,6 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 			InternalEObject oldSurveyResponseId = (InternalEObject)surveyResponseId;
 			surveyResponseId = (SurveyResponse)eResolveProxy(oldSurveyResponseId);
 			if (surveyResponseId != oldSurveyResponseId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 			}
 		}
 		return surveyResponseId;
@@ -197,10 +184,7 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 */
 	@Override
 	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
-		SurveyResponse oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 	}
 
 	/**

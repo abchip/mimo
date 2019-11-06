@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeAttr;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
 			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
 			if (fixedAssetTypeId != oldFixedAssetTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 			}
 		}
 		return fixedAssetTypeId;
@@ -183,10 +172,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
-		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
 		fixedAssetTypeId = newFixedAssetTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 	}
 
 	/**

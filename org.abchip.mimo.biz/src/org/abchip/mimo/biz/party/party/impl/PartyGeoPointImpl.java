@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyGeoPoint;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,10 +130,7 @@ public class PartyGeoPointImpl extends BizEntityImpl implements PartyGeoPoint {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GEO_POINT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -150,8 +144,6 @@ public class PartyGeoPointImpl extends BizEntityImpl implements PartyGeoPoint {
 			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
 			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
 			if (geoPointId != oldGeoPointId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
 			}
 		}
 		return geoPointId;
@@ -173,10 +165,7 @@ public class PartyGeoPointImpl extends BizEntityImpl implements PartyGeoPoint {
 	 */
 	@Override
 	public void setGeoPointId(GeoPoint newGeoPointId) {
-		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
 	}
 
 	/**
@@ -196,10 +185,7 @@ public class PartyGeoPointImpl extends BizEntityImpl implements PartyGeoPoint {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GEO_POINT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -213,8 +199,6 @@ public class PartyGeoPointImpl extends BizEntityImpl implements PartyGeoPoint {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_GEO_POINT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -236,10 +220,7 @@ public class PartyGeoPointImpl extends BizEntityImpl implements PartyGeoPoint {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_GEO_POINT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

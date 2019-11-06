@@ -10,10 +10,7 @@ package org.abchip.mimo.biz.accounting.invoice.impl;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemAttribute;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -164,10 +161,7 @@ public class InvoiceItemAttributeImpl extends BizEntityImpl implements InvoiceIt
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
-		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -187,10 +181,7 @@ public class InvoiceItemAttributeImpl extends BizEntityImpl implements InvoiceIt
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
-		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -210,10 +201,7 @@ public class InvoiceItemAttributeImpl extends BizEntityImpl implements InvoiceIt
 	 */
 	@Override
 	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ATTRIBUTE__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -233,10 +221,7 @@ public class InvoiceItemAttributeImpl extends BizEntityImpl implements InvoiceIt
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
-		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ATTRIBUTE__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -256,10 +241,7 @@ public class InvoiceItemAttributeImpl extends BizEntityImpl implements InvoiceIt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**

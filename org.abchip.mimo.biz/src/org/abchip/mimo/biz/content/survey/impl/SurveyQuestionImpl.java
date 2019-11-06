@@ -16,15 +16,12 @@ import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -250,10 +247,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -273,10 +267,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setEnumTypeId(String newEnumTypeId) {
-		String oldEnumTypeId = enumTypeId;
 		enumTypeId = newEnumTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__ENUM_TYPE_ID, oldEnumTypeId, enumTypeId));
 	}
 
 	/**
@@ -296,10 +287,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setFormatString(String newFormatString) {
-		String oldFormatString = formatString;
 		formatString = newFormatString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__FORMAT_STRING, oldFormatString, formatString));
 	}
 
 	/**
@@ -313,8 +301,6 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -336,10 +322,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
-		Geo oldGeoId = geoId;
 		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**
@@ -359,10 +342,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setHint(String newHint) {
-		String oldHint = hint;
 		hint = newHint;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__HINT, oldHint, hint));
 	}
 
 	/**
@@ -382,10 +362,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setQuestion(String newQuestion) {
-		String oldQuestion = question;
 		question = newQuestion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__QUESTION, oldQuestion, question));
 	}
 
 	/**
@@ -399,8 +376,6 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 			InternalEObject oldSurveyQuestionCategoryId = (InternalEObject)surveyQuestionCategoryId;
 			surveyQuestionCategoryId = (SurveyQuestionCategory)eResolveProxy(oldSurveyQuestionCategoryId);
 			if (surveyQuestionCategoryId != oldSurveyQuestionCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID, oldSurveyQuestionCategoryId, surveyQuestionCategoryId));
 			}
 		}
 		return surveyQuestionCategoryId;
@@ -422,10 +397,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setSurveyQuestionCategoryId(SurveyQuestionCategory newSurveyQuestionCategoryId) {
-		SurveyQuestionCategory oldSurveyQuestionCategoryId = surveyQuestionCategoryId;
 		surveyQuestionCategoryId = newSurveyQuestionCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID, oldSurveyQuestionCategoryId, surveyQuestionCategoryId));
 	}
 
 	/**
@@ -445,10 +417,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setSurveyQuestionId(String newSurveyQuestionId) {
-		String oldSurveyQuestionId = surveyQuestionId;
 		surveyQuestionId = newSurveyQuestionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
 	}
 
 	/**
@@ -462,8 +431,6 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 			InternalEObject oldSurveyQuestionTypeId = (InternalEObject)surveyQuestionTypeId;
 			surveyQuestionTypeId = (SurveyQuestionType)eResolveProxy(oldSurveyQuestionTypeId);
 			if (surveyQuestionTypeId != oldSurveyQuestionTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID, oldSurveyQuestionTypeId, surveyQuestionTypeId));
 			}
 		}
 		return surveyQuestionTypeId;
@@ -485,10 +452,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@Override
 	public void setSurveyQuestionTypeId(SurveyQuestionType newSurveyQuestionTypeId) {
-		SurveyQuestionType oldSurveyQuestionTypeId = surveyQuestionTypeId;
 		surveyQuestionTypeId = newSurveyQuestionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID, oldSurveyQuestionTypeId, surveyQuestionTypeId));
 	}
 
 	/**
@@ -499,7 +463,7 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	@Override
 	public List<String> getSurveyQuestionOptions() {
 		if (surveyQuestionOptions == null) {
-			surveyQuestionOptions = new EDataTypeUniqueEList<String>(String.class, this, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS);
+			surveyQuestionOptions = new BasicInternalEList<String>(String.class);
 		}
 		return surveyQuestionOptions;
 	}

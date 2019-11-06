@@ -18,13 +18,10 @@ import org.abchip.mimo.biz.order.request.CustRequestItem;
 import org.abchip.mimo.biz.order.request.CustRequestResolution;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -397,10 +394,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
-		String oldConfigId = configId;
 		configId = newConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID, oldConfigId, configId));
 	}
 
 	/**
@@ -414,8 +408,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -437,10 +429,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -460,10 +449,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setCustRequestItemSeqId(String newCustRequestItemSeqId) {
-		String oldCustRequestItemSeqId = custRequestItemSeqId;
 		custRequestItemSeqId = newCustRequestItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID, oldCustRequestItemSeqId, custRequestItemSeqId));
 	}
 
 	/**
@@ -477,8 +463,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 			InternalEObject oldCustRequestResolutionId = (InternalEObject)custRequestResolutionId;
 			custRequestResolutionId = (CustRequestResolution)eResolveProxy(oldCustRequestResolutionId);
 			if (custRequestResolutionId != oldCustRequestResolutionId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID, oldCustRequestResolutionId, custRequestResolutionId));
 			}
 		}
 		return custRequestResolutionId;
@@ -500,10 +484,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setCustRequestResolutionId(CustRequestResolution newCustRequestResolutionId) {
-		CustRequestResolution oldCustRequestResolutionId = custRequestResolutionId;
 		custRequestResolutionId = newCustRequestResolutionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID, oldCustRequestResolutionId, custRequestResolutionId));
 	}
 
 	/**
@@ -523,10 +504,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -546,10 +524,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setMaximumAmount(BigDecimal newMaximumAmount) {
-		BigDecimal oldMaximumAmount = maximumAmount;
 		maximumAmount = newMaximumAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT, oldMaximumAmount, maximumAmount));
 	}
 
 	/**
@@ -569,10 +544,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setPriority(long newPriority) {
-		long oldPriority = priority;
 		priority = newPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -586,8 +558,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -609,10 +579,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -632,10 +599,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -655,10 +619,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setRequiredByDate(Date newRequiredByDate) {
-		Date oldRequiredByDate = requiredByDate;
 		requiredByDate = newRequiredByDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__REQUIRED_BY_DATE, oldRequiredByDate, requiredByDate));
 	}
 
 	/**
@@ -678,10 +639,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setReservLength(BigDecimal newReservLength) {
-		BigDecimal oldReservLength = reservLength;
 		reservLength = newReservLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__RESERV_LENGTH, oldReservLength, reservLength));
 	}
 
 	/**
@@ -701,10 +659,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setReservPersons(BigDecimal newReservPersons) {
-		BigDecimal oldReservPersons = reservPersons;
 		reservPersons = newReservPersons;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__RESERV_PERSONS, oldReservPersons, reservPersons));
 	}
 
 	/**
@@ -724,10 +679,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setReservStart(Date newReservStart) {
-		Date oldReservStart = reservStart;
 		reservStart = newReservStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__RESERV_START, oldReservStart, reservStart));
 	}
 
 	/**
@@ -747,10 +699,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setSelectedAmount(BigDecimal newSelectedAmount) {
-		BigDecimal oldSelectedAmount = selectedAmount;
 		selectedAmount = newSelectedAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__SELECTED_AMOUNT, oldSelectedAmount, selectedAmount));
 	}
 
 	/**
@@ -770,10 +719,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -787,8 +733,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -810,10 +754,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -833,10 +774,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setStory(String newStory) {
-		String oldStory = story;
 		story = newStory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__STORY, oldStory, story));
 	}
 
 	/**

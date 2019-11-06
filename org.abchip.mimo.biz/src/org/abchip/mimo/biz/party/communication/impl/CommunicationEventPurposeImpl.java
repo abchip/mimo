@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPurpose;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,10 +109,7 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -129,8 +123,6 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -152,10 +144,7 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
-		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -169,8 +158,6 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 			InternalEObject oldCommunicationEventPrpTypId = (InternalEObject)communicationEventPrpTypId;
 			communicationEventPrpTypId = (CommunicationEventPrpTyp)eResolveProxy(oldCommunicationEventPrpTypId);
 			if (communicationEventPrpTypId != oldCommunicationEventPrpTypId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID, oldCommunicationEventPrpTypId, communicationEventPrpTypId));
 			}
 		}
 		return communicationEventPrpTypId;
@@ -192,10 +179,7 @@ public class CommunicationEventPurposeImpl extends BizEntityImpl implements Comm
 	 */
 	@Override
 	public void setCommunicationEventPrpTypId(CommunicationEventPrpTyp newCommunicationEventPrpTypId) {
-		CommunicationEventPrpTyp oldCommunicationEventPrpTypId = communicationEventPrpTypId;
 		communicationEventPrpTypId = newCommunicationEventPrpTypId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID, oldCommunicationEventPrpTypId, communicationEventPrpTypId));
 	}
 
 	/**

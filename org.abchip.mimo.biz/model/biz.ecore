@@ -271,8 +271,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="budgetReviewResultTypeId"
-            eType="#//accounting/budget/BudgetReviewResultType"
-            eKeys="#//accounting/budget/BudgetReviewResultType/budgetReviewResultTypeId"/>
+            eType="#//accounting/budget/BudgetReviewResultType" eKeys="#//accounting/budget/BudgetReviewResultType/budgetReviewResultTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BudgetReviewResultType" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
@@ -637,8 +636,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderItemSeqId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransTypeId"
-            eType="#//accounting/finaccount/FinAccountTransType"
-            eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId"/>
+            eType="#//accounting/finaccount/FinAccountTransType" eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountId" eType="#//accounting/finaccount/FinAccount"
             eKeys="#//accounting/finaccount/FinAccount/finAccountId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
@@ -676,8 +674,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="attrDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="attrValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
+            eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FinAccountTransType">
         <eAnnotations source="mimo-ent-frame">
@@ -737,8 +734,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransTypeId"
-            eType="#//accounting/finaccount/FinAccountTransType"
-            eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId"/>
+            eType="#//accounting/finaccount/FinAccountTransType" eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FinAccountType">
         <eAnnotations source="mimo-ent-frame">
@@ -894,13 +890,11 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfSpaces" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationClassId"
-            eType="#//accounting/fixedasset/AccommodationClass"
-            eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
+            eType="#//accounting/fixedasset/AccommodationClass" eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetId" eType="#//accounting/fixedasset/FixedAsset"
             eKeys="#//accounting/fixedasset/FixedAsset/fixedAssetId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationMapTypeId"
-            eType="#//accounting/fixedasset/AccommodationMapType"
-            eKeys="#//accounting/fixedasset/AccommodationMapType/accommodationMapTypeId"/>
+            eType="#//accounting/fixedasset/AccommodationMapType" eKeys="#//accounting/fixedasset/AccommodationMapType/accommodationMapTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/fixedasset/AccommodationMapType"/>
         </eGenericSuperTypes>
@@ -1145,8 +1139,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetId" eType="#//accounting/fixedasset/FixedAsset"
             eKeys="#//accounting/fixedasset/FixedAsset/fixedAssetId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetIdentTypeId"
-            eType="#//accounting/fixedasset/FixedAssetIdentType"
-            eKeys="#//accounting/fixedasset/FixedAssetIdentType/fixedAssetIdentTypeId"/>
+            eType="#//accounting/fixedasset/FixedAssetIdentType" eKeys="#//accounting/fixedasset/FixedAssetIdentType/fixedAssetIdentTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/fixedasset/FixedAssetIdentType"/>
         </eGenericSuperTypes>
@@ -1256,8 +1249,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetId" eType="#//accounting/fixedasset/FixedAsset"
             eKeys="#//accounting/fixedasset/FixedAsset/fixedAssetId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetProductTypeId"
-            eType="#//accounting/fixedasset/FixedAssetProductType"
-            eKeys="#//accounting/fixedasset/FixedAssetProductType/fixedAssetProductTypeId"/>
+            eType="#//accounting/fixedasset/FixedAssetProductType" eKeys="#//accounting/fixedasset/FixedAssetProductType/fixedAssetProductTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="quantityUomId" eType="#//common/uom/Uom"
             eKeys="#//common/uom/Uom/uomId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
@@ -1309,8 +1301,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetId" eType="#//accounting/fixedasset/FixedAsset"
             eKeys="#//accounting/fixedasset/FixedAsset/fixedAssetId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetStdCostTypeId"
-            eType="#//accounting/fixedasset/FixedAssetStdCostType"
-            eKeys="#//accounting/fixedasset/FixedAssetStdCostType/fixedAssetStdCostTypeId"/>
+            eType="#//accounting/fixedasset/FixedAssetStdCostType" eKeys="#//accounting/fixedasset/FixedAssetStdCostType/fixedAssetStdCostTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="amountUomId" eType="#//common/uom/Uom"
             eKeys="#//common/uom/Uom/uomId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
@@ -1574,8 +1565,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
+            eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InvoiceContent">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" lowerBound="1"
@@ -1590,8 +1580,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentId" eType="#//content/content/Content"
             eKeys="#//content/content/Content/contentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoiceContentTypeId"
-            eType="#//accounting/invoice/InvoiceContentType"
-            eKeys="#//accounting/invoice/InvoiceContentType/invoiceContentTypeId"/>
+            eType="#//accounting/invoice/InvoiceContentType" eKeys="#//accounting/invoice/InvoiceContentType/invoiceContentTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/invoice/InvoiceContentType"/>
         </eGenericSuperTypes>
@@ -1660,13 +1649,11 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthGeoId" eType="#//common/geo/Geo"
             eKeys="#//common/geo/Geo/geoId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityRateSeqId"
-            eType="#//accounting/tax/TaxAuthorityRateProduct"
-            eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
+            eType="#//accounting/tax/TaxAuthorityRateProduct" eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="overrideOrgPartyId"
             eType="#//party/party/Party" eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/invoice/InvoiceItemType"/>
         </eGenericSuperTypes>
@@ -1706,8 +1693,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoiceItemAssocTypeId"
-            eType="#//accounting/invoice/InvoiceItemAssocType"
-            eKeys="#//accounting/invoice/InvoiceItemAssocType/invoiceItemAssocTypeId"/>
+            eType="#//accounting/invoice/InvoiceItemAssocType" eKeys="#//accounting/invoice/InvoiceItemAssocType/invoiceItemAssocTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdFrom" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdTo" eType="#//party/party/Party"
@@ -2078,8 +2064,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentId" eType="#//accounting/payment/Payment"
             eKeys="#//accounting/payment/Payment/paymentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
+            eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentId" eType="#//shipment/shipment/Shipment"
             eKeys="#//shipment/shipment/Shipment/shipmentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiptId" eType="#//shipment/receipt/ShipmentReceipt"
@@ -2145,8 +2130,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="theirProductId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="voucherRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="acctgTransEntryTypeId"
-            eType="#//accounting/ledger/AcctgTransEntryType"
-            eKeys="#//accounting/ledger/AcctgTransEntryType/acctgTransEntryTypeId"/>
+            eType="#//accounting/ledger/AcctgTransEntryType" eKeys="#//accounting/ledger/AcctgTransEntryType/acctgTransEntryTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="currencyUomId" eType="#//common/uom/Uom"
             eKeys="#//common/uom/Uom/uomId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="origCurrencyUomId"
@@ -2500,8 +2484,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountCategoryTypeId"
-            eType="#//accounting/ledger/GlAccountCategoryType"
-            eKeys="#//accounting/ledger/GlAccountCategoryType/glAccountCategoryTypeId"/>
+            eType="#//accounting/ledger/GlAccountCategoryType" eKeys="#//accounting/ledger/GlAccountCategoryType/glAccountCategoryTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/ledger/GlAccountCategoryType"/>
         </eGenericSuperTypes>
@@ -2602,8 +2585,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountGroupTypeId"
-            eType="#//accounting/ledger/GlAccountGroupType"
-            eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId"/>
+            eType="#//accounting/ledger/GlAccountGroupType" eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/ledger/GlAccountGroupType"/>
         </eGenericSuperTypes>
@@ -2614,8 +2596,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountGroupId" eType="#//accounting/ledger/GlAccountGroup"
             eKeys="#//accounting/ledger/GlAccountGroup/glAccountGroupId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountGroupTypeId"
-            eType="#//accounting/ledger/GlAccountGroupType"
-            eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId"/>
+            eType="#//accounting/ledger/GlAccountGroupType" eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="GlAccountGroupType">
         <eAnnotations source="mimo-ent-frame">
@@ -3037,8 +3018,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="averageCost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productAverageCostTypeId"
-            eType="#//accounting/ledger/ProductAverageCostType"
-            eKeys="#//accounting/ledger/ProductAverageCostType/productAverageCostTypeId"/>
+            eType="#//accounting/ledger/ProductAverageCostType" eKeys="#//accounting/ledger/ProductAverageCostType/productAverageCostTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="organizationPartyId"
             eType="#//party/party/Party" eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
@@ -3235,8 +3215,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="attrValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="billingAccountTermId"
-            eType="#//accounting/payment/BillingAccountTerm"
-            eKeys="#//accounting/payment/BillingAccountTerm/billingAccountTermId"/>
+            eType="#//accounting/payment/BillingAccountTerm" eKeys="#//accounting/payment/BillingAccountTerm/billingAccountTermId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CheckAccount" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="accountNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -3475,8 +3454,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentTypeId" eType="#//accounting/payment/PaymentType"
             eKeys="#//accounting/payment/PaymentType/paymentTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodId" eType="#//accounting/payment/PaymentMethod"
             eKeys="#//accounting/payment/PaymentMethod/paymentMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="currencyUomId" eType="#//common/uom/Uom"
@@ -3486,8 +3464,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentPreferenceId"
             eType="#//order/order/OrderPaymentPreference" eKeys="#//order/order/OrderPaymentPreference/orderPaymentPreferenceId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayResponseId"
-            eType="#//accounting/payment/PaymentGatewayResponse"
-            eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
+            eType="#//accounting/payment/PaymentGatewayResponse" eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdFrom" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdTo" eType="#//party/party/Party"
@@ -3497,8 +3474,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="statusId" eType="#//common/status/StatusItem"
             eKeys="#//common/status/StatusItem/statusId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
+            eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="overrideGlAccountId"
             eType="#//accounting/ledger/GlAccount" eKeys="#//accounting/ledger/GlAccount/glAccountId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentAttributes"
@@ -3575,8 +3551,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentId" eType="#//content/content/Content"
             eKeys="#//content/content/Content/contentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentContentTypeId"
-            eType="#//accounting/payment/PaymentContentType"
-            eKeys="#//accounting/payment/PaymentContentType/paymentContentTypeId"/>
+            eType="#//accounting/payment/PaymentContentType" eKeys="#//accounting/payment/PaymentContentType/paymentContentTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/payment/PaymentContentType"/>
         </eGenericSuperTypes>
@@ -3629,8 +3604,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="userId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayClearCommerce" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="clientId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -3644,8 +3618,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="userAlias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayConfig">
         <eAnnotations source="mimo-ent-frame">
@@ -3660,8 +3633,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigTypeId"
-            eType="#//accounting/payment/PaymentGatewayConfigType"
-            eKeys="#//accounting/payment/PaymentGatewayConfigType/paymentGatewayConfigTypeId"/>
+            eType="#//accounting/payment/PaymentGatewayConfigType" eKeys="#//accounting/payment/PaymentGatewayConfigType/paymentGatewayConfigTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/payment/PaymentGatewayConfigType"/>
         </eGenericSuperTypes>
@@ -3722,8 +3694,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="merchantId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="production" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayEway" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="customerId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -3732,8 +3703,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="refundPwd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="testMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayOrbital" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorizationURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -3754,8 +3724,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="sslSocketFactory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayPayPal" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiEnvironment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -3775,8 +3744,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="shippingCallbackUrl"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayPayflowPro" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="cancelReturnUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -3803,8 +3771,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="userId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayRespMsg" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentGatewayRespMsgId"
@@ -3816,8 +3783,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="pgrMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayResponseId"
-            eType="#//accounting/payment/PaymentGatewayResponse"
-            eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
+            eType="#//accounting/payment/PaymentGatewayResponse" eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayResponse" eSuperTypes="#//BizEntity">
         <eOperations name="paymentGatewayRespMsgs" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -3871,8 +3837,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderPaymentPreferenceId"
             eType="#//order/order/OrderPaymentPreference" eKeys="#//order/order/OrderPaymentPreference/orderPaymentPreferenceId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodId" eType="#//accounting/payment/PaymentMethod"
             eKeys="#//accounting/payment/PaymentMethod/paymentMethodId"/>
       </eClassifiers>
@@ -3894,8 +3859,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="voidUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewaySecurePay" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="enableAmountRound"
@@ -3905,8 +3869,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="pwd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGatewayWorldPay" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="authMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -3920,8 +3883,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="testMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="withDelivery" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentGlAccountTypeMap" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentTypeId" eType="#//accounting/payment/PaymentType"
@@ -4075,8 +4037,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountId" eType="#//accounting/ledger/GlAccount"
@@ -4152,8 +4113,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentMethodTypeGlAccount" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="organizationPartyId"
             eType="#//party/party/Party" eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountId" eType="#//accounting/ledger/GlAccount"
@@ -4389,8 +4349,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityAssocTypeId"
-            eType="#//accounting/tax/TaxAuthorityAssocType"
-            eKeys="#//accounting/tax/TaxAuthorityAssocType/taxAuthorityAssocTypeId"/>
+            eType="#//accounting/tax/TaxAuthorityAssocType" eKeys="#//accounting/tax/TaxAuthorityAssocType/taxAuthorityAssocTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/tax/TaxAuthorityAssocType"/>
         </eGenericSuperTypes>
@@ -7901,8 +7860,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="lastModifiedByUserLogin"
             eType="#//security/login/UserLogin" eKeys="#//security/login/UserLogin/userLoginId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentAssocPredicateId"
-            eType="#//content/content/ContentAssocPredicate"
-            eKeys="#//content/content/ContentAssocPredicate/contentAssocPredicateId"/>
+            eType="#//content/content/ContentAssocPredicate" eKeys="#//content/content/ContentAssocPredicate/contentAssocPredicateId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="dataSourceId" eType="#//common/datasource/DataSource"
             eKeys="#//common/datasource/DataSource/dataSourceId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
@@ -8736,8 +8694,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="webPreferenceValue"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="webPreferenceTypeId"
-            eType="#//content/preference/WebPreferenceType"
-            eKeys="#//content/preference/WebPreferenceType/webPreferenceTypeId"/>
+            eType="#//content/preference/WebPreferenceType" eKeys="#//content/preference/WebPreferenceType/webPreferenceTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="userLoginId" eType="#//security/login/UserLogin"
             eKeys="#//security/login/UserLogin/userLoginId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
@@ -8908,8 +8865,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="surveyQuestionTypeId"
             eType="#//content/survey/SurveyQuestionType" eKeys="#//content/survey/SurveyQuestionType/surveyQuestionTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="surveyQuestionCategoryId"
-            eType="#//content/survey/SurveyQuestionCategory"
-            eKeys="#//content/survey/SurveyQuestionCategory/surveyQuestionCategoryId"/>
+            eType="#//content/survey/SurveyQuestionCategory" eKeys="#//content/survey/SurveyQuestionCategory/surveyQuestionCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="geoId" eType="#//common/geo/Geo"
             eKeys="#//common/geo/Geo/geoId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="surveyQuestionOptions"
@@ -10145,8 +10101,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="leaveTypeId" eType="#//humanres/employment/EmplLeaveType"
             eKeys="#//humanres/employment/EmplLeaveType/leaveTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplLeaveReasonTypeId"
-            eType="#//humanres/employment/EmplLeaveReasonType"
-            eKeys="#//humanres/employment/EmplLeaveReasonType/emplLeaveReasonTypeId"/>
+            eType="#//humanres/employment/EmplLeaveReasonType" eKeys="#//humanres/employment/EmplLeaveReasonType/emplLeaveReasonTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="approverPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="leaveStatus" eType="#//common/status/StatusItem"
@@ -10233,8 +10188,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdFrom" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="terminationReasonId"
-            eType="#//humanres/employment/TerminationReason"
-            eKeys="#//humanres/employment/TerminationReason/terminationReasonId"/>
+            eType="#//humanres/employment/TerminationReason" eKeys="#//humanres/employment/TerminationReason/terminationReasonId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="terminationTypeId"
             eType="#//humanres/employment/TerminationType" eKeys="#//humanres/employment/TerminationType/terminationTypeId"/>
       </eClassifiers>
@@ -10252,8 +10206,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="statusId" eType="#//common/status/StatusItem"
             eKeys="#//common/status/StatusItem/statusId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="employmentAppSourceTypeId"
-            eType="#//humanres/employment/EmploymentAppSourceType"
-            eKeys="#//humanres/employment/EmploymentAppSourceType/employmentAppSourceTypeId"/>
+            eType="#//humanres/employment/EmploymentAppSourceType" eKeys="#//humanres/employment/EmploymentAppSourceType/employmentAppSourceTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="applyingPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="referredByPartyId"
@@ -10406,8 +10359,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="deductionTypeId" eType="#//accounting/payment/DeductionType"
             eKeys="#//accounting/payment/DeductionType/deductionTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="periodTypeId" eType="#//common/period/PeriodType"
             eKeys="#//common/period/PeriodType/periodTypeId"/>
       </eClassifiers>
@@ -10655,8 +10607,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionTypeId"
             eType="#//humanres/position/EmplPositionType" eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionClassTypeId"
-            eType="#//humanres/position/EmplPositionClassType"
-            eKeys="#//humanres/position/EmplPositionClassType/emplPositionClassTypeId"/>
+            eType="#//humanres/position/EmplPositionClassType" eKeys="#//humanres/position/EmplPositionClassType/emplPositionClassTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EmplPositionTypeRate" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" lowerBound="1"
@@ -10706,8 +10657,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="jobInterviewerPartyId"
             eType="#//party/party/Party" eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="jobInterviewTypeId"
-            eType="#//humanres/recruitment/JobInterviewType"
-            eKeys="#//humanres/recruitment/JobInterviewType/jobInterviewTypeId"/>
+            eType="#//humanres/recruitment/JobInterviewType" eKeys="#//humanres/recruitment/JobInterviewType/jobInterviewTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="jobRequisitionId" eType="#//humanres/recruitment/JobRequisition"
             eKeys="#//humanres/recruitment/JobRequisition/jobRequisitionId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="gradeSecuredEnumId"
@@ -11089,8 +11039,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MarketingCampaignNote" eSuperTypes="#//BizEntityNote">
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MarketingCampaignPrice" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" lowerBound="1"
@@ -11101,8 +11050,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceRuleId"
             eType="#//product/price/ProductPriceRule" eKeys="#//product/price/ProductPriceRule/productPriceRuleId"/>
       </eClassifiers>
@@ -11115,8 +11063,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPromoId" eType="#//product/promo/ProductPromo"
             eKeys="#//product/promo/ProductPromo/productPromoId"/>
       </eClassifiers>
@@ -11129,8 +11076,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleTypeId" eType="#//party/party/RoleType"
@@ -11173,8 +11119,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="verifyEmailWebSiteId"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactListTypeId"
             eType="#//marketing/contact/ContactListType" eKeys="#//marketing/contact/ContactListType/contactListTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechTypeId"
@@ -11194,8 +11139,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactListId" eType="#//marketing/contact/ContactList"
             eKeys="#//marketing/contact/ContactList/contactListId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
@@ -11454,13 +11398,11 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="currencyUomId" eType="#//common/uom/Uom"
             eKeys="#//common/uom/Uom/uomId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="opportunityStageId"
-            eType="#//marketing/opportunity/SalesOpportunityStage"
-            eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
+            eType="#//marketing/opportunity/SalesOpportunityStage" eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="typeEnumId" eType="#//common/enum/Enumeration"
             eKeys="#//common/enum/Enumeration/enumId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="createdByUserLogin"
             eType="#//security/login/UserLogin" eKeys="#//security/login/UserLogin/userLoginId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="salesOpportunityCompetitors"
@@ -11511,8 +11453,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="strengths" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="weaknesses" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SalesOpportunityHistory" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
@@ -11538,25 +11479,21 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="currencyUomId" eType="#//common/uom/Uom"
             eKeys="#//common/uom/Uom/uomId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="opportunityStageId"
-            eType="#//marketing/opportunity/SalesOpportunityStage"
-            eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
+            eType="#//marketing/opportunity/SalesOpportunityStage" eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="modifiedByUserLogin"
             eType="#//security/login/UserLogin" eKeys="#//security/login/UserLogin/userLoginId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SalesOpportunityQuote" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="quoteId" eType="#//order/quote/Quote"
             eKeys="#//order/quote/Quote/quoteId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SalesOpportunityRole" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleTypeId" eType="#//party/party/RoleType"
@@ -11605,13 +11542,11 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="receivedDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SalesOpportunityWorkEffort" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortId" eType="#//workeffort/workeffort/WorkEffort"
             eKeys="#//workeffort/workeffort/WorkEffort/workEffortId"/>
       </eClassifiers>
@@ -11660,8 +11595,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="segmentGroupId" eType="#//marketing/segment/SegmentGroup"
             eKeys="#//marketing/segment/SegmentGroup/segmentGroupId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyClassificationGroupId"
-            eType="#//party/party/PartyClassificationGroup"
-            eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId"/>
+            eType="#//party/party/PartyClassificationGroup" eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SegmentGroupGeo" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="segmentGroupId" eType="#//marketing/segment/SegmentGroup"
@@ -11745,8 +11679,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="trackableLifetime"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="trackingCodeTypeId"
             eType="#//marketing/tracking/TrackingCodeType" eKeys="#//marketing/tracking/TrackingCodeType/trackingCodeTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
@@ -11843,8 +11776,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderId" eType="#//order/order/OrderHeader"
             eKeys="#//order/order/OrderHeader/orderId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OrderAdjustment">
         <eAnnotations source="mimo-ent-frame">
@@ -11915,8 +11847,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="overrideGlAccountId"
             eType="#//accounting/ledger/GlAccount" eKeys="#//accounting/ledger/GlAccount/glAccountId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityRateSeqId"
-            eType="#//accounting/tax/TaxAuthorityRateProduct"
-            eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
+            eType="#//accounting/tax/TaxAuthorityRateProduct" eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="originalAdjustmentId"
             eType="#//order/order/OrderAdjustment" eKeys="#//order/order/OrderAdjustment/orderAdjustmentId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderAdjustmentAttributes"
@@ -12082,8 +12013,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
+            eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OrderContent">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderItemSeqId" lowerBound="1"
@@ -12552,8 +12482,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="overrideGlAccountId"
             eType="#//accounting/ledger/GlAccount" eKeys="#//accounting/ledger/GlAccount/glAccountId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="changeByUserLoginId"
             eType="#//security/login/UserLogin" eKeys="#//security/login/UserLogin/userLoginId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
@@ -12706,8 +12635,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
+            eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OrderItemGroup" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderItemGroupSeqId"
@@ -12807,8 +12735,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="facilityId" eType="#//product/facility/Facility"
             eKeys="#//product/facility/Facility/facilityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="telecomContactMechId"
@@ -13005,8 +12932,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPricePurposeId"
             eType="#//product/price/ProductPricePurpose" eKeys="#//product/price/ProductPricePurpose/productPricePurposeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodId" eType="#//accounting/payment/PaymentMethod"
             eKeys="#//accounting/payment/PaymentMethod/paymentMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountId" eType="#//accounting/finaccount/FinAccount"
@@ -13442,8 +13368,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureId" eType="#//product/feature/ProductFeature"
             eKeys="#//product/feature/ProductFeature/productFeatureId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deliverableTypeId"
-            eType="#//workeffort/workeffort/DeliverableType"
-            eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
+            eType="#//workeffort/workeffort/DeliverableType" eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="skillTypeId" eType="#//humanres/ability/SkillType"
             eKeys="#//humanres/ability/SkillType/skillTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="uomId" eType="#//common/uom/Uom"
@@ -13745,8 +13670,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="custRequestId" eType="#//order/request/CustRequest"
             eKeys="#//order/request/CustRequest/custRequestId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CustRequestContent" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" lowerBound="1"
@@ -14273,8 +14197,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfSpaces" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationClassId"
-            eType="#//accounting/fixedasset/AccommodationClass"
-            eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
+            eType="#//accounting/fixedasset/AccommodationClass" eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetId" eType="#//accounting/fixedasset/FixedAsset"
             eKeys="#//accounting/fixedasset/FixedAsset/fixedAssetId"/>
       </eClassifiers>
@@ -14285,8 +14208,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="returnId" eType="#//order/return/ReturnHeader"
             eKeys="#//order/return/ReturnHeader/returnId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ReturnAdjustment">
         <eAnnotations source="mimo-ent-frame">
@@ -14345,8 +14267,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderAdjustmentId"
             eType="#//order/order/OrderAdjustment" eKeys="#//order/order/OrderAdjustment/orderAdjustmentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityRateSeqId"
-            eType="#//accounting/tax/TaxAuthorityRateProduct"
-            eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
+            eType="#//accounting/tax/TaxAuthorityRateProduct" eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//order/return/ReturnAdjustmentType"/>
         </eGenericSuperTypes>
@@ -14403,8 +14324,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
+            eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ReturnHeader">
         <eOperations name="primaryShipments" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -14621,8 +14541,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="billingAccountId" eType="#//accounting/payment/BillingAccount"
             eKeys="#//accounting/payment/BillingAccount/billingAccountId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
+            eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ReturnItemShipment" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnItemSeqId" lowerBound="1"
@@ -15082,8 +15001,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentId" eType="#//content/content/Content"
             eKeys="#//content/content/Content/contentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="agreementContentTypeId"
-            eType="#//party/agreement/AgreementContentType"
-            eKeys="#//party/agreement/AgreementContentType/agreementContentTypeId"/>
+            eType="#//party/agreement/AgreementContentType" eKeys="#//party/agreement/AgreementContentType/agreementContentTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//party/agreement/AgreementContentType"/>
         </eGenericSuperTypes>
@@ -15563,11 +15481,9 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentId" eType="#//content/content/Content"
             eKeys="#//content/content/Content/contentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="commContentAssocTypeId"
-            eType="#//party/communication/CommContentAssocType"
-            eKeys="#//party/communication/CommContentAssocType/commContentAssocTypeId"/>
+            eType="#//party/communication/CommContentAssocType" eKeys="#//party/communication/CommContentAssocType/commContentAssocTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CommunicationEvent">
         <eOperations name="communicationEventOrders" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -15656,8 +15572,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="subject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventTypeId"
-            eType="#//party/communication/CommunicationEventType"
-            eKeys="#//party/communication/CommunicationEventType/communicationEventTypeId"/>
+            eType="#//party/communication/CommunicationEventType" eKeys="#//party/communication/CommunicationEventType/communicationEventTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdTo" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleTypeIdTo" eType="#//party/party/RoleType"
@@ -15688,8 +15603,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
             eKeys="#//product/product/Product/productId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CommunicationEventPrpTyp" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
@@ -15731,16 +15645,13 @@
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventPrpTypId"
-            eType="#//party/communication/CommunicationEventPrpTyp"
-            eKeys="#//party/communication/CommunicationEventPrpTyp/communicationEventPrpTypId"/>
+            eType="#//party/communication/CommunicationEventPrpTyp" eKeys="#//party/communication/CommunicationEventPrpTyp/communicationEventPrpTypId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CommunicationEventRole" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleTypeId" eType="#//party/party/RoleType"
@@ -16173,8 +16084,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechTypeId"
             eType="#//party/contact/ContactMechType" eKeys="#//party/contact/ContactMechType/contactMechTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
+            eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EmailAddressVerification" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailAddress" lowerBound="1"
@@ -16231,8 +16141,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
+            eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
@@ -16355,8 +16264,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyTypeId" eType="#//party/party/PartyType"
             eKeys="#//party/party/PartyType/partyTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
             eKeys="#//product/product/Product/productId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
@@ -17274,8 +17182,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyClassificationGroupId"
-            eType="#//party/party/PartyClassificationGroup"
-            eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId"/>
+            eType="#//party/party/PartyClassificationGroup" eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//party/party/PartyClassificationType"/>
         </eGenericSuperTypes>
@@ -18181,8 +18088,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
             eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="prodCatalogCategoryTypeId"
-            eType="#//product/catalog/ProdCatalogCategoryType"
-            eKeys="#//product/catalog/ProdCatalogCategoryType/prodCatalogCategoryTypeId"/>
+            eType="#//product/catalog/ProdCatalogCategoryType" eKeys="#//product/catalog/ProdCatalogCategoryType/prodCatalogCategoryTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//product/catalog/ProdCatalogCategoryType"/>
         </eGenericSuperTypes>
@@ -18321,8 +18227,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="longDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="showInSelect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryTypeId"
-            eType="#//product/category/ProductCategoryType"
-            eKeys="#//product/category/ProductCategoryType/productCategoryTypeId"/>
+            eType="#//product/category/ProductCategoryType" eKeys="#//product/category/ProductCategoryType/productCategoryTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="primaryParentCategoryId"
             eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="productCategoryAttributes"
@@ -18367,8 +18272,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentId" eType="#//content/content/Content"
             eKeys="#//content/content/Content/contentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="prodCatContentTypeId"
-            eType="#//product/category/ProductCategoryContentType"
-            eKeys="#//product/category/ProductCategoryContentType/prodCatContentTypeId"/>
+            eType="#//product/category/ProductCategoryContentType" eKeys="#//product/category/ProductCategoryContentType/prodCatContentTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//product/category/ProductCategoryContentType"/>
         </eGenericSuperTypes>
@@ -18542,8 +18446,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryTypeId"
-            eType="#//product/category/ProductCategoryType"
-            eKeys="#//product/category/ProductCategoryType/productCategoryTypeId"/>
+            eType="#//product/category/ProductCategoryType" eKeys="#//product/category/ProductCategoryType/productCategoryTypeId"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="config" nsURI="http://www.abchip.org/mimo/biz/product/config"
@@ -18598,8 +18501,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentId" eType="#//content/content/Content"
             eKeys="#//content/content/Content/contentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="confItemContentTypeId"
-            eType="#//product/config/ProdConfItemContentType"
-            eKeys="#//product/config/ProdConfItemContentType/confItemContentTypeId"/>
+            eType="#//product/config/ProdConfItemContentType" eKeys="#//product/config/ProdConfItemContentType/confItemContentTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//product/config/ProdConfItemContentType"/>
         </eGenericSuperTypes>
@@ -19317,8 +19219,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="facilityId" eType="#//product/facility/Facility"
             eKeys="#//product/facility/Facility/facilityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="facilityCalendarTypeId"
-            eType="#//product/facility/FacilityCalendarType"
-            eKeys="#//product/facility/FacilityCalendarType/facilityCalendarTypeId"/>
+            eType="#//product/facility/FacilityCalendarType" eKeys="#//product/facility/FacilityCalendarType/facilityCalendarTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//product/facility/FacilityCalendarType"/>
         </eGenericSuperTypes>
@@ -19352,8 +19253,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="facilityId" eType="#//product/facility/Facility"
             eKeys="#//product/facility/Facility/facilityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FacilityContactMech" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" lowerBound="1"
@@ -19379,8 +19279,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
+            eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="facilityId" eType="#//product/facility/Facility"
             eKeys="#//product/facility/Facility/facilityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
@@ -19729,8 +19628,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="idCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberSpecified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureCategoryId"
-            eType="#//product/feature/ProductFeatureCategory"
-            eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId"/>
+            eType="#//product/feature/ProductFeatureCategory" eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureTypeId"
             eType="#//product/feature/ProductFeatureType" eKeys="#//product/feature/ProductFeatureType/productFeatureTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="uomId" eType="#//common/uom/Uom"
@@ -19760,8 +19658,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureApplTypeId"
-            eType="#//product/feature/ProductFeatureApplType"
-            eKeys="#//product/feature/ProductFeatureApplType/productFeatureApplTypeId"/>
+            eType="#//product/feature/ProductFeatureApplType" eKeys="#//product/feature/ProductFeatureApplType/productFeatureApplTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
             eKeys="#//product/product/Product/productId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureId" eType="#//product/feature/ProductFeature"
@@ -19874,8 +19771,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
             eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureCategoryId"
-            eType="#//product/feature/ProductFeatureCategory"
-            eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId"/>
+            eType="#//product/feature/ProductFeatureCategory" eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ProductFeatureDataResource" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="dataResourceId" eType="#//content/data/DataResource"
@@ -19913,8 +19809,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="ProductFeatureIactn">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="productId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureIactnTypeId"
-            eType="#//product/feature/ProductFeatureIactnType"
-            eKeys="#//product/feature/ProductFeatureIactnType/productFeatureIactnTypeId"/>
+            eType="#//product/feature/ProductFeatureIactnType" eKeys="#//product/feature/ProductFeatureIactnType/productFeatureIactnTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureId" eType="#//product/feature/ProductFeature"
             eKeys="#//product/feature/ProductFeature/productFeatureId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureIdTo"
@@ -20259,8 +20154,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemLabelTypeId"
-            eType="#//product/inventory/InventoryItemLabelType"
-            eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId"/>
+            eType="#//product/inventory/InventoryItemLabelType" eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//product/inventory/InventoryItemLabelType"/>
         </eGenericSuperTypes>
@@ -20270,11 +20164,9 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemId" eType="#//product/inventory/InventoryItem"
             eKeys="#//product/inventory/InventoryItem/inventoryItemId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemLabelTypeId"
-            eType="#//product/inventory/InventoryItemLabelType"
-            eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId"/>
+            eType="#//product/inventory/InventoryItemLabelType" eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemLabelId"
-            eType="#//product/inventory/InventoryItemLabel"
-            eKeys="#//product/inventory/InventoryItemLabel/inventoryItemLabelId"/>
+            eType="#//product/inventory/InventoryItemLabel" eKeys="#//product/inventory/InventoryItemLabel/inventoryItemLabelId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InventoryItemLabelType">
         <eAnnotations source="mimo-ent-frame">
@@ -20606,8 +20498,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
             eKeys="#//product/product/Product/productId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPricePurposeId"
             eType="#//product/price/ProductPricePurpose" eKeys="#//product/price/ProductPricePurpose/productPricePurposeId"/>
       </eClassifiers>
@@ -20663,8 +20554,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="rateCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceActionTypeId"
-            eType="#//product/price/ProductPriceActionType"
-            eKeys="#//product/price/ProductPriceActionType/productPriceActionTypeId"/>
+            eType="#//product/price/ProductPriceActionType" eKeys="#//product/price/ProductPriceActionType/productPriceActionTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceRuleId"
             eType="#//product/price/ProductPriceRule" eKeys="#//product/price/ProductPriceRule/productPriceRuleId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
@@ -20917,8 +20807,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="GoodIdentification">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="idValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="goodIdentificationTypeId"
-            eType="#//product/product/GoodIdentificationType"
-            eKeys="#//product/product/GoodIdentificationType/goodIdentificationTypeId"/>
+            eType="#//product/product/GoodIdentificationType" eKeys="#//product/product/GoodIdentificationType/goodIdentificationTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
             eKeys="#//product/product/Product/productId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
@@ -22656,13 +22545,11 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreId" eType="#//product/store/ProductStore"
             eKeys="#//product/store/ProductStore/productStoreId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentServiceTypeEnumId"
             eType="#//common/enum/Enumeration" eKeys="#//common/enum/Enumeration/enumId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentCustomMethodId"
             eType="#//common/method/CustomMethod" eKeys="#//common/method/CustomMethod/customMethodId"/>
       </eClassifiers>
@@ -22742,15 +22629,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="companyPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="includeGeoId" eType="#//common/geo/Geo"
             eKeys="#//common/geo/Geo/geoId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="excludeGeoId" eType="#//common/geo/Geo"
             eKeys="#//common/geo/Geo/geoId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentGatewayConfigId"
-            eType="#//shipment/shipment/ShipmentGatewayConfig"
-            eKeys="#//shipment/shipment/ShipmentGatewayConfig/shipmentGatewayConfigId"/>
+            eType="#//shipment/shipment/ShipmentGatewayConfig" eKeys="#//shipment/shipment/ShipmentGatewayConfig/shipmentGatewayConfigId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentCustomMethodId"
             eType="#//common/method/CustomMethod" eKeys="#//common/method/CustomMethod/customMethodId"/>
       </eClassifiers>
@@ -22785,8 +22670,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="vendorPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="creditCardEnumId" eType="#//common/enum/Enumeration"
             eKeys="#//common/enum/Enumeration/enumId"/>
       </eClassifiers>
@@ -22796,8 +22680,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="vendorPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="carrierPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
       </eClassifiers>
@@ -22825,8 +22708,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
             eKeys="#//product/product/Product/productId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionResourceId"
-            eType="#//product/subscription/SubscriptionResource"
-            eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId"/>
+            eType="#//product/subscription/SubscriptionResource" eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="useRoleTypeId" eType="#//party/party/RoleType"
             eKeys="#//party/party/RoleType/roleTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="useTimeUomId" eType="#//common/uom/Uom"
@@ -22882,8 +22764,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCountLimit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="useTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionResourceId"
-            eType="#//product/subscription/SubscriptionResource"
-            eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId"/>
+            eType="#//product/subscription/SubscriptionResource" eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
@@ -22913,8 +22794,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemId" eType="#//product/inventory/InventoryItem"
             eKeys="#//product/inventory/InventoryItem/inventoryItemId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionTypeId"
-            eType="#//product/subscription/SubscriptionType"
-            eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId"/>
+            eType="#//product/subscription/SubscriptionType" eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="gracePeriodOnExpiryUomId"
             eType="#//common/uom/Uom" eKeys="#//common/uom/Uom/uomId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscriptionAttributes"
@@ -22973,8 +22853,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SubscriptionCommEvent" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionId" eType="#//product/subscription/Subscription"
             eKeys="#//product/subscription/Subscription/subscriptionId"/>
       </eClassifiers>
@@ -22982,8 +22861,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionId" eType="#//product/subscription/Subscription"
             eKeys="#//product/subscription/Subscription/subscriptionId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionActivityId"
-            eType="#//product/subscription/SubscriptionActivity"
-            eKeys="#//product/subscription/SubscriptionActivity/subscriptionActivityId"/>
+            eType="#//product/subscription/SubscriptionActivity" eKeys="#//product/subscription/SubscriptionActivity/subscriptionActivityId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SubscriptionResource" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
@@ -23082,8 +22960,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionTypeId"
-            eType="#//product/subscription/SubscriptionType"
-            eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId"/>
+            eType="#//product/subscription/SubscriptionType" eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="supplier" nsURI="http://www.abchip.org/mimo/biz/product/supplier"
@@ -23099,8 +22976,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
             eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyClassificationGroupId"
-            eType="#//party/party/PartyClassificationGroup"
-            eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId"/>
+            eType="#//party/party/PartyClassificationGroup" eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ReorderGuideline" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="reorderGuidelineId"
@@ -24221,8 +24097,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="facilityId" eType="#//product/facility/Facility"
             eKeys="#//product/facility/Facility/facilityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statusId" eType="#//common/status/StatusItem"
             eKeys="#//common/status/StatusItem/statusId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="picklistStatusHistories"
@@ -24433,8 +24308,7 @@
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
       </eClassifiers>
@@ -24686,8 +24560,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechId" eType="#//party/contact/ContactMech"
             eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentContactMechTypeId"
-            eType="#//shipment/shipment/ShipmentContactMechType"
-            eKeys="#//shipment/shipment/ShipmentContactMechType/shipmentContactMechTypeId"/>
+            eType="#//shipment/shipment/ShipmentContactMechType" eKeys="#//shipment/shipment/ShipmentContactMechType/shipmentContactMechTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//shipment/shipment/ShipmentContactMechType"/>
         </eGenericSuperTypes>
@@ -24749,8 +24622,7 @@
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="weightUnitPrice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreShipMethId"
-            eType="#//product/store/ProductStoreShipmentMeth"
-            eKeys="#//product/store/ProductStoreShipmentMeth/productStoreShipMethId"/>
+            eType="#//product/store/ProductStoreShipmentMeth" eKeys="#//product/store/ProductStoreShipmentMeth/productStoreShipMethId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleTypeId" eType="#//party/party/RoleType"
@@ -24794,8 +24666,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentGatewayConfTypeId"
-            eType="#//shipment/shipment/ShipmentGatewayConfigType"
-            eKeys="#//shipment/shipment/ShipmentGatewayConfigType/shipmentGatewayConfTypeId"/>
+            eType="#//shipment/shipment/ShipmentGatewayConfigType" eKeys="#//shipment/shipment/ShipmentGatewayConfigType/shipmentGatewayConfTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//shipment/shipment/ShipmentGatewayConfigType"/>
         </eGenericSuperTypes>
@@ -25147,8 +25018,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="carrierPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="originFacilityId" eType="#//product/facility/Facility"
             eKeys="#//product/facility/Facility/facilityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="destFacilityId" eType="#//product/facility/Facility"
@@ -25747,8 +25617,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortId" eType="#//workeffort/workeffort/WorkEffort"
             eKeys="#//workeffort/workeffort/WorkEffort/workEffortId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Deliverable">
         <eAnnotations source="mimo-ent-frame">
@@ -25782,8 +25651,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="deliverableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deliverableTypeId"
-            eType="#//workeffort/workeffort/DeliverableType"
-            eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
+            eType="#//workeffort/workeffort/DeliverableType" eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//workeffort/workeffort/DeliverableType"/>
         </eGenericSuperTypes>
@@ -26030,8 +25898,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortTypeId" eType="#//workeffort/workeffort/WorkEffortType"
             eKeys="#//workeffort/workeffort/WorkEffortType/workEffortTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortPurposeTypeId"
-            eType="#//workeffort/workeffort/WorkEffortPurposeType"
-            eKeys="#//workeffort/workeffort/WorkEffortPurposeType/workEffortPurposeTypeId"/>
+            eType="#//workeffort/workeffort/WorkEffortPurposeType" eKeys="#//workeffort/workeffort/WorkEffortPurposeType/workEffortPurposeTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortParentId"
             eType="#//workeffort/workeffort/WorkEffort" eKeys="#//workeffort/workeffort/WorkEffort/workEffortId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="currentStatusId" eType="#//common/status/StatusItem"
@@ -26055,11 +25922,9 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="estimateCalcMethod"
             eType="#//common/method/CustomMethod" eKeys="#//common/method/CustomMethod/customMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationMapId"
-            eType="#//accounting/fixedasset/AccommodationMap"
-            eKeys="#//accounting/fixedasset/AccommodationMap/accommodationMapId"/>
+            eType="#//accounting/fixedasset/AccommodationMap" eKeys="#//accounting/fixedasset/AccommodationMap/accommodationMapId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationSpotId"
-            eType="#//order/reservations/AccommodationSpot"
-            eKeys="#//order/reservations/AccommodationSpot/accommodationSpotId"/>
+            eType="#//order/reservations/AccommodationSpot" eKeys="#//order/reservations/AccommodationSpot/accommodationSpotId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationEventWorkEffs"
             upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-slot">
@@ -26164,8 +26029,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortAssocTypeId"
-            eType="#//workeffort/workeffort/WorkEffortAssocType"
-            eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId"/>
+            eType="#//workeffort/workeffort/WorkEffortAssocType" eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortIdFrom" eType="#//workeffort/workeffort/WorkEffort"
             eKeys="#//workeffort/workeffort/WorkEffort/workEffortId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortIdTo" eType="#//workeffort/workeffort/WorkEffort"
@@ -26252,8 +26116,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortAssocTypeId"
-            eType="#//workeffort/workeffort/WorkEffortAssocType"
-            eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId"/>
+            eType="#//workeffort/workeffort/WorkEffortAssocType" eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WorkEffortAttribute" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="attrName" lowerBound="1"
@@ -26307,8 +26170,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentId" eType="#//content/content/Content"
             eKeys="#//content/content/Content/contentId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortContentTypeId"
-            eType="#//workeffort/workeffort/WorkEffortContentType"
-            eKeys="#//workeffort/workeffort/WorkEffortContentType/workEffortContentTypeId"/>
+            eType="#//workeffort/workeffort/WorkEffortContentType" eKeys="#//workeffort/workeffort/WorkEffortContentType/workEffortContentTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//workeffort/workeffort/WorkEffortContentType"/>
         </eGenericSuperTypes>
@@ -26426,8 +26288,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortId" eType="#//workeffort/workeffort/WorkEffort"
             eKeys="#//workeffort/workeffort/WorkEffort/workEffortId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortGoodStdTypeId"
-            eType="#//workeffort/workeffort/WorkEffortGoodStandardType"
-            eKeys="#//workeffort/workeffort/WorkEffortGoodStandardType/workEffortGoodStdTypeId"/>
+            eType="#//workeffort/workeffort/WorkEffortGoodStandardType" eKeys="#//workeffort/workeffort/WorkEffortGoodStandardType/workEffortGoodStdTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
             eKeys="#//product/product/Product/productId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statusId" eType="#//common/status/StatusItem"
@@ -26598,8 +26459,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="removeStems" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortSearchResultId"
-            eType="#//workeffort/workeffort/WorkEffortSearchResult"
-            eKeys="#//workeffort/workeffort/WorkEffortSearchResult/workEffortSearchResultId"/>
+            eType="#//workeffort/workeffort/WorkEffortSearchResult" eKeys="#//workeffort/workeffort/WorkEffortSearchResult/workEffortSearchResultId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WorkEffortSearchResult" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="workEffortSearchResultId"
@@ -26741,5 +26601,5 @@
             eKeys="#//workeffort/workeffort/WorkEffortType/workEffortTypeId"/>
       </eClassifiers>
     </eSubpackages>
-  </eSubpackages>s  
+  </eSubpackages>
 </ecore:EPackage>

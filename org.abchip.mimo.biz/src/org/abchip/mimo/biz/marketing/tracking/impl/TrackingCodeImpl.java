@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -456,10 +453,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setBillableLifetime(long newBillableLifetime) {
-		long oldBillableLifetime = billableLifetime;
 		billableLifetime = newBillableLifetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__BILLABLE_LIFETIME, oldBillableLifetime, billableLifetime));
 	}
 
 	/**
@@ -479,10 +473,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -502,10 +493,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -525,10 +513,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -548,10 +533,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -571,10 +553,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -594,10 +573,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setGroupId(String newGroupId) {
-		String oldGroupId = groupId;
 		groupId = newGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__GROUP_ID, oldGroupId, groupId));
 	}
 
 	/**
@@ -617,10 +593,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -640,10 +613,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -657,8 +627,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
 			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
 			if (marketingCampaignId != oldMarketingCampaignId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 			}
 		}
 		return marketingCampaignId;
@@ -680,10 +648,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
-		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 	}
 
 	/**
@@ -703,10 +668,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setOverrideCss(String newOverrideCss) {
-		String oldOverrideCss = overrideCss;
 		overrideCss = newOverrideCss;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__OVERRIDE_CSS, oldOverrideCss, overrideCss));
 	}
 
 	/**
@@ -726,10 +688,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setOverrideLogo(String newOverrideLogo) {
-		String oldOverrideLogo = overrideLogo;
 		overrideLogo = newOverrideLogo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO, oldOverrideLogo, overrideLogo));
 	}
 
 	/**
@@ -749,10 +708,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setProdCatalogId(String newProdCatalogId) {
-		String oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 	}
 
 	/**
@@ -772,10 +728,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setRedirectUrl(String newRedirectUrl) {
-		String oldRedirectUrl = redirectUrl;
 		redirectUrl = newRedirectUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__REDIRECT_URL, oldRedirectUrl, redirectUrl));
 	}
 
 	/**
@@ -795,10 +748,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setSubgroupId(String newSubgroupId) {
-		String oldSubgroupId = subgroupId;
 		subgroupId = newSubgroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__SUBGROUP_ID, oldSubgroupId, subgroupId));
 	}
 
 	/**
@@ -818,10 +768,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -841,10 +788,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setTrackableLifetime(long newTrackableLifetime) {
-		long oldTrackableLifetime = trackableLifetime;
 		trackableLifetime = newTrackableLifetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME, oldTrackableLifetime, trackableLifetime));
 	}
 
 	/**
@@ -864,10 +808,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setTrackingCodeId(String newTrackingCodeId) {
-		String oldTrackingCodeId = trackingCodeId;
 		trackingCodeId = newTrackingCodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
 	}
 
 	/**
@@ -881,8 +822,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 			InternalEObject oldTrackingCodeTypeId = (InternalEObject)trackingCodeTypeId;
 			trackingCodeTypeId = (TrackingCodeType)eResolveProxy(oldTrackingCodeTypeId);
 			if (trackingCodeTypeId != oldTrackingCodeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
 			}
 		}
 		return trackingCodeTypeId;
@@ -904,10 +843,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setTrackingCodeTypeId(TrackingCodeType newTrackingCodeTypeId) {
-		TrackingCodeType oldTrackingCodeTypeId = trackingCodeTypeId;
 		trackingCodeTypeId = newTrackingCodeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
 	}
 
 	/**

@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureGroup;
 import org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,10 +157,7 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -183,10 +177,7 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -206,10 +197,7 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -223,8 +211,6 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 			InternalEObject oldProductFeatureGroupId = (InternalEObject)productFeatureGroupId;
 			productFeatureGroupId = (ProductFeatureGroup)eResolveProxy(oldProductFeatureGroupId);
 			if (productFeatureGroupId != oldProductFeatureGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID, oldProductFeatureGroupId, productFeatureGroupId));
 			}
 		}
 		return productFeatureGroupId;
@@ -246,10 +232,7 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductFeatureGroupId(ProductFeatureGroup newProductFeatureGroupId) {
-		ProductFeatureGroup oldProductFeatureGroupId = productFeatureGroupId;
 		productFeatureGroupId = newProductFeatureGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_GROUP_ID, oldProductFeatureGroupId, productFeatureGroupId));
 	}
 
 	/**
@@ -263,8 +246,6 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -286,10 +267,7 @@ public class ProductFeatureGroupApplImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
-		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP_APPL__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**

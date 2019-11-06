@@ -14,15 +14,12 @@ import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,10 +160,7 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	 */
 	@Override
 	public void setContentTypeId(String newContentTypeId) {
-		String oldContentTypeId = contentTypeId;
 		contentTypeId = newContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
 	}
 
 	/**
@@ -186,10 +180,7 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -209,10 +200,7 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -226,8 +214,6 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ContentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -249,10 +235,7 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	 */
 	@Override
 	public void setParentTypeId(ContentType newParentTypeId) {
-		ContentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -263,7 +246,7 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	@Override
 	public List<String> getContentTypeAttrs() {
 		if (contentTypeAttrs == null) {
-			contentTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, ContentPackage.CONTENT_TYPE__CONTENT_TYPE_ATTRS);
+			contentTypeAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return contentTypeAttrs;
 	}

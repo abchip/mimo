@@ -14,14 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -299,10 +296,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setCategoryImageUrl(String newCategoryImageUrl) {
-		String oldCategoryImageUrl = categoryImageUrl;
 		categoryImageUrl = newCategoryImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__CATEGORY_IMAGE_URL, oldCategoryImageUrl, categoryImageUrl));
 	}
 
 	/**
@@ -322,10 +316,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setCategoryName(String newCategoryName) {
-		String oldCategoryName = categoryName;
 		categoryName = newCategoryName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__CATEGORY_NAME, oldCategoryName, categoryName));
 	}
 
 	/**
@@ -345,10 +336,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -368,10 +356,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setDetailScreen(String newDetailScreen) {
-		String oldDetailScreen = detailScreen;
 		detailScreen = newDetailScreen;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__DETAIL_SCREEN, oldDetailScreen, detailScreen));
 	}
 
 	/**
@@ -391,10 +376,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setLinkOneImageUrl(String newLinkOneImageUrl) {
-		String oldLinkOneImageUrl = linkOneImageUrl;
 		linkOneImageUrl = newLinkOneImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__LINK_ONE_IMAGE_URL, oldLinkOneImageUrl, linkOneImageUrl));
 	}
 
 	/**
@@ -414,10 +396,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setLinkTwoImageUrl(String newLinkTwoImageUrl) {
-		String oldLinkTwoImageUrl = linkTwoImageUrl;
 		linkTwoImageUrl = newLinkTwoImageUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__LINK_TWO_IMAGE_URL, oldLinkTwoImageUrl, linkTwoImageUrl));
 	}
 
 	/**
@@ -437,10 +416,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setLongDescription(String newLongDescription) {
-		String oldLongDescription = longDescription;
 		longDescription = newLongDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__LONG_DESCRIPTION, oldLongDescription, longDescription));
 	}
 
 	/**
@@ -451,7 +427,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	@Override
 	public List<String> getProductCategoryAttributes() {
 		if (productCategoryAttributes == null) {
-			productCategoryAttributes = new EDataTypeUniqueEList<String>(String.class, this, CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES);
+			productCategoryAttributes = new BasicInternalEList<String>(String.class);
 		}
 		return productCategoryAttributes;
 	}
@@ -539,8 +515,6 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 			InternalEObject oldProductCategoryTypeId = (InternalEObject)productCategoryTypeId;
 			productCategoryTypeId = (ProductCategoryType)eResolveProxy(oldProductCategoryTypeId);
 			if (productCategoryTypeId != oldProductCategoryTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
 			}
 		}
 		return productCategoryTypeId;
@@ -562,10 +536,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setProductCategoryTypeId(ProductCategoryType newProductCategoryTypeId) {
-		ProductCategoryType oldProductCategoryTypeId = productCategoryTypeId;
 		productCategoryTypeId = newProductCategoryTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
 	}
 
 	/**
@@ -585,10 +556,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setShowInSelect(boolean newShowInSelect) {
-		boolean oldShowInSelect = showInSelect;
 		showInSelect = newShowInSelect;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__SHOW_IN_SELECT, oldShowInSelect, showInSelect));
 	}
 
 	/**
@@ -602,8 +570,6 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 			InternalEObject oldPrimaryParentCategoryId = (InternalEObject)primaryParentCategoryId;
 			primaryParentCategoryId = (ProductCategory)eResolveProxy(oldPrimaryParentCategoryId);
 			if (primaryParentCategoryId != oldPrimaryParentCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID, oldPrimaryParentCategoryId, primaryParentCategoryId));
 			}
 		}
 		return primaryParentCategoryId;
@@ -625,10 +591,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setPrimaryParentCategoryId(ProductCategory newPrimaryParentCategoryId) {
-		ProductCategory oldPrimaryParentCategoryId = primaryParentCategoryId;
 		primaryParentCategoryId = newPrimaryParentCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID, oldPrimaryParentCategoryId, primaryParentCategoryId));
 	}
 
 	/**
@@ -648,10 +611,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@Override
 	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**

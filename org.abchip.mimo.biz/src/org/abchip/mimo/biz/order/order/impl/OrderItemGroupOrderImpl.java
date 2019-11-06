@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderItemGroupOrder;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.product.product.ProductGroupOrder;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,8 +117,6 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 			InternalEObject oldGroupOrderId = (InternalEObject)groupOrderId;
 			groupOrderId = (ProductGroupOrder)eResolveProxy(oldGroupOrderId);
 			if (groupOrderId != oldGroupOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID, oldGroupOrderId, groupOrderId));
 			}
 		}
 		return groupOrderId;
@@ -143,10 +138,7 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 	 */
 	@Override
 	public void setGroupOrderId(ProductGroupOrder newGroupOrderId) {
-		ProductGroupOrder oldGroupOrderId = groupOrderId;
 		groupOrderId = newGroupOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID, oldGroupOrderId, groupOrderId));
 	}
 
 	/**
@@ -166,10 +158,7 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 	 */
 	@Override
 	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP_ORDER__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -189,10 +178,7 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP_ORDER__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**

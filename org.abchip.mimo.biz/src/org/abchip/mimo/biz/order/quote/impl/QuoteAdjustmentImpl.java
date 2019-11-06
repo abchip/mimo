@@ -20,13 +20,10 @@ import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -579,10 +576,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -602,10 +596,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -625,10 +616,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setCorrespondingProductId(String newCorrespondingProductId) {
-		String oldCorrespondingProductId = correspondingProductId;
 		correspondingProductId = newCorrespondingProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__CORRESPONDING_PRODUCT_ID, oldCorrespondingProductId, correspondingProductId));
 	}
 
 	/**
@@ -642,8 +630,6 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ADJUSTMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -665,10 +651,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -688,10 +671,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -711,10 +691,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setCustomerReferenceId(String newCustomerReferenceId) {
-		String oldCustomerReferenceId = customerReferenceId;
 		customerReferenceId = newCustomerReferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__CUSTOMER_REFERENCE_ID, oldCustomerReferenceId, customerReferenceId));
 	}
 
 	/**
@@ -734,10 +711,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -757,10 +731,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setExemptAmount(BigDecimal newExemptAmount) {
-		BigDecimal oldExemptAmount = exemptAmount;
 		exemptAmount = newExemptAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__EXEMPT_AMOUNT, oldExemptAmount, exemptAmount));
 	}
 
 	/**
@@ -780,10 +751,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setIncludeInShipping(boolean newIncludeInShipping) {
-		boolean oldIncludeInShipping = includeInShipping;
 		includeInShipping = newIncludeInShipping;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__INCLUDE_IN_SHIPPING, oldIncludeInShipping, includeInShipping));
 	}
 
 	/**
@@ -803,10 +771,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setIncludeInTax(boolean newIncludeInTax) {
-		boolean oldIncludeInTax = includeInTax;
 		includeInTax = newIncludeInTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__INCLUDE_IN_TAX, oldIncludeInTax, includeInTax));
 	}
 
 	/**
@@ -826,10 +791,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -849,10 +811,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -866,8 +825,6 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
 			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
 			if (overrideGlAccountId != oldOverrideGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 			}
 		}
 		return overrideGlAccountId;
@@ -889,10 +846,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
-		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 	}
 
 	/**
@@ -906,8 +860,6 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 			InternalEObject oldPrimaryGeoId = (InternalEObject)primaryGeoId;
 			primaryGeoId = (Geo)eResolveProxy(oldPrimaryGeoId);
 			if (primaryGeoId != oldPrimaryGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ADJUSTMENT__PRIMARY_GEO_ID, oldPrimaryGeoId, primaryGeoId));
 			}
 		}
 		return primaryGeoId;
@@ -929,10 +881,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setPrimaryGeoId(Geo newPrimaryGeoId) {
-		Geo oldPrimaryGeoId = primaryGeoId;
 		primaryGeoId = newPrimaryGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__PRIMARY_GEO_ID, oldPrimaryGeoId, primaryGeoId));
 	}
 
 	/**
@@ -952,10 +901,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -975,10 +921,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setProductPromoActionSeqId(String newProductPromoActionSeqId) {
-		String oldProductPromoActionSeqId = productPromoActionSeqId;
 		productPromoActionSeqId = newProductPromoActionSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID, oldProductPromoActionSeqId, productPromoActionSeqId));
 	}
 
 	/**
@@ -992,8 +935,6 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ADJUSTMENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -1015,10 +956,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
-		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**
@@ -1038,10 +976,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setProductPromoRuleId(String newProductPromoRuleId) {
-		String oldProductPromoRuleId = productPromoRuleId;
 		productPromoRuleId = newProductPromoRuleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__PRODUCT_PROMO_RULE_ID, oldProductPromoRuleId, productPromoRuleId));
 	}
 
 	/**
@@ -1061,10 +996,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setQuoteAdjustmentId(String newQuoteAdjustmentId) {
-		String oldQuoteAdjustmentId = quoteAdjustmentId;
 		quoteAdjustmentId = newQuoteAdjustmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_ID, oldQuoteAdjustmentId, quoteAdjustmentId));
 	}
 
 	/**
@@ -1078,8 +1010,6 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 			InternalEObject oldQuoteAdjustmentTypeId = (InternalEObject)quoteAdjustmentTypeId;
 			quoteAdjustmentTypeId = (OrderAdjustmentType)eResolveProxy(oldQuoteAdjustmentTypeId);
 			if (quoteAdjustmentTypeId != oldQuoteAdjustmentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_TYPE_ID, oldQuoteAdjustmentTypeId, quoteAdjustmentTypeId));
 			}
 		}
 		return quoteAdjustmentTypeId;
@@ -1101,10 +1031,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setQuoteAdjustmentTypeId(OrderAdjustmentType newQuoteAdjustmentTypeId) {
-		OrderAdjustmentType oldQuoteAdjustmentTypeId = quoteAdjustmentTypeId;
 		quoteAdjustmentTypeId = newQuoteAdjustmentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_TYPE_ID, oldQuoteAdjustmentTypeId, quoteAdjustmentTypeId));
 	}
 
 	/**
@@ -1118,8 +1045,6 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ADJUSTMENT__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -1141,10 +1066,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
-		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**
@@ -1164,10 +1086,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setQuoteItemSeqId(String newQuoteItemSeqId) {
-		String oldQuoteItemSeqId = quoteItemSeqId;
 		quoteItemSeqId = newQuoteItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__QUOTE_ITEM_SEQ_ID, oldQuoteItemSeqId, quoteItemSeqId));
 	}
 
 	/**
@@ -1181,8 +1100,6 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 			InternalEObject oldSecondaryGeoId = (InternalEObject)secondaryGeoId;
 			secondaryGeoId = (Geo)eResolveProxy(oldSecondaryGeoId);
 			if (secondaryGeoId != oldSecondaryGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ADJUSTMENT__SECONDARY_GEO_ID, oldSecondaryGeoId, secondaryGeoId));
 			}
 		}
 		return secondaryGeoId;
@@ -1204,10 +1121,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setSecondaryGeoId(Geo newSecondaryGeoId) {
-		Geo oldSecondaryGeoId = secondaryGeoId;
 		secondaryGeoId = newSecondaryGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__SECONDARY_GEO_ID, oldSecondaryGeoId, secondaryGeoId));
 	}
 
 	/**
@@ -1227,10 +1141,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setSourcePercentage(BigDecimal newSourcePercentage) {
-		BigDecimal oldSourcePercentage = sourcePercentage;
 		sourcePercentage = newSourcePercentage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__SOURCE_PERCENTAGE, oldSourcePercentage, sourcePercentage));
 	}
 
 	/**
@@ -1250,10 +1161,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setSourceReferenceId(String newSourceReferenceId) {
-		String oldSourceReferenceId = sourceReferenceId;
 		sourceReferenceId = newSourceReferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__SOURCE_REFERENCE_ID, oldSourceReferenceId, sourceReferenceId));
 	}
 
 	/**
@@ -1273,10 +1181,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
-		String oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -1296,10 +1201,7 @@ public class QuoteAdjustmentImpl extends BizEntityImpl implements QuoteAdjustmen
 	 */
 	@Override
 	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
-		String oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ADJUSTMENT__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**

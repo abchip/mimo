@@ -14,13 +14,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -203,10 +200,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 */
 	@Override
 	public void setRecurrenceInfoId(String newRecurrenceInfoId) {
-		String oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 	}
 
 	/**
@@ -226,10 +220,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 */
 	@Override
 	public void setExceptionDateTimes(String newExceptionDateTimes) {
-		String oldExceptionDateTimes = exceptionDateTimes;
 		exceptionDateTimes = newExceptionDateTimes;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__EXCEPTION_DATE_TIMES, oldExceptionDateTimes, exceptionDateTimes));
 	}
 
 	/**
@@ -243,8 +234,6 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 			InternalEObject oldExceptionRuleId = (InternalEObject)exceptionRuleId;
 			exceptionRuleId = (RecurrenceRule)eResolveProxy(oldExceptionRuleId);
 			if (exceptionRuleId != oldExceptionRuleId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID, oldExceptionRuleId, exceptionRuleId));
 			}
 		}
 		return exceptionRuleId;
@@ -266,10 +255,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 */
 	@Override
 	public void setExceptionRuleId(RecurrenceRule newExceptionRuleId) {
-		RecurrenceRule oldExceptionRuleId = exceptionRuleId;
 		exceptionRuleId = newExceptionRuleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID, oldExceptionRuleId, exceptionRuleId));
 	}
 
 	/**
@@ -289,10 +275,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 */
 	@Override
 	public void setRecurrenceCount(long newRecurrenceCount) {
-		long oldRecurrenceCount = recurrenceCount;
 		recurrenceCount = newRecurrenceCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__RECURRENCE_COUNT, oldRecurrenceCount, recurrenceCount));
 	}
 
 	/**
@@ -312,10 +295,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 */
 	@Override
 	public void setRecurrenceDateTimes(String newRecurrenceDateTimes) {
-		String oldRecurrenceDateTimes = recurrenceDateTimes;
 		recurrenceDateTimes = newRecurrenceDateTimes;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__RECURRENCE_DATE_TIMES, oldRecurrenceDateTimes, recurrenceDateTimes));
 	}
 
 	/**
@@ -329,8 +309,6 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 			InternalEObject oldRecurrenceRuleId = (InternalEObject)recurrenceRuleId;
 			recurrenceRuleId = (RecurrenceRule)eResolveProxy(oldRecurrenceRuleId);
 			if (recurrenceRuleId != oldRecurrenceRuleId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID, oldRecurrenceRuleId, recurrenceRuleId));
 			}
 		}
 		return recurrenceRuleId;
@@ -352,10 +330,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 */
 	@Override
 	public void setRecurrenceRuleId(RecurrenceRule newRecurrenceRuleId) {
-		RecurrenceRule oldRecurrenceRuleId = recurrenceRuleId;
 		recurrenceRuleId = newRecurrenceRuleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID, oldRecurrenceRuleId, recurrenceRuleId));
 	}
 
 	/**
@@ -375,10 +350,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 */
 	@Override
 	public void setStartDateTime(Date newStartDateTime) {
-		Date oldStartDateTime = startDateTime;
 		startDateTime = newStartDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__START_DATE_TIME, oldStartDateTime, startDateTime));
 	}
 
 	/**

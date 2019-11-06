@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourcePurpose;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +87,6 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 			InternalEObject oldContentPurposeTypeId = (InternalEObject)contentPurposeTypeId;
 			contentPurposeTypeId = (ContentPurposeType)eResolveProxy(oldContentPurposeTypeId);
 			if (contentPurposeTypeId != oldContentPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
 			}
 		}
 		return contentPurposeTypeId;
@@ -113,10 +108,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 */
 	@Override
 	public void setContentPurposeTypeId(ContentPurposeType newContentPurposeTypeId) {
-		ContentPurposeType oldContentPurposeTypeId = contentPurposeTypeId;
 		contentPurposeTypeId = newContentPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
 	}
 
 	/**
@@ -130,8 +122,6 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
 			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
 			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 			}
 		}
 		return dataResourceId;
@@ -153,10 +143,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 	}
 
 	/**

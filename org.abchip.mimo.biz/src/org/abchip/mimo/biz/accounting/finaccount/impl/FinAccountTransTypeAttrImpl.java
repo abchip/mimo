@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class FinAccountTransTypeAttrImpl extends BizEntityImpl implements FinAcc
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class FinAccountTransTypeAttrImpl extends BizEntityImpl implements FinAcc
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class FinAccountTransTypeAttrImpl extends BizEntityImpl implements FinAcc
 			InternalEObject oldFinAccountTransTypeId = (InternalEObject)finAccountTransTypeId;
 			finAccountTransTypeId = (FinAccountTransType)eResolveProxy(oldFinAccountTransTypeId);
 			if (finAccountTransTypeId != oldFinAccountTransTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE_ATTR__FIN_ACCOUNT_TRANS_TYPE_ID, oldFinAccountTransTypeId, finAccountTransTypeId));
 			}
 		}
 		return finAccountTransTypeId;
@@ -183,10 +172,7 @@ public class FinAccountTransTypeAttrImpl extends BizEntityImpl implements FinAcc
 	 */
 	@Override
 	public void setFinAccountTransTypeId(FinAccountTransType newFinAccountTransTypeId) {
-		FinAccountTransType oldFinAccountTransTypeId = finAccountTransTypeId;
 		finAccountTransTypeId = newFinAccountTransTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS_TYPE_ATTR__FIN_ACCOUNT_TRANS_TYPE_ID, oldFinAccountTransTypeId, finAccountTransTypeId));
 	}
 
 	/**

@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabel;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabelType;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,10 +145,7 @@ public class InventoryItemLabelTypeImpl extends BizEntityTypeImpl<InventoryItemL
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -171,10 +165,7 @@ public class InventoryItemLabelTypeImpl extends BizEntityTypeImpl<InventoryItemL
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -188,8 +179,6 @@ public class InventoryItemLabelTypeImpl extends BizEntityTypeImpl<InventoryItemL
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (InventoryItemLabelType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_LABEL_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -211,10 +200,7 @@ public class InventoryItemLabelTypeImpl extends BizEntityTypeImpl<InventoryItemL
 	 */
 	@Override
 	public void setParentTypeId(InventoryItemLabelType newParentTypeId) {
-		InventoryItemLabelType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -270,10 +256,7 @@ public class InventoryItemLabelTypeImpl extends BizEntityTypeImpl<InventoryItemL
 	 */
 	@Override
 	public void setInventoryItemLabelTypeId(String newInventoryItemLabelTypeId) {
-		String oldInventoryItemLabelTypeId = inventoryItemLabelTypeId;
 		inventoryItemLabelTypeId = newInventoryItemLabelTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL_TYPE__INVENTORY_ITEM_LABEL_TYPE_ID, oldInventoryItemLabelTypeId, inventoryItemLabelTypeId));
 	}
 
 	/**

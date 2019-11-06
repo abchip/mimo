@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PartyContactMechPurpose;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,10 +141,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -161,8 +155,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -184,10 +176,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -207,10 +196,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -224,8 +210,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			InternalEObject oldContactMechPurposeTypeId = (InternalEObject)contactMechPurposeTypeId;
 			contactMechPurposeTypeId = (ContactMechPurposeType)eResolveProxy(oldContactMechPurposeTypeId);
 			if (contactMechPurposeTypeId != oldContactMechPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 			}
 		}
 		return contactMechPurposeTypeId;
@@ -247,10 +231,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 */
 	@Override
 	public void setContactMechPurposeTypeId(ContactMechPurposeType newContactMechPurposeTypeId) {
-		ContactMechPurposeType oldContactMechPurposeTypeId = contactMechPurposeTypeId;
 		contactMechPurposeTypeId = newContactMechPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 	}
 
 	/**
@@ -264,8 +245,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -287,10 +266,7 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**

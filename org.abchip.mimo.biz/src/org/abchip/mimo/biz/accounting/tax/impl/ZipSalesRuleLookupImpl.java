@@ -12,11 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.ZipSalesRuleLookup;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -208,10 +204,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setCity(String newCity) {
-		String oldCity = city;
 		city = newCity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__CITY, oldCity, city));
 	}
 
 	/**
@@ -231,10 +224,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setCounty(String newCounty) {
-		String oldCounty = county;
 		county = newCounty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__COUNTY, oldCounty, county));
 	}
 
 	/**
@@ -254,10 +244,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -277,10 +264,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setIdCode(String newIdCode) {
-		String oldIdCode = idCode;
 		idCode = newIdCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__ID_CODE, oldIdCode, idCode));
 	}
 
 	/**
@@ -300,10 +284,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setShipCond(String newShipCond) {
-		String oldShipCond = shipCond;
 		shipCond = newShipCond;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__SHIP_COND, oldShipCond, shipCond));
 	}
 
 	/**
@@ -323,10 +304,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setStateCode(String newStateCode) {
-		String oldStateCode = stateCode;
 		stateCode = newStateCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__STATE_CODE, oldStateCode, stateCode));
 	}
 
 	/**
@@ -346,10 +324,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setTaxable(String newTaxable) {
-		String oldTaxable = taxable;
 		taxable = newTaxable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__TAXABLE, oldTaxable, taxable));
 	}
 
 	/**

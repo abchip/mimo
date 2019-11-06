@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.accounting.budget.BudgetItem;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -171,10 +168,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
 		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -194,10 +188,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
-		String oldBudgetItemSeqId = budgetItemSeqId;
 		budgetItemSeqId = newBudgetItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
 	}
 
 	/**
@@ -217,10 +208,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setJustification(String newJustification) {
-		String oldJustification = justification;
 		justification = newJustification;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__JUSTIFICATION, oldJustification, justification));
 	}
 
 	/**
@@ -240,10 +228,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setPurpose(String newPurpose) {
-		String oldPurpose = purpose;
 		purpose = newPurpose;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__PURPOSE, oldPurpose, purpose));
 	}
 
 	/**
@@ -257,8 +242,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -280,10 +263,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**
@@ -297,8 +277,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 			InternalEObject oldBudgetItemTypeId = (InternalEObject)budgetItemTypeId;
 			budgetItemTypeId = (BudgetItemType)eResolveProxy(oldBudgetItemTypeId);
 			if (budgetItemTypeId != oldBudgetItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 			}
 		}
 		return budgetItemTypeId;
@@ -320,10 +298,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setBudgetItemTypeId(BudgetItemType newBudgetItemTypeId) {
-		BudgetItemType oldBudgetItemTypeId = budgetItemTypeId;
 		budgetItemTypeId = newBudgetItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 	}
 
 	/**

@@ -13,13 +13,10 @@ import org.abchip.mimo.biz.content.preference.WebUserPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,8 +141,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -167,10 +162,7 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -184,8 +176,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -207,10 +197,7 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
-		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -230,10 +217,7 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
 		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**
@@ -247,8 +231,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 			InternalEObject oldWebPreferenceTypeId = (InternalEObject)webPreferenceTypeId;
 			webPreferenceTypeId = (WebPreferenceType)eResolveProxy(oldWebPreferenceTypeId);
 			if (webPreferenceTypeId != oldWebPreferenceTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID, oldWebPreferenceTypeId, webPreferenceTypeId));
 			}
 		}
 		return webPreferenceTypeId;
@@ -270,10 +252,7 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 */
 	@Override
 	public void setWebPreferenceTypeId(WebPreferenceType newWebPreferenceTypeId) {
-		WebPreferenceType oldWebPreferenceTypeId = webPreferenceTypeId;
 		webPreferenceTypeId = newWebPreferenceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID, oldWebPreferenceTypeId, webPreferenceTypeId));
 	}
 
 	/**
@@ -293,10 +272,7 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 */
 	@Override
 	public void setWebPreferenceValue(String newWebPreferenceValue) {
-		String oldWebPreferenceValue = webPreferenceValue;
 		webPreferenceValue = newWebPreferenceValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE, oldWebPreferenceValue, webPreferenceValue));
 	}
 
 	/**

@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentContentType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,8 +135,6 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -161,10 +156,7 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
 		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -184,10 +176,7 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -207,10 +196,7 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -224,8 +210,6 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_CONTENT__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -247,10 +231,7 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
-		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**
@@ -264,8 +245,6 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 			InternalEObject oldPaymentContentTypeId = (InternalEObject)paymentContentTypeId;
 			paymentContentTypeId = (PaymentContentType)eResolveProxy(oldPaymentContentTypeId);
 			if (paymentContentTypeId != oldPaymentContentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID, oldPaymentContentTypeId, paymentContentTypeId));
 			}
 		}
 		return paymentContentTypeId;
@@ -287,10 +266,7 @@ public class PaymentContentImpl extends BizEntityTypedImpl<PaymentContentType> i
 	 */
 	@Override
 	public void setPaymentContentTypeId(PaymentContentType newPaymentContentTypeId) {
-		PaymentContentType oldPaymentContentTypeId = paymentContentTypeId;
 		paymentContentTypeId = newPaymentContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID, oldPaymentContentTypeId, paymentContentTypeId));
 	}
 
 	/**

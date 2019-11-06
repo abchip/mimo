@@ -16,13 +16,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -352,10 +349,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setCreatedDatetime(Date newCreatedDatetime) {
-		Date oldCreatedDatetime = createdDatetime;
 		createdDatetime = newCreatedDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CREATED_DATETIME, oldCreatedDatetime, createdDatetime));
 	}
 
 	/**
@@ -375,10 +369,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setCurrentPromisedDate(Date newCurrentPromisedDate) {
-		Date oldCurrentPromisedDate = currentPromisedDate;
 		currentPromisedDate = newCurrentPromisedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CURRENT_PROMISED_DATE, oldCurrentPromisedDate, currentPromisedDate));
 	}
 
 	/**
@@ -392,8 +383,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -415,10 +404,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -438,10 +424,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setOldPickStartDate(Date newOldPickStartDate) {
-		Date oldOldPickStartDate = oldPickStartDate;
 		oldPickStartDate = newOldPickStartDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__OLD_PICK_START_DATE, oldOldPickStartDate, oldPickStartDate));
 	}
 
 	/**
@@ -461,10 +444,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setPriority(boolean newPriority) {
-		boolean oldPriority = priority;
 		priority = newPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -478,8 +458,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -501,10 +479,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -524,10 +499,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -547,10 +519,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setPromisedDatetime(Date newPromisedDatetime) {
-		Date oldPromisedDatetime = promisedDatetime;
 		promisedDatetime = newPromisedDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__PROMISED_DATETIME, oldPromisedDatetime, promisedDatetime));
 	}
 
 	/**
@@ -570,10 +539,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -593,10 +559,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setQuantityNotAvailable(BigDecimal newQuantityNotAvailable) {
-		BigDecimal oldQuantityNotAvailable = quantityNotAvailable;
 		quantityNotAvailable = newQuantityNotAvailable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__QUANTITY_NOT_AVAILABLE, oldQuantityNotAvailable, quantityNotAvailable));
 	}
 
 	/**
@@ -616,10 +579,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setReserveOrderEnumId(String newReserveOrderEnumId) {
-		String oldReserveOrderEnumId = reserveOrderEnumId;
 		reserveOrderEnumId = newReserveOrderEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__RESERVE_ORDER_ENUM_ID, oldReserveOrderEnumId, reserveOrderEnumId));
 	}
 
 	/**
@@ -639,10 +599,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setReservedDatetime(Date newReservedDatetime) {
-		Date oldReservedDatetime = reservedDatetime;
 		reservedDatetime = newReservedDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__RESERVED_DATETIME, oldReservedDatetime, reservedDatetime));
 	}
 
 	/**
@@ -662,10 +619,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setSequenceId(long newSequenceId) {
-		long oldSequenceId = sequenceId;
 		sequenceId = newSequenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID, oldSequenceId, sequenceId));
 	}
 
 	/**
@@ -685,10 +639,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
-		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**

@@ -14,17 +14,13 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,10 +151,7 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 */
 	@Override
 	public void setCalendarId(String newCalendarId) {
-		String oldCalendarId = calendarId;
 		calendarId = newCalendarId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_ID, oldCalendarId, calendarId));
 	}
 
 	/**
@@ -172,8 +165,6 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 			InternalEObject oldCalendarWeekId = (InternalEObject)calendarWeekId;
 			calendarWeekId = (TechDataCalendarWeek)eResolveProxy(oldCalendarWeekId);
 			if (calendarWeekId != oldCalendarWeekId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
 			}
 		}
 		return calendarWeekId;
@@ -195,10 +186,7 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 */
 	@Override
 	public void setCalendarWeekId(TechDataCalendarWeek newCalendarWeekId) {
-		TechDataCalendarWeek oldCalendarWeekId = calendarWeekId;
 		calendarWeekId = newCalendarWeekId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
 	}
 
 	/**
@@ -218,10 +206,7 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -232,7 +217,7 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	@Override
 	public List<String> getTechDataCalendarExcDaies() {
 		if (techDataCalendarExcDaies == null) {
-			techDataCalendarExcDaies = new EDataTypeUniqueEList<String>(String.class, this, TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES);
+			techDataCalendarExcDaies = new BasicInternalEList<String>(String.class);
 		}
 		return techDataCalendarExcDaies;
 	}
@@ -245,7 +230,7 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	@Override
 	public List<String> getTechDataCalendarExcWeeks() {
 		if (techDataCalendarExcWeeks == null) {
-			techDataCalendarExcWeeks = new EDataTypeUniqueEList<String>(String.class, this, TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS);
+			techDataCalendarExcWeeks = new BasicInternalEList<String>(String.class);
 		}
 		return techDataCalendarExcWeeks;
 	}

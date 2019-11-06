@@ -19,9 +19,11 @@ import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
@@ -38,11 +40,25 @@ public class PartyCommandProviderImpl implements CommandProvider {
 	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
 		
 		EntityReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
+
+		Party party = frameManager.createEntity(Party.class); 
+		party.setPartyId("ABC");
+		party.setDescription("abcdefg");
+		PartyType partyType = frameManager.createEntity(PartyType.class);
+		partyType.setPartyTypeId("DEF");
+		partyType.setDescription("hilmnopq");
+		party.setPartyTypeId(partyType);
 		
-		for(Party party: partyReader.find(null, null, 0)) {
-			if(party.getLastModifiedByUserLogin() != null)
-				System.out.println(party.getLastModifiedByUserLogin().getName());
+		EntitySerializer<Party> partySerializer = resourceManager.createEntitySerializer(contextRoot, Party.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		partySerializer.add(party);
+				
+		for(Party party2: partyReader.find(null, null, 0)) {
+			partySerializer.add(party2);
+			party2.getPartyTypeId().getName();
+			break;
 		}
+		partySerializer.save(System.out);
+		partySerializer.clear();
 	}
 	
 	@SuppressWarnings("unused")

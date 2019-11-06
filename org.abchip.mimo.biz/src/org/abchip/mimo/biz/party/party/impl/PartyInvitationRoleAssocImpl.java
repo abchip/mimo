@@ -12,12 +12,9 @@ import org.abchip.mimo.biz.party.party.PartyInvitation;
 import org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,8 +84,6 @@ public class PartyInvitationRoleAssocImpl extends BizEntityImpl implements Party
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION_ROLE_ASSOC__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -110,10 +105,7 @@ public class PartyInvitationRoleAssocImpl extends BizEntityImpl implements Party
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION_ROLE_ASSOC__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -127,8 +119,6 @@ public class PartyInvitationRoleAssocImpl extends BizEntityImpl implements Party
 			InternalEObject oldPartyInvitationId = (InternalEObject)partyInvitationId;
 			partyInvitationId = (PartyInvitation)eResolveProxy(oldPartyInvitationId);
 			if (partyInvitationId != oldPartyInvitationId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION_ROLE_ASSOC__PARTY_INVITATION_ID, oldPartyInvitationId, partyInvitationId));
 			}
 		}
 		return partyInvitationId;
@@ -150,10 +140,7 @@ public class PartyInvitationRoleAssocImpl extends BizEntityImpl implements Party
 	 */
 	@Override
 	public void setPartyInvitationId(PartyInvitation newPartyInvitationId) {
-		PartyInvitation oldPartyInvitationId = partyInvitationId;
 		partyInvitationId = newPartyInvitationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION_ROLE_ASSOC__PARTY_INVITATION_ID, oldPartyInvitationId, partyInvitationId));
 	}
 
 	/**

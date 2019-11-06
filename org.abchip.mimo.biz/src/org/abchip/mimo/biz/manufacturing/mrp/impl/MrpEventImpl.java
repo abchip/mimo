@@ -15,13 +15,10 @@ import org.abchip.mimo.biz.manufacturing.mrp.MrpEventType;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpPackage;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -215,10 +212,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setMrpId(String newMrpId) {
-		String oldMrpId = mrpId;
 		mrpId = newMrpId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__MRP_ID, oldMrpId, mrpId));
 	}
 
 	/**
@@ -232,8 +226,6 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MrpPackage.MRP_EVENT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -255,10 +247,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -278,10 +267,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setEventDate(Date newEventDate) {
-		Date oldEventDate = eventDate;
 		eventDate = newEventDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__EVENT_DATE, oldEventDate, eventDate));
 	}
 
 	/**
@@ -295,8 +281,6 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 			InternalEObject oldMrpEventTypeId = (InternalEObject)mrpEventTypeId;
 			mrpEventTypeId = (MrpEventType)eResolveProxy(oldMrpEventTypeId);
 			if (mrpEventTypeId != oldMrpEventTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID, oldMrpEventTypeId, mrpEventTypeId));
 			}
 		}
 		return mrpEventTypeId;
@@ -318,10 +302,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setMrpEventTypeId(MrpEventType newMrpEventTypeId) {
-		MrpEventType oldMrpEventTypeId = mrpEventTypeId;
 		mrpEventTypeId = newMrpEventTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID, oldMrpEventTypeId, mrpEventTypeId));
 	}
 
 	/**
@@ -341,10 +322,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setEventName(String newEventName) {
-		String oldEventName = eventName;
 		eventName = newEventName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__EVENT_NAME, oldEventName, eventName));
 	}
 
 	/**
@@ -358,8 +336,6 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MrpPackage.MRP_EVENT__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -381,10 +357,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -404,10 +377,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setIsLate(boolean newIsLate) {
-		boolean oldIsLate = isLate;
 		isLate = newIsLate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__IS_LATE, oldIsLate, isLate));
 	}
 
 	/**
@@ -427,10 +397,7 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 */
 	@Override
 	public void setQuantity(double newQuantity) {
-		double oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**

@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.party.party.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.AddressMatchMap;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,10 +128,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public void setMapKey(String newMapKey) {
-		String oldMapKey = mapKey;
 		mapKey = newMapKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ADDRESS_MATCH_MAP__MAP_KEY, oldMapKey, mapKey));
 	}
 
 	/**
@@ -155,10 +148,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public void setMapValue(String newMapValue) {
-		String oldMapValue = mapValue;
 		mapValue = newMapValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ADDRESS_MATCH_MAP__MAP_VALUE, oldMapValue, mapValue));
 	}
 
 	/**
@@ -178,10 +168,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ADDRESS_MATCH_MAP__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**

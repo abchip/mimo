@@ -18,14 +18,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.TermType;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -179,10 +176,7 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setTermDays(long newTermDays) {
-		long oldTermDays = termDays;
 		termDays = newTermDays;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM__TERM_DAYS, oldTermDays, termDays));
 	}
 
 	/**
@@ -196,8 +190,6 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 			InternalEObject oldTermTypeId = (InternalEObject)termTypeId;
 			termTypeId = (TermType)eResolveProxy(oldTermTypeId);
 			if (termTypeId != oldTermTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 			}
 		}
 		return termTypeId;
@@ -219,10 +211,7 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setTermTypeId(TermType newTermTypeId) {
-		TermType oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 	}
 
 	/**
@@ -242,10 +231,7 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setTermValue(BigDecimal newTermValue) {
-		BigDecimal oldTermValue = termValue;
 		termValue = newTermValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM__TERM_VALUE, oldTermValue, termValue));
 	}
 
 	/**
@@ -259,8 +245,6 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_TERM__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -282,10 +266,7 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
-		Uom oldUomId = uomId;
 		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -296,7 +277,7 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	@Override
 	public List<String> getBillingAccountTermAttrs() {
 		if (billingAccountTermAttrs == null) {
-			billingAccountTermAttrs = new EDataTypeUniqueEList<String>(String.class, this, PaymentPackage.BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ATTRS);
+			billingAccountTermAttrs = new BasicInternalEList<String>(String.class);
 		}
 		return billingAccountTermAttrs;
 	}
@@ -312,8 +293,6 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
 			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
 			if (billingAccountId != oldBillingAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 			}
 		}
 		return billingAccountId;
@@ -335,10 +314,7 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
-		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**
@@ -358,10 +334,7 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setBillingAccountTermId(String newBillingAccountTermId) {
-		String oldBillingAccountTermId = billingAccountTermId;
 		billingAccountTermId = newBillingAccountTermId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ID, oldBillingAccountTermId, billingAccountTermId));
 	}
 
 	/**

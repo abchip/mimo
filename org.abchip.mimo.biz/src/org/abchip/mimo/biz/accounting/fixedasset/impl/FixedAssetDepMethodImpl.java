@@ -14,12 +14,9 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,8 +124,6 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 			InternalEObject oldDepreciationCustomMethodId = (InternalEObject)depreciationCustomMethodId;
 			depreciationCustomMethodId = (CustomMethod)eResolveProxy(oldDepreciationCustomMethodId);
 			if (depreciationCustomMethodId != oldDepreciationCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID, oldDepreciationCustomMethodId, depreciationCustomMethodId));
 			}
 		}
 		return depreciationCustomMethodId;
@@ -150,10 +145,7 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setDepreciationCustomMethodId(CustomMethod newDepreciationCustomMethodId) {
-		CustomMethod oldDepreciationCustomMethodId = depreciationCustomMethodId;
 		depreciationCustomMethodId = newDepreciationCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID, oldDepreciationCustomMethodId, depreciationCustomMethodId));
 	}
 
 	/**
@@ -173,10 +165,7 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -196,10 +185,7 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -213,8 +199,6 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -236,10 +220,7 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

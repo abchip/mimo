@@ -16,12 +16,9 @@ import org.abchip.mimo.biz.common.period.PeriodPackage;
 import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -221,10 +218,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -244,10 +238,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setIsClosed(boolean newIsClosed) {
-		boolean oldIsClosed = isClosed;
 		isClosed = newIsClosed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__IS_CLOSED, oldIsClosed, isClosed));
 	}
 
 	/**
@@ -261,8 +252,6 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -284,10 +273,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
-		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -307,10 +293,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setPeriodName(String newPeriodName) {
-		String oldPeriodName = periodName;
 		periodName = newPeriodName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NAME, oldPeriodName, periodName));
 	}
 
 	/**
@@ -330,10 +313,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setPeriodNum(long newPeriodNum) {
-		long oldPeriodNum = periodNum;
 		periodNum = newPeriodNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NUM, oldPeriodNum, periodNum));
 	}
 
 	/**
@@ -353,10 +333,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -418,8 +395,6 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 			InternalEObject oldParentPeriodId = (InternalEObject)parentPeriodId;
 			parentPeriodId = (CustomTimePeriod)eResolveProxy(oldParentPeriodId);
 			if (parentPeriodId != oldParentPeriodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID, oldParentPeriodId, parentPeriodId));
 			}
 		}
 		return parentPeriodId;
@@ -441,10 +416,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setParentPeriodId(CustomTimePeriod newParentPeriodId) {
-		CustomTimePeriod oldParentPeriodId = parentPeriodId;
 		parentPeriodId = newParentPeriodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID, oldParentPeriodId, parentPeriodId));
 	}
 
 	/**
@@ -458,8 +430,6 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
 			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
 			if (periodTypeId != oldPeriodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 			}
 		}
 		return periodTypeId;
@@ -481,10 +451,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
-		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 	}
 
 	/**
@@ -504,10 +471,7 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	@Override
 	public void setCustomTimePeriodId(String newCustomTimePeriodId) {
-		String oldCustomTimePeriodId = customTimePeriodId;
 		customTimePeriodId = newCustomTimePeriodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 	}
 
 	/**

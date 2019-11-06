@@ -15,14 +15,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,10 +135,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -155,8 +149,6 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 			InternalEObject oldDefaultGlAccountId = (InternalEObject)defaultGlAccountId;
 			defaultGlAccountId = (GlAccount)eResolveProxy(oldDefaultGlAccountId);
 			if (defaultGlAccountId != oldDefaultGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
 			}
 		}
 		return defaultGlAccountId;
@@ -178,10 +170,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 */
 	@Override
 	public void setDefaultGlAccountId(GlAccount newDefaultGlAccountId) {
-		GlAccount oldDefaultGlAccountId = defaultGlAccountId;
 		defaultGlAccountId = newDefaultGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
 	}
 
 	/**
@@ -201,10 +190,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 */
 	@Override
 	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -215,7 +201,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	@Override
 	public List<String> getPaymentMethodTypeGlAccounts() {
 		if (paymentMethodTypeGlAccounts == null) {
-			paymentMethodTypeGlAccounts = new EDataTypeUniqueEList<String>(String.class, this, PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS);
+			paymentMethodTypeGlAccounts = new BasicInternalEList<String>(String.class);
 		}
 		return paymentMethodTypeGlAccounts;
 	}

@@ -18,13 +18,10 @@ import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -250,10 +247,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setGeneralFeedback(String newGeneralFeedback) {
-		String oldGeneralFeedback = generalFeedback;
 		generalFeedback = newGeneralFeedback;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__GENERAL_FEEDBACK, oldGeneralFeedback, generalFeedback));
 	}
 
 	/**
@@ -273,10 +267,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -290,8 +281,6 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -313,10 +302,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -336,10 +322,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -353,8 +336,6 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -376,10 +357,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
 		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -399,10 +377,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setReferenceId(String newReferenceId) {
-		String oldReferenceId = referenceId;
 		referenceId = newReferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__REFERENCE_ID, oldReferenceId, referenceId));
 	}
 
 	/**
@@ -422,10 +397,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setResponseDate(Date newResponseDate) {
-		Date oldResponseDate = responseDate;
 		responseDate = newResponseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__RESPONSE_DATE, oldResponseDate, responseDate));
 	}
 
 	/**
@@ -439,8 +411,6 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -462,10 +432,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -479,8 +446,6 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -502,10 +467,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
-		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -549,10 +511,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 */
 	@Override
 	public void setSurveyResponseId(String newSurveyResponseId) {
-		String oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
 	}
 
 	/**

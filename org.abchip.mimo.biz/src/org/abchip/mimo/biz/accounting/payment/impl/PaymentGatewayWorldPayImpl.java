@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -272,10 +269,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setInstId(String newInstId) {
-		String oldInstId = instId;
 		instId = newInstId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__INST_ID, oldInstId, instId));
 	}
 
 	/**
@@ -295,10 +289,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setLangId(String newLangId) {
-		String oldLangId = langId;
 		langId = newLangId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID, oldLangId, langId));
 	}
 
 	/**
@@ -318,10 +309,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setNoLanguageMenu(boolean newNoLanguageMenu) {
-		boolean oldNoLanguageMenu = noLanguageMenu;
 		noLanguageMenu = newNoLanguageMenu;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU, oldNoLanguageMenu, noLanguageMenu));
 	}
 
 	/**
@@ -335,8 +323,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -358,10 +344,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
-		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -381,10 +364,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setAuthMode(boolean newAuthMode) {
-		boolean oldAuthMode = authMode;
 		authMode = newAuthMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, oldAuthMode, authMode));
 	}
 
 	/**
@@ -404,10 +384,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setFixContact(boolean newFixContact) {
-		boolean oldFixContact = fixContact;
 		fixContact = newFixContact;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, oldFixContact, fixContact));
 	}
 
 	/**
@@ -427,10 +404,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setHideContact(boolean newHideContact) {
-		boolean oldHideContact = hideContact;
 		hideContact = newHideContact;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, oldHideContact, hideContact));
 	}
 
 	/**
@@ -450,10 +424,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setHideCurrency(boolean newHideCurrency) {
-		boolean oldHideCurrency = hideCurrency;
 		hideCurrency = newHideCurrency;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, oldHideCurrency, hideCurrency));
 	}
 
 	/**
@@ -473,10 +444,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setRedirectUrl(String newRedirectUrl) {
-		String oldRedirectUrl = redirectUrl;
 		redirectUrl = newRedirectUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL, oldRedirectUrl, redirectUrl));
 	}
 
 	/**
@@ -496,10 +464,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setTestMode(long newTestMode) {
-		long oldTestMode = testMode;
 		testMode = newTestMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE, oldTestMode, testMode));
 	}
 
 	/**
@@ -519,10 +484,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setWithDelivery(boolean newWithDelivery) {
-		boolean oldWithDelivery = withDelivery;
 		withDelivery = newWithDelivery;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY, oldWithDelivery, withDelivery));
 	}
 
 	/**

@@ -11,12 +11,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.PaymentType;
 import org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,10 +117,7 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,10 +137,7 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
 		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -160,8 +151,6 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 			InternalEObject oldPaymentTypeId = (InternalEObject)paymentTypeId;
 			paymentTypeId = (PaymentType)eResolveProxy(oldPaymentTypeId);
 			if (paymentTypeId != oldPaymentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
 			}
 		}
 		return paymentTypeId;
@@ -183,10 +172,7 @@ public class PaymentTypeAttrImpl extends BizEntityImpl implements PaymentTypeAtt
 	 */
 	@Override
 	public void setPaymentTypeId(PaymentType newPaymentTypeId) {
-		PaymentType oldPaymentTypeId = paymentTypeId;
 		paymentTypeId = newPaymentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
 	}
 
 	/**

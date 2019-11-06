@@ -16,11 +16,9 @@ import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -204,8 +202,6 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 			InternalEObject oldAccountCurrencyUomId = (InternalEObject)accountCurrencyUomId;
 			accountCurrencyUomId = (Uom)eResolveProxy(oldAccountCurrencyUomId);
 			if (accountCurrencyUomId != oldAccountCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID, oldAccountCurrencyUomId, accountCurrencyUomId));
 			}
 		}
 		return accountCurrencyUomId;
@@ -227,10 +223,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setAccountCurrencyUomId(Uom newAccountCurrencyUomId) {
-		Uom oldAccountCurrencyUomId = accountCurrencyUomId;
 		accountCurrencyUomId = newAccountCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID, oldAccountCurrencyUomId, accountCurrencyUomId));
 	}
 
 	/**
@@ -250,10 +243,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setAccountLimit(BigDecimal newAccountLimit) {
-		BigDecimal oldAccountLimit = accountLimit;
 		accountLimit = newAccountLimit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__ACCOUNT_LIMIT, oldAccountLimit, accountLimit));
 	}
 
 	/**
@@ -267,8 +257,6 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -290,10 +278,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -313,10 +298,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -336,10 +318,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setExternalAccountId(String newExternalAccountId) {
-		String oldExternalAccountId = externalAccountId;
 		externalAccountId = newExternalAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__EXTERNAL_ACCOUNT_ID, oldExternalAccountId, externalAccountId));
 	}
 
 	/**
@@ -359,10 +338,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -382,10 +358,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -477,10 +450,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	@Override
 	public void setBillingAccountId(String newBillingAccountId) {
-		String oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**

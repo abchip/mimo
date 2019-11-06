@@ -13,12 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupRollup;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,10 +156,7 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -182,10 +176,7 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -205,10 +196,7 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -222,8 +210,6 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
 			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
 			if (productStoreGroupId != oldProductStoreGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 			}
 		}
 		return productStoreGroupId;
@@ -245,10 +231,7 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
-		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 	}
 
 	/**
@@ -262,8 +245,6 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 			InternalEObject oldParentGroupId = (InternalEObject)parentGroupId;
 			parentGroupId = (ProductStoreGroup)eResolveProxy(oldParentGroupId);
 			if (parentGroupId != oldParentGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PARENT_GROUP_ID, oldParentGroupId, parentGroupId));
 			}
 		}
 		return parentGroupId;
@@ -285,10 +266,7 @@ public class ProductStoreGroupRollupImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setParentGroupId(ProductStoreGroup newParentGroupId) {
-		ProductStoreGroup oldParentGroupId = parentGroupId;
 		parentGroupId = newParentGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLLUP__PARENT_GROUP_ID, oldParentGroupId, parentGroupId));
 	}
 
 	/**

@@ -13,13 +13,9 @@ import java.util.List;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -307,10 +303,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setAcroFormContentId(String newAcroFormContentId) {
-		String oldAcroFormContentId = acroFormContentId;
 		acroFormContentId = newAcroFormContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__ACRO_FORM_CONTENT_ID, oldAcroFormContentId, acroFormContentId));
 	}
 
 	/**
@@ -330,10 +323,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setAllowMultiple(boolean newAllowMultiple) {
-		boolean oldAllowMultiple = allowMultiple;
 		allowMultiple = newAllowMultiple;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__ALLOW_MULTIPLE, oldAllowMultiple, allowMultiple));
 	}
 
 	/**
@@ -353,10 +343,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setAllowUpdate(boolean newAllowUpdate) {
-		boolean oldAllowUpdate = allowUpdate;
 		allowUpdate = newAllowUpdate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__ALLOW_UPDATE, oldAllowUpdate, allowUpdate));
 	}
 
 	/**
@@ -376,10 +363,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -399,10 +383,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -422,10 +403,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setIsAnonymous(boolean newIsAnonymous) {
-		boolean oldIsAnonymous = isAnonymous;
 		isAnonymous = newIsAnonymous;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__IS_ANONYMOUS, oldIsAnonymous, isAnonymous));
 	}
 
 	/**
@@ -445,10 +423,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setResponseService(String newResponseService) {
-		String oldResponseService = responseService;
 		responseService = newResponseService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__RESPONSE_SERVICE, oldResponseService, responseService));
 	}
 
 	/**
@@ -468,10 +443,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setSubmitCaption(String newSubmitCaption) {
-		String oldSubmitCaption = submitCaption;
 		submitCaption = newSubmitCaption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__SUBMIT_CAPTION, oldSubmitCaption, submitCaption));
 	}
 
 	/**
@@ -491,10 +463,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setSurveyId(String newSurveyId) {
-		String oldSurveyId = surveyId;
 		surveyId = newSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -514,10 +483,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@Override
 	public void setSurveyName(String newSurveyName) {
-		String oldSurveyName = surveyName;
 		surveyName = newSurveyName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY__SURVEY_NAME, oldSurveyName, surveyName));
 	}
 
 	/**
@@ -528,7 +494,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	@Override
 	public List<String> getSurveyMultiResps() {
 		if (surveyMultiResps == null) {
-			surveyMultiResps = new EDataTypeUniqueEList<String>(String.class, this, SurveyPackage.SURVEY__SURVEY_MULTI_RESPS);
+			surveyMultiResps = new BasicInternalEList<String>(String.class);
 		}
 		return surveyMultiResps;
 	}
@@ -541,7 +507,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	@Override
 	public List<String> getSurveyPages() {
 		if (surveyPages == null) {
-			surveyPages = new EDataTypeUniqueEList<String>(String.class, this, SurveyPackage.SURVEY__SURVEY_PAGES);
+			surveyPages = new BasicInternalEList<String>(String.class);
 		}
 		return surveyPages;
 	}

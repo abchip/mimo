@@ -15,12 +15,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.subscription.SubscriptionActivity;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -150,10 +147,7 @@ public class SubscriptionActivityImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_ACTIVITY__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -173,10 +167,7 @@ public class SubscriptionActivityImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setDateSent(Date newDateSent) {
-		Date oldDateSent = dateSent;
 		dateSent = newDateSent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_ACTIVITY__DATE_SENT, oldDateSent, dateSent));
 	}
 
 	/**
@@ -196,10 +187,7 @@ public class SubscriptionActivityImpl extends BizEntityImpl implements Subscript
 	 */
 	@Override
 	public void setSubscriptionActivityId(String newSubscriptionActivityId) {
-		String oldSubscriptionActivityId = subscriptionActivityId;
 		subscriptionActivityId = newSubscriptionActivityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_ACTIVITY_ID, oldSubscriptionActivityId, subscriptionActivityId));
 	}
 
 	/**
@@ -210,7 +198,7 @@ public class SubscriptionActivityImpl extends BizEntityImpl implements Subscript
 	@Override
 	public List<String> getSubscriptionFulfillmentPieces() {
 		if (subscriptionFulfillmentPieces == null) {
-			subscriptionFulfillmentPieces = new EDataTypeUniqueEList<String>(String.class, this, SubscriptionPackage.SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES);
+			subscriptionFulfillmentPieces = new BasicInternalEList<String>(String.class);
 		}
 		return subscriptionFulfillmentPieces;
 	}

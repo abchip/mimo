@@ -15,12 +15,9 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemStatus;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -187,8 +184,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -210,10 +205,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
-		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -233,10 +225,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setOwnerPartyId(String newOwnerPartyId) {
-		String oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
 	}
 
 	/**
@@ -256,10 +245,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setProductId(String newProductId) {
-		String oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -279,10 +265,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setStatusDatetime(Date newStatusDatetime) {
-		Date oldStatusDatetime = statusDatetime;
 		statusDatetime = newStatusDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_DATETIME, oldStatusDatetime, statusDatetime));
 	}
 
 	/**
@@ -302,10 +285,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setStatusEndDatetime(Date newStatusEndDatetime) {
-		Date oldStatusEndDatetime = statusEndDatetime;
 		statusEndDatetime = newStatusEndDatetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_END_DATETIME, oldStatusEndDatetime, statusEndDatetime));
 	}
 
 	/**
@@ -319,8 +299,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -342,10 +320,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -359,8 +334,6 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -382,10 +355,7 @@ public class InventoryItemStatusImpl extends BizEntityImpl implements InventoryI
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_STATUS__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**

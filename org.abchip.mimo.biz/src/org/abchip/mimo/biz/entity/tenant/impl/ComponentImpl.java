@@ -13,13 +13,9 @@ import java.util.List;
 import org.abchip.mimo.biz.entity.tenant.Component;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,10 +123,7 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@Override
 	public void setComponentName(String newComponentName) {
-		String oldComponentName = componentName;
 		componentName = newComponentName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.COMPONENT__COMPONENT_NAME, oldComponentName, componentName));
 	}
 
 	/**
@@ -150,10 +143,7 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@Override
 	public void setRootLocation(String newRootLocation) {
-		String oldRootLocation = rootLocation;
 		rootLocation = newRootLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.COMPONENT__ROOT_LOCATION, oldRootLocation, rootLocation));
 	}
 
 	/**
@@ -164,7 +154,7 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	@Override
 	public List<String> getTenantComponents() {
 		if (tenantComponents == null) {
-			tenantComponents = new EDataTypeUniqueEList<String>(String.class, this, TenantPackage.COMPONENT__TENANT_COMPONENTS);
+			tenantComponents = new BasicInternalEList<String>(String.class);
 		}
 		return tenantComponents;
 	}

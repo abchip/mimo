@@ -12,12 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.Person;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -684,10 +681,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setBirthDate(Date newBirthDate) {
-		Date oldBirthDate = birthDate;
 		birthDate = newBirthDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__BIRTH_DATE, oldBirthDate, birthDate));
 	}
 
 	/**
@@ -707,10 +701,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setCardId(String newCardId) {
-		String oldCardId = cardId;
 		cardId = newCardId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__CARD_ID, oldCardId, cardId));
 	}
 
 	/**
@@ -730,10 +721,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
 		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -753,10 +741,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setDeceasedDate(Date newDeceasedDate) {
-		Date oldDeceasedDate = deceasedDate;
 		deceasedDate = newDeceasedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__DECEASED_DATE, oldDeceasedDate, deceasedDate));
 	}
 
 	/**
@@ -770,8 +755,6 @@ public class PersonImpl extends PartyImpl implements Person {
 			InternalEObject oldEmploymentStatusEnumId = (InternalEObject)employmentStatusEnumId;
 			employmentStatusEnumId = (Enumeration)eResolveProxy(oldEmploymentStatusEnumId);
 			if (employmentStatusEnumId != oldEmploymentStatusEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID, oldEmploymentStatusEnumId, employmentStatusEnumId));
 			}
 		}
 		return employmentStatusEnumId;
@@ -793,10 +776,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setEmploymentStatusEnumId(Enumeration newEmploymentStatusEnumId) {
-		Enumeration oldEmploymentStatusEnumId = employmentStatusEnumId;
 		employmentStatusEnumId = newEmploymentStatusEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID, oldEmploymentStatusEnumId, employmentStatusEnumId));
 	}
 
 	/**
@@ -816,10 +796,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setExistingCustomer(boolean newExistingCustomer) {
-		boolean oldExistingCustomer = existingCustomer;
 		existingCustomer = newExistingCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__EXISTING_CUSTOMER, oldExistingCustomer, existingCustomer));
 	}
 
 	/**
@@ -839,10 +816,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setFirstName(String newFirstName) {
-		String oldFirstName = firstName;
 		firstName = newFirstName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__FIRST_NAME, oldFirstName, firstName));
 	}
 
 	/**
@@ -862,10 +836,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setFirstNameLocal(String newFirstNameLocal) {
-		String oldFirstNameLocal = firstNameLocal;
 		firstNameLocal = newFirstNameLocal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__FIRST_NAME_LOCAL, oldFirstNameLocal, firstNameLocal));
 	}
 
 	/**
@@ -885,10 +856,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setGender(boolean newGender) {
-		boolean oldGender = gender;
 		gender = newGender;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__GENDER, oldGender, gender));
 	}
 
 	/**
@@ -908,10 +876,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setHeight(double newHeight) {
-		double oldHeight = height;
 		height = newHeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__HEIGHT, oldHeight, height));
 	}
 
 	/**
@@ -931,10 +896,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setLastName(String newLastName) {
-		String oldLastName = lastName;
 		lastName = newLastName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__LAST_NAME, oldLastName, lastName));
 	}
 
 	/**
@@ -954,10 +916,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setLastNameLocal(String newLastNameLocal) {
-		String oldLastNameLocal = lastNameLocal;
 		lastNameLocal = newLastNameLocal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__LAST_NAME_LOCAL, oldLastNameLocal, lastNameLocal));
 	}
 
 	/**
@@ -977,10 +936,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setMaritalStatus(boolean newMaritalStatus) {
-		boolean oldMaritalStatus = maritalStatus;
 		maritalStatus = newMaritalStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__MARITAL_STATUS, oldMaritalStatus, maritalStatus));
 	}
 
 	/**
@@ -1000,10 +956,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setMemberId(String newMemberId) {
-		String oldMemberId = memberId;
 		memberId = newMemberId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__MEMBER_ID, oldMemberId, memberId));
 	}
 
 	/**
@@ -1023,10 +976,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setMiddleName(String newMiddleName) {
-		String oldMiddleName = middleName;
 		middleName = newMiddleName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__MIDDLE_NAME, oldMiddleName, middleName));
 	}
 
 	/**
@@ -1046,10 +996,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setMiddleNameLocal(String newMiddleNameLocal) {
-		String oldMiddleNameLocal = middleNameLocal;
 		middleNameLocal = newMiddleNameLocal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__MIDDLE_NAME_LOCAL, oldMiddleNameLocal, middleNameLocal));
 	}
 
 	/**
@@ -1069,10 +1016,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setMonthsWithEmployer(long newMonthsWithEmployer) {
-		long oldMonthsWithEmployer = monthsWithEmployer;
 		monthsWithEmployer = newMonthsWithEmployer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__MONTHS_WITH_EMPLOYER, oldMonthsWithEmployer, monthsWithEmployer));
 	}
 
 	/**
@@ -1092,10 +1036,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setMothersMaidenName(String newMothersMaidenName) {
-		String oldMothersMaidenName = mothersMaidenName;
 		mothersMaidenName = newMothersMaidenName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__MOTHERS_MAIDEN_NAME, oldMothersMaidenName, mothersMaidenName));
 	}
 
 	/**
@@ -1115,10 +1056,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setNickname(String newNickname) {
-		String oldNickname = nickname;
 		nickname = newNickname;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__NICKNAME, oldNickname, nickname));
 	}
 
 	/**
@@ -1138,10 +1076,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setOccupation(String newOccupation) {
-		String oldOccupation = occupation;
 		occupation = newOccupation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__OCCUPATION, oldOccupation, occupation));
 	}
 
 	/**
@@ -1161,10 +1096,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setOtherLocal(String newOtherLocal) {
-		String oldOtherLocal = otherLocal;
 		otherLocal = newOtherLocal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__OTHER_LOCAL, oldOtherLocal, otherLocal));
 	}
 
 	/**
@@ -1184,10 +1116,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setPassportExpireDate(Date newPassportExpireDate) {
-		Date oldPassportExpireDate = passportExpireDate;
 		passportExpireDate = newPassportExpireDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__PASSPORT_EXPIRE_DATE, oldPassportExpireDate, passportExpireDate));
 	}
 
 	/**
@@ -1207,10 +1136,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setPassportNumber(String newPassportNumber) {
-		String oldPassportNumber = passportNumber;
 		passportNumber = newPassportNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__PASSPORT_NUMBER, oldPassportNumber, passportNumber));
 	}
 
 	/**
@@ -1230,10 +1156,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setPersonalTitle(String newPersonalTitle) {
-		String oldPersonalTitle = personalTitle;
 		personalTitle = newPersonalTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__PERSONAL_TITLE, oldPersonalTitle, personalTitle));
 	}
 
 	/**
@@ -1247,8 +1170,6 @@ public class PersonImpl extends PartyImpl implements Person {
 			InternalEObject oldResidenceStatusEnumId = (InternalEObject)residenceStatusEnumId;
 			residenceStatusEnumId = (Enumeration)eResolveProxy(oldResidenceStatusEnumId);
 			if (residenceStatusEnumId != oldResidenceStatusEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID, oldResidenceStatusEnumId, residenceStatusEnumId));
 			}
 		}
 		return residenceStatusEnumId;
@@ -1270,10 +1191,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setResidenceStatusEnumId(Enumeration newResidenceStatusEnumId) {
-		Enumeration oldResidenceStatusEnumId = residenceStatusEnumId;
 		residenceStatusEnumId = newResidenceStatusEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID, oldResidenceStatusEnumId, residenceStatusEnumId));
 	}
 
 	/**
@@ -1293,10 +1211,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setSalutation(String newSalutation) {
-		String oldSalutation = salutation;
 		salutation = newSalutation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__SALUTATION, oldSalutation, salutation));
 	}
 
 	/**
@@ -1316,10 +1231,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setSocialSecurityNumber(String newSocialSecurityNumber) {
-		String oldSocialSecurityNumber = socialSecurityNumber;
 		socialSecurityNumber = newSocialSecurityNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__SOCIAL_SECURITY_NUMBER, oldSocialSecurityNumber, socialSecurityNumber));
 	}
 
 	/**
@@ -1339,10 +1251,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setSuffix(String newSuffix) {
-		String oldSuffix = suffix;
 		suffix = newSuffix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__SUFFIX, oldSuffix, suffix));
 	}
 
 	/**
@@ -1362,10 +1271,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setTotalYearsWorkExperience(double newTotalYearsWorkExperience) {
-		double oldTotalYearsWorkExperience = totalYearsWorkExperience;
 		totalYearsWorkExperience = newTotalYearsWorkExperience;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__TOTAL_YEARS_WORK_EXPERIENCE, oldTotalYearsWorkExperience, totalYearsWorkExperience));
 	}
 
 	/**
@@ -1385,10 +1291,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setWeight(double newWeight) {
-		double oldWeight = weight;
 		weight = newWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__WEIGHT, oldWeight, weight));
 	}
 
 	/**
@@ -1408,10 +1311,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	@Override
 	public void setYearsWithEmployer(long newYearsWithEmployer) {
-		long oldYearsWithEmployer = yearsWithEmployer;
 		yearsWithEmployer = newYearsWithEmployer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__YEARS_WITH_EMPLOYER, oldYearsWithEmployer, yearsWithEmployer));
 	}
 
 	/**

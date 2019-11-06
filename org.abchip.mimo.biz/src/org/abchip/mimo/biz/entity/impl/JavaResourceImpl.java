@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.entity.impl;
 import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.JavaResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,10 +107,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	@Override
 	public void setResourceName(String newResourceName) {
-		String oldResourceName = resourceName;
 		resourceName = newResourceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.JAVA_RESOURCE__RESOURCE_NAME, oldResourceName, resourceName));
 	}
 
 	/**
@@ -134,10 +127,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	@Override
 	public void setResourceValue(byte[] newResourceValue) {
-		byte[] oldResourceValue = resourceValue;
 		resourceValue = newResourceValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.JAVA_RESOURCE__RESOURCE_VALUE, oldResourceValue, resourceValue));
 	}
 
 	/**

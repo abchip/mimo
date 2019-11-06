@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,10 +111,7 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -150,10 +143,7 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 */
 	@Override
 	public void setSurveyQuestionTypeId(String newSurveyQuestionTypeId) {
-		String oldSurveyQuestionTypeId = surveyQuestionTypeId;
 		surveyQuestionTypeId = newSurveyQuestionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID, oldSurveyQuestionTypeId, surveyQuestionTypeId));
 	}
 
 	/**

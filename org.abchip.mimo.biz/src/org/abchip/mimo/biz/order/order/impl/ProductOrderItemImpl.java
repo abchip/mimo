@@ -12,13 +12,10 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.ProductOrderItem;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,8 +140,6 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 			InternalEObject oldEngagementId = (InternalEObject)engagementId;
 			engagementId = (OrderHeader)eResolveProxy(oldEngagementId);
 			if (engagementId != oldEngagementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID, oldEngagementId, engagementId));
 			}
 		}
 		return engagementId;
@@ -166,10 +161,7 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 */
 	@Override
 	public void setEngagementId(OrderHeader newEngagementId) {
-		OrderHeader oldEngagementId = engagementId;
 		engagementId = newEngagementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID, oldEngagementId, engagementId));
 	}
 
 	/**
@@ -189,10 +181,7 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 */
 	@Override
 	public void setEngagementItemSeqId(String newEngagementItemSeqId) {
-		String oldEngagementItemSeqId = engagementItemSeqId;
 		engagementItemSeqId = newEngagementItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ITEM_SEQ_ID, oldEngagementItemSeqId, engagementItemSeqId));
 	}
 
 	/**
@@ -206,8 +195,6 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.PRODUCT_ORDER_ITEM__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -229,10 +216,7 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.PRODUCT_ORDER_ITEM__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -252,10 +236,7 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.PRODUCT_ORDER_ITEM__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -269,8 +250,6 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -292,10 +271,7 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
 		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

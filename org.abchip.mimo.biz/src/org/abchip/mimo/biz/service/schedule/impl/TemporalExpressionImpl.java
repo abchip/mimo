@@ -14,15 +14,10 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -278,10 +273,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setTempExprId(String newTempExprId) {
-		String oldTempExprId = tempExprId;
 		tempExprId = newTempExprId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__TEMP_EXPR_ID, oldTempExprId, tempExprId));
 	}
 
 	/**
@@ -301,10 +293,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setDate1(Date newDate1) {
-		Date oldDate1 = date1;
 		date1 = newDate1;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__DATE1, oldDate1, date1));
 	}
 
 	/**
@@ -324,10 +313,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setDate2(Date newDate2) {
-		Date oldDate2 = date2;
 		date2 = newDate2;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__DATE2, oldDate2, date2));
 	}
 
 	/**
@@ -347,10 +333,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -370,10 +353,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setInteger1(long newInteger1) {
-		long oldInteger1 = integer1;
 		integer1 = newInteger1;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__INTEGER1, oldInteger1, integer1));
 	}
 
 	/**
@@ -393,10 +373,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setInteger2(long newInteger2) {
-		long oldInteger2 = integer2;
 		integer2 = newInteger2;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__INTEGER2, oldInteger2, integer2));
 	}
 
 	/**
@@ -416,10 +393,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setString1(String newString1) {
-		String oldString1 = string1;
 		string1 = newString1;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__STRING1, oldString1, string1));
 	}
 
 	/**
@@ -439,10 +413,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setString2(String newString2) {
-		String oldString2 = string2;
 		string2 = newString2;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__STRING2, oldString2, string2));
 	}
 
 	/**
@@ -462,10 +433,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@Override
 	public void setTempExprTypeId(String newTempExprTypeId) {
-		String oldTempExprTypeId = tempExprTypeId;
 		tempExprTypeId = newTempExprTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID, oldTempExprTypeId, tempExprTypeId));
 	}
 
 	/**
@@ -476,7 +444,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	@Override
 	public List<String> getFromTemporalExpressionAssocs() {
 		if (fromTemporalExpressionAssocs == null) {
-			fromTemporalExpressionAssocs = new EDataTypeUniqueEList<String>(String.class, this, SchedulePackage.TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS);
+			fromTemporalExpressionAssocs = new BasicInternalEList<String>(String.class);
 		}
 		return fromTemporalExpressionAssocs;
 	}

@@ -11,13 +11,10 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -294,10 +291,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setConstraintName(String newConstraintName) {
-		String oldConstraintName = constraintName;
 		constraintName = newConstraintName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__CONSTRAINT_NAME, oldConstraintName, constraintName));
 	}
 
 	/**
@@ -317,10 +311,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setConstraintSeqId(String newConstraintSeqId) {
-		String oldConstraintSeqId = constraintSeqId;
 		constraintSeqId = newConstraintSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID, oldConstraintSeqId, constraintSeqId));
 	}
 
 	/**
@@ -340,10 +331,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setAnyPrefix(boolean newAnyPrefix) {
-		boolean oldAnyPrefix = anyPrefix;
 		anyPrefix = newAnyPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX, oldAnyPrefix, anyPrefix));
 	}
 
 	/**
@@ -363,10 +351,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setAnySuffix(boolean newAnySuffix) {
-		boolean oldAnySuffix = anySuffix;
 		anySuffix = newAnySuffix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_SUFFIX, oldAnySuffix, anySuffix));
 	}
 
 	/**
@@ -386,10 +371,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setHighValue(String newHighValue) {
-		String oldHighValue = highValue;
 		highValue = newHighValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__HIGH_VALUE, oldHighValue, highValue));
 	}
 
 	/**
@@ -409,10 +391,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setIncludeSubWorkEfforts(boolean newIncludeSubWorkEfforts) {
-		boolean oldIncludeSubWorkEfforts = includeSubWorkEfforts;
 		includeSubWorkEfforts = newIncludeSubWorkEfforts;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__INCLUDE_SUB_WORK_EFFORTS, oldIncludeSubWorkEfforts, includeSubWorkEfforts));
 	}
 
 	/**
@@ -432,10 +411,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setInfoString(String newInfoString) {
-		String oldInfoString = infoString;
 		infoString = newInfoString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__INFO_STRING, oldInfoString, infoString));
 	}
 
 	/**
@@ -455,10 +431,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setIsAnd(boolean newIsAnd) {
-		boolean oldIsAnd = isAnd;
 		isAnd = newIsAnd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__IS_AND, oldIsAnd, isAnd));
 	}
 
 	/**
@@ -478,10 +451,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setLowValue(String newLowValue) {
-		String oldLowValue = lowValue;
 		lowValue = newLowValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__LOW_VALUE, oldLowValue, lowValue));
 	}
 
 	/**
@@ -501,10 +471,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setRemoveStems(boolean newRemoveStems) {
-		boolean oldRemoveStems = removeStems;
 		removeStems = newRemoveStems;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__REMOVE_STEMS, oldRemoveStems, removeStems));
 	}
 
 	/**
@@ -518,8 +485,6 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 			InternalEObject oldWorkEffortSearchResultId = (InternalEObject)workEffortSearchResultId;
 			workEffortSearchResultId = (WorkEffortSearchResult)eResolveProxy(oldWorkEffortSearchResultId);
 			if (workEffortSearchResultId != oldWorkEffortSearchResultId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID, oldWorkEffortSearchResultId, workEffortSearchResultId));
 			}
 		}
 		return workEffortSearchResultId;
@@ -541,10 +506,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setWorkEffortSearchResultId(WorkEffortSearchResult newWorkEffortSearchResultId) {
-		WorkEffortSearchResult oldWorkEffortSearchResultId = workEffortSearchResultId;
 		workEffortSearchResultId = newWorkEffortSearchResultId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SEARCH_CONSTRAINT__WORK_EFFORT_SEARCH_RESULT_ID, oldWorkEffortSearchResultId, workEffortSearchResultId));
 	}
 
 	/**
