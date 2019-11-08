@@ -109,9 +109,9 @@ public class LinkedInResponseServlet extends HttpServlet {
 
 		HttpPost postMethod = null;
 		try (CloseableHttpClient client = HttpClients.custom().build()) {
-			String clientId = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "apiKey").toString();
-			String returnURI = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "liveReturnUrl").toString();
-			String secret = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "secretKey").toString();
+			String clientId = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "apiKey", false).toString();
+			String returnURI = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "liveReturnUrl", false).toString();
+			String secret = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "secretKey", false).toString();
 
 			URI uri = new URIBuilder().setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":"))).setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
 					.setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")

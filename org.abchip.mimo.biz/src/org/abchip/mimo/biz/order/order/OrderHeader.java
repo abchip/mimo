@@ -1201,4 +1201,11 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 */
 	List<String> surveyResponses();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	boolean isApprovable();
+
 } // OrderHeader

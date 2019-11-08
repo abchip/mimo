@@ -78,8 +78,8 @@ public class GoogleRedirectServlet extends HttpServlet {
 			return;
 		}
 
-		String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
-		String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
+		String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false).toString();
+		String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false).toString();
 		// Get user authorization code
 		try {
 			String location = AUTHORIZE_URI + "?client_id=" + clientId 

@@ -321,6 +321,18 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		return frames;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getValue(Entity entity, String slotName, boolean resolve) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
 		Frame<? super E> ako = frame.ako();
 		if (ako != null) {
@@ -329,18 +341,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		}
 	}
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getValue(Entity entity, String slotName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

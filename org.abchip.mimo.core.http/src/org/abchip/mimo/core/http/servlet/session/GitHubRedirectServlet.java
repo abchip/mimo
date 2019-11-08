@@ -78,8 +78,8 @@ public class GitHubRedirectServlet extends HttpServlet {
 			return;
 		}
 
-		String clientId = oauth2GitHub.isa().getValue(oauth2GitHub, "clientId").toString();
-		String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl").toString();
+		String clientId = oauth2GitHub.isa().getValue(oauth2GitHub, "clientId", false).toString();
+		String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl", false).toString();
 		// Get user authorization code
 		try {
 			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId 

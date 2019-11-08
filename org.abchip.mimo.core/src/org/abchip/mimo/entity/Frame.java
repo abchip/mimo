@@ -168,10 +168,10 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" entityRequired="true" slotNameRequired="true"
+	 * @model required="true" entityRequired="true" slotNameRequired="true" resolveRequired="true"
 	 * @generated
 	 */
-	Object getValue(Entity entity, String slotName);
+	Object getValue(Entity entity, String slotName, boolean resolve);
 
 	/**
 	 * <!-- begin-user-doc -->

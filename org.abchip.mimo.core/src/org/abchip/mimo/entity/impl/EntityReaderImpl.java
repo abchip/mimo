@@ -208,14 +208,6 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * @generated NOT
 	 */
 	@Override
-	public abstract String getResourceName();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
 	public abstract E lookup(String name);
 
 	/**

@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				return;
 			}
-			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri").toString();
+			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false).toString();
 
 			location = response.encodeURL(location);
 			// System.err.println(("Login location: " + location));

@@ -79,7 +79,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(Entity entity, String slotName) {
+	public Object getValue(Entity entity, String slotName, boolean resolve) {
 		return null;
 	}
 

@@ -474,4 +474,14 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 		return result.toString();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isPostalAddress() {
+		return getContactMechTypeId().equals("POSTAL_ADDRESS");
+	}
+
 } //ContactMechTypeImpl

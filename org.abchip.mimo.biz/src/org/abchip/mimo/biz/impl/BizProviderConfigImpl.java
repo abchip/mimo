@@ -12,10 +12,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.abchip.mimo.biz.BizProviderConfig;
 import org.abchip.mimo.biz.BizProviderUser;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -153,28 +150,9 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPublicUser(BizProviderUser newPublicUser, NotificationChain msgs) {
-		BizProviderUser oldPublicUser = publicUser;
-		publicUser = newPublicUser;
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public void setPublicUser(BizProviderUser newPublicUser) {
-		if (newPublicUser != publicUser) {
-			NotificationChain msgs = null;
-			if (publicUser != null)
-				msgs = ((InternalEObject)publicUser).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, null, msgs);
-			if (newPublicUser != null)
-				msgs = ((InternalEObject)newPublicUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, null, msgs);
-			msgs = basicSetPublicUser(newPublicUser, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
+		publicUser = newPublicUser;
 	}
 
 	/**
@@ -192,44 +170,9 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSystemUser(BizProviderUser newSystemUser, NotificationChain msgs) {
-		BizProviderUser oldSystemUser = systemUser;
-		systemUser = newSystemUser;
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public void setSystemUser(BizProviderUser newSystemUser) {
-		if (newSystemUser != systemUser) {
-			NotificationChain msgs = null;
-			if (systemUser != null)
-				msgs = ((InternalEObject)systemUser).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
-			if (newSystemUser != null)
-				msgs = ((InternalEObject)newSystemUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
-			msgs = basicSetSystemUser(newSystemUser, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER:
-				return basicSetPublicUser(null, msgs);
-			case BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER:
-				return basicSetSystemUser(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		systemUser = newSystemUser;
 	}
 
 	/**

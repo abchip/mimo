@@ -21,11 +21,8 @@ import org.apache.http.entity.InputStreamEntity;
 
 public class HttpEntityWriterImpl<E extends EntityNameable> extends HttpEntityReaderImpl<E> implements EntityWriter<E> {
 
-	private String resource = null;
-
 	public HttpEntityWriterImpl(EntitySerializer<E> resourceSerializer, String resource) {
 		super(resourceSerializer, resource);
-		this.resource = resource;
 	}
 
 	@Override
@@ -39,11 +36,6 @@ public class HttpEntityWriterImpl<E extends EntityNameable> extends HttpEntityRe
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-	}
-
-	@Override
-	public String getResourceName() {
-		return resource;
 	}
 
 	@Override
@@ -80,7 +72,7 @@ public class HttpEntityWriterImpl<E extends EntityNameable> extends HttpEntityRe
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		this.getEntitySerializer().save(baos);
 
-		String url = "/entitySave?frame=" + getFrame().getName() + "&resource=" + this.getResourceName() + "&replace=" + replace;
+		String url = "/entitySave?frame=" + getFrame().getName() + "&resource=" + this.resource + "&replace=" + replace;
 		try (CloseableHttpResponse response = connector.execute(url, new InputStreamEntity(new ByteArrayInputStream(baos.toByteArray())))) {
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -99,7 +91,7 @@ public class HttpEntityWriterImpl<E extends EntityNameable> extends HttpEntityRe
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		this.getEntitySerializer().save(baos);
 
-		String url = "/entityDelete?frame=" + getFrame().getName() + "&resource=" + this.getResourceName();
+		String url = "/entityDelete?frame=" + getFrame().getName() + "&resource=" + this.resource;
 		try (CloseableHttpResponse response = connector.execute(url, new InputStreamEntity(new ByteArrayInputStream(baos.toByteArray())))) {
 		} catch (Exception e) {
 			e.printStackTrace();

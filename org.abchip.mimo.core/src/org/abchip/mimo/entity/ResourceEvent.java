@@ -65,12 +65,4 @@ public interface ResourceEvent<E extends EntityNameable> {
 	 */
 	String getOldName();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getResourceName();
-
 } // ResourceEvent

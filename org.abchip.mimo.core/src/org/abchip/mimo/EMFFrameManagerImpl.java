@@ -10,11 +10,14 @@ package org.abchip.mimo;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameManagerImpl implements FrameManager {
@@ -29,8 +32,7 @@ public class EMFFrameManagerImpl implements FrameManager {
 			return null;
 	}
 
-	@Override
-	public <E extends Entity> E createEntity(Class<E> klass) {
+	@Override	public <E extends Entity> E createEntity(Class<E> klass) {
 		return createEntity(getFrame(klass));
 	}
 
@@ -60,12 +62,38 @@ public class EMFFrameManagerImpl implements FrameManager {
 	@Override
 	public <E extends Entity> void checkFrameAutorization(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		// TODO Auto-generated method stub
-		if(false)
+		if (false)
 			throw new SecurityException("Permission denied for frame: " + frame.getName());
 	}
 
 	@Override
-	public <E extends Entity> E createProxy(Class<E> klass, String name) {
-		return null;
+	public <E extends EntityNameable> E createProxy(Class<E> klass, String name) {
+
+		E proxy = this.createEntity(klass);
+		InternalEObject eValue = (InternalEObject) proxy;
+		eValue.eSetProxyURI(org.eclipse.emf.common.util.URI.createURI("#" + name));
+
+		if (eValue instanceof EntityNameable) {
+			Entity entity = (Entity) eValue;
+			Frame<?> domainFrame = entity.isa();
+			for (String key : domainFrame.getKeys()) {
+				domainFrame.setValue(entity, key, name.toString());
+				break;
+			}
+		}
+		
+		return proxy;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <E extends EntityNameable> E resolveProxy(E entity) {
+		
+		if(entity.isProxy()) {
+			InternalEObject eValue = (InternalEObject) entity;
+			entity = (E) EcoreUtil.resolve(eValue, (ResourceSet)null);
+		}
+		
+		return entity;
 	}
 }

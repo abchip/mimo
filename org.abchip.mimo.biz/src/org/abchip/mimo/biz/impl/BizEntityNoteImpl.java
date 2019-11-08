@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.impl;
 import org.abchip.mimo.biz.BizEntityNote;
 import org.abchip.mimo.biz.BizEntityNoteData;
 import org.abchip.mimo.biz.BizPackage;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,42 +113,9 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNote(BizEntityNoteData newNote, NotificationChain msgs) {
-		BizEntityNoteData oldNote = note;
-		note = newNote;
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public void setNote(BizEntityNoteData newNote) {
-		if (newNote != note) {
-			NotificationChain msgs = null;
-			if (note != null)
-				msgs = ((InternalEObject)note).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_ENTITY_NOTE__NOTE, null, msgs);
-			if (newNote != null)
-				msgs = ((InternalEObject)newNote).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_ENTITY_NOTE__NOTE, null, msgs);
-			msgs = basicSetNote(newNote, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BizPackage.BIZ_ENTITY_NOTE__NOTE:
-				return basicSetNote(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		note = newNote;
 	}
 
 	/**

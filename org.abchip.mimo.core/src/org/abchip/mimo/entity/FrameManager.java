@@ -43,7 +43,7 @@ public interface FrameManager {
 	 * @model required="true" klassRequired="true" nameRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> E createProxy(Class<E> klass, String name);
+	<E extends EntityNameable> E createProxy(Class<E> klass, String name);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,4 +76,12 @@ public interface FrameManager {
 	 * @generated
 	 */
 	<E extends Entity> void checkFrameAutorization(ContextProvider contextProvider, Frame<E> frame, String resource);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" entityRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> E resolveProxy(E entity);
 } // FrameManager

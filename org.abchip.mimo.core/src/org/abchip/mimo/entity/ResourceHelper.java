@@ -66,11 +66,6 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public String getResourceName() {
-				return resourceWriter.getResourceName();
-			}
-
-			@Override
 			public ContextProvider getContextProvider() {
 				return resourceWriter.getContextProvider();
 			}
@@ -102,11 +97,6 @@ public class ResourceHelper {
 			@Override
 			public String getOldName() {
 				return null;
-			}
-
-			@Override
-			public String getResourceName() {
-				return resourceWriter.getResourceName();
 			}
 
 			@Override
@@ -145,11 +135,6 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public String getResourceName() {
-				return resourceWriter.getResourceName();
-			}
-
-			@Override
 			public ContextProvider getContextProvider() {
 				return resourceWriter.getContextProvider();
 			}
@@ -182,11 +167,6 @@ public class ResourceHelper {
 			@Override
 			public String getOldName() {
 				return null;
-			}
-
-			@Override
-			public String getResourceName() {
-				return resourceWriter.getResourceName();
 			}
 
 			@Override
@@ -283,12 +263,6 @@ public class ResourceHelper {
 
 			return object;
 		}
-
-		@Override
-		public String getResourceName() {
-			// TODO Auto-generated method stub
-			return null;
-		}
 	}
 	
 	private static class QueueReaderIteratorImpl<E extends EntityNameable> implements EntityIterator<E> {
@@ -374,6 +348,7 @@ public class ResourceHelper {
 	
 	private static class MapReader<E extends EntityNameable> extends EntityReaderImpl<E> {
 
+		@SuppressWarnings("unused")
 		private String resource = null;
 		private Map<String, E> entities = null;
 		
@@ -429,11 +404,6 @@ public class ResourceHelper {
 			E entity = entities.get(name);
 			
 			return entity;
-		}
-
-		@Override
-		public String getResourceName() {
-			return this.resource;
 		}
 	}
 }

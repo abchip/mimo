@@ -24,7 +24,6 @@ import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.util.Strings;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
@@ -40,8 +39,10 @@ public class PartyCommandProviderImpl implements CommandProvider {
 	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
 		
 		EntityReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
-
-		Party party = frameManager.createEntity(Party.class); 
+		Party party = partyReader.lookup("pippo3");
+		System.out.println(party.getPartyTypeId().getName());
+		
+		party = frameManager.createEntity(Party.class); 
 		party.setPartyId("ABC");
 		party.setDescription("abcdefg");
 		PartyType partyType = frameManager.createEntity(PartyType.class);
@@ -61,10 +62,9 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		partySerializer.clear();
 	}
 	
-	@SuppressWarnings("unused")
-	private <E extends EntityNameable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
+	public <E extends EntityNameable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
 
-		String id = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+		String id = interpreter.nextArgument();
 
 		// Write Person
 		EntityWriter<Person> personWriter = resourceManager.getEntityWriter(contextRoot, Person.class);

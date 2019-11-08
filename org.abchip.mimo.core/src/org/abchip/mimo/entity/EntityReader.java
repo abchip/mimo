@@ -139,14 +139,6 @@ public interface EntityReader<E extends EntityNameable> {
 	E first();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getResourceName();
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model nameRequired="true"
 	 * @generated

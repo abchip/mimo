@@ -55,6 +55,17 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isProxy() {
+		return eIsProxy();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -77,7 +88,11 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 		for (String key : frame.getKeys()) {
 			if (!name.toString().isEmpty())
 				name.append("/");
-			name.append(frame.getValue(this, key));
+			Object value = frame.getValue(this, key, false);
+			if (value instanceof EntityNameable)
+				name.append(((EntityNameable) value).getName());
+			else
+				name.append(value);
 		}
 
 		if (name.toString().isEmpty())

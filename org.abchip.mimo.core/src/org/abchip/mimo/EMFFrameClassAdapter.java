@@ -9,7 +9,6 @@
 package org.abchip.mimo;
 
 import java.lang.reflect.Method;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +20,7 @@ import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
@@ -149,12 +150,12 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(Entity entity, String slotName) {
+	public Object getValue(Entity entity, String slotName, boolean resolve) {
 
 		if (entity instanceof EObject)
-			return getValue((EObject) entity, slotName);
+			return getValue((EObject) entity, slotName, resolve);
 		else
-			return getValue((Object) entity, slotName);
+			return getValue((Object) entity, slotName, resolve);
 	}
 
 	@Override
@@ -163,20 +164,20 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			setValue((EObject) entity, slot, value);
 	}
 
-	private Object getValue(EObject eObject, String slotName) {
+	private Object getValue(EObject eObject, String slotName, boolean resolve) {
 		Object value = null;
 
 		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slotName);
 		if (eStructuralFeature != null)
-			value = eObject.eGet(eStructuralFeature);
+			value = eObject.eGet(eStructuralFeature, resolve);
 		else {
-			value = getValue((Object) eObject, slotName);
+			value = getValue((Object) eObject, slotName, resolve);
 		}
 
 		return value;
 	}
 
-	private Object getValue(Object object, String slotName) {
+	private Object getValue(Object object, String slotName, boolean resolve) {
 		Object value = null;
 
 		try {
@@ -214,14 +215,25 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			if (eClassifier instanceof EClass) {
 				EClass eClass = (EClass) eClassifier;
 				InternalEObject eValue = (InternalEObject) EcoreUtil.create(eClass);
-				eValue.eSetProxyURI(org.eclipse.emf.common.util.URI.createURI("#" + value.toString()));
 				if (eValue instanceof EntityNameable) {
 					Entity entity = (Entity) eValue;
 					Frame<?> domainFrame = entity.isa();
-					for (String key : domainFrame.getKeys()) {
-						domainFrame.setValue(entity, key, value.toString());
-						break;
+
+					if (value instanceof EntityNameable) {
+						"".toString();
+					} else {
+						for (String key : domainFrame.getKeys()) {
+							domainFrame.setValue(entity, key, value.toString());
+							break;
+						}
 					}
+
+					InternalEObject internalEObject = (InternalEObject) eObject;
+					Resource resource = internalEObject.eResource();
+					System.out.println(resource.getURIFragment(eValue));
+					URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { domainFrame.getName() }, null, null);
+					eValue.eSetProxyURI(uri);
+
 				}
 				eObject.eSet(eFeature, eValue);
 			} else
@@ -241,7 +253,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public URI getURI() {
-		return URI.create(EcoreUtil.getURI(eClass).toString());
+	public java.net.URI getURI() {
+		return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
 	}
 }

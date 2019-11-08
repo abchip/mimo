@@ -117,11 +117,6 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 	}
 
 	@Override
-	public String getResourceName() {
-		return getResourceName();
-	}
-
-	@Override
 	public String nextSequence() {
 		throw new UnsupportedOperationException();
 	}

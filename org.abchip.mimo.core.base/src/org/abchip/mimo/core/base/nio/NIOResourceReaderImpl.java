@@ -61,9 +61,4 @@ public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 	public Resource lookup(String name) {
 		return pathManager.getResources().get(name);
 	}
-
-	@Override
-	public String getResourceName() {
-		return pathManager.getResourceRoot().getName();
-	}
 }

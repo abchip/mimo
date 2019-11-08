@@ -451,6 +451,7 @@
       <genClasses ecoreClass="mimo.ecore#//entity/EntityNameable">
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityNameable/getResource"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityNameable/getURI"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityNameable/isProxy"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityProvider">
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/isActive">
@@ -563,7 +564,6 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/findNames/filter"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/first"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/getResourceName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/lookup">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/lookup/name"/>
         </genOperations>
@@ -646,6 +646,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/slotName"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/resolve"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/setValue">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/entity"/>
@@ -684,6 +685,10 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/checkFrameAutorization/resource"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/checkFrameAutorization/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/resolveProxy">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/resolveProxy/entity"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/resolveProxy/E"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Nameable">
         <genOperations ecoreOperation="mimo.ecore#//entity/Nameable/getName"/>
@@ -698,7 +703,6 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceEvent/getEventType"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceEvent/getNewName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceEvent/getOldName"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceEvent/getResourceName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceEvent/getSource"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/ResourceListener">

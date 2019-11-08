@@ -27,7 +27,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 public class HttpEntityReaderImpl<E extends EntityNameable> extends EntityReaderImpl<E> {
 
 	private EntitySerializer<E> entitySerializer;
-	private String resource = null;
+	protected String resource = null;
 
 	public HttpEntityReaderImpl(EntitySerializer<E> entitySerializer, String resource) {
 		setContextProvider(entitySerializer.getContextProvider());
@@ -52,7 +52,7 @@ public class HttpEntityReaderImpl<E extends EntityNameable> extends EntityReader
 		if (connector == null)
 			return null;
 
-		String url = "/entityFind?frame=" + getFrame().getName() + "&resource=" + this.getResourceName() + "&nrElem=" + nrElem;
+		String url = "/entityFind?frame=" + getFrame().getName() + "&resource=" + this.resource + "&nrElem=" + nrElem;
 		if (filter != null) {
 			try {
 				url += "&filter=" + URLEncoder.encode(filter, "UTF-8");
@@ -97,7 +97,7 @@ public class HttpEntityReaderImpl<E extends EntityNameable> extends EntityReader
 				fields.append(",");
 			fields.append(key);
 		}
-		String url = "/entityFind?frame=" + getFrame().getName() + "&resource=" + this.getResourceName() + "&fields=" + fields.toString();
+		String url = "/entityFind?frame=" + getFrame().getName() + "&resource=" + this.resource + "&fields=" + fields.toString();
 		if (filter != null) {
 			try {
 				url += "&filter=" + URLEncoder.encode(filter, "UTF-8");
@@ -136,7 +136,7 @@ public class HttpEntityReaderImpl<E extends EntityNameable> extends EntityReader
 
 		E entity = null;
 
-		String url = "/entityLookup?frame=" + getFrame().getName() + "&resource=" + this.getResourceName() + "&name=" + name.trim();
+		String url = "/entityLookup?frame=" + getFrame().getName() + "&resource=" + this.resource + "&name=" + name.trim();
 		try (CloseableHttpResponse response = connector.execute(url, null)) {
 
 			if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
@@ -151,10 +151,5 @@ public class HttpEntityReaderImpl<E extends EntityNameable> extends EntityReader
 		}
 
 		return entity;
-	}
-
-	@Override
-	public String getResourceName() {
-		return this.resource;
 	}
 }

@@ -226,4 +226,6 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	 */
 	void setContactMechTypeId(String value);
 
+	boolean isPostalAddress();
+
 } // ContactMechType

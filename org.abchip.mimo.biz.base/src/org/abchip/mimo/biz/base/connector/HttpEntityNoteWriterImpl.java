@@ -21,17 +21,8 @@ import org.apache.http.entity.InputStreamEntity;
 
 public class HttpEntityNoteWriterImpl<E extends BizEntityNote> extends HttpEntityReaderImpl<E> implements EntityWriter<E> {
 
-	private String resource = null;
-
 	public HttpEntityNoteWriterImpl(EntitySerializer<E> entitySerializer, String resource) {
 		super(entitySerializer, resource);
-
-		this.resource = resource;
-	}
-
-	@Override
-	public String getResourceName() {
-		return resource;
 	}
 
 	@Override
