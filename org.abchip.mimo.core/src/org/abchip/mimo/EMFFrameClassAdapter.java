@@ -15,12 +15,12 @@ import java.util.List;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -29,8 +29,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
@@ -41,9 +39,12 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
 
-	public EMFFrameClassAdapter(EClass eClass) {
+	private FrameManager frameManager = null;
+
+	public EMFFrameClassAdapter(FrameManager frameManager, EClass eClass) {
 		super();
 
+		this.frameManager = frameManager;
 		this.eClass = eClass;
 
 		this.name = this.eClass.getName();
@@ -123,11 +124,11 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return null;
 
 		EClass eAko = classes.get(0);
-		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames().get(eAko.getName());
+		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames(this.frameManager).get(eAko.getName());
 		if (akoFrame != null)
 			return akoFrame;
 		else
-			return new EMFFrameClassAdapter(eAko);
+			return new EMFFrameClassAdapter(frameManager, eAko);
 	}
 
 	public EClass getEClass() {
@@ -212,32 +213,12 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		if (eFeature instanceof EReference) {
 			EReference eReference = (EReference) eFeature;
 			EClassifier eClassifier = eReference.getEType();
-			if (eClassifier instanceof EClass) {
-				EClass eClass = (EClass) eClassifier;
-				InternalEObject eValue = (InternalEObject) EcoreUtil.create(eClass);
-				if (eValue instanceof EntityNameable) {
-					Entity entity = (Entity) eValue;
-					Frame<?> domainFrame = entity.isa();
-
-					if (value instanceof EntityNameable) {
-						"".toString();
-					} else {
-						for (String key : domainFrame.getKeys()) {
-							domainFrame.setValue(entity, key, value.toString());
-							break;
-						}
-					}
-
-					InternalEObject internalEObject = (InternalEObject) eObject;
-					Resource resource = internalEObject.eResource();
-					System.out.println(resource.getURIFragment(eValue));
-					URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { domainFrame.getName() }, null, null);
-					eValue.eSetProxyURI(uri);
-
-				}
-				eObject.eSet(eFeature, eValue);
-			} else
-				"".toString();
+			Class<?> klass = eClassifier.getInstanceClass();
+			if (EntityNameable.class.isAssignableFrom(klass)) {
+				@SuppressWarnings("unchecked")
+				EntityNameable entity = this.frameManager.createProxy((Class<? extends EntityNameable>) klass, value.toString());
+				eObject.eSet(eFeature, entity);
+			}
 		} else {
 			try {
 				eObject.eSet(eFeature, value);

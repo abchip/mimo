@@ -40,6 +40,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		
 		EntityReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
 		Party party = partyReader.lookup("pippo3");
+		System.out.println("----> "+party.getURI());
 		System.out.println(party.getPartyTypeId().getName());
 		
 		party = frameManager.createEntity(Party.class); 

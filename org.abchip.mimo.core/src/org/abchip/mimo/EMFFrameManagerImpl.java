@@ -15,7 +15,7 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceHelper;
-import org.abchip.mimo.entity.impl.EntityProviderImpl;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -32,7 +32,8 @@ public class EMFFrameManagerImpl implements FrameManager {
 			return null;
 	}
 
-	@Override	public <E extends Entity> E createEntity(Class<E> klass) {
+	@Override
+	public <E extends Entity> E createEntity(Class<E> klass) {
 		return createEntity(getFrame(klass));
 	}
 
@@ -43,19 +44,19 @@ public class EMFFrameManagerImpl implements FrameManager {
 
 	@SuppressWarnings("unchecked")
 	private <E extends Entity, F extends Frame<E>> EntityReader<F> _getFrameReader(ContextProvider contextProvider) {
-		EntityReader<F> frameReader = (EntityReader<F>) ResourceHelper.wrapReader(contextProvider, EntityProviderImpl.RESOURCE_MASTER, EMFFrameHelper.getFrames());
+		EntityReader<F> frameReader = (EntityReader<F>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames(this));
 		return frameReader;
 	}
 
 	@Override
 	public Frame<?> getFrame(String name) {
-		return EMFFrameHelper.getFrames().get(name);
+		return EMFFrameHelper.getFrames(this).get(name);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
-		return (Frame<E>) EMFFrameHelper.getFrames().get(klass.getSimpleName());
+		return (Frame<E>) EMFFrameHelper.getFrames(this).get(klass.getSimpleName());
 	}
 
 	@SuppressWarnings("unused")
@@ -68,32 +69,37 @@ public class EMFFrameManagerImpl implements FrameManager {
 
 	@Override
 	public <E extends EntityNameable> E createProxy(Class<E> klass, String name) {
+		return createProxy(getFrame(klass), name);
+	}
 
-		E proxy = this.createEntity(klass);
-		InternalEObject eValue = (InternalEObject) proxy;
-		eValue.eSetProxyURI(org.eclipse.emf.common.util.URI.createURI("#" + name));
+	@Override
+	public <E extends EntityNameable> E createProxy(Frame<E> frame, String name) {
 
-		if (eValue instanceof EntityNameable) {
-			Entity entity = (Entity) eValue;
-			Frame<?> domainFrame = entity.isa();
-			for (String key : domainFrame.getKeys()) {
-				domainFrame.setValue(entity, key, name.toString());
-				break;
-			}
+		E proxy = this.createEntity(frame);
+
+		InternalEObject internalEObject = (InternalEObject) proxy;
+		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, name);
+		internalEObject.eSetProxyURI(uri);
+
+		Entity entity = (Entity) internalEObject;
+		Frame<?> domainFrame = entity.isa();
+		for (String key : domainFrame.getKeys()) {
+			domainFrame.setValue(entity, key, name.toString());
+			break;
 		}
-		
+
 		return proxy;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityNameable> E resolveProxy(E entity) {
-		
-		if(entity.isProxy()) {
+
+		if (entity.isProxy()) {
 			InternalEObject eValue = (InternalEObject) entity;
-			entity = (E) EcoreUtil.resolve(eValue, (ResourceSet)null);
+			entity = (E) EcoreUtil.resolve(eValue, (ResourceSet) null);
 		}
-		
+
 		return entity;
 	}
 }

@@ -29,6 +29,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityImpl() {
@@ -37,6 +38,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -52,6 +54,6 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Frame<? extends Entity> isa() {
 
-		return EMFFrameHelper.getFrames().get(eClass().getName());
+		return EMFFrameHelper.getFrames(null).get(eClass().getName());
 	}
 } // EntityImpl

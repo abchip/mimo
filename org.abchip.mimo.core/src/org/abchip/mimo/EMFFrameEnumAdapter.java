@@ -11,8 +11,6 @@ package org.abchip.mimo;
 import java.net.URI;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityEnum;
-import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
@@ -38,7 +36,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		EAnnotation eTextAnnotation = eEnum.getEAnnotation(Frame.NS_PREFIX_FRAME);
 		if (eTextAnnotation != null) {
 			String formula = eTextAnnotation.getDetails().get("formula");
-			if(formula != null)
+			if (formula != null)
 				this.textFormula = formula;
 		}
 	}
@@ -48,15 +46,9 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		return null;
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public Frame<? super E> ako() {
-		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames().get(EntityEnum.class.getSimpleName());
-		if (akoFrame != null)
-			return akoFrame;
-		else
-			return new EMFFrameClassAdapter(EntityPackage.eINSTANCE.getEntityEnum());
-
+		return null;
 	}
 
 	protected EEnum getEEnum() {

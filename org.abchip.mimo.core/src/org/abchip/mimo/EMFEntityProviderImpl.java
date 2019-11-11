@@ -17,6 +17,7 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
@@ -25,6 +26,8 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 
 	@Inject
 	private ResourceManager resourceManager;
+	@Inject
+	private FrameManager frameManager;
 
 	@PostConstruct
 	protected void init() {
@@ -46,9 +49,9 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 	@Override
 	public <E extends EntityNameable> EntityReader<E> doEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		if (isFrame(frame)) {
-			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, resource, EMFFrameHelper.getFrames());
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames(frameManager));
 		} else if (isEnum(frame)) {
-			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, resource, EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
 		} else
 			throw new UnsupportedOperationException();
 	}

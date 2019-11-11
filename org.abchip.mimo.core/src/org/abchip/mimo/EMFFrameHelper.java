@@ -17,6 +17,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.FrameManager;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -29,12 +30,12 @@ public class EMFFrameHelper {
 
 	private static Map<String, Frame<?>> publicFrames = null;
 
-	public static Map<String, Frame<?>> getFrames() {
+	public static Map<String, Frame<?>> getFrames(FrameManager frameManager) {
 
 		if (publicFrames == null) {
 			synchronized (EMFFrameHelper.class) {
 				if (publicFrames == null) {
-					loadFrames();
+					loadFrames(frameManager);
 				}
 			}
 		}
@@ -81,7 +82,7 @@ public class EMFFrameHelper {
 		return ePackage;
 	}
 
-	private static synchronized void loadFrames() {
+	private static synchronized void loadFrames(FrameManager frameManager) {
 
 		Map<String, Frame<?>> tempFrames = new HashMap<String, Frame<?>>();
 		if(publicFrames == null)
@@ -102,7 +103,7 @@ public class EMFFrameHelper {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
-						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(eClass));
+						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(frameManager, eClass));
 					}
 				}
 				else if (eClassifier instanceof EEnum) {

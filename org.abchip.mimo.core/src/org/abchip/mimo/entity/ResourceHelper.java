@@ -38,8 +38,8 @@ public class ResourceHelper {
 		return new ListReaderImpl<E>(resources);
 	}
 
-	public static <E extends EntityNameable> EntityReader<E> wrapReader(ContextProvider contextProvider, String resource, Map<String, E> entities) {
-		return new MapReader<E>(contextProvider, resource, entities);
+	public static <E extends EntityNameable> EntityReader<E> wrapReader(ContextProvider contextProvider, Map<String, E> entities) {
+		return new MapReader<E>(contextProvider, entities);
 	}
 	
 	public static <E extends EntityNameable> void firePreDeleteEvent(final EntityWriter<E> resourceWriter, final E source) {
@@ -348,13 +348,10 @@ public class ResourceHelper {
 	
 	private static class MapReader<E extends EntityNameable> extends EntityReaderImpl<E> {
 
-		@SuppressWarnings("unused")
-		private String resource = null;
 		private Map<String, E> entities = null;
 		
-		public MapReader(ContextProvider contextProvider, String resource, Map<String, E> entities) {
+		public MapReader(ContextProvider contextProvider, Map<String, E> entities) {
 			setContextProvider(contextProvider);
-			this.resource = resource;
 			this.entities = entities;
 		}
 
