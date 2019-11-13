@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.application.ComponentStarted;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLogManager;
 import org.abchip.mimo.server.JobManager;

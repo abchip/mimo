@@ -110,11 +110,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		this.routesNumber = this.getSlots().size() - this.slotsNumber;
 	}
 
-	@Override
-	public String getResource() {
-		return "emf";
-	}
-
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Frame<? super E> ako() {

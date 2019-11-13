@@ -14,11 +14,10 @@ import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
-import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
@@ -35,7 +34,7 @@ public class EdiCommandProviderImpl implements CommandProvider {
 
 		Frame<MessageSent> messageSentFrame = frameManager.getFrame(MessageSent.class);
 
-		EntityWriter<MessageSent> messageSentWriter = resourceManager.getEntityWriter(contextRoot, messageSentFrame);
+		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getEntityWriter(contextRoot, messageSentFrame);
 		MessageSent messageSent = frameManager.createEntity(messageSentFrame);
 		messageSent.setMessageId("test-010");
 		messageSent.setEvent(EntityEvent.CREATE);
@@ -45,18 +44,16 @@ public class EdiCommandProviderImpl implements CommandProvider {
 		messageSent.setStatus(MessageStatus.TRASMITTED);
 		messageSentWriter.create(messageSent);
 
-		if (messageSentWriter.lookup(messageSent.getMessageId()) != null) {
+		if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null) {
 			System.out.println(messageSent);
 			messageSentWriter.delete(messageSent);
-			if (messageSentWriter.lookup(messageSent.getMessageId()) != null)
+			if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null)
 				System.err.println("MessageSent not deleted");
 		} else
 			System.err.println("MessageSent not found");
 
-		try (EntityIterator<MessageSent> messageIterator = messageSentWriter.find(null, null, 0)) {
-			for (MessageSent messageSent2 : messageIterator) {
-				System.out.println(messageSent2);
-			}
+		for (MessageSent messageSent2 : messageSentWriter.find(null, null, 0, true)) {
+			System.out.println(messageSent2);
 		}
 	}
 

@@ -20,12 +20,10 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Strings;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -50,8 +48,7 @@ public class ImportProductCategoriesServlet extends BaseServlet {
 
 		try {
 
-			EntityWriter<ProductCategory> productCategoryWriter = resourceManager.getEntityWriter(contextProvider, ProductCategory.class);
-			EntityReader<ProductCategory> productCategoryReader = resourceManager.getEntityReader(contextProvider, ProductCategory.class);
+			ResourceWriter<ProductCategory> productCategoryWriter = resourceManager.getEntityWriter(contextProvider, ProductCategory.class);
 
 			for (Part filePart : parseRequest(request).values()) {
 				if (!filePart.getName().equals("upload"))
@@ -77,11 +74,6 @@ public class ImportProductCategoriesServlet extends BaseServlet {
 							productCategory.setProductCategoryTypeId(frameManager.createProxy(ProductCategoryType.class, "MATERIALS_CATEGORY"));
 							productCategory.setCategoryName(Strings.qINSTANCE.escape(description));
 							productCategoryWriter.create(productCategory, true);
-
-							try (EntityIterator<ProductCategory> productCategoryIterator = productCategoryReader.find(null, null, 0)) {
-								if (productCategoryIterator == null)
-									System.out.println(productCategory);
-							}
 						}
 					}
 				}

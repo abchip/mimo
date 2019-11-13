@@ -58,6 +58,8 @@ import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
+import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 import org.abchip.mimo.util.BinaryDef;
 import org.abchip.mimo.util.BinaryType;
 import org.abchip.mimo.util.CharacterDef;
@@ -582,6 +584,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
+		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theUtilPackage.createPackageContents();
@@ -590,6 +594,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theNetPackage.createPackageContents();
+		theResourcePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUtilPackage.initializePackageContents();
@@ -598,6 +603,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
+		theResourcePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theUtilPackage.freeze();
@@ -1826,7 +1832,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "list", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "index", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "nrElem", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "limit", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getJavaList());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -2031,6 +2037,15 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		op = addEOperation(urIsEClass, ecorePackage.getEString(), "getBaseName", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaURI(), "uri", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(urIsEClass, null, "parseParameter", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "query", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		// Initialize enums and add enum literals
 		initEEnum(binaryTypeEEnum, BinaryType.class, "BinaryType");

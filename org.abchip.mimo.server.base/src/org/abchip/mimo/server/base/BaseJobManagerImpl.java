@@ -21,9 +21,9 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.Identity;
 import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobCapability;
 import org.abchip.mimo.server.JobEvent;
@@ -70,7 +70,7 @@ public class BaseJobManagerImpl implements JobManager {
 	public JobCapability create(Identity<?> identity, String jobName) {
 
 		Job startupJob = systemManager.getJobKernel();
-		EntityReader<UserProfile> userResource = resourceManager.getEntityReader(startupJob, UserProfile.class);
+		ResourceReader<UserProfile> userResource = resourceManager.getEntityReader(startupJob, UserProfile.class);
 
 		// check credential
 		UserProfile userProfile = userResource.lookup(identity.getJavaPrincipal().getName());
@@ -86,7 +86,7 @@ public class BaseJobManagerImpl implements JobManager {
 		fireEvent(jobEvent);
 
 		// save
-		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class);
+		ResourceWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class);
 		jobWriter.create(job);
 
 		jobEvent.setType(JobEventType.STARTED);
@@ -157,15 +157,14 @@ public class BaseJobManagerImpl implements JobManager {
 		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
 		Job jobTarget = null;
 
-		EntityReader<Job> jobReader = resourceManager.getEntityReader(jobCaller, Job.class);
-		try (EntityIterator<Job> jobs = jobReader.find(filter, null, 0)) {
+		ResourceReader<Job> jobReader = resourceManager.getEntityReader(jobCaller, Job.class);
+		EntityIterator<Job> jobs = jobReader.find(filter);
 
-			// first element
-			if (jobs.hasNext())
-				jobTarget = jobs.next();
+		// first element
+		if (jobs.hasNext())
+			jobTarget = jobs.next();
 
-			return jobTarget;
-		}
+		return jobTarget;
 	}
 
 	@Override
@@ -205,7 +204,7 @@ public class BaseJobManagerImpl implements JobManager {
 			jobListener.handleEvent(jobEvent);
 
 		// save destroy date job
-		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class);
+		ResourceWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class);
 		job.setDestroyDate(new Date());
 		jobWriter.update(job);
 

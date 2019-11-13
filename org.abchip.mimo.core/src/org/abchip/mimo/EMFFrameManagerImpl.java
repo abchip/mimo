@@ -11,13 +11,12 @@ package org.abchip.mimo;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceHelper;
+import org.abchip.mimo.resource.ResourceHelper;
+import org.abchip.mimo.resource.ResourceReader;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameManagerImpl implements FrameManager {
@@ -38,13 +37,13 @@ public class EMFFrameManagerImpl implements FrameManager {
 	}
 
 	@Override
-	public <E extends Entity> EntityReader<Frame<E>> getFrameReader(ContextProvider contextProvider) {
+	public <E extends Entity> ResourceReader<Frame<E>> getFrameReader(ContextProvider contextProvider) {
 		return _getFrameReader(contextProvider);
 	}
 
 	@SuppressWarnings("unchecked")
-	private <E extends Entity, F extends Frame<E>> EntityReader<F> _getFrameReader(ContextProvider contextProvider) {
-		EntityReader<F> frameReader = (EntityReader<F>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames(this));
+	private <E extends Entity, F extends Frame<E>> ResourceReader<F> _getFrameReader(ContextProvider contextProvider) {
+		ResourceReader<F> frameReader = (ResourceReader<F>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames(this));
 		return frameReader;
 	}
 
@@ -57,14 +56,6 @@ public class EMFFrameManagerImpl implements FrameManager {
 	@Override
 	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
 		return (Frame<E>) EMFFrameHelper.getFrames(this).get(klass.getSimpleName());
-	}
-
-	@SuppressWarnings("unused")
-	@Override
-	public <E extends Entity> void checkFrameAutorization(ContextProvider contextProvider, Frame<E> frame, String resource) {
-		// TODO Auto-generated method stub
-		if (false)
-			throw new SecurityException("Permission denied for frame: " + frame.getName());
 	}
 
 	@Override
@@ -89,17 +80,5 @@ public class EMFFrameManagerImpl implements FrameManager {
 		}
 
 		return proxy;
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public <E extends EntityNameable> E resolveProxy(E entity) {
-
-		if (entity.isProxy()) {
-			InternalEObject eValue = (InternalEObject) entity;
-			entity = (E) EcoreUtil.resolve(eValue, (ResourceSet) null);
-		}
-
-		return entity;
 	}
 }

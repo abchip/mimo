@@ -86,20 +86,20 @@
       <services
           xsi:type="mimo-app:ServiceExecutor"
           className="org.abchip.mimo.core.base.BaseResourceManagerImpl"
-          interfaceName="org.abchip.mimo.entity.ResourceManager"/>
+          interfaceName="org.abchip.mimo.resource.ResourceManager"/>
       <services
           xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.core.base.BaseEntityProviderRegistryImpl"
-          interfaceName="org.abchip.mimo.entity.EntityProviderRegistry">
+          className="org.abchip.mimo.core.base.BaseResourceProviderRegistryImpl"
+          interfaceName="org.abchip.mimo.resource.ResourceProviderRegistry">
         <entries
-            className="org.abchip.mimo.EMFEntityProviderImpl"
-            interfaceName="org.abchip.mimo.entity.EntityProvider"
+            className="org.abchip.mimo.EMFResourceProviderImpl"
+            interfaceName="org.abchip.mimo.resource.ResourceProvider"
             name="*EMF"
             vendor="ABChip"
             version="0.1.0"/>
         <entries
-            className="org.abchip.mimo.core.base.nio.NIOEntityProviderImpl"
-            interfaceName="org.abchip.mimo.entity.EntityProvider"
+            className="org.abchip.mimo.core.base.nio.NIOResourceProviderImpl"
+            interfaceName="org.abchip.mimo.resource.ResourceProvider"
             name="*NIO"
             vendor="ABChip"
             version="0.1.0"/>

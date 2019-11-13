@@ -11,12 +11,12 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.logic.MindManager;
 import org.abchip.mimo.logic.Term;
 import org.abchip.mimo.logic.Theory;
+import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
@@ -34,7 +34,7 @@ public class TestLogic {
 	@TestStarted
 	public void start() {
 
-		EntityReader<Frame<Entity>> frameReader = frameManager.getFrameReader(testRunner);
+		ResourceReader<Frame<Entity>> frameReader = frameManager.getFrameReader(testRunner);
 		Frame<?> frame = frameReader.lookup(EntityPackage.eINSTANCE.getFrame().getName());
 
 		Theory theory = mindManager.buildTheory(testRunner, frame);

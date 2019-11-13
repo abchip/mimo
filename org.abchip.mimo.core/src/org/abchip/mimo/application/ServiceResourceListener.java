@@ -28,7 +28,7 @@ package org.abchip.mimo.application;
 public interface ServiceResourceListener extends ServiceRef {
 	/**
 	 * Returns the value of the '<em><b>Interface Name</b></em>' attribute.
-	 * The default value is <code>"org.abchip.mimo.entity.ResourceListener"</code>.
+	 * The default value is <code>"org.abchip.mimo.resource.ResourceListener"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interface Name</em>' attribute isn't clear,
@@ -37,7 +37,7 @@ public interface ServiceResourceListener extends ServiceRef {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceResourceListener_InterfaceName()
-	 * @model default="org.abchip.mimo.entity.ResourceListener" required="true" changeable="false"
+	 * @model default="org.abchip.mimo.resource.ResourceListener" required="true" changeable="false"
 	 * @generated
 	 */
 	String getInterfaceName();

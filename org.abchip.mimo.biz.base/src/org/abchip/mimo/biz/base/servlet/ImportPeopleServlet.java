@@ -27,9 +27,9 @@ import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -54,9 +54,9 @@ public class ImportPeopleServlet extends BaseServlet {
 
 		try {
 
-			EntityWriter<Person> personWriter = resourceManager.getEntityWriter(contextProvider, Person.class);
-			EntityWriter<PartyRole> partyRoleWriter = resourceManager.getEntityWriter(contextProvider, PartyRole.class);
-			EntityWriter<PartyTaxAuthInfo> partyTaxAuthInfoWriter = resourceManager.getEntityWriter(contextProvider, PartyTaxAuthInfo.class);
+			ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextProvider, Person.class);
+			ResourceWriter<PartyRole> partyRoleWriter = resourceManager.getEntityWriter(contextProvider, PartyRole.class);
+			ResourceWriter<PartyTaxAuthInfo> partyTaxAuthInfoWriter = resourceManager.getEntityWriter(contextProvider, PartyTaxAuthInfo.class);
 
 			for (Part filePart : parseRequest(request).values()) {
 				if (!filePart.getName().equals("upload"))

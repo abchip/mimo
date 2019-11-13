@@ -23,10 +23,10 @@ import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
-import org.abchip.mimo.entity.EntityProvider;
-import org.abchip.mimo.entity.EntitySerializer;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceSerializer;
 
 public class StatusServlet extends HttpServlet {
 
@@ -35,18 +35,18 @@ public class StatusServlet extends HttpServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	private EntityProvider entityProvider = null;
+	private ResourceProvider resourceProvider = null;
 
-	protected EntityProvider getDefaultProvider() {
-		if (this.entityProvider == null) {
+	protected ResourceProvider getDefaultProvider() {
+		if (this.resourceProvider == null) {
 			synchronized (this) {
-				if (this.entityProvider == null) {
-					this.entityProvider = resourceManager.getProvider("UserLogin");
+				if (this.resourceProvider == null) {
+					this.resourceProvider = resourceManager.getProvider("UserLogin");
 				}
 			}
 		}
 
-		return this.entityProvider;
+		return this.resourceProvider;
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class StatusServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		EntitySerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		serializer.add(contextProvider.getContext().getContextDescription());
 		serializer.save(response.getOutputStream());
 

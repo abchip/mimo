@@ -7,9 +7,9 @@ import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestFactory;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -36,21 +36,18 @@ public class TestEntity {
 
 	private void testRead() {
 
-		EntityReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class);
+		ResourceReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class);
 
-		try (EntityIterator<ObjectA> entityIterator = entityReader.find(null, null, 0)) {
-			while (entityIterator.hasNext()) {
-				ObjectA objectA = entityIterator.next();
-				asserter.assertNotNull("Read object", objectA);
-			}
-		} catch (Exception exc) {
-			asserter.fail("Resource reading failed: " + exc.getMessage());
+		EntityIterator<ObjectA> entityIterator = entityReader.find();
+		while (entityIterator.hasNext()) {
+			ObjectA objectA = entityIterator.next();
+			asserter.assertNotNull("Read object", objectA);
 		}
 	}
 
 	private void testWrite() {
 		try {
-			EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
+			ResourceWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
 
 			ObjectA objectA = TestFactory.eINSTANCE.createObjectA();
 			objectA.setName("PIPPO");
@@ -80,16 +77,13 @@ public class TestEntity {
 
 	private void testDelete() {
 
-		EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
+		ResourceWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
 
-		try (EntityIterator<ObjectA> objectIterator = entityWriter.find(null, null, 0)) {
-			while (objectIterator.hasNext()) {
-				ObjectA objectA = objectIterator.next();
-				entityWriter.delete(objectA);
-				asserter.assertNull("Delete object", entityWriter.lookup(objectA.getName()));
-			}
-		} catch (Exception exc) {
-			asserter.fail("Resource reading failed: " + exc.getMessage());
+		EntityIterator<ObjectA> objectIterator = entityWriter.find();
+		while (objectIterator.hasNext()) {
+			ObjectA objectA = objectIterator.next();
+			entityWriter.delete(objectA);
+			asserter.assertNull("Delete object", entityWriter.lookup(objectA.getName()));
 		}
 	}
 }

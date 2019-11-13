@@ -14,15 +14,14 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationFactory;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Files;
 
 import com.aliasi.classify.BaseClassifierEvaluator;
@@ -112,11 +111,9 @@ public class LPClassifierImpl implements Classifier {
 	}
 
 	private void loadLanguages() {
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(contextRoot, Language.class);
-		try (EntityIterator<Language> languageIterator = languageReader.find(null, null, 0)) {
-			for (Language language : languageIterator)
-				languages.put(language.getName(), language);
-		}
+		ResourceReader<Language> languageReader = resourceManager.getEntityReader(contextRoot, Language.class);
+		for (Language language : languageReader.find())
+			languages.put(language.getName(), language);
 	}
 
 	@SuppressWarnings("unchecked")

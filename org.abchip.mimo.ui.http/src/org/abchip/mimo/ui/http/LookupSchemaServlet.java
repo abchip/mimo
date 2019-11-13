@@ -19,14 +19,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.entity.impl.EntityProviderImpl;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
@@ -53,7 +53,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, EntityProviderImpl.RESOURCE_MASTER).lookup(name);
+		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, Resource.TENANT_MASTER).lookup(name);
 
 		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			schema = frameManager.createEntity(Schema.class);
@@ -94,7 +94,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		EntitySerializer<Schema> entitySerializer = resourceManager.createEntitySerializer(contextProvider, Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Schema> entitySerializer = resourceManager.createEntitySerializer(Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (schema != null) {
 			completeSchema(contextProvider, schema);
 			entitySerializer.add(schema);
@@ -142,7 +142,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, EntityProviderImpl.RESOURCE_MASTER);
+		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, Resource.TENANT_MASTER);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

@@ -10,7 +10,7 @@ package org.abchip.mimo.core.base;
 
 import org.abchip.mimo.application.ComponentStarted;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
 
 public class BaseEntityActivator {
 

@@ -35,6 +35,8 @@ import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
+import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 import org.abchip.mimo.util.UtilPackage;
 import org.abchip.mimo.util.impl.UtilPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -215,6 +217,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
+		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
@@ -224,6 +228,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theNetPackage.createPackageContents();
+		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -232,6 +237,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
+		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -924,7 +930,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		addEOperation(serviceRefEClass, ecorePackage.getEString(), "getInterfaceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceResourceListenerEClass, ServiceResourceListener.class, "ServiceResourceListener", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceResourceListener_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.entity.ResourceListener", 1, 1, ServiceResourceListener.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceResourceListener_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.resource.ResourceListener", 1, 1, ServiceResourceListener.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceRegistryEClass, ServiceRegistry.class, "ServiceRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceRegistry_Entries(), this.getServiceRegistryEntry(), null, "entries", null, 0, -1, ServiceRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

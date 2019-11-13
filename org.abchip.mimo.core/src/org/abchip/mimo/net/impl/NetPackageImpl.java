@@ -26,6 +26,8 @@ import org.abchip.mimo.net.NetFactory;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.SocketConfig;
 
+import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 import org.abchip.mimo.util.UtilPackage;
 
 import org.abchip.mimo.util.impl.UtilPackageImpl;
@@ -105,6 +107,8 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
+		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
@@ -114,6 +118,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
+		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -122,6 +127,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
+		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

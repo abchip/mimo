@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.Resource;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -23,6 +23,7 @@ public class TestResource {
 	private ResourceManager resourceManager;
 	@Inject
 	private FrameManager frameManager;
+	@SuppressWarnings("unused")
 	@Inject
 	private TestRunner testRunner;
 	@Inject
@@ -34,7 +35,7 @@ public class TestResource {
 
 		Frame<Resource> resourceFrame = frameManager.getFrame(Resource.class);
 		
-		EntitySerializer<Frame> frameSerializer = resourceManager.createEntitySerializer(testRunner, Frame.class, SerializationType.XML_METADATA_INTERCHANGE);
+		ResourceSerializer<Frame> frameSerializer = resourceManager.createEntitySerializer(Frame.class, SerializationType.XML_METADATA_INTERCHANGE);
 		frameSerializer.add(resourceFrame);
 		frameSerializer.save(System.out);
 

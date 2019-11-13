@@ -9,6 +9,7 @@
 package org.abchip.mimo.entity;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.resource.ResourceReader;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -59,7 +60,7 @@ public interface FrameManager {
 	 * @model contextProviderRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> EntityReader<Frame<E>> getFrameReader(ContextProvider contextProvider);
+	<E extends Entity> ResourceReader<Frame<E>> getFrameReader(ContextProvider contextProvider);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,20 +77,4 @@ public interface FrameManager {
 	 * @generated
 	 */
 	<E extends Entity> Frame<E> getFrame(Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" resourceRequired="true"
-	 * @generated
-	 */
-	<E extends Entity> void checkFrameAutorization(ContextProvider contextProvider, Frame<E> frame, String resource);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" entityRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> E resolveProxy(E entity);
 } // FrameManager

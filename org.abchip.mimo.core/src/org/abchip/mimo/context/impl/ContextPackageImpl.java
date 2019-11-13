@@ -45,6 +45,8 @@ import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
+import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 import org.abchip.mimo.util.UtilPackage;
 import org.abchip.mimo.util.impl.UtilPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -311,6 +313,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
+		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
@@ -320,6 +324,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theApplicationPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theNetPackage.createPackageContents();
+		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -328,6 +333,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theApplicationPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
+		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

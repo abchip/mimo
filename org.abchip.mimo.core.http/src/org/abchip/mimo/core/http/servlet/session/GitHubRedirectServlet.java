@@ -22,9 +22,9 @@ import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityProvider;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProvider;
 
 public class GitHubRedirectServlet extends HttpServlet {
 
@@ -38,18 +38,18 @@ public class GitHubRedirectServlet extends HttpServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	private EntityProvider entityProvider = null;
+	private ResourceProvider resourceProvider = null;
 
-	protected EntityProvider getDefaultProvider() {
-		if (this.entityProvider == null) {
+	protected ResourceProvider getDefaultProvider() {
+		if (this.resourceProvider == null) {
 			synchronized (this) {
-				if (this.entityProvider == null) {
-					this.entityProvider = resourceManager.getProvider("UserLogin");
+				if (this.resourceProvider == null) {
+					this.resourceProvider = resourceManager.getProvider("UserLogin");
 				}
 			}
 		}
 
-		return this.entityProvider;
+		return this.resourceProvider;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class GitHubRedirectServlet extends HttpServlet {
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
 
-		EntityReader<EntityNameable> oauth2Reader = resourceManager.getEntityReader(contextProvider, "OAuth2GitHub");
+		ResourceReader<EntityNameable> oauth2Reader = resourceManager.getEntityReader(contextProvider, "OAuth2GitHub");
 		EntityNameable oauth2GitHub = oauth2Reader.first();
 
 		getDefaultProvider().logout(contextProvider);

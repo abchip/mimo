@@ -25,9 +25,9 @@ import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityProvider;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProvider;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
@@ -51,18 +51,18 @@ public class GitHubResponseServlet extends HttpServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	private EntityProvider entityProvider = null;
+	private ResourceProvider resourceProvider = null;
 
-	protected EntityProvider getDefaultProvider() {
-		if (this.entityProvider == null) {
+	protected ResourceProvider getDefaultProvider() {
+		if (this.resourceProvider == null) {
 			synchronized (this) {
-				if (this.entityProvider == null) {
-					this.entityProvider = resourceManager.getProvider("UserLogin");
+				if (this.resourceProvider == null) {
+					this.resourceProvider = resourceManager.getProvider("UserLogin");
 				}
 			}
 		}
 
-		return this.entityProvider;
+		return this.resourceProvider;
 	}
 
 	@Override
@@ -99,7 +99,7 @@ public class GitHubResponseServlet extends HttpServlet {
 
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2GitHub";
-		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
+		ResourceReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
 		EntityNameable oauth2GitHub = oauth2Reader.first();
 
 		this.getDefaultProvider().logout(contextProvider);

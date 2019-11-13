@@ -18,12 +18,12 @@ import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntitySerializer;
-import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
@@ -38,10 +38,11 @@ public class PartyCommandProviderImpl implements CommandProvider {
 
 	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
 		
-		EntityReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
+		ResourceReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
 		Party party = partyReader.lookup("pippo3");
 		System.out.println("----> "+party.getURI());
 		System.out.println(party.getPartyTypeId().getName());
+		System.out.println(party.getPreferredCurrencyUomId().getNumericCode());
 		
 		party = frameManager.createEntity(Party.class); 
 		party.setPartyId("ABC");
@@ -51,14 +52,15 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		partyType.setDescription("hilmnopq");
 		party.setPartyTypeId(partyType);
 		
-		EntitySerializer<Party> partySerializer = resourceManager.createEntitySerializer(contextRoot, Party.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Party> partySerializer = resourceManager.createEntitySerializer(Party.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		partySerializer.add(party);
 				
-		for(Party party2: partyReader.find(null, null, 0)) {
+		for(Party party2: partyReader.find()) {
 			partySerializer.add(party2);
 			party2.getPartyTypeId().getName();
 			break;
 		}
+		
 		partySerializer.save(System.out);
 		partySerializer.clear();
 	}
@@ -68,7 +70,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		String id = interpreter.nextArgument();
 
 		// Write Person
-		EntityWriter<Person> personWriter = resourceManager.getEntityWriter(contextRoot, Person.class);
+		ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextRoot, Person.class);
 
 		Person person = frameManager.createEntity(Person.class);
 		person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
@@ -79,7 +81,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		personWriter.create(person);
 
 		// Write PartyGroup
-		EntityWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextRoot, PartyGroup.class);
+		ResourceWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextRoot, PartyGroup.class);
 
 		PartyGroup partyGroup = frameManager.createEntity(PartyGroup.class);
 		partyGroup.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));

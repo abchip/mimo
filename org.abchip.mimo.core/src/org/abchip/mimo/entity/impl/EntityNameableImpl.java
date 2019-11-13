@@ -69,17 +69,6 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 * @generated NOT
 	 */
 	@Override
-	public String getResource() {
-		// TODO
-		return "data";
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
 	public String getName() {
 
 		StringBuffer name = new StringBuffer();

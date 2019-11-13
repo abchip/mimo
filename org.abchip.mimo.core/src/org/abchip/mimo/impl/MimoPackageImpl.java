@@ -22,6 +22,8 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
+import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 import org.abchip.mimo.util.UtilPackage;
 
 import org.abchip.mimo.util.impl.UtilPackageImpl;
@@ -101,6 +103,8 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
+		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
@@ -110,6 +114,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theNetPackage.createPackageContents();
+		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -118,6 +123,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
+		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -198,6 +204,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		NetPackage theNetPackage = (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
+		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
 		// Add subpackages
@@ -205,6 +212,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		getESubpackages().add(theContextPackage);
 		getESubpackages().add(theEntityPackage);
 		getESubpackages().add(theNetPackage);
+		getESubpackages().add(theResourcePackage);
 		getESubpackages().add(theUtilPackage);
 
 		// Create type parameters

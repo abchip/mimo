@@ -27,8 +27,8 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.core.http.MultipartSupportPart;
-import org.abchip.mimo.entity.EntityProvider;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProvider;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -41,18 +41,18 @@ public abstract class BaseServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private EntityProvider entityProvider = null;
+	private ResourceProvider resourceProvider = null;
 
-	protected EntityProvider getDefaultProvider() {
-		if (this.entityProvider == null) {
+	protected ResourceProvider getDefaultProvider() {
+		if (this.resourceProvider == null) {
 			synchronized (this) {
-				if (this.entityProvider == null) {
-					this.entityProvider = resourceManager.getProvider("UserLogin");
+				if (this.resourceProvider == null) {
+					this.resourceProvider = resourceManager.getProvider("UserLogin");
 				}
 			}
 		}
 
-		return this.entityProvider;
+		return this.resourceProvider;
 	}
 
 	@Override

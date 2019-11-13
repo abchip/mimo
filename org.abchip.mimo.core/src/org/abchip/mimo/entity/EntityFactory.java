@@ -55,15 +55,6 @@ public interface EntityFactory extends EFactory {
 	EntityContainer createEntityContainer();
 
 	/**
-	 * Returns a new object of class '<em>Name</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Name</em>'.
-	 * @generated
-	 */
-	EntityName createEntityName();
-
-	/**
 	 * Returns a new object of class '<em>Typed</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,24 +62,6 @@ public interface EntityFactory extends EFactory {
 	 * @generated
 	 */
 	<T extends EntityType<?>> EntityTyped<T> createEntityTyped();
-
-	/**
-	 * Returns a new object of class '<em>Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource</em>'.
-	 * @generated
-	 */
-	Resource createResource();
-
-	/**
-	 * Returns a new object of class '<em>Resource Notifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource Notifier</em>'.
-	 * @generated
-	 */
-	<E extends EntityNameable> ResourceNotifier<E> createResourceNotifier();
 
 	/**
 	 * Returns the package supported by this factory.

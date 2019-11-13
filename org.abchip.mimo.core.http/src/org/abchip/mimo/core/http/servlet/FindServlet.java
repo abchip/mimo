@@ -15,15 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.util.Strings;
 
 public class FindServlet extends BaseServlet {
@@ -44,9 +43,9 @@ public class FindServlet extends BaseServlet {
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 		String fields = request.getParameter("fields");
-		String nrElem = request.getParameter("nrElem");
-		if (nrElem == null)
-			nrElem = "0";
+		String limit = request.getParameter("limit");
+		if (limit == null)
+			limit = "0";
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
@@ -77,14 +76,12 @@ public class FindServlet extends BaseServlet {
 		}
 
 		response.setStatus(HttpServletResponse.SC_FOUND);
-		
-		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
-		EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-		try (EntityIterator<E> entityIterator = entityReader.find(filter, fields, Integer.parseInt(nrElem))) {
-			for (E entity : entityIterator)
-				entitySerializer.add(entity);
-		}
-		
+
+		ResourceReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
+		ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		for (E entity : entityReader.find(filter, fields, Integer.parseInt(limit)))
+			entitySerializer.add(entity);
+
 		entitySerializer.save(response.getOutputStream());
 		entitySerializer.clear();
 	}

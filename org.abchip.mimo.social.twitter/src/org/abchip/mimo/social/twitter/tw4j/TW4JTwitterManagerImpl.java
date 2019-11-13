@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.ResourceHelper;
+import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.social.twitter.Tweet;
 import org.abchip.mimo.social.twitter.TwitterManager;
 

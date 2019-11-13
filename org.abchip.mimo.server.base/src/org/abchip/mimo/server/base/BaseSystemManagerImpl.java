@@ -25,8 +25,8 @@ import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
-import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobReference;
 import org.abchip.mimo.server.JobType;
@@ -84,7 +84,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 			if (lastNumber == 1000000)
 				lastNumber = 1;
 
-			EntityWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(jobKernel, org.abchip.mimo.server.System.class);
+			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(jobKernel, org.abchip.mimo.server.System.class);
 			system.setLastJobNumber(lastNumber);
 			systemWriter.update(system);
 		}
@@ -115,7 +115,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 			jobKernel = createJob(system, JobType.KERNEL, principal, "KERNEL");
 
-			EntityWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(jobKernel, org.abchip.mimo.server.System.class);
+			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(jobKernel, org.abchip.mimo.server.System.class);
 			org.abchip.mimo.server.System persistedSystem = systemWriter.lookup(system.getName());
 			if (persistedSystem != null) {
 				system.setLastJobNumber(persistedSystem.getLastJobNumber());

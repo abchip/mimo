@@ -11,11 +11,10 @@ package org.abchip.mimo.core.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
@@ -37,10 +36,8 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
-		try (EntityIterator<E> entityIterator = resourceManager.getEntityReader(contextRoot, frame).find(null, null, 0)) {
-			for (E entity : entityIterator)
-				System.out.println(entity);
-		}
+		for (E entity : resourceManager.getEntityReader(contextRoot, frame).find())
+			System.out.println(entity);
 	}
 
 	public <E extends EntityNameable> void _lookup(CommandInterpreter interpreter) throws Exception {

@@ -39,7 +39,7 @@ public class ServiceResourceListenerImpl extends ServiceRefImpl implements Servi
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INTERFACE_NAME_EDEFAULT = "org.abchip.mimo.entity.ResourceListener";
+	protected static final String INTERFACE_NAME_EDEFAULT = "org.abchip.mimo.resource.ResourceListener";
 
 	/**
 	 * The cached value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.

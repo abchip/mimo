@@ -10,12 +10,11 @@ package org.abchip.mimo.core.test.runner;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
+import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -40,12 +39,10 @@ public class TestFrame {
 
 	private <E extends EntityNameable> void testFrame() {
 
-		EntityReader<Frame<E>> frameReader = frameManager.getFrameReader(testRunner);
-		try (EntityIterator<Frame<E>> frameIterator = frameReader.find(null, null, 0)) {
-			for (Frame<E> frame : frameIterator) {
-				if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityNameable().getName()))
-					testAsserter.assertNotNull("Entity creation " + frame.getName(), frameManager.createEntity(frame));
-			}
+		ResourceReader<Frame<E>> frameReader = frameManager.getFrameReader(testRunner);
+		for (Frame<E> frame : frameReader.find()) {
+			if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityNameable().getName()))
+				testAsserter.assertNotNull("Entity creation " + frame.getName(), frameManager.createEntity(frame));
 		}
 	}
 }

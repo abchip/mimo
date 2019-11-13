@@ -38,10 +38,10 @@ public class BaseListsImpl implements Lists {
 	}
 
 	@Override
-	public <E> List<E> slice(List<E> list, int index, int nrElem) {
+	public <E> List<E> slice(List<E> list, int index, int limit) {
 		List<E> result = new ArrayList<E>();
 		if (index >= 0 && index < list.size()) {
-			int end = index + nrElem < list.size() ? index + nrElem : list.size();
+			int end = index + limit < list.size() ? index + limit : list.size();
 			for (int i = index; i < end; i++) {
 				result.add(list.get(i));
 			}

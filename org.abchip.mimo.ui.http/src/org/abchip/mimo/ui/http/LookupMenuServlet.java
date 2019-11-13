@@ -18,13 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
-import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.entity.impl.EntityProviderImpl;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.menu.Menu;
 import org.abchip.mimo.ui.menu.MenuAction;
 import org.abchip.mimo.ui.menu.MenuGroup;
@@ -45,24 +44,22 @@ public class LookupMenuServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		Menu menu = null;
-		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, EntityProviderImpl.RESOURCE_MASTER);
+		ResourceReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, Resource.TENANT_MASTER);
 
 		if (name == null || name.isEmpty()) {
 			menu = frameManager.createEntity(Menu.class);
 			menu.setName("List Menu");
 
-			try (EntityIterator<Menu> menuIterator = menuReader.find(null, null, 0)) {
-				for (Menu elem : menuIterator) {
-					// build upper level group from menu
-					MenuGroup group = frameManager.createEntity(MenuGroup.class);
-					group.setId(UUID.randomUUID().toString());
-					group.setValue(elem.getName());
-					group.setIcon(elem.getIcon());
-					group.getData().addAll(elem.getElements());
+			for (Menu elem : menuReader.find()) {
+				// build upper level group from menu
+				MenuGroup group = frameManager.createEntity(MenuGroup.class);
+				group.setId(UUID.randomUUID().toString());
+				group.setValue(elem.getName());
+				group.setIcon(elem.getIcon());
+				group.getData().addAll(elem.getElements());
 
-					// append to root
-					menu.getElements().add(group);
-				}
+				// append to root
+				menu.getElements().add(group);
 			}
 		} else {
 			menu = menuReader.lookup(name);
@@ -92,7 +89,7 @@ public class LookupMenuServlet extends BaseServlet {
 			});
 		}
 
-		EntitySerializer<Menu> entitySerializer = resourceManager.createEntitySerializer(contextProvider, Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Menu> entitySerializer = resourceManager.createEntitySerializer(Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (menu != null)
 			entitySerializer.add(menu);
 		entitySerializer.save(response.getOutputStream());

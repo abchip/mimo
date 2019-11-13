@@ -16,11 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
 
 public class LookupServlet extends BaseServlet {
@@ -54,7 +54,7 @@ public class LookupServlet extends BaseServlet {
 		else {
 			response.setStatus(HttpServletResponse.SC_FOUND);
 			
-			EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			entitySerializer.add(entity);
 			entitySerializer.save(response.getOutputStream());
 		}

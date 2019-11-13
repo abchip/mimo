@@ -26,11 +26,11 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityProvider;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntitySerializer;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceSerializer;
 import org.eclipse.jetty.http.HttpHeader;
 
 public class LoginServlet extends HttpServlet {
@@ -40,18 +40,18 @@ public class LoginServlet extends HttpServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	private EntityProvider entityProvider = null;
+	private ResourceProvider resourceProvider = null;
 
-	protected EntityProvider getDefaultProvider() {
-		if (this.entityProvider == null) {
+	protected ResourceProvider getDefaultProvider() {
+		if (this.resourceProvider == null) {
 			synchronized (this) {
-				if (this.entityProvider == null) {
-					this.entityProvider = resourceManager.getProvider("UserLogin");
+				if (this.resourceProvider == null) {
+					this.resourceProvider = resourceManager.getProvider("UserLogin");
 				}
 			}
 		}
 
-		return this.entityProvider;
+		return this.resourceProvider;
 	}
 
 	@Override
@@ -84,14 +84,15 @@ public class LoginServlet extends HttpServlet {
 
 			String entityName = "OAuth2" + provider;
 
-			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
+			ResourceReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
 			EntityNameable oauth2Entity = oauth2Reader.first();
 
 			if (oauth2Entity == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				return;
 			}
-			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false).toString();
+			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+					+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false).toString();
 
 			location = response.encodeURL(location);
 			// System.err.println(("Login location: " + location));
@@ -102,8 +103,7 @@ public class LoginServlet extends HttpServlet {
 			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
 			tempContextDescription.setId(session.getId());
 			tempContextDescription.setAnonymous(true);
-			EntitySerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(contextProvider, ContextDescription.class,
-					SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			serializer.add(tempContextDescription);
 			serializer.save(response.getOutputStream());
 
@@ -111,7 +111,7 @@ public class LoginServlet extends HttpServlet {
 
 			getDefaultProvider().logout(contextProvider);
 			contextProvider.getContext().close();
-			
+
 			return;
 		}
 
@@ -164,7 +164,7 @@ public class LoginServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_OK);
 
-		EntitySerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		serializer.add(contextProvider.getContext().getContextDescription());
 		serializer.save(response.getOutputStream());
 

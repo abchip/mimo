@@ -37,12 +37,4 @@ public interface EntityNameable extends Entity, Nameable {
 	 */
 	boolean isProxy();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getResource();
-
 } // EntityNameable

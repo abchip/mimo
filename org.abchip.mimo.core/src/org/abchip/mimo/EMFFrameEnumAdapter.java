@@ -42,11 +42,6 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public String getResource() {
-		return null;
-	}
-
-	@Override
 	public Frame<? super E> ako() {
 		return null;
 	}

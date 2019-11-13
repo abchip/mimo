@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
 
 public class DeleteServlet extends BaseServlet {
@@ -37,8 +37,8 @@ public class DeleteServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		try {
-			EntityWriter<E> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName);
-			E entity = entityWriter.lookup(name);		
+			ResourceWriter<E> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName);
+			E entity = entityWriter.lookup(name, true);		
 			entityWriter.delete(entity);
 			
 			response.setStatus(HttpServletResponse.SC_OK);

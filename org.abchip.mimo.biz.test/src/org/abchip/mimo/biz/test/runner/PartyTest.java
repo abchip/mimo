@@ -20,11 +20,11 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.entity.EntityProvider;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestStarted;
@@ -45,13 +45,13 @@ public class PartyTest {
 	public void doTest() {
 
 		// login
-		EntityProvider entityProvider = resourceManager.getProvider(UserLogin.class);
+		ResourceProvider resourceProvider = resourceManager.getProvider(UserLogin.class);
 
 		AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
 		authentication.setUser("user-test");
 		authentication.setPassword("ofbiz");
 
-		ContextProvider contextProvider = entityProvider.login(null, authentication);
+		ContextProvider contextProvider = resourceProvider.login(null, authentication);
 		testAsserter.assertNotNull("Connection to Ofbiz", contextProvider);
 
 		if (contextProvider == null)
@@ -61,7 +61,7 @@ public class PartyTest {
 		Party party = frameManager.createEntity(Party.class);
 		testAsserter.assertNotNull("Frame Party creation", party);
 
-		EntityReader<Party> partyReader = resourceManager.getEntityReader(contextProvider, Party.class);
+		ResourceReader<Party> partyReader = resourceManager.getEntityReader(contextProvider, Party.class);
 		testAsserter.assertNotNull("Party Reader", partyReader);
 		if (partyReader != null) {
 			Party partyTest = partyReader.lookup("party-test");
@@ -72,7 +72,7 @@ public class PartyTest {
 		}
 
 		// Person
-		EntityReader<Person> personReader = resourceManager.getEntityReader(contextProvider, Person.class);
+		ResourceReader<Person> personReader = resourceManager.getEntityReader(contextProvider, Person.class);
 		testAsserter.assertNotNull("Person Reader", personReader);
 		if (personReader != null) {
 			Person personTest = personReader.lookup("party-test");
@@ -83,7 +83,7 @@ public class PartyTest {
 		// Write Person
 		String partyId = "party-test-01";
 
-		EntityWriter<Person> personWriter = resourceManager.getEntityWriter(contextProvider, Person.class);
+		ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextProvider, Person.class);
 		testAsserter.assertNotNull("Person Writer", personWriter);
 		if (personWriter != null) {
 			Person person = frameManager.createEntity(Person.class);
@@ -101,10 +101,10 @@ public class PartyTest {
 		}
 
 		// Write PartyGroup
-		EntityReader<PartyGroup> groupReader = resourceManager.getEntityReader(contextProvider, PartyGroup.class);
+		ResourceReader<PartyGroup> groupReader = resourceManager.getEntityReader(contextProvider, PartyGroup.class);
 		testAsserter.assertNotNull("Party Group Reader", groupReader);
 
-		EntityWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextProvider, PartyGroup.class);
+		ResourceWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextProvider, PartyGroup.class);
 		testAsserter.assertNotNull("Party Group Writer", groupWriter);
 
 		if (groupWriter != null) {

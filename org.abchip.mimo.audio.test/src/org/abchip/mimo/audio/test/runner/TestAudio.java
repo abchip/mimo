@@ -17,15 +17,14 @@ import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioRecorder;
 import org.abchip.mimo.audio.AudioStyle;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.classification.Classification;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -58,17 +57,15 @@ public class TestAudio {
 
 		// recordAudio();
 
-		EntityReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class);
-		try (EntityIterator<Audio> audioIterator = audioReader.find(null, null, 0)) {
-			for (Audio audio : audioIterator) {
+		ResourceReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class);
+		for (Audio audio : audioReader.find()) {
 
-				asserter.assertNotNull("Audio content", audio.getContent());
+			asserter.assertNotNull("Audio content", audio.getContent());
 
-				audioManager.play(testRunner, audio, true, true);
+			audioManager.play(testRunner, audio, true, true);
 
-				Classification<Language> classification = languageManager.classifyLanguage(testRunner, audio.getText());
-				System.out.println(classification);
-			}
+			Classification<Language> classification = languageManager.classifyLanguage(testRunner, audio.getText());
+			System.out.println(classification);
 		}
 	}
 
@@ -76,19 +73,15 @@ public class TestAudio {
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following frames in the system", true, true);
 
-		try (EntityIterator<Frame<Entity>> frameIterator = frameManger.getFrameReader(testRunner).find(null, null, 0)) {
-			for (Frame<Entity> frame : frameIterator) {
-				audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
-			}
+		for (Frame<Entity> frame : frameManger.getFrameReader(testRunner).find()) {
+			audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
 		}
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following languages in the system", true, true);
 
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
-		try (EntityIterator<Language> languageIterator = languageReader.find(null, null, 0)) {
-			for (Language language : languageIterator) {
-				audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
-			}
+		ResourceReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
+		for (Language language : languageReader.find()) {
+			audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
 		}
 	}
 
@@ -105,7 +98,7 @@ public class TestAudio {
 		audio.setText("Mimo audio test");
 		audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
 
-		EntityWriter<Audio> audioWriter = resourceManager.getEntityWriter(testRunner, Audio.class);
+		ResourceWriter<Audio> audioWriter = resourceManager.getEntityWriter(testRunner, Audio.class);
 		audioWriter.create(audio);
 	}
 }

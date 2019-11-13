@@ -98,7 +98,11 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONFIGS, "ecf.generic.server");
 			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONTAINER_FACTORY_ARGUMENTS, "ecftcp://localhost:30001/server");
 		}
-		getBundleContext().registerService(name, object, dictionary);
+		try {
+			getBundleContext().registerService(name, object, dictionary);
+		} catch (Exception e) {
+			e.toString();
+		}
 	}
 
 	@Override

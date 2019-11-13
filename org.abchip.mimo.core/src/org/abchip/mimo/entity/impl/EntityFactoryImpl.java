@@ -9,7 +9,6 @@
 package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.entity.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -66,10 +65,7 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 			case EntityPackage.DEFAULT: return (EObject)createDefault();
 			case EntityPackage.DOMAIN: return (EObject)createDomain();
 			case EntityPackage.ENTITY_CONTAINER: return (EObject)createEntityContainer();
-			case EntityPackage.ENTITY_NAME: return (EObject)createEntityName();
 			case EntityPackage.ENTITY_TYPED: return (EObject)createEntityTyped();
-			case EntityPackage.RESOURCE: return (EObject)createResource();
-			case EntityPackage.RESOURCE_NOTIFIER: return (EObject)createResourceNotifier();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,8 +79,6 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case EntityPackage.RESOURCE_EVENT_TYPE:
-				return createResourceEventTypeFromString(eDataType, initialValue);
 			case EntityPackage.SERIALIZATION_TYPE:
 				return createSerializationTypeFromString(eDataType, initialValue);
 			default:
@@ -100,8 +94,6 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case EntityPackage.RESOURCE_EVENT_TYPE:
-				return convertResourceEventTypeToString(eDataType, instanceValue);
 			case EntityPackage.SERIALIZATION_TYPE:
 				return convertSerializationTypeToString(eDataType, instanceValue);
 			default:
@@ -148,62 +140,9 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * @generated
 	 */
 	@Override
-	public EntityName createEntityName() {
-		EntityNameImpl entityName = new EntityNameImpl();
-		return entityName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public <T extends EntityType<?>> EntityTyped<T> createEntityTyped() {
 		EntityTypedImpl<T> entityTyped = new EntityTypedImpl<T>();
 		return entityTyped;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Resource createResource() {
-		ResourceImpl resource = new ResourceImpl();
-		return resource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public <E extends EntityNameable> ResourceNotifier<E> createResourceNotifier() {
-		ResourceNotifierImpl<E> resourceNotifier = new ResourceNotifierImpl<E>();
-		return resourceNotifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceEventType createResourceEventTypeFromString(EDataType eDataType, String initialValue) {
-		ResourceEventType result = ResourceEventType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertResourceEventTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

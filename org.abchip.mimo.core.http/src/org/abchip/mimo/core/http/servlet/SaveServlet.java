@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntitySerializer;
-import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.resource.ResourceManager;
 
 public class SaveServlet extends BaseServlet {
 
@@ -37,7 +37,7 @@ public class SaveServlet extends BaseServlet {
 		String frame = request.getParameter("frame");
 		String json = request.getParameter("json");
 
-		EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
 		if (!json.contains("\"eClass\""))
 			json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
@@ -45,7 +45,7 @@ public class SaveServlet extends BaseServlet {
 		entitySerializer.load(json, false);
 		E entity = entitySerializer.get();
 
-		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame);
+		ResourceWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame);
 		entityWriter.create(entity, true);
 
 		response.setStatus(HttpServletResponse.SC_OK);

@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
 
 public class FindNamesServlet extends BaseServlet {
@@ -45,7 +45,7 @@ public class FindNamesServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
+		ResourceReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
 		if (entityReader == null) {
 			response.setStatus(HttpServletResponse.SC_NO_CONTENT);
 			response.getWriter().write("[]");
@@ -57,11 +57,11 @@ public class FindNamesServlet extends BaseServlet {
 
 		boolean first = true;
 		response.getWriter().write("[");
-		for (String name : entityReader.findNames(filter)) {
+		for (E entity : entityReader.find(filter, null, 0, true)) {
 			if (!first)
 				response.getWriter().write(", ");
 
-			response.getWriter().write("\"" + Strings.qINSTANCE.escape(name) + "\"");
+			response.getWriter().write("\"" + Strings.qINSTANCE.escape(entity.getName()) + "\"");
 			first = false;
 		}
 		response.getWriter().write("]");
