@@ -62,7 +62,8 @@ public class NIOResourceDriverImpl<E extends EntityNameable> extends ResourceDri
 			this.tenant = ResourceDriver.TENANT_MASTER.replaceFirst("\\*", "").toLowerCase();
 	}
 
-	private Frame<E> getFrame() {
+	@Override
+	public Frame<E> getFrame() {
 		return this.resourceSerializer.getFrame();
 	}
 

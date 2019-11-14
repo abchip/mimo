@@ -19,6 +19,7 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.ResourceDriverConfig#isLockSupport <em>Lock Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.ResourceDriverConfig#getPageSize <em>Page Size</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriverConfig()
@@ -51,5 +52,32 @@ public interface ResourceDriverConfig extends Entity {
 	 * @generated
 	 */
 	void setLockSupport(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Page Size</b></em>' attribute.
+	 * The default value is <code>"100"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Page Size</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Page Size</em>' attribute.
+	 * @see #setPageSize(int)
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriverConfig_PageSize()
+	 * @model default="100" required="true"
+	 * @generated
+	 */
+	int getPageSize();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceDriverConfig#getPageSize <em>Page Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Page Size</em>' attribute.
+	 * @see #getPageSize()
+	 * @generated
+	 */
+	void setPageSize(int value);
 
 } // ResourceDriverConfig

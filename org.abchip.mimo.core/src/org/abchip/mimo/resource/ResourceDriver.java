@@ -11,6 +11,7 @@ package org.abchip.mimo.resource;
 import java.util.List;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -46,6 +47,14 @@ public interface ResourceDriver<E extends EntityNameable> extends Entity {
 	 * @generated
 	 */
 	void delete(E entity);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	Frame<E> getFrame();
 
 	/**
 	 * Returns the value of the '<em><b>Resource Config</b></em>' reference.

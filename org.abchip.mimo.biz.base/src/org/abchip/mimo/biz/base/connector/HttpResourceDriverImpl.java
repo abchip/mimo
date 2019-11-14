@@ -52,7 +52,8 @@ public class HttpResourceDriverImpl<E extends EntityNameable> extends ResourceDr
 		this.tenant = tenant;
 	}
 
-	private Frame<E> getFrame() {
+	@Override
+	public Frame<E> getFrame() {
 		return this.resourceSerializer.getFrame();
 	}
 

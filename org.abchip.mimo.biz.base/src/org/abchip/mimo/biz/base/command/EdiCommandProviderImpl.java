@@ -15,8 +15,6 @@ import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
-import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
@@ -26,8 +24,6 @@ public class EdiCommandProviderImpl implements CommandProvider {
 
 	@Inject
 	private ContextRoot contextRoot;
-	@Inject
-	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 

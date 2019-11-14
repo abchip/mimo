@@ -16,7 +16,6 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioStyle;
-import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -73,8 +72,8 @@ public class TestTwitter {
 
 		Tweet t = tweetReader.lookup("939830847619944449");
 
-		ResourceReader<Frame<Entity>> frameReader = frameManager.getFrameReader(testRunner);
-		EntityIterator<Frame<Entity>> frameIterator = frameReader.find();
+		ResourceReader<Frame<?>> frameReader = frameManager.getFrameReader(testRunner);
+		EntityIterator<Frame<?>> frameIterator = frameReader.find();
 		for (Frame<?> frame : frameIterator) {
 			String text = "The frame " + frame.getName() + " has the following properties:";
 			// audioManager.play(testRunner, AudioStyle.A, text, true, true);

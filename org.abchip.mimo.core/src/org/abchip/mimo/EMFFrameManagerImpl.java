@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo;
 
+import java.util.Map;
+
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
@@ -32,14 +34,16 @@ public class EMFFrameManagerImpl implements FrameManager {
 	}
 
 	@Override
-	public <E extends Entity> ResourceReader<Frame<E>> getFrameReader(ContextProvider contextProvider) {
+	public ResourceReader<Frame<?>> getFrameReader(ContextProvider contextProvider) {
 		return _getFrameReader(contextProvider);
 	}
-
+	
 	@SuppressWarnings("unchecked")
-	private <E extends Entity, F extends Frame<E>> ResourceReader<F> _getFrameReader(ContextProvider contextProvider) {
-		ResourceReader<F> frameReader = (ResourceReader<F>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames(this));
-		return frameReader;
+	private <E extends EntityNameable> ResourceReader<E> _getFrameReader(ContextProvider contextProvider) {
+		
+		Frame<E> frame =  (Frame<E>) this.getFrame(Frame.class);
+		ResourceReader<Frame<?>> frameReader = (ResourceReader<Frame<?>>) ResourceHelper.wrapReader(contextProvider, frame, (Map<String, E>)EMFFrameHelper.getFrames(this));
+		return (ResourceReader<E>) frameReader;
 	}
 
 	@Override

@@ -21,9 +21,7 @@ import org.abchip.mimo.entity.Frame;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.ResourceReader#getContextProvider <em>Context Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.ResourceReader#getNotifier <em>Notifier</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.ResourceReader#getFrame <em>Frame</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResourceReader()
@@ -31,32 +29,6 @@ import org.abchip.mimo.entity.Frame;
  * @generated
  */
 public interface ResourceReader<E extends EntityNameable> {
-	/**
-	 * Returns the value of the '<em><b>Context Provider</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Context Provider</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context Provider</em>' reference.
-	 * @see #setContextProvider(ContextProvider)
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceReader_ContextProvider()
-	 * @model resolveProxies="false" required="true" transient="true"
-	 * @generated
-	 */
-	ContextProvider getContextProvider();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceReader#getContextProvider <em>Context Provider</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context Provider</em>' reference.
-	 * @see #getContextProvider()
-	 * @generated
-	 */
-	void setContextProvider(ContextProvider value);
-
 	/**
 	 * Returns the value of the '<em><b>Notifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -82,32 +54,6 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @generated
 	 */
 	void setNotifier(ResourceNotifier<E> value);
-
-	/**
-	 * Returns the value of the '<em><b>Frame</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Frame</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Frame</em>' reference.
-	 * @see #setFrame(Frame)
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceReader_Frame()
-	 * @model resolveProxies="false" required="true" transient="true"
-	 * @generated
-	 */
-	Frame<E> getFrame();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceReader#getFrame <em>Frame</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Frame</em>' reference.
-	 * @see #getFrame()
-	 * @generated
-	 */
-	void setFrame(Frame<E> value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,4 +126,20 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @generated
 	 */
 	E lookup(String name, boolean proxy);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	Frame<E> getFrame();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ContextProvider getContextProvider();
 } // ResourceDriver

@@ -58,9 +58,9 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 		ResourceDriver<E> resource = null;
 
 		if (isFrame(frame)) {
-			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getFrames(frameManager));
+			resource = new EMFResourceDriverImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getFrames(frameManager));
 		} else if (isEnum(frame)) {
-			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+			resource = new EMFResourceDriverImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
 		}
 
 		resource.setResourceConfig(this.resourceConfig);

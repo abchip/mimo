@@ -112,13 +112,22 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Page Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_DRIVER_CONFIG__PAGE_SIZE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Driver Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_DRIVER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int RESOURCE_DRIVER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.ResourceEvent <em>Event</em>}' class.
@@ -245,31 +254,13 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE_READER = 8;
 
 	/**
-	 * The feature id for the '<em><b>Context Provider</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_READER__CONTEXT_PROVIDER = 0;
-
-	/**
 	 * The feature id for the '<em><b>Notifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_READER__NOTIFIER = 1;
-
-	/**
-	 * The feature id for the '<em><b>Frame</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_READER__FRAME = 2;
+	int RESOURCE_READER__NOTIFIER = 0;
 
 	/**
 	 * The number of structural features of the '<em>Reader</em>' class.
@@ -278,7 +269,7 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_READER_FEATURE_COUNT = 3;
+	int RESOURCE_READER_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceSerializerImpl <em>Serializer</em>}' class.
@@ -319,15 +310,6 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE_WRITER = 10;
 
 	/**
-	 * The feature id for the '<em><b>Context Provider</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_WRITER__CONTEXT_PROVIDER = RESOURCE_READER__CONTEXT_PROVIDER;
-
-	/**
 	 * The feature id for the '<em><b>Notifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,15 +317,6 @@ public interface ResourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_WRITER__NOTIFIER = RESOURCE_READER__NOTIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Frame</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_WRITER__FRAME = RESOURCE_READER__FRAME;
 
 	/**
 	 * The number of structural features of the '<em>Writer</em>' class.
@@ -406,6 +379,17 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getResourceDriverConfig_LockSupport();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceDriverConfig#getPageSize <em>Page Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Page Size</em>'.
+	 * @see org.abchip.mimo.resource.ResourceDriverConfig#getPageSize()
+	 * @see #getResourceDriverConfig()
+	 * @generated
+	 */
+	EAttribute getResourceDriverConfig_PageSize();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceEvent <em>Event</em>}'.
@@ -478,17 +462,6 @@ public interface ResourcePackage extends EPackage {
 	EClass getResourceReader();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.ResourceReader#getContextProvider <em>Context Provider</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context Provider</em>'.
-	 * @see org.abchip.mimo.resource.ResourceReader#getContextProvider()
-	 * @see #getResourceReader()
-	 * @generated
-	 */
-	EReference getResourceReader_ContextProvider();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.ResourceReader#getNotifier <em>Notifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -498,17 +471,6 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResourceReader_Notifier();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.ResourceReader#getFrame <em>Frame</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Frame</em>'.
-	 * @see org.abchip.mimo.resource.ResourceReader#getFrame()
-	 * @see #getResourceReader()
-	 * @generated
-	 */
-	EReference getResourceReader_Frame();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceSerializer <em>Serializer</em>}'.
@@ -610,6 +572,14 @@ public interface ResourcePackage extends EPackage {
 		EAttribute RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT = eINSTANCE.getResourceDriverConfig_LockSupport();
 
 		/**
+		 * The meta object literal for the '<em><b>Page Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_DRIVER_CONFIG__PAGE_SIZE = eINSTANCE.getResourceDriverConfig_PageSize();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.ResourceEvent <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -680,28 +650,12 @@ public interface ResourcePackage extends EPackage {
 		EClass RESOURCE_READER = eINSTANCE.getResourceReader();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Provider</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE_READER__CONTEXT_PROVIDER = eINSTANCE.getResourceReader_ContextProvider();
-
-		/**
 		 * The meta object literal for the '<em><b>Notifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference RESOURCE_READER__NOTIFIER = eINSTANCE.getResourceReader_Notifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Frame</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE_READER__FRAME = eINSTANCE.getResourceReader_Frame();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceSerializerImpl <em>Serializer</em>}' class.

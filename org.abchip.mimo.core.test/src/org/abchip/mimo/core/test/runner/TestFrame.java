@@ -10,7 +10,6 @@ package org.abchip.mimo.core.test.runner;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -37,10 +36,10 @@ public class TestFrame {
 		testFrame();
 	}
 
-	private <E extends EntityNameable> void testFrame() {
+	private void testFrame() {
 
-		ResourceReader<Frame<E>> frameReader = frameManager.getFrameReader(testRunner);
-		for (Frame<E> frame : frameReader.find()) {
+		ResourceReader<Frame<?>> frameReader = frameManager.getFrameReader(testRunner);
+		for (Frame<?> frame : frameReader.find()) {
 			if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityNameable().getName()))
 				testAsserter.assertNotNull("Entity creation " + frame.getName(), frameManager.createEntity(frame));
 		}

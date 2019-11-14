@@ -50,7 +50,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	// root ResourceSet
 	private ResourceSet resourceSet = null;
 
-	private ResourceReader<Frame<Entity>> frameReader = null;
+	private ResourceReader<Frame<?>> frameReader = null;
 	private Map<String, ResourceNotifier<?>> notifiers = null;
 
 	@PostConstruct

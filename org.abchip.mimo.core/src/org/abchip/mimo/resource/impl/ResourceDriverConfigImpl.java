@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#isLockSupport <em>Lock Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#getPageSize <em>Page Size</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,6 +57,26 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	 * @ordered
 	 */
 	protected boolean lockSupport = LOCK_SUPPORT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPageSize() <em>Page Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPageSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PAGE_SIZE_EDEFAULT = 100;
+
+	/**
+	 * The cached value of the '{@link #getPageSize() <em>Page Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPageSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int pageSize = PAGE_SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,10 +126,35 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	 * @generated
 	 */
 	@Override
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPageSize(int newPageSize) {
+		int oldPageSize = pageSize;
+		pageSize = newPageSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE, oldPageSize, pageSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				return isLockSupport();
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+				return getPageSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,6 +169,9 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		switch (featureID) {
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				setLockSupport((Boolean)newValue);
+				return;
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+				setPageSize((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,6 +188,9 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				setLockSupport(LOCK_SUPPORT_EDEFAULT);
 				return;
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+				setPageSize(PAGE_SIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,6 +205,8 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		switch (featureID) {
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				return lockSupport != LOCK_SUPPORT_EDEFAULT;
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+				return pageSize != PAGE_SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -169,6 +223,8 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (lockSupport: ");
 		result.append(lockSupport);
+		result.append(", pageSize: ");
+		result.append(pageSize);
 		result.append(')');
 		return result.toString();
 	}

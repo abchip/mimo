@@ -52,7 +52,7 @@ public interface FrameManager {
 	 * @model contextProviderRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceReader<Frame<E>> getFrameReader(ContextProvider contextProvider);
+	ResourceReader<Frame<?>> getFrameReader(ContextProvider contextProvider);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceDriverImpl;
 
 public class EMFResourceDriverImpl<E extends EntityNameable> extends ResourceDriverImpl<E> {
@@ -24,10 +25,17 @@ public class EMFResourceDriverImpl<E extends EntityNameable> extends ResourceDri
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private Frame<E> frame;
 	private Map<String, E> entities = null;
-
-	protected EMFResourceDriverImpl(Map<String, E> entities) {
+	
+	protected EMFResourceDriverImpl(Frame<E> frame, Map<String, E> entities) {
+		this.frame = frame;
 		this.entities = entities;
+	}
+
+	@Override
+	public Frame<E> getFrame() {
+		return this.frame;
 	}
 
 	@Override

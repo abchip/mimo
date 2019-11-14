@@ -9,6 +9,7 @@ package org.abchip.mimo.resource.impl;
 
 import java.util.List;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceDriverConfig;
@@ -121,6 +122,14 @@ public abstract class ResourceDriverImpl<E extends EntityNameable> extends Entit
 	 */
 	@Override
 	public abstract void delete(E entity);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract Frame<E> getFrame();
 
 	/**
 	 * <!-- begin-user-doc -->

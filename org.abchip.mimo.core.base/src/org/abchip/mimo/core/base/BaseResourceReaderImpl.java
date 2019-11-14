@@ -12,8 +12,10 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.abchip.mimo.MimoResourceImpl;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -34,11 +36,21 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 	}
 
 	@Override
+	public Frame<E> getFrame() {
+		return this.resource.getFrame();
+	}
+
+	@Override
+	public ContextProvider getContextProvider() {
+		return this.internal.getContextProvider();
+	}
+
+	@Override
 	public EntityIterator<E> find(String filter, String fields, int limit, boolean proxy) {
 
 		List<E> entities = this.resource.read(filter, fields, limit, proxy);
 
-		EntityIterator<E> entityIterator = new BaseEntityIteratorImpl(entities.iterator(), limit);
+		EntityIterator<E> entityIterator = new BaseEntityIteratorImpl(entities.iterator(), limit, proxy);
 
 		return entityIterator;
 	}
@@ -48,7 +60,7 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 
 		E entity = this.resource.read(name, null, proxy);
 
-		if (entity != null)
+		if (entity != null && !proxy)
 			this.setInternalResource(entity);
 
 		return entity;
@@ -58,12 +70,14 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 
 		private Iterator<E> iterator;
 		private int limit = 0;
+		private boolean proxy = false;
 		private E nextObject = null;
 		private int count = 0;
 
-		public BaseEntityIteratorImpl(Iterator<E> iterator, int limit) {
+		public BaseEntityIteratorImpl(Iterator<E> iterator, int limit, boolean proxy) {
 			this.iterator = iterator;
 			this.limit = limit;
+			this.proxy = proxy;
 			doNext();
 		}
 
@@ -96,7 +110,7 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 			while (iterator.hasNext()) {
 				E entity = iterator.next();
 
-				if (entity != null)
+				if (entity != null && !proxy)
 					BaseResourceReaderImpl.this.setInternalResource(entity);
 
 				nextObject = entity;

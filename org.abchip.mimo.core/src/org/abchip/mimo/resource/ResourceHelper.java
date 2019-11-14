@@ -19,6 +19,7 @@ import java.util.Map;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.abchip.mimo.util.Lists;
 
@@ -32,8 +33,8 @@ public class ResourceHelper {
 		return new MyEntityIterator<E>(iterator);
 	}
 
-	public static <E extends EntityNameable> ResourceReader<E> wrapReader(ContextProvider contextProvider, Map<String, E> entities) {
-		return new MapReader<E>(contextProvider, entities);
+	public static <E extends EntityNameable> ResourceReader<E> wrapReader(ContextProvider contextProvider, Frame<E> frame, Map<String, E> entities) {
+		return new MapReader<E>(contextProvider, frame, entities);
 	}
 
 	public static <E extends EntityNameable> void firePreDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
@@ -207,10 +208,13 @@ public class ResourceHelper {
 
 	private static class MapReader<E extends EntityNameable> extends ResourceReaderImpl<E> {
 
+		private Frame<E> frame;
+		private ContextProvider contextProvider;
 		private Map<String, E> entities = null;
 
-		public MapReader(ContextProvider contextProvider, Map<String, E> entities) {
-			setContextProvider(contextProvider);
+		public MapReader(ContextProvider contextProvider, Frame<E> frame, Map<String, E> entities) {
+			this.contextProvider = contextProvider;
+			this.frame = frame;
 			this.entities = entities;
 		}
 
@@ -245,6 +249,16 @@ public class ResourceHelper {
 			E entity = entities.get(name);
 
 			return entity;
+		}
+
+		@Override
+		public Frame<E> getFrame() {
+			return this.frame;
+		}
+
+		@Override
+		public ContextProvider getContextProvider() {
+			return this.contextProvider;
 		}
 	}
 }

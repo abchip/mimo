@@ -19,7 +19,6 @@ import javax.servlet.http.Part;
 import org.abchip.mimo.biz.product.category.CategoryFactory;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
-import org.abchip.mimo.biz.product.product.ProductFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;

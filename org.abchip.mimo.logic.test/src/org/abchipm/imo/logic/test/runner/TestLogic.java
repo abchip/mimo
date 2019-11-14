@@ -9,7 +9,6 @@ package org.abchipm.imo.logic.test.runner;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -34,7 +33,7 @@ public class TestLogic {
 	@TestStarted
 	public void start() {
 
-		ResourceReader<Frame<Entity>> frameReader = frameManager.getFrameReader(testRunner);
+		ResourceReader<Frame<?>> frameReader = frameManager.getFrameReader(testRunner);
 		Frame<?> frame = frameReader.lookup(EntityPackage.eINSTANCE.getFrame().getName());
 
 		Theory theory = mindManager.buildTheory(testRunner, frame);
