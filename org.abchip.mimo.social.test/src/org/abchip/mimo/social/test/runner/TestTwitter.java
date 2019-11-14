@@ -139,7 +139,7 @@ public class TestTwitter {
 
 		List<Language> languages = new ArrayList<Language>();
 		ResourceReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
-		for (Language language : languageReader.find(null, null, 0))
+		for (Language language : languageReader.find())
 			languages.add(language);
 
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);

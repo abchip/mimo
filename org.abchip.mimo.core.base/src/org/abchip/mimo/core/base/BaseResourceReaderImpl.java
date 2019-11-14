@@ -46,9 +46,9 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 	}
 
 	@Override
-	public EntityIterator<E> find(String filter, String fields, int limit, boolean proxy) {
+	public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) {
 
-		List<E> entities = this.resource.read(filter, fields, limit, proxy);
+		List<E> entities = this.resource.read(filter, fields, order, limit, proxy);
 
 		EntityIterator<E> entityIterator = new BaseEntityIteratorImpl(entities.iterator(), limit, proxy);
 

@@ -85,7 +85,7 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @model
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter, String fields, int limit);
+	EntityIterator<E> find(String filter, String fields, String order);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,7 +93,15 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @model
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter, String fields, int limit, boolean proxy);
+	EntityIterator<E> find(String filter, String fields, String order, int limit);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy);
 
 	/**
 	 * <!-- begin-user-doc -->

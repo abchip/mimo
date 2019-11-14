@@ -771,12 +771,9 @@
       <eOperations name="getFrameReader">
         <eGenericType eClassifier="#//resource/ResourceReader">
           <eTypeArguments eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//entity/FrameManager/getFrameReader/E"/>
+            <eTypeArguments/>
           </eTypeArguments>
         </eGenericType>
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/Entity"/>
-        </eTypeParameters>
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
       </eOperations>
       <eOperations name="getFrame">
@@ -867,6 +864,11 @@
           <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
         </eParameters>
       </eOperations>
+      <eOperations name="getFrame" lowerBound="1">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//resource/ResourceDriver/E"/>
+        </eGenericType>
+      </eOperations>
       <eOperations name="nextSequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="read" lowerBound="1">
         <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
@@ -878,6 +880,7 @@
         <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
@@ -891,6 +894,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceDriverConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lockSupport" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderSupport" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageSize" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="100"/>
@@ -1381,6 +1386,15 @@
         </eGenericType>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="find">
+        <eGenericType eClassifier="#//entity/EntityIterator">
+          <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
+        </eGenericType>
+        <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eOperations name="find">
@@ -1389,6 +1403,7 @@
         </eGenericType>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
@@ -1399,6 +1414,11 @@
         <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
+      <eOperations name="getFrame" lowerBound="1">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
+        </eGenericType>
+      </eOperations>
       <eOperations name="lookup">
         <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1408,16 +1428,9 @@
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="contextProvider" lowerBound="1"
-          eType="#//context/ContextProvider" transient="true" resolveProxies="false"/>
+      <eOperations name="getContextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="notifier">
         <eGenericType eClassifier="#//resource/ResourceNotifier">
-          <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
-        </eGenericType>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1"
-          transient="true" resolveProxies="false">
-        <eGenericType eClassifier="#//entity/Frame">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
       </eStructuralFeatures>

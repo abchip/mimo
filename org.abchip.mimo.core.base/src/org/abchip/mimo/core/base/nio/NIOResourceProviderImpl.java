@@ -37,6 +37,7 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 
 		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceDriverConfig();
 		this.resourceConfig.setLockSupport(true);
+		this.resourceConfig.setOrderSupport(true);
 
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
 

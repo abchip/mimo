@@ -499,7 +499,6 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrameReader">
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrameReader/contextProvider"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/getFrameReader/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame">
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame/name"/>
@@ -563,6 +562,7 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/delete">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/delete/entity"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/getFrame"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/nextSequence"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/read">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read/name"/>
@@ -572,6 +572,7 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/read.1">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/filter"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/order"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/limit"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/proxy"/>
         </genOperations>
@@ -581,6 +582,8 @@
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//resource/ResourceDriverConfig">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceDriverConfig/lockSupport"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceDriverConfig/orderSupport"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceDriverConfig/pageSize"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceEvent">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceEvent/E"/>
@@ -792,11 +795,7 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceReader">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceReader/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference mimo.ecore#//resource/ResourceReader/contextProvider"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference mimo.ecore#//resource/ResourceReader/notifier"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference mimo.ecore#//resource/ResourceReader/frame"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/find"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/find.1">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.1/filter"/>
@@ -808,18 +807,26 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/find.3">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.3/filter"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.3/fields"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.3/limit"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.3/order"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/find.4">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.4/filter"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.4/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.4/order"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.4/limit"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.4/proxy"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/find.5">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.5/filter"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.5/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.5/order"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.5/limit"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/find.5/proxy"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/first"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/first.1">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/first.1/proxy"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getFrame"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/lookup">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup/name"/>
         </genOperations>
@@ -827,6 +834,7 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup.1/name"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup.1/proxy"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getContextProvider"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceSerializer">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSerializer/E"/>

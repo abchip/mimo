@@ -102,7 +102,8 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 	protected void init() {
 
 		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceDriverConfig();
-		this.resourceConfig.setLockSupport(false);
+		this.resourceConfig.setLockSupport(false);		
+		this.resourceConfig.setOrderSupport(false);
 
 		resourceManager.registerProvider(BizEntity.class, this);
 		resourceManager.registerProvider(BizEntityTyped.class, this);

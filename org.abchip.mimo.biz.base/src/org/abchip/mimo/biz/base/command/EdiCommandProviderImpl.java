@@ -47,7 +47,7 @@ public class EdiCommandProviderImpl implements CommandProvider {
 		} else
 			System.err.println("MessageSent not found");
 
-		for (MessageSent messageSent2 : messageSentWriter.find(null, null, 0, true)) {
+		for (MessageSent messageSent2 : messageSentWriter.find(null, null, null, 0, true)) {
 			System.out.println(messageSent2);
 		}
 	}

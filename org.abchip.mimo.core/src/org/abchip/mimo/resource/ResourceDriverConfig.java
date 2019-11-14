@@ -19,6 +19,7 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.ResourceDriverConfig#isLockSupport <em>Lock Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.ResourceDriverConfig#isOrderSupport <em>Order Support</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.ResourceDriverConfig#getPageSize <em>Page Size</em>}</li>
  * </ul>
  *
@@ -52,6 +53,32 @@ public interface ResourceDriverConfig extends Entity {
 	 * @generated
 	 */
 	void setLockSupport(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Support</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Support</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Support</em>' attribute.
+	 * @see #setOrderSupport(boolean)
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriverConfig_OrderSupport()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isOrderSupport();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceDriverConfig#isOrderSupport <em>Order Support</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Support</em>' attribute.
+	 * @see #isOrderSupport()
+	 * @generated
+	 */
+	void setOrderSupport(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Page Size</b></em>' attribute.

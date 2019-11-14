@@ -57,7 +57,7 @@ public class FindNamesServlet extends BaseServlet {
 
 		boolean first = true;
 		response.getWriter().write("[");
-		for (E entity : entityReader.find(filter, null, 0, true)) {
+		for (E entity : entityReader.find(filter, null, null, 0, true)) {
 			if (!first)
 				response.getWriter().write(", ");
 

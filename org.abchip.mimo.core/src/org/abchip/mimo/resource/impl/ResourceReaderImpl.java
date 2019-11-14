@@ -126,7 +126,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 */
 	@Override
 	public EntityIterator<E> find(String filter, String fields) {
-		return find(filter, fields, 0);
+		return find(filter, fields, null);
 	}
 
 	/**
@@ -135,8 +135,8 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 * @generated NOT
 	 */
 	@Override
-	public EntityIterator<E> find(String filter, String fields, int limit) {
-		return find(filter, fields, limit, false);
+	public EntityIterator<E> find(String filter, String fields, String order) {
+		return find(filter, fields, order, 0);
 	}
 
 	/**
@@ -145,7 +145,17 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 * @generated NOT
 	 */
 	@Override
-	public abstract EntityIterator<E> find(String filter, String fields, int limit, boolean proxy);
+	public EntityIterator<E> find(String filter, String fields, String order, int limit) {
+		return find(filter, fields, order, limit, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -165,7 +175,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	@Override
 	public E first(boolean proxy) {
 
-		EntityIterator<E> entityIterator = find(null, null, 1, proxy);
+		EntityIterator<E> entityIterator = find(null, null, null, 1, proxy);
 		if (entityIterator.hasNext())
 			return entityIterator.next();
 		else

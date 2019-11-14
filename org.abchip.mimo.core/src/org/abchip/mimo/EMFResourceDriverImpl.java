@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceDriverImpl;
 
 public class EMFResourceDriverImpl<E extends EntityNameable> extends ResourceDriverImpl<E> {
@@ -25,17 +24,10 @@ public class EMFResourceDriverImpl<E extends EntityNameable> extends ResourceDri
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Frame<E> frame;
 	private Map<String, E> entities = null;
 	
-	protected EMFResourceDriverImpl(Frame<E> frame, Map<String, E> entities) {
-		this.frame = frame;
+	protected EMFResourceDriverImpl(Map<String, E> entities) {
 		this.entities = entities;
-	}
-
-	@Override
-	public Frame<E> getFrame() {
-		return this.frame;
 	}
 
 	@Override
@@ -49,7 +41,7 @@ public class EMFResourceDriverImpl<E extends EntityNameable> extends ResourceDri
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, int limit, boolean proxy) {
+	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
 		List<E> entities = new ArrayList<E>(this.entities.values());
 
 		Collections.sort(entities, new Comparator<E>() {

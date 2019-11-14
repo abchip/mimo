@@ -112,13 +112,22 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Order Support</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Page Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_DRIVER_CONFIG__PAGE_SIZE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int RESOURCE_DRIVER_CONFIG__PAGE_SIZE = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Driver Config</em>' class.
@@ -127,7 +136,7 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_DRIVER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int RESOURCE_DRIVER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.ResourceEvent <em>Event</em>}' class.
@@ -381,6 +390,17 @@ public interface ResourcePackage extends EPackage {
 	EAttribute getResourceDriverConfig_LockSupport();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceDriverConfig#isOrderSupport <em>Order Support</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Order Support</em>'.
+	 * @see org.abchip.mimo.resource.ResourceDriverConfig#isOrderSupport()
+	 * @see #getResourceDriverConfig()
+	 * @generated
+	 */
+	EAttribute getResourceDriverConfig_OrderSupport();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceDriverConfig#getPageSize <em>Page Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -570,6 +590,14 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT = eINSTANCE.getResourceDriverConfig_LockSupport();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Support</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT = eINSTANCE.getResourceDriverConfig_OrderSupport();
 
 		/**
 		 * The meta object literal for the '<em><b>Page Size</b></em>' attribute feature.

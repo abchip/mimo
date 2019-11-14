@@ -100,7 +100,7 @@ public interface ResourceDriver<E extends EntityNameable> extends Entity {
 	 * @model required="true"
 	 * @generated
 	 */
-	List<E> read(String filter, String fields, int limit, boolean proxy);
+	List<E> read(String filter, String fields, String order, int limit, boolean proxy);
 
 	/**
 	 * <!-- begin-user-doc -->

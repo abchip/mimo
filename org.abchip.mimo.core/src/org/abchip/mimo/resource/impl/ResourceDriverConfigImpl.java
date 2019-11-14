@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#isLockSupport <em>Lock Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#isOrderSupport <em>Order Support</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#getPageSize <em>Page Size</em>}</li>
  * </ul>
  *
@@ -57,6 +58,26 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	 * @ordered
 	 */
 	protected boolean lockSupport = LOCK_SUPPORT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOrderSupport() <em>Order Support</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOrderSupport()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ORDER_SUPPORT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOrderSupport() <em>Order Support</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOrderSupport()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean orderSupport = ORDER_SUPPORT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPageSize() <em>Page Size</em>}' attribute.
@@ -126,6 +147,29 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	 * @generated
 	 */
 	@Override
+	public boolean isOrderSupport() {
+		return orderSupport;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOrderSupport(boolean newOrderSupport) {
+		boolean oldOrderSupport = orderSupport;
+		orderSupport = newOrderSupport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT, oldOrderSupport, orderSupport));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public int getPageSize() {
 		return pageSize;
 	}
@@ -153,6 +197,8 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		switch (featureID) {
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				return isLockSupport();
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+				return isOrderSupport();
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
 				return getPageSize();
 		}
@@ -169,6 +215,9 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		switch (featureID) {
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				setLockSupport((Boolean)newValue);
+				return;
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+				setOrderSupport((Boolean)newValue);
 				return;
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
 				setPageSize((Integer)newValue);
@@ -188,6 +237,9 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				setLockSupport(LOCK_SUPPORT_EDEFAULT);
 				return;
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+				setOrderSupport(ORDER_SUPPORT_EDEFAULT);
+				return;
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
 				setPageSize(PAGE_SIZE_EDEFAULT);
 				return;
@@ -205,6 +257,8 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		switch (featureID) {
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				return lockSupport != LOCK_SUPPORT_EDEFAULT;
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+				return orderSupport != ORDER_SUPPORT_EDEFAULT;
 			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
 				return pageSize != PAGE_SIZE_EDEFAULT;
 		}
@@ -223,6 +277,8 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (lockSupport: ");
 		result.append(lockSupport);
+		result.append(", orderSupport: ");
+		result.append(orderSupport);
 		result.append(", pageSize: ");
 		result.append(pageSize);
 		result.append(')');

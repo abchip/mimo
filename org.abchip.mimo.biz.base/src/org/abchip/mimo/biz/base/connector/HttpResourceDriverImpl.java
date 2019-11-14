@@ -127,7 +127,7 @@ public class HttpResourceDriverImpl<E extends EntityNameable> extends ResourceDr
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, int limit, boolean proxy) {
+	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
 
 		synchronized (this.resourceSerializer) {
 			List<E> entities = null;
@@ -149,6 +149,8 @@ public class HttpResourceDriverImpl<E extends EntityNameable> extends ResourceDr
 			}
 			if (fields != null)
 				url += "&fields=" + fields;
+			if (order != null)
+				url += "&order=" + order;
 
 			try (CloseableHttpResponse response = this.connector.execute(url, null)) {
 

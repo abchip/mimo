@@ -219,7 +219,7 @@ public class ResourceHelper {
 		}
 
 		@Override
-		public EntityIterator<E> find(String filter, String fields, int limit, boolean proxy) {
+		public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) {
 
 			List<E> values = new ArrayList<E>(entities.values());
 			if (limit > 0)

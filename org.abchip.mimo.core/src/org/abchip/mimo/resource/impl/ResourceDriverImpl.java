@@ -8,6 +8,7 @@
 package org.abchip.mimo.resource.impl;
 
 import java.util.List;
+
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
@@ -126,10 +127,14 @@ public abstract class ResourceDriverImpl<E extends EntityNameable> extends Entit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
-	public abstract Frame<E> getFrame();
+	public Frame<E> getFrame() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +158,7 @@ public abstract class ResourceDriverImpl<E extends EntityNameable> extends Entit
 	 * @generated NOT
 	 */
 	@Override
-	public abstract List<E> read(String filter, String fields, int limit, boolean proxy);
+	public abstract List<E> read(String filter, String fields, String order, int limit, boolean proxy);
 
 	/**
 	 * <!-- begin-user-doc -->

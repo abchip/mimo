@@ -43,6 +43,7 @@ public class FindServlet extends BaseServlet {
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 		String fields = request.getParameter("fields");
+		String order = request.getParameter("order");
 		String limit = request.getParameter("limit");
 		if (limit == null)
 			limit = "0";
@@ -83,7 +84,7 @@ public class FindServlet extends BaseServlet {
 
 		ResourceReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
 		ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-		for (E entity : entityReader.find(filter, fields, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
+		for (E entity : entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
 			entitySerializer.add(entity);
 
 		entitySerializer.save(response.getOutputStream());

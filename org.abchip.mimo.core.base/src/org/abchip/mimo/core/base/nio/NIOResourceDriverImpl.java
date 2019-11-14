@@ -142,7 +142,7 @@ public class NIOResourceDriverImpl<E extends EntityNameable> extends ResourceDri
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, int limit, boolean proxy) {
+	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
 
 		synchronized (this.resourceSerializer) {
 			List<E> entries = new ArrayList<E>();

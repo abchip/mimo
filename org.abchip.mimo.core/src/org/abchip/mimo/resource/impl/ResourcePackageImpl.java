@@ -279,8 +279,18 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResourceDriverConfig_PageSize() {
+	public EAttribute getResourceDriverConfig_OrderSupport() {
 		return (EAttribute)resourceDriverConfigEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getResourceDriverConfig_PageSize() {
+		return (EAttribute)resourceDriverConfigEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -437,6 +447,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		resourceDriverConfigEClass = createEClass(RESOURCE_DRIVER_CONFIG);
 		createEAttribute(resourceDriverConfigEClass, RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT);
+		createEAttribute(resourceDriverConfigEClass, RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT);
 		createEAttribute(resourceDriverConfigEClass, RESOURCE_DRIVER_CONFIG__PAGE_SIZE);
 
 		resourceEventEClass = createEClass(RESOURCE_EVENT);
@@ -559,6 +570,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		op = addEOperation(resourceDriverEClass, null, "read", 1, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceDriverEClass_E);
@@ -570,6 +582,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		initEClass(resourceDriverConfigEClass, ResourceDriverConfig.class, "ResourceDriverConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResourceDriverConfig_LockSupport(), ecorePackage.getEBoolean(), "lockSupport", null, 1, 1, ResourceDriverConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceDriverConfig_OrderSupport(), ecorePackage.getEBoolean(), "orderSupport", null, 1, 1, ResourceDriverConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResourceDriverConfig_PageSize(), ecorePackage.getEInt(), "pageSize", "100", 1, 1, ResourceDriverConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEventEClass, ResourceEvent.class, "ResourceEvent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1041,6 +1054,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		op = addEOperation(resourceReaderEClass, null, "find", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getEntityIterator());
+		g2 = createEGenericType(resourceReaderEClass_E);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceReaderEClass, null, "find", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
 		g2 = createEGenericType(resourceReaderEClass_E);
@@ -1050,6 +1073,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		op = addEOperation(resourceReaderEClass, null, "find", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
@@ -1072,8 +1096,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		addEOperation(resourceReaderEClass, theContextPackage.getContextProvider(), "getContextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(resourceReaderEClass, null, "lookup", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceReaderEClass_E);
@@ -1084,6 +1106,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
+
+		addEOperation(resourceReaderEClass, theContextPackage.getContextProvider(), "getContextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resourceSerializerEClass, ResourceSerializer.class, "ResourceSerializer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(theEntityPackage.getFrame());

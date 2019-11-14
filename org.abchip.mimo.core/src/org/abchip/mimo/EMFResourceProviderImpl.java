@@ -37,7 +37,8 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	protected void init() {
 
 		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceDriverConfig();
-		this.resourceConfig.setLockSupport(false);
+		this.resourceConfig.setLockSupport(true);
+		this.resourceConfig.setOrderSupport(true);
 
 		resourceManager.registerProvider(Frame.class, this);
 		resourceManager.registerProvider(EntityEnum.class, this);
@@ -58,9 +59,9 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 		ResourceDriver<E> resource = null;
 
 		if (isFrame(frame)) {
-			resource = new EMFResourceDriverImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getFrames(frameManager));
+			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getFrames(frameManager));
 		} else if (isEnum(frame)) {
-			resource = new EMFResourceDriverImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
 		}
 
 		resource.setResourceConfig(this.resourceConfig);
