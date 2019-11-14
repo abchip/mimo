@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
@@ -37,8 +36,6 @@ public class LookupMenuServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 

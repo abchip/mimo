@@ -28,12 +28,14 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 	public <E extends EntityNameable> void _find(CommandInterpreter interpreter) throws Exception {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+		String order = interpreter.nextArgument();
+		
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) resourceManager.getEntityReader(contextRoot, Frame.class).lookup(frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
-		for (E entity : resourceManager.getEntityReader(contextRoot, frame).find())
+		for (E entity : resourceManager.getEntityReader(contextRoot, frame).find(null, null, order))
 			System.out.println(entity);
 	}
 

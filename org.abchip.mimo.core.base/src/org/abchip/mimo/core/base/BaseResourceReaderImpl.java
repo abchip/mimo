@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo.core.base;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -50,9 +52,73 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 
 		List<E> entities = this.resource.read(filter, fields, order, limit, proxy);
 
+		if (this.resource.getResourceConfig().isOrderSupport() && order != null) {
+
+			String[] orders = order.split(",");
+			Collections.sort(entities, new Comparator<E>() {
+
+				@Override
+				public int compare(E o1, E o2) {
+
+					StringBuffer k1 = new StringBuffer();
+					StringBuffer k2 = new StringBuffer();
+
+					for (String order : orders) {
+						order = order.trim();
+						String[] ords = order.split(" ");
+
+						Object v1 = o1.isa().getValue(o1, ords[0], false);
+						if (v1 == null)
+							if (ords.length > 1 && ords[1].trim().equalsIgnoreCase("DESC"))
+								return -1;
+							else
+								return 1;
+
+						if (ords.length > 1 && ords[1].trim().equalsIgnoreCase("DESC"))
+							v1 = stringComplement(v1.toString());
+						k1.append(v1);
+
+						Object v2 = o2.isa().getValue(o2, ords[0], false);
+						if (v2 == null)
+							if (ords.length > 1 && ords[1].trim().equalsIgnoreCase("DESC"))
+								return 1;
+							else
+								return -1;
+
+						if (ords.length > 1 && ords[1].trim().equalsIgnoreCase("DESC"))
+							v2 = stringComplement(v2.toString());
+						k2.append(v2);
+					}
+
+					return k1.toString().compareTo(k2.toString());
+				}
+			});
+		}
+
 		EntityIterator<E> entityIterator = new BaseEntityIteratorImpl(entities.iterator(), limit, proxy);
 
 		return entityIterator;
+	}
+
+	private static String stringComplement(String input) {
+
+		final byte[] bytes = input.getBytes();
+
+		final byte[] transformedBytes = new byte[bytes.length];
+
+		byte original, transformed;
+
+		for (int index = 0; index < bytes.length; index++) {
+			original = bytes[index];
+			transformed = (byte) transformByte(original);
+			transformedBytes[index] = transformed;
+		}
+
+		return new String(transformedBytes);
+	}
+
+	private static int transformByte(final byte original) {
+		return ~original & 0x7f;
 	}
 
 	@Override
