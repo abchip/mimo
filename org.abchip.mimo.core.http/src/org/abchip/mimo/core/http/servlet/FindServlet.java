@@ -46,6 +46,10 @@ public class FindServlet extends BaseServlet {
 		String limit = request.getParameter("limit");
 		if (limit == null)
 			limit = "0";
+		String proxy = request.getParameter("proxy");
+		if (proxy == null || proxy.trim().isEmpty())
+			proxy = "false";
+
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
@@ -79,7 +83,7 @@ public class FindServlet extends BaseServlet {
 
 		ResourceReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
 		ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-		for (E entity : entityReader.find(filter, fields, Integer.parseInt(limit)))
+		for (E entity : entityReader.find(filter, fields, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
 			entitySerializer.add(entity);
 
 		entitySerializer.save(response.getOutputStream());

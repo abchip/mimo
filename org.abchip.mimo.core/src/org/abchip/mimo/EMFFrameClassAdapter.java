@@ -210,17 +210,16 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			EClassifier eClassifier = eReference.getEType();
 			Frame<?> frameRef = frameManager.getFrame(eClassifier.getName());
 			if (frameRef != null) {
-				
-				if(frameRef.getSuperNames().contains("EntityTyped")) {
-					if(value.toString().equals("DemoRepStore"))
-						frameRef = frameManager.getFrame("Person");
-				}
-				
+
+				// if(frameRef.getSuperNames().contains("EntityTyped")) {
+				// if(value.toString().equals("DemoRepStore"))
+				// frameRef = frameManager.getFrame("Person");
+				// }
+
 				@SuppressWarnings("unchecked")
 				EntityNameable entity = this.frameManager.createProxy((Frame<EntityNameable>) frameRef, value.toString());
 				eObject.eSet(eFeature, entity);
-			}
-			else
+			} else
 				System.err.println("Unexpected condition: bvtw4a87ny4r9tycsa9et6");
 		} else {
 			try {
