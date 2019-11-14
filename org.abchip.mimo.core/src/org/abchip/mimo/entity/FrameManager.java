@@ -33,14 +33,6 @@ public interface FrameManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" klassRequired="true"
-	 * @generated
-	 */
-	<E extends Entity> E createEntity(Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" frameRequired="true" nameRequired="true"
 	 * @generated
 	 */

@@ -77,7 +77,6 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
-import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -683,8 +682,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -838,7 +835,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
-		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -933,7 +929,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
-		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();

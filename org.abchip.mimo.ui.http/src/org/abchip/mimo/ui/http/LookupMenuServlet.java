@@ -20,12 +20,13 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.menu.Menu;
 import org.abchip.mimo.ui.menu.MenuAction;
+import org.abchip.mimo.ui.menu.MenuFactory;
 import org.abchip.mimo.ui.menu.MenuGroup;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -44,15 +45,15 @@ public class LookupMenuServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		Menu menu = null;
-		ResourceReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, Resource.TENANT_MASTER);
+		ResourceReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, ResourceDriver.TENANT_MASTER);
 
 		if (name == null || name.isEmpty()) {
-			menu = frameManager.createEntity(Menu.class);
+			menu = MenuFactory.eINSTANCE.createMenu();
 			menu.setName("List Menu");
 
 			for (Menu elem : menuReader.find()) {
 				// build upper level group from menu
-				MenuGroup group = frameManager.createEntity(MenuGroup.class);
+				MenuGroup group = MenuFactory.eINSTANCE.createMenuGroup();
 				group.setId(UUID.randomUUID().toString());
 				group.setValue(elem.getName());
 				group.setIcon(elem.getIcon());

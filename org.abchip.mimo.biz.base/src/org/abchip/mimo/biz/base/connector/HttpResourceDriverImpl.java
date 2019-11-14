@@ -22,15 +22,14 @@ import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.impl.ResourceImpl;
+import org.abchip.mimo.resource.impl.ResourceDriverImpl;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.entity.InputStreamEntity;
 
-public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
+public class HttpResourceDriverImpl<E extends EntityNameable> extends ResourceDriverImpl<E> {
 
 	/**
 	 * 
@@ -43,15 +42,14 @@ public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> 
 
 	private String tenant = null;
 
-	public HttpResourceImpl(ContextProvider contextProvider, Frame<E> frame, String tenant, HttpConnector connector) {
+	public HttpResourceDriverImpl(ContextProvider contextProvider, Frame<E> frame, String tenant, HttpConnector connector) {
 		this.logger = contextProvider.getContext().get(Logger.class);
 		this.connector = connector;
 
 		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
 		this.resourceSerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
-		if (tenant != null)
-			this.tenant = tenant;
+		this.tenant = tenant;
 	}
 
 	private Frame<E> getFrame() {
@@ -79,7 +77,10 @@ public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> 
 				this.resourceSerializer.clear();
 			}
 
-			String url = "/entityDelete?frame=" + getFrame().getName() + "&tenant=" + this.tenant;
+			String url = "/entityDelete?frame=" + getFrame().getName();
+			if (tenant != null)
+				url += "&tenant=" + this.tenant;
+
 			try (CloseableHttpResponse response = this.connector.execute(url, new InputStreamEntity(new ByteArrayInputStream(baos.toByteArray())))) {
 			} catch (Exception e) {
 				logger.error(e);
@@ -101,7 +102,12 @@ public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> 
 		synchronized (this.resourceSerializer) {
 			E entity = null;
 
-			String url = "/entityLookup?frame=" + getFrame().getName() + "&tenant=" + this.tenant + "&name=" + name.trim() + "&proxy=" + proxy;
+			String url = "/entityLookup?frame=" + getFrame().getName() + "&name=" + name.trim();
+			if (tenant != null)
+				url += "&tenant=" + this.tenant;
+			if (proxy)
+				url += "&proxy=" + proxy;
+
 			try (CloseableHttpResponse response = this.connector.execute(url, null)) {
 
 				if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
@@ -125,7 +131,13 @@ public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> 
 		synchronized (this.resourceSerializer) {
 			List<E> entities = null;
 
-			String url = "/entityFind?frame=" + getFrame().getName() + "&tenant=" + this.tenant + "&limit=" + limit + "&proxy=" + proxy;
+			String url = "/entityFind?frame=" + getFrame().getName();
+			if (tenant != null)
+				url += "&tenant=" + this.tenant;
+			if (proxy)
+				url += "&proxy=" + proxy;
+			if (limit != 0)
+				url += "&limit=" + limit;
 			if (filter != null) {
 				try {
 					url += "&filter=" + URLEncoder.encode(filter, "UTF-8");
@@ -134,7 +146,6 @@ public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> 
 					return null;
 				}
 			}
-
 			if (fields != null)
 				url += "&fields=" + fields;
 
@@ -175,7 +186,10 @@ public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> 
 				this.resourceSerializer.clear();
 			}
 
-			String url = "/entitySave?frame=" + getFrame().getName() + "&tenant=" + this.tenant + "&replace=" + replace;
+			String url = "/entitySave?frame=" + getFrame().getName() + "&replace=" + replace;
+			if (tenant != null)
+				url += "&tenant=" + this.tenant;
+
 			try (CloseableHttpResponse response = connector.execute(url, new InputStreamEntity(new ByteArrayInputStream(baos.toByteArray())))) {
 			} catch (Exception e) {
 				logger.error(e);

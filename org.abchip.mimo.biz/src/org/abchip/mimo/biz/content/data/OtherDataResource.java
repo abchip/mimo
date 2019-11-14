@@ -11,15 +11,15 @@ import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Other Data Resource</b></em>'.
+ * A representation of the model object '<em><b>Other Data ResourceDriver</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data Resource Content</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data ResourceDriver Content</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getOtherDataResource()
@@ -28,14 +28,14 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface OtherDataResource extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Data Resource Content</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data ResourceDriver Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Resource Content</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data ResourceDriver Content</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Content</em>' attribute.
+	 * @return the value of the '<em>Data ResourceDriver Content</em>' attribute.
 	 * @see #setDataResourceContent(byte[])
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getOtherDataResource_DataResourceContent()
 	 * @model
@@ -44,24 +44,24 @@ public interface OtherDataResource extends BizEntity {
 	byte[] getDataResourceContent();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data Resource Content</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data ResourceDriver Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Content</em>' attribute.
+	 * @param value the new value of the '<em>Data ResourceDriver Content</em>' attribute.
 	 * @see #getDataResourceContent()
 	 * @generated
 	 */
 	void setDataResourceContent(byte[] value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data ResourceDriver Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Id</em>' reference.
+	 * @return the value of the '<em>Data ResourceDriver Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getOtherDataResource_DataResourceId()
 	 * @model keys="dataResourceId"
@@ -70,10 +70,10 @@ public interface OtherDataResource extends BizEntity {
 	DataResource getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Id</em>' reference.
+	 * @param value the new value of the '<em>Data ResourceDriver Id</em>' reference.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */

@@ -28,7 +28,7 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
@@ -238,7 +238,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		if (resourceProvider == null)
 			return null;
 
-		Resource<E> resource = resourceProvider.getResource(contextProvider, frame, tenant);
+		ResourceDriver<E> resource = resourceProvider.getResource(contextProvider, frame, tenant);
 
 		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, null);
 		MimoResourceImpl internal = (MimoResourceImpl) getResourceSet(contextProvider).getResource(uri, true);
@@ -288,7 +288,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		if (resourceProvider == null)
 			return null;
 
-		Resource<E> resource = resourceProvider.getResource(contextProvider, frame, tenant);
+		ResourceDriver<E> resource = resourceProvider.getResource(contextProvider, frame, tenant);
 
 		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, null);
 		MimoResourceImpl internal = (MimoResourceImpl) getResourceSet(contextProvider).getResource(uri, true);

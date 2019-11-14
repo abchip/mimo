@@ -16,7 +16,7 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.eclipse.emf.ecore.EClass;
@@ -122,7 +122,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Class<E> klass) {
+	public final <E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Class<E> klass) {
 		return getResource(contextProvider, klass.getSimpleName());
 	}
 
@@ -132,7 +132,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Frame<E> frame) {
+	public <E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Frame<E> frame) {
 		return getResource(contextProvider, frame, null);
 	}
 
@@ -143,7 +143,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public final <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame) {
+	public final <E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, String frame) {
 		return getResource(contextProvider, (Frame<E>) frameManager.getFrame(frame));
 	}
 
@@ -153,7 +153,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Class<E> klass, String tenant) {
+	public <E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Class<E> klass, String tenant) {
 		return getResource(contextProvider, klass.getSimpleName(), tenant);
 	}
 
@@ -163,7 +163,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame, String tenant) {
+	public <E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, String frame, String tenant) {
 		return getResource(contextProvider, frame, tenant);
 	}
 	
@@ -173,16 +173,16 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public <E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
 
 		if (tenant == null || tenant.trim().isEmpty()) {
 			if (contextProvider.getContextDescription().isTenant())
 				tenant = contextProvider.getContextDescription().getTenant();
-		} else if (tenant.equals(Resource.TENANT_MASTER))
+		} else if (tenant.equals(ResourceDriver.TENANT_MASTER))
 			tenant = null;	
 
 		return doGetResource(contextProvider, frame, tenant);
 	}
 	
-	public abstract <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant);
+	public abstract <E extends EntityNameable> ResourceDriver<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant);
 } // ResourceProviderImpl

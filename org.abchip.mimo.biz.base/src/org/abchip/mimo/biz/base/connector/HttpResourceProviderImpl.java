@@ -48,8 +48,8 @@ import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionType;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.ResourceDriverConfig;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
@@ -96,12 +96,12 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 
 	private SSLConnectionSocketFactory sslsf = null;
 
-	private ResourceConfig resourceConfig;
+	private ResourceDriverConfig resourceConfig;
 
 	@PostConstruct
 	protected void init() {
 
-		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceConfig();
+		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceDriverConfig();
 		this.resourceConfig.setLockSupport(false);
 
 		resourceManager.registerProvider(BizEntity.class, this);
@@ -577,13 +577,13 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public <E extends EntityNameable> ResourceDriver<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
 
 		HttpConnector connector = contextProvider.getContext().get(HttpConnector.class);
 		if (connector == null)
 			return null;
 
-		Resource<E> resource = new HttpResourceImpl<E>(contextProvider, frame, tenant, connector);
+		ResourceDriver<E> resource = new HttpResourceDriverImpl<E>(contextProvider, frame, tenant, connector);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

@@ -14,7 +14,7 @@ import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.resource.ResourceWriter;
 
@@ -22,7 +22,7 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 
 	private LockManager lockManager;
 
-	public BaseResourceWriterImpl(MimoResourceImpl internal, Resource<E> resource) {
+	public BaseResourceWriterImpl(MimoResourceImpl internal, ResourceDriver<E> resource) {
 		super(internal, resource);
 
 		this.lockManager = internal.getContextProvider().getContext().get(LockManager.class);

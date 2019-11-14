@@ -27,10 +27,10 @@ public interface DataFactory extends EFactory {
 	DataFactory eINSTANCE = org.abchip.mimo.biz.content.data.impl.DataFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Audio Data Resource</em>'.
+	 * Returns a new object of class '<em>Audio Data ResourceDriver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Audio Data Resource</em>'.
+	 * @return a new object of class '<em>Audio Data ResourceDriver</em>'.
 	 * @generated
 	 */
 	AudioDataResource createAudioDataResource();
@@ -54,64 +54,64 @@ public interface DataFactory extends EFactory {
 	DataCategory createDataCategory();
 
 	/**
-	 * Returns a new object of class '<em>Resource</em>'.
+	 * Returns a new object of class '<em>ResourceDriver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource</em>'.
+	 * @return a new object of class '<em>ResourceDriver</em>'.
 	 * @generated
 	 */
 	DataResource createDataResource();
 
 	/**
-	 * Returns a new object of class '<em>Resource Attribute</em>'.
+	 * Returns a new object of class '<em>ResourceDriver Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource Attribute</em>'.
+	 * @return a new object of class '<em>ResourceDriver Attribute</em>'.
 	 * @generated
 	 */
 	DataResourceAttribute createDataResourceAttribute();
 
 	/**
-	 * Returns a new object of class '<em>Resource Meta Data</em>'.
+	 * Returns a new object of class '<em>ResourceDriver Meta Data</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource Meta Data</em>'.
+	 * @return a new object of class '<em>ResourceDriver Meta Data</em>'.
 	 * @generated
 	 */
 	DataResourceMetaData createDataResourceMetaData();
 
 	/**
-	 * Returns a new object of class '<em>Resource Purpose</em>'.
+	 * Returns a new object of class '<em>ResourceDriver Purpose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource Purpose</em>'.
+	 * @return a new object of class '<em>ResourceDriver Purpose</em>'.
 	 * @generated
 	 */
 	DataResourcePurpose createDataResourcePurpose();
 
 	/**
-	 * Returns a new object of class '<em>Resource Role</em>'.
+	 * Returns a new object of class '<em>ResourceDriver Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource Role</em>'.
+	 * @return a new object of class '<em>ResourceDriver Role</em>'.
 	 * @generated
 	 */
 	DataResourceRole createDataResourceRole();
 
 	/**
-	 * Returns a new object of class '<em>Resource Type</em>'.
+	 * Returns a new object of class '<em>ResourceDriver Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource Type</em>'.
+	 * @return a new object of class '<em>ResourceDriver Type</em>'.
 	 * @generated
 	 */
 	DataResourceType createDataResourceType();
 
 	/**
-	 * Returns a new object of class '<em>Resource Type Attr</em>'.
+	 * Returns a new object of class '<em>ResourceDriver Type Attr</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource Type Attr</em>'.
+	 * @return a new object of class '<em>ResourceDriver Type Attr</em>'.
 	 * @generated
 	 */
 	DataResourceTypeAttr createDataResourceTypeAttr();
@@ -144,10 +144,10 @@ public interface DataFactory extends EFactory {
 	FileExtension createFileExtension();
 
 	/**
-	 * Returns a new object of class '<em>Image Data Resource</em>'.
+	 * Returns a new object of class '<em>Image Data ResourceDriver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Image Data Resource</em>'.
+	 * @return a new object of class '<em>Image Data ResourceDriver</em>'.
 	 * @generated
 	 */
 	ImageDataResource createImageDataResource();
@@ -180,19 +180,19 @@ public interface DataFactory extends EFactory {
 	MimeTypeHtmlTemplate createMimeTypeHtmlTemplate();
 
 	/**
-	 * Returns a new object of class '<em>Other Data Resource</em>'.
+	 * Returns a new object of class '<em>Other Data ResourceDriver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Other Data Resource</em>'.
+	 * @return a new object of class '<em>Other Data ResourceDriver</em>'.
 	 * @generated
 	 */
 	OtherDataResource createOtherDataResource();
 
 	/**
-	 * Returns a new object of class '<em>Video Data Resource</em>'.
+	 * Returns a new object of class '<em>Video Data ResourceDriver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Video Data Resource</em>'.
+	 * @return a new object of class '<em>Video Data ResourceDriver</em>'.
 	 * @generated
 	 */
 	VideoDataResource createVideoDataResource();

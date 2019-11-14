@@ -23,12 +23,13 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.form.Form;
+import org.abchip.mimo.ui.form.FormFactory;
 import org.abchip.mimo.ui.form.FormField;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
@@ -50,10 +51,10 @@ public class LookupFormServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Form form = resourceManager.getEntityReader(contextProvider, Form.class, Resource.TENANT_MASTER).lookup(name);
+		Form form = resourceManager.getEntityReader(contextProvider, Form.class, ResourceDriver.TENANT_MASTER).lookup(name);
 
 		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
-			form = frameManager.createEntity(Form.class);
+			form = FormFactory.eINSTANCE.createForm();
 			form.setName("prototype");
 
 			Frame<?> frame = frameManager.getFrame(frameName);
@@ -105,7 +106,7 @@ public class LookupFormServlet extends BaseServlet {
 	}
 
 	private FormField buildFormField(Slot slot) {
-		FormField field = frameManager.createEntity(FormField.class);
+		FormField field = FormFactory.eINSTANCE.createFormField();
 		field.setName(slot.getName());
 
 		StringBuffer label = new StringBuffer();

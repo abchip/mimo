@@ -16,7 +16,7 @@ import org.abchip.mimo.entity.SerializationType;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Resource Manager</b></em>'.
+ * A representation of the model object '<em><b>ResourceDriver Manager</b></em>'.
  * <!-- end-user-doc -->
  *
  *

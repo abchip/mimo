@@ -13,15 +13,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.abchip.mimo.util.Lists;
 
@@ -35,17 +32,8 @@ public class ResourceHelper {
 		return new MyEntityIterator<E>(iterator);
 	}
 
-	public static <E extends EntityNameable> ResourceReader<E> wrapReader(List<ResourceReader<E>> resources) {
-		return new ListReaderImpl<E>(resources);
-	}
-
 	public static <E extends EntityNameable> ResourceReader<E> wrapReader(ContextProvider contextProvider, Map<String, E> entities) {
 		return new MapReader<E>(contextProvider, entities);
-	}
-
-	public static <E extends EntityNameable> Resource<E> wrapResource(Map<String, E> entities) {
-		Resource<E> resource = new MapResource<E>(entities);
-		return resource;
 	}
 
 	public static <E extends EntityNameable> void firePreDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
@@ -217,108 +205,6 @@ public class ResourceHelper {
 		}
 	}
 
-	private static class ListReaderImpl<E extends EntityNameable> extends ResourceReaderImpl<E> {
-
-		private List<ResourceReader<E>> readers = null;
-
-		public ListReaderImpl(List<ResourceReader<E>> readers) {
-			this.readers = readers;
-		}
-
-		@Override
-		public EntityIterator<E> find(String filter, String fields, int limit, boolean proxy) {
-			return new QueueReaderIteratorImpl<E>(readers, filter, fields, limit, proxy);
-		}
-
-		@Override
-		public E lookup(String name, boolean proxy) {
-
-			E object = null;
-			for (ResourceReader<E> resourceReader : readers) {
-				object = resourceReader.lookup(name, proxy);
-				if (object != null)
-					break;
-			}
-
-			return object;
-		}
-	}
-
-	private static class QueueReaderIteratorImpl<E extends EntityNameable> implements EntityIterator<E> {
-
-		private Queue<ResourceReader<E>> readers;
-		private EntityIterator<E> currentIterator;
-		private String filter = null;
-		private String fields = null;
-		private int limit = 0;
-		private boolean proxy = false;
-		private E nextObject = null;
-		private int count = 0;
-
-		public QueueReaderIteratorImpl(List<ResourceReader<E>> resources, String filter, String fields, int limit, boolean proxy) {
-
-			this.filter = filter;
-			this.fields = fields;
-			this.limit = limit;
-			this.proxy = proxy;
-
-			readers = new LinkedList<ResourceReader<E>>();
-			for (ResourceReader<E> resourceReader : resources)
-				readers.add(resourceReader);
-
-			if (!readers.isEmpty())
-				this.currentIterator = readers.poll().find(filter, fields, limit, proxy);
-			doNext();
-		}
-
-		@Override
-		public boolean hasNext() {
-			return nextObject != null;
-		}
-
-		@Override
-		public E next() {
-			E object = nextObject;
-			count++;
-
-			if (limit > 0 && count >= limit)
-				nextObject = null;
-			else
-				doNext();
-
-			return object;
-		}
-
-		@Override
-		public void remove() {
-			throw new UnsupportedOperationException();
-		}
-
-		private void doNext() {
-			nextObject = null;
-			if (currentIterator == null)
-				return;
-
-			if (currentIterator.hasNext()) {
-				nextObject = currentIterator.next();
-				return;
-			}
-
-			while (readers.peek() != null) {
-				currentIterator = readers.poll().find(filter, fields, limit - count, proxy);
-				while (currentIterator != null && currentIterator.hasNext()) {
-					nextObject = currentIterator.next();
-					return;
-				}
-			}
-		}
-
-		@Override
-		public Iterator<E> iterator() {
-			return this;
-		}
-	}
-
 	private static class MapReader<E extends EntityNameable> extends ResourceReaderImpl<E> {
 
 		private Map<String, E> entities = null;
@@ -359,59 +245,6 @@ public class ResourceHelper {
 			E entity = entities.get(name);
 
 			return entity;
-		}
-	}
-
-	private static class MapResource<E extends EntityNameable> extends ResourceImpl<E> {
-
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-
-		private Map<String, E> entities = null;
-
-		protected MapResource(Map<String, E> entities) {
-			this.entities = entities;
-		}
-
-		@Override
-		public void create(E entity, boolean update) {
-			throw new UnsupportedOperationException();
-		}
-
-		@Override
-		public void delete(E entity) {
-			throw new UnsupportedOperationException();
-		}
-
-		@Override
-		public List<E> read(String filter, String fields, int limit, boolean proxy) {
-			List<E> entities = new ArrayList<E>(this.entities.values());
-
-			Collections.sort(entities, new Comparator<E>() {
-				@Override
-				public int compare(E e1, E e2) {
-					return e1.getName().compareTo(e2.getName());
-				}
-			});
-
-			return entities;
-		}
-
-		@Override
-		public void update(E entity) {
-			throw new UnsupportedOperationException();
-		}
-
-		@Override
-		public String nextSequence() {
-			throw new UnsupportedOperationException();
-		}
-
-		@Override
-		public E read(String name, String fields, boolean proxy) {
-			return this.entities.get(name);
 		}
 	}
 }

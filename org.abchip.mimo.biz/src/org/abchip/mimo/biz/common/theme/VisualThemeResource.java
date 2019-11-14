@@ -12,7 +12,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Visual Theme Resource</b></em>'.
+ * A representation of the model object '<em><b>Visual Theme ResourceDriver</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getSequenceId <em>Sequence Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>Resource Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>ResourceDriver Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getVisualThemeId <em>Visual Theme Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>Resource Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>ResourceDriver Type Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource()
@@ -31,14 +31,14 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  */
 public interface VisualThemeResource extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Resource Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>ResourceDriver Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resource Value</em>' attribute isn't clear,
+	 * If the meaning of the '<em>ResourceDriver Value</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Value</em>' attribute.
+	 * @return the value of the '<em>ResourceDriver Value</em>' attribute.
 	 * @see #setResourceValue(String)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_ResourceValue()
 	 * @model
@@ -47,10 +47,10 @@ public interface VisualThemeResource extends BizEntity {
 	String getResourceValue();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>Resource Value</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>ResourceDriver Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Value</em>' attribute.
+	 * @param value the new value of the '<em>ResourceDriver Value</em>' attribute.
 	 * @see #getResourceValue()
 	 * @generated
 	 */
@@ -110,14 +110,14 @@ public interface VisualThemeResource extends BizEntity {
 	void setVisualThemeId(VisualTheme value);
 
 	/**
-	 * Returns the value of the '<em><b>Resource Type Enum Id</b></em>' reference.
+	 * Returns the value of the '<em><b>ResourceDriver Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resource Type Enum Id</em>' reference isn't clear,
+	 * If the meaning of the '<em>ResourceDriver Type Enum Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Type Enum Id</em>' reference.
+	 * @return the value of the '<em>ResourceDriver Type Enum Id</em>' reference.
 	 * @see #setResourceTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_ResourceTypeEnumId()
 	 * @model keys="enumId"
@@ -126,10 +126,10 @@ public interface VisualThemeResource extends BizEntity {
 	Enumeration getResourceTypeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>Resource Type Enum Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>ResourceDriver Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Type Enum Id</em>' reference.
+	 * @param value the new value of the '<em>ResourceDriver Type Enum Id</em>' reference.
 	 * @see #getResourceTypeEnumId()
 	 * @generated
 	 */

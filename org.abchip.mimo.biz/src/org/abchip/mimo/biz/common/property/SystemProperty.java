@@ -18,7 +18,7 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System ResourceDriver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemPropertyId <em>System Property Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemPropertyValue <em>System Property Value</em>}</li>
@@ -109,14 +109,14 @@ public interface SystemProperty extends BizEntity {
 	void setSystemPropertyValue(String value);
 
 	/**
-	 * Returns the value of the '<em><b>System Resource Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>System ResourceDriver Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>System Resource Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>System ResourceDriver Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>System Resource Id</em>' attribute.
+	 * @return the value of the '<em>System ResourceDriver Id</em>' attribute.
 	 * @see #setSystemResourceId(String)
 	 * @see org.abchip.mimo.biz.common.property.PropertyPackage#getSystemProperty_SystemResourceId()
 	 * @model required="true"
@@ -126,10 +126,10 @@ public interface SystemProperty extends BizEntity {
 	String getSystemResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System Resource Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System ResourceDriver Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>System Resource Id</em>' attribute.
+	 * @param value the new value of the '<em>System ResourceDriver Id</em>' attribute.
 	 * @see #getSystemResourceId()
 	 * @generated
 	 */

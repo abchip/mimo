@@ -13,7 +13,7 @@ import org.abchip.mimo.entity.EntityNameable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Resource Event</b></em>'. <!-- end-user-doc -->
+ * <em><b>ResourceDriver Event</b></em>'. <!-- end-user-doc -->
  *
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResourceEvent()

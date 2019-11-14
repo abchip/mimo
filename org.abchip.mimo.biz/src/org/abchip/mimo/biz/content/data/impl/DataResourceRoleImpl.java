@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Resource Role</b></em>'.
+ * An implementation of the model object '<em><b>Data ResourceDriver Role</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.InternalEObject;
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -103,7 +103,7 @@ public class DataResourceRoleImpl extends BizEntityImpl implements DataResourceR
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()

@@ -29,13 +29,13 @@ public interface ResourceFactory extends EFactory {
 	ResourceFactory eINSTANCE = org.abchip.mimo.resource.impl.ResourceFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Config</em>'.
+	 * Returns a new object of class '<em>Driver Config</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Config</em>'.
+	 * @return a new object of class '<em>Driver Config</em>'.
 	 * @generated
 	 */
-	ResourceConfig createResourceConfig();
+	ResourceDriverConfig createResourceDriverConfig();
 
 	/**
 	 * Returns a new object of class '<em>Notifier</em>'.

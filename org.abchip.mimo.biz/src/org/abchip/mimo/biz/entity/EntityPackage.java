@@ -61,7 +61,7 @@ public interface EntityPackage extends EPackage {
 	EntityPackage eINSTANCE = org.abchip.mimo.biz.entity.impl.EntityPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl <em>Java Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl <em>Java ResourceDriver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.entity.impl.JavaResourceImpl
@@ -107,7 +107,7 @@ public interface EntityPackage extends EPackage {
 	int JAVA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Resource Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ResourceDriver Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -116,7 +116,7 @@ public interface EntityPackage extends EPackage {
 	int JAVA_RESOURCE__RESOURCE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Resource Value</b></em>' attribute.
+	 * The feature id for the '<em><b>ResourceDriver Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -125,7 +125,7 @@ public interface EntityPackage extends EPackage {
 	int JAVA_RESOURCE__RESOURCE_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Java Resource</em>' class.
+	 * The number of structural features of the '<em>Java ResourceDriver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -135,20 +135,20 @@ public interface EntityPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.JavaResource <em>Java Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.JavaResource <em>Java ResourceDriver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Java Resource</em>'.
+	 * @return the meta object for class '<em>Java ResourceDriver</em>'.
 	 * @see org.abchip.mimo.biz.entity.JavaResource
 	 * @generated
 	 */
 	EClass getJavaResource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.JavaResource#getResourceName <em>Resource Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.JavaResource#getResourceName <em>ResourceDriver Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Resource Name</em>'.
+	 * @return the meta object for the attribute '<em>ResourceDriver Name</em>'.
 	 * @see org.abchip.mimo.biz.entity.JavaResource#getResourceName()
 	 * @see #getJavaResource()
 	 * @generated
@@ -156,10 +156,10 @@ public interface EntityPackage extends EPackage {
 	EAttribute getJavaResource_ResourceName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.JavaResource#getResourceValue <em>Resource Value</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.JavaResource#getResourceValue <em>ResourceDriver Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Resource Value</em>'.
+	 * @return the meta object for the attribute '<em>ResourceDriver Value</em>'.
 	 * @see org.abchip.mimo.biz.entity.JavaResource#getResourceValue()
 	 * @see #getJavaResource()
 	 * @generated
@@ -189,7 +189,7 @@ public interface EntityPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl <em>Java Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl <em>Java ResourceDriver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.entity.impl.JavaResourceImpl
@@ -199,7 +199,7 @@ public interface EntityPackage extends EPackage {
 		EClass JAVA_RESOURCE = eINSTANCE.getJavaResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ResourceDriver Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -207,7 +207,7 @@ public interface EntityPackage extends EPackage {
 		EAttribute JAVA_RESOURCE__RESOURCE_NAME = eINSTANCE.getJavaResource_ResourceName();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ResourceDriver Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

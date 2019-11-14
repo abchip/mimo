@@ -10,8 +10,8 @@ package org.abchip.mimo.resource.impl;
 import java.util.List;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.ResourceDriverConfig;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -21,18 +21,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resource</b></em>'.
+ * An implementation of the model object '<em><b>ResourceDriver</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverImpl#getResourceConfig <em>Resource Config</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl implements Resource<E> {
+public abstract class ResourceDriverImpl<E extends EntityNameable> extends EntityImpl implements ResourceDriver<E> {
 	/**
 	 * The cached value of the '{@link #getResourceConfig() <em>Resource Config</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	 * @generated
 	 * @ordered
 	 */
-	protected ResourceConfig resourceConfig;
+	protected ResourceDriverConfig resourceConfig;
 	/**
 	 * 
 	 */
@@ -52,7 +52,7 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceImpl() {
+	protected ResourceDriverImpl() {
 		super();
 	}
 
@@ -63,7 +63,7 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ResourcePackage.Literals.RESOURCE;
+		return ResourcePackage.Literals.RESOURCE_DRIVER;
 	}
 
 	/**
@@ -72,13 +72,13 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	 * @generated
 	 */
 	@Override
-	public ResourceConfig getResourceConfig() {
+	public ResourceDriverConfig getResourceConfig() {
 		if (resourceConfig != null && ((EObject)resourceConfig).eIsProxy()) {
 			InternalEObject oldResourceConfig = (InternalEObject)resourceConfig;
-			resourceConfig = (ResourceConfig)eResolveProxy(oldResourceConfig);
+			resourceConfig = (ResourceDriverConfig)eResolveProxy(oldResourceConfig);
 			if (resourceConfig != oldResourceConfig) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
 			}
 		}
 		return resourceConfig;
@@ -89,7 +89,7 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceConfig basicGetResourceConfig() {
+	public ResourceDriverConfig basicGetResourceConfig() {
 		return resourceConfig;
 	}
 
@@ -99,11 +99,11 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	 * @generated
 	 */
 	@Override
-	public void setResourceConfig(ResourceConfig newResourceConfig) {
-		ResourceConfig oldResourceConfig = resourceConfig;
+	public void setResourceConfig(ResourceDriverConfig newResourceConfig) {
+		ResourceDriverConfig oldResourceConfig = resourceConfig;
 		resourceConfig = newResourceConfig;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
 	}
 
 	/**
@@ -162,7 +162,7 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
 				if (resolve) return getResourceConfig();
 				return basicGetResourceConfig();
 		}
@@ -177,8 +177,8 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				setResourceConfig((ResourceConfig)newValue);
+			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
+				setResourceConfig((ResourceDriverConfig)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +192,8 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				setResourceConfig((ResourceConfig)null);
+			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
+				setResourceConfig((ResourceDriverConfig)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,10 +207,10 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
 				return resourceConfig != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ResourceImpl
+} //ResourceDriverImpl

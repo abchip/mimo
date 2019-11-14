@@ -18,16 +18,16 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Visual Theme Resource</b></em>'.
+ * An implementation of the model object '<em><b>Visual Theme ResourceDriver</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getSequenceId <em>Sequence Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceValue <em>Resource Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceValue <em>ResourceDriver Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getVisualThemeId <em>Visual Theme Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceTypeEnumId <em>Resource Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceTypeEnumId <em>ResourceDriver Type Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,7 +56,7 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 */
 	protected String sequenceId = SEQUENCE_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getResourceValue() <em>Resource Value</em>}' attribute.
+	 * The default value of the '{@link #getResourceValue() <em>ResourceDriver Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResourceValue()
@@ -65,7 +65,7 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 */
 	protected static final String RESOURCE_VALUE_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getResourceValue() <em>Resource Value</em>}' attribute.
+	 * The cached value of the '{@link #getResourceValue() <em>ResourceDriver Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResourceValue()
@@ -83,7 +83,7 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 */
 	protected VisualTheme visualThemeId;
 	/**
-	 * The cached value of the '{@link #getResourceTypeEnumId() <em>Resource Type Enum Id</em>}' reference.
+	 * The cached value of the '{@link #getResourceTypeEnumId() <em>ResourceDriver Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResourceTypeEnumId()

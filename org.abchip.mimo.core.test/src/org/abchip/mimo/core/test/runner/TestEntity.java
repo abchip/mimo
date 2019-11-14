@@ -71,7 +71,7 @@ public class TestEntity {
 
 			entityWriter.create(objectA);
 		} catch (Exception exc) {
-			asserter.fail("Resource writing failed: " + exc.getMessage());
+			asserter.fail("ResourceDriver writing failed: " + exc.getMessage());
 		}
 	}
 

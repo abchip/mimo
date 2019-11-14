@@ -14,20 +14,20 @@ import org.abchip.mimo.entity.EntityNameable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Resource</b></em>'. <!-- end-user-doc -->
+ * <em><b>ResourceDriver</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.ResourceDriver#getResourceConfig <em>Resource Config</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.resource.ResourcePackage#getResource()
+ * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriver()
  * @model abstract="true"
  * @generated
  */
-public interface Resource<E extends EntityNameable> extends Entity {
+public interface ResourceDriver<E extends EntityNameable> extends Entity {
 
 	public static String TENANT_MASTER = "*MASTER";
 	
@@ -52,22 +52,22 @@ public interface Resource<E extends EntityNameable> extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resource Config</em>' reference.
-	 * @see #setResourceConfig(ResourceConfig)
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_ResourceConfig()
+	 * @see #setResourceConfig(ResourceDriverConfig)
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriver_ResourceConfig()
 	 * @model required="true"
 	 * @generated
 	 */
-	ResourceConfig getResourceConfig();
+	ResourceDriverConfig getResourceConfig();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceDriver#getResourceConfig <em>Resource Config</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Resource Config</em>' reference.
 	 * @see #getResourceConfig()
 	 * @generated
 	 */
-	void setResourceConfig(ResourceConfig value);
+	void setResourceConfig(ResourceDriverConfig value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,4 +101,4 @@ public interface Resource<E extends EntityNameable> extends Entity {
 	 */
 	void update(E entity);
 
-} // Resource
+} // ResourceDriver

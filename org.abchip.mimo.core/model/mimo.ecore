@@ -744,17 +744,6 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="createEntity" lowerBound="1">
-        <eGenericType eTypeParameter="#//entity/FrameManager/createEntity.1/E"/>
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/Entity"/>
-        </eTypeParameters>
-        <eParameters name="klass" lowerBound="1">
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//entity/FrameManager/createEntity.1/E"/>
-          </eGenericType>
-        </eParameters>
-      </eOperations>
       <eOperations name="createProxy" lowerBound="1">
         <eGenericType eTypeParameter="#//entity/FrameManager/createProxy/E"/>
         <eTypeParameters name="E">
@@ -863,30 +852,30 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
-    <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//entity/Entity">
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceDriver" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityNameable"/>
       </eTypeParameters>
       <eOperations name="create">
         <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//resource/Resource/E"/>
+          <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
         </eParameters>
         <eParameters name="update" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="delete">
         <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//resource/Resource/E"/>
+          <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
         </eParameters>
       </eOperations>
       <eOperations name="nextSequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="read" lowerBound="1">
-        <eGenericType eTypeParameter="#//resource/Resource/E"/>
+        <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="read" lowerBound="1" upperBound="-1">
-        <eGenericType eTypeParameter="#//resource/Resource/E"/>
+        <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -894,15 +883,17 @@
       </eOperations>
       <eOperations name="update">
         <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//resource/Resource/E"/>
+          <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
         </eParameters>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceConfig" lowerBound="1"
-          eType="#//resource/ResourceConfig"/>
+          eType="#//resource/ResourceDriverConfig"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourceConfig" eSuperTypes="#//entity/Entity">
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceDriverConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lockSupport" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageSize" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="100"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceEvent" abstract="true" interface="true">
       <eTypeParameters name="E">
@@ -1259,7 +1250,7 @@
         <eParameters name="create" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/Resource">
+        <eGenericType eClassifier="#//resource/ResourceDriver">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1273,7 +1264,7 @@
         </eParameters>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/Resource">
+        <eGenericType eClassifier="#//resource/ResourceDriver">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1287,7 +1278,7 @@
         </eParameters>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/Resource">
+        <eGenericType eClassifier="#//resource/ResourceDriver">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1297,7 +1288,7 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/Resource">
+        <eGenericType eClassifier="#//resource/ResourceDriver">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.3/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1312,7 +1303,7 @@
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/Resource">
+        <eGenericType eClassifier="#//resource/ResourceDriver">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.4/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1327,7 +1318,7 @@
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/Resource">
+        <eGenericType eClassifier="#//resource/ResourceDriver">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.5/E"/>
         </eGenericType>
         <eTypeParameters name="E">

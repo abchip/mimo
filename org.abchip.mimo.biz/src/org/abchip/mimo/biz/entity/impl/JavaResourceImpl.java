@@ -14,14 +14,14 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Java Resource</b></em>'.
+ * An implementation of the model object '<em><b>Java ResourceDriver</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl#getResourceName <em>Resource Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl#getResourceValue <em>Resource Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl#getResourceName <em>ResourceDriver Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.impl.JavaResourceImpl#getResourceValue <em>ResourceDriver Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,7 +32,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getResourceName() <em>Resource Name</em>}' attribute.
+	 * The default value of the '{@link #getResourceName() <em>ResourceDriver Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResourceName()
@@ -42,7 +42,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	protected static final String RESOURCE_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getResourceName() <em>Resource Name</em>}' attribute.
+	 * The cached value of the '{@link #getResourceName() <em>ResourceDriver Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResourceName()
@@ -52,7 +52,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	protected String resourceName = RESOURCE_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getResourceValue() <em>Resource Value</em>}' attribute.
+	 * The default value of the '{@link #getResourceValue() <em>ResourceDriver Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResourceValue()
@@ -62,7 +62,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	protected static final byte[] RESOURCE_VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getResourceValue() <em>Resource Value</em>}' attribute.
+	 * The cached value of the '{@link #getResourceValue() <em>ResourceDriver Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResourceValue()

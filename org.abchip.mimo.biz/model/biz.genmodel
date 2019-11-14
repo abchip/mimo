@@ -2765,10 +2765,6 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Entity" basePackage="org.abchip.mimo.biz" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="biz.ecore#//entity">
-      <genClasses ecoreClass="biz.ecore#//entity/JavaResource">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/JavaResource/resourceName"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/JavaResource/resourceValue"/>
-      </genClasses>
       <nestedGenPackages prefix="Audit" basePackage="org.abchip.mimo.biz.entity" disposableProviderFactory="true"
           adapterFactory="false" ecorePackage="biz.ecore#//entity/audit">
         <genClasses ecoreClass="biz.ecore#//entity/audit/EntityAuditLog">

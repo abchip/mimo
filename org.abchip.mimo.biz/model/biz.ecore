@@ -9194,16 +9194,6 @@
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/biz/entity" nsPrefix="biz-entity">
-    <eClassifiers xsi:type="ecore:EClass" name="JavaResource" eSuperTypes="#//BizEntity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true">
-        <eAnnotations source="mimo-ent-slot">
-          <details key="key" value="true"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
-    </eClassifiers>
     <eSubpackages name="audit" nsURI="http://www.abchip.org/mimo/biz/entity/audit"
         nsPrefix="biz-audit">
       <eClassifiers xsi:type="ecore:EClass" name="EntityAuditLog" eSuperTypes="#//BizEntity">

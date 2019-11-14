@@ -44,7 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getCreationDate <em>Creation Date</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getCurrentResource <em>Current Resource</em>}</li>
+ *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getCurrentResource <em>Current ResourceDriver</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getDateSeparator <em>Date Separator</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getDestroyDate <em>Destroy Date</em>}</li>
@@ -97,7 +97,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	protected Date creationDate = CREATION_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCurrentResource() <em>Current Resource</em>}' attribute.
+	 * The default value of the '{@link #getCurrentResource() <em>Current ResourceDriver</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCurrentResource()
@@ -107,7 +107,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	protected static final String CURRENT_RESOURCE_EDEFAULT = "QGPL";
 
 	/**
-	 * The cached value of the '{@link #getCurrentResource() <em>Current Resource</em>}' attribute.
+	 * The cached value of the '{@link #getCurrentResource() <em>Current ResourceDriver</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCurrentResource()

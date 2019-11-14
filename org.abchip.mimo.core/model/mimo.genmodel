@@ -487,10 +487,6 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createEntity/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/createEntity/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/createEntity.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createEntity.1/klass"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/createEntity.1/E"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/createProxy">
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createProxy/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createProxy/name"/>
@@ -556,35 +552,35 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/Before_Delete"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/After_Delete"/>
       </genEnums>
-      <genClasses ecoreClass="mimo.ecore#//resource/Resource">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceDriver">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceDriver/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/resourceConfig"/>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/create">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/create/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/create/update"/>
+            ecoreFeature="ecore:EReference mimo.ecore#//resource/ResourceDriver/resourceConfig"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/create">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/create/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/create/update"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/delete">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/delete/entity"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/delete">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/delete/entity"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/nextSequence"/>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/read">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read/name"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read/fields"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read/proxy"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/nextSequence"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/read">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read/name"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read/proxy"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/read.1">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/filter"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/fields"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/limit"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/proxy"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/read.1">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/filter"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/limit"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/read.1/proxy"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/update">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/update/entity"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceDriver/update">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceDriver/update/entity"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//resource/ResourceConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceConfig/lockSupport"/>
+      <genClasses ecoreClass="mimo.ecore#//resource/ResourceDriverConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceDriverConfig/lockSupport"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceEvent">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceEvent/E"/>

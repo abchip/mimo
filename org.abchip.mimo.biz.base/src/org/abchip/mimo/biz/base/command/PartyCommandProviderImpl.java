@@ -13,17 +13,16 @@ import javax.inject.Inject;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.ResourceReader;
-import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
@@ -39,11 +38,12 @@ public class PartyCommandProviderImpl implements CommandProvider {
 	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
 		
 		ResourceReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
-		Party party = partyReader.lookup("pippo3");
-		System.out.println("----> "+party.getURI());
+		Party party = partyReader.lookup("10000");
+		System.out.println(party.getURI());
 		System.out.println(party.getPartyTypeId().getName());
-		System.out.println(party.getPreferredCurrencyUomId().getNumericCode());
-		
+//		System.out.println(party.getPreferredCurrencyUomId().getNumericCode());
+		System.out.println(party.getCreatedByUserLogin().getPartyId().getName());
+		/*
 		party = frameManager.createEntity(Party.class); 
 		party.setPartyId("ABC");
 		party.setDescription("abcdefg");
@@ -62,7 +62,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		}
 		
 		partySerializer.save(System.out);
-		partySerializer.clear();
+		partySerializer.clear();*/
 	}
 	
 	public <E extends EntityNameable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
@@ -72,7 +72,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		// Write Person
 		ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextRoot, Person.class);
 
-		Person person = frameManager.createEntity(Person.class);
+		Person person = PartyFactory.eINSTANCE.createPerson();
 		person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
 		person.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
 		person.setPartyTypeId(frameManager.createProxy(PartyType.class, "PERSON"));
@@ -83,7 +83,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		// Write PartyGroup
 		ResourceWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextRoot, PartyGroup.class);
 
-		PartyGroup partyGroup = frameManager.createEntity(PartyGroup.class);
+		PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
 		partyGroup.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
 		partyGroup.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
 		partyGroup.setPartyTypeId(frameManager.createProxy(PartyType.class, "PARTY_GROUP"));

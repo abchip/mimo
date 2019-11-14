@@ -16,9 +16,7 @@ import org.abchip.mimo.audio.AudioFactory;
 import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioRecorder;
 import org.abchip.mimo.audio.AudioStyle;
-import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.classification.Classification;
@@ -43,8 +41,6 @@ public class TestAudio {
 	private TestAsserter asserter;
 	@Inject
 	private TestRunner testRunner;
-	@Inject
-	private FrameManager frameManger;
 
 	@TestStarted
 	public void start() throws InterruptedException {
@@ -73,7 +69,7 @@ public class TestAudio {
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following frames in the system", true, true);
 
-		for (Frame<Entity> frame : frameManger.getFrameReader(testRunner).find()) {
+		for (Frame<?> frame : resourceManager.getEntityReader(testRunner, Frame.class).find()) {
 			audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
 		}
 

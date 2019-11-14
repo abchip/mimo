@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc --> A representation of the literals of the enumeration '
- * <em><b>Resource Event Type</b></em>', and utility methods for working with
+ * <em><b>ResourceDriver Event Type</b></em>', and utility methods for working with
  * them. <!-- end-user-doc -->
  * @see org.abchip.mimo.resource.ResourcePackage#getResourceEventType()
  * @model

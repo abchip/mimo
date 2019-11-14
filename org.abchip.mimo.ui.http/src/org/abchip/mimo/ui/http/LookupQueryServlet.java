@@ -20,10 +20,11 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.query.Query;
+import org.abchip.mimo.ui.query.QueryFactory;
 import org.abchip.mimo.ui.query.QueryField;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
@@ -43,10 +44,10 @@ public class LookupQueryServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Query query = resourceManager.getEntityReader(contextProvider, Query.class, Resource.TENANT_MASTER).lookup(name);
+		Query query = resourceManager.getEntityReader(contextProvider, Query.class, ResourceDriver.TENANT_MASTER).lookup(name);
 
 		if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
-			query = frameManager.createEntity(Query.class);
+			query = QueryFactory.eINSTANCE.createQuery();
 			query.setName("prototype");
 
 			Frame<?> frame = frameManager.getFrame(frameName);
@@ -86,7 +87,7 @@ public class LookupQueryServlet extends BaseServlet {
 	}
 
 	private QueryField buildField(Slot slot) {
-		QueryField field = frameManager.createEntity(QueryField.class);
+		QueryField field = QueryFactory.eINSTANCE.createQueryField();
 		field.setId(slot.getName());
 
 		StringBuffer label = new StringBuffer();

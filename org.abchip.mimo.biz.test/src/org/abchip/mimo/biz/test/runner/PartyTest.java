@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
@@ -58,7 +59,7 @@ public class PartyTest {
 			return;
 
 		// Party
-		Party party = frameManager.createEntity(Party.class);
+		Party party = PartyFactory.eINSTANCE.createParty();
 		testAsserter.assertNotNull("Frame Party creation", party);
 
 		ResourceReader<Party> partyReader = resourceManager.getEntityReader(contextProvider, Party.class);
@@ -86,7 +87,7 @@ public class PartyTest {
 		ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextProvider, Person.class);
 		testAsserter.assertNotNull("Person Writer", personWriter);
 		if (personWriter != null) {
-			Person person = frameManager.createEntity(Person.class);
+			Person person = PartyFactory.eINSTANCE.createPerson();
 			person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
 			person.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
 			person.setPartyTypeId(frameManager.createProxy(PartyType.class, "PERSON"));
@@ -108,7 +109,7 @@ public class PartyTest {
 		testAsserter.assertNotNull("Party Group Writer", groupWriter);
 
 		if (groupWriter != null) {
-			PartyGroup partyGroup = frameManager.createEntity(PartyGroup.class);
+			PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
 			partyGroup.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
 			partyGroup.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
 			partyGroup.setPartyTypeId(frameManager.createProxy(PartyType.class, "PARTY_GROUP"));

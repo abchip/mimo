@@ -14,7 +14,7 @@ import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Data Resource Role</b></em>'.
+ * A representation of the model object '<em><b>Data ResourceDriver Role</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceRole#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceRole#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceRole#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceRole#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceRole#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceRole#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
@@ -34,14 +34,14 @@ import org.abchip.mimo.biz.party.party.Party;
  */
 public interface DataResourceRole extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Data Resource Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data ResourceDriver Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Id</em>' reference.
+	 * @return the value of the '<em>Data ResourceDriver Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceRole_DataResourceId()
 	 * @model keys="dataResourceId"
@@ -50,10 +50,10 @@ public interface DataResourceRole extends BizEntity {
 	DataResource getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceRole#getDataResourceId <em>Data Resource Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceRole#getDataResourceId <em>Data ResourceDriver Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Id</em>' reference.
+	 * @param value the new value of the '<em>Data ResourceDriver Id</em>' reference.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */

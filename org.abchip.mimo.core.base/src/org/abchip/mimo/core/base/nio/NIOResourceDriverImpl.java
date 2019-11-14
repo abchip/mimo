@@ -28,12 +28,12 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.impl.ResourceImpl;
+import org.abchip.mimo.resource.impl.ResourceDriverImpl;
 
-public class NIOResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
+public class NIOResourceDriverImpl<E extends EntityNameable> extends ResourceDriverImpl<E> {
 
 	/**
 	 * 
@@ -47,7 +47,7 @@ public class NIOResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
 
 	private String tenant = null;
 
-	public NIOResourceImpl(ContextProvider contextProvider, Frame<E> frame, String tenant, NIOPathManager pathManager) {
+	public NIOResourceDriverImpl(ContextProvider contextProvider, Frame<E> frame, String tenant, NIOPathManager pathManager) {
 
 		this.frameManager = contextProvider.getContext().get(FrameManager.class);
 		this.logger = contextProvider.getContext().get(Logger.class);
@@ -59,7 +59,7 @@ public class NIOResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
 		if (tenant != null)
 			this.tenant = tenant;
 		else
-			this.tenant = Resource.TENANT_MASTER.replaceFirst("\\*", "").toLowerCase();
+			this.tenant = ResourceDriver.TENANT_MASTER.replaceFirst("\\*", "").toLowerCase();
 	}
 
 	private Frame<E> getFrame() {
@@ -227,7 +227,7 @@ public class NIOResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
 
 				Path file = getClassFolder(getFrame(), true).resolve(entity.getName());
 				if (!Files.exists(file))
-					throw new IOException("Resource not exists: " + entity.getName());
+					throw new IOException("ResourceDriver not exists: " + entity.getName());
 
 				Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
 

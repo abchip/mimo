@@ -10,8 +10,8 @@ package org.abchip.mimo.biz.test.runner;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.biz.party.contact.ContactFactory;
 import org.abchip.mimo.biz.party.contact.PartyContactMech;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestStarted;
@@ -21,14 +21,11 @@ public class PartyContactMechTest {
 
 	@Inject
 	public transient TestAsserter testAsserter;
-
-	@Inject
-	private FrameManager frameManager;
 	
 	@TestStarted
 	public void doTest() {
 
-		PartyContactMech party = frameManager.createEntity(PartyContactMech.class);
+		PartyContactMech party = ContactFactory.eINSTANCE.createPartyContactMech();
 		testAsserter.assertNotNull("Frame PartyContactMech creation", party);
 	}
 }

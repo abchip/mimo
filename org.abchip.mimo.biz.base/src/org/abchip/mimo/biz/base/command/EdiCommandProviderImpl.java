@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.edi.entity.EntityEvent;
+import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.entity.Frame;
@@ -32,10 +33,8 @@ public class EdiCommandProviderImpl implements CommandProvider {
 
 	public void _testEdi(CommandInterpreter interpreter) throws Exception {
 
-		Frame<MessageSent> messageSentFrame = frameManager.getFrame(MessageSent.class);
-
-		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getEntityWriter(contextRoot, messageSentFrame);
-		MessageSent messageSent = frameManager.createEntity(messageSentFrame);
+		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getEntityWriter(contextRoot, MessageSent.class);
+		MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
 		messageSent.setMessageId("test-010");
 		messageSent.setEvent(EntityEvent.CREATE);
 		messageSent.setFrame("Party");

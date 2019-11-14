@@ -27,10 +27,10 @@ public interface EntityFactory extends EFactory {
 	EntityFactory eINSTANCE = org.abchip.mimo.biz.entity.impl.EntityFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Java Resource</em>'.
+	 * Returns a new object of class '<em>Java ResourceDriver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Java Resource</em>'.
+	 * @return a new object of class '<em>Java ResourceDriver</em>'.
 	 * @generated
 	 */
 	JavaResource createJavaResource();

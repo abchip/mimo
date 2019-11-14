@@ -65,14 +65,14 @@ public interface ResourcePackage extends EPackage {
 	ResourcePackage eINSTANCE = org.abchip.mimo.resource.impl.ResourcePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceImpl <em>Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceDriverImpl <em>Driver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.resource.impl.ResourceImpl
-	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResource()
+	 * @see org.abchip.mimo.resource.impl.ResourceDriverImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceDriver()
 	 * @generated
 	 */
-	int RESOURCE = 0;
+	int RESOURCE_DRIVER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Resource Config</b></em>' reference.
@@ -81,26 +81,26 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__RESOURCE_CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int RESOURCE_DRIVER__RESOURCE_CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Resource</em>' class.
+	 * The number of structural features of the '<em>Driver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int RESOURCE_DRIVER_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl <em>Driver Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.resource.impl.ResourceConfigImpl
-	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceConfig()
+	 * @see org.abchip.mimo.resource.impl.ResourceDriverConfigImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceDriverConfig()
 	 * @generated
 	 */
-	int RESOURCE_CONFIG = 1;
+	int RESOURCE_DRIVER_CONFIG = 1;
 
 	/**
 	 * The feature id for the '<em><b>Lock Support</b></em>' attribute.
@@ -109,16 +109,16 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONFIG__LOCK_SUPPORT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Config</em>' class.
+	 * The number of structural features of the '<em>Driver Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int RESOURCE_DRIVER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.ResourceEvent <em>Event</em>}' class.
@@ -366,46 +366,46 @@ public interface ResourcePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.resource.Resource <em>Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceDriver <em>Driver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource</em>'.
-	 * @see org.abchip.mimo.resource.Resource
+	 * @return the meta object for class '<em>Driver</em>'.
+	 * @see org.abchip.mimo.resource.ResourceDriver
 	 * @generated
 	 */
-	EClass getResource();
+	EClass getResourceDriver();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.ResourceDriver#getResourceConfig <em>Resource Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Resource Config</em>'.
-	 * @see org.abchip.mimo.resource.Resource#getResourceConfig()
-	 * @see #getResource()
+	 * @see org.abchip.mimo.resource.ResourceDriver#getResourceConfig()
+	 * @see #getResourceDriver()
 	 * @generated
 	 */
-	EReference getResource_ResourceConfig();
+	EReference getResourceDriver_ResourceConfig();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceConfig <em>Config</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceDriverConfig <em>Driver Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Config</em>'.
-	 * @see org.abchip.mimo.resource.ResourceConfig
+	 * @return the meta object for class '<em>Driver Config</em>'.
+	 * @see org.abchip.mimo.resource.ResourceDriverConfig
 	 * @generated
 	 */
-	EClass getResourceConfig();
+	EClass getResourceDriverConfig();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceConfig#isLockSupport <em>Lock Support</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceDriverConfig#isLockSupport <em>Lock Support</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Lock Support</em>'.
-	 * @see org.abchip.mimo.resource.ResourceConfig#isLockSupport()
-	 * @see #getResourceConfig()
+	 * @see org.abchip.mimo.resource.ResourceDriverConfig#isLockSupport()
+	 * @see #getResourceDriverConfig()
 	 * @generated
 	 */
-	EAttribute getResourceConfig_LockSupport();
+	EAttribute getResourceDriverConfig_LockSupport();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceEvent <em>Event</em>}'.
@@ -574,14 +574,14 @@ public interface ResourcePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceImpl <em>Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceDriverImpl <em>Driver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.resource.impl.ResourceImpl
-		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResource()
+		 * @see org.abchip.mimo.resource.impl.ResourceDriverImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceDriver()
 		 * @generated
 		 */
-		EClass RESOURCE = eINSTANCE.getResource();
+		EClass RESOURCE_DRIVER = eINSTANCE.getResourceDriver();
 
 		/**
 		 * The meta object literal for the '<em><b>Resource Config</b></em>' reference feature.
@@ -589,17 +589,17 @@ public interface ResourcePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RESOURCE__RESOURCE_CONFIG = eINSTANCE.getResource_ResourceConfig();
+		EReference RESOURCE_DRIVER__RESOURCE_CONFIG = eINSTANCE.getResourceDriver_ResourceConfig();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl <em>Driver Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.resource.impl.ResourceConfigImpl
-		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceConfig()
+		 * @see org.abchip.mimo.resource.impl.ResourceDriverConfigImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceDriverConfig()
 		 * @generated
 		 */
-		EClass RESOURCE_CONFIG = eINSTANCE.getResourceConfig();
+		EClass RESOURCE_DRIVER_CONFIG = eINSTANCE.getResourceDriverConfig();
 
 		/**
 		 * The meta object literal for the '<em><b>Lock Support</b></em>' attribute feature.
@@ -607,7 +607,7 @@ public interface ResourcePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESOURCE_CONFIG__LOCK_SUPPORT = eINSTANCE.getResourceConfig_LockSupport();
+		EAttribute RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT = eINSTANCE.getResourceDriverConfig_LockSupport();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.ResourceEvent <em>Event</em>}' class.

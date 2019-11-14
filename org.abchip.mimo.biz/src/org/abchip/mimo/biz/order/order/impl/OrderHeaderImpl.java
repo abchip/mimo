@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.order.order.impl;
 
 import java.math.BigDecimal;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -28,7 +27,6 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.BasicInternalEList;
@@ -2438,8 +2436,16 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 		return result.toString();
 	}
 
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	@Override
 	public boolean isApprovable() {
+
+		if (this.statusId == null)
+			return false;
 
 		if (this.statusId.getStatusId().equals("ORDER_CREATED") || this.statusId.getStatusId().equals("ORDER_PROCESSING") || this.statusId.getStatusId().equals("ORDER_HOLD"))
 			return true;

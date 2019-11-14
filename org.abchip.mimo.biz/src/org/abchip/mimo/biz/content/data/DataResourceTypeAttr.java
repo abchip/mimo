@@ -11,7 +11,7 @@ import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Data Resource Type Attr</b></em>'.
+ * A representation of the model object '<em><b>Data ResourceDriver Type Attr</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -20,7 +20,7 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceTypeAttr()
@@ -56,14 +56,14 @@ public interface DataResourceTypeAttr extends BizEntity {
 	void setAttrName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Type Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data ResourceDriver Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Resource Type Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data ResourceDriver Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Type Id</em>' reference.
+	 * @return the value of the '<em>Data ResourceDriver Type Id</em>' reference.
 	 * @see #setDataResourceTypeId(DataResourceType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceTypeAttr_DataResourceTypeId()
 	 * @model keys="dataResourceTypeId"
@@ -72,10 +72,10 @@ public interface DataResourceTypeAttr extends BizEntity {
 	DataResourceType getDataResourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data Resource Type Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Type Id</em>' reference.
+	 * @param value the new value of the '<em>Data ResourceDriver Type Id</em>' reference.
 	 * @see #getDataResourceTypeId()
 	 * @generated
 	 */

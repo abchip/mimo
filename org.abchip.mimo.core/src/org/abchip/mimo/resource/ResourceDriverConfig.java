@@ -18,14 +18,14 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.ResourceConfig#isLockSupport <em>Lock Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.ResourceDriverConfig#isLockSupport <em>Lock Support</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.resource.ResourcePackage#getResourceConfig()
+ * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriverConfig()
  * @model
  * @generated
  */
-public interface ResourceConfig extends Entity {
+public interface ResourceDriverConfig extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Lock Support</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -36,14 +36,14 @@ public interface ResourceConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lock Support</em>' attribute.
 	 * @see #setLockSupport(boolean)
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceConfig_LockSupport()
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriverConfig_LockSupport()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isLockSupport();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceConfig#isLockSupport <em>Lock Support</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceDriverConfig#isLockSupport <em>Lock Support</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Lock Support</em>' attribute.
@@ -52,4 +52,4 @@ public interface ResourceConfig extends Entity {
 	 */
 	void setLockSupport(boolean value);
 
-} // ResourceConfig
+} // ResourceDriverConfig

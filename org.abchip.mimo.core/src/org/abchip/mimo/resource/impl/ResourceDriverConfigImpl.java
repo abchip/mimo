@@ -9,7 +9,7 @@ package org.abchip.mimo.resource.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
-import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceDriverConfig;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,12 +26,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceConfigImpl#isLockSupport <em>Lock Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#isLockSupport <em>Lock Support</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
+public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriverConfig {
 	/**
 	 * 
 	 */
@@ -62,7 +62,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceConfigImpl() {
+	protected ResourceDriverConfigImpl() {
 		super();
 	}
 
@@ -73,7 +73,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ResourcePackage.Literals.RESOURCE_CONFIG;
+		return ResourcePackage.Literals.RESOURCE_DRIVER_CONFIG;
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 		boolean oldLockSupport = lockSupport;
 		lockSupport = newLockSupport;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT, oldLockSupport, lockSupport));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT, oldLockSupport, lockSupport));
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				return isLockSupport();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -121,7 +121,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				setLockSupport((Boolean)newValue);
 				return;
 		}
@@ -136,7 +136,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				setLockSupport(LOCK_SUPPORT_EDEFAULT);
 				return;
 		}
@@ -151,7 +151,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
 				return lockSupport != LOCK_SUPPORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -173,4 +173,4 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 		return result.toString();
 	}
 
-} //ResourceConfigImpl
+} //ResourceDriverConfigImpl

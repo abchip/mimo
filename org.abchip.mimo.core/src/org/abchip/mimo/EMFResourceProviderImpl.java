@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo;
 
+import java.util.Map;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -16,10 +18,9 @@ import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.ResourceDriverConfig;
 import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
@@ -30,14 +31,14 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	@Inject
 	private FrameManager frameManager;
 
-	private ResourceConfig resourceConfig;
+	private ResourceDriverConfig resourceConfig;
 
 	@PostConstruct
 	protected void init() {
 
-		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceConfig();
+		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceDriverConfig();
 		this.resourceConfig.setLockSupport(false);
-		
+
 		resourceManager.registerProvider(Frame.class, this);
 		resourceManager.registerProvider(EntityEnum.class, this);
 	}
@@ -52,18 +53,18 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
-		
-		Resource<E> resource = null;
-		
+	public <E extends EntityNameable> ResourceDriver<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+
+		ResourceDriver<E> resource = null;
+
 		if (isFrame(frame)) {
-			resource = (Resource<E>) ResourceHelper.wrapResource(EMFFrameHelper.getFrames(frameManager));
+			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getFrames(frameManager));
 		} else if (isEnum(frame)) {
-			resource = (Resource<E>) ResourceHelper.wrapResource(EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
-		} 
-		
+			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+		}
+
 		resource.setResourceConfig(this.resourceConfig);
-		
+
 		return resource;
 	}
 }

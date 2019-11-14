@@ -32,11 +32,6 @@ public class EMFFrameManagerImpl implements FrameManager {
 	}
 
 	@Override
-	public <E extends Entity> E createEntity(Class<E> klass) {
-		return createEntity(getFrame(klass));
-	}
-
-	@Override
 	public <E extends Entity> ResourceReader<Frame<E>> getFrameReader(ContextProvider contextProvider) {
 		return _getFrameReader(contextProvider);
 	}

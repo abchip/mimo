@@ -18,8 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import org.abchip.mimo.biz.accounting.tax.PartyTaxAuthInfo;
+import org.abchip.mimo.biz.accounting.tax.TaxFactory;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyRole;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
@@ -83,7 +85,7 @@ public class ImportPeopleServlet extends BaseServlet {
 						// String piva = "";
 						// String city = c.getStringCellValue();
 
-						Person person = frameManager.createEntity(Person.class);
+						Person person = PartyFactory.eINSTANCE.createPerson();
 						// Party
 						person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
 						person.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
@@ -95,13 +97,13 @@ public class ImportPeopleServlet extends BaseServlet {
 						personWriter.create(person);
 
 						// Party Role
-						PartyRole partyRole = frameManager.createEntity(PartyRole.class);
+						PartyRole partyRole = PartyFactory.eINSTANCE.createPartyRole();
 						partyRole.setPartyId(person);
 						partyRole.setRoleTypeId(frameManager.createProxy(RoleType.class, "CUSTOMER"));
 						partyRoleWriter.create(partyRole, true);
 
 						// PartyTaxAuthInfo
-						PartyTaxAuthInfo partyTaxAuthInfo = frameManager.createEntity(PartyTaxAuthInfo.class);
+						PartyTaxAuthInfo partyTaxAuthInfo = TaxFactory.eINSTANCE.createPartyTaxAuthInfo();
 						partyTaxAuthInfo.setPartyId(person);
 						partyTaxAuthInfo.setFromDate(new Date());
 						partyTaxAuthInfo.setTaxAuthGeoId("ITA");

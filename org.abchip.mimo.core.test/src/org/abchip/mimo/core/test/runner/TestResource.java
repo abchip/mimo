@@ -8,7 +8,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
@@ -16,7 +16,7 @@ import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
 import org.abchip.mimo.tester.TestStopped;
 
-@Test(entity = "Resource")
+@Test(entity = "ResourceDriver")
 public class TestResource {
 
 	@Inject
@@ -33,7 +33,7 @@ public class TestResource {
 	@TestStarted
 	public void start() throws IOException {
 
-		Frame<Resource> resourceFrame = frameManager.getFrame(Resource.class);
+		Frame<ResourceDriver> resourceFrame = frameManager.getFrame(ResourceDriver.class);
 		
 		ResourceSerializer<Frame> frameSerializer = resourceManager.createEntitySerializer(Frame.class, SerializationType.XML_METADATA_INTERCHANGE);
 		frameSerializer.add(resourceFrame);

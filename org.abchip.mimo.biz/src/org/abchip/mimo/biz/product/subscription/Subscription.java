@@ -48,7 +48,7 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getUseTime <em>Use Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
@@ -846,14 +846,14 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	List<String> subscriptionFulfillmentPieces();
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Resource Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Subscription ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Subscription Resource Id</em>' reference isn't clear,
+	 * If the meaning of the '<em>Subscription ResourceDriver Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Resource Id</em>' reference.
+	 * @return the value of the '<em>Subscription ResourceDriver Id</em>' reference.
 	 * @see #setSubscriptionResourceId(SubscriptionResource)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionResourceId()
 	 * @model keys="subscriptionResourceId"
@@ -862,10 +862,10 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	SubscriptionResource getSubscriptionResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription Resource Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscription Resource Id</em>' reference.
+	 * @param value the new value of the '<em>Subscription ResourceDriver Id</em>' reference.
 	 * @see #getSubscriptionResourceId()
 	 * @generated
 	 */

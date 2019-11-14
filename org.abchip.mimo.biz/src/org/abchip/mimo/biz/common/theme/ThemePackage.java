@@ -144,7 +144,7 @@ public interface ThemePackage extends EPackage {
 	int VISUAL_THEME_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl <em>Visual Theme Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl <em>Visual Theme ResourceDriver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl
@@ -199,7 +199,7 @@ public interface ThemePackage extends EPackage {
 	int VISUAL_THEME_RESOURCE__SEQUENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Resource Value</b></em>' attribute.
+	 * The feature id for the '<em><b>ResourceDriver Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -217,7 +217,7 @@ public interface ThemePackage extends EPackage {
 	int VISUAL_THEME_RESOURCE__VISUAL_THEME_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Resource Type Enum Id</b></em>' reference.
+	 * The feature id for the '<em><b>ResourceDriver Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -226,7 +226,7 @@ public interface ThemePackage extends EPackage {
 	int VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Visual Theme Resource</em>' class.
+	 * The number of structural features of the '<em>Visual Theme ResourceDriver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -352,10 +352,10 @@ public interface ThemePackage extends EPackage {
 	EReference getVisualTheme_VisualThemeSetId();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource <em>Visual Theme Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource <em>Visual Theme ResourceDriver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Visual Theme Resource</em>'.
+	 * @return the meta object for class '<em>Visual Theme ResourceDriver</em>'.
 	 * @see org.abchip.mimo.biz.common.theme.VisualThemeResource
 	 * @generated
 	 */
@@ -373,10 +373,10 @@ public interface ThemePackage extends EPackage {
 	EReference getVisualThemeResource_VisualThemeId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>Resource Type Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>ResourceDriver Type Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Resource Type Enum Id</em>'.
+	 * @return the meta object for the reference '<em>ResourceDriver Type Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId()
 	 * @see #getVisualThemeResource()
 	 * @generated
@@ -395,10 +395,10 @@ public interface ThemePackage extends EPackage {
 	EAttribute getVisualThemeResource_SequenceId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>Resource Value</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>ResourceDriver Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Resource Value</em>'.
+	 * @return the meta object for the attribute '<em>ResourceDriver Value</em>'.
 	 * @see org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue()
 	 * @see #getVisualThemeResource()
 	 * @generated
@@ -494,7 +494,7 @@ public interface ThemePackage extends EPackage {
 		EReference VISUAL_THEME__VISUAL_THEME_SET_ID = eINSTANCE.getVisualTheme_VisualThemeSetId();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl <em>Visual Theme Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl <em>Visual Theme ResourceDriver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl
@@ -512,7 +512,7 @@ public interface ThemePackage extends EPackage {
 		EReference VISUAL_THEME_RESOURCE__VISUAL_THEME_ID = eINSTANCE.getVisualThemeResource_VisualThemeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource Type Enum Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>ResourceDriver Type Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -528,7 +528,7 @@ public interface ThemePackage extends EPackage {
 		EAttribute VISUAL_THEME_RESOURCE__SEQUENCE_ID = eINSTANCE.getVisualThemeResource_SequenceId();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ResourceDriver Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

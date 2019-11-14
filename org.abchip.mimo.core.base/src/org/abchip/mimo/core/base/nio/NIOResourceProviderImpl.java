@@ -15,8 +15,8 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.ResourceDriverConfig;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
@@ -30,12 +30,12 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 
 	private NIOPathManager pathManager;
 
-	private ResourceConfig resourceConfig;
+	private ResourceDriverConfig resourceConfig;
 
 	@PostConstruct
 	protected void init() {
 
-		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceConfig();
+		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceDriverConfig();
 		this.resourceConfig.setLockSupport(true);
 
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
@@ -44,12 +44,12 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public <E extends EntityNameable> ResourceDriver<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
 
 		if(pathManager == null)
 			return null;
 		
-		Resource<E> resource = new NIOResourceImpl<E>(contextProvider, frame, tenant, pathManager);
+		ResourceDriver<E> resource = new NIOResourceDriverImpl<E>(contextProvider, frame, tenant, pathManager);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

@@ -62,7 +62,7 @@ public interface DataPackage extends EPackage {
 	DataPackage eINSTANCE = org.abchip.mimo.biz.content.data.impl.DataPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl <em>Audio Data Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl <em>Audio Data ResourceDriver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl
@@ -117,7 +117,7 @@ public interface DataPackage extends EPackage {
 	int AUDIO_DATA_RESOURCE__AUDIO_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +126,7 @@ public interface DataPackage extends EPackage {
 	int AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Audio Data Resource</em>' class.
+	 * The number of structural features of the '<em>Audio Data ResourceDriver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -290,7 +290,7 @@ public interface DataPackage extends EPackage {
 	int DATA_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl <em>Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl <em>ResourceDriver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.DataResourceImpl
@@ -336,7 +336,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -354,7 +354,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__CREATED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Data ResourceDriver Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -417,7 +417,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Type Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -507,7 +507,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__SURVEY_RESPONSE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data ResourceDriver Attributes</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -516,7 +516,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Meta Datas</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data ResourceDriver Meta Datas</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -525,7 +525,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__DATA_RESOURCE_META_DATAS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Purposes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data ResourceDriver Purposes</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -543,7 +543,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
 
 	/**
-	 * The number of structural features of the '<em>Resource</em>' class.
+	 * The number of structural features of the '<em>ResourceDriver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -552,7 +552,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl <em>Resource Attribute</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl <em>ResourceDriver Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl
@@ -625,7 +625,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -634,7 +634,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Resource Attribute</em>' class.
+	 * The number of structural features of the '<em>ResourceDriver Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -643,7 +643,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl <em>Resource Meta Data</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl <em>ResourceDriver Meta Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl
@@ -698,7 +698,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_META_DATA__META_DATA_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -725,7 +725,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_META_DATA__DATA_SOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Resource Meta Data</em>' class.
+	 * The number of structural features of the '<em>ResourceDriver Meta Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -734,7 +734,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_META_DATA_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl <em>Resource Purpose</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl <em>ResourceDriver Purpose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl
@@ -780,7 +780,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_PURPOSE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -798,7 +798,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Resource Purpose</em>' class.
+	 * The number of structural features of the '<em>ResourceDriver Purpose</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -807,7 +807,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_PURPOSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl <em>Resource Role</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl <em>ResourceDriver Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl
@@ -880,7 +880,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -898,7 +898,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Resource Role</em>' class.
+	 * The number of structural features of the '<em>ResourceDriver Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -907,7 +907,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl <em>Resource Type</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl <em>ResourceDriver Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl
@@ -962,7 +962,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Data ResourceDriver Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -998,7 +998,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data ResourceDriver Type Attrs</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1007,7 +1007,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Resource Type</em>' class.
+	 * The number of structural features of the '<em>ResourceDriver Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1016,7 +1016,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl <em>Resource Type Attr</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl <em>ResourceDriver Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl
@@ -1080,7 +1080,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE_ATTR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Type Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1089,7 +1089,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE_ATTR__DATA_RESOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Resource Type Attr</em>' class.
+	 * The number of structural features of the '<em>ResourceDriver Type Attr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1226,7 +1226,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__LAST_UPDATED_TX_STAMP = DATA_RESOURCE__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1244,7 +1244,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__CREATED_DATE = DATA_RESOURCE__CREATED_DATE;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Data ResourceDriver Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1307,7 +1307,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__STATUS_ID = DATA_RESOURCE__STATUS_ID;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Type Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1397,7 +1397,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__SURVEY_RESPONSE_ID = DATA_RESOURCE__SURVEY_RESPONSE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data ResourceDriver Attributes</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1406,7 +1406,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__DATA_RESOURCE_ATTRIBUTES = DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Meta Datas</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data ResourceDriver Meta Datas</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1415,7 +1415,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__DATA_RESOURCE_META_DATAS = DATA_RESOURCE__DATA_RESOURCE_META_DATAS;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Purposes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data ResourceDriver Purposes</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1524,7 +1524,7 @@ public interface DataPackage extends EPackage {
 	int FILE_EXTENSION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl <em>Image Data Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl <em>Image Data ResourceDriver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl
@@ -1579,7 +1579,7 @@ public interface DataPackage extends EPackage {
 	int IMAGE_DATA_RESOURCE__IMAGE_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1588,7 +1588,7 @@ public interface DataPackage extends EPackage {
 	int IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Image Data Resource</em>' class.
+	 * The number of structural features of the '<em>Image Data ResourceDriver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1816,7 +1816,7 @@ public interface DataPackage extends EPackage {
 	int MIME_TYPE_HTML_TEMPLATE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl <em>Other Data Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl <em>Other Data ResourceDriver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl
@@ -1862,7 +1862,7 @@ public interface DataPackage extends EPackage {
 	int OTHER_DATA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Content</b></em>' attribute.
+	 * The feature id for the '<em><b>Data ResourceDriver Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1871,7 +1871,7 @@ public interface DataPackage extends EPackage {
 	int OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1880,7 +1880,7 @@ public interface DataPackage extends EPackage {
 	int OTHER_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Other Data Resource</em>' class.
+	 * The number of structural features of the '<em>Other Data ResourceDriver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1889,7 +1889,7 @@ public interface DataPackage extends EPackage {
 	int OTHER_DATA_RESOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl <em>Video Data Resource</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl <em>Video Data ResourceDriver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl
@@ -1944,7 +1944,7 @@ public interface DataPackage extends EPackage {
 	int VIDEO_DATA_RESOURCE__VIDEO_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1953,7 +1953,7 @@ public interface DataPackage extends EPackage {
 	int VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Video Data Resource</em>' class.
+	 * The number of structural features of the '<em>Video Data ResourceDriver</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1963,20 +1963,20 @@ public interface DataPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.AudioDataResource <em>Audio Data Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.AudioDataResource <em>Audio Data ResourceDriver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Audio Data Resource</em>'.
+	 * @return the meta object for class '<em>Audio Data ResourceDriver</em>'.
 	 * @see org.abchip.mimo.biz.content.data.AudioDataResource
 	 * @generated
 	 */
 	EClass getAudioDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.AudioDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.AudioDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.AudioDataResource#getDataResourceId()
 	 * @see #getAudioDataResource()
 	 * @generated
@@ -2070,20 +2070,20 @@ public interface DataPackage extends EPackage {
 	EReference getDataCategory_ParentCategoryId();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResource <em>Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResource <em>ResourceDriver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource</em>'.
+	 * @return the meta object for class '<em>ResourceDriver</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource
 	 * @generated
 	 */
 	EClass getDataResource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Resource Id</em>'.
+	 * @return the meta object for the attribute '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourceId()
 	 * @see #getDataResource()
 	 * @generated
@@ -2135,10 +2135,10 @@ public interface DataPackage extends EPackage {
 	EReference getDataResource_DataCategoryId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data Resource Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data ResourceDriver Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Resource Name</em>'.
+	 * @return the meta object for the attribute '<em>Data ResourceDriver Name</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourceName()
 	 * @see #getDataResource()
 	 * @generated
@@ -2146,10 +2146,10 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResource_DataResourceName();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Type Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Type Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId()
 	 * @see #getDataResource()
 	 * @generated
@@ -2289,10 +2289,10 @@ public interface DataPackage extends EPackage {
 	EReference getDataResource_SurveyResponseId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data Resource Attributes</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data ResourceDriver Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Attributes</em>'.
+	 * @return the meta object for the attribute list '<em>Data ResourceDriver Attributes</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes()
 	 * @see #getDataResource()
 	 * @generated
@@ -2300,10 +2300,10 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResource_DataResourceAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data ResourceDriver Meta Datas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Meta Datas</em>'.
+	 * @return the meta object for the attribute list '<em>Data ResourceDriver Meta Datas</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas()
 	 * @see #getDataResource()
 	 * @generated
@@ -2311,10 +2311,10 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResource_DataResourceMetaDatas();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data Resource Purposes</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data ResourceDriver Purposes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Purposes</em>'.
+	 * @return the meta object for the attribute list '<em>Data ResourceDriver Purposes</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes()
 	 * @see #getDataResource()
 	 * @generated
@@ -2333,20 +2333,20 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResource_ProductFeatureDataResources();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceAttribute <em>Resource Attribute</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceAttribute <em>ResourceDriver Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource Attribute</em>'.
+	 * @return the meta object for class '<em>ResourceDriver Attribute</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceAttribute
 	 * @generated
 	 */
 	EClass getDataResourceAttribute();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceAttribute#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceAttribute#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceAttribute#getDataResourceId()
 	 * @see #getDataResourceAttribute()
 	 * @generated
@@ -2387,20 +2387,20 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResourceAttribute_AttrValue();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData <em>Resource Meta Data</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData <em>ResourceDriver Meta Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource Meta Data</em>'.
+	 * @return the meta object for class '<em>ResourceDriver Meta Data</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceMetaData
 	 * @generated
 	 */
 	EClass getDataResourceMetaData();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId()
 	 * @see #getDataResourceMetaData()
 	 * @generated
@@ -2441,20 +2441,20 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResourceMetaData_MetaDataValue();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourcePurpose <em>Resource Purpose</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourcePurpose <em>ResourceDriver Purpose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource Purpose</em>'.
+	 * @return the meta object for class '<em>ResourceDriver Purpose</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourcePurpose
 	 * @generated
 	 */
 	EClass getDataResourcePurpose();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourcePurpose#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourcePurpose#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourcePurpose#getDataResourceId()
 	 * @see #getDataResourcePurpose()
 	 * @generated
@@ -2473,20 +2473,20 @@ public interface DataPackage extends EPackage {
 	EReference getDataResourcePurpose_ContentPurposeTypeId();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceRole <em>Resource Role</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceRole <em>ResourceDriver Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource Role</em>'.
+	 * @return the meta object for class '<em>ResourceDriver Role</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceRole
 	 * @generated
 	 */
 	EClass getDataResourceRole();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceRole#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceRole#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceRole#getDataResourceId()
 	 * @see #getDataResourceRole()
 	 * @generated
@@ -2538,20 +2538,20 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResourceRole_ThruDate();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceType <em>Resource Type</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceType <em>ResourceDriver Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource Type</em>'.
+	 * @return the meta object for class '<em>ResourceDriver Type</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceType
 	 * @generated
 	 */
 	EClass getDataResourceType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeId <em>Data Resource Type Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Resource Type Id</em>'.
+	 * @return the meta object for the attribute '<em>Data ResourceDriver Type Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeId()
 	 * @see #getDataResourceType()
 	 * @generated
@@ -2592,10 +2592,10 @@ public interface DataPackage extends EPackage {
 	EReference getDataResourceType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeAttrs <em>Data Resource Type Attrs</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeAttrs <em>Data ResourceDriver Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Type Attrs</em>'.
+	 * @return the meta object for the attribute list '<em>Data ResourceDriver Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeAttrs()
 	 * @see #getDataResourceType()
 	 * @generated
@@ -2603,20 +2603,20 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResourceType_DataResourceTypeAttrs();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr <em>Resource Type Attr</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr <em>ResourceDriver Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource Type Attr</em>'.
+	 * @return the meta object for class '<em>ResourceDriver Type Attr</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceTypeAttr
 	 * @generated
 	 */
 	EClass getDataResourceTypeAttr();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data Resource Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Type Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Type Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceTypeAttr#getDataResourceTypeId()
 	 * @see #getDataResourceTypeAttr()
 	 * @generated
@@ -2742,20 +2742,20 @@ public interface DataPackage extends EPackage {
 	EReference getFileExtension_MimeTypeId();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.ImageDataResource <em>Image Data Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.ImageDataResource <em>Image Data ResourceDriver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Image Data Resource</em>'.
+	 * @return the meta object for class '<em>Image Data ResourceDriver</em>'.
 	 * @see org.abchip.mimo.biz.content.data.ImageDataResource
 	 * @generated
 	 */
 	EClass getImageDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.ImageDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.ImageDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.ImageDataResource#getDataResourceId()
 	 * @see #getImageDataResource()
 	 * @generated
@@ -2870,20 +2870,20 @@ public interface DataPackage extends EPackage {
 	EAttribute getMimeTypeHtmlTemplate_TemplateLocation();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.OtherDataResource <em>Other Data Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.OtherDataResource <em>Other Data ResourceDriver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Other Data Resource</em>'.
+	 * @return the meta object for class '<em>Other Data ResourceDriver</em>'.
 	 * @see org.abchip.mimo.biz.content.data.OtherDataResource
 	 * @generated
 	 */
 	EClass getOtherDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId()
 	 * @see #getOtherDataResource()
 	 * @generated
@@ -2891,10 +2891,10 @@ public interface DataPackage extends EPackage {
 	EReference getOtherDataResource_DataResourceId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data Resource Content</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data ResourceDriver Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Resource Content</em>'.
+	 * @return the meta object for the attribute '<em>Data ResourceDriver Content</em>'.
 	 * @see org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent()
 	 * @see #getOtherDataResource()
 	 * @generated
@@ -2902,20 +2902,20 @@ public interface DataPackage extends EPackage {
 	EAttribute getOtherDataResource_DataResourceContent();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.VideoDataResource <em>Video Data Resource</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.VideoDataResource <em>Video Data ResourceDriver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Video Data Resource</em>'.
+	 * @return the meta object for class '<em>Video Data ResourceDriver</em>'.
 	 * @see org.abchip.mimo.biz.content.data.VideoDataResource
 	 * @generated
 	 */
 	EClass getVideoDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId()
 	 * @see #getVideoDataResource()
 	 * @generated
@@ -2956,7 +2956,7 @@ public interface DataPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl <em>Audio Data Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl <em>Audio Data ResourceDriver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl
@@ -2966,7 +2966,7 @@ public interface DataPackage extends EPackage {
 		EClass AUDIO_DATA_RESOURCE = eINSTANCE.getAudioDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3042,7 +3042,7 @@ public interface DataPackage extends EPackage {
 		EReference DATA_CATEGORY__PARENT_CATEGORY_ID = eINSTANCE.getDataCategory_ParentCategoryId();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl <em>Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl <em>ResourceDriver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.DataResourceImpl
@@ -3052,7 +3052,7 @@ public interface DataPackage extends EPackage {
 		EClass DATA_RESOURCE = eINSTANCE.getDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3092,7 +3092,7 @@ public interface DataPackage extends EPackage {
 		EReference DATA_RESOURCE__DATA_CATEGORY_ID = eINSTANCE.getDataResource_DataCategoryId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3100,7 +3100,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE__DATA_RESOURCE_NAME = eINSTANCE.getDataResource_DataResourceName();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Type Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3204,7 +3204,7 @@ public interface DataPackage extends EPackage {
 		EReference DATA_RESOURCE__SURVEY_RESPONSE_ID = eINSTANCE.getDataResource_SurveyResponseId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Attributes</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3212,7 +3212,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES = eINSTANCE.getDataResource_DataResourceAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Meta Datas</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Meta Datas</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3220,7 +3220,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE__DATA_RESOURCE_META_DATAS = eINSTANCE.getDataResource_DataResourceMetaDatas();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Purposes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Purposes</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3236,7 +3236,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES = eINSTANCE.getDataResource_ProductFeatureDataResources();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl <em>Resource Attribute</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl <em>ResourceDriver Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl
@@ -3246,7 +3246,7 @@ public interface DataPackage extends EPackage {
 		EClass DATA_RESOURCE_ATTRIBUTE = eINSTANCE.getDataResourceAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3278,7 +3278,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE = eINSTANCE.getDataResourceAttribute_AttrValue();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl <em>Resource Meta Data</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl <em>ResourceDriver Meta Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl
@@ -3288,7 +3288,7 @@ public interface DataPackage extends EPackage {
 		EClass DATA_RESOURCE_META_DATA = eINSTANCE.getDataResourceMetaData();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3320,7 +3320,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE_META_DATA__META_DATA_VALUE = eINSTANCE.getDataResourceMetaData_MetaDataValue();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl <em>Resource Purpose</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl <em>ResourceDriver Purpose</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl
@@ -3330,7 +3330,7 @@ public interface DataPackage extends EPackage {
 		EClass DATA_RESOURCE_PURPOSE = eINSTANCE.getDataResourcePurpose();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3346,7 +3346,7 @@ public interface DataPackage extends EPackage {
 		EReference DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID = eINSTANCE.getDataResourcePurpose_ContentPurposeTypeId();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl <em>Resource Role</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl <em>ResourceDriver Role</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl
@@ -3356,7 +3356,7 @@ public interface DataPackage extends EPackage {
 		EClass DATA_RESOURCE_ROLE = eINSTANCE.getDataResourceRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3396,7 +3396,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE_ROLE__THRU_DATE = eINSTANCE.getDataResourceRole_ThruDate();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl <em>Resource Type</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl <em>ResourceDriver Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl
@@ -3406,7 +3406,7 @@ public interface DataPackage extends EPackage {
 		EClass DATA_RESOURCE_TYPE = eINSTANCE.getDataResourceType();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Type Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3438,7 +3438,7 @@ public interface DataPackage extends EPackage {
 		EReference DATA_RESOURCE_TYPE__PARENT_TYPE_ID = eINSTANCE.getDataResourceType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Type Attrs</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3446,7 +3446,7 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS = eINSTANCE.getDataResourceType_DataResourceTypeAttrs();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl <em>Resource Type Attr</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl <em>ResourceDriver Type Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl
@@ -3456,7 +3456,7 @@ public interface DataPackage extends EPackage {
 		EClass DATA_RESOURCE_TYPE_ATTR = eINSTANCE.getDataResourceTypeAttr();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Type Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3558,7 +3558,7 @@ public interface DataPackage extends EPackage {
 		EReference FILE_EXTENSION__MIME_TYPE_ID = eINSTANCE.getFileExtension_MimeTypeId();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl <em>Image Data Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl <em>Image Data ResourceDriver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl
@@ -3568,7 +3568,7 @@ public interface DataPackage extends EPackage {
 		EClass IMAGE_DATA_RESOURCE = eINSTANCE.getImageDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3662,7 +3662,7 @@ public interface DataPackage extends EPackage {
 		EAttribute MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION = eINSTANCE.getMimeTypeHtmlTemplate_TemplateLocation();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl <em>Other Data Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl <em>Other Data ResourceDriver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl
@@ -3672,7 +3672,7 @@ public interface DataPackage extends EPackage {
 		EClass OTHER_DATA_RESOURCE = eINSTANCE.getOtherDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3680,7 +3680,7 @@ public interface DataPackage extends EPackage {
 		EReference OTHER_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getOtherDataResource_DataResourceId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Content</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Content</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3688,7 +3688,7 @@ public interface DataPackage extends EPackage {
 		EAttribute OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT = eINSTANCE.getOtherDataResource_DataResourceContent();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl <em>Video Data Resource</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl <em>Video Data ResourceDriver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl
@@ -3698,7 +3698,7 @@ public interface DataPackage extends EPackage {
 		EClass VIDEO_DATA_RESOURCE = eINSTANCE.getVideoDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

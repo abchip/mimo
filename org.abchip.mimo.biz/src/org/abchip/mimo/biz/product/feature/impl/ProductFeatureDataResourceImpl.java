@@ -18,13 +18,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Product Feature Data Resource</b></em>'.
+ * An implementation of the model object '<em><b>Product Feature Data ResourceDriver</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
@@ -37,7 +37,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()

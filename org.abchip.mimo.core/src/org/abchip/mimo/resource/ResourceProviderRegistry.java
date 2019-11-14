@@ -11,7 +11,7 @@ import org.abchip.mimo.context.Registry;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Resource Provider Registry</b></em>'.
+ * A representation of the model object '<em><b>ResourceDriver Provider Registry</b></em>'.
  * <!-- end-user-doc -->
  *
  *

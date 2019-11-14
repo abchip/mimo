@@ -90,10 +90,10 @@ public interface FeatureFactory extends EFactory {
 	ProductFeatureCategoryAppl createProductFeatureCategoryAppl();
 
 	/**
-	 * Returns a new object of class '<em>Product Feature Data Resource</em>'.
+	 * Returns a new object of class '<em>Product Feature Data ResourceDriver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Product Feature Data Resource</em>'.
+	 * @return a new object of class '<em>Product Feature Data ResourceDriver</em>'.
 	 * @generated
 	 */
 	ProductFeatureDataResource createProductFeatureDataResource();

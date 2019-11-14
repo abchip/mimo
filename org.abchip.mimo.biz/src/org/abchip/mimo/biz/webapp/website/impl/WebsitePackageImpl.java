@@ -75,7 +75,6 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
-import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -337,8 +336,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.content.website.WebsitePackage.eNS_URI);
 		org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl theWebsitePackage_1 = (org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl ? registeredPackage : org.abchip.mimo.biz.content.website.WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -492,7 +489,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage_1.createPackageContents();
-		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -587,7 +583,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage_1.initializePackageContents();
-		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();

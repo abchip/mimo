@@ -19,7 +19,7 @@ import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.toolbar.Toolbar;
@@ -43,10 +43,10 @@ public class LookupToolbarServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Toolbar toolbar = resourceManager.getEntityReader(contextProvider, Toolbar.class, Resource.TENANT_MASTER).lookup(frameName);
+		Toolbar toolbar = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceDriver.TENANT_MASTER).lookup(frameName);
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
-			Toolbar toolbarAko = resourceManager.getEntityReader(contextProvider, Toolbar.class, Resource.TENANT_MASTER).lookup(ako.getName());
+			Toolbar toolbarAko = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceDriver.TENANT_MASTER).lookup(ako.getName());
 			if (toolbarAko == null)
 				continue;
 

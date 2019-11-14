@@ -23,13 +23,14 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
+import org.abchip.mimo.ui.schema.SchemaFactory;
 import org.abchip.mimo.util.Lists;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -53,10 +54,10 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, Resource.TENANT_MASTER).lookup(name);
+		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, ResourceDriver.TENANT_MASTER).lookup(name);
 
 		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
-			schema = frameManager.createEntity(Schema.class);
+			schema = SchemaFactory.eINSTANCE.createSchema();
 			schema.setName("prototype");
 
 			SchemaColumn currentColumn = null;
@@ -103,7 +104,7 @@ public class LookupSchemaServlet extends BaseServlet {
 	}
 
 	private SchemaColumn buildColumn(Slot slot) {
-		SchemaColumn column = frameManager.createEntity(SchemaColumn.class);
+		SchemaColumn column = SchemaFactory.eINSTANCE.createSchemaColumn();
 		column.setId(slot.getName());
 		column.setHeader(slot.getText());
 		column.setAdjust(true);
@@ -142,7 +143,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, Resource.TENANT_MASTER);
+		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceDriver.TENANT_MASTER);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

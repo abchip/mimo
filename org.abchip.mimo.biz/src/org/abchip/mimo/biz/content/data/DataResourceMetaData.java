@@ -12,7 +12,7 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Data Resource Meta Data</b></em>'.
+ * A representation of the model object '<em><b>Data ResourceDriver Meta Data</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -20,7 +20,7 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataValue <em>Meta Data Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
@@ -31,14 +31,14 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
  */
 public interface DataResourceMetaData extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Data Resource Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data ResourceDriver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data ResourceDriver Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Id</em>' reference.
+	 * @return the value of the '<em>Data ResourceDriver Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_DataResourceId()
 	 * @model keys="dataResourceId"
@@ -47,10 +47,10 @@ public interface DataResourceMetaData extends BizEntity {
 	DataResource getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data Resource Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data ResourceDriver Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Id</em>' reference.
+	 * @param value the new value of the '<em>Data ResourceDriver Id</em>' reference.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */

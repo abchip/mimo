@@ -1167,7 +1167,7 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT__GL_ACCOUNT_CLASS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Gl Resource Type Id</b></em>' reference.
+	 * The feature id for the '<em><b>Gl ResourceDriver Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2876,7 +2876,7 @@ public interface LedgerPackage extends EPackage {
 	int GL_RECONCILIATION_ENTRY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl <em>Gl Resource Type</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl <em>Gl ResourceDriver Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl
@@ -2922,7 +2922,7 @@ public interface LedgerPackage extends EPackage {
 	int GL_RESOURCE_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Gl Resource Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Gl ResourceDriver Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2940,7 +2940,7 @@ public interface LedgerPackage extends EPackage {
 	int GL_RESOURCE_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Gl Resource Type</em>' class.
+	 * The number of structural features of the '<em>Gl ResourceDriver Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4831,10 +4831,10 @@ public interface LedgerPackage extends EPackage {
 	EReference getGlAccount_GlAccountTypeId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl ResourceDriver Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Gl Resource Type Id</em>'.
+	 * @return the meta object for the reference '<em>Gl ResourceDriver Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId()
 	 * @see #getGlAccount()
 	 * @generated
@@ -5914,20 +5914,20 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getGlReconciliationEntry_ReconciledAmount();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlResourceType <em>Gl Resource Type</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlResourceType <em>Gl ResourceDriver Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Gl Resource Type</em>'.
+	 * @return the meta object for class '<em>Gl ResourceDriver Type</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.GlResourceType
 	 * @generated
 	 */
 	EClass getGlResourceType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.ledger.GlResourceType#getGlResourceTypeId <em>Gl Resource Type Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.ledger.GlResourceType#getGlResourceTypeId <em>Gl ResourceDriver Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Gl Resource Type Id</em>'.
+	 * @return the meta object for the attribute '<em>Gl ResourceDriver Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.GlResourceType#getGlResourceTypeId()
 	 * @see #getGlResourceType()
 	 * @generated
@@ -7358,7 +7358,7 @@ public interface LedgerPackage extends EPackage {
 		EReference GL_ACCOUNT__GL_ACCOUNT_TYPE_ID = eINSTANCE.getGlAccount_GlAccountTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Resource Type Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Gl ResourceDriver Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -8192,7 +8192,7 @@ public interface LedgerPackage extends EPackage {
 		EAttribute GL_RECONCILIATION_ENTRY__RECONCILED_AMOUNT = eINSTANCE.getGlReconciliationEntry_ReconciledAmount();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl <em>Gl Resource Type</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl <em>Gl ResourceDriver Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl
@@ -8202,7 +8202,7 @@ public interface LedgerPackage extends EPackage {
 		EClass GL_RESOURCE_TYPE = eINSTANCE.getGlResourceType();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Resource Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Gl ResourceDriver Type Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

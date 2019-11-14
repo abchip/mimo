@@ -26,8 +26,8 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 
 import org.abchip.mimo.net.impl.NetPackageImpl;
-import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.ResourceDriverConfig;
 import org.abchip.mimo.resource.ResourceEvent;
 import org.abchip.mimo.resource.ResourceEventType;
 import org.abchip.mimo.resource.ResourceFactory;
@@ -67,14 +67,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass resourceEClass = null;
+	private EClass resourceDriverEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass resourceConfigEClass = null;
+	private EClass resourceDriverConfigEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,8 +239,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EClass getResource() {
-		return resourceEClass;
+	public EClass getResourceDriver() {
+		return resourceDriverEClass;
 	}
 
 	/**
@@ -249,8 +249,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getResource_ResourceConfig() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(0);
+	public EReference getResourceDriver_ResourceConfig() {
+		return (EReference)resourceDriverEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -259,8 +259,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EClass getResourceConfig() {
-		return resourceConfigEClass;
+	public EClass getResourceDriverConfig() {
+		return resourceDriverConfigEClass;
 	}
 
 	/**
@@ -269,8 +269,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResourceConfig_LockSupport() {
-		return (EAttribute)resourceConfigEClass.getEStructuralFeatures().get(0);
+	public EAttribute getResourceDriverConfig_LockSupport() {
+		return (EAttribute)resourceDriverConfigEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -442,11 +442,11 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		isCreated = true;
 
 		// Create classes and their features
-		resourceEClass = createEClass(RESOURCE);
-		createEReference(resourceEClass, RESOURCE__RESOURCE_CONFIG);
+		resourceDriverEClass = createEClass(RESOURCE_DRIVER);
+		createEReference(resourceDriverEClass, RESOURCE_DRIVER__RESOURCE_CONFIG);
 
-		resourceConfigEClass = createEClass(RESOURCE_CONFIG);
-		createEAttribute(resourceConfigEClass, RESOURCE_CONFIG__LOCK_SUPPORT);
+		resourceDriverConfigEClass = createEClass(RESOURCE_DRIVER_CONFIG);
+		createEAttribute(resourceDriverConfigEClass, RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT);
 
 		resourceEventEClass = createEClass(RESOURCE_EVENT);
 
@@ -503,7 +503,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
 		// Create type parameters
-		ETypeParameter resourceEClass_E = addETypeParameter(resourceEClass, "E");
+		ETypeParameter resourceDriverEClass_E = addETypeParameter(resourceDriverEClass, "E");
 		ETypeParameter resourceEventEClass_E = addETypeParameter(resourceEventEClass, "E");
 		ETypeParameter resourceListenerEClass_E = addETypeParameter(resourceListenerEClass, "E");
 		ETypeParameter resourceNotifierEClass_E = addETypeParameter(resourceNotifierEClass, "E");
@@ -513,7 +513,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		// Set bounds for type parameters
 		EGenericType g1 = createEGenericType(theEntityPackage.getEntityNameable());
-		resourceEClass_E.getEBounds().add(g1);
+		resourceDriverEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		resourceEventEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
@@ -528,8 +528,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		resourceWriterEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		resourceEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		resourceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		resourceDriverEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		resourceDriverConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getResourceProvider());
 		g1.getETypeArguments().add(g2);
@@ -540,41 +540,41 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		resourceWriterEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResource_ResourceConfig(), this.getResourceConfig(), null, "resourceConfig", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(resourceDriverEClass, ResourceDriver.class, "ResourceDriver", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResourceDriver_ResourceConfig(), this.getResourceDriverConfig(), null, "resourceConfig", null, 1, 1, ResourceDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(resourceEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceEClass_E);
+		EOperation op = addEOperation(resourceDriverEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceDriverEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(resourceEClass, null, "delete", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceEClass_E);
+		op = addEOperation(resourceDriverEClass, null, "delete", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceDriverEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(resourceEClass, ecorePackage.getEString(), "nextSequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(resourceDriverEClass, ecorePackage.getEString(), "nextSequence", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(resourceEClass, null, "read", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(resourceDriverEClass, null, "read", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceEClass_E);
+		g1 = createEGenericType(resourceDriverEClass_E);
 		initEOperation(op, g1);
 
-		op = addEOperation(resourceEClass, null, "read", 1, -1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(resourceDriverEClass, null, "read", 1, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceEClass_E);
+		g1 = createEGenericType(resourceDriverEClass_E);
 		initEOperation(op, g1);
 
-		op = addEOperation(resourceEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceEClass_E);
+		op = addEOperation(resourceDriverEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceDriverEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(resourceConfigEClass, ResourceConfig.class, "ResourceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResourceConfig_LockSupport(), ecorePackage.getEBoolean(), "lockSupport", null, 1, 1, ResourceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(resourceDriverConfigEClass, ResourceDriverConfig.class, "ResourceDriverConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResourceDriverConfig_LockSupport(), ecorePackage.getEBoolean(), "lockSupport", null, 1, 1, ResourceDriverConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEventEClass, ResourceEvent.class, "ResourceEvent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -923,7 +923,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getResource());
+		g1 = createEGenericType(this.getResourceDriver());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
@@ -937,7 +937,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getResource());
+		g1 = createEGenericType(this.getResourceDriver());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
@@ -948,7 +948,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getResource());
+		g1 = createEGenericType(this.getResourceDriver());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
@@ -963,7 +963,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getResource());
+		g1 = createEGenericType(this.getResourceDriver());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
@@ -978,7 +978,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getResource());
+		g1 = createEGenericType(this.getResourceDriver());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
@@ -990,7 +990,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getResource());
+		g1 = createEGenericType(this.getResourceDriver());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);

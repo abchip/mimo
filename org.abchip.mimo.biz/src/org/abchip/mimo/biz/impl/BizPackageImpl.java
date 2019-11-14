@@ -80,14 +80,12 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
-import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
-import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -386,8 +384,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -542,7 +538,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
-		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -637,7 +632,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
-		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -1065,7 +1059,13 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		PreferencePackage thePreferencePackage = (PreferencePackage)EPackage.Registry.INSTANCE.getEPackage(PreferencePackage.eNS_URI);
 		SurveyPackage theSurveyPackage = (SurveyPackage)EPackage.Registry.INSTANCE.getEPackage(SurveyPackage.eNS_URI);
 		WebsitePackage theWebsitePackage = (WebsitePackage)EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
-		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		AuditPackage theAuditPackage = (AuditPackage)EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
+		CryptoPackage theCryptoPackage = (CryptoPackage)EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
+		GroupPackage theGroupPackage = (GroupPackage)EPackage.Registry.INSTANCE.getEPackage(GroupPackage.eNS_URI);
+		SequencePackage theSequencePackage = (SequencePackage)EPackage.Registry.INSTANCE.getEPackage(SequencePackage.eNS_URI);
+		SynchronizationPackage theSynchronizationPackage = (SynchronizationPackage)EPackage.Registry.INSTANCE.getEPackage(SynchronizationPackage.eNS_URI);
+		TenantPackage theTenantPackage = (TenantPackage)EPackage.Registry.INSTANCE.getEPackage(TenantPackage.eNS_URI);
+		TestPackage theTestPackage = (TestPackage)EPackage.Registry.INSTANCE.getEPackage(TestPackage.eNS_URI);
 		AbilityPackage theAbilityPackage = (AbilityPackage)EPackage.Registry.INSTANCE.getEPackage(AbilityPackage.eNS_URI);
 		EmploymentPackage theEmploymentPackage = (EmploymentPackage)EPackage.Registry.INSTANCE.getEPackage(EmploymentPackage.eNS_URI);
 		PositionPackage thePositionPackage = (PositionPackage)EPackage.Registry.INSTANCE.getEPackage(PositionPackage.eNS_URI);
@@ -1119,7 +1119,7 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		org.abchip.mimo.biz.webapp.website.WebsitePackage theWebsitePackage_1 = (org.abchip.mimo.biz.webapp.website.WebsitePackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.webapp.website.WebsitePackage.eNS_URI);
 		TimesheetPackage theTimesheetPackage = (TimesheetPackage)EPackage.Registry.INSTANCE.getEPackage(TimesheetPackage.eNS_URI);
 		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
-		org.abchip.mimo.entity.EntityPackage theEntityPackage_1 = (org.abchip.mimo.entity.EntityPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.entity.EntityPackage.eNS_URI);
+		org.abchip.mimo.entity.EntityPackage theEntityPackage = (org.abchip.mimo.entity.EntityPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.entity.EntityPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theBudgetPackage);
@@ -1153,7 +1153,13 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		getESubpackages().add(thePreferencePackage);
 		getESubpackages().add(theSurveyPackage);
 		getESubpackages().add(theWebsitePackage);
-		getESubpackages().add(theEntityPackage);
+		getESubpackages().add(theAuditPackage);
+		getESubpackages().add(theCryptoPackage);
+		getESubpackages().add(theGroupPackage);
+		getESubpackages().add(theSequencePackage);
+		getESubpackages().add(theSynchronizationPackage);
+		getESubpackages().add(theTenantPackage);
+		getESubpackages().add(theTestPackage);
 		getESubpackages().add(theAbilityPackage);
 		getESubpackages().add(theEmploymentPackage);
 		getESubpackages().add(thePositionPackage);
@@ -1223,23 +1229,23 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizEntityTypeEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		bizEntityEClass.getESuperTypes().add(theEntityPackage_1.getEntityNameable());
-		bizEntityEClass.getESuperTypes().add(theEntityPackage_1.getEntityInfo());
+		bizEntityEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		bizEntityEClass.getESuperTypes().add(theEntityPackage.getEntityInfo());
 		bizEntityNoteEClass.getESuperTypes().add(this.getBizEntity());
 		bizEntityNoteDataEClass.getESuperTypes().add(this.getBizEntity());
-		g1 = createEGenericType(theEntityPackage_1.getEntityTyped());
+		g1 = createEGenericType(theEntityPackage.getEntityTyped());
 		g2 = createEGenericType(bizEntityTypedEClass_T);
 		g1.getETypeArguments().add(g2);
 		bizEntityTypedEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getBizEntity());
 		bizEntityTypedEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theEntityPackage_1.getEntityType());
+		g1 = createEGenericType(theEntityPackage.getEntityType());
 		g2 = createEGenericType(bizEntityTypeEClass_E);
 		g1.getETypeArguments().add(g2);
 		bizEntityTypeEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getBizEntity());
 		bizEntityTypeEClass.getEGenericSuperTypes().add(g1);
-		bizProviderConfigEClass.getESuperTypes().add(theEntityPackage_1.getEntity());
+		bizProviderConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		bizProviderUserEClass.getESuperTypes().add(this.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters

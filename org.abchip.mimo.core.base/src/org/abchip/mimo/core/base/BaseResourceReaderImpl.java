@@ -14,16 +14,16 @@ import java.util.List;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.eclipse.emf.ecore.InternalEObject;
 
 public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceReaderImpl<E> {
 
 	protected MimoResourceImpl internal = null;
-	protected Resource<E> resource = null;
+	protected ResourceDriver<E> resource = null;
 
-	public BaseResourceReaderImpl(MimoResourceImpl internal, Resource<E> resource) {
+	public BaseResourceReaderImpl(MimoResourceImpl internal, ResourceDriver<E> resource) {
 		this.internal = internal;
 		this.resource = resource;
 	}

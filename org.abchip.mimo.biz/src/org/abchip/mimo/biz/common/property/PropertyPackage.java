@@ -107,7 +107,7 @@ public interface PropertyPackage extends EPackage {
 	int SYSTEM_PROPERTY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>System Resource Id</b></em>' attribute.
+	 * The feature id for the '<em><b>System ResourceDriver Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -163,10 +163,10 @@ public interface PropertyPackage extends EPackage {
 	EClass getSystemProperty();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System Resource Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System ResourceDriver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>System Resource Id</em>'.
+	 * @return the meta object for the attribute '<em>System ResourceDriver Id</em>'.
 	 * @see org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId()
 	 * @see #getSystemProperty()
 	 * @generated
@@ -239,7 +239,7 @@ public interface PropertyPackage extends EPackage {
 		EClass SYSTEM_PROPERTY = eINSTANCE.getSystemProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>System Resource Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>System ResourceDriver Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

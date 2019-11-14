@@ -64,7 +64,7 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ResourcePackage.RESOURCE_CONFIG: return (EObject)createResourceConfig();
+			case ResourcePackage.RESOURCE_DRIVER_CONFIG: return (EObject)createResourceDriverConfig();
 			case ResourcePackage.RESOURCE_NOTIFIER: return (EObject)createResourceNotifier();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -107,9 +107,9 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	 * @generated
 	 */
 	@Override
-	public ResourceConfig createResourceConfig() {
-		ResourceConfigImpl resourceConfig = new ResourceConfigImpl();
-		return resourceConfig;
+	public ResourceDriverConfig createResourceDriverConfig() {
+		ResourceDriverConfigImpl resourceDriverConfig = new ResourceDriverConfigImpl();
+		return resourceDriverConfig;
 	}
 
 	/**

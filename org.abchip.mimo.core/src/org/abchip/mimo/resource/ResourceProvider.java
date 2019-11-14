@@ -18,7 +18,7 @@ import org.abchip.mimo.entity.Frame;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Resource Provider</b></em>'. <!-- end-user-doc -->
+ * <em><b>ResourceDriver Provider</b></em>'. <!-- end-user-doc -->
  *
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResourceProvider()
@@ -72,7 +72,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextProviderRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Class<E> klass);
+	<E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextProviderRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Frame<E> frame);
+	<E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,7 +88,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextProviderRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame);
+	<E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +96,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextProviderRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Class<E> klass, String tenant);
+	<E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,7 +104,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextProviderRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Frame<E> frame, String tenant);
+	<E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,7 +112,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextProviderRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame, String tenant);
+	<E extends EntityNameable> ResourceDriver<E> getResource(ContextProvider contextProvider, String frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
