@@ -3,8 +3,9 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017, 2019 ABChip and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html"
     modelDirectory="/org.abchip.mimo.language/src" modelPluginID="org.abchip.mimo.language"
     modelName="MIMO Language" rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
-    complianceLevel="8.0" copyrightFields="false" language="EN" usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo ../../org.abchip.mimo.mining/model/mining.genmodel#//mining"
+    suppressEMFTypes="true" reflectiveDelegation="true" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Reflective" containmentProxies="true" complianceLevel="8.0"
+    copyrightFields="false" language="EN" usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo ../../org.abchip.mimo.mining/model/mining.genmodel#//mining"
     importOrganizing="true">
   <foreignModel>language.ecore</foreignModel>
   <genPackages prefix="Language" basePackage="org.abchip.mimo" disposableProviderFactory="true"
