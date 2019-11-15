@@ -198,7 +198,7 @@ public interface ContentPackage extends EPackage {
 	int CONTENT__CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -207,7 +207,7 @@ public interface ContentPackage extends EPackage {
 	int CONTENT__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Template Data ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>Template Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1615,7 +1615,7 @@ public interface ContentPackage extends EPackage {
 	int CONTENT_REVISION_ITEM__ITEM_CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Old Data ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>Old Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1624,7 +1624,7 @@ public interface ContentPackage extends EPackage {
 	int CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>New Data ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>New Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2324,10 +2324,10 @@ public interface ContentPackage extends EPackage {
 	EReference getContent_CustomMethodId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.content.Content#getDataResourceId()
 	 * @see #getContent()
 	 * @generated
@@ -2467,10 +2467,10 @@ public interface ContentPackage extends EPackage {
 	EReference getContent_StatusId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Template Data ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>Template Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId()
 	 * @see #getContent()
 	 * @generated
@@ -3301,10 +3301,10 @@ public interface ContentPackage extends EPackage {
 	EAttribute getContentRevisionItem_ItemContentId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getNewDataResourceId <em>New Data ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getNewDataResourceId <em>New Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>New Data ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>New Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.content.ContentRevisionItem#getNewDataResourceId()
 	 * @see #getContentRevisionItem()
 	 * @generated
@@ -3312,10 +3312,10 @@ public interface ContentPackage extends EPackage {
 	EReference getContentRevisionItem_NewDataResourceId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getOldDataResourceId <em>Old Data ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getOldDataResourceId <em>Old Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Old Data ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>Old Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.content.ContentRevisionItem#getOldDataResourceId()
 	 * @see #getContentRevisionItem()
 	 * @generated
@@ -3829,7 +3829,7 @@ public interface ContentPackage extends EPackage {
 		EReference CONTENT__CUSTOM_METHOD_ID = eINSTANCE.getContent_CustomMethodId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3933,7 +3933,7 @@ public interface ContentPackage extends EPackage {
 		EReference CONTENT__STATUS_ID = eINSTANCE.getContent_StatusId();
 
 		/**
-		 * The meta object literal for the '<em><b>Template Data ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Template Data Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4575,7 +4575,7 @@ public interface ContentPackage extends EPackage {
 		EAttribute CONTENT_REVISION_ITEM__ITEM_CONTENT_ID = eINSTANCE.getContentRevisionItem_ItemContentId();
 
 		/**
-		 * The meta object literal for the '<em><b>New Data ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>New Data Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4583,7 +4583,7 @@ public interface ContentPackage extends EPackage {
 		EReference CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID = eINSTANCE.getContentRevisionItem_NewDataResourceId();
 
 		/**
-		 * The meta object literal for the '<em><b>Old Data ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Old Data Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

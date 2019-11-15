@@ -28,7 +28,6 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
@@ -59,7 +58,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		this.frameReader = frameManager.getFrameReader(contextRoot);
 
 		this.resourceSet = new MimoResourceSetImpl(contextRoot);
-		this.resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl());
+		this.resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(resourceSet));
 	}
 
 	@Override
@@ -128,22 +127,22 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	}
 
 	@Override
-	public <E extends Entity> ResourceSerializer<E> createEntitySerializer(Class<E> klass, SerializationType serializationType) {
-		return createEntitySerializer(klass.getSimpleName(), serializationType);
+	public <E extends Entity> ResourceSerializer<E> createResourceSerializer(Class<E> klass, SerializationType serializationType) {
+		return createResourceSerializer(klass.getSimpleName(), serializationType);
 	}
 
 	@Override
-	public <E extends Entity> ResourceSerializer<E> createEntitySerializer(String frameName, SerializationType serializationType) {
+	public <E extends Entity> ResourceSerializer<E> createResourceSerializer(String frameName, SerializationType serializationType) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
 		if (frame == null)
 			return null;
 
-		return createEntitySerializer(frame, serializationType);
+		return createResourceSerializer(frame, serializationType);
 	}
 
 	@Override
-	public <E extends Entity> ResourceSerializer<E> createEntitySerializer(Frame<E> frame, SerializationType serializationType) {
+	public <E extends Entity> ResourceSerializer<E> createResourceSerializer(Frame<E> frame, SerializationType serializationType) {
 		return new BaseResourceSerializerImpl<E>(frame, serializationType);
 	}
 
@@ -201,49 +200,42 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass) {
-		return getEntityReader(contextProvider, klass.getSimpleName());
+	public final <E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Class<E> klass) {
+		return getResourceReader(contextProvider, klass.getSimpleName());
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceReader<E> getEntityReader(ContextProvider contextProvider, String frameName) {
+	public final <E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, String frameName) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		return getEntityReader(contextProvider, frame);
+		return getResourceReader(contextProvider, frame);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame) {
-		return getEntityReader(contextProvider, frame, null);
+	public final <E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Frame<E> frame) {
+		return getResourceReader(contextProvider, frame, null);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass, String tenant) {
-		return getEntityReader(contextProvider, klass.getSimpleName(), tenant);
+	public final <E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Class<E> klass, String tenant) {
+		return getResourceReader(contextProvider, klass.getSimpleName(), tenant);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceReader<E> getEntityReader(ContextProvider contextProvider, String frameName, String tenant) {
+	public final <E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, String frameName, String tenant) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		return getEntityReader(contextProvider, frame, tenant);
+		return getResourceReader(contextProvider, frame, tenant);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public final <E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Frame<E> frame, String tenant) {
 
 		this.checkAuthorization(contextProvider, tenant);
 
-		ResourceProvider resourceProvider = getProvider(frame);
-		if (resourceProvider == null)
-			return null;
+		MimoResourceImpl<E> internal = getInternalResource(contextProvider, frame, tenant);
 
-		ResourceDriver<E> resource = resourceProvider.getResource(contextProvider, frame, tenant);
-
-		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, null);
-		MimoResourceImpl internal = (MimoResourceImpl) getResourceSet(contextProvider).getResource(uri, true);
-
-		ResourceReader<E> resourceReader = new BaseResourceReaderImpl<E>(internal, resource);
+		ResourceReader<E> resourceReader = new BaseResourceReaderImpl<E>(internal);
 		if (resourceReader != null)
 			prepareListener(resourceReader, frame);
 
@@ -251,49 +243,42 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceWriter<E> getEntityWriter(ContextProvider contextProvider, Class<E> klass) {
-		return getEntityWriter(contextProvider, klass.getSimpleName());
+	public final <E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Class<E> klass) {
+		return getResourceWriter(contextProvider, klass.getSimpleName());
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceWriter<E> getEntityWriter(ContextProvider contextProvider, String frameName) {
+	public final <E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, String frameName) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		return getEntityWriter(contextProvider, frame);
+		return getResourceWriter(contextProvider, frame);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame) {
-		return getEntityWriter(contextProvider, frame, null);
+	public final <E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Frame<E> frame) {
+		return getResourceWriter(contextProvider, frame, null);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceWriter<E> getEntityWriter(ContextProvider contextProvider, Class<E> klass, String tenant) {
-		return getEntityWriter(contextProvider, klass.getSimpleName(), tenant);
+	public final <E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Class<E> klass, String tenant) {
+		return getResourceWriter(contextProvider, klass.getSimpleName(), tenant);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceWriter<E> getEntityWriter(ContextProvider contextProvider, String frameName, String tenant) {
+	public final <E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, String frameName, String tenant) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		return getEntityWriter(contextProvider, frame, tenant);
+		return getResourceWriter(contextProvider, frame, tenant);
 	}
 
 	@Override
-	public final <E extends EntityNameable> ResourceWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public final <E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Frame<E> frame, String tenant) {
 
 		this.checkAuthorization(contextProvider, tenant);
 
-		ResourceProvider resourceProvider = getProvider(frame);
-		if (resourceProvider == null)
-			return null;
+		MimoResourceImpl<E> internal = getInternalResource(contextProvider, frame, tenant);
 
-		ResourceDriver<E> resource = resourceProvider.getResource(contextProvider, frame, tenant);
-
-		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, null);
-		MimoResourceImpl internal = (MimoResourceImpl) getResourceSet(contextProvider).getResource(uri, true);
-
-		ResourceWriter<E> resourceWriter = new BaseResourceWriterImpl<E>(internal, resource);
+		ResourceWriter<E> resourceWriter = new BaseResourceWriterImpl<E>(internal);
 		if (resourceWriter != null)
 			prepareListener(resourceWriter, frame);
 
@@ -313,20 +298,27 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		// check frame authorization
 	}
 
+	private <E extends EntityNameable> MimoResourceImpl<E> getInternalResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+
+		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, null);
+		@SuppressWarnings("unchecked")
+		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) getResourceSet(contextProvider).getResource(uri, true);
+
+		return internal;
+	}
+
 	private ResourceSet getResourceSet(ContextProvider contextProvider) {
 
-		ResourceSet resourceSet = null;
-		if (contextProvider.getContextDescription().isTenant()) {
-			resourceSet = contextProvider.getContext().get(ResourceSet.class);
-			if (resourceSet == null) {
-				synchronized (contextProvider.getContext()) {
-					resourceSet = new MimoResourceSetImpl(contextProvider);
-					resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl());
-					contextProvider.getContext().set(ResourceSet.class, resourceSet);
-				}
+		if (contextProvider.getContext() instanceof ContextRoot)
+			return resourceSet;
+
+		ResourceSet resourceSet = contextProvider.getContext().get(ResourceSet.class);
+		if (resourceSet == null) {
+			synchronized (contextProvider.getContext()) {
+				resourceSet = new MimoResourceSetImpl(contextProvider);
+				resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(resourceSet));
+				contextProvider.getContext().set(ResourceSet.class, resourceSet);
 			}
-		} else {
-			return this.resourceSet;
 		}
 
 		return resourceSet;

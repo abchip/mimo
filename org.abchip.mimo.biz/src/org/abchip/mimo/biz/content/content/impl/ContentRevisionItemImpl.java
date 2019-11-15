@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.InternalEObject;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getItemContentId <em>Item Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getOldDataResourceId <em>Old Data ResourceDriver Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getNewDataResourceId <em>New Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getOldDataResourceId <em>Old Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getNewDataResourceId <em>New Data Resource Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,7 +100,7 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	protected String itemContentId = ITEM_CONTENT_ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOldDataResourceId() <em>Old Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getOldDataResourceId() <em>Old Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOldDataResourceId()
@@ -110,7 +110,7 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	protected DataResource oldDataResourceId;
 
 	/**
-	 * The cached value of the '{@link #getNewDataResourceId() <em>New Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getNewDataResourceId() <em>New Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewDataResourceId()

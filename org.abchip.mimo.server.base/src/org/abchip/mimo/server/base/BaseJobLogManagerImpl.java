@@ -86,7 +86,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 				jobLog.getEntries().add(entry);
 
 				// save
-				ResourceWriter<JobLog> jobLogWriter = resourceManager.getEntityWriter(job, JobLog.class);
+				ResourceWriter<JobLog> jobLogWriter = resourceManager.getResourceWriter(job, JobLog.class);
 				jobLogWriter.create(jobLog, true);
 			}
 		};
@@ -116,7 +116,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 		if (jobTarget == null)
 			return null;
 
-		ResourceReader<JobLog> jobLogReader = resourceManager.getEntityReader(jobCaller, JobLog.class);
+		ResourceReader<JobLog> jobLogReader = resourceManager.getResourceReader(jobCaller, JobLog.class);
 		JobLog jobLog = jobLogReader.lookup(jobTarget.getJobID());
 
 		return jobLog;

@@ -37,7 +37,7 @@ public class DeleteServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		try {
-			ResourceWriter<E> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName);
+			ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(contextProvider, frameName);
 			E entity = entityWriter.lookup(name, true);		
 			entityWriter.delete(entity);
 			

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemResourceId <em>System ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemResourceId <em>System Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemPropertyId <em>System Property Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemPropertyValue <em>System Property Value</em>}</li>
@@ -34,7 +34,7 @@ public class SystemPropertyImpl extends BizEntityImpl implements SystemProperty 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getSystemResourceId() <em>System ResourceDriver Id</em>}' attribute.
+	 * The default value of the '{@link #getSystemResourceId() <em>System Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSystemResourceId()
@@ -44,7 +44,7 @@ public class SystemPropertyImpl extends BizEntityImpl implements SystemProperty 
 	protected static final String SYSTEM_RESOURCE_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSystemResourceId() <em>System ResourceDriver Id</em>}' attribute.
+	 * The cached value of the '{@link #getSystemResourceId() <em>System Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSystemResourceId()

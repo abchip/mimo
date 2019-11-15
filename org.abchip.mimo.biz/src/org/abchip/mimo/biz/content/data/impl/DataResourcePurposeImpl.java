@@ -19,13 +19,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data ResourceDriver Purpose</b></em>'.
+ * An implementation of the model object '<em><b>Data Resource Purpose</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl#getContentPurposeTypeId <em>Content Purpose Type Id</em>}</li>
  * </ul>
  *
@@ -38,7 +38,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()

@@ -9,7 +9,7 @@ import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
 import org.abchip.mimo.tester.TestStopped;
 
-@Test(entity = "ResourceDriver")
+@Test(entity = "Resource")
 public class TestSerializer {
 	
 	@SuppressWarnings("unused")

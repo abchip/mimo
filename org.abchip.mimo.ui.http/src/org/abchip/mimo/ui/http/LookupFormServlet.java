@@ -23,7 +23,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -51,7 +51,7 @@ public class LookupFormServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Form form = resourceManager.getEntityReader(contextProvider, Form.class, ResourceDriver.TENANT_MASTER).lookup(name);
+		Form form = resourceManager.getResourceReader(contextProvider, Form.class, Resource.TENANT_MASTER).lookup(name);
 
 		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			form = FormFactory.eINSTANCE.createForm();
@@ -97,7 +97,7 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Form> entitySerializer = resourceManager.createEntitySerializer(Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (form != null) {
 			completeForm(contextProvider, form);
 			entitySerializer.add(form);
@@ -163,7 +163,7 @@ public class LookupFormServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class);
+		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(contextProvider, UiFrameSetup.class);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

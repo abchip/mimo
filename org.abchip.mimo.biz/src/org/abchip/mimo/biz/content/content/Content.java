@@ -39,8 +39,8 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getLocaleString <em>Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getServiceName <em>Service Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentTypeId <em>Content Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getPrivilegeEnumId <em>Privilege Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCustomMethodId <em>Custom Method Id</em>}</li>
@@ -300,14 +300,14 @@ public interface Content extends BizEntityTyped<ContentType> {
 	void setCustomMethodId(CustomMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Id</em>' reference.
+	 * @return the value of the '<em>Data Resource Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_DataResourceId()
 	 * @model keys="dataResourceId"
@@ -316,10 +316,10 @@ public interface Content extends BizEntityTyped<ContentType> {
 	DataResource getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data ResourceDriver Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data ResourceDriver Id</em>' reference.
+	 * @param value the new value of the '<em>Data Resource Id</em>' reference.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */
@@ -638,14 +638,14 @@ public interface Content extends BizEntityTyped<ContentType> {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Template Data ResourceDriver Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Template Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Template Data ResourceDriver Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Template Data Resource Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Template Data ResourceDriver Id</em>' reference.
+	 * @return the value of the '<em>Template Data Resource Id</em>' reference.
 	 * @see #setTemplateDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_TemplateDataResourceId()
 	 * @model keys="dataResourceId"
@@ -654,10 +654,10 @@ public interface Content extends BizEntityTyped<ContentType> {
 	DataResource getTemplateDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data ResourceDriver Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Template Data ResourceDriver Id</em>' reference.
+	 * @param value the new value of the '<em>Template Data Resource Id</em>' reference.
 	 * @see #getTemplateDataResourceId()
 	 * @generated
 	 */

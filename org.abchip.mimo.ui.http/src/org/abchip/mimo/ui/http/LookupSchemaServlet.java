@@ -23,7 +23,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -54,7 +54,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, ResourceDriver.TENANT_MASTER).lookup(name);
+		Schema schema = resourceManager.getResourceReader(contextProvider, Schema.class, Resource.TENANT_MASTER).lookup(name);
 
 		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			schema = SchemaFactory.eINSTANCE.createSchema();
@@ -95,7 +95,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Schema> entitySerializer = resourceManager.createEntitySerializer(Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Schema> entitySerializer = resourceManager.createResourceSerializer(Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (schema != null) {
 			completeSchema(contextProvider, schema);
 			entitySerializer.add(schema);
@@ -143,7 +143,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceDriver.TENANT_MASTER);
+		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(contextProvider, UiFrameSetup.class, Resource.TENANT_MASTER);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

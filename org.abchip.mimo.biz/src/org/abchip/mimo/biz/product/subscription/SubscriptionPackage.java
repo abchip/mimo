@@ -62,7 +62,7 @@ public interface SubscriptionPackage extends EPackage {
 	SubscriptionPackage eINSTANCE = org.abchip.mimo.biz.product.subscription.impl.SubscriptionPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl <em>Product Subscription ResourceDriver</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl <em>Product Subscription Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl
@@ -216,7 +216,7 @@ public interface SubscriptionPackage extends EPackage {
 	int PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Subscription ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>Subscription Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -279,7 +279,7 @@ public interface SubscriptionPackage extends EPackage {
 	int PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
-	 * The number of structural features of the '<em>Product Subscription ResourceDriver</em>' class.
+	 * The number of structural features of the '<em>Product Subscription Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -496,7 +496,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION__USE_TIME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>Subscription ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>Subscription Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1004,7 +1004,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION_FULFILLMENT_PIECE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl <em>ResourceDriver</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl <em>Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl
@@ -1050,7 +1050,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Subscription ResourceDriver Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Subscription Resource Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1077,7 +1077,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION_RESOURCE__SERVICE_NAME_ON_EXPIRY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>Parent Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1104,7 +1104,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION_RESOURCE__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of structural features of the '<em>ResourceDriver</em>' class.
+	 * The number of structural features of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1305,10 +1305,10 @@ public interface SubscriptionPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource <em>Product Subscription ResourceDriver</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource <em>Product Subscription Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Product Subscription ResourceDriver</em>'.
+	 * @return the meta object for class '<em>Product Subscription Resource</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource
 	 * @generated
 	 */
@@ -1326,10 +1326,10 @@ public interface SubscriptionPackage extends EPackage {
 	EReference getProductSubscriptionResource_ProductId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Subscription ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>Subscription Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getSubscriptionResourceId()
 	 * @see #getProductSubscriptionResource()
 	 * @generated
@@ -1853,10 +1853,10 @@ public interface SubscriptionPackage extends EPackage {
 	EReference getSubscription_RoleTypeId();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Subscription ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>Subscription Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId()
 	 * @see #getSubscription()
 	 * @generated
@@ -2113,20 +2113,20 @@ public interface SubscriptionPackage extends EPackage {
 	EReference getSubscriptionFulfillmentPiece_SubscriptionId();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource <em>ResourceDriver</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ResourceDriver</em>'.
+	 * @return the meta object for class '<em>Resource</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionResource
 	 * @generated
 	 */
 	EClass getSubscriptionResource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Subscription ResourceDriver Id</em>'.
+	 * @return the meta object for the attribute '<em>Subscription Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId()
 	 * @see #getSubscriptionResource()
 	 * @generated
@@ -2156,10 +2156,10 @@ public interface SubscriptionPackage extends EPackage {
 	EAttribute getSubscriptionResource_Description();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId()
 	 * @see #getSubscriptionResource()
 	 * @generated
@@ -2319,7 +2319,7 @@ public interface SubscriptionPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl <em>Product Subscription ResourceDriver</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl <em>Product Subscription Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl
@@ -2337,7 +2337,7 @@ public interface SubscriptionPackage extends EPackage {
 		EReference PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID = eINSTANCE.getProductSubscriptionResource_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscription ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Subscription Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2723,7 +2723,7 @@ public interface SubscriptionPackage extends EPackage {
 		EReference SUBSCRIPTION__ROLE_TYPE_ID = eINSTANCE.getSubscription_RoleTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscription ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Subscription Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2923,7 +2923,7 @@ public interface SubscriptionPackage extends EPackage {
 		EReference SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID = eINSTANCE.getSubscriptionFulfillmentPiece_SubscriptionId();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl <em>ResourceDriver</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl <em>Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl
@@ -2933,7 +2933,7 @@ public interface SubscriptionPackage extends EPackage {
 		EClass SUBSCRIPTION_RESOURCE = eINSTANCE.getSubscriptionResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscription ResourceDriver Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Subscription Resource Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2957,7 +2957,7 @@ public interface SubscriptionPackage extends EPackage {
 		EAttribute SUBSCRIPTION_RESOURCE__DESCRIPTION = eINSTANCE.getSubscriptionResource_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Parent Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

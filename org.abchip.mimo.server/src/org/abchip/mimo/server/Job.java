@@ -26,7 +26,7 @@ import org.abchip.mimo.util.DateFormat;
  * <ul>
  *   <li>{@link org.abchip.mimo.server.Job#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getCreationDate <em>Creation Date</em>}</li>
- *   <li>{@link org.abchip.mimo.server.Job#getCurrentResource <em>Current ResourceDriver</em>}</li>
+ *   <li>{@link org.abchip.mimo.server.Job#getCurrentResource <em>Current Resource</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getDateSeparator <em>Date Separator</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getDestroyDate <em>Destroy Date</em>}</li>
@@ -98,15 +98,15 @@ public interface Job extends EntityNameable, ContextProvider {
 	void setCreationDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Current ResourceDriver</b></em>' attribute.
+	 * Returns the value of the '<em><b>Current Resource</b></em>' attribute.
 	 * The default value is <code>"QGPL"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current ResourceDriver</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Current Resource</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current ResourceDriver</em>' attribute.
+	 * @return the value of the '<em>Current Resource</em>' attribute.
 	 * @see #setCurrentResource(String)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_CurrentResource()
 	 * @model default="QGPL"
@@ -115,10 +115,10 @@ public interface Job extends EntityNameable, ContextProvider {
 	String getCurrentResource();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.server.Job#getCurrentResource <em>Current ResourceDriver</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.server.Job#getCurrentResource <em>Current Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current ResourceDriver</em>' attribute.
+	 * @param value the new value of the '<em>Current Resource</em>' attribute.
 	 * @see #getCurrentResource()
 	 * @generated
 	 */

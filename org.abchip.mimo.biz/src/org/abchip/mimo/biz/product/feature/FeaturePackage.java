@@ -807,7 +807,7 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_CATEGORY_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl <em>Product Feature Data ResourceDriver</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl <em>Product Feature Data Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl
@@ -853,7 +853,7 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_DATA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data ResourceDriver Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -871,7 +871,7 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Product Feature Data ResourceDriver</em>' class.
+	 * The number of structural features of the '<em>Product Feature Data Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1844,20 +1844,20 @@ public interface FeaturePackage extends EPackage {
 	EAttribute getProductFeatureCategoryAppl_ThruDate();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.feature.ProductFeatureDataResource <em>Product Feature Data ResourceDriver</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.feature.ProductFeatureDataResource <em>Product Feature Data Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Product Feature Data ResourceDriver</em>'.
+	 * @return the meta object for class '<em>Product Feature Data Resource</em>'.
 	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureDataResource
 	 * @generated
 	 */
 	EClass getProductFeatureDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.feature.ProductFeatureDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.feature.ProductFeatureDataResource#getDataResourceId <em>Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data ResourceDriver Id</em>'.
+	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureDataResource#getDataResourceId()
 	 * @see #getProductFeatureDataResource()
 	 * @generated
@@ -2539,7 +2539,7 @@ public interface FeaturePackage extends EPackage {
 		EAttribute PRODUCT_FEATURE_CATEGORY_APPL__THRU_DATE = eINSTANCE.getProductFeatureCategoryAppl_ThruDate();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl <em>Product Feature Data ResourceDriver</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl <em>Product Feature Data Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl
@@ -2549,7 +2549,7 @@ public interface FeaturePackage extends EPackage {
 		EClass PRODUCT_FEATURE_DATA_RESOURCE = eINSTANCE.getProductFeatureDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data ResourceDriver Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

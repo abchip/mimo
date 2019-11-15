@@ -18,8 +18,8 @@ import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.resource.ResourceDriver;
-import org.abchip.mimo.resource.ResourceDriverConfig;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
@@ -31,12 +31,12 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	@Inject
 	private FrameManager frameManager;
 
-	private ResourceDriverConfig resourceConfig;
+	private ResourceConfig resourceConfig;
 
 	@PostConstruct
 	protected void init() {
 
-		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceDriverConfig();
+		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceConfig();
 		this.resourceConfig.setLockSupport(true);
 		this.resourceConfig.setOrderSupport(true);
 
@@ -54,17 +54,17 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityNameable> ResourceDriver<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
 
-		ResourceDriver<E> resource = null;
+		Resource<E> resource = null;
 
 		if (isFrame(frame)) {
-			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getFrames(frameManager));
+			resource = new EMFResourceImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getFrames(frameManager));
 		} else if (isEnum(frame)) {
-			resource = new EMFResourceDriverImpl<E>((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+			resource = new EMFResourceImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
 		}
-
-		resource.setResourceConfig(this.resourceConfig);
+		if (resource != null)
+			resource.setResourceConfig(this.resourceConfig);
 
 		return resource;
 	}

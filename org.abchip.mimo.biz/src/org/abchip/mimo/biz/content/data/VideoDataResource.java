@@ -11,7 +11,7 @@ import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Video Data ResourceDriver</b></em>'.
+ * A representation of the model object '<em><b>Video Data Resource</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -19,7 +19,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.VideoDataResource#getVideoData <em>Video Data</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data Resource Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getVideoDataResource()
@@ -28,14 +28,14 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface VideoDataResource extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Id</em>' reference.
+	 * @return the value of the '<em>Data Resource Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getVideoDataResource_DataResourceId()
 	 * @model keys="dataResourceId"
@@ -44,10 +44,10 @@ public interface VideoDataResource extends BizEntity {
 	DataResource getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data ResourceDriver Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data ResourceDriver Id</em>' reference.
+	 * @param value the new value of the '<em>Data Resource Id</em>' reference.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */

@@ -15,17 +15,17 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Subscription ResourceDriver</b></em>'.
+ * A representation of the model object '<em><b>Subscription Resource</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getServiceNameOnExpiry <em>Service Name On Expiry</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
@@ -158,14 +158,14 @@ public interface SubscriptionResource extends BizEntity {
 	List<String> subscriptions();
 
 	/**
-	 * Returns the value of the '<em><b>Parent ResourceDriver Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Parent Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parent ResourceDriver Id</em>' reference isn't clear,
+	 * If the meaning of the '<em>Parent Resource Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent ResourceDriver Id</em>' reference.
+	 * @return the value of the '<em>Parent Resource Id</em>' reference.
 	 * @see #setParentResourceId(SubscriptionResource)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_ParentResourceId()
 	 * @model keys="subscriptionResourceId"
@@ -174,24 +174,24 @@ public interface SubscriptionResource extends BizEntity {
 	SubscriptionResource getParentResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent ResourceDriver Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent ResourceDriver Id</em>' reference.
+	 * @param value the new value of the '<em>Parent Resource Id</em>' reference.
 	 * @see #getParentResourceId()
 	 * @generated
 	 */
 	void setParentResourceId(SubscriptionResource value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription ResourceDriver Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Subscription Resource Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Subscription ResourceDriver Id</em>' reference isn't clear,
+	 * If the meaning of the '<em>Subscription Resource Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription ResourceDriver Id</em>' attribute.
+	 * @return the value of the '<em>Subscription Resource Id</em>' attribute.
 	 * @see #setSubscriptionResourceId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_SubscriptionResourceId()
 	 * @model id="true" required="true"
@@ -201,10 +201,10 @@ public interface SubscriptionResource extends BizEntity {
 	String getSubscriptionResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscription ResourceDriver Id</em>' attribute.
+	 * @param value the new value of the '<em>Subscription Resource Id</em>' attribute.
 	 * @see #getSubscriptionResourceId()
 	 * @generated
 	 */

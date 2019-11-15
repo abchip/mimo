@@ -31,11 +31,11 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		String order = interpreter.nextArgument();
 		
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getEntityReader(contextRoot, Frame.class).lookup(frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getResourceReader(contextRoot, Frame.class).lookup(frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
-		for (E entity : resourceManager.getEntityReader(contextRoot, frame).find(null, null, order))
+		for (E entity : resourceManager.getResourceReader(contextRoot, frame).find(null, null, order))
 			System.out.println(entity);
 	}
 
@@ -43,13 +43,13 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getEntityReader(contextRoot, Frame.class).lookup(frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getResourceReader(contextRoot, Frame.class).lookup(frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
 		String entityName = interpreter.nextArgument();
 
-		E entity = resourceManager.getEntityReader(contextRoot, frame).lookup(entityName);
+		E entity = resourceManager.getResourceReader(contextRoot, frame).lookup(entityName);
 		System.out.println(entity);
 	}
 

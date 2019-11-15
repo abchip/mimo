@@ -84,7 +84,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 			if (lastNumber == 1000000)
 				lastNumber = 1;
 
-			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(jobKernel, org.abchip.mimo.server.System.class);
+			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getResourceWriter(jobKernel, org.abchip.mimo.server.System.class);
 			system.setLastJobNumber(lastNumber);
 			systemWriter.update(system);
 		}
@@ -115,7 +115,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 			jobKernel = createJob(system, JobType.KERNEL, principal, "KERNEL");
 
-			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(jobKernel, org.abchip.mimo.server.System.class);
+			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getResourceWriter(jobKernel, org.abchip.mimo.server.System.class);
 			org.abchip.mimo.server.System persistedSystem = systemWriter.lookup(system.getName());
 			if (persistedSystem != null) {
 				system.setLastJobNumber(persistedSystem.getLastJobNumber());

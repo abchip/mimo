@@ -18,18 +18,15 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceDriver;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.eclipse.emf.ecore.InternalEObject;
 
 public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceReaderImpl<E> {
 
-	protected MimoResourceImpl internal = null;
-	protected ResourceDriver<E> resource = null;
+	protected MimoResourceImpl<E> internal = null;
 
-	public BaseResourceReaderImpl(MimoResourceImpl internal, ResourceDriver<E> resource) {
+	public BaseResourceReaderImpl(MimoResourceImpl<E> internal) {
 		this.internal = internal;
-		this.resource = resource;
 	}
 
 	protected void setInternalResource(E entity) {
@@ -39,7 +36,7 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 
 	@Override
 	public Frame<E> getFrame() {
-		return this.resource.getFrame();
+		return this.internal.getResource().getFrame();
 	}
 
 	@Override
@@ -50,9 +47,9 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 	@Override
 	public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) {
 
-		List<E> entities = this.resource.read(filter, fields, order, limit, proxy);
+		List<E> entities = this.internal.getResource().read(filter, fields, order, limit, proxy);
 
-		if (this.resource.getResourceConfig().isOrderSupport() && order != null) {
+		if (this.internal.getResource().getResourceConfig().isOrderSupport() && order != null) {
 
 			String[] orders = order.split(",");
 			Collections.sort(entities, new Comparator<E>() {
@@ -124,7 +121,7 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 	@Override
 	public E lookup(String name, boolean proxy) {
 
-		E entity = this.resource.read(name, null, proxy);
+		E entity = this.internal.getResource().read(name, null, proxy);
 
 		if (entity != null && !proxy)
 			this.setInternalResource(entity);

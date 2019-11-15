@@ -12,8 +12,8 @@ import java.util.List;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.resource.ResourceDriver;
-import org.abchip.mimo.resource.ResourceDriverConfig;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -22,161 +22,157 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ResourceDriver</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Resource</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverImpl#getResourceConfig <em>Resource Config</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ResourceDriverImpl<E extends EntityNameable> extends EntityImpl implements ResourceDriver<E> {
+public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl implements Resource<E> {
 	/**
 	 * The cached value of the '{@link #getResourceConfig() <em>Resource Config</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getResourceConfig()
 	 * @generated
 	 * @ordered
 	 */
-	protected ResourceDriverConfig resourceConfig;
+	protected ResourceConfig resourceConfig;
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceDriverImpl() {
+	protected ResourceImpl() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ResourcePackage.Literals.RESOURCE_DRIVER;
+		return ResourcePackage.Literals.RESOURCE;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public ResourceDriverConfig getResourceConfig() {
+	public ResourceConfig getResourceConfig() {
 		if (resourceConfig != null && ((EObject)resourceConfig).eIsProxy()) {
 			InternalEObject oldResourceConfig = (InternalEObject)resourceConfig;
-			resourceConfig = (ResourceDriverConfig)eResolveProxy(oldResourceConfig);
+			resourceConfig = (ResourceConfig)eResolveProxy(oldResourceConfig);
 			if (resourceConfig != oldResourceConfig) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
 			}
 		}
 		return resourceConfig;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceDriverConfig basicGetResourceConfig() {
+	public ResourceConfig basicGetResourceConfig() {
 		return resourceConfig;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void setResourceConfig(ResourceDriverConfig newResourceConfig) {
-		ResourceDriverConfig oldResourceConfig = resourceConfig;
+	public void setResourceConfig(ResourceConfig newResourceConfig) {
+		ResourceConfig oldResourceConfig = resourceConfig;
 		resourceConfig = newResourceConfig;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract void create(E entity, boolean update);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract void delete(E entity);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public Frame<E> getFrame() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract Frame<E> getFrame();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract String getTenant();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract String nextSequence();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract E read(String name, String fields, boolean proxy);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract List<E> read(String filter, String fields, String order, int limit, boolean proxy);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract void update(E entity);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
+			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				if (resolve) return getResourceConfig();
 				return basicGetResourceConfig();
 		}
@@ -184,47 +180,44 @@ public abstract class ResourceDriverImpl<E extends EntityNameable> extends Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
-				setResourceConfig((ResourceDriverConfig)newValue);
+			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+				setResourceConfig((ResourceConfig)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
-				setResourceConfig((ResourceDriverConfig)null);
+			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+				setResourceConfig((ResourceConfig)null);
 				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER__RESOURCE_CONFIG:
+			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				return resourceConfig != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ResourceDriverImpl
+} // ResourceImpl

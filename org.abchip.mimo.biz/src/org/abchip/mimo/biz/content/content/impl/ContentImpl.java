@@ -49,8 +49,8 @@ import org.eclipse.emf.ecore.util.BasicInternalEList;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getLocaleString <em>Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getServiceName <em>Service Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentTypeId <em>Content Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getTemplateDataResourceId <em>Template Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getTemplateDataResourceId <em>Template Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getPrivilegeEnumId <em>Privilege Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
@@ -268,7 +268,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	protected ContentType contentTypeId;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()
@@ -278,7 +278,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	protected DataResource dataResourceId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateDataResourceId() <em>Template Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getTemplateDataResourceId() <em>Template Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTemplateDataResourceId()

@@ -67,7 +67,7 @@ public class GitHubRedirectServlet extends HttpServlet {
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
 
-		ResourceReader<EntityNameable> oauth2Reader = resourceManager.getEntityReader(contextProvider, "OAuth2GitHub");
+		ResourceReader<EntityNameable> oauth2Reader = resourceManager.getResourceReader(contextProvider, "OAuth2GitHub");
 		EntityNameable oauth2GitHub = oauth2Reader.first();
 
 		getDefaultProvider().logout(contextProvider);

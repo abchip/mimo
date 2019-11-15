@@ -9,7 +9,7 @@ package org.abchip.mimo.resource.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
-import org.abchip.mimo.resource.ResourceDriverConfig;
+import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,14 +26,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#isLockSupport <em>Lock Support</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#isOrderSupport <em>Order Support</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceDriverConfigImpl#getPageSize <em>Page Size</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceConfigImpl#isLockSupport <em>Lock Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceConfigImpl#isOrderSupport <em>Order Support</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceConfigImpl#getPageSize <em>Page Size</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriverConfig {
+public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	/**
 	 * 
 	 */
@@ -104,7 +104,7 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceDriverConfigImpl() {
+	protected ResourceConfigImpl() {
 		super();
 	}
 
@@ -115,7 +115,7 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ResourcePackage.Literals.RESOURCE_DRIVER_CONFIG;
+		return ResourcePackage.Literals.RESOURCE_CONFIG;
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		boolean oldLockSupport = lockSupport;
 		lockSupport = newLockSupport;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT, oldLockSupport, lockSupport));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT, oldLockSupport, lockSupport));
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		boolean oldOrderSupport = orderSupport;
 		orderSupport = newOrderSupport;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT, oldOrderSupport, orderSupport));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT, oldOrderSupport, orderSupport));
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		int oldPageSize = pageSize;
 		pageSize = newPageSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE, oldPageSize, pageSize));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE, oldPageSize, pageSize));
 	}
 
 	/**
@@ -195,11 +195,11 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
 				return isLockSupport();
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
 				return isOrderSupport();
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
 				return getPageSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -213,13 +213,13 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
 				setLockSupport((Boolean)newValue);
 				return;
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
 				setOrderSupport((Boolean)newValue);
 				return;
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
 				setPageSize((Integer)newValue);
 				return;
 		}
@@ -234,13 +234,13 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
 				setLockSupport(LOCK_SUPPORT_EDEFAULT);
 				return;
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
 				setOrderSupport(ORDER_SUPPORT_EDEFAULT);
 				return;
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
 				setPageSize(PAGE_SIZE_EDEFAULT);
 				return;
 		}
@@ -255,11 +255,11 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__LOCK_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
 				return lockSupport != LOCK_SUPPORT_EDEFAULT;
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__ORDER_SUPPORT:
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
 				return orderSupport != ORDER_SUPPORT_EDEFAULT;
-			case ResourcePackage.RESOURCE_DRIVER_CONFIG__PAGE_SIZE:
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
 				return pageSize != PAGE_SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -285,4 +285,4 @@ public class ResourceDriverConfigImpl extends EntityImpl implements ResourceDriv
 		return result.toString();
 	}
 
-} //ResourceDriverConfigImpl
+} //ResourceConfigImpl

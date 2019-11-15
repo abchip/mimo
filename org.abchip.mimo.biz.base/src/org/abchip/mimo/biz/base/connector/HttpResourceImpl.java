@@ -24,12 +24,12 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.impl.ResourceDriverImpl;
+import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.entity.InputStreamEntity;
 
-public class HttpResourceDriverImpl<E extends EntityNameable> extends ResourceDriverImpl<E> {
+public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
 
 	/**
 	 * 
@@ -42,16 +42,21 @@ public class HttpResourceDriverImpl<E extends EntityNameable> extends ResourceDr
 
 	private String tenant = null;
 
-	public HttpResourceDriverImpl(ContextProvider contextProvider, Frame<E> frame, String tenant, HttpConnector connector) {
+	public HttpResourceImpl(ContextProvider contextProvider, Frame<E> frame, String tenant, HttpConnector connector) {
 		this.logger = contextProvider.getContext().get(Logger.class);
 		this.connector = connector;
 
 		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		this.resourceSerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		this.resourceSerializer = resourceManager.createResourceSerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
 		this.tenant = tenant;
 	}
 
+	@Override
+	public String getTenant() {
+		return tenant;
+	}
+	
 	@Override
 	public Frame<E> getFrame() {
 		return this.resourceSerializer.getFrame();

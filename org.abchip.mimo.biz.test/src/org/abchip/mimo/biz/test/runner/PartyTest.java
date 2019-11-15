@@ -62,7 +62,7 @@ public class PartyTest {
 		Party party = PartyFactory.eINSTANCE.createParty();
 		testAsserter.assertNotNull("Frame Party creation", party);
 
-		ResourceReader<Party> partyReader = resourceManager.getEntityReader(contextProvider, Party.class);
+		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextProvider, Party.class);
 		testAsserter.assertNotNull("Party Reader", partyReader);
 		if (partyReader != null) {
 			Party partyTest = partyReader.lookup("party-test");
@@ -73,7 +73,7 @@ public class PartyTest {
 		}
 
 		// Person
-		ResourceReader<Person> personReader = resourceManager.getEntityReader(contextProvider, Person.class);
+		ResourceReader<Person> personReader = resourceManager.getResourceReader(contextProvider, Person.class);
 		testAsserter.assertNotNull("Person Reader", personReader);
 		if (personReader != null) {
 			Person personTest = personReader.lookup("party-test");
@@ -84,7 +84,7 @@ public class PartyTest {
 		// Write Person
 		String partyId = "party-test-01";
 
-		ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextProvider, Person.class);
+		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(contextProvider, Person.class);
 		testAsserter.assertNotNull("Person Writer", personWriter);
 		if (personWriter != null) {
 			Person person = PartyFactory.eINSTANCE.createPerson();
@@ -102,10 +102,10 @@ public class PartyTest {
 		}
 
 		// Write PartyGroup
-		ResourceReader<PartyGroup> groupReader = resourceManager.getEntityReader(contextProvider, PartyGroup.class);
+		ResourceReader<PartyGroup> groupReader = resourceManager.getResourceReader(contextProvider, PartyGroup.class);
 		testAsserter.assertNotNull("Party Group Reader", groupReader);
 
-		ResourceWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextProvider, PartyGroup.class);
+		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(contextProvider, PartyGroup.class);
 		testAsserter.assertNotNull("Party Group Writer", groupWriter);
 
 		if (groupWriter != null) {

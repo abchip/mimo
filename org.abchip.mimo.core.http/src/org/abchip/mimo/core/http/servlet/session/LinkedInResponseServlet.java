@@ -93,7 +93,7 @@ public class LinkedInResponseServlet extends HttpServlet {
 
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2LinkedIn";
-		ResourceReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
+		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(contextProvider, entityName);
 		EntityNameable oauth2LinkedIn = oauth2Reader.first();
 
 		this.getDefaultProvider().logout(contextProvider);

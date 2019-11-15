@@ -56,9 +56,9 @@ public class ImportPeopleServlet extends BaseServlet {
 
 		try {
 
-			ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextProvider, Person.class);
-			ResourceWriter<PartyRole> partyRoleWriter = resourceManager.getEntityWriter(contextProvider, PartyRole.class);
-			ResourceWriter<PartyTaxAuthInfo> partyTaxAuthInfoWriter = resourceManager.getEntityWriter(contextProvider, PartyTaxAuthInfo.class);
+			ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(contextProvider, Person.class);
+			ResourceWriter<PartyRole> partyRoleWriter = resourceManager.getResourceWriter(contextProvider, PartyRole.class);
+			ResourceWriter<PartyTaxAuthInfo> partyTaxAuthInfoWriter = resourceManager.getResourceWriter(contextProvider, PartyTaxAuthInfo.class);
 
 			for (Part filePart : parseRequest(request).values()) {
 				if (!filePart.getName().equals("upload"))

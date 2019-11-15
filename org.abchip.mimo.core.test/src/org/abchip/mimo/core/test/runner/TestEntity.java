@@ -36,7 +36,7 @@ public class TestEntity {
 
 	private void testRead() {
 
-		ResourceReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class);
+		ResourceReader<ObjectA> entityReader = resourceManager.getResourceReader(testRunner, ObjectA.class);
 
 		EntityIterator<ObjectA> entityIterator = entityReader.find();
 		while (entityIterator.hasNext()) {
@@ -47,7 +47,7 @@ public class TestEntity {
 
 	private void testWrite() {
 		try {
-			ResourceWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
+			ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner, ObjectA.class);
 
 			ObjectA objectA = TestFactory.eINSTANCE.createObjectA();
 			objectA.setName("PIPPO");
@@ -71,13 +71,13 @@ public class TestEntity {
 
 			entityWriter.create(objectA);
 		} catch (Exception exc) {
-			asserter.fail("ResourceDriver writing failed: " + exc.getMessage());
+			asserter.fail("Resource writing failed: " + exc.getMessage());
 		}
 	}
 
 	private void testDelete() {
 
-		ResourceWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
+		ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner, ObjectA.class);
 
 		EntityIterator<ObjectA> objectIterator = entityWriter.find();
 		while (objectIterator.hasNext()) {

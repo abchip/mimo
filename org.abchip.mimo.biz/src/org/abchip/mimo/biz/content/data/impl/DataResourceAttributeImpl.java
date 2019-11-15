@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data ResourceDriver Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Data Resource Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,7 +99,7 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()

@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -42,7 +42,7 @@ public class LookupMenuServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		Menu menu = null;
-		ResourceReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, ResourceDriver.TENANT_MASTER);
+		ResourceReader<Menu> menuReader = resourceManager.getResourceReader(contextProvider, Menu.class, Resource.TENANT_MASTER);
 
 		if (name == null || name.isEmpty()) {
 			menu = MenuFactory.eINSTANCE.createMenu();
@@ -87,7 +87,7 @@ public class LookupMenuServlet extends BaseServlet {
 			});
 		}
 
-		ResourceSerializer<Menu> entitySerializer = resourceManager.createEntitySerializer(Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Menu> entitySerializer = resourceManager.createResourceSerializer(Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (menu != null)
 			entitySerializer.add(menu);
 		entitySerializer.save(response.getOutputStream());

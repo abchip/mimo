@@ -15,7 +15,7 @@ import org.abchip.mimo.entity.Frame;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>ResourceDriver</b></em>'. <!-- end-user-doc -->
+ * <em><b>Resource</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -150,4 +150,4 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @generated
 	 */
 	ContextProvider getContextProvider();
-} // ResourceDriver
+} // Resource

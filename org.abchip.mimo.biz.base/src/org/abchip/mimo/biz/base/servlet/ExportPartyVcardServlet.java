@@ -55,9 +55,9 @@ public class ExportPartyVcardServlet extends BaseServlet {
 
 		String partyId = request.getParameter("partyId");
 
-		ResourceReader<Party> partyReader = resourceManager.getEntityReader(contextProvider, Party.class);
-		ResourceReader<Person> personReader = resourceManager.getEntityReader(contextProvider, Person.class);
-		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getEntityReader(contextProvider, PartyGroup.class);
+		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextProvider, Party.class);
+		ResourceReader<Person> personReader = resourceManager.getResourceReader(contextProvider, Person.class);
+		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getResourceReader(contextProvider, PartyGroup.class);
 		Party partyEntity = partyReader.lookup(partyId);
 
 		ezvcard.VCard vcard = new ezvcard.VCard();
@@ -147,11 +147,11 @@ public class ExportPartyVcardServlet extends BaseServlet {
 		// Serve l'ordinamento per fromDate desc
 		// e capire come fare il filtro con l'oggetto
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
-		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getEntityReader(contextProvider, PartyContactMech.class);
-		ResourceReader<PostalAddress> postalAddressReader = resourceManager.getEntityReader(contextProvider, PostalAddress.class);
+		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider, PartyContactMech.class);
+		ResourceReader<PostalAddress> postalAddressReader = resourceManager.getResourceReader(contextProvider, PostalAddress.class);
 
 		for (PartyContactMech partyContactMech : partyContactMechReader.find(filter)) {
-			ResourceReader<ContactMech> contactMechReader = resourceManager.getEntityReader(contextProvider, ContactMech.class);
+			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(contextProvider, ContactMech.class);
 			ContactMech contactMech = contactMechReader.lookup(partyContactMech.getContactMechId().getContactMechId());
 
 			if (!contactMech.getContactMechTypeId().getContactMechTypeId().equals("POSTAL_ADDRESS"))
@@ -179,11 +179,11 @@ public class ExportPartyVcardServlet extends BaseServlet {
 		// Serve l'ordinamento per fromDate desc
 		// e capire come fare il filtro con l'oggetto
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
-		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getEntityReader(contextProvider, PartyContactMech.class);
-		ResourceReader<TelecomNumber> telecomNumberReader = resourceManager.getEntityReader(contextProvider, TelecomNumber.class);
+		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider, PartyContactMech.class);
+		ResourceReader<TelecomNumber> telecomNumberReader = resourceManager.getResourceReader(contextProvider, TelecomNumber.class);
 
 		for (PartyContactMech partyContactMech : partyContactMechReader.find(filter)) {
-			ResourceReader<ContactMech> contactMechReader = resourceManager.getEntityReader(contextProvider, ContactMech.class);
+			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(contextProvider, ContactMech.class);
 			ContactMech contactMech = contactMechReader.lookup(partyContactMech.getContactMechId().getContactMechId());
 
 			if (!contactMech.getContactMechTypeId().getContactMechTypeId().equals("TELECOM_NUMBER"))
@@ -205,10 +205,10 @@ public class ExportPartyVcardServlet extends BaseServlet {
 		// Serve l'ordinamento per fromDate desc
 		// e capire come fare il filtro con l'oggetto
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
-		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getEntityReader(contextProvider, PartyContactMech.class);
+		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider, PartyContactMech.class);
 
 		for (PartyContactMech partyContactMech : partyContactMechReader.find(filter)) {
-			ResourceReader<ContactMech> contactMechReader = resourceManager.getEntityReader(contextProvider, ContactMech.class);
+			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(contextProvider, ContactMech.class);
 			ContactMech contactMech = contactMechReader.lookup(partyContactMech.getContactMechId().getContactMechId());
 
 			if (!contactMech.getContactMechTypeId().getContactMechTypeId().equals("EMAIL_ADDRESS"))

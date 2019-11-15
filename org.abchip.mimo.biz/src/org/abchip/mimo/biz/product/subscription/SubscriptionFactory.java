@@ -27,10 +27,10 @@ public interface SubscriptionFactory extends EFactory {
 	SubscriptionFactory eINSTANCE = org.abchip.mimo.biz.product.subscription.impl.SubscriptionFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Product Subscription ResourceDriver</em>'.
+	 * Returns a new object of class '<em>Product Subscription Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Product Subscription ResourceDriver</em>'.
+	 * @return a new object of class '<em>Product Subscription Resource</em>'.
 	 * @generated
 	 */
 	ProductSubscriptionResource createProductSubscriptionResource();
@@ -81,10 +81,10 @@ public interface SubscriptionFactory extends EFactory {
 	SubscriptionFulfillmentPiece createSubscriptionFulfillmentPiece();
 
 	/**
-	 * Returns a new object of class '<em>ResourceDriver</em>'.
+	 * Returns a new object of class '<em>Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ResourceDriver</em>'.
+	 * @return a new object of class '<em>Resource</em>'.
 	 * @generated
 	 */
 	SubscriptionResource createSubscriptionResource();

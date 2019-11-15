@@ -100,7 +100,7 @@ public class GoogleResponseServlet extends HttpServlet {
 
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2Google";
-		ResourceReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
+		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(contextProvider, entityName);
 		EntityNameable oauth2Google = oauth2Reader.first();
 
 		this.getDefaultProvider().logout(contextProvider);

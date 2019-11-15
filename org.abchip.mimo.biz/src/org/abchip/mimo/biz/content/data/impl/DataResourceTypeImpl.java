@@ -23,17 +23,17 @@ import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data ResourceDriver Type</b></em>'.
+ * An implementation of the model object '<em><b>Data Resource Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDataResourceTypeAttrs <em>Data ResourceDriver Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDataResourceTypeAttrs <em>Data Resource Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,7 +45,7 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getDataResourceTypeId() <em>Data ResourceDriver Type Id</em>}' attribute.
+	 * The default value of the '{@link #getDataResourceTypeId() <em>Data Resource Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceTypeId()
@@ -55,7 +55,7 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	protected static final String DATA_RESOURCE_TYPE_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data ResourceDriver Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data Resource Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceTypeId()
@@ -115,7 +115,7 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	protected DataResourceType parentTypeId;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceTypeAttrs() <em>Data ResourceDriver Type Attrs</em>}' attribute list.
+	 * The cached value of the '{@link #getDataResourceTypeAttrs() <em>Data Resource Type Attrs</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceTypeAttrs()

@@ -48,13 +48,13 @@ public class LookupServlet extends BaseServlet {
 			return;
 		}
 
-		E entity = resourceManager.getEntityReader(contextProvider, frame).lookup(name);
+		E entity = resourceManager.getResourceReader(contextProvider, frame).lookup(name);
 		if (entity == null)
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		else {
 			response.setStatus(HttpServletResponse.SC_FOUND);
 			
-			ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			entitySerializer.add(entity);
 			entitySerializer.save(response.getOutputStream());
 		}

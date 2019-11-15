@@ -20,7 +20,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.ui.query.Query;
@@ -44,7 +44,7 @@ public class LookupQueryServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Query query = resourceManager.getEntityReader(contextProvider, Query.class, ResourceDriver.TENANT_MASTER).lookup(name);
+		Query query = resourceManager.getResourceReader(contextProvider, Query.class, Resource.TENANT_MASTER).lookup(name);
 
 		if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			query = QueryFactory.eINSTANCE.createQuery();
@@ -80,7 +80,7 @@ public class LookupQueryServlet extends BaseServlet {
 			}
 		}
 		
-		ResourceSerializer<Query> entitySerializer = resourceManager.createEntitySerializer(Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (query != null)
 			entitySerializer.add(query);
 		entitySerializer.save(response.getOutputStream());

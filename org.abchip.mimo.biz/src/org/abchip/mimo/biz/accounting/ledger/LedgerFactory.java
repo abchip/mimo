@@ -243,10 +243,10 @@ public interface LedgerFactory extends EFactory {
 	GlReconciliationEntry createGlReconciliationEntry();
 
 	/**
-	 * Returns a new object of class '<em>Gl ResourceDriver Type</em>'.
+	 * Returns a new object of class '<em>Gl Resource Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Gl ResourceDriver Type</em>'.
+	 * @return a new object of class '<em>Gl Resource Type</em>'.
 	 * @generated
 	 */
 	GlResourceType createGlResourceType();

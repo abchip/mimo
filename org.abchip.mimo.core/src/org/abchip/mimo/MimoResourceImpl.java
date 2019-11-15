@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.URIs;
@@ -18,27 +20,41 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 
-public class MimoResourceImpl extends ResourceImpl {
+public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 
-	private ResourceReader<?> resourceReader = null;
+	private Resource<E> resource = null;
+	private ResourceReader<E> resourceReader = null;
 
-	public MimoResourceImpl(URI uri) {
+	public MimoResourceImpl(ResourceSet resourceSet, URI uri) {
 		super(uri);
+
+		this.resourceSet = resourceSet;
+
+		String frame = getURI().segment(0);
+		String tenant = null;
+		if (getURI().hasQuery())
+			tenant = URIs.qINSTANCE.parseParameter(getURI().query()).get("tenant");
+
+		ContextProvider contextProvider = this.getContextProvider();
+		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+		this.resource = resourceManager.getProvider(frame).getResource(contextProvider, frame, tenant);
+		
+		if(this.resource == null)
+			"".toString();
 	}
 
-	protected ResourceReader<?> getResourceReader() {
+	public Resource<E> getResource() {
+		return this.resource;
+	}
+
+	private ResourceReader<E> getResourceReader() {
 
 		if (this.resourceReader == null) {
 			synchronized (this) {
 				if (this.resourceReader == null) {
 					Context context = this.getContextProvider().getContext();
-					String frameName = getURI().segment(0);
-					String tenant = null;
-					if (getURI().hasQuery())
-						tenant = URIs.qINSTANCE.parseParameter(getURI().query()).get("tenant");
-
 					ResourceManager resourceManager = context.get(ResourceManager.class);
-					this.resourceReader = resourceManager.getEntityReader(context, frameName, tenant);
+					this.resourceReader = resourceManager.getResourceReader(context, this.resource.getFrame(), this.resource.getTenant());
 				}
 			}
 		}

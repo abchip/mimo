@@ -10,18 +10,24 @@ package org.abchip.mimo;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
 public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
-	
-	public MimoResourceFactoryImpl() {
+
+	private ResourceSet resourceSet;
+
+	public MimoResourceFactoryImpl(ResourceSet resourceSet) {
 		super();
+		this.resourceSet = resourceSet;
 	}
 
 	@Override
 	public Resource createResource(URI uri) {
 
-		MimoResourceImpl resource = new MimoResourceImpl(uri);
-		return resource;
+		@SuppressWarnings("rawtypes")
+		MimoResourceImpl<?> internal = new MimoResourceImpl(resourceSet, uri);
+
+		return internal;
 	}
 }

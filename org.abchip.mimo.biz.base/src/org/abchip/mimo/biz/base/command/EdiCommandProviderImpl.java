@@ -29,7 +29,7 @@ public class EdiCommandProviderImpl implements CommandProvider {
 
 	public void _testEdi(CommandInterpreter interpreter) throws Exception {
 
-		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getEntityWriter(contextRoot, MessageSent.class);
+		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(contextRoot, MessageSent.class);
 		MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
 		messageSent.setMessageId("test-010");
 		messageSent.setEvent(EntityEvent.CREATE);

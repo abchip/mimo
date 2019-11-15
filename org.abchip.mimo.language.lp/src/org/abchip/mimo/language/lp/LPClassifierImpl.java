@@ -111,7 +111,7 @@ public class LPClassifierImpl implements Classifier {
 	}
 
 	private void loadLanguages() {
-		ResourceReader<Language> languageReader = resourceManager.getEntityReader(contextRoot, Language.class);
+		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
 		for (Language language : languageReader.find())
 			languages.put(language.getName(), language);
 	}

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Product Subscription ResourceDriver</b></em>'.
+ * An implementation of the model object '<em><b>Product Subscription Resource</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.InternalEObject;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseTime <em>Use Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
@@ -288,7 +288,7 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	protected Product productId;
 
 	/**
-	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSubscriptionResourceId()

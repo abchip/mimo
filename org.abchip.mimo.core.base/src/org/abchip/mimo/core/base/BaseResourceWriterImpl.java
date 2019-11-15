@@ -14,7 +14,7 @@ import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.ResourceDriver;
+import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.resource.ResourceWriter;
 
@@ -22,8 +22,8 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 
 	private LockManager lockManager;
 
-	public BaseResourceWriterImpl(MimoResourceImpl internal, ResourceDriver<E> resource) {
-		super(internal, resource);
+	public BaseResourceWriterImpl(MimoResourceImpl<E> internal) {
+		super(internal);
 
 		this.lockManager = internal.getContextProvider().getContext().get(LockManager.class);
 	}
@@ -35,7 +35,7 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 		EntityLocker<?> entityLocker = lock(context, this.getFrame());
 
 		try {
-			return this.resource.nextSequence();
+			return this.internal.getResource().nextSequence();
 		} finally {
 			unlock(entityLocker);
 		}
@@ -50,7 +50,8 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 		try {
 			ResourceHelper.firePreDeleteEvent(this, entity);
 
-			this.resource.update(entity);
+			this.internal.getResource().delete(entity);
+			this.setInternalResource(entity);
 
 			ResourceHelper.firePostDeleteEvent(this, entity);
 		} finally {
@@ -72,7 +73,8 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);
 
-			this.resource.create(entity, update);
+			this.internal.getResource().create(entity, update);
+			this.setInternalResource(entity);
 
 			ResourceHelper.firePostSaveEvent(this, entity);
 		} finally {
@@ -89,7 +91,8 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);
 
-			this.resource.update(entity);
+			this.internal.getResource().update(entity);
+			this.setInternalResource(entity);
 
 			ResourceHelper.firePostSaveEvent(this, entity);
 		} finally {
@@ -99,10 +102,11 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 
 	private <N extends EntityNameable> EntityLocker<N> lock(Context context, N entity) {
 
-		if (this.resource.getResourceConfig() == null)
+		ResourceConfig resourceConfig = this.internal.getResource().getResourceConfig();
+		if (resourceConfig == null)
 			return null;
 
-		if (!this.resource.getResourceConfig().isLockSupport())
+		if (resourceConfig.isLockSupport())
 			return null;
 
 		EntityLocker<N> entityLocker = lockManager.getLocker(context, entity);

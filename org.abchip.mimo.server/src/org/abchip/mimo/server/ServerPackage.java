@@ -94,7 +94,7 @@ public interface ServerPackage extends EPackage {
 	int JOB__CREATION_DATE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Current ResourceDriver</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Resource</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -849,10 +849,10 @@ public interface ServerPackage extends EPackage {
 	EAttribute getJob_CreationDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.server.Job#getCurrentResource <em>Current ResourceDriver</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.server.Job#getCurrentResource <em>Current Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Current ResourceDriver</em>'.
+	 * @return the meta object for the attribute '<em>Current Resource</em>'.
 	 * @see org.abchip.mimo.server.Job#getCurrentResource()
 	 * @see #getJob()
 	 * @generated
@@ -1537,7 +1537,7 @@ public interface ServerPackage extends EPackage {
 		EAttribute JOB__CREATION_DATE = eINSTANCE.getJob_CreationDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Current ResourceDriver</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Current Resource</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

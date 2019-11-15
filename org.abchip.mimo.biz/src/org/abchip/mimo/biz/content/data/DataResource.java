@@ -19,23 +19,23 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Data ResourceDriver</b></em>'.
+ * A representation of the model object '<em><b>Data Resource</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data ResourceDriver Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data Resource Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLocaleString <em>Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getObjectInfo <em>Object Info</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getRelatedDetailId <em>Related Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataCategoryId <em>Data Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataSourceId <em>Data Source Id</em>}</li>
@@ -45,9 +45,9 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyResponseId <em>Survey Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data ResourceDriver Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data ResourceDriver Meta Datas</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data ResourceDriver Purposes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data Resource Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data Resource Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getProductFeatureDataResources <em>Product Feature Data Resources</em>}</li>
  * </ul>
  *
@@ -161,14 +161,14 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setDataCategoryId(DataCategory value);
 
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Resource Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Id</em>' attribute.
+	 * @return the value of the '<em>Data Resource Id</em>' attribute.
 	 * @see #setDataResourceId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceId()
 	 * @model id="true" required="true"
@@ -178,24 +178,24 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	String getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceId <em>Data ResourceDriver Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceId <em>Data Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data ResourceDriver Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Resource Id</em>' attribute.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */
 	void setDataResourceId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Resource Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data Resource Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Name</em>' attribute.
+	 * @return the value of the '<em>Data Resource Name</em>' attribute.
 	 * @see #setDataResourceName(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceName()
 	 * @model
@@ -204,24 +204,24 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	String getDataResourceName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data ResourceDriver Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data Resource Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data ResourceDriver Name</em>' attribute.
+	 * @param value the new value of the '<em>Data Resource Name</em>' attribute.
 	 * @see #getDataResourceName()
 	 * @generated
 	 */
 	void setDataResourceName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Type Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data Resource Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Type Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data Resource Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Type Id</em>' reference.
+	 * @return the value of the '<em>Data Resource Type Id</em>' reference.
 	 * @see #setDataResourceTypeId(DataResourceType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceTypeId()
 	 * @model keys="dataResourceTypeId"
@@ -230,10 +230,10 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	DataResourceType getDataResourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data ResourceDriver Type Id</em>' reference.
+	 * @param value the new value of the '<em>Data Resource Type Id</em>' reference.
 	 * @see #getDataResourceTypeId()
 	 * @generated
 	 */
@@ -552,15 +552,15 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setSurveyResponseId(SurveyResponse value);
 
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Attributes</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Data Resource Attributes</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Attributes</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Data Resource Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Attributes</em>' attribute list.
+	 * @return the value of the '<em>Data Resource Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceAttributes()
 	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceAttribute'"
@@ -569,15 +569,15 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	List<String> getDataResourceAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Meta Datas</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Data Resource Meta Datas</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Meta Datas</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Data Resource Meta Datas</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Meta Datas</em>' attribute list.
+	 * @return the value of the '<em>Data Resource Meta Datas</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceMetaDatas()
 	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceMetaData'"
@@ -586,15 +586,15 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	List<String> getDataResourceMetaDatas();
 
 	/**
-	 * Returns the value of the '<em><b>Data ResourceDriver Purposes</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Data Resource Purposes</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data ResourceDriver Purposes</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Data Resource Purposes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data ResourceDriver Purposes</em>' attribute list.
+	 * @return the value of the '<em>Data Resource Purposes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourcePurposes()
 	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourcePurpose'"

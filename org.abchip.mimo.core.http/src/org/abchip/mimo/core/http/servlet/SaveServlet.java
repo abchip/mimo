@@ -37,7 +37,7 @@ public class SaveServlet extends BaseServlet {
 		String frame = request.getParameter("frame");
 		String json = request.getParameter("json");
 
-		ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
 		if (!json.contains("\"eClass\""))
 			json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
@@ -45,7 +45,7 @@ public class SaveServlet extends BaseServlet {
 		entitySerializer.load(json, false);
 		E entity = entitySerializer.get();
 
-		ResourceWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame);
+		ResourceWriter<EntityNameable> entityWriter = resourceManager.getResourceWriter(contextProvider, frame);
 		entityWriter.create(entity, true);
 
 		response.setStatus(HttpServletResponse.SC_OK);

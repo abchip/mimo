@@ -67,8 +67,8 @@ public class TestTwitter {
 		if (true)
 			return;
 
-		ResourceReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class);
-		ResourceReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
+		ResourceReader<Tweet> tweetReader = resourceManager.getResourceReader(testRunner, Tweet.class);
+		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner, Language.class);
 
 		Tweet t = tweetReader.lookup("939830847619944449");
 
@@ -138,14 +138,14 @@ public class TestTwitter {
 	private void testConfusionMatrix() {
 
 		List<Language> languages = new ArrayList<Language>();
-		ResourceReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
+		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner, Language.class);
 		for (Language language : languageReader.find())
 			languages.add(language);
 
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
 		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
 
-		ResourceReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class);
+		ResourceReader<Tweet> tweetReader = resourceManager.getResourceReader(testRunner, Tweet.class);
 		for (Tweet tweet : tweetReader.find()) {
 
 			Language language = lookupLanguageByIso(languages, tweet.getLanguage());
@@ -169,7 +169,7 @@ public class TestTwitter {
 		EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner, null, "#ai", 1000);
 		asserter.assertTrue("Count tweets", tweetIterator.hasNext());
 
-		ResourceWriter<Tweet> tweetWriter = resourceManager.getEntityWriter(testRunner, Tweet.class);
+		ResourceWriter<Tweet> tweetWriter = resourceManager.getResourceWriter(testRunner, Tweet.class);
 		for (Tweet tweet : tweetIterator) {
 			try {
 				tweetWriter.create(tweet, true);

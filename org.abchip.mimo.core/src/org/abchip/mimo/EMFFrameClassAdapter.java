@@ -225,9 +225,13 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			try {
 				eObject.eSet(eFeature, value);
 			} catch (ClassCastException e) {
-				if (eFeature.getEType() instanceof EDataType) {
-					value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
-					eObject.eSet(eFeature, value);
+				try {
+					if (eFeature.getEType() instanceof EDataType) {
+						value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
+						eObject.eSet(eFeature, value);
+					}
+				} catch (Exception e1) {
+					System.err.println("Invalid slot value: " + eObject.eClass().getName() + "." + slot + " = " + value);
 				}
 			} catch (Exception e) {
 				e.toString();

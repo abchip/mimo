@@ -19,25 +19,24 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 public class MimoResourceSetImpl extends ResourceSetImpl {
 
 	private ContextProvider contextProvider;
-	 
+
 	public MimoResourceSetImpl(ContextProvider contextProvider) {
 		super();
-		
+
 		this.contextProvider = contextProvider;
-		
+
 		this.setURIResourceMap(new WeakHashMap<URI, Resource>());
 	}
-	
+
 	public ContextProvider getContextProvider() {
 		return this.contextProvider;
-	} 
+	}
 
 	@Override
 	public Resource createResource(URI uri, String contentType) {
 		Resource.Factory resourceFactory = getResourceFactoryRegistry().getFactory(uri, contentType);
 		if (resourceFactory != null) {
 			ResourceImpl resource = (ResourceImpl) resourceFactory.createResource(uri);
-			resource.basicSetResourceSet(this, null);
 			return resource;
 		} else {
 			return null;

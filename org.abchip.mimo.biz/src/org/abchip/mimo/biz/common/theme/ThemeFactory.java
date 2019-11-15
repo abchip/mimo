@@ -36,10 +36,10 @@ public interface ThemeFactory extends EFactory {
 	VisualTheme createVisualTheme();
 
 	/**
-	 * Returns a new object of class '<em>Visual Theme ResourceDriver</em>'.
+	 * Returns a new object of class '<em>Visual Theme Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Visual Theme ResourceDriver</em>'.
+	 * @return a new object of class '<em>Visual Theme Resource</em>'.
 	 * @generated
 	 */
 	VisualThemeResource createVisualThemeResource();

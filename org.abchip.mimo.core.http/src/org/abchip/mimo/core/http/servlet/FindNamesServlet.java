@@ -45,7 +45,7 @@ public class FindNamesServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		ResourceReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frame);
 		if (entityReader == null) {
 			response.setStatus(HttpServletResponse.SC_NO_CONTENT);
 			response.getWriter().write("[]");

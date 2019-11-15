@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>ResourceDriver</b></em>'. <!-- end-user-doc -->
+ * <em><b>Resource</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>

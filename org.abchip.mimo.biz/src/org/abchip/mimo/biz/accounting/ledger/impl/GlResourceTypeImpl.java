@@ -16,13 +16,13 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Gl ResourceDriver Type</b></em>'.
+ * An implementation of the model object '<em><b>Gl Resource Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl#getGlResourceTypeId <em>Gl ResourceDriver Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -34,7 +34,7 @@ public class GlResourceTypeImpl extends BizEntityImpl implements GlResourceType 
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getGlResourceTypeId() <em>Gl ResourceDriver Type Id</em>}' attribute.
+	 * The default value of the '{@link #getGlResourceTypeId() <em>Gl Resource Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlResourceTypeId()
@@ -43,7 +43,7 @@ public class GlResourceTypeImpl extends BizEntityImpl implements GlResourceType 
 	 */
 	protected static final String GL_RESOURCE_TYPE_ID_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getGlResourceTypeId() <em>Gl ResourceDriver Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlResourceTypeId() <em>Gl Resource Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlResourceTypeId()

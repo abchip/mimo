@@ -37,7 +37,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 
 	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
 		
-		ResourceReader<Party> partyReader = resourceManager.getEntityReader(contextRoot, Party.class);
+		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextRoot, Party.class);
 		Party party = partyReader.lookup("10000");
 		System.out.println(party.getURI());
 		System.out.println(party.getPartyTypeId().getName());
@@ -70,7 +70,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		String id = interpreter.nextArgument();
 
 		// Write Person
-		ResourceWriter<Person> personWriter = resourceManager.getEntityWriter(contextRoot, Person.class);
+		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(contextRoot, Person.class);
 
 		Person person = PartyFactory.eINSTANCE.createPerson();
 		person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
@@ -81,7 +81,7 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		personWriter.create(person);
 
 		// Write PartyGroup
-		ResourceWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextRoot, PartyGroup.class);
+		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(contextRoot, PartyGroup.class);
 
 		PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
 		partyGroup.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));

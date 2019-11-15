@@ -15,20 +15,20 @@ import org.abchip.mimo.entity.Frame;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>ResourceDriver</b></em>'. <!-- end-user-doc -->
+ * <em><b>Resource</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.ResourceDriver#getResourceConfig <em>Resource Config</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriver()
+ * @see org.abchip.mimo.resource.ResourcePackage#getResource()
  * @model abstract="true"
  * @generated
  */
-public interface ResourceDriver<E extends EntityNameable> extends Entity {
+public interface Resource<E extends EntityNameable> extends Entity {
 
 	public static String TENANT_MASTER = "*MASTER";
 	
@@ -57,26 +57,34 @@ public interface ResourceDriver<E extends EntityNameable> extends Entity {
 	Frame<E> getFrame();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getTenant();
+
+	/**
 	 * Returns the value of the '<em><b>Resource Config</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resource Config</em>' reference.
-	 * @see #setResourceConfig(ResourceDriverConfig)
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceDriver_ResourceConfig()
+	 * @see #setResourceConfig(ResourceConfig)
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_ResourceConfig()
 	 * @model required="true"
 	 * @generated
 	 */
-	ResourceDriverConfig getResourceConfig();
+	ResourceConfig getResourceConfig();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceDriver#getResourceConfig <em>Resource Config</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Resource Config</em>' reference.
 	 * @see #getResourceConfig()
 	 * @generated
 	 */
-	void setResourceConfig(ResourceDriverConfig value);
+	void setResourceConfig(ResourceConfig value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,4 +118,4 @@ public interface ResourceDriver<E extends EntityNameable> extends Entity {
 	 */
 	void update(E entity);
 
-} // ResourceDriver
+} // Resource

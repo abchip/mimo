@@ -18,14 +18,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Other Data ResourceDriver</b></em>'.
+ * An implementation of the model object '<em><b>Other Data Resource</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl#getDataResourceContent <em>Data ResourceDriver Content</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl#getDataResourceContent <em>Data Resource Content</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,7 +37,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getDataResourceContent() <em>Data ResourceDriver Content</em>}' attribute.
+	 * The default value of the '{@link #getDataResourceContent() <em>Data Resource Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceContent()
@@ -47,7 +47,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	protected static final byte[] DATA_RESOURCE_CONTENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceContent() <em>Data ResourceDriver Content</em>}' attribute.
+	 * The cached value of the '{@link #getDataResourceContent() <em>Data Resource Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceContent()
@@ -57,7 +57,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	protected byte[] dataResourceContent = DATA_RESOURCE_CONTENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()

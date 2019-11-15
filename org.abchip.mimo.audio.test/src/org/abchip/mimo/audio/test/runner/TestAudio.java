@@ -53,7 +53,7 @@ public class TestAudio {
 
 		// recordAudio();
 
-		ResourceReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class);
+		ResourceReader<Audio> audioReader = resourceManager.getResourceReader(testRunner, Audio.class);
 		for (Audio audio : audioReader.find()) {
 
 			asserter.assertNotNull("Audio content", audio.getContent());
@@ -69,13 +69,13 @@ public class TestAudio {
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following frames in the system", true, true);
 
-		for (Frame<?> frame : resourceManager.getEntityReader(testRunner, Frame.class).find()) {
+		for (Frame<?> frame : resourceManager.getResourceReader(testRunner, Frame.class).find()) {
 			audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
 		}
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following languages in the system", true, true);
 
-		ResourceReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
+		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner, Language.class);
 		for (Language language : languageReader.find()) {
 			audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
 		}
@@ -94,7 +94,7 @@ public class TestAudio {
 		audio.setText("Mimo audio test");
 		audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
 
-		ResourceWriter<Audio> audioWriter = resourceManager.getEntityWriter(testRunner, Audio.class);
+		ResourceWriter<Audio> audioWriter = resourceManager.getResourceWriter(testRunner, Audio.class);
 		audioWriter.create(audio);
 	}
 }

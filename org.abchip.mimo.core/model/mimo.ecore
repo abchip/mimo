@@ -849,35 +849,36 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
-    <eClassifiers xsi:type="ecore:EClass" name="ResourceDriver" abstract="true" eSuperTypes="#//entity/Entity">
+    <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityNameable"/>
       </eTypeParameters>
       <eOperations name="create">
         <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
+          <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
         <eParameters name="update" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="delete">
         <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
+          <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
       </eOperations>
       <eOperations name="getFrame" lowerBound="1">
         <eGenericType eClassifier="#//entity/Frame">
-          <eTypeArguments eTypeParameter="#//resource/ResourceDriver/E"/>
+          <eTypeArguments eTypeParameter="#//resource/Resource/E"/>
         </eGenericType>
       </eOperations>
+      <eOperations name="getTenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="nextSequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="read" lowerBound="1">
-        <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
+        <eGenericType eTypeParameter="#//resource/Resource/E"/>
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="read" lowerBound="1" upperBound="-1">
-        <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
+        <eGenericType eTypeParameter="#//resource/Resource/E"/>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -886,13 +887,13 @@
       </eOperations>
       <eOperations name="update">
         <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//resource/ResourceDriver/E"/>
+          <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceConfig" lowerBound="1"
-          eType="#//resource/ResourceDriverConfig"/>
+          eType="#//resource/ResourceConfig"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourceDriverConfig" eSuperTypes="#//entity/Entity">
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lockSupport" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderSupport" lowerBound="1"
@@ -932,37 +933,37 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceManager" abstract="true" interface="true">
-      <eOperations name="createEntitySerializer">
+      <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//resource/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/createEntitySerializer/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/createResourceSerializer/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/createEntitySerializer/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/createResourceSerializer/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
       </eOperations>
-      <eOperations name="createEntitySerializer">
+      <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//resource/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/createEntitySerializer.1/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/createResourceSerializer.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/createEntitySerializer.1/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/createResourceSerializer.1/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
       </eOperations>
-      <eOperations name="createEntitySerializer">
+      <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//resource/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/createEntitySerializer.2/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/createResourceSerializer.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
@@ -970,9 +971,9 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
       </eOperations>
-      <eOperations name="getEntityReader">
+      <eOperations name="getResourceReader">
         <eGenericType eClassifier="#//resource/ResourceReader">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -980,13 +981,13 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader/E"/>
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getEntityReader">
+      <eOperations name="getResourceReader">
         <eGenericType eClassifier="#//resource/ResourceReader">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.1/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -994,13 +995,13 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.1/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.1/E"/>
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getEntityReader">
+      <eOperations name="getResourceReader">
         <eGenericType eClassifier="#//resource/ResourceReader">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.2/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1008,9 +1009,9 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getEntityReader">
+      <eOperations name="getResourceReader">
         <eGenericType eClassifier="#//resource/ResourceReader">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.3/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.3/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1018,14 +1019,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.3/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.3/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getEntityReader">
+      <eOperations name="getResourceReader">
         <eGenericType eClassifier="#//resource/ResourceReader">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.4/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.4/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1033,14 +1034,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.4/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.4/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getEntityReader">
+      <eOperations name="getResourceReader">
         <eGenericType eClassifier="#//resource/ResourceReader">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityReader.5/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.5/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1049,9 +1050,9 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getEntityWriter">
+      <eOperations name="getResourceWriter">
         <eGenericType eClassifier="#//resource/ResourceWriter">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1059,13 +1060,13 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter/E"/>
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getEntityWriter">
+      <eOperations name="getResourceWriter">
         <eGenericType eClassifier="#//resource/ResourceWriter">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.1/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1073,13 +1074,13 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.1/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.1/E"/>
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getEntityWriter">
+      <eOperations name="getResourceWriter">
         <eGenericType eClassifier="#//resource/ResourceWriter">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.2/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1087,9 +1088,9 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getEntityWriter">
+      <eOperations name="getResourceWriter">
         <eGenericType eClassifier="#//resource/ResourceWriter">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.3/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.3/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1097,14 +1098,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.3/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.3/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getEntityWriter">
+      <eOperations name="getResourceWriter">
         <eGenericType eClassifier="#//resource/ResourceWriter">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.4/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.4/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1112,14 +1113,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.4/E"/>
+            <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.4/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getEntityWriter">
+      <eOperations name="getResourceWriter">
         <eGenericType eClassifier="#//resource/ResourceWriter">
-          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getEntityWriter.5/E"/>
+          <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.5/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityNameable"/>
@@ -1255,7 +1256,7 @@
         <eParameters name="create" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/ResourceDriver">
+        <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1269,7 +1270,7 @@
         </eParameters>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/ResourceDriver">
+        <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1283,7 +1284,7 @@
         </eParameters>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/ResourceDriver">
+        <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1293,7 +1294,7 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/ResourceDriver">
+        <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.3/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1308,7 +1309,7 @@
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/ResourceDriver">
+        <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.4/E"/>
         </eGenericType>
         <eTypeParameters name="E">
@@ -1323,7 +1324,7 @@
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getResource" lowerBound="1">
-        <eGenericType eClassifier="#//resource/ResourceDriver">
+        <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource.5/E"/>
         </eGenericType>
         <eTypeParameters name="E">

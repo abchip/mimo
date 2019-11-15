@@ -82,8 +82,8 @@ public class FindServlet extends BaseServlet {
 
 		response.setStatus(HttpServletResponse.SC_FOUND);
 
-		ResourceReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
-		ResourceSerializer<E> entitySerializer = resourceManager.createEntitySerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frame);
+		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		for (E entity : entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
 			entitySerializer.add(entity);
 

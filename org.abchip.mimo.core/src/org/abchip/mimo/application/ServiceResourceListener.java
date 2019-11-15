@@ -11,7 +11,7 @@ package org.abchip.mimo.application;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service ResourceDriver Listener</b></em>'.
+ * A representation of the model object '<em><b>Service Resource Listener</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

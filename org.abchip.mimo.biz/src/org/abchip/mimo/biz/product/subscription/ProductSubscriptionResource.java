@@ -16,7 +16,7 @@ import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Product Subscription ResourceDriver</b></em>'.
+ * A representation of the model object '<em><b>Product Subscription Resource</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -35,7 +35,7 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getUseTime <em>Use Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
@@ -519,14 +519,14 @@ public interface ProductSubscriptionResource extends BizEntity {
 	void setProductId(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription ResourceDriver Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Subscription Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Subscription ResourceDriver Id</em>' reference isn't clear,
+	 * If the meaning of the '<em>Subscription Resource Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription ResourceDriver Id</em>' reference.
+	 * @return the value of the '<em>Subscription Resource Id</em>' reference.
 	 * @see #setSubscriptionResourceId(SubscriptionResource)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_SubscriptionResourceId()
 	 * @model keys="subscriptionResourceId"
@@ -535,10 +535,10 @@ public interface ProductSubscriptionResource extends BizEntity {
 	SubscriptionResource getSubscriptionResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscription ResourceDriver Id</em>' reference.
+	 * @param value the new value of the '<em>Subscription Resource Id</em>' reference.
 	 * @see #getSubscriptionResourceId()
 	 * @generated
 	 */

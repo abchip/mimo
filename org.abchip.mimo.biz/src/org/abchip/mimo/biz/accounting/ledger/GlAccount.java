@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl ResourceDriver Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getParentGlAccountId <em>Parent Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
@@ -428,14 +428,14 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	void setGlAccountClassId(GlAccountClass value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl ResourceDriver Type Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Gl Resource Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Gl ResourceDriver Type Id</em>' reference isn't clear,
+	 * If the meaning of the '<em>Gl Resource Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl ResourceDriver Type Id</em>' reference.
+	 * @return the value of the '<em>Gl Resource Type Id</em>' reference.
 	 * @see #setGlResourceTypeId(GlResourceType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlResourceTypeId()
 	 * @model keys="glResourceTypeId"
@@ -444,10 +444,10 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	GlResourceType getGlResourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl ResourceDriver Type Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl ResourceDriver Type Id</em>' reference.
+	 * @param value the new value of the '<em>Gl Resource Type Id</em>' reference.
 	 * @see #getGlResourceTypeId()
 	 * @generated
 	 */

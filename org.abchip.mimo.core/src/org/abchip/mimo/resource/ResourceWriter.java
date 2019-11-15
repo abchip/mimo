@@ -12,7 +12,7 @@ import org.abchip.mimo.entity.EntityNameable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>ResourceDriver Writer</b></em>'. <!-- end-user-doc -->
+ * <em><b>Resource Writer</b></em>'. <!-- end-user-doc -->
  *
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResourceWriter()

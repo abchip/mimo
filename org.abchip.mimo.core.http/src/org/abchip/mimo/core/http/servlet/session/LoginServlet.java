@@ -84,7 +84,7 @@ public class LoginServlet extends HttpServlet {
 
 			String entityName = "OAuth2" + provider;
 
-			ResourceReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
+			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(contextProvider, entityName);
 			EntityNameable oauth2Entity = oauth2Reader.first();
 
 			if (oauth2Entity == null) {
@@ -103,7 +103,7 @@ public class LoginServlet extends HttpServlet {
 			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
 			tempContextDescription.setId(session.getId());
 			tempContextDescription.setAnonymous(true);
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			serializer.add(tempContextDescription);
 			serializer.save(response.getOutputStream());
 
@@ -164,7 +164,7 @@ public class LoginServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_OK);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		serializer.add(contextProvider.getContext().getContextDescription());
 		serializer.save(response.getOutputStream());
 

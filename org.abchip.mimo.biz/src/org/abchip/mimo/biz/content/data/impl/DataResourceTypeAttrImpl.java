@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data ResourceDriver Type Attr</b></em>'.
+ * An implementation of the model object '<em><b>Data Resource Type Attr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,7 +78,7 @@ public class DataResourceTypeAttrImpl extends BizEntityImpl implements DataResou
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data ResourceDriver Type Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceTypeId()

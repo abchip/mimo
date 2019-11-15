@@ -18,14 +18,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Image Data ResourceDriver</b></em>'.
+ * An implementation of the model object '<em><b>Image Data Resource</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl#getImageData <em>Image Data</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,7 +57,7 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	protected byte[] imageData = IMAGE_DATA_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()

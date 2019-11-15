@@ -49,7 +49,7 @@ public class ImportProductCategoriesServlet extends BaseServlet {
 
 		try {
 
-			ResourceWriter<ProductCategory> productCategoryWriter = resourceManager.getEntityWriter(contextProvider, ProductCategory.class);
+			ResourceWriter<ProductCategory> productCategoryWriter = resourceManager.getResourceWriter(contextProvider, ProductCategory.class);
 
 			for (Part filePart : parseRequest(request).values()) {
 				if (!filePart.getName().equals("upload"))

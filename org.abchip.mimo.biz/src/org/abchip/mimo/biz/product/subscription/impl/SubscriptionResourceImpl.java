@@ -20,16 +20,16 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Subscription ResourceDriver</b></em>'.
+ * An implementation of the model object '<em><b>Subscription Resource</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getServiceNameOnExpiry <em>Service Name On Expiry</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getParentResourceId <em>Parent ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getParentResourceId <em>Parent Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
@@ -43,7 +43,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getSubscriptionResourceId() <em>Subscription ResourceDriver Id</em>}' attribute.
+	 * The default value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSubscriptionResourceId()
@@ -53,7 +53,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	protected static final String SUBSCRIPTION_RESOURCE_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription ResourceDriver Id</em>}' attribute.
+	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSubscriptionResourceId()
@@ -103,7 +103,7 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	protected String serviceNameOnExpiry = SERVICE_NAME_ON_EXPIRY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getParentResourceId() <em>Parent ResourceDriver Id</em>}' reference.
+	 * The cached value of the '{@link #getParentResourceId() <em>Parent Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentResourceId()

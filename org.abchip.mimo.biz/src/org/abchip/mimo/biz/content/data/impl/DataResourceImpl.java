@@ -34,22 +34,22 @@ import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data ResourceDriver</b></em>'.
+ * An implementation of the model object '<em><b>Data Resource</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceId <em>Data ResourceDriver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceName <em>Data ResourceDriver Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceName <em>Data Resource Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLocaleString <em>Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getObjectInfo <em>Object Info</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getRelatedDetailId <em>Related Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceTypeId <em>Data ResourceDriver Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataCategoryId <em>Data Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
@@ -59,9 +59,9 @@ import org.eclipse.emf.ecore.util.BasicInternalEList;
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceAttributes <em>Data ResourceDriver Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceMetaDatas <em>Data ResourceDriver Meta Datas</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourcePurposes <em>Data ResourceDriver Purposes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceAttributes <em>Data Resource Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourcePurposes <em>Data Resource Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getProductFeatureDataResources <em>Product Feature Data Resources</em>}</li>
  * </ul>
  *
@@ -74,7 +74,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' attribute.
+	 * The default value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()
@@ -84,7 +84,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected static final String DATA_RESOURCE_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data ResourceDriver Id</em>}' attribute.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceId()
@@ -114,7 +114,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDataResourceName() <em>Data ResourceDriver Name</em>}' attribute.
+	 * The default value of the '{@link #getDataResourceName() <em>Data Resource Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceName()
@@ -124,7 +124,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected static final String DATA_RESOURCE_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceName() <em>Data ResourceDriver Name</em>}' attribute.
+	 * The cached value of the '{@link #getDataResourceName() <em>Data Resource Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceName()
@@ -244,7 +244,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data ResourceDriver Type Id</em>}' reference.
+	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceTypeId()
@@ -344,7 +344,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected SurveyResponse surveyResponseId;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceAttributes() <em>Data ResourceDriver Attributes</em>}' attribute list.
+	 * The cached value of the '{@link #getDataResourceAttributes() <em>Data Resource Attributes</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceAttributes()
@@ -354,7 +354,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected EList<String> dataResourceAttributes;
 
 	/**
-	 * The cached value of the '{@link #getDataResourceMetaDatas() <em>Data ResourceDriver Meta Datas</em>}' attribute list.
+	 * The cached value of the '{@link #getDataResourceMetaDatas() <em>Data Resource Meta Datas</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourceMetaDatas()
@@ -364,7 +364,7 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected EList<String> dataResourceMetaDatas;
 
 	/**
-	 * The cached value of the '{@link #getDataResourcePurposes() <em>Data ResourceDriver Purposes</em>}' attribute list.
+	 * The cached value of the '{@link #getDataResourcePurposes() <em>Data Resource Purposes</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataResourcePurposes()
