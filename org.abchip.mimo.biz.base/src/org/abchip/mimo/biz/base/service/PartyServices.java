@@ -19,18 +19,16 @@ import ezvcard.property.Telephone;
 
 public class PartyServices {
 
-	public static ezvcard.VCard createVcardFromParty(ContextProvider contextProvider,
-			String partyId) {
-		
+	public static VCard createVcardFromParty(ContextProvider contextProvider, String partyId) {
+
 		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		
+
 		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextProvider, Party.class);
 		ResourceReader<Person> personReader = resourceManager.getResourceReader(contextProvider, Person.class);
-		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getResourceReader(contextProvider,
-				PartyGroup.class);
+		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getResourceReader(contextProvider, PartyGroup.class);
 		Party partyEntity = partyReader.lookup(partyId);
 
-		ezvcard.VCard vcard = new ezvcard.VCard();
+		VCard vcard = new VCard();
 		StructuredName structuredName = new StructuredName();
 		if (partyEntity == null) {
 			// response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -39,7 +37,7 @@ public class PartyServices {
 			// mock
 			structuredName.setGiven("Nome");
 			structuredName.setFamily("Cognome");
-//			fullName = "MockVcard";
+			// fullName = "MockVcard";
 			vcard.setStructuredName(structuredName);
 			Address address = new Address();
 			address.setStreetAddress("via Manzoni n.1");
@@ -62,22 +60,22 @@ public class PartyServices {
 				Person personEntity = personReader.lookup(partyId);
 				if (personEntity.getFirstName() != null && !personEntity.getFirstName().isEmpty()) {
 					structuredName.setGiven(personEntity.getFirstName());
-//					fullName = personEntity.getFirstName();
+					// fullName = personEntity.getFirstName();
 				}
 				if (personEntity.getMiddleName() != null && !personEntity.getMiddleName().isEmpty()) {
 					structuredName.setGiven(personEntity.getMiddleName());
-//					fullName += personEntity.getMiddleName();
+					// fullName += personEntity.getMiddleName();
 				}
 				if (personEntity.getLastName() != null && !personEntity.getLastName().isEmpty()) {
 					structuredName.setFamily(personEntity.getLastName());
-//					fullName += personEntity.getLastName();
+					// fullName += personEntity.getLastName();
 				}
 				break;
 			case "PARTY_GROUP":
 				PartyGroup partyGroupEntity = partyGroupReader.lookup(partyId);
 				if (partyGroupEntity.getGroupName() != null && !partyGroupEntity.getGroupName().isEmpty()) {
 					structuredName.setGiven(partyGroupEntity.getGroupName());
-//					fullName = partyGroupEntity.getGroupName();
+					// fullName = partyGroupEntity.getGroupName();
 				}
 				break;
 			}
@@ -85,21 +83,20 @@ public class PartyServices {
 			vcard.setStructuredName(structuredName);
 
 			// PostalAddress
-			writeLatestPostalAddress(resourceManager, contextProvider, vcard, partyId);
+			writeLatestPostalAddress(contextProvider, vcard, partyId);
 
 			// TelecomNumber
-			writeLatestTelecomNumber(resourceManager, contextProvider, vcard, partyId);
+			writeLatestTelecomNumber(contextProvider, vcard, partyId);
 
 			// E-mail
-			writeLatestEmail(resourceManager, contextProvider, vcard, partyId);
+			writeLatestEmail(contextProvider, vcard, partyId);
 		}
 
 		return vcard;
 	}
 
-	private static void writeLatestPostalAddress(ResourceManager resourceManager, ContextProvider contextProvider, ezvcard.VCard vcard, String partyId) {
-		PostalAddress postalAddress = ContactMechServices.getLatestPostaAddress(resourceManager, contextProvider,
-				partyId);
+	private static void writeLatestPostalAddress(ContextProvider contextProvider, VCard vcard, String partyId) {
+		PostalAddress postalAddress = ContactMechServices.getLatestPostaAddress(contextProvider, partyId);
 		if (postalAddress == null)
 			return;
 
@@ -121,9 +118,8 @@ public class PartyServices {
 		vcard.addAddress(address);
 	}
 
-	private static void writeLatestTelecomNumber(ResourceManager resourceManager, ContextProvider contextProvider, VCard vcard, String partyId) {
-		TelecomNumber telecomNumber = ContactMechServices.getLatestTelecomNumber(resourceManager, contextProvider,
-				partyId);
+	private static void writeLatestTelecomNumber(ContextProvider contextProvider, VCard vcard, String partyId) {
+		TelecomNumber telecomNumber = ContactMechServices.getLatestTelecomNumber(contextProvider, partyId);
 		if (telecomNumber == null)
 			return;
 
@@ -138,8 +134,8 @@ public class PartyServices {
 		vcard.addTelephoneNumber(tel);
 	}
 
-	private static void writeLatestEmail(ResourceManager resourceManager, ContextProvider contextProvider, ezvcard.VCard vcard, String partyId) {
-		String email = ContactMechServices.getLatestEmail(resourceManager, contextProvider, partyId);
+	private static void writeLatestEmail(ContextProvider contextProvider, VCard vcard, String partyId) {
+		String email = ContactMechServices.getLatestEmail(contextProvider, partyId);
 		if (email.isEmpty())
 			return;
 		vcard.addEmail(new Email(email));

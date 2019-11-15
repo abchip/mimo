@@ -10,7 +10,9 @@ import org.abchip.mimo.resource.ResourceReader;
 
 public class ContactMechServices {
 
-	public static PostalAddress getLatestPostaAddress(ResourceManager resourceManager, ContextProvider contextProvider, String partyId) {
+	public static PostalAddress getLatestPostaAddress(ContextProvider contextProvider, String partyId) {
+		
+		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
 		
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
 		String order = "-fromDate";
@@ -30,7 +32,10 @@ public class ContactMechServices {
 		return postalAddress;
 	}
 	
-	public static TelecomNumber getLatestTelecomNumber(ResourceManager resourceManager, ContextProvider contextProvider, String partyId) {
+	public static TelecomNumber getLatestTelecomNumber(ContextProvider contextProvider, String partyId) {
+		
+		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
 		String order = "-fromDate";
 		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider,
@@ -52,7 +57,10 @@ public class ContactMechServices {
 		return telecomNumber;
 	}
 	
-	public static String getLatestEmail(ResourceManager resourceManager, ContextProvider contextProvider, String partyId) {
+	public static String getLatestEmail(ContextProvider contextProvider, String partyId) {
+		
+		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
 		String order = "-fromDate";
 		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider,
