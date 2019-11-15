@@ -19,8 +19,11 @@ import ezvcard.property.Telephone;
 
 public class PartyServices {
 
-	public static ezvcard.VCard createVcardFromParty(ResourceManager resourceManager, ContextProvider contextProvider,
+	public static ezvcard.VCard createVcardFromParty(ContextProvider contextProvider,
 			String partyId) {
+		
+		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+		
 		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextProvider, Party.class);
 		ResourceReader<Person> personReader = resourceManager.getResourceReader(contextProvider, Person.class);
 		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getResourceReader(contextProvider,

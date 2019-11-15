@@ -8,11 +8,8 @@
  */
 package org.abchip.mimo.biz.base.servlet;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,9 +17,6 @@ import org.abchip.mimo.biz.base.service.PartyServices;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.ResourceManager;
-import org.apache.commons.io.FileUtils;
-import org.apache.poi.util.IOUtils;
 
 import ezvcard.Ezvcard;
 import ezvcard.VCard;
@@ -31,29 +25,23 @@ public class ExportPartyVcardServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(contextProvider, request, response);
 	}
 
 	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
 		String partyId = request.getParameter("partyId");
-		VCard vcard = PartyServices.createVcardFromParty(resourceManager, contextProvider, partyId);
 
-		//
-		File file = new File(partyId + ".vcf");
-		Ezvcard.write(vcard).go(file);
+		try {
 
-		// Set the content type and attachment header.
-		response.setStatus(HttpServletResponse.SC_OK);
-		response.addHeader("Content-disposition", "attachment; filename=" + file.getName());
-		response.setContentType("text/vcard");
+			VCard vcard = PartyServices.createVcardFromParty(contextProvider, partyId);
 
-		try (InputStream myStream = FileUtils.openInputStream(file)) {
-			IOUtils.copy(myStream, response.getOutputStream());
-			response.flushBuffer();
+			response.setStatus(HttpServletResponse.SC_OK);
+			response.addHeader("Content-disposition", "attachment; filename=" + partyId + ".vcf");
+			response.setContentType("text/vcard");
+
+			Ezvcard.write(vcard).go(response.getOutputStream());
 		} catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		}
