@@ -36,7 +36,7 @@ public interface Schema extends EntityNameable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Columns</em>' containment reference list.
 	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchema_Columns()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<SchemaColumn> getColumns();

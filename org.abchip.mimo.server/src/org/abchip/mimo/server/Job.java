@@ -56,7 +56,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * @return the value of the '<em>Context</em>' containment reference.
 	 * @see #setContext(Context)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_Context()
-	 * @model containment="true" transient="true"
+	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
 	Context getContext();
@@ -244,7 +244,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * @return the value of the '<em>Job Reference</em>' containment reference.
 	 * @see #setJobReference(JobReference)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_JobReference()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	JobReference getJobReference();
@@ -270,7 +270,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * @return the value of the '<em>Job Run Info</em>' containment reference.
 	 * @see #setJobRunInfo(JobRunInfo)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_JobRunInfo()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	JobRunInfo getJobRunInfo();
@@ -351,7 +351,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Messages</em>' containment reference list.
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_Messages()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<JobMessage> getMessages();

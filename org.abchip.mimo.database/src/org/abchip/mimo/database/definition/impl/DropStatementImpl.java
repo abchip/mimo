@@ -15,6 +15,7 @@ import org.abchip.mimo.database.definition.TargetElement;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -133,6 +134,29 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	 */
 	@Override
 	public QualifiedName getTargetName() {
+		if (targetName != null && ((EObject)targetName).eIsProxy()) {
+			InternalEObject oldTargetName = (InternalEObject)targetName;
+			targetName = (QualifiedName)eResolveProxy(oldTargetName);
+			if (targetName != oldTargetName) {
+				InternalEObject newTargetName = (InternalEObject)targetName;
+				NotificationChain msgs = oldTargetName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.DROP_STATEMENT__TARGET_NAME, null, null);
+				if (newTargetName.eInternalContainer() == null) {
+					msgs = newTargetName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.DROP_STATEMENT__TARGET_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.DROP_STATEMENT__TARGET_NAME, oldTargetName, targetName));
+			}
+		}
+		return targetName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetTargetName() {
 		return targetName;
 	}
 
@@ -219,7 +243,8 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 			case DatabaseDefinitionPackage.DROP_STATEMENT__RANGE:
 				return getRange();
 			case DatabaseDefinitionPackage.DROP_STATEMENT__TARGET_NAME:
-				return getTargetName();
+				if (resolve) return getTargetName();
+				return basicGetTargetName();
 			case DatabaseDefinitionPackage.DROP_STATEMENT__TARGET:
 				return getTarget();
 		}

@@ -44,7 +44,7 @@ public interface CreateAliasStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Alias Name</em>' containment reference.
 	 * @see #setAliasName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateAliasStatement_AliasName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getAliasName();
@@ -70,7 +70,7 @@ public interface CreateAliasStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Table Name</em>' containment reference.
 	 * @see #setTableName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateAliasStatement_TableName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getTableName();

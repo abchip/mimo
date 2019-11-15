@@ -153,7 +153,7 @@ public interface TestResult extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assert Results</em>' containment reference list.
 	 * @see org.abchip.mimo.tester.TesterPackage#getTestResult_AssertResults()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<AssertionResult> getAssertResults();

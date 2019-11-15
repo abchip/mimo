@@ -237,7 +237,7 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	@Override
 	public List<MessageDataField<?>> getMessageDataFields() {
 		if (messageDataFields == null) {
-			messageDataFields = new EObjectContainmentEList<MessageDataField<?>>(MessageDataField.class, this, ContextPackage.MESSAGE_DESCRIPTION__MESSAGE_DATA_FIELDS);
+			messageDataFields = new EObjectContainmentEList.Resolving<MessageDataField<?>>(MessageDataField.class, this, ContextPackage.MESSAGE_DESCRIPTION__MESSAGE_DATA_FIELDS);
 		}
 		return messageDataFields;
 	}

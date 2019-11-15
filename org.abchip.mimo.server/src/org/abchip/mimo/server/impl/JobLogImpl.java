@@ -130,7 +130,7 @@ public class JobLogImpl extends EntityNameableImpl implements JobLog {
 	@Override
 	public List<JobLogEntry> getEntries() {
 		if (entries == null) {
-			entries = new EObjectContainmentEList<JobLogEntry>(JobLogEntry.class, this, ServerPackage.JOB_LOG__ENTRIES);
+			entries = new EObjectContainmentEList.Resolving<JobLogEntry>(JobLogEntry.class, this, ServerPackage.JOB_LOG__ENTRIES);
 		}
 		return entries;
 	}

@@ -202,6 +202,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -2297,7 +2298,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "route", "productPriceActionTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPricePurposeEClass.getEOperations().get(0),
@@ -2307,7 +2308,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "route", "productPricePurposeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPriceRuleEClass.getEOperations().get(0),
@@ -2317,7 +2318,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "route", "productPriceRuleId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductPriceRule_ProductPriceActions(),
@@ -2326,7 +2327,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "frame", "ProductPriceAction"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductPriceRule_ProductPriceConds(),
@@ -2335,7 +2336,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "frame", "ProductPriceCond"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (quantityBreakEClass.getEOperations().get(0),
@@ -2345,7 +2346,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "route", "priceBreakId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (quantityBreakEClass.getEOperations().get(1),
@@ -2355,7 +2356,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "route", "quantityBreakId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (quantityBreakEClass.getEOperations().get(2),
@@ -2365,7 +2366,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "route", "weightBreakId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (quantityBreakTypeEClass.getEOperations().get(0),
@@ -2375,7 +2376,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 			   "route", "quantityBreakTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

@@ -102,7 +102,7 @@ public class ToolbarImpl extends EntityNameableImpl implements Toolbar {
 	@Override
 	public List<ToolbarView> getElements() {
 		if (elements == null) {
-			elements = new EObjectContainmentEList<ToolbarView>(ToolbarView.class, this, ToolbarPackage.TOOLBAR__ELEMENTS);
+			elements = new EObjectContainmentEList.Resolving<ToolbarView>(ToolbarView.class, this, ToolbarPackage.TOOLBAR__ELEMENTS);
 		}
 		return elements;
 	}

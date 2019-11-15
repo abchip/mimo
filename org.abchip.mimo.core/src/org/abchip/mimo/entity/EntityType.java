@@ -37,7 +37,7 @@ public interface EntityType<E extends EntityTyped<?>> extends EntityNameable, Te
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Slots</em>' containment reference list.
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityType_Slots()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<Slot> getSlots();

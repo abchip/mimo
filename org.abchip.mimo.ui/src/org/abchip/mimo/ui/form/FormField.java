@@ -198,7 +198,7 @@ public interface FormField extends Entity {
 	 * @return the value of the '<em>Domain</em>' containment reference.
 	 * @see #setDomain(Domain)
 	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Domain()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Domain getDomain();

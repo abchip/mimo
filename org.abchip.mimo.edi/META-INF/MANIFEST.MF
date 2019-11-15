@@ -16,7 +16,7 @@ Export-Package: org.abchip.mimo.edi,
  org.abchip.mimo.edi.message.impl,
  org.abchip.mimo.edi.transmission,
  org.abchip.mimo.edi.transmission.impl
-Require-Bundle: org.eclipse.core.runtime;resolution:=optional;x-installation:=greedy,
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.abchip.mimo.core;visibility:=reexport
 Bundle-ActivationPolicy: lazy

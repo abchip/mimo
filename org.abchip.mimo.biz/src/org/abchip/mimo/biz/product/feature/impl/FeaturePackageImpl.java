@@ -201,6 +201,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -2041,7 +2042,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureIdTo"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureEClass.getEOperations().get(1),
@@ -2051,7 +2052,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureEClass.getEOperations().get(2),
@@ -2061,7 +2062,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureEClass.getEOperations().get(3),
@@ -2071,7 +2072,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureEClass.getEOperations().get(4),
@@ -2081,7 +2082,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureEClass.getEOperations().get(5),
@@ -2091,7 +2092,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeature"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureEClass.getEOperations().get(6),
@@ -2101,7 +2102,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureEClass.getEOperations().get(7),
@@ -2111,7 +2112,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductFeature_MainProductFeatureIactns(),
@@ -2120,7 +2121,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "frame", "ProductFeatureIactn"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureApplTypeEClass.getEOperations().get(0),
@@ -2130,7 +2131,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureCategoryEClass.getEOperations().get(0),
@@ -2140,7 +2141,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "parentCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureCategoryEClass.getEOperations().get(1),
@@ -2150,7 +2151,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureIactnTypeEClass.getEOperations().get(0),
@@ -2160,7 +2161,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureIactnTypeEClass.getEOperations().get(1),
@@ -2170,7 +2171,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureIactnTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureTypeEClass.getEOperations().get(0),
@@ -2180,7 +2181,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productFeatureTypeEClass.getEOperations().get(1),
@@ -2190,7 +2191,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "route", "productFeatureTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

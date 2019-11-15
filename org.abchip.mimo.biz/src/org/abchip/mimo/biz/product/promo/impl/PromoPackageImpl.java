@@ -199,6 +199,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -2202,7 +2203,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPromoEClass.getEOperations().get(1),
@@ -2212,7 +2213,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPromoEClass.getEOperations().get(2),
@@ -2222,7 +2223,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPromoEClass.getEOperations().get(3),
@@ -2232,7 +2233,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPromoEClass.getEOperations().get(4),
@@ -2242,7 +2243,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductPromo_ProductPromoRules(),
@@ -2251,7 +2252,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "frame", "ProductPromoRule"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPromoCodeEClass.getEOperations().get(0),
@@ -2261,7 +2262,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoCodeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPromoCodeEClass.getEOperations().get(1),
@@ -2271,7 +2272,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoCodeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productPromoCodeEClass.getEOperations().get(2),
@@ -2281,7 +2282,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "route", "productPromoCodeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductPromoCode_ProductPromoCodeEmails(),
@@ -2290,7 +2291,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "frame", "ProductPromoCodeEmail"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductPromoCode_ProductPromoCodeParties(),
@@ -2299,7 +2300,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "frame", "ProductPromoCodeParty"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

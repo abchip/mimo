@@ -197,6 +197,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -2082,7 +2083,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "route", "subscriptionId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getSubscription_SubscriptionAttributes(),
@@ -2091,7 +2092,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "frame", "SubscriptionAttribute"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getSubscription_SubscriptionCommEvents(),
@@ -2100,7 +2101,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "frame", "SubscriptionCommEvent"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getSubscriptionActivity_SubscriptionFulfillmentPieces(),
@@ -2109,7 +2110,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "frame", "SubscriptionFulfillmentPiece"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (subscriptionResourceEClass.getEOperations().get(0),
@@ -2119,7 +2120,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "route", "parentResourceId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (subscriptionResourceEClass.getEOperations().get(1),
@@ -2129,7 +2130,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "route", "subscriptionResourceId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (subscriptionTypeEClass.getEOperations().get(0),
@@ -2139,7 +2140,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (subscriptionTypeEClass.getEOperations().get(1),
@@ -2149,7 +2150,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "route", "subscriptionTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getSubscriptionType_SubscriptionTypeAttrs(),
@@ -2158,7 +2159,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "frame", "SubscriptionTypeAttr"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

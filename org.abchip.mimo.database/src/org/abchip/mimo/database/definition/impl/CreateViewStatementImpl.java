@@ -17,6 +17,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -139,6 +140,29 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	 */
 	@Override
 	public QualifiedName getViewName() {
+		if (viewName != null && ((EObject)viewName).eIsProxy()) {
+			InternalEObject oldViewName = (InternalEObject)viewName;
+			viewName = (QualifiedName)eResolveProxy(oldViewName);
+			if (viewName != oldViewName) {
+				InternalEObject newViewName = (InternalEObject)viewName;
+				NotificationChain msgs = oldViewName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_VIEW_STATEMENT__VIEW_NAME, null, null);
+				if (newViewName.eInternalContainer() == null) {
+					msgs = newViewName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_VIEW_STATEMENT__VIEW_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CREATE_VIEW_STATEMENT__VIEW_NAME, oldViewName, viewName));
+			}
+		}
+		return viewName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetViewName() {
 		return viewName;
 	}
 
@@ -200,7 +224,8 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatabaseDefinitionPackage.CREATE_VIEW_STATEMENT__VIEW_NAME:
-				return getViewName();
+				if (resolve) return getViewName();
+				return basicGetViewName();
 			case DatabaseDefinitionPackage.CREATE_VIEW_STATEMENT__FIELDS:
 				return getFields();
 			case DatabaseDefinitionPackage.CREATE_VIEW_STATEMENT__QUERY:

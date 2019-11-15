@@ -193,6 +193,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -1260,7 +1261,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 			   "route", "prodCatalogId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (prodCatalogCategoryTypeEClass.getEOperations().get(0),
@@ -1270,7 +1271,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

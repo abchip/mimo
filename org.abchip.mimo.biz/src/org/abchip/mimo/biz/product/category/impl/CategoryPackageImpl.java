@@ -199,6 +199,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -2073,7 +2074,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "primaryParentCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryEClass.getEOperations().get(1),
@@ -2083,7 +2084,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "primaryProductCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryEClass.getEOperations().get(2),
@@ -2093,7 +2094,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "productCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryEClass.getEOperations().get(3),
@@ -2103,7 +2104,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "productCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryEClass.getEOperations().get(4),
@@ -2113,7 +2114,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "productCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryEClass.getEOperations().get(5),
@@ -2123,7 +2124,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "productCategoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductCategory_ProductCategoryAttributes(),
@@ -2132,7 +2133,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "frame", "ProductCategoryAttribute"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryContentTypeEClass.getEOperations().get(0),
@@ -2142,7 +2143,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryTypeEClass.getEOperations().get(0),
@@ -2152,7 +2153,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productCategoryTypeEClass.getEOperations().get(1),
@@ -2162,7 +2163,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "route", "productCategoryTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductCategoryType_ProductCategoryTypeAttrs(),
@@ -2171,7 +2172,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "frame", "ProductCategoryTypeAttr"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

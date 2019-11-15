@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -84,6 +85,29 @@ public class CreateTableStatementImpl extends DefinitionStatementImpl implements
 	 */
 	@Override
 	public QualifiedName getTableName() {
+		if (tableName != null && ((EObject)tableName).eIsProxy()) {
+			InternalEObject oldTableName = (InternalEObject)tableName;
+			tableName = (QualifiedName)eResolveProxy(oldTableName);
+			if (tableName != oldTableName) {
+				InternalEObject newTableName = (InternalEObject)tableName;
+				NotificationChain msgs = oldTableName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__TABLE_NAME, null, null);
+				if (newTableName.eInternalContainer() == null) {
+					msgs = newTableName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__TABLE_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__TABLE_NAME, oldTableName, tableName));
+			}
+		}
+		return tableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetTableName() {
 		return tableName;
 	}
 
@@ -130,7 +154,7 @@ public class CreateTableStatementImpl extends DefinitionStatementImpl implements
 	@Override
 	public List<TableColumnDef> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<TableColumnDef>(TableColumnDef.class, this, DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__FIELDS);
+			fields = new EObjectContainmentEList.Resolving<TableColumnDef>(TableColumnDef.class, this, DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__FIELDS);
 		}
 		return fields;
 	}
@@ -160,7 +184,8 @@ public class CreateTableStatementImpl extends DefinitionStatementImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__TABLE_NAME:
-				return getTableName();
+				if (resolve) return getTableName();
+				return basicGetTableName();
 			case DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__FIELDS:
 				return getFields();
 		}

@@ -36,7 +36,7 @@ public interface Toolbar extends EntityNameable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.abchip.mimo.ui.toolbar.ToolbarPackage#getToolbar_Elements()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ToolbarView> getElements();

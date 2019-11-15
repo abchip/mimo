@@ -74,7 +74,7 @@ public interface DropStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Target Name</em>' containment reference.
 	 * @see #setTargetName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getDropStatement_TargetName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getTargetName();

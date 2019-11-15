@@ -35,7 +35,7 @@ public interface MenuGroup extends DataNode {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data</em>' containment reference list.
 	 * @see org.abchip.mimo.ui.menu.MenuPackage#getMenuGroup_Data()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<DataNode> getData();

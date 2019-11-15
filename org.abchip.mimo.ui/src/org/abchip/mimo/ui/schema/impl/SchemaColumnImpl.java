@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -353,6 +354,29 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 */
 	@Override
 	public Domain getDomain() {
+		if (domain != null && ((EObject)domain).eIsProxy()) {
+			InternalEObject oldDomain = (InternalEObject)domain;
+			domain = (Domain)eResolveProxy(oldDomain);
+			if (domain != oldDomain) {
+				InternalEObject newDomain = (InternalEObject)domain;
+				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__DOMAIN, null, null);
+				if (newDomain.eInternalContainer() == null) {
+					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__DOMAIN, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchemaPackage.SCHEMA_COLUMN__DOMAIN, oldDomain, domain));
+			}
+		}
+		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Domain basicGetDomain() {
 		return domain;
 	}
 
@@ -533,7 +557,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__CONTEXT_MENU:
 				return isContextMenu();
 			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
-				return getDomain();
+				if (resolve) return getDomain();
+				return basicGetDomain();
 			case SchemaPackage.SCHEMA_COLUMN__GROUP:
 				return getGroup();
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:

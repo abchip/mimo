@@ -39,7 +39,7 @@ public interface Question {
 	 * @return the value of the '<em>Object</em>' containment reference.
 	 * @see #setObject(Term)
 	 * @see org.abchip.mimo.logic.LogicPackage#getQuestion_Object()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Term getObject();
@@ -65,7 +65,7 @@ public interface Question {
 	 * @return the value of the '<em>Subject</em>' containment reference.
 	 * @see #setSubject(Term)
 	 * @see org.abchip.mimo.logic.LogicPackage#getQuestion_Subject()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Term getSubject();
@@ -91,7 +91,7 @@ public interface Question {
 	 * @return the value of the '<em>Relation</em>' containment reference.
 	 * @see #setRelation(Term)
 	 * @see org.abchip.mimo.logic.LogicPackage#getQuestion_Relation()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Term getRelation();
@@ -117,7 +117,7 @@ public interface Question {
 	 * @return the value of the '<em>Rule</em>' containment reference.
 	 * @see #setRule(Term)
 	 * @see org.abchip.mimo.logic.LogicPackage#getQuestion_Rule()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Term getRule();

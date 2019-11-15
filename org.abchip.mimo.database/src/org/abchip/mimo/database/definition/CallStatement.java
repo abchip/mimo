@@ -46,7 +46,7 @@ public interface CallStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Procedure Name</em>' containment reference.
 	 * @see #setProcedureName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCallStatement_ProcedureName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getProcedureName();

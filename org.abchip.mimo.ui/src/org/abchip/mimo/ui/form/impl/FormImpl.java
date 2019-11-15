@@ -102,7 +102,7 @@ public class FormImpl extends EntityNameableImpl implements Form {
 	@Override
 	public List<FormField> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<FormField>(FormField.class, this, FormPackage.FORM__FIELDS);
+			fields = new EObjectContainmentEList.Resolving<FormField>(FormField.class, this, FormPackage.FORM__FIELDS);
 		}
 		return fields;
 	}

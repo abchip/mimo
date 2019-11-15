@@ -47,7 +47,7 @@ public interface CreateViewStatement extends DefinitionStatement {
 	 * @return the value of the '<em>View Name</em>' containment reference.
 	 * @see #setViewName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateViewStatement_ViewName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getViewName();

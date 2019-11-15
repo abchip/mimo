@@ -26,6 +26,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -152,6 +153,29 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 */
 	@Override
 	public ServiceConfig getConfig() {
+		if (config != null && ((EObject)config).eIsProxy()) {
+			InternalEObject oldConfig = (InternalEObject)config;
+			config = (ServiceConfig)eResolveProxy(oldConfig);
+			if (config != oldConfig) {
+				InternalEObject newConfig = (InternalEObject)config;
+				NotificationChain msgs = oldConfig.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION_COMPONENT__CONFIG, null, null);
+				if (newConfig.eInternalContainer() == null) {
+					msgs = newConfig.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION_COMPONENT__CONFIG, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION_COMPONENT__CONFIG, oldConfig, config));
+			}
+		}
+		return config;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceConfig basicGetConfig() {
 		return config;
 	}
 
@@ -198,7 +222,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	@Override
 	public List<ServiceCommandProvider> getCommands() {
 		if (commands == null) {
-			commands = new EObjectContainmentEList<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION_COMPONENT__COMMANDS);
+			commands = new EObjectContainmentEList.Resolving<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION_COMPONENT__COMMANDS);
 		}
 		return commands;
 	}
@@ -211,7 +235,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	@Override
 	public List<ServiceHook> getHooks() {
 		if (hooks == null) {
-			hooks = new EObjectContainmentEList<ServiceHook>(ServiceHook.class, this, ApplicationPackage.APPLICATION_COMPONENT__HOOKS);
+			hooks = new EObjectContainmentEList.Resolving<ServiceHook>(ServiceHook.class, this, ApplicationPackage.APPLICATION_COMPONENT__HOOKS);
 		}
 		return hooks;
 	}
@@ -224,7 +248,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	@Override
 	public List<ApplicationModule> getModules() {
 		if (modules == null) {
-			modules = new EObjectContainmentEList<ApplicationModule>(ApplicationModule.class, this, ApplicationPackage.APPLICATION_COMPONENT__MODULES);
+			modules = new EObjectContainmentEList.Resolving<ApplicationModule>(ApplicationModule.class, this, ApplicationPackage.APPLICATION_COMPONENT__MODULES);
 		}
 		return modules;
 	}
@@ -271,6 +295,29 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 */
 	@Override
 	public Context getContext() {
+		if (context != null && ((EObject)context).eIsProxy()) {
+			InternalEObject oldContext = (InternalEObject)context;
+			context = (Context)eResolveProxy(oldContext);
+			if (context != oldContext) {
+				InternalEObject newContext = (InternalEObject)context;
+				NotificationChain msgs = oldContext.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, null, null);
+				if (newContext.eInternalContainer() == null) {
+					msgs = newContext.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, oldContext, context));
+			}
+		}
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Context basicGetContext() {
 		return context;
 	}
 
@@ -340,9 +387,11 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
-				return getConfig();
+				if (resolve) return getConfig();
+				return basicGetConfig();
 			case ApplicationPackage.APPLICATION_COMPONENT__CONTEXT:
-				return getContext();
+				if (resolve) return getContext();
+				return basicGetContext();
 			case ApplicationPackage.APPLICATION_COMPONENT__HOOKS:
 				return getHooks();
 			case ApplicationPackage.APPLICATION_COMPONENT__COMMANDS:

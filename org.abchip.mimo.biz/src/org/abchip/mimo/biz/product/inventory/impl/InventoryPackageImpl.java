@@ -203,6 +203,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -2868,7 +2869,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(1),
@@ -2878,7 +2879,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(2),
@@ -2888,7 +2889,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "fromInventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(3),
@@ -2898,7 +2899,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(4),
@@ -2908,7 +2909,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(5),
@@ -2918,7 +2919,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(6),
@@ -2928,7 +2929,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(7),
@@ -2938,7 +2939,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(8),
@@ -2948,7 +2949,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemEClass.getEOperations().get(9),
@@ -2958,7 +2959,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getInventoryItem_InventoryItemAttributes(),
@@ -2967,7 +2968,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "frame", "InventoryItemAttribute"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getInventoryItem_InventoryItemDetails(),
@@ -2976,7 +2977,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "frame", "InventoryItemDetail"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getInventoryItem_InventoryItemLabelAppls(),
@@ -2985,7 +2986,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "frame", "InventoryItemLabelAppl"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getInventoryItem_InventoryItemVariances(),
@@ -2994,7 +2995,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "frame", "InventoryItemVariance"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemLabelEClass.getEOperations().get(0),
@@ -3004,7 +3005,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemLabelId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemLabelTypeEClass.getEOperations().get(0),
@@ -3014,7 +3015,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemLabelTypeEClass.getEOperations().get(1),
@@ -3024,7 +3025,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemLabelTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemLabelTypeEClass.getEOperations().get(2),
@@ -3034,7 +3035,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemLabelTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemTypeEClass.getEOperations().get(0),
@@ -3044,7 +3045,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemTypeEClass.getEOperations().get(1),
@@ -3054,7 +3055,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "defaultInventoryItemTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemTypeEClass.getEOperations().get(2),
@@ -3064,7 +3065,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (inventoryItemTypeEClass.getEOperations().get(3),
@@ -3074,7 +3075,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "inventoryItemTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getInventoryItemType_InventoryItemTypeAttrs(),
@@ -3083,7 +3084,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "frame", "InventoryItemTypeAttr"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (lotEClass.getEOperations().get(0),
@@ -3093,7 +3094,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "lotId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (physicalInventoryEClass.getEOperations().get(0),
@@ -3103,7 +3104,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "physicalInventoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (physicalInventoryEClass.getEOperations().get(1),
@@ -3113,7 +3114,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "physicalInventoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (physicalInventoryEClass.getEOperations().get(2),
@@ -3123,7 +3124,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "physicalInventoryId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (varianceReasonEClass.getEOperations().get(0),
@@ -3133,7 +3134,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "route", "varianceReasonId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getVarianceReason_VarianceReasonGlAccounts(),
@@ -3142,7 +3143,7 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "frame", "VarianceReasonGlAccount"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

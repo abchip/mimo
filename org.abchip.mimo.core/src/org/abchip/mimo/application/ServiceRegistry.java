@@ -39,7 +39,7 @@ public interface ServiceRegistry extends ServiceRef {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entries</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistry_Entries()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ServiceRegistryEntry> getEntries();

@@ -46,7 +46,7 @@ public interface CreateTableStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Table Name</em>' containment reference.
 	 * @see #setTableName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateTableStatement_TableName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getTableName();
@@ -72,7 +72,7 @@ public interface CreateTableStatement extends DefinitionStatement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateTableStatement_Fields()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	List<TableColumnDef> getFields();

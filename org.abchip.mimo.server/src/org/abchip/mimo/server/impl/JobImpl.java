@@ -361,6 +361,29 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 */
 	@Override
 	public JobReference getJobReference() {
+		if (jobReference != null && ((EObject)jobReference).eIsProxy()) {
+			InternalEObject oldJobReference = (InternalEObject)jobReference;
+			jobReference = (JobReference)eResolveProxy(oldJobReference);
+			if (jobReference != oldJobReference) {
+				InternalEObject newJobReference = (InternalEObject)jobReference;
+				NotificationChain msgs = oldJobReference.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, null);
+				if (newJobReference.eInternalContainer() == null) {
+					msgs = newJobReference.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.JOB__JOB_REFERENCE, oldJobReference, jobReference));
+			}
+		}
+		return jobReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JobReference basicGetJobReference() {
 		return jobReference;
 	}
 
@@ -406,6 +429,29 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 */
 	@Override
 	public JobRunInfo getJobRunInfo() {
+		if (jobRunInfo != null && ((EObject)jobRunInfo).eIsProxy()) {
+			InternalEObject oldJobRunInfo = (InternalEObject)jobRunInfo;
+			jobRunInfo = (JobRunInfo)eResolveProxy(oldJobRunInfo);
+			if (jobRunInfo != oldJobRunInfo) {
+				InternalEObject newJobRunInfo = (InternalEObject)jobRunInfo;
+				NotificationChain msgs = oldJobRunInfo.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, null);
+				if (newJobRunInfo.eInternalContainer() == null) {
+					msgs = newJobRunInfo.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.JOB__JOB_RUN_INFO, oldJobRunInfo, jobRunInfo));
+			}
+		}
+		return jobRunInfo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JobRunInfo basicGetJobRunInfo() {
 		return jobRunInfo;
 	}
 
@@ -579,7 +625,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	@Override
 	public List<JobMessage> getMessages() {
 		if (messages == null) {
-			messages = new EObjectContainmentEList<JobMessage>(JobMessage.class, this, ServerPackage.JOB__MESSAGES);
+			messages = new EObjectContainmentEList.Resolving<JobMessage>(JobMessage.class, this, ServerPackage.JOB__MESSAGES);
 		}
 		return messages;
 	}
@@ -760,6 +806,29 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 */
 	@Override
 	public Context getContext() {
+		if (context != null && ((EObject)context).eIsProxy()) {
+			InternalEObject oldContext = (InternalEObject)context;
+			context = (Context)eResolveProxy(oldContext);
+			if (context != oldContext) {
+				InternalEObject newContext = (InternalEObject)context;
+				NotificationChain msgs = oldContext.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, null);
+				if (newContext.eInternalContainer() == null) {
+					msgs = newContext.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.JOB__CONTEXT, oldContext, context));
+			}
+		}
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Context basicGetContext() {
 		return context;
 	}
 
@@ -856,7 +925,8 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ServerPackage.JOB__CONTEXT:
-				return getContext();
+				if (resolve) return getContext();
+				return basicGetContext();
 			case ServerPackage.JOB__CREATION_DATE:
 				return getCreationDate();
 			case ServerPackage.JOB__CURRENT_RESOURCE:
@@ -870,9 +940,11 @@ public class JobImpl extends EntityNameableImpl implements Job {
 			case ServerPackage.JOB__JOB_ID:
 				return getJobID();
 			case ServerPackage.JOB__JOB_REFERENCE:
-				return getJobReference();
+				if (resolve) return getJobReference();
+				return basicGetJobReference();
 			case ServerPackage.JOB__JOB_RUN_INFO:
-				return getJobRunInfo();
+				if (resolve) return getJobRunInfo();
+				return basicGetJobRunInfo();
 			case ServerPackage.JOB__JOB_THREAD:
 				return getJobThread();
 			case ServerPackage.JOB__JOB_TYPE:

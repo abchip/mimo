@@ -46,7 +46,7 @@ public interface CreateIndexStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Index Name</em>' containment reference.
 	 * @see #setIndexName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateIndexStatement_IndexName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getIndexName();
@@ -72,7 +72,7 @@ public interface CreateIndexStatement extends DefinitionStatement {
 	 * @return the value of the '<em>On Table</em>' containment reference.
 	 * @see #setOnTable(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateIndexStatement_OnTable()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getOnTable();
@@ -98,7 +98,7 @@ public interface CreateIndexStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Sort By</em>' containment reference.
 	 * @see #setSortBy(IndexDef)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getCreateIndexStatement_SortBy()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	IndexDef getSortBy();

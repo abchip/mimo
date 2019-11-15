@@ -78,7 +78,7 @@ public class MenuGroupImpl extends DataNodeImpl implements MenuGroup {
 	@Override
 	public List<DataNode> getData() {
 		if (data == null) {
-			data = new EObjectContainmentEList<DataNode>(DataNode.class, this, MenuPackage.MENU_GROUP__DATA);
+			data = new EObjectContainmentEList.Resolving<DataNode>(DataNode.class, this, MenuPackage.MENU_GROUP__DATA);
 		}
 		return data;
 	}

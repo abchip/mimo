@@ -66,7 +66,7 @@ public interface JobLog extends EntityNameable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entries</em>' containment reference list.
 	 * @see org.abchip.mimo.server.ServerPackage#getJobLog_Entries()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<JobLogEntry> getEntries();

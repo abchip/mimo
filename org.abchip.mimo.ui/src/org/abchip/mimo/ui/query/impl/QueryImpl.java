@@ -102,7 +102,7 @@ public class QueryImpl extends EntityNameableImpl implements Query {
 	@Override
 	public List<QueryField> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<QueryField>(QueryField.class, this, QueryPackage.QUERY__FIELDS);
+			fields = new EObjectContainmentEList.Resolving<QueryField>(QueryField.class, this, QueryPackage.QUERY__FIELDS);
 		}
 		return fields;
 	}

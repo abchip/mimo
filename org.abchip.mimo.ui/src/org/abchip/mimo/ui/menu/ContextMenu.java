@@ -39,7 +39,7 @@ public interface ContextMenu extends EntityNameable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.abchip.mimo.ui.menu.MenuPackage#getContextMenu_Elements()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<DataNode> getElements();

@@ -253,7 +253,7 @@ public class TestResultImpl extends EntityImpl implements TestResult {
 	@Override
 	public List<AssertionResult> getAssertResults() {
 		if (assertResults == null) {
-			assertResults = new EObjectContainmentEList<AssertionResult>(AssertionResult.class, this, TesterPackage.TEST_RESULT__ASSERT_RESULTS);
+			assertResults = new EObjectContainmentEList.Resolving<AssertionResult>(AssertionResult.class, this, TesterPackage.TEST_RESULT__ASSERT_RESULTS);
 		}
 		return assertResults;
 	}

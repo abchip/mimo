@@ -17,6 +17,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -82,6 +83,29 @@ public class CallStatementImpl extends DefinitionStatementImpl implements CallSt
 	 */
 	@Override
 	public QualifiedName getProcedureName() {
+		if (procedureName != null && ((EObject)procedureName).eIsProxy()) {
+			InternalEObject oldProcedureName = (InternalEObject)procedureName;
+			procedureName = (QualifiedName)eResolveProxy(oldProcedureName);
+			if (procedureName != oldProcedureName) {
+				InternalEObject newProcedureName = (InternalEObject)procedureName;
+				NotificationChain msgs = oldProcedureName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CALL_STATEMENT__PROCEDURE_NAME, null, null);
+				if (newProcedureName.eInternalContainer() == null) {
+					msgs = newProcedureName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CALL_STATEMENT__PROCEDURE_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CALL_STATEMENT__PROCEDURE_NAME, oldProcedureName, procedureName));
+			}
+		}
+		return procedureName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetProcedureName() {
 		return procedureName;
 	}
 
@@ -156,7 +180,8 @@ public class CallStatementImpl extends DefinitionStatementImpl implements CallSt
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatabaseDefinitionPackage.CALL_STATEMENT__PROCEDURE_NAME:
-				return getProcedureName();
+				if (resolve) return getProcedureName();
+				return basicGetProcedureName();
 			case DatabaseDefinitionPackage.CALL_STATEMENT__PARMS:
 				return getParms();
 		}

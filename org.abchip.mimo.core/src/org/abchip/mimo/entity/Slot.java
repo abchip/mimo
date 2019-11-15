@@ -92,7 +92,7 @@ public interface Slot extends EntityNameable, Textable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Cardinality()
-	 * @model containment="true" changeable="false"
+	 * @model containment="true" resolveProxies="true" changeable="false"
 	 * @generated
 	 */
 	Cardinality getCardinality();
@@ -152,7 +152,7 @@ public interface Slot extends EntityNameable, Textable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' containment reference.
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Domain()
-	 * @model containment="true" changeable="false"
+	 * @model containment="true" resolveProxies="true" changeable="false"
 	 * @generated
 	 */
 	Domain getDomain();

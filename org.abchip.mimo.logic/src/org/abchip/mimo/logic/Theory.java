@@ -64,7 +64,7 @@ public interface Theory {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facts</em>' containment reference list.
 	 * @see org.abchip.mimo.logic.LogicPackage#getTheory_Facts()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<Term> getFacts();

@@ -13,6 +13,7 @@ import org.abchip.mimo.database.definition.DatabaseDefinitionPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -77,6 +78,29 @@ public class CreateAliasStatementImpl extends DefinitionStatementImpl implements
 	 */
 	@Override
 	public QualifiedName getAliasName() {
+		if (aliasName != null && ((EObject)aliasName).eIsProxy()) {
+			InternalEObject oldAliasName = (InternalEObject)aliasName;
+			aliasName = (QualifiedName)eResolveProxy(oldAliasName);
+			if (aliasName != oldAliasName) {
+				InternalEObject newAliasName = (InternalEObject)aliasName;
+				NotificationChain msgs = oldAliasName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__ALIAS_NAME, null, null);
+				if (newAliasName.eInternalContainer() == null) {
+					msgs = newAliasName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__ALIAS_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__ALIAS_NAME, oldAliasName, aliasName));
+			}
+		}
+		return aliasName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetAliasName() {
 		return aliasName;
 	}
 
@@ -122,6 +146,29 @@ public class CreateAliasStatementImpl extends DefinitionStatementImpl implements
 	 */
 	@Override
 	public QualifiedName getTableName() {
+		if (tableName != null && ((EObject)tableName).eIsProxy()) {
+			InternalEObject oldTableName = (InternalEObject)tableName;
+			tableName = (QualifiedName)eResolveProxy(oldTableName);
+			if (tableName != oldTableName) {
+				InternalEObject newTableName = (InternalEObject)tableName;
+				NotificationChain msgs = oldTableName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__TABLE_NAME, null, null);
+				if (newTableName.eInternalContainer() == null) {
+					msgs = newTableName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__TABLE_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__TABLE_NAME, oldTableName, tableName));
+			}
+		}
+		return tableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetTableName() {
 		return tableName;
 	}
 
@@ -185,9 +232,11 @@ public class CreateAliasStatementImpl extends DefinitionStatementImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__ALIAS_NAME:
-				return getAliasName();
+				if (resolve) return getAliasName();
+				return basicGetAliasName();
 			case DatabaseDefinitionPackage.CREATE_ALIAS_STATEMENT__TABLE_NAME:
-				return getTableName();
+				if (resolve) return getTableName();
+				return basicGetTableName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

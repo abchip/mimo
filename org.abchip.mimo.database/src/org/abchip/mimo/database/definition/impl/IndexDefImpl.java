@@ -133,7 +133,7 @@ public class IndexDefImpl extends DatabaseObjectDefImpl implements IndexDef {
 	@Override
 	public List<IndexColumnDef> getColumns() {
 		if (columns == null) {
-			columns = new EObjectContainmentEList<IndexColumnDef>(IndexColumnDef.class, this, DatabaseDefinitionPackage.INDEX_DEF__COLUMNS);
+			columns = new EObjectContainmentEList.Resolving<IndexColumnDef>(IndexColumnDef.class, this, DatabaseDefinitionPackage.INDEX_DEF__COLUMNS);
 		}
 		return columns;
 	}

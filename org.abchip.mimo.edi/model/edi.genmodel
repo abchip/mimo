@@ -6,8 +6,8 @@
     editorPluginClass="org.abchip.mimo.edi.presentation.EDICoreEditorPlugin" rootExtendsInterface=""
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" suppressEMFTypes="true"
     testSuiteClass="org.abchip.mimo.edi.tests.EDICoreAllTests" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" language="EN" usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo"
-    importOrganizing="true" oSGiCompatible="true">
+    containmentProxies="true" complianceLevel="8.0" copyrightFields="false" language="EN"
+    usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo" importOrganizing="true">
   <foreignModel>edi.ecore</foreignModel>
   <genPackages prefix="EDI" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="edi.ecore#/">

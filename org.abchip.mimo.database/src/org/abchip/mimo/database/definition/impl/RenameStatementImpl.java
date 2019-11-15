@@ -14,6 +14,7 @@ import org.abchip.mimo.database.definition.TargetElement;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -176,6 +177,29 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 */
 	@Override
 	public QualifiedName getOriginalName() {
+		if (originalName != null && ((EObject)originalName).eIsProxy()) {
+			InternalEObject oldOriginalName = (InternalEObject)originalName;
+			originalName = (QualifiedName)eResolveProxy(oldOriginalName);
+			if (originalName != oldOriginalName) {
+				InternalEObject newOriginalName = (InternalEObject)originalName;
+				NotificationChain msgs = oldOriginalName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.RENAME_STATEMENT__ORIGINAL_NAME, null, null);
+				if (newOriginalName.eInternalContainer() == null) {
+					msgs = newOriginalName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.RENAME_STATEMENT__ORIGINAL_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.RENAME_STATEMENT__ORIGINAL_NAME, oldOriginalName, originalName));
+			}
+		}
+		return originalName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetOriginalName() {
 		return originalName;
 	}
 
@@ -264,7 +288,8 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 			case DatabaseDefinitionPackage.RENAME_STATEMENT__SYSTEM:
 				return getSystem();
 			case DatabaseDefinitionPackage.RENAME_STATEMENT__ORIGINAL_NAME:
-				return getOriginalName();
+				if (resolve) return getOriginalName();
+				return basicGetOriginalName();
 			case DatabaseDefinitionPackage.RENAME_STATEMENT__TARGET:
 				return getTarget();
 		}

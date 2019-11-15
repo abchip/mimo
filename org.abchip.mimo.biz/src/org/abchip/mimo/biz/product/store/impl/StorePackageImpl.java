@@ -206,6 +206,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -4037,7 +4038,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(1),
@@ -4047,7 +4048,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(2),
@@ -4057,7 +4058,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(3),
@@ -4067,7 +4068,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(4),
@@ -4077,7 +4078,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(5),
@@ -4087,7 +4088,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(6),
@@ -4097,7 +4098,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(7),
@@ -4107,7 +4108,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(8),
@@ -4117,7 +4118,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(9),
@@ -4127,7 +4128,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(10),
@@ -4137,7 +4138,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(11),
@@ -4147,7 +4148,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreEClass.getEOperations().get(12),
@@ -4157,7 +4158,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductStore_OAuth2GitHubs(),
@@ -4166,7 +4167,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "frame", "OAuth2GitHub"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductStore_OAuth2Googles(),
@@ -4175,7 +4176,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "frame", "OAuth2Google"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductStore_OAuth2LinkedIns(),
@@ -4184,7 +4185,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "frame", "OAuth2LinkedIn"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductStore_ProductStoreEmailSettings(),
@@ -4193,7 +4194,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "frame", "ProductStoreEmailSetting"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getProductStore_ProductStoreFinActSettings(),
@@ -4202,7 +4203,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "frame", "ProductStoreFinActSetting"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreGroupEClass.getEOperations().get(0),
@@ -4212,7 +4213,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "primaryStoreGroupId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreGroupTypeEClass.getEOperations().get(0),
@@ -4222,7 +4223,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreGroupTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (productStoreShipmentMethEClass.getEOperations().get(0),
@@ -4232,7 +4233,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "route", "productStoreShipMethId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

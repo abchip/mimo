@@ -77,7 +77,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	@Override
 	public List<Term> getTerms() {
 		if (terms == null) {
-			terms = new EObjectContainmentEList<Term>(Term.class, this, LogicPackage.GOAL__TERMS);
+			terms = new EObjectContainmentEList.Resolving<Term>(Term.class, this, LogicPackage.GOAL__TERMS);
 		}
 		return terms;
 	}

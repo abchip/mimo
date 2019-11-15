@@ -148,7 +148,7 @@ public interface MessageDescription extends Entity, Textable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message Data Fields</em>' containment reference list.
 	 * @see org.abchip.mimo.context.ContextPackage#getMessageDescription_MessageDataFields()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<MessageDataField<?>> getMessageDataFields();

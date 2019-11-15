@@ -67,7 +67,7 @@ public interface TableColumnDef extends DatabaseObjectDef {
 	 * @return the value of the '<em>Definition</em>' containment reference.
 	 * @see #setDefinition(DataDef)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getTableColumnDef_Definition()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	DataDef<?> getDefinition();

@@ -14,6 +14,7 @@ import org.abchip.mimo.database.definition.IndexDef;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -110,6 +111,29 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 */
 	@Override
 	public QualifiedName getIndexName() {
+		if (indexName != null && ((EObject)indexName).eIsProxy()) {
+			InternalEObject oldIndexName = (InternalEObject)indexName;
+			indexName = (QualifiedName)eResolveProxy(oldIndexName);
+			if (indexName != oldIndexName) {
+				InternalEObject newIndexName = (InternalEObject)indexName;
+				NotificationChain msgs = oldIndexName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__INDEX_NAME, null, null);
+				if (newIndexName.eInternalContainer() == null) {
+					msgs = newIndexName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__INDEX_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__INDEX_NAME, oldIndexName, indexName));
+			}
+		}
+		return indexName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetIndexName() {
 		return indexName;
 	}
 
@@ -155,6 +179,29 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 */
 	@Override
 	public QualifiedName getOnTable() {
+		if (onTable != null && ((EObject)onTable).eIsProxy()) {
+			InternalEObject oldOnTable = (InternalEObject)onTable;
+			onTable = (QualifiedName)eResolveProxy(oldOnTable);
+			if (onTable != oldOnTable) {
+				InternalEObject newOnTable = (InternalEObject)onTable;
+				NotificationChain msgs = oldOnTable.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__ON_TABLE, null, null);
+				if (newOnTable.eInternalContainer() == null) {
+					msgs = newOnTable.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__ON_TABLE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__ON_TABLE, oldOnTable, onTable));
+			}
+		}
+		return onTable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetOnTable() {
 		return onTable;
 	}
 
@@ -200,6 +247,29 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 */
 	@Override
 	public IndexDef getSortBy() {
+		if (sortBy != null && ((EObject)sortBy).eIsProxy()) {
+			InternalEObject oldSortBy = (InternalEObject)sortBy;
+			sortBy = (IndexDef)eResolveProxy(oldSortBy);
+			if (sortBy != oldSortBy) {
+				InternalEObject newSortBy = (InternalEObject)sortBy;
+				NotificationChain msgs = oldSortBy.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__SORT_BY, null, null);
+				if (newSortBy.eInternalContainer() == null) {
+					msgs = newSortBy.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__SORT_BY, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__SORT_BY, oldSortBy, sortBy));
+			}
+		}
+		return sortBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IndexDef basicGetSortBy() {
 		return sortBy;
 	}
 
@@ -288,11 +358,14 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__INDEX_NAME:
-				return getIndexName();
+				if (resolve) return getIndexName();
+				return basicGetIndexName();
 			case DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__ON_TABLE:
-				return getOnTable();
+				if (resolve) return getOnTable();
+				return basicGetOnTable();
 			case DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__SORT_BY:
-				return getSortBy();
+				if (resolve) return getSortBy();
+				return basicGetSortBy();
 			case DatabaseDefinitionPackage.CREATE_INDEX_STATEMENT__UNIQUE:
 				return isUnique();
 		}

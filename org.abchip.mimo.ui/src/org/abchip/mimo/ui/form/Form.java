@@ -36,7 +36,7 @@ public interface Form extends EntityNameable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.abchip.mimo.ui.form.FormPackage#getForm_Fields()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<FormField> getFields();

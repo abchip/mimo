@@ -72,7 +72,7 @@ public class TableDefImpl extends DatabaseObjectDefImpl implements TableDef {
 	@Override
 	public List<TableColumnDef> getColumns() {
 		if (columns == null) {
-			columns = new EObjectContainmentEList<TableColumnDef>(TableColumnDef.class, this, DatabaseDefinitionPackage.TABLE_DEF__COLUMNS);
+			columns = new EObjectContainmentEList.Resolving<TableColumnDef>(TableColumnDef.class, this, DatabaseDefinitionPackage.TABLE_DEF__COLUMNS);
 		}
 		return columns;
 	}

@@ -194,7 +194,7 @@ Export-Package: org.abchip.mimo.biz,
  org.abchip.mimo.biz.workeffort.timesheet.impl,
  org.abchip.mimo.biz.workeffort.workeffort,
  org.abchip.mimo.biz.workeffort.workeffort.impl
-Require-Bundle: org.eclipse.core.runtime;resolution:=optional;x-installation:=greedy,
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.abchip.mimo.core;visibility:=reexport
 Bundle-ActivationPolicy: lazy

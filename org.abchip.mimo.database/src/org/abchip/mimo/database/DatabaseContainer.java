@@ -42,7 +42,7 @@ public interface DatabaseContainer extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Catalog Containers</em>' containment reference list.
 	 * @see org.abchip.mimo.database.DatabasePackage#getDatabaseContainer_CatalogContainers()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	List<CatalogContainer> getCatalogContainers();

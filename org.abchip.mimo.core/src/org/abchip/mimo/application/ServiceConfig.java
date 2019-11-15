@@ -40,7 +40,7 @@ public interface ServiceConfig {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entities</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceConfig_Entities()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	List<Entity> getEntities();

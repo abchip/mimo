@@ -14,6 +14,7 @@ import org.abchip.mimo.database.definition.ShareMode;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -155,6 +156,29 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	 */
 	@Override
 	public QualifiedName getTableName() {
+		if (tableName != null && ((EObject)tableName).eIsProxy()) {
+			InternalEObject oldTableName = (InternalEObject)tableName;
+			tableName = (QualifiedName)eResolveProxy(oldTableName);
+			if (tableName != oldTableName) {
+				InternalEObject newTableName = (InternalEObject)tableName;
+				NotificationChain msgs = oldTableName.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.LOCK_TABLE_STATEMENT__TABLE_NAME, null, null);
+				if (newTableName.eInternalContainer() == null) {
+					msgs = newTableName.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.LOCK_TABLE_STATEMENT__TABLE_NAME, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.LOCK_TABLE_STATEMENT__TABLE_NAME, oldTableName, tableName));
+			}
+		}
+		return tableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualifiedName basicGetTableName() {
 		return tableName;
 	}
 
@@ -220,7 +244,8 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 			case DatabaseDefinitionPackage.LOCK_TABLE_STATEMENT__SHARE_MODE:
 				return getShareMode();
 			case DatabaseDefinitionPackage.LOCK_TABLE_STATEMENT__TABLE_NAME:
-				return getTableName();
+				if (resolve) return getTableName();
+				return basicGetTableName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

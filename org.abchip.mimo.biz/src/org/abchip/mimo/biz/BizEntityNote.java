@@ -65,7 +65,7 @@ public interface BizEntityNote extends BizEntity {
 	 * @return the value of the '<em>Note</em>' containment reference.
 	 * @see #setNote(BizEntityNoteData)
 	 * @see org.abchip.mimo.biz.BizPackage#getBizEntityNote_Note()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	BizEntityNoteData getNote();

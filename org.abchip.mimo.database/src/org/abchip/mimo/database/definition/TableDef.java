@@ -38,7 +38,7 @@ public interface TableDef extends DatabaseObjectDef {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Columns</em>' containment reference list.
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getTableDef_Columns()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<TableColumnDef> getColumns();

@@ -113,7 +113,7 @@ public interface CatalogContainer {
 	 * @return the value of the '<em>Connection Config</em>' containment reference.
 	 * @see #setConnectionConfig(ConnectionConfig)
 	 * @see org.abchip.mimo.database.DatabasePackage#getCatalogContainer_ConnectionConfig()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	ConnectionConfig getConnectionConfig();
@@ -166,7 +166,7 @@ public interface CatalogContainer {
 	 * @return the value of the '<em>Generation Strategy</em>' containment reference.
 	 * @see #setGenerationStrategy(CatalogGenerationStrategy)
 	 * @see org.abchip.mimo.database.DatabasePackage#getCatalogContainer_GenerationStrategy()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	CatalogGenerationStrategy getGenerationStrategy();

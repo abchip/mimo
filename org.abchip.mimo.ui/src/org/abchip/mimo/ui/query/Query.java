@@ -36,7 +36,7 @@ public interface Query extends EntityNameable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.abchip.mimo.ui.query.QueryPackage#getQuery_Fields()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<QueryField> getFields();

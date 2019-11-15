@@ -66,7 +66,7 @@ public interface BizProviderConfig extends Entity {
 	 * @return the value of the '<em>Public User</em>' containment reference.
 	 * @see #setPublicUser(BizProviderUser)
 	 * @see org.abchip.mimo.biz.BizPackage#getBizProviderConfig_PublicUser()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	BizProviderUser getPublicUser();
@@ -92,7 +92,7 @@ public interface BizProviderConfig extends Entity {
 	 * @return the value of the '<em>System User</em>' containment reference.
 	 * @see #setSystemUser(BizProviderUser)
 	 * @see org.abchip.mimo.biz.BizPackage#getBizProviderConfig_SystemUser()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	BizProviderUser getSystemUser();

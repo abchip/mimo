@@ -37,7 +37,7 @@ public interface Goal {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Terms</em>' containment reference list.
 	 * @see org.abchip.mimo.logic.LogicPackage#getGoal_Terms()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<Term> getTerms();

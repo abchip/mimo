@@ -102,7 +102,7 @@ public class SchemaImpl extends EntityNameableImpl implements Schema {
 	@Override
 	public List<SchemaColumn> getColumns() {
 		if (columns == null) {
-			columns = new EObjectContainmentEList<SchemaColumn>(SchemaColumn.class, this, SchemaPackage.SCHEMA__COLUMNS);
+			columns = new EObjectContainmentEList.Resolving<SchemaColumn>(SchemaColumn.class, this, SchemaPackage.SCHEMA__COLUMNS);
 		}
 		return columns;
 	}

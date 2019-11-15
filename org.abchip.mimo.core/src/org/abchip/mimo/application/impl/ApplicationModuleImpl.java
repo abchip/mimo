@@ -124,7 +124,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	@Override
 	public List<ServiceRef> getServices() {
 		if (services == null) {
-			services = new EObjectContainmentEList<ServiceRef>(ServiceRef.class, this, ApplicationPackage.APPLICATION_MODULE__SERVICES);
+			services = new EObjectContainmentEList.Resolving<ServiceRef>(ServiceRef.class, this, ApplicationPackage.APPLICATION_MODULE__SERVICES);
 		}
 		return services;
 	}

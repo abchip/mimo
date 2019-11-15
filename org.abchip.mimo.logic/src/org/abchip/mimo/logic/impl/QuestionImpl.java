@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -103,6 +104,29 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 */
 	@Override
 	public Term getObject() {
+		if (object != null && ((EObject)object).eIsProxy()) {
+			InternalEObject oldObject = (InternalEObject)object;
+			object = (Term)eResolveProxy(oldObject);
+			if (object != oldObject) {
+				InternalEObject newObject = (InternalEObject)object;
+				NotificationChain msgs = oldObject.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__OBJECT, null, null);
+				if (newObject.eInternalContainer() == null) {
+					msgs = newObject.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__OBJECT, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LogicPackage.QUESTION__OBJECT, oldObject, object));
+			}
+		}
+		return object;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Term basicGetObject() {
 		return object;
 	}
 
@@ -148,6 +172,29 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 */
 	@Override
 	public Term getSubject() {
+		if (subject != null && ((EObject)subject).eIsProxy()) {
+			InternalEObject oldSubject = (InternalEObject)subject;
+			subject = (Term)eResolveProxy(oldSubject);
+			if (subject != oldSubject) {
+				InternalEObject newSubject = (InternalEObject)subject;
+				NotificationChain msgs = oldSubject.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__SUBJECT, null, null);
+				if (newSubject.eInternalContainer() == null) {
+					msgs = newSubject.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__SUBJECT, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LogicPackage.QUESTION__SUBJECT, oldSubject, subject));
+			}
+		}
+		return subject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Term basicGetSubject() {
 		return subject;
 	}
 
@@ -193,6 +240,29 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 */
 	@Override
 	public Term getRelation() {
+		if (relation != null && ((EObject)relation).eIsProxy()) {
+			InternalEObject oldRelation = (InternalEObject)relation;
+			relation = (Term)eResolveProxy(oldRelation);
+			if (relation != oldRelation) {
+				InternalEObject newRelation = (InternalEObject)relation;
+				NotificationChain msgs = oldRelation.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__RELATION, null, null);
+				if (newRelation.eInternalContainer() == null) {
+					msgs = newRelation.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__RELATION, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LogicPackage.QUESTION__RELATION, oldRelation, relation));
+			}
+		}
+		return relation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Term basicGetRelation() {
 		return relation;
 	}
 
@@ -238,6 +308,29 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 */
 	@Override
 	public Term getRule() {
+		if (rule != null && ((EObject)rule).eIsProxy()) {
+			InternalEObject oldRule = (InternalEObject)rule;
+			rule = (Term)eResolveProxy(oldRule);
+			if (rule != oldRule) {
+				InternalEObject newRule = (InternalEObject)rule;
+				NotificationChain msgs = oldRule.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__RULE, null, null);
+				if (newRule.eInternalContainer() == null) {
+					msgs = newRule.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.QUESTION__RULE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LogicPackage.QUESTION__RULE, oldRule, rule));
+			}
+		}
+		return rule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Term basicGetRule() {
 		return rule;
 	}
 
@@ -305,13 +398,17 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LogicPackage.QUESTION__OBJECT:
-				return getObject();
+				if (resolve) return getObject();
+				return basicGetObject();
 			case LogicPackage.QUESTION__SUBJECT:
-				return getSubject();
+				if (resolve) return getSubject();
+				return basicGetSubject();
 			case LogicPackage.QUESTION__RELATION:
-				return getRelation();
+				if (resolve) return getRelation();
+				return basicGetRelation();
 			case LogicPackage.QUESTION__RULE:
-				return getRule();
+				if (resolve) return getRule();
+				return basicGetRule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

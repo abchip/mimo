@@ -11,6 +11,8 @@ import org.abchip.mimo.biz.BizEntityNote;
 import org.abchip.mimo.biz.BizEntityNoteData;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,6 +107,21 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 	 */
 	@Override
 	public BizEntityNoteData getNote() {
+		if (note != null && ((EObject)note).eIsProxy()) {
+			InternalEObject oldNote = (InternalEObject)note;
+			note = (BizEntityNoteData)eResolveProxy(oldNote);
+			if (note != oldNote) {
+			}
+		}
+		return note;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BizEntityNoteData basicGetNote() {
 		return note;
 	}
 
@@ -129,7 +146,8 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 			case BizPackage.BIZ_ENTITY_NOTE__NOTE_ID:
 				return getNoteId();
 			case BizPackage.BIZ_ENTITY_NOTE__NOTE:
-				return getNote();
+				if (resolve) return getNote();
+				return basicGetNote();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -123,6 +124,29 @@ public class TableTermImpl extends EntityNameableImpl implements TableTerm {
 	 */
 	@Override
 	public TableDef getTableDef() {
+		if (tableDef != null && ((EObject)tableDef).eIsProxy()) {
+			InternalEObject oldTableDef = (InternalEObject)tableDef;
+			tableDef = (TableDef)eResolveProxy(oldTableDef);
+			if (tableDef != oldTableDef) {
+				InternalEObject newTableDef = (InternalEObject)tableDef;
+				NotificationChain msgs = oldTableDef.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.TABLE_TERM__TABLE_DEF, null, null);
+				if (newTableDef.eInternalContainer() == null) {
+					msgs = newTableDef.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.TABLE_TERM__TABLE_DEF, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.TABLE_TERM__TABLE_DEF, oldTableDef, tableDef));
+			}
+		}
+		return tableDef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TableDef basicGetTableDef() {
 		return tableDef;
 	}
 
@@ -186,7 +210,8 @@ public class TableTermImpl extends EntityNameableImpl implements TableTerm {
 			case DatabaseDefinitionPackage.TABLE_TERM__NAME:
 				return getName();
 			case DatabaseDefinitionPackage.TABLE_TERM__TABLE_DEF:
-				return getTableDef();
+				if (resolve) return getTableDef();
+				return basicGetTableDef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

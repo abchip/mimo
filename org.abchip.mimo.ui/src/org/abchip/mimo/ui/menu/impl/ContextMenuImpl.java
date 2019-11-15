@@ -124,7 +124,7 @@ public class ContextMenuImpl extends EntityNameableImpl implements ContextMenu {
 	@Override
 	public List<DataNode> getElements() {
 		if (elements == null) {
-			elements = new EObjectContainmentEList<DataNode>(DataNode.class, this, MenuPackage.CONTEXT_MENU__ELEMENTS);
+			elements = new EObjectContainmentEList.Resolving<DataNode>(DataNode.class, this, MenuPackage.CONTEXT_MENU__ELEMENTS);
 		}
 		return elements;
 	}

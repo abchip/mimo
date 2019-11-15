@@ -38,7 +38,7 @@ public interface EntityContainer extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contents</em>' containment reference list.
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityContainer_Contents()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<EntityNameable> getContents();

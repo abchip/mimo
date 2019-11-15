@@ -100,7 +100,7 @@ public class EntityContainerImpl extends EntityImpl implements EntityContainer {
 	@Override
 	public List<EntityNameable> getContents() {
 		if (contents == null) {
-			contents = new EObjectContainmentEList<EntityNameable>(EntityNameable.class, this, EntityPackage.ENTITY_CONTAINER__CONTENTS);
+			contents = new EObjectContainmentEList.Resolving<EntityNameable>(EntityNameable.class, this, EntityPackage.ENTITY_CONTAINER__CONTENTS);
 		}
 		return contents;
 	}

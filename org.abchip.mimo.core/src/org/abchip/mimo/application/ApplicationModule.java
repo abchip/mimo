@@ -67,7 +67,7 @@ public interface ApplicationModule extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Services</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationModule_Services()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ServiceRef> getServices();

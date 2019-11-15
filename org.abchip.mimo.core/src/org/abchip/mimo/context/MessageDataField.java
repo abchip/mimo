@@ -66,7 +66,7 @@ public interface MessageDataField<DD extends DataDef<?>> extends Entity {
 	 * @return the value of the '<em>Definition</em>' containment reference.
 	 * @see #setDefinition(DataDef)
 	 * @see org.abchip.mimo.context.ContextPackage#getMessageDataField_Definition()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	DataDef<?> getDefinition();

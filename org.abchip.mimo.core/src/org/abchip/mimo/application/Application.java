@@ -53,7 +53,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Commands</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Commands()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ServiceCommandProvider> getCommands();
@@ -69,7 +69,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Components</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Components()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ApplicationComponent> getComponents();
@@ -85,7 +85,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * @return the value of the '<em>Config</em>' containment reference.
 	 * @see #setConfig(ServiceConfig)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Config()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	ServiceConfig getConfig();
@@ -111,7 +111,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * @return the value of the '<em>Context</em>' containment reference.
 	 * @see #setContext(ContextRoot)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Context()
-	 * @model containment="true" transient="true"
+	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
 	ContextRoot getContext();
@@ -137,7 +137,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * @return the value of the '<em>Context Description</em>' containment reference.
 	 * @see #setContextDescription(ContextDescription)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_ContextDescription()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	ContextDescription getContextDescription();
@@ -163,7 +163,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Hooks</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Hooks()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ServiceHook> getHooks();

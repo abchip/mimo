@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -378,6 +379,29 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 */
 	@Override
 	public Domain getDomain() {
+		if (domain != null && ((EObject)domain).eIsProxy()) {
+			InternalEObject oldDomain = (InternalEObject)domain;
+			domain = (Domain)eResolveProxy(oldDomain);
+			if (domain != oldDomain) {
+				InternalEObject newDomain = (InternalEObject)domain;
+				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__DOMAIN, null, null);
+				if (newDomain.eInternalContainer() == null) {
+					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__DOMAIN, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FormPackage.FORM_FIELD__DOMAIN, oldDomain, domain));
+			}
+		}
+		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Domain basicGetDomain() {
 		return domain;
 	}
 
@@ -489,7 +513,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__DISABLED:
 				return isDisabled();
 			case FormPackage.FORM_FIELD__DOMAIN:
-				return getDomain();
+				if (resolve) return getDomain();
+				return basicGetDomain();
 			case FormPackage.FORM_FIELD__GROUP:
 				return getGroup();
 			case FormPackage.FORM_FIELD__ICON:

@@ -81,7 +81,7 @@ public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNam
 	@Override
 	public List<Slot> getSlots() {
 		if (slots == null) {
-			slots = new EObjectContainmentEList<Slot>(Slot.class, this, EntityPackage.ENTITY_TYPE__SLOTS);
+			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.ENTITY_TYPE__SLOTS);
 		}
 		return slots;
 	}

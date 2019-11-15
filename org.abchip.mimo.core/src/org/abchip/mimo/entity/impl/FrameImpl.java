@@ -259,7 +259,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	@Override
 	public List<Slot> getSlots() {
 		if (slots == null) {
-			slots = new EObjectContainmentEList<Slot>(Slot.class, this, EntityPackage.FRAME__SLOTS);
+			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.FRAME__SLOTS);
 		}
 		return slots;
 	}

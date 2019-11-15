@@ -65,7 +65,7 @@ public interface TableTerm extends EntityNameable {
 	 * @return the value of the '<em>Table Def</em>' containment reference.
 	 * @see #setTableDef(TableDef)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getTableTerm_TableDef()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	TableDef getTableDef();

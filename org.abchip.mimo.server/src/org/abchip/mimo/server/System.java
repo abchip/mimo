@@ -48,7 +48,7 @@ public interface System extends EntityNameable, ContextProvider {
 	 * @return the value of the '<em>Context</em>' containment reference.
 	 * @see #setContext(Context)
 	 * @see org.abchip.mimo.server.ServerPackage#getSystem_Context()
-	 * @model containment="true" transient="true"
+	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
 	@Override

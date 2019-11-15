@@ -147,7 +147,7 @@ public interface SchemaColumn extends Entity {
 	 * @return the value of the '<em>Domain</em>' containment reference.
 	 * @see #setDomain(Domain)
 	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Domain()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Domain getDomain();

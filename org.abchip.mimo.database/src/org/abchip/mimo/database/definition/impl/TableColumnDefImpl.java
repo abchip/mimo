@@ -19,6 +19,7 @@ import org.abchip.mimo.util.DataDef;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -139,6 +140,29 @@ public class TableColumnDefImpl extends DatabaseObjectDefImpl implements TableCo
 	 */
 	@Override
 	public DataDef<?> getDefinition() {
+		if (definition != null && ((EObject)definition).eIsProxy()) {
+			InternalEObject oldDefinition = (InternalEObject)definition;
+			definition = (DataDef<?>)eResolveProxy(oldDefinition);
+			if (definition != oldDefinition) {
+				InternalEObject newDefinition = (InternalEObject)definition;
+				NotificationChain msgs = oldDefinition.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.TABLE_COLUMN_DEF__DEFINITION, null, null);
+				if (newDefinition.eInternalContainer() == null) {
+					msgs = newDefinition.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseDefinitionPackage.TABLE_COLUMN_DEF__DEFINITION, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseDefinitionPackage.TABLE_COLUMN_DEF__DEFINITION, oldDefinition, definition));
+			}
+		}
+		return definition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataDef<?> basicGetDefinition() {
 		return definition;
 	}
 
@@ -242,7 +266,8 @@ public class TableColumnDefImpl extends DatabaseObjectDefImpl implements TableCo
 			case DatabaseDefinitionPackage.TABLE_COLUMN_DEF__DEFAULT:
 				return isDefault();
 			case DatabaseDefinitionPackage.TABLE_COLUMN_DEF__DEFINITION:
-				return getDefinition();
+				if (resolve) return getDefinition();
+				return basicGetDefinition();
 			case DatabaseDefinitionPackage.TABLE_COLUMN_DEF__NAME:
 				return getName();
 			case DatabaseDefinitionPackage.TABLE_COLUMN_DEF__NULLABLE:

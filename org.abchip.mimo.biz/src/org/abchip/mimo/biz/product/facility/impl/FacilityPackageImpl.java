@@ -210,6 +210,7 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -3237,7 +3238,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "containerId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (containerEClass.getEOperations().get(1),
@@ -3247,7 +3248,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "containerId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (containerEClass.getEOperations().get(2),
@@ -3257,7 +3258,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "containerIdTo"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (containerTypeEClass.getEOperations().get(0),
@@ -3267,7 +3268,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "containerTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(0),
@@ -3277,7 +3278,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "parentFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(1),
@@ -3287,7 +3288,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(2),
@@ -3297,7 +3298,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "destFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(3),
@@ -3307,7 +3308,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "destFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(4),
@@ -3317,7 +3318,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "destinationFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(5),
@@ -3327,7 +3328,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(6),
@@ -3337,7 +3338,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(7),
@@ -3347,7 +3348,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "locatedAtFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(8),
@@ -3357,7 +3358,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(9),
@@ -3367,7 +3368,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "originFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(10),
@@ -3377,7 +3378,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "originFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(11),
@@ -3387,7 +3388,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "originFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(12),
@@ -3397,7 +3398,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "originFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(13),
@@ -3407,7 +3408,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(14),
@@ -3417,7 +3418,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(15),
@@ -3427,7 +3428,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(16),
@@ -3437,7 +3438,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(17),
@@ -3447,7 +3448,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(18),
@@ -3457,7 +3458,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "destinationFacilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(19),
@@ -3467,7 +3468,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityIdTo"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityEClass.getEOperations().get(20),
@@ -3477,7 +3478,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getFacility_FacilityAttributes(),
@@ -3486,7 +3487,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "frame", "FacilityAttribute"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getFacility_FacilityLocations(),
@@ -3495,7 +3496,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "frame", "FacilityLocation"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityGroupEClass.getEOperations().get(0),
@@ -3505,7 +3506,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "primaryFacilityGroupId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityGroupTypeEClass.getEOperations().get(0),
@@ -3515,7 +3516,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityGroupTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityTypeEClass.getEOperations().get(0),
@@ -3525,7 +3526,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "parentTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (facilityTypeEClass.getEOperations().get(1),
@@ -3535,7 +3536,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "route", "facilityTypeId"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getFacilityType_FacilityTypeAttrs(),
@@ -3544,7 +3545,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "frame", "FacilityTypeAttr"
 		   },
 		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

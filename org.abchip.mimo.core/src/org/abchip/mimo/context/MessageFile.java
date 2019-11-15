@@ -42,7 +42,7 @@ public interface MessageFile extends EntityNameable, Textable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Messages</em>' containment reference list.
 	 * @see org.abchip.mimo.context.ContextPackage#getMessageFile_Messages()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<MessageDescription> getMessages();

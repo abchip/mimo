@@ -15,6 +15,7 @@ import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -263,6 +264,29 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public Cardinality getCardinality() {
+		if (cardinality != null && ((EObject)cardinality).eIsProxy()) {
+			InternalEObject oldCardinality = (InternalEObject)cardinality;
+			cardinality = (Cardinality)eResolveProxy(oldCardinality);
+			if (cardinality != oldCardinality) {
+				InternalEObject newCardinality = (InternalEObject)cardinality;
+				NotificationChain msgs = oldCardinality.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__CARDINALITY, null, null);
+				if (newCardinality.eInternalContainer() == null) {
+					msgs = newCardinality.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__CARDINALITY, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.SLOT__CARDINALITY, oldCardinality, cardinality));
+			}
+		}
+		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cardinality basicGetCardinality() {
 		return cardinality;
 	}
 
@@ -318,6 +342,29 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public Domain getDomain() {
+		if (domain != null && ((EObject)domain).eIsProxy()) {
+			InternalEObject oldDomain = (InternalEObject)domain;
+			domain = (Domain)eResolveProxy(oldDomain);
+			if (domain != oldDomain) {
+				InternalEObject newDomain = (InternalEObject)domain;
+				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DOMAIN, null, null);
+				if (newDomain.eInternalContainer() == null) {
+					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DOMAIN, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.SLOT__DOMAIN, oldDomain, domain));
+			}
+		}
+		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Domain basicGetDomain() {
 		return domain;
 	}
 
@@ -465,7 +512,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EntityPackage.SLOT__CARDINALITY:
-				return getCardinality();
+				if (resolve) return getCardinality();
+				return basicGetCardinality();
 			case EntityPackage.SLOT__CONTAINMENT:
 				return isContainment();
 			case EntityPackage.SLOT__DEFAULT_VALUE:
@@ -473,7 +521,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 			case EntityPackage.SLOT__DERIVED:
 				return isDerived();
 			case EntityPackage.SLOT__DOMAIN:
-				return getDomain();
+				if (resolve) return getDomain();
+				return basicGetDomain();
 			case EntityPackage.SLOT__GROUP:
 				return getGroup();
 			case EntityPackage.SLOT__KEY:

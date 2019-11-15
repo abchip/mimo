@@ -132,7 +132,7 @@ public class DatabaseContainerImpl extends EntityImpl implements DatabaseContain
 	@Override
 	public List<CatalogContainer> getCatalogContainers() {
 		if (catalogContainers == null) {
-			catalogContainers = new EObjectContainmentEList<CatalogContainer>(CatalogContainer.class, this, DatabasePackage.DATABASE_CONTAINER__CATALOG_CONTAINERS);
+			catalogContainers = new EObjectContainmentEList.Resolving<CatalogContainer>(CatalogContainer.class, this, DatabasePackage.DATABASE_CONTAINER__CATALOG_CONTAINERS);
 		}
 		return catalogContainers;
 	}

@@ -29,6 +29,7 @@ import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -233,6 +234,29 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public CatalogGenerationStrategy getGenerationStrategy() {
+		if (generationStrategy != null && ((EObject)generationStrategy).eIsProxy()) {
+			InternalEObject oldGenerationStrategy = (InternalEObject)generationStrategy;
+			generationStrategy = (CatalogGenerationStrategy)eResolveProxy(oldGenerationStrategy);
+			if (generationStrategy != oldGenerationStrategy) {
+				InternalEObject newGenerationStrategy = (InternalEObject)generationStrategy;
+				NotificationChain msgs = oldGenerationStrategy.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabasePackage.CATALOG_CONTAINER__GENERATION_STRATEGY, null, null);
+				if (newGenerationStrategy.eInternalContainer() == null) {
+					msgs = newGenerationStrategy.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabasePackage.CATALOG_CONTAINER__GENERATION_STRATEGY, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabasePackage.CATALOG_CONTAINER__GENERATION_STRATEGY, oldGenerationStrategy, generationStrategy));
+			}
+		}
+		return generationStrategy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CatalogGenerationStrategy basicGetGenerationStrategy() {
 		return generationStrategy;
 	}
 
@@ -301,6 +325,29 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public ConnectionConfig getConnectionConfig() {
+		if (connectionConfig != null && ((EObject)connectionConfig).eIsProxy()) {
+			InternalEObject oldConnectionConfig = (InternalEObject)connectionConfig;
+			connectionConfig = (ConnectionConfig)eResolveProxy(oldConnectionConfig);
+			if (connectionConfig != oldConnectionConfig) {
+				InternalEObject newConnectionConfig = (InternalEObject)connectionConfig;
+				NotificationChain msgs = oldConnectionConfig.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabasePackage.CATALOG_CONTAINER__CONNECTION_CONFIG, null, null);
+				if (newConnectionConfig.eInternalContainer() == null) {
+					msgs = newConnectionConfig.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabasePackage.CATALOG_CONTAINER__CONNECTION_CONFIG, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabasePackage.CATALOG_CONTAINER__CONNECTION_CONFIG, oldConnectionConfig, connectionConfig));
+			}
+		}
+		return connectionConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectionConfig basicGetConnectionConfig() {
 		return connectionConfig;
 	}
 
@@ -498,11 +545,13 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 			case DatabasePackage.CATALOG_CONTAINER__ACTIVE:
 				return isActive();
 			case DatabasePackage.CATALOG_CONTAINER__CONNECTION_CONFIG:
-				return getConnectionConfig();
+				if (resolve) return getConnectionConfig();
+				return basicGetConnectionConfig();
 			case DatabasePackage.CATALOG_CONTAINER__SUPPORTS_GUEST_ACCESS:
 				return isSupportsGuestAccess();
 			case DatabasePackage.CATALOG_CONTAINER__GENERATION_STRATEGY:
-				return getGenerationStrategy();
+				if (resolve) return getGenerationStrategy();
+				return basicGetGenerationStrategy();
 			case DatabasePackage.CATALOG_CONTAINER__SEARCH_STRATEGY:
 				return getSearchStrategy();
 		}

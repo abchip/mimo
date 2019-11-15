@@ -24,6 +24,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -191,7 +192,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	@Override
 	public List<ServiceCommandProvider> getCommands() {
 		if (commands == null) {
-			commands = new EObjectContainmentEList<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION__COMMANDS);
+			commands = new EObjectContainmentEList.Resolving<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION__COMMANDS);
 		}
 		return commands;
 	}
@@ -204,7 +205,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	@Override
 	public List<ApplicationComponent> getComponents() {
 		if (components == null) {
-			components = new EObjectContainmentEList<ApplicationComponent>(ApplicationComponent.class, this, ApplicationPackage.APPLICATION__COMPONENTS);
+			components = new EObjectContainmentEList.Resolving<ApplicationComponent>(ApplicationComponent.class, this, ApplicationPackage.APPLICATION__COMPONENTS);
 		}
 		return components;
 	}
@@ -216,6 +217,29 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	@Override
 	public ServiceConfig getConfig() {
+		if (config != null && ((EObject)config).eIsProxy()) {
+			InternalEObject oldConfig = (InternalEObject)config;
+			config = (ServiceConfig)eResolveProxy(oldConfig);
+			if (config != oldConfig) {
+				InternalEObject newConfig = (InternalEObject)config;
+				NotificationChain msgs = oldConfig.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONFIG, null, null);
+				if (newConfig.eInternalContainer() == null) {
+					msgs = newConfig.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONFIG, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONFIG, oldConfig, config));
+			}
+		}
+		return config;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceConfig basicGetConfig() {
 		return config;
 	}
 
@@ -262,7 +286,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	@Override
 	public List<ServiceHook> getHooks() {
 		if (hooks == null) {
-			hooks = new EObjectContainmentEList<ServiceHook>(ServiceHook.class, this, ApplicationPackage.APPLICATION__HOOKS);
+			hooks = new EObjectContainmentEList.Resolving<ServiceHook>(ServiceHook.class, this, ApplicationPackage.APPLICATION__HOOKS);
 		}
 		return hooks;
 	}
@@ -344,6 +368,29 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	@Override
 	public ContextRoot getContext() {
+		if (context != null && ((EObject)context).eIsProxy()) {
+			InternalEObject oldContext = (InternalEObject)context;
+			context = (ContextRoot)eResolveProxy(oldContext);
+			if (context != oldContext) {
+				InternalEObject newContext = (InternalEObject)context;
+				NotificationChain msgs = oldContext.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT, null, null);
+				if (newContext.eInternalContainer() == null) {
+					msgs = newContext.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONTEXT, oldContext, context));
+			}
+		}
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContextRoot basicGetContext() {
 		return context;
 	}
 
@@ -389,6 +436,29 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	@Override
 	public ContextDescription getContextDescription() {
+		if (contextDescription != null && ((EObject)contextDescription).eIsProxy()) {
+			InternalEObject oldContextDescription = (InternalEObject)contextDescription;
+			contextDescription = (ContextDescription)eResolveProxy(oldContextDescription);
+			if (contextDescription != oldContextDescription) {
+				InternalEObject newContextDescription = (InternalEObject)contextDescription;
+				NotificationChain msgs = oldContextDescription.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, null, null);
+				if (newContextDescription.eInternalContainer() == null) {
+					msgs = newContextDescription.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, oldContextDescription, contextDescription));
+			}
+		}
+		return contextDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContextDescription basicGetContextDescription() {
 		return contextDescription;
 	}
 
@@ -464,11 +534,14 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 			case ApplicationPackage.APPLICATION__COMPONENTS:
 				return getComponents();
 			case ApplicationPackage.APPLICATION__CONFIG:
-				return getConfig();
+				if (resolve) return getConfig();
+				return basicGetConfig();
 			case ApplicationPackage.APPLICATION__CONTEXT:
-				return getContext();
+				if (resolve) return getContext();
+				return basicGetContext();
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
-				return getContextDescription();
+				if (resolve) return getContextDescription();
+				return basicGetContextDescription();
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return getHooks();
 			case ApplicationPackage.APPLICATION__NAME:

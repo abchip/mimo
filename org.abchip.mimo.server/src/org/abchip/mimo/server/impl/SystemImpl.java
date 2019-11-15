@@ -18,6 +18,7 @@ import org.abchip.mimo.server.SystemStatus;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -181,6 +182,29 @@ public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.se
 	 */
 	@Override
 	public Context getContext() {
+		if (context != null && ((EObject)context).eIsProxy()) {
+			InternalEObject oldContext = (InternalEObject)context;
+			context = (Context)eResolveProxy(oldContext);
+			if (context != oldContext) {
+				InternalEObject newContext = (InternalEObject)context;
+				NotificationChain msgs = oldContext.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.SYSTEM__CONTEXT, null, null);
+				if (newContext.eInternalContainer() == null) {
+					msgs = newContext.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.SYSTEM__CONTEXT, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.SYSTEM__CONTEXT, oldContext, context));
+			}
+		}
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Context basicGetContext() {
 		return context;
 	}
 
@@ -387,7 +411,8 @@ public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.se
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ServerPackage.SYSTEM__CONTEXT:
-				return getContext();
+				if (resolve) return getContext();
+				return basicGetContext();
 			case ServerPackage.SYSTEM__LAST_JOB_NUMBER:
 				return getLastJobNumber();
 			case ServerPackage.SYSTEM__NAME:

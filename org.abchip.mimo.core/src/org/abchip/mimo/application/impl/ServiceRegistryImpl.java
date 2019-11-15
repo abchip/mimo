@@ -96,7 +96,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	@Override
 	public List<ServiceRegistryEntry> getEntries() {
 		if (entries == null) {
-			entries = new EObjectContainmentEList<ServiceRegistryEntry>(ServiceRegistryEntry.class, this, ApplicationPackage.SERVICE_REGISTRY__ENTRIES);
+			entries = new EObjectContainmentEList.Resolving<ServiceRegistryEntry>(ServiceRegistryEntry.class, this, ApplicationPackage.SERVICE_REGISTRY__ENTRIES);
 		}
 		return entries;
 	}

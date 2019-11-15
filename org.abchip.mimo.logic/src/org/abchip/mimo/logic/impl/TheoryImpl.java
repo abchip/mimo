@@ -123,7 +123,7 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory {
 	@Override
 	public List<Term> getFacts() {
 		if (facts == null) {
-			facts = new EObjectContainmentEList<Term>(Term.class, this, LogicPackage.THEORY__FACTS);
+			facts = new EObjectContainmentEList.Resolving<Term>(Term.class, this, LogicPackage.THEORY__FACTS);
 		}
 		return facts;
 	}

@@ -19,6 +19,7 @@ import org.abchip.mimo.database.connection.DatabaseConnectionPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -165,6 +166,29 @@ public class ConnectionConfigImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public ConnectionCredentials getCredentials() {
+		if (credentials != null && ((EObject)credentials).eIsProxy()) {
+			InternalEObject oldCredentials = (InternalEObject)credentials;
+			credentials = (ConnectionCredentials)eResolveProxy(oldCredentials);
+			if (credentials != oldCredentials) {
+				InternalEObject newCredentials = (InternalEObject)credentials;
+				NotificationChain msgs = oldCredentials.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatabaseConnectionPackage.CONNECTION_CONFIG__CREDENTIALS, null, null);
+				if (newCredentials.eInternalContainer() == null) {
+					msgs = newCredentials.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatabaseConnectionPackage.CONNECTION_CONFIG__CREDENTIALS, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatabaseConnectionPackage.CONNECTION_CONFIG__CREDENTIALS, oldCredentials, credentials));
+			}
+		}
+		return credentials;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectionCredentials basicGetCredentials() {
 		return credentials;
 	}
 
@@ -329,7 +353,8 @@ public class ConnectionConfigImpl extends MinimalEObjectImpl.Container implement
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatabaseConnectionPackage.CONNECTION_CONFIG__CREDENTIALS:
-				return getCredentials();
+				if (resolve) return getCredentials();
+				return basicGetCredentials();
 			case DatabaseConnectionPackage.CONNECTION_CONFIG__VENDOR:
 				return getVendor();
 			case DatabaseConnectionPackage.CONNECTION_CONFIG__VERSION:

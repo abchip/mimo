@@ -47,7 +47,7 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * @return the value of the '<em>Config</em>' containment reference.
 	 * @see #setConfig(ServiceConfig)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Config()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	ServiceConfig getConfig();
@@ -73,7 +73,7 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * @return the value of the '<em>Context</em>' containment reference.
 	 * @see #setContext(Context)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Context()
-	 * @model containment="true" transient="true"
+	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
 	Context getContext();
@@ -99,7 +99,7 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Commands</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Commands()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ServiceCommandProvider> getCommands();
@@ -115,7 +115,7 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Hooks</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Hooks()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ServiceHook> getHooks();
@@ -131,7 +131,7 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Modules</em>' containment reference list.
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Modules()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	List<ApplicationModule> getModules();

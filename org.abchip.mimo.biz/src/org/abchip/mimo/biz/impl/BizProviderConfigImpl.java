@@ -13,6 +13,8 @@ import org.abchip.mimo.biz.BizProviderConfig;
 import org.abchip.mimo.biz.BizProviderUser;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,6 +144,21 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 */
 	@Override
 	public BizProviderUser getPublicUser() {
+		if (publicUser != null && ((EObject)publicUser).eIsProxy()) {
+			InternalEObject oldPublicUser = (InternalEObject)publicUser;
+			publicUser = (BizProviderUser)eResolveProxy(oldPublicUser);
+			if (publicUser != oldPublicUser) {
+			}
+		}
+		return publicUser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BizProviderUser basicGetPublicUser() {
 		return publicUser;
 	}
 
@@ -162,6 +179,21 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 */
 	@Override
 	public BizProviderUser getSystemUser() {
+		if (systemUser != null && ((EObject)systemUser).eIsProxy()) {
+			InternalEObject oldSystemUser = (InternalEObject)systemUser;
+			systemUser = (BizProviderUser)eResolveProxy(oldSystemUser);
+			if (systemUser != oldSystemUser) {
+			}
+		}
+		return systemUser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BizProviderUser basicGetSystemUser() {
 		return systemUser;
 	}
 
@@ -208,9 +240,11 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 			case BizPackage.BIZ_PROVIDER_CONFIG__URL:
 				return getUrl();
 			case BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER:
-				return getPublicUser();
+				if (resolve) return getPublicUser();
+				return basicGetPublicUser();
 			case BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER:
-				return getSystemUser();
+				if (resolve) return getSystemUser();
+				return basicGetSystemUser();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

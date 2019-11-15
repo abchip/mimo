@@ -98,7 +98,7 @@ public interface RenameStatement extends DefinitionStatement {
 	 * @return the value of the '<em>Original Name</em>' containment reference.
 	 * @see #setOriginalName(QualifiedName)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getRenameStatement_OriginalName()
-	 * @model containment="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	QualifiedName getOriginalName();

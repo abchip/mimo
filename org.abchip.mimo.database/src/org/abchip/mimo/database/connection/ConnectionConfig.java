@@ -41,7 +41,7 @@ public interface ConnectionConfig {
 	 * @return the value of the '<em>Credentials</em>' containment reference.
 	 * @see #setCredentials(ConnectionCredentials)
 	 * @see org.abchip.mimo.database.connection.DatabaseConnectionPackage#getConnectionConfig_Credentials()
-	 * @model containment="true" required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	ConnectionCredentials getCredentials();

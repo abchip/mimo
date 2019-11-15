@@ -113,7 +113,7 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	@Override
 	public List<MessageDescription> getMessages() {
 		if (messages == null) {
-			messages = new EObjectContainmentEList<MessageDescription>(MessageDescription.class, this, ContextPackage.MESSAGE_FILE__MESSAGES);
+			messages = new EObjectContainmentEList.Resolving<MessageDescription>(MessageDescription.class, this, ContextPackage.MESSAGE_FILE__MESSAGES);
 		}
 		return messages;
 	}

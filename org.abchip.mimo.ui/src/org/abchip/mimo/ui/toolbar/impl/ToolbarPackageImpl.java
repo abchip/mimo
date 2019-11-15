@@ -296,7 +296,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(toolbarEClass, Toolbar.class, "Toolbar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getToolbar_Elements(), this.getToolbarView(), null, "elements", null, 0, -1, Toolbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getToolbar_Elements(), this.getToolbarView(), null, "elements", null, 0, -1, Toolbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToolbar_Name(), ecorePackage.getEString(), "name", null, 1, 1, Toolbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(toolbarViewEClass, ToolbarView.class, "ToolbarView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
