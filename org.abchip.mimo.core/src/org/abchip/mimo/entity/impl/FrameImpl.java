@@ -14,19 +14,11 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Frame</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Frame</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -46,148 +38,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl implements Frame<E> {
 	/**
-	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ABSTRACT_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean abstract_ = ABSTRACT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAutoIncrement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean AUTO_INCREMENT_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAutoIncrement()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeys()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> keys;
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getSlots() <em>Slots</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSlots()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Slot> slots;
-	/**
-	 * The default value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSlotsNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SLOTS_NUMBER_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSlotsNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected int slotsNumber = SLOTS_NUMBER_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoutesNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int ROUTES_NUMBER_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoutesNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected int routesNumber = ROUTES_NUMBER_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getSuperNames() <em>Super Names</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSuperNames()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> superNames;
-	/**
-	 * The default value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTextFormula()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEXT_FORMULA_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTextFormula()
-	 * @generated
-	 * @ordered
-	 */
-	protected String textFormula = TEXT_FORMULA_EDEFAULT;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected FrameImpl() {
@@ -195,8 +51,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -205,111 +60,115 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-		return name;
+		return (String)eGet(EntityPackage.Literals.FRAME__NAME, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Frame<? super E> ako() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void setName(String newName) {
+		eSet(EntityPackage.Literals.FRAME__NAME, newName);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract Frame<? super E> ako();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract E createEntity();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getKeys() {
-		if (keys == null) {
-			keys = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__KEYS);
-		}
-		return keys;
+		return (List<String>)eGet(EntityPackage.Literals.FRAME__KEYS, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public Slot getSlot(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
+	public abstract Slot getSlot(String name);
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Slot> getSlots() {
-		if (slots == null) {
-			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.FRAME__SLOTS);
-		}
-		return slots;
+		return (List<Slot>)eGet(EntityPackage.Literals.FRAME__SLOTS, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getSlotsNumber() {
-		return slotsNumber;
+		return (Integer)eGet(EntityPackage.Literals.FRAME__SLOTS_NUMBER, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getRoutesNumber() {
-		return routesNumber;
+		return (Integer)eGet(EntityPackage.Literals.FRAME__ROUTES_NUMBER, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getSuperNames() {
-		if (superNames == null) {
-			superNames = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__SUPER_NAMES);
-		}
-		return superNames;
+		return (List<String>)eGet(EntityPackage.Literals.FRAME__SUPER_NAMES, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getTextFormula() {
-		return textFormula;
+		return (String)eGet(EntityPackage.Literals.FRAME__TEXT_FORMULA, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTextFormula(String newTextFormula) {
+		eSet(EntityPackage.Literals.FRAME__TEXT_FORMULA, newTextFormula);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -322,16 +181,12 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public Object getValue(Entity entity, String slotName, boolean resolve) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract Object getValue(Entity entity, String slotName, boolean resolve);
 
 	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
 		Frame<? super E> ako = frame.ako();
@@ -340,141 +195,49 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 			addFrames(ako, frames);
 		}
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setValue(Entity entity, String slotName, Object value) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract void setValue(Entity entity, String slotName, Object value);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean isAbstract() {
-		return abstract_;
+		return (Boolean)eGet(EntityPackage.Literals.FRAME__ABSTRACT, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAbstract(boolean newAbstract) {
+		eSet(EntityPackage.Literals.FRAME__ABSTRACT, newAbstract);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean isAutoIncrement() {
-		return autoIncrement;
+		return (Boolean)eGet(EntityPackage.Literals.FRAME__AUTO_INCREMENT, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case EntityPackage.FRAME__SLOTS:
-				return ((InternalEList<?>)getSlots()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setAutoIncrement(boolean newAutoIncrement) {
+		eSet(EntityPackage.Literals.FRAME__AUTO_INCREMENT, newAutoIncrement);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case EntityPackage.FRAME__ABSTRACT:
-				return isAbstract();
-			case EntityPackage.FRAME__AUTO_INCREMENT:
-				return isAutoIncrement();
-			case EntityPackage.FRAME__KEYS:
-				return getKeys();
-			case EntityPackage.FRAME__NAME:
-				return getName();
-			case EntityPackage.FRAME__SLOTS:
-				return getSlots();
-			case EntityPackage.FRAME__SLOTS_NUMBER:
-				return getSlotsNumber();
-			case EntityPackage.FRAME__ROUTES_NUMBER:
-				return getRoutesNumber();
-			case EntityPackage.FRAME__SUPER_NAMES:
-				return getSuperNames();
-			case EntityPackage.FRAME__TEXT_FORMULA:
-				return getTextFormula();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case EntityPackage.FRAME__ABSTRACT:
-				return abstract_ != ABSTRACT_EDEFAULT;
-			case EntityPackage.FRAME__AUTO_INCREMENT:
-				return autoIncrement != AUTO_INCREMENT_EDEFAULT;
-			case EntityPackage.FRAME__KEYS:
-				return keys != null && !keys.isEmpty();
-			case EntityPackage.FRAME__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EntityPackage.FRAME__SLOTS:
-				return slots != null && !slots.isEmpty();
-			case EntityPackage.FRAME__SLOTS_NUMBER:
-				return slotsNumber != SLOTS_NUMBER_EDEFAULT;
-			case EntityPackage.FRAME__ROUTES_NUMBER:
-				return routesNumber != ROUTES_NUMBER_EDEFAULT;
-			case EntityPackage.FRAME__SUPER_NAMES:
-				return superNames != null && !superNames.isEmpty();
-			case EntityPackage.FRAME__TEXT_FORMULA:
-				return TEXT_FORMULA_EDEFAULT == null ? textFormula != null : !TEXT_FORMULA_EDEFAULT.equals(textFormula);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (abstract: ");
-		result.append(abstract_);
-		result.append(", autoIncrement: ");
-		result.append(autoIncrement);
-		result.append(", keys: ");
-		result.append(keys);
-		result.append(", name: ");
-		result.append(name);
-		result.append(", slotsNumber: ");
-		result.append(slotsNumber);
-		result.append(", routesNumber: ");
-		result.append(routesNumber);
-		result.append(", superNames: ");
-		result.append(superNames);
-		result.append(", textFormula: ");
-		result.append(textFormula);
-		result.append(')');
-		return result.toString();
-	}
-
-} //FrameImpl
+} // FrameImpl

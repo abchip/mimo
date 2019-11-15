@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo;
 
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.CardinalityImpl;
 import org.eclipse.emf.ecore.ETypedElement;
 
@@ -19,8 +20,8 @@ public class EMFCardinalityAdapter extends CardinalityImpl {
 
 	public EMFCardinalityAdapter(ETypedElement element) {
 		this.element = element;
-		this.min = this.element.getLowerBound();
-		this.max = this.element.getUpperBound();
+		eSet(EntityPackage.CARDINALITY__MIN, this.element.getLowerBound());
+		eSet(EntityPackage.CARDINALITY__MAX, this.element.getUpperBound());
 	}
 	
 	@Override

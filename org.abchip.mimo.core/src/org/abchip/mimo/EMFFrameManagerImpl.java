@@ -19,30 +19,19 @@ import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.resource.ResourceReader;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameManagerImpl implements FrameManager {
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public <E extends Entity> E createEntity(Frame<E> frame) {
-
-		if (frame instanceof EMFFrameClassAdapter)
-			return (E) EcoreUtil.create(((EMFFrameClassAdapter<E>) frame).getEClass());
-		else
-			return null;
-	}
 
 	@Override
 	public ResourceReader<Frame<?>> getFrameReader(ContextProvider contextProvider) {
 		return _getFrameReader(contextProvider);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private <E extends EntityNameable> ResourceReader<E> _getFrameReader(ContextProvider contextProvider) {
-		
-		Frame<E> frame =  (Frame<E>) this.getFrame(Frame.class);
-		ResourceReader<Frame<?>> frameReader = (ResourceReader<Frame<?>>) ResourceHelper.wrapReader(contextProvider, frame, (Map<String, E>)EMFFrameHelper.getFrames(this));
+
+		Frame<E> frame = (Frame<E>) this.getFrame(Frame.class);
+		ResourceReader<Frame<?>> frameReader = (ResourceReader<Frame<?>>) ResourceHelper.wrapReader(contextProvider, frame, (Map<String, E>) EMFFrameHelper.getFrames(this));
 		return (ResourceReader<E>) frameReader;
 	}
 
@@ -65,7 +54,7 @@ public class EMFFrameManagerImpl implements FrameManager {
 	@Override
 	public <E extends EntityNameable> E createProxy(Frame<E> frame, String name) {
 
-		E proxy = this.createEntity(frame);
+		E proxy = frame.createEntity();
 
 		InternalEObject internalEObject = (InternalEObject) proxy;
 		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, name);

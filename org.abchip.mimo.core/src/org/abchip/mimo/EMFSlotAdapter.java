@@ -40,29 +40,29 @@ public class EMFSlotAdapter extends SlotImpl {
 	public EMFSlotAdapter(Frame<?> frame, ETypedElement element) {
 		this.element = element;
 
-		this.name = element.getName();
+		eSet(EntityPackage.SLOT__NAME, element.getName());
 
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
-			this.defaultValue = eStructuralFeature.getDefaultValueLiteral();
+			eSet(EntityPackage.SLOT__DEFAULT_VALUE, eStructuralFeature.getDefaultValueLiteral());
 		}
 
 		this.setSlotText(frame);
 
-		this.cardinality = new EMFCardinalityAdapter(element);
+		eSet(EntityPackage.SLOT__CARDINALITY, new EMFCardinalityAdapter(element));
 
 		if (element instanceof EAttribute)
-			this.key = ((EAttribute) element).isID();
+			eSet(EntityPackage.SLOT__KEY, ((EAttribute) element).isID());
 
 		EAnnotation eAnnotation = element.getEAnnotation(Slot.NS_PREFIX_SLOT);
 		if (eAnnotation != null) {
 			for (String key : eAnnotation.getDetails().keySet()) {
 				if (key.equals("derived"))
-					this.derived = true;
+					eSet(EntityPackage.SLOT__DERIVED, true);
 				else if (key.equals("key"))
-					this.key = true;
+					eSet(EntityPackage.SLOT__KEY, true);
 				else if (key.equals("group"))
-					this.group = eAnnotation.getDetails().get(key);
+					eSet(EntityPackage.SLOT__GROUP, eAnnotation.getDetails().get(key));
 			}
 		}
 
@@ -99,38 +99,39 @@ public class EMFSlotAdapter extends SlotImpl {
 		return this.element.toString();
 	}
 
-	@Override
-	public String getDataClassName() {
-		return element.getEType().getInstanceClassName();
-	}
-
-	public ETypedElement getETypedElement() {
+	protected ETypedElement getETypedElement() {
 		return this.element;
 	}
 
 	private void setSlotText(Frame<?> frame) {
 
+		String text = null;
 		// remove prefix from slotText
 		if (this.getName().toLowerCase().startsWith(frame.getName().toLowerCase()))
-			this.text = this.getName().substring(frame.getName().length());
+			text = this.getName().substring(frame.getName().length());
 		else if (!frame.getSuperNames().isEmpty()) {
 			for (String superName : frame.getSuperNames()) {
-				
+
 				if (this.getName().toLowerCase().equals(superName.toLowerCase()))
 					break;
-				
+
 				if (this.getName().toLowerCase().startsWith(superName.toLowerCase())) {
-					this.text = this.getName().substring(superName.length());
+					text = this.getName().substring(superName.length());
 					break;
 				}
 			}
 		}
 
-		if (this.text == null)
-			this.text = Strings.qINSTANCE.firstToUpper(this.getName());
+		if (text == null)
+			text = Strings.qINSTANCE.firstToUpper(this.getName());
+
+		if (text != null)
+			eSet(EntityPackage.SLOT__TEXT, text);
 	}
 
 	private void setSlotDomain() {
+
+		Domain domain = null;
 
 		EAnnotation eAnnotation = this.getETypedElement().getEAnnotation(Slot.NS_PREFIX_DOMAIN);
 		if (eAnnotation != null) {
@@ -146,33 +147,39 @@ public class EMFSlotAdapter extends SlotImpl {
 					eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
 			}
 
-			this.domain = (Domain) eObject;
+			domain = (Domain) eObject;
 		}
 
-		if (this.domain == null || this.getDomain().getFrame() == null) {
+		if (domain == null || domain.getFrame() == null) {
 
 			// reference
 			if (element instanceof EReference) {
-				if (this.domain == null)
-					this.domain = EntityFactory.eINSTANCE.createDomain();
-				if (this.getDomain().getFrame() == null)
-					this.getDomain().setFrame(element.getEType().getName());
-				this.containment = ((EReference) element).isContainment();
+				if (domain == null)
+					domain = EntityFactory.eINSTANCE.createDomain();
+				if (domain.getFrame() == null)
+					domain.setFrame(element.getEType().getName());
+
+				if (((EReference) element).isContainment())
+					eSet(EntityPackage.SLOT__CONTAINMENT, true);
 			}
 			// enum
 			else if (element.getEType() instanceof EEnum) {
-				if (this.domain == null)
-					this.domain = EntityFactory.eINSTANCE.createDomain();
-				if (this.getDomain().getFrame() == null)
-					this.getDomain().setFrame(element.getEType().getName());
+				if (domain == null)
+					domain = EntityFactory.eINSTANCE.createDomain();
+				if (domain.getFrame() == null)
+					domain.setFrame(element.getEType().getName());
 			} else if (element instanceof EAttribute) {
 
 			} else
 				"".toString();
 		}
 
-		if (this.domain != null)
-			this.route = this.domain.getRoute() != null;
+		if (domain != null) {
+			eSet(EntityPackage.SLOT__DOMAIN, domain);
+
+			if (domain.getRoute() != null)
+				eSet(EntityPackage.SLOT__ROUTE, true);
+		}
 	}
 
 	@Override
@@ -233,7 +240,13 @@ public class EMFSlotAdapter extends SlotImpl {
 
 		if (this.getDataClassName().equals(String.class.getCanonicalName()))
 			return true;
+		else if (this.getDataClassName().equals(char.class.getCanonicalName()))
+			return true;
 
 		return false;
+	}
+
+	private String getDataClassName() {
+		return element.getEType().getInstanceClassName();
 	}
 }

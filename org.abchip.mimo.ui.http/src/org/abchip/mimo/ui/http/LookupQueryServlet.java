@@ -79,7 +79,7 @@ public class LookupQueryServlet extends BaseServlet {
 				}
 			}
 		}
-		
+
 		ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (query != null)
 			entitySerializer.add(query);
@@ -98,26 +98,17 @@ public class LookupQueryServlet extends BaseServlet {
 		}
 		field.setValue(Strings.qINSTANCE.firstToUpper(label.toString()));
 
-		switch (slot.getDataClassName()) {
-		case "java.lang.String":
-		case "char":
+		if (slot.isString()) {
 			field.setType("string");
-			break;
-		case "boolean":
+		} else if (slot.isBoolean()) {
 			field.setType("string");
-			break;
-		case "java.util.Date":
-			field.setType("date");
-			break;
-		case "java.math.BigDecimal":
-		case "long":
-		case "double":
+		} else if (slot.isNumeric()) {
 			field.setType("number");
-			break;
-		default:
-			System.out.println("Unexpected condition: 873we65r87ewtr" + slot.getDataClassName());
+		} else if (slot.isDate()) {
+			field.setType("date");
+		} else {
+			System.out.println("Unexpected condition: 873we65r87ewtr");
 			field.setType("string");
-			break;
 		}
 
 		return field;

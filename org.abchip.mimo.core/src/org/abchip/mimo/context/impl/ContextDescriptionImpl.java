@@ -10,9 +10,7 @@ package org.abchip.mimo.context.impl;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -33,121 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ContextDescriptionImpl extends EntityImpl implements ContextDescription {
 	/**
-	 * The default value of the '{@link #isAnonymous() <em>Anonymous</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #isAnonymous()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ANONYMOUS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAnonymous() <em>Anonymous</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #isAnonymous()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean anonymous = ANONYMOUS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getDataPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_PATH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getDataPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataPath = DATA_PATH_EDEFAULT;
-
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPicture() <em>Picture</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicture()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PICTURE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPicture() <em>Picture</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicture()
-	 * @generated
-	 * @ordered
-	 */
-	protected String picture = PICTURE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTenant()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TENANT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTenant()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenant = TENANT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUser() <em>User</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected String user = USER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -172,7 +58,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public boolean isAnonymous() {
-		return anonymous;
+		return (Boolean)eGet(ContextPackage.Literals.CONTEXT_DESCRIPTION__ANONYMOUS, true);
 	}
 
 	/**
@@ -181,10 +67,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setAnonymous(boolean newAnonymous) {
-		boolean oldAnonymous = anonymous;
-		anonymous = newAnonymous;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS, oldAnonymous, anonymous));
+		eSet(ContextPackage.Literals.CONTEXT_DESCRIPTION__ANONYMOUS, newAnonymous);
 	}
 
 	/**
@@ -193,7 +76,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public String getDataPath() {
-		return dataPath;
+		return (String)eGet(ContextPackage.Literals.CONTEXT_DESCRIPTION__DATA_PATH, true);
 	}
 
 	/**
@@ -202,10 +85,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setDataPath(String newDataPath) {
-		String oldDataPath = dataPath;
-		dataPath = newDataPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH, oldDataPath, dataPath));
+		eSet(ContextPackage.Literals.CONTEXT_DESCRIPTION__DATA_PATH, newDataPath);
 	}
 
 	/**
@@ -214,7 +94,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public String getId() {
-		return id;
+		return (String)eGet(ContextPackage.Literals.CONTEXT_DESCRIPTION__ID, true);
 	}
 
 	/**
@@ -223,10 +103,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__ID, oldId, id));
+		eSet(ContextPackage.Literals.CONTEXT_DESCRIPTION__ID, newId);
 	}
 
 	/**
@@ -236,7 +113,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public String getPicture() {
-		return picture;
+		return (String)eGet(ContextPackage.Literals.CONTEXT_DESCRIPTION__PICTURE, true);
 	}
 
 	/**
@@ -246,10 +123,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setPicture(String newPicture) {
-		String oldPicture = picture;
-		picture = newPicture;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__PICTURE, oldPicture, picture));
+		eSet(ContextPackage.Literals.CONTEXT_DESCRIPTION__PICTURE, newPicture);
 	}
 
 	/**
@@ -258,7 +132,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public String getTenant() {
-		return tenant;
+		return (String)eGet(ContextPackage.Literals.CONTEXT_DESCRIPTION__TENANT, true);
 	}
 
 	/**
@@ -267,10 +141,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setTenant(String newTenant) {
-		String oldTenant = tenant;
-		tenant = newTenant;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__TENANT, oldTenant, tenant));
+		eSet(ContextPackage.Literals.CONTEXT_DESCRIPTION__TENANT, newTenant);
 	}
 
 	/**
@@ -279,7 +150,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public String getUser() {
-		return user;
+		return (String)eGet(ContextPackage.Literals.CONTEXT_DESCRIPTION__USER, true);
 	}
 
 	/**
@@ -288,10 +159,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setUser(String newUser) {
-		String oldUser = user;
-		user = newUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__USER, oldUser, user));
+		eSet(ContextPackage.Literals.CONTEXT_DESCRIPTION__USER, newUser);
 	}
 
 	/**
@@ -305,135 +173,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 			return true;
 		else
 			return false;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
-				return isAnonymous();
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				return getDataPath();
-			case ContextPackage.CONTEXT_DESCRIPTION__ID:
-				return getId();
-			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
-				return getPicture();
-			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
-				return getTenant();
-			case ContextPackage.CONTEXT_DESCRIPTION__USER:
-				return getUser();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
-				setAnonymous((Boolean)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				setDataPath((String)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__ID:
-				setId((String)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
-				setPicture((String)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
-				setTenant((String)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__USER:
-				setUser((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
-				setAnonymous(ANONYMOUS_EDEFAULT);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				setDataPath(DATA_PATH_EDEFAULT);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
-				setPicture(PICTURE_EDEFAULT);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
-				setTenant(TENANT_EDEFAULT);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__USER:
-				setUser(USER_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
-				return anonymous != ANONYMOUS_EDEFAULT;
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				return DATA_PATH_EDEFAULT == null ? dataPath != null : !DATA_PATH_EDEFAULT.equals(dataPath);
-			case ContextPackage.CONTEXT_DESCRIPTION__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
-				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
-			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
-				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
-			case ContextPackage.CONTEXT_DESCRIPTION__USER:
-				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (anonymous: ");
-		result.append(anonymous);
-		result.append(", dataPath: ");
-		result.append(dataPath);
-		result.append(", id: ");
-		result.append(id);
-		result.append(", picture: ");
-		result.append(picture);
-		result.append(", tenant: ");
-		result.append(tenant);
-		result.append(", user: ");
-		result.append(user);
-		result.append(')');
-		return result.toString();
 	}
 
 } // ContextDescriptionImpl

@@ -8,16 +8,11 @@
  */
 package org.abchip.mimo.entity.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.entity.Default;
 import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -37,33 +32,6 @@ public class DefaultImpl extends EntityImpl implements Default {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getValues()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> values;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -88,7 +56,7 @@ public class DefaultImpl extends EntityImpl implements Default {
 	 */
 	@Override
 	public String getValue() {
-		return value;
+		return (String)eGet(EntityPackage.Literals.DEFAULT__VALUE, true);
 	}
 
 	/**
@@ -97,22 +65,17 @@ public class DefaultImpl extends EntityImpl implements Default {
 	 */
 	@Override
 	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.DEFAULT__VALUE, oldValue, value));
+		eSet(EntityPackage.Literals.DEFAULT__VALUE, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getValues() {
-		if (values == null) {
-			values = new EDataTypeEList<String>(String.class, this, EntityPackage.DEFAULT__VALUES);
-		}
-		return values;
+		return (List<String>)eGet(EntityPackage.Literals.DEFAULT__VALUES, true);
 	}
 
 	/**
@@ -137,89 +100,6 @@ public class DefaultImpl extends EntityImpl implements Default {
 			return this.getValues().isEmpty();
 		else
 			return getValue().isEmpty();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case EntityPackage.DEFAULT__VALUE:
-				return getValue();
-			case EntityPackage.DEFAULT__VALUES:
-				return getValues();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case EntityPackage.DEFAULT__VALUE:
-				setValue((String)newValue);
-				return;
-			case EntityPackage.DEFAULT__VALUES:
-				getValues().clear();
-				getValues().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case EntityPackage.DEFAULT__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
-			case EntityPackage.DEFAULT__VALUES:
-				getValues().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case EntityPackage.DEFAULT__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case EntityPackage.DEFAULT__VALUES:
-				return values != null && !values.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", values: ");
-		result.append(values);
-		result.append(')');
-		return result.toString();
 	}
 
 } // DefaultImpl

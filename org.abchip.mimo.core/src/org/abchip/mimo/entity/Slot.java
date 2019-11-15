@@ -46,11 +46,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Name()
-	 * @model required="true" changeable="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Route</b></em>' attribute.
@@ -61,11 +72,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Route</em>' attribute.
+	 * @see #setRoute(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Route()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	boolean isRoute();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isRoute <em>Route</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Route</em>' attribute.
+	 * @see #isRoute()
+	 * @generated
+	 */
+	void setRoute(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
@@ -76,11 +98,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see #setText(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Text()
-	 * @model required="true" changeable="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getText();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' attribute.
+	 * @see #getText()
+	 * @generated
+	 */
+	void setText(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
@@ -91,11 +124,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
+	 * @see #setCardinality(Cardinality)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Cardinality()
-	 * @model containment="true" resolveProxies="true" changeable="false"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Cardinality getCardinality();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
+	 * @see #getCardinality()
+	 * @generated
+	 */
+	void setCardinality(Cardinality value);
 
 	/**
 	 * Returns the value of the '<em><b>Containment</b></em>' attribute.
@@ -106,11 +150,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Containment</em>' attribute.
+	 * @see #setContainment(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Containment()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	boolean isContainment();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isContainment <em>Containment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Containment</em>' attribute.
+	 * @see #isContainment()
+	 * @generated
+	 */
+	void setContainment(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
@@ -121,11 +176,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default Value</em>' attribute.
+	 * @see #setDefaultValue(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_DefaultValue()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	String getDefaultValue();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default Value</em>' attribute.
+	 * @see #getDefaultValue()
+	 * @generated
+	 */
+	void setDefaultValue(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Derived</b></em>' attribute.
@@ -136,11 +202,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Derived</em>' attribute.
+	 * @see #setDerived(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Derived()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	boolean isDerived();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Derived</em>' attribute.
+	 * @see #isDerived()
+	 * @generated
+	 */
+	void setDerived(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
@@ -151,11 +228,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' containment reference.
+	 * @see #setDomain(Domain)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Domain()
-	 * @model containment="true" resolveProxies="true" changeable="false"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Domain getDomain();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Domain</em>' containment reference.
+	 * @see #getDomain()
+	 * @generated
+	 */
+	void setDomain(Domain value);
 
 	/**
 	 * Returns the value of the '<em><b>Group</b></em>' attribute.
@@ -166,11 +254,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Group</em>' attribute.
+	 * @see #setGroup(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Group()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	String getGroup();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Group</em>' attribute.
+	 * @see #getGroup()
+	 * @generated
+	 */
+	void setGroup(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
@@ -181,11 +280,22 @@ public interface Slot extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Key</em>' attribute.
+	 * @see #setKey(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Key()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	boolean isKey();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Key</em>' attribute.
+	 * @see #isKey()
+	 * @generated
+	 */
+	void setKey(boolean value);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -193,14 +303,6 @@ public interface Slot extends EntityNameable, Textable {
 	 * @generated
 	 */
 	Entity getValue(String nsPrefix);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getDataClassName();
 
 	/**
 	 * <!-- begin-user-doc -->

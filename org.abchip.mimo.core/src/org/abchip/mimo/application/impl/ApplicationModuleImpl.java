@@ -8,21 +8,13 @@
  */
 package org.abchip.mimo.application.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,36 +35,6 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ServiceRef> services;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +62,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 */
 	@Override
 	public String getName() {
-		return name;
+		return (String)eGet(ApplicationPackage.Literals.APPLICATION_MODULE__NAME, true);
 	}
 
 	/**
@@ -110,53 +72,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 */
 	@Override
 	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_MODULE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ServiceRef> getServices() {
-		if (services == null) {
-			services = new EObjectContainmentEList.Resolving<ServiceRef>(ServiceRef.class, this, ApplicationPackage.APPLICATION_MODULE__SERVICES);
-		}
-		return services;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
-				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE__NAME:
-				return getName();
-			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
-				return getServices();
-		}
-		return super.eGet(featureID, resolve, coreType);
+		eSet(ApplicationPackage.Literals.APPLICATION_MODULE__NAME, newName);
 	}
 
 	/**
@@ -166,67 +82,8 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE__NAME:
-				setName((String)newValue);
-				return;
-			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
-				getServices().clear();
-				getServices().addAll((Collection<? extends ServiceRef>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
-				getServices().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ApplicationPackage.APPLICATION_MODULE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
-				return services != null && !services.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
+	public List<ServiceRef> getServices() {
+		return (List<ServiceRef>)eGet(ApplicationPackage.Literals.APPLICATION_MODULE__SERVICES, true);
 	}
 
 } //ModuleImpl

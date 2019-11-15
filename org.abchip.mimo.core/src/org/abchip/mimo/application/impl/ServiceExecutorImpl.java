@@ -10,9 +10,7 @@ package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceExecutor;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,49 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecutor {
 	/**
-	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInterfaceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERFACE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInterfaceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String interfaceName = INTERFACE_NAME_EDEFAULT;
-
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #isRemoteExport() <em>Remote Export</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRemoteExport()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean REMOTE_EXPORT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isRemoteExport() <em>Remote Export</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRemoteExport()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean remoteExport = REMOTE_EXPORT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +58,7 @@ public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecut
 	 */
 	@Override
 	public String getInterfaceName() {
-		return interfaceName;
+		return (String)eGet(ApplicationPackage.Literals.SERVICE_EXECUTOR__INTERFACE_NAME, true);
 	}
 
 	/**
@@ -110,10 +68,7 @@ public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecut
 	 */
 	@Override
 	public void setInterfaceName(String newInterfaceName) {
-		String oldInterfaceName = interfaceName;
-		interfaceName = newInterfaceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_EXECUTOR__INTERFACE_NAME, oldInterfaceName, interfaceName));
+		eSet(ApplicationPackage.Literals.SERVICE_EXECUTOR__INTERFACE_NAME, newInterfaceName);
 	}
 
 	/**
@@ -123,7 +78,7 @@ public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecut
 	 */
 	@Override
 	public boolean isRemoteExport() {
-		return remoteExport;
+		return (Boolean)eGet(ApplicationPackage.Literals.SERVICE_EXECUTOR__REMOTE_EXPORT, true);
 	}
 
 	/**
@@ -133,96 +88,7 @@ public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecut
 	 */
 	@Override
 	public void setRemoteExport(boolean newRemoteExport) {
-		boolean oldRemoteExport = remoteExport;
-		remoteExport = newRemoteExport;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_EXECUTOR__REMOTE_EXPORT, oldRemoteExport, remoteExport));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ApplicationPackage.SERVICE_EXECUTOR__INTERFACE_NAME:
-				return getInterfaceName();
-			case ApplicationPackage.SERVICE_EXECUTOR__REMOTE_EXPORT:
-				return isRemoteExport();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ApplicationPackage.SERVICE_EXECUTOR__INTERFACE_NAME:
-				setInterfaceName((String)newValue);
-				return;
-			case ApplicationPackage.SERVICE_EXECUTOR__REMOTE_EXPORT:
-				setRemoteExport((Boolean)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ApplicationPackage.SERVICE_EXECUTOR__INTERFACE_NAME:
-				setInterfaceName(INTERFACE_NAME_EDEFAULT);
-				return;
-			case ApplicationPackage.SERVICE_EXECUTOR__REMOTE_EXPORT:
-				setRemoteExport(REMOTE_EXPORT_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ApplicationPackage.SERVICE_EXECUTOR__INTERFACE_NAME:
-				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
-			case ApplicationPackage.SERVICE_EXECUTOR__REMOTE_EXPORT:
-				return remoteExport != REMOTE_EXPORT_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (interfaceName: ");
-		result.append(interfaceName);
-		result.append(", remoteExport: ");
-		result.append(remoteExport);
-		result.append(')');
-		return result.toString();
+		eSet(ApplicationPackage.Literals.SERVICE_EXECUTOR__REMOTE_EXPORT, newRemoteExport);
 	}
 
 } //ServiceExecutorImpl

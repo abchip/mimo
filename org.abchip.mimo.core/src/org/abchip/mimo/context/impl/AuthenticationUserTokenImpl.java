@@ -11,12 +11,7 @@ import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,106 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class AuthenticationUserTokenImpl extends EntityImpl implements AuthenticationUserToken {
-	/**
-	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProvider()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROVIDER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProvider() <em>Provider</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProvider()
-	 * @generated
-	 * @ordered
-	 */
-	protected String provider = PROVIDER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAccessToken() <em>Access Token</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessToken()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCESS_TOKEN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAccessToken() <em>Access Token</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessToken()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accessToken = ACCESS_TOKEN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIdToken() <em>Id Token</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdToken()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_TOKEN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIdToken() <em>Id Token</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdToken()
-	 * @generated
-	 * @ordered
-	 */
-	protected String idToken = ID_TOKEN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPicture() <em>Picture</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicture()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PICTURE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPicture() <em>Picture</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicture()
-	 * @generated
-	 * @ordered
-	 */
-	protected String picture = PICTURE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUser() <em>User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected String user = USER_EDEFAULT;
-
 	/**
 	 * 
 	 */
@@ -167,7 +62,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public String getProvider() {
-		return provider;
+		return (String)eGet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__PROVIDER, true);
 	}
 
 	/**
@@ -177,10 +72,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setProvider(String newProvider) {
-		String oldProvider = provider;
-		provider = newProvider;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER, oldProvider, provider));
+		eSet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__PROVIDER, newProvider);
 	}
 
 	/**
@@ -190,7 +82,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public String getAccessToken() {
-		return accessToken;
+		return (String)eGet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN, true);
 	}
 
 	/**
@@ -200,10 +92,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setAccessToken(String newAccessToken) {
-		String oldAccessToken = accessToken;
-		accessToken = newAccessToken;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN, oldAccessToken, accessToken));
+		eSet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN, newAccessToken);
 	}
 
 	/**
@@ -213,7 +102,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public String getIdToken() {
-		return idToken;
+		return (String)eGet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__ID_TOKEN, true);
 	}
 
 	/**
@@ -223,10 +112,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setIdToken(String newIdToken) {
-		String oldIdToken = idToken;
-		idToken = newIdToken;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN, oldIdToken, idToken));
+		eSet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__ID_TOKEN, newIdToken);
 	}
 
 	/**
@@ -236,7 +122,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public String getPicture() {
-		return picture;
+		return (String)eGet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__PICTURE, true);
 	}
 
 	/**
@@ -246,10 +132,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setPicture(String newPicture) {
-		String oldPicture = picture;
-		picture = newPicture;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE, oldPicture, picture));
+		eSet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__PICTURE, newPicture);
 	}
 
 	/**
@@ -259,7 +142,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public String getUser() {
-		return user;
+		return (String)eGet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__USER, true);
 	}
 
 	/**
@@ -269,132 +152,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setUser(String newUser) {
-		String oldUser = user;
-		user = newUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__USER, oldUser, user));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
-				return getProvider();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
-				return getAccessToken();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
-				return getIdToken();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
-				return getPicture();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				return getUser();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
-				setProvider((String)newValue);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
-				setAccessToken((String)newValue);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
-				setIdToken((String)newValue);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
-				setPicture((String)newValue);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				setUser((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
-				setProvider(PROVIDER_EDEFAULT);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
-				setAccessToken(ACCESS_TOKEN_EDEFAULT);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
-				setIdToken(ID_TOKEN_EDEFAULT);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
-				setPicture(PICTURE_EDEFAULT);
-				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				setUser(USER_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
-				return PROVIDER_EDEFAULT == null ? provider != null : !PROVIDER_EDEFAULT.equals(provider);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
-				return ACCESS_TOKEN_EDEFAULT == null ? accessToken != null : !ACCESS_TOKEN_EDEFAULT.equals(accessToken);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
-				return ID_TOKEN_EDEFAULT == null ? idToken != null : !ID_TOKEN_EDEFAULT.equals(idToken);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
-				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (provider: ");
-		result.append(provider);
-		result.append(", accessToken: ");
-		result.append(accessToken);
-		result.append(", idToken: ");
-		result.append(idToken);
-		result.append(", picture: ");
-		result.append(picture);
-		result.append(", user: ");
-		result.append(user);
-		result.append(')');
-		return result.toString();
+		eSet(ContextPackage.Literals.AUTHENTICATION_USER_TOKEN__USER, newUser);
 	}
 
 } //AuthenticationUserTokenImpl

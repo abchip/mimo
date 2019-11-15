@@ -35,11 +35,22 @@ public interface EntityEnum extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityEnum_Name()
-	 * @model required="true" changeable="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.EntityEnum#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
@@ -50,10 +61,21 @@ public interface EntityEnum extends EntityNameable, Textable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see #setText(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityEnum_Text()
-	 * @model required="true" changeable="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getText();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.EntityEnum#getText <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' attribute.
+	 * @see #getText()
+	 * @generated
+	 */
+	void setText(String value);
 
 } // EntityEnum

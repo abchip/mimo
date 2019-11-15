@@ -11,12 +11,11 @@ package org.abchip.mimo;
 import java.net.URI;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
@@ -31,14 +30,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
 		this.eEnum = eEnum;
 
-		this.name = this.eEnum.getName();
-
-		EAnnotation eTextAnnotation = eEnum.getEAnnotation(Frame.NS_PREFIX_FRAME);
-		if (eTextAnnotation != null) {
-			String formula = eTextAnnotation.getDetails().get("formula");
-			if (formula != null)
-				this.textFormula = formula;
-		}
+		eSet(EntityPackage.FRAME__NAME, this.eEnum.getName());
 	}
 
 	@Override
@@ -67,15 +59,22 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public Object getValue(Entity entity, String slotName, boolean resolve) {
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public void setValue(Entity entity, String slot, Object value) {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public URI getURI() {
-		return URI.create(EcoreUtil.getURI(eEnum).toString());
+		return super.getURI();
+		// return URI.create(EcoreUtil.getURI(eEnum).toString());
+	}
+
+	@Override
+	public E createEntity() {
+		throw new UnsupportedOperationException();
 	}
 }

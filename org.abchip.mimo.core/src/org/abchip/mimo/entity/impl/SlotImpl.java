@@ -12,12 +12,7 @@ import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Slot;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,171 +38,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality;
-	/**
-	 * The default value of the '{@link #isContainment() <em>Containment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isContainment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean CONTAINMENT_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isContainment() <em>Containment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isContainment()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean containment = CONTAINMENT_EDEFAULT;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_VALUE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean DERIVED_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isDerived() <em>Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean derived = DERIVED_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDomain()
-	 * @generated
-	 * @ordered
-	 */
-	protected Domain domain;
-	/**
-	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroup()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GROUP_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroup()
-	 * @generated
-	 * @ordered
-	 */
-	protected String group = GROUP_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean KEY_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean key = KEY_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isRoute() <em>Route</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRoute()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ROUTE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isRoute() <em>Route</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRoute()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean route = ROUTE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEXT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String text = TEXT_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,7 +67,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public String getName() {
-		return name;
+		return (String)eGet(EntityPackage.Literals.SLOT__NAME, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		eSet(EntityPackage.Literals.SLOT__NAME, newName);
 	}
 
 	/**
@@ -244,7 +87,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public boolean isRoute() {
-		return route;
+		return (Boolean)eGet(EntityPackage.Literals.SLOT__ROUTE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRoute(boolean newRoute) {
+		eSet(EntityPackage.Literals.SLOT__ROUTE, newRoute);
 	}
 
 	/**
@@ -254,7 +107,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public String getText() {
-		return text;
+		return (String)eGet(EntityPackage.Literals.SLOT__TEXT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setText(String newText) {
+		eSet(EntityPackage.Literals.SLOT__TEXT, newText);
 	}
 
 	/**
@@ -264,21 +127,7 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public Cardinality getCardinality() {
-		if (cardinality != null && ((EObject)cardinality).eIsProxy()) {
-			InternalEObject oldCardinality = (InternalEObject)cardinality;
-			cardinality = (Cardinality)eResolveProxy(oldCardinality);
-			if (cardinality != oldCardinality) {
-				InternalEObject newCardinality = (InternalEObject)cardinality;
-				NotificationChain msgs = oldCardinality.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__CARDINALITY, null, null);
-				if (newCardinality.eInternalContainer() == null) {
-					msgs = newCardinality.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__CARDINALITY, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.SLOT__CARDINALITY, oldCardinality, cardinality));
-			}
-		}
-		return cardinality;
+		return (Cardinality)eGet(EntityPackage.Literals.SLOT__CARDINALITY, true);
 	}
 
 	/**
@@ -286,23 +135,9 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality basicGetCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__CARDINALITY, oldCardinality, newCardinality);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	@Override
+	public void setCardinality(Cardinality newCardinality) {
+		eSet(EntityPackage.Literals.SLOT__CARDINALITY, newCardinality);
 	}
 
 	/**
@@ -312,7 +147,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public boolean isContainment() {
-		return containment;
+		return (Boolean)eGet(EntityPackage.Literals.SLOT__CONTAINMENT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContainment(boolean newContainment) {
+		eSet(EntityPackage.Literals.SLOT__CONTAINMENT, newContainment);
 	}
 
 	/**
@@ -322,7 +167,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public String getDefaultValue() {
-		return defaultValue;
+		return (String)eGet(EntityPackage.Literals.SLOT__DEFAULT_VALUE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDefaultValue(String newDefaultValue) {
+		eSet(EntityPackage.Literals.SLOT__DEFAULT_VALUE, newDefaultValue);
 	}
 
 	/**
@@ -332,7 +187,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public boolean isDerived() {
-		return derived;
+		return (Boolean)eGet(EntityPackage.Literals.SLOT__DERIVED, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDerived(boolean newDerived) {
+		eSet(EntityPackage.Literals.SLOT__DERIVED, newDerived);
 	}
 
 	/**
@@ -342,21 +207,7 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public Domain getDomain() {
-		if (domain != null && ((EObject)domain).eIsProxy()) {
-			InternalEObject oldDomain = (InternalEObject)domain;
-			domain = (Domain)eResolveProxy(oldDomain);
-			if (domain != oldDomain) {
-				InternalEObject newDomain = (InternalEObject)domain;
-				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DOMAIN, null, null);
-				if (newDomain.eInternalContainer() == null) {
-					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DOMAIN, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.SLOT__DOMAIN, oldDomain, domain));
-			}
-		}
-		return domain;
+		return (Domain)eGet(EntityPackage.Literals.SLOT__DOMAIN, true);
 	}
 
 	/**
@@ -364,23 +215,9 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Domain basicGetDomain() {
-		return domain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDomain(Domain newDomain, NotificationChain msgs) {
-		Domain oldDomain = domain;
-		domain = newDomain;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DOMAIN, oldDomain, newDomain);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	@Override
+	public void setDomain(Domain newDomain) {
+		eSet(EntityPackage.Literals.SLOT__DOMAIN, newDomain);
 	}
 
 	/**
@@ -390,7 +227,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public String getGroup() {
-		return group;
+		return (String)eGet(EntityPackage.Literals.SLOT__GROUP, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGroup(String newGroup) {
+		eSet(EntityPackage.Literals.SLOT__GROUP, newGroup);
 	}
 
 	/**
@@ -400,7 +247,17 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public boolean isKey() {
-		return key;
+		return (Boolean)eGet(EntityPackage.Literals.SLOT__KEY, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setKey(boolean newKey) {
+		eSet(EntityPackage.Literals.SLOT__KEY, newKey);
 	}
 
 	/**
@@ -410,18 +267,6 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public Entity getValue(String nsPrefix) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getDataClassName() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -485,118 +330,6 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case EntityPackage.SLOT__CARDINALITY:
-				return basicSetCardinality(null, msgs);
-			case EntityPackage.SLOT__DOMAIN:
-				return basicSetDomain(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case EntityPackage.SLOT__CARDINALITY:
-				if (resolve) return getCardinality();
-				return basicGetCardinality();
-			case EntityPackage.SLOT__CONTAINMENT:
-				return isContainment();
-			case EntityPackage.SLOT__DEFAULT_VALUE:
-				return getDefaultValue();
-			case EntityPackage.SLOT__DERIVED:
-				return isDerived();
-			case EntityPackage.SLOT__DOMAIN:
-				if (resolve) return getDomain();
-				return basicGetDomain();
-			case EntityPackage.SLOT__GROUP:
-				return getGroup();
-			case EntityPackage.SLOT__KEY:
-				return isKey();
-			case EntityPackage.SLOT__NAME:
-				return getName();
-			case EntityPackage.SLOT__ROUTE:
-				return isRoute();
-			case EntityPackage.SLOT__TEXT:
-				return getText();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case EntityPackage.SLOT__CARDINALITY:
-				return cardinality != null;
-			case EntityPackage.SLOT__CONTAINMENT:
-				return containment != CONTAINMENT_EDEFAULT;
-			case EntityPackage.SLOT__DEFAULT_VALUE:
-				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
-			case EntityPackage.SLOT__DERIVED:
-				return derived != DERIVED_EDEFAULT;
-			case EntityPackage.SLOT__DOMAIN:
-				return domain != null;
-			case EntityPackage.SLOT__GROUP:
-				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
-			case EntityPackage.SLOT__KEY:
-				return key != KEY_EDEFAULT;
-			case EntityPackage.SLOT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EntityPackage.SLOT__ROUTE:
-				return route != ROUTE_EDEFAULT;
-			case EntityPackage.SLOT__TEXT:
-				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (containment: ");
-		result.append(containment);
-		result.append(", defaultValue: ");
-		result.append(defaultValue);
-		result.append(", derived: ");
-		result.append(derived);
-		result.append(", group: ");
-		result.append(group);
-		result.append(", key: ");
-		result.append(key);
-		result.append(", name: ");
-		result.append(name);
-		result.append(", route: ");
-		result.append(route);
-		result.append(", text: ");
-		result.append(text);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SlotImpl

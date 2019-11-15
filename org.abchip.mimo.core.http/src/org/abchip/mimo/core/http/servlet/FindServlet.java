@@ -66,8 +66,7 @@ public class FindServlet extends BaseServlet {
 					break;
 
 				Slot slot = frame.getSlot(slotKey);
-				String dataClassName = slot.getDataClassName();
-				if (dataClassName != null && dataClassName.equals("java.lang.String"))
+				if (slot.isString())
 					sb.append(slotKey + " = \"" + keys[i] + "\"");
 				else
 					sb.append(slotKey + " = " + keys[i] + "");

@@ -14,6 +14,7 @@ import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.Slot;
@@ -38,6 +39,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	 */
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
+	int routesNumber = 0;
 
 	private FrameManager frameManager = null;
 
@@ -47,9 +49,8 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		this.frameManager = frameManager;
 		this.eClass = eClass;
 
-		this.name = this.eClass.getName();
-
-		this.abstract_ = eClass.isAbstract();
+		eSet(EntityPackage.FRAME__NAME, this.eClass.getName());
+		eSet(EntityPackage.FRAME__ABSTRACT, eClass.isAbstract());
 
 		for (Frame<?> superFrame : getSuperFrames())
 			getSuperNames().add(superFrame.getName());
@@ -59,10 +60,10 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		if (eFrameAnnotation != null) {
 			String formula = eFrameAnnotation.getDetails().get("formula");
 			if (formula != null)
-				this.textFormula = formula;
+				eSet(EntityPackage.FRAME__TEXT_FORMULA, formula);
 			String autoIncrement = eFrameAnnotation.getDetails().get("autoIncrement");
 			if (autoIncrement != null)
-				this.autoIncrement = Boolean.parseBoolean(autoIncrement);
+				eSet(EntityPackage.FRAME__AUTO_INCREMENT, Boolean.parseBoolean(autoIncrement));
 		}
 
 		List<String> keys = new ArrayList<String>();
@@ -92,8 +93,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				this.getSlots().add(slot);
 		}
 
-		this.slotsNumber = this.getSlots().size();
-
 		this.getKeys().addAll(keys);
 
 		// load operations
@@ -105,9 +104,8 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 			// other operation
 			this.getSlots().add(new EMFSlotAdapter(this, operation));
+			routesNumber++;
 		}
-
-		this.routesNumber = this.getSlots().size() - this.slotsNumber;
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -124,10 +122,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return akoFrame;
 		else
 			return new EMFFrameClassAdapter(frameManager, eAko);
-	}
-
-	public EClass getEClass() {
-		return this.eClass;
 	}
 
 	@Override
@@ -241,6 +235,24 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public java.net.URI getURI() {
-		return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
+		return super.getURI();
+		// return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public E createEntity() {
+		return (E) EcoreUtil.create(eClass);
+	}
+
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case EntityPackage.FRAME__SLOTS_NUMBER:
+			return this.getSlots().size() - this.routesNumber;
+		case EntityPackage.FRAME__ROUTES_NUMBER:
+			return this.routesNumber;
+		}
+		return super.eGet(featureID, resolve, coreType);
 	}
 }

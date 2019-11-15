@@ -25,14 +25,6 @@ public interface FrameManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends Entity> E createEntity(Frame<E> frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" frameRequired="true" nameRequired="true"
 	 * @generated
 	 */

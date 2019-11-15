@@ -54,11 +54,29 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	String getName();
 
 	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
 	Frame<? super E> ako();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	E createEntity();
 
 	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' attribute list.
@@ -67,7 +85,7 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Keys</em>' attribute list.
 	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Keys()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	List<String> getKeys();
@@ -159,6 +177,16 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	String getTextFormula();
 
 	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#getTextFormula <em>Text Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text Formula</em>' attribute.
+	 * @see #getTextFormula()
+	 * @generated
+	 */
+	void setTextFormula(String value);
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
@@ -193,6 +221,16 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	boolean isAbstract();
 
 	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#isAbstract <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Abstract</em>' attribute.
+	 * @see #isAbstract()
+	 * @generated
+	 */
+	void setAbstract(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Auto Increment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -201,9 +239,20 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Auto Increment</em>' attribute.
+	 * @see #setAutoIncrement(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_AutoIncrement()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	boolean isAutoIncrement();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#isAutoIncrement <em>Auto Increment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auto Increment</em>' attribute.
+	 * @see #isAutoIncrement()
+	 * @generated
+	 */
+	void setAutoIncrement(boolean value);
 } // Frame
