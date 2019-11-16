@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.facility;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -153,6 +154,87 @@ public interface FacilityPackage extends EPackage {
 	int CONTAINER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Inventory Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___INVENTORY_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Inventory Transfers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___INVENTORY_TRANSFERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>To Inventory Transfers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER___TO_INVENTORY_TRANSFERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl <em>Container Geo Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,6 +326,51 @@ public interface FacilityPackage extends EPackage {
 	int CONTAINER_GEO_POINT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_GEO_POINT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_GEO_POINT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_GEO_POINT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_GEO_POINT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Container Geo Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_GEO_POINT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.ContainerTypeImpl <em>Container Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,6 +451,96 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTAINER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Containers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE___CONTAINERS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Container Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl <em>Facility</em>}' class.
@@ -561,6 +778,249 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Child Facilities</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___CHILD_FACILITIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Containers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___CONTAINERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Dest Deliveries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___DEST_DELIVERIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Dest Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___DEST_SHIPMENT_ROUTE_SEGMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Destination Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___DESTINATION_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Inventory Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___INVENTORY_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Inventory Transfers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___INVENTORY_TRANSFERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Located At Fixed Assets</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___LOCATED_AT_FIXED_ASSETS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___ORDER_ITEM_SHIP_GROUPS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Origin Deliveries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___ORIGIN_DELIVERIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Origin Order Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___ORIGIN_ORDER_HEADERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Origin Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___ORIGIN_SHIPMENT_ROUTE_SEGMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Origin Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___ORIGIN_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Picklists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___PICKLISTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>Product Facilities</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___PRODUCT_FACILITIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Products</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___PRODUCTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Reorder Guidelines</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___REORDER_GUIDELINES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Requirements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___REQUIREMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 17;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___RETURN_HEADERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 18;
+
+	/**
+	 * The operation id for the '<em>To Inventory Transfers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___TO_INVENTORY_TRANSFERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 19;
+
+	/**
+	 * The operation id for the '<em>Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY___WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 20;
+
+	/**
+	 * The number of operations of the '<em>Facility</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 21;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityAttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -650,6 +1110,51 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACILITY_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl <em>Calendar</em>}' class.
@@ -752,6 +1257,60 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_CALENDAR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Calendar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarTypeImpl <em>Calendar Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -843,6 +1402,87 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_CALENDAR_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The number of operations of the '<em>Calendar Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CALENDAR_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityCarrierShipmentImpl <em>Carrier Shipment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -932,6 +1572,51 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACILITY_CARRIER_SHIPMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CARRIER_SHIPMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CARRIER_SHIPMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CARRIER_SHIPMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CARRIER_SHIPMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Carrier Shipment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CARRIER_SHIPMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechImpl <em>Contact Mech</em>}' class.
@@ -1043,6 +1728,51 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Contact Mech</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl <em>Contact Mech Purpose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1143,6 +1873,51 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_CONTACT_MECH_PURPOSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH_PURPOSE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH_PURPOSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH_PURPOSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH_PURPOSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Contact Mech Purpose</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTACT_MECH_PURPOSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityContentImpl <em>Content</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1232,6 +2007,51 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACILITY_CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTENT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_CONTENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupImpl <em>Group</em>}' class.
@@ -1334,6 +2154,69 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Facilities</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP___FACILITIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl <em>Group Member</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1434,6 +2317,51 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_GROUP_MEMBER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_MEMBER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_MEMBER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_MEMBER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_MEMBER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Group Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_MEMBER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRoleImpl <em>Group Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1514,6 +2442,51 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACILITY_GROUP_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Group Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl <em>Group Rollup</em>}' class.
@@ -1616,6 +2589,51 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_GROUP_ROLLUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLLUP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLLUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLLUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLLUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Group Rollup</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_ROLLUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupTypeImpl <em>Group Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1696,6 +2714,96 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACILITY_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Facility Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE___FACILITY_GROUPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Group Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_GROUP_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl <em>Location</em>}' class.
@@ -1834,6 +2942,51 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_LOCATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Location</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationGeoPointImpl <em>Location Geo Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1934,6 +3087,51 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_LOCATION_GEO_POINT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION_GEO_POINT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION_GEO_POINT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION_GEO_POINT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION_GEO_POINT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Location Geo Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_LOCATION_GEO_POINT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityPartyImpl <em>Party</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2032,6 +3230,51 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACILITY_PARTY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_PARTY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_PARTY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_PARTY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_PARTY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_PARTY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeImpl <em>Type</em>}' class.
@@ -2143,6 +3386,105 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Facility Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___CHILD_FACILITY_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Facilities</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE___FACILITIES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeAttrImpl <em>Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2223,6 +3565,51 @@ public interface FacilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACILITY_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Type Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACILITY_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl <em>Product Facility</em>}' class.
@@ -2343,6 +3730,51 @@ public interface FacilityPackage extends EPackage {
 	int PRODUCT_FACILITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Facility</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityLocationImpl <em>Product Facility Location</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2444,6 +3876,52 @@ public interface FacilityPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY_LOCATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY_LOCATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY_LOCATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY_LOCATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Facility Location</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FACILITY_LOCATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.Container <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2496,6 +3974,36 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContainer_FacilityId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Container#inventoryItems() <em>Inventory Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inventory Items</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Container#inventoryItems()
+	 * @generated
+	 */
+	EOperation getContainer__InventoryItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Container#inventoryTransfers() <em>Inventory Transfers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inventory Transfers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Container#inventoryTransfers()
+	 * @generated
+	 */
+	EOperation getContainer__InventoryTransfers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Container#toInventoryTransfers() <em>To Inventory Transfers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To Inventory Transfers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Container#toInventoryTransfers()
+	 * @generated
+	 */
+	EOperation getContainer__ToInventoryTransfers();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.ContainerGeoPoint <em>Container Geo Point</em>}'.
@@ -2582,6 +4090,16 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContainerType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.ContainerType#containers() <em>Containers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Containers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.ContainerType#containers()
+	 * @generated
+	 */
+	EOperation getContainerType__Containers();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.Facility <em>Facility</em>}'.
@@ -2812,6 +4330,216 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFacility_FacilityLocations();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#childFacilities() <em>Child Facilities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Facilities</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#childFacilities()
+	 * @generated
+	 */
+	EOperation getFacility__ChildFacilities();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#containers() <em>Containers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Containers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#containers()
+	 * @generated
+	 */
+	EOperation getFacility__Containers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#destDeliveries() <em>Dest Deliveries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Dest Deliveries</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#destDeliveries()
+	 * @generated
+	 */
+	EOperation getFacility__DestDeliveries();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#destShipmentRouteSegments() <em>Dest Shipment Route Segments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Dest Shipment Route Segments</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#destShipmentRouteSegments()
+	 * @generated
+	 */
+	EOperation getFacility__DestShipmentRouteSegments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#destinationShipments() <em>Destination Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Destination Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#destinationShipments()
+	 * @generated
+	 */
+	EOperation getFacility__DestinationShipments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#inventoryItems() <em>Inventory Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inventory Items</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#inventoryItems()
+	 * @generated
+	 */
+	EOperation getFacility__InventoryItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#inventoryTransfers() <em>Inventory Transfers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inventory Transfers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#inventoryTransfers()
+	 * @generated
+	 */
+	EOperation getFacility__InventoryTransfers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#locatedAtFixedAssets() <em>Located At Fixed Assets</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Located At Fixed Assets</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#locatedAtFixedAssets()
+	 * @generated
+	 */
+	EOperation getFacility__LocatedAtFixedAssets();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#orderItemShipGroups() <em>Order Item Ship Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Item Ship Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#orderItemShipGroups()
+	 * @generated
+	 */
+	EOperation getFacility__OrderItemShipGroups();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#originDeliveries() <em>Origin Deliveries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Origin Deliveries</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#originDeliveries()
+	 * @generated
+	 */
+	EOperation getFacility__OriginDeliveries();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#originOrderHeaders() <em>Origin Order Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Origin Order Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#originOrderHeaders()
+	 * @generated
+	 */
+	EOperation getFacility__OriginOrderHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#originShipmentRouteSegments() <em>Origin Shipment Route Segments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Origin Shipment Route Segments</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#originShipmentRouteSegments()
+	 * @generated
+	 */
+	EOperation getFacility__OriginShipmentRouteSegments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#originShipments() <em>Origin Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Origin Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#originShipments()
+	 * @generated
+	 */
+	EOperation getFacility__OriginShipments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#picklists() <em>Picklists</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Picklists</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#picklists()
+	 * @generated
+	 */
+	EOperation getFacility__Picklists();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#productFacilities() <em>Product Facilities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Facilities</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#productFacilities()
+	 * @generated
+	 */
+	EOperation getFacility__ProductFacilities();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#products() <em>Products</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Products</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#products()
+	 * @generated
+	 */
+	EOperation getFacility__Products();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#reorderGuidelines() <em>Reorder Guidelines</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Reorder Guidelines</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#reorderGuidelines()
+	 * @generated
+	 */
+	EOperation getFacility__ReorderGuidelines();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#requirements() <em>Requirements</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Requirements</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#requirements()
+	 * @generated
+	 */
+	EOperation getFacility__Requirements();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#returnHeaders() <em>Return Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Return Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#returnHeaders()
+	 * @generated
+	 */
+	EOperation getFacility__ReturnHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#toInventoryTransfers() <em>To Inventory Transfers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To Inventory Transfers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#toInventoryTransfers()
+	 * @generated
+	 */
+	EOperation getFacility__ToInventoryTransfers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.Facility#workEfforts() <em>Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.Facility#workEfforts()
+	 * @generated
+	 */
+	EOperation getFacility__WorkEfforts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.FacilityAttribute <em>Attribute</em>}'.
@@ -3290,6 +5018,16 @@ public interface FacilityPackage extends EPackage {
 	EReference getFacilityGroup_PrimaryParentGroupId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.FacilityGroup#facilities() <em>Facilities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Facilities</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.FacilityGroup#facilities()
+	 * @generated
+	 */
+	EOperation getFacilityGroup__Facilities();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember <em>Group Member</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3493,6 +5231,16 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFacilityGroupType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.FacilityGroupType#facilityGroups() <em>Facility Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Facility Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.FacilityGroupType#facilityGroups()
+	 * @generated
+	 */
+	EOperation getFacilityGroupType__FacilityGroups();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.FacilityLocation <em>Location</em>}'.
@@ -3799,6 +5547,26 @@ public interface FacilityPackage extends EPackage {
 	EAttribute getFacilityType_FacilityTypeAttrs();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.FacilityType#childFacilityTypes() <em>Child Facility Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Facility Types</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.FacilityType#childFacilityTypes()
+	 * @generated
+	 */
+	EOperation getFacilityType__ChildFacilityTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.facility.FacilityType#facilities() <em>Facilities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Facilities</em>' operation.
+	 * @see org.abchip.mimo.biz.product.facility.FacilityType#facilities()
+	 * @generated
+	 */
+	EOperation getFacilityType__Facilities();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr <em>Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4058,6 +5826,30 @@ public interface FacilityPackage extends EPackage {
 		EReference CONTAINER__FACILITY_ID = eINSTANCE.getContainer_FacilityId();
 
 		/**
+		 * The meta object literal for the '<em><b>Inventory Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTAINER___INVENTORY_ITEMS = eINSTANCE.getContainer__InventoryItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Inventory Transfers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTAINER___INVENTORY_TRANSFERS = eINSTANCE.getContainer__InventoryTransfers();
+
+		/**
+		 * The meta object literal for the '<em><b>To Inventory Transfers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTAINER___TO_INVENTORY_TRANSFERS = eINSTANCE.getContainer__ToInventoryTransfers();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl <em>Container Geo Point</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4124,6 +5916,14 @@ public interface FacilityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTAINER_TYPE__DESCRIPTION = eINSTANCE.getContainerType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Containers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTAINER_TYPE___CONTAINERS = eINSTANCE.getContainerType__Containers();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl <em>Facility</em>}' class.
@@ -4294,6 +6094,174 @@ public interface FacilityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FACILITY__FACILITY_LOCATIONS = eINSTANCE.getFacility_FacilityLocations();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Facilities</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___CHILD_FACILITIES = eINSTANCE.getFacility__ChildFacilities();
+
+		/**
+		 * The meta object literal for the '<em><b>Containers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___CONTAINERS = eINSTANCE.getFacility__Containers();
+
+		/**
+		 * The meta object literal for the '<em><b>Dest Deliveries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___DEST_DELIVERIES = eINSTANCE.getFacility__DestDeliveries();
+
+		/**
+		 * The meta object literal for the '<em><b>Dest Shipment Route Segments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___DEST_SHIPMENT_ROUTE_SEGMENTS = eINSTANCE.getFacility__DestShipmentRouteSegments();
+
+		/**
+		 * The meta object literal for the '<em><b>Destination Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___DESTINATION_SHIPMENTS = eINSTANCE.getFacility__DestinationShipments();
+
+		/**
+		 * The meta object literal for the '<em><b>Inventory Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___INVENTORY_ITEMS = eINSTANCE.getFacility__InventoryItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Inventory Transfers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___INVENTORY_TRANSFERS = eINSTANCE.getFacility__InventoryTransfers();
+
+		/**
+		 * The meta object literal for the '<em><b>Located At Fixed Assets</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___LOCATED_AT_FIXED_ASSETS = eINSTANCE.getFacility__LocatedAtFixedAssets();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Item Ship Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___ORDER_ITEM_SHIP_GROUPS = eINSTANCE.getFacility__OrderItemShipGroups();
+
+		/**
+		 * The meta object literal for the '<em><b>Origin Deliveries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___ORIGIN_DELIVERIES = eINSTANCE.getFacility__OriginDeliveries();
+
+		/**
+		 * The meta object literal for the '<em><b>Origin Order Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___ORIGIN_ORDER_HEADERS = eINSTANCE.getFacility__OriginOrderHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>Origin Shipment Route Segments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___ORIGIN_SHIPMENT_ROUTE_SEGMENTS = eINSTANCE.getFacility__OriginShipmentRouteSegments();
+
+		/**
+		 * The meta object literal for the '<em><b>Origin Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___ORIGIN_SHIPMENTS = eINSTANCE.getFacility__OriginShipments();
+
+		/**
+		 * The meta object literal for the '<em><b>Picklists</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___PICKLISTS = eINSTANCE.getFacility__Picklists();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Facilities</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___PRODUCT_FACILITIES = eINSTANCE.getFacility__ProductFacilities();
+
+		/**
+		 * The meta object literal for the '<em><b>Products</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___PRODUCTS = eINSTANCE.getFacility__Products();
+
+		/**
+		 * The meta object literal for the '<em><b>Reorder Guidelines</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___REORDER_GUIDELINES = eINSTANCE.getFacility__ReorderGuidelines();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirements</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___REQUIREMENTS = eINSTANCE.getFacility__Requirements();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___RETURN_HEADERS = eINSTANCE.getFacility__ReturnHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>To Inventory Transfers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___TO_INVENTORY_TRANSFERS = eINSTANCE.getFacility__ToInventoryTransfers();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY___WORK_EFFORTS = eINSTANCE.getFacility__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityAttributeImpl <em>Attribute</em>}' class.
@@ -4664,6 +6632,14 @@ public interface FacilityPackage extends EPackage {
 		EReference FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID = eINSTANCE.getFacilityGroup_PrimaryParentGroupId();
 
 		/**
+		 * The meta object literal for the '<em><b>Facilities</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY_GROUP___FACILITIES = eINSTANCE.getFacilityGroup__Facilities();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl <em>Group Member</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4822,6 +6798,14 @@ public interface FacilityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FACILITY_GROUP_TYPE__DESCRIPTION = eINSTANCE.getFacilityGroupType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Facility Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY_GROUP_TYPE___FACILITY_GROUPS = eINSTANCE.getFacilityGroupType__FacilityGroups();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl <em>Location</em>}' class.
@@ -5054,6 +7038,22 @@ public interface FacilityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FACILITY_TYPE__FACILITY_TYPE_ATTRS = eINSTANCE.getFacilityType_FacilityTypeAttrs();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Facility Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY_TYPE___CHILD_FACILITY_TYPES = eINSTANCE.getFacilityType__ChildFacilityTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Facilities</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FACILITY_TYPE___FACILITIES = eINSTANCE.getFacilityType__Facilities();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeAttrImpl <em>Type Attr</em>}' class.

@@ -7,8 +7,8 @@
  */
 package org.abchip.mimo.biz.product.promo.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
-
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -16,6 +16,7 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -305,6 +306,24 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PromoPackage.PRODUCT_PROMO_CODE___ORDER_PRODUCT_PROMO_CODES:
+				return orderProductPromoCodes();
+			case PromoPackage.PRODUCT_PROMO_CODE___PRODUCT_PROMO_USES:
+				return productPromoUses();
+			case PromoPackage.PRODUCT_PROMO_CODE___SHOPPING_LISTS:
+				return shoppingLists();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

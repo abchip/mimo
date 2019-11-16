@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.webapp.visit;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -144,6 +145,60 @@ public interface VisitPackage extends EPackage {
 	int BROWSER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BROWSER_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BROWSER_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BROWSER_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BROWSER_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>User Agents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BROWSER_TYPE___USER_AGENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Browser Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BROWSER_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.PlatformTypeImpl <em>Platform Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,6 +281,60 @@ public interface VisitPackage extends EPackage {
 	int PLATFORM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>User Agents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_TYPE___USER_AGENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Platform Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.ProtocolTypeImpl <em>Protocol Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -297,6 +406,60 @@ public interface VisitPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROTOCOL_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>User Agents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL_TYPE___USER_AGENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Protocol Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl <em>Server Hit</em>}' class.
@@ -498,6 +661,60 @@ public interface VisitPackage extends EPackage {
 	int SERVER_HIT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Server Hit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl <em>Server Hit Bin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -661,6 +878,51 @@ public interface VisitPackage extends EPackage {
 	int SERVER_HIT_BIN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_BIN___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_BIN___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_BIN___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_BIN___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Server Hit Bin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_BIN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitTypeImpl <em>Server Hit Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -741,6 +1003,96 @@ public interface VisitPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVER_HIT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Server Hit Bins</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE___SERVER_HIT_BINS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Server Hit Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl <em>User Agent</em>}' class.
@@ -852,6 +1204,69 @@ public interface VisitPackage extends EPackage {
 	int USER_AGENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Visits</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT___VISITS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>User Agent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentMethodTypeImpl <em>User Agent Method Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -923,6 +1338,60 @@ public interface VisitPackage extends EPackage {
 	 * @ordered
 	 */
 	int USER_AGENT_METHOD_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_METHOD_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_METHOD_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_METHOD_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_METHOD_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>User Agents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_METHOD_TYPE___USER_AGENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>User Agent Method Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_METHOD_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentTypeImpl <em>User Agent Type</em>}' class.
@@ -1005,6 +1474,96 @@ public interface VisitPackage extends EPackage {
 	 * @ordered
 	 */
 	int USER_AGENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>User Agents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE___USER_AGENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>User Agent Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_AGENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl <em>Visit</em>}' class.
@@ -1296,6 +1855,51 @@ public interface VisitPackage extends EPackage {
 	int VISIT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 26;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISIT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISIT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISIT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISIT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Visit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISIT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.visit.impl.VisitorImpl <em>Visitor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1379,6 +1983,61 @@ public interface VisitPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITOR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITOR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITOR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITOR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Visits</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITOR___VISITS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Visitor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISITOR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.BrowserType <em>Browser Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1420,6 +2079,16 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBrowserType_BrowserVersion();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.BrowserType#userAgents() <em>User Agents</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>User Agents</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.BrowserType#userAgents()
+	 * @generated
+	 */
+	EOperation getBrowserType__UserAgents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.PlatformType <em>Platform Type</em>}'.
@@ -1465,6 +2134,16 @@ public interface VisitPackage extends EPackage {
 	EAttribute getPlatformType_PlatformVersion();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.PlatformType#userAgents() <em>User Agents</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>User Agents</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.PlatformType#userAgents()
+	 * @generated
+	 */
+	EOperation getPlatformType__UserAgents();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.ProtocolType <em>Protocol Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1495,6 +2174,16 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProtocolType_ProtocolName();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.ProtocolType#userAgents() <em>User Agents</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>User Agents</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.ProtocolType#userAgents()
+	 * @generated
+	 */
+	EOperation getProtocolType__UserAgents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.ServerHit <em>Server Hit</em>}'.
@@ -1857,6 +2546,16 @@ public interface VisitPackage extends EPackage {
 	EAttribute getServerHitType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.ServerHitType#serverHitBins() <em>Server Hit Bins</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Server Hit Bins</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.ServerHitType#serverHitBins()
+	 * @generated
+	 */
+	EOperation getServerHitType__ServerHitBins();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.UserAgent <em>User Agent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1922,6 +2621,16 @@ public interface VisitPackage extends EPackage {
 	EReference getUserAgent_UserAgentMethodTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#visits() <em>Visits</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Visits</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.UserAgent#visits()
+	 * @generated
+	 */
+	EOperation getUserAgent__Visits();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentTypeId <em>User Agent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1965,6 +2674,16 @@ public interface VisitPackage extends EPackage {
 	EAttribute getUserAgentMethodType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.UserAgentMethodType#userAgents() <em>User Agents</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>User Agents</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.UserAgentMethodType#userAgents()
+	 * @generated
+	 */
+	EOperation getUserAgentMethodType__UserAgents();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.UserAgentType <em>User Agent Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1995,6 +2714,16 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUserAgentType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.UserAgentType#userAgents() <em>User Agents</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>User Agents</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.UserAgentType#userAgents()
+	 * @generated
+	 */
+	EOperation getUserAgentType__UserAgents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.Visit <em>Visit</em>}'.
@@ -2336,6 +3065,16 @@ public interface VisitPackage extends EPackage {
 	EReference getVisitor_UserLoginId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.visit.Visitor#visits() <em>Visits</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Visits</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.visit.Visitor#visits()
+	 * @generated
+	 */
+	EOperation getVisitor__Visits();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2392,6 +3131,14 @@ public interface VisitPackage extends EPackage {
 		EAttribute BROWSER_TYPE__BROWSER_VERSION = eINSTANCE.getBrowserType_BrowserVersion();
 
 		/**
+		 * The meta object literal for the '<em><b>User Agents</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BROWSER_TYPE___USER_AGENTS = eINSTANCE.getBrowserType__UserAgents();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.visit.impl.PlatformTypeImpl <em>Platform Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2426,6 +3173,14 @@ public interface VisitPackage extends EPackage {
 		EAttribute PLATFORM_TYPE__PLATFORM_VERSION = eINSTANCE.getPlatformType_PlatformVersion();
 
 		/**
+		 * The meta object literal for the '<em><b>User Agents</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PLATFORM_TYPE___USER_AGENTS = eINSTANCE.getPlatformType__UserAgents();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.visit.impl.ProtocolTypeImpl <em>Protocol Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2450,6 +3205,14 @@ public interface VisitPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROTOCOL_TYPE__PROTOCOL_NAME = eINSTANCE.getProtocolType_ProtocolName();
+
+		/**
+		 * The meta object literal for the '<em><b>User Agents</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PROTOCOL_TYPE___USER_AGENTS = eINSTANCE.getProtocolType__UserAgents();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl <em>Server Hit</em>}' class.
@@ -2722,6 +3485,14 @@ public interface VisitPackage extends EPackage {
 		EAttribute SERVER_HIT_TYPE__DESCRIPTION = eINSTANCE.getServerHitType_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Server Hit Bins</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SERVER_HIT_TYPE___SERVER_HIT_BINS = eINSTANCE.getServerHitType__ServerHitBins();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl <em>User Agent</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2772,6 +3543,14 @@ public interface VisitPackage extends EPackage {
 		EReference USER_AGENT__USER_AGENT_METHOD_TYPE_ID = eINSTANCE.getUserAgent_UserAgentMethodTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Visits</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation USER_AGENT___VISITS = eINSTANCE.getUserAgent__Visits();
+
+		/**
 		 * The meta object literal for the '<em><b>User Agent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2806,6 +3585,14 @@ public interface VisitPackage extends EPackage {
 		EAttribute USER_AGENT_METHOD_TYPE__DESCRIPTION = eINSTANCE.getUserAgentMethodType_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>User Agents</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation USER_AGENT_METHOD_TYPE___USER_AGENTS = eINSTANCE.getUserAgentMethodType__UserAgents();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentTypeImpl <em>User Agent Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2830,6 +3617,14 @@ public interface VisitPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute USER_AGENT_TYPE__DESCRIPTION = eINSTANCE.getUserAgentType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>User Agents</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation USER_AGENT_TYPE___USER_AGENTS = eINSTANCE.getUserAgentType__UserAgents();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl <em>Visit</em>}' class.
@@ -3082,6 +3877,14 @@ public interface VisitPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VISITOR__USER_LOGIN_ID = eINSTANCE.getVisitor_UserLoginId();
+
+		/**
+		 * The meta object literal for the '<em><b>Visits</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VISITOR___VISITS = eINSTANCE.getVisitor__Visits();
 
 	}
 

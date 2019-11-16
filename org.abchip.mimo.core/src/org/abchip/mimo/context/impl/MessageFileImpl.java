@@ -1,12 +1,13 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.context.impl;
+
+import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,19 +15,26 @@ import java.util.List;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.MessageDescription;
 import org.abchip.mimo.context.MessageFile;
+
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Message File</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Message File</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -40,6 +48,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,6 +61,7 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 * @ordered
 	 */
 	protected EList<MessageDescription> messages;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,6 +71,7 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,6 +81,7 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +91,7 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 * @ordered
 	 */
 	protected static final String TEXT_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,12 +101,10 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 * @ordered
 	 */
 	protected String text = TEXT_EDEFAULT;
+
 	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected MessageFileImpl() {
@@ -97,7 +112,8 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -106,7 +122,8 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -141,28 +158,38 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
-	public <E extends Enum<E>> MessageDescription lookup(Enum<E> name) {
-		return lookup(name.name());
+	public String getText() {
+		return text;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setText(String newText) {
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_FILE__TEXT, oldText, text));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public <E extends Enum<E>> MessageDescription lookup(String name) {
-
-		for (MessageDescription messageDescription : getMessages())
-			if (messageDescription.getName().equals(name))
-				return messageDescription;
-
-		return null;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -265,6 +292,20 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 * @generated
 	 */
 	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContextPackage.MESSAGE_FILE___LOOKUP__STRING:
+				return lookup((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
@@ -277,26 +318,4 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 		return result.toString();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getText() {
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setText(String newText) {
-		String oldText = text;
-		text = newText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_FILE__TEXT, oldText, text));
-	}
-} // MessageFileImpl
+} //MessageFileImpl

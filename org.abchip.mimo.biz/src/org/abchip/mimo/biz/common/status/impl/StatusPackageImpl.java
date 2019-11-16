@@ -197,6 +197,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -746,6 +747,586 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getStatusItem__AcctgTransEntries() {
+		return statusItemEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__AcctgTranss() {
+		return statusItemEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ApprovalContentApprovals() {
+		return statusItemEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__BudgetStatuss() {
+		return statusItemEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__CarrierServiceShipmentRouteSegments() {
+		return statusItemEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__CommunicationEvents() {
+		return statusItemEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Contents() {
+		return statusItemEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__CurrentWorkEfforts() {
+		return statusItemEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__CustRequestItems() {
+		return statusItemEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__CustRequestStatuss() {
+		return statusItemEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__CustRequests() {
+		return statusItemEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__DataResources() {
+		return statusItemEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__DigitalItemApprovedProductStores() {
+		return statusItemEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__EmplPositions() {
+		return statusItemEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__EmploymentApps() {
+		return statusItemEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__FinAccountTranss() {
+		return statusItemEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__FixedAssetMaints() {
+		return statusItemEClass.getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__GlReconciliations() {
+		return statusItemEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__HeaderApprovedProductStores() {
+		return statusItemEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__HeaderCancelProductStores() {
+		return statusItemEClass.getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__HeaderDeclinedProductStores() {
+		return statusItemEClass.getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__InventoryItems() {
+		return statusItemEClass.getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__InventoryReturnItems() {
+		return statusItemEClass.getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__InventoryTransfers() {
+		return statusItemEClass.getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Invoices() {
+		return statusItemEClass.getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ItemApprovedProductStores() {
+		return statusItemEClass.getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ItemCancelProductStores() {
+		return statusItemEClass.getEOperations().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ItemDeclinedProductStores() {
+		return statusItemEClass.getEOperations().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__JobSandboxs() {
+		return statusItemEClass.getEOperations().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__MarketingCampaigns() {
+		return statusItemEClass.getEOperations().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__OrderDeliverySchedules() {
+		return statusItemEClass.getEOperations().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__OrderHeaders() {
+		return statusItemEClass.getEOperations().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__OrderItems() {
+		return statusItemEClass.getEOperations().get(32);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__OrderPaymentPreferences() {
+		return statusItemEClass.getEOperations().get(33);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__OrderStatuss() {
+		return statusItemEClass.getEOperations().get(34);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Parties() {
+		return statusItemEClass.getEOperations().get(35);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__PartyInvitations() {
+		return statusItemEClass.getEOperations().get(36);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Payments() {
+		return statusItemEClass.getEOperations().get(37);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__PicklistStatusHistories() {
+		return statusItemEClass.getEOperations().get(38);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Picklists() {
+		return statusItemEClass.getEOperations().get(39);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ProductGroupOrders() {
+		return statusItemEClass.getEOperations().get(40);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ProductReviews() {
+		return statusItemEClass.getEOperations().get(41);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Quotes() {
+		return statusItemEClass.getEOperations().get(42);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__RequirementStatuss() {
+		return statusItemEClass.getEOperations().get(43);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Requirements() {
+		return statusItemEClass.getEOperations().get(44);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ReturnHeaders() {
+		return statusItemEClass.getEOperations().get(45);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ReturnItems() {
+		return statusItemEClass.getEOperations().get(46);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ReturnStatuss() {
+		return statusItemEClass.getEOperations().get(47);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Shipments() {
+		return statusItemEClass.getEOperations().get(48);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__SurveyResponses() {
+		return statusItemEClass.getEOperations().get(49);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__SyncOrderHeaders() {
+		return statusItemEClass.getEOperations().get(50);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__SyncOrderItems() {
+		return statusItemEClass.getEOperations().get(51);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__TestingStatuss() {
+		return statusItemEClass.getEOperations().get(52);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__Timesheets() {
+		return statusItemEClass.getEOperations().get(53);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ToPicklistStatusHistories() {
+		return statusItemEClass.getEOperations().get(54);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__ToStatusValidChanges() {
+		return statusItemEClass.getEOperations().get(55);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__UnemploymentClaims() {
+		return statusItemEClass.getEOperations().get(56);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusItem__WorkEffortInventoryAssigns() {
+		return statusItemEClass.getEOperations().get(57);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getStatusType() {
 		return statusTypeEClass;
 	}
@@ -788,6 +1369,26 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	@Override
 	public EReference getStatusType_ParentTypeId() {
 		return (EReference)statusTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusType__ChildStatusTypes() {
+		return statusTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getStatusType__StatusItems() {
+		return statusTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -877,12 +1478,72 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		createEReference(statusItemEClass, STATUS_ITEM__STATUS_TYPE_ID);
 		createEAttribute(statusItemEClass, STATUS_ITEM__SHIPMENT_STATUSS);
 		createEAttribute(statusItemEClass, STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
+		createEOperation(statusItemEClass, STATUS_ITEM___ACCTG_TRANS_ENTRIES);
+		createEOperation(statusItemEClass, STATUS_ITEM___ACCTG_TRANSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___APPROVAL_CONTENT_APPROVALS);
+		createEOperation(statusItemEClass, STATUS_ITEM___BUDGET_STATUSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___CARRIER_SERVICE_SHIPMENT_ROUTE_SEGMENTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___COMMUNICATION_EVENTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___CONTENTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___CURRENT_WORK_EFFORTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___CUST_REQUEST_ITEMS);
+		createEOperation(statusItemEClass, STATUS_ITEM___CUST_REQUEST_STATUSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___CUST_REQUESTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___DATA_RESOURCES);
+		createEOperation(statusItemEClass, STATUS_ITEM___DIGITAL_ITEM_APPROVED_PRODUCT_STORES);
+		createEOperation(statusItemEClass, STATUS_ITEM___EMPL_POSITIONS);
+		createEOperation(statusItemEClass, STATUS_ITEM___EMPLOYMENT_APPS);
+		createEOperation(statusItemEClass, STATUS_ITEM___FIN_ACCOUNT_TRANSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___FIXED_ASSET_MAINTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___GL_RECONCILIATIONS);
+		createEOperation(statusItemEClass, STATUS_ITEM___HEADER_APPROVED_PRODUCT_STORES);
+		createEOperation(statusItemEClass, STATUS_ITEM___HEADER_CANCEL_PRODUCT_STORES);
+		createEOperation(statusItemEClass, STATUS_ITEM___HEADER_DECLINED_PRODUCT_STORES);
+		createEOperation(statusItemEClass, STATUS_ITEM___INVENTORY_ITEMS);
+		createEOperation(statusItemEClass, STATUS_ITEM___INVENTORY_RETURN_ITEMS);
+		createEOperation(statusItemEClass, STATUS_ITEM___INVENTORY_TRANSFERS);
+		createEOperation(statusItemEClass, STATUS_ITEM___INVOICES);
+		createEOperation(statusItemEClass, STATUS_ITEM___ITEM_APPROVED_PRODUCT_STORES);
+		createEOperation(statusItemEClass, STATUS_ITEM___ITEM_CANCEL_PRODUCT_STORES);
+		createEOperation(statusItemEClass, STATUS_ITEM___ITEM_DECLINED_PRODUCT_STORES);
+		createEOperation(statusItemEClass, STATUS_ITEM___JOB_SANDBOXS);
+		createEOperation(statusItemEClass, STATUS_ITEM___MARKETING_CAMPAIGNS);
+		createEOperation(statusItemEClass, STATUS_ITEM___ORDER_DELIVERY_SCHEDULES);
+		createEOperation(statusItemEClass, STATUS_ITEM___ORDER_HEADERS);
+		createEOperation(statusItemEClass, STATUS_ITEM___ORDER_ITEMS);
+		createEOperation(statusItemEClass, STATUS_ITEM___ORDER_PAYMENT_PREFERENCES);
+		createEOperation(statusItemEClass, STATUS_ITEM___ORDER_STATUSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___PARTIES);
+		createEOperation(statusItemEClass, STATUS_ITEM___PARTY_INVITATIONS);
+		createEOperation(statusItemEClass, STATUS_ITEM___PAYMENTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___PICKLIST_STATUS_HISTORIES);
+		createEOperation(statusItemEClass, STATUS_ITEM___PICKLISTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___PRODUCT_GROUP_ORDERS);
+		createEOperation(statusItemEClass, STATUS_ITEM___PRODUCT_REVIEWS);
+		createEOperation(statusItemEClass, STATUS_ITEM___QUOTES);
+		createEOperation(statusItemEClass, STATUS_ITEM___REQUIREMENT_STATUSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___REQUIREMENTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___RETURN_HEADERS);
+		createEOperation(statusItemEClass, STATUS_ITEM___RETURN_ITEMS);
+		createEOperation(statusItemEClass, STATUS_ITEM___RETURN_STATUSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___SHIPMENTS);
+		createEOperation(statusItemEClass, STATUS_ITEM___SURVEY_RESPONSES);
+		createEOperation(statusItemEClass, STATUS_ITEM___SYNC_ORDER_HEADERS);
+		createEOperation(statusItemEClass, STATUS_ITEM___SYNC_ORDER_ITEMS);
+		createEOperation(statusItemEClass, STATUS_ITEM___TESTING_STATUSS);
+		createEOperation(statusItemEClass, STATUS_ITEM___TIMESHEETS);
+		createEOperation(statusItemEClass, STATUS_ITEM___TO_PICKLIST_STATUS_HISTORIES);
+		createEOperation(statusItemEClass, STATUS_ITEM___TO_STATUS_VALID_CHANGES);
+		createEOperation(statusItemEClass, STATUS_ITEM___UNEMPLOYMENT_CLAIMS);
+		createEOperation(statusItemEClass, STATUS_ITEM___WORK_EFFORT_INVENTORY_ASSIGNS);
 
 		statusTypeEClass = createEClass(STATUS_TYPE);
 		createEAttribute(statusTypeEClass, STATUS_TYPE__STATUS_TYPE_ID);
 		createEAttribute(statusTypeEClass, STATUS_TYPE__DESCRIPTION);
 		createEAttribute(statusTypeEClass, STATUS_TYPE__HAS_TABLE);
 		createEReference(statusTypeEClass, STATUS_TYPE__PARENT_TYPE_ID);
+		createEOperation(statusTypeEClass, STATUS_TYPE___CHILD_STATUS_TYPES);
+		createEOperation(statusTypeEClass, STATUS_TYPE___STATUS_ITEMS);
 
 		statusValidChangeEClass = createEClass(STATUS_VALID_CHANGE);
 		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__CONDITION_EXPRESSION);
@@ -932,7 +1593,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		statusTypeEClass.getEGenericSuperTypes().add(g1);
 		statusValidChangeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(statusItemEClass, StatusItem.class, "StatusItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusItem_StatusId(), ecorePackage.getEString(), "statusId", null, 1, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_Description(), ecorePackage.getEString(), "description", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -943,121 +1604,121 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEAttribute(getStatusItem_ShipmentStatuss(), ecorePackage.getEString(), "shipmentStatuss", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_MainStatusValidChanges(), ecorePackage.getEString(), "mainStatusValidChanges", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__AcctgTransEntries(), ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "approvalContentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ApprovalContentApprovals(), ecorePackage.getEString(), "approvalContentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "budgetStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__BudgetStatuss(), ecorePackage.getEString(), "budgetStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "carrierServiceShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__CarrierServiceShipmentRouteSegments(), ecorePackage.getEString(), "carrierServiceShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__CommunicationEvents(), ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Contents(), ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "currentWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__CurrentWorkEfforts(), ecorePackage.getEString(), "currentWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "custRequestItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__CustRequestItems(), ecorePackage.getEString(), "custRequestItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "custRequestStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__CustRequestStatuss(), ecorePackage.getEString(), "custRequestStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__CustRequests(), ecorePackage.getEString(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__DataResources(), ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "digitalItemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__DigitalItemApprovedProductStores(), ecorePackage.getEString(), "digitalItemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__EmplPositions(), ecorePackage.getEString(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__EmploymentApps(), ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__FinAccountTranss(), ecorePackage.getEString(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "fixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__FixedAssetMaints(), ecorePackage.getEString(), "fixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "glReconciliations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__GlReconciliations(), ecorePackage.getEString(), "glReconciliations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "headerApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__HeaderApprovedProductStores(), ecorePackage.getEString(), "headerApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "headerCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__HeaderCancelProductStores(), ecorePackage.getEString(), "headerCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "headerDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__HeaderDeclinedProductStores(), ecorePackage.getEString(), "headerDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__InventoryItems(), ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "inventoryReturnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__InventoryReturnItems(), ecorePackage.getEString(), "inventoryReturnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__InventoryTransfers(), ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Invoices(), ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "itemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ItemApprovedProductStores(), ecorePackage.getEString(), "itemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "itemCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ItemCancelProductStores(), ecorePackage.getEString(), "itemCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "itemDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ItemDeclinedProductStores(), ecorePackage.getEString(), "itemDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__JobSandboxs(), ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "marketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__MarketingCampaigns(), ecorePackage.getEString(), "marketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__OrderDeliverySchedules(), ecorePackage.getEString(), "orderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__OrderHeaders(), ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__OrderItems(), ecorePackage.getEString(), "orderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__OrderPaymentPreferences(), ecorePackage.getEString(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__OrderStatuss(), ecorePackage.getEString(), "orderStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Parties(), ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "partyInvitations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__PartyInvitations(), ecorePackage.getEString(), "partyInvitations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Payments(), ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "picklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__PicklistStatusHistories(), ecorePackage.getEString(), "picklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "picklists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Picklists(), ecorePackage.getEString(), "picklists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ProductGroupOrders(), ecorePackage.getEString(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ProductReviews(), ecorePackage.getEString(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Quotes(), ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "requirementStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__RequirementStatuss(), ecorePackage.getEString(), "requirementStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Requirements(), ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ReturnHeaders(), ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ReturnItems(), ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "returnStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ReturnStatuss(), ecorePackage.getEString(), "returnStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "shipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Shipments(), ecorePackage.getEString(), "shipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "surveyResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__SurveyResponses(), ecorePackage.getEString(), "surveyResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "syncOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__SyncOrderHeaders(), ecorePackage.getEString(), "syncOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "syncOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__SyncOrderItems(), ecorePackage.getEString(), "syncOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "testingStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__TestingStatuss(), ecorePackage.getEString(), "testingStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "timesheets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__Timesheets(), ecorePackage.getEString(), "timesheets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "toPicklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ToPicklistStatusHistories(), ecorePackage.getEString(), "toPicklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "toStatusValidChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__ToStatusValidChanges(), ecorePackage.getEString(), "toStatusValidChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "unemploymentClaims", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__UnemploymentClaims(), ecorePackage.getEString(), "unemploymentClaims", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "workEffortInventoryAssigns", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusItem__WorkEffortInventoryAssigns(), ecorePackage.getEString(), "workEffortInventoryAssigns", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(statusTypeEClass, StatusType.class, "StatusType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusType_StatusTypeId(), ecorePackage.getEString(), "statusTypeId", null, 1, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1066,9 +1727,9 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEReference(getStatusType_ParentTypeId(), this.getStatusType(), null, "parentTypeId", null, 0, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getStatusType_ParentTypeId().getEKeys().add(this.getStatusType_StatusTypeId());
 
-		addEOperation(statusTypeEClass, ecorePackage.getEString(), "childStatusTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusType__ChildStatusTypes(), ecorePackage.getEString(), "childStatusTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusTypeEClass, ecorePackage.getEString(), "statusItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStatusType__StatusItems(), ecorePackage.getEString(), "statusItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(statusValidChangeEClass, StatusValidChange.class, "StatusValidChange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusValidChange_ConditionExpression(), ecorePackage.getEString(), "conditionExpression", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1118,349 +1779,349 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(0),
+		  (getStatusItem__AcctgTransEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(1),
+		  (getStatusItem__AcctgTranss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(2),
+		  (getStatusItem__ApprovalContentApprovals(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(3),
+		  (getStatusItem__BudgetStatuss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(4),
+		  (getStatusItem__CarrierServiceShipmentRouteSegments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(5),
+		  (getStatusItem__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(6),
+		  (getStatusItem__Contents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(7),
+		  (getStatusItem__CurrentWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(8),
+		  (getStatusItem__CustRequestItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(9),
+		  (getStatusItem__CustRequestStatuss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(10),
+		  (getStatusItem__CustRequests(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(11),
+		  (getStatusItem__DataResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(12),
+		  (getStatusItem__DigitalItemApprovedProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(13),
+		  (getStatusItem__EmplPositions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(14),
+		  (getStatusItem__EmploymentApps(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(15),
+		  (getStatusItem__FinAccountTranss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(16),
+		  (getStatusItem__FixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(17),
+		  (getStatusItem__GlReconciliations(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(18),
+		  (getStatusItem__HeaderApprovedProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(19),
+		  (getStatusItem__HeaderCancelProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(20),
+		  (getStatusItem__HeaderDeclinedProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(21),
+		  (getStatusItem__InventoryItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(22),
+		  (getStatusItem__InventoryReturnItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(23),
+		  (getStatusItem__InventoryTransfers(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(24),
+		  (getStatusItem__Invoices(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(25),
+		  (getStatusItem__ItemApprovedProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(26),
+		  (getStatusItem__ItemCancelProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(27),
+		  (getStatusItem__ItemDeclinedProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(28),
+		  (getStatusItem__JobSandboxs(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(29),
+		  (getStatusItem__MarketingCampaigns(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(30),
+		  (getStatusItem__OrderDeliverySchedules(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(31),
+		  (getStatusItem__OrderHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(32),
+		  (getStatusItem__OrderItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(33),
+		  (getStatusItem__OrderPaymentPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(34),
+		  (getStatusItem__OrderStatuss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(35),
+		  (getStatusItem__Parties(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(36),
+		  (getStatusItem__PartyInvitations(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(37),
+		  (getStatusItem__Payments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(38),
+		  (getStatusItem__PicklistStatusHistories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(39),
+		  (getStatusItem__Picklists(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(40),
+		  (getStatusItem__ProductGroupOrders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(41),
+		  (getStatusItem__ProductReviews(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(42),
+		  (getStatusItem__Quotes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(43),
+		  (getStatusItem__RequirementStatuss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(44),
+		  (getStatusItem__Requirements(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(45),
+		  (getStatusItem__ReturnHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(46),
+		  (getStatusItem__ReturnItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(47),
+		  (getStatusItem__ReturnStatuss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(48),
+		  (getStatusItem__Shipments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(49),
+		  (getStatusItem__SurveyResponses(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(50),
+		  (getStatusItem__SyncOrderHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(51),
+		  (getStatusItem__SyncOrderItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(52),
+		  (getStatusItem__TestingStatuss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(53),
+		  (getStatusItem__Timesheets(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(54),
+		  (getStatusItem__ToPicklistStatusHistories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(55),
+		  (getStatusItem__ToStatusValidChanges(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(56),
+		  (getStatusItem__UnemploymentClaims(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(57),
+		  (getStatusItem__WorkEffortInventoryAssigns(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1484,13 +2145,13 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusTypeEClass.getEOperations().get(0),
+		  (getStatusType__ChildStatusTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (statusTypeEClass.getEOperations().get(1),
+		  (getStatusType__StatusItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1512,7 +2173,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(0),
+		  (getStatusItem__AcctgTransEntries(),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntry",
@@ -1522,7 +2183,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(1),
+		  (getStatusItem__AcctgTranss(),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -1532,7 +2193,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(2),
+		  (getStatusItem__ApprovalContentApprovals(),
 		   source,
 		   new String[] {
 			   "frame", "ContentApproval",
@@ -1542,7 +2203,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(3),
+		  (getStatusItem__BudgetStatuss(),
 		   source,
 		   new String[] {
 			   "frame", "BudgetStatus",
@@ -1552,7 +2213,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(4),
+		  (getStatusItem__CarrierServiceShipmentRouteSegments(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentRouteSegment",
@@ -1562,7 +2223,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(5),
+		  (getStatusItem__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEvent",
@@ -1572,7 +2233,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(6),
+		  (getStatusItem__Contents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -1582,7 +2243,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(7),
+		  (getStatusItem__CurrentWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -1592,7 +2253,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(8),
+		  (getStatusItem__CustRequestItems(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequestItem",
@@ -1602,7 +2263,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(9),
+		  (getStatusItem__CustRequestStatuss(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequestStatus",
@@ -1612,7 +2273,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(10),
+		  (getStatusItem__CustRequests(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequest",
@@ -1622,7 +2283,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(11),
+		  (getStatusItem__DataResources(),
 		   source,
 		   new String[] {
 			   "frame", "DataResource",
@@ -1632,7 +2293,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(12),
+		  (getStatusItem__DigitalItemApprovedProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1642,7 +2303,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(13),
+		  (getStatusItem__EmplPositions(),
 		   source,
 		   new String[] {
 			   "frame", "EmplPosition",
@@ -1652,7 +2313,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(14),
+		  (getStatusItem__EmploymentApps(),
 		   source,
 		   new String[] {
 			   "frame", "EmploymentApp",
@@ -1662,7 +2323,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(15),
+		  (getStatusItem__FinAccountTranss(),
 		   source,
 		   new String[] {
 			   "frame", "FinAccountTrans",
@@ -1672,7 +2333,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(16),
+		  (getStatusItem__FixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAssetMaint",
@@ -1682,7 +2343,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(17),
+		  (getStatusItem__GlReconciliations(),
 		   source,
 		   new String[] {
 			   "frame", "GlReconciliation",
@@ -1692,7 +2353,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(18),
+		  (getStatusItem__HeaderApprovedProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1702,7 +2363,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(19),
+		  (getStatusItem__HeaderCancelProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1712,7 +2373,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(20),
+		  (getStatusItem__HeaderDeclinedProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1722,7 +2383,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(21),
+		  (getStatusItem__InventoryItems(),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItem",
@@ -1732,7 +2393,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(22),
+		  (getStatusItem__InventoryReturnItems(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnItem",
@@ -1742,7 +2403,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(23),
+		  (getStatusItem__InventoryTransfers(),
 		   source,
 		   new String[] {
 			   "frame", "InventoryTransfer",
@@ -1752,7 +2413,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(24),
+		  (getStatusItem__Invoices(),
 		   source,
 		   new String[] {
 			   "frame", "Invoice",
@@ -1762,7 +2423,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(25),
+		  (getStatusItem__ItemApprovedProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1772,7 +2433,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(26),
+		  (getStatusItem__ItemCancelProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1782,7 +2443,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(27),
+		  (getStatusItem__ItemDeclinedProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1792,7 +2453,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(28),
+		  (getStatusItem__JobSandboxs(),
 		   source,
 		   new String[] {
 			   "frame", "JobSandbox",
@@ -1802,7 +2463,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(29),
+		  (getStatusItem__MarketingCampaigns(),
 		   source,
 		   new String[] {
 			   "frame", "MarketingCampaign",
@@ -1812,7 +2473,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(30),
+		  (getStatusItem__OrderDeliverySchedules(),
 		   source,
 		   new String[] {
 			   "frame", "OrderDeliverySchedule",
@@ -1822,7 +2483,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(31),
+		  (getStatusItem__OrderHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -1832,7 +2493,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(32),
+		  (getStatusItem__OrderItems(),
 		   source,
 		   new String[] {
 			   "frame", "OrderItem",
@@ -1842,7 +2503,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(33),
+		  (getStatusItem__OrderPaymentPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "OrderPaymentPreference",
@@ -1852,7 +2513,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(34),
+		  (getStatusItem__OrderStatuss(),
 		   source,
 		   new String[] {
 			   "frame", "OrderStatus",
@@ -1862,7 +2523,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(35),
+		  (getStatusItem__Parties(),
 		   source,
 		   new String[] {
 			   "frame", "Party",
@@ -1872,7 +2533,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(36),
+		  (getStatusItem__PartyInvitations(),
 		   source,
 		   new String[] {
 			   "frame", "PartyInvitation",
@@ -1882,7 +2543,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(37),
+		  (getStatusItem__Payments(),
 		   source,
 		   new String[] {
 			   "frame", "Payment",
@@ -1892,7 +2553,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(38),
+		  (getStatusItem__PicklistStatusHistories(),
 		   source,
 		   new String[] {
 			   "frame", "PicklistStatusHistory",
@@ -1902,7 +2563,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(39),
+		  (getStatusItem__Picklists(),
 		   source,
 		   new String[] {
 			   "frame", "Picklist",
@@ -1912,7 +2573,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(40),
+		  (getStatusItem__ProductGroupOrders(),
 		   source,
 		   new String[] {
 			   "frame", "ProductGroupOrder",
@@ -1922,7 +2583,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(41),
+		  (getStatusItem__ProductReviews(),
 		   source,
 		   new String[] {
 			   "frame", "ProductReview",
@@ -1932,7 +2593,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(42),
+		  (getStatusItem__Quotes(),
 		   source,
 		   new String[] {
 			   "frame", "Quote",
@@ -1942,7 +2603,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(43),
+		  (getStatusItem__RequirementStatuss(),
 		   source,
 		   new String[] {
 			   "frame", "RequirementStatus",
@@ -1952,7 +2613,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(44),
+		  (getStatusItem__Requirements(),
 		   source,
 		   new String[] {
 			   "frame", "Requirement",
@@ -1962,7 +2623,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(45),
+		  (getStatusItem__ReturnHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnHeader",
@@ -1972,7 +2633,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(46),
+		  (getStatusItem__ReturnItems(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnItem",
@@ -1982,7 +2643,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(47),
+		  (getStatusItem__ReturnStatuss(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnStatus",
@@ -1992,7 +2653,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(48),
+		  (getStatusItem__Shipments(),
 		   source,
 		   new String[] {
 			   "frame", "Shipment",
@@ -2002,7 +2663,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(49),
+		  (getStatusItem__SurveyResponses(),
 		   source,
 		   new String[] {
 			   "frame", "SurveyResponse",
@@ -2012,7 +2673,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(50),
+		  (getStatusItem__SyncOrderHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -2022,7 +2683,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(51),
+		  (getStatusItem__SyncOrderItems(),
 		   source,
 		   new String[] {
 			   "frame", "OrderItem",
@@ -2032,7 +2693,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(52),
+		  (getStatusItem__TestingStatuss(),
 		   source,
 		   new String[] {
 			   "frame", "TestingStatus",
@@ -2042,7 +2703,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(53),
+		  (getStatusItem__Timesheets(),
 		   source,
 		   new String[] {
 			   "frame", "Timesheet",
@@ -2052,7 +2713,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(54),
+		  (getStatusItem__ToPicklistStatusHistories(),
 		   source,
 		   new String[] {
 			   "frame", "PicklistStatusHistory",
@@ -2062,7 +2723,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(55),
+		  (getStatusItem__ToStatusValidChanges(),
 		   source,
 		   new String[] {
 			   "frame", "StatusValidChange",
@@ -2072,7 +2733,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(56),
+		  (getStatusItem__UnemploymentClaims(),
 		   source,
 		   new String[] {
 			   "frame", "UnemploymentClaim",
@@ -2082,7 +2743,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(57),
+		  (getStatusItem__WorkEffortInventoryAssigns(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortInventoryAssign",
@@ -2110,7 +2771,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusTypeEClass.getEOperations().get(0),
+		  (getStatusType__ChildStatusTypes(),
 		   source,
 		   new String[] {
 			   "frame", "StatusType",
@@ -2120,7 +2781,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (statusTypeEClass.getEOperations().get(1),
+		  (getStatusType__StatusItems(),
 		   source,
 		   new String[] {
 			   "frame", "StatusItem",

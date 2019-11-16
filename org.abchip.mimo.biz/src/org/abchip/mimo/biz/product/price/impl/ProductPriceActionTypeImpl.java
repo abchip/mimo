@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.price.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceAction;
 import org.abchip.mimo.biz.product.price.ProductPriceActionType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -84,6 +86,20 @@ public class ProductPriceActionTypeImpl extends BizEntityTypeImpl<ProductPriceAc
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PricePackage.PRODUCT_PRICE_ACTION_TYPE___PRODUCT_PRICE_ACTIONS:
+				return productPriceActions();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

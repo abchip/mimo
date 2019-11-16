@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -360,6 +362,62 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContactPackage.CONTACT_MECH___BILLING_ACCOUNTS:
+				return billingAccounts();
+			case ContactPackage.CONTACT_MECH___CHECK_ACCOUNTS:
+				return checkAccounts();
+			case ContactPackage.CONTACT_MECH___CREDIT_CARDS:
+				return creditCards();
+			case ContactPackage.CONTACT_MECH___DEST_SHIPMENT_ROUTE_SEGMENTS:
+				return destShipmentRouteSegments();
+			case ContactPackage.CONTACT_MECH___DEST_SHIPMENTS:
+				return destShipments();
+			case ContactPackage.CONTACT_MECH___EFT_ACCOUNTS:
+				return eftAccounts();
+			case ContactPackage.CONTACT_MECH___FROM_COMMUNICATION_EVENTS:
+				return fromCommunicationEvents();
+			case ContactPackage.CONTACT_MECH___FULFILL_CUST_REQUESTS:
+				return fulfillCustRequests();
+			case ContactPackage.CONTACT_MECH___GIFT_CARDS:
+				return giftCards();
+			case ContactPackage.CONTACT_MECH___INVOICES:
+				return invoices();
+			case ContactPackage.CONTACT_MECH___ORDER_ITEM_SHIP_GROUPS:
+				return orderItemShipGroups();
+			case ContactPackage.CONTACT_MECH___ORIGIN_SHIPMENT_ROUTE_SEGMENTS:
+				return originShipmentRouteSegments();
+			case ContactPackage.CONTACT_MECH___ORIGIN_SHIPMENTS:
+				return originShipments();
+			case ContactPackage.CONTACT_MECH___PAY_PAL_PAYMENT_METHODS:
+				return payPalPaymentMethods();
+			case ContactPackage.CONTACT_MECH___RETURN_HEADERS:
+				return returnHeaders();
+			case ContactPackage.CONTACT_MECH___SHIPMENT_CONTACT_MECHS:
+				return shipmentContactMechs();
+			case ContactPackage.CONTACT_MECH___SHOPPING_LISTS:
+				return shoppingLists();
+			case ContactPackage.CONTACT_MECH___SUBSCRIPTIONS:
+				return subscriptions();
+			case ContactPackage.CONTACT_MECH___TELECOM_ORDER_ITEM_SHIP_GROUPS:
+				return telecomOrderItemShipGroups();
+			case ContactPackage.CONTACT_MECH___TO_COMMUNICATION_EVENTS:
+				return toCommunicationEvents();
+			case ContactPackage.CONTACT_MECH___TO_CONTACT_MECH_LINKS:
+				return toContactMechLinks();
+			case ContactPackage.CONTACT_MECH___WORK_EFFORT_EVENT_REMINDERS:
+				return workEffortEventReminders();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

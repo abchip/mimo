@@ -196,6 +196,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -785,6 +786,26 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getVisualThemeSet__VisualThemes() {
+		return visualThemeSetEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getVisualThemeSet__WebSites() {
+		return visualThemeSetEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ThemeFactory getThemeFactory() {
 		return (ThemeFactory)getEFactoryInstance();
 	}
@@ -822,6 +843,8 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		visualThemeSetEClass = createEClass(VISUAL_THEME_SET);
 		createEAttribute(visualThemeSetEClass, VISUAL_THEME_SET__VISUAL_THEME_SET_ID);
 		createEAttribute(visualThemeSetEClass, VISUAL_THEME_SET__DESCRIPTION);
+		createEOperation(visualThemeSetEClass, VISUAL_THEME_SET___VISUAL_THEMES);
+		createEOperation(visualThemeSetEClass, VISUAL_THEME_SET___WEB_SITES);
 	}
 
 	/**
@@ -860,7 +883,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		visualThemeResourceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		visualThemeSetEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(visualThemeEClass, VisualTheme.class, "VisualTheme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualTheme_VisualThemeId(), ecorePackage.getEString(), "visualThemeId", null, 1, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualTheme_Description(), ecorePackage.getEString(), "description", null, 0, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -879,9 +902,9 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		initEAttribute(getVisualThemeSet_VisualThemeSetId(), ecorePackage.getEString(), "visualThemeSetId", null, 1, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeSet_Description(), ecorePackage.getEString(), "description", null, 0, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(visualThemeSetEClass, ecorePackage.getEString(), "visualThemes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getVisualThemeSet__VisualThemes(), ecorePackage.getEString(), "visualThemes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(visualThemeSetEClass, ecorePackage.getEString(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getVisualThemeSet__WebSites(), ecorePackage.getEString(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -935,13 +958,13 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (visualThemeSetEClass.getEOperations().get(0),
+		  (getVisualThemeSet__VisualThemes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (visualThemeSetEClass.getEOperations().get(1),
+		  (getVisualThemeSet__WebSites(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -963,7 +986,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (visualThemeSetEClass.getEOperations().get(0),
+		  (getVisualThemeSet__VisualThemes(),
 		   source,
 		   new String[] {
 			   "frame", "VisualTheme",
@@ -973,7 +996,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (visualThemeSetEClass.getEOperations().get(1),
+		  (getVisualThemeSet__WebSites(),
 		   source,
 		   new String[] {
 			   "frame", "WebSite",

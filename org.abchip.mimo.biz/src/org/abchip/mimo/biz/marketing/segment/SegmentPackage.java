@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.marketing.segment;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -171,6 +172,60 @@ public interface SegmentPackage extends EPackage {
 	int SEGMENT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupClassificationImpl <em>Group Classification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,6 +299,51 @@ public interface SegmentPackage extends EPackage {
 	int SEGMENT_GROUP_CLASSIFICATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_CLASSIFICATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_CLASSIFICATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_CLASSIFICATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_CLASSIFICATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Group Classification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_CLASSIFICATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupGeoImpl <em>Group Geo</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -315,6 +415,51 @@ public interface SegmentPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEGMENT_GROUP_GEO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_GEO___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_GEO___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_GEO___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_GEO___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Group Geo</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_GEO_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupRoleImpl <em>Group Role</em>}' class.
@@ -399,6 +544,51 @@ public interface SegmentPackage extends EPackage {
 	int SEGMENT_GROUP_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Group Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupTypeImpl <em>Group Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,6 +669,97 @@ public interface SegmentPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEGMENT_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Segment Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE___SEGMENT_GROUPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Group Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT_GROUP_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 
 	/**
@@ -697,6 +978,16 @@ public interface SegmentPackage extends EPackage {
 	EAttribute getSegmentGroupType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroupType#segmentGroups() <em>Segment Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Segment Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.marketing.segment.SegmentGroupType#segmentGroups()
+	 * @generated
+	 */
+	EOperation getSegmentGroupType__SegmentGroups();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -887,6 +1178,14 @@ public interface SegmentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SEGMENT_GROUP_TYPE__DESCRIPTION = eINSTANCE.getSegmentGroupType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Segment Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SEGMENT_GROUP_TYPE___SEGMENT_GROUPS = eINSTANCE.getSegmentGroupType__SegmentGroups();
 
 	}
 

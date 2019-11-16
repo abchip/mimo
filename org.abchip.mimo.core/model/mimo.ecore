@@ -507,12 +507,6 @@
         <eTypeParameters name="E">
           <eBounds eClassifier="#//util/JavaEnum"/>
         </eTypeParameters>
-        <eParameters name="name" lowerBound="1" eType="#//util/JavaEnum"/>
-      </eOperations>
-      <eOperations name="lookup" lowerBound="1" eType="#//context/MessageDescription">
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//util/JavaEnum"/>
-        </eTypeParameters>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"

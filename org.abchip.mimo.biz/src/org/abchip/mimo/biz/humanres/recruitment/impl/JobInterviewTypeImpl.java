@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.humanres.recruitment.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
 import org.abchip.mimo.biz.humanres.recruitment.JobInterviewType;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -84,6 +86,20 @@ public class JobInterviewTypeImpl extends BizEntityTypeImpl<JobInterview> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RecruitmentPackage.JOB_INTERVIEW_TYPE___JOB_INTERVIEWS:
+				return jobInterviews();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

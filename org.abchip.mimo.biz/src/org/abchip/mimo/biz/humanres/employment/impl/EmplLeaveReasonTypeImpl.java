@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.humanres.employment.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.humanres.employment.EmplLeaveReasonType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -145,6 +147,20 @@ public class EmplLeaveReasonTypeImpl extends BizEntityImpl implements EmplLeaveR
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case EmploymentPackage.EMPL_LEAVE_REASON_TYPE___CHILD_EMPL_LEAVE_REASON_TYPES:
+				return childEmplLeaveReasonTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //EmplLeaveReasonTypeImpl

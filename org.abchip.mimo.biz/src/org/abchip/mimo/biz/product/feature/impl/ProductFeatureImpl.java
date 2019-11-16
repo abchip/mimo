@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.feature.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
 import org.abchip.mimo.biz.product.feature.ProductFeatureType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -311,6 +313,34 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case FeaturePackage.PRODUCT_FEATURE___ASSOC_PRODUCT_FEATURE_IACTNS:
+				return assocProductFeatureIactns();
+			case FeaturePackage.PRODUCT_FEATURE___COST_COMPONENTS:
+				return costComponents();
+			case FeaturePackage.PRODUCT_FEATURE___DESIRED_FEATURES:
+				return desiredFeatures();
+			case FeaturePackage.PRODUCT_FEATURE___INVOICE_ITEMS:
+				return invoiceItems();
+			case FeaturePackage.PRODUCT_FEATURE___PRODUCT_FEATURE_DATA_RESOURCES:
+				return productFeatureDataResources();
+			case FeaturePackage.PRODUCT_FEATURE___PRODUCT_MANUFACTURING_RULES:
+				return productManufacturingRules();
+			case FeaturePackage.PRODUCT_FEATURE___QUOTE_ITEMS:
+				return quoteItems();
+			case FeaturePackage.PRODUCT_FEATURE___SUPPLIER_PRODUCT_FEATURES:
+				return supplierProductFeatures();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

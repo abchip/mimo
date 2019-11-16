@@ -232,6 +232,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1089,6 +1090,26 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	 * @generated
 	 */
 	@Override
+	public EOperation getDeliverable__Requirements() {
+		return deliverableEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDeliverable__WorkEffortDeliverableProds() {
+		return deliverableEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getDeliverable_Description() {
 		return (EAttribute)deliverableEClass.getEStructuralFeatures().get(2);
 	}
@@ -1121,6 +1142,26 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	@Override
 	public EAttribute getDeliverableType_Description() {
 		return (EAttribute)deliverableTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDeliverableType__Deliverables() {
+		return deliverableTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDeliverableType__QuoteItems() {
+		return deliverableTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1749,6 +1790,166 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	 * @generated
 	 */
 	@Override
+	public EOperation getWorkEffort__AcctgTranss() {
+		return workEffortEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__ChildWorkEfforts() {
+		return workEffortEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__CostComponents() {
+		return workEffortEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__CustRequestWorkEfforts() {
+		return workEffortEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__EstimatedArrivalShipments() {
+		return workEffortEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__EstimatedShipShipments() {
+		return workEffortEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__InventoryItemDetails() {
+		return workEffortEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__MaintTemplateProductMaints() {
+		return workEffortEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__OrderHeaderWorkEfforts() {
+		return workEffortEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__QuoteItems() {
+		return workEffortEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__QuoteWorkEfforts() {
+		return workEffortEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__SalesOpportunityWorkEfforts() {
+		return workEffortEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__ScheduleFixedAssetMaints() {
+		return workEffortEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__ShoppingListWorkEfforts() {
+		return workEffortEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__TimeEntries() {
+		return workEffortEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffort__WorkRequirementFulfillments() {
+		return workEffortEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWorkEffortAssoc() {
 		return workEffortAssocEClass;
 	}
@@ -1951,6 +2152,16 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	@Override
 	public EAttribute getWorkEffortAssocType_WorkEffortAssocTypeAttrs() {
 		return (EAttribute)workEffortAssocTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffortAssocType__ChildWorkEffortAssocTypes() {
+		return workEffortAssocTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -2251,6 +2462,16 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	@Override
 	public EReference getWorkEffortContentType_ParentTypeId() {
 		return (EReference)workEffortContentTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffortContentType__ChildWorkEffortContentTypes() {
+		return workEffortContentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -2759,6 +2980,16 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	 * @generated
 	 */
 	@Override
+	public EOperation getWorkEffortGoodStandardType__ChildWorkEffortGoodStandardTypes() {
+		return workEffortGoodStandardTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWorkEffortIcalData() {
 		return workEffortIcalDataEClass;
 	}
@@ -3121,6 +3352,26 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	@Override
 	public EReference getWorkEffortPurposeType_ParentTypeId() {
 		return (EReference)workEffortPurposeTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffortPurposeType__ChildWorkEffortPurposeTypes() {
+		return workEffortPurposeTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffortPurposeType__WorkEfforts() {
+		return workEffortPurposeTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -3689,6 +3940,26 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	 * @generated
 	 */
 	@Override
+	public EOperation getWorkEffortType__ChildWorkEffortTypes() {
+		return workEffortTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkEffortType__WorkEfforts() {
+		return workEffortTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWorkEffortTypeAttr() {
 		return workEffortTypeAttrEClass;
 	}
@@ -3770,10 +4041,14 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEAttribute(deliverableEClass, DELIVERABLE__DELIVERABLE_NAME);
 		createEAttribute(deliverableEClass, DELIVERABLE__DESCRIPTION);
 		createEReference(deliverableEClass, DELIVERABLE__DELIVERABLE_TYPE_ID);
+		createEOperation(deliverableEClass, DELIVERABLE___REQUIREMENTS);
+		createEOperation(deliverableEClass, DELIVERABLE___WORK_EFFORT_DELIVERABLE_PRODS);
 
 		deliverableTypeEClass = createEClass(DELIVERABLE_TYPE);
 		createEAttribute(deliverableTypeEClass, DELIVERABLE_TYPE__DELIVERABLE_TYPE_ID);
 		createEAttribute(deliverableTypeEClass, DELIVERABLE_TYPE__DESCRIPTION);
+		createEOperation(deliverableTypeEClass, DELIVERABLE_TYPE___DELIVERABLES);
+		createEOperation(deliverableTypeEClass, DELIVERABLE_TYPE___QUOTE_ITEMS);
 
 		workEffortEClass = createEClass(WORK_EFFORT);
 		createEAttribute(workEffortEClass, WORK_EFFORT__WORK_EFFORT_ID);
@@ -3837,6 +4112,22 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEAttribute(workEffortEClass, WORK_EFFORT__WORK_EFFORT_KEYWORDS);
 		createEAttribute(workEffortEClass, WORK_EFFORT__WORK_EFFORT_NOTES);
 		createEAttribute(workEffortEClass, WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS);
+		createEOperation(workEffortEClass, WORK_EFFORT___ACCTG_TRANSS);
+		createEOperation(workEffortEClass, WORK_EFFORT___CHILD_WORK_EFFORTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___COST_COMPONENTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___CUST_REQUEST_WORK_EFFORTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___ESTIMATED_ARRIVAL_SHIPMENTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___ESTIMATED_SHIP_SHIPMENTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___INVENTORY_ITEM_DETAILS);
+		createEOperation(workEffortEClass, WORK_EFFORT___MAINT_TEMPLATE_PRODUCT_MAINTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___ORDER_HEADER_WORK_EFFORTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___QUOTE_ITEMS);
+		createEOperation(workEffortEClass, WORK_EFFORT___QUOTE_WORK_EFFORTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___SALES_OPPORTUNITY_WORK_EFFORTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___SCHEDULE_FIXED_ASSET_MAINTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___SHOPPING_LIST_WORK_EFFORTS);
+		createEOperation(workEffortEClass, WORK_EFFORT___TIME_ENTRIES);
+		createEOperation(workEffortEClass, WORK_EFFORT___WORK_REQUIREMENT_FULFILLMENTS);
 
 		workEffortAssocEClass = createEClass(WORK_EFFORT_ASSOC);
 		createEAttribute(workEffortAssocEClass, WORK_EFFORT_ASSOC__FROM_DATE);
@@ -3861,6 +4152,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEAttribute(workEffortAssocTypeEClass, WORK_EFFORT_ASSOC_TYPE__HAS_TABLE);
 		createEReference(workEffortAssocTypeEClass, WORK_EFFORT_ASSOC_TYPE__PARENT_TYPE_ID);
 		createEAttribute(workEffortAssocTypeEClass, WORK_EFFORT_ASSOC_TYPE__WORK_EFFORT_ASSOC_TYPE_ATTRS);
+		createEOperation(workEffortAssocTypeEClass, WORK_EFFORT_ASSOC_TYPE___CHILD_WORK_EFFORT_ASSOC_TYPES);
 
 		workEffortAssocTypeAttrEClass = createEClass(WORK_EFFORT_ASSOC_TYPE_ATTR);
 		createEAttribute(workEffortAssocTypeAttrEClass, WORK_EFFORT_ASSOC_TYPE_ATTR__ATTR_NAME);
@@ -3897,6 +4189,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEAttribute(workEffortContentTypeEClass, WORK_EFFORT_CONTENT_TYPE__WORK_EFFORT_CONTENT_TYPE_ID);
 		createEAttribute(workEffortContentTypeEClass, WORK_EFFORT_CONTENT_TYPE__DESCRIPTION);
 		createEReference(workEffortContentTypeEClass, WORK_EFFORT_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEOperation(workEffortContentTypeEClass, WORK_EFFORT_CONTENT_TYPE___CHILD_WORK_EFFORT_CONTENT_TYPES);
 
 		workEffortCostCalcEClass = createEClass(WORK_EFFORT_COST_CALC);
 		createEAttribute(workEffortCostCalcEClass, WORK_EFFORT_COST_CALC__FROM_DATE);
@@ -3954,6 +4247,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEAttribute(workEffortGoodStandardTypeEClass, WORK_EFFORT_GOOD_STANDARD_TYPE__DESCRIPTION);
 		createEAttribute(workEffortGoodStandardTypeEClass, WORK_EFFORT_GOOD_STANDARD_TYPE__HAS_TABLE);
 		createEReference(workEffortGoodStandardTypeEClass, WORK_EFFORT_GOOD_STANDARD_TYPE__PARENT_TYPE_ID);
+		createEOperation(workEffortGoodStandardTypeEClass, WORK_EFFORT_GOOD_STANDARD_TYPE___CHILD_WORK_EFFORT_GOOD_STANDARD_TYPES);
 
 		workEffortIcalDataEClass = createEClass(WORK_EFFORT_ICAL_DATA);
 		createEAttribute(workEffortIcalDataEClass, WORK_EFFORT_ICAL_DATA__ICAL_DATA);
@@ -3998,6 +4292,8 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEAttribute(workEffortPurposeTypeEClass, WORK_EFFORT_PURPOSE_TYPE__WORK_EFFORT_PURPOSE_TYPE_ID);
 		createEAttribute(workEffortPurposeTypeEClass, WORK_EFFORT_PURPOSE_TYPE__DESCRIPTION);
 		createEReference(workEffortPurposeTypeEClass, WORK_EFFORT_PURPOSE_TYPE__PARENT_TYPE_ID);
+		createEOperation(workEffortPurposeTypeEClass, WORK_EFFORT_PURPOSE_TYPE___CHILD_WORK_EFFORT_PURPOSE_TYPES);
+		createEOperation(workEffortPurposeTypeEClass, WORK_EFFORT_PURPOSE_TYPE___WORK_EFFORTS);
 
 		workEffortReviewEClass = createEClass(WORK_EFFORT_REVIEW);
 		createEAttribute(workEffortReviewEClass, WORK_EFFORT_REVIEW__REVIEW_DATE);
@@ -4062,6 +4358,8 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEAttribute(workEffortTypeEClass, WORK_EFFORT_TYPE__HAS_TABLE);
 		createEReference(workEffortTypeEClass, WORK_EFFORT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(workEffortTypeEClass, WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS);
+		createEOperation(workEffortTypeEClass, WORK_EFFORT_TYPE___CHILD_WORK_EFFORT_TYPES);
+		createEOperation(workEffortTypeEClass, WORK_EFFORT_TYPE___WORK_EFFORTS);
 
 		workEffortTypeAttrEClass = createEClass(WORK_EFFORT_TYPE_ATTR);
 		createEAttribute(workEffortTypeAttrEClass, WORK_EFFORT_TYPE_ATTR__ATTR_NAME);
@@ -4188,7 +4486,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		workEffortTypeEClass.getEGenericSuperTypes().add(g1);
 		workEffortTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(applicationSandboxEClass, ApplicationSandbox.class, "ApplicationSandbox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationSandbox_ApplicationId(), ecorePackage.getEString(), "applicationId", null, 1, 1, ApplicationSandbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationSandbox_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ApplicationSandbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4212,17 +4510,17 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		initEReference(getDeliverable_DeliverableTypeId(), this.getDeliverableType(), null, "deliverableTypeId", null, 0, 1, Deliverable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDeliverable_DeliverableTypeId().getEKeys().add(this.getDeliverableType_DeliverableTypeId());
 
-		addEOperation(deliverableEClass, ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDeliverable__Requirements(), ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(deliverableEClass, ecorePackage.getEString(), "workEffortDeliverableProds", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDeliverable__WorkEffortDeliverableProds(), ecorePackage.getEString(), "workEffortDeliverableProds", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deliverableTypeEClass, DeliverableType.class, "DeliverableType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeliverableType_DeliverableTypeId(), ecorePackage.getEString(), "deliverableTypeId", null, 1, 1, DeliverableType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeliverableType_Description(), ecorePackage.getEString(), "description", null, 0, 1, DeliverableType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(deliverableTypeEClass, ecorePackage.getEString(), "deliverables", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDeliverableType__Deliverables(), ecorePackage.getEString(), "deliverables", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(deliverableTypeEClass, ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDeliverableType__QuoteItems(), ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortEClass, WorkEffort.class, "WorkEffort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkEffort_WorkEffortId(), ecorePackage.getEString(), "workEffortId", null, 1, 1, WorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4302,37 +4600,37 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		initEAttribute(getWorkEffort_WorkEffortNotes(), ecorePackage.getEString(), "workEffortNotes", null, 0, -1, WorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWorkEffort_WorkEffortSkillStandards(), ecorePackage.getEString(), "workEffortSkillStandards", null, 0, -1, WorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "childWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__ChildWorkEfforts(), ecorePackage.getEString(), "childWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "costComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__CostComponents(), ecorePackage.getEString(), "costComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "custRequestWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__CustRequestWorkEfforts(), ecorePackage.getEString(), "custRequestWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "estimatedArrivalShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__EstimatedArrivalShipments(), ecorePackage.getEString(), "estimatedArrivalShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "estimatedShipShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__EstimatedShipShipments(), ecorePackage.getEString(), "estimatedShipShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__InventoryItemDetails(), ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "maintTemplateProductMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__MaintTemplateProductMaints(), ecorePackage.getEString(), "maintTemplateProductMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "orderHeaderWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__OrderHeaderWorkEfforts(), ecorePackage.getEString(), "orderHeaderWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__QuoteItems(), ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "quoteWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__QuoteWorkEfforts(), ecorePackage.getEString(), "quoteWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "salesOpportunityWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__SalesOpportunityWorkEfforts(), ecorePackage.getEString(), "salesOpportunityWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "scheduleFixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__ScheduleFixedAssetMaints(), ecorePackage.getEString(), "scheduleFixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "shoppingListWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__ShoppingListWorkEfforts(), ecorePackage.getEString(), "shoppingListWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__TimeEntries(), ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortEClass, ecorePackage.getEString(), "workRequirementFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffort__WorkRequirementFulfillments(), ecorePackage.getEString(), "workRequirementFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortAssocEClass, WorkEffortAssoc.class, "WorkEffortAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkEffortAssoc_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, WorkEffortAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4362,7 +4660,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		getWorkEffortAssocType_ParentTypeId().getEKeys().add(this.getWorkEffortAssocType_WorkEffortAssocTypeId());
 		initEAttribute(getWorkEffortAssocType_WorkEffortAssocTypeAttrs(), ecorePackage.getEString(), "workEffortAssocTypeAttrs", null, 0, -1, WorkEffortAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(workEffortAssocTypeEClass, ecorePackage.getEString(), "childWorkEffortAssocTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffortAssocType__ChildWorkEffortAssocTypes(), ecorePackage.getEString(), "childWorkEffortAssocTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortAssocTypeAttrEClass, WorkEffortAssocTypeAttr.class, "WorkEffortAssocTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkEffortAssocTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, WorkEffortAssocTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4410,7 +4708,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		initEReference(getWorkEffortContentType_ParentTypeId(), this.getWorkEffortContentType(), null, "parentTypeId", null, 0, 1, WorkEffortContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWorkEffortContentType_ParentTypeId().getEKeys().add(this.getWorkEffortContentType_WorkEffortContentTypeId());
 
-		addEOperation(workEffortContentTypeEClass, ecorePackage.getEString(), "childWorkEffortContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffortContentType__ChildWorkEffortContentTypes(), ecorePackage.getEString(), "childWorkEffortContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortCostCalcEClass, WorkEffortCostCalc.class, "WorkEffortCostCalc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkEffortCostCalc_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, WorkEffortCostCalc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4488,7 +4786,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		initEReference(getWorkEffortGoodStandardType_ParentTypeId(), this.getWorkEffortGoodStandardType(), null, "parentTypeId", null, 0, 1, WorkEffortGoodStandardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWorkEffortGoodStandardType_ParentTypeId().getEKeys().add(this.getWorkEffortGoodStandardType_WorkEffortGoodStdTypeId());
 
-		addEOperation(workEffortGoodStandardTypeEClass, ecorePackage.getEString(), "childWorkEffortGoodStandardTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffortGoodStandardType__ChildWorkEffortGoodStandardTypes(), ecorePackage.getEString(), "childWorkEffortGoodStandardTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortIcalDataEClass, WorkEffortIcalData.class, "WorkEffortIcalData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkEffortIcalData_IcalData(), ecorePackage.getEString(), "icalData", null, 0, 1, WorkEffortIcalData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4552,9 +4850,9 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		initEReference(getWorkEffortPurposeType_ParentTypeId(), this.getWorkEffortPurposeType(), null, "parentTypeId", null, 0, 1, WorkEffortPurposeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWorkEffortPurposeType_ParentTypeId().getEKeys().add(this.getWorkEffortPurposeType_WorkEffortPurposeTypeId());
 
-		addEOperation(workEffortPurposeTypeEClass, ecorePackage.getEString(), "childWorkEffortPurposeTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffortPurposeType__ChildWorkEffortPurposeTypes(), ecorePackage.getEString(), "childWorkEffortPurposeTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortPurposeTypeEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffortPurposeType__WorkEfforts(), ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortReviewEClass, WorkEffortReview.class, "WorkEffortReview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkEffortReview_ReviewDate(), ecorePackage.getEDate(), "reviewDate", null, 1, 1, WorkEffortReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4633,9 +4931,9 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		getWorkEffortType_ParentTypeId().getEKeys().add(this.getWorkEffortType_WorkEffortTypeId());
 		initEAttribute(getWorkEffortType_WorkEffortTypeAttrs(), ecorePackage.getEString(), "workEffortTypeAttrs", null, 0, -1, WorkEffortType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(workEffortTypeEClass, ecorePackage.getEString(), "childWorkEffortTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffortType__ChildWorkEffortTypes(), ecorePackage.getEString(), "childWorkEffortTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(workEffortTypeEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkEffortType__WorkEfforts(), ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortTypeAttrEClass, WorkEffortTypeAttr.class, "WorkEffortTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkEffortTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, WorkEffortTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4667,13 +4965,13 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (deliverableEClass.getEOperations().get(0),
+		  (getDeliverable__Requirements(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (deliverableEClass.getEOperations().get(1),
+		  (getDeliverable__WorkEffortDeliverableProds(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4685,13 +4983,13 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (deliverableTypeEClass.getEOperations().get(0),
+		  (getDeliverableType__Deliverables(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (deliverableTypeEClass.getEOperations().get(1),
+		  (getDeliverableType__QuoteItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4703,97 +5001,97 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(0),
+		  (getWorkEffort__AcctgTranss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(1),
+		  (getWorkEffort__ChildWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(2),
+		  (getWorkEffort__CostComponents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(3),
+		  (getWorkEffort__CustRequestWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(4),
+		  (getWorkEffort__EstimatedArrivalShipments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(5),
+		  (getWorkEffort__EstimatedShipShipments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(6),
+		  (getWorkEffort__InventoryItemDetails(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(7),
+		  (getWorkEffort__MaintTemplateProductMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(8),
+		  (getWorkEffort__OrderHeaderWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(9),
+		  (getWorkEffort__QuoteItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(10),
+		  (getWorkEffort__QuoteWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(11),
+		  (getWorkEffort__SalesOpportunityWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(12),
+		  (getWorkEffort__ScheduleFixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(13),
+		  (getWorkEffort__ShoppingListWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(14),
+		  (getWorkEffort__TimeEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(15),
+		  (getWorkEffort__WorkRequirementFulfillments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4895,7 +5193,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workEffortAssocTypeEClass.getEOperations().get(0),
+		  (getWorkEffortAssocType__ChildWorkEffortAssocTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4943,7 +5241,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workEffortContentTypeEClass.getEOperations().get(0),
+		  (getWorkEffortContentType__ChildWorkEffortContentTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4979,7 +5277,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workEffortGoodStandardTypeEClass.getEOperations().get(0),
+		  (getWorkEffortGoodStandardType__ChildWorkEffortGoodStandardTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5003,13 +5301,13 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workEffortPurposeTypeEClass.getEOperations().get(0),
+		  (getWorkEffortPurposeType__ChildWorkEffortPurposeTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortPurposeTypeEClass.getEOperations().get(1),
+		  (getWorkEffortPurposeType__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5069,13 +5367,13 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workEffortTypeEClass.getEOperations().get(0),
+		  (getWorkEffortType__ChildWorkEffortTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (workEffortTypeEClass.getEOperations().get(1),
+		  (getWorkEffortType__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5109,7 +5407,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (deliverableEClass.getEOperations().get(0),
+		  (getDeliverable__Requirements(),
 		   source,
 		   new String[] {
 			   "frame", "Requirement",
@@ -5119,7 +5417,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (deliverableEClass.getEOperations().get(1),
+		  (getDeliverable__WorkEffortDeliverableProds(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortDeliverableProd",
@@ -5129,7 +5427,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (deliverableTypeEClass.getEOperations().get(0),
+		  (getDeliverableType__Deliverables(),
 		   source,
 		   new String[] {
 			   "frame", "Deliverable",
@@ -5139,7 +5437,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (deliverableTypeEClass.getEOperations().get(1),
+		  (getDeliverableType__QuoteItems(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteItem",
@@ -5149,7 +5447,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(0),
+		  (getWorkEffort__AcctgTranss(),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -5159,7 +5457,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(1),
+		  (getWorkEffort__ChildWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -5169,7 +5467,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(2),
+		  (getWorkEffort__CostComponents(),
 		   source,
 		   new String[] {
 			   "frame", "CostComponent",
@@ -5179,7 +5477,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(3),
+		  (getWorkEffort__CustRequestWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequestWorkEffort",
@@ -5189,7 +5487,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(4),
+		  (getWorkEffort__EstimatedArrivalShipments(),
 		   source,
 		   new String[] {
 			   "frame", "Shipment",
@@ -5199,7 +5497,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(5),
+		  (getWorkEffort__EstimatedShipShipments(),
 		   source,
 		   new String[] {
 			   "frame", "Shipment",
@@ -5209,7 +5507,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(6),
+		  (getWorkEffort__InventoryItemDetails(),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItemDetail",
@@ -5219,7 +5517,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(7),
+		  (getWorkEffort__MaintTemplateProductMaints(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMaint",
@@ -5229,7 +5527,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(8),
+		  (getWorkEffort__OrderHeaderWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeaderWorkEffort",
@@ -5239,7 +5537,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(9),
+		  (getWorkEffort__QuoteItems(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteItem",
@@ -5249,7 +5547,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(10),
+		  (getWorkEffort__QuoteWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteWorkEffort",
@@ -5259,7 +5557,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(11),
+		  (getWorkEffort__SalesOpportunityWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "SalesOpportunityWorkEffort",
@@ -5269,7 +5567,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(12),
+		  (getWorkEffort__ScheduleFixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAssetMaint",
@@ -5279,7 +5577,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(13),
+		  (getWorkEffort__ShoppingListWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingListWorkEffort",
@@ -5289,7 +5587,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(14),
+		  (getWorkEffort__TimeEntries(),
 		   source,
 		   new String[] {
 			   "frame", "TimeEntry",
@@ -5299,7 +5597,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortEClass.getEOperations().get(15),
+		  (getWorkEffort__WorkRequirementFulfillments(),
 		   source,
 		   new String[] {
 			   "frame", "WorkRequirementFulfillment",
@@ -5399,7 +5697,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortAssocTypeEClass.getEOperations().get(0),
+		  (getWorkEffortAssocType__ChildWorkEffortAssocTypes(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortAssocType",
@@ -5418,7 +5716,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortContentTypeEClass.getEOperations().get(0),
+		  (getWorkEffortContentType__ChildWorkEffortContentTypes(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortContentType",
@@ -5428,7 +5726,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortGoodStandardTypeEClass.getEOperations().get(0),
+		  (getWorkEffortGoodStandardType__ChildWorkEffortGoodStandardTypes(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortGoodStandardType",
@@ -5438,7 +5736,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortPurposeTypeEClass.getEOperations().get(0),
+		  (getWorkEffortPurposeType__ChildWorkEffortPurposeTypes(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortPurposeType",
@@ -5448,7 +5746,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortPurposeTypeEClass.getEOperations().get(1),
+		  (getWorkEffortPurposeType__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -5467,7 +5765,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortTypeEClass.getEOperations().get(0),
+		  (getWorkEffortType__ChildWorkEffortTypes(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortType",
@@ -5477,7 +5775,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workEffortTypeEClass.getEOperations().get(1),
+		  (getWorkEffortType__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",

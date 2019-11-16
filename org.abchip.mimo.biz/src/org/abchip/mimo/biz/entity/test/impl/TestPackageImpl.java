@@ -204,6 +204,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1072,6 +1073,16 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTestingNode__PrimaryChildTestingNodes() {
+		return testingNodeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTestingNodeMember() {
 		return testingNodeMemberEClass;
 	}
@@ -1292,6 +1303,16 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTestingType__Testings() {
+		return testingTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public TestFactory getTestFactory() {
 		return (TestFactory)getEFactoryInstance();
 	}
@@ -1354,6 +1375,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testingNodeEClass, TESTING_NODE__TESTING_NODE_ID);
 		createEAttribute(testingNodeEClass, TESTING_NODE__DESCRIPTION);
 		createEReference(testingNodeEClass, TESTING_NODE__PRIMARY_PARENT_NODE_ID);
+		createEOperation(testingNodeEClass, TESTING_NODE___PRIMARY_CHILD_TESTING_NODES);
 
 		testingNodeMemberEClass = createEClass(TESTING_NODE_MEMBER);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__FROM_DATE);
@@ -1381,6 +1403,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		testingTypeEClass = createEClass(TESTING_TYPE);
 		createEAttribute(testingTypeEClass, TESTING_TYPE__TESTING_TYPE_ID);
 		createEAttribute(testingTypeEClass, TESTING_TYPE__DESCRIPTION);
+		createEOperation(testingTypeEClass, TESTING_TYPE___TESTINGS);
 	}
 
 	/**
@@ -1433,7 +1456,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		g1.getETypeArguments().add(g2);
 		testingTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(testFieldTypeEClass, TestFieldType.class, "TestFieldType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestFieldType_TestFieldTypeId(), ecorePackage.getEString(), "testFieldTypeId", null, 1, 1, TestFieldType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestFieldType_BlobField(), ecorePackage.getEString(), "blobField", null, 0, 1, TestFieldType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1477,7 +1500,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEReference(getTestingNode_PrimaryParentNodeId(), this.getTestingNode(), null, "primaryParentNodeId", null, 0, 1, TestingNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTestingNode_PrimaryParentNodeId().getEKeys().add(this.getTestingNode_TestingNodeId());
 
-		addEOperation(testingNodeEClass, ecorePackage.getEString(), "primaryChildTestingNodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTestingNode__PrimaryChildTestingNodes(), ecorePackage.getEString(), "primaryChildTestingNodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(testingNodeMemberEClass, TestingNodeMember.class, "TestingNodeMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingNodeMember_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1510,7 +1533,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTestingType_TestingTypeId(), ecorePackage.getEString(), "testingTypeId", null, 1, 1, TestingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingType_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(testingTypeEClass, ecorePackage.getEString(), "testings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTestingType__Testings(), ecorePackage.getEString(), "testings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1560,7 +1583,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (testingNodeEClass.getEOperations().get(0),
+		  (getTestingNode__PrimaryChildTestingNodes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1596,7 +1619,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (testingTypeEClass.getEOperations().get(0),
+		  (getTestingType__Testings(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1661,7 +1684,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (testingNodeEClass.getEOperations().get(0),
+		  (getTestingNode__PrimaryChildTestingNodes(),
 		   source,
 		   new String[] {
 			   "frame", "TestingNode",
@@ -1671,7 +1694,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (testingTypeEClass.getEOperations().get(0),
+		  (getTestingType__Testings(),
 		   source,
 		   new String[] {
 			   "frame", "Testing",

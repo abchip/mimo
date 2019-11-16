@@ -871,7 +871,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		// Add supertypes to classes
 		cartAbandonedLineEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(cartAbandonedLineEClass, CartAbandonedLine.class, "CartAbandonedLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCartAbandonedLine_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_CartAbandonedLineSeqId(), ecorePackage.getEString(), "cartAbandonedLineSeqId", null, 1, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

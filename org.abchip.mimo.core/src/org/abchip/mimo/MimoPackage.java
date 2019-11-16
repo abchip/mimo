@@ -79,6 +79,16 @@ public interface MimoPackage extends EPackage {
 
 
 	/**
+	 * The number of operations of the '<em>Mimo</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIMO_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.Mimo <em>Mimo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

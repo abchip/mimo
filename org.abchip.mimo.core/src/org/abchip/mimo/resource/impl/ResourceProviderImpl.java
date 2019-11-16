@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.resource.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
@@ -19,6 +20,7 @@ import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceProvider;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -114,6 +116,44 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings({"rawtypes", "unchecked" })
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ResourcePackage.RESOURCE_PROVIDER___CHECK_LOGIN__AUTHENTICATIONUSERTOKEN_BOOLEAN:
+				return checkLogin((AuthenticationUserToken)arguments.get(0), (Boolean)arguments.get(1));
+			case ResourcePackage.RESOURCE_PROVIDER___GET_RESOURCE__CONTEXTPROVIDER_CLASS:
+				return getResource((ContextProvider)arguments.get(0), (Class)arguments.get(1));
+			case ResourcePackage.RESOURCE_PROVIDER___GET_RESOURCE__CONTEXTPROVIDER_FRAME:
+				return getResource((ContextProvider)arguments.get(0), (Frame)arguments.get(1));
+			case ResourcePackage.RESOURCE_PROVIDER___GET_RESOURCE__CONTEXTPROVIDER_STRING:
+				return getResource((ContextProvider)arguments.get(0), (String)arguments.get(1));
+			case ResourcePackage.RESOURCE_PROVIDER___GET_RESOURCE__CONTEXTPROVIDER_CLASS_STRING:
+				return getResource((ContextProvider)arguments.get(0), (Class)arguments.get(1), (String)arguments.get(2));
+			case ResourcePackage.RESOURCE_PROVIDER___GET_RESOURCE__CONTEXTPROVIDER_FRAME_STRING:
+				return getResource((ContextProvider)arguments.get(0), (Frame)arguments.get(1), (String)arguments.get(2));
+			case ResourcePackage.RESOURCE_PROVIDER___GET_RESOURCE__CONTEXTPROVIDER_STRING_STRING:
+				return getResource((ContextProvider)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2));
+			case ResourcePackage.RESOURCE_PROVIDER___IS_ACTIVE__CONTEXTPROVIDER:
+				return isActive((ContextProvider)arguments.get(0));
+			case ResourcePackage.RESOURCE_PROVIDER___LOGIN__STRING_AUTHENTICATIONANONYMOUS:
+				return login((String)arguments.get(0), (AuthenticationAnonymous)arguments.get(1));
+			case ResourcePackage.RESOURCE_PROVIDER___LOGIN__STRING_AUTHENTICATIONUSERPASSWORD:
+				return login((String)arguments.get(0), (AuthenticationUserPassword)arguments.get(1));
+			case ResourcePackage.RESOURCE_PROVIDER___LOGIN__STRING_AUTHENTICATIONUSERTOKEN:
+				return login((String)arguments.get(0), (AuthenticationUserToken)arguments.get(1));
+			case ResourcePackage.RESOURCE_PROVIDER___LOGOUT__CONTEXTPROVIDER:
+				logout((ContextProvider)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -736,7 +736,7 @@ public class CryptoPackageImpl extends EPackageImpl implements CryptoPackage {
 		// Add supertypes to classes
 		entityKeyStoreEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(entityKeyStoreEClass, EntityKeyStore.class, "EntityKeyStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityKeyStore_KeyName(), ecorePackage.getEString(), "keyName", null, 1, 1, EntityKeyStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityKeyStore_KeyText(), ecorePackage.getEString(), "keyText", null, 0, 1, EntityKeyStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

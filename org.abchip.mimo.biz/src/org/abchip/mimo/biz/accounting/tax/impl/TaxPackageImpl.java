@@ -204,6 +204,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1152,6 +1153,36 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTaxAuthorityRateProduct__InvoiceItems() {
+		return taxAuthorityRateProductEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTaxAuthorityRateProduct__OrderAdjustments() {
+		return taxAuthorityRateProductEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTaxAuthorityRateProduct__ReturnAdjustments() {
+		return taxAuthorityRateProductEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getTaxAuthorityRateProduct_ProductStoreId() {
 		return (EReference)taxAuthorityRateProductEClass.getEStructuralFeatures().get(14);
 	}
@@ -1264,6 +1295,16 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 	@Override
 	public EAttribute getTaxAuthorityRateType_Description() {
 		return (EAttribute)taxAuthorityRateTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTaxAuthorityRateType__TaxAuthorityRateProducts() {
+		return taxAuthorityRateTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1663,10 +1704,14 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		createEReference(taxAuthorityRateProductEClass, TAX_AUTHORITY_RATE_PRODUCT__TAX_AUTHORITY_RATE_TYPE_ID);
 		createEReference(taxAuthorityRateProductEClass, TAX_AUTHORITY_RATE_PRODUCT__PRODUCT_STORE_ID);
 		createEReference(taxAuthorityRateProductEClass, TAX_AUTHORITY_RATE_PRODUCT__PRODUCT_CATEGORY_ID);
+		createEOperation(taxAuthorityRateProductEClass, TAX_AUTHORITY_RATE_PRODUCT___INVOICE_ITEMS);
+		createEOperation(taxAuthorityRateProductEClass, TAX_AUTHORITY_RATE_PRODUCT___ORDER_ADJUSTMENTS);
+		createEOperation(taxAuthorityRateProductEClass, TAX_AUTHORITY_RATE_PRODUCT___RETURN_ADJUSTMENTS);
 
 		taxAuthorityRateTypeEClass = createEClass(TAX_AUTHORITY_RATE_TYPE);
 		createEAttribute(taxAuthorityRateTypeEClass, TAX_AUTHORITY_RATE_TYPE__TAX_AUTHORITY_RATE_TYPE_ID);
 		createEAttribute(taxAuthorityRateTypeEClass, TAX_AUTHORITY_RATE_TYPE__DESCRIPTION);
+		createEOperation(taxAuthorityRateTypeEClass, TAX_AUTHORITY_RATE_TYPE___TAX_AUTHORITY_RATE_PRODUCTS);
 
 		zipSalesRuleLookupEClass = createEClass(ZIP_SALES_RULE_LOOKUP);
 		createEAttribute(zipSalesRuleLookupEClass, ZIP_SALES_RULE_LOOKUP__STATE_CODE);
@@ -1755,7 +1800,7 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		zipSalesRuleLookupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		zipSalesTaxLookupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(partyTaxAuthInfoEClass, PartyTaxAuthInfo.class, "PartyTaxAuthInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyTaxAuthInfo_TaxAuthGeoId(), ecorePackage.getEString(), "taxAuthGeoId", null, 1, 1, PartyTaxAuthInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyTaxAuthInfo_TaxAuthPartyId(), ecorePackage.getEString(), "taxAuthPartyId", null, 1, 1, PartyTaxAuthInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1825,17 +1870,17 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		initEReference(getTaxAuthorityRateProduct_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 0, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTaxAuthorityRateProduct_ProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
 
-		addEOperation(taxAuthorityRateProductEClass, ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTaxAuthorityRateProduct__InvoiceItems(), ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(taxAuthorityRateProductEClass, ecorePackage.getEString(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTaxAuthorityRateProduct__OrderAdjustments(), ecorePackage.getEString(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(taxAuthorityRateProductEClass, ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTaxAuthorityRateProduct__ReturnAdjustments(), ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(taxAuthorityRateTypeEClass, TaxAuthorityRateType.class, "TaxAuthorityRateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTaxAuthorityRateType_TaxAuthorityRateTypeId(), ecorePackage.getEString(), "taxAuthorityRateTypeId", null, 1, 1, TaxAuthorityRateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaxAuthorityRateType_Description(), ecorePackage.getEString(), "description", null, 0, 1, TaxAuthorityRateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(taxAuthorityRateTypeEClass, ecorePackage.getEString(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTaxAuthorityRateType__TaxAuthorityRateProducts(), ecorePackage.getEString(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(zipSalesRuleLookupEClass, ZipSalesRuleLookup.class, "ZipSalesRuleLookup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getZipSalesRuleLookup_StateCode(), ecorePackage.getEString(), "stateCode", null, 1, 1, ZipSalesRuleLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1966,19 +2011,19 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(0),
+		  (getTaxAuthorityRateProduct__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(1),
+		  (getTaxAuthorityRateProduct__OrderAdjustments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(2),
+		  (getTaxAuthorityRateProduct__ReturnAdjustments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1990,7 +2035,7 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (taxAuthorityRateTypeEClass.getEOperations().get(0),
+		  (getTaxAuthorityRateType__TaxAuthorityRateProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2066,7 +2111,7 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(0),
+		  (getTaxAuthorityRateProduct__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItem",
@@ -2076,7 +2121,7 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(1),
+		  (getTaxAuthorityRateProduct__OrderAdjustments(),
 		   source,
 		   new String[] {
 			   "frame", "OrderAdjustment",
@@ -2086,7 +2131,7 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(2),
+		  (getTaxAuthorityRateProduct__ReturnAdjustments(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnAdjustment",
@@ -2096,7 +2141,7 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (taxAuthorityRateTypeEClass.getEOperations().get(0),
+		  (getTaxAuthorityRateType__TaxAuthorityRateProducts(),
 		   source,
 		   new String[] {
 			   "frame", "TaxAuthorityRateProduct",

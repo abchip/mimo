@@ -226,6 +226,52 @@ public interface BomPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Manufacturing Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule <em>Product Manufacturing Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

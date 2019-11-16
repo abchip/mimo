@@ -218,6 +218,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -926,6 +927,16 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	@Override
 	public EAttribute getGoodIdentificationType_GoodIdentifications() {
 		return (EAttribute)goodIdentificationTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getGoodIdentificationType__ChildGoodIdentificationTypes() {
+		return goodIdentificationTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1704,6 +1715,266 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getProduct__Agreements() {
+		return productEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__CartAbandonedLines() {
+		return productEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__CostComponents() {
+		return productEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__CustRequestItems() {
+		return productEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__GoodIdentifications() {
+		return productEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__InstanceOfFixedAssets() {
+		return productEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__InventoryItems() {
+		return productEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__InvoiceItems() {
+		return productEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__OrderItems() {
+		return productEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductForProductManufacturingRules() {
+		return productEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductGroupOrders() {
+		return productEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductInProductManufacturingRules() {
+		return productEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductManufacturingRules() {
+		return productEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductProductConfigStatss() {
+		return productEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductReviews() {
+		return productEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductStoreSurveyAppls() {
+		return productEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ProductSubstProductManufacturingRules() {
+		return productEClass.getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__QuoteItems() {
+		return productEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ReorderGuidelines() {
+		return productEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__Requirements() {
+		return productEClass.getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ReturnItems() {
+		return productEClass.getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__SalesForecastDetails() {
+		return productEClass.getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ShipmentItems() {
+		return productEClass.getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ShipmentReceipts() {
+		return productEClass.getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__ShoppingListItems() {
+		return productEClass.getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProduct__Subscriptions() {
+		return productEClass.getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProductAssoc() {
 		return productAssocEClass;
 	}
@@ -1886,6 +2157,16 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	@Override
 	public EReference getProductAssocType_ParentTypeId() {
 		return (EReference)productAssocTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductAssocType__ChildProductAssocTypes() {
+		return productAssocTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -2176,6 +2457,16 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	@Override
 	public EReference getProductContentType_ParentTypeId() {
 		return (EReference)productContentTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductContentType__ChildProductContentTypes() {
+		return productContentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -2574,6 +2865,36 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getProductMaintType__ChildProductMaintTypes() {
+		return productMaintTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductMaintType__FixedAssetMaints() {
+		return productMaintTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductMaintType__ProductMaints() {
+		return productMaintTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProductMeter() {
 		return productMeterEClass;
 	}
@@ -2646,6 +2967,36 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	@Override
 	public EReference getProductMeterType_DefaultUomId() {
 		return (EReference)productMeterTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductMeterType__IntervalFixedAssetMaints() {
+		return productMeterTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductMeterType__IntervalProductMaints() {
+		return productMeterTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductMeterType__ProductMeters() {
+		return productMeterTypeEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -3134,6 +3485,26 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getProductType__ChildProductTypes() {
+		return productTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductType__Products() {
+		return productTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProductTypeAttr() {
 		return productTypeAttrEClass;
 	}
@@ -3248,6 +3619,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__HAS_TABLE);
 		createEReference(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS);
+		createEOperation(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE___CHILD_GOOD_IDENTIFICATION_TYPES);
 
 		productEClass = createEClass(PRODUCT);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_ID);
@@ -3326,6 +3698,32 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productEClass, PRODUCT__PRODUCT_GEOS);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_MAINTS);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_METERS);
+		createEOperation(productEClass, PRODUCT___AGREEMENTS);
+		createEOperation(productEClass, PRODUCT___CART_ABANDONED_LINES);
+		createEOperation(productEClass, PRODUCT___COST_COMPONENTS);
+		createEOperation(productEClass, PRODUCT___CUST_REQUEST_ITEMS);
+		createEOperation(productEClass, PRODUCT___GOOD_IDENTIFICATIONS);
+		createEOperation(productEClass, PRODUCT___INSTANCE_OF_FIXED_ASSETS);
+		createEOperation(productEClass, PRODUCT___INVENTORY_ITEMS);
+		createEOperation(productEClass, PRODUCT___INVOICE_ITEMS);
+		createEOperation(productEClass, PRODUCT___ORDER_ITEMS);
+		createEOperation(productEClass, PRODUCT___PRODUCT_FOR_PRODUCT_MANUFACTURING_RULES);
+		createEOperation(productEClass, PRODUCT___PRODUCT_GROUP_ORDERS);
+		createEOperation(productEClass, PRODUCT___PRODUCT_IN_PRODUCT_MANUFACTURING_RULES);
+		createEOperation(productEClass, PRODUCT___PRODUCT_MANUFACTURING_RULES);
+		createEOperation(productEClass, PRODUCT___PRODUCT_PRODUCT_CONFIG_STATSS);
+		createEOperation(productEClass, PRODUCT___PRODUCT_REVIEWS);
+		createEOperation(productEClass, PRODUCT___PRODUCT_STORE_SURVEY_APPLS);
+		createEOperation(productEClass, PRODUCT___PRODUCT_SUBST_PRODUCT_MANUFACTURING_RULES);
+		createEOperation(productEClass, PRODUCT___QUOTE_ITEMS);
+		createEOperation(productEClass, PRODUCT___REORDER_GUIDELINES);
+		createEOperation(productEClass, PRODUCT___REQUIREMENTS);
+		createEOperation(productEClass, PRODUCT___RETURN_ITEMS);
+		createEOperation(productEClass, PRODUCT___SALES_FORECAST_DETAILS);
+		createEOperation(productEClass, PRODUCT___SHIPMENT_ITEMS);
+		createEOperation(productEClass, PRODUCT___SHIPMENT_RECEIPTS);
+		createEOperation(productEClass, PRODUCT___SHOPPING_LIST_ITEMS);
+		createEOperation(productEClass, PRODUCT___SUBSCRIPTIONS);
 
 		productAssocEClass = createEClass(PRODUCT_ASSOC);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__FROM_DATE);
@@ -3347,6 +3745,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__DESCRIPTION);
 		createEAttribute(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__HAS_TABLE);
 		createEReference(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID);
+		createEOperation(productAssocTypeEClass, PRODUCT_ASSOC_TYPE___CHILD_PRODUCT_ASSOC_TYPES);
 
 		productAttributeEClass = createEClass(PRODUCT_ATTRIBUTE);
 		createEAttribute(productAttributeEClass, PRODUCT_ATTRIBUTE__ATTR_NAME);
@@ -3380,6 +3779,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productContentTypeEClass, PRODUCT_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(productContentTypeEClass, PRODUCT_CONTENT_TYPE__HAS_TABLE);
 		createEReference(productContentTypeEClass, PRODUCT_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEOperation(productContentTypeEClass, PRODUCT_CONTENT_TYPE___CHILD_PRODUCT_CONTENT_TYPES);
 
 		productGeoEClass = createEClass(PRODUCT_GEO);
 		createEAttribute(productGeoEClass, PRODUCT_GEO__DESCRIPTION);
@@ -3425,6 +3825,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productMaintTypeEClass, PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID);
 		createEAttribute(productMaintTypeEClass, PRODUCT_MAINT_TYPE__DESCRIPTION);
 		createEReference(productMaintTypeEClass, PRODUCT_MAINT_TYPE__PARENT_TYPE_ID);
+		createEOperation(productMaintTypeEClass, PRODUCT_MAINT_TYPE___CHILD_PRODUCT_MAINT_TYPES);
+		createEOperation(productMaintTypeEClass, PRODUCT_MAINT_TYPE___FIXED_ASSET_MAINTS);
+		createEOperation(productMaintTypeEClass, PRODUCT_MAINT_TYPE___PRODUCT_MAINTS);
 
 		productMeterEClass = createEClass(PRODUCT_METER);
 		createEAttribute(productMeterEClass, PRODUCT_METER__METER_NAME);
@@ -3436,6 +3839,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productMeterTypeEClass, PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID);
 		createEAttribute(productMeterTypeEClass, PRODUCT_METER_TYPE__DESCRIPTION);
 		createEReference(productMeterTypeEClass, PRODUCT_METER_TYPE__DEFAULT_UOM_ID);
+		createEOperation(productMeterTypeEClass, PRODUCT_METER_TYPE___INTERVAL_FIXED_ASSET_MAINTS);
+		createEOperation(productMeterTypeEClass, PRODUCT_METER_TYPE___INTERVAL_PRODUCT_MAINTS);
+		createEOperation(productMeterTypeEClass, PRODUCT_METER_TYPE___PRODUCT_METERS);
 
 		productReviewEClass = createEClass(PRODUCT_REVIEW);
 		createEAttribute(productReviewEClass, PRODUCT_REVIEW__PRODUCT_REVIEW_ID);
@@ -3488,6 +3894,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__IS_PHYSICAL);
 		createEReference(productTypeEClass, PRODUCT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__PRODUCT_TYPE_ATTRS);
+		createEOperation(productTypeEClass, PRODUCT_TYPE___CHILD_PRODUCT_TYPES);
+		createEOperation(productTypeEClass, PRODUCT_TYPE___PRODUCTS);
 
 		productTypeAttrEClass = createEClass(PRODUCT_TYPE_ATTR);
 		createEAttribute(productTypeAttrEClass, PRODUCT_TYPE_ATTR__ATTR_NAME);
@@ -3608,7 +4016,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		productTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		vendorProductEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(goodIdentificationEClass, GoodIdentification.class, "GoodIdentification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoodIdentification_IdValue(), ecorePackage.getEString(), "idValue", null, 0, 1, GoodIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGoodIdentification_GoodIdentificationTypeId(), this.getGoodIdentificationType(), null, "goodIdentificationTypeId", null, 0, 1, GoodIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3624,7 +4032,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		getGoodIdentificationType_ParentTypeId().getEKeys().add(this.getGoodIdentificationType_GoodIdentificationTypeId());
 		initEAttribute(getGoodIdentificationType_GoodIdentifications(), ecorePackage.getEString(), "goodIdentifications", null, 0, -1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(goodIdentificationTypeEClass, ecorePackage.getEString(), "childGoodIdentificationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getGoodIdentificationType__ChildGoodIdentificationTypes(), ecorePackage.getEString(), "childGoodIdentificationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productEClass, Product.class, "Product", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProduct_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3722,57 +4130,57 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProduct_ProductMaints(), ecorePackage.getEString(), "productMaints", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductMeters(), ecorePackage.getEString(), "productMeters", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "agreements", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__Agreements(), ecorePackage.getEString(), "agreements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "cartAbandonedLines", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__CartAbandonedLines(), ecorePackage.getEString(), "cartAbandonedLines", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "costComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__CostComponents(), ecorePackage.getEString(), "costComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "custRequestItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__CustRequestItems(), ecorePackage.getEString(), "custRequestItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "goodIdentifications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__GoodIdentifications(), ecorePackage.getEString(), "goodIdentifications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "instanceOfFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__InstanceOfFixedAssets(), ecorePackage.getEString(), "instanceOfFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__InventoryItems(), ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__InvoiceItems(), ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "orderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__OrderItems(), ecorePackage.getEString(), "orderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productForProductManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductForProductManufacturingRules(), ecorePackage.getEString(), "productForProductManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductGroupOrders(), ecorePackage.getEString(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productInProductManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductInProductManufacturingRules(), ecorePackage.getEString(), "productInProductManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductManufacturingRules(), ecorePackage.getEString(), "productManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productProductConfigStatss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductProductConfigStatss(), ecorePackage.getEString(), "productProductConfigStatss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductReviews(), ecorePackage.getEString(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductStoreSurveyAppls(), ecorePackage.getEString(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "productSubstProductManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ProductSubstProductManufacturingRules(), ecorePackage.getEString(), "productSubstProductManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__QuoteItems(), ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "reorderGuidelines", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ReorderGuidelines(), ecorePackage.getEString(), "reorderGuidelines", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__Requirements(), ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ReturnItems(), ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "salesForecastDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__SalesForecastDetails(), ecorePackage.getEString(), "salesForecastDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "shipmentItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ShipmentItems(), ecorePackage.getEString(), "shipmentItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "shipmentReceipts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ShipmentReceipts(), ecorePackage.getEString(), "shipmentReceipts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "shoppingListItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__ShoppingListItems(), ecorePackage.getEString(), "shoppingListItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProduct__Subscriptions(), ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productAssocEClass, ProductAssoc.class, "ProductAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductAssoc_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3802,7 +4210,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEReference(getProductAssocType_ParentTypeId(), this.getProductAssocType(), null, "parentTypeId", null, 0, 1, ProductAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductAssocType_ParentTypeId().getEKeys().add(this.getProductAssocType_ProductAssocTypeId());
 
-		addEOperation(productAssocTypeEClass, ecorePackage.getEString(), "childProductAssocTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductAssocType__ChildProductAssocTypes(), ecorePackage.getEString(), "childProductAssocTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productAttributeEClass, ProductAttribute.class, "ProductAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3845,7 +4253,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEReference(getProductContentType_ParentTypeId(), this.getProductContentType(), null, "parentTypeId", null, 0, 1, ProductContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductContentType_ParentTypeId().getEKeys().add(this.getProductContentType_ProductContentTypeId());
 
-		addEOperation(productContentTypeEClass, ecorePackage.getEString(), "childProductContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductContentType__ChildProductContentTypes(), ecorePackage.getEString(), "childProductContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productGeoEClass, ProductGeo.class, "ProductGeo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductGeo_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3911,11 +4319,11 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEReference(getProductMaintType_ParentTypeId(), this.getProductMaintType(), null, "parentTypeId", null, 0, 1, ProductMaintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductMaintType_ParentTypeId().getEKeys().add(this.getProductMaintType_ProductMaintTypeId());
 
-		addEOperation(productMaintTypeEClass, ecorePackage.getEString(), "childProductMaintTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductMaintType__ChildProductMaintTypes(), ecorePackage.getEString(), "childProductMaintTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productMaintTypeEClass, ecorePackage.getEString(), "fixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductMaintType__FixedAssetMaints(), ecorePackage.getEString(), "fixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productMaintTypeEClass, ecorePackage.getEString(), "productMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductMaintType__ProductMaints(), ecorePackage.getEString(), "productMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productMeterEClass, ProductMeter.class, "ProductMeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductMeter_MeterName(), ecorePackage.getEString(), "meterName", null, 0, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3932,11 +4340,11 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEReference(getProductMeterType_DefaultUomId(), theUomPackage.getUom(), null, "defaultUomId", null, 0, 1, ProductMeterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductMeterType_DefaultUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
-		addEOperation(productMeterTypeEClass, ecorePackage.getEString(), "intervalFixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductMeterType__IntervalFixedAssetMaints(), ecorePackage.getEString(), "intervalFixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productMeterTypeEClass, ecorePackage.getEString(), "intervalProductMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductMeterType__IntervalProductMaints(), ecorePackage.getEString(), "intervalProductMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productMeterTypeEClass, ecorePackage.getEString(), "productMeters", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductMeterType__ProductMeters(), ecorePackage.getEString(), "productMeters", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productReviewEClass, ProductReview.class, "ProductReview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductReview_ProductReviewId(), ecorePackage.getEString(), "productReviewId", null, 1, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3999,9 +4407,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		getProductType_ParentTypeId().getEKeys().add(this.getProductType_ProductTypeId());
 		initEAttribute(getProductType_ProductTypeAttrs(), ecorePackage.getEString(), "productTypeAttrs", null, 0, -1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productTypeEClass, ecorePackage.getEString(), "childProductTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductType__ChildProductTypes(), ecorePackage.getEString(), "childProductTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productTypeEClass, ecorePackage.getEString(), "products", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductType__Products(), ecorePackage.getEString(), "products", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productTypeAttrEClass, ProductTypeAttr.class, "ProductTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ProductTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4035,7 +4443,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (goodIdentificationTypeEClass.getEOperations().get(0),
+		  (getGoodIdentificationType__ChildGoodIdentificationTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4053,157 +4461,157 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(0),
+		  (getProduct__Agreements(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(1),
+		  (getProduct__CartAbandonedLines(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(2),
+		  (getProduct__CostComponents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(3),
+		  (getProduct__CustRequestItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(4),
+		  (getProduct__GoodIdentifications(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(5),
+		  (getProduct__InstanceOfFixedAssets(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(6),
+		  (getProduct__InventoryItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(7),
+		  (getProduct__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(8),
+		  (getProduct__OrderItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(9),
+		  (getProduct__ProductForProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(10),
+		  (getProduct__ProductGroupOrders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(11),
+		  (getProduct__ProductInProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(12),
+		  (getProduct__ProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(13),
+		  (getProduct__ProductProductConfigStatss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(14),
+		  (getProduct__ProductReviews(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(15),
+		  (getProduct__ProductStoreSurveyAppls(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(16),
+		  (getProduct__ProductSubstProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(17),
+		  (getProduct__QuoteItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(18),
+		  (getProduct__ReorderGuidelines(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(19),
+		  (getProduct__Requirements(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(20),
+		  (getProduct__ReturnItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(21),
+		  (getProduct__SalesForecastDetails(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(22),
+		  (getProduct__ShipmentItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(23),
+		  (getProduct__ShipmentReceipts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(24),
+		  (getProduct__ShoppingListItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(25),
+		  (getProduct__Subscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4257,7 +4665,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productAssocTypeEClass.getEOperations().get(0),
+		  (getProductAssocType__ChildProductAssocTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4281,7 +4689,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productContentTypeEClass.getEOperations().get(0),
+		  (getProductContentType__ChildProductContentTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4311,19 +4719,19 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productMaintTypeEClass.getEOperations().get(0),
+		  (getProductMaintType__ChildProductMaintTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productMaintTypeEClass.getEOperations().get(1),
+		  (getProductMaintType__FixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productMaintTypeEClass.getEOperations().get(2),
+		  (getProductMaintType__ProductMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4335,19 +4743,19 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productMeterTypeEClass.getEOperations().get(0),
+		  (getProductMeterType__IntervalFixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productMeterTypeEClass.getEOperations().get(1),
+		  (getProductMeterType__IntervalProductMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productMeterTypeEClass.getEOperations().get(2),
+		  (getProductMeterType__ProductMeters(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4389,13 +4797,13 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productTypeEClass.getEOperations().get(0),
+		  (getProductType__ChildProductTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productTypeEClass.getEOperations().get(1),
+		  (getProductType__Products(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4429,7 +4837,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (goodIdentificationTypeEClass.getEOperations().get(0),
+		  (getGoodIdentificationType__ChildGoodIdentificationTypes(),
 		   source,
 		   new String[] {
 			   "frame", "GoodIdentificationType",
@@ -4448,7 +4856,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(0),
+		  (getProduct__Agreements(),
 		   source,
 		   new String[] {
 			   "frame", "Agreement",
@@ -4458,7 +4866,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(1),
+		  (getProduct__CartAbandonedLines(),
 		   source,
 		   new String[] {
 			   "frame", "CartAbandonedLine",
@@ -4468,7 +4876,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(2),
+		  (getProduct__CostComponents(),
 		   source,
 		   new String[] {
 			   "frame", "CostComponent",
@@ -4478,7 +4886,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(3),
+		  (getProduct__CustRequestItems(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequestItem",
@@ -4488,7 +4896,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(4),
+		  (getProduct__GoodIdentifications(),
 		   source,
 		   new String[] {
 			   "frame", "GoodIdentification",
@@ -4498,7 +4906,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(5),
+		  (getProduct__InstanceOfFixedAssets(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAsset",
@@ -4508,7 +4916,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(6),
+		  (getProduct__InventoryItems(),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItem",
@@ -4518,7 +4926,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(7),
+		  (getProduct__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItem",
@@ -4528,7 +4936,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(8),
+		  (getProduct__OrderItems(),
 		   source,
 		   new String[] {
 			   "frame", "OrderItem",
@@ -4538,7 +4946,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(9),
+		  (getProduct__ProductForProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "frame", "ProductManufacturingRule",
@@ -4548,7 +4956,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(10),
+		  (getProduct__ProductGroupOrders(),
 		   source,
 		   new String[] {
 			   "frame", "ProductGroupOrder",
@@ -4558,7 +4966,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(11),
+		  (getProduct__ProductInProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "frame", "ProductManufacturingRule",
@@ -4568,7 +4976,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(12),
+		  (getProduct__ProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "frame", "ProductManufacturingRule",
@@ -4578,7 +4986,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(13),
+		  (getProduct__ProductProductConfigStatss(),
 		   source,
 		   new String[] {
 			   "frame", "ProductConfigStats",
@@ -4588,7 +4996,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(14),
+		  (getProduct__ProductReviews(),
 		   source,
 		   new String[] {
 			   "frame", "ProductReview",
@@ -4598,7 +5006,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(15),
+		  (getProduct__ProductStoreSurveyAppls(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreSurveyAppl",
@@ -4608,7 +5016,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(16),
+		  (getProduct__ProductSubstProductManufacturingRules(),
 		   source,
 		   new String[] {
 			   "frame", "ProductManufacturingRule",
@@ -4618,7 +5026,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(17),
+		  (getProduct__QuoteItems(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteItem",
@@ -4628,7 +5036,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(18),
+		  (getProduct__ReorderGuidelines(),
 		   source,
 		   new String[] {
 			   "frame", "ReorderGuideline",
@@ -4638,7 +5046,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(19),
+		  (getProduct__Requirements(),
 		   source,
 		   new String[] {
 			   "frame", "Requirement",
@@ -4648,7 +5056,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(20),
+		  (getProduct__ReturnItems(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnItem",
@@ -4658,7 +5066,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(21),
+		  (getProduct__SalesForecastDetails(),
 		   source,
 		   new String[] {
 			   "frame", "SalesForecastDetail",
@@ -4668,7 +5076,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(22),
+		  (getProduct__ShipmentItems(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentItem",
@@ -4678,7 +5086,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(23),
+		  (getProduct__ShipmentReceipts(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentReceipt",
@@ -4688,7 +5096,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(24),
+		  (getProduct__ShoppingListItems(),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingListItem",
@@ -4698,7 +5106,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productEClass.getEOperations().get(25),
+		  (getProduct__Subscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",
@@ -4762,7 +5170,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productAssocTypeEClass.getEOperations().get(0),
+		  (getProductAssocType__ChildProductAssocTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductAssocType",
@@ -4772,7 +5180,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productContentTypeEClass.getEOperations().get(0),
+		  (getProductContentType__ChildProductContentTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductContentType",
@@ -4782,7 +5190,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productMaintTypeEClass.getEOperations().get(0),
+		  (getProductMaintType__ChildProductMaintTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMaintType",
@@ -4792,7 +5200,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productMaintTypeEClass.getEOperations().get(1),
+		  (getProductMaintType__FixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAssetMaint",
@@ -4802,7 +5210,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productMaintTypeEClass.getEOperations().get(2),
+		  (getProductMaintType__ProductMaints(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMaint",
@@ -4812,7 +5220,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productMeterTypeEClass.getEOperations().get(0),
+		  (getProductMeterType__IntervalFixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAssetMaint",
@@ -4822,7 +5230,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productMeterTypeEClass.getEOperations().get(1),
+		  (getProductMeterType__IntervalProductMaints(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMaint",
@@ -4832,7 +5240,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productMeterTypeEClass.getEOperations().get(2),
+		  (getProductMeterType__ProductMeters(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMeter",
@@ -4851,7 +5259,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productTypeEClass.getEOperations().get(0),
+		  (getProductType__ChildProductTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductType",
@@ -4861,7 +5269,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productTypeEClass.getEOperations().get(1),
+		  (getProductType__Products(),
 		   source,
 		   new String[] {
 			   "frame", "Product",

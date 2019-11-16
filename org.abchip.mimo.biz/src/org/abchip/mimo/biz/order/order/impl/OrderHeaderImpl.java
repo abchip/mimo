@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -24,6 +25,7 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.website.WebSite;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -33,88 +35,47 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderId
- * <em>Order Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAgreementId
- * <em>Agreement Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getEntryDate
- * <em>Entry Date</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getExternalId
- * <em>External Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getFirstAttemptOrderId
- * <em>First Attempt Order Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getGrandTotal
- * <em>Grand Total</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getInternalCode
- * <em>Internal Code</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isInvoicePerShipment
- * <em>Invoice Per Shipment</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsRushOrder
- * <em>Is Rush Order</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsViewed
- * <em>Is Viewed</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isNeedsInventoryIssuance
- * <em>Needs Inventory Issuance</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDate
- * <em>Order Date</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderName
- * <em>Order Name</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getPickSheetPrintedDate
- * <em>Pick Sheet Printed Date</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isPriority
- * <em>Priority</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getRemainingSubTotal
- * <em>Remaining Sub Total</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTerminalId
- * <em>Terminal Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTransactionId
- * <em>Transaction Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getVisitId
- * <em>Visit Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderTypeId
- * <em>Order Type Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSalesChannelEnumId
- * <em>Sales Channel Enum Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOriginFacilityId
- * <em>Origin Facility Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getBillingAccountId
- * <em>Billing Account Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductStoreId
- * <em>Product Store Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAutoOrderShoppingListId
- * <em>Auto Order Shopping List Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCreatedBy
- * <em>Created By</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getStatusId
- * <em>Status Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSyncStatusId
- * <em>Sync Status Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCurrencyUom
- * <em>Currency Uom</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getWebSiteId
- * <em>Web Site Id</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCommunicationEventOrders
- * <em>Communication Event Orders</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderAttributes
- * <em>Order Attributes</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDeliverySchedules
- * <em>Order Delivery Schedules</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderNotes
- * <em>Order Header Notes</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderWorkEfforts
- * <em>Order Header Work Efforts</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItems
- * <em>Order Items</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemGroups
- * <em>Order Item Groups</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemShipGroups
- * <em>Order Item Ship Groups</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderProductPromoCodes
- * <em>Order Product Promo Codes</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductPromoUses
- * <em>Product Promo Uses</em>}</li>
- * <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTrackingCodeOrders
- * <em>Tracking Code Orders</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getEntryDate <em>Entry Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getExternalId <em>External Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getFirstAttemptOrderId <em>First Attempt Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getGrandTotal <em>Grand Total</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getInternalCode <em>Internal Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsRushOrder <em>Is Rush Order</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsViewed <em>Is Viewed</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDate <em>Order Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderName <em>Order Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getPickSheetPrintedDate <em>Pick Sheet Printed Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getRemainingSubTotal <em>Remaining Sub Total</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTerminalId <em>Terminal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTransactionId <em>Transaction Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderTypeId <em>Order Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAutoOrderShoppingListId <em>Auto Order Shopping List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCreatedBy <em>Created By</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCurrencyUom <em>Currency Uom</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getWebSiteId <em>Web Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCommunicationEventOrders <em>Communication Event Orders</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderAttributes <em>Order Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDeliverySchedules <em>Order Delivery Schedules</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderNotes <em>Order Header Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderWorkEfforts <em>Order Header Work Efforts</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItems <em>Order Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemGroups <em>Order Item Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemShipGroups <em>Order Item Ship Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderProductPromoCodes <em>Order Product Promo Codes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductPromoUses <em>Product Promo Uses</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTrackingCodeOrders <em>Tracking Code Orders</em>}</li>
  * </ul>
  *
  * @generated
@@ -127,7 +88,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected OrderHeaderImpl() {
@@ -136,7 +96,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,17 +105,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getAgreementId() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__AGREEMENT_ID, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__AGREEMENT_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -166,17 +123,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public ShoppingList getAutoOrderShoppingListId() {
-		return (ShoppingList) eGet(OrderPackage.Literals.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID, true);
+		return (ShoppingList)eGet(OrderPackage.Literals.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,17 +141,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public BillingAccount getBillingAccountId() {
-		return (BillingAccount) eGet(OrderPackage.Literals.ORDER_HEADER__BILLING_ACCOUNT_ID, true);
+		return (BillingAccount)eGet(OrderPackage.Literals.ORDER_HEADER__BILLING_ACCOUNT_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,17 +159,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public UserLogin getCreatedBy() {
-		return (UserLogin) eGet(OrderPackage.Literals.ORDER_HEADER__CREATED_BY, true);
+		return (UserLogin)eGet(OrderPackage.Literals.ORDER_HEADER__CREATED_BY, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -226,17 +177,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Uom getCurrencyUom() {
-		return (Uom) eGet(OrderPackage.Literals.ORDER_HEADER__CURRENCY_UOM, true);
+		return (Uom)eGet(OrderPackage.Literals.ORDER_HEADER__CURRENCY_UOM, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,17 +195,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Date getEntryDate() {
-		return (Date) eGet(OrderPackage.Literals.ORDER_HEADER__ENTRY_DATE, true);
+		return (Date)eGet(OrderPackage.Literals.ORDER_HEADER__ENTRY_DATE, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -266,17 +213,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getExternalId() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__EXTERNAL_ID, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__EXTERNAL_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -286,17 +231,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getFirstAttemptOrderId() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -306,17 +249,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public BigDecimal getGrandTotal() {
-		return (BigDecimal) eGet(OrderPackage.Literals.ORDER_HEADER__GRAND_TOTAL, true);
+		return (BigDecimal)eGet(OrderPackage.Literals.ORDER_HEADER__GRAND_TOTAL, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -326,17 +267,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getInternalCode() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__INTERNAL_CODE, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__INTERNAL_CODE, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -346,17 +285,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isInvoicePerShipment() {
-		return (Boolean) eGet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, true);
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -366,17 +303,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isIsRushOrder() {
-		return (Boolean) eGet(OrderPackage.Literals.ORDER_HEADER__IS_RUSH_ORDER, true);
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__IS_RUSH_ORDER, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -386,17 +321,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isIsViewed() {
-		return (Boolean) eGet(OrderPackage.Literals.ORDER_HEADER__IS_VIEWED, true);
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__IS_VIEWED, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -406,17 +339,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isNeedsInventoryIssuance() {
-		return (Boolean) eGet(OrderPackage.Literals.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE, true);
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -426,17 +357,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Date getOrderDate() {
-		return (Date) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_DATE, true);
+		return (Date)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_DATE, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -446,17 +375,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getOrderId() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ID, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -466,17 +393,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getOrderName() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_NAME, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_NAME, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -486,17 +411,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public OrderType getOrderTypeId() {
-		return (OrderType) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_TYPE_ID, true);
+		return (OrderType)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_TYPE_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -506,17 +429,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Facility getOriginFacilityId() {
-		return (Facility) eGet(OrderPackage.Literals.ORDER_HEADER__ORIGIN_FACILITY_ID, true);
+		return (Facility)eGet(OrderPackage.Literals.ORDER_HEADER__ORIGIN_FACILITY_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -526,17 +447,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Date getPickSheetPrintedDate() {
-		return (Date) eGet(OrderPackage.Literals.ORDER_HEADER__PICK_SHEET_PRINTED_DATE, true);
+		return (Date)eGet(OrderPackage.Literals.ORDER_HEADER__PICK_SHEET_PRINTED_DATE, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -546,17 +465,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isPriority() {
-		return (Boolean) eGet(OrderPackage.Literals.ORDER_HEADER__PRIORITY, true);
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__PRIORITY, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -566,17 +483,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public ProductStore getProductStoreId() {
-		return (ProductStore) eGet(OrderPackage.Literals.ORDER_HEADER__PRODUCT_STORE_ID, true);
+		return (ProductStore)eGet(OrderPackage.Literals.ORDER_HEADER__PRODUCT_STORE_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -586,17 +501,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public BigDecimal getRemainingSubTotal() {
-		return (BigDecimal) eGet(OrderPackage.Literals.ORDER_HEADER__REMAINING_SUB_TOTAL, true);
+		return (BigDecimal)eGet(OrderPackage.Literals.ORDER_HEADER__REMAINING_SUB_TOTAL, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -606,17 +519,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Enumeration getSalesChannelEnumId() {
-		return (Enumeration) eGet(OrderPackage.Literals.ORDER_HEADER__SALES_CHANNEL_ENUM_ID, true);
+		return (Enumeration)eGet(OrderPackage.Literals.ORDER_HEADER__SALES_CHANNEL_ENUM_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -626,17 +537,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public StatusItem getStatusId() {
-		return (StatusItem) eGet(OrderPackage.Literals.ORDER_HEADER__STATUS_ID, true);
+		return (StatusItem)eGet(OrderPackage.Literals.ORDER_HEADER__STATUS_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -646,17 +555,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public StatusItem getSyncStatusId() {
-		return (StatusItem) eGet(OrderPackage.Literals.ORDER_HEADER__SYNC_STATUS_ID, true);
+		return (StatusItem)eGet(OrderPackage.Literals.ORDER_HEADER__SYNC_STATUS_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -666,17 +573,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getTerminalId() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__TERMINAL_ID, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__TERMINAL_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -686,17 +591,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getTransactionId() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__TRANSACTION_ID, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__TRANSACTION_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -706,17 +609,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getVisitId() {
-		return (String) eGet(OrderPackage.Literals.ORDER_HEADER__VISIT_ID, true);
+		return (String)eGet(OrderPackage.Literals.ORDER_HEADER__VISIT_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -726,17 +627,15 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public WebSite getWebSiteId() {
-		return (WebSite) eGet(OrderPackage.Literals.ORDER_HEADER__WEB_SITE_ID, true);
+		return (WebSite)eGet(OrderPackage.Literals.ORDER_HEADER__WEB_SITE_ID, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -746,128 +645,116 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getCommunicationEventOrders() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderAttributes() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ATTRIBUTES, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ATTRIBUTES, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderDeliverySchedules() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderHeaderNotes() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_NOTES, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_NOTES, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderHeaderWorkEfforts() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderItems() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEMS, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEMS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderItemGroups() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_GROUPS, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_GROUPS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderItemShipGroups() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderProductPromoCodes() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getProductPromoUses() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__PRODUCT_PROMO_USES, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__PRODUCT_PROMO_USES, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getTrackingCodeOrders() {
-		return (List<String>) eGet(OrderPackage.Literals.ORDER_HEADER__TRACKING_CODE_ORDERS, true);
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__TRACKING_CODE_ORDERS, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -879,7 +766,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -891,7 +777,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -903,7 +788,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -915,7 +799,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -927,7 +810,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -939,7 +821,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -951,7 +832,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -963,7 +843,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -975,7 +854,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -987,7 +865,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -999,7 +876,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1011,7 +887,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1023,7 +898,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1035,7 +909,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1047,7 +920,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1059,7 +931,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1067,6 +938,52 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OrderPackage.ORDER_HEADER___ACQUIRE_FIXED_ASSETS:
+				return acquireFixedAssets();
+			case OrderPackage.ORDER_HEADER___GIFT_CARD_FULFILLMENTS:
+				return giftCardFulfillments();
+			case OrderPackage.ORDER_HEADER___ITEM_ISSUANCES:
+				return itemIssuances();
+			case OrderPackage.ORDER_HEADER___ORDER_ADJUSTMENTS:
+				return orderAdjustments();
+			case OrderPackage.ORDER_HEADER___ORDER_ITEM_CHANGES:
+				return orderItemChanges();
+			case OrderPackage.ORDER_HEADER___ORDER_ITEM_PRICE_INFOS:
+				return orderItemPriceInfos();
+			case OrderPackage.ORDER_HEADER___ORDER_NOTIFICATIONS:
+				return orderNotifications();
+			case OrderPackage.ORDER_HEADER___ORDER_PAYMENT_PREFERENCES:
+				return orderPaymentPreferences();
+			case OrderPackage.ORDER_HEADER___ORDER_STATUSS:
+				return orderStatuss();
+			case OrderPackage.ORDER_HEADER___PRIMARY_PICKLIST_BINS:
+				return primaryPicklistBins();
+			case OrderPackage.ORDER_HEADER___PRIMARY_SHIPMENTS:
+				return primaryShipments();
+			case OrderPackage.ORDER_HEADER___PURCHASE_FIXED_ASSET_MAINTS:
+				return purchaseFixedAssetMaints();
+			case OrderPackage.ORDER_HEADER___REPLACEMENT_RETURN_ITEM_RESPONSES:
+				return replacementReturnItemResponses();
+			case OrderPackage.ORDER_HEADER___RETURN_ITEMS:
+				return returnItems();
+			case OrderPackage.ORDER_HEADER___SHIPMENT_RECEIPTS:
+				return shipmentReceipts();
+			case OrderPackage.ORDER_HEADER___SUBSCRIPTIONS:
+				return subscriptions();
+			case OrderPackage.ORDER_HEADER___SURVEY_RESPONSES:
+				return surveyResponses();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

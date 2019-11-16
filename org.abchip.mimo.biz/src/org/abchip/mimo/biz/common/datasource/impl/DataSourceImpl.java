@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.common.datasource.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.datasource.DataSourceType;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -164,6 +166,30 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DatasourcePackage.DATA_SOURCE___CONTENT_META_DATAS:
+				return contentMetaDatas();
+			case DatasourcePackage.DATA_SOURCE___CONTENTS:
+				return contents();
+			case DatasourcePackage.DATA_SOURCE___DATA_RESOURCE_META_DATAS:
+				return dataResourceMetaDatas();
+			case DatasourcePackage.DATA_SOURCE___DATA_RESOURCES:
+				return dataResources();
+			case DatasourcePackage.DATA_SOURCE___GEO_POINTS:
+				return geoPoints();
+			case DatasourcePackage.DATA_SOURCE___PARTIES:
+				return parties();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

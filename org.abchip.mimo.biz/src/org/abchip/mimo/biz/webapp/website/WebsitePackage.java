@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.webapp.website;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -151,6 +152,51 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int WEB_PAGE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_PAGE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_PAGE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_PAGE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_PAGE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Web Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_PAGE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl <em>Web Site</em>}' class.
@@ -368,6 +414,79 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int WEB_SITE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Order Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE___ORDER_HEADERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Subscription Resources</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE___SUBSCRIPTION_RESOURCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Web Pages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE___WEB_PAGES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Web Site</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
 
 
 	/**
@@ -633,6 +752,36 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebSite_WebAnalyticsConfigs();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.website.WebSite#orderHeaders() <em>Order Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.website.WebSite#orderHeaders()
+	 * @generated
+	 */
+	EOperation getWebSite__OrderHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.website.WebSite#subscriptionResources() <em>Subscription Resources</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Subscription Resources</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.website.WebSite#subscriptionResources()
+	 * @generated
+	 */
+	EOperation getWebSite__SubscriptionResources();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.webapp.website.WebSite#webPages() <em>Web Pages</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Web Pages</em>' operation.
+	 * @see org.abchip.mimo.biz.webapp.website.WebSite#webPages()
+	 * @generated
+	 */
+	EOperation getWebSite__WebPages();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -849,6 +998,30 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEB_SITE__WEB_ANALYTICS_CONFIGS = eINSTANCE.getWebSite_WebAnalyticsConfigs();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WEB_SITE___ORDER_HEADERS = eINSTANCE.getWebSite__OrderHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>Subscription Resources</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WEB_SITE___SUBSCRIPTION_RESOURCES = eINSTANCE.getWebSite__SubscriptionResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Web Pages</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WEB_SITE___WEB_PAGES = eINSTANCE.getWebSite__WebPages();
 
 	}
 

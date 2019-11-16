@@ -360,6 +360,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getAdapterFactory__GetAdapter__Context_Object_Class() {
+		return adapterFactoryEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAuthentication() {
 		return authenticationEClass;
 	}
@@ -372,6 +382,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	@Override
 	public EClass getAuthenticationManager() {
 		return authenticationManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAuthenticationManager__Authenticate__Authentication() {
+		return authenticationManagerEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -520,6 +540,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getCapability__GetEntityName() {
+		return capabilityEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getContext() {
 		return contextEClass;
 	}
@@ -530,8 +560,198 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getContext__Close() {
+		return contextEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__Get__Class() {
+		return contextEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__GetAdapter__Object_Class() {
+		return contextEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__Inject__Object() {
+		return contextEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__IsClosed() {
+		return contextEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__Invoke__Object_Class() {
+		return contextEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__Make__Class() {
+		return contextEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__RegisterAdapterFactory__AdapterFactory_Class() {
+		return contextEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__Set__Class_Object() {
+		return contextEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__Set__String_Object() {
+		return contextEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__GetResource__Class_String() {
+		return contextEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContext__GetResources__Class_String() {
+		return contextEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getContextRoot() {
 		return contextRootEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextRoot__CreateChildContext__String() {
+		return contextRootEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextRoot__CreateChildContext__ContextDescription() {
+		return contextRootEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextRoot__Get__Class_String() {
+		return contextRootEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextRoot__GetAll__Class() {
+		return contextRootEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextRoot__GetAll__Class_String() {
+		return contextRootEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextRoot__LoadClass__String() {
+		return contextRootEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextRoot__Set__String_Object_boolean_Dictionary() {
+		return contextRootEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -610,8 +830,38 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getContextDescription__IsTenant() {
+		return contextDescriptionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getContextProvider() {
 		return contextProviderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextProvider__GetContext() {
+		return contextProviderEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContextProvider__GetContextDescription() {
+		return contextProviderEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -630,8 +880,98 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getEntityLocker__GetAddress() {
+		return entityLockerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityLocker__IsLocked__LockType() {
+		return entityLockerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityLocker__Lock__LockType() {
+		return entityLockerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityLocker__TryLock__long_LockType() {
+		return entityLockerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityLocker__Unlock__LockType() {
+		return entityLockerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getExceptionManager() {
 		return exceptionManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExceptionManager__PrepareException__ContextProvider_Enum() {
+		return exceptionManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExceptionManager__PrepareException__ContextProvider_Enum_Object() {
+		return exceptionManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExceptionManager__PrepareException__ContextProvider_Enum_Object_1() {
+		return exceptionManagerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExceptionManager__PrepareException__ContextProvider_String_String_String_Object() {
+		return exceptionManagerEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -650,6 +990,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getIdentity__GetJavaPrincipal() {
+		return identityEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getLockManager() {
 		return lockManagerEClass;
 	}
@@ -660,8 +1010,168 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getLockManager__GetLocker__ContextProvider_URI() {
+		return lockManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLockManager__GetLocker__ContextProvider_EntityNameable() {
+		return lockManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLockManager__GetConcurrentMap__ContextProvider_String() {
+		return lockManagerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLockManager__GetQueue__ContextProvider_String() {
+		return lockManagerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getLogger() {
 		return loggerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Debug__String() {
+		return loggerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Debug__Throwable() {
+		return loggerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Debug__String_Throwable() {
+		return loggerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Error__String() {
+		return loggerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Error__Throwable() {
+		return loggerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Error__String_Throwable() {
+		return loggerEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Info__String() {
+		return loggerEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Info__Throwable() {
+		return loggerEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Info__String_Throwable() {
+		return loggerEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Warning__String() {
+		return loggerEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Warning__Throwable() {
+		return loggerEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getLogger__Warning__String_Throwable() {
+		return loggerEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -800,6 +1310,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getMessageFile__Lookup__String() {
+		return messageFileEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRegistry() {
 		return registryEClass;
 	}
@@ -810,8 +1330,58 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getRegistry__Lookup__String() {
+		return registryEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRegistry__List() {
+		return registryEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRegistry__LookupByPort__int() {
+		return registryEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRegistry__LookupByVendorVersion__String_String() {
+		return registryEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRegistryFactory() {
 		return registryFactoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRegistryFactory__CreateRegistry__Class() {
+		return registryFactoryEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -944,10 +1514,12 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		// Create classes and their features
 		adapterFactoryEClass = createEClass(ADAPTER_FACTORY);
+		createEOperation(adapterFactoryEClass, ADAPTER_FACTORY___GET_ADAPTER__CONTEXT_OBJECT_CLASS);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
 
 		authenticationManagerEClass = createEClass(AUTHENTICATION_MANAGER);
+		createEOperation(authenticationManagerEClass, AUTHENTICATION_MANAGER___AUTHENTICATE__AUTHENTICATION);
 
 		authenticationUserPasswordEClass = createEClass(AUTHENTICATION_USER_PASSWORD);
 		createEAttribute(authenticationUserPasswordEClass, AUTHENTICATION_USER_PASSWORD__USER);
@@ -966,8 +1538,21 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		capabilityEClass = createEClass(CAPABILITY);
 		createEAttribute(capabilityEClass, CAPABILITY__RIGHTS);
 		createEAttribute(capabilityEClass, CAPABILITY__ENTITY_URI);
+		createEOperation(capabilityEClass, CAPABILITY___GET_ENTITY_NAME);
 
 		contextEClass = createEClass(CONTEXT);
+		createEOperation(contextEClass, CONTEXT___CLOSE);
+		createEOperation(contextEClass, CONTEXT___GET__CLASS);
+		createEOperation(contextEClass, CONTEXT___GET_ADAPTER__OBJECT_CLASS);
+		createEOperation(contextEClass, CONTEXT___INJECT__OBJECT);
+		createEOperation(contextEClass, CONTEXT___IS_CLOSED);
+		createEOperation(contextEClass, CONTEXT___INVOKE__OBJECT_CLASS);
+		createEOperation(contextEClass, CONTEXT___MAKE__CLASS);
+		createEOperation(contextEClass, CONTEXT___REGISTER_ADAPTER_FACTORY__ADAPTERFACTORY_CLASS);
+		createEOperation(contextEClass, CONTEXT___SET__CLASS_OBJECT);
+		createEOperation(contextEClass, CONTEXT___SET__STRING_OBJECT);
+		createEOperation(contextEClass, CONTEXT___GET_RESOURCE__CLASS_STRING);
+		createEOperation(contextEClass, CONTEXT___GET_RESOURCES__CLASS_STRING);
 
 		contextDescriptionEClass = createEClass(CONTEXT_DESCRIPTION);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ANONYMOUS);
@@ -976,20 +1561,56 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__PICTURE);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__TENANT);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__USER);
+		createEOperation(contextDescriptionEClass, CONTEXT_DESCRIPTION___IS_TENANT);
 
 		contextProviderEClass = createEClass(CONTEXT_PROVIDER);
+		createEOperation(contextProviderEClass, CONTEXT_PROVIDER___GET_CONTEXT);
+		createEOperation(contextProviderEClass, CONTEXT_PROVIDER___GET_CONTEXT_DESCRIPTION);
 
 		contextRootEClass = createEClass(CONTEXT_ROOT);
+		createEOperation(contextRootEClass, CONTEXT_ROOT___CREATE_CHILD_CONTEXT__STRING);
+		createEOperation(contextRootEClass, CONTEXT_ROOT___CREATE_CHILD_CONTEXT__CONTEXTDESCRIPTION);
+		createEOperation(contextRootEClass, CONTEXT_ROOT___GET__CLASS_STRING);
+		createEOperation(contextRootEClass, CONTEXT_ROOT___GET_ALL__CLASS);
+		createEOperation(contextRootEClass, CONTEXT_ROOT___GET_ALL__CLASS_STRING);
+		createEOperation(contextRootEClass, CONTEXT_ROOT___LOAD_CLASS__STRING);
+		createEOperation(contextRootEClass, CONTEXT_ROOT___SET__STRING_OBJECT_BOOLEAN_DICTIONARY);
 
 		entityLockerEClass = createEClass(ENTITY_LOCKER);
+		createEOperation(entityLockerEClass, ENTITY_LOCKER___GET_ADDRESS);
+		createEOperation(entityLockerEClass, ENTITY_LOCKER___IS_LOCKED__LOCKTYPE);
+		createEOperation(entityLockerEClass, ENTITY_LOCKER___LOCK__LOCKTYPE);
+		createEOperation(entityLockerEClass, ENTITY_LOCKER___TRY_LOCK__LONG_LOCKTYPE);
+		createEOperation(entityLockerEClass, ENTITY_LOCKER___UNLOCK__LOCKTYPE);
 
 		exceptionManagerEClass = createEClass(EXCEPTION_MANAGER);
+		createEOperation(exceptionManagerEClass, EXCEPTION_MANAGER___PREPARE_EXCEPTION__CONTEXTPROVIDER_ENUM);
+		createEOperation(exceptionManagerEClass, EXCEPTION_MANAGER___PREPARE_EXCEPTION__CONTEXTPROVIDER_ENUM_OBJECT);
+		createEOperation(exceptionManagerEClass, EXCEPTION_MANAGER___PREPARE_EXCEPTION__CONTEXTPROVIDER_ENUM_OBJECT_1);
+		createEOperation(exceptionManagerEClass, EXCEPTION_MANAGER___PREPARE_EXCEPTION__CONTEXTPROVIDER_STRING_STRING_STRING_OBJECT);
 
 		identityEClass = createEClass(IDENTITY);
+		createEOperation(identityEClass, IDENTITY___GET_JAVA_PRINCIPAL);
 
 		lockManagerEClass = createEClass(LOCK_MANAGER);
+		createEOperation(lockManagerEClass, LOCK_MANAGER___GET_LOCKER__CONTEXTPROVIDER_URI);
+		createEOperation(lockManagerEClass, LOCK_MANAGER___GET_LOCKER__CONTEXTPROVIDER_ENTITYNAMEABLE);
+		createEOperation(lockManagerEClass, LOCK_MANAGER___GET_CONCURRENT_MAP__CONTEXTPROVIDER_STRING);
+		createEOperation(lockManagerEClass, LOCK_MANAGER___GET_QUEUE__CONTEXTPROVIDER_STRING);
 
 		loggerEClass = createEClass(LOGGER);
+		createEOperation(loggerEClass, LOGGER___DEBUG__STRING);
+		createEOperation(loggerEClass, LOGGER___DEBUG__THROWABLE);
+		createEOperation(loggerEClass, LOGGER___DEBUG__STRING_THROWABLE);
+		createEOperation(loggerEClass, LOGGER___ERROR__STRING);
+		createEOperation(loggerEClass, LOGGER___ERROR__THROWABLE);
+		createEOperation(loggerEClass, LOGGER___ERROR__STRING_THROWABLE);
+		createEOperation(loggerEClass, LOGGER___INFO__STRING);
+		createEOperation(loggerEClass, LOGGER___INFO__THROWABLE);
+		createEOperation(loggerEClass, LOGGER___INFO__STRING_THROWABLE);
+		createEOperation(loggerEClass, LOGGER___WARNING__STRING);
+		createEOperation(loggerEClass, LOGGER___WARNING__THROWABLE);
+		createEOperation(loggerEClass, LOGGER___WARNING__STRING_THROWABLE);
 
 		messageDescriptionEClass = createEClass(MESSAGE_DESCRIPTION);
 		createEAttribute(messageDescriptionEClass, MESSAGE_DESCRIPTION__NAME);
@@ -1006,10 +1627,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEReference(messageFileEClass, MESSAGE_FILE__MESSAGES);
 		createEAttribute(messageFileEClass, MESSAGE_FILE__NAME);
 		createEAttribute(messageFileEClass, MESSAGE_FILE__TEXT);
+		createEOperation(messageFileEClass, MESSAGE_FILE___LOOKUP__STRING);
 
 		registryEClass = createEClass(REGISTRY);
+		createEOperation(registryEClass, REGISTRY___LOOKUP__STRING);
+		createEOperation(registryEClass, REGISTRY___LIST);
+		createEOperation(registryEClass, REGISTRY___LOOKUP_BY_PORT__INT);
+		createEOperation(registryEClass, REGISTRY___LOOKUP_BY_VENDOR_VERSION__STRING_STRING);
 
 		registryFactoryEClass = createEClass(REGISTRY_FACTORY);
+		createEOperation(registryFactoryEClass, REGISTRY_FACTORY___CREATE_REGISTRY__CLASS);
 
 		userProfileEClass = createEClass(USER_PROFILE);
 		createEAttribute(userProfileEClass, USER_PROFILE__JOB_DESCRIPTION);
@@ -1088,10 +1715,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		userProfileEClass.getESuperTypes().add(theEntityPackage.getTextable());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(adapterFactoryEClass, AdapterFactory.class, "AdapterFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(adapterFactoryEClass, null, "getAdapter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getAdapterFactory__GetAdapter__Context_Object_Class(), null, "getAdapter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaObject());
 		t1.getEBounds().add(g1);
@@ -1108,7 +1735,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(authenticationManagerEClass, AuthenticationManager.class, "AuthenticationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(authenticationManagerEClass, null, "authenticate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAuthenticationManager__Authenticate__Authentication(), null, "authenticate", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthentication(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getIdentity());
 		g2 = createEGenericType(this.getAuthentication());
@@ -1133,13 +1760,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getCapability_Rights(), this.getCapabilityRight(), "rights", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCapability_EntityURI(), theUtilPackage.getJavaURI(), "entityURI", null, 1, 1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(capabilityEClass, ecorePackage.getEString(), "getEntityName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCapability__GetEntityName(), ecorePackage.getEString(), "getEntityName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(contextEClass, null, "close", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContext__Close(), null, "close", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, null, "get", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__Get__Class(), null, "get", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1148,7 +1775,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(contextEClass, null, "getAdapter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__GetAdapter__Object_Class(), null, "getAdapter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaObject());
 		t1.getEBounds().add(g1);
@@ -1160,12 +1787,12 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(contextEClass, null, "inject", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__Inject__Object(), null, "inject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contextEClass, ecorePackage.getEBoolean(), "isClosed", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContext__IsClosed(), ecorePackage.getEBoolean(), "isClosed", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, null, "invoke", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__Invoke__Object_Class(), null, "invoke", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "A");
 		g1 = createEGenericType(theUtilPackage.getJavaAnnotation());
 		t1.getEBounds().add(g1);
@@ -1175,7 +1802,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "qualifier", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__Make__Class(), null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1184,7 +1811,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(contextEClass, null, "registerAdapterFactory", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__RegisterAdapterFactory__AdapterFactory_Class(), null, "registerAdapterFactory", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaObject());
 		t1.getEBounds().add(g1);
@@ -1194,7 +1821,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "adapterType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__Set__Class_Object(), null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1203,11 +1830,11 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__Set__String_Object(), null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, theUtilPackage.getJavaURL(), "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__GetResource__Class_String(), theUtilPackage.getJavaURL(), "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -1215,7 +1842,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theUtilPackage.getJavaIOException());
 
-		op = addEOperation(contextEClass, theUtilPackage.getJavaURL(), "getResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContext__GetResources__Class_String(), theUtilPackage.getJavaURL(), "getResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -1231,23 +1858,23 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getContextDescription_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_User(), ecorePackage.getEString(), "user", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(contextDescriptionEClass, ecorePackage.getEBoolean(), "isTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContextDescription__IsTenant(), ecorePackage.getEBoolean(), "isTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contextProviderEClass, ContextProvider.class, "ContextProvider", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(contextProviderEClass, this.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContextProvider__GetContext(), this.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contextProviderEClass, this.getContextDescription(), "getContextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContextProvider__GetContextDescription(), this.getContextDescription(), "getContextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contextRootEClass, ContextRoot.class, "ContextRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(contextRootEClass, this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContextRoot__CreateChildContext__String(), this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextRootEClass, this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContextRoot__CreateChildContext__ContextDescription(), this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getContextDescription(), "contextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextRootEClass, null, "get", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContextRoot__Get__Class_String(), null, "get", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1257,7 +1884,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(contextRootEClass, null, "getAll", 0, -1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContextRoot__GetAll__Class(), null, "getAll", 0, -1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1266,7 +1893,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(contextRootEClass, null, "getAll", 0, -1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContextRoot__GetAll__Class_String(), null, "getAll", 0, -1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1276,14 +1903,14 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(contextRootEClass, null, "loadClass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContextRoot__LoadClass__String(), null, "loadClass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(contextRootEClass, null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getContextRoot__Set__String_Object_boolean_Dictionary(), null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "remoteExport", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1296,31 +1923,31 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(entityLockerEClass, EntityLocker.class, "EntityLocker", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(entityLockerEClass, theUtilPackage.getJavaURI(), "getAddress", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityLocker__GetAddress(), theUtilPackage.getJavaURI(), "getAddress", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityLockerEClass, ecorePackage.getEBoolean(), "isLocked", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntityLocker__IsLocked__LockType(), ecorePackage.getEBoolean(), "isLocked", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getLockType(), "lockType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityLockerEClass, null, "lock", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntityLocker__Lock__LockType(), null, "lock", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getLockType(), "lockType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityLockerEClass, ecorePackage.getEBoolean(), "tryLock", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntityLocker__TryLock__long_LockType(), ecorePackage.getEBoolean(), "tryLock", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "time", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getLockType(), "lockType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityLockerEClass, null, "unlock", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntityLocker__Unlock__LockType(), null, "unlock", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getLockType(), "lockType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(exceptionManagerEClass, ExceptionManager.class, "ExceptionManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExceptionManager__PrepareException__ContextProvider_Enum(), this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theUtilPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExceptionManager__PrepareException__ContextProvider_Enum_Object(), this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theUtilPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
@@ -1328,7 +1955,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, theUtilPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "variable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExceptionManager__PrepareException__ContextProvider_Enum_Object_1(), this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theUtilPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
@@ -1336,7 +1963,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, theUtilPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getMessageVariableList(), "variables", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExceptionManager__PrepareException__ContextProvider_String_String_String_Object(), this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "messageFileName", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1345,11 +1972,11 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(identityEClass, Identity.class, "Identity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(identityEClass, theUtilPackage.getJavaPrincipal(), "getJavaPrincipal", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getIdentity__GetJavaPrincipal(), theUtilPackage.getJavaPrincipal(), "getJavaPrincipal", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(lockManagerEClass, LockManager.class, "LockManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(lockManagerEClass, null, "getLocker", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLockManager__GetLocker__ContextProvider_URI(), null, "getLocker", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "N");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
@@ -1360,7 +1987,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(lockManagerEClass, null, "getLocker", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLockManager__GetLocker__ContextProvider_EntityNameable(), null, "getLocker", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "N");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
@@ -1372,56 +1999,56 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(lockManagerEClass, theUtilPackage.getJavaConcurrentMap(), "getConcurrentMap", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLockManager__GetConcurrentMap__ContextProvider_String(), theUtilPackage.getJavaConcurrentMap(), "getConcurrentMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addETypeParameter(op, "K");
 		addETypeParameter(op, "V");
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(lockManagerEClass, theUtilPackage.getJavaBlockingQueue(), "getQueue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLockManager__GetQueue__ContextProvider_String(), theUtilPackage.getJavaBlockingQueue(), "getQueue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addETypeParameter(op, "E");
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(loggerEClass, Logger.class, "Logger", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(loggerEClass, null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Debug__String(), null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Debug__Throwable(), null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Debug__String_Throwable(), null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Error__String(), null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Error__Throwable(), null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Error__String_Throwable(), null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Info__String(), null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Info__Throwable(), null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Info__String_Throwable(), null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Warning__String(), null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Warning__Throwable(), null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(loggerEClass, null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLogger__Warning__String_Throwable(), null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1447,13 +2074,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getMessageFile_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageFile_Text(), ecorePackage.getEString(), "text", null, 1, 1, MessageFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(messageFileEClass, this.getMessageDescription(), "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theUtilPackage.getJavaEnum());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theUtilPackage.getJavaEnum(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(messageFileEClass, this.getMessageDescription(), "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getMessageFile__Lookup__String(), this.getMessageDescription(), "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theUtilPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
@@ -1461,21 +2082,21 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(registryEClass, org.abchip.mimo.context.Registry.class, "Registry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(registryEClass, null, "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRegistry__Lookup__String(), null, "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(registryEClass_S);
 		initEOperation(op, g1);
 
-		op = addEOperation(registryEClass, null, "list", 1, -1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRegistry__List(), null, "list", 1, -1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(registryEClass_S);
 		initEOperation(op, g1);
 
-		op = addEOperation(registryEClass, null, "lookupByPort", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRegistry__LookupByPort__int(), null, "lookupByPort", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "port", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(registryEClass_S);
 		initEOperation(op, g1);
 
-		op = addEOperation(registryEClass, null, "lookupByVendorVersion", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRegistry__LookupByVendorVersion__String_String(), null, "lookupByVendorVersion", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "vendor", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "version", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(registryEClass_S);
@@ -1483,7 +2104,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(registryFactoryEClass, RegistryFactory.class, "RegistryFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(registryFactoryEClass, null, "createRegistry", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRegistryFactory__CreateRegistry__Class(), null, "createRegistry", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "S");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);

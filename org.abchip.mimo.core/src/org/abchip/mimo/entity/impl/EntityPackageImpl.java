@@ -310,6 +310,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getCardinality__IsMandatory() {
+		return cardinalityEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCardinality__IsMultiple() {
+		return cardinalityEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDefault() {
 		return defaultEClass;
 	}
@@ -332,6 +352,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EAttribute getDefault_Values() {
 		return (EAttribute)defaultEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDefault__Clear() {
+		return defaultEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDefault__IsEmpty() {
+		return defaultEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -372,6 +412,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EClass getEntity() {
 		return entityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntity__Isa() {
+		return entityEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -500,6 +550,36 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getEntityIterator__HasNext() {
+		return entityIteratorEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityIterator__Next() {
+		return entityIteratorEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityIterator__Remove() {
+		return entityIteratorEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntityNameable() {
 		return entityNameableEClass;
 	}
@@ -510,8 +590,38 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getEntityNameable__GetURI() {
+		return entityNameableEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityNameable__IsProxy() {
+		return entityNameableEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntityTyped() {
 		return entityTypedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityTyped__GetType() {
+		return entityTypedEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -532,6 +642,46 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EReference getEntityType_Slots() {
 		return (EReference)entityTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityType__GetFrame() {
+		return entityTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityType__GetTypeId() {
+		return entityTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityType__HasTable() {
+		return entityTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEntityType__GetText() {
+		return entityTypeEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -650,6 +800,66 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getFrame__Ako() {
+		return frameEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrame__CreateEntity() {
+		return frameEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrame__GetSlot__String() {
+		return frameEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrame__GetSuperFrames() {
+		return frameEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrame__GetValue__Entity_String_boolean() {
+		return frameEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrame__SetValue__Entity_String_Object() {
+		return frameEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFrameManager() {
 		return frameManagerEClass;
 	}
@@ -660,8 +870,68 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getFrameManager__CreateProxy__Frame_String() {
+		return frameManagerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrameManager__CreateProxy__Class_String() {
+		return frameManagerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrameManager__GetFrameReader__ContextProvider() {
+		return frameManagerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrameManager__GetFrame__String() {
+		return frameManagerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrameManager__GetFrame__Class() {
+		return frameManagerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getNameable() {
 		return nameableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getNameable__GetName() {
+		return nameableEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -730,6 +1000,66 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getSlot__GetValue__String() {
+		return slotEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSlot__IsBoolean() {
+		return slotEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSlot__IsDate() {
+		return slotEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSlot__IsEnum() {
+		return slotEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSlot__IsNumeric() {
+		return slotEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSlot__IsString() {
+		return slotEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getSlot_DefaultValue() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(2);
 	}
@@ -790,6 +1120,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTextable__GetText() {
+		return textableEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getSerializationType() {
 		return serializationTypeEEnum;
 	}
@@ -826,16 +1166,21 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		cardinalityEClass = createEClass(CARDINALITY);
 		createEAttribute(cardinalityEClass, CARDINALITY__MAX);
 		createEAttribute(cardinalityEClass, CARDINALITY__MIN);
+		createEOperation(cardinalityEClass, CARDINALITY___IS_MANDATORY);
+		createEOperation(cardinalityEClass, CARDINALITY___IS_MULTIPLE);
 
 		defaultEClass = createEClass(DEFAULT);
 		createEAttribute(defaultEClass, DEFAULT__VALUE);
 		createEAttribute(defaultEClass, DEFAULT__VALUES);
+		createEOperation(defaultEClass, DEFAULT___CLEAR);
+		createEOperation(defaultEClass, DEFAULT___IS_EMPTY);
 
 		domainEClass = createEClass(DOMAIN);
 		createEAttribute(domainEClass, DOMAIN__FRAME);
 		createEAttribute(domainEClass, DOMAIN__ROUTE);
 
 		entityEClass = createEClass(ENTITY);
+		createEOperation(entityEClass, ENTITY___ISA);
 
 		entityContainerEClass = createEClass(ENTITY_CONTAINER);
 		createEReference(entityContainerEClass, ENTITY_CONTAINER__CONTENTS);
@@ -852,13 +1197,23 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(entityEnumEClass, ENTITY_ENUM__TEXT);
 
 		entityIteratorEClass = createEClass(ENTITY_ITERATOR);
+		createEOperation(entityIteratorEClass, ENTITY_ITERATOR___HAS_NEXT);
+		createEOperation(entityIteratorEClass, ENTITY_ITERATOR___NEXT);
+		createEOperation(entityIteratorEClass, ENTITY_ITERATOR___REMOVE);
 
 		entityNameableEClass = createEClass(ENTITY_NAMEABLE);
+		createEOperation(entityNameableEClass, ENTITY_NAMEABLE___GET_URI);
+		createEOperation(entityNameableEClass, ENTITY_NAMEABLE___IS_PROXY);
 
 		entityTypedEClass = createEClass(ENTITY_TYPED);
+		createEOperation(entityTypedEClass, ENTITY_TYPED___GET_TYPE);
 
 		entityTypeEClass = createEClass(ENTITY_TYPE);
 		createEReference(entityTypeEClass, ENTITY_TYPE__SLOTS);
+		createEOperation(entityTypeEClass, ENTITY_TYPE___GET_FRAME);
+		createEOperation(entityTypeEClass, ENTITY_TYPE___GET_TYPE_ID);
+		createEOperation(entityTypeEClass, ENTITY_TYPE___HAS_TABLE);
+		createEOperation(entityTypeEClass, ENTITY_TYPE___GET_TEXT);
 
 		facetEClass = createEClass(FACET);
 
@@ -872,10 +1227,22 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(frameEClass, FRAME__ROUTES_NUMBER);
 		createEAttribute(frameEClass, FRAME__SUPER_NAMES);
 		createEAttribute(frameEClass, FRAME__TEXT_FORMULA);
+		createEOperation(frameEClass, FRAME___AKO);
+		createEOperation(frameEClass, FRAME___CREATE_ENTITY);
+		createEOperation(frameEClass, FRAME___GET_SLOT__STRING);
+		createEOperation(frameEClass, FRAME___GET_SUPER_FRAMES);
+		createEOperation(frameEClass, FRAME___GET_VALUE__ENTITY_STRING_BOOLEAN);
+		createEOperation(frameEClass, FRAME___SET_VALUE__ENTITY_STRING_OBJECT);
 
 		frameManagerEClass = createEClass(FRAME_MANAGER);
+		createEOperation(frameManagerEClass, FRAME_MANAGER___CREATE_PROXY__FRAME_STRING);
+		createEOperation(frameManagerEClass, FRAME_MANAGER___CREATE_PROXY__CLASS_STRING);
+		createEOperation(frameManagerEClass, FRAME_MANAGER___GET_FRAME_READER__CONTEXTPROVIDER);
+		createEOperation(frameManagerEClass, FRAME_MANAGER___GET_FRAME__STRING);
+		createEOperation(frameManagerEClass, FRAME_MANAGER___GET_FRAME__CLASS);
 
 		nameableEClass = createEClass(NAMEABLE);
+		createEOperation(nameableEClass, NAMEABLE___GET_NAME);
 
 		slotEClass = createEClass(SLOT);
 		createEReference(slotEClass, SLOT__CARDINALITY);
@@ -888,8 +1255,15 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(slotEClass, SLOT__NAME);
 		createEAttribute(slotEClass, SLOT__ROUTE);
 		createEAttribute(slotEClass, SLOT__TEXT);
+		createEOperation(slotEClass, SLOT___GET_VALUE__STRING);
+		createEOperation(slotEClass, SLOT___IS_BOOLEAN);
+		createEOperation(slotEClass, SLOT___IS_DATE);
+		createEOperation(slotEClass, SLOT___IS_ENUM);
+		createEOperation(slotEClass, SLOT___IS_NUMERIC);
+		createEOperation(slotEClass, SLOT___IS_STRING);
 
 		textableEClass = createEClass(TEXTABLE);
+		createEOperation(textableEClass, TEXTABLE___GET_TEXT);
 
 		// Create enums
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
@@ -968,22 +1342,22 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		slotEClass.getESuperTypes().add(this.getEntityNameable());
 		slotEClass.getESuperTypes().add(this.getTextable());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCardinality_Max(), ecorePackage.getEInt(), "max", "1", 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCardinality_Min(), ecorePackage.getEInt(), "min", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(cardinalityEClass, ecorePackage.getEBoolean(), "isMandatory", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCardinality__IsMandatory(), ecorePackage.getEBoolean(), "isMandatory", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(cardinalityEClass, ecorePackage.getEBoolean(), "isMultiple", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCardinality__IsMultiple(), ecorePackage.getEBoolean(), "isMultiple", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(defaultEClass, Default.class, "Default", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDefault_Value(), ecorePackage.getEString(), "value", null, 0, 1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDefault_Values(), ecorePackage.getEString(), "values", null, 0, -1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(defaultEClass, null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDefault__Clear(), null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(defaultEClass, ecorePackage.getEBoolean(), "isEmpty", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDefault__IsEmpty(), ecorePackage.getEBoolean(), "isEmpty", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDomain_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -991,7 +1365,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(entityEClass, null, "isa", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getEntity__Isa(), null, "isa", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -1013,40 +1387,40 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(entityIteratorEClass, EntityIterator.class, "EntityIterator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(entityIteratorEClass, ecorePackage.getEBoolean(), "hasNext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityIterator__HasNext(), ecorePackage.getEBoolean(), "hasNext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityIteratorEClass, null, "next", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntityIterator__Next(), null, "next", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityIteratorEClass_E);
 		initEOperation(op, g1);
 
-		addEOperation(entityIteratorEClass, null, "remove", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityIterator__Remove(), null, "remove", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityNameableEClass, EntityNameable.class, "EntityNameable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(entityNameableEClass, theUtilPackage.getJavaURI(), "getURI", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityNameable__GetURI(), theUtilPackage.getJavaURI(), "getURI", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(entityNameableEClass, ecorePackage.getEBoolean(), "isProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityNameable__IsProxy(), ecorePackage.getEBoolean(), "isProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityTypedEClass, EntityTyped.class, "EntityTyped", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(entityTypedEClass, null, "getType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntityTyped__GetType(), null, "getType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityTypedEClass_T);
 		initEOperation(op, g1);
 
 		initEClass(entityTypeEClass, EntityType.class, "EntityType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityType_Slots(), this.getSlot(), null, "slots", null, 0, -1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(entityTypeEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntityType__GetFrame(), null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType(entityTypeEClass_E);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		addEOperation(entityTypeEClass, ecorePackage.getEString(), "getTypeId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityType__GetTypeId(), ecorePackage.getEString(), "getTypeId", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(entityTypeEClass, ecorePackage.getEBoolean(), "hasTable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityType__HasTable(), ecorePackage.getEBoolean(), "hasTable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(entityTypeEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityType__GetText(), ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facetEClass, Facet.class, "Facet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1061,7 +1435,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getFrame_SuperNames(), ecorePackage.getEString(), "superNames", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_TextFormula(), ecorePackage.getEString(), "textFormula", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(frameEClass, null, "ako", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrame__Ako(), null, "ako", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -1069,14 +1443,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2.setELowerBound(g3);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameEClass, null, "createEntity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrame__CreateEntity(), null, "createEntity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(frameEClass_E);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameEClass, this.getSlot(), "getSlot", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrame__GetSlot__String(), this.getSlot(), "getSlot", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(frameEClass, null, "getSuperFrames", 0, -1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrame__GetSuperFrames(), null, "getSuperFrames", 0, -1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -1084,19 +1458,19 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2.setELowerBound(g3);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameEClass, ecorePackage.getEJavaObject(), "getValue", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrame__GetValue__Entity_String_boolean(), ecorePackage.getEJavaObject(), "getValue", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEntity(), "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "slotName", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "resolve", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(frameEClass, null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrame__SetValue__Entity_String_Object(), null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEntity(), "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "slotName", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(frameManagerEClass, FrameManager.class, "FrameManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(frameManagerEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrameManager__CreateProxy__Frame_String(), null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getEntityNameable());
 		t1.getEBounds().add(g1);
@@ -1108,7 +1482,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameManagerEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrameManager__CreateProxy__Class_String(), null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getEntityNameable());
 		t1.getEBounds().add(g1);
@@ -1120,7 +1494,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameManagerEClass, null, "getFrameReader", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrameManager__GetFrameReader__ContextProvider(), null, "getFrameReader", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theResourcePackage.getResourceReader());
 		g2 = createEGenericType(this.getFrame());
@@ -1129,14 +1503,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2.getETypeArguments().add(g3);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrameManager__GetFrame__String(), null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFrameManager__GetFrame__Class(), null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getEntity());
 		t1.getEBounds().add(g1);
@@ -1151,7 +1525,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(nameableEClass, Nameable.class, "Nameable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(nameableEClass, ecorePackage.getEString(), "getName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getNameable__GetName(), ecorePackage.getEString(), "getName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(slotEClass, Slot.class, "Slot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSlot_Cardinality(), this.getCardinality(), null, "cardinality", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1165,22 +1539,22 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getSlot_Route(), ecorePackage.getEBoolean(), "route", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Text(), ecorePackage.getEString(), "text", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(slotEClass, this.getEntity(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getSlot__GetValue__String(), this.getEntity(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "nsPrefix", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isBoolean", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSlot__IsBoolean(), ecorePackage.getEBoolean(), "isBoolean", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isDate", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSlot__IsDate(), ecorePackage.getEBoolean(), "isDate", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isEnum", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSlot__IsEnum(), ecorePackage.getEBoolean(), "isEnum", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isNumeric", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSlot__IsNumeric(), ecorePackage.getEBoolean(), "isNumeric", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isString", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSlot__IsString(), ecorePackage.getEBoolean(), "isString", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(textableEClass, Textable.class, "Textable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(textableEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTextable__GetText(), ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");

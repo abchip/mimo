@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
@@ -14,6 +15,7 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -783,6 +785,30 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case EntityPackage.SLOT___GET_VALUE__STRING:
+				return getValue((String)arguments.get(0));
+			case EntityPackage.SLOT___IS_BOOLEAN:
+				return isBoolean();
+			case EntityPackage.SLOT___IS_DATE:
+				return isDate();
+			case EntityPackage.SLOT___IS_ENUM:
+				return isEnum();
+			case EntityPackage.SLOT___IS_NUMERIC:
+				return isNumeric();
+			case EntityPackage.SLOT___IS_STRING:
+				return isString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

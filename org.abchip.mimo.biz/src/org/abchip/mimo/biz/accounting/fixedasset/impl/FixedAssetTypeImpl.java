@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -161,6 +163,24 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case FixedassetPackage.FIXED_ASSET_TYPE___CHILD_FIXED_ASSET_TYPES:
+				return childFixedAssetTypes();
+			case FixedassetPackage.FIXED_ASSET_TYPE___FIXED_ASSETS:
+				return fixedAssets();
+			case FixedassetPackage.FIXED_ASSET_TYPE___WORK_EFFORT_FIXED_ASSET_STDS:
+				return workEffortFixedAssetStds();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

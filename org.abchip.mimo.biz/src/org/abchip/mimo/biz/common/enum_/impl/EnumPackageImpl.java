@@ -196,6 +196,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -728,6 +729,456 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getEnumeration__ClassFixedAssets() {
+		return enumerationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__CogsPartyAcctgPreferences() {
+		return enumerationEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__CommunicationEvents() {
+		return enumerationEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__DefaultSalesChannelProductStores() {
+		return enumerationEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__EmailTemplateSettings() {
+		return enumerationEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__EmploymentStatusPersons() {
+		return enumerationEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ExamTypeJobRequisitions() {
+		return enumerationEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__GeoPointTypeGeoPoints() {
+		return enumerationEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__GiftCardFulfillments() {
+		return enumerationEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__InputParamProductPriceConds() {
+		return enumerationEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__InvoiceSequencePartyAcctgPreferences() {
+		return enumerationEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__JobInterviews() {
+		return enumerationEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__JobPostingTypeJobRequisitions() {
+		return enumerationEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__OperatorProductPriceConds() {
+		return enumerationEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__OrderItemChanges() {
+		return enumerationEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__OrderNotifications() {
+		return enumerationEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__OrderSequencePartyAcctgPreferences() {
+		return enumerationEClass.getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__PrivilegeContents() {
+		return enumerationEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ProductGeos() {
+		return enumerationEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ProductStoreEmailSettings() {
+		return enumerationEClass.getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__QuoteSequencePartyAcctgPreferences() {
+		return enumerationEClass.getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__RatingProducts() {
+		return enumerationEClass.getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ReasonFinAccountTranss() {
+		return enumerationEClass.getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ReasonInventoryItemDetails() {
+		return enumerationEClass.getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ReasonJobManagerLocks() {
+		return enumerationEClass.getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ReasonOrderItemChanges() {
+		return enumerationEClass.getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__RelationshipKeywordThesauruss() {
+		return enumerationEClass.getEOperations().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ReplenishFinAccountTypes() {
+		return enumerationEClass.getEOperations().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ReplenishMethodProductStoreFinActSettings() {
+		return enumerationEClass.getEOperations().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__RequirementMethodProductFacilities() {
+		return enumerationEClass.getEOperations().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__RequirementMethodProductStores() {
+		return enumerationEClass.getEOperations().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__RequirementMethodProducts() {
+		return enumerationEClass.getEOperations().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ReserveOrderProductStores() {
+		return enumerationEClass.getEOperations().get(32);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ResidenceStatusPersons() {
+		return enumerationEClass.getEOperations().get(33);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__SalesChannelCustRequests() {
+		return enumerationEClass.getEOperations().get(34);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__SalesChannelOrderHeaders() {
+		return enumerationEClass.getEOperations().get(35);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__SalesChannelQuotes() {
+		return enumerationEClass.getEOperations().get(36);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ScopeWorkEfforts() {
+		return enumerationEClass.getEOperations().get(37);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__ServiceTypePaymentGatewayResponses() {
+		return enumerationEClass.getEOperations().get(38);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__StoreCreditAccountProductStores() {
+		return enumerationEClass.getEOperations().get(39);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__TaxFormPartyAcctgPreferences() {
+		return enumerationEClass.getEOperations().get(40);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__TranCodePaymentGatewayResponses() {
+		return enumerationEClass.getEOperations().get(41);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__TypeFacilityLocations() {
+		return enumerationEClass.getEOperations().get(42);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__TypeSalesOpportunities() {
+		return enumerationEClass.getEOperations().get(43);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumeration__VirtualVariantMethodProducts() {
+		return enumerationEClass.getEOperations().get(44);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEnumerationType() {
 		return enumerationTypeEClass;
 	}
@@ -778,6 +1229,26 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getEnumerationType__ChildEnumerationTypes() {
+		return enumerationTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnumerationType__Enumerations() {
+		return enumerationTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EnumFactory getEnumFactory() {
 		return (EnumFactory)getEFactoryInstance();
 	}
@@ -808,12 +1279,59 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		createEAttribute(enumerationEClass, ENUMERATION__SEQUENCE_ID);
 		createEReference(enumerationEClass, ENUMERATION__ENUM_TYPE_ID);
 		createEAttribute(enumerationEClass, ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS);
+		createEOperation(enumerationEClass, ENUMERATION___CLASS_FIXED_ASSETS);
+		createEOperation(enumerationEClass, ENUMERATION___COGS_PARTY_ACCTG_PREFERENCES);
+		createEOperation(enumerationEClass, ENUMERATION___COMMUNICATION_EVENTS);
+		createEOperation(enumerationEClass, ENUMERATION___DEFAULT_SALES_CHANNEL_PRODUCT_STORES);
+		createEOperation(enumerationEClass, ENUMERATION___EMAIL_TEMPLATE_SETTINGS);
+		createEOperation(enumerationEClass, ENUMERATION___EMPLOYMENT_STATUS_PERSONS);
+		createEOperation(enumerationEClass, ENUMERATION___EXAM_TYPE_JOB_REQUISITIONS);
+		createEOperation(enumerationEClass, ENUMERATION___GEO_POINT_TYPE_GEO_POINTS);
+		createEOperation(enumerationEClass, ENUMERATION___GIFT_CARD_FULFILLMENTS);
+		createEOperation(enumerationEClass, ENUMERATION___INPUT_PARAM_PRODUCT_PRICE_CONDS);
+		createEOperation(enumerationEClass, ENUMERATION___INVOICE_SEQUENCE_PARTY_ACCTG_PREFERENCES);
+		createEOperation(enumerationEClass, ENUMERATION___JOB_INTERVIEWS);
+		createEOperation(enumerationEClass, ENUMERATION___JOB_POSTING_TYPE_JOB_REQUISITIONS);
+		createEOperation(enumerationEClass, ENUMERATION___OPERATOR_PRODUCT_PRICE_CONDS);
+		createEOperation(enumerationEClass, ENUMERATION___ORDER_ITEM_CHANGES);
+		createEOperation(enumerationEClass, ENUMERATION___ORDER_NOTIFICATIONS);
+		createEOperation(enumerationEClass, ENUMERATION___ORDER_SEQUENCE_PARTY_ACCTG_PREFERENCES);
+		createEOperation(enumerationEClass, ENUMERATION___PRIVILEGE_CONTENTS);
+		createEOperation(enumerationEClass, ENUMERATION___PRODUCT_GEOS);
+		createEOperation(enumerationEClass, ENUMERATION___PRODUCT_STORE_EMAIL_SETTINGS);
+		createEOperation(enumerationEClass, ENUMERATION___QUOTE_SEQUENCE_PARTY_ACCTG_PREFERENCES);
+		createEOperation(enumerationEClass, ENUMERATION___RATING_PRODUCTS);
+		createEOperation(enumerationEClass, ENUMERATION___REASON_FIN_ACCOUNT_TRANSS);
+		createEOperation(enumerationEClass, ENUMERATION___REASON_INVENTORY_ITEM_DETAILS);
+		createEOperation(enumerationEClass, ENUMERATION___REASON_JOB_MANAGER_LOCKS);
+		createEOperation(enumerationEClass, ENUMERATION___REASON_ORDER_ITEM_CHANGES);
+		createEOperation(enumerationEClass, ENUMERATION___RELATIONSHIP_KEYWORD_THESAURUSS);
+		createEOperation(enumerationEClass, ENUMERATION___REPLENISH_FIN_ACCOUNT_TYPES);
+		createEOperation(enumerationEClass, ENUMERATION___REPLENISH_METHOD_PRODUCT_STORE_FIN_ACT_SETTINGS);
+		createEOperation(enumerationEClass, ENUMERATION___REQUIREMENT_METHOD_PRODUCT_FACILITIES);
+		createEOperation(enumerationEClass, ENUMERATION___REQUIREMENT_METHOD_PRODUCT_STORES);
+		createEOperation(enumerationEClass, ENUMERATION___REQUIREMENT_METHOD_PRODUCTS);
+		createEOperation(enumerationEClass, ENUMERATION___RESERVE_ORDER_PRODUCT_STORES);
+		createEOperation(enumerationEClass, ENUMERATION___RESIDENCE_STATUS_PERSONS);
+		createEOperation(enumerationEClass, ENUMERATION___SALES_CHANNEL_CUST_REQUESTS);
+		createEOperation(enumerationEClass, ENUMERATION___SALES_CHANNEL_ORDER_HEADERS);
+		createEOperation(enumerationEClass, ENUMERATION___SALES_CHANNEL_QUOTES);
+		createEOperation(enumerationEClass, ENUMERATION___SCOPE_WORK_EFFORTS);
+		createEOperation(enumerationEClass, ENUMERATION___SERVICE_TYPE_PAYMENT_GATEWAY_RESPONSES);
+		createEOperation(enumerationEClass, ENUMERATION___STORE_CREDIT_ACCOUNT_PRODUCT_STORES);
+		createEOperation(enumerationEClass, ENUMERATION___TAX_FORM_PARTY_ACCTG_PREFERENCES);
+		createEOperation(enumerationEClass, ENUMERATION___TRAN_CODE_PAYMENT_GATEWAY_RESPONSES);
+		createEOperation(enumerationEClass, ENUMERATION___TYPE_FACILITY_LOCATIONS);
+		createEOperation(enumerationEClass, ENUMERATION___TYPE_SALES_OPPORTUNITIES);
+		createEOperation(enumerationEClass, ENUMERATION___VIRTUAL_VARIANT_METHOD_PRODUCTS);
 
 		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
 		createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__ENUM_TYPE_ID);
 		createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__DESCRIPTION);
 		createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__HAS_TABLE);
 		createEReference(enumerationTypeEClass, ENUMERATION_TYPE__PARENT_TYPE_ID);
+		createEOperation(enumerationTypeEClass, ENUMERATION_TYPE___CHILD_ENUMERATION_TYPES);
+		createEOperation(enumerationTypeEClass, ENUMERATION_TYPE___ENUMERATIONS);
 	}
 
 	/**
@@ -856,7 +1374,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		g1.getETypeArguments().add(g2);
 		enumerationTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumeration_EnumId(), ecorePackage.getEString(), "enumId", null, 1, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEnumeration_Description(), ecorePackage.getEString(), "description", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -866,95 +1384,95 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		getEnumeration_EnumTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
 		initEAttribute(getEnumeration_UserLoginSecurityQuestions(), ecorePackage.getEString(), "userLoginSecurityQuestions", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "classFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ClassFixedAssets(), ecorePackage.getEString(), "classFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "cogsPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__CogsPartyAcctgPreferences(), ecorePackage.getEString(), "cogsPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__CommunicationEvents(), ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "defaultSalesChannelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__DefaultSalesChannelProductStores(), ecorePackage.getEString(), "defaultSalesChannelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "emailTemplateSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__EmailTemplateSettings(), ecorePackage.getEString(), "emailTemplateSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "employmentStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__EmploymentStatusPersons(), ecorePackage.getEString(), "employmentStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "examTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ExamTypeJobRequisitions(), ecorePackage.getEString(), "examTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "geoPointTypeGeoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__GeoPointTypeGeoPoints(), ecorePackage.getEString(), "geoPointTypeGeoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "giftCardFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__GiftCardFulfillments(), ecorePackage.getEString(), "giftCardFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "inputParamProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__InputParamProductPriceConds(), ecorePackage.getEString(), "inputParamProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "invoiceSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__InvoiceSequencePartyAcctgPreferences(), ecorePackage.getEString(), "invoiceSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__JobInterviews(), ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "jobPostingTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__JobPostingTypeJobRequisitions(), ecorePackage.getEString(), "jobPostingTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "operatorProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__OperatorProductPriceConds(), ecorePackage.getEString(), "operatorProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "orderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__OrderItemChanges(), ecorePackage.getEString(), "orderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "orderNotifications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__OrderNotifications(), ecorePackage.getEString(), "orderNotifications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "orderSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__OrderSequencePartyAcctgPreferences(), ecorePackage.getEString(), "orderSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "privilegeContents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__PrivilegeContents(), ecorePackage.getEString(), "privilegeContents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "productGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ProductGeos(), ecorePackage.getEString(), "productGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "productStoreEmailSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ProductStoreEmailSettings(), ecorePackage.getEString(), "productStoreEmailSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "quoteSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__QuoteSequencePartyAcctgPreferences(), ecorePackage.getEString(), "quoteSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "ratingProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__RatingProducts(), ecorePackage.getEString(), "ratingProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonFinAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ReasonFinAccountTranss(), ecorePackage.getEString(), "reasonFinAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonInventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ReasonInventoryItemDetails(), ecorePackage.getEString(), "reasonInventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonJobManagerLocks", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ReasonJobManagerLocks(), ecorePackage.getEString(), "reasonJobManagerLocks", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonOrderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ReasonOrderItemChanges(), ecorePackage.getEString(), "reasonOrderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "relationshipKeywordThesauruss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__RelationshipKeywordThesauruss(), ecorePackage.getEString(), "relationshipKeywordThesauruss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "replenishFinAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ReplenishFinAccountTypes(), ecorePackage.getEString(), "replenishFinAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "replenishMethodProductStoreFinActSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ReplenishMethodProductStoreFinActSettings(), ecorePackage.getEString(), "replenishMethodProductStoreFinActSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "requirementMethodProductFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__RequirementMethodProductFacilities(), ecorePackage.getEString(), "requirementMethodProductFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "requirementMethodProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__RequirementMethodProductStores(), ecorePackage.getEString(), "requirementMethodProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "requirementMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__RequirementMethodProducts(), ecorePackage.getEString(), "requirementMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reserveOrderProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ReserveOrderProductStores(), ecorePackage.getEString(), "reserveOrderProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "residenceStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ResidenceStatusPersons(), ecorePackage.getEString(), "residenceStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "salesChannelCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__SalesChannelCustRequests(), ecorePackage.getEString(), "salesChannelCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "salesChannelOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__SalesChannelOrderHeaders(), ecorePackage.getEString(), "salesChannelOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "salesChannelQuotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__SalesChannelQuotes(), ecorePackage.getEString(), "salesChannelQuotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "scopeWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ScopeWorkEfforts(), ecorePackage.getEString(), "scopeWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "serviceTypePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__ServiceTypePaymentGatewayResponses(), ecorePackage.getEString(), "serviceTypePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "storeCreditAccountProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__StoreCreditAccountProductStores(), ecorePackage.getEString(), "storeCreditAccountProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "taxFormPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__TaxFormPartyAcctgPreferences(), ecorePackage.getEString(), "taxFormPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "tranCodePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__TranCodePaymentGatewayResponses(), ecorePackage.getEString(), "tranCodePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "typeFacilityLocations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__TypeFacilityLocations(), ecorePackage.getEString(), "typeFacilityLocations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "typeSalesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__TypeSalesOpportunities(), ecorePackage.getEString(), "typeSalesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "virtualVariantMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumeration__VirtualVariantMethodProducts(), ecorePackage.getEString(), "virtualVariantMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumerationType_EnumTypeId(), ecorePackage.getEString(), "enumTypeId", null, 1, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -963,9 +1481,9 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		initEReference(getEnumerationType_ParentTypeId(), this.getEnumerationType(), null, "parentTypeId", null, 0, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEnumerationType_ParentTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
 
-		addEOperation(enumerationTypeEClass, ecorePackage.getEString(), "childEnumerationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumerationType__ChildEnumerationTypes(), ecorePackage.getEString(), "childEnumerationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationTypeEClass, ecorePackage.getEString(), "enumerations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEnumerationType__Enumerations(), ecorePackage.getEString(), "enumerations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1007,271 +1525,271 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(0),
+		  (getEnumeration__ClassFixedAssets(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(1),
+		  (getEnumeration__CogsPartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(2),
+		  (getEnumeration__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(3),
+		  (getEnumeration__DefaultSalesChannelProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(4),
+		  (getEnumeration__EmailTemplateSettings(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(5),
+		  (getEnumeration__EmploymentStatusPersons(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(6),
+		  (getEnumeration__ExamTypeJobRequisitions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(7),
+		  (getEnumeration__GeoPointTypeGeoPoints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(8),
+		  (getEnumeration__GiftCardFulfillments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(9),
+		  (getEnumeration__InputParamProductPriceConds(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(10),
+		  (getEnumeration__InvoiceSequencePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(11),
+		  (getEnumeration__JobInterviews(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(12),
+		  (getEnumeration__JobPostingTypeJobRequisitions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(13),
+		  (getEnumeration__OperatorProductPriceConds(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(14),
+		  (getEnumeration__OrderItemChanges(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(15),
+		  (getEnumeration__OrderNotifications(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(16),
+		  (getEnumeration__OrderSequencePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(17),
+		  (getEnumeration__PrivilegeContents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(18),
+		  (getEnumeration__ProductGeos(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(19),
+		  (getEnumeration__ProductStoreEmailSettings(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(20),
+		  (getEnumeration__QuoteSequencePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(21),
+		  (getEnumeration__RatingProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(22),
+		  (getEnumeration__ReasonFinAccountTranss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(23),
+		  (getEnumeration__ReasonInventoryItemDetails(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(24),
+		  (getEnumeration__ReasonJobManagerLocks(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(25),
+		  (getEnumeration__ReasonOrderItemChanges(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(26),
+		  (getEnumeration__RelationshipKeywordThesauruss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(27),
+		  (getEnumeration__ReplenishFinAccountTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(28),
+		  (getEnumeration__ReplenishMethodProductStoreFinActSettings(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(29),
+		  (getEnumeration__RequirementMethodProductFacilities(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(30),
+		  (getEnumeration__RequirementMethodProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(31),
+		  (getEnumeration__RequirementMethodProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(32),
+		  (getEnumeration__ReserveOrderProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(33),
+		  (getEnumeration__ResidenceStatusPersons(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(34),
+		  (getEnumeration__SalesChannelCustRequests(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(35),
+		  (getEnumeration__SalesChannelOrderHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(36),
+		  (getEnumeration__SalesChannelQuotes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(37),
+		  (getEnumeration__ScopeWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(38),
+		  (getEnumeration__ServiceTypePaymentGatewayResponses(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(39),
+		  (getEnumeration__StoreCreditAccountProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(40),
+		  (getEnumeration__TaxFormPartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(41),
+		  (getEnumeration__TranCodePaymentGatewayResponses(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(42),
+		  (getEnumeration__TypeFacilityLocations(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(43),
+		  (getEnumeration__TypeSalesOpportunities(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(44),
+		  (getEnumeration__VirtualVariantMethodProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1289,13 +1807,13 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(0),
+		  (getEnumerationType__ChildEnumerationTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(1),
+		  (getEnumerationType__Enumerations(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1317,7 +1835,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(0),
+		  (getEnumeration__ClassFixedAssets(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAsset",
@@ -1327,7 +1845,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(1),
+		  (getEnumeration__CogsPartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1337,7 +1855,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(2),
+		  (getEnumeration__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEvent",
@@ -1347,7 +1865,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(3),
+		  (getEnumeration__DefaultSalesChannelProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1357,7 +1875,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(4),
+		  (getEnumeration__EmailTemplateSettings(),
 		   source,
 		   new String[] {
 			   "frame", "EmailTemplateSetting",
@@ -1367,7 +1885,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(5),
+		  (getEnumeration__EmploymentStatusPersons(),
 		   source,
 		   new String[] {
 			   "frame", "Person",
@@ -1377,7 +1895,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(6),
+		  (getEnumeration__ExamTypeJobRequisitions(),
 		   source,
 		   new String[] {
 			   "frame", "JobRequisition",
@@ -1387,7 +1905,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(7),
+		  (getEnumeration__GeoPointTypeGeoPoints(),
 		   source,
 		   new String[] {
 			   "frame", "GeoPoint",
@@ -1397,7 +1915,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(8),
+		  (getEnumeration__GiftCardFulfillments(),
 		   source,
 		   new String[] {
 			   "frame", "GiftCardFulfillment",
@@ -1407,7 +1925,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(9),
+		  (getEnumeration__InputParamProductPriceConds(),
 		   source,
 		   new String[] {
 			   "frame", "ProductPriceCond",
@@ -1417,7 +1935,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(10),
+		  (getEnumeration__InvoiceSequencePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1427,7 +1945,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(11),
+		  (getEnumeration__JobInterviews(),
 		   source,
 		   new String[] {
 			   "frame", "JobInterview",
@@ -1437,7 +1955,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(12),
+		  (getEnumeration__JobPostingTypeJobRequisitions(),
 		   source,
 		   new String[] {
 			   "frame", "JobRequisition",
@@ -1447,7 +1965,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(13),
+		  (getEnumeration__OperatorProductPriceConds(),
 		   source,
 		   new String[] {
 			   "frame", "ProductPriceCond",
@@ -1457,7 +1975,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(14),
+		  (getEnumeration__OrderItemChanges(),
 		   source,
 		   new String[] {
 			   "frame", "OrderItemChange",
@@ -1467,7 +1985,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(15),
+		  (getEnumeration__OrderNotifications(),
 		   source,
 		   new String[] {
 			   "frame", "OrderNotification",
@@ -1477,7 +1995,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(16),
+		  (getEnumeration__OrderSequencePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1487,7 +2005,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(17),
+		  (getEnumeration__PrivilegeContents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -1497,7 +2015,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(18),
+		  (getEnumeration__ProductGeos(),
 		   source,
 		   new String[] {
 			   "frame", "ProductGeo",
@@ -1507,7 +2025,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(19),
+		  (getEnumeration__ProductStoreEmailSettings(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreEmailSetting",
@@ -1517,7 +2035,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(20),
+		  (getEnumeration__QuoteSequencePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1527,7 +2045,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(21),
+		  (getEnumeration__RatingProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -1537,7 +2055,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(22),
+		  (getEnumeration__ReasonFinAccountTranss(),
 		   source,
 		   new String[] {
 			   "frame", "FinAccountTrans",
@@ -1547,7 +2065,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(23),
+		  (getEnumeration__ReasonInventoryItemDetails(),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItemDetail",
@@ -1557,7 +2075,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(24),
+		  (getEnumeration__ReasonJobManagerLocks(),
 		   source,
 		   new String[] {
 			   "frame", "JobManagerLock",
@@ -1567,7 +2085,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(25),
+		  (getEnumeration__ReasonOrderItemChanges(),
 		   source,
 		   new String[] {
 			   "frame", "OrderItemChange",
@@ -1577,7 +2095,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(26),
+		  (getEnumeration__RelationshipKeywordThesauruss(),
 		   source,
 		   new String[] {
 			   "frame", "KeywordThesaurus",
@@ -1587,7 +2105,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(27),
+		  (getEnumeration__ReplenishFinAccountTypes(),
 		   source,
 		   new String[] {
 			   "frame", "FinAccountType",
@@ -1597,7 +2115,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(28),
+		  (getEnumeration__ReplenishMethodProductStoreFinActSettings(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreFinActSetting",
@@ -1607,7 +2125,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(29),
+		  (getEnumeration__RequirementMethodProductFacilities(),
 		   source,
 		   new String[] {
 			   "frame", "ProductFacility",
@@ -1617,7 +2135,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(30),
+		  (getEnumeration__RequirementMethodProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1627,7 +2145,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(31),
+		  (getEnumeration__RequirementMethodProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -1637,7 +2155,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(32),
+		  (getEnumeration__ReserveOrderProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1647,7 +2165,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(33),
+		  (getEnumeration__ResidenceStatusPersons(),
 		   source,
 		   new String[] {
 			   "frame", "Person",
@@ -1657,7 +2175,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(34),
+		  (getEnumeration__SalesChannelCustRequests(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequest",
@@ -1667,7 +2185,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(35),
+		  (getEnumeration__SalesChannelOrderHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -1677,7 +2195,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(36),
+		  (getEnumeration__SalesChannelQuotes(),
 		   source,
 		   new String[] {
 			   "frame", "Quote",
@@ -1687,7 +2205,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(37),
+		  (getEnumeration__ScopeWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -1697,7 +2215,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(38),
+		  (getEnumeration__ServiceTypePaymentGatewayResponses(),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayResponse",
@@ -1707,7 +2225,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(39),
+		  (getEnumeration__StoreCreditAccountProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -1717,7 +2235,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(40),
+		  (getEnumeration__TaxFormPartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1727,7 +2245,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(41),
+		  (getEnumeration__TranCodePaymentGatewayResponses(),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayResponse",
@@ -1737,7 +2255,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(42),
+		  (getEnumeration__TypeFacilityLocations(),
 		   source,
 		   new String[] {
 			   "frame", "FacilityLocation",
@@ -1747,7 +2265,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(43),
+		  (getEnumeration__TypeSalesOpportunities(),
 		   source,
 		   new String[] {
 			   "frame", "SalesOpportunity",
@@ -1757,7 +2275,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(44),
+		  (getEnumeration__VirtualVariantMethodProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -1776,7 +2294,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(0),
+		  (getEnumerationType__ChildEnumerationTypes(),
 		   source,
 		   new String[] {
 			   "frame", "EnumerationType",
@@ -1786,7 +2304,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(1),
+		  (getEnumerationType__Enumerations(),
 		   source,
 		   new String[] {
 			   "frame", "Enumeration",

@@ -213,6 +213,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1084,6 +1085,66 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getContent__ContentApprovals() {
+		return contentEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContent__PartyResumes() {
+		return contentEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContent__PortalPages() {
+		return contentEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContent__ServerHitBins() {
+		return contentEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContent__SubscriptionResources() {
+		return contentEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContent__WebPages() {
+		return contentEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getContentApproval() {
 		return contentApprovalEClass;
 	}
@@ -1704,6 +1765,26 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getContentPurposeType__ContentPurposes() {
+		return contentPurposeTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContentPurposeType__DataResourcePurposes() {
+		return contentPurposeTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getContentRevision() {
 		return contentRevisionEClass;
 	}
@@ -2144,6 +2225,26 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getContentType__ChildContentTypes() {
+		return contentTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getContentType__Contents() {
+		return contentTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getContentTypeAttr() {
 		return contentTypeAttrEClass;
 	}
@@ -2236,6 +2337,12 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		createEAttribute(contentEClass, CONTENT__CONTENT_META_DATAS);
 		createEAttribute(contentEClass, CONTENT__CONTENT_PURPOSES);
 		createEAttribute(contentEClass, CONTENT__CONTENT_REVISIONS);
+		createEOperation(contentEClass, CONTENT___CONTENT_APPROVALS);
+		createEOperation(contentEClass, CONTENT___PARTY_RESUMES);
+		createEOperation(contentEClass, CONTENT___PORTAL_PAGES);
+		createEOperation(contentEClass, CONTENT___SERVER_HIT_BINS);
+		createEOperation(contentEClass, CONTENT___SUBSCRIPTION_RESOURCES);
+		createEOperation(contentEClass, CONTENT___WEB_PAGES);
 
 		contentApprovalEClass = createEClass(CONTENT_APPROVAL);
 		createEAttribute(contentApprovalEClass, CONTENT_APPROVAL__CONTENT_APPROVAL_ID);
@@ -2309,6 +2416,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		contentPurposeTypeEClass = createEClass(CONTENT_PURPOSE_TYPE);
 		createEAttribute(contentPurposeTypeEClass, CONTENT_PURPOSE_TYPE__CONTENT_PURPOSE_TYPE_ID);
 		createEAttribute(contentPurposeTypeEClass, CONTENT_PURPOSE_TYPE__DESCRIPTION);
+		createEOperation(contentPurposeTypeEClass, CONTENT_PURPOSE_TYPE___CONTENT_PURPOSES);
+		createEOperation(contentPurposeTypeEClass, CONTENT_PURPOSE_TYPE___DATA_RESOURCE_PURPOSES);
 
 		contentRevisionEClass = createEClass(CONTENT_REVISION);
 		createEAttribute(contentRevisionEClass, CONTENT_REVISION__CONTENT_REVISION_SEQ_ID);
@@ -2359,6 +2468,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		createEAttribute(contentTypeEClass, CONTENT_TYPE__HAS_TABLE);
 		createEReference(contentTypeEClass, CONTENT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(contentTypeEClass, CONTENT_TYPE__CONTENT_TYPE_ATTRS);
+		createEOperation(contentTypeEClass, CONTENT_TYPE___CHILD_CONTENT_TYPES);
+		createEOperation(contentTypeEClass, CONTENT_TYPE___CONTENTS);
 
 		contentTypeAttrEClass = createEClass(CONTENT_TYPE_ATTR);
 		createEAttribute(contentTypeAttrEClass, CONTENT_TYPE_ATTR__ATTR_NAME);
@@ -2442,7 +2553,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		contentTypeEClass.getEGenericSuperTypes().add(g1);
 		contentTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(contentEClass, Content.class, "Content", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContent_ContentId(), ecorePackage.getEString(), "contentId", null, 1, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContent_ChildBranchCount(), ecorePackage.getELong(), "childBranchCount", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2487,17 +2598,17 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		initEAttribute(getContent_ContentPurposes(), ecorePackage.getEString(), "contentPurposes", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContent_ContentRevisions(), ecorePackage.getEString(), "contentRevisions", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "contentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContent__ContentApprovals(), ecorePackage.getEString(), "contentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "partyResumes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContent__PartyResumes(), ecorePackage.getEString(), "partyResumes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContent__PortalPages(), ecorePackage.getEString(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "serverHitBins", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContent__ServerHitBins(), ecorePackage.getEString(), "serverHitBins", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContent__SubscriptionResources(), ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContent__WebPages(), ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contentApprovalEClass, ContentApproval.class, "ContentApproval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContentApproval_ContentApprovalId(), ecorePackage.getEString(), "contentApprovalId", null, 1, 1, ContentApproval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2595,9 +2706,9 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		initEAttribute(getContentPurposeType_ContentPurposeTypeId(), ecorePackage.getEString(), "contentPurposeTypeId", null, 1, 1, ContentPurposeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentPurposeType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContentPurposeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(contentPurposeTypeEClass, ecorePackage.getEString(), "contentPurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContentPurposeType__ContentPurposes(), ecorePackage.getEString(), "contentPurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentPurposeTypeEClass, ecorePackage.getEString(), "dataResourcePurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContentPurposeType__DataResourcePurposes(), ecorePackage.getEString(), "dataResourcePurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contentRevisionEClass, ContentRevision.class, "ContentRevision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContentRevision_ContentRevisionSeqId(), ecorePackage.getEString(), "contentRevisionSeqId", null, 1, 1, ContentRevision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2657,9 +2768,9 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		getContentType_ParentTypeId().getEKeys().add(this.getContentType_ContentTypeId());
 		initEAttribute(getContentType_ContentTypeAttrs(), ecorePackage.getEString(), "contentTypeAttrs", null, 0, -1, ContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(contentTypeEClass, ecorePackage.getEString(), "childContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContentType__ChildContentTypes(), ecorePackage.getEString(), "childContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentTypeEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContentType__Contents(), ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contentTypeAttrEClass, ContentTypeAttr.class, "ContentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContentTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ContentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2737,37 +2848,37 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (contentEClass.getEOperations().get(0),
+		  (getContent__ContentApprovals(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(1),
+		  (getContent__PartyResumes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(2),
+		  (getContent__PortalPages(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(3),
+		  (getContent__ServerHitBins(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(4),
+		  (getContent__SubscriptionResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(5),
+		  (getContent__WebPages(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2851,13 +2962,13 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (contentPurposeTypeEClass.getEOperations().get(0),
+		  (getContentPurposeType__ContentPurposes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentPurposeTypeEClass.getEOperations().get(1),
+		  (getContentPurposeType__DataResourcePurposes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2923,13 +3034,13 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentTypeEClass.getEOperations().get(0),
+		  (getContentType__ChildContentTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (contentTypeEClass.getEOperations().get(1),
+		  (getContentType__Contents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2963,7 +3074,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (contentEClass.getEOperations().get(0),
+		  (getContent__ContentApprovals(),
 		   source,
 		   new String[] {
 			   "frame", "ContentApproval",
@@ -2973,7 +3084,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(1),
+		  (getContent__PartyResumes(),
 		   source,
 		   new String[] {
 			   "frame", "PartyResume",
@@ -2983,7 +3094,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(2),
+		  (getContent__PortalPages(),
 		   source,
 		   new String[] {
 			   "frame", "PortalPage",
@@ -2993,7 +3104,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(3),
+		  (getContent__ServerHitBins(),
 		   source,
 		   new String[] {
 			   "frame", "ServerHitBin",
@@ -3003,7 +3114,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(4),
+		  (getContent__SubscriptionResources(),
 		   source,
 		   new String[] {
 			   "frame", "SubscriptionResource",
@@ -3013,7 +3124,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentEClass.getEOperations().get(5),
+		  (getContent__WebPages(),
 		   source,
 		   new String[] {
 			   "frame", "WebPage",
@@ -3068,7 +3179,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentPurposeTypeEClass.getEOperations().get(0),
+		  (getContentPurposeType__ContentPurposes(),
 		   source,
 		   new String[] {
 			   "frame", "ContentPurpose",
@@ -3078,7 +3189,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentPurposeTypeEClass.getEOperations().get(1),
+		  (getContentPurposeType__DataResourcePurposes(),
 		   source,
 		   new String[] {
 			   "frame", "DataResourcePurpose",
@@ -3097,7 +3208,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentTypeEClass.getEOperations().get(0),
+		  (getContentType__ChildContentTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ContentType",
@@ -3107,7 +3218,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contentTypeEClass.getEOperations().get(1),
+		  (getContentType__Contents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",

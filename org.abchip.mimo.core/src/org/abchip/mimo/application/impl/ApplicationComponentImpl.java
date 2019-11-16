@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.application.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,6 +20,8 @@ import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -412,6 +415,37 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ContextProvider.class) {
+			switch (baseOperationID) {
+				case ContextPackage.CONTEXT_PROVIDER___GET_CONTEXT: return ApplicationPackage.APPLICATION_COMPONENT___GET_CONTEXT;
+				case ContextPackage.CONTEXT_PROVIDER___GET_CONTEXT_DESCRIPTION: return ApplicationPackage.APPLICATION_COMPONENT___GET_CONTEXT_DESCRIPTION;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ApplicationPackage.APPLICATION_COMPONENT___GET_CONTEXT_DESCRIPTION:
+				return getContextDescription();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

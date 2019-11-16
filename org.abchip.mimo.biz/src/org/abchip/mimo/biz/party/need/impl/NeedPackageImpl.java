@@ -196,6 +196,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -688,6 +689,16 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getNeedType__Subscriptions() {
+		return needTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPartyNeed() {
 		return partyNeedEClass;
 	}
@@ -834,6 +845,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		needTypeEClass = createEClass(NEED_TYPE);
 		createEAttribute(needTypeEClass, NEED_TYPE__NEED_TYPE_ID);
 		createEAttribute(needTypeEClass, NEED_TYPE__DESCRIPTION);
+		createEOperation(needTypeEClass, NEED_TYPE___SUBSCRIPTIONS);
 
 		partyNeedEClass = createEClass(PARTY_NEED);
 		createEAttribute(partyNeedEClass, PARTY_NEED__PARTY_NEED_ID);
@@ -887,12 +899,12 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		needTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		partyNeedEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(needTypeEClass, NeedType.class, "NeedType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNeedType_NeedTypeId(), ecorePackage.getEString(), "needTypeId", null, 1, 1, NeedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNeedType_Description(), ecorePackage.getEString(), "description", null, 0, 1, NeedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(needTypeEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getNeedType__Subscriptions(), ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyNeedEClass, PartyNeed.class, "PartyNeed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyNeed_PartyNeedId(), ecorePackage.getEString(), "partyNeedId", null, 1, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -954,7 +966,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (needTypeEClass.getEOperations().get(0),
+		  (getNeedType__Subscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -982,7 +994,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (needTypeEClass.getEOperations().get(0),
+		  (getNeedType__Subscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",

@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.resource.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.abchip.mimo.resource.ResourceEvent;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -78,6 +80,27 @@ public class ResourceNotifierImpl<E extends EntityNameable> extends MinimalEObje
 	@Override
 	public void registerListener(ResourceListener<E> listener) {
 		listeners.add(listener);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ResourcePackage.RESOURCE_NOTIFIER___FIRE_EVENT__RESOURCEEVENT:
+				fireEvent((ResourceEvent<E>)arguments.get(0));
+				return null;
+			case ResourcePackage.RESOURCE_NOTIFIER___GET_LISTENERS:
+				return getListeners();
+			case ResourcePackage.RESOURCE_NOTIFIER___REGISTER_LISTENER__RESOURCELISTENER:
+				registerListener((ResourceListener<E>)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } // ResourceNotifierImpl

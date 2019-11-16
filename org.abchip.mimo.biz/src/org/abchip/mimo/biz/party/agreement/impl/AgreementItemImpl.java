@@ -63,7 +63,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public Object getAgreementImage() {
-		return (Object)eGet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_IMAGE, true);
+		return eGet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_IMAGE, true);
 	}
 
 	/**

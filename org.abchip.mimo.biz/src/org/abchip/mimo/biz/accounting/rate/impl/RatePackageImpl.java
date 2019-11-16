@@ -196,6 +196,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -865,6 +866,16 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getRateType__TimeEntries() {
+		return rateTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public RateFactory getRateFactory() {
 		return (RateFactory)getEFactoryInstance();
 	}
@@ -910,6 +921,7 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 		rateTypeEClass = createEClass(RATE_TYPE);
 		createEAttribute(rateTypeEClass, RATE_TYPE__RATE_TYPE_ID);
 		createEAttribute(rateTypeEClass, RATE_TYPE__DESCRIPTION);
+		createEOperation(rateTypeEClass, RATE_TYPE___TIME_ENTRIES);
 	}
 
 	/**
@@ -952,7 +964,7 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 		rateAmountEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		rateTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(partyRateEClass, PartyRate.class, "PartyRate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyRate_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, PartyRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyRate_DefaultRate(), ecorePackage.getEBoolean(), "defaultRate", null, 0, 1, PartyRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -984,7 +996,7 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 		initEAttribute(getRateType_RateTypeId(), ecorePackage.getEString(), "rateTypeId", null, 1, 1, RateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRateType_Description(), ecorePackage.getEString(), "description", null, 0, 1, RateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(rateTypeEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getRateType__TimeEntries(), ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1016,7 +1028,7 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (rateTypeEClass.getEOperations().get(0),
+		  (getRateType__TimeEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1038,7 +1050,7 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (rateTypeEClass.getEOperations().get(0),
+		  (getRateType__TimeEntries(),
 		   source,
 		   new String[] {
 			   "frame", "TimeEntry",

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.workeffort.timesheet.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -214,6 +216,20 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case TimesheetPackage.TIMESHEET___TIME_ENTRIES:
+				return timeEntries();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

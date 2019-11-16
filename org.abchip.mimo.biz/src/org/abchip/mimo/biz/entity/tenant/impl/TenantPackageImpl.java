@@ -199,6 +199,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -789,6 +790,26 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTenant__TenantComponents() {
+		return tenantEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTenant__TenantDomainNames() {
+		return tenantEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTenantComponent() {
 		return tenantComponentEClass;
 	}
@@ -983,6 +1004,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		createEAttribute(tenantEClass, TENANT__INITIAL_PATH);
 		createEAttribute(tenantEClass, TENANT__TENANT_NAME);
 		createEAttribute(tenantEClass, TENANT__TENANT_DATA_SOURCES);
+		createEOperation(tenantEClass, TENANT___TENANT_COMPONENTS);
+		createEOperation(tenantEClass, TENANT___TENANT_DOMAIN_NAMES);
 
 		tenantComponentEClass = createEClass(TENANT_COMPONENT);
 		createEAttribute(tenantComponentEClass, TENANT_COMPONENT__SEQUENCE_NUM);
@@ -1043,7 +1066,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		tenantDomainNameEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		tenantKeyEncryptingKeyEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_ComponentName(), ecorePackage.getEString(), "componentName", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_RootLocation(), ecorePackage.getEString(), "rootLocation", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1056,9 +1079,9 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		initEAttribute(getTenant_TenantName(), ecorePackage.getEString(), "tenantName", null, 0, 1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenant_TenantDataSources(), ecorePackage.getEString(), "tenantDataSources", null, 0, -1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(tenantEClass, ecorePackage.getEString(), "tenantComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTenant__TenantComponents(), ecorePackage.getEString(), "tenantComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(tenantEClass, ecorePackage.getEString(), "tenantDomainNames", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTenant__TenantDomainNames(), ecorePackage.getEString(), "tenantDomainNames", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tenantComponentEClass, TenantComponent.class, "TenantComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTenantComponent_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1113,13 +1136,13 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (tenantEClass.getEOperations().get(0),
+		  (getTenant__TenantComponents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (tenantEClass.getEOperations().get(1),
+		  (getTenant__TenantDomainNames(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1168,7 +1191,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (tenantEClass.getEOperations().get(0),
+		  (getTenant__TenantComponents(),
 		   source,
 		   new String[] {
 			   "frame", "TenantComponent",
@@ -1178,7 +1201,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (tenantEClass.getEOperations().get(1),
+		  (getTenant__TenantDomainNames(),
 		   source,
 		   new String[] {
 			   "frame", "TenantDomainName",

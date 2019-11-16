@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderItemAssoc;
 import org.abchip.mimo.biz.order.order.OrderItemAssocType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -146,6 +148,20 @@ public class OrderItemAssocTypeImpl extends BizEntityTypeImpl<OrderItemAssoc> im
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OrderPackage.ORDER_ITEM_ASSOC_TYPE___CHILD_ORDER_ITEM_ASSOC_TYPES:
+				return childOrderItemAssocTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //OrderItemAssocTypeImpl

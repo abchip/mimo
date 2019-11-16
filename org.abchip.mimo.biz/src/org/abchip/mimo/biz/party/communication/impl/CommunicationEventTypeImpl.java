@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.communication.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
@@ -14,6 +15,7 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -160,6 +162,22 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CommunicationPackage.COMMUNICATION_EVENT_TYPE___CHILD_COMMUNICATION_EVENT_TYPES:
+				return childCommunicationEventTypes();
+			case CommunicationPackage.COMMUNICATION_EVENT_TYPE___COMMUNICATION_EVENTS:
+				return communicationEvents();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

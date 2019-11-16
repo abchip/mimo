@@ -1337,7 +1337,7 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		oAuth2LinkedInEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		thirdPartyLoginEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(gitHubUserEClass, GitHubUser.class, "GitHubUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGitHubUser_GitHubUserId(), ecorePackage.getEString(), "gitHubUserId", null, 1, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGitHubUser_AccessToken(), ecorePackage.getEString(), "accessToken", null, 0, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

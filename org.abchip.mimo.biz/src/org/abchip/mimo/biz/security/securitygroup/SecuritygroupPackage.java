@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.security.securitygroup;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -162,6 +163,51 @@ public interface SecuritygroupPackage extends EPackage {
 	int PROTECTED_VIEW_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_VIEW___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_VIEW___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_VIEW___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_VIEW___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Protected View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_VIEW_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupImpl <em>Security Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,6 +297,60 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @ordered
 	 */
 	int SECURITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Portal Pages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP___PORTAL_PAGES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Security Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl <em>Security Group Permission</em>}' class.
@@ -344,6 +444,51 @@ public interface SecuritygroupPackage extends EPackage {
 	int SECURITY_GROUP_PERMISSION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_PERMISSION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_PERMISSION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_PERMISSION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_PERMISSION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Security Group Permission</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_PERMISSION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityPermissionImpl <em>Security Permission</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,6 +560,51 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @ordered
 	 */
 	int SECURITY_PERMISSION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_PERMISSION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_PERMISSION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_PERMISSION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_PERMISSION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Security Permission</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_PERMISSION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.security.securitygroup.impl.TarpittedLoginViewImpl <em>Tarpitted Login View</em>}' class.
@@ -497,6 +687,51 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @ordered
 	 */
 	int TARPITTED_LOGIN_VIEW_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARPITTED_LOGIN_VIEW___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARPITTED_LOGIN_VIEW___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARPITTED_LOGIN_VIEW___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARPITTED_LOGIN_VIEW___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Tarpitted Login View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARPITTED_LOGIN_VIEW_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.security.securitygroup.impl.UserLoginSecurityGroupImpl <em>User Login Security Group</em>}' class.
@@ -588,6 +823,52 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @ordered
 	 */
 	int USER_LOGIN_SECURITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_GROUP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_GROUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_GROUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>User Login Security Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -708,6 +989,16 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSecurityGroup_ProtectedViews();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#portalPages() <em>Portal Pages</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Portal Pages</em>' operation.
+	 * @see org.abchip.mimo.biz.security.securitygroup.SecurityGroup#portalPages()
+	 * @generated
+	 */
+	EOperation getSecurityGroup__PortalPages();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission <em>Security Group Permission</em>}'.
@@ -1005,6 +1296,14 @@ public interface SecuritygroupPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SECURITY_GROUP__PROTECTED_VIEWS = eINSTANCE.getSecurityGroup_ProtectedViews();
+
+		/**
+		 * The meta object literal for the '<em><b>Portal Pages</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SECURITY_GROUP___PORTAL_PAGES = eINSTANCE.getSecurityGroup__PortalPages();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl <em>Security Group Permission</em>}' class.

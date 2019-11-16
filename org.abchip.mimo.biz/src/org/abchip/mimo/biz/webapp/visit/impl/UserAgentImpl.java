@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -17,6 +18,7 @@ import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.UserAgentMethodType;
 import org.abchip.mimo.biz.webapp.visit.UserAgentType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -192,6 +194,20 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case VisitPackage.USER_AGENT___VISITS:
+				return visits();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //UserAgentImpl

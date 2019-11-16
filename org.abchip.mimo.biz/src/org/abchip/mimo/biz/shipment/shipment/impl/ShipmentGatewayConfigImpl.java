@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfigType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -105,6 +107,20 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG___PRODUCT_STORE_SHIPMENT_METHS:
+				return productStoreShipmentMeths();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

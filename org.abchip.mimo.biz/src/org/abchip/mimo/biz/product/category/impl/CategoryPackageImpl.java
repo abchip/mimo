@@ -205,6 +205,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -860,6 +861,66 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getProductCategory__PrimaryChildProductCategories() {
+		return productCategoryEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductCategory__PrimaryProducts() {
+		return productCategoryEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductCategory__ProductStoreSurveyAppls() {
+		return productCategoryEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductCategory__SalesForecastDetails() {
+		return productCategoryEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductCategory__Subscriptions() {
+		return productCategoryEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductCategory__TaxAuthorityRateProducts() {
+		return productCategoryEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProductCategoryAttribute() {
 		return productCategoryAttributeEClass;
 	}
@@ -1052,6 +1113,16 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 	@Override
 	public EReference getProductCategoryContentType_ParentTypeId() {
 		return (EReference)productCategoryContentTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductCategoryContentType__ChildProductCategoryContentTypes() {
+		return productCategoryContentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1520,6 +1591,26 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getProductCategoryType__ChildProductCategoryTypes() {
+		return productCategoryTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductCategoryType__ProductCategories() {
+		return productCategoryTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProductCategoryTypeAttr() {
 		return productCategoryTypeAttrEClass;
 	}
@@ -1596,6 +1687,12 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		createEReference(productCategoryEClass, PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID);
 		createEReference(productCategoryEClass, PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID);
 		createEAttribute(productCategoryEClass, PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES);
+		createEOperation(productCategoryEClass, PRODUCT_CATEGORY___PRIMARY_CHILD_PRODUCT_CATEGORIES);
+		createEOperation(productCategoryEClass, PRODUCT_CATEGORY___PRIMARY_PRODUCTS);
+		createEOperation(productCategoryEClass, PRODUCT_CATEGORY___PRODUCT_STORE_SURVEY_APPLS);
+		createEOperation(productCategoryEClass, PRODUCT_CATEGORY___SALES_FORECAST_DETAILS);
+		createEOperation(productCategoryEClass, PRODUCT_CATEGORY___SUBSCRIPTIONS);
+		createEOperation(productCategoryEClass, PRODUCT_CATEGORY___TAX_AUTHORITY_RATE_PRODUCTS);
 
 		productCategoryAttributeEClass = createEClass(PRODUCT_CATEGORY_ATTRIBUTE);
 		createEAttribute(productCategoryAttributeEClass, PRODUCT_CATEGORY_ATTRIBUTE__ATTR_NAME);
@@ -1619,6 +1716,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		createEAttribute(productCategoryContentTypeEClass, PRODUCT_CATEGORY_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(productCategoryContentTypeEClass, PRODUCT_CATEGORY_CONTENT_TYPE__HAS_TABLE);
 		createEReference(productCategoryContentTypeEClass, PRODUCT_CATEGORY_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEOperation(productCategoryContentTypeEClass, PRODUCT_CATEGORY_CONTENT_TYPE___CHILD_PRODUCT_CATEGORY_CONTENT_TYPES);
 
 		productCategoryGlAccountEClass = createEClass(PRODUCT_CATEGORY_GL_ACCOUNT);
 		createEReference(productCategoryGlAccountEClass, PRODUCT_CATEGORY_GL_ACCOUNT__PRODUCT_CATEGORY_ID);
@@ -1671,6 +1769,8 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		createEAttribute(productCategoryTypeEClass, PRODUCT_CATEGORY_TYPE__HAS_TABLE);
 		createEReference(productCategoryTypeEClass, PRODUCT_CATEGORY_TYPE__PARENT_TYPE_ID);
 		createEAttribute(productCategoryTypeEClass, PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ATTRS);
+		createEOperation(productCategoryTypeEClass, PRODUCT_CATEGORY_TYPE___CHILD_PRODUCT_CATEGORY_TYPES);
+		createEOperation(productCategoryTypeEClass, PRODUCT_CATEGORY_TYPE___PRODUCT_CATEGORIES);
 
 		productCategoryTypeAttrEClass = createEClass(PRODUCT_CATEGORY_TYPE_ATTR);
 		createEAttribute(productCategoryTypeAttrEClass, PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME);
@@ -1738,7 +1838,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		productCategoryTypeEClass.getEGenericSuperTypes().add(g1);
 		productCategoryTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(productCategoryEClass, ProductCategory.class, "ProductCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductCategory_ProductCategoryId(), ecorePackage.getEString(), "productCategoryId", null, 1, 1, ProductCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductCategory_CategoryImageUrl(), ecorePackage.getEString(), "categoryImageUrl", null, 0, 1, ProductCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1755,17 +1855,17 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		getProductCategory_PrimaryParentCategoryId().getEKeys().add(this.getProductCategory_ProductCategoryId());
 		initEAttribute(getProductCategory_ProductCategoryAttributes(), ecorePackage.getEString(), "productCategoryAttributes", null, 0, -1, ProductCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productCategoryEClass, ecorePackage.getEString(), "primaryChildProductCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategory__PrimaryChildProductCategories(), ecorePackage.getEString(), "primaryChildProductCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productCategoryEClass, ecorePackage.getEString(), "primaryProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategory__PrimaryProducts(), ecorePackage.getEString(), "primaryProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productCategoryEClass, ecorePackage.getEString(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategory__ProductStoreSurveyAppls(), ecorePackage.getEString(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productCategoryEClass, ecorePackage.getEString(), "salesForecastDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategory__SalesForecastDetails(), ecorePackage.getEString(), "salesForecastDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productCategoryEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategory__Subscriptions(), ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productCategoryEClass, ecorePackage.getEString(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategory__TaxAuthorityRateProducts(), ecorePackage.getEString(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productCategoryAttributeEClass, ProductCategoryAttribute.class, "ProductCategoryAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductCategoryAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ProductCategoryAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1795,7 +1895,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		initEReference(getProductCategoryContentType_ParentTypeId(), this.getProductCategoryContentType(), null, "parentTypeId", null, 0, 1, ProductCategoryContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductCategoryContentType_ParentTypeId().getEKeys().add(this.getProductCategoryContentType_ProdCatContentTypeId());
 
-		addEOperation(productCategoryContentTypeEClass, ecorePackage.getEString(), "childProductCategoryContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategoryContentType__ChildProductCategoryContentTypes(), ecorePackage.getEString(), "childProductCategoryContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productCategoryGlAccountEClass, ProductCategoryGlAccount.class, "ProductCategoryGlAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProductCategoryGlAccount_ProductCategoryId(), this.getProductCategory(), null, "productCategoryId", null, 0, 1, ProductCategoryGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1863,9 +1963,9 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		getProductCategoryType_ParentTypeId().getEKeys().add(this.getProductCategoryType_ProductCategoryTypeId());
 		initEAttribute(getProductCategoryType_ProductCategoryTypeAttrs(), ecorePackage.getEString(), "productCategoryTypeAttrs", null, 0, -1, ProductCategoryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productCategoryTypeEClass, ecorePackage.getEString(), "childProductCategoryTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategoryType__ChildProductCategoryTypes(), ecorePackage.getEString(), "childProductCategoryTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productCategoryTypeEClass, ecorePackage.getEString(), "productCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductCategoryType__ProductCategories(), ecorePackage.getEString(), "productCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productCategoryTypeAttrEClass, ProductCategoryTypeAttr.class, "ProductCategoryTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductCategoryTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ProductCategoryTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1925,37 +2025,37 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(0),
+		  (getProductCategory__PrimaryChildProductCategories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(1),
+		  (getProductCategory__PrimaryProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(2),
+		  (getProductCategory__ProductStoreSurveyAppls(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(3),
+		  (getProductCategory__SalesForecastDetails(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(4),
+		  (getProductCategory__Subscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(5),
+		  (getProductCategory__TaxAuthorityRateProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1985,7 +2085,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productCategoryContentTypeEClass.getEOperations().get(0),
+		  (getProductCategoryContentType__ChildProductCategoryContentTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2027,13 +2127,13 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productCategoryTypeEClass.getEOperations().get(0),
+		  (getProductCategoryType__ChildProductCategoryTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productCategoryTypeEClass.getEOperations().get(1),
+		  (getProductCategoryType__ProductCategories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2067,7 +2167,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(0),
+		  (getProductCategory__PrimaryChildProductCategories(),
 		   source,
 		   new String[] {
 			   "frame", "ProductCategory",
@@ -2077,7 +2177,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(1),
+		  (getProductCategory__PrimaryProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -2087,7 +2187,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(2),
+		  (getProductCategory__ProductStoreSurveyAppls(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreSurveyAppl",
@@ -2097,7 +2197,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(3),
+		  (getProductCategory__SalesForecastDetails(),
 		   source,
 		   new String[] {
 			   "frame", "SalesForecastDetail",
@@ -2107,7 +2207,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(4),
+		  (getProductCategory__Subscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",
@@ -2117,7 +2217,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryEClass.getEOperations().get(5),
+		  (getProductCategory__TaxAuthorityRateProducts(),
 		   source,
 		   new String[] {
 			   "frame", "TaxAuthorityRateProduct",
@@ -2136,7 +2236,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryContentTypeEClass.getEOperations().get(0),
+		  (getProductCategoryContentType__ChildProductCategoryContentTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductCategoryContentType",
@@ -2146,7 +2246,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryTypeEClass.getEOperations().get(0),
+		  (getProductCategoryType__ChildProductCategoryTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductCategoryType",
@@ -2156,7 +2256,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productCategoryTypeEClass.getEOperations().get(1),
+		  (getProductCategoryType__ProductCategories(),
 		   source,
 		   new String[] {
 			   "frame", "ProductCategory",

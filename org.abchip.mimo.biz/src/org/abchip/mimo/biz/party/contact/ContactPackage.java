@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.contact;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -162,6 +163,258 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Billing Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___BILLING_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Check Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___CHECK_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Credit Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___CREDIT_CARDS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Dest Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___DEST_SHIPMENT_ROUTE_SEGMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Dest Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___DEST_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Eft Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___EFT_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>From Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___FROM_COMMUNICATION_EVENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Fulfill Cust Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___FULFILL_CUST_REQUESTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Gift Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___GIFT_CARDS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Invoices</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___INVOICES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___ORDER_ITEM_SHIP_GROUPS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Origin Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___ORIGIN_SHIPMENT_ROUTE_SEGMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Origin Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___ORIGIN_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Pay Pal Payment Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___PAY_PAL_PAYMENT_METHODS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___RETURN_HEADERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Shipment Contact Mechs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___SHIPMENT_CONTACT_MECHS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___SHOPPING_LISTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Subscriptions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___SUBSCRIPTIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 17;
+
+	/**
+	 * The operation id for the '<em>Telecom Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___TELECOM_ORDER_ITEM_SHIP_GROUPS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 18;
+
+	/**
+	 * The operation id for the '<em>To Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___TO_COMMUNICATION_EVENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 19;
+
+	/**
+	 * The operation id for the '<em>To Contact Mech Links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___TO_CONTACT_MECH_LINKS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 20;
+
+	/**
+	 * The operation id for the '<em>Work Effort Event Reminders</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH___WORK_EFFORT_EVENT_REMINDERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 21;
+
+	/**
+	 * The number of operations of the '<em>Mech</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 22;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechAttributeImpl <em>Mech Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,6 +506,51 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Mech Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechLinkImpl <em>Mech Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -326,6 +624,51 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_LINK_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_LINK___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_LINK___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_LINK___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_LINK___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Mech Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_LINK_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechPurposeTypeImpl <em>Mech Purpose Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,6 +740,60 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTACT_MECH_PURPOSE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_PURPOSE_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_PURPOSE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_PURPOSE_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_PURPOSE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Contact Mech Type Purposes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_PURPOSE_TYPE___CONTACT_MECH_TYPE_PURPOSES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Mech Purpose Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_PURPOSE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl <em>Mech Type</em>}' class.
@@ -517,6 +914,141 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Contact Mech Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___CHILD_CONTACT_MECH_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___COMMUNICATION_EVENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Contac Mech Type Communication Event Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___CONTAC_MECH_TYPE_COMMUNICATION_EVENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Contact Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___CONTACT_LISTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Contact Mechs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___CONTACT_MECHS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Valid Contact Mech Roles</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE___VALID_CONTACT_MECH_ROLES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Mech Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 6;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeAttrImpl <em>Mech Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -599,6 +1131,51 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Mech Type Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypePurposeImpl <em>Mech Type Purpose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -670,6 +1247,51 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTACT_MECH_TYPE_PURPOSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_PURPOSE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_PURPOSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_PURPOSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_PURPOSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Mech Type Purpose</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH_TYPE_PURPOSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.EmailAddressVerificationImpl <em>Email Address Verification</em>}' class.
@@ -752,6 +1374,51 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int EMAIL_ADDRESS_VERIFICATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMAIL_ADDRESS_VERIFICATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMAIL_ADDRESS_VERIFICATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMAIL_ADDRESS_VERIFICATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMAIL_ADDRESS_VERIFICATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Email Address Verification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMAIL_ADDRESS_VERIFICATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl <em>Ftp Address</em>}' class.
@@ -935,6 +1602,258 @@ public interface ContactPackage extends EPackage {
 	int FTP_ADDRESS_FEATURE_COUNT = CONTACT_MECH_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___ISA = CONTACT_MECH___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___GET_NAME = CONTACT_MECH___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___GET_URI = CONTACT_MECH___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___IS_PROXY = CONTACT_MECH___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___GET_TYPE = CONTACT_MECH___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Billing Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___BILLING_ACCOUNTS = CONTACT_MECH___BILLING_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Check Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___CHECK_ACCOUNTS = CONTACT_MECH___CHECK_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Credit Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___CREDIT_CARDS = CONTACT_MECH___CREDIT_CARDS;
+
+	/**
+	 * The operation id for the '<em>Dest Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___DEST_SHIPMENT_ROUTE_SEGMENTS = CONTACT_MECH___DEST_SHIPMENT_ROUTE_SEGMENTS;
+
+	/**
+	 * The operation id for the '<em>Dest Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___DEST_SHIPMENTS = CONTACT_MECH___DEST_SHIPMENTS;
+
+	/**
+	 * The operation id for the '<em>Eft Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___EFT_ACCOUNTS = CONTACT_MECH___EFT_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>From Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___FROM_COMMUNICATION_EVENTS = CONTACT_MECH___FROM_COMMUNICATION_EVENTS;
+
+	/**
+	 * The operation id for the '<em>Fulfill Cust Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___FULFILL_CUST_REQUESTS = CONTACT_MECH___FULFILL_CUST_REQUESTS;
+
+	/**
+	 * The operation id for the '<em>Gift Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___GIFT_CARDS = CONTACT_MECH___GIFT_CARDS;
+
+	/**
+	 * The operation id for the '<em>Invoices</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___INVOICES = CONTACT_MECH___INVOICES;
+
+	/**
+	 * The operation id for the '<em>Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___ORDER_ITEM_SHIP_GROUPS = CONTACT_MECH___ORDER_ITEM_SHIP_GROUPS;
+
+	/**
+	 * The operation id for the '<em>Origin Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___ORIGIN_SHIPMENT_ROUTE_SEGMENTS = CONTACT_MECH___ORIGIN_SHIPMENT_ROUTE_SEGMENTS;
+
+	/**
+	 * The operation id for the '<em>Origin Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___ORIGIN_SHIPMENTS = CONTACT_MECH___ORIGIN_SHIPMENTS;
+
+	/**
+	 * The operation id for the '<em>Pay Pal Payment Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___PAY_PAL_PAYMENT_METHODS = CONTACT_MECH___PAY_PAL_PAYMENT_METHODS;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___RETURN_HEADERS = CONTACT_MECH___RETURN_HEADERS;
+
+	/**
+	 * The operation id for the '<em>Shipment Contact Mechs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___SHIPMENT_CONTACT_MECHS = CONTACT_MECH___SHIPMENT_CONTACT_MECHS;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___SHOPPING_LISTS = CONTACT_MECH___SHOPPING_LISTS;
+
+	/**
+	 * The operation id for the '<em>Subscriptions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___SUBSCRIPTIONS = CONTACT_MECH___SUBSCRIPTIONS;
+
+	/**
+	 * The operation id for the '<em>Telecom Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___TELECOM_ORDER_ITEM_SHIP_GROUPS = CONTACT_MECH___TELECOM_ORDER_ITEM_SHIP_GROUPS;
+
+	/**
+	 * The operation id for the '<em>To Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___TO_COMMUNICATION_EVENTS = CONTACT_MECH___TO_COMMUNICATION_EVENTS;
+
+	/**
+	 * The operation id for the '<em>To Contact Mech Links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___TO_CONTACT_MECH_LINKS = CONTACT_MECH___TO_CONTACT_MECH_LINKS;
+
+	/**
+	 * The operation id for the '<em>Work Effort Event Reminders</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS___WORK_EFFORT_EVENT_REMINDERS = CONTACT_MECH___WORK_EFFORT_EVENT_REMINDERS;
+
+	/**
+	 * The number of operations of the '<em>Ftp Address</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS_OPERATION_COUNT = CONTACT_MECH_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechImpl <em>Party Contact Mech</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1089,6 +2008,51 @@ public interface ContactPackage extends EPackage {
 	int PARTY_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party Contact Mech</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl <em>Party Contact Mech Purpose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1187,6 +2151,51 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARTY_CONTACT_MECH_PURPOSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_PURPOSE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_PURPOSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_PURPOSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_PURPOSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party Contact Mech Purpose</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_PURPOSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl <em>Postal Address</em>}' class.
@@ -1451,6 +2460,267 @@ public interface ContactPackage extends EPackage {
 	int POSTAL_ADDRESS_FEATURE_COUNT = CONTACT_MECH_FEATURE_COUNT + 18;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___ISA = CONTACT_MECH___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___GET_NAME = CONTACT_MECH___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___GET_URI = CONTACT_MECH___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___IS_PROXY = CONTACT_MECH___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___GET_TYPE = CONTACT_MECH___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Billing Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___BILLING_ACCOUNTS = CONTACT_MECH___BILLING_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Check Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___CHECK_ACCOUNTS = CONTACT_MECH___CHECK_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Credit Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___CREDIT_CARDS = CONTACT_MECH___CREDIT_CARDS;
+
+	/**
+	 * The operation id for the '<em>Dest Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___DEST_SHIPMENT_ROUTE_SEGMENTS = CONTACT_MECH___DEST_SHIPMENT_ROUTE_SEGMENTS;
+
+	/**
+	 * The operation id for the '<em>Dest Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___DEST_SHIPMENTS = CONTACT_MECH___DEST_SHIPMENTS;
+
+	/**
+	 * The operation id for the '<em>Eft Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___EFT_ACCOUNTS = CONTACT_MECH___EFT_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>From Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___FROM_COMMUNICATION_EVENTS = CONTACT_MECH___FROM_COMMUNICATION_EVENTS;
+
+	/**
+	 * The operation id for the '<em>Fulfill Cust Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___FULFILL_CUST_REQUESTS = CONTACT_MECH___FULFILL_CUST_REQUESTS;
+
+	/**
+	 * The operation id for the '<em>Gift Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___GIFT_CARDS = CONTACT_MECH___GIFT_CARDS;
+
+	/**
+	 * The operation id for the '<em>Invoices</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___INVOICES = CONTACT_MECH___INVOICES;
+
+	/**
+	 * The operation id for the '<em>Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___ORDER_ITEM_SHIP_GROUPS = CONTACT_MECH___ORDER_ITEM_SHIP_GROUPS;
+
+	/**
+	 * The operation id for the '<em>Origin Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___ORIGIN_SHIPMENT_ROUTE_SEGMENTS = CONTACT_MECH___ORIGIN_SHIPMENT_ROUTE_SEGMENTS;
+
+	/**
+	 * The operation id for the '<em>Origin Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___ORIGIN_SHIPMENTS = CONTACT_MECH___ORIGIN_SHIPMENTS;
+
+	/**
+	 * The operation id for the '<em>Pay Pal Payment Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___PAY_PAL_PAYMENT_METHODS = CONTACT_MECH___PAY_PAL_PAYMENT_METHODS;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___RETURN_HEADERS = CONTACT_MECH___RETURN_HEADERS;
+
+	/**
+	 * The operation id for the '<em>Shipment Contact Mechs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___SHIPMENT_CONTACT_MECHS = CONTACT_MECH___SHIPMENT_CONTACT_MECHS;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___SHOPPING_LISTS = CONTACT_MECH___SHOPPING_LISTS;
+
+	/**
+	 * The operation id for the '<em>Subscriptions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___SUBSCRIPTIONS = CONTACT_MECH___SUBSCRIPTIONS;
+
+	/**
+	 * The operation id for the '<em>Telecom Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___TELECOM_ORDER_ITEM_SHIP_GROUPS = CONTACT_MECH___TELECOM_ORDER_ITEM_SHIP_GROUPS;
+
+	/**
+	 * The operation id for the '<em>To Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___TO_COMMUNICATION_EVENTS = CONTACT_MECH___TO_COMMUNICATION_EVENTS;
+
+	/**
+	 * The operation id for the '<em>To Contact Mech Links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___TO_CONTACT_MECH_LINKS = CONTACT_MECH___TO_CONTACT_MECH_LINKS;
+
+	/**
+	 * The operation id for the '<em>Work Effort Event Reminders</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___WORK_EFFORT_EVENT_REMINDERS = CONTACT_MECH___WORK_EFFORT_EVENT_REMINDERS;
+
+	/**
+	 * The operation id for the '<em>Destination Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS___DESTINATION_SHIPMENTS = CONTACT_MECH_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Postal Address</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS_OPERATION_COUNT = CONTACT_MECH_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressBoundaryImpl <em>Postal Address Boundary</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1522,6 +2792,51 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int POSTAL_ADDRESS_BOUNDARY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS_BOUNDARY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS_BOUNDARY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS_BOUNDARY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS_BOUNDARY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Postal Address Boundary</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS_BOUNDARY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.TelecomNumberImpl <em>Telecom Number</em>}' class.
@@ -1660,6 +2975,267 @@ public interface ContactPackage extends EPackage {
 	int TELECOM_NUMBER_FEATURE_COUNT = CONTACT_MECH_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___ISA = CONTACT_MECH___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___GET_NAME = CONTACT_MECH___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___GET_URI = CONTACT_MECH___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___IS_PROXY = CONTACT_MECH___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___GET_TYPE = CONTACT_MECH___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Billing Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___BILLING_ACCOUNTS = CONTACT_MECH___BILLING_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Check Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___CHECK_ACCOUNTS = CONTACT_MECH___CHECK_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Credit Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___CREDIT_CARDS = CONTACT_MECH___CREDIT_CARDS;
+
+	/**
+	 * The operation id for the '<em>Dest Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___DEST_SHIPMENT_ROUTE_SEGMENTS = CONTACT_MECH___DEST_SHIPMENT_ROUTE_SEGMENTS;
+
+	/**
+	 * The operation id for the '<em>Dest Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___DEST_SHIPMENTS = CONTACT_MECH___DEST_SHIPMENTS;
+
+	/**
+	 * The operation id for the '<em>Eft Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___EFT_ACCOUNTS = CONTACT_MECH___EFT_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>From Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___FROM_COMMUNICATION_EVENTS = CONTACT_MECH___FROM_COMMUNICATION_EVENTS;
+
+	/**
+	 * The operation id for the '<em>Fulfill Cust Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___FULFILL_CUST_REQUESTS = CONTACT_MECH___FULFILL_CUST_REQUESTS;
+
+	/**
+	 * The operation id for the '<em>Gift Cards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___GIFT_CARDS = CONTACT_MECH___GIFT_CARDS;
+
+	/**
+	 * The operation id for the '<em>Invoices</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___INVOICES = CONTACT_MECH___INVOICES;
+
+	/**
+	 * The operation id for the '<em>Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___ORDER_ITEM_SHIP_GROUPS = CONTACT_MECH___ORDER_ITEM_SHIP_GROUPS;
+
+	/**
+	 * The operation id for the '<em>Origin Shipment Route Segments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___ORIGIN_SHIPMENT_ROUTE_SEGMENTS = CONTACT_MECH___ORIGIN_SHIPMENT_ROUTE_SEGMENTS;
+
+	/**
+	 * The operation id for the '<em>Origin Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___ORIGIN_SHIPMENTS = CONTACT_MECH___ORIGIN_SHIPMENTS;
+
+	/**
+	 * The operation id for the '<em>Pay Pal Payment Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___PAY_PAL_PAYMENT_METHODS = CONTACT_MECH___PAY_PAL_PAYMENT_METHODS;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___RETURN_HEADERS = CONTACT_MECH___RETURN_HEADERS;
+
+	/**
+	 * The operation id for the '<em>Shipment Contact Mechs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___SHIPMENT_CONTACT_MECHS = CONTACT_MECH___SHIPMENT_CONTACT_MECHS;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___SHOPPING_LISTS = CONTACT_MECH___SHOPPING_LISTS;
+
+	/**
+	 * The operation id for the '<em>Subscriptions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___SUBSCRIPTIONS = CONTACT_MECH___SUBSCRIPTIONS;
+
+	/**
+	 * The operation id for the '<em>Telecom Order Item Ship Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___TELECOM_ORDER_ITEM_SHIP_GROUPS = CONTACT_MECH___TELECOM_ORDER_ITEM_SHIP_GROUPS;
+
+	/**
+	 * The operation id for the '<em>To Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___TO_COMMUNICATION_EVENTS = CONTACT_MECH___TO_COMMUNICATION_EVENTS;
+
+	/**
+	 * The operation id for the '<em>To Contact Mech Links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___TO_CONTACT_MECH_LINKS = CONTACT_MECH___TO_CONTACT_MECH_LINKS;
+
+	/**
+	 * The operation id for the '<em>Work Effort Event Reminders</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___WORK_EFFORT_EVENT_REMINDERS = CONTACT_MECH___WORK_EFFORT_EVENT_REMINDERS;
+
+	/**
+	 * The operation id for the '<em>Destination Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER___DESTINATION_SHIPMENTS = CONTACT_MECH_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Telecom Number</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER_OPERATION_COUNT = CONTACT_MECH_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.contact.impl.ValidContactMechRoleImpl <em>Valid Contact Mech Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1734,6 +3310,52 @@ public interface ContactPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALID_CONTACT_MECH_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALID_CONTACT_MECH_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALID_CONTACT_MECH_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALID_CONTACT_MECH_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Valid Contact Mech Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALID_CONTACT_MECH_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ContactMech <em>Mech</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1797,6 +3419,226 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContactMech_FromContactMechLinks();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#billingAccounts() <em>Billing Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Billing Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#billingAccounts()
+	 * @generated
+	 */
+	EOperation getContactMech__BillingAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#checkAccounts() <em>Check Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#checkAccounts()
+	 * @generated
+	 */
+	EOperation getContactMech__CheckAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#creditCards() <em>Credit Cards</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Credit Cards</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#creditCards()
+	 * @generated
+	 */
+	EOperation getContactMech__CreditCards();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#destShipmentRouteSegments() <em>Dest Shipment Route Segments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Dest Shipment Route Segments</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#destShipmentRouteSegments()
+	 * @generated
+	 */
+	EOperation getContactMech__DestShipmentRouteSegments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#destShipments() <em>Dest Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Dest Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#destShipments()
+	 * @generated
+	 */
+	EOperation getContactMech__DestShipments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#eftAccounts() <em>Eft Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Eft Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#eftAccounts()
+	 * @generated
+	 */
+	EOperation getContactMech__EftAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#fromCommunicationEvents() <em>From Communication Events</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>From Communication Events</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#fromCommunicationEvents()
+	 * @generated
+	 */
+	EOperation getContactMech__FromCommunicationEvents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#fulfillCustRequests() <em>Fulfill Cust Requests</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fulfill Cust Requests</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#fulfillCustRequests()
+	 * @generated
+	 */
+	EOperation getContactMech__FulfillCustRequests();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#giftCards() <em>Gift Cards</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gift Cards</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#giftCards()
+	 * @generated
+	 */
+	EOperation getContactMech__GiftCards();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#invoices() <em>Invoices</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Invoices</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#invoices()
+	 * @generated
+	 */
+	EOperation getContactMech__Invoices();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#orderItemShipGroups() <em>Order Item Ship Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Item Ship Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#orderItemShipGroups()
+	 * @generated
+	 */
+	EOperation getContactMech__OrderItemShipGroups();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#originShipmentRouteSegments() <em>Origin Shipment Route Segments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Origin Shipment Route Segments</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#originShipmentRouteSegments()
+	 * @generated
+	 */
+	EOperation getContactMech__OriginShipmentRouteSegments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#originShipments() <em>Origin Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Origin Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#originShipments()
+	 * @generated
+	 */
+	EOperation getContactMech__OriginShipments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#payPalPaymentMethods() <em>Pay Pal Payment Methods</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Pay Pal Payment Methods</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#payPalPaymentMethods()
+	 * @generated
+	 */
+	EOperation getContactMech__PayPalPaymentMethods();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#returnHeaders() <em>Return Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Return Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#returnHeaders()
+	 * @generated
+	 */
+	EOperation getContactMech__ReturnHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#shipmentContactMechs() <em>Shipment Contact Mechs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Shipment Contact Mechs</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#shipmentContactMechs()
+	 * @generated
+	 */
+	EOperation getContactMech__ShipmentContactMechs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#shoppingLists() <em>Shopping Lists</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Shopping Lists</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#shoppingLists()
+	 * @generated
+	 */
+	EOperation getContactMech__ShoppingLists();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#subscriptions() <em>Subscriptions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Subscriptions</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#subscriptions()
+	 * @generated
+	 */
+	EOperation getContactMech__Subscriptions();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#telecomOrderItemShipGroups() <em>Telecom Order Item Ship Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Telecom Order Item Ship Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#telecomOrderItemShipGroups()
+	 * @generated
+	 */
+	EOperation getContactMech__TelecomOrderItemShipGroups();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#toCommunicationEvents() <em>To Communication Events</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To Communication Events</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#toCommunicationEvents()
+	 * @generated
+	 */
+	EOperation getContactMech__ToCommunicationEvents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#toContactMechLinks() <em>To Contact Mech Links</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To Contact Mech Links</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#toContactMechLinks()
+	 * @generated
+	 */
+	EOperation getContactMech__ToContactMechLinks();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMech#workEffortEventReminders() <em>Work Effort Event Reminders</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Effort Event Reminders</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMech#workEffortEventReminders()
+	 * @generated
+	 */
+	EOperation getContactMech__WorkEffortEventReminders();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ContactMechAttribute <em>Mech Attribute</em>}'.
@@ -1917,6 +3759,16 @@ public interface ContactPackage extends EPackage {
 	EAttribute getContactMechPurposeType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMechPurposeType#contactMechTypePurposes() <em>Contact Mech Type Purposes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Contact Mech Type Purposes</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMechPurposeType#contactMechTypePurposes()
+	 * @generated
+	 */
+	EOperation getContactMechPurposeType__ContactMechTypePurposes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ContactMechType <em>Mech Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1991,6 +3843,66 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContactMechType_ContactMechTypePurposes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#childContactMechTypes() <em>Child Contact Mech Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Contact Mech Types</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#childContactMechTypes()
+	 * @generated
+	 */
+	EOperation getContactMechType__ChildContactMechTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#communicationEvents() <em>Communication Events</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Communication Events</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#communicationEvents()
+	 * @generated
+	 */
+	EOperation getContactMechType__CommunicationEvents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#contacMechTypeCommunicationEventTypes() <em>Contac Mech Type Communication Event Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Contac Mech Type Communication Event Types</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#contacMechTypeCommunicationEventTypes()
+	 * @generated
+	 */
+	EOperation getContactMechType__ContacMechTypeCommunicationEventTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#contactLists() <em>Contact Lists</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Contact Lists</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#contactLists()
+	 * @generated
+	 */
+	EOperation getContactMechType__ContactLists();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#contactMechs() <em>Contact Mechs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Contact Mechs</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#contactMechs()
+	 * @generated
+	 */
+	EOperation getContactMechType__ContactMechs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#validContactMechRoles() <em>Valid Contact Mech Roles</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Valid Contact Mech Roles</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#validContactMechRoles()
+	 * @generated
+	 */
+	EOperation getContactMechType__ValidContactMechRoles();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr <em>Mech Type Attr</em>}'.
@@ -2624,6 +4536,16 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPostalAddress_PostalAddressBoundaries();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#destinationShipments() <em>Destination Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Destination Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#destinationShipments()
+	 * @generated
+	 */
+	EOperation getPostalAddress__DestinationShipments();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.PostalAddressBoundary <em>Postal Address Boundary</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2708,6 +4630,16 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTelecomNumber_CountryCode();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.contact.TelecomNumber#destinationShipments() <em>Destination Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Destination Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.party.contact.TelecomNumber#destinationShipments()
+	 * @generated
+	 */
+	EOperation getTelecomNumber__DestinationShipments();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ValidContactMechRole <em>Valid Contact Mech Role</em>}'.
@@ -2814,6 +4746,182 @@ public interface ContactPackage extends EPackage {
 		EAttribute CONTACT_MECH__FROM_CONTACT_MECH_LINKS = eINSTANCE.getContactMech_FromContactMechLinks();
 
 		/**
+		 * The meta object literal for the '<em><b>Billing Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___BILLING_ACCOUNTS = eINSTANCE.getContactMech__BillingAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___CHECK_ACCOUNTS = eINSTANCE.getContactMech__CheckAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Credit Cards</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___CREDIT_CARDS = eINSTANCE.getContactMech__CreditCards();
+
+		/**
+		 * The meta object literal for the '<em><b>Dest Shipment Route Segments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___DEST_SHIPMENT_ROUTE_SEGMENTS = eINSTANCE.getContactMech__DestShipmentRouteSegments();
+
+		/**
+		 * The meta object literal for the '<em><b>Dest Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___DEST_SHIPMENTS = eINSTANCE.getContactMech__DestShipments();
+
+		/**
+		 * The meta object literal for the '<em><b>Eft Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___EFT_ACCOUNTS = eINSTANCE.getContactMech__EftAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>From Communication Events</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___FROM_COMMUNICATION_EVENTS = eINSTANCE.getContactMech__FromCommunicationEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Fulfill Cust Requests</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___FULFILL_CUST_REQUESTS = eINSTANCE.getContactMech__FulfillCustRequests();
+
+		/**
+		 * The meta object literal for the '<em><b>Gift Cards</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___GIFT_CARDS = eINSTANCE.getContactMech__GiftCards();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoices</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___INVOICES = eINSTANCE.getContactMech__Invoices();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Item Ship Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___ORDER_ITEM_SHIP_GROUPS = eINSTANCE.getContactMech__OrderItemShipGroups();
+
+		/**
+		 * The meta object literal for the '<em><b>Origin Shipment Route Segments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___ORIGIN_SHIPMENT_ROUTE_SEGMENTS = eINSTANCE.getContactMech__OriginShipmentRouteSegments();
+
+		/**
+		 * The meta object literal for the '<em><b>Origin Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___ORIGIN_SHIPMENTS = eINSTANCE.getContactMech__OriginShipments();
+
+		/**
+		 * The meta object literal for the '<em><b>Pay Pal Payment Methods</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___PAY_PAL_PAYMENT_METHODS = eINSTANCE.getContactMech__PayPalPaymentMethods();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___RETURN_HEADERS = eINSTANCE.getContactMech__ReturnHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>Shipment Contact Mechs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___SHIPMENT_CONTACT_MECHS = eINSTANCE.getContactMech__ShipmentContactMechs();
+
+		/**
+		 * The meta object literal for the '<em><b>Shopping Lists</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___SHOPPING_LISTS = eINSTANCE.getContactMech__ShoppingLists();
+
+		/**
+		 * The meta object literal for the '<em><b>Subscriptions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___SUBSCRIPTIONS = eINSTANCE.getContactMech__Subscriptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom Order Item Ship Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___TELECOM_ORDER_ITEM_SHIP_GROUPS = eINSTANCE.getContactMech__TelecomOrderItemShipGroups();
+
+		/**
+		 * The meta object literal for the '<em><b>To Communication Events</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___TO_COMMUNICATION_EVENTS = eINSTANCE.getContactMech__ToCommunicationEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>To Contact Mech Links</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___TO_CONTACT_MECH_LINKS = eINSTANCE.getContactMech__ToContactMechLinks();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Effort Event Reminders</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH___WORK_EFFORT_EVENT_REMINDERS = eINSTANCE.getContactMech__WorkEffortEventReminders();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechAttributeImpl <em>Mech Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2908,6 +5016,14 @@ public interface ContactPackage extends EPackage {
 		EAttribute CONTACT_MECH_PURPOSE_TYPE__DESCRIPTION = eINSTANCE.getContactMechPurposeType_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Contact Mech Type Purposes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH_PURPOSE_TYPE___CONTACT_MECH_TYPE_PURPOSES = eINSTANCE.getContactMechPurposeType__ContactMechTypePurposes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl <em>Mech Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2964,6 +5080,54 @@ public interface ContactPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_PURPOSES = eINSTANCE.getContactMechType_ContactMechTypePurposes();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Contact Mech Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH_TYPE___CHILD_CONTACT_MECH_TYPES = eINSTANCE.getContactMechType__ChildContactMechTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Communication Events</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH_TYPE___COMMUNICATION_EVENTS = eINSTANCE.getContactMechType__CommunicationEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Contac Mech Type Communication Event Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH_TYPE___CONTAC_MECH_TYPE_COMMUNICATION_EVENT_TYPES = eINSTANCE.getContactMechType__ContacMechTypeCommunicationEventTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Contact Lists</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH_TYPE___CONTACT_LISTS = eINSTANCE.getContactMechType__ContactLists();
+
+		/**
+		 * The meta object literal for the '<em><b>Contact Mechs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH_TYPE___CONTACT_MECHS = eINSTANCE.getContactMechType__ContactMechs();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid Contact Mech Roles</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTACT_MECH_TYPE___VALID_CONTACT_MECH_ROLES = eINSTANCE.getContactMechType__ValidContactMechRoles();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeAttrImpl <em>Mech Type Attr</em>}' class.
@@ -3444,6 +5608,14 @@ public interface ContactPackage extends EPackage {
 		EAttribute POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES = eINSTANCE.getPostalAddress_PostalAddressBoundaries();
 
 		/**
+		 * The meta object literal for the '<em><b>Destination Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation POSTAL_ADDRESS___DESTINATION_SHIPMENTS = eINSTANCE.getPostalAddress__DestinationShipments();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressBoundaryImpl <em>Postal Address Boundary</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3510,6 +5682,14 @@ public interface ContactPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TELECOM_NUMBER__COUNTRY_CODE = eINSTANCE.getTelecomNumber_CountryCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Destination Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TELECOM_NUMBER___DESTINATION_SHIPMENTS = eINSTANCE.getTelecomNumber__DestinationShipments();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.ValidContactMechRoleImpl <em>Valid Contact Mech Role</em>}' class.

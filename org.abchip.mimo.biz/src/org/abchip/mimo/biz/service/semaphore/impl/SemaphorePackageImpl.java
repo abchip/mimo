@@ -758,7 +758,7 @@ public class SemaphorePackageImpl extends EPackageImpl implements SemaphorePacka
 		// Add supertypes to classes
 		serviceSemaphoreEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(serviceSemaphoreEClass, ServiceSemaphore.class, "ServiceSemaphore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceSemaphore_ServiceName(), ecorePackage.getEString(), "serviceName", null, 1, 1, ServiceSemaphore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceSemaphore_LockThread(), ecorePackage.getEString(), "lockThread", null, 0, 1, ServiceSemaphore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

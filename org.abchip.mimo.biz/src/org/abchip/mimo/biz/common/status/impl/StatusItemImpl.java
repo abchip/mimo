@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.common.status.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -854,6 +856,134 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case StatusPackage.STATUS_ITEM___ACCTG_TRANS_ENTRIES:
+				return acctgTransEntries();
+			case StatusPackage.STATUS_ITEM___ACCTG_TRANSS:
+				return acctgTranss();
+			case StatusPackage.STATUS_ITEM___APPROVAL_CONTENT_APPROVALS:
+				return approvalContentApprovals();
+			case StatusPackage.STATUS_ITEM___BUDGET_STATUSS:
+				return budgetStatuss();
+			case StatusPackage.STATUS_ITEM___CARRIER_SERVICE_SHIPMENT_ROUTE_SEGMENTS:
+				return carrierServiceShipmentRouteSegments();
+			case StatusPackage.STATUS_ITEM___COMMUNICATION_EVENTS:
+				return communicationEvents();
+			case StatusPackage.STATUS_ITEM___CONTENTS:
+				return contents();
+			case StatusPackage.STATUS_ITEM___CURRENT_WORK_EFFORTS:
+				return currentWorkEfforts();
+			case StatusPackage.STATUS_ITEM___CUST_REQUEST_ITEMS:
+				return custRequestItems();
+			case StatusPackage.STATUS_ITEM___CUST_REQUEST_STATUSS:
+				return custRequestStatuss();
+			case StatusPackage.STATUS_ITEM___CUST_REQUESTS:
+				return custRequests();
+			case StatusPackage.STATUS_ITEM___DATA_RESOURCES:
+				return dataResources();
+			case StatusPackage.STATUS_ITEM___DIGITAL_ITEM_APPROVED_PRODUCT_STORES:
+				return digitalItemApprovedProductStores();
+			case StatusPackage.STATUS_ITEM___EMPL_POSITIONS:
+				return emplPositions();
+			case StatusPackage.STATUS_ITEM___EMPLOYMENT_APPS:
+				return employmentApps();
+			case StatusPackage.STATUS_ITEM___FIN_ACCOUNT_TRANSS:
+				return finAccountTranss();
+			case StatusPackage.STATUS_ITEM___FIXED_ASSET_MAINTS:
+				return fixedAssetMaints();
+			case StatusPackage.STATUS_ITEM___GL_RECONCILIATIONS:
+				return glReconciliations();
+			case StatusPackage.STATUS_ITEM___HEADER_APPROVED_PRODUCT_STORES:
+				return headerApprovedProductStores();
+			case StatusPackage.STATUS_ITEM___HEADER_CANCEL_PRODUCT_STORES:
+				return headerCancelProductStores();
+			case StatusPackage.STATUS_ITEM___HEADER_DECLINED_PRODUCT_STORES:
+				return headerDeclinedProductStores();
+			case StatusPackage.STATUS_ITEM___INVENTORY_ITEMS:
+				return inventoryItems();
+			case StatusPackage.STATUS_ITEM___INVENTORY_RETURN_ITEMS:
+				return inventoryReturnItems();
+			case StatusPackage.STATUS_ITEM___INVENTORY_TRANSFERS:
+				return inventoryTransfers();
+			case StatusPackage.STATUS_ITEM___INVOICES:
+				return invoices();
+			case StatusPackage.STATUS_ITEM___ITEM_APPROVED_PRODUCT_STORES:
+				return itemApprovedProductStores();
+			case StatusPackage.STATUS_ITEM___ITEM_CANCEL_PRODUCT_STORES:
+				return itemCancelProductStores();
+			case StatusPackage.STATUS_ITEM___ITEM_DECLINED_PRODUCT_STORES:
+				return itemDeclinedProductStores();
+			case StatusPackage.STATUS_ITEM___JOB_SANDBOXS:
+				return jobSandboxs();
+			case StatusPackage.STATUS_ITEM___MARKETING_CAMPAIGNS:
+				return marketingCampaigns();
+			case StatusPackage.STATUS_ITEM___ORDER_DELIVERY_SCHEDULES:
+				return orderDeliverySchedules();
+			case StatusPackage.STATUS_ITEM___ORDER_HEADERS:
+				return orderHeaders();
+			case StatusPackage.STATUS_ITEM___ORDER_ITEMS:
+				return orderItems();
+			case StatusPackage.STATUS_ITEM___ORDER_PAYMENT_PREFERENCES:
+				return orderPaymentPreferences();
+			case StatusPackage.STATUS_ITEM___ORDER_STATUSS:
+				return orderStatuss();
+			case StatusPackage.STATUS_ITEM___PARTIES:
+				return parties();
+			case StatusPackage.STATUS_ITEM___PARTY_INVITATIONS:
+				return partyInvitations();
+			case StatusPackage.STATUS_ITEM___PAYMENTS:
+				return payments();
+			case StatusPackage.STATUS_ITEM___PICKLIST_STATUS_HISTORIES:
+				return picklistStatusHistories();
+			case StatusPackage.STATUS_ITEM___PICKLISTS:
+				return picklists();
+			case StatusPackage.STATUS_ITEM___PRODUCT_GROUP_ORDERS:
+				return productGroupOrders();
+			case StatusPackage.STATUS_ITEM___PRODUCT_REVIEWS:
+				return productReviews();
+			case StatusPackage.STATUS_ITEM___QUOTES:
+				return quotes();
+			case StatusPackage.STATUS_ITEM___REQUIREMENT_STATUSS:
+				return requirementStatuss();
+			case StatusPackage.STATUS_ITEM___REQUIREMENTS:
+				return requirements();
+			case StatusPackage.STATUS_ITEM___RETURN_HEADERS:
+				return returnHeaders();
+			case StatusPackage.STATUS_ITEM___RETURN_ITEMS:
+				return returnItems();
+			case StatusPackage.STATUS_ITEM___RETURN_STATUSS:
+				return returnStatuss();
+			case StatusPackage.STATUS_ITEM___SHIPMENTS:
+				return shipments();
+			case StatusPackage.STATUS_ITEM___SURVEY_RESPONSES:
+				return surveyResponses();
+			case StatusPackage.STATUS_ITEM___SYNC_ORDER_HEADERS:
+				return syncOrderHeaders();
+			case StatusPackage.STATUS_ITEM___SYNC_ORDER_ITEMS:
+				return syncOrderItems();
+			case StatusPackage.STATUS_ITEM___TESTING_STATUSS:
+				return testingStatuss();
+			case StatusPackage.STATUS_ITEM___TIMESHEETS:
+				return timesheets();
+			case StatusPackage.STATUS_ITEM___TO_PICKLIST_STATUS_HISTORIES:
+				return toPicklistStatusHistories();
+			case StatusPackage.STATUS_ITEM___TO_STATUS_VALID_CHANGES:
+				return toStatusValidChanges();
+			case StatusPackage.STATUS_ITEM___UNEMPLOYMENT_CLAIMS:
+				return unemploymentClaims();
+			case StatusPackage.STATUS_ITEM___WORK_EFFORT_INVENTORY_ASSIGNS:
+				return workEffortInventoryAssigns();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

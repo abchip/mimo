@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.common.method.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.method.CustomMethodType;
 import org.abchip.mimo.biz.common.method.MethodPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -137,6 +139,22 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MethodPackage.CUSTOM_METHOD_TYPE___CHILD_CUSTOM_METHOD_TYPES:
+				return childCustomMethodTypes();
+			case MethodPackage.CUSTOM_METHOD_TYPE___CUSTOM_METHODS:
+				return customMethods();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

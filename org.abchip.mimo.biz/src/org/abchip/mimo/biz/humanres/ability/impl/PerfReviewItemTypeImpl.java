@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.humanres.ability.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItem;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItemType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -126,6 +128,20 @@ public class PerfReviewItemTypeImpl extends BizEntityTypeImpl<PerfReviewItem> im
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case AbilityPackage.PERF_REVIEW_ITEM_TYPE___CHILD_PERF_REVIEW_ITEM_TYPES:
+				return childPerfReviewItemTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

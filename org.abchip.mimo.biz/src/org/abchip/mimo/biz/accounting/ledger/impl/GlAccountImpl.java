@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
@@ -16,6 +17,7 @@ import org.abchip.mimo.biz.accounting.ledger.GlResourceType;
 import org.abchip.mimo.biz.accounting.ledger.GlXbrlClass;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -415,6 +417,56 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case LedgerPackage.GL_ACCOUNT___ACCTG_TRANS_ENTRIES:
+				return acctgTransEntries();
+			case LedgerPackage.GL_ACCOUNT___CHILD_GL_ACCOUNTS:
+				return childGlAccounts();
+			case LedgerPackage.GL_ACCOUNT___DEFAULT_INVOICE_ITEM_TYPES:
+				return defaultInvoiceItemTypes();
+			case LedgerPackage.GL_ACCOUNT___DEFAULT_PAYMENT_METHOD_TYPES:
+				return defaultPaymentMethodTypes();
+			case LedgerPackage.GL_ACCOUNT___FIN_ACCOUNT_TYPE_GL_ACCOUNTS:
+				return finAccountTypeGlAccounts();
+			case LedgerPackage.GL_ACCOUNT___GL_ACCOUNT_TYPE_DEFAULTS:
+				return glAccountTypeDefaults();
+			case LedgerPackage.GL_ACCOUNT___GL_RECONCILIATIONS:
+				return glReconciliations();
+			case LedgerPackage.GL_ACCOUNT___INVOICE_ITEM_TYPE_GL_ACCOUNTS:
+				return invoiceItemTypeGlAccounts();
+			case LedgerPackage.GL_ACCOUNT___OVERRIDE_INVOICE_ITEMS:
+				return overrideInvoiceItems();
+			case LedgerPackage.GL_ACCOUNT___OVERRIDE_ORDER_ADJUSTMENTS:
+				return overrideOrderAdjustments();
+			case LedgerPackage.GL_ACCOUNT___OVERRIDE_ORDER_ITEMS:
+				return overrideOrderItems();
+			case LedgerPackage.GL_ACCOUNT___OVERRIDE_QUOTE_ADJUSTMENTS:
+				return overrideQuoteAdjustments();
+			case LedgerPackage.GL_ACCOUNT___OVERRIDE_RETURN_ADJUSTMENTS:
+				return overrideReturnAdjustments();
+			case LedgerPackage.GL_ACCOUNT___PAYMENT_APPLICATIONS:
+				return paymentApplications();
+			case LedgerPackage.GL_ACCOUNT___PAYMENT_METHOD_TYPE_GL_ACCOUNTS:
+				return paymentMethodTypeGlAccounts();
+			case LedgerPackage.GL_ACCOUNT___PAYMENT_METHODS:
+				return paymentMethods();
+			case LedgerPackage.GL_ACCOUNT___PAYMENTS:
+				return payments();
+			case LedgerPackage.GL_ACCOUNT___POST_TO_FIN_ACCOUNTS:
+				return postToFinAccounts();
+			case LedgerPackage.GL_ACCOUNT___VARIANCE_REASON_GL_ACCOUNTS:
+				return varianceReasonGlAccounts();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

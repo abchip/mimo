@@ -199,6 +199,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -782,6 +783,16 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getPicklist__PicklistBins() {
+		return picklistEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPicklistBin() {
 		return picklistBinEClass;
 	}
@@ -824,6 +835,16 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 	@Override
 	public EReference getPicklistBin_PrimaryOrderId() {
 		return (EReference)picklistBinEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getPicklistBin__Shipments() {
+		return picklistBinEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1095,6 +1116,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 		createEReference(picklistEClass, PICKLIST__SHIPMENT_METHOD_TYPE_ID);
 		createEReference(picklistEClass, PICKLIST__STATUS_ID);
 		createEAttribute(picklistEClass, PICKLIST__PICKLIST_STATUS_HISTORIES);
+		createEOperation(picklistEClass, PICKLIST___PICKLIST_BINS);
 
 		picklistBinEClass = createEClass(PICKLIST_BIN);
 		createEAttribute(picklistBinEClass, PICKLIST_BIN__PICKLIST_BIN_ID);
@@ -1102,6 +1124,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 		createEAttribute(picklistBinEClass, PICKLIST_BIN__PRIMARY_SHIP_GROUP_SEQ_ID);
 		createEReference(picklistBinEClass, PICKLIST_BIN__PICKLIST_ID);
 		createEReference(picklistBinEClass, PICKLIST_BIN__PRIMARY_ORDER_ID);
+		createEOperation(picklistBinEClass, PICKLIST_BIN___SHIPMENTS);
 
 		picklistItemEClass = createEClass(PICKLIST_ITEM);
 		createEAttribute(picklistItemEClass, PICKLIST_ITEM__ORDER_ITEM_SEQ_ID);
@@ -1173,7 +1196,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 		picklistRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		picklistStatusHistoryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(picklistEClass, Picklist.class, "Picklist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPicklist_PicklistId(), ecorePackage.getEString(), "picklistId", null, 1, 1, Picklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPicklist_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, Picklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1188,7 +1211,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 		getPicklist_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getPicklist_PicklistStatusHistories(), ecorePackage.getEString(), "picklistStatusHistories", null, 0, -1, Picklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(picklistEClass, ecorePackage.getEString(), "picklistBins", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPicklist__PicklistBins(), ecorePackage.getEString(), "picklistBins", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(picklistBinEClass, PicklistBin.class, "PicklistBin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPicklistBin_PicklistBinId(), ecorePackage.getEString(), "picklistBinId", null, 1, 1, PicklistBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1199,7 +1222,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 		initEReference(getPicklistBin_PrimaryOrderId(), theOrderPackage.getOrderHeader(), null, "primaryOrderId", null, 0, 1, PicklistBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPicklistBin_PrimaryOrderId().getEKeys().add(theOrderPackage.getOrderHeader_OrderId());
 
-		addEOperation(picklistBinEClass, ecorePackage.getEString(), "shipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPicklistBin__Shipments(), ecorePackage.getEString(), "shipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(picklistItemEClass, PicklistItem.class, "PicklistItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPicklistItem_OrderItemSeqId(), ecorePackage.getEString(), "orderItemSeqId", null, 1, 1, PicklistItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1272,7 +1295,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (picklistEClass.getEOperations().get(0),
+		  (getPicklist__PicklistBins(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1290,7 +1313,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (picklistBinEClass.getEOperations().get(0),
+		  (getPicklistBin__Shipments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1342,7 +1365,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (picklistEClass.getEOperations().get(0),
+		  (getPicklist__PicklistBins(),
 		   source,
 		   new String[] {
 			   "frame", "PicklistBin",
@@ -1361,7 +1384,7 @@ public class PicklistPackageImpl extends EPackageImpl implements PicklistPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (picklistBinEClass.getEOperations().get(0),
+		  (getPicklistBin__Shipments(),
 		   source,
 		   new String[] {
 			   "frame", "Shipment",

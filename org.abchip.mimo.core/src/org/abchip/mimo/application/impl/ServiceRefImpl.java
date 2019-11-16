@@ -8,11 +8,13 @@
  */
 package org.abchip.mimo.application.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -192,6 +194,20 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ApplicationPackage.SERVICE_REF___GET_INTERFACE_NAME:
+				return getInterfaceName();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

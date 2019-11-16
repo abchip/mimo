@@ -758,7 +758,7 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 		// Add supertypes to classes
 		systemPropertyEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(systemPropertyEClass, SystemProperty.class, "SystemProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSystemProperty_SystemResourceId(), ecorePackage.getEString(), "systemResourceId", null, 1, 1, SystemProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystemProperty_SystemPropertyId(), ecorePackage.getEString(), "systemPropertyId", null, 1, 1, SystemProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

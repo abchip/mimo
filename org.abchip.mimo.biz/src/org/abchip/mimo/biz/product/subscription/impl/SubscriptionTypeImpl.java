@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.subscription.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -170,6 +172,22 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SubscriptionPackage.SUBSCRIPTION_TYPE___CHILD_SUBSCRIPTION_TYPES:
+				return childSubscriptionTypes();
+			case SubscriptionPackage.SUBSCRIPTION_TYPE___SUBSCRIPTIONS:
+				return subscriptions();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //SubscriptionTypeImpl

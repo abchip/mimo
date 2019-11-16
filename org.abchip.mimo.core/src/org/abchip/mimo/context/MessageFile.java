@@ -103,13 +103,6 @@ public interface MessageFile extends EntityNameable, Textable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" nameType="org.abchip.mimo.util.JavaEnum" nameRequired="true" EBounds="org.abchip.mimo.util.JavaEnum"
-	 * @generated
-	 */
-	<E extends Enum<E>> MessageDescription lookup(Enum<E> name);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true" nameRequired="true" EBounds="org.abchip.mimo.util.JavaEnum"
 	 * @generated
 	 */

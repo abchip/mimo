@@ -195,6 +195,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -700,6 +701,16 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 * @generated
 	 */
 	@Override
+	public EOperation getAccommodationSpot__WorkEfforts() {
+		return accommodationSpotEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getAccommodationSpot_NumberOfSpaces() {
 		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(2);
 	}
@@ -739,6 +750,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__NUMBER_OF_SPACES);
 		createEReference(accommodationSpotEClass, ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID);
 		createEReference(accommodationSpotEClass, ACCOMMODATION_SPOT__FIXED_ASSET_ID);
+		createEOperation(accommodationSpotEClass, ACCOMMODATION_SPOT___WORK_EFFORTS);
 	}
 
 	/**
@@ -775,7 +787,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		// Add supertypes to classes
 		accommodationSpotEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(accommodationSpotEClass, AccommodationSpot.class, "AccommodationSpot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAccommodationSpot_AccommodationSpotId(), ecorePackage.getEString(), "accommodationSpotId", null, 1, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAccommodationSpot_Description(), ecorePackage.getEString(), "description", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -785,7 +797,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		initEReference(getAccommodationSpot_FixedAssetId(), theFixedassetPackage.getFixedAsset(), null, "fixedAssetId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAccommodationSpot_FixedAssetId().getEKeys().add(theFixedassetPackage.getFixedAsset_FixedAssetId());
 
-		addEOperation(accommodationSpotEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getAccommodationSpot__WorkEfforts(), ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -821,7 +833,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (accommodationSpotEClass.getEOperations().get(0),
+		  (getAccommodationSpot__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -843,7 +855,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (accommodationSpotEClass.getEOperations().get(0),
+		  (getAccommodationSpot__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",

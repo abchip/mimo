@@ -204,6 +204,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -785,6 +786,16 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getEmplPosition__EmploymentApps() {
+		return emplPositionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getEmplPosition_EstimatedFromDate() {
 		return (EAttribute)emplPositionEClass.getEStructuralFeatures().get(5);
 	}
@@ -907,6 +918,16 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 	@Override
 	public EReference getEmplPositionClassType_ParentTypeId() {
 		return (EReference)emplPositionClassTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEmplPositionClassType__ChildEmplPositionClassTypes() {
+		return emplPositionClassTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1155,6 +1176,26 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getEmplPositionType__ChildEmplPositionTypes() {
+		return emplPositionTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEmplPositionType__EmplPositions() {
+		return emplPositionTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEmplPositionTypeClass() {
 		return emplPositionTypeClassEClass;
 	}
@@ -1383,12 +1424,14 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		createEReference(emplPositionEClass, EMPL_POSITION__STATUS_ID);
 		createEReference(emplPositionEClass, EMPL_POSITION__PARTY_ID);
 		createEReference(emplPositionEClass, EMPL_POSITION__EMPL_POSITION_TYPE_ID);
+		createEOperation(emplPositionEClass, EMPL_POSITION___EMPLOYMENT_APPS);
 
 		emplPositionClassTypeEClass = createEClass(EMPL_POSITION_CLASS_TYPE);
 		createEAttribute(emplPositionClassTypeEClass, EMPL_POSITION_CLASS_TYPE__EMPL_POSITION_CLASS_TYPE_ID);
 		createEAttribute(emplPositionClassTypeEClass, EMPL_POSITION_CLASS_TYPE__DESCRIPTION);
 		createEAttribute(emplPositionClassTypeEClass, EMPL_POSITION_CLASS_TYPE__HAS_TABLE);
 		createEReference(emplPositionClassTypeEClass, EMPL_POSITION_CLASS_TYPE__PARENT_TYPE_ID);
+		createEOperation(emplPositionClassTypeEClass, EMPL_POSITION_CLASS_TYPE___CHILD_EMPL_POSITION_CLASS_TYPES);
 
 		emplPositionFulfillmentEClass = createEClass(EMPL_POSITION_FULFILLMENT);
 		createEAttribute(emplPositionFulfillmentEClass, EMPL_POSITION_FULFILLMENT__FROM_DATE);
@@ -1417,6 +1460,8 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		createEAttribute(emplPositionTypeEClass, EMPL_POSITION_TYPE__DESCRIPTION);
 		createEAttribute(emplPositionTypeEClass, EMPL_POSITION_TYPE__HAS_TABLE);
 		createEReference(emplPositionTypeEClass, EMPL_POSITION_TYPE__PARENT_TYPE_ID);
+		createEOperation(emplPositionTypeEClass, EMPL_POSITION_TYPE___CHILD_EMPL_POSITION_TYPES);
+		createEOperation(emplPositionTypeEClass, EMPL_POSITION_TYPE___EMPL_POSITIONS);
 
 		emplPositionTypeClassEClass = createEClass(EMPL_POSITION_TYPE_CLASS);
 		createEAttribute(emplPositionTypeClassEClass, EMPL_POSITION_TYPE_CLASS__FROM_DATE);
@@ -1492,7 +1537,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		emplPositionTypeRateEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		validResponsibilityEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(emplPositionEClass, EmplPosition.class, "EmplPosition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplPosition_EmplPositionId(), ecorePackage.getEString(), "emplPositionId", null, 1, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplPosition_ActualFromDate(), ecorePackage.getEDate(), "actualFromDate", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1512,7 +1557,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEReference(getEmplPosition_EmplPositionTypeId(), this.getEmplPositionType(), null, "emplPositionTypeId", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPosition_EmplPositionTypeId().getEKeys().add(this.getEmplPositionType_EmplPositionTypeId());
 
-		addEOperation(emplPositionEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEmplPosition__EmploymentApps(), ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplPositionClassTypeEClass, EmplPositionClassType.class, "EmplPositionClassType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplPositionClassType_EmplPositionClassTypeId(), ecorePackage.getEString(), "emplPositionClassTypeId", null, 1, 1, EmplPositionClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1521,7 +1566,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEReference(getEmplPositionClassType_ParentTypeId(), this.getEmplPositionClassType(), null, "parentTypeId", null, 0, 1, EmplPositionClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPositionClassType_ParentTypeId().getEKeys().add(this.getEmplPositionClassType_EmplPositionClassTypeId());
 
-		addEOperation(emplPositionClassTypeEClass, ecorePackage.getEString(), "childEmplPositionClassTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEmplPositionClassType__ChildEmplPositionClassTypes(), ecorePackage.getEString(), "childEmplPositionClassTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplPositionFulfillmentEClass, EmplPositionFulfillment.class, "EmplPositionFulfillment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplPositionFulfillment_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1558,9 +1603,9 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEReference(getEmplPositionType_ParentTypeId(), this.getEmplPositionType(), null, "parentTypeId", null, 0, 1, EmplPositionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPositionType_ParentTypeId().getEKeys().add(this.getEmplPositionType_EmplPositionTypeId());
 
-		addEOperation(emplPositionTypeEClass, ecorePackage.getEString(), "childEmplPositionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEmplPositionType__ChildEmplPositionTypes(), ecorePackage.getEString(), "childEmplPositionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(emplPositionTypeEClass, ecorePackage.getEString(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEmplPositionType__EmplPositions(), ecorePackage.getEString(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplPositionTypeClassEClass, EmplPositionTypeClass.class, "EmplPositionTypeClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplPositionTypeClass_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplPositionTypeClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1608,7 +1653,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (emplPositionEClass.getEOperations().get(0),
+		  (getEmplPosition__EmploymentApps(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1620,7 +1665,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (emplPositionClassTypeEClass.getEOperations().get(0),
+		  (getEmplPositionClassType__ChildEmplPositionClassTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1650,13 +1695,13 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(0),
+		  (getEmplPositionType__ChildEmplPositionTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(1),
+		  (getEmplPositionType__EmplPositions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1696,7 +1741,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (emplPositionEClass.getEOperations().get(0),
+		  (getEmplPosition__EmploymentApps(),
 		   source,
 		   new String[] {
 			   "frame", "EmploymentApp",
@@ -1706,7 +1751,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (emplPositionClassTypeEClass.getEOperations().get(0),
+		  (getEmplPositionClassType__ChildEmplPositionClassTypes(),
 		   source,
 		   new String[] {
 			   "frame", "EmplPositionClassType",
@@ -1716,7 +1761,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(0),
+		  (getEmplPositionType__ChildEmplPositionTypes(),
 		   source,
 		   new String[] {
 			   "frame", "EmplPositionType",
@@ -1726,7 +1771,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(1),
+		  (getEmplPositionType__EmplPositions(),
 		   source,
 		   new String[] {
 			   "frame", "EmplPosition",

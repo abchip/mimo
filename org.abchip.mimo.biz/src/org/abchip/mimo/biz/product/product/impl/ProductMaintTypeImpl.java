@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -129,6 +131,24 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ProductPackage.PRODUCT_MAINT_TYPE___CHILD_PRODUCT_MAINT_TYPES:
+				return childProductMaintTypes();
+			case ProductPackage.PRODUCT_MAINT_TYPE___FIXED_ASSET_MAINTS:
+				return fixedAssetMaints();
+			case ProductPackage.PRODUCT_MAINT_TYPE___PRODUCT_MAINTS:
+				return productMaints();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

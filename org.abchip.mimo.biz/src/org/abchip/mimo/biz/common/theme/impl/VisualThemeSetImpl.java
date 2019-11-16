@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.common.theme.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.theme.ThemePackage;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -94,6 +96,22 @@ public class VisualThemeSetImpl extends BizEntityImpl implements VisualThemeSet 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ThemePackage.VISUAL_THEME_SET___VISUAL_THEMES:
+				return visualThemes();
+			case ThemePackage.VISUAL_THEME_SET___WEB_SITES:
+				return webSites();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.common.method.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.method.CustomMethodType;
 import org.abchip.mimo.biz.common.method.MethodPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -221,6 +223,34 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MethodPackage.CUSTOM_METHOD___CONTENTS:
+				return contents();
+			case MethodPackage.CUSTOM_METHOD___COST_COMPONENT_CALCS:
+				return costComponentCalcs();
+			case MethodPackage.CUSTOM_METHOD___INVOICE_PARTY_ACCTG_PREFERENCES:
+				return invoicePartyAcctgPreferences();
+			case MethodPackage.CUSTOM_METHOD___ORDER_PARTY_ACCTG_PREFERENCES:
+				return orderPartyAcctgPreferences();
+			case MethodPackage.CUSTOM_METHOD___PRODUCT_STORE_SHIPMENT_METHS:
+				return productStoreShipmentMeths();
+			case MethodPackage.CUSTOM_METHOD___QUOTE_PARTY_ACCTG_PREFERENCES:
+				return quotePartyAcctgPreferences();
+			case MethodPackage.CUSTOM_METHOD___UOM_CUSTOM_METHOD_UOM_CONVERSIONS:
+				return uomCustomMethodUomConversions();
+			case MethodPackage.CUSTOM_METHOD___WORK_EFFORTS:
+				return workEfforts();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

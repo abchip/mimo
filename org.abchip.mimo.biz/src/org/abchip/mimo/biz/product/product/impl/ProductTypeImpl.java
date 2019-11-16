@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -212,6 +214,22 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ProductPackage.PRODUCT_TYPE___CHILD_PRODUCT_TYPES:
+				return childProductTypes();
+			case ProductPackage.PRODUCT_TYPE___PRODUCTS:
+				return products();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ProductTypeImpl

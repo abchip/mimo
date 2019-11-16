@@ -849,7 +849,7 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		// Add supertypes to classes
 		productManufacturingRuleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(productManufacturingRuleEClass, ProductManufacturingRule.class, "ProductManufacturingRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductManufacturingRule_RuleId(), ecorePackage.getEString(), "ruleId", null, 1, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductManufacturingRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

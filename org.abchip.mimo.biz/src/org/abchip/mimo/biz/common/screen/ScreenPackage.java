@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.common.screen;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -162,6 +163,60 @@ public interface ScreenPackage extends EPackage {
 	int CUSTOM_SCREEN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Custom Screen</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenTypeImpl <em>Custom Screen Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,6 +315,106 @@ public interface ScreenPackage extends EPackage {
 	 * @ordered
 	 */
 	int CUSTOM_SCREEN_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Custom Screen Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___CHILD_CUSTOM_SCREEN_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Custom Screens</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE___CUSTOM_SCREENS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Custom Screen Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_SCREEN_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 
 	/**
@@ -382,6 +537,26 @@ public interface ScreenPackage extends EPackage {
 	EAttribute getCustomScreenType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.screen.CustomScreenType#childCustomScreenTypes() <em>Child Custom Screen Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Custom Screen Types</em>' operation.
+	 * @see org.abchip.mimo.biz.common.screen.CustomScreenType#childCustomScreenTypes()
+	 * @generated
+	 */
+	EOperation getCustomScreenType__ChildCustomScreenTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.screen.CustomScreenType#customScreens() <em>Custom Screens</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Custom Screens</em>' operation.
+	 * @see org.abchip.mimo.biz.common.screen.CustomScreenType#customScreens()
+	 * @generated
+	 */
+	EOperation getCustomScreenType__CustomScreens();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -494,6 +669,22 @@ public interface ScreenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CUSTOM_SCREEN_TYPE__PARENT_TYPE_ID = eINSTANCE.getCustomScreenType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Custom Screen Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_SCREEN_TYPE___CHILD_CUSTOM_SCREEN_TYPES = eINSTANCE.getCustomScreenType__ChildCustomScreenTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Screens</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_SCREEN_TYPE___CUSTOM_SCREENS = eINSTANCE.getCustomScreenType__CustomScreens();
 
 	}
 

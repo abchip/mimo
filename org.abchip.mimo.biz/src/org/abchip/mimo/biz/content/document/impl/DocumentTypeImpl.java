@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.content.document.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -170,6 +172,22 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DocumentPackage.DOCUMENT_TYPE___CHILD_DOCUMENT_TYPES:
+				return childDocumentTypes();
+			case DocumentPackage.DOCUMENT_TYPE___DOCUMENTS:
+				return documents();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DocumentTypeImpl

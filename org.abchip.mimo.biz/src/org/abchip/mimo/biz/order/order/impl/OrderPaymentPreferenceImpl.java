@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 import java.util.Date;
@@ -23,6 +24,7 @@ import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -612,6 +614,26 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE___ORDER_STATUSS:
+				return orderStatuss();
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE___PAYMENT_GATEWAY_RESPONSES:
+				return paymentGatewayResponses();
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE___PAYMENTS:
+				return payments();
+			case OrderPackage.ORDER_PAYMENT_PREFERENCE___RETURN_ITEM_RESPONSES:
+				return returnItemResponses();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //OrderPaymentPreferenceImpl

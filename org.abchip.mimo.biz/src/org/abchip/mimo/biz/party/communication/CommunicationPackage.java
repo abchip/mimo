@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.communication;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -135,6 +136,51 @@ public interface CommunicationPackage extends EPackage {
 	int COMM_CONTENT_ASSOC_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_CONTENT_ASSOC_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_CONTENT_ASSOC_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_CONTENT_ASSOC_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_CONTENT_ASSOC_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Comm Content Assoc Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_CONTENT_ASSOC_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl <em>Comm Event Content Assoc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,6 +288,51 @@ public interface CommunicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMM_EVENT_CONTENT_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_EVENT_CONTENT_ASSOC___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_EVENT_CONTENT_ASSOC___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_EVENT_CONTENT_ASSOC___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_EVENT_CONTENT_ASSOC___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Comm Event Content Assoc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_EVENT_CONTENT_ASSOC_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl <em>Event</em>}' class.
@@ -542,6 +633,123 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 27;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Communication Event Orders</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___COMMUNICATION_EVENT_ORDERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Communication Event Products</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___COMMUNICATION_EVENT_PRODUCTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Communication Event Purposes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___COMMUNICATION_EVENT_PURPOSES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Communication Event Returns</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___COMMUNICATION_EVENT_RETURNS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Communication Event Work Effs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___COMMUNICATION_EVENT_WORK_EFFS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Cust Request Comm Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___CUST_REQUEST_COMM_EVENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Subscription Comm Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT___SUBSCRIPTION_COMM_EVENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventProductImpl <em>Event Product</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,6 +821,51 @@ public interface CommunicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_EVENT_PRODUCT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRODUCT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRODUCT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRODUCT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRODUCT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Event Product</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRODUCT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPrpTypImpl <em>Event Prp Typ</em>}' class.
@@ -715,6 +968,60 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_PRP_TYP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRP_TYP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRP_TYP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRP_TYP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRP_TYP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Communication Event Prp Typs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRP_TYP___CHILD_COMMUNICATION_EVENT_PRP_TYPS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Event Prp Typ</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PRP_TYP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl <em>Event Purpose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -795,6 +1102,51 @@ public interface CommunicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_EVENT_PURPOSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PURPOSE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PURPOSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PURPOSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PURPOSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Event Purpose</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PURPOSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventRoleImpl <em>Event Role</em>}' class.
@@ -895,6 +1247,51 @@ public interface CommunicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_EVENT_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Event Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl <em>Event Type</em>}' class.
@@ -1004,6 +1401,106 @@ public interface CommunicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_EVENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Communication Event Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___CHILD_COMMUNICATION_EVENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Communication Events</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE___COMMUNICATION_EVENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Event Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 
 	/**
@@ -1367,6 +1864,76 @@ public interface CommunicationPackage extends EPackage {
 	EReference getCommunicationEvent_ReasonEnumId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventOrders() <em>Communication Event Orders</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Communication Event Orders</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventOrders()
+	 * @generated
+	 */
+	EOperation getCommunicationEvent__CommunicationEventOrders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventProducts() <em>Communication Event Products</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Communication Event Products</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventProducts()
+	 * @generated
+	 */
+	EOperation getCommunicationEvent__CommunicationEventProducts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventPurposes() <em>Communication Event Purposes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Communication Event Purposes</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventPurposes()
+	 * @generated
+	 */
+	EOperation getCommunicationEvent__CommunicationEventPurposes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventReturns() <em>Communication Event Returns</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Communication Event Returns</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventReturns()
+	 * @generated
+	 */
+	EOperation getCommunicationEvent__CommunicationEventReturns();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventWorkEffs() <em>Communication Event Work Effs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Communication Event Work Effs</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#communicationEventWorkEffs()
+	 * @generated
+	 */
+	EOperation getCommunicationEvent__CommunicationEventWorkEffs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#custRequestCommEvents() <em>Cust Request Comm Events</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cust Request Comm Events</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#custRequestCommEvents()
+	 * @generated
+	 */
+	EOperation getCommunicationEvent__CustRequestCommEvents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#subscriptionCommEvents() <em>Subscription Comm Events</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Subscription Comm Events</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#subscriptionCommEvents()
+	 * @generated
+	 */
+	EOperation getCommunicationEvent__SubscriptionCommEvents();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdFrom <em>Role Type Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1519,6 +2086,16 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEventPrpTyp_CommunicationEventPurposes();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#childCommunicationEventPrpTyps() <em>Child Communication Event Prp Typs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Communication Event Prp Typs</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#childCommunicationEventPrpTyps()
+	 * @generated
+	 */
+	EOperation getCommunicationEventPrpTyp__ChildCommunicationEventPrpTyps();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose <em>Event Purpose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1657,6 +2234,26 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCommunicationEventType_ContactMechTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#childCommunicationEventTypes() <em>Child Communication Event Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Communication Event Types</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventType#childCommunicationEventTypes()
+	 * @generated
+	 */
+	EOperation getCommunicationEventType__ChildCommunicationEventTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#communicationEvents() <em>Communication Events</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Communication Events</em>' operation.
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventType#communicationEvents()
+	 * @generated
+	 */
+	EOperation getCommunicationEventType__CommunicationEvents();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getDescription <em>Description</em>}'.
@@ -1984,6 +2581,62 @@ public interface CommunicationPackage extends EPackage {
 		EReference COMMUNICATION_EVENT__REASON_ENUM_ID = eINSTANCE.getCommunicationEvent_ReasonEnumId();
 
 		/**
+		 * The meta object literal for the '<em><b>Communication Event Orders</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT___COMMUNICATION_EVENT_ORDERS = eINSTANCE.getCommunicationEvent__CommunicationEventOrders();
+
+		/**
+		 * The meta object literal for the '<em><b>Communication Event Products</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT___COMMUNICATION_EVENT_PRODUCTS = eINSTANCE.getCommunicationEvent__CommunicationEventProducts();
+
+		/**
+		 * The meta object literal for the '<em><b>Communication Event Purposes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT___COMMUNICATION_EVENT_PURPOSES = eINSTANCE.getCommunicationEvent__CommunicationEventPurposes();
+
+		/**
+		 * The meta object literal for the '<em><b>Communication Event Returns</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT___COMMUNICATION_EVENT_RETURNS = eINSTANCE.getCommunicationEvent__CommunicationEventReturns();
+
+		/**
+		 * The meta object literal for the '<em><b>Communication Event Work Effs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT___COMMUNICATION_EVENT_WORK_EFFS = eINSTANCE.getCommunicationEvent__CommunicationEventWorkEffs();
+
+		/**
+		 * The meta object literal for the '<em><b>Cust Request Comm Events</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT___CUST_REQUEST_COMM_EVENTS = eINSTANCE.getCommunicationEvent__CustRequestCommEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Subscription Comm Events</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT___SUBSCRIPTION_COMM_EVENTS = eINSTANCE.getCommunicationEvent__SubscriptionCommEvents();
+
+		/**
 		 * The meta object literal for the '<em><b>Role Type Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2100,6 +2753,14 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES = eINSTANCE.getCommunicationEventPrpTyp_CommunicationEventPurposes();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Communication Event Prp Typs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT_PRP_TYP___CHILD_COMMUNICATION_EVENT_PRP_TYPS = eINSTANCE.getCommunicationEventPrpTyp__ChildCommunicationEventPrpTyps();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl <em>Event Purpose</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2208,6 +2869,22 @@ public interface CommunicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID = eINSTANCE.getCommunicationEventType_ContactMechTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Communication Event Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT_TYPE___CHILD_COMMUNICATION_EVENT_TYPES = eINSTANCE.getCommunicationEventType__ChildCommunicationEventTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Communication Events</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMMUNICATION_EVENT_TYPE___COMMUNICATION_EVENTS = eINSTANCE.getCommunicationEventType__CommunicationEvents();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

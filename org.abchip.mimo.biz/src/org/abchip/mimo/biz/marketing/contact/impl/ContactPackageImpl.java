@@ -201,6 +201,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -821,6 +822,16 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getContactList__CommunicationEvents() {
+		return contactListEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getContactList_SingleUse() {
 		return (EAttribute)contactListEClass.getEStructuralFeatures().get(6);
 	}
@@ -1131,6 +1142,16 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getContactListType__ContactLists() {
+		return contactListTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWebSiteContactList() {
 		return webSiteContactListEClass;
 	}
@@ -1222,6 +1243,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		createEReference(contactListEClass, CONTACT_LIST__CREATED_BY_USER_LOGIN);
 		createEReference(contactListEClass, CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN);
 		createEReference(contactListEClass, CONTACT_LIST__OWNER_PARTY_ID);
+		createEOperation(contactListEClass, CONTACT_LIST___COMMUNICATION_EVENTS);
 
 		contactListCommStatusEClass = createEClass(CONTACT_LIST_COMM_STATUS);
 		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__MESSAGE_ID);
@@ -1252,6 +1274,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		contactListTypeEClass = createEClass(CONTACT_LIST_TYPE);
 		createEAttribute(contactListTypeEClass, CONTACT_LIST_TYPE__CONTACT_LIST_TYPE_ID);
 		createEAttribute(contactListTypeEClass, CONTACT_LIST_TYPE__DESCRIPTION);
+		createEOperation(contactListTypeEClass, CONTACT_LIST_TYPE___CONTACT_LISTS);
 
 		webSiteContactListEClass = createEClass(WEB_SITE_CONTACT_LIST);
 		createEAttribute(webSiteContactListEClass, WEB_SITE_CONTACT_LIST__FROM_DATE);
@@ -1311,7 +1334,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		contactListTypeEClass.getEGenericSuperTypes().add(g1);
 		webSiteContactListEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(contactListEClass, ContactList.class, "ContactList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContactList_ContactListId(), ecorePackage.getEString(), "contactListId", null, 1, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1337,7 +1360,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		initEReference(getContactList_OwnerPartyId(), thePartyPackage.getParty(), null, "ownerPartyId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getContactList_OwnerPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
-		addEOperation(contactListEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContactList__CommunicationEvents(), ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contactListCommStatusEClass, ContactListCommStatus.class, "ContactListCommStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContactListCommStatus_MessageId(), ecorePackage.getEString(), "messageId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1379,7 +1402,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		initEAttribute(getContactListType_ContactListTypeId(), ecorePackage.getEString(), "contactListTypeId", null, 1, 1, ContactListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactListType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContactListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(contactListTypeEClass, ecorePackage.getEString(), "contactLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getContactListType__ContactLists(), ecorePackage.getEString(), "contactLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSiteContactListEClass, WebSiteContactList.class, "WebSiteContactList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebSiteContactList_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1429,7 +1452,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (contactListEClass.getEOperations().get(0),
+		  (getContactList__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1471,7 +1494,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (contactListTypeEClass.getEOperations().get(0),
+		  (getContactListType__ContactLists(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1499,7 +1522,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (contactListEClass.getEOperations().get(0),
+		  (getContactList__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEvent",
@@ -1509,7 +1532,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (contactListTypeEClass.getEOperations().get(0),
+		  (getContactListType__ContactLists(),
 		   source,
 		   new String[] {
 			   "frame", "ContactList",

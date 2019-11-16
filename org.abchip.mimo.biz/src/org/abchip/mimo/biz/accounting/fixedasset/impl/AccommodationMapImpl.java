@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
@@ -15,6 +16,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -108,6 +110,20 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case FixedassetPackage.ACCOMMODATION_MAP___WORK_EFFORTS:
+				return workEfforts();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -204,6 +204,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -912,6 +913,16 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getProdConfItemContentType__ChildProdConfItemContentTypes() {
+		return prodConfItemContentTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProductConfig() {
 		return productConfigEClass;
 	}
@@ -1456,6 +1467,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEAttribute(prodConfItemContentTypeEClass, PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(prodConfItemContentTypeEClass, PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE);
 		createEReference(prodConfItemContentTypeEClass, PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEOperation(prodConfItemContentTypeEClass, PROD_CONF_ITEM_CONTENT_TYPE___CHILD_PROD_CONF_ITEM_CONTENT_TYPES);
 
 		productConfigEClass = createEClass(PRODUCT_CONFIG);
 		createEAttribute(productConfigEClass, PRODUCT_CONFIG__SEQUENCE_NUM);
@@ -1565,7 +1577,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		productConfigProductEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		productConfigStatsEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(configOptionProductOptionEClass, ConfigOptionProductOption.class, "ConfigOptionProductOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfigOptionProductOption_ConfigId(), ecorePackage.getEString(), "configId", null, 1, 1, ConfigOptionProductOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfigOptionProductOption_ConfigItemId(), ecorePackage.getEString(), "configItemId", null, 1, 1, ConfigOptionProductOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1592,7 +1604,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEReference(getProdConfItemContentType_ParentTypeId(), this.getProdConfItemContentType(), null, "parentTypeId", null, 0, 1, ProdConfItemContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProdConfItemContentType_ParentTypeId().getEKeys().add(this.getProdConfItemContentType_ConfItemContentTypeId());
 
-		addEOperation(prodConfItemContentTypeEClass, ecorePackage.getEString(), "childProdConfItemContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProdConfItemContentType__ChildProdConfItemContentTypes(), ecorePackage.getEString(), "childProdConfItemContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productConfigEClass, ProductConfig.class, "ProductConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductConfig_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 1, 1, ProductConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1766,7 +1778,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (prodConfItemContentTypeEClass.getEOperations().get(0),
+		  (getProdConfItemContentType__ChildProdConfItemContentTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1866,7 +1878,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (prodConfItemContentTypeEClass.getEOperations().get(0),
+		  (getProdConfItemContentType__ChildProdConfItemContentTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProdConfItemContentType",

@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -116,6 +118,22 @@ public class DeliverableTypeImpl extends BizEntityTypeImpl<Deliverable> implemen
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case WorkeffortPackage.DELIVERABLE_TYPE___DELIVERABLES:
+				return deliverables();
+			case WorkeffortPackage.DELIVERABLE_TYPE___QUOTE_ITEMS:
+				return quoteItems();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DeliverableTypeImpl

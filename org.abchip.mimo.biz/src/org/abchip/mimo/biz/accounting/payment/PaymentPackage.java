@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.payment;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -189,6 +190,105 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Billing Account Terms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___BILLING_ACCOUNT_TERMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Invoices</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___INVOICES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Order Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___ORDER_HEADERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Payment Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___PAYMENT_APPLICATIONS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___RETURN_HEADERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Return Item Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT___RETURN_ITEM_RESPONSES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Billing Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 6;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountRoleImpl <em>Billing Account Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -287,6 +387,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILLING_ACCOUNT_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Billing Account Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl <em>Billing Account Term</em>}' class.
@@ -407,6 +552,51 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT_TERM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Billing Account Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermAttrImpl <em>Billing Account Term Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -487,6 +677,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILLING_ACCOUNT_TERM_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Billing Account Term Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl <em>Check Account</em>}' class.
@@ -625,6 +860,51 @@ public interface PaymentPackage extends EPackage {
 	int CHECK_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Check Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl <em>Method</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -750,6 +1030,123 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_METHOD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Order Payment Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___ORDER_PAYMENT_PREFERENCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___PARTY_ACCTG_PREFERENCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Payment Gateway Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___PAYMENT_GATEWAY_RESPONSES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___PAYMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Replenish Fin Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___REPLENISH_FIN_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___RETURN_HEADERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD___SHOPPING_LISTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Method</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl <em>Credit Card</em>}' class.
@@ -1023,6 +1420,123 @@ public interface PaymentPackage extends EPackage {
 	int CREDIT_CARD_FEATURE_COUNT = PAYMENT_METHOD_FEATURE_COUNT + 16;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___ISA = PAYMENT_METHOD___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___GET_NAME = PAYMENT_METHOD___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___GET_URI = PAYMENT_METHOD___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___IS_PROXY = PAYMENT_METHOD___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___GET_TYPE = PAYMENT_METHOD___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Order Payment Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___ORDER_PAYMENT_PREFERENCES = PAYMENT_METHOD___ORDER_PAYMENT_PREFERENCES;
+
+	/**
+	 * The operation id for the '<em>Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___PARTY_ACCTG_PREFERENCES = PAYMENT_METHOD___PARTY_ACCTG_PREFERENCES;
+
+	/**
+	 * The operation id for the '<em>Payment Gateway Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___PAYMENT_GATEWAY_RESPONSES = PAYMENT_METHOD___PAYMENT_GATEWAY_RESPONSES;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___PAYMENTS = PAYMENT_METHOD___PAYMENTS;
+
+	/**
+	 * The operation id for the '<em>Replenish Fin Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___REPLENISH_FIN_ACCOUNTS = PAYMENT_METHOD___REPLENISH_FIN_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___RETURN_HEADERS = PAYMENT_METHOD___RETURN_HEADERS;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD___SHOPPING_LISTS = PAYMENT_METHOD___SHOPPING_LISTS;
+
+	/**
+	 * The number of operations of the '<em>Credit Card</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_OPERATION_COUNT = PAYMENT_METHOD_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardTypeGlAccountImpl <em>Credit Card Type Gl Account</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1103,6 +1617,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREDIT_CARD_TYPE_GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_TYPE_GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_TYPE_GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_TYPE_GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_TYPE_GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Credit Card Type Gl Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD_TYPE_GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.DeductionImpl <em>Deduction</em>}' class.
@@ -1194,6 +1753,60 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEDUCTION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Deduction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.DeductionTypeImpl <em>Deduction Type</em>}' class.
@@ -1294,6 +1907,105 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEDUCTION_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Deduction Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___CHILD_DEDUCTION_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Deductions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE___DEDUCTIONS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Deduction Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEDUCTION_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl <em>Eft Account</em>}' class.
@@ -1495,6 +2207,123 @@ public interface PaymentPackage extends EPackage {
 	int EFT_ACCOUNT_FEATURE_COUNT = PAYMENT_METHOD_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___ISA = PAYMENT_METHOD___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___GET_NAME = PAYMENT_METHOD___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___GET_URI = PAYMENT_METHOD___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___IS_PROXY = PAYMENT_METHOD___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___GET_TYPE = PAYMENT_METHOD___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Order Payment Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___ORDER_PAYMENT_PREFERENCES = PAYMENT_METHOD___ORDER_PAYMENT_PREFERENCES;
+
+	/**
+	 * The operation id for the '<em>Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___PARTY_ACCTG_PREFERENCES = PAYMENT_METHOD___PARTY_ACCTG_PREFERENCES;
+
+	/**
+	 * The operation id for the '<em>Payment Gateway Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___PAYMENT_GATEWAY_RESPONSES = PAYMENT_METHOD___PAYMENT_GATEWAY_RESPONSES;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___PAYMENTS = PAYMENT_METHOD___PAYMENTS;
+
+	/**
+	 * The operation id for the '<em>Replenish Fin Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___REPLENISH_FIN_ACCOUNTS = PAYMENT_METHOD___REPLENISH_FIN_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___RETURN_HEADERS = PAYMENT_METHOD___RETURN_HEADERS;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT___SHOPPING_LISTS = PAYMENT_METHOD___SHOPPING_LISTS;
+
+	/**
+	 * The number of operations of the '<em>Eft Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT_OPERATION_COUNT = PAYMENT_METHOD_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardImpl <em>Gift Card</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1656,6 +2485,123 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int GIFT_CARD_FEATURE_COUNT = PAYMENT_METHOD_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___ISA = PAYMENT_METHOD___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___GET_NAME = PAYMENT_METHOD___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___GET_URI = PAYMENT_METHOD___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___IS_PROXY = PAYMENT_METHOD___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___GET_TYPE = PAYMENT_METHOD___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Order Payment Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___ORDER_PAYMENT_PREFERENCES = PAYMENT_METHOD___ORDER_PAYMENT_PREFERENCES;
+
+	/**
+	 * The operation id for the '<em>Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___PARTY_ACCTG_PREFERENCES = PAYMENT_METHOD___PARTY_ACCTG_PREFERENCES;
+
+	/**
+	 * The operation id for the '<em>Payment Gateway Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___PAYMENT_GATEWAY_RESPONSES = PAYMENT_METHOD___PAYMENT_GATEWAY_RESPONSES;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___PAYMENTS = PAYMENT_METHOD___PAYMENTS;
+
+	/**
+	 * The operation id for the '<em>Replenish Fin Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___REPLENISH_FIN_ACCOUNTS = PAYMENT_METHOD___REPLENISH_FIN_ACCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Return Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___RETURN_HEADERS = PAYMENT_METHOD___RETURN_HEADERS;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD___SHOPPING_LISTS = PAYMENT_METHOD___SHOPPING_LISTS;
+
+	/**
+	 * The number of operations of the '<em>Gift Card</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_OPERATION_COUNT = PAYMENT_METHOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl <em>Gift Card Fulfillment</em>}' class.
@@ -1839,6 +2785,51 @@ public interface PaymentPackage extends EPackage {
 	int GIFT_CARD_FULFILLMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_FULFILLMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_FULFILLMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_FULFILLMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_FULFILLMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gift Card Fulfillment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_FULFILLMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl <em>Pay Pal Payment Method</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1973,6 +2964,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAY_PAL_PAYMENT_METHOD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_PAL_PAYMENT_METHOD___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_PAL_PAYMENT_METHOD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_PAL_PAYMENT_METHOD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_PAL_PAYMENT_METHOD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Pay Pal Payment Method</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_PAL_PAYMENT_METHOD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentImpl <em>Payment</em>}' class.
@@ -2210,6 +3246,105 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Acctg Transs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Deductions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___DEDUCTIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Payment Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___PAYMENT_APPLICATIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Return Item Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___RETURN_ITEM_RESPONSES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>To Payment Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___TO_PAYMENT_APPLICATIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Payment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentApplicationImpl <em>Application</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2346,6 +3481,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_APPLICATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_APPLICATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_APPLICATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_APPLICATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_APPLICATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Application</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_APPLICATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentAttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2437,6 +3617,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentBudgetAllocationImpl <em>Budget Allocation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2526,6 +3751,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_BUDGET_ALLOCATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_BUDGET_ALLOCATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_BUDGET_ALLOCATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_BUDGET_ALLOCATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_BUDGET_ALLOCATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Budget Allocation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_BUDGET_ALLOCATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentImpl <em>Content</em>}' class.
@@ -2628,6 +3898,60 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentContentTypeImpl <em>Content Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2726,6 +4050,96 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_CONTENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Payment Content Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE___CHILD_PAYMENT_CONTENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Content Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl <em>Gateway Authorize Net</em>}' class.
@@ -2954,6 +4368,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_AUTHORIZE_NET_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_AUTHORIZE_NET___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_AUTHORIZE_NET___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_AUTHORIZE_NET___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_AUTHORIZE_NET___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Authorize Net</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_AUTHORIZE_NET_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl <em>Gateway Clear Commerce</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3108,6 +4567,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_CLEAR_COMMERCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Clear Commerce</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CLEAR_COMMERCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayConfigImpl <em>Gateway Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3188,6 +4692,60 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GATEWAY_CONFIG_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Gateway Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayConfigTypeImpl <em>Gateway Config Type</em>}' class.
@@ -3288,6 +4846,105 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GATEWAY_CONFIG_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Payment Gateway Config Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___CHILD_PAYMENT_GATEWAY_CONFIG_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Payment Gateway Configs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE___PAYMENT_GATEWAY_CONFIGS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Gateway Config Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CONFIG_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl <em>Gateway Cyber Source</em>}' class.
@@ -3507,6 +5164,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_CYBER_SOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CYBER_SOURCE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CYBER_SOURCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CYBER_SOURCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CYBER_SOURCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Cyber Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_CYBER_SOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayEwayImpl <em>Gateway Eway</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3614,6 +5316,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GATEWAY_EWAY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_EWAY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_EWAY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_EWAY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_EWAY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Eway</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_EWAY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayOrbitalImpl <em>Gateway Orbital</em>}' class.
@@ -3806,6 +5553,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_ORBITAL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_ORBITAL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_ORBITAL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_ORBITAL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_ORBITAL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Orbital</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_ORBITAL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayPalImpl <em>Gateway Pay Pal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3994,6 +5786,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GATEWAY_PAY_PAL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAY_PAL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAY_PAL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAY_PAL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAY_PAL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Pay Pal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAY_PAL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl <em>Gateway Payflow Pro</em>}' class.
@@ -4267,6 +6104,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_PAYFLOW_PRO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAYFLOW_PRO___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAYFLOW_PRO___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAYFLOW_PRO___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAYFLOW_PRO___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Payflow Pro</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_PAYFLOW_PRO_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayRespMsgImpl <em>Gateway Resp Msg</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4347,6 +6229,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GATEWAY_RESP_MSG_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESP_MSG___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESP_MSG___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESP_MSG___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESP_MSG___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Resp Msg</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESP_MSG_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl <em>Gateway Response</em>}' class.
@@ -4602,6 +6529,69 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_RESPONSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Payment Gateway Resp Msgs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE___PAYMENT_GATEWAY_RESP_MSGS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE___PAYMENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Gateway Response</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl <em>Gateway Sage Pay</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4783,6 +6773,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_SAGE_PAY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SAGE_PAY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SAGE_PAY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SAGE_PAY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SAGE_PAY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Sage Pay</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SAGE_PAY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySecurePayImpl <em>Gateway Secure Pay</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4890,6 +6925,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GATEWAY_SECURE_PAY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SECURE_PAY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SECURE_PAY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SECURE_PAY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SECURE_PAY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway Secure Pay</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_SECURE_PAY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl <em>Gateway World Pay</em>}' class.
@@ -5046,6 +7126,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_WORLD_PAY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_WORLD_PAY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_WORLD_PAY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_WORLD_PAY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_WORLD_PAY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gateway World Pay</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_WORLD_PAY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGlAccountTypeMapImpl <em>Gl Account Type Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5128,6 +7253,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GL_ACCOUNT_TYPE_MAP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GL_ACCOUNT_TYPE_MAP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GL_ACCOUNT_TYPE_MAP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GL_ACCOUNT_TYPE_MAP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GL_ACCOUNT_TYPE_MAP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Type Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GL_ACCOUNT_TYPE_MAP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupImpl <em>Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5208,6 +7378,60 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl <em>Group Member</em>}' class.
@@ -5310,6 +7534,51 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GROUP_MEMBER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_MEMBER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_MEMBER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_MEMBER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_MEMBER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Group Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_MEMBER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupTypeImpl <em>Group Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5408,6 +7677,105 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Payment Group Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___CHILD_PAYMENT_GROUP_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Payment Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE___PAYMENT_GROUPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Group Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl <em>Method Type</em>}' class.
@@ -5510,6 +7878,123 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_METHOD_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Order Payment Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___ORDER_PAYMENT_PREFERENCES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Payment Gateway Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___PAYMENT_GATEWAY_RESPONSES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Payment Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___PAYMENT_METHODS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE___PAYMENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Method Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeGlAccountImpl <em>Method Type Gl Account</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5590,6 +8075,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_METHOD_TYPE_GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE_GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE_GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE_GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE_GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Method Type Gl Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE_GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeImpl <em>Type</em>}' class.
@@ -5710,6 +8240,105 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Payment Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___CHILD_PAYMENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE___PAYMENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeAttrImpl <em>Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5790,6 +8419,51 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYMENT_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Type Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.payment.impl.ValueLinkKeyImpl <em>Value Link Key</em>}' class.
@@ -5965,6 +8639,52 @@ public interface PaymentPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_LINK_KEY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_LINK_KEY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_LINK_KEY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_LINK_KEY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Value Link Key</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_LINK_KEY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount <em>Billing Account</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5995,6 +8715,66 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBillingAccount_AccountCurrencyUomId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#billingAccountTerms() <em>Billing Account Terms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Billing Account Terms</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#billingAccountTerms()
+	 * @generated
+	 */
+	EOperation getBillingAccount__BillingAccountTerms();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#invoices() <em>Invoices</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Invoices</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#invoices()
+	 * @generated
+	 */
+	EOperation getBillingAccount__Invoices();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#orderHeaders() <em>Order Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#orderHeaders()
+	 * @generated
+	 */
+	EOperation getBillingAccount__OrderHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#paymentApplications() <em>Payment Applications</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Applications</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#paymentApplications()
+	 * @generated
+	 */
+	EOperation getBillingAccount__PaymentApplications();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#returnHeaders() <em>Return Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Return Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#returnHeaders()
+	 * @generated
+	 */
+	EOperation getBillingAccount__ReturnHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#returnItemResponses() <em>Return Item Responses</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Return Item Responses</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#returnItemResponses()
+	 * @generated
+	 */
+	EOperation getBillingAccount__ReturnItemResponses();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountLimit <em>Account Limit</em>}'.
@@ -6704,6 +9484,26 @@ public interface PaymentPackage extends EPackage {
 	EReference getDeductionType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.DeductionType#childDeductionTypes() <em>Child Deduction Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Deduction Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.DeductionType#childDeductionTypes()
+	 * @generated
+	 */
+	EOperation getDeductionType__ChildDeductionTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.DeductionType#deductions() <em>Deductions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Deductions</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.DeductionType#deductions()
+	 * @generated
+	 */
+	EOperation getDeductionType__Deductions();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.EftAccount <em>Eft Account</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7359,6 +10159,56 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPayment_PaymentAttributes();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.Payment#acctgTranss() <em>Acctg Transs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.Payment#acctgTranss()
+	 * @generated
+	 */
+	EOperation getPayment__AcctgTranss();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.Payment#deductions() <em>Deductions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Deductions</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.Payment#deductions()
+	 * @generated
+	 */
+	EOperation getPayment__Deductions();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.Payment#paymentApplications() <em>Payment Applications</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Applications</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.Payment#paymentApplications()
+	 * @generated
+	 */
+	EOperation getPayment__PaymentApplications();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.Payment#returnItemResponses() <em>Return Item Responses</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Return Item Responses</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.Payment#returnItemResponses()
+	 * @generated
+	 */
+	EOperation getPayment__ReturnItemResponses();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.Payment#toPaymentApplications() <em>To Payment Applications</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To Payment Applications</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.Payment#toPaymentApplications()
+	 * @generated
+	 */
+	EOperation getPayment__ToPaymentApplications();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication <em>Application</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7693,6 +10543,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPaymentContentType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentContentType#childPaymentContentTypes() <em>Child Payment Content Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Payment Content Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentContentType#childPaymentContentTypes()
+	 * @generated
+	 */
+	EOperation getPaymentContentType__ChildPaymentContentTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet <em>Gateway Authorize Net</em>}'.
@@ -8140,6 +11000,26 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPaymentGatewayConfigType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType#childPaymentGatewayConfigTypes() <em>Child Payment Gateway Config Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Payment Gateway Config Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType#childPaymentGatewayConfigTypes()
+	 * @generated
+	 */
+	EOperation getPaymentGatewayConfigType__ChildPaymentGatewayConfigTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType#paymentGatewayConfigs() <em>Payment Gateway Configs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Gateway Configs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType#paymentGatewayConfigs()
+	 * @generated
+	 */
+	EOperation getPaymentGatewayConfigType__PaymentGatewayConfigs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource <em>Gateway Cyber Source</em>}'.
@@ -9235,6 +12115,26 @@ public interface PaymentPackage extends EPackage {
 	EReference getPaymentGatewayResponse_PaymentMethodId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#paymentGatewayRespMsgs() <em>Payment Gateway Resp Msgs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Gateway Resp Msgs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#paymentGatewayRespMsgs()
+	 * @generated
+	 */
+	EOperation getPaymentGatewayResponse__PaymentGatewayRespMsgs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#payments() <em>Payments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#payments()
+	 * @generated
+	 */
+	EOperation getPaymentGatewayResponse__Payments();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9921,6 +12821,26 @@ public interface PaymentPackage extends EPackage {
 	EReference getPaymentGroupType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupType#childPaymentGroupTypes() <em>Child Payment Group Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Payment Group Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGroupType#childPaymentGroupTypes()
+	 * @generated
+	 */
+	EOperation getPaymentGroupType__ChildPaymentGroupTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupType#paymentGroups() <em>Payment Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGroupType#paymentGroups()
+	 * @generated
+	 */
+	EOperation getPaymentGroupType__PaymentGroups();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod <em>Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9962,6 +12882,76 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPaymentMethod_FinAccountId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#orderPaymentPreferences() <em>Order Payment Preferences</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Payment Preferences</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#orderPaymentPreferences()
+	 * @generated
+	 */
+	EOperation getPaymentMethod__OrderPaymentPreferences();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#partyAcctgPreferences() <em>Party Acctg Preferences</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Party Acctg Preferences</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#partyAcctgPreferences()
+	 * @generated
+	 */
+	EOperation getPaymentMethod__PartyAcctgPreferences();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#paymentGatewayResponses() <em>Payment Gateway Responses</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Gateway Responses</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#paymentGatewayResponses()
+	 * @generated
+	 */
+	EOperation getPaymentMethod__PaymentGatewayResponses();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#payments() <em>Payments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#payments()
+	 * @generated
+	 */
+	EOperation getPaymentMethod__Payments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#replenishFinAccounts() <em>Replenish Fin Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Replenish Fin Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#replenishFinAccounts()
+	 * @generated
+	 */
+	EOperation getPaymentMethod__ReplenishFinAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#returnHeaders() <em>Return Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Return Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#returnHeaders()
+	 * @generated
+	 */
+	EOperation getPaymentMethod__ReturnHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#shoppingLists() <em>Shopping Lists</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Shopping Lists</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#shoppingLists()
+	 * @generated
+	 */
+	EOperation getPaymentMethod__ShoppingLists();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getFromDate <em>From Date</em>}'.
@@ -10071,6 +13061,46 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPaymentMethodType_PaymentMethodTypeGlAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#orderPaymentPreferences() <em>Order Payment Preferences</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Payment Preferences</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodType#orderPaymentPreferences()
+	 * @generated
+	 */
+	EOperation getPaymentMethodType__OrderPaymentPreferences();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#paymentGatewayResponses() <em>Payment Gateway Responses</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Gateway Responses</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodType#paymentGatewayResponses()
+	 * @generated
+	 */
+	EOperation getPaymentMethodType__PaymentGatewayResponses();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#paymentMethods() <em>Payment Methods</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Methods</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodType#paymentMethods()
+	 * @generated
+	 */
+	EOperation getPaymentMethodType__PaymentMethods();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#payments() <em>Payments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodType#payments()
+	 * @generated
+	 */
+	EOperation getPaymentMethodType__Payments();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount <em>Method Type Gl Account</em>}'.
@@ -10190,6 +13220,26 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPaymentType_PaymentTypeAttrs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentType#childPaymentTypes() <em>Child Payment Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Payment Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentType#childPaymentTypes()
+	 * @generated
+	 */
+	EOperation getPaymentType__ChildPaymentTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.payment.PaymentType#payments() <em>Payments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentType#payments()
+	 * @generated
+	 */
+	EOperation getPaymentType__Payments();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr <em>Type Attr</em>}'.
@@ -10434,6 +13484,54 @@ public interface PaymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID = eINSTANCE.getBillingAccount_AccountCurrencyUomId();
+
+		/**
+		 * The meta object literal for the '<em><b>Billing Account Terms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILLING_ACCOUNT___BILLING_ACCOUNT_TERMS = eINSTANCE.getBillingAccount__BillingAccountTerms();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoices</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILLING_ACCOUNT___INVOICES = eINSTANCE.getBillingAccount__Invoices();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILLING_ACCOUNT___ORDER_HEADERS = eINSTANCE.getBillingAccount__OrderHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Applications</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILLING_ACCOUNT___PAYMENT_APPLICATIONS = eINSTANCE.getBillingAccount__PaymentApplications();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILLING_ACCOUNT___RETURN_HEADERS = eINSTANCE.getBillingAccount__ReturnHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Item Responses</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILLING_ACCOUNT___RETURN_ITEM_RESPONSES = eINSTANCE.getBillingAccount__ReturnItemResponses();
 
 		/**
 		 * The meta object literal for the '<em><b>Account Limit</b></em>' attribute feature.
@@ -10972,6 +14070,22 @@ public interface PaymentPackage extends EPackage {
 		EReference DEDUCTION_TYPE__PARENT_TYPE_ID = eINSTANCE.getDeductionType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Deduction Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DEDUCTION_TYPE___CHILD_DEDUCTION_TYPES = eINSTANCE.getDeductionType__ChildDeductionTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Deductions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DEDUCTION_TYPE___DEDUCTIONS = eINSTANCE.getDeductionType__Deductions();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl <em>Eft Account</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -11462,6 +14576,46 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT__PAYMENT_ATTRIBUTES = eINSTANCE.getPayment_PaymentAttributes();
 
 		/**
+		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___ACCTG_TRANSS = eINSTANCE.getPayment__AcctgTranss();
+
+		/**
+		 * The meta object literal for the '<em><b>Deductions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___DEDUCTIONS = eINSTANCE.getPayment__Deductions();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Applications</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___PAYMENT_APPLICATIONS = eINSTANCE.getPayment__PaymentApplications();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Item Responses</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___RETURN_ITEM_RESPONSES = eINSTANCE.getPayment__ReturnItemResponses();
+
+		/**
+		 * The meta object literal for the '<em><b>To Payment Applications</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___TO_PAYMENT_APPLICATIONS = eINSTANCE.getPayment__ToPaymentApplications();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentApplicationImpl <em>Application</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -11718,6 +14872,14 @@ public interface PaymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentContentType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Payment Content Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_CONTENT_TYPE___CHILD_PAYMENT_CONTENT_TYPES = eINSTANCE.getPaymentContentType__ChildPaymentContentTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl <em>Gateway Authorize Net</em>}' class.
@@ -12054,6 +15216,22 @@ public interface PaymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PAYMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentGatewayConfigType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Payment Gateway Config Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_GATEWAY_CONFIG_TYPE___CHILD_PAYMENT_GATEWAY_CONFIG_TYPES = eINSTANCE.getPaymentGatewayConfigType__ChildPaymentGatewayConfigTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Gateway Configs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_GATEWAY_CONFIG_TYPE___PAYMENT_GATEWAY_CONFIGS = eINSTANCE.getPaymentGatewayConfigType__PaymentGatewayConfigs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl <em>Gateway Cyber Source</em>}' class.
@@ -12870,6 +16048,22 @@ public interface PaymentPackage extends EPackage {
 		EReference PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID = eINSTANCE.getPaymentGatewayResponse_PaymentMethodId();
 
 		/**
+		 * The meta object literal for the '<em><b>Payment Gateway Resp Msgs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_GATEWAY_RESPONSE___PAYMENT_GATEWAY_RESP_MSGS = eINSTANCE.getPaymentGatewayResponse__PaymentGatewayRespMsgs();
+
+		/**
+		 * The meta object literal for the '<em><b>Payments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_GATEWAY_RESPONSE___PAYMENTS = eINSTANCE.getPaymentGatewayResponse__Payments();
+
+		/**
 		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13388,6 +16582,22 @@ public interface PaymentPackage extends EPackage {
 		EReference PAYMENT_GROUP_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentGroupType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Payment Group Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_GROUP_TYPE___CHILD_PAYMENT_GROUP_TYPES = eINSTANCE.getPaymentGroupType__ChildPaymentGroupTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_GROUP_TYPE___PAYMENT_GROUPS = eINSTANCE.getPaymentGroupType__PaymentGroups();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl <em>Method</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13420,6 +16630,62 @@ public interface PaymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PAYMENT_METHOD__FIN_ACCOUNT_ID = eINSTANCE.getPaymentMethod_FinAccountId();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Payment Preferences</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD___ORDER_PAYMENT_PREFERENCES = eINSTANCE.getPaymentMethod__OrderPaymentPreferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Party Acctg Preferences</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD___PARTY_ACCTG_PREFERENCES = eINSTANCE.getPaymentMethod__PartyAcctgPreferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Gateway Responses</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD___PAYMENT_GATEWAY_RESPONSES = eINSTANCE.getPaymentMethod__PaymentGatewayResponses();
+
+		/**
+		 * The meta object literal for the '<em><b>Payments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD___PAYMENTS = eINSTANCE.getPaymentMethod__Payments();
+
+		/**
+		 * The meta object literal for the '<em><b>Replenish Fin Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD___REPLENISH_FIN_ACCOUNTS = eINSTANCE.getPaymentMethod__ReplenishFinAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD___RETURN_HEADERS = eINSTANCE.getPaymentMethod__ReturnHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>Shopping Lists</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD___SHOPPING_LISTS = eINSTANCE.getPaymentMethod__ShoppingLists();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -13502,6 +16768,38 @@ public interface PaymentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS = eINSTANCE.getPaymentMethodType_PaymentMethodTypeGlAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Payment Preferences</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD_TYPE___ORDER_PAYMENT_PREFERENCES = eINSTANCE.getPaymentMethodType__OrderPaymentPreferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Gateway Responses</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD_TYPE___PAYMENT_GATEWAY_RESPONSES = eINSTANCE.getPaymentMethodType__PaymentGatewayResponses();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Methods</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD_TYPE___PAYMENT_METHODS = eINSTANCE.getPaymentMethodType__PaymentMethods();
+
+		/**
+		 * The meta object literal for the '<em><b>Payments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_METHOD_TYPE___PAYMENTS = eINSTANCE.getPaymentMethodType__Payments();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeGlAccountImpl <em>Method Type Gl Account</em>}' class.
@@ -13594,6 +16892,22 @@ public interface PaymentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAYMENT_TYPE__PAYMENT_TYPE_ATTRS = eINSTANCE.getPaymentType_PaymentTypeAttrs();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Payment Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_TYPE___CHILD_PAYMENT_TYPES = eINSTANCE.getPaymentType__ChildPaymentTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Payments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT_TYPE___PAYMENTS = eINSTANCE.getPaymentType__Payments();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeAttrImpl <em>Type Attr</em>}' class.

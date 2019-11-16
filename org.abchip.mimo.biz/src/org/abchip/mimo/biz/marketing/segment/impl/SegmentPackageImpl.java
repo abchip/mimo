@@ -200,6 +200,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -883,6 +884,16 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getSegmentGroupType__SegmentGroups() {
+		return segmentGroupTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public SegmentFactory getSegmentFactory() {
 		return (SegmentFactory)getEFactoryInstance();
 	}
@@ -930,6 +941,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		segmentGroupTypeEClass = createEClass(SEGMENT_GROUP_TYPE);
 		createEAttribute(segmentGroupTypeEClass, SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID);
 		createEAttribute(segmentGroupTypeEClass, SEGMENT_GROUP_TYPE__DESCRIPTION);
+		createEOperation(segmentGroupTypeEClass, SEGMENT_GROUP_TYPE___SEGMENT_GROUPS);
 	}
 
 	/**
@@ -978,7 +990,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		g1.getETypeArguments().add(g2);
 		segmentGroupTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(segmentGroupEClass, SegmentGroup.class, "SegmentGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSegmentGroup_SegmentGroupId(), ecorePackage.getEString(), "segmentGroupId", null, 1, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSegmentGroup_Description(), ecorePackage.getEString(), "description", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1013,7 +1025,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		initEAttribute(getSegmentGroupType_SegmentGroupTypeId(), ecorePackage.getEString(), "segmentGroupTypeId", null, 1, 1, SegmentGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSegmentGroupType_Description(), ecorePackage.getEString(), "description", null, 0, 1, SegmentGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(segmentGroupTypeEClass, ecorePackage.getEString(), "segmentGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSegmentGroupType__SegmentGroups(), ecorePackage.getEString(), "segmentGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1073,7 +1085,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (segmentGroupTypeEClass.getEOperations().get(0),
+		  (getSegmentGroupType__SegmentGroups(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1113,7 +1125,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (segmentGroupTypeEClass.getEOperations().get(0),
+		  (getSegmentGroupType__SegmentGroups(),
 		   source,
 		   new String[] {
 			   "frame", "SegmentGroup",

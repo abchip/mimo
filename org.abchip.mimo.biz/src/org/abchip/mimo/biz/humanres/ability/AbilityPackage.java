@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.ability;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -189,6 +190,60 @@ public interface AbilityPackage extends EPackage {
 	int PARTY_QUAL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Party Qual</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualTypeImpl <em>Party Qual Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -289,6 +344,96 @@ public interface AbilityPackage extends EPackage {
 	int PARTY_QUAL_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Party Qual Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE___CHILD_PARTY_QUAL_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Party Qual Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl <em>Party Resume</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,6 +532,51 @@ public interface AbilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARTY_RESUME_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RESUME___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RESUME___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RESUME___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RESUME___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party Resume</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RESUME_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PartySkillImpl <em>Party Skill</em>}' class.
@@ -498,6 +688,51 @@ public interface AbilityPackage extends EPackage {
 	int PARTY_SKILL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_SKILL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_SKILL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_SKILL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_SKILL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party Skill</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_SKILL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerfRatingTypeImpl <em>Perf Rating Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -587,6 +822,60 @@ public interface AbilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERF_RATING_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_RATING_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_RATING_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_RATING_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_RATING_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Perf Rating Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_RATING_TYPE___CHILD_PERF_RATING_TYPES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Perf Rating Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_RATING_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl <em>Perf Review</em>}' class.
@@ -734,6 +1023,51 @@ public interface AbilityPackage extends EPackage {
 	int PERF_REVIEW_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Perf Review</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemImpl <em>Perf Review Item</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -852,6 +1186,60 @@ public interface AbilityPackage extends EPackage {
 	int PERF_REVIEW_ITEM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Perf Review Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemTypeImpl <em>Perf Review Item Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -950,6 +1338,96 @@ public interface AbilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERF_REVIEW_ITEM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Perf Review Item Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE___CHILD_PERF_REVIEW_ITEM_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Perf Review Item Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW_ITEM_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl <em>Performance Note</em>}' class.
@@ -1059,6 +1537,51 @@ public interface AbilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERFORMANCE_NOTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERFORMANCE_NOTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERFORMANCE_NOTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERFORMANCE_NOTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERFORMANCE_NOTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Performance Note</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERFORMANCE_NOTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl <em>Person Training</em>}' class.
@@ -1197,6 +1720,51 @@ public interface AbilityPackage extends EPackage {
 	int PERSON_TRAINING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_TRAINING___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_TRAINING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_TRAINING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_TRAINING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Person Training</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_TRAINING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.ResponsibilityTypeImpl <em>Responsibility Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1286,6 +1854,60 @@ public interface AbilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESPONSIBILITY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBILITY_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBILITY_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBILITY_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBILITY_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Responsibility Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBILITY_TYPE___CHILD_RESPONSIBILITY_TYPES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Responsibility Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBILITY_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.SkillTypeImpl <em>Skill Type</em>}' class.
@@ -1379,6 +2001,96 @@ public interface AbilityPackage extends EPackage {
 	int SKILL_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Skill Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___CHILD_SKILL_TYPES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Job Requisitions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___JOB_REQUISITIONS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Party Skills</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___PARTY_SKILLS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Quote Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___QUOTE_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Work Effort Skill Standards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE___WORK_EFFORT_SKILL_STANDARDS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Skill Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 5;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.ability.impl.TrainingClassTypeImpl <em>Training Class Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1468,6 +2180,61 @@ public interface AbilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRAINING_CLASS_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAINING_CLASS_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAINING_CLASS_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAINING_CLASS_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAINING_CLASS_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Training Class Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAINING_CLASS_TYPE___CHILD_TRAINING_CLASS_TYPES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Training Class Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAINING_CLASS_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 
 	/**
@@ -1621,6 +2388,16 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPartyQualType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.PartyQualType#childPartyQualTypes() <em>Child Party Qual Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Party Qual Types</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.PartyQualType#childPartyQualTypes()
+	 * @generated
+	 */
+	EOperation getPartyQualType__ChildPartyQualTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PartyResume <em>Party Resume</em>}'.
@@ -1816,6 +2593,16 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPerfRatingType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.PerfRatingType#childPerfRatingTypes() <em>Child Perf Rating Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Perf Rating Types</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.PerfRatingType#childPerfRatingTypes()
+	 * @generated
+	 */
+	EOperation getPerfRatingType__ChildPerfRatingTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PerfReview <em>Perf Review</em>}'.
@@ -2079,6 +2866,16 @@ public interface AbilityPackage extends EPackage {
 	EReference getPerfReviewItemType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItemType#childPerfReviewItemTypes() <em>Child Perf Review Item Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Perf Review Item Types</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.PerfReviewItemType#childPerfReviewItemTypes()
+	 * @generated
+	 */
+	EOperation getPerfReviewItemType__ChildPerfReviewItemTypes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PerformanceNote <em>Performance Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2318,6 +3115,16 @@ public interface AbilityPackage extends EPackage {
 	EReference getResponsibilityType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.ResponsibilityType#childResponsibilityTypes() <em>Child Responsibility Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Responsibility Types</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.ResponsibilityType#childResponsibilityTypes()
+	 * @generated
+	 */
+	EOperation getResponsibilityType__ChildResponsibilityTypes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.SkillType <em>Skill Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2372,6 +3179,56 @@ public interface AbilityPackage extends EPackage {
 	EReference getSkillType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.SkillType#childSkillTypes() <em>Child Skill Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Skill Types</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.SkillType#childSkillTypes()
+	 * @generated
+	 */
+	EOperation getSkillType__ChildSkillTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.SkillType#jobRequisitions() <em>Job Requisitions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Job Requisitions</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.SkillType#jobRequisitions()
+	 * @generated
+	 */
+	EOperation getSkillType__JobRequisitions();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.SkillType#partySkills() <em>Party Skills</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Party Skills</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.SkillType#partySkills()
+	 * @generated
+	 */
+	EOperation getSkillType__PartySkills();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.SkillType#quoteItems() <em>Quote Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quote Items</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.SkillType#quoteItems()
+	 * @generated
+	 */
+	EOperation getSkillType__QuoteItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.SkillType#workEffortSkillStandards() <em>Work Effort Skill Standards</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Effort Skill Standards</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.SkillType#workEffortSkillStandards()
+	 * @generated
+	 */
+	EOperation getSkillType__WorkEffortSkillStandards();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.TrainingClassType <em>Training Class Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2424,6 +3281,16 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTrainingClassType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.ability.TrainingClassType#childTrainingClassTypes() <em>Child Training Class Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Training Class Types</em>' operation.
+	 * @see org.abchip.mimo.biz.humanres.ability.TrainingClassType#childTrainingClassTypes()
+	 * @generated
+	 */
+	EOperation getTrainingClassType__ChildTrainingClassTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2562,6 +3429,14 @@ public interface AbilityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARTY_QUAL_TYPE__PARENT_TYPE_ID = eINSTANCE.getPartyQualType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Party Qual Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PARTY_QUAL_TYPE___CHILD_PARTY_QUAL_TYPES = eINSTANCE.getPartyQualType__ChildPartyQualTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl <em>Party Resume</em>}' class.
@@ -2712,6 +3587,14 @@ public interface AbilityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERF_RATING_TYPE__PARENT_TYPE_ID = eINSTANCE.getPerfRatingType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Perf Rating Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PERF_RATING_TYPE___CHILD_PERF_RATING_TYPES = eINSTANCE.getPerfRatingType__ChildPerfRatingTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl <em>Perf Review</em>}' class.
@@ -2912,6 +3795,14 @@ public interface AbilityPackage extends EPackage {
 		EReference PERF_REVIEW_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getPerfReviewItemType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Perf Review Item Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PERF_REVIEW_ITEM_TYPE___CHILD_PERF_REVIEW_ITEM_TYPES = eINSTANCE.getPerfReviewItemType__ChildPerfReviewItemTypes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl <em>Performance Note</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3094,6 +3985,14 @@ public interface AbilityPackage extends EPackage {
 		EReference RESPONSIBILITY_TYPE__PARENT_TYPE_ID = eINSTANCE.getResponsibilityType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Responsibility Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RESPONSIBILITY_TYPE___CHILD_RESPONSIBILITY_TYPES = eINSTANCE.getResponsibilityType__ChildResponsibilityTypes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.SkillTypeImpl <em>Skill Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3136,6 +4035,46 @@ public interface AbilityPackage extends EPackage {
 		EReference SKILL_TYPE__PARENT_TYPE_ID = eINSTANCE.getSkillType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Skill Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SKILL_TYPE___CHILD_SKILL_TYPES = eINSTANCE.getSkillType__ChildSkillTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Job Requisitions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SKILL_TYPE___JOB_REQUISITIONS = eINSTANCE.getSkillType__JobRequisitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Party Skills</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SKILL_TYPE___PARTY_SKILLS = eINSTANCE.getSkillType__PartySkills();
+
+		/**
+		 * The meta object literal for the '<em><b>Quote Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SKILL_TYPE___QUOTE_ITEMS = eINSTANCE.getSkillType__QuoteItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Effort Skill Standards</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SKILL_TYPE___WORK_EFFORT_SKILL_STANDARDS = eINSTANCE.getSkillType__WorkEffortSkillStandards();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.TrainingClassTypeImpl <em>Training Class Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3176,6 +4115,14 @@ public interface AbilityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRAINING_CLASS_TYPE__PARENT_TYPE_ID = eINSTANCE.getTrainingClassType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Training Class Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRAINING_CLASS_TYPE___CHILD_TRAINING_CLASS_TYPES = eINSTANCE.getTrainingClassType__ChildTrainingClassTypes();
 
 	}
 

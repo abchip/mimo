@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -55,6 +57,20 @@ public class EntityTypedImpl<T extends EntityType<?>> extends EntityNameableImpl
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case EntityPackage.ENTITY_TYPED___GET_TYPE:
+				return getType();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //EntityTypedImpl

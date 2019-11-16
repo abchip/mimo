@@ -213,6 +213,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -854,6 +855,26 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getCharacterSet__Contents() {
+		return characterSetEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCharacterSet__DataResources() {
+		return characterSetEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDataCategory() {
 		return dataCategoryEClass;
 	}
@@ -886,6 +907,26 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	@Override
 	public EReference getDataCategory_ParentCategoryId() {
 		return (EReference)dataCategoryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDataCategory__ChildDataCategories() {
+		return dataCategoryEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDataCategory__DataResources() {
+		return dataCategoryEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1126,6 +1167,26 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	@Override
 	public EAttribute getDataResource_ProductFeatureDataResources() {
 		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDataResource__Contents() {
+		return dataResourceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDataResource__TemplateContents() {
+		return dataResourceEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1384,6 +1445,26 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getDataResourceType__ChildDataResourceTypes() {
+		return dataResourceTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDataResourceType__DataResources() {
+		return dataResourceTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDataResourceTypeAttr() {
 		return dataResourceTypeAttrEClass;
 	}
@@ -1456,6 +1537,16 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	@Override
 	public EAttribute getDataTemplateType_Extension() {
 		return (EAttribute)dataTemplateTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDataTemplateType__DataResources() {
+		return dataTemplateTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1574,6 +1665,26 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getMetaDataPredicate__ContentMetaDatas() {
+		return metaDataPredicateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMetaDataPredicate__DataResourceMetaDatas() {
+		return metaDataPredicateEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMimeType() {
 		return mimeTypeEClass;
 	}
@@ -1596,6 +1707,46 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	@Override
 	public EAttribute getMimeType_Description() {
 		return (EAttribute)mimeTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMimeType__CommunicationEvents() {
+		return mimeTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMimeType__Contents() {
+		return mimeTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMimeType__DataResources() {
+		return mimeTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMimeType__FileExtensions() {
+		return mimeTypeEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -1724,11 +1875,15 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		characterSetEClass = createEClass(CHARACTER_SET);
 		createEAttribute(characterSetEClass, CHARACTER_SET__CHARACTER_SET_ID);
 		createEAttribute(characterSetEClass, CHARACTER_SET__DESCRIPTION);
+		createEOperation(characterSetEClass, CHARACTER_SET___CONTENTS);
+		createEOperation(characterSetEClass, CHARACTER_SET___DATA_RESOURCES);
 
 		dataCategoryEClass = createEClass(DATA_CATEGORY);
 		createEAttribute(dataCategoryEClass, DATA_CATEGORY__DATA_CATEGORY_ID);
 		createEAttribute(dataCategoryEClass, DATA_CATEGORY__CATEGORY_NAME);
 		createEReference(dataCategoryEClass, DATA_CATEGORY__PARENT_CATEGORY_ID);
+		createEOperation(dataCategoryEClass, DATA_CATEGORY___CHILD_DATA_CATEGORIES);
+		createEOperation(dataCategoryEClass, DATA_CATEGORY___DATA_RESOURCES);
 
 		dataResourceEClass = createEClass(DATA_RESOURCE);
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_ID);
@@ -1754,6 +1909,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_META_DATAS);
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_PURPOSES);
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES);
+		createEOperation(dataResourceEClass, DATA_RESOURCE___CONTENTS);
+		createEOperation(dataResourceEClass, DATA_RESOURCE___TEMPLATE_CONTENTS);
 
 		dataResourceAttributeEClass = createEClass(DATA_RESOURCE_ATTRIBUTE);
 		createEAttribute(dataResourceAttributeEClass, DATA_RESOURCE_ATTRIBUTE__ATTR_NAME);
@@ -1784,6 +1941,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(dataResourceTypeEClass, DATA_RESOURCE_TYPE__HAS_TABLE);
 		createEReference(dataResourceTypeEClass, DATA_RESOURCE_TYPE__PARENT_TYPE_ID);
 		createEAttribute(dataResourceTypeEClass, DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS);
+		createEOperation(dataResourceTypeEClass, DATA_RESOURCE_TYPE___CHILD_DATA_RESOURCE_TYPES);
+		createEOperation(dataResourceTypeEClass, DATA_RESOURCE_TYPE___DATA_RESOURCES);
 
 		dataResourceTypeAttrEClass = createEClass(DATA_RESOURCE_TYPE_ATTR);
 		createEAttribute(dataResourceTypeAttrEClass, DATA_RESOURCE_TYPE_ATTR__ATTR_NAME);
@@ -1794,6 +1953,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(dataTemplateTypeEClass, DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID);
 		createEAttribute(dataTemplateTypeEClass, DATA_TEMPLATE_TYPE__DESCRIPTION);
 		createEAttribute(dataTemplateTypeEClass, DATA_TEMPLATE_TYPE__EXTENSION);
+		createEOperation(dataTemplateTypeEClass, DATA_TEMPLATE_TYPE___DATA_RESOURCES);
 
 		electronicTextEClass = createEClass(ELECTRONIC_TEXT);
 		createEAttribute(electronicTextEClass, ELECTRONIC_TEXT__TEXT_DATA);
@@ -1809,10 +1969,16 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		metaDataPredicateEClass = createEClass(META_DATA_PREDICATE);
 		createEAttribute(metaDataPredicateEClass, META_DATA_PREDICATE__META_DATA_PREDICATE_ID);
 		createEAttribute(metaDataPredicateEClass, META_DATA_PREDICATE__DESCRIPTION);
+		createEOperation(metaDataPredicateEClass, META_DATA_PREDICATE___CONTENT_META_DATAS);
+		createEOperation(metaDataPredicateEClass, META_DATA_PREDICATE___DATA_RESOURCE_META_DATAS);
 
 		mimeTypeEClass = createEClass(MIME_TYPE);
 		createEAttribute(mimeTypeEClass, MIME_TYPE__MIME_TYPE_ID);
 		createEAttribute(mimeTypeEClass, MIME_TYPE__DESCRIPTION);
+		createEOperation(mimeTypeEClass, MIME_TYPE___COMMUNICATION_EVENTS);
+		createEOperation(mimeTypeEClass, MIME_TYPE___CONTENTS);
+		createEOperation(mimeTypeEClass, MIME_TYPE___DATA_RESOURCES);
+		createEOperation(mimeTypeEClass, MIME_TYPE___FILE_EXTENSIONS);
 
 		mimeTypeHtmlTemplateEClass = createEClass(MIME_TYPE_HTML_TEMPLATE);
 		createEAttribute(mimeTypeHtmlTemplateEClass, MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION);
@@ -1890,7 +2056,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		otherDataResourceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		videoDataResourceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(audioDataResourceEClass, AudioDataResource.class, "AudioDataResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAudioDataResource_AudioData(), ecorePackage.getEByteArray(), "audioData", null, 0, 1, AudioDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAudioDataResource_DataResourceId(), this.getDataResource(), null, "dataResourceId", null, 0, 1, AudioDataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1900,9 +2066,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEAttribute(getCharacterSet_CharacterSetId(), ecorePackage.getEString(), "characterSetId", null, 1, 1, CharacterSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCharacterSet_Description(), ecorePackage.getEString(), "description", null, 0, 1, CharacterSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(characterSetEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCharacterSet__Contents(), ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(characterSetEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCharacterSet__DataResources(), ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataCategoryEClass, DataCategory.class, "DataCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataCategory_DataCategoryId(), ecorePackage.getEString(), "dataCategoryId", null, 1, 1, DataCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1910,9 +2076,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEReference(getDataCategory_ParentCategoryId(), this.getDataCategory(), null, "parentCategoryId", null, 0, 1, DataCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataCategory_ParentCategoryId().getEKeys().add(this.getDataCategory_DataCategoryId());
 
-		addEOperation(dataCategoryEClass, ecorePackage.getEString(), "childDataCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataCategory__ChildDataCategories(), ecorePackage.getEString(), "childDataCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataCategoryEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataCategory__DataResources(), ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataResourceEClass, DataResource.class, "DataResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataResource_DataResourceId(), ecorePackage.getEString(), "dataResourceId", null, 1, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1950,9 +2116,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEAttribute(getDataResource_DataResourcePurposes(), ecorePackage.getEString(), "dataResourcePurposes", null, 0, -1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResource_ProductFeatureDataResources(), ecorePackage.getEString(), "productFeatureDataResources", null, 0, -1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dataResourceEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataResource__Contents(), ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataResourceEClass, ecorePackage.getEString(), "templateContents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataResource__TemplateContents(), ecorePackage.getEString(), "templateContents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataResourceAttributeEClass, DataResourceAttribute.class, "DataResourceAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataResourceAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DataResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1993,9 +2159,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		getDataResourceType_ParentTypeId().getEKeys().add(this.getDataResourceType_DataResourceTypeId());
 		initEAttribute(getDataResourceType_DataResourceTypeAttrs(), ecorePackage.getEString(), "dataResourceTypeAttrs", null, 0, -1, DataResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dataResourceTypeEClass, ecorePackage.getEString(), "childDataResourceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataResourceType__ChildDataResourceTypes(), ecorePackage.getEString(), "childDataResourceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataResourceTypeEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataResourceType__DataResources(), ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataResourceTypeAttrEClass, DataResourceTypeAttr.class, "DataResourceTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataResourceTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DataResourceTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2008,7 +2174,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEAttribute(getDataTemplateType_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataTemplateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataTemplateType_Extension(), ecorePackage.getEString(), "extension", null, 0, 1, DataTemplateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dataTemplateTypeEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataTemplateType__DataResources(), ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(electronicTextEClass, ElectronicText.class, "ElectronicText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElectronicText_TextData(), ecorePackage.getEString(), "textData", null, 0, 1, ElectronicText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2027,21 +2193,21 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEAttribute(getMetaDataPredicate_MetaDataPredicateId(), ecorePackage.getEString(), "metaDataPredicateId", null, 1, 1, MetaDataPredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMetaDataPredicate_Description(), ecorePackage.getEString(), "description", null, 0, 1, MetaDataPredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(metaDataPredicateEClass, ecorePackage.getEString(), "contentMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMetaDataPredicate__ContentMetaDatas(), ecorePackage.getEString(), "contentMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(metaDataPredicateEClass, ecorePackage.getEString(), "dataResourceMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMetaDataPredicate__DataResourceMetaDatas(), ecorePackage.getEString(), "dataResourceMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mimeTypeEClass, MimeType.class, "MimeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMimeType_MimeTypeId(), ecorePackage.getEString(), "mimeTypeId", null, 1, 1, MimeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMimeType_Description(), ecorePackage.getEString(), "description", null, 0, 1, MimeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(mimeTypeEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMimeType__CommunicationEvents(), ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mimeTypeEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMimeType__Contents(), ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mimeTypeEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMimeType__DataResources(), ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(mimeTypeEClass, ecorePackage.getEString(), "fileExtensions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMimeType__FileExtensions(), ecorePackage.getEString(), "fileExtensions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mimeTypeHtmlTemplateEClass, MimeTypeHtmlTemplate.class, "MimeTypeHtmlTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMimeTypeHtmlTemplate_TemplateLocation(), ecorePackage.getEString(), "templateLocation", null, 0, 1, MimeTypeHtmlTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2076,13 +2242,13 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (characterSetEClass.getEOperations().get(0),
+		  (getCharacterSet__Contents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (characterSetEClass.getEOperations().get(1),
+		  (getCharacterSet__DataResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2094,13 +2260,13 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (dataCategoryEClass.getEOperations().get(0),
+		  (getDataCategory__ChildDataCategories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (dataCategoryEClass.getEOperations().get(1),
+		  (getDataCategory__DataResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2112,13 +2278,13 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (dataResourceEClass.getEOperations().get(0),
+		  (getDataResource__Contents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (dataResourceEClass.getEOperations().get(1),
+		  (getDataResource__TemplateContents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2172,13 +2338,13 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (dataResourceTypeEClass.getEOperations().get(0),
+		  (getDataResourceType__ChildDataResourceTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (dataResourceTypeEClass.getEOperations().get(1),
+		  (getDataResourceType__DataResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2202,7 +2368,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (dataTemplateTypeEClass.getEOperations().get(0),
+		  (getDataTemplateType__DataResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2220,13 +2386,13 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (metaDataPredicateEClass.getEOperations().get(0),
+		  (getMetaDataPredicate__ContentMetaDatas(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (metaDataPredicateEClass.getEOperations().get(1),
+		  (getMetaDataPredicate__DataResourceMetaDatas(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2238,25 +2404,25 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(0),
+		  (getMimeType__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(1),
+		  (getMimeType__Contents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(2),
+		  (getMimeType__DataResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(3),
+		  (getMimeType__FileExtensions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2278,7 +2444,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (characterSetEClass.getEOperations().get(0),
+		  (getCharacterSet__Contents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -2288,7 +2454,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (characterSetEClass.getEOperations().get(1),
+		  (getCharacterSet__DataResources(),
 		   source,
 		   new String[] {
 			   "frame", "DataResource",
@@ -2298,7 +2464,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (dataCategoryEClass.getEOperations().get(0),
+		  (getDataCategory__ChildDataCategories(),
 		   source,
 		   new String[] {
 			   "frame", "DataCategory",
@@ -2308,7 +2474,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (dataCategoryEClass.getEOperations().get(1),
+		  (getDataCategory__DataResources(),
 		   source,
 		   new String[] {
 			   "frame", "DataResource",
@@ -2318,7 +2484,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (dataResourceEClass.getEOperations().get(0),
+		  (getDataResource__Contents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -2328,7 +2494,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (dataResourceEClass.getEOperations().get(1),
+		  (getDataResource__TemplateContents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -2374,7 +2540,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (dataResourceTypeEClass.getEOperations().get(0),
+		  (getDataResourceType__ChildDataResourceTypes(),
 		   source,
 		   new String[] {
 			   "frame", "DataResourceType",
@@ -2384,7 +2550,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (dataResourceTypeEClass.getEOperations().get(1),
+		  (getDataResourceType__DataResources(),
 		   source,
 		   new String[] {
 			   "frame", "DataResource",
@@ -2403,7 +2569,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (dataTemplateTypeEClass.getEOperations().get(0),
+		  (getDataTemplateType__DataResources(),
 		   source,
 		   new String[] {
 			   "frame", "DataResource",
@@ -2413,7 +2579,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (metaDataPredicateEClass.getEOperations().get(0),
+		  (getMetaDataPredicate__ContentMetaDatas(),
 		   source,
 		   new String[] {
 			   "frame", "ContentMetaData",
@@ -2423,7 +2589,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (metaDataPredicateEClass.getEOperations().get(1),
+		  (getMetaDataPredicate__DataResourceMetaDatas(),
 		   source,
 		   new String[] {
 			   "frame", "DataResourceMetaData",
@@ -2433,7 +2599,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(0),
+		  (getMimeType__CommunicationEvents(),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEvent",
@@ -2443,7 +2609,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(1),
+		  (getMimeType__Contents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -2453,7 +2619,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(2),
+		  (getMimeType__DataResources(),
 		   source,
 		   new String[] {
 			   "frame", "DataResource",
@@ -2463,7 +2629,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (mimeTypeEClass.getEOperations().get(3),
+		  (getMimeType__FileExtensions(),
 		   source,
 		   new String[] {
 			   "frame", "FileExtension",

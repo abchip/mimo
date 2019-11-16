@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.ledger;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -387,6 +388,60 @@ public interface LedgerPackage extends EPackage {
 	int ACCTG_TRANS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 30;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Acctg Trans</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransAttributeImpl <em>Acctg Trans Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,6 +531,51 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACCTG_TRANS_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Acctg Trans Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl <em>Acctg Trans Entry</em>}' class.
@@ -758,6 +858,60 @@ public interface LedgerPackage extends EPackage {
 	int ACCTG_TRANS_ENTRY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Acctg Trans Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryTypeImpl <em>Acctg Trans Entry Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -856,6 +1010,105 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACCTG_TRANS_ENTRY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Acctg Trans Entries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___ACCTG_TRANS_ENTRIES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Child Acctg Trans Entry Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE___CHILD_ACCTG_TRANS_ENTRY_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Acctg Trans Entry Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_ENTRY_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeImpl <em>Acctg Trans Type</em>}' class.
@@ -967,6 +1220,105 @@ public interface LedgerPackage extends EPackage {
 	int ACCTG_TRANS_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Acctg Transs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Child Acctg Trans Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE___CHILD_ACCTG_TRANS_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Acctg Trans Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeAttrImpl <em>Acctg Trans Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1047,6 +1399,51 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACCTG_TRANS_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Acctg Trans Type Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCTG_TRANS_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl <em>Gl Account</em>}' class.
@@ -1221,6 +1618,231 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Acctg Trans Entries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___ACCTG_TRANS_ENTRIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Child Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___CHILD_GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Default Invoice Item Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___DEFAULT_INVOICE_ITEM_TYPES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Default Payment Method Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___DEFAULT_PAYMENT_METHOD_TYPES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Fin Account Type Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___FIN_ACCOUNT_TYPE_GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Gl Account Type Defaults</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___GL_ACCOUNT_TYPE_DEFAULTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Gl Reconciliations</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___GL_RECONCILIATIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Invoice Item Type Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___INVOICE_ITEM_TYPE_GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Override Invoice Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___OVERRIDE_INVOICE_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Override Order Adjustments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___OVERRIDE_ORDER_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Override Order Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___OVERRIDE_ORDER_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Override Quote Adjustments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___OVERRIDE_QUOTE_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Override Return Adjustments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___OVERRIDE_RETURN_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Payment Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___PAYMENT_APPLICATIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>Payment Method Type Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___PAYMENT_METHOD_TYPE_GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Payment Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___PAYMENT_METHODS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Payments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___PAYMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Post To Fin Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___POST_TO_FIN_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 17;
+
+	/**
+	 * The operation id for the '<em>Variance Reason Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT___VARIANCE_REASON_GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 18;
+
+	/**
+	 * The number of operations of the '<em>Gl Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 19;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryImpl <em>Gl Account Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1301,6 +1923,60 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_ACCOUNT_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl <em>Gl Account Category Member</em>}' class.
@@ -1403,6 +2079,51 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_CATEGORY_MEMBER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_MEMBER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_MEMBER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_MEMBER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_MEMBER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Category Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_MEMBER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryTypeImpl <em>Gl Account Category Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1483,6 +2204,96 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_ACCOUNT_CATEGORY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Gl Account Categories</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE___GL_ACCOUNT_CATEGORIES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Category Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CATEGORY_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountClassImpl <em>Gl Account Class</em>}' class.
@@ -1585,6 +2396,69 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_CLASS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CLASS___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CLASS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CLASS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CLASS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Gl Account Classes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CLASS___CHILD_GL_ACCOUNT_CLASSES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CLASS___GL_ACCOUNTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_CLASS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountGroupImpl <em>Gl Account Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1665,6 +2539,69 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_ACCOUNT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Gl Account Group Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP___GL_ACCOUNT_GROUP_MEMBERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountGroupMemberImpl <em>Gl Account Group Member</em>}' class.
@@ -1749,6 +2686,51 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_GROUP_MEMBER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_MEMBER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_MEMBER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_MEMBER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_MEMBER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Group Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_MEMBER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountGroupTypeImpl <em>Gl Account Group Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1829,6 +2811,105 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_ACCOUNT_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Gl Account Group Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___GL_ACCOUNT_GROUP_MEMBERS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Gl Account Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE___GL_ACCOUNT_GROUPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Group Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_GROUP_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl <em>Gl Account History</em>}' class.
@@ -1949,6 +3030,51 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_HISTORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_HISTORY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_HISTORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_HISTORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_HISTORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Account History</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_HISTORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountOrganizationImpl <em>Gl Account Organization</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2049,6 +3175,51 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_ORGANIZATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ORGANIZATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ORGANIZATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ORGANIZATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ORGANIZATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Organization</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ORGANIZATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountRoleImpl <em>Gl Account Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2147,6 +3318,51 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_ACCOUNT_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountTypeImpl <em>Gl Account Type</em>}' class.
@@ -2258,6 +3474,141 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Acctg Trans Entries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___ACCTG_TRANS_ENTRIES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Child Gl Account Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___CHILD_GL_ACCOUNT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Cost Cost Component Calcs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___COST_COST_COMPONENT_CALCS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Offsetting Cost Component Calcs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___OFFSETTING_COST_COMPONENT_CALCS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Payment Gl Account Type Maps</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE___PAYMENT_GL_ACCOUNT_TYPE_MAPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 6;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountTypeDefaultImpl <em>Gl Account Type Default</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2338,6 +3689,51 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_ACCOUNT_TYPE_DEFAULT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE_DEFAULT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE_DEFAULT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE_DEFAULT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE_DEFAULT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Account Type Default</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_ACCOUNT_TYPE_DEFAULT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlBudgetXrefImpl <em>Gl Budget Xref</em>}' class.
@@ -2440,6 +3836,51 @@ public interface LedgerPackage extends EPackage {
 	int GL_BUDGET_XREF_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_BUDGET_XREF___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_BUDGET_XREF___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_BUDGET_XREF___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_BUDGET_XREF___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Budget Xref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_BUDGET_XREF_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlFiscalTypeImpl <em>Gl Fiscal Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2511,6 +3952,60 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_FISCAL_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_FISCAL_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_FISCAL_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_FISCAL_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_FISCAL_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Acctg Transs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_FISCAL_TYPE___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Gl Fiscal Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_FISCAL_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl <em>Gl Journal</em>}' class.
@@ -2611,6 +4106,69 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_JOURNAL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_JOURNAL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_JOURNAL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_JOURNAL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_JOURNAL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Acctg Transs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_JOURNAL___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_JOURNAL___PARTY_ACCTG_PREFERENCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Gl Journal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_JOURNAL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl <em>Gl Reconciliation</em>}' class.
@@ -2785,6 +4343,60 @@ public interface LedgerPackage extends EPackage {
 	int GL_RECONCILIATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Fin Account Transs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION___FIN_ACCOUNT_TRANSS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Gl Reconciliation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationEntryImpl <em>Gl Reconciliation Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2876,6 +4488,51 @@ public interface LedgerPackage extends EPackage {
 	int GL_RECONCILIATION_ENTRY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION_ENTRY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION_ENTRY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION_ENTRY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION_ENTRY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Gl Reconciliation Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RECONCILIATION_ENTRY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlResourceTypeImpl <em>Gl Resource Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2949,6 +4606,60 @@ public interface LedgerPackage extends EPackage {
 	int GL_RESOURCE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RESOURCE_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RESOURCE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RESOURCE_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RESOURCE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RESOURCE_TYPE___GL_ACCOUNTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Gl Resource Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_RESOURCE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlXbrlClassImpl <em>Gl Xbrl Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3020,6 +4731,60 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int GL_XBRL_CLASS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_XBRL_CLASS___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_XBRL_CLASS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_XBRL_CLASS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_XBRL_CLASS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Gl Accounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_XBRL_CLASS___GL_ACCOUNTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Gl Xbrl Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GL_XBRL_CLASS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl <em>Party Acctg Preference</em>}' class.
@@ -3284,6 +5049,60 @@ public interface LedgerPackage extends EPackage {
 	int PARTY_ACCTG_PREFERENCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACCTG_PREFERENCE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACCTG_PREFERENCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACCTG_PREFERENCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACCTG_PREFERENCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Party Pref Doc Type Tpls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACCTG_PREFERENCE___PARTY_PREF_DOC_TYPE_TPLS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Party Acctg Preference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_ACCTG_PREFERENCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyGlAccountImpl <em>Party Gl Account</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3382,6 +5201,51 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARTY_GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party Gl Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyPrefDocTypeTplImpl <em>Party Pref Doc Type Tpl</em>}' class.
@@ -3511,6 +5375,51 @@ public interface LedgerPackage extends EPackage {
 	int PARTY_PREF_DOC_TYPE_TPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_PREF_DOC_TYPE_TPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_PREF_DOC_TYPE_TPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_PREF_DOC_TYPE_TPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_PREF_DOC_TYPE_TPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party Pref Doc Type Tpl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_PREF_DOC_TYPE_TPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.ProductAverageCostImpl <em>Product Average Cost</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3629,6 +5538,60 @@ public interface LedgerPackage extends EPackage {
 	int PRODUCT_AVERAGE_COST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Product Average Cost</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.ProductAverageCostTypeImpl <em>Product Average Cost Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3729,6 +5692,96 @@ public interface LedgerPackage extends EPackage {
 	int PRODUCT_AVERAGE_COST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Product Average Cost Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE___CHILD_PRODUCT_AVERAGE_COST_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Product Average Cost Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_AVERAGE_COST_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.SettlementTermImpl <em>Settlement Term</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3820,6 +5873,60 @@ public interface LedgerPackage extends EPackage {
 	int SETTLEMENT_TERM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SETTLEMENT_TERM___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SETTLEMENT_TERM___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SETTLEMENT_TERM___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SETTLEMENT_TERM___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Acctg Trans Entries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SETTLEMENT_TERM___ACCTG_TRANS_ENTRIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Settlement Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SETTLEMENT_TERM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.VarianceReasonGlAccountImpl <em>Variance Reason Gl Account</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3900,6 +6007,52 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int VARIANCE_REASON_GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIANCE_REASON_GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIANCE_REASON_GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIANCE_REASON_GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIANCE_REASON_GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Variance Reason Gl Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIANCE_REASON_GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -4636,6 +6789,26 @@ public interface LedgerPackage extends EPackage {
 	EReference getAcctgTransEntryType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType#acctgTransEntries() <em>Acctg Trans Entries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Trans Entries</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType#acctgTransEntries()
+	 * @generated
+	 */
+	EOperation getAcctgTransEntryType__AcctgTransEntries();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType#childAcctgTransEntryTypes() <em>Child Acctg Trans Entry Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Acctg Trans Entry Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType#childAcctgTransEntryTypes()
+	 * @generated
+	 */
+	EOperation getAcctgTransEntryType__ChildAcctgTransEntryTypes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType <em>Acctg Trans Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4699,6 +6872,26 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAcctgTransType_AcctgTransTypeAttrs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#acctgTranss() <em>Acctg Transs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.AcctgTransType#acctgTranss()
+	 * @generated
+	 */
+	EOperation getAcctgTransType__AcctgTranss();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#childAcctgTransTypes() <em>Child Acctg Trans Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Acctg Trans Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.AcctgTransType#childAcctgTransTypes()
+	 * @generated
+	 */
+	EOperation getAcctgTransType__ChildAcctgTransTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr <em>Acctg Trans Type Attr</em>}'.
@@ -4897,6 +7090,196 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getGlAccount_GlAccountOrganizations();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#acctgTransEntries() <em>Acctg Trans Entries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Trans Entries</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#acctgTransEntries()
+	 * @generated
+	 */
+	EOperation getGlAccount__AcctgTransEntries();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#childGlAccounts() <em>Child Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#childGlAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccount__ChildGlAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#defaultInvoiceItemTypes() <em>Default Invoice Item Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Default Invoice Item Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#defaultInvoiceItemTypes()
+	 * @generated
+	 */
+	EOperation getGlAccount__DefaultInvoiceItemTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#defaultPaymentMethodTypes() <em>Default Payment Method Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Default Payment Method Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#defaultPaymentMethodTypes()
+	 * @generated
+	 */
+	EOperation getGlAccount__DefaultPaymentMethodTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#finAccountTypeGlAccounts() <em>Fin Account Type Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fin Account Type Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#finAccountTypeGlAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccount__FinAccountTypeGlAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#glAccountTypeDefaults() <em>Gl Account Type Defaults</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Account Type Defaults</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#glAccountTypeDefaults()
+	 * @generated
+	 */
+	EOperation getGlAccount__GlAccountTypeDefaults();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#glReconciliations() <em>Gl Reconciliations</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Reconciliations</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#glReconciliations()
+	 * @generated
+	 */
+	EOperation getGlAccount__GlReconciliations();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#invoiceItemTypeGlAccounts() <em>Invoice Item Type Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Invoice Item Type Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#invoiceItemTypeGlAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccount__InvoiceItemTypeGlAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideInvoiceItems() <em>Override Invoice Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Override Invoice Items</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideInvoiceItems()
+	 * @generated
+	 */
+	EOperation getGlAccount__OverrideInvoiceItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideOrderAdjustments() <em>Override Order Adjustments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Override Order Adjustments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideOrderAdjustments()
+	 * @generated
+	 */
+	EOperation getGlAccount__OverrideOrderAdjustments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideOrderItems() <em>Override Order Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Override Order Items</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideOrderItems()
+	 * @generated
+	 */
+	EOperation getGlAccount__OverrideOrderItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideQuoteAdjustments() <em>Override Quote Adjustments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Override Quote Adjustments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideQuoteAdjustments()
+	 * @generated
+	 */
+	EOperation getGlAccount__OverrideQuoteAdjustments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideReturnAdjustments() <em>Override Return Adjustments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Override Return Adjustments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#overrideReturnAdjustments()
+	 * @generated
+	 */
+	EOperation getGlAccount__OverrideReturnAdjustments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#paymentApplications() <em>Payment Applications</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Applications</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#paymentApplications()
+	 * @generated
+	 */
+	EOperation getGlAccount__PaymentApplications();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#paymentMethodTypeGlAccounts() <em>Payment Method Type Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Method Type Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#paymentMethodTypeGlAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccount__PaymentMethodTypeGlAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#paymentMethods() <em>Payment Methods</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Methods</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#paymentMethods()
+	 * @generated
+	 */
+	EOperation getGlAccount__PaymentMethods();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#payments() <em>Payments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payments</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#payments()
+	 * @generated
+	 */
+	EOperation getGlAccount__Payments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#postToFinAccounts() <em>Post To Fin Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Post To Fin Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#postToFinAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccount__PostToFinAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#varianceReasonGlAccounts() <em>Variance Reason Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Variance Reason Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#varianceReasonGlAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccount__VarianceReasonGlAccounts();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategory <em>Gl Account Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5037,6 +7420,16 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getGlAccountCategoryType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryType#glAccountCategories() <em>Gl Account Categories</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Account Categories</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryType#glAccountCategories()
+	 * @generated
+	 */
+	EOperation getGlAccountCategoryType__GlAccountCategories();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass <em>Gl Account Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5091,6 +7484,26 @@ public interface LedgerPackage extends EPackage {
 	EReference getGlAccountClass_ParentClassId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#childGlAccountClasses() <em>Child Gl Account Classes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Gl Account Classes</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountClass#childGlAccountClasses()
+	 * @generated
+	 */
+	EOperation getGlAccountClass__ChildGlAccountClasses();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#glAccounts() <em>Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountClass#glAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccountClass__GlAccounts();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getSequenceNum <em>Sequence Num</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5143,6 +7556,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGlAccountGroup_GlAccountGroupTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroup#glAccountGroupMembers() <em>Gl Account Group Members</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Account Group Members</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountGroup#glAccountGroupMembers()
+	 * @generated
+	 */
+	EOperation getGlAccountGroup__GlAccountGroupMembers();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember <em>Gl Account Group Member</em>}'.
@@ -5218,6 +7641,26 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGlAccountGroupType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType#glAccountGroupMembers() <em>Gl Account Group Members</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Account Group Members</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType#glAccountGroupMembers()
+	 * @generated
+	 */
+	EOperation getGlAccountGroupType__GlAccountGroupMembers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType#glAccountGroups() <em>Gl Account Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Account Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType#glAccountGroups()
+	 * @generated
+	 */
+	EOperation getGlAccountGroupType__GlAccountGroups();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory <em>Gl Account History</em>}'.
@@ -5502,6 +7945,66 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getGlAccountType_GlAccountTypeDefaults();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#acctgTransEntries() <em>Acctg Trans Entries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Trans Entries</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountType#acctgTransEntries()
+	 * @generated
+	 */
+	EOperation getGlAccountType__AcctgTransEntries();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#childGlAccountTypes() <em>Child Gl Account Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Gl Account Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountType#childGlAccountTypes()
+	 * @generated
+	 */
+	EOperation getGlAccountType__ChildGlAccountTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#costCostComponentCalcs() <em>Cost Cost Component Calcs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cost Cost Component Calcs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountType#costCostComponentCalcs()
+	 * @generated
+	 */
+	EOperation getGlAccountType__CostCostComponentCalcs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#glAccounts() <em>Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountType#glAccounts()
+	 * @generated
+	 */
+	EOperation getGlAccountType__GlAccounts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#offsettingCostComponentCalcs() <em>Offsetting Cost Component Calcs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Offsetting Cost Component Calcs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountType#offsettingCostComponentCalcs()
+	 * @generated
+	 */
+	EOperation getGlAccountType__OffsettingCostComponentCalcs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#paymentGlAccountTypeMaps() <em>Payment Gl Account Type Maps</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Payment Gl Account Type Maps</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountType#paymentGlAccountTypeMaps()
+	 * @generated
+	 */
+	EOperation getGlAccountType__PaymentGlAccountTypeMaps();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault <em>Gl Account Type Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5642,6 +8145,16 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getGlFiscalType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlFiscalType#acctgTranss() <em>Acctg Transs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlFiscalType#acctgTranss()
+	 * @generated
+	 */
+	EOperation getGlFiscalType__AcctgTranss();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlJournal <em>Gl Journal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5694,6 +8207,26 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGlJournal_OrganizationPartyId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#acctgTranss() <em>Acctg Transs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlJournal#acctgTranss()
+	 * @generated
+	 */
+	EOperation getGlJournal__AcctgTranss();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#partyAcctgPreferences() <em>Party Acctg Preferences</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Party Acctg Preferences</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlJournal#partyAcctgPreferences()
+	 * @generated
+	 */
+	EOperation getGlJournal__PartyAcctgPreferences();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getPostedDate <em>Posted Date</em>}'.
@@ -5860,6 +8393,16 @@ public interface LedgerPackage extends EPackage {
 	EReference getGlReconciliation_StatusId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#finAccountTranss() <em>Fin Account Transs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fin Account Transs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlReconciliation#finAccountTranss()
+	 * @generated
+	 */
+	EOperation getGlReconciliation__FinAccountTranss();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry <em>Gl Reconciliation Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5946,6 +8489,16 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getGlResourceType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlResourceType#glAccounts() <em>Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlResourceType#glAccounts()
+	 * @generated
+	 */
+	EOperation getGlResourceType__GlAccounts();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlXbrlClass <em>Gl Xbrl Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5976,6 +8529,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGlXbrlClass_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.GlXbrlClass#glAccounts() <em>Gl Accounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gl Accounts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.GlXbrlClass#glAccounts()
+	 * @generated
+	 */
+	EOperation getGlXbrlClass__GlAccounts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference <em>Party Acctg Preference</em>}'.
@@ -6151,6 +8714,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPartyAcctgPreference_OldOrderSequenceEnumId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#partyPrefDocTypeTpls() <em>Party Pref Doc Type Tpls</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Party Pref Doc Type Tpls</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#partyPrefDocTypeTpls()
+	 * @generated
+	 */
+	EOperation getPartyAcctgPreference__PartyPrefDocTypeTpls();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}'.
@@ -6545,6 +9118,16 @@ public interface LedgerPackage extends EPackage {
 	EReference getProductAverageCostType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.ProductAverageCostType#childProductAverageCostTypes() <em>Child Product Average Cost Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Product Average Cost Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.ProductAverageCostType#childProductAverageCostTypes()
+	 * @generated
+	 */
+	EOperation getProductAverageCostType__ChildProductAverageCostTypes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.SettlementTerm <em>Settlement Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6597,6 +9180,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSettlementTerm_UomId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.ledger.SettlementTerm#acctgTransEntries() <em>Acctg Trans Entries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Trans Entries</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.ledger.SettlementTerm#acctgTransEntries()
+	 * @generated
+	 */
+	EOperation getSettlementTerm__AcctgTransEntries();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount <em>Variance Reason Gl Account</em>}'.
@@ -7208,6 +9801,22 @@ public interface LedgerPackage extends EPackage {
 		EReference ACCTG_TRANS_ENTRY_TYPE__PARENT_TYPE_ID = eINSTANCE.getAcctgTransEntryType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Acctg Trans Entries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCTG_TRANS_ENTRY_TYPE___ACCTG_TRANS_ENTRIES = eINSTANCE.getAcctgTransEntryType__AcctgTransEntries();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Acctg Trans Entry Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCTG_TRANS_ENTRY_TYPE___CHILD_ACCTG_TRANS_ENTRY_TYPES = eINSTANCE.getAcctgTransEntryType__ChildAcctgTransEntryTypes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeImpl <em>Acctg Trans Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7256,6 +9865,22 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ATTRS = eINSTANCE.getAcctgTransType_AcctgTransTypeAttrs();
+
+		/**
+		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCTG_TRANS_TYPE___ACCTG_TRANSS = eINSTANCE.getAcctgTransType__AcctgTranss();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Acctg Trans Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCTG_TRANS_TYPE___CHILD_ACCTG_TRANS_TYPES = eINSTANCE.getAcctgTransType__ChildAcctgTransTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeAttrImpl <em>Acctg Trans Type Attr</em>}' class.
@@ -7406,6 +10031,158 @@ public interface LedgerPackage extends EPackage {
 		EAttribute GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS = eINSTANCE.getGlAccount_GlAccountOrganizations();
 
 		/**
+		 * The meta object literal for the '<em><b>Acctg Trans Entries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___ACCTG_TRANS_ENTRIES = eINSTANCE.getGlAccount__AcctgTransEntries();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___CHILD_GL_ACCOUNTS = eINSTANCE.getGlAccount__ChildGlAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Invoice Item Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___DEFAULT_INVOICE_ITEM_TYPES = eINSTANCE.getGlAccount__DefaultInvoiceItemTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Payment Method Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___DEFAULT_PAYMENT_METHOD_TYPES = eINSTANCE.getGlAccount__DefaultPaymentMethodTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Fin Account Type Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___FIN_ACCOUNT_TYPE_GL_ACCOUNTS = eINSTANCE.getGlAccount__FinAccountTypeGlAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Account Type Defaults</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___GL_ACCOUNT_TYPE_DEFAULTS = eINSTANCE.getGlAccount__GlAccountTypeDefaults();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Reconciliations</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___GL_RECONCILIATIONS = eINSTANCE.getGlAccount__GlReconciliations();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoice Item Type Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___INVOICE_ITEM_TYPE_GL_ACCOUNTS = eINSTANCE.getGlAccount__InvoiceItemTypeGlAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Override Invoice Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___OVERRIDE_INVOICE_ITEMS = eINSTANCE.getGlAccount__OverrideInvoiceItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Override Order Adjustments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___OVERRIDE_ORDER_ADJUSTMENTS = eINSTANCE.getGlAccount__OverrideOrderAdjustments();
+
+		/**
+		 * The meta object literal for the '<em><b>Override Order Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___OVERRIDE_ORDER_ITEMS = eINSTANCE.getGlAccount__OverrideOrderItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Override Quote Adjustments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___OVERRIDE_QUOTE_ADJUSTMENTS = eINSTANCE.getGlAccount__OverrideQuoteAdjustments();
+
+		/**
+		 * The meta object literal for the '<em><b>Override Return Adjustments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___OVERRIDE_RETURN_ADJUSTMENTS = eINSTANCE.getGlAccount__OverrideReturnAdjustments();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Applications</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___PAYMENT_APPLICATIONS = eINSTANCE.getGlAccount__PaymentApplications();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Method Type Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___PAYMENT_METHOD_TYPE_GL_ACCOUNTS = eINSTANCE.getGlAccount__PaymentMethodTypeGlAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Methods</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___PAYMENT_METHODS = eINSTANCE.getGlAccount__PaymentMethods();
+
+		/**
+		 * The meta object literal for the '<em><b>Payments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___PAYMENTS = eINSTANCE.getGlAccount__Payments();
+
+		/**
+		 * The meta object literal for the '<em><b>Post To Fin Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___POST_TO_FIN_ACCOUNTS = eINSTANCE.getGlAccount__PostToFinAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Variance Reason Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT___VARIANCE_REASON_GL_ACCOUNTS = eINSTANCE.getGlAccount__VarianceReasonGlAccounts();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryImpl <em>Gl Account Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7516,6 +10293,14 @@ public interface LedgerPackage extends EPackage {
 		EAttribute GL_ACCOUNT_CATEGORY_TYPE__DESCRIPTION = eINSTANCE.getGlAccountCategoryType_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Gl Account Categories</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_CATEGORY_TYPE___GL_ACCOUNT_CATEGORIES = eINSTANCE.getGlAccountCategoryType__GlAccountCategories();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountClassImpl <em>Gl Account Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7558,6 +10343,22 @@ public interface LedgerPackage extends EPackage {
 		EReference GL_ACCOUNT_CLASS__PARENT_CLASS_ID = eINSTANCE.getGlAccountClass_ParentClassId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Gl Account Classes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_CLASS___CHILD_GL_ACCOUNT_CLASSES = eINSTANCE.getGlAccountClass__ChildGlAccountClasses();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_CLASS___GL_ACCOUNTS = eINSTANCE.getGlAccountClass__GlAccounts();
+
+		/**
 		 * The meta object literal for the '<em><b>Sequence Num</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7598,6 +10399,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID = eINSTANCE.getGlAccountGroup_GlAccountGroupTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Account Group Members</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_GROUP___GL_ACCOUNT_GROUP_MEMBERS = eINSTANCE.getGlAccountGroup__GlAccountGroupMembers();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountGroupMemberImpl <em>Gl Account Group Member</em>}' class.
@@ -7658,6 +10467,22 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GL_ACCOUNT_GROUP_TYPE__DESCRIPTION = eINSTANCE.getGlAccountGroupType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Account Group Members</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_GROUP_TYPE___GL_ACCOUNT_GROUP_MEMBERS = eINSTANCE.getGlAccountGroupType__GlAccountGroupMembers();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Account Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_GROUP_TYPE___GL_ACCOUNT_GROUPS = eINSTANCE.getGlAccountGroupType__GlAccountGroups();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl <em>Gl Account History</em>}' class.
@@ -7876,6 +10701,54 @@ public interface LedgerPackage extends EPackage {
 		EAttribute GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS = eINSTANCE.getGlAccountType_GlAccountTypeDefaults();
 
 		/**
+		 * The meta object literal for the '<em><b>Acctg Trans Entries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_TYPE___ACCTG_TRANS_ENTRIES = eINSTANCE.getGlAccountType__AcctgTransEntries();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Gl Account Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_TYPE___CHILD_GL_ACCOUNT_TYPES = eINSTANCE.getGlAccountType__ChildGlAccountTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Cost Cost Component Calcs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_TYPE___COST_COST_COMPONENT_CALCS = eINSTANCE.getGlAccountType__CostCostComponentCalcs();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_TYPE___GL_ACCOUNTS = eINSTANCE.getGlAccountType__GlAccounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Offsetting Cost Component Calcs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_TYPE___OFFSETTING_COST_COMPONENT_CALCS = eINSTANCE.getGlAccountType__OffsettingCostComponentCalcs();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Gl Account Type Maps</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_ACCOUNT_TYPE___PAYMENT_GL_ACCOUNT_TYPE_MAPS = eINSTANCE.getGlAccountType__PaymentGlAccountTypeMaps();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountTypeDefaultImpl <em>Gl Account Type Default</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7986,6 +10859,14 @@ public interface LedgerPackage extends EPackage {
 		EAttribute GL_FISCAL_TYPE__DESCRIPTION = eINSTANCE.getGlFiscalType_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_FISCAL_TYPE___ACCTG_TRANSS = eINSTANCE.getGlFiscalType__AcctgTranss();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl <em>Gl Journal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8026,6 +10907,22 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GL_JOURNAL__ORGANIZATION_PARTY_ID = eINSTANCE.getGlJournal_OrganizationPartyId();
+
+		/**
+		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_JOURNAL___ACCTG_TRANSS = eINSTANCE.getGlJournal__AcctgTranss();
+
+		/**
+		 * The meta object literal for the '<em><b>Party Acctg Preferences</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_JOURNAL___PARTY_ACCTG_PREFERENCES = eINSTANCE.getGlJournal__PartyAcctgPreferences();
 
 		/**
 		 * The meta object literal for the '<em><b>Posted Date</b></em>' attribute feature.
@@ -8150,6 +11047,14 @@ public interface LedgerPackage extends EPackage {
 		EReference GL_RECONCILIATION__STATUS_ID = eINSTANCE.getGlReconciliation_StatusId();
 
 		/**
+		 * The meta object literal for the '<em><b>Fin Account Transs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_RECONCILIATION___FIN_ACCOUNT_TRANSS = eINSTANCE.getGlReconciliation__FinAccountTranss();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationEntryImpl <em>Gl Reconciliation Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8218,6 +11123,14 @@ public interface LedgerPackage extends EPackage {
 		EAttribute GL_RESOURCE_TYPE__DESCRIPTION = eINSTANCE.getGlResourceType_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_RESOURCE_TYPE___GL_ACCOUNTS = eINSTANCE.getGlResourceType__GlAccounts();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlXbrlClassImpl <em>Gl Xbrl Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8242,6 +11155,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GL_XBRL_CLASS__DESCRIPTION = eINSTANCE.getGlXbrlClass_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Gl Accounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GL_XBRL_CLASS___GL_ACCOUNTS = eINSTANCE.getGlXbrlClass__GlAccounts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl <em>Party Acctg Preference</em>}' class.
@@ -8372,6 +11293,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID = eINSTANCE.getPartyAcctgPreference_OldOrderSequenceEnumId();
+
+		/**
+		 * The meta object literal for the '<em><b>Party Pref Doc Type Tpls</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PARTY_ACCTG_PREFERENCE___PARTY_PREF_DOC_TYPE_TPLS = eINSTANCE.getPartyAcctgPreference__PartyPrefDocTypeTpls();
 
 		/**
 		 * The meta object literal for the '<em><b>Old Quote Sequence Enum Id</b></em>' reference feature.
@@ -8670,6 +11599,14 @@ public interface LedgerPackage extends EPackage {
 		EReference PRODUCT_AVERAGE_COST_TYPE__PARENT_TYPE_ID = eINSTANCE.getProductAverageCostType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Product Average Cost Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_AVERAGE_COST_TYPE___CHILD_PRODUCT_AVERAGE_COST_TYPES = eINSTANCE.getProductAverageCostType__ChildProductAverageCostTypes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.SettlementTermImpl <em>Settlement Term</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8710,6 +11647,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SETTLEMENT_TERM__UOM_ID = eINSTANCE.getSettlementTerm_UomId();
+
+		/**
+		 * The meta object literal for the '<em><b>Acctg Trans Entries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SETTLEMENT_TERM___ACCTG_TRANS_ENTRIES = eINSTANCE.getSettlementTerm__AcctgTransEntries();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.VarianceReasonGlAccountImpl <em>Variance Reason Gl Account</em>}' class.

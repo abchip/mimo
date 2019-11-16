@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.reservations.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
@@ -14,6 +15,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 import org.abchip.mimo.biz.order.reservations.ReservationsPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -168,6 +170,20 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ReservationsPackage.ACCOMMODATION_SPOT___WORK_EFFORTS:
+				return workEfforts();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //AccommodationSpotImpl

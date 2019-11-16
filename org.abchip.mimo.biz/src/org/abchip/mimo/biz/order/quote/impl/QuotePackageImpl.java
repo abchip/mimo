@@ -207,6 +207,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -911,6 +912,26 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 	@Override
 	public EAttribute getQuote_QuoteWorkEfforts() {
 		return (EAttribute)quoteEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getQuote__QuoteAdjustments() {
+		return quoteEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getQuote__SalesOpportunityQuotes() {
+		return quoteEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1809,6 +1830,36 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getQuoteType__ChildQuoteTypes() {
+		return quoteTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getQuoteType__PartyPrefDocTypeTpls() {
+		return quoteTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getQuoteType__Quotes() {
+		return quoteTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getQuoteTypeAttr() {
 		return quoteTypeAttrEClass;
 	}
@@ -1920,6 +1971,8 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		createEAttribute(quoteEClass, QUOTE__QUOTE_ITEMS);
 		createEAttribute(quoteEClass, QUOTE__QUOTE_NOTES);
 		createEAttribute(quoteEClass, QUOTE__QUOTE_WORK_EFFORTS);
+		createEOperation(quoteEClass, QUOTE___QUOTE_ADJUSTMENTS);
+		createEOperation(quoteEClass, QUOTE___SALES_OPPORTUNITY_QUOTES);
 
 		quoteAdjustmentEClass = createEClass(QUOTE_ADJUSTMENT);
 		createEAttribute(quoteAdjustmentEClass, QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_ID);
@@ -2018,6 +2071,9 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		createEAttribute(quoteTypeEClass, QUOTE_TYPE__HAS_TABLE);
 		createEReference(quoteTypeEClass, QUOTE_TYPE__PARENT_TYPE_ID);
 		createEAttribute(quoteTypeEClass, QUOTE_TYPE__QUOTE_TYPE_ATTRS);
+		createEOperation(quoteTypeEClass, QUOTE_TYPE___CHILD_QUOTE_TYPES);
+		createEOperation(quoteTypeEClass, QUOTE_TYPE___PARTY_PREF_DOC_TYPE_TPLS);
+		createEOperation(quoteTypeEClass, QUOTE_TYPE___QUOTES);
 
 		quoteTypeAttrEClass = createEClass(QUOTE_TYPE_ATTR);
 		createEAttribute(quoteTypeAttrEClass, QUOTE_TYPE_ATTR__ATTR_NAME);
@@ -2095,7 +2151,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		quoteTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		quoteWorkEffortEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(quoteEClass, Quote.class, "Quote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuote_QuoteId(), ecorePackage.getEString(), "quoteId", null, 1, 1, Quote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuote_Description(), ecorePackage.getEString(), "description", null, 0, 1, Quote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2121,9 +2177,9 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		initEAttribute(getQuote_QuoteNotes(), ecorePackage.getEString(), "quoteNotes", null, 0, -1, Quote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuote_QuoteWorkEfforts(), ecorePackage.getEString(), "quoteWorkEfforts", null, 0, -1, Quote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(quoteEClass, ecorePackage.getEString(), "quoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getQuote__QuoteAdjustments(), ecorePackage.getEString(), "quoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(quoteEClass, ecorePackage.getEString(), "salesOpportunityQuotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getQuote__SalesOpportunityQuotes(), ecorePackage.getEString(), "salesOpportunityQuotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(quoteAdjustmentEClass, QuoteAdjustment.class, "QuoteAdjustment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuoteAdjustment_QuoteAdjustmentId(), ecorePackage.getEString(), "quoteAdjustmentId", null, 1, 1, QuoteAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2247,11 +2303,11 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		getQuoteType_ParentTypeId().getEKeys().add(this.getQuoteType_QuoteTypeId());
 		initEAttribute(getQuoteType_QuoteTypeAttrs(), ecorePackage.getEString(), "quoteTypeAttrs", null, 0, -1, QuoteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(quoteTypeEClass, ecorePackage.getEString(), "childQuoteTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getQuoteType__ChildQuoteTypes(), ecorePackage.getEString(), "childQuoteTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(quoteTypeEClass, ecorePackage.getEString(), "partyPrefDocTypeTpls", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getQuoteType__PartyPrefDocTypeTpls(), ecorePackage.getEString(), "partyPrefDocTypeTpls", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(quoteTypeEClass, ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getQuoteType__Quotes(), ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(quoteTypeAttrEClass, QuoteTypeAttr.class, "QuoteTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuoteTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, QuoteTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2323,13 +2379,13 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (quoteEClass.getEOperations().get(0),
+		  (getQuote__QuoteAdjustments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (quoteEClass.getEOperations().get(1),
+		  (getQuote__SalesOpportunityQuotes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2425,19 +2481,19 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (quoteTypeEClass.getEOperations().get(0),
+		  (getQuoteType__ChildQuoteTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (quoteTypeEClass.getEOperations().get(1),
+		  (getQuoteType__PartyPrefDocTypeTpls(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (quoteTypeEClass.getEOperations().get(2),
+		  (getQuoteType__Quotes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2471,7 +2527,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (quoteEClass.getEOperations().get(0),
+		  (getQuote__QuoteAdjustments(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteAdjustment",
@@ -2481,7 +2537,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (quoteEClass.getEOperations().get(1),
+		  (getQuote__SalesOpportunityQuotes(),
 		   source,
 		   new String[] {
 			   "frame", "SalesOpportunityQuote",
@@ -2536,7 +2592,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (quoteTypeEClass.getEOperations().get(0),
+		  (getQuoteType__ChildQuoteTypes(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteType",
@@ -2546,7 +2602,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (quoteTypeEClass.getEOperations().get(1),
+		  (getQuoteType__PartyPrefDocTypeTpls(),
 		   source,
 		   new String[] {
 			   "frame", "PartyPrefDocTypeTpl",
@@ -2556,7 +2612,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (quoteTypeEClass.getEOperations().get(2),
+		  (getQuoteType__Quotes(),
 		   source,
 		   new String[] {
 			   "frame", "Quote",

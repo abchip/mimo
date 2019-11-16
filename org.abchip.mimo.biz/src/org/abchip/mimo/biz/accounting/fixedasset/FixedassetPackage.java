@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -144,6 +145,78 @@ public interface FixedassetPackage extends EPackage {
 	int ACCOMMODATION_CLASS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Accommodation Maps</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS___ACCOMMODATION_MAPS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Accommodation Spots</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS___ACCOMMODATION_SPOTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Child Accommodation Classes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS___CHILD_ACCOMMODATION_CLASSES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Accommodation Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_CLASS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl <em>Accommodation Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,6 +317,69 @@ public interface FixedassetPackage extends EPackage {
 	int ACCOMMODATION_MAP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP___WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Accommodation Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapTypeImpl <em>Accommodation Map Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,6 +460,96 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACCOMMODATION_MAP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Accommodation Maps</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE___ACCOMMODATION_MAPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Accommodation Map Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_MAP_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl <em>Fixed Asset</em>}' class.
@@ -642,6 +868,150 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Accommodation Maps</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___ACCOMMODATION_MAPS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Accommodation Spots</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___ACCOMMODATION_SPOTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Acctg Transs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Child Fixed Assets</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___CHILD_FIXED_ASSETS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Cost Components</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___COST_COMPONENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Deliveries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___DELIVERIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Fixed Asset Dep Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___FIXED_ASSET_DEP_METHODS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Fixed Asset Inventory Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___FIXED_ASSET_INVENTORY_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Requirements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___REQUIREMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET___WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 9;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 10;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetAttributeImpl <em>Fixed Asset Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -731,6 +1101,51 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl <em>Fixed Asset Dep Method</em>}' class.
@@ -824,6 +1239,51 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_DEP_METHOD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_DEP_METHOD___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_DEP_METHOD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_DEP_METHOD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_DEP_METHOD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Dep Method</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_DEP_METHOD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetGeoPointImpl <em>Fixed Asset Geo Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -915,6 +1375,51 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_GEO_POINT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_GEO_POINT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_GEO_POINT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_GEO_POINT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_GEO_POINT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Geo Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_GEO_POINT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl <em>Fixed Asset Ident</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -997,6 +1502,60 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_IDENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Ident</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentTypeImpl <em>Fixed Asset Ident Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1077,6 +1636,96 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_IDENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Fixed Asset Idents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE___FIXED_ASSET_IDENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Ident Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_IDENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl <em>Fixed Asset Maint</em>}' class.
@@ -1224,6 +1873,51 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_MAINT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Maint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintOrderImpl <em>Fixed Asset Maint Order</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1313,6 +2007,51 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_MAINT_ORDER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT_ORDER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT_ORDER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT_ORDER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT_ORDER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Maint Order</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_MAINT_ORDER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl <em>Fixed Asset Meter</em>}' class.
@@ -1431,6 +2170,51 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_METER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_METER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_METER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_METER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_METER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Meter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_METER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl <em>Fixed Asset Product</em>}' class.
@@ -1569,6 +2353,60 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_PRODUCT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Product</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductTypeImpl <em>Fixed Asset Product Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1649,6 +2487,87 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_PRODUCT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Product Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_PRODUCT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl <em>Fixed Asset Registration</em>}' class.
@@ -1769,6 +2688,51 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_REGISTRATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_REGISTRATION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_REGISTRATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_REGISTRATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_REGISTRATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Registration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_REGISTRATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl <em>Fixed Asset Std Cost</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1878,6 +2842,60 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_STD_COST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Std Cost</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostTypeImpl <em>Fixed Asset Std Cost Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1976,6 +2994,96 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_STD_COST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Fixed Asset Std Cost Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE___CHILD_FIXED_ASSET_STD_COST_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Std Cost Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_STD_COST_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeImpl <em>Fixed Asset Type</em>}' class.
@@ -2087,6 +3195,114 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Fixed Asset Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___CHILD_FIXED_ASSET_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Fixed Assets</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___FIXED_ASSETS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Work Effort Fixed Asset Stds</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE___WORK_EFFORT_FIXED_ASSET_STDS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeAttrImpl <em>Fixed Asset Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2167,6 +3383,51 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Type Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl <em>Fixed Asset Type Gl Account</em>}' class.
@@ -2294,6 +3555,51 @@ public interface FixedassetPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIXED_ASSET_TYPE_GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Fixed Asset Type Gl Account</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_ASSET_TYPE_GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl <em>Party Fixed Asset Assignment</em>}' class.
@@ -2424,6 +3730,52 @@ public interface FixedassetPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_FIXED_ASSET_ASSIGNMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_FIXED_ASSET_ASSIGNMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_FIXED_ASSET_ASSIGNMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_FIXED_ASSET_ASSIGNMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Party Fixed Asset Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_FIXED_ASSET_ASSIGNMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass <em>Accommodation Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2467,6 +3819,36 @@ public interface FixedassetPackage extends EPackage {
 	EReference getAccommodationClass_ParentClassId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#accommodationMaps() <em>Accommodation Maps</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Accommodation Maps</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#accommodationMaps()
+	 * @generated
+	 */
+	EOperation getAccommodationClass__AccommodationMaps();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#accommodationSpots() <em>Accommodation Spots</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Accommodation Spots</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#accommodationSpots()
+	 * @generated
+	 */
+	EOperation getAccommodationClass__AccommodationSpots();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#childAccommodationClasses() <em>Child Accommodation Classes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Accommodation Classes</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#childAccommodationClasses()
+	 * @generated
+	 */
+	EOperation getAccommodationClass__ChildAccommodationClasses();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap <em>Accommodation Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2508,6 +3890,16 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAccommodationMap_AccommodationMapTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#workEfforts() <em>Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#workEfforts()
+	 * @generated
+	 */
+	EOperation getAccommodationMap__WorkEfforts();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getFixedAssetId <em>Fixed Asset Id</em>}'.
@@ -2562,6 +3954,16 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAccommodationMapType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType#accommodationMaps() <em>Accommodation Maps</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Accommodation Maps</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType#accommodationMaps()
+	 * @generated
+	 */
+	EOperation getAccommodationMapType__AccommodationMaps();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset <em>Fixed Asset</em>}'.
@@ -2893,6 +4295,106 @@ public interface FixedassetPackage extends EPackage {
 	EAttribute getFixedAsset_FixedAssetRegistrations();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#accommodationMaps() <em>Accommodation Maps</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Accommodation Maps</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#accommodationMaps()
+	 * @generated
+	 */
+	EOperation getFixedAsset__AccommodationMaps();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#accommodationSpots() <em>Accommodation Spots</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Accommodation Spots</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#accommodationSpots()
+	 * @generated
+	 */
+	EOperation getFixedAsset__AccommodationSpots();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#acctgTranss() <em>Acctg Transs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#acctgTranss()
+	 * @generated
+	 */
+	EOperation getFixedAsset__AcctgTranss();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#childFixedAssets() <em>Child Fixed Assets</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Fixed Assets</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#childFixedAssets()
+	 * @generated
+	 */
+	EOperation getFixedAsset__ChildFixedAssets();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#costComponents() <em>Cost Components</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cost Components</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#costComponents()
+	 * @generated
+	 */
+	EOperation getFixedAsset__CostComponents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#deliveries() <em>Deliveries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Deliveries</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#deliveries()
+	 * @generated
+	 */
+	EOperation getFixedAsset__Deliveries();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#fixedAssetDepMethods() <em>Fixed Asset Dep Methods</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fixed Asset Dep Methods</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#fixedAssetDepMethods()
+	 * @generated
+	 */
+	EOperation getFixedAsset__FixedAssetDepMethods();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#fixedAssetInventoryItems() <em>Fixed Asset Inventory Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fixed Asset Inventory Items</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#fixedAssetInventoryItems()
+	 * @generated
+	 */
+	EOperation getFixedAsset__FixedAssetInventoryItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#requirements() <em>Requirements</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Requirements</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#requirements()
+	 * @generated
+	 */
+	EOperation getFixedAsset__Requirements();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#workEfforts() <em>Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#workEfforts()
+	 * @generated
+	 */
+	EOperation getFixedAsset__WorkEfforts();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetAttribute <em>Fixed Asset Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3128,6 +4630,16 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFixedAssetIdentType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType#fixedAssetIdents() <em>Fixed Asset Idents</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fixed Asset Idents</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType#fixedAssetIdents()
+	 * @generated
+	 */
+	EOperation getFixedAssetIdentType__FixedAssetIdents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint <em>Fixed Asset Maint</em>}'.
@@ -3749,6 +5261,16 @@ public interface FixedassetPackage extends EPackage {
 	EReference getFixedAssetStdCostType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType#childFixedAssetStdCostTypes() <em>Child Fixed Asset Std Cost Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Fixed Asset Std Cost Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType#childFixedAssetStdCostTypes()
+	 * @generated
+	 */
+	EOperation getFixedAssetStdCostType__ChildFixedAssetStdCostTypes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType <em>Fixed Asset Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3812,6 +5334,36 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFixedAssetType_FixedAssetTypeAttrs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#childFixedAssetTypes() <em>Child Fixed Asset Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Fixed Asset Types</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#childFixedAssetTypes()
+	 * @generated
+	 */
+	EOperation getFixedAssetType__ChildFixedAssetTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#fixedAssets() <em>Fixed Assets</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fixed Assets</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#fixedAssets()
+	 * @generated
+	 */
+	EOperation getFixedAssetType__FixedAssets();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#workEffortFixedAssetStds() <em>Work Effort Fixed Asset Stds</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Effort Fixed Asset Stds</em>' operation.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#workEffortFixedAssetStds()
+	 * @generated
+	 */
+	EOperation getFixedAssetType__WorkEffortFixedAssetStds();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeAttr <em>Fixed Asset Type Attr</em>}'.
@@ -4109,6 +5661,30 @@ public interface FixedassetPackage extends EPackage {
 		EReference ACCOMMODATION_CLASS__PARENT_CLASS_ID = eINSTANCE.getAccommodationClass_ParentClassId();
 
 		/**
+		 * The meta object literal for the '<em><b>Accommodation Maps</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOMMODATION_CLASS___ACCOMMODATION_MAPS = eINSTANCE.getAccommodationClass__AccommodationMaps();
+
+		/**
+		 * The meta object literal for the '<em><b>Accommodation Spots</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOMMODATION_CLASS___ACCOMMODATION_SPOTS = eINSTANCE.getAccommodationClass__AccommodationSpots();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Accommodation Classes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOMMODATION_CLASS___CHILD_ACCOMMODATION_CLASSES = eINSTANCE.getAccommodationClass__ChildAccommodationClasses();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl <em>Accommodation Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4141,6 +5717,14 @@ public interface FixedassetPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID = eINSTANCE.getAccommodationMap_AccommodationMapTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOMMODATION_MAP___WORK_EFFORTS = eINSTANCE.getAccommodationMap__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '<em><b>Fixed Asset Id</b></em>' reference feature.
@@ -4183,6 +5767,14 @@ public interface FixedassetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACCOMMODATION_MAP_TYPE__DESCRIPTION = eINSTANCE.getAccommodationMapType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Accommodation Maps</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOMMODATION_MAP_TYPE___ACCOMMODATION_MAPS = eINSTANCE.getAccommodationMapType__AccommodationMaps();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl <em>Fixed Asset</em>}' class.
@@ -4427,6 +6019,86 @@ public interface FixedassetPackage extends EPackage {
 		EAttribute FIXED_ASSET__FIXED_ASSET_REGISTRATIONS = eINSTANCE.getFixedAsset_FixedAssetRegistrations();
 
 		/**
+		 * The meta object literal for the '<em><b>Accommodation Maps</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___ACCOMMODATION_MAPS = eINSTANCE.getFixedAsset__AccommodationMaps();
+
+		/**
+		 * The meta object literal for the '<em><b>Accommodation Spots</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___ACCOMMODATION_SPOTS = eINSTANCE.getFixedAsset__AccommodationSpots();
+
+		/**
+		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___ACCTG_TRANSS = eINSTANCE.getFixedAsset__AcctgTranss();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Fixed Assets</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___CHILD_FIXED_ASSETS = eINSTANCE.getFixedAsset__ChildFixedAssets();
+
+		/**
+		 * The meta object literal for the '<em><b>Cost Components</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___COST_COMPONENTS = eINSTANCE.getFixedAsset__CostComponents();
+
+		/**
+		 * The meta object literal for the '<em><b>Deliveries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___DELIVERIES = eINSTANCE.getFixedAsset__Deliveries();
+
+		/**
+		 * The meta object literal for the '<em><b>Fixed Asset Dep Methods</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___FIXED_ASSET_DEP_METHODS = eINSTANCE.getFixedAsset__FixedAssetDepMethods();
+
+		/**
+		 * The meta object literal for the '<em><b>Fixed Asset Inventory Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___FIXED_ASSET_INVENTORY_ITEMS = eINSTANCE.getFixedAsset__FixedAssetInventoryItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirements</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___REQUIREMENTS = eINSTANCE.getFixedAsset__Requirements();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET___WORK_EFFORTS = eINSTANCE.getFixedAsset__WorkEfforts();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetAttributeImpl <em>Fixed Asset Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4611,6 +6283,14 @@ public interface FixedassetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIXED_ASSET_IDENT_TYPE__DESCRIPTION = eINSTANCE.getFixedAssetIdentType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Fixed Asset Idents</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET_IDENT_TYPE___FIXED_ASSET_IDENTS = eINSTANCE.getFixedAssetIdentType__FixedAssetIdents();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl <em>Fixed Asset Maint</em>}' class.
@@ -5085,6 +6765,14 @@ public interface FixedassetPackage extends EPackage {
 		EReference FIXED_ASSET_STD_COST_TYPE__PARENT_TYPE_ID = eINSTANCE.getFixedAssetStdCostType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Fixed Asset Std Cost Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET_STD_COST_TYPE___CHILD_FIXED_ASSET_STD_COST_TYPES = eINSTANCE.getFixedAssetStdCostType__ChildFixedAssetStdCostTypes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeImpl <em>Fixed Asset Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5133,6 +6821,30 @@ public interface FixedassetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS = eINSTANCE.getFixedAssetType_FixedAssetTypeAttrs();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Fixed Asset Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET_TYPE___CHILD_FIXED_ASSET_TYPES = eINSTANCE.getFixedAssetType__ChildFixedAssetTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Fixed Assets</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET_TYPE___FIXED_ASSETS = eINSTANCE.getFixedAssetType__FixedAssets();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Effort Fixed Asset Stds</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIXED_ASSET_TYPE___WORK_EFFORT_FIXED_ASSET_STDS = eINSTANCE.getFixedAssetType__WorkEffortFixedAssetStds();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeAttrImpl <em>Fixed Asset Type Attr</em>}' class.

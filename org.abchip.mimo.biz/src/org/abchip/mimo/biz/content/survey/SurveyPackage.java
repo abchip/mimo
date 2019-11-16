@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.content.survey;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -225,6 +226,87 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Data Resources</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___DATA_RESOURCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Product Store Fin Act Settings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___PRODUCT_STORE_FIN_ACT_SETTINGS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Product Store Survey Appls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___PRODUCT_STORE_SURVEY_APPLS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Survey Responses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY___SURVEY_RESPONSES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Survey</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyApplTypeImpl <em>Appl Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,6 +378,60 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_APPL_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_APPL_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_APPL_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_APPL_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_APPL_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Product Store Survey Appls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_APPL_TYPE___PRODUCT_STORE_SURVEY_APPLS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Appl Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_APPL_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespImpl <em>Multi Resp</em>}' class.
@@ -378,6 +514,51 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_MULTI_RESP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Multi Resp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespColumnImpl <em>Multi Resp Column</em>}' class.
@@ -480,6 +661,51 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_MULTI_RESP_COLUMN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP_COLUMN___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP_COLUMN___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP_COLUMN___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP_COLUMN___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Multi Resp Column</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_MULTI_RESP_COLUMN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl <em>Page</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -569,6 +795,51 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_PAGE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_PAGE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_PAGE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_PAGE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_PAGE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_PAGE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl <em>Question</em>}' class.
@@ -714,6 +985,60 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_QUESTION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Question</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionApplImpl <em>Question Appl</em>}' class.
@@ -879,6 +1204,51 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_QUESTION_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Question Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionCategoryImpl <em>Question Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -959,6 +1329,69 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_QUESTION_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_CATEGORY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_CATEGORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_CATEGORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_CATEGORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Survey Question Categories</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_CATEGORY___CHILD_SURVEY_QUESTION_CATEGORIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Survey Questions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_CATEGORY___SURVEY_QUESTIONS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Question Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_CATEGORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl <em>Question Option</em>}' class.
@@ -1097,6 +1530,51 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_QUESTION_OPTION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_OPTION___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_OPTION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_OPTION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_OPTION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Question Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_OPTION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionTypeImpl <em>Question Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1177,6 +1655,96 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_QUESTION_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Survey Questions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE___SURVEY_QUESTIONS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Question Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_QUESTION_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl <em>Response</em>}' class.
@@ -1322,6 +1890,69 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_RESPONSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Data Resources</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE___DATA_RESOURCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Gift Card Fulfillments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE___GIFT_CARD_FULFILLMENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Response</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl <em>Response Answer</em>}' class.
@@ -1541,6 +2172,51 @@ public interface SurveyPackage extends EPackage {
 	int SURVEY_RESPONSE_ANSWER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE_ANSWER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE_ANSWER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE_ANSWER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE_ANSWER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Response Answer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_RESPONSE_ANSWER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyTriggerImpl <em>Trigger</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1630,6 +2306,52 @@ public interface SurveyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURVEY_TRIGGER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_TRIGGER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_TRIGGER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_TRIGGER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_TRIGGER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Trigger</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURVEY_TRIGGER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1775,6 +2497,46 @@ public interface SurveyPackage extends EPackage {
 	EAttribute getSurvey_SurveyPages();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.Survey#dataResources() <em>Data Resources</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Data Resources</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.Survey#dataResources()
+	 * @generated
+	 */
+	EOperation getSurvey__DataResources();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.Survey#productStoreFinActSettings() <em>Product Store Fin Act Settings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Store Fin Act Settings</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.Survey#productStoreFinActSettings()
+	 * @generated
+	 */
+	EOperation getSurvey__ProductStoreFinActSettings();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.Survey#productStoreSurveyAppls() <em>Product Store Survey Appls</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Store Survey Appls</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.Survey#productStoreSurveyAppls()
+	 * @generated
+	 */
+	EOperation getSurvey__ProductStoreSurveyAppls();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.Survey#surveyResponses() <em>Survey Responses</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Survey Responses</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.Survey#surveyResponses()
+	 * @generated
+	 */
+	EOperation getSurvey__SurveyResponses();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.survey.SurveyApplType <em>Appl Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1805,6 +2567,16 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSurveyApplType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.SurveyApplType#productStoreSurveyAppls() <em>Product Store Survey Appls</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Store Survey Appls</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyApplType#productStoreSurveyAppls()
+	 * @generated
+	 */
+	EOperation getSurveyApplType__ProductStoreSurveyAppls();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp <em>Multi Resp</em>}'.
@@ -2274,6 +3046,26 @@ public interface SurveyPackage extends EPackage {
 	EReference getSurveyQuestionCategory_ParentCategoryId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionCategory#childSurveyQuestionCategories() <em>Child Survey Question Categories</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Survey Question Categories</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyQuestionCategory#childSurveyQuestionCategories()
+	 * @generated
+	 */
+	EOperation getSurveyQuestionCategory__ChildSurveyQuestionCategories();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionCategory#surveyQuestions() <em>Survey Questions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Survey Questions</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyQuestionCategory#surveyQuestions()
+	 * @generated
+	 */
+	EOperation getSurveyQuestionCategory__SurveyQuestions();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption <em>Question Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2415,6 +3207,16 @@ public interface SurveyPackage extends EPackage {
 	EAttribute getSurveyQuestionType_Description();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionType#surveyQuestions() <em>Survey Questions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Survey Questions</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyQuestionType#surveyQuestions()
+	 * @generated
+	 */
+	EOperation getSurveyQuestionType__SurveyQuestions();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.survey.SurveyResponse <em>Response</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2522,6 +3324,26 @@ public interface SurveyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSurveyResponse_StatusId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#dataResources() <em>Data Resources</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Data Resources</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyResponse#dataResources()
+	 * @generated
+	 */
+	EOperation getSurveyResponse__DataResources();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#giftCardFulfillments() <em>Gift Card Fulfillments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Gift Card Fulfillments</em>' operation.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyResponse#giftCardFulfillments()
+	 * @generated
+	 */
+	EOperation getSurveyResponse__GiftCardFulfillments();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyId <em>Survey Id</em>}'.
@@ -2925,6 +3747,38 @@ public interface SurveyPackage extends EPackage {
 		EAttribute SURVEY__SURVEY_PAGES = eINSTANCE.getSurvey_SurveyPages();
 
 		/**
+		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY___DATA_RESOURCES = eINSTANCE.getSurvey__DataResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Store Fin Act Settings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY___PRODUCT_STORE_FIN_ACT_SETTINGS = eINSTANCE.getSurvey__ProductStoreFinActSettings();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Store Survey Appls</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY___PRODUCT_STORE_SURVEY_APPLS = eINSTANCE.getSurvey__ProductStoreSurveyAppls();
+
+		/**
+		 * The meta object literal for the '<em><b>Survey Responses</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY___SURVEY_RESPONSES = eINSTANCE.getSurvey__SurveyResponses();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyApplTypeImpl <em>Appl Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2949,6 +3803,14 @@ public interface SurveyPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SURVEY_APPL_TYPE__DESCRIPTION = eINSTANCE.getSurveyApplType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Store Survey Appls</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY_APPL_TYPE___PRODUCT_STORE_SURVEY_APPLS = eINSTANCE.getSurveyApplType__ProductStoreSurveyAppls();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespImpl <em>Multi Resp</em>}' class.
@@ -3307,6 +4169,22 @@ public interface SurveyPackage extends EPackage {
 		EReference SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID = eINSTANCE.getSurveyQuestionCategory_ParentCategoryId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Survey Question Categories</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY_QUESTION_CATEGORY___CHILD_SURVEY_QUESTION_CATEGORIES = eINSTANCE.getSurveyQuestionCategory__ChildSurveyQuestionCategories();
+
+		/**
+		 * The meta object literal for the '<em><b>Survey Questions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY_QUESTION_CATEGORY___SURVEY_QUESTIONS = eINSTANCE.getSurveyQuestionCategory__SurveyQuestions();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionOptionImpl <em>Question Option</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3415,6 +4293,14 @@ public interface SurveyPackage extends EPackage {
 		EAttribute SURVEY_QUESTION_TYPE__DESCRIPTION = eINSTANCE.getSurveyQuestionType_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Survey Questions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY_QUESTION_TYPE___SURVEY_QUESTIONS = eINSTANCE.getSurveyQuestionType__SurveyQuestions();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl <em>Response</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3495,6 +4381,22 @@ public interface SurveyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SURVEY_RESPONSE__STATUS_ID = eINSTANCE.getSurveyResponse_StatusId();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY_RESPONSE___DATA_RESOURCES = eINSTANCE.getSurveyResponse__DataResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Gift Card Fulfillments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SURVEY_RESPONSE___GIFT_CARD_FULFILLMENTS = eINSTANCE.getSurveyResponse__GiftCardFulfillments();
 
 		/**
 		 * The meta object literal for the '<em><b>Survey Id</b></em>' reference feature.

@@ -826,7 +826,7 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 		// Add supertypes to classes
 		emailTemplateSettingEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(emailTemplateSettingEClass, EmailTemplateSetting.class, "EmailTemplateSetting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmailTemplateSetting_EmailTemplateSettingId(), ecorePackage.getEString(), "emailTemplateSettingId", null, 1, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmailTemplateSetting_BccAddress(), ecorePackage.getEString(), "bccAddress", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.feature;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -216,6 +217,132 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Assoc Product Feature Iactns</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___ASSOC_PRODUCT_FEATURE_IACTNS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Cost Components</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___COST_COMPONENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Desired Features</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___DESIRED_FEATURES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Invoice Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___INVOICE_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Product Feature Data Resources</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___PRODUCT_FEATURE_DATA_RESOURCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Product Manufacturing Rules</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___PRODUCT_MANUFACTURING_RULES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Quote Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___QUOTE_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Supplier Product Features</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE___SUPPLIER_PRODUCT_FEATURES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
+	 * The number of operations of the '<em>Product Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl <em>Product Feature Appl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -343,6 +470,60 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplAttrImpl <em>Product Feature Appl Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,6 +622,51 @@ public interface FeaturePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_FEATURE_APPL_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Appl Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplTypeImpl <em>Product Feature Appl Type</em>}' class.
@@ -543,6 +769,96 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_APPL_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Product Feature Appl Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE___CHILD_PRODUCT_FEATURE_APPL_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Appl Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_APPL_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCatGrpApplImpl <em>Product Feature Cat Grp Appl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -634,6 +950,51 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_CAT_GRP_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CAT_GRP_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CAT_GRP_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CAT_GRP_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CAT_GRP_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Cat Grp Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CAT_GRP_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryImpl <em>Product Feature Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -714,6 +1075,69 @@ public interface FeaturePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_FEATURE_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Product Feature Categories</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY___CHILD_PRODUCT_FEATURE_CATEGORIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Product Features</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY___PRODUCT_FEATURES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryApplImpl <em>Product Feature Category Appl</em>}' class.
@@ -807,6 +1231,51 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_CATEGORY_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Category Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_CATEGORY_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureDataResourceImpl <em>Product Feature Data Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -880,6 +1349,51 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_DATA_RESOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_DATA_RESOURCE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_DATA_RESOURCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_DATA_RESOURCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_DATA_RESOURCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Data Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_DATA_RESOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupImpl <em>Product Feature Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -951,6 +1465,51 @@ public interface FeaturePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_FEATURE_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureGroupApplImpl <em>Product Feature Group Appl</em>}' class.
@@ -1053,6 +1612,51 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_GROUP_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Group Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_GROUP_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureIactnImpl <em>Product Feature Iactn</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1142,6 +1746,60 @@ public interface FeaturePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_FEATURE_IACTN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Iactn</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureIactnTypeImpl <em>Product Feature Iactn Type</em>}' class.
@@ -1244,6 +1902,105 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE_IACTN_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Product Feature Iactn Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___CHILD_PRODUCT_FEATURE_IACTN_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Product Feature Iactns</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE___PRODUCT_FEATURE_IACTNS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Iactn Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_IACTN_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureTypeImpl <em>Product Feature Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1342,6 +2099,106 @@ public interface FeaturePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_FEATURE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Product Feature Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___CHILD_PRODUCT_FEATURE_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Product Features</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE___PRODUCT_FEATURES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Product Feature Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 
 	/**
@@ -1474,6 +2331,86 @@ public interface FeaturePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProductFeature_MainProductFeatureIactns();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#assocProductFeatureIactns() <em>Assoc Product Feature Iactns</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Assoc Product Feature Iactns</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#assocProductFeatureIactns()
+	 * @generated
+	 */
+	EOperation getProductFeature__AssocProductFeatureIactns();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#costComponents() <em>Cost Components</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cost Components</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#costComponents()
+	 * @generated
+	 */
+	EOperation getProductFeature__CostComponents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#desiredFeatures() <em>Desired Features</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Desired Features</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#desiredFeatures()
+	 * @generated
+	 */
+	EOperation getProductFeature__DesiredFeatures();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#invoiceItems() <em>Invoice Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Invoice Items</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#invoiceItems()
+	 * @generated
+	 */
+	EOperation getProductFeature__InvoiceItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#productFeatureDataResources() <em>Product Feature Data Resources</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Feature Data Resources</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#productFeatureDataResources()
+	 * @generated
+	 */
+	EOperation getProductFeature__ProductFeatureDataResources();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#productManufacturingRules() <em>Product Manufacturing Rules</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Manufacturing Rules</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#productManufacturingRules()
+	 * @generated
+	 */
+	EOperation getProductFeature__ProductManufacturingRules();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#quoteItems() <em>Quote Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quote Items</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#quoteItems()
+	 * @generated
+	 */
+	EOperation getProductFeature__QuoteItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#supplierProductFeatures() <em>Supplier Product Features</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Supplier Product Features</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#supplierProductFeatures()
+	 * @generated
+	 */
+	EOperation getProductFeature__SupplierProductFeatures();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl <em>Product Feature Appl</em>}'.
@@ -1693,6 +2630,16 @@ public interface FeaturePackage extends EPackage {
 	EReference getProductFeatureApplType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplType#childProductFeatureApplTypes() <em>Child Product Feature Appl Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Product Feature Appl Types</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureApplType#childProductFeatureApplTypes()
+	 * @generated
+	 */
+	EOperation getProductFeatureApplType__ChildProductFeatureApplTypes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl <em>Product Feature Cat Grp Appl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1788,6 +2735,26 @@ public interface FeaturePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProductFeatureCategory_ParentCategoryId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategory#childProductFeatureCategories() <em>Child Product Feature Categories</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Product Feature Categories</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureCategory#childProductFeatureCategories()
+	 * @generated
+	 */
+	EOperation getProductFeatureCategory__ChildProductFeatureCategories();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategory#productFeatures() <em>Product Features</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Features</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureCategory#productFeatures()
+	 * @generated
+	 */
+	EOperation getProductFeatureCategory__ProductFeatures();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl <em>Product Feature Category Appl</em>}'.
@@ -2081,6 +3048,26 @@ public interface FeaturePackage extends EPackage {
 	EReference getProductFeatureIactnType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactnType#childProductFeatureIactnTypes() <em>Child Product Feature Iactn Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Product Feature Iactn Types</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureIactnType#childProductFeatureIactnTypes()
+	 * @generated
+	 */
+	EOperation getProductFeatureIactnType__ChildProductFeatureIactnTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactnType#productFeatureIactns() <em>Product Feature Iactns</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Feature Iactns</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureIactnType#productFeatureIactns()
+	 * @generated
+	 */
+	EOperation getProductFeatureIactnType__ProductFeatureIactns();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.feature.ProductFeatureType <em>Product Feature Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2133,6 +3120,26 @@ public interface FeaturePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProductFeatureType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureType#childProductFeatureTypes() <em>Child Product Feature Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Product Feature Types</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureType#childProductFeatureTypes()
+	 * @generated
+	 */
+	EOperation getProductFeatureType__ChildProductFeatureTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureType#productFeatures() <em>Product Features</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Features</em>' operation.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeatureType#productFeatures()
+	 * @generated
+	 */
+	EOperation getProductFeatureType__ProductFeatures();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2253,6 +3260,70 @@ public interface FeaturePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS = eINSTANCE.getProductFeature_MainProductFeatureIactns();
+
+		/**
+		 * The meta object literal for the '<em><b>Assoc Product Feature Iactns</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___ASSOC_PRODUCT_FEATURE_IACTNS = eINSTANCE.getProductFeature__AssocProductFeatureIactns();
+
+		/**
+		 * The meta object literal for the '<em><b>Cost Components</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___COST_COMPONENTS = eINSTANCE.getProductFeature__CostComponents();
+
+		/**
+		 * The meta object literal for the '<em><b>Desired Features</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___DESIRED_FEATURES = eINSTANCE.getProductFeature__DesiredFeatures();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoice Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___INVOICE_ITEMS = eINSTANCE.getProductFeature__InvoiceItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Feature Data Resources</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___PRODUCT_FEATURE_DATA_RESOURCES = eINSTANCE.getProductFeature__ProductFeatureDataResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Manufacturing Rules</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___PRODUCT_MANUFACTURING_RULES = eINSTANCE.getProductFeature__ProductManufacturingRules();
+
+		/**
+		 * The meta object literal for the '<em><b>Quote Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___QUOTE_ITEMS = eINSTANCE.getProductFeature__QuoteItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Supplier Product Features</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE___SUPPLIER_PRODUCT_FEATURES = eINSTANCE.getProductFeature__SupplierProductFeatures();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl <em>Product Feature Appl</em>}' class.
@@ -2421,6 +3492,14 @@ public interface FeaturePackage extends EPackage {
 		EReference PRODUCT_FEATURE_APPL_TYPE__PARENT_TYPE_ID = eINSTANCE.getProductFeatureApplType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Product Feature Appl Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE_APPL_TYPE___CHILD_PRODUCT_FEATURE_APPL_TYPES = eINSTANCE.getProductFeatureApplType__ChildProductFeatureApplTypes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCatGrpApplImpl <em>Product Feature Cat Grp Appl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2495,6 +3574,22 @@ public interface FeaturePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID = eINSTANCE.getProductFeatureCategory_ParentCategoryId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Product Feature Categories</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE_CATEGORY___CHILD_PRODUCT_FEATURE_CATEGORIES = eINSTANCE.getProductFeatureCategory__ChildProductFeatureCategories();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Features</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE_CATEGORY___PRODUCT_FEATURES = eINSTANCE.getProductFeatureCategory__ProductFeatures();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureCategoryApplImpl <em>Product Feature Category Appl</em>}' class.
@@ -2725,6 +3820,22 @@ public interface FeaturePackage extends EPackage {
 		EReference PRODUCT_FEATURE_IACTN_TYPE__PARENT_TYPE_ID = eINSTANCE.getProductFeatureIactnType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Product Feature Iactn Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE_IACTN_TYPE___CHILD_PRODUCT_FEATURE_IACTN_TYPES = eINSTANCE.getProductFeatureIactnType__ChildProductFeatureIactnTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Feature Iactns</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE_IACTN_TYPE___PRODUCT_FEATURE_IACTNS = eINSTANCE.getProductFeatureIactnType__ProductFeatureIactns();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureTypeImpl <em>Product Feature Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2765,6 +3876,22 @@ public interface FeaturePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PRODUCT_FEATURE_TYPE__PARENT_TYPE_ID = eINSTANCE.getProductFeatureType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Product Feature Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE_TYPE___CHILD_PRODUCT_FEATURE_TYPES = eINSTANCE.getProductFeatureType__ChildProductFeatureTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Features</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_FEATURE_TYPE___PRODUCT_FEATURES = eINSTANCE.getProductFeatureType__ProductFeatures();
 
 	}
 

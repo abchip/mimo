@@ -195,6 +195,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -897,6 +898,36 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getWebSite__OrderHeaders() {
+		return webSiteEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWebSite__SubscriptionResources() {
+		return webSiteEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWebSite__WebPages() {
+		return webSiteEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public WebsiteFactory getWebsiteFactory() {
 		return (WebsiteFactory)getEFactoryInstance();
 	}
@@ -945,6 +976,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(webSiteEClass, WEB_SITE__VISUAL_THEME_SET_ID);
 		createEReference(webSiteEClass, WEB_SITE__PRODUCT_STORE_ID);
 		createEAttribute(webSiteEClass, WEB_SITE__WEB_ANALYTICS_CONFIGS);
+		createEOperation(webSiteEClass, WEB_SITE___ORDER_HEADERS);
+		createEOperation(webSiteEClass, WEB_SITE___SUBSCRIPTION_RESOURCES);
+		createEOperation(webSiteEClass, WEB_SITE___WEB_PAGES);
 	}
 
 	/**
@@ -984,7 +1018,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		webPageEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		webSiteEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(webPageEClass, WebPage.class, "WebPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebPage_WebPageId(), ecorePackage.getEString(), "webPageId", null, 1, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebPage_PageName(), ecorePackage.getEString(), "pageName", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1015,11 +1049,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		getWebSite_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
 		initEAttribute(getWebSite_WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", null, 0, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(webSiteEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWebSite__OrderHeaders(), ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(webSiteEClass, ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWebSite__SubscriptionResources(), ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(webSiteEClass, ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWebSite__WebPages(), ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1043,19 +1077,19 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (webSiteEClass.getEOperations().get(0),
+		  (getWebSite__OrderHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (webSiteEClass.getEOperations().get(1),
+		  (getWebSite__SubscriptionResources(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (webSiteEClass.getEOperations().get(2),
+		  (getWebSite__WebPages(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1083,7 +1117,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (webSiteEClass.getEOperations().get(0),
+		  (getWebSite__OrderHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -1093,7 +1127,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (webSiteEClass.getEOperations().get(1),
+		  (getWebSite__SubscriptionResources(),
 		   source,
 		   new String[] {
 			   "frame", "SubscriptionResource",
@@ -1103,7 +1137,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (webSiteEClass.getEOperations().get(2),
+		  (getWebSite__WebPages(),
 		   source,
 		   new String[] {
 			   "frame", "WebPage",

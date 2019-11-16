@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -24,6 +25,7 @@ import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -532,6 +534,22 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DataPackage.DATA_RESOURCE___CONTENTS:
+				return contents();
+			case DataPackage.DATA_RESOURCE___TEMPLATE_CONTENTS:
+				return templateContents();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DataResourceImpl

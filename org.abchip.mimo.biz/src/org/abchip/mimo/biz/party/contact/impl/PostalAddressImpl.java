@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -430,6 +432,20 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContactPackage.POSTAL_ADDRESS___DESTINATION_SHIPMENTS:
+				return destinationShipments();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //PostalAddressImpl

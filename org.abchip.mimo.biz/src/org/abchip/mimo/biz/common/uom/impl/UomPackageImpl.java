@@ -199,6 +199,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -752,6 +753,686 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getUom__ActualCurrencyPayments() {
+		return uomEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__AvailableTimeSubscriptions() {
+		return uomEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__BillingAccountTerms() {
+		return uomEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__BillingAccounts() {
+		return uomEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__BillingWeightShipmentRouteSegments() {
+		return uomEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CancelTimeSubscriptions() {
+		return uomEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__ConvToUomConversions() {
+		return uomEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CostComponentCalcs() {
+		return uomEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyAcctgTransEntries() {
+		return uomEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyCostComponents() {
+		return uomEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyCustRequests() {
+		return uomEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyFinAccounts() {
+		return uomEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyInventoryItems() {
+		return uomEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyInvoices() {
+		return uomEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyPayments() {
+		return uomEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyShipmentRouteSegments() {
+		return uomEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__CurrencyShipments() {
+		return uomEClass.getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__DefaultProductMeterTypes() {
+		return uomEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__DepthProducts() {
+		return uomEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__DiameterProducts() {
+		return uomEClass.getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__DimensionFacilities() {
+		return uomEClass.getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__DimensionShipmentBoxTypes() {
+		return uomEClass.getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__DimensionShipmentPackages() {
+		return uomEClass.getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__ElevationGeoPoints() {
+		return uomEClass.getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__FacilitySizeFacilities() {
+		return uomEClass.getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__FixedAssets() {
+		return uomEClass.getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__GracePeriodSubscriptions() {
+		return uomEClass.getEOperations().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__HeightProducts() {
+		return uomEClass.getEOperations().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__IntervalFixedAssetMaints() {
+		return uomEClass.getEOperations().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__IntervalProductMaints() {
+		return uomEClass.getEOperations().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__InventoryItems() {
+		return uomEClass.getEOperations().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__InvoiceItems() {
+		return uomEClass.getEOperations().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__MarketingCampaigns() {
+		return uomEClass.getEOperations().get(32);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__MaxLifeTimeSubscriptions() {
+		return uomEClass.getEOperations().get(33);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__MaximumAmountCustRequests() {
+		return uomEClass.getEOperations().get(34);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__MeterProductMeters() {
+		return uomEClass.getEOperations().get(35);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__MoneyWorkEfforts() {
+		return uomEClass.getEOperations().get(36);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__OrderHeaders() {
+		return uomEClass.getEOperations().get(37);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__OrigCurrencyAcctgTransEntries() {
+		return uomEClass.getEOperations().get(38);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__Parties() {
+		return uomEClass.getEOperations().get(39);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__PartyAcctgPreferences() {
+		return uomEClass.getEOperations().get(40);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__PaymentGatewayResponses() {
+		return uomEClass.getEOperations().get(41);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__PeriodTypes() {
+		return uomEClass.getEOperations().get(42);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__PriceShipmentCostEstimates() {
+		return uomEClass.getEOperations().get(43);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__ProductFeatures() {
+		return uomEClass.getEOperations().get(44);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__ProductStores() {
+		return uomEClass.getEOperations().get(45);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__QuantityProducts() {
+		return uomEClass.getEOperations().get(46);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__QuantitySalesForecastDetails() {
+		return uomEClass.getEOperations().get(47);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__QuantityShipmentCostEstimates() {
+		return uomEClass.getEOperations().get(48);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__QuoteItems() {
+		return uomEClass.getEOperations().get(49);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__Quotes() {
+		return uomEClass.getEOperations().get(50);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__RecurringFreqOrderItems() {
+		return uomEClass.getEOperations().get(51);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__ReturnHeaders() {
+		return uomEClass.getEOperations().get(52);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__SalesForecastHistories() {
+		return uomEClass.getEOperations().get(53);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__SalesForecasts() {
+		return uomEClass.getEOperations().get(54);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__SalesOpportunities() {
+		return uomEClass.getEOperations().get(55);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__SalesOpportunityHistories() {
+		return uomEClass.getEOperations().get(56);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__SupplierProductFeatures() {
+		return uomEClass.getEOperations().get(57);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__TotalCubicOrderDeliverySchedules() {
+		return uomEClass.getEOperations().get(58);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__TotalWeightOrderDeliverySchedules() {
+		return uomEClass.getEOperations().get(59);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__UomGroups() {
+		return uomEClass.getEOperations().get(60);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__UseTimeSubscriptions() {
+		return uomEClass.getEOperations().get(61);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__WeightFacilities() {
+		return uomEClass.getEOperations().get(62);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__WeightProducts() {
+		return uomEClass.getEOperations().get(63);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__WeightShipmentBoxTypes() {
+		return uomEClass.getEOperations().get(64);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__WeightShipmentCostEstimates() {
+		return uomEClass.getEOperations().get(65);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__WeightShipmentPackages() {
+		return uomEClass.getEOperations().get(66);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUom__WidthProducts() {
+		return uomEClass.getEOperations().get(67);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getUomConversion() {
 		return uomConversionEClass;
 	}
@@ -1002,6 +1683,36 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getUomType__AmountProducts() {
+		return uomTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUomType__ChildUomTypes() {
+		return uomTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUomType__Uoms() {
+		return uomTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public UomFactory getUomFactory() {
 		return (UomFactory)getEFactoryInstance();
 	}
@@ -1032,6 +1743,74 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		createEAttribute(uomEClass, UOM__NUMERIC_CODE);
 		createEReference(uomEClass, UOM__UOM_TYPE_ID);
 		createEAttribute(uomEClass, UOM__MAIN_UOM_CONVERSIONS);
+		createEOperation(uomEClass, UOM___ACTUAL_CURRENCY_PAYMENTS);
+		createEOperation(uomEClass, UOM___AVAILABLE_TIME_SUBSCRIPTIONS);
+		createEOperation(uomEClass, UOM___BILLING_ACCOUNT_TERMS);
+		createEOperation(uomEClass, UOM___BILLING_ACCOUNTS);
+		createEOperation(uomEClass, UOM___BILLING_WEIGHT_SHIPMENT_ROUTE_SEGMENTS);
+		createEOperation(uomEClass, UOM___CANCEL_TIME_SUBSCRIPTIONS);
+		createEOperation(uomEClass, UOM___CONV_TO_UOM_CONVERSIONS);
+		createEOperation(uomEClass, UOM___COST_COMPONENT_CALCS);
+		createEOperation(uomEClass, UOM___CURRENCY_ACCTG_TRANS_ENTRIES);
+		createEOperation(uomEClass, UOM___CURRENCY_COST_COMPONENTS);
+		createEOperation(uomEClass, UOM___CURRENCY_CUST_REQUESTS);
+		createEOperation(uomEClass, UOM___CURRENCY_FIN_ACCOUNTS);
+		createEOperation(uomEClass, UOM___CURRENCY_INVENTORY_ITEMS);
+		createEOperation(uomEClass, UOM___CURRENCY_INVOICES);
+		createEOperation(uomEClass, UOM___CURRENCY_PAYMENTS);
+		createEOperation(uomEClass, UOM___CURRENCY_SHIPMENT_ROUTE_SEGMENTS);
+		createEOperation(uomEClass, UOM___CURRENCY_SHIPMENTS);
+		createEOperation(uomEClass, UOM___DEFAULT_PRODUCT_METER_TYPES);
+		createEOperation(uomEClass, UOM___DEPTH_PRODUCTS);
+		createEOperation(uomEClass, UOM___DIAMETER_PRODUCTS);
+		createEOperation(uomEClass, UOM___DIMENSION_FACILITIES);
+		createEOperation(uomEClass, UOM___DIMENSION_SHIPMENT_BOX_TYPES);
+		createEOperation(uomEClass, UOM___DIMENSION_SHIPMENT_PACKAGES);
+		createEOperation(uomEClass, UOM___ELEVATION_GEO_POINTS);
+		createEOperation(uomEClass, UOM___FACILITY_SIZE_FACILITIES);
+		createEOperation(uomEClass, UOM___FIXED_ASSETS);
+		createEOperation(uomEClass, UOM___GRACE_PERIOD_SUBSCRIPTIONS);
+		createEOperation(uomEClass, UOM___HEIGHT_PRODUCTS);
+		createEOperation(uomEClass, UOM___INTERVAL_FIXED_ASSET_MAINTS);
+		createEOperation(uomEClass, UOM___INTERVAL_PRODUCT_MAINTS);
+		createEOperation(uomEClass, UOM___INVENTORY_ITEMS);
+		createEOperation(uomEClass, UOM___INVOICE_ITEMS);
+		createEOperation(uomEClass, UOM___MARKETING_CAMPAIGNS);
+		createEOperation(uomEClass, UOM___MAX_LIFE_TIME_SUBSCRIPTIONS);
+		createEOperation(uomEClass, UOM___MAXIMUM_AMOUNT_CUST_REQUESTS);
+		createEOperation(uomEClass, UOM___METER_PRODUCT_METERS);
+		createEOperation(uomEClass, UOM___MONEY_WORK_EFFORTS);
+		createEOperation(uomEClass, UOM___ORDER_HEADERS);
+		createEOperation(uomEClass, UOM___ORIG_CURRENCY_ACCTG_TRANS_ENTRIES);
+		createEOperation(uomEClass, UOM___PARTIES);
+		createEOperation(uomEClass, UOM___PARTY_ACCTG_PREFERENCES);
+		createEOperation(uomEClass, UOM___PAYMENT_GATEWAY_RESPONSES);
+		createEOperation(uomEClass, UOM___PERIOD_TYPES);
+		createEOperation(uomEClass, UOM___PRICE_SHIPMENT_COST_ESTIMATES);
+		createEOperation(uomEClass, UOM___PRODUCT_FEATURES);
+		createEOperation(uomEClass, UOM___PRODUCT_STORES);
+		createEOperation(uomEClass, UOM___QUANTITY_PRODUCTS);
+		createEOperation(uomEClass, UOM___QUANTITY_SALES_FORECAST_DETAILS);
+		createEOperation(uomEClass, UOM___QUANTITY_SHIPMENT_COST_ESTIMATES);
+		createEOperation(uomEClass, UOM___QUOTE_ITEMS);
+		createEOperation(uomEClass, UOM___QUOTES);
+		createEOperation(uomEClass, UOM___RECURRING_FREQ_ORDER_ITEMS);
+		createEOperation(uomEClass, UOM___RETURN_HEADERS);
+		createEOperation(uomEClass, UOM___SALES_FORECAST_HISTORIES);
+		createEOperation(uomEClass, UOM___SALES_FORECASTS);
+		createEOperation(uomEClass, UOM___SALES_OPPORTUNITIES);
+		createEOperation(uomEClass, UOM___SALES_OPPORTUNITY_HISTORIES);
+		createEOperation(uomEClass, UOM___SUPPLIER_PRODUCT_FEATURES);
+		createEOperation(uomEClass, UOM___TOTAL_CUBIC_ORDER_DELIVERY_SCHEDULES);
+		createEOperation(uomEClass, UOM___TOTAL_WEIGHT_ORDER_DELIVERY_SCHEDULES);
+		createEOperation(uomEClass, UOM___UOM_GROUPS);
+		createEOperation(uomEClass, UOM___USE_TIME_SUBSCRIPTIONS);
+		createEOperation(uomEClass, UOM___WEIGHT_FACILITIES);
+		createEOperation(uomEClass, UOM___WEIGHT_PRODUCTS);
+		createEOperation(uomEClass, UOM___WEIGHT_SHIPMENT_BOX_TYPES);
+		createEOperation(uomEClass, UOM___WEIGHT_SHIPMENT_COST_ESTIMATES);
+		createEOperation(uomEClass, UOM___WEIGHT_SHIPMENT_PACKAGES);
+		createEOperation(uomEClass, UOM___WIDTH_PRODUCTS);
 
 		uomConversionEClass = createEClass(UOM_CONVERSION);
 		createEAttribute(uomConversionEClass, UOM_CONVERSION__CONVERSION_FACTOR);
@@ -1061,6 +1840,9 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		createEAttribute(uomTypeEClass, UOM_TYPE__DESCRIPTION);
 		createEAttribute(uomTypeEClass, UOM_TYPE__HAS_TABLE);
 		createEReference(uomTypeEClass, UOM_TYPE__PARENT_TYPE_ID);
+		createEOperation(uomTypeEClass, UOM_TYPE___AMOUNT_PRODUCTS);
+		createEOperation(uomTypeEClass, UOM_TYPE___CHILD_UOM_TYPES);
+		createEOperation(uomTypeEClass, UOM_TYPE___UOMS);
 	}
 
 	/**
@@ -1108,7 +1890,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		g1.getETypeArguments().add(g2);
 		uomTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(uomEClass, Uom.class, "Uom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUom_UomId(), ecorePackage.getEString(), "uomId", null, 1, 1, Uom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUom_Abbreviation(), ecorePackage.getEString(), "abbreviation", null, 0, 1, Uom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1118,141 +1900,141 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		getUom_UomTypeId().getEKeys().add(this.getUomType_UomTypeId());
 		initEAttribute(getUom_MainUomConversions(), ecorePackage.getEString(), "mainUomConversions", null, 0, -1, Uom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "actualCurrencyPayments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__ActualCurrencyPayments(), ecorePackage.getEString(), "actualCurrencyPayments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "availableTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__AvailableTimeSubscriptions(), ecorePackage.getEString(), "availableTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "billingAccountTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__BillingAccountTerms(), ecorePackage.getEString(), "billingAccountTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "billingAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__BillingAccounts(), ecorePackage.getEString(), "billingAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "billingWeightShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__BillingWeightShipmentRouteSegments(), ecorePackage.getEString(), "billingWeightShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "cancelTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CancelTimeSubscriptions(), ecorePackage.getEString(), "cancelTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "convToUomConversions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__ConvToUomConversions(), ecorePackage.getEString(), "convToUomConversions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "costComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CostComponentCalcs(), ecorePackage.getEString(), "costComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyAcctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyAcctgTransEntries(), ecorePackage.getEString(), "currencyAcctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyCostComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyCostComponents(), ecorePackage.getEString(), "currencyCostComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyCustRequests(), ecorePackage.getEString(), "currencyCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyFinAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyFinAccounts(), ecorePackage.getEString(), "currencyFinAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyInventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyInventoryItems(), ecorePackage.getEString(), "currencyInventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyInvoices", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyInvoices(), ecorePackage.getEString(), "currencyInvoices", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyPayments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyPayments(), ecorePackage.getEString(), "currencyPayments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyShipmentRouteSegments(), ecorePackage.getEString(), "currencyShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "currencyShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__CurrencyShipments(), ecorePackage.getEString(), "currencyShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "defaultProductMeterTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__DefaultProductMeterTypes(), ecorePackage.getEString(), "defaultProductMeterTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "depthProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__DepthProducts(), ecorePackage.getEString(), "depthProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "diameterProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__DiameterProducts(), ecorePackage.getEString(), "diameterProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "dimensionFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__DimensionFacilities(), ecorePackage.getEString(), "dimensionFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "dimensionShipmentBoxTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__DimensionShipmentBoxTypes(), ecorePackage.getEString(), "dimensionShipmentBoxTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "dimensionShipmentPackages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__DimensionShipmentPackages(), ecorePackage.getEString(), "dimensionShipmentPackages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "elevationGeoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__ElevationGeoPoints(), ecorePackage.getEString(), "elevationGeoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "facilitySizeFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__FacilitySizeFacilities(), ecorePackage.getEString(), "facilitySizeFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "fixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__FixedAssets(), ecorePackage.getEString(), "fixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "gracePeriodSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__GracePeriodSubscriptions(), ecorePackage.getEString(), "gracePeriodSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "heightProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__HeightProducts(), ecorePackage.getEString(), "heightProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "intervalFixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__IntervalFixedAssetMaints(), ecorePackage.getEString(), "intervalFixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "intervalProductMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__IntervalProductMaints(), ecorePackage.getEString(), "intervalProductMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__InventoryItems(), ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__InvoiceItems(), ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "marketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__MarketingCampaigns(), ecorePackage.getEString(), "marketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "maxLifeTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__MaxLifeTimeSubscriptions(), ecorePackage.getEString(), "maxLifeTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "maximumAmountCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__MaximumAmountCustRequests(), ecorePackage.getEString(), "maximumAmountCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "meterProductMeters", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__MeterProductMeters(), ecorePackage.getEString(), "meterProductMeters", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "moneyWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__MoneyWorkEfforts(), ecorePackage.getEString(), "moneyWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__OrderHeaders(), ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "origCurrencyAcctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__OrigCurrencyAcctgTransEntries(), ecorePackage.getEString(), "origCurrencyAcctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__Parties(), ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "partyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__PartyAcctgPreferences(), ecorePackage.getEString(), "partyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "paymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__PaymentGatewayResponses(), ecorePackage.getEString(), "paymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "periodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__PeriodTypes(), ecorePackage.getEString(), "periodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "priceShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__PriceShipmentCostEstimates(), ecorePackage.getEString(), "priceShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "productFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__ProductFeatures(), ecorePackage.getEString(), "productFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "productStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__ProductStores(), ecorePackage.getEString(), "productStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "quantityProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__QuantityProducts(), ecorePackage.getEString(), "quantityProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "quantitySalesForecastDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__QuantitySalesForecastDetails(), ecorePackage.getEString(), "quantitySalesForecastDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "quantityShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__QuantityShipmentCostEstimates(), ecorePackage.getEString(), "quantityShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__QuoteItems(), ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__Quotes(), ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "recurringFreqOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__RecurringFreqOrderItems(), ecorePackage.getEString(), "recurringFreqOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__ReturnHeaders(), ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "salesForecastHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__SalesForecastHistories(), ecorePackage.getEString(), "salesForecastHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "salesForecasts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__SalesForecasts(), ecorePackage.getEString(), "salesForecasts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "salesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__SalesOpportunities(), ecorePackage.getEString(), "salesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "salesOpportunityHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__SalesOpportunityHistories(), ecorePackage.getEString(), "salesOpportunityHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "supplierProductFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__SupplierProductFeatures(), ecorePackage.getEString(), "supplierProductFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "totalCubicOrderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__TotalCubicOrderDeliverySchedules(), ecorePackage.getEString(), "totalCubicOrderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "totalWeightOrderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__TotalWeightOrderDeliverySchedules(), ecorePackage.getEString(), "totalWeightOrderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "uomGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__UomGroups(), ecorePackage.getEString(), "uomGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "useTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__UseTimeSubscriptions(), ecorePackage.getEString(), "useTimeSubscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "weightFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__WeightFacilities(), ecorePackage.getEString(), "weightFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "weightProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__WeightProducts(), ecorePackage.getEString(), "weightProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "weightShipmentBoxTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__WeightShipmentBoxTypes(), ecorePackage.getEString(), "weightShipmentBoxTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "weightShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__WeightShipmentCostEstimates(), ecorePackage.getEString(), "weightShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "weightShipmentPackages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__WeightShipmentPackages(), ecorePackage.getEString(), "weightShipmentPackages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomEClass, ecorePackage.getEString(), "widthProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUom__WidthProducts(), ecorePackage.getEString(), "widthProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(uomConversionEClass, UomConversion.class, "UomConversion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUomConversion_ConversionFactor(), ecorePackage.getEDouble(), "conversionFactor", null, 0, 1, UomConversion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1292,11 +2074,11 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 		initEReference(getUomType_ParentTypeId(), this.getUomType(), null, "parentTypeId", null, 0, 1, UomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUomType_ParentTypeId().getEKeys().add(this.getUomType_UomTypeId());
 
-		addEOperation(uomTypeEClass, ecorePackage.getEString(), "amountProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUomType__AmountProducts(), ecorePackage.getEString(), "amountProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomTypeEClass, ecorePackage.getEString(), "childUomTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUomType__ChildUomTypes(), ecorePackage.getEString(), "childUomTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(uomTypeEClass, ecorePackage.getEString(), "uoms", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUomType__Uoms(), ecorePackage.getEString(), "uoms", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1338,409 +2120,409 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (uomEClass.getEOperations().get(0),
+		  (getUom__ActualCurrencyPayments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(1),
+		  (getUom__AvailableTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(2),
+		  (getUom__BillingAccountTerms(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(3),
+		  (getUom__BillingAccounts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(4),
+		  (getUom__BillingWeightShipmentRouteSegments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(5),
+		  (getUom__CancelTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(6),
+		  (getUom__ConvToUomConversions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(7),
+		  (getUom__CostComponentCalcs(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(8),
+		  (getUom__CurrencyAcctgTransEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(9),
+		  (getUom__CurrencyCostComponents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(10),
+		  (getUom__CurrencyCustRequests(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(11),
+		  (getUom__CurrencyFinAccounts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(12),
+		  (getUom__CurrencyInventoryItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(13),
+		  (getUom__CurrencyInvoices(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(14),
+		  (getUom__CurrencyPayments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(15),
+		  (getUom__CurrencyShipmentRouteSegments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(16),
+		  (getUom__CurrencyShipments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(17),
+		  (getUom__DefaultProductMeterTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(18),
+		  (getUom__DepthProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(19),
+		  (getUom__DiameterProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(20),
+		  (getUom__DimensionFacilities(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(21),
+		  (getUom__DimensionShipmentBoxTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(22),
+		  (getUom__DimensionShipmentPackages(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(23),
+		  (getUom__ElevationGeoPoints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(24),
+		  (getUom__FacilitySizeFacilities(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(25),
+		  (getUom__FixedAssets(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(26),
+		  (getUom__GracePeriodSubscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(27),
+		  (getUom__HeightProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(28),
+		  (getUom__IntervalFixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(29),
+		  (getUom__IntervalProductMaints(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(30),
+		  (getUom__InventoryItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(31),
+		  (getUom__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(32),
+		  (getUom__MarketingCampaigns(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(33),
+		  (getUom__MaxLifeTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(34),
+		  (getUom__MaximumAmountCustRequests(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(35),
+		  (getUom__MeterProductMeters(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(36),
+		  (getUom__MoneyWorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(37),
+		  (getUom__OrderHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(38),
+		  (getUom__OrigCurrencyAcctgTransEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(39),
+		  (getUom__Parties(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(40),
+		  (getUom__PartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(41),
+		  (getUom__PaymentGatewayResponses(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(42),
+		  (getUom__PeriodTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(43),
+		  (getUom__PriceShipmentCostEstimates(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(44),
+		  (getUom__ProductFeatures(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(45),
+		  (getUom__ProductStores(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(46),
+		  (getUom__QuantityProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(47),
+		  (getUom__QuantitySalesForecastDetails(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(48),
+		  (getUom__QuantityShipmentCostEstimates(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(49),
+		  (getUom__QuoteItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(50),
+		  (getUom__Quotes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(51),
+		  (getUom__RecurringFreqOrderItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(52),
+		  (getUom__ReturnHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(53),
+		  (getUom__SalesForecastHistories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(54),
+		  (getUom__SalesForecasts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(55),
+		  (getUom__SalesOpportunities(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(56),
+		  (getUom__SalesOpportunityHistories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(57),
+		  (getUom__SupplierProductFeatures(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(58),
+		  (getUom__TotalCubicOrderDeliverySchedules(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(59),
+		  (getUom__TotalWeightOrderDeliverySchedules(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(60),
+		  (getUom__UomGroups(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(61),
+		  (getUom__UseTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(62),
+		  (getUom__WeightFacilities(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(63),
+		  (getUom__WeightProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(64),
+		  (getUom__WeightShipmentBoxTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(65),
+		  (getUom__WeightShipmentCostEstimates(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(66),
+		  (getUom__WeightShipmentPackages(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(67),
+		  (getUom__WidthProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1770,19 +2552,19 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (uomTypeEClass.getEOperations().get(0),
+		  (getUomType__AmountProducts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomTypeEClass.getEOperations().get(1),
+		  (getUomType__ChildUomTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (uomTypeEClass.getEOperations().get(2),
+		  (getUomType__Uoms(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1804,7 +2586,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (uomEClass.getEOperations().get(0),
+		  (getUom__ActualCurrencyPayments(),
 		   source,
 		   new String[] {
 			   "frame", "Payment",
@@ -1814,7 +2596,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(1),
+		  (getUom__AvailableTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",
@@ -1824,7 +2606,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(2),
+		  (getUom__BillingAccountTerms(),
 		   source,
 		   new String[] {
 			   "frame", "BillingAccountTerm",
@@ -1834,7 +2616,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(3),
+		  (getUom__BillingAccounts(),
 		   source,
 		   new String[] {
 			   "frame", "BillingAccount",
@@ -1844,7 +2626,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(4),
+		  (getUom__BillingWeightShipmentRouteSegments(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentRouteSegment",
@@ -1854,7 +2636,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(5),
+		  (getUom__CancelTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",
@@ -1864,7 +2646,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(6),
+		  (getUom__ConvToUomConversions(),
 		   source,
 		   new String[] {
 			   "frame", "UomConversion",
@@ -1874,7 +2656,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(7),
+		  (getUom__CostComponentCalcs(),
 		   source,
 		   new String[] {
 			   "frame", "CostComponentCalc",
@@ -1884,7 +2666,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(8),
+		  (getUom__CurrencyAcctgTransEntries(),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntry",
@@ -1894,7 +2676,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(9),
+		  (getUom__CurrencyCostComponents(),
 		   source,
 		   new String[] {
 			   "frame", "CostComponent",
@@ -1904,7 +2686,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(10),
+		  (getUom__CurrencyCustRequests(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequest",
@@ -1914,7 +2696,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(11),
+		  (getUom__CurrencyFinAccounts(),
 		   source,
 		   new String[] {
 			   "frame", "FinAccount",
@@ -1924,7 +2706,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(12),
+		  (getUom__CurrencyInventoryItems(),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItem",
@@ -1934,7 +2716,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(13),
+		  (getUom__CurrencyInvoices(),
 		   source,
 		   new String[] {
 			   "frame", "Invoice",
@@ -1944,7 +2726,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(14),
+		  (getUom__CurrencyPayments(),
 		   source,
 		   new String[] {
 			   "frame", "Payment",
@@ -1954,7 +2736,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(15),
+		  (getUom__CurrencyShipmentRouteSegments(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentRouteSegment",
@@ -1964,7 +2746,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(16),
+		  (getUom__CurrencyShipments(),
 		   source,
 		   new String[] {
 			   "frame", "Shipment",
@@ -1974,7 +2756,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(17),
+		  (getUom__DefaultProductMeterTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMeterType",
@@ -1984,7 +2766,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(18),
+		  (getUom__DepthProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -1994,7 +2776,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(19),
+		  (getUom__DiameterProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -2004,7 +2786,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(20),
+		  (getUom__DimensionFacilities(),
 		   source,
 		   new String[] {
 			   "frame", "Facility",
@@ -2014,7 +2796,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(21),
+		  (getUom__DimensionShipmentBoxTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentBoxType",
@@ -2024,7 +2806,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(22),
+		  (getUom__DimensionShipmentPackages(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentPackage",
@@ -2034,7 +2816,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(23),
+		  (getUom__ElevationGeoPoints(),
 		   source,
 		   new String[] {
 			   "frame", "GeoPoint",
@@ -2044,7 +2826,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(24),
+		  (getUom__FacilitySizeFacilities(),
 		   source,
 		   new String[] {
 			   "frame", "Facility",
@@ -2054,7 +2836,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(25),
+		  (getUom__FixedAssets(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAsset",
@@ -2064,7 +2846,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(26),
+		  (getUom__GracePeriodSubscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",
@@ -2074,7 +2856,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(27),
+		  (getUom__HeightProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -2084,7 +2866,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(28),
+		  (getUom__IntervalFixedAssetMaints(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAssetMaint",
@@ -2094,7 +2876,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(29),
+		  (getUom__IntervalProductMaints(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMaint",
@@ -2104,7 +2886,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(30),
+		  (getUom__InventoryItems(),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItem",
@@ -2114,7 +2896,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(31),
+		  (getUom__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItem",
@@ -2124,7 +2906,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(32),
+		  (getUom__MarketingCampaigns(),
 		   source,
 		   new String[] {
 			   "frame", "MarketingCampaign",
@@ -2134,7 +2916,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(33),
+		  (getUom__MaxLifeTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",
@@ -2144,7 +2926,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(34),
+		  (getUom__MaximumAmountCustRequests(),
 		   source,
 		   new String[] {
 			   "frame", "CustRequest",
@@ -2154,7 +2936,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(35),
+		  (getUom__MeterProductMeters(),
 		   source,
 		   new String[] {
 			   "frame", "ProductMeter",
@@ -2164,7 +2946,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(36),
+		  (getUom__MoneyWorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -2174,7 +2956,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(37),
+		  (getUom__OrderHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -2184,7 +2966,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(38),
+		  (getUom__OrigCurrencyAcctgTransEntries(),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntry",
@@ -2194,7 +2976,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(39),
+		  (getUom__Parties(),
 		   source,
 		   new String[] {
 			   "frame", "Party",
@@ -2204,7 +2986,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(40),
+		  (getUom__PartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -2214,7 +2996,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(41),
+		  (getUom__PaymentGatewayResponses(),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayResponse",
@@ -2224,7 +3006,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(42),
+		  (getUom__PeriodTypes(),
 		   source,
 		   new String[] {
 			   "frame", "PeriodType",
@@ -2234,7 +3016,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(43),
+		  (getUom__PriceShipmentCostEstimates(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentCostEstimate",
@@ -2244,7 +3026,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(44),
+		  (getUom__ProductFeatures(),
 		   source,
 		   new String[] {
 			   "frame", "ProductFeature",
@@ -2254,7 +3036,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(45),
+		  (getUom__ProductStores(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -2264,7 +3046,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(46),
+		  (getUom__QuantityProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -2274,7 +3056,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(47),
+		  (getUom__QuantitySalesForecastDetails(),
 		   source,
 		   new String[] {
 			   "frame", "SalesForecastDetail",
@@ -2284,7 +3066,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(48),
+		  (getUom__QuantityShipmentCostEstimates(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentCostEstimate",
@@ -2294,7 +3076,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(49),
+		  (getUom__QuoteItems(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteItem",
@@ -2304,7 +3086,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(50),
+		  (getUom__Quotes(),
 		   source,
 		   new String[] {
 			   "frame", "Quote",
@@ -2314,7 +3096,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(51),
+		  (getUom__RecurringFreqOrderItems(),
 		   source,
 		   new String[] {
 			   "frame", "OrderItem",
@@ -2324,7 +3106,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(52),
+		  (getUom__ReturnHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnHeader",
@@ -2334,7 +3116,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(53),
+		  (getUom__SalesForecastHistories(),
 		   source,
 		   new String[] {
 			   "frame", "SalesForecastHistory",
@@ -2344,7 +3126,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(54),
+		  (getUom__SalesForecasts(),
 		   source,
 		   new String[] {
 			   "frame", "SalesForecast",
@@ -2354,7 +3136,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(55),
+		  (getUom__SalesOpportunities(),
 		   source,
 		   new String[] {
 			   "frame", "SalesOpportunity",
@@ -2364,7 +3146,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(56),
+		  (getUom__SalesOpportunityHistories(),
 		   source,
 		   new String[] {
 			   "frame", "SalesOpportunityHistory",
@@ -2374,7 +3156,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(57),
+		  (getUom__SupplierProductFeatures(),
 		   source,
 		   new String[] {
 			   "frame", "SupplierProductFeature",
@@ -2384,7 +3166,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(58),
+		  (getUom__TotalCubicOrderDeliverySchedules(),
 		   source,
 		   new String[] {
 			   "frame", "OrderDeliverySchedule",
@@ -2394,7 +3176,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(59),
+		  (getUom__TotalWeightOrderDeliverySchedules(),
 		   source,
 		   new String[] {
 			   "frame", "OrderDeliverySchedule",
@@ -2404,7 +3186,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(60),
+		  (getUom__UomGroups(),
 		   source,
 		   new String[] {
 			   "frame", "UomGroup",
@@ -2414,7 +3196,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(61),
+		  (getUom__UseTimeSubscriptions(),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",
@@ -2424,7 +3206,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(62),
+		  (getUom__WeightFacilities(),
 		   source,
 		   new String[] {
 			   "frame", "Facility",
@@ -2434,7 +3216,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(63),
+		  (getUom__WeightProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -2444,7 +3226,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(64),
+		  (getUom__WeightShipmentBoxTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentBoxType",
@@ -2454,7 +3236,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(65),
+		  (getUom__WeightShipmentCostEstimates(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentCostEstimate",
@@ -2464,7 +3246,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(66),
+		  (getUom__WeightShipmentPackages(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentPackage",
@@ -2474,7 +3256,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomEClass.getEOperations().get(67),
+		  (getUom__WidthProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -2493,7 +3275,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomTypeEClass.getEOperations().get(0),
+		  (getUomType__AmountProducts(),
 		   source,
 		   new String[] {
 			   "frame", "Product",
@@ -2503,7 +3285,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomTypeEClass.getEOperations().get(1),
+		  (getUomType__ChildUomTypes(),
 		   source,
 		   new String[] {
 			   "frame", "UomType",
@@ -2513,7 +3295,7 @@ public class UomPackageImpl extends EPackageImpl implements UomPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (uomTypeEClass.getEOperations().get(2),
+		  (getUomType__Uoms(),
 		   source,
 		   new String[] {
 			   "frame", "Uom",

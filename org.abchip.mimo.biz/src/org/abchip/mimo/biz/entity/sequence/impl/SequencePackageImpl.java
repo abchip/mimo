@@ -747,7 +747,7 @@ public class SequencePackageImpl extends EPackageImpl implements SequencePackage
 		// Add supertypes to classes
 		sequenceValueItemEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(sequenceValueItemEClass, SequenceValueItem.class, "SequenceValueItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSequenceValueItem_SeqName(), ecorePackage.getEString(), "seqName", null, 1, 1, SequenceValueItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSequenceValueItem_SeqId(), ecorePackage.getELong(), "seqId", null, 0, 1, SequenceValueItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

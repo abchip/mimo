@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.service.schedule.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -410,6 +412,22 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SchedulePackage.RECURRENCE_RULE___EXCEPTION_RECURRENCE_INFOS:
+				return exceptionRecurrenceInfos();
+			case SchedulePackage.RECURRENCE_RULE___RECURRENCE_INFOS:
+				return recurrenceInfos();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //RecurrenceRuleImpl

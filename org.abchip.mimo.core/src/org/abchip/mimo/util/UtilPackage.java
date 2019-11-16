@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -102,6 +103,15 @@ public interface UtilPackage extends EPackage {
 	int BINARY_DEF_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Binary Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_DEF_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.CharacterDefImpl <em>Character Def</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +150,42 @@ public interface UtilPackage extends EPackage {
 	int DATA_DEF_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_DEF___ISA = EntityPackage.ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_DEF___GET_JAVA_CLASS = EntityPackage.ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_DEF___GET_DATA_DEF_TYPE = EntityPackage.ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Data Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_DEF_OPERATION_COUNT = EntityPackage.ENTITY_OPERATION_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Formulas</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -176,6 +222,42 @@ public interface UtilPackage extends EPackage {
 	int CHARACTER_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTER_DEF___ISA = DATA_DEF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTER_DEF___GET_JAVA_CLASS = DATA_DEF___GET_JAVA_CLASS;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTER_DEF___GET_DATA_DEF_TYPE = DATA_DEF___GET_DATA_DEF_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Character Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTER_DEF_OPERATION_COUNT = DATA_DEF_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Classes <em>Classes</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,6 +275,24 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASSES_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get All Interfaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSES___GET_ALL_INTERFACES__CLASS = 0;
+
+	/**
+	 * The number of operations of the '<em>Classes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSES_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.DatetimeDefImpl <em>Datetime Def</em>}' class.
@@ -250,6 +350,42 @@ public interface UtilPackage extends EPackage {
 	int DATETIME_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATETIME_DEF___ISA = DATA_DEF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATETIME_DEF___GET_JAVA_CLASS = DATA_DEF___GET_JAVA_CLASS;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATETIME_DEF___GET_DATA_DEF_TYPE = DATA_DEF___GET_DATA_DEF_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Datetime Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATETIME_DEF_OPERATION_COUNT = DATA_DEF_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.DecimalDefImpl <em>Decimal Def</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +441,42 @@ public interface UtilPackage extends EPackage {
 	int DECIMAL_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECIMAL_DEF___ISA = DATA_DEF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECIMAL_DEF___GET_JAVA_CLASS = DATA_DEF___GET_JAVA_CLASS;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECIMAL_DEF___GET_DATA_DEF_TYPE = DATA_DEF___GET_DATA_DEF_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Decimal Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECIMAL_DEF_OPERATION_COUNT = DATA_DEF_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Files <em>Files</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,6 +494,60 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int FILES_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Base Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILES___GET_BASE_NAME__STRING = 0;
+
+	/**
+	 * The operation id for the '<em>Clean Directory</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILES___CLEAN_DIRECTORY__STRING = 1;
+
+	/**
+	 * The operation id for the '<em>Delete Directory</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILES___DELETE_DIRECTORY__STRING = 2;
+
+	/**
+	 * The operation id for the '<em>Get Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILES___GET_SEPARATOR = 3;
+
+	/**
+	 * The operation id for the '<em>Copy To File</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILES___COPY_TO_FILE__INPUTSTREAM = 4;
+
+	/**
+	 * The number of operations of the '<em>Files</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILES_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.FloatingDefImpl <em>Floating Def</em>}' class.
@@ -361,6 +587,42 @@ public interface UtilPackage extends EPackage {
 	int FLOATING_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOATING_DEF___ISA = DATA_DEF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOATING_DEF___GET_JAVA_CLASS = DATA_DEF___GET_JAVA_CLASS;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOATING_DEF___GET_DATA_DEF_TYPE = DATA_DEF___GET_DATA_DEF_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Floating Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOATING_DEF_OPERATION_COUNT = DATA_DEF_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.IdentityDefImpl <em>Identity Def</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +651,42 @@ public interface UtilPackage extends EPackage {
 	int IDENTITY_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDENTITY_DEF___ISA = DATA_DEF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDENTITY_DEF___GET_JAVA_CLASS = DATA_DEF___GET_JAVA_CLASS;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDENTITY_DEF___GET_DATA_DEF_TYPE = DATA_DEF___GET_DATA_DEF_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Identity Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDENTITY_DEF_OPERATION_COUNT = DATA_DEF_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link java.nio.ByteBuffer <em>Java Byte Buffer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -406,6 +704,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_BYTE_BUFFER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Byte Buffer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_BYTE_BUFFER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.util.concurrent.BlockingQueue <em>Java Blocking Queue</em>}' class.
@@ -427,6 +734,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_BLOCKING_QUEUE_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Blocking Queue</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_BLOCKING_QUEUE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.util.concurrent.Callable <em>Java Callable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -444,6 +760,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_CALLABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Callable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_CALLABLE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.nio.charset.Charset <em>Java Charset</em>}' class.
@@ -465,6 +790,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_CHARSET_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Charset</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_CHARSET_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.io.Closeable <em>Java Closeable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -482,6 +816,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_CLOSEABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Closeable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_CLOSEABLE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.util.concurrent.ConcurrentMap <em>Java Concurrent Map</em>}' class.
@@ -503,6 +846,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_CONCURRENT_MAP_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Concurrent Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_CONCURRENT_MAP_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.lang.Enum <em>Java Enum</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -520,6 +872,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_ENUM_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Enum</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_ENUM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.util.concurrent.ExecutorService <em>Java Executor Service</em>}' class.
@@ -541,6 +902,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_EXECUTOR_SERVICE_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Executor Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_EXECUTOR_SERVICE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.io.File <em>Java File</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -558,6 +928,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_FILE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_FILE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Iterable <em>Java Iterable</em>}' class.
@@ -579,6 +958,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_ITERABLE_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Iterable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_ITERABLE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.util.Iterator <em>Java Iterator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -596,6 +984,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_ITERATOR_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Iterator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_ITERATOR_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.util.List <em>Java List</em>}' class.
@@ -617,6 +1014,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_LIST_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_LIST_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.lang.Number <em>Java Number</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -634,6 +1040,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_NUMBER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Number</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_NUMBER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.security.Principal <em>Java Principal</em>}' class.
@@ -655,6 +1070,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_PRINCIPAL_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Principal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_PRINCIPAL_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.lang.Runnable <em>Java Runnable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -672,6 +1096,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_RUNNABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Runnable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_RUNNABLE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Thread <em>Java Thread</em>}' class.
@@ -1044,6 +1477,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_SERIALIZABLE_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Serializable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_SERIALIZABLE_OPERATION_COUNT = 0;
+
+	/**
 	 * The number of structural features of the '<em>Java Thread</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1051,6 +1493,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_THREAD_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Thread</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_THREAD_OPERATION_COUNT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Java Thread Group</em>' class.
@@ -1062,6 +1513,15 @@ public interface UtilPackage extends EPackage {
 	int JAVA_THREAD_GROUP_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Java Thread Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_THREAD_GROUP_OPERATION_COUNT = 0;
+
+	/**
 	 * The number of structural features of the '<em>Java Thread Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1069,6 +1529,15 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int JAVA_THREAD_INFO_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Java Thread Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_THREAD_INFO_OPERATION_COUNT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Singleton</em>' class.
@@ -1080,6 +1549,15 @@ public interface UtilPackage extends EPackage {
 	int SINGLETON_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Singleton</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_OPERATION_COUNT = 0;
+
+	/**
 	 * The number of structural features of the '<em>Lists</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1087,6 +1565,60 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int LISTS_FEATURE_COUNT = SINGLETON_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Add First</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LISTS___ADD_FIRST__LIST_OBJECT = SINGLETON_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Add Last</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LISTS___ADD_LAST__LIST_OBJECT = SINGLETON_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Add Before</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LISTS___ADD_BEFORE__LIST_OBJECT_OBJECT = SINGLETON_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Add After</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LISTS___ADD_AFTER__LIST_OBJECT_OBJECT = SINGLETON_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Slice</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LISTS___SLICE__LIST_INT_INT = SINGLETON_OPERATION_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Lists</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LISTS_OPERATION_COUNT = SINGLETON_OPERATION_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Formulas</b></em>' attribute list.
@@ -1107,6 +1639,42 @@ public interface UtilPackage extends EPackage {
 	int NUMERIC_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_DEF___ISA = DATA_DEF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_DEF___GET_JAVA_CLASS = DATA_DEF___GET_JAVA_CLASS;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_DEF___GET_DATA_DEF_TYPE = DATA_DEF___GET_DATA_DEF_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Numeric Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_DEF_OPERATION_COUNT = DATA_DEF_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Streams</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1114,6 +1682,24 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int STREAMS_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Copy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STREAMS___COPY__INPUTSTREAM_OUTPUTSTREAM = 0;
+
+	/**
+	 * The number of operations of the '<em>Streams</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STREAMS_OPERATION_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Formulas</b></em>' attribute list.
@@ -1134,6 +1720,42 @@ public interface UtilPackage extends EPackage {
 	int STRING_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_DEF___ISA = DATA_DEF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Java Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_DEF___GET_JAVA_CLASS = DATA_DEF___GET_JAVA_CLASS;
+
+	/**
+	 * The operation id for the '<em>Get Data Def Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_DEF___GET_DATA_DEF_TYPE = DATA_DEF___GET_DATA_DEF_TYPE;
+
+	/**
+	 * The number of operations of the '<em>String Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_DEF_OPERATION_COUNT = DATA_DEF_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Strings</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1141,6 +1763,177 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRINGS_FEATURE_COUNT = SINGLETON_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Append Chars</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___APPEND_CHARS__STRING_STRING_INT_BOOLEAN = SINGLETON_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Check Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___CHECK_EQUALS__STRING_STRING = SINGLETON_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Escape</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___ESCAPE__STRING = SINGLETON_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>First To Upper</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___FIRST_TO_UPPER__STRING = SINGLETON_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>First To Lower</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___FIRST_TO_LOWER__STRING = SINGLETON_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Is Empty Trim</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___IS_EMPTY_TRIM__STRING = SINGLETON_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Is One Of</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___IS_ONE_OF__STRING_LIST = SINGLETON_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Left</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___LEFT__STRING_INT = SINGLETON_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>LSet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___LSET__STRING_INT = SINGLETON_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>LSet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___LSET__STRING_INT_STRING = SINGLETON_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Remove First Char</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___REMOVE_FIRST_CHAR__STRING = SINGLETON_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Remove Last Char</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___REMOVE_LAST_CHAR__STRING = SINGLETON_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Right</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___RIGHT__STRING_INT = SINGLETON_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>RSet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___RSET__STRING_INT = SINGLETON_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>RSet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___RSET__STRING_INT_STRING = SINGLETON_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___STRING__INT_STRING = SINGLETON_OPERATION_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Trim L</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___TRIM_L__STRING = SINGLETON_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Trim R</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS___TRIM_R__STRING = SINGLETON_OPERATION_COUNT + 17;
+
+	/**
+	 * The number of operations of the '<em>Strings</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRINGS_OPERATION_COUNT = SINGLETON_OPERATION_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>Thread</em>' class.
@@ -1152,6 +1945,123 @@ public interface UtilPackage extends EPackage {
 	int THREAD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___ISA = EntityPackage.ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Check Runnable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___CHECK_RUNNABLE = EntityPackage.ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Java Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___GET_JAVA_THREAD = EntityPackage.ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Thread ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___GET_THREAD_ID = EntityPackage.ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Thread Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___GET_THREAD_NAME = EntityPackage.ENTITY_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Thread Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___GET_THREAD_PRIORITY = EntityPackage.ENTITY_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get Thread CPU Usage</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___GET_THREAD_CPU_USAGE = EntityPackage.ENTITY_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get Thread Status</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___GET_THREAD_STATUS = EntityPackage.ENTITY_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Is Interrupted</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___IS_INTERRUPTED = EntityPackage.ENTITY_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Is Native</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___IS_NATIVE = EntityPackage.ENTITY_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Is Suspended</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___IS_SUSPENDED = EntityPackage.ENTITY_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Is Thread Daemon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD___IS_THREAD_DAEMON = EntityPackage.ENTITY_OPERATION_COUNT + 10;
+
+	/**
+	 * The number of operations of the '<em>Thread</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_OPERATION_COUNT = EntityPackage.ENTITY_OPERATION_COUNT + 11;
+
+	/**
 	 * The number of structural features of the '<em>Threads</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1159,6 +2069,141 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int THREADS_FEATURE_COUNT = SINGLETON_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>List Threads</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LIST_THREADS = SINGLETON_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>List Threads</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LIST_THREADS__STRING = SINGLETON_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>List Threads</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LIST_THREADS__THREADGROUP = SINGLETON_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>List Thread Infos</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LIST_THREAD_INFOS = SINGLETON_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>List Thread Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LIST_THREAD_GROUPS = SINGLETON_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Lookup Blocking Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_BLOCKING_THREAD__THREAD = SINGLETON_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Lookup Locking Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_LOCKING_THREAD__OBJECT = SINGLETON_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_THREAD__LONG = SINGLETON_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_THREAD__STRING = SINGLETON_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_THREAD__THREADINFO = SINGLETON_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread Group</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_THREAD_GROUP__STRING = SINGLETON_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_THREAD_INFO__LONG = SINGLETON_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_THREAD_INFO__STRING = SINGLETON_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS___LOOKUP_THREAD_INFO__THREAD = SINGLETON_OPERATION_COUNT + 13;
+
+	/**
+	 * The number of operations of the '<em>Threads</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREADS_OPERATION_COUNT = SINGLETON_OPERATION_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Thread Name</b></em>' attribute.
@@ -1260,6 +2305,24 @@ public interface UtilPackage extends EPackage {
 	int THREAD_INFO_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO___ISA = EntityPackage.ENTITY___ISA;
+
+	/**
+	 * The number of operations of the '<em>Thread Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO_OPERATION_COUNT = EntityPackage.ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Thread Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1269,6 +2332,114 @@ public interface UtilPackage extends EPackage {
 	int THREAD_MANAGER_FEATURE_COUNT = SINGLETON_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Create Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___CREATE_THREAD__STRING_RUNNABLE = SINGLETON_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Create Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___CREATE_THREAD__STRING_RUNNABLE_BOOLEAN = SINGLETON_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Current Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___CURRENT_THREAD = SINGLETON_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Thread Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___GET_THREAD_INFO__THREAD = SINGLETON_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>List Threads</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___LIST_THREADS = SINGLETON_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___LOOKUP_THREAD__LONG = SINGLETON_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Lookup Thread</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___LOOKUP_THREAD__STRING = SINGLETON_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Release</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___RELEASE__THREAD = SINGLETON_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___START__THREAD = SINGLETON_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Stop</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___STOP__THREAD = SINGLETON_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Suspend</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER___SUSPEND__THREAD = SINGLETON_OPERATION_COUNT + 10;
+
+	/**
+	 * The number of operations of the '<em>Thread Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER_OPERATION_COUNT = SINGLETON_OPERATION_COUNT + 11;
+
+	/**
 	 * The number of structural features of the '<em>UR Is</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1276,6 +2447,34 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int UR_IS_FEATURE_COUNT = 0;
+
+
+	/**
+	 * The operation id for the '<em>Get Base Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UR_IS___GET_BASE_NAME__URI = 0;
+
+	/**
+	 * The operation id for the '<em>Parse Parameter</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UR_IS___PARSE_PARAMETER__STRING = 1;
+
+	/**
+	 * The number of operations of the '<em>UR Is</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UR_IS_OPERATION_COUNT = 2;
 
 
 	/**
@@ -1353,6 +2552,16 @@ public interface UtilPackage extends EPackage {
 	EClass getClasses();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Classes#getAllInterfaces(java.lang.Class) <em>Get All Interfaces</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Interfaces</em>' operation.
+	 * @see org.abchip.mimo.util.Classes#getAllInterfaces(java.lang.Class)
+	 * @generated
+	 */
+	EOperation getClasses__GetAllInterfaces__Class();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.DataDef <em>Data Def</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1372,6 +2581,26 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataDef_Formulas();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.DataDef#getJavaClass() <em>Get Java Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Java Class</em>' operation.
+	 * @see org.abchip.mimo.util.DataDef#getJavaClass()
+	 * @generated
+	 */
+	EOperation getDataDef__GetJavaClass();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.DataDef#getDataDefType() <em>Get Data Def Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Data Def Type</em>' operation.
+	 * @see org.abchip.mimo.util.DataDef#getDataDefType()
+	 * @generated
+	 */
+	EOperation getDataDef__GetDataDefType();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.DatetimeDef <em>Datetime Def</em>}'.
@@ -1468,6 +2697,56 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFiles();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Files#getBaseName(java.lang.String) <em>Get Base Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Base Name</em>' operation.
+	 * @see org.abchip.mimo.util.Files#getBaseName(java.lang.String)
+	 * @generated
+	 */
+	EOperation getFiles__GetBaseName__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Files#cleanDirectory(java.lang.String) <em>Clean Directory</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Clean Directory</em>' operation.
+	 * @see org.abchip.mimo.util.Files#cleanDirectory(java.lang.String)
+	 * @generated
+	 */
+	EOperation getFiles__CleanDirectory__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Files#deleteDirectory(java.lang.String) <em>Delete Directory</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Delete Directory</em>' operation.
+	 * @see org.abchip.mimo.util.Files#deleteDirectory(java.lang.String)
+	 * @generated
+	 */
+	EOperation getFiles__DeleteDirectory__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Files#getSeparator() <em>Get Separator</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Separator</em>' operation.
+	 * @see org.abchip.mimo.util.Files#getSeparator()
+	 * @generated
+	 */
+	EOperation getFiles__GetSeparator();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Files#copyToFile(java.io.InputStream) <em>Copy To File</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Copy To File</em>' operation.
+	 * @see org.abchip.mimo.util.Files#copyToFile(java.io.InputStream)
+	 * @generated
+	 */
+	EOperation getFiles__CopyToFile__InputStream();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.FloatingDef <em>Floating Def</em>}'.
@@ -1709,6 +2988,56 @@ public interface UtilPackage extends EPackage {
 	EClass getLists();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Lists#addFirst(java.util.List, java.lang.Object) <em>Add First</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add First</em>' operation.
+	 * @see org.abchip.mimo.util.Lists#addFirst(java.util.List, java.lang.Object)
+	 * @generated
+	 */
+	EOperation getLists__AddFirst__List_Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Lists#addLast(java.util.List, java.lang.Object) <em>Add Last</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Last</em>' operation.
+	 * @see org.abchip.mimo.util.Lists#addLast(java.util.List, java.lang.Object)
+	 * @generated
+	 */
+	EOperation getLists__AddLast__List_Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Lists#addBefore(java.util.List, java.lang.Object, java.lang.Object) <em>Add Before</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Before</em>' operation.
+	 * @see org.abchip.mimo.util.Lists#addBefore(java.util.List, java.lang.Object, java.lang.Object)
+	 * @generated
+	 */
+	EOperation getLists__AddBefore__List_Object_Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Lists#addAfter(java.util.List, java.lang.Object, java.lang.Object) <em>Add After</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add After</em>' operation.
+	 * @see org.abchip.mimo.util.Lists#addAfter(java.util.List, java.lang.Object, java.lang.Object)
+	 * @generated
+	 */
+	EOperation getLists__AddAfter__List_Object_Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Lists#slice(java.util.List, int, int) <em>Slice</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Slice</em>' operation.
+	 * @see org.abchip.mimo.util.Lists#slice(java.util.List, int, int)
+	 * @generated
+	 */
+	EOperation getLists__Slice__List_int_int();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.NumericDef <em>Numeric Def</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1739,6 +3068,16 @@ public interface UtilPackage extends EPackage {
 	EClass getStreams();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Streams#copy(java.io.InputStream, java.io.OutputStream) <em>Copy</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Copy</em>' operation.
+	 * @see org.abchip.mimo.util.Streams#copy(java.io.InputStream, java.io.OutputStream)
+	 * @generated
+	 */
+	EOperation getStreams__Copy__InputStream_OutputStream();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.StringDef <em>String Def</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1759,6 +3098,186 @@ public interface UtilPackage extends EPackage {
 	EClass getStrings();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#appendChars(java.lang.String, java.lang.String, int, boolean) <em>Append Chars</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Append Chars</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#appendChars(java.lang.String, java.lang.String, int, boolean)
+	 * @generated
+	 */
+	EOperation getStrings__AppendChars__String_String_int_boolean();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#checkEquals(java.lang.String, java.lang.String) <em>Check Equals</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Equals</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#checkEquals(java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__CheckEquals__String_String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#escape(java.lang.String) <em>Escape</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Escape</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#escape(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__Escape__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#firstToUpper(java.lang.String) <em>First To Upper</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>First To Upper</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#firstToUpper(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__FirstToUpper__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#firstToLower(java.lang.String) <em>First To Lower</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>First To Lower</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#firstToLower(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__FirstToLower__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#isEmptyTrim(java.lang.String) <em>Is Empty Trim</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Empty Trim</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#isEmptyTrim(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__IsEmptyTrim__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#isOneOf(java.lang.String, java.util.List) <em>Is One Of</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is One Of</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#isOneOf(java.lang.String, java.util.List)
+	 * @generated
+	 */
+	EOperation getStrings__IsOneOf__String_List();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#left(java.lang.String, int) <em>Left</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Left</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#left(java.lang.String, int)
+	 * @generated
+	 */
+	EOperation getStrings__Left__String_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#lSet(java.lang.String, int) <em>LSet</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>LSet</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#lSet(java.lang.String, int)
+	 * @generated
+	 */
+	EOperation getStrings__LSet__String_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#lSet(java.lang.String, int, java.lang.String) <em>LSet</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>LSet</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#lSet(java.lang.String, int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__LSet__String_int_String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#removeFirstChar(java.lang.String) <em>Remove First Char</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove First Char</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#removeFirstChar(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__RemoveFirstChar__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#removeLastChar(java.lang.String) <em>Remove Last Char</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Last Char</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#removeLastChar(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__RemoveLastChar__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#right(java.lang.String, int) <em>Right</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Right</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#right(java.lang.String, int)
+	 * @generated
+	 */
+	EOperation getStrings__Right__String_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#rSet(java.lang.String, int) <em>RSet</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>RSet</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#rSet(java.lang.String, int)
+	 * @generated
+	 */
+	EOperation getStrings__RSet__String_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#rSet(java.lang.String, int, java.lang.String) <em>RSet</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>RSet</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#rSet(java.lang.String, int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__RSet__String_int_String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#string(int, java.lang.String) <em>String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>String</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#string(int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__String__int_String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#trimL(java.lang.String) <em>Trim L</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Trim L</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#trimL(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__TrimL__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Strings#trimR(java.lang.String) <em>Trim R</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Trim R</em>' operation.
+	 * @see org.abchip.mimo.util.Strings#trimR(java.lang.String)
+	 * @generated
+	 */
+	EOperation getStrings__TrimR__String();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.Thread <em>Thread</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1769,6 +3288,116 @@ public interface UtilPackage extends EPackage {
 	EClass getThread();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#checkRunnable() <em>Check Runnable</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Runnable</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#checkRunnable()
+	 * @generated
+	 */
+	EOperation getThread__CheckRunnable();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#getJavaThread() <em>Get Java Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Java Thread</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#getJavaThread()
+	 * @generated
+	 */
+	EOperation getThread__GetJavaThread();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#getThreadID() <em>Get Thread ID</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Thread ID</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#getThreadID()
+	 * @generated
+	 */
+	EOperation getThread__GetThreadID();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#getThreadName() <em>Get Thread Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Thread Name</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#getThreadName()
+	 * @generated
+	 */
+	EOperation getThread__GetThreadName();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#getThreadPriority() <em>Get Thread Priority</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Thread Priority</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#getThreadPriority()
+	 * @generated
+	 */
+	EOperation getThread__GetThreadPriority();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#getThreadCPUUsage() <em>Get Thread CPU Usage</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Thread CPU Usage</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#getThreadCPUUsage()
+	 * @generated
+	 */
+	EOperation getThread__GetThreadCPUUsage();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#getThreadStatus() <em>Get Thread Status</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Thread Status</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#getThreadStatus()
+	 * @generated
+	 */
+	EOperation getThread__GetThreadStatus();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#isInterrupted() <em>Is Interrupted</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Interrupted</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#isInterrupted()
+	 * @generated
+	 */
+	EOperation getThread__IsInterrupted();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#isNative() <em>Is Native</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Native</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#isNative()
+	 * @generated
+	 */
+	EOperation getThread__IsNative();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#isSuspended() <em>Is Suspended</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Suspended</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#isSuspended()
+	 * @generated
+	 */
+	EOperation getThread__IsSuspended();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Thread#isThreadDaemon() <em>Is Thread Daemon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Thread Daemon</em>' operation.
+	 * @see org.abchip.mimo.util.Thread#isThreadDaemon()
+	 * @generated
+	 */
+	EOperation getThread__IsThreadDaemon();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.Threads <em>Threads</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1777,6 +3406,146 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getThreads();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#listThreads() <em>List Threads</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>List Threads</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#listThreads()
+	 * @generated
+	 */
+	EOperation getThreads__ListThreads();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#listThreads(java.lang.String) <em>List Threads</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>List Threads</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#listThreads(java.lang.String)
+	 * @generated
+	 */
+	EOperation getThreads__ListThreads__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#listThreads(java.lang.ThreadGroup) <em>List Threads</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>List Threads</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#listThreads(java.lang.ThreadGroup)
+	 * @generated
+	 */
+	EOperation getThreads__ListThreads__ThreadGroup();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#listThreadInfos() <em>List Thread Infos</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>List Thread Infos</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#listThreadInfos()
+	 * @generated
+	 */
+	EOperation getThreads__ListThreadInfos();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#listThreadGroups() <em>List Thread Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>List Thread Groups</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#listThreadGroups()
+	 * @generated
+	 */
+	EOperation getThreads__ListThreadGroups();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupBlockingThread(java.lang.Thread) <em>Lookup Blocking Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Blocking Thread</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupBlockingThread(java.lang.Thread)
+	 * @generated
+	 */
+	EOperation getThreads__LookupBlockingThread__Thread();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupLockingThread(java.lang.Object) <em>Lookup Locking Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Locking Thread</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupLockingThread(java.lang.Object)
+	 * @generated
+	 */
+	EOperation getThreads__LookupLockingThread__Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupThread(long) <em>Lookup Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupThread(long)
+	 * @generated
+	 */
+	EOperation getThreads__LookupThread__long();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupThread(java.lang.String) <em>Lookup Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupThread(java.lang.String)
+	 * @generated
+	 */
+	EOperation getThreads__LookupThread__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupThread(java.lang.management.ThreadInfo) <em>Lookup Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupThread(java.lang.management.ThreadInfo)
+	 * @generated
+	 */
+	EOperation getThreads__LookupThread__ThreadInfo();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupThreadGroup(java.lang.String) <em>Lookup Thread Group</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread Group</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupThreadGroup(java.lang.String)
+	 * @generated
+	 */
+	EOperation getThreads__LookupThreadGroup__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupThreadInfo(long) <em>Lookup Thread Info</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread Info</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupThreadInfo(long)
+	 * @generated
+	 */
+	EOperation getThreads__LookupThreadInfo__long();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupThreadInfo(java.lang.String) <em>Lookup Thread Info</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread Info</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupThreadInfo(java.lang.String)
+	 * @generated
+	 */
+	EOperation getThreads__LookupThreadInfo__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.Threads#lookupThreadInfo(java.lang.Thread) <em>Lookup Thread Info</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread Info</em>' operation.
+	 * @see org.abchip.mimo.util.Threads#lookupThreadInfo(java.lang.Thread)
+	 * @generated
+	 */
+	EOperation getThreads__LookupThreadInfo__Thread();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.ThreadInfo <em>Thread Info</em>}'.
@@ -1909,6 +3678,116 @@ public interface UtilPackage extends EPackage {
 	EClass getThreadManager();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#createThread(java.lang.String, java.lang.Runnable) <em>Create Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Thread</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#createThread(java.lang.String, java.lang.Runnable)
+	 * @generated
+	 */
+	EOperation getThreadManager__CreateThread__String_Runnable();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#createThread(java.lang.String, java.lang.Runnable, boolean) <em>Create Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Thread</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#createThread(java.lang.String, java.lang.Runnable, boolean)
+	 * @generated
+	 */
+	EOperation getThreadManager__CreateThread__String_Runnable_boolean();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#currentThread() <em>Current Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Current Thread</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#currentThread()
+	 * @generated
+	 */
+	EOperation getThreadManager__CurrentThread();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#getThreadInfo(org.abchip.mimo.util.Thread) <em>Get Thread Info</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Thread Info</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#getThreadInfo(org.abchip.mimo.util.Thread)
+	 * @generated
+	 */
+	EOperation getThreadManager__GetThreadInfo__Thread();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#listThreads() <em>List Threads</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>List Threads</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#listThreads()
+	 * @generated
+	 */
+	EOperation getThreadManager__ListThreads();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#lookupThread(long) <em>Lookup Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#lookupThread(long)
+	 * @generated
+	 */
+	EOperation getThreadManager__LookupThread__long();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#lookupThread(java.lang.String) <em>Lookup Thread</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lookup Thread</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#lookupThread(java.lang.String)
+	 * @generated
+	 */
+	EOperation getThreadManager__LookupThread__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#release(org.abchip.mimo.util.Thread) <em>Release</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Release</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#release(org.abchip.mimo.util.Thread)
+	 * @generated
+	 */
+	EOperation getThreadManager__Release__Thread();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#start(org.abchip.mimo.util.Thread) <em>Start</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#start(org.abchip.mimo.util.Thread)
+	 * @generated
+	 */
+	EOperation getThreadManager__Start__Thread();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#stop(org.abchip.mimo.util.Thread) <em>Stop</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Stop</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#stop(org.abchip.mimo.util.Thread)
+	 * @generated
+	 */
+	EOperation getThreadManager__Stop__Thread();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.ThreadManager#suspend(org.abchip.mimo.util.Thread) <em>Suspend</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Suspend</em>' operation.
+	 * @see org.abchip.mimo.util.ThreadManager#suspend(org.abchip.mimo.util.Thread)
+	 * @generated
+	 */
+	EOperation getThreadManager__Suspend__Thread();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.URIs <em>UR Is</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1917,6 +3796,26 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getURIs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.URIs#getBaseName(java.net.URI) <em>Get Base Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Base Name</em>' operation.
+	 * @see org.abchip.mimo.util.URIs#getBaseName(java.net.URI)
+	 * @generated
+	 */
+	EOperation getURIs__GetBaseName__URI();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.util.URIs#parseParameter(java.lang.String) <em>Parse Parameter</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Parse Parameter</em>' operation.
+	 * @see org.abchip.mimo.util.URIs#parseParameter(java.lang.String)
+	 * @generated
+	 */
+	EOperation getURIs__ParseParameter__String();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.util.BinaryType <em>Binary Type</em>}'.
@@ -2237,6 +4136,14 @@ public interface UtilPackage extends EPackage {
 		EClass CLASSES = eINSTANCE.getClasses();
 
 		/**
+		 * The meta object literal for the '<em><b>Get All Interfaces</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CLASSES___GET_ALL_INTERFACES__CLASS = eINSTANCE.getClasses__GetAllInterfaces__Class();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.DataDefImpl <em>Data Def</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2253,6 +4160,22 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_DEF__FORMULAS = eINSTANCE.getDataDef_Formulas();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Java Class</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_DEF___GET_JAVA_CLASS = eINSTANCE.getDataDef__GetJavaClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Data Def Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_DEF___GET_DATA_DEF_TYPE = eINSTANCE.getDataDef__GetDataDefType();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.DatetimeDefImpl <em>Datetime Def</em>}' class.
@@ -2331,6 +4254,46 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FILES = eINSTANCE.getFiles();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Base Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FILES___GET_BASE_NAME__STRING = eINSTANCE.getFiles__GetBaseName__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Clean Directory</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FILES___CLEAN_DIRECTORY__STRING = eINSTANCE.getFiles__CleanDirectory__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Delete Directory</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FILES___DELETE_DIRECTORY__STRING = eINSTANCE.getFiles__DeleteDirectory__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Separator</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FILES___GET_SEPARATOR = eINSTANCE.getFiles__GetSeparator();
+
+		/**
+		 * The meta object literal for the '<em><b>Copy To File</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FILES___COPY_TO_FILE__INPUTSTREAM = eINSTANCE.getFiles__CopyToFile__InputStream();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.FloatingDefImpl <em>Floating Def</em>}' class.
@@ -2551,6 +4514,46 @@ public interface UtilPackage extends EPackage {
 		EClass LISTS = eINSTANCE.getLists();
 
 		/**
+		 * The meta object literal for the '<em><b>Add First</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LISTS___ADD_FIRST__LIST_OBJECT = eINSTANCE.getLists__AddFirst__List_Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Last</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LISTS___ADD_LAST__LIST_OBJECT = eINSTANCE.getLists__AddLast__List_Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Before</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LISTS___ADD_BEFORE__LIST_OBJECT_OBJECT = eINSTANCE.getLists__AddBefore__List_Object_Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Add After</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LISTS___ADD_AFTER__LIST_OBJECT_OBJECT = eINSTANCE.getLists__AddAfter__List_Object_Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Slice</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LISTS___SLICE__LIST_INT_INT = eINSTANCE.getLists__Slice__List_int_int();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.NumericDefImpl <em>Numeric Def</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2581,6 +4584,14 @@ public interface UtilPackage extends EPackage {
 		EClass STREAMS = eINSTANCE.getStreams();
 
 		/**
+		 * The meta object literal for the '<em><b>Copy</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STREAMS___COPY__INPUTSTREAM_OUTPUTSTREAM = eINSTANCE.getStreams__Copy__InputStream_OutputStream();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.StringDefImpl <em>String Def</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2601,6 +4612,150 @@ public interface UtilPackage extends EPackage {
 		EClass STRINGS = eINSTANCE.getStrings();
 
 		/**
+		 * The meta object literal for the '<em><b>Append Chars</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___APPEND_CHARS__STRING_STRING_INT_BOOLEAN = eINSTANCE.getStrings__AppendChars__String_String_int_boolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Equals</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___CHECK_EQUALS__STRING_STRING = eINSTANCE.getStrings__CheckEquals__String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Escape</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___ESCAPE__STRING = eINSTANCE.getStrings__Escape__String();
+
+		/**
+		 * The meta object literal for the '<em><b>First To Upper</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___FIRST_TO_UPPER__STRING = eINSTANCE.getStrings__FirstToUpper__String();
+
+		/**
+		 * The meta object literal for the '<em><b>First To Lower</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___FIRST_TO_LOWER__STRING = eINSTANCE.getStrings__FirstToLower__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Empty Trim</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___IS_EMPTY_TRIM__STRING = eINSTANCE.getStrings__IsEmptyTrim__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Is One Of</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___IS_ONE_OF__STRING_LIST = eINSTANCE.getStrings__IsOneOf__String_List();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___LEFT__STRING_INT = eINSTANCE.getStrings__Left__String_int();
+
+		/**
+		 * The meta object literal for the '<em><b>LSet</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___LSET__STRING_INT = eINSTANCE.getStrings__LSet__String_int();
+
+		/**
+		 * The meta object literal for the '<em><b>LSet</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___LSET__STRING_INT_STRING = eINSTANCE.getStrings__LSet__String_int_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove First Char</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___REMOVE_FIRST_CHAR__STRING = eINSTANCE.getStrings__RemoveFirstChar__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Last Char</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___REMOVE_LAST_CHAR__STRING = eINSTANCE.getStrings__RemoveLastChar__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___RIGHT__STRING_INT = eINSTANCE.getStrings__Right__String_int();
+
+		/**
+		 * The meta object literal for the '<em><b>RSet</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___RSET__STRING_INT = eINSTANCE.getStrings__RSet__String_int();
+
+		/**
+		 * The meta object literal for the '<em><b>RSet</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___RSET__STRING_INT_STRING = eINSTANCE.getStrings__RSet__String_int_String();
+
+		/**
+		 * The meta object literal for the '<em><b>String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___STRING__INT_STRING = eINSTANCE.getStrings__String__int_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Trim L</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___TRIM_L__STRING = eINSTANCE.getStrings__TrimL__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Trim R</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRINGS___TRIM_R__STRING = eINSTANCE.getStrings__TrimR__String();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.Thread <em>Thread</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2611,6 +4766,94 @@ public interface UtilPackage extends EPackage {
 		EClass THREAD = eINSTANCE.getThread();
 
 		/**
+		 * The meta object literal for the '<em><b>Check Runnable</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___CHECK_RUNNABLE = eINSTANCE.getThread__CheckRunnable();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Java Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___GET_JAVA_THREAD = eINSTANCE.getThread__GetJavaThread();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Thread ID</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___GET_THREAD_ID = eINSTANCE.getThread__GetThreadID();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Thread Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___GET_THREAD_NAME = eINSTANCE.getThread__GetThreadName();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Thread Priority</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___GET_THREAD_PRIORITY = eINSTANCE.getThread__GetThreadPriority();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Thread CPU Usage</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___GET_THREAD_CPU_USAGE = eINSTANCE.getThread__GetThreadCPUUsage();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Thread Status</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___GET_THREAD_STATUS = eINSTANCE.getThread__GetThreadStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Interrupted</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___IS_INTERRUPTED = eINSTANCE.getThread__IsInterrupted();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Native</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___IS_NATIVE = eINSTANCE.getThread__IsNative();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Suspended</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___IS_SUSPENDED = eINSTANCE.getThread__IsSuspended();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Thread Daemon</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD___IS_THREAD_DAEMON = eINSTANCE.getThread__IsThreadDaemon();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.Threads <em>Threads</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2619,6 +4862,118 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EClass THREADS = eINSTANCE.getThreads();
+
+		/**
+		 * The meta object literal for the '<em><b>List Threads</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LIST_THREADS = eINSTANCE.getThreads__ListThreads();
+
+		/**
+		 * The meta object literal for the '<em><b>List Threads</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LIST_THREADS__STRING = eINSTANCE.getThreads__ListThreads__String();
+
+		/**
+		 * The meta object literal for the '<em><b>List Threads</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LIST_THREADS__THREADGROUP = eINSTANCE.getThreads__ListThreads__ThreadGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>List Thread Infos</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LIST_THREAD_INFOS = eINSTANCE.getThreads__ListThreadInfos();
+
+		/**
+		 * The meta object literal for the '<em><b>List Thread Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LIST_THREAD_GROUPS = eINSTANCE.getThreads__ListThreadGroups();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Blocking Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_BLOCKING_THREAD__THREAD = eINSTANCE.getThreads__LookupBlockingThread__Thread();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Locking Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_LOCKING_THREAD__OBJECT = eINSTANCE.getThreads__LookupLockingThread__Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_THREAD__LONG = eINSTANCE.getThreads__LookupThread__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_THREAD__STRING = eINSTANCE.getThreads__LookupThread__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_THREAD__THREADINFO = eINSTANCE.getThreads__LookupThread__ThreadInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread Group</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_THREAD_GROUP__STRING = eINSTANCE.getThreads__LookupThreadGroup__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread Info</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_THREAD_INFO__LONG = eINSTANCE.getThreads__LookupThreadInfo__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread Info</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_THREAD_INFO__STRING = eINSTANCE.getThreads__LookupThreadInfo__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread Info</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREADS___LOOKUP_THREAD_INFO__THREAD = eINSTANCE.getThreads__LookupThreadInfo__Thread();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.ThreadInfoImpl <em>Thread Info</em>}' class.
@@ -2721,6 +5076,94 @@ public interface UtilPackage extends EPackage {
 		EClass THREAD_MANAGER = eINSTANCE.getThreadManager();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___CREATE_THREAD__STRING_RUNNABLE = eINSTANCE.getThreadManager__CreateThread__String_Runnable();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___CREATE_THREAD__STRING_RUNNABLE_BOOLEAN = eINSTANCE.getThreadManager__CreateThread__String_Runnable_boolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Current Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___CURRENT_THREAD = eINSTANCE.getThreadManager__CurrentThread();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Thread Info</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___GET_THREAD_INFO__THREAD = eINSTANCE.getThreadManager__GetThreadInfo__Thread();
+
+		/**
+		 * The meta object literal for the '<em><b>List Threads</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___LIST_THREADS = eINSTANCE.getThreadManager__ListThreads();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___LOOKUP_THREAD__LONG = eINSTANCE.getThreadManager__LookupThread__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Lookup Thread</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___LOOKUP_THREAD__STRING = eINSTANCE.getThreadManager__LookupThread__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Release</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___RELEASE__THREAD = eINSTANCE.getThreadManager__Release__Thread();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___START__THREAD = eINSTANCE.getThreadManager__Start__Thread();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___STOP__THREAD = eINSTANCE.getThreadManager__Stop__Thread();
+
+		/**
+		 * The meta object literal for the '<em><b>Suspend</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAD_MANAGER___SUSPEND__THREAD = eINSTANCE.getThreadManager__Suspend__Thread();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.URIs <em>UR Is</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2729,6 +5172,22 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UR_IS = eINSTANCE.getURIs();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Base Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation UR_IS___GET_BASE_NAME__URI = eINSTANCE.getURIs__GetBaseName__URI();
+
+		/**
+		 * The meta object literal for the '<em><b>Parse Parameter</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation UR_IS___PARSE_PARAMETER__STRING = eINSTANCE.getURIs__ParseParameter__String();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.BinaryType <em>Binary Type</em>}' enum.

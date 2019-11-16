@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.category.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -170,6 +172,22 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CategoryPackage.PRODUCT_CATEGORY_TYPE___CHILD_PRODUCT_CATEGORY_TYPES:
+				return childProductCategoryTypes();
+			case CategoryPackage.PRODUCT_CATEGORY_TYPE___PRODUCT_CATEGORIES:
+				return productCategories();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ProductCategoryTypeImpl

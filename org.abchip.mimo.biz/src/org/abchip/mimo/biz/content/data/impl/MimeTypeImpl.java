@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -119,6 +121,26 @@ public class MimeTypeImpl extends BizEntityImpl implements MimeType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DataPackage.MIME_TYPE___COMMUNICATION_EVENTS:
+				return communicationEvents();
+			case DataPackage.MIME_TYPE___CONTENTS:
+				return contents();
+			case DataPackage.MIME_TYPE___DATA_RESOURCES:
+				return dataResources();
+			case DataPackage.MIME_TYPE___FILE_EXTENSIONS:
+				return fileExtensions();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

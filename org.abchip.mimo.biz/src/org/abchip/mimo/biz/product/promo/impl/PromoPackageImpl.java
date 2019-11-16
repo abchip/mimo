@@ -204,6 +204,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -899,6 +900,56 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getProductPromo__OrderAdjustments() {
+		return productPromoEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductPromo__ProductPromoCodes() {
+		return productPromoEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductPromo__ProductPromoUses() {
+		return productPromoEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductPromo__QuoteAdjustments() {
+		return productPromoEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductPromo__ReturnAdjustments() {
+		return productPromoEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProductPromoAction() {
 		return productPromoActionEClass;
 	}
@@ -1261,6 +1312,36 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	@Override
 	public EAttribute getProductPromoCode_ProductPromoCodeParties() {
 		return (EAttribute)productPromoCodeEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductPromoCode__OrderProductPromoCodes() {
+		return productPromoCodeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductPromoCode__ProductPromoUses() {
+		return productPromoCodeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProductPromoCode__ShoppingLists() {
+		return productPromoCodeEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1709,6 +1790,11 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		createEReference(productPromoEClass, PRODUCT_PROMO__CREATED_BY_USER_LOGIN);
 		createEReference(productPromoEClass, PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(productPromoEClass, PRODUCT_PROMO__PRODUCT_PROMO_RULES);
+		createEOperation(productPromoEClass, PRODUCT_PROMO___ORDER_ADJUSTMENTS);
+		createEOperation(productPromoEClass, PRODUCT_PROMO___PRODUCT_PROMO_CODES);
+		createEOperation(productPromoEClass, PRODUCT_PROMO___PRODUCT_PROMO_USES);
+		createEOperation(productPromoEClass, PRODUCT_PROMO___QUOTE_ADJUSTMENTS);
+		createEOperation(productPromoEClass, PRODUCT_PROMO___RETURN_ADJUSTMENTS);
 
 		productPromoActionEClass = createEClass(PRODUCT_PROMO_ACTION);
 		createEAttribute(productPromoActionEClass, PRODUCT_PROMO_ACTION__PRODUCT_PROMO_RULE_ID);
@@ -1749,6 +1835,9 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		createEReference(productPromoCodeEClass, PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS);
 		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES);
+		createEOperation(productPromoCodeEClass, PRODUCT_PROMO_CODE___ORDER_PRODUCT_PROMO_CODES);
+		createEOperation(productPromoCodeEClass, PRODUCT_PROMO_CODE___PRODUCT_PROMO_USES);
+		createEOperation(productPromoCodeEClass, PRODUCT_PROMO_CODE___SHOPPING_LISTS);
 
 		productPromoCodeEmailEClass = createEClass(PRODUCT_PROMO_CODE_EMAIL);
 		createEAttribute(productPromoCodeEmailEClass, PRODUCT_PROMO_CODE_EMAIL__EMAIL_ADDRESS);
@@ -1849,7 +1938,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		productPromoRuleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		productPromoUseEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(productPromoEClass, ProductPromo.class, "ProductPromo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductPromo_ProductPromoId(), ecorePackage.getEString(), "productPromoId", null, 1, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPromo_BillbackFactor(), ecorePackage.getEBigDecimal(), "billbackFactor", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1871,15 +1960,15 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		getProductPromo_LastModifiedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 		initEAttribute(getProductPromo_ProductPromoRules(), ecorePackage.getEString(), "productPromoRules", null, 0, -1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromo__OrderAdjustments(), ecorePackage.getEString(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "productPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromo__ProductPromoCodes(), ecorePackage.getEString(), "productPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromo__ProductPromoUses(), ecorePackage.getEString(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "quoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromo__QuoteAdjustments(), ecorePackage.getEString(), "quoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromo__ReturnAdjustments(), ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productPromoActionEClass, ProductPromoAction.class, "ProductPromoAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductPromoAction_ProductPromoRuleId(), ecorePackage.getEString(), "productPromoRuleId", null, 1, 1, ProductPromoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1931,11 +2020,11 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		initEAttribute(getProductPromoCode_ProductPromoCodeEmails(), ecorePackage.getEString(), "productPromoCodeEmails", null, 0, -1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPromoCode_ProductPromoCodeParties(), ecorePackage.getEString(), "productPromoCodeParties", null, 0, -1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productPromoCodeEClass, ecorePackage.getEString(), "orderProductPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromoCode__OrderProductPromoCodes(), ecorePackage.getEString(), "orderProductPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoCodeEClass, ecorePackage.getEString(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromoCode__ProductPromoUses(), ecorePackage.getEString(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoCodeEClass, ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getProductPromoCode__ShoppingLists(), ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productPromoCodeEmailEClass, ProductPromoCodeEmail.class, "ProductPromoCodeEmail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductPromoCodeEmail_EmailAddress(), ecorePackage.getEString(), "emailAddress", null, 1, 1, ProductPromoCodeEmail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2018,31 +2107,31 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(0),
+		  (getProductPromo__OrderAdjustments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(1),
+		  (getProductPromo__ProductPromoCodes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(2),
+		  (getProductPromo__ProductPromoUses(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(3),
+		  (getProductPromo__QuoteAdjustments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(4),
+		  (getProductPromo__ReturnAdjustments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2096,19 +2185,19 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(0),
+		  (getProductPromoCode__OrderProductPromoCodes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(1),
+		  (getProductPromoCode__ProductPromoUses(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(2),
+		  (getProductPromoCode__ShoppingLists(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2196,7 +2285,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(0),
+		  (getProductPromo__OrderAdjustments(),
 		   source,
 		   new String[] {
 			   "frame", "OrderAdjustment",
@@ -2206,7 +2295,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(1),
+		  (getProductPromo__ProductPromoCodes(),
 		   source,
 		   new String[] {
 			   "frame", "ProductPromoCode",
@@ -2216,7 +2305,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(2),
+		  (getProductPromo__ProductPromoUses(),
 		   source,
 		   new String[] {
 			   "frame", "ProductPromoUse",
@@ -2226,7 +2315,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(3),
+		  (getProductPromo__QuoteAdjustments(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteAdjustment",
@@ -2236,7 +2325,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(4),
+		  (getProductPromo__ReturnAdjustments(),
 		   source,
 		   new String[] {
 			   "frame", "ReturnAdjustment",
@@ -2255,7 +2344,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(0),
+		  (getProductPromoCode__OrderProductPromoCodes(),
 		   source,
 		   new String[] {
 			   "frame", "OrderProductPromoCode",
@@ -2265,7 +2354,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(1),
+		  (getProductPromoCode__ProductPromoUses(),
 		   source,
 		   new String[] {
 			   "frame", "ProductPromoUse",
@@ -2275,7 +2364,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(2),
+		  (getProductPromoCode__ShoppingLists(),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingList",

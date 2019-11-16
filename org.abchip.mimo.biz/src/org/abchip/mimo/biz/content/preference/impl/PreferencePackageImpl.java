@@ -815,7 +815,7 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		webPreferenceTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		webUserPreferenceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(webPreferenceTypeEClass, WebPreferenceType.class, "WebPreferenceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebPreferenceType_WebPreferenceTypeId(), ecorePackage.getEString(), "webPreferenceTypeId", null, 1, 1, WebPreferenceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebPreferenceType_Description(), ecorePackage.getEString(), "description", null, 0, 1, WebPreferenceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

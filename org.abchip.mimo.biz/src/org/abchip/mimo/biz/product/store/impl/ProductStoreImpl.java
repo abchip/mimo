@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.enum_.Enumeration;
@@ -18,6 +19,7 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -1652,6 +1654,44 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case StorePackage.PRODUCT_STORE___CUST_REQUESTS:
+				return custRequests();
+			case StorePackage.PRODUCT_STORE___GIT_HUB_USERS:
+				return gitHubUsers();
+			case StorePackage.PRODUCT_STORE___GOOGLE_USERS:
+				return googleUsers();
+			case StorePackage.PRODUCT_STORE___LINKED_IN_USERS:
+				return linkedInUsers();
+			case StorePackage.PRODUCT_STORE___ORDER_HEADERS:
+				return orderHeaders();
+			case StorePackage.PRODUCT_STORE___PARTY_PROFILE_DEFAULTS:
+				return partyProfileDefaults();
+			case StorePackage.PRODUCT_STORE___PRODUCT_REVIEWS:
+				return productReviews();
+			case StorePackage.PRODUCT_STORE___PRODUCT_STORE_SURVEY_APPLS:
+				return productStoreSurveyAppls();
+			case StorePackage.PRODUCT_STORE___QUOTES:
+				return quotes();
+			case StorePackage.PRODUCT_STORE___SEGMENT_GROUPS:
+				return segmentGroups();
+			case StorePackage.PRODUCT_STORE___SHOPPING_LISTS:
+				return shoppingLists();
+			case StorePackage.PRODUCT_STORE___TAX_AUTHORITY_RATE_PRODUCTS:
+				return taxAuthorityRateProducts();
+			case StorePackage.PRODUCT_STORE___WEB_SITES:
+				return webSites();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

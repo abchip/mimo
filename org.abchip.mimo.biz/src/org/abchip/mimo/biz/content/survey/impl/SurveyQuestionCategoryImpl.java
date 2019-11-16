@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.content.survey.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -116,6 +118,22 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SurveyPackage.SURVEY_QUESTION_CATEGORY___CHILD_SURVEY_QUESTION_CATEGORIES:
+				return childSurveyQuestionCategories();
+			case SurveyPackage.SURVEY_QUESTION_CATEGORY___SURVEY_QUESTIONS:
+				return surveyQuestions();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

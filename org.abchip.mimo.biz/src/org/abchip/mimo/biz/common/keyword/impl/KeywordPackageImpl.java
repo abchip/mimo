@@ -749,7 +749,7 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 		// Add supertypes to classes
 		keywordThesaurusEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(keywordThesaurusEClass, KeywordThesaurus.class, "KeywordThesaurus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeywordThesaurus_EnteredKeyword(), ecorePackage.getEString(), "enteredKeyword", null, 1, 1, KeywordThesaurus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getKeywordThesaurus_AlternateKeyword(), ecorePackage.getEString(), "alternateKeyword", null, 1, 1, KeywordThesaurus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

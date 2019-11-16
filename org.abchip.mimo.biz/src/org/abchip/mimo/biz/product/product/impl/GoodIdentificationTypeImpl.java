@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.GoodIdentification;
 import org.abchip.mimo.biz.product.product.GoodIdentificationType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -138,6 +140,20 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ProductPackage.GOOD_IDENTIFICATION_TYPE___CHILD_GOOD_IDENTIFICATION_TYPES:
+				return childGoodIdentificationTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

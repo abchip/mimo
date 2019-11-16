@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -495,6 +496,31 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 				return TEXT_FORMULA_EDEFAULT == null ? textFormula != null : !TEXT_FORMULA_EDEFAULT.equals(textFormula);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case EntityPackage.FRAME___AKO:
+				return ako();
+			case EntityPackage.FRAME___CREATE_ENTITY:
+				return createEntity();
+			case EntityPackage.FRAME___GET_SLOT__STRING:
+				return getSlot((String)arguments.get(0));
+			case EntityPackage.FRAME___GET_SUPER_FRAMES:
+				return getSuperFrames();
+			case EntityPackage.FRAME___GET_VALUE__ENTITY_STRING_BOOLEAN:
+				return getValue((Entity)arguments.get(0), (String)arguments.get(1), (Boolean)arguments.get(2));
+			case EntityPackage.FRAME___SET_VALUE__ENTITY_STRING_OBJECT:
+				setValue((Entity)arguments.get(0), (String)arguments.get(1), arguments.get(2));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

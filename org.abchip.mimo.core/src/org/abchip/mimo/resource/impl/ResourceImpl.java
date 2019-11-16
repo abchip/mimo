@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.resource.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.entity.EntityNameable;
@@ -16,6 +17,7 @@ import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -224,6 +226,38 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 				return resourceConfig != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ResourcePackage.RESOURCE___CREATE__ENTITYNAMEABLE_BOOLEAN:
+				create((E)arguments.get(0), (Boolean)arguments.get(1));
+				return null;
+			case ResourcePackage.RESOURCE___DELETE__ENTITYNAMEABLE:
+				delete((E)arguments.get(0));
+				return null;
+			case ResourcePackage.RESOURCE___GET_FRAME:
+				return getFrame();
+			case ResourcePackage.RESOURCE___GET_TENANT:
+				return getTenant();
+			case ResourcePackage.RESOURCE___NEXT_SEQUENCE:
+				return nextSequence();
+			case ResourcePackage.RESOURCE___READ__STRING_STRING_BOOLEAN:
+				return read((String)arguments.get(0), (String)arguments.get(1), (Boolean)arguments.get(2));
+			case ResourcePackage.RESOURCE___READ__STRING_STRING_STRING_INT_BOOLEAN:
+				return read((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (Integer)arguments.get(3), (Boolean)arguments.get(4));
+			case ResourcePackage.RESOURCE___UPDATE__ENTITYNAMEABLE:
+				update((E)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } // ResourceImpl

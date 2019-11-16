@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.feature.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeatureAppl;
 import org.abchip.mimo.biz.product.feature.ProductFeatureApplType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -126,6 +128,20 @@ public class ProductFeatureApplTypeImpl extends BizEntityTypeImpl<ProductFeature
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case FeaturePackage.PRODUCT_FEATURE_APPL_TYPE___CHILD_PRODUCT_FEATURE_APPL_TYPES:
+				return childProductFeatureApplTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

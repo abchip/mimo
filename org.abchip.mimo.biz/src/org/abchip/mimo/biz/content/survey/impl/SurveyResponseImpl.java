@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.survey.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -18,6 +19,7 @@ import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -269,6 +271,22 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SurveyPackage.SURVEY_RESPONSE___DATA_RESOURCES:
+				return dataResources();
+			case SurveyPackage.SURVEY_RESPONSE___GIFT_CARD_FULFILLMENTS:
+				return giftCardFulfillments();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

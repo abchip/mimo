@@ -208,6 +208,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -887,6 +888,16 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getPartyQualType__ChildPartyQualTypes() {
+		return partyQualTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPartyResume() {
 		return partyResumeEClass;
 	}
@@ -1059,6 +1070,16 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	@Override
 	public EReference getPerfRatingType_ParentTypeId() {
 		return (EReference)perfRatingTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getPerfRatingType__ChildPerfRatingTypes() {
+		return perfRatingTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1307,6 +1328,16 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getPerfReviewItemType__ChildPerfReviewItemTypes() {
+		return perfReviewItemTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPerformanceNote() {
 		return performanceNoteEClass;
 	}
@@ -1527,6 +1558,16 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getResponsibilityType__ChildResponsibilityTypes() {
+		return responsibilityTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSkillType() {
 		return skillTypeEClass;
 	}
@@ -1569,6 +1610,56 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	@Override
 	public EReference getSkillType_ParentTypeId() {
 		return (EReference)skillTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSkillType__ChildSkillTypes() {
+		return skillTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSkillType__JobRequisitions() {
+		return skillTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSkillType__PartySkills() {
+		return skillTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSkillType__QuoteItems() {
+		return skillTypeEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getSkillType__WorkEffortSkillStandards() {
+		return skillTypeEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -1627,6 +1718,16 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTrainingClassType__ChildTrainingClassTypes() {
+		return trainingClassTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public AbilityFactory getAbilityFactory() {
 		return (AbilityFactory)getEFactoryInstance();
 	}
@@ -1665,6 +1766,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		createEAttribute(partyQualTypeEClass, PARTY_QUAL_TYPE__DESCRIPTION);
 		createEAttribute(partyQualTypeEClass, PARTY_QUAL_TYPE__HAS_TABLE);
 		createEReference(partyQualTypeEClass, PARTY_QUAL_TYPE__PARENT_TYPE_ID);
+		createEOperation(partyQualTypeEClass, PARTY_QUAL_TYPE___CHILD_PARTY_QUAL_TYPES);
 
 		partyResumeEClass = createEClass(PARTY_RESUME);
 		createEAttribute(partyResumeEClass, PARTY_RESUME__RESUME_ID);
@@ -1686,6 +1788,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		createEAttribute(perfRatingTypeEClass, PERF_RATING_TYPE__DESCRIPTION);
 		createEAttribute(perfRatingTypeEClass, PERF_RATING_TYPE__HAS_TABLE);
 		createEReference(perfRatingTypeEClass, PERF_RATING_TYPE__PARENT_TYPE_ID);
+		createEOperation(perfRatingTypeEClass, PERF_RATING_TYPE___CHILD_PERF_RATING_TYPES);
 
 		perfReviewEClass = createEClass(PERF_REVIEW);
 		createEAttribute(perfReviewEClass, PERF_REVIEW__EMPLOYEE_ROLE_TYPE_ID);
@@ -1713,6 +1816,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		createEAttribute(perfReviewItemTypeEClass, PERF_REVIEW_ITEM_TYPE__DESCRIPTION);
 		createEAttribute(perfReviewItemTypeEClass, PERF_REVIEW_ITEM_TYPE__HAS_TABLE);
 		createEReference(perfReviewItemTypeEClass, PERF_REVIEW_ITEM_TYPE__PARENT_TYPE_ID);
+		createEOperation(perfReviewItemTypeEClass, PERF_REVIEW_ITEM_TYPE___CHILD_PERF_REVIEW_ITEM_TYPES);
 
 		performanceNoteEClass = createEClass(PERFORMANCE_NOTE);
 		createEAttribute(performanceNoteEClass, PERFORMANCE_NOTE__ROLE_TYPE_ID);
@@ -1738,18 +1842,25 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		createEAttribute(responsibilityTypeEClass, RESPONSIBILITY_TYPE__DESCRIPTION);
 		createEAttribute(responsibilityTypeEClass, RESPONSIBILITY_TYPE__HAS_TABLE);
 		createEReference(responsibilityTypeEClass, RESPONSIBILITY_TYPE__PARENT_TYPE_ID);
+		createEOperation(responsibilityTypeEClass, RESPONSIBILITY_TYPE___CHILD_RESPONSIBILITY_TYPES);
 
 		skillTypeEClass = createEClass(SKILL_TYPE);
 		createEAttribute(skillTypeEClass, SKILL_TYPE__SKILL_TYPE_ID);
 		createEAttribute(skillTypeEClass, SKILL_TYPE__DESCRIPTION);
 		createEAttribute(skillTypeEClass, SKILL_TYPE__HAS_TABLE);
 		createEReference(skillTypeEClass, SKILL_TYPE__PARENT_TYPE_ID);
+		createEOperation(skillTypeEClass, SKILL_TYPE___CHILD_SKILL_TYPES);
+		createEOperation(skillTypeEClass, SKILL_TYPE___JOB_REQUISITIONS);
+		createEOperation(skillTypeEClass, SKILL_TYPE___PARTY_SKILLS);
+		createEOperation(skillTypeEClass, SKILL_TYPE___QUOTE_ITEMS);
+		createEOperation(skillTypeEClass, SKILL_TYPE___WORK_EFFORT_SKILL_STANDARDS);
 
 		trainingClassTypeEClass = createEClass(TRAINING_CLASS_TYPE);
 		createEAttribute(trainingClassTypeEClass, TRAINING_CLASS_TYPE__TRAINING_CLASS_TYPE_ID);
 		createEAttribute(trainingClassTypeEClass, TRAINING_CLASS_TYPE__DESCRIPTION);
 		createEAttribute(trainingClassTypeEClass, TRAINING_CLASS_TYPE__HAS_TABLE);
 		createEReference(trainingClassTypeEClass, TRAINING_CLASS_TYPE__PARENT_TYPE_ID);
+		createEOperation(trainingClassTypeEClass, TRAINING_CLASS_TYPE___CHILD_TRAINING_CLASS_TYPES);
 	}
 
 	/**
@@ -1816,7 +1927,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		skillTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		trainingClassTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(partyQualEClass, PartyQual.class, "PartyQual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyQual_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, PartyQual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyQual_QualificationDesc(), ecorePackage.getEString(), "qualificationDesc", null, 0, 1, PartyQual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1838,7 +1949,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		initEReference(getPartyQualType_ParentTypeId(), this.getPartyQualType(), null, "parentTypeId", null, 0, 1, PartyQualType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyQualType_ParentTypeId().getEKeys().add(this.getPartyQualType_PartyQualTypeId());
 
-		addEOperation(partyQualTypeEClass, ecorePackage.getEString(), "childPartyQualTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPartyQualType__ChildPartyQualTypes(), ecorePackage.getEString(), "childPartyQualTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyResumeEClass, PartyResume.class, "PartyResume", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyResume_ResumeId(), ecorePackage.getEString(), "resumeId", null, 1, 1, PartyResume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1866,7 +1977,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		initEReference(getPerfRatingType_ParentTypeId(), this.getPerfRatingType(), null, "parentTypeId", null, 0, 1, PerfRatingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPerfRatingType_ParentTypeId().getEKeys().add(this.getPerfRatingType_PerfRatingTypeId());
 
-		addEOperation(perfRatingTypeEClass, ecorePackage.getEString(), "childPerfRatingTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPerfRatingType__ChildPerfRatingTypes(), ecorePackage.getEString(), "childPerfRatingTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(perfReviewEClass, PerfReview.class, "PerfReview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPerfReview_EmployeeRoleTypeId(), ecorePackage.getEString(), "employeeRoleTypeId", null, 1, 1, PerfReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1903,7 +2014,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		initEReference(getPerfReviewItemType_ParentTypeId(), this.getPerfReviewItemType(), null, "parentTypeId", null, 0, 1, PerfReviewItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPerfReviewItemType_ParentTypeId().getEKeys().add(this.getPerfReviewItemType_PerfReviewItemTypeId());
 
-		addEOperation(perfReviewItemTypeEClass, ecorePackage.getEString(), "childPerfReviewItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPerfReviewItemType__ChildPerfReviewItemTypes(), ecorePackage.getEString(), "childPerfReviewItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(performanceNoteEClass, PerformanceNote.class, "PerformanceNote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPerformanceNote_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, PerformanceNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1937,7 +2048,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		initEReference(getResponsibilityType_ParentTypeId(), this.getResponsibilityType(), null, "parentTypeId", null, 0, 1, ResponsibilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getResponsibilityType_ParentTypeId().getEKeys().add(this.getResponsibilityType_ResponsibilityTypeId());
 
-		addEOperation(responsibilityTypeEClass, ecorePackage.getEString(), "childResponsibilityTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getResponsibilityType__ChildResponsibilityTypes(), ecorePackage.getEString(), "childResponsibilityTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(skillTypeEClass, SkillType.class, "SkillType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSkillType_SkillTypeId(), ecorePackage.getEString(), "skillTypeId", null, 1, 1, SkillType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1946,15 +2057,15 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		initEReference(getSkillType_ParentTypeId(), this.getSkillType(), null, "parentTypeId", null, 0, 1, SkillType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSkillType_ParentTypeId().getEKeys().add(this.getSkillType_SkillTypeId());
 
-		addEOperation(skillTypeEClass, ecorePackage.getEString(), "childSkillTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSkillType__ChildSkillTypes(), ecorePackage.getEString(), "childSkillTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(skillTypeEClass, ecorePackage.getEString(), "jobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSkillType__JobRequisitions(), ecorePackage.getEString(), "jobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(skillTypeEClass, ecorePackage.getEString(), "partySkills", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSkillType__PartySkills(), ecorePackage.getEString(), "partySkills", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(skillTypeEClass, ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSkillType__QuoteItems(), ecorePackage.getEString(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(skillTypeEClass, ecorePackage.getEString(), "workEffortSkillStandards", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSkillType__WorkEffortSkillStandards(), ecorePackage.getEString(), "workEffortSkillStandards", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(trainingClassTypeEClass, TrainingClassType.class, "TrainingClassType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTrainingClassType_TrainingClassTypeId(), ecorePackage.getEString(), "trainingClassTypeId", null, 1, 1, TrainingClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1963,7 +2074,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		initEReference(getTrainingClassType_ParentTypeId(), this.getTrainingClassType(), null, "parentTypeId", null, 0, 1, TrainingClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTrainingClassType_ParentTypeId().getEKeys().add(this.getTrainingClassType_TrainingClassTypeId());
 
-		addEOperation(trainingClassTypeEClass, ecorePackage.getEString(), "childTrainingClassTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTrainingClassType__ChildTrainingClassTypes(), ecorePackage.getEString(), "childTrainingClassTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1989,7 +2100,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (partyQualTypeEClass.getEOperations().get(0),
+		  (getPartyQualType__ChildPartyQualTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2007,7 +2118,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (perfRatingTypeEClass.getEOperations().get(0),
+		  (getPerfRatingType__ChildPerfRatingTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2049,7 +2160,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (perfReviewItemTypeEClass.getEOperations().get(0),
+		  (getPerfReviewItemType__ChildPerfReviewItemTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2079,7 +2190,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (responsibilityTypeEClass.getEOperations().get(0),
+		  (getResponsibilityType__ChildResponsibilityTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2091,31 +2202,31 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(0),
+		  (getSkillType__ChildSkillTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(1),
+		  (getSkillType__JobRequisitions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(2),
+		  (getSkillType__PartySkills(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(3),
+		  (getSkillType__QuoteItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(4),
+		  (getSkillType__WorkEffortSkillStandards(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2127,7 +2238,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (trainingClassTypeEClass.getEOperations().get(0),
+		  (getTrainingClassType__ChildTrainingClassTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2149,7 +2260,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (partyQualTypeEClass.getEOperations().get(0),
+		  (getPartyQualType__ChildPartyQualTypes(),
 		   source,
 		   new String[] {
 			   "frame", "PartyQualType",
@@ -2159,7 +2270,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (perfRatingTypeEClass.getEOperations().get(0),
+		  (getPerfRatingType__ChildPerfRatingTypes(),
 		   source,
 		   new String[] {
 			   "frame", "PerfRatingType",
@@ -2169,7 +2280,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (perfReviewItemTypeEClass.getEOperations().get(0),
+		  (getPerfReviewItemType__ChildPerfReviewItemTypes(),
 		   source,
 		   new String[] {
 			   "frame", "PerfReviewItemType",
@@ -2179,7 +2290,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (responsibilityTypeEClass.getEOperations().get(0),
+		  (getResponsibilityType__ChildResponsibilityTypes(),
 		   source,
 		   new String[] {
 			   "frame", "ResponsibilityType",
@@ -2189,7 +2300,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(0),
+		  (getSkillType__ChildSkillTypes(),
 		   source,
 		   new String[] {
 			   "frame", "SkillType",
@@ -2199,7 +2310,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(1),
+		  (getSkillType__JobRequisitions(),
 		   source,
 		   new String[] {
 			   "frame", "JobRequisition",
@@ -2209,7 +2320,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(2),
+		  (getSkillType__PartySkills(),
 		   source,
 		   new String[] {
 			   "frame", "PartySkill",
@@ -2219,7 +2330,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(3),
+		  (getSkillType__QuoteItems(),
 		   source,
 		   new String[] {
 			   "frame", "QuoteItem",
@@ -2229,7 +2340,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (skillTypeEClass.getEOperations().get(4),
+		  (getSkillType__WorkEffortSkillStandards(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffortSkillStandard",
@@ -2239,7 +2350,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (trainingClassTypeEClass.getEOperations().get(0),
+		  (getTrainingClassType__ChildTrainingClassTypes(),
 		   source,
 		   new String[] {
 			   "frame", "TrainingClassType",

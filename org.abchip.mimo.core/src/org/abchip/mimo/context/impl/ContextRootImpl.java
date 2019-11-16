@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Dictionary;
 import java.util.List;
 import org.abchip.mimo.context.Context;
@@ -14,6 +15,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextRoot;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -125,6 +127,34 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings({"rawtypes", "unchecked" })
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContextPackage.CONTEXT_ROOT___CREATE_CHILD_CONTEXT__STRING:
+				return createChildContext((String)arguments.get(0));
+			case ContextPackage.CONTEXT_ROOT___CREATE_CHILD_CONTEXT__CONTEXTDESCRIPTION:
+				return createChildContext((ContextDescription)arguments.get(0));
+			case ContextPackage.CONTEXT_ROOT___GET__CLASS_STRING:
+				return get((Class)arguments.get(0), (String)arguments.get(1));
+			case ContextPackage.CONTEXT_ROOT___GET_ALL__CLASS:
+				return getAll((Class)arguments.get(0));
+			case ContextPackage.CONTEXT_ROOT___GET_ALL__CLASS_STRING:
+				return getAll((Class)arguments.get(0), (String)arguments.get(1));
+			case ContextPackage.CONTEXT_ROOT___LOAD_CLASS__STRING:
+				return loadClass((String)arguments.get(0));
+			case ContextPackage.CONTEXT_ROOT___SET__STRING_OBJECT_BOOLEAN_DICTIONARY:
+				set((String)arguments.get(0), arguments.get(1), (Boolean)arguments.get(2), (Dictionary<String, String>)arguments.get(3));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ContextRootImpl

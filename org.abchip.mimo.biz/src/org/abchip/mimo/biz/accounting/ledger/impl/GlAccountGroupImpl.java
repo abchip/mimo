@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroup;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -104,6 +106,20 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case LedgerPackage.GL_ACCOUNT_GROUP___GL_ACCOUNT_GROUP_MEMBERS:
+				return glAccountGroupMembers();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

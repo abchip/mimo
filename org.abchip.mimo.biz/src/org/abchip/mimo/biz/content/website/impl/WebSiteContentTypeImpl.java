@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.content.website.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.website.WebSiteContent;
 import org.abchip.mimo.biz.content.website.WebSiteContentType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -126,6 +128,20 @@ public class WebSiteContentTypeImpl extends BizEntityTypeImpl<WebSiteContent> im
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case WebsitePackage.WEB_SITE_CONTENT_TYPE___CHILD_WEB_SITE_CONTENT_TYPES:
+				return childWebSiteContentTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

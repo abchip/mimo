@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -23,6 +24,7 @@ import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -675,6 +677,30 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContentPackage.CONTENT___CONTENT_APPROVALS:
+				return contentApprovals();
+			case ContentPackage.CONTENT___PARTY_RESUMES:
+				return partyResumes();
+			case ContentPackage.CONTENT___PORTAL_PAGES:
+				return portalPages();
+			case ContentPackage.CONTENT___SERVER_HIT_BINS:
+				return serverHitBins();
+			case ContentPackage.CONTENT___SUBSCRIPTION_RESOURCES:
+				return subscriptionResources();
+			case ContentPackage.CONTENT___WEB_PAGES:
+				return webPages();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ContentImpl

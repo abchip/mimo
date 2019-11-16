@@ -207,6 +207,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1059,6 +1060,16 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
+	public EOperation getRequirement__DesiredFeatures() {
+		return requirementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRequirementAttribute() {
 		return requirementAttributeEClass;
 	}
@@ -1369,6 +1380,26 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
+	public EOperation getRequirementType__ChildRequirementTypes() {
+		return requirementTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRequirementType__Requirements() {
+		return requirementTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRequirementTypeAttr() {
 		return requirementTypeAttrEClass;
 	}
@@ -1431,6 +1462,16 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	@Override
 	public EAttribute getWorkReqFulfType_Description() {
 		return (EAttribute)workReqFulfTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkReqFulfType__WorkRequirementFulfillments() {
+		return workReqFulfTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1536,6 +1577,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		createEAttribute(requirementEClass, REQUIREMENT__REQUIREMENT_ATTRIBUTES);
 		createEAttribute(requirementEClass, REQUIREMENT__REQUIREMENT_STATUSS);
 		createEAttribute(requirementEClass, REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS);
+		createEOperation(requirementEClass, REQUIREMENT___DESIRED_FEATURES);
 
 		requirementAttributeEClass = createEClass(REQUIREMENT_ATTRIBUTE);
 		createEAttribute(requirementAttributeEClass, REQUIREMENT_ATTRIBUTE__ATTR_NAME);
@@ -1573,6 +1615,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__HAS_TABLE);
 		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS);
+		createEOperation(requirementTypeEClass, REQUIREMENT_TYPE___CHILD_REQUIREMENT_TYPES);
+		createEOperation(requirementTypeEClass, REQUIREMENT_TYPE___REQUIREMENTS);
 
 		requirementTypeAttrEClass = createEClass(REQUIREMENT_TYPE_ATTR);
 		createEAttribute(requirementTypeAttrEClass, REQUIREMENT_TYPE_ATTR__ATTR_NAME);
@@ -1582,6 +1626,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		workReqFulfTypeEClass = createEClass(WORK_REQ_FULF_TYPE);
 		createEAttribute(workReqFulfTypeEClass, WORK_REQ_FULF_TYPE__WORK_REQ_FULF_TYPE_ID);
 		createEAttribute(workReqFulfTypeEClass, WORK_REQ_FULF_TYPE__DESCRIPTION);
+		createEOperation(workReqFulfTypeEClass, WORK_REQ_FULF_TYPE___WORK_REQUIREMENT_FULFILLMENTS);
 
 		workRequirementFulfillmentEClass = createEClass(WORK_REQUIREMENT_FULFILLMENT);
 		createEReference(workRequirementFulfillmentEClass, WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID);
@@ -1656,7 +1701,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		g1.getETypeArguments().add(g2);
 		workRequirementFulfillmentEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(desiredFeatureEClass, DesiredFeature.class, "DesiredFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDesiredFeature_DesiredFeatureId(), ecorePackage.getEString(), "desiredFeatureId", null, 1, 1, DesiredFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDesiredFeature_OptionalInd(), ecorePackage.getEBoolean(), "optionalInd", null, 0, 1, DesiredFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1702,7 +1747,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEAttribute(getRequirement_RequirementStatuss(), ecorePackage.getEString(), "requirementStatuss", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_WorkRequirementFulfillments(), ecorePackage.getEString(), "workRequirementFulfillments", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(requirementEClass, ecorePackage.getEString(), "desiredFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getRequirement__DesiredFeatures(), ecorePackage.getEString(), "desiredFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(requirementAttributeEClass, RequirementAttribute.class, "RequirementAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRequirementAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, RequirementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1752,9 +1797,9 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		getRequirementType_ParentTypeId().getEKeys().add(this.getRequirementType_RequirementTypeId());
 		initEAttribute(getRequirementType_RequirementTypeAttrs(), ecorePackage.getEString(), "requirementTypeAttrs", null, 0, -1, RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(requirementTypeEClass, ecorePackage.getEString(), "childRequirementTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getRequirementType__ChildRequirementTypes(), ecorePackage.getEString(), "childRequirementTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(requirementTypeEClass, ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getRequirementType__Requirements(), ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(requirementTypeAttrEClass, RequirementTypeAttr.class, "RequirementTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRequirementTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, RequirementTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1766,7 +1811,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEAttribute(getWorkReqFulfType_WorkReqFulfTypeId(), ecorePackage.getEString(), "workReqFulfTypeId", null, 1, 1, WorkReqFulfType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWorkReqFulfType_Description(), ecorePackage.getEString(), "description", null, 0, 1, WorkReqFulfType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(workReqFulfTypeEClass, ecorePackage.getEString(), "workRequirementFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWorkReqFulfType__WorkRequirementFulfillments(), ecorePackage.getEString(), "workRequirementFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workRequirementFulfillmentEClass, WorkRequirementFulfillment.class, "WorkRequirementFulfillment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkRequirementFulfillment_RequirementId(), this.getRequirement(), null, "requirementId", null, 0, 1, WorkRequirementFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1806,7 +1851,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (requirementEClass.getEOperations().get(0),
+		  (getRequirement__DesiredFeatures(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1866,13 +1911,13 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(0),
+		  (getRequirementType__ChildRequirementTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(1),
+		  (getRequirementType__Requirements(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1896,7 +1941,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workReqFulfTypeEClass.getEOperations().get(0),
+		  (getWorkReqFulfType__WorkRequirementFulfillments(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1918,7 +1963,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (requirementEClass.getEOperations().get(0),
+		  (getRequirement__DesiredFeatures(),
 		   source,
 		   new String[] {
 			   "frame", "DesiredFeature",
@@ -1955,7 +2000,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(0),
+		  (getRequirementType__ChildRequirementTypes(),
 		   source,
 		   new String[] {
 			   "frame", "RequirementType",
@@ -1965,7 +2010,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(1),
+		  (getRequirementType__Requirements(),
 		   source,
 		   new String[] {
 			   "frame", "Requirement",
@@ -1984,7 +2029,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (workReqFulfTypeEClass.getEOperations().get(0),
+		  (getWorkReqFulfType__WorkRequirementFulfillments(),
 		   source,
 		   new String[] {
 			   "frame", "WorkRequirementFulfillment",

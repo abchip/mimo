@@ -195,6 +195,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -697,6 +698,16 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getEntityGroup__EntitySyncIncludeGroups() {
+		return entityGroupEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntityGroupEntry() {
 		return entityGroupEntryEClass;
 	}
@@ -764,6 +775,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ID);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_NAME);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ENTRIES);
+		createEOperation(entityGroupEClass, ENTITY_GROUP___ENTITY_SYNC_INCLUDE_GROUPS);
 
 		entityGroupEntryEClass = createEClass(ENTITY_GROUP_ENTRY);
 		createEAttribute(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_OR_PACKAGE);
@@ -805,13 +817,13 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		entityGroupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		entityGroupEntryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(entityGroupEClass, EntityGroup.class, "EntityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGroup_EntityGroupId(), ecorePackage.getEString(), "entityGroupId", null, 1, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroup_EntityGroupName(), ecorePackage.getEString(), "entityGroupName", null, 0, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroup_EntityGroupEntries(), ecorePackage.getEString(), "entityGroupEntries", null, 0, -1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(entityGroupEClass, ecorePackage.getEString(), "entitySyncIncludeGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityGroup__EntitySyncIncludeGroups(), ecorePackage.getEString(), "entitySyncIncludeGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityGroupEntryEClass, EntityGroupEntry.class, "EntityGroupEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGroupEntry_EntityOrPackage(), ecorePackage.getEString(), "entityOrPackage", null, 1, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -835,7 +847,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (entityGroupEClass.getEOperations().get(0),
+		  (getEntityGroup__EntitySyncIncludeGroups(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -869,7 +881,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (entityGroupEClass.getEOperations().get(0),
+		  (getEntityGroup__EntitySyncIncludeGroups(),
 		   source,
 		   new String[] {
 			   "frame", "EntitySyncIncludeGroup",

@@ -8,12 +8,15 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.MessageDataField;
 import org.abchip.mimo.context.MessageDescription;
+import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.Textable;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -364,6 +367,36 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 				return messageDataFields != null && !messageDataFields.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == Textable.class) {
+			switch (baseOperationID) {
+				case EntityPackage.TEXTABLE___GET_TEXT: return ContextPackage.MESSAGE_DESCRIPTION___GET_TEXT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContextPackage.MESSAGE_DESCRIPTION___GET_TEXT:
+				return getText();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

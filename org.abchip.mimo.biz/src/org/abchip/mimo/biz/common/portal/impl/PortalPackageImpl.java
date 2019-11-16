@@ -200,6 +200,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -807,6 +808,16 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getPortalPage__ChildPortalPages() {
+		return portalPageEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPortalPageColumn() {
 		return portalPageColumnEClass;
 	}
@@ -1147,6 +1158,16 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getPortletCategory__PortletPortletCategories() {
+		return portletCategoryEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPortletPortletCategory() {
 		return portletPortletCategoryEClass;
 	}
@@ -1211,6 +1232,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		createEReference(portalPageEClass, PORTAL_PAGE__SECURITY_GROUP_ID);
 		createEReference(portalPageEClass, PORTAL_PAGE__HELP_CONTENT_ID);
 		createEAttribute(portalPageEClass, PORTAL_PAGE__PORTAL_PAGE_COLUMNS);
+		createEOperation(portalPageEClass, PORTAL_PAGE___CHILD_PORTAL_PAGES);
 
 		portalPageColumnEClass = createEClass(PORTAL_PAGE_COLUMN);
 		createEAttribute(portalPageColumnEClass, PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID);
@@ -1250,6 +1272,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		portletCategoryEClass = createEClass(PORTLET_CATEGORY);
 		createEAttribute(portletCategoryEClass, PORTLET_CATEGORY__PORTLET_CATEGORY_ID);
 		createEAttribute(portletCategoryEClass, PORTLET_CATEGORY__DESCRIPTION);
+		createEOperation(portletCategoryEClass, PORTLET_CATEGORY___PORTLET_PORTLET_CATEGORIES);
 
 		portletPortletCategoryEClass = createEClass(PORTLET_PORTLET_CATEGORY);
 		createEReference(portletPortletCategoryEClass, PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID);
@@ -1297,7 +1320,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		portletCategoryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		portletPortletCategoryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(portalPageEClass, PortalPage.class, "PortalPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPortalPage_PortalPageId(), ecorePackage.getEString(), "portalPageId", null, 1, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPage_Description(), ecorePackage.getEString(), "description", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1313,7 +1336,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		getPortalPage_HelpContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 		initEAttribute(getPortalPage_PortalPageColumns(), ecorePackage.getEString(), "portalPageColumns", null, 0, -1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(portalPageEClass, ecorePackage.getEString(), "childPortalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPortalPage__ChildPortalPages(), ecorePackage.getEString(), "childPortalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portalPageColumnEClass, PortalPageColumn.class, "PortalPageColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPortalPageColumn_ColumnSeqId(), ecorePackage.getEString(), "columnSeqId", null, 1, 1, PortalPageColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1358,7 +1381,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		initEAttribute(getPortletCategory_PortletCategoryId(), ecorePackage.getEString(), "portletCategoryId", null, 1, 1, PortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortletCategory_Description(), ecorePackage.getEString(), "description", null, 0, 1, PortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(portletCategoryEClass, ecorePackage.getEString(), "portletPortletCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPortletCategory__PortletPortletCategories(), ecorePackage.getEString(), "portletPortletCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portletPortletCategoryEClass, PortletPortletCategory.class, "PortletPortletCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortletPortletCategory_PortalPortletId(), this.getPortalPortlet(), null, "portalPortletId", null, 0, 1, PortletPortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1412,7 +1435,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (portalPageEClass.getEOperations().get(0),
+		  (getPortalPage__ChildPortalPages(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1472,7 +1495,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (portletCategoryEClass.getEOperations().get(0),
+		  (getPortletCategory__PortletPortletCategories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1494,7 +1517,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (portalPageEClass.getEOperations().get(0),
+		  (getPortalPage__ChildPortalPages(),
 		   source,
 		   new String[] {
 			   "frame", "PortalPage",
@@ -1522,7 +1545,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (portletCategoryEClass.getEOperations().get(0),
+		  (getPortletCategory__PortletPortletCategories(),
 		   source,
 		   new String[] {
 			   "frame", "PortletPortletCategory",

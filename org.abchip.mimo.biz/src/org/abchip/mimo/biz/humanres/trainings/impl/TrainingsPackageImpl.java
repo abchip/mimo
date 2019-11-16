@@ -725,7 +725,7 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		// Add supertypes to classes
 		trainingRequestEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(trainingRequestEClass, TrainingRequest.class, "TrainingRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTrainingRequest_TrainingRequestId(), ecorePackage.getEString(), "trainingRequestId", null, 1, 1, TrainingRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

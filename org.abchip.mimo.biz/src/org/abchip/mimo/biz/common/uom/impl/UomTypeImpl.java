@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.common.uom.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -149,6 +151,24 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case UomPackage.UOM_TYPE___AMOUNT_PRODUCTS:
+				return amountProducts();
+			case UomPackage.UOM_TYPE___CHILD_UOM_TYPES:
+				return childUomTypes();
+			case UomPackage.UOM_TYPE___UOMS:
+				return uoms();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

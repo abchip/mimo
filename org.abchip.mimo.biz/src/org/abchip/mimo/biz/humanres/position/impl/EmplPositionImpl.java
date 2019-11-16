@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.humanres.position.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -360,6 +362,20 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PositionPackage.EMPL_POSITION___EMPLOYMENT_APPS:
+				return employmentApps();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //EmplPositionImpl

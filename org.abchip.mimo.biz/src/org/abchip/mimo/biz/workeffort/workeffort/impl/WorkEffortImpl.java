@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -29,6 +30,7 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -1449,6 +1451,50 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case WorkeffortPackage.WORK_EFFORT___ACCTG_TRANSS:
+				return acctgTranss();
+			case WorkeffortPackage.WORK_EFFORT___CHILD_WORK_EFFORTS:
+				return childWorkEfforts();
+			case WorkeffortPackage.WORK_EFFORT___COST_COMPONENTS:
+				return costComponents();
+			case WorkeffortPackage.WORK_EFFORT___CUST_REQUEST_WORK_EFFORTS:
+				return custRequestWorkEfforts();
+			case WorkeffortPackage.WORK_EFFORT___ESTIMATED_ARRIVAL_SHIPMENTS:
+				return estimatedArrivalShipments();
+			case WorkeffortPackage.WORK_EFFORT___ESTIMATED_SHIP_SHIPMENTS:
+				return estimatedShipShipments();
+			case WorkeffortPackage.WORK_EFFORT___INVENTORY_ITEM_DETAILS:
+				return inventoryItemDetails();
+			case WorkeffortPackage.WORK_EFFORT___MAINT_TEMPLATE_PRODUCT_MAINTS:
+				return maintTemplateProductMaints();
+			case WorkeffortPackage.WORK_EFFORT___ORDER_HEADER_WORK_EFFORTS:
+				return orderHeaderWorkEfforts();
+			case WorkeffortPackage.WORK_EFFORT___QUOTE_ITEMS:
+				return quoteItems();
+			case WorkeffortPackage.WORK_EFFORT___QUOTE_WORK_EFFORTS:
+				return quoteWorkEfforts();
+			case WorkeffortPackage.WORK_EFFORT___SALES_OPPORTUNITY_WORK_EFFORTS:
+				return salesOpportunityWorkEfforts();
+			case WorkeffortPackage.WORK_EFFORT___SCHEDULE_FIXED_ASSET_MAINTS:
+				return scheduleFixedAssetMaints();
+			case WorkeffortPackage.WORK_EFFORT___SHOPPING_LIST_WORK_EFFORTS:
+				return shoppingListWorkEfforts();
+			case WorkeffortPackage.WORK_EFFORT___TIME_ENTRIES:
+				return timeEntries();
+			case WorkeffortPackage.WORK_EFFORT___WORK_REQUIREMENT_FULFILLMENTS:
+				return workRequirementFulfillments();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //WorkEffortImpl

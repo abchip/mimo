@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.product.cost.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.product.cost.CostPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -150,6 +152,22 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CostPackage.COST_COMPONENT_TYPE___CHILD_COST_COMPONENT_TYPES:
+				return childCostComponentTypes();
+			case CostPackage.COST_COMPONENT_TYPE___COST_COMPONENTS:
+				return costComponents();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -196,6 +196,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -718,6 +719,86 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getCustomMethod__Contents() {
+		return customMethodEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethod__CostComponentCalcs() {
+		return customMethodEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethod__InvoicePartyAcctgPreferences() {
+		return customMethodEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethod__OrderPartyAcctgPreferences() {
+		return customMethodEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethod__ProductStoreShipmentMeths() {
+		return customMethodEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethod__QuotePartyAcctgPreferences() {
+		return customMethodEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethod__UomCustomMethodUomConversions() {
+		return customMethodEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethod__WorkEfforts() {
+		return customMethodEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCustomMethodType() {
 		return customMethodTypeEClass;
 	}
@@ -768,6 +849,26 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getCustomMethodType__ChildCustomMethodTypes() {
+		return customMethodTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCustomMethodType__CustomMethods() {
+		return customMethodTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public MethodFactory getMethodFactory() {
 		return (MethodFactory)getEFactoryInstance();
 	}
@@ -797,12 +898,22 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__DESCRIPTION);
 		createEReference(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___CONTENTS);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___COST_COMPONENT_CALCS);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___INVOICE_PARTY_ACCTG_PREFERENCES);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___ORDER_PARTY_ACCTG_PREFERENCES);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___PRODUCT_STORE_SHIPMENT_METHS);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___QUOTE_PARTY_ACCTG_PREFERENCES);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___UOM_CUSTOM_METHOD_UOM_CONVERSIONS);
+		createEOperation(customMethodEClass, CUSTOM_METHOD___WORK_EFFORTS);
 
 		customMethodTypeEClass = createEClass(CUSTOM_METHOD_TYPE);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__DESCRIPTION);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__HAS_TABLE);
 		createEReference(customMethodTypeEClass, CUSTOM_METHOD_TYPE__PARENT_TYPE_ID);
+		createEOperation(customMethodTypeEClass, CUSTOM_METHOD_TYPE___CHILD_CUSTOM_METHOD_TYPES);
+		createEOperation(customMethodTypeEClass, CUSTOM_METHOD_TYPE___CUSTOM_METHODS);
 	}
 
 	/**
@@ -845,7 +956,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		g1.getETypeArguments().add(g2);
 		customMethodTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(customMethodEClass, CustomMethod.class, "CustomMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomMethod_CustomMethodId(), ecorePackage.getEString(), "customMethodId", null, 1, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomMethod_CustomMethodName(), ecorePackage.getEString(), "customMethodName", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -854,21 +965,21 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		getCustomMethod_CustomMethodTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 		initEAttribute(getCustomMethod_FixedAssetDepMethods(), ecorePackage.getEString(), "fixedAssetDepMethods", null, 0, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__Contents(), ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "costComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__CostComponentCalcs(), ecorePackage.getEString(), "costComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "invoicePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__InvoicePartyAcctgPreferences(), ecorePackage.getEString(), "invoicePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "orderPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__OrderPartyAcctgPreferences(), ecorePackage.getEString(), "orderPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "productStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__ProductStoreShipmentMeths(), ecorePackage.getEString(), "productStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "quotePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__QuotePartyAcctgPreferences(), ecorePackage.getEString(), "quotePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "uomCustomMethodUomConversions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__UomCustomMethodUomConversions(), ecorePackage.getEString(), "uomCustomMethodUomConversions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethod__WorkEfforts(), ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(customMethodTypeEClass, CustomMethodType.class, "CustomMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomMethodType_CustomMethodTypeId(), ecorePackage.getEString(), "customMethodTypeId", null, 1, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -877,9 +988,9 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEReference(getCustomMethodType_ParentTypeId(), this.getCustomMethodType(), null, "parentTypeId", null, 0, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomMethodType_ParentTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 
-		addEOperation(customMethodTypeEClass, ecorePackage.getEString(), "childCustomMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethodType__ChildCustomMethodTypes(), ecorePackage.getEString(), "childCustomMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodTypeEClass, ecorePackage.getEString(), "customMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getCustomMethodType__CustomMethods(), ecorePackage.getEString(), "customMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -921,49 +1032,49 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(0),
+		  (getCustomMethod__Contents(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(1),
+		  (getCustomMethod__CostComponentCalcs(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(2),
+		  (getCustomMethod__InvoicePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(3),
+		  (getCustomMethod__OrderPartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(4),
+		  (getCustomMethod__ProductStoreShipmentMeths(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(5),
+		  (getCustomMethod__QuotePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(6),
+		  (getCustomMethod__UomCustomMethodUomConversions(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(7),
+		  (getCustomMethod__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -981,13 +1092,13 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(0),
+		  (getCustomMethodType__ChildCustomMethodTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(1),
+		  (getCustomMethodType__CustomMethods(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1009,7 +1120,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(0),
+		  (getCustomMethod__Contents(),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -1019,7 +1130,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(1),
+		  (getCustomMethod__CostComponentCalcs(),
 		   source,
 		   new String[] {
 			   "frame", "CostComponentCalc",
@@ -1029,7 +1140,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(2),
+		  (getCustomMethod__InvoicePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1039,7 +1150,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(3),
+		  (getCustomMethod__OrderPartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1049,7 +1160,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(4),
+		  (getCustomMethod__ProductStoreShipmentMeths(),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreShipmentMeth",
@@ -1059,7 +1170,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(5),
+		  (getCustomMethod__QuotePartyAcctgPreferences(),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -1069,7 +1180,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(6),
+		  (getCustomMethod__UomCustomMethodUomConversions(),
 		   source,
 		   new String[] {
 			   "frame", "UomConversion",
@@ -1079,7 +1190,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(7),
+		  (getCustomMethod__WorkEfforts(),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -1098,7 +1209,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(0),
+		  (getCustomMethodType__ChildCustomMethodTypes(),
 		   source,
 		   new String[] {
 			   "frame", "CustomMethodType",
@@ -1108,7 +1219,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(1),
+		  (getCustomMethodType__CustomMethods(),
 		   source,
 		   new String[] {
 			   "frame", "CustomMethod",

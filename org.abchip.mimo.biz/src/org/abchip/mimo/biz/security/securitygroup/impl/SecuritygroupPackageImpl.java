@@ -199,6 +199,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -799,6 +800,16 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 * @generated
 	 */
 	@Override
+	public EOperation getSecurityGroup__PortalPages() {
+		return securityGroupEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSecurityGroupPermission() {
 		return securityGroupPermissionEClass;
 	}
@@ -1004,6 +1015,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__DESCRIPTION);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__GROUP_NAME);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__PROTECTED_VIEWS);
+		createEOperation(securityGroupEClass, SECURITY_GROUP___PORTAL_PAGES);
 
 		securityGroupPermissionEClass = createEClass(SECURITY_GROUP_PERMISSION);
 		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__FROM_DATE);
@@ -1066,7 +1078,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		tarpittedLoginViewEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		userLoginSecurityGroupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(protectedViewEClass, ProtectedView.class, "ProtectedView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProtectedView_ViewNameId(), ecorePackage.getEString(), "viewNameId", null, 1, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProtectedView_MaxHits(), ecorePackage.getELong(), "maxHits", null, 0, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1081,7 +1093,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		initEAttribute(getSecurityGroup_GroupName(), ecorePackage.getEString(), "groupName", null, 0, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroup_ProtectedViews(), ecorePackage.getEString(), "protectedViews", null, 0, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(securityGroupEClass, ecorePackage.getEString(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getSecurityGroup__PortalPages(), ecorePackage.getEString(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(securityGroupPermissionEClass, SecurityGroupPermission.class, "SecurityGroupPermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurityGroupPermission_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1132,7 +1144,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "key", "true"
 		   });
 		addAnnotation
-		  (securityGroupEClass.getEOperations().get(0),
+		  (getSecurityGroup__PortalPages(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1190,7 +1202,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (securityGroupEClass.getEOperations().get(0),
+		  (getSecurityGroup__PortalPages(),
 		   source,
 		   new String[] {
 			   "frame", "PortalPage",

@@ -813,7 +813,7 @@ public class AuditPackageImpl extends EPackageImpl implements AuditPackage {
 		// Add supertypes to classes
 		entityAuditLogEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(entityAuditLogEClass, EntityAuditLog.class, "EntityAuditLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityAuditLog_AuditHistorySeqId(), ecorePackage.getEString(), "auditHistorySeqId", null, 1, 1, EntityAuditLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAuditLog_ChangedByInfo(), ecorePackage.getEString(), "changedByInfo", null, 0, 1, EntityAuditLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -200,6 +200,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -780,6 +781,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getWebAnalyticsType__ChildWebAnalyticsTypes() {
+		return webAnalyticsTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWebAnalyticsType__WebAnalyticsConfigs() {
+		return webAnalyticsTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWebSiteContent() {
 		return webSiteContentEClass;
 	}
@@ -882,6 +903,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	@Override
 	public EReference getWebSiteContentType_ParentTypeId() {
 		return (EReference)webSiteContentTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWebSiteContentType__ChildWebSiteContentTypes() {
+		return webSiteContentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1113,6 +1144,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE__DESCRIPTION);
 		createEAttribute(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE__HAS_TABLE);
 		createEReference(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE__PARENT_TYPE_ID);
+		createEOperation(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE___CHILD_WEB_ANALYTICS_TYPES);
+		createEOperation(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE___WEB_ANALYTICS_CONFIGS);
 
 		webSiteContentEClass = createEClass(WEB_SITE_CONTENT);
 		createEAttribute(webSiteContentEClass, WEB_SITE_CONTENT__FROM_DATE);
@@ -1126,6 +1159,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE__HAS_TABLE);
 		createEReference(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEOperation(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE___CHILD_WEB_SITE_CONTENT_TYPES);
 
 		webSitePathAliasEClass = createEClass(WEB_SITE_PATH_ALIAS);
 		createEAttribute(webSitePathAliasEClass, WEB_SITE_PATH_ALIAS__PATH_ALIAS);
@@ -1195,7 +1229,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		webSitePathAliasEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		webSitePublishPointEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(webAnalyticsConfigEClass, WebAnalyticsConfig.class, "WebAnalyticsConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebAnalyticsConfig_WebAnalyticsCode(), ecorePackage.getEString(), "webAnalyticsCode", null, 0, 1, WebAnalyticsConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebAnalyticsConfig_WebAnalyticsTypeId(), this.getWebAnalyticsType(), null, "webAnalyticsTypeId", null, 0, 1, WebAnalyticsConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1210,9 +1244,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getWebAnalyticsType_ParentTypeId(), this.getWebAnalyticsType(), null, "parentTypeId", null, 0, 1, WebAnalyticsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebAnalyticsType_ParentTypeId().getEKeys().add(this.getWebAnalyticsType_WebAnalyticsTypeId());
 
-		addEOperation(webAnalyticsTypeEClass, ecorePackage.getEString(), "childWebAnalyticsTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWebAnalyticsType__ChildWebAnalyticsTypes(), ecorePackage.getEString(), "childWebAnalyticsTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(webAnalyticsTypeEClass, ecorePackage.getEString(), "webAnalyticsConfigs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWebAnalyticsType__WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSiteContentEClass, WebSiteContent.class, "WebSiteContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebSiteContent_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, WebSiteContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1231,7 +1265,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getWebSiteContentType_ParentTypeId(), this.getWebSiteContentType(), null, "parentTypeId", null, 0, 1, WebSiteContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebSiteContentType_ParentTypeId().getEKeys().add(this.getWebSiteContentType_WebSiteContentTypeId());
 
-		addEOperation(webSiteContentTypeEClass, ecorePackage.getEString(), "childWebSiteContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getWebSiteContentType__ChildWebSiteContentTypes(), ecorePackage.getEString(), "childWebSiteContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSitePathAliasEClass, WebSitePathAlias.class, "WebSitePathAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebSitePathAlias_PathAlias(), ecorePackage.getEString(), "pathAlias", null, 1, 1, WebSitePathAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1275,13 +1309,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (webAnalyticsTypeEClass.getEOperations().get(0),
+		  (getWebAnalyticsType__ChildWebAnalyticsTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (webAnalyticsTypeEClass.getEOperations().get(1),
+		  (getWebAnalyticsType__WebAnalyticsConfigs(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1299,7 +1333,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (webSiteContentTypeEClass.getEOperations().get(0),
+		  (getWebSiteContentType__ChildWebSiteContentTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1333,7 +1367,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (webAnalyticsTypeEClass.getEOperations().get(0),
+		  (getWebAnalyticsType__ChildWebAnalyticsTypes(),
 		   source,
 		   new String[] {
 			   "frame", "WebAnalyticsType",
@@ -1343,7 +1377,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (webAnalyticsTypeEClass.getEOperations().get(1),
+		  (getWebAnalyticsType__WebAnalyticsConfigs(),
 		   source,
 		   new String[] {
 			   "frame", "WebAnalyticsConfig",
@@ -1353,7 +1387,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (webSiteContentTypeEClass.getEOperations().get(0),
+		  (getWebSiteContentType__ChildWebSiteContentTypes(),
 		   source,
 		   new String[] {
 			   "frame", "WebSiteContentType",

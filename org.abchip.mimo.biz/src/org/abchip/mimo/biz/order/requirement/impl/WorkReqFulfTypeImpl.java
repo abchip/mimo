@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.order.requirement.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
 import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -84,6 +86,20 @@ public class WorkReqFulfTypeImpl extends BizEntityTypeImpl<WorkRequirementFulfil
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RequirementPackage.WORK_REQ_FULF_TYPE___WORK_REQUIREMENT_FULFILLMENTS:
+				return workRequirementFulfillments();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

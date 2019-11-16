@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.store;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -891,6 +892,168 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 86;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Cust Requests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___CUST_REQUESTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Git Hub Users</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___GIT_HUB_USERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Google Users</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___GOOGLE_USERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Linked In Users</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___LINKED_IN_USERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Order Headers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___ORDER_HEADERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Party Profile Defaults</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___PARTY_PROFILE_DEFAULTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Product Reviews</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___PRODUCT_REVIEWS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Product Store Survey Appls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___PRODUCT_STORE_SURVEY_APPLS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Quotes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___QUOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Segment Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___SEGMENT_GROUPS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Shopping Lists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___SHOPPING_LISTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Tax Authority Rate Products</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___TAX_AUTHORITY_RATE_PRODUCTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Web Sites</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE___WEB_SITES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 12;
+
+	/**
+	 * The number of operations of the '<em>Product Store</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 13;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl <em>Product Store Catalog</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -989,6 +1152,51 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_CATALOG_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_CATALOG___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_CATALOG___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_CATALOG___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_CATALOG___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Catalog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_CATALOG_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl <em>Product Store Email Setting</em>}' class.
@@ -1127,6 +1335,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_EMAIL_SETTING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_EMAIL_SETTING___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_EMAIL_SETTING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_EMAIL_SETTING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_EMAIL_SETTING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Email Setting</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_EMAIL_SETTING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFacilityImpl <em>Product Store Facility</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1225,6 +1478,51 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_FACILITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FACILITY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FACILITY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FACILITY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FACILITY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Facility</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FACILITY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl <em>Product Store Fin Act Setting</em>}' class.
@@ -1417,6 +1715,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_FIN_ACT_SETTING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FIN_ACT_SETTING___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FIN_ACT_SETTING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FIN_ACT_SETTING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FIN_ACT_SETTING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Fin Act Setting</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_FIN_ACT_SETTING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupImpl <em>Product Store Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1515,6 +1858,69 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Primary Product Stores</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP___PRIMARY_PRODUCT_STORES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Product Store Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl <em>Product Store Group Member</em>}' class.
@@ -1617,6 +2023,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_GROUP_MEMBER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_MEMBER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_MEMBER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_MEMBER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_MEMBER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Group Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_MEMBER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRoleImpl <em>Product Store Group Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1697,6 +2148,51 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_GROUP_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Group Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupRollupImpl <em>Product Store Group Rollup</em>}' class.
@@ -1799,6 +2295,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_GROUP_ROLLUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLLUP___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLLUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLLUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLLUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Group Rollup</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_ROLLUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupTypeImpl <em>Product Store Group Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1879,6 +2420,96 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Product Store Groups</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE___PRODUCT_STORE_GROUPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Product Store Group Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_GROUP_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl <em>Product Store Keyword Ovrd</em>}' class.
@@ -1988,6 +2619,51 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_KEYWORD_OVRD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_KEYWORD_OVRD___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_KEYWORD_OVRD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_KEYWORD_OVRD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_KEYWORD_OVRD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Keyword Ovrd</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_KEYWORD_OVRD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl <em>Product Store Payment Setting</em>}' class.
@@ -2117,6 +2793,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_PAYMENT_SETTING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PAYMENT_SETTING___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PAYMENT_SETTING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PAYMENT_SETTING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PAYMENT_SETTING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Payment Setting</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PAYMENT_SETTING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl <em>Product Store Promo Appl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2226,6 +2947,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_PROMO_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PROMO_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PROMO_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PROMO_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PROMO_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Promo Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_PROMO_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl <em>Product Store Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2333,6 +3099,51 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl <em>Product Store Shipment Meth</em>}' class.
@@ -2642,6 +3453,60 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_SHIPMENT_METH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 28;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SHIPMENT_METH___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SHIPMENT_METH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SHIPMENT_METH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SHIPMENT_METH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Shipment Cost Estimates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SHIPMENT_METH___SHIPMENT_COST_ESTIMATES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Product Store Shipment Meth</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SHIPMENT_METH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreSurveyApplImpl <em>Product Store Survey Appl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2805,6 +3670,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_SURVEY_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SURVEY_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SURVEY_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SURVEY_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SURVEY_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Survey Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_SURVEY_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreVendorPaymentImpl <em>Product Store Vendor Payment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2896,6 +3806,51 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_VENDOR_PAYMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_PAYMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_PAYMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_PAYMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_PAYMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Vendor Payment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_PAYMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreVendorShipmentImpl <em>Product Store Vendor Shipment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2985,6 +3940,52 @@ public interface StorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_STORE_VENDOR_SHIPMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_SHIPMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_SHIPMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_SHIPMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_SHIPMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Product Store Vendor Shipment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_STORE_VENDOR_SHIPMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -3944,6 +4945,136 @@ public interface StorePackage extends EPackage {
 	EAttribute getProductStore_ProductStoreFinActSettings();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#custRequests() <em>Cust Requests</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cust Requests</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#custRequests()
+	 * @generated
+	 */
+	EOperation getProductStore__CustRequests();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#gitHubUsers() <em>Git Hub Users</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Git Hub Users</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#gitHubUsers()
+	 * @generated
+	 */
+	EOperation getProductStore__GitHubUsers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#googleUsers() <em>Google Users</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Google Users</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#googleUsers()
+	 * @generated
+	 */
+	EOperation getProductStore__GoogleUsers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#linkedInUsers() <em>Linked In Users</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Linked In Users</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#linkedInUsers()
+	 * @generated
+	 */
+	EOperation getProductStore__LinkedInUsers();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#orderHeaders() <em>Order Headers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Headers</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#orderHeaders()
+	 * @generated
+	 */
+	EOperation getProductStore__OrderHeaders();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#partyProfileDefaults() <em>Party Profile Defaults</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Party Profile Defaults</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#partyProfileDefaults()
+	 * @generated
+	 */
+	EOperation getProductStore__PartyProfileDefaults();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#productReviews() <em>Product Reviews</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Reviews</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#productReviews()
+	 * @generated
+	 */
+	EOperation getProductStore__ProductReviews();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#productStoreSurveyAppls() <em>Product Store Survey Appls</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Store Survey Appls</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#productStoreSurveyAppls()
+	 * @generated
+	 */
+	EOperation getProductStore__ProductStoreSurveyAppls();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#quotes() <em>Quotes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quotes</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#quotes()
+	 * @generated
+	 */
+	EOperation getProductStore__Quotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#segmentGroups() <em>Segment Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Segment Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#segmentGroups()
+	 * @generated
+	 */
+	EOperation getProductStore__SegmentGroups();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#shoppingLists() <em>Shopping Lists</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Shopping Lists</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#shoppingLists()
+	 * @generated
+	 */
+	EOperation getProductStore__ShoppingLists();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#taxAuthorityRateProducts() <em>Tax Authority Rate Products</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Tax Authority Rate Products</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#taxAuthorityRateProducts()
+	 * @generated
+	 */
+	EOperation getProductStore__TaxAuthorityRateProducts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStore#webSites() <em>Web Sites</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Web Sites</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#webSites()
+	 * @generated
+	 */
+	EOperation getProductStore__WebSites();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.store.ProductStoreCatalog <em>Product Store Catalog</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4401,6 +5532,16 @@ public interface StorePackage extends EPackage {
 	EReference getProductStoreGroup_PrimaryParentGroupId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroup#primaryProductStores() <em>Primary Product Stores</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Primary Product Stores</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStoreGroup#primaryProductStores()
+	 * @generated
+	 */
+	EOperation getProductStoreGroup__PrimaryProductStores();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStoreGroup#getProductStoreGroupName <em>Product Store Group Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4626,6 +5767,16 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProductStoreGroupType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroupType#productStoreGroups() <em>Product Store Groups</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Store Groups</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStoreGroupType#productStoreGroups()
+	 * @generated
+	 */
+	EOperation getProductStoreGroupType__ProductStoreGroups();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd <em>Product Store Keyword Ovrd</em>}'.
@@ -5248,6 +6399,16 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProductStoreShipmentMeth_ShipmentCustomMethodId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#shipmentCostEstimates() <em>Shipment Cost Estimates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Shipment Cost Estimates</em>' operation.
+	 * @see org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#shipmentCostEstimates()
+	 * @generated
+	 */
+	EOperation getProductStoreShipmentMeth__ShipmentCostEstimates();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getShipmentGatewayConfigId <em>Shipment Gateway Config Id</em>}'.
@@ -6242,6 +7403,110 @@ public interface StorePackage extends EPackage {
 		EAttribute PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS = eINSTANCE.getProductStore_ProductStoreFinActSettings();
 
 		/**
+		 * The meta object literal for the '<em><b>Cust Requests</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___CUST_REQUESTS = eINSTANCE.getProductStore__CustRequests();
+
+		/**
+		 * The meta object literal for the '<em><b>Git Hub Users</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___GIT_HUB_USERS = eINSTANCE.getProductStore__GitHubUsers();
+
+		/**
+		 * The meta object literal for the '<em><b>Google Users</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___GOOGLE_USERS = eINSTANCE.getProductStore__GoogleUsers();
+
+		/**
+		 * The meta object literal for the '<em><b>Linked In Users</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___LINKED_IN_USERS = eINSTANCE.getProductStore__LinkedInUsers();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Headers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___ORDER_HEADERS = eINSTANCE.getProductStore__OrderHeaders();
+
+		/**
+		 * The meta object literal for the '<em><b>Party Profile Defaults</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___PARTY_PROFILE_DEFAULTS = eINSTANCE.getProductStore__PartyProfileDefaults();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Reviews</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___PRODUCT_REVIEWS = eINSTANCE.getProductStore__ProductReviews();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Store Survey Appls</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___PRODUCT_STORE_SURVEY_APPLS = eINSTANCE.getProductStore__ProductStoreSurveyAppls();
+
+		/**
+		 * The meta object literal for the '<em><b>Quotes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___QUOTES = eINSTANCE.getProductStore__Quotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Segment Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___SEGMENT_GROUPS = eINSTANCE.getProductStore__SegmentGroups();
+
+		/**
+		 * The meta object literal for the '<em><b>Shopping Lists</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___SHOPPING_LISTS = eINSTANCE.getProductStore__ShoppingLists();
+
+		/**
+		 * The meta object literal for the '<em><b>Tax Authority Rate Products</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___TAX_AUTHORITY_RATE_PRODUCTS = eINSTANCE.getProductStore__TaxAuthorityRateProducts();
+
+		/**
+		 * The meta object literal for the '<em><b>Web Sites</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE___WEB_SITES = eINSTANCE.getProductStore__WebSites();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl <em>Product Store Catalog</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6588,6 +7853,14 @@ public interface StorePackage extends EPackage {
 		EReference PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID = eINSTANCE.getProductStoreGroup_PrimaryParentGroupId();
 
 		/**
+		 * The meta object literal for the '<em><b>Primary Product Stores</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE_GROUP___PRIMARY_PRODUCT_STORES = eINSTANCE.getProductStoreGroup__PrimaryProductStores();
+
+		/**
 		 * The meta object literal for the '<em><b>Product Store Group Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6762,6 +8035,14 @@ public interface StorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRODUCT_STORE_GROUP_TYPE__DESCRIPTION = eINSTANCE.getProductStoreGroupType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Store Groups</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE_GROUP_TYPE___PRODUCT_STORE_GROUPS = eINSTANCE.getProductStoreGroupType__ProductStoreGroups();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl <em>Product Store Keyword Ovrd</em>}' class.
@@ -7228,6 +8509,14 @@ public interface StorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID = eINSTANCE.getProductStoreShipmentMeth_ShipmentCustomMethodId();
+
+		/**
+		 * The meta object literal for the '<em><b>Shipment Cost Estimates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PRODUCT_STORE_SHIPMENT_METH___SHIPMENT_COST_ESTIMATES = eINSTANCE.getProductStoreShipmentMeth__ShipmentCostEstimates();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Gateway Config Id</b></em>' reference feature.

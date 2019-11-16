@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -140,6 +142,26 @@ public class ShipmentMethodTypeImpl extends BizEntityImpl implements ShipmentMet
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case Shipment_Package.SHIPMENT_METHOD_TYPE___ORDER_ITEM_SHIP_GROUPS:
+				return orderItemShipGroups();
+			case Shipment_Package.SHIPMENT_METHOD_TYPE___PICKLISTS:
+				return picklists();
+			case Shipment_Package.SHIPMENT_METHOD_TYPE___PRODUCT_STORE_SHIPMENT_METHS:
+				return productStoreShipmentMeths();
+			case Shipment_Package.SHIPMENT_METHOD_TYPE___SHIPMENT_ROUTE_SEGMENTS:
+				return shipmentRouteSegments();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

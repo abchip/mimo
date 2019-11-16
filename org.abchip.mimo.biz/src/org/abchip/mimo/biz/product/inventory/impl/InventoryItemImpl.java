@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.inventory.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.Lot;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -715,6 +717,38 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case InventoryPackage.INVENTORY_ITEM___ACCTG_TRANS_ENTRIES:
+				return acctgTransEntries();
+			case InventoryPackage.INVENTORY_ITEM___ACCTG_TRANSS:
+				return acctgTranss();
+			case InventoryPackage.INVENTORY_ITEM___FROM_ORDER_ITEMS:
+				return fromOrderItems();
+			case InventoryPackage.INVENTORY_ITEM___INVENTORY_TRANSFERS:
+				return inventoryTransfers();
+			case InventoryPackage.INVENTORY_ITEM___INVOICE_ITEMS:
+				return invoiceItems();
+			case InventoryPackage.INVENTORY_ITEM___ITEM_ISSUANCES:
+				return itemIssuances();
+			case InventoryPackage.INVENTORY_ITEM___SHIPMENT_RECEIPTS:
+				return shipmentReceipts();
+			case InventoryPackage.INVENTORY_ITEM___SUBSCRIPTIONS:
+				return subscriptions();
+			case InventoryPackage.INVENTORY_ITEM___WORK_EFFORT_INVENTORY_ASSIGNS:
+				return workEffortInventoryAssigns();
+			case InventoryPackage.INVENTORY_ITEM___WORK_EFFORT_INVENTORY_PRODUCEDS:
+				return workEffortInventoryProduceds();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

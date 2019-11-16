@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.issuance.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 import java.util.Date;
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.issuance.IssuancePackage;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -354,6 +356,22 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case IssuancePackage.ITEM_ISSUANCE___INVENTORY_ITEM_DETAILS:
+				return inventoryItemDetails();
+			case IssuancePackage.ITEM_ISSUANCE___INVENTORY_TRANSFERS:
+				return inventoryTransfers();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ItemIssuanceImpl

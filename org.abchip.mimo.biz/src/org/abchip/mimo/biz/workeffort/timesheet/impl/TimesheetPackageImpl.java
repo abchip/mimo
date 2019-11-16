@@ -197,6 +197,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -816,6 +817,16 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
+	public EOperation getTimesheet__TimeEntries() {
+		return timesheetEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getTimesheet_ClientPartyId() {
 		return (EReference)timesheetEClass.getEStructuralFeatures().get(5);
 	}
@@ -961,6 +972,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		createEReference(timesheetEClass, TIMESHEET__CLIENT_PARTY_ID);
 		createEReference(timesheetEClass, TIMESHEET__STATUS_ID);
 		createEReference(timesheetEClass, TIMESHEET__APPROVED_BY_USER_LOGIN_ID);
+		createEOperation(timesheetEClass, TIMESHEET___TIME_ENTRIES);
 
 		timesheetRoleEClass = createEClass(TIMESHEET_ROLE);
 		createEReference(timesheetRoleEClass, TIMESHEET_ROLE__TIMESHEET_ID);
@@ -1009,7 +1021,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		timesheetEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		timesheetRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(timeEntryEClass, TimeEntry.class, "TimeEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeEntry_TimeEntryId(), ecorePackage.getEString(), "timeEntryId", null, 1, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeEntry_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1042,7 +1054,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		initEReference(getTimesheet_ApprovedByUserLoginId(), theLoginPackage.getUserLogin(), null, "approvedByUserLoginId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimesheet_ApprovedByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
-		addEOperation(timesheetEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTimesheet__TimeEntries(), ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timesheetRoleEClass, TimesheetRole.class, "TimesheetRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimesheetRole_TimesheetId(), this.getTimesheet(), null, "timesheetId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1074,7 +1086,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (timesheetEClass.getEOperations().get(0),
+		  (getTimesheet__TimeEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1096,7 +1108,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (timesheetEClass.getEOperations().get(0),
+		  (getTimesheet__TimeEntries(),
 		   source,
 		   new String[] {
 			   "frame", "TimeEntry",

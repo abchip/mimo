@@ -855,7 +855,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		g1.getETypeArguments().add(g2);
 		mrpEventTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(mrpEventEClass, MrpEvent.class, "MrpEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMrpEvent_MrpId(), ecorePackage.getEString(), "mrpId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMrpEvent_EventDate(), ecorePackage.getEDate(), "eventDate", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

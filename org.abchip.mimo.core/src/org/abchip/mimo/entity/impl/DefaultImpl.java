@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
 
@@ -207,6 +208,23 @@ public class DefaultImpl extends EntityImpl implements Default {
 				return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case EntityPackage.DEFAULT___CLEAR:
+				clear();
+				return null;
+			case EntityPackage.DEFAULT___IS_EMPTY:
+				return isEmpty();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

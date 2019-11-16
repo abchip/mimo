@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -209,6 +211,30 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContactPackage.CONTACT_MECH_TYPE___CHILD_CONTACT_MECH_TYPES:
+				return childContactMechTypes();
+			case ContactPackage.CONTACT_MECH_TYPE___COMMUNICATION_EVENTS:
+				return communicationEvents();
+			case ContactPackage.CONTACT_MECH_TYPE___CONTAC_MECH_TYPE_COMMUNICATION_EVENT_TYPES:
+				return contacMechTypeCommunicationEventTypes();
+			case ContactPackage.CONTACT_MECH_TYPE___CONTACT_LISTS:
+				return contactLists();
+			case ContactPackage.CONTACT_MECH_TYPE___CONTACT_MECHS:
+				return contactMechs();
+			case ContactPackage.CONTACT_MECH_TYPE___VALID_CONTACT_MECH_ROLES:
+				return validContactMechRoles();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

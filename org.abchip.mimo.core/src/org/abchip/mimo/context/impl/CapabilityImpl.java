@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.util.Collection;
 import java.util.List;
@@ -202,6 +203,20 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 				return ENTITY_URI_EDEFAULT == null ? entityURI != null : !ENTITY_URI_EDEFAULT.equals(entityURI);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContextPackage.CAPABILITY___GET_ENTITY_NAME:
+				return getEntityName();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

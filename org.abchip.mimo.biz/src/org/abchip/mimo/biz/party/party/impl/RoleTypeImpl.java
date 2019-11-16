@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -384,6 +386,56 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PartyPackage.ROLE_TYPE___ACCTG_TRANS_ENTRIES:
+				return acctgTransEntries();
+			case PartyPackage.ROLE_TYPE___ACCTG_TRANSS:
+				return acctgTranss();
+			case PartyPackage.ROLE_TYPE___CHILD_ROLE_TYPES:
+				return childRoleTypes();
+			case PartyPackage.ROLE_TYPE___CONTENT_APPROVALS:
+				return contentApprovals();
+			case PartyPackage.ROLE_TYPE___FIXED_ASSETS:
+				return fixedAssets();
+			case PartyPackage.ROLE_TYPE___FROM_AGREEMENTS:
+				return fromAgreements();
+			case PartyPackage.ROLE_TYPE___FROM_COMMUNICATION_EVENTS:
+				return fromCommunicationEvents();
+			case PartyPackage.ROLE_TYPE___GL_ACCOUNT_ORGANIZATIONS:
+				return glAccountOrganizations();
+			case PartyPackage.ROLE_TYPE___INVOICES:
+				return invoices();
+			case PartyPackage.ROLE_TYPE___ORIGINATED_FROM_SUBSCRIPTIONS:
+				return originatedFromSubscriptions();
+			case PartyPackage.ROLE_TYPE___PARTY_INVITATION_ROLE_ASSOCS:
+				return partyInvitationRoleAssocs();
+			case PartyPackage.ROLE_TYPE___PARTY_ROLES:
+				return partyRoles();
+			case PartyPackage.ROLE_TYPE___SHIPMENT_COST_ESTIMATES:
+				return shipmentCostEstimates();
+			case PartyPackage.ROLE_TYPE___SUBSCRIPTIONS:
+				return subscriptions();
+			case PartyPackage.ROLE_TYPE___TO_AGREEMENTS:
+				return toAgreements();
+			case PartyPackage.ROLE_TYPE___TO_COMMUNICATION_EVENTS:
+				return toCommunicationEvents();
+			case PartyPackage.ROLE_TYPE___TO_PAYMENTS:
+				return toPayments();
+			case PartyPackage.ROLE_TYPE___VALID_FROM_PARTY_RELATIONSHIP_TYPES:
+				return validFromPartyRelationshipTypes();
+			case PartyPackage.ROLE_TYPE___VALID_TO_PARTY_RELATIONSHIP_TYPES:
+				return validToPartyRelationshipTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //RoleTypeImpl

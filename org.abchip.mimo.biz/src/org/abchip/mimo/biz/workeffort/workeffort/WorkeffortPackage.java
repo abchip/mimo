@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -171,6 +172,51 @@ public interface WorkeffortPackage extends EPackage {
 	int APPLICATION_SANDBOX_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_SANDBOX___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_SANDBOX___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_SANDBOX___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_SANDBOX___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Application Sandbox</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_SANDBOX_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl <em>Communication Event Work Eff</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,6 +297,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_EVENT_WORK_EFF_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_WORK_EFF___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_WORK_EFF___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_WORK_EFF___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_WORK_EFF___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Communication Event Work Eff</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_WORK_EFF_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableImpl <em>Deliverable</em>}' class.
@@ -344,6 +435,78 @@ public interface WorkeffortPackage extends EPackage {
 	int DELIVERABLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Requirements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE___REQUIREMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Work Effort Deliverable Prods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE___WORK_EFFORT_DELIVERABLE_PRODS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Deliverable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableTypeImpl <em>Deliverable Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -424,6 +587,105 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELIVERABLE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Deliverables</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___DELIVERABLES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Quote Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE___QUOTE_ITEMS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Deliverable Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELIVERABLE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl <em>Work Effort</em>}' class.
@@ -1030,6 +1292,204 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 61;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Acctg Transs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Child Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___CHILD_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Cost Components</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___COST_COMPONENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Cust Request Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___CUST_REQUEST_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Estimated Arrival Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___ESTIMATED_ARRIVAL_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Estimated Ship Shipments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___ESTIMATED_SHIP_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Inventory Item Details</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___INVENTORY_ITEM_DETAILS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Maint Template Product Maints</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___MAINT_TEMPLATE_PRODUCT_MAINTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Order Header Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___ORDER_HEADER_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Quote Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___QUOTE_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Quote Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___QUOTE_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Sales Opportunity Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___SALES_OPPORTUNITY_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Schedule Fixed Asset Maints</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___SCHEDULE_FIXED_ASSET_MAINTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Shopping List Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___SHOPPING_LIST_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>Time Entries</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___TIME_ENTRIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Work Requirement Fulfillments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT___WORK_REQUIREMENT_FULFILLMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 15;
+
+	/**
+	 * The number of operations of the '<em>Work Effort</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 16;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl <em>Work Effort Assoc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1137,6 +1597,60 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Assoc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocAttributeImpl <em>Work Effort Assoc Attribute</em>}' class.
@@ -1257,6 +1771,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_ASSOC_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Assoc Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeImpl <em>Work Effort Assoc Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1366,6 +1925,96 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_ASSOC_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Work Effort Assoc Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE___CHILD_WORK_EFFORT_ASSOC_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Assoc Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeAttrImpl <em>Work Effort Assoc Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1446,6 +2095,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_ASSOC_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Assoc Type Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ASSOC_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAttributeImpl <em>Work Effort Attribute</em>}' class.
@@ -1539,6 +2233,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortBillingImpl <em>Work Effort Billing</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1628,6 +2367,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_BILLING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_BILLING___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_BILLING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_BILLING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_BILLING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Billing</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_BILLING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContactMechImpl <em>Work Effort Contact Mech</em>}' class.
@@ -1730,6 +2514,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTACT_MECH___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTACT_MECH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTACT_MECH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTACT_MECH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Contact Mech</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTACT_MECH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl <em>Work Effort Content</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1830,6 +2659,60 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentTypeImpl <em>Work Effort Content Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1919,6 +2802,96 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_CONTENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Work Effort Content Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE___CHILD_WORK_EFFORT_CONTENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Content Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_CONTENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl <em>Work Effort Cost Calc</em>}' class.
@@ -2021,6 +2994,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_COST_CALC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_COST_CALC___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_COST_CALC___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_COST_CALC___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_COST_CALC___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Cost Calc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_COST_CALC_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortDeliverableProdImpl <em>Work Effort Deliverable Prod</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2092,6 +3110,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_DELIVERABLE_PROD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_DELIVERABLE_PROD___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_DELIVERABLE_PROD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_DELIVERABLE_PROD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_DELIVERABLE_PROD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Deliverable Prod</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_DELIVERABLE_PROD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl <em>Work Effort Event Reminder</em>}' class.
@@ -2248,6 +3311,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_EVENT_REMINDER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_EVENT_REMINDER___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_EVENT_REMINDER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_EVENT_REMINDER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_EVENT_REMINDER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Event Reminder</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_EVENT_REMINDER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetAssignImpl <em>Work Effort Fixed Asset Assign</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2375,6 +3483,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_FIXED_ASSET_ASSIGN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_ASSIGN___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_ASSIGN___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_ASSIGN___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_ASSIGN___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Fixed Asset Assign</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_ASSIGN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortFixedAssetStdImpl <em>Work Effort Fixed Asset Std</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2473,6 +3626,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_FIXED_ASSET_STD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_STD___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_STD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_STD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_STD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Fixed Asset Std</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_FIXED_ASSET_STD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl <em>Work Effort Good Standard</em>}' class.
@@ -2602,6 +3800,60 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_GOOD_STANDARD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Good Standard</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardTypeImpl <em>Work Effort Good Standard Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2702,6 +3954,96 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_GOOD_STANDARD_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Work Effort Good Standard Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE___CHILD_WORK_EFFORT_GOOD_STANDARD_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Good Standard Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_GOOD_STANDARD_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortIcalDataImpl <em>Work Effort Ical Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2773,6 +4115,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_ICAL_DATA_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ICAL_DATA___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ICAL_DATA___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ICAL_DATA___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ICAL_DATA___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Ical Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ICAL_DATA_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortInventoryAssignImpl <em>Work Effort Inventory Assign</em>}' class.
@@ -2866,6 +4253,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_INVENTORY_ASSIGN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_ASSIGN___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_ASSIGN___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_ASSIGN___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_ASSIGN___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Inventory Assign</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_ASSIGN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortInventoryProducedImpl <em>Work Effort Inventory Produced</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2937,6 +4369,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_INVENTORY_PRODUCED_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_PRODUCED___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_PRODUCED___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_PRODUCED___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_PRODUCED___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Inventory Produced</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_INVENTORY_PRODUCED_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortKeywordImpl <em>Work Effort Keyword</em>}' class.
@@ -3019,6 +4496,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_KEYWORD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_KEYWORD___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_KEYWORD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_KEYWORD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_KEYWORD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Keyword</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_KEYWORD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortNoteImpl <em>Work Effort Note</em>}' class.
@@ -3110,6 +4632,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_NOTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_NOTE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_NOTE___ISA = BizPackage.BIZ_ENTITY_NOTE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_NOTE___GET_NAME = BizPackage.BIZ_ENTITY_NOTE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_NOTE___GET_URI = BizPackage.BIZ_ENTITY_NOTE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_NOTE___IS_PROXY = BizPackage.BIZ_ENTITY_NOTE___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Note</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_NOTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_NOTE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl <em>Work Effort Party Assignment</em>}' class.
@@ -3293,6 +4860,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_PARTY_ASSIGNMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PARTY_ASSIGNMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PARTY_ASSIGNMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PARTY_ASSIGNMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PARTY_ASSIGNMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Party Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PARTY_ASSIGNMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPurposeTypeImpl <em>Work Effort Purpose Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3373,6 +4985,69 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_PURPOSE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PURPOSE_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PURPOSE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PURPOSE_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PURPOSE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Child Work Effort Purpose Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PURPOSE_TYPE___CHILD_WORK_EFFORT_PURPOSE_TYPES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PURPOSE_TYPE___WORK_EFFORTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Purpose Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_PURPOSE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl <em>Work Effort Review</em>}' class.
@@ -3491,6 +5166,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_REVIEW_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_REVIEW___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_REVIEW___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_REVIEW___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_REVIEW___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Review</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_REVIEW_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl <em>Work Effort Search Constraint</em>}' class.
@@ -3647,6 +5367,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_SEARCH_CONSTRAINT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_CONSTRAINT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_CONSTRAINT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_CONSTRAINT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_CONSTRAINT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Search Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_CONSTRAINT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchResultImpl <em>Work Effort Search Result</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3774,6 +5539,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_SEARCH_RESULT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_RESULT___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_RESULT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_RESULT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_RESULT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Search Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SEARCH_RESULT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl <em>Work Effort Skill Standard</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3872,6 +5682,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_SKILL_STANDARD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SKILL_STANDARD___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SKILL_STANDARD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SKILL_STANDARD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SKILL_STANDARD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Skill Standard</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SKILL_STANDARD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl <em>Work Effort Status</em>}' class.
@@ -3974,6 +5829,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_STATUS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_STATUS___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_STATUS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_STATUS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_STATUS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Status</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_STATUS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSurveyApplImpl <em>Work Effort Survey Appl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4065,6 +5965,51 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_SURVEY_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SURVEY_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SURVEY_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SURVEY_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SURVEY_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Survey Appl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_SURVEY_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTransBoxImpl <em>Work Effort Trans Box</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4145,6 +6090,51 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_TRANS_BOX_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TRANS_BOX___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TRANS_BOX___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TRANS_BOX___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TRANS_BOX___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Trans Box</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TRANS_BOX_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeImpl <em>Work Effort Type</em>}' class.
@@ -4256,6 +6246,105 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Work Effort Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___CHILD_WORK_EFFORT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE___WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeAttrImpl <em>Work Effort Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4336,6 +6425,52 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Work Effort Type Attr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -4501,6 +6636,26 @@ public interface WorkeffortPackage extends EPackage {
 	EReference getDeliverable_DeliverableTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#requirements() <em>Requirements</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Requirements</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.Deliverable#requirements()
+	 * @generated
+	 */
+	EOperation getDeliverable__Requirements();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#workEffortDeliverableProds() <em>Work Effort Deliverable Prods</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Effort Deliverable Prods</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.Deliverable#workEffortDeliverableProds()
+	 * @generated
+	 */
+	EOperation getDeliverable__WorkEffortDeliverableProds();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4542,6 +6697,26 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDeliverableType_Description();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.DeliverableType#deliverables() <em>Deliverables</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Deliverables</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.DeliverableType#deliverables()
+	 * @generated
+	 */
+	EOperation getDeliverableType__Deliverables();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.DeliverableType#quoteItems() <em>Quote Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quote Items</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.DeliverableType#quoteItems()
+	 * @generated
+	 */
+	EOperation getDeliverableType__QuoteItems();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort <em>Work Effort</em>}'.
@@ -5225,6 +7400,166 @@ public interface WorkeffortPackage extends EPackage {
 	EAttribute getWorkEffort_WorkEffortSkillStandards();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#acctgTranss() <em>Acctg Transs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#acctgTranss()
+	 * @generated
+	 */
+	EOperation getWorkEffort__AcctgTranss();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#childWorkEfforts() <em>Child Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#childWorkEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffort__ChildWorkEfforts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#costComponents() <em>Cost Components</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cost Components</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#costComponents()
+	 * @generated
+	 */
+	EOperation getWorkEffort__CostComponents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#custRequestWorkEfforts() <em>Cust Request Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cust Request Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#custRequestWorkEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffort__CustRequestWorkEfforts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#estimatedArrivalShipments() <em>Estimated Arrival Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Estimated Arrival Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#estimatedArrivalShipments()
+	 * @generated
+	 */
+	EOperation getWorkEffort__EstimatedArrivalShipments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#estimatedShipShipments() <em>Estimated Ship Shipments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Estimated Ship Shipments</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#estimatedShipShipments()
+	 * @generated
+	 */
+	EOperation getWorkEffort__EstimatedShipShipments();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#inventoryItemDetails() <em>Inventory Item Details</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inventory Item Details</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#inventoryItemDetails()
+	 * @generated
+	 */
+	EOperation getWorkEffort__InventoryItemDetails();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#maintTemplateProductMaints() <em>Maint Template Product Maints</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Maint Template Product Maints</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#maintTemplateProductMaints()
+	 * @generated
+	 */
+	EOperation getWorkEffort__MaintTemplateProductMaints();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#orderHeaderWorkEfforts() <em>Order Header Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Header Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#orderHeaderWorkEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffort__OrderHeaderWorkEfforts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#quoteItems() <em>Quote Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quote Items</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#quoteItems()
+	 * @generated
+	 */
+	EOperation getWorkEffort__QuoteItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#quoteWorkEfforts() <em>Quote Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quote Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#quoteWorkEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffort__QuoteWorkEfforts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#salesOpportunityWorkEfforts() <em>Sales Opportunity Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Sales Opportunity Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#salesOpportunityWorkEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffort__SalesOpportunityWorkEfforts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#scheduleFixedAssetMaints() <em>Schedule Fixed Asset Maints</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Schedule Fixed Asset Maints</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#scheduleFixedAssetMaints()
+	 * @generated
+	 */
+	EOperation getWorkEffort__ScheduleFixedAssetMaints();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#shoppingListWorkEfforts() <em>Shopping List Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Shopping List Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#shoppingListWorkEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffort__ShoppingListWorkEfforts();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#timeEntries() <em>Time Entries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Time Entries</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#timeEntries()
+	 * @generated
+	 */
+	EOperation getWorkEffort__TimeEntries();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#workRequirementFulfillments() <em>Work Requirement Fulfillments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Requirement Fulfillments</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#workRequirementFulfillments()
+	 * @generated
+	 */
+	EOperation getWorkEffort__WorkRequirementFulfillments();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc <em>Work Effort Assoc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5451,6 +7786,16 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWorkEffortAssocType_WorkEffortAssocTypeAttrs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#childWorkEffortAssocTypes() <em>Child Work Effort Assoc Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Work Effort Assoc Types</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#childWorkEffortAssocTypes()
+	 * @generated
+	 */
+	EOperation getWorkEffortAssocType__ChildWorkEffortAssocTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr <em>Work Effort Assoc Type Attr</em>}'.
@@ -5775,6 +8120,16 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWorkEffortContentType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContentType#childWorkEffortContentTypes() <em>Child Work Effort Content Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Work Effort Content Types</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContentType#childWorkEffortContentTypes()
+	 * @generated
+	 */
+	EOperation getWorkEffortContentType__ChildWorkEffortContentTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc <em>Work Effort Cost Calc</em>}'.
@@ -6320,6 +8675,16 @@ public interface WorkeffortPackage extends EPackage {
 	EReference getWorkEffortGoodStandardType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandardType#childWorkEffortGoodStandardTypes() <em>Child Work Effort Good Standard Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Work Effort Good Standard Types</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandardType#childWorkEffortGoodStandardTypes()
+	 * @generated
+	 */
+	EOperation getWorkEffortGoodStandardType__ChildWorkEffortGoodStandardTypes();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortIcalData <em>Work Effort Ical Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6718,6 +9083,26 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWorkEffortPurposeType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType#childWorkEffortPurposeTypes() <em>Child Work Effort Purpose Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Work Effort Purpose Types</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType#childWorkEffortPurposeTypes()
+	 * @generated
+	 */
+	EOperation getWorkEffortPurposeType__ChildWorkEffortPurposeTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType#workEfforts() <em>Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType#workEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffortPurposeType__WorkEfforts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortReview <em>Work Effort Review</em>}'.
@@ -7328,6 +9713,26 @@ public interface WorkeffortPackage extends EPackage {
 	EAttribute getWorkEffortType_WorkEffortTypeAttrs();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#childWorkEffortTypes() <em>Child Work Effort Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Work Effort Types</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#childWorkEffortTypes()
+	 * @generated
+	 */
+	EOperation getWorkEffortType__ChildWorkEffortTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#workEfforts() <em>Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#workEfforts()
+	 * @generated
+	 */
+	EOperation getWorkEffortType__WorkEfforts();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr <em>Work Effort Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7519,6 +9924,22 @@ public interface WorkeffortPackage extends EPackage {
 		EReference DELIVERABLE__DELIVERABLE_TYPE_ID = eINSTANCE.getDeliverable_DeliverableTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Requirements</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DELIVERABLE___REQUIREMENTS = eINSTANCE.getDeliverable__Requirements();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Effort Deliverable Prods</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DELIVERABLE___WORK_EFFORT_DELIVERABLE_PRODS = eINSTANCE.getDeliverable__WorkEffortDeliverableProds();
+
+		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7551,6 +9972,22 @@ public interface WorkeffortPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DELIVERABLE_TYPE__DESCRIPTION = eINSTANCE.getDeliverableType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Deliverables</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DELIVERABLE_TYPE___DELIVERABLES = eINSTANCE.getDeliverableType__Deliverables();
+
+		/**
+		 * The meta object literal for the '<em><b>Quote Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DELIVERABLE_TYPE___QUOTE_ITEMS = eINSTANCE.getDeliverableType__QuoteItems();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl <em>Work Effort</em>}' class.
@@ -8051,6 +10488,134 @@ public interface WorkeffortPackage extends EPackage {
 		EAttribute WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS = eINSTANCE.getWorkEffort_WorkEffortSkillStandards();
 
 		/**
+		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___ACCTG_TRANSS = eINSTANCE.getWorkEffort__AcctgTranss();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___CHILD_WORK_EFFORTS = eINSTANCE.getWorkEffort__ChildWorkEfforts();
+
+		/**
+		 * The meta object literal for the '<em><b>Cost Components</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___COST_COMPONENTS = eINSTANCE.getWorkEffort__CostComponents();
+
+		/**
+		 * The meta object literal for the '<em><b>Cust Request Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___CUST_REQUEST_WORK_EFFORTS = eINSTANCE.getWorkEffort__CustRequestWorkEfforts();
+
+		/**
+		 * The meta object literal for the '<em><b>Estimated Arrival Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___ESTIMATED_ARRIVAL_SHIPMENTS = eINSTANCE.getWorkEffort__EstimatedArrivalShipments();
+
+		/**
+		 * The meta object literal for the '<em><b>Estimated Ship Shipments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___ESTIMATED_SHIP_SHIPMENTS = eINSTANCE.getWorkEffort__EstimatedShipShipments();
+
+		/**
+		 * The meta object literal for the '<em><b>Inventory Item Details</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___INVENTORY_ITEM_DETAILS = eINSTANCE.getWorkEffort__InventoryItemDetails();
+
+		/**
+		 * The meta object literal for the '<em><b>Maint Template Product Maints</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___MAINT_TEMPLATE_PRODUCT_MAINTS = eINSTANCE.getWorkEffort__MaintTemplateProductMaints();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Header Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___ORDER_HEADER_WORK_EFFORTS = eINSTANCE.getWorkEffort__OrderHeaderWorkEfforts();
+
+		/**
+		 * The meta object literal for the '<em><b>Quote Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___QUOTE_ITEMS = eINSTANCE.getWorkEffort__QuoteItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Quote Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___QUOTE_WORK_EFFORTS = eINSTANCE.getWorkEffort__QuoteWorkEfforts();
+
+		/**
+		 * The meta object literal for the '<em><b>Sales Opportunity Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___SALES_OPPORTUNITY_WORK_EFFORTS = eINSTANCE.getWorkEffort__SalesOpportunityWorkEfforts();
+
+		/**
+		 * The meta object literal for the '<em><b>Schedule Fixed Asset Maints</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___SCHEDULE_FIXED_ASSET_MAINTS = eINSTANCE.getWorkEffort__ScheduleFixedAssetMaints();
+
+		/**
+		 * The meta object literal for the '<em><b>Shopping List Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___SHOPPING_LIST_WORK_EFFORTS = eINSTANCE.getWorkEffort__ShoppingListWorkEfforts();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Entries</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___TIME_ENTRIES = eINSTANCE.getWorkEffort__TimeEntries();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Requirement Fulfillments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT___WORK_REQUIREMENT_FULFILLMENTS = eINSTANCE.getWorkEffort__WorkRequirementFulfillments();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl <em>Work Effort Assoc</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8223,6 +10788,14 @@ public interface WorkeffortPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WORK_EFFORT_ASSOC_TYPE__WORK_EFFORT_ASSOC_TYPE_ATTRS = eINSTANCE.getWorkEffortAssocType_WorkEffortAssocTypeAttrs();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Work Effort Assoc Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT_ASSOC_TYPE___CHILD_WORK_EFFORT_ASSOC_TYPES = eINSTANCE.getWorkEffortAssocType__ChildWorkEffortAssocTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeAttrImpl <em>Work Effort Assoc Type Attr</em>}' class.
@@ -8475,6 +11048,14 @@ public interface WorkeffortPackage extends EPackage {
 		 * @generated
 		 */
 		EReference WORK_EFFORT_CONTENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getWorkEffortContentType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Work Effort Content Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT_CONTENT_TYPE___CHILD_WORK_EFFORT_CONTENT_TYPES = eINSTANCE.getWorkEffortContentType__ChildWorkEffortContentTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl <em>Work Effort Cost Calc</em>}' class.
@@ -8891,6 +11472,14 @@ public interface WorkeffortPackage extends EPackage {
 		EReference WORK_EFFORT_GOOD_STANDARD_TYPE__PARENT_TYPE_ID = eINSTANCE.getWorkEffortGoodStandardType_ParentTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Child Work Effort Good Standard Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT_GOOD_STANDARD_TYPE___CHILD_WORK_EFFORT_GOOD_STANDARD_TYPES = eINSTANCE.getWorkEffortGoodStandardType__ChildWorkEffortGoodStandardTypes();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortIcalDataImpl <em>Work Effort Ical Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -9199,6 +11788,22 @@ public interface WorkeffortPackage extends EPackage {
 		 * @generated
 		 */
 		EReference WORK_EFFORT_PURPOSE_TYPE__PARENT_TYPE_ID = eINSTANCE.getWorkEffortPurposeType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Work Effort Purpose Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT_PURPOSE_TYPE___CHILD_WORK_EFFORT_PURPOSE_TYPES = eINSTANCE.getWorkEffortPurposeType__ChildWorkEffortPurposeTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT_PURPOSE_TYPE___WORK_EFFORTS = eINSTANCE.getWorkEffortPurposeType__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortReviewImpl <em>Work Effort Review</em>}' class.
@@ -9663,6 +12268,22 @@ public interface WorkeffortPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS = eINSTANCE.getWorkEffortType_WorkEffortTypeAttrs();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Work Effort Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT_TYPE___CHILD_WORK_EFFORT_TYPES = eINSTANCE.getWorkEffortType__ChildWorkEffortTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORK_EFFORT_TYPE___WORK_EFFORTS = eINSTANCE.getWorkEffortType__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeAttrImpl <em>Work Effort Type Attr</em>}' class.

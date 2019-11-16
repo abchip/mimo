@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -137,6 +139,22 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PartyPackage.PARTY_CLASSIFICATION_GROUP___CHILD_PARTY_CLASSIFICATION_GROUPS:
+				return childPartyClassificationGroups();
+			case PartyPackage.PARTY_CLASSIFICATION_GROUP___SEGMENT_GROUP_CLASSIFICATIONS:
+				return segmentGroupClassifications();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

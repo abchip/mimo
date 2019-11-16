@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.cost.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -234,6 +236,20 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CostPackage.COST_COMPONENT_CALC___COST_COMPONENTS:
+				return costComponents();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

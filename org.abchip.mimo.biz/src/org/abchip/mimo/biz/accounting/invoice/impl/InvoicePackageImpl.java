@@ -214,6 +214,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1002,6 +1003,46 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getInvoice__AcctgTranss() {
+		return invoiceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoice__InvoiceTerms() {
+		return invoiceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoice__PaymentApplications() {
+		return invoiceEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoice__TimeEntries() {
+		return invoiceEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getInvoiceAttribute() {
 		return invoiceAttributeEClass;
 	}
@@ -1194,6 +1235,16 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 	@Override
 	public EReference getInvoiceContentType_ParentTypeId() {
 		return (EReference)invoiceContentTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceContentType__ChildInvoiceContentTypes() {
+		return invoiceContentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1572,6 +1623,16 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getInvoiceItemAssocType__ChildInvoiceItemAssocTypes() {
+		return invoiceItemAssocTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getInvoiceItemAttribute() {
 		return invoiceItemAttributeEClass;
 	}
@@ -1704,6 +1765,46 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 	@Override
 	public EAttribute getInvoiceItemType_InvoiceItemTypeGlAccounts() {
 		return (EAttribute)invoiceItemTypeEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceItemType__AgreementTerms() {
+		return invoiceItemTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceItemType__ChildInvoiceItemTypes() {
+		return invoiceItemTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceItemType__InvoiceItemTypeMaps() {
+		return invoiceItemTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceItemType__InvoiceItems() {
+		return invoiceItemTypeEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -2182,6 +2283,46 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getInvoiceType__ChildInvoiceTypes() {
+		return invoiceTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceType__InvoiceItemTypeMaps() {
+		return invoiceTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceType__Invoices() {
+		return invoiceTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getInvoiceType__PartyPrefDocTypeTpls() {
+		return invoiceTypeEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getInvoiceTypeAttr() {
 		return invoiceTypeAttrEClass;
 	}
@@ -2265,6 +2406,10 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		createEAttribute(invoiceEClass, INVOICE__INVOICE_ATTRIBUTES);
 		createEAttribute(invoiceEClass, INVOICE__INVOICE_ITEMS);
 		createEAttribute(invoiceEClass, INVOICE__INVOICE_NOTES);
+		createEOperation(invoiceEClass, INVOICE___ACCTG_TRANSS);
+		createEOperation(invoiceEClass, INVOICE___INVOICE_TERMS);
+		createEOperation(invoiceEClass, INVOICE___PAYMENT_APPLICATIONS);
+		createEOperation(invoiceEClass, INVOICE___TIME_ENTRIES);
 
 		invoiceAttributeEClass = createEClass(INVOICE_ATTRIBUTE);
 		createEAttribute(invoiceAttributeEClass, INVOICE_ATTRIBUTE__ATTR_NAME);
@@ -2289,6 +2434,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		createEAttribute(invoiceContentTypeEClass, INVOICE_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(invoiceContentTypeEClass, INVOICE_CONTENT_TYPE__HAS_TABLE);
 		createEReference(invoiceContentTypeEClass, INVOICE_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEOperation(invoiceContentTypeEClass, INVOICE_CONTENT_TYPE___CHILD_INVOICE_CONTENT_TYPES);
 
 		invoiceItemEClass = createEClass(INVOICE_ITEM);
 		createEAttribute(invoiceItemEClass, INVOICE_ITEM__INVOICE_ITEM_SEQ_ID);
@@ -2329,6 +2475,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		createEAttribute(invoiceItemAssocTypeEClass, INVOICE_ITEM_ASSOC_TYPE__DESCRIPTION);
 		createEAttribute(invoiceItemAssocTypeEClass, INVOICE_ITEM_ASSOC_TYPE__HAS_TABLE);
 		createEReference(invoiceItemAssocTypeEClass, INVOICE_ITEM_ASSOC_TYPE__PARENT_TYPE_ID);
+		createEOperation(invoiceItemAssocTypeEClass, INVOICE_ITEM_ASSOC_TYPE___CHILD_INVOICE_ITEM_ASSOC_TYPES);
 
 		invoiceItemAttributeEClass = createEClass(INVOICE_ITEM_ATTRIBUTE);
 		createEAttribute(invoiceItemAttributeEClass, INVOICE_ITEM_ATTRIBUTE__INVOICE_ID);
@@ -2345,6 +2492,10 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		createEReference(invoiceItemTypeEClass, INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID);
 		createEAttribute(invoiceItemTypeEClass, INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS);
 		createEAttribute(invoiceItemTypeEClass, INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS);
+		createEOperation(invoiceItemTypeEClass, INVOICE_ITEM_TYPE___AGREEMENT_TERMS);
+		createEOperation(invoiceItemTypeEClass, INVOICE_ITEM_TYPE___CHILD_INVOICE_ITEM_TYPES);
+		createEOperation(invoiceItemTypeEClass, INVOICE_ITEM_TYPE___INVOICE_ITEM_TYPE_MAPS);
+		createEOperation(invoiceItemTypeEClass, INVOICE_ITEM_TYPE___INVOICE_ITEMS);
 
 		invoiceItemTypeAttrEClass = createEClass(INVOICE_ITEM_TYPE_ATTR);
 		createEAttribute(invoiceItemTypeAttrEClass, INVOICE_ITEM_TYPE_ATTR__ATTR_NAME);
@@ -2401,6 +2552,10 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		createEAttribute(invoiceTypeEClass, INVOICE_TYPE__HAS_TABLE);
 		createEReference(invoiceTypeEClass, INVOICE_TYPE__PARENT_TYPE_ID);
 		createEAttribute(invoiceTypeEClass, INVOICE_TYPE__INVOICE_TYPE_ATTRS);
+		createEOperation(invoiceTypeEClass, INVOICE_TYPE___CHILD_INVOICE_TYPES);
+		createEOperation(invoiceTypeEClass, INVOICE_TYPE___INVOICE_ITEM_TYPE_MAPS);
+		createEOperation(invoiceTypeEClass, INVOICE_TYPE___INVOICES);
+		createEOperation(invoiceTypeEClass, INVOICE_TYPE___PARTY_PREF_DOC_TYPE_TPLS);
 
 		invoiceTypeAttrEClass = createEClass(INVOICE_TYPE_ATTR);
 		createEAttribute(invoiceTypeAttrEClass, INVOICE_TYPE_ATTR__ATTR_NAME);
@@ -2500,7 +2655,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		invoiceTypeEClass.getEGenericSuperTypes().add(g1);
 		invoiceTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(invoiceEClass, Invoice.class, "Invoice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInvoice_InvoiceId(), ecorePackage.getEString(), "invoiceId", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInvoice_Description(), ecorePackage.getEString(), "description", null, 0, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2531,13 +2686,13 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		initEAttribute(getInvoice_InvoiceItems(), ecorePackage.getEString(), "invoiceItems", null, 0, -1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInvoice_InvoiceNotes(), ecorePackage.getEString(), "invoiceNotes", null, 0, -1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(invoiceEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoice__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceEClass, ecorePackage.getEString(), "invoiceTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoice__InvoiceTerms(), ecorePackage.getEString(), "invoiceTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceEClass, ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoice__PaymentApplications(), ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoice__TimeEntries(), ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(invoiceAttributeEClass, InvoiceAttribute.class, "InvoiceAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInvoiceAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, InvoiceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2571,7 +2726,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		initEReference(getInvoiceContentType_ParentTypeId(), this.getInvoiceContentType(), null, "parentTypeId", null, 0, 1, InvoiceContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getInvoiceContentType_ParentTypeId().getEKeys().add(this.getInvoiceContentType_InvoiceContentTypeId());
 
-		addEOperation(invoiceContentTypeEClass, ecorePackage.getEString(), "childInvoiceContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceContentType__ChildInvoiceContentTypes(), ecorePackage.getEString(), "childInvoiceContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(invoiceItemEClass, InvoiceItem.class, "InvoiceItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInvoiceItem_InvoiceItemSeqId(), ecorePackage.getEString(), "invoiceItemSeqId", null, 1, 1, InvoiceItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2629,7 +2784,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		initEReference(getInvoiceItemAssocType_ParentTypeId(), this.getInvoiceItemAssocType(), null, "parentTypeId", null, 0, 1, InvoiceItemAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getInvoiceItemAssocType_ParentTypeId().getEKeys().add(this.getInvoiceItemAssocType_InvoiceItemAssocTypeId());
 
-		addEOperation(invoiceItemAssocTypeEClass, ecorePackage.getEString(), "childInvoiceItemAssocTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceItemAssocType__ChildInvoiceItemAssocTypes(), ecorePackage.getEString(), "childInvoiceItemAssocTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(invoiceItemAttributeEClass, InvoiceItemAttribute.class, "InvoiceItemAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInvoiceItemAttribute_InvoiceId(), ecorePackage.getEString(), "invoiceId", null, 1, 1, InvoiceItemAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2649,13 +2804,13 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		initEAttribute(getInvoiceItemType_InvoiceItemTypeAttrs(), ecorePackage.getEString(), "invoiceItemTypeAttrs", null, 0, -1, InvoiceItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInvoiceItemType_InvoiceItemTypeGlAccounts(), ecorePackage.getEString(), "invoiceItemTypeGlAccounts", null, 0, -1, InvoiceItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(invoiceItemTypeEClass, ecorePackage.getEString(), "agreementTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceItemType__AgreementTerms(), ecorePackage.getEString(), "agreementTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceItemTypeEClass, ecorePackage.getEString(), "childInvoiceItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceItemType__ChildInvoiceItemTypes(), ecorePackage.getEString(), "childInvoiceItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceItemTypeEClass, ecorePackage.getEString(), "invoiceItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceItemType__InvoiceItemTypeMaps(), ecorePackage.getEString(), "invoiceItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceItemTypeEClass, ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceItemType__InvoiceItems(), ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(invoiceItemTypeAttrEClass, InvoiceItemTypeAttr.class, "InvoiceItemTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInvoiceItemTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, InvoiceItemTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2730,13 +2885,13 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		getInvoiceType_ParentTypeId().getEKeys().add(this.getInvoiceType_InvoiceTypeId());
 		initEAttribute(getInvoiceType_InvoiceTypeAttrs(), ecorePackage.getEString(), "invoiceTypeAttrs", null, 0, -1, InvoiceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(invoiceTypeEClass, ecorePackage.getEString(), "childInvoiceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceType__ChildInvoiceTypes(), ecorePackage.getEString(), "childInvoiceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceTypeEClass, ecorePackage.getEString(), "invoiceItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceType__InvoiceItemTypeMaps(), ecorePackage.getEString(), "invoiceItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceTypeEClass, ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceType__Invoices(), ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(invoiceTypeEClass, ecorePackage.getEString(), "partyPrefDocTypeTpls", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getInvoiceType__PartyPrefDocTypeTpls(), ecorePackage.getEString(), "partyPrefDocTypeTpls", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(invoiceTypeAttrEClass, InvoiceTypeAttr.class, "InvoiceTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInvoiceTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, InvoiceTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2826,25 +2981,25 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(0),
+		  (getInvoice__AcctgTranss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(1),
+		  (getInvoice__InvoiceTerms(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(2),
+		  (getInvoice__PaymentApplications(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(3),
+		  (getInvoice__TimeEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2886,7 +3041,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (invoiceContentTypeEClass.getEOperations().get(0),
+		  (getInvoiceContentType__ChildInvoiceContentTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2934,7 +3089,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (invoiceItemAssocTypeEClass.getEOperations().get(0),
+		  (getInvoiceItemAssocType__ChildInvoiceItemAssocTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2964,25 +3119,25 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(0),
+		  (getInvoiceItemType__AgreementTerms(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(1),
+		  (getInvoiceItemType__ChildInvoiceItemTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(2),
+		  (getInvoiceItemType__InvoiceItemTypeMaps(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(3),
+		  (getInvoiceItemType__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -3042,25 +3197,25 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(0),
+		  (getInvoiceType__ChildInvoiceTypes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(1),
+		  (getInvoiceType__InvoiceItemTypeMaps(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(2),
+		  (getInvoiceType__Invoices(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(3),
+		  (getInvoiceType__PartyPrefDocTypeTpls(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -3094,7 +3249,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(0),
+		  (getInvoice__AcctgTranss(),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -3104,7 +3259,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(1),
+		  (getInvoice__InvoiceTerms(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceTerm",
@@ -3114,7 +3269,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(2),
+		  (getInvoice__PaymentApplications(),
 		   source,
 		   new String[] {
 			   "frame", "PaymentApplication",
@@ -3124,7 +3279,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceEClass.getEOperations().get(3),
+		  (getInvoice__TimeEntries(),
 		   source,
 		   new String[] {
 			   "frame", "TimeEntry",
@@ -3161,7 +3316,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceContentTypeEClass.getEOperations().get(0),
+		  (getInvoiceContentType__ChildInvoiceContentTypes(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceContentType",
@@ -3171,7 +3326,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceItemAssocTypeEClass.getEOperations().get(0),
+		  (getInvoiceItemAssocType__ChildInvoiceItemAssocTypes(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItemAssocType",
@@ -3181,7 +3336,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(0),
+		  (getInvoiceItemType__AgreementTerms(),
 		   source,
 		   new String[] {
 			   "frame", "AgreementTerm",
@@ -3191,7 +3346,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(1),
+		  (getInvoiceItemType__ChildInvoiceItemTypes(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItemType",
@@ -3201,7 +3356,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(2),
+		  (getInvoiceItemType__InvoiceItemTypeMaps(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItemTypeMap",
@@ -3211,7 +3366,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceItemTypeEClass.getEOperations().get(3),
+		  (getInvoiceItemType__InvoiceItems(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItem",
@@ -3248,7 +3403,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(0),
+		  (getInvoiceType__ChildInvoiceTypes(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceType",
@@ -3258,7 +3413,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(1),
+		  (getInvoiceType__InvoiceItemTypeMaps(),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItemTypeMap",
@@ -3268,7 +3423,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(2),
+		  (getInvoiceType__Invoices(),
 		   source,
 		   new String[] {
 			   "frame", "Invoice",
@@ -3278,7 +3433,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (invoiceTypeEClass.getEOperations().get(3),
+		  (getInvoiceType__PartyPrefDocTypeTpls(),
 		   source,
 		   new String[] {
 			   "frame", "PartyPrefDocTypeTpl",

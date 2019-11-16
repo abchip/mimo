@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -143,6 +145,20 @@ public class TelecomNumberImpl extends ContactMechImpl implements TelecomNumber 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContactPackage.TELECOM_NUMBER___DESTINATION_SHIPMENTS:
+				return destinationShipments();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TelecomNumberImpl

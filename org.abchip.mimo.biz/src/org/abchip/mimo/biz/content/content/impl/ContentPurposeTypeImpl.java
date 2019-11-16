@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentPurpose;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -116,6 +118,22 @@ public class ContentPurposeTypeImpl extends BizEntityTypeImpl<ContentPurpose> im
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContentPackage.CONTENT_PURPOSE_TYPE___CONTENT_PURPOSES:
+				return contentPurposes();
+			case ContentPackage.CONTENT_PURPOSE_TYPE___DATA_RESOURCE_PURPOSES:
+				return dataResourcePurposes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ContentPurposeTypeImpl

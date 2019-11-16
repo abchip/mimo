@@ -1249,7 +1249,7 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizProviderConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		bizProviderUserEClass.getESuperTypes().add(this.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(bizEntityEClass, BizEntity.class, "BizEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bizEntityNoteEClass, BizEntityNote.class, "BizEntityNote", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

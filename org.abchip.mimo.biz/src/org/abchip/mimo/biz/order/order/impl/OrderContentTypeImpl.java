@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderContent;
 import org.abchip.mimo.biz.order.order.OrderContentType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -146,6 +148,20 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OrderPackage.ORDER_CONTENT_TYPE___CHILD_ORDER_CONTENT_TYPES:
+				return childOrderContentTypes();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //OrderContentTypeImpl

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -24,6 +25,7 @@ import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -1815,6 +1817,70 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ProductPackage.PRODUCT___AGREEMENTS:
+				return agreements();
+			case ProductPackage.PRODUCT___CART_ABANDONED_LINES:
+				return cartAbandonedLines();
+			case ProductPackage.PRODUCT___COST_COMPONENTS:
+				return costComponents();
+			case ProductPackage.PRODUCT___CUST_REQUEST_ITEMS:
+				return custRequestItems();
+			case ProductPackage.PRODUCT___GOOD_IDENTIFICATIONS:
+				return goodIdentifications();
+			case ProductPackage.PRODUCT___INSTANCE_OF_FIXED_ASSETS:
+				return instanceOfFixedAssets();
+			case ProductPackage.PRODUCT___INVENTORY_ITEMS:
+				return inventoryItems();
+			case ProductPackage.PRODUCT___INVOICE_ITEMS:
+				return invoiceItems();
+			case ProductPackage.PRODUCT___ORDER_ITEMS:
+				return orderItems();
+			case ProductPackage.PRODUCT___PRODUCT_FOR_PRODUCT_MANUFACTURING_RULES:
+				return productForProductManufacturingRules();
+			case ProductPackage.PRODUCT___PRODUCT_GROUP_ORDERS:
+				return productGroupOrders();
+			case ProductPackage.PRODUCT___PRODUCT_IN_PRODUCT_MANUFACTURING_RULES:
+				return productInProductManufacturingRules();
+			case ProductPackage.PRODUCT___PRODUCT_MANUFACTURING_RULES:
+				return productManufacturingRules();
+			case ProductPackage.PRODUCT___PRODUCT_PRODUCT_CONFIG_STATSS:
+				return productProductConfigStatss();
+			case ProductPackage.PRODUCT___PRODUCT_REVIEWS:
+				return productReviews();
+			case ProductPackage.PRODUCT___PRODUCT_STORE_SURVEY_APPLS:
+				return productStoreSurveyAppls();
+			case ProductPackage.PRODUCT___PRODUCT_SUBST_PRODUCT_MANUFACTURING_RULES:
+				return productSubstProductManufacturingRules();
+			case ProductPackage.PRODUCT___QUOTE_ITEMS:
+				return quoteItems();
+			case ProductPackage.PRODUCT___REORDER_GUIDELINES:
+				return reorderGuidelines();
+			case ProductPackage.PRODUCT___REQUIREMENTS:
+				return requirements();
+			case ProductPackage.PRODUCT___RETURN_ITEMS:
+				return returnItems();
+			case ProductPackage.PRODUCT___SALES_FORECAST_DETAILS:
+				return salesForecastDetails();
+			case ProductPackage.PRODUCT___SHIPMENT_ITEMS:
+				return shipmentItems();
+			case ProductPackage.PRODUCT___SHIPMENT_RECEIPTS:
+				return shipmentReceipts();
+			case ProductPackage.PRODUCT___SHOPPING_LIST_ITEMS:
+				return shoppingListItems();
+			case ProductPackage.PRODUCT___SUBSCRIPTIONS:
+				return subscriptions();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

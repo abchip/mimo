@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.PaymentType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -181,6 +183,22 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PaymentPackage.PAYMENT_TYPE___CHILD_PAYMENT_TYPES:
+				return childPaymentTypes();
+			case PaymentPackage.PAYMENT_TYPE___PAYMENTS:
+				return payments();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //PaymentTypeImpl

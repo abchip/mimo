@@ -791,7 +791,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Add supertypes to classes
 		standardLanguageEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(standardLanguageEClass, StandardLanguage.class, "StandardLanguage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStandardLanguage_StandardLanguageId(), ecorePackage.getEString(), "standardLanguageId", null, 1, 1, StandardLanguage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStandardLanguage_LangCharset(), ecorePackage.getEString(), "langCharset", null, 0, 1, StandardLanguage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.service.schedule.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -287,6 +289,24 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SchedulePackage.TEMPORAL_EXPRESSION___JOB_SANDBOXS:
+				return jobSandboxs();
+			case SchedulePackage.TEMPORAL_EXPRESSION___TO_TEMPORAL_EXPRESSION_ASSOCS:
+				return toTemporalExpressionAssocs();
+			case SchedulePackage.TEMPORAL_EXPRESSION___WORK_EFFORTS:
+				return workEfforts();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TemporalExpressionImpl

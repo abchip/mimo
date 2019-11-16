@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.PlatformType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -124,6 +126,20 @@ public class PlatformTypeImpl extends BizEntityImpl implements PlatformType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case VisitPackage.PLATFORM_TYPE___USER_AGENTS:
+				return userAgents();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //PlatformTypeImpl

@@ -1300,7 +1300,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		supplierProductFeatureEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		supplierRatingTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(marketInterestEClass, MarketInterest.class, "MarketInterest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMarketInterest_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketInterest_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

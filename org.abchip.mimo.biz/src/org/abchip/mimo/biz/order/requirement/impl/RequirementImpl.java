@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.requirement.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.order.requirement.RequirementType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -483,6 +485,20 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RequirementPackage.REQUIREMENT___DESIRED_FEATURES:
+				return desiredFeatures();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //RequirementImpl

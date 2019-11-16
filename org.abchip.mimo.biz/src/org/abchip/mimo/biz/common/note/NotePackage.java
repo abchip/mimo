@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.common.note;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -190,6 +191,124 @@ public interface NotePackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Cust Request Notes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___CUST_REQUEST_NOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Invoice Notes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___INVOICE_NOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Marketing Campaign Notes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___MARKETING_CAMPAIGN_NOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Order Header Notes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___ORDER_HEADER_NOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Party Notes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___PARTY_NOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Quote Notes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___QUOTE_NOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Work Effort Notes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___WORK_EFFORT_NOTES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA___WORK_EFFORTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 7;
+
+	/**
+	 * The number of operations of the '<em>Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DATA_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 8;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.note.NoteData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -288,6 +407,86 @@ public interface NotePackage extends EPackage {
 	EReference getNoteData_NoteParty();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#custRequestNotes() <em>Cust Request Notes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cust Request Notes</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#custRequestNotes()
+	 * @generated
+	 */
+	EOperation getNoteData__CustRequestNotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#invoiceNotes() <em>Invoice Notes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Invoice Notes</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#invoiceNotes()
+	 * @generated
+	 */
+	EOperation getNoteData__InvoiceNotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#marketingCampaignNotes() <em>Marketing Campaign Notes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Marketing Campaign Notes</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#marketingCampaignNotes()
+	 * @generated
+	 */
+	EOperation getNoteData__MarketingCampaignNotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#orderHeaderNotes() <em>Order Header Notes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Header Notes</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#orderHeaderNotes()
+	 * @generated
+	 */
+	EOperation getNoteData__OrderHeaderNotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#partyNotes() <em>Party Notes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Party Notes</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#partyNotes()
+	 * @generated
+	 */
+	EOperation getNoteData__PartyNotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#quoteNotes() <em>Quote Notes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quote Notes</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#quoteNotes()
+	 * @generated
+	 */
+	EOperation getNoteData__QuoteNotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#workEffortNotes() <em>Work Effort Notes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Effort Notes</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#workEffortNotes()
+	 * @generated
+	 */
+	EOperation getNoteData__WorkEffortNotes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.note.NoteData#workEfforts() <em>Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.common.note.NoteData#workEfforts()
+	 * @generated
+	 */
+	EOperation getNoteData__WorkEfforts();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -382,6 +581,70 @@ public interface NotePackage extends EPackage {
 		 * @generated
 		 */
 		EReference NOTE_DATA__NOTE_PARTY = eINSTANCE.getNoteData_NoteParty();
+
+		/**
+		 * The meta object literal for the '<em><b>Cust Request Notes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___CUST_REQUEST_NOTES = eINSTANCE.getNoteData__CustRequestNotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoice Notes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___INVOICE_NOTES = eINSTANCE.getNoteData__InvoiceNotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Marketing Campaign Notes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___MARKETING_CAMPAIGN_NOTES = eINSTANCE.getNoteData__MarketingCampaignNotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Header Notes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___ORDER_HEADER_NOTES = eINSTANCE.getNoteData__OrderHeaderNotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Party Notes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___PARTY_NOTES = eINSTANCE.getNoteData__PartyNotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Quote Notes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___QUOTE_NOTES = eINSTANCE.getNoteData__QuoteNotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Effort Notes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___WORK_EFFORT_NOTES = eINSTANCE.getNoteData__WorkEffortNotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NOTE_DATA___WORK_EFFORTS = eINSTANCE.getNoteData__WorkEfforts();
 
 	}
 

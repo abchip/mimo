@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.webapp.website.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
@@ -14,6 +15,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.abchip.mimo.biz.webapp.website.WebsitePackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -456,6 +458,24 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case WebsitePackage.WEB_SITE___ORDER_HEADERS:
+				return orderHeaders();
+			case WebsitePackage.WEB_SITE___SUBSCRIPTION_RESOURCES:
+				return subscriptionResources();
+			case WebsitePackage.WEB_SITE___WEB_PAGES:
+				return webPages();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //WebSiteImpl

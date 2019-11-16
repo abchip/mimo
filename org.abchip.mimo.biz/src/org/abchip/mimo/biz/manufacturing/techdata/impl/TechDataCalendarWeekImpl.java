@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.manufacturing.techdata.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -410,6 +412,22 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case TechdataPackage.TECH_DATA_CALENDAR_WEEK___TECH_DATA_CALENDAR_EXC_WEEKS:
+				return techDataCalendarExcWeeks();
+			case TechdataPackage.TECH_DATA_CALENDAR_WEEK___TECH_DATA_CALENDARS:
+				return techDataCalendars();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TechDataCalendarWeekImpl

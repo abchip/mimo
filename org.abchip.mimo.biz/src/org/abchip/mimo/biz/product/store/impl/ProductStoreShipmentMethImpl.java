@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -655,6 +657,20 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case StorePackage.PRODUCT_STORE_SHIPMENT_METH___SHIPMENT_COST_ESTIMATES:
+				return shipmentCostEstimates();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ProductStoreShipmentMethImpl

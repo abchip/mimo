@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.common.method;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -162,6 +163,132 @@ public interface MethodPackage extends EPackage {
 	int CUSTOM_METHOD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
+
+	/**
+	 * The operation id for the '<em>Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___CONTENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Cost Component Calcs</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___COST_COMPONENT_CALCS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Invoice Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___INVOICE_PARTY_ACCTG_PREFERENCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Order Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___ORDER_PARTY_ACCTG_PREFERENCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Product Store Shipment Meths</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___PRODUCT_STORE_SHIPMENT_METHS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Quote Party Acctg Preferences</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___QUOTE_PARTY_ACCTG_PREFERENCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Uom Custom Method Uom Conversions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___UOM_CUSTOM_METHOD_UOM_CONVERSIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Work Efforts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD___WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
+
+	/**
+	 * The number of operations of the '<em>Custom Method</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.method.impl.CustomMethodTypeImpl <em>Custom Method Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -263,6 +390,106 @@ public interface MethodPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Frame</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
+
+	/**
+	 * The operation id for the '<em>Get Type Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
+
+	/**
+	 * The operation id for the '<em>Has Table</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Child Custom Method Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___CHILD_CUSTOM_METHOD_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Custom Methods</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE___CUSTOM_METHODS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Custom Method Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.method.CustomMethod <em>Custom Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -328,6 +555,86 @@ public interface MethodPackage extends EPackage {
 	EAttribute getCustomMethod_FixedAssetDepMethods();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#contents() <em>Contents</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Contents</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#contents()
+	 * @generated
+	 */
+	EOperation getCustomMethod__Contents();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#costComponentCalcs() <em>Cost Component Calcs</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cost Component Calcs</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#costComponentCalcs()
+	 * @generated
+	 */
+	EOperation getCustomMethod__CostComponentCalcs();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#invoicePartyAcctgPreferences() <em>Invoice Party Acctg Preferences</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Invoice Party Acctg Preferences</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#invoicePartyAcctgPreferences()
+	 * @generated
+	 */
+	EOperation getCustomMethod__InvoicePartyAcctgPreferences();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#orderPartyAcctgPreferences() <em>Order Party Acctg Preferences</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Order Party Acctg Preferences</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#orderPartyAcctgPreferences()
+	 * @generated
+	 */
+	EOperation getCustomMethod__OrderPartyAcctgPreferences();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#productStoreShipmentMeths() <em>Product Store Shipment Meths</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Product Store Shipment Meths</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#productStoreShipmentMeths()
+	 * @generated
+	 */
+	EOperation getCustomMethod__ProductStoreShipmentMeths();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#quotePartyAcctgPreferences() <em>Quote Party Acctg Preferences</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Quote Party Acctg Preferences</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#quotePartyAcctgPreferences()
+	 * @generated
+	 */
+	EOperation getCustomMethod__QuotePartyAcctgPreferences();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#uomCustomMethodUomConversions() <em>Uom Custom Method Uom Conversions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Uom Custom Method Uom Conversions</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#uomCustomMethodUomConversions()
+	 * @generated
+	 */
+	EOperation getCustomMethod__UomCustomMethodUomConversions();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethod#workEfforts() <em>Work Efforts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Work Efforts</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethod#workEfforts()
+	 * @generated
+	 */
+	EOperation getCustomMethod__WorkEfforts();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.method.CustomMethodType <em>Custom Method Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -380,6 +687,26 @@ public interface MethodPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCustomMethodType_ParentTypeId();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethodType#childCustomMethodTypes() <em>Child Custom Method Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Child Custom Method Types</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethodType#childCustomMethodTypes()
+	 * @generated
+	 */
+	EOperation getCustomMethodType__ChildCustomMethodTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.method.CustomMethodType#customMethods() <em>Custom Methods</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Custom Methods</em>' operation.
+	 * @see org.abchip.mimo.biz.common.method.CustomMethodType#customMethods()
+	 * @generated
+	 */
+	EOperation getCustomMethodType__CustomMethods();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -454,6 +781,70 @@ public interface MethodPackage extends EPackage {
 		EAttribute CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS = eINSTANCE.getCustomMethod_FixedAssetDepMethods();
 
 		/**
+		 * The meta object literal for the '<em><b>Contents</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___CONTENTS = eINSTANCE.getCustomMethod__Contents();
+
+		/**
+		 * The meta object literal for the '<em><b>Cost Component Calcs</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___COST_COMPONENT_CALCS = eINSTANCE.getCustomMethod__CostComponentCalcs();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoice Party Acctg Preferences</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___INVOICE_PARTY_ACCTG_PREFERENCES = eINSTANCE.getCustomMethod__InvoicePartyAcctgPreferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Party Acctg Preferences</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___ORDER_PARTY_ACCTG_PREFERENCES = eINSTANCE.getCustomMethod__OrderPartyAcctgPreferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Store Shipment Meths</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___PRODUCT_STORE_SHIPMENT_METHS = eINSTANCE.getCustomMethod__ProductStoreShipmentMeths();
+
+		/**
+		 * The meta object literal for the '<em><b>Quote Party Acctg Preferences</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___QUOTE_PARTY_ACCTG_PREFERENCES = eINSTANCE.getCustomMethod__QuotePartyAcctgPreferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Uom Custom Method Uom Conversions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___UOM_CUSTOM_METHOD_UOM_CONVERSIONS = eINSTANCE.getCustomMethod__UomCustomMethodUomConversions();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD___WORK_EFFORTS = eINSTANCE.getCustomMethod__WorkEfforts();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.method.impl.CustomMethodTypeImpl <em>Custom Method Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -494,6 +885,22 @@ public interface MethodPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CUSTOM_METHOD_TYPE__PARENT_TYPE_ID = eINSTANCE.getCustomMethodType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Custom Method Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD_TYPE___CHILD_CUSTOM_METHOD_TYPES = eINSTANCE.getCustomMethodType__ChildCustomMethodTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Methods</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOM_METHOD_TYPE___CUSTOM_METHODS = eINSTANCE.getCustomMethodType__CustomMethods();
 
 	}
 

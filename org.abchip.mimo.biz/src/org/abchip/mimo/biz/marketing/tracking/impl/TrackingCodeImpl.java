@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.marketing.tracking.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -463,6 +465,20 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case TrackingPackage.TRACKING_CODE___TRACKING_CODE_ORDERS:
+				return trackingCodeOrders();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TrackingCodeImpl

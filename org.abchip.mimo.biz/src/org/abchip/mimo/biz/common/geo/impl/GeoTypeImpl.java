@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.common.geo.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -137,6 +139,22 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case GeoPackage.GEO_TYPE___CHILD_GEO_TYPES:
+				return childGeoTypes();
+			case GeoPackage.GEO_TYPE___GEOS:
+				return geos();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

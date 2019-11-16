@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.manufacturing.techdata;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -162,6 +163,60 @@ public interface TechdataPackage extends EPackage {
 	int TECH_DATA_CALENDAR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Fixed Assets</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR___FIXED_ASSETS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Tech Data Calendar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl <em>Tech Data Calendar Exc Day</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -262,6 +317,51 @@ public interface TechdataPackage extends EPackage {
 	int TECH_DATA_CALENDAR_EXC_DAY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_DAY___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_DAY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_DAY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_DAY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Tech Data Calendar Exc Day</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_DAY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcWeekImpl <em>Tech Data Calendar Exc Week</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -351,6 +451,51 @@ public interface TechdataPackage extends EPackage {
 	 * @ordered
 	 */
 	int TECH_DATA_CALENDAR_EXC_WEEK_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_WEEK___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_WEEK___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_WEEK___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_WEEK___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The number of operations of the '<em>Tech Data Calendar Exc Week</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_WEEK_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarWeekImpl <em>Tech Data Calendar Week</em>}' class.
@@ -553,6 +698,70 @@ public interface TechdataPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_WEEK___ISA = BizPackage.BIZ_ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_WEEK___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_WEEK___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_WEEK___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Tech Data Calendar Exc Weeks</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_WEEK___TECH_DATA_CALENDAR_EXC_WEEKS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Tech Data Calendars</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_WEEK___TECH_DATA_CALENDARS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Tech Data Calendar Week</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_WEEK_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar <em>Tech Data Calendar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -616,6 +825,16 @@ public interface TechdataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTechDataCalendar_TechDataCalendarExcWeeks();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#fixedAssets() <em>Fixed Assets</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fixed Assets</em>' operation.
+	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#fixedAssets()
+	 * @generated
+	 */
+	EOperation getTechDataCalendar__FixedAssets();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay <em>Tech Data Calendar Exc Day</em>}'.
@@ -923,6 +1142,26 @@ public interface TechdataPackage extends EPackage {
 	EAttribute getTechDataCalendarWeek_WednesdayStartTime();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek#techDataCalendarExcWeeks() <em>Tech Data Calendar Exc Weeks</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Tech Data Calendar Exc Weeks</em>' operation.
+	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek#techDataCalendarExcWeeks()
+	 * @generated
+	 */
+	EOperation getTechDataCalendarWeek__TechDataCalendarExcWeeks();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek#techDataCalendars() <em>Tech Data Calendars</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Tech Data Calendars</em>' operation.
+	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek#techDataCalendars()
+	 * @generated
+	 */
+	EOperation getTechDataCalendarWeek__TechDataCalendars();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,6 +1232,14 @@ public interface TechdataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS = eINSTANCE.getTechDataCalendar_TechDataCalendarExcWeeks();
+
+		/**
+		 * The meta object literal for the '<em><b>Fixed Assets</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TECH_DATA_CALENDAR___FIXED_ASSETS = eINSTANCE.getTechDataCalendar__FixedAssets();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl <em>Tech Data Calendar Exc Day</em>}' class.
@@ -1223,6 +1470,22 @@ public interface TechdataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME = eINSTANCE.getTechDataCalendarWeek_WednesdayStartTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Tech Data Calendar Exc Weeks</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TECH_DATA_CALENDAR_WEEK___TECH_DATA_CALENDAR_EXC_WEEKS = eINSTANCE.getTechDataCalendarWeek__TechDataCalendarExcWeeks();
+
+		/**
+		 * The meta object literal for the '<em><b>Tech Data Calendars</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TECH_DATA_CALENDAR_WEEK___TECH_DATA_CALENDARS = eINSTANCE.getTechDataCalendarWeek__TechDataCalendars();
 
 	}
 

@@ -7,12 +7,14 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -137,6 +139,22 @@ public class PaymentGatewayConfigTypeImpl extends BizEntityTypeImpl<PaymentGatew
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PaymentPackage.PAYMENT_GATEWAY_CONFIG_TYPE___CHILD_PAYMENT_GATEWAY_CONFIG_TYPES:
+				return childPaymentGatewayConfigTypes();
+			case PaymentPackage.PAYMENT_GATEWAY_CONFIG_TYPE___PAYMENT_GATEWAY_CONFIGS:
+				return paymentGatewayConfigs();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

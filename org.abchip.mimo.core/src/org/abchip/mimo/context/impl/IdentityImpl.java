@@ -8,12 +8,14 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.security.Principal;
 
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.Identity;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -68,6 +70,20 @@ public class IdentityImpl<T extends Entity> extends EntityImpl implements Identi
 	@Override
 	public Principal getJavaPrincipal() {
 		return this.principal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ContextPackage.IDENTITY___GET_JAVA_PRINCIPAL:
+				return getJavaPrincipal();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //IdentityImpl

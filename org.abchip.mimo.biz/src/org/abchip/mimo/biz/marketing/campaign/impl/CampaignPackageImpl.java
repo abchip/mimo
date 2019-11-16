@@ -199,6 +199,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -892,6 +893,46 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getMarketingCampaign__ChildMarketingCampaigns() {
+		return marketingCampaignEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMarketingCampaign__ContactLists() {
+		return marketingCampaignEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMarketingCampaign__SalesOpportunities() {
+		return marketingCampaignEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMarketingCampaign__TrackingCodes() {
+		return marketingCampaignEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMarketingCampaignNote() {
 		return marketingCampaignNoteEClass;
 	}
@@ -1116,6 +1157,10 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		createEReference(marketingCampaignEClass, MARKETING_CAMPAIGN__STATUS_ID);
 		createEReference(marketingCampaignEClass, MARKETING_CAMPAIGN__CURRENCY_UOM_ID);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES);
+		createEOperation(marketingCampaignEClass, MARKETING_CAMPAIGN___CHILD_MARKETING_CAMPAIGNS);
+		createEOperation(marketingCampaignEClass, MARKETING_CAMPAIGN___CONTACT_LISTS);
+		createEOperation(marketingCampaignEClass, MARKETING_CAMPAIGN___SALES_OPPORTUNITIES);
+		createEOperation(marketingCampaignEClass, MARKETING_CAMPAIGN___TRACKING_CODES);
 
 		marketingCampaignNoteEClass = createEClass(MARKETING_CAMPAIGN_NOTE);
 		createEReference(marketingCampaignNoteEClass, MARKETING_CAMPAIGN_NOTE__MARKETING_CAMPAIGN_ID);
@@ -1182,7 +1227,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		marketingCampaignPromoEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		marketingCampaignRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(marketingCampaignEClass, MarketingCampaign.class, "MarketingCampaign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMarketingCampaign_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 1, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_ActualCost(), ecorePackage.getEBigDecimal(), "actualCost", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1208,13 +1253,13 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		getMarketingCampaign_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEAttribute(getMarketingCampaign_MarketingCampaignNotes(), ecorePackage.getEString(), "marketingCampaignNotes", null, 0, -1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(marketingCampaignEClass, ecorePackage.getEString(), "childMarketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMarketingCampaign__ChildMarketingCampaigns(), ecorePackage.getEString(), "childMarketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(marketingCampaignEClass, ecorePackage.getEString(), "contactLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMarketingCampaign__ContactLists(), ecorePackage.getEString(), "contactLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(marketingCampaignEClass, ecorePackage.getEString(), "salesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMarketingCampaign__SalesOpportunities(), ecorePackage.getEString(), "salesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(marketingCampaignEClass, ecorePackage.getEString(), "trackingCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMarketingCampaign__TrackingCodes(), ecorePackage.getEString(), "trackingCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(marketingCampaignNoteEClass, MarketingCampaignNote.class, "MarketingCampaignNote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMarketingCampaignNote_MarketingCampaignId(), this.getMarketingCampaign(), null, "marketingCampaignId", null, 0, 1, MarketingCampaignNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1262,25 +1307,25 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(0),
+		  (getMarketingCampaign__ChildMarketingCampaigns(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(1),
+		  (getMarketingCampaign__ContactLists(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(2),
+		  (getMarketingCampaign__SalesOpportunities(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(3),
+		  (getMarketingCampaign__TrackingCodes(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1326,7 +1371,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(0),
+		  (getMarketingCampaign__ChildMarketingCampaigns(),
 		   source,
 		   new String[] {
 			   "frame", "MarketingCampaign",
@@ -1336,7 +1381,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(1),
+		  (getMarketingCampaign__ContactLists(),
 		   source,
 		   new String[] {
 			   "frame", "ContactList",
@@ -1346,7 +1391,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(2),
+		  (getMarketingCampaign__SalesOpportunities(),
 		   source,
 		   new String[] {
 			   "frame", "SalesOpportunity",
@@ -1356,7 +1401,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (marketingCampaignEClass.getEOperations().get(3),
+		  (getMarketingCampaign__TrackingCodes(),
 		   source,
 		   new String[] {
 			   "frame", "TrackingCode",

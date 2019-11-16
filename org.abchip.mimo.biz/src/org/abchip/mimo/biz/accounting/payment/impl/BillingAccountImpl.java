@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,7 @@ import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -272,6 +274,30 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PaymentPackage.BILLING_ACCOUNT___BILLING_ACCOUNT_TERMS:
+				return billingAccountTerms();
+			case PaymentPackage.BILLING_ACCOUNT___INVOICES:
+				return invoices();
+			case PaymentPackage.BILLING_ACCOUNT___ORDER_HEADERS:
+				return orderHeaders();
+			case PaymentPackage.BILLING_ACCOUNT___PAYMENT_APPLICATIONS:
+				return paymentApplications();
+			case PaymentPackage.BILLING_ACCOUNT___RETURN_HEADERS:
+				return returnHeaders();
+			case PaymentPackage.BILLING_ACCOUNT___RETURN_ITEM_RESPONSES:
+				return returnItemResponses();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

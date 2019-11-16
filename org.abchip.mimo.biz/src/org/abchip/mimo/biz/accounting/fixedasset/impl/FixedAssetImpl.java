@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -24,6 +25,7 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -693,6 +695,38 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case FixedassetPackage.FIXED_ASSET___ACCOMMODATION_MAPS:
+				return accommodationMaps();
+			case FixedassetPackage.FIXED_ASSET___ACCOMMODATION_SPOTS:
+				return accommodationSpots();
+			case FixedassetPackage.FIXED_ASSET___ACCTG_TRANSS:
+				return acctgTranss();
+			case FixedassetPackage.FIXED_ASSET___CHILD_FIXED_ASSETS:
+				return childFixedAssets();
+			case FixedassetPackage.FIXED_ASSET___COST_COMPONENTS:
+				return costComponents();
+			case FixedassetPackage.FIXED_ASSET___DELIVERIES:
+				return deliveries();
+			case FixedassetPackage.FIXED_ASSET___FIXED_ASSET_DEP_METHODS:
+				return fixedAssetDepMethods();
+			case FixedassetPackage.FIXED_ASSET___FIXED_ASSET_INVENTORY_ITEMS:
+				return fixedAssetInventoryItems();
+			case FixedassetPackage.FIXED_ASSET___REQUIREMENTS:
+				return requirements();
+			case FixedassetPackage.FIXED_ASSET___WORK_EFFORTS:
+				return workEfforts();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

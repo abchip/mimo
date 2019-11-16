@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.common.portal.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
@@ -14,6 +15,7 @@ import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -223,6 +225,20 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PortalPackage.PORTAL_PAGE___CHILD_PORTAL_PAGES:
+				return childPortalPages();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

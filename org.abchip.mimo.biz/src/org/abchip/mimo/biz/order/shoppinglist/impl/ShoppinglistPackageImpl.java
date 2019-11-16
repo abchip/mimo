@@ -200,6 +200,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -913,6 +914,26 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 	 * @generated
 	 */
 	@Override
+	public EOperation getShoppingList__AutoOrderOrderHeaders() {
+		return shoppingListEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getShoppingList__ChildShoppingLists() {
+		return shoppingListEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getShoppingListItem() {
 		return shoppingListItemEClass;
 	}
@@ -1093,6 +1114,16 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 	 * @generated
 	 */
 	@Override
+	public EOperation getShoppingListType__ShoppingLists() {
+		return shoppingListTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getShoppingListWorkEffort() {
 		return shoppingListWorkEffortEClass;
 	}
@@ -1169,6 +1200,8 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		createEReference(shoppingListEClass, SHOPPING_LIST__PRODUCT_PROMO_CODE_ID);
 		createEAttribute(shoppingListEClass, SHOPPING_LIST__SHOPPING_LIST_ITEMS);
 		createEAttribute(shoppingListEClass, SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS);
+		createEOperation(shoppingListEClass, SHOPPING_LIST___AUTO_ORDER_ORDER_HEADERS);
+		createEOperation(shoppingListEClass, SHOPPING_LIST___CHILD_SHOPPING_LISTS);
 
 		shoppingListItemEClass = createEClass(SHOPPING_LIST_ITEM);
 		createEAttribute(shoppingListItemEClass, SHOPPING_LIST_ITEM__SHOPPING_LIST_ITEM_SEQ_ID);
@@ -1190,6 +1223,7 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		shoppingListTypeEClass = createEClass(SHOPPING_LIST_TYPE);
 		createEAttribute(shoppingListTypeEClass, SHOPPING_LIST_TYPE__SHOPPING_LIST_TYPE_ID);
 		createEAttribute(shoppingListTypeEClass, SHOPPING_LIST_TYPE__DESCRIPTION);
+		createEOperation(shoppingListTypeEClass, SHOPPING_LIST_TYPE___SHOPPING_LISTS);
 
 		shoppingListWorkEffortEClass = createEClass(SHOPPING_LIST_WORK_EFFORT);
 		createEReference(shoppingListWorkEffortEClass, SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID);
@@ -1248,7 +1282,7 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		shoppingListTypeEClass.getEGenericSuperTypes().add(g1);
 		shoppingListWorkEffortEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(shoppingListEClass, ShoppingList.class, "ShoppingList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getShoppingList_ShoppingListId(), ecorePackage.getEString(), "shoppingListId", null, 1, 1, ShoppingList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShoppingList_CarrierPartyId(), ecorePackage.getEString(), "carrierPartyId", null, 0, 1, ShoppingList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1281,9 +1315,9 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		initEAttribute(getShoppingList_ShoppingListItems(), ecorePackage.getEString(), "shoppingListItems", null, 0, -1, ShoppingList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShoppingList_ShoppingListWorkEfforts(), ecorePackage.getEString(), "shoppingListWorkEfforts", null, 0, -1, ShoppingList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(shoppingListEClass, ecorePackage.getEString(), "autoOrderOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getShoppingList__AutoOrderOrderHeaders(), ecorePackage.getEString(), "autoOrderOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(shoppingListEClass, ecorePackage.getEString(), "childShoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getShoppingList__ChildShoppingLists(), ecorePackage.getEString(), "childShoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shoppingListItemEClass, ShoppingListItem.class, "ShoppingListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getShoppingListItem_ShoppingListItemSeqId(), ecorePackage.getEString(), "shoppingListItemSeqId", null, 1, 1, ShoppingListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1310,7 +1344,7 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		initEAttribute(getShoppingListType_ShoppingListTypeId(), ecorePackage.getEString(), "shoppingListTypeId", null, 1, 1, ShoppingListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShoppingListType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShoppingListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(shoppingListTypeEClass, ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getShoppingListType__ShoppingLists(), ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shoppingListWorkEffortEClass, ShoppingListWorkEffort.class, "ShoppingListWorkEffort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getShoppingListWorkEffort_ShoppingListId(), this.getShoppingList(), null, "shoppingListId", null, 0, 1, ShoppingListWorkEffort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1358,13 +1392,13 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (shoppingListEClass.getEOperations().get(0),
+		  (getShoppingList__AutoOrderOrderHeaders(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (shoppingListEClass.getEOperations().get(1),
+		  (getShoppingList__ChildShoppingLists(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1400,7 +1434,7 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			   "key", "true"
 		   });
 		addAnnotation
-		  (shoppingListTypeEClass.getEOperations().get(0),
+		  (getShoppingListType__ShoppingLists(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1422,7 +1456,7 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (shoppingListEClass.getEOperations().get(0),
+		  (getShoppingList__AutoOrderOrderHeaders(),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -1432,7 +1466,7 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (shoppingListEClass.getEOperations().get(1),
+		  (getShoppingList__ChildShoppingLists(),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingList",
@@ -1460,7 +1494,7 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (shoppingListTypeEClass.getEOperations().get(0),
+		  (getShoppingListType__ShoppingLists(),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingList",

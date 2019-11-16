@@ -13,6 +13,7 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -165,6 +166,78 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION___ISA = EntityPackage.ENTITY_NAMEABLE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION___GET_NAME = EntityPackage.ENTITY_NAMEABLE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION___GET_URI = EntityPackage.ENTITY_NAMEABLE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION___IS_PROXY = EntityPackage.ENTITY_NAMEABLE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION___GET_TEXT = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Context</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION___GET_CONTEXT = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Context Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION___GET_CONTEXT_DESCRIPTION = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Application</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_OPERATION_COUNT = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -238,6 +311,69 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT___ISA = EntityPackage.ENTITY_NAMEABLE___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT___GET_NAME = EntityPackage.ENTITY_NAMEABLE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get URI</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT___GET_URI = EntityPackage.ENTITY_NAMEABLE___GET_URI;
+
+	/**
+	 * The operation id for the '<em>Is Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT___IS_PROXY = EntityPackage.ENTITY_NAMEABLE___IS_PROXY;
+
+	/**
+	 * The operation id for the '<em>Get Context</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT___GET_CONTEXT = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Context Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT___GET_CONTEXT_DESCRIPTION = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT_OPERATION_COUNT = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ApplicationManager <em>Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -255,6 +391,42 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int APPLICATION_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_MANAGER___START__CLASS_APPLICATION_OUTPUTSTREAM = 0;
+
+	/**
+	 * The operation id for the '<em>Restart</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_MANAGER___RESTART__APPLICATION = 1;
+
+	/**
+	 * The operation id for the '<em>Stop</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_MANAGER___STOP__APPLICATION = 2;
+
+	/**
+	 * The number of operations of the '<em>Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_MANAGER_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationModuleImpl <em>Module</em>}' class.
@@ -294,6 +466,24 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_MODULE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_MODULE___ISA = EntityPackage.ENTITY___ISA;
+
+	/**
+	 * The number of operations of the '<em>Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_MODULE_OPERATION_COUNT = EntityPackage.ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRefImpl <em>Service Ref</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -329,6 +519,33 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_REF_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REF___ISA = EntityPackage.ENTITY___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REF___GET_INTERFACE_NAME = EntityPackage.ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Service Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REF_OPERATION_COUNT = EntityPackage.ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceCommandProviderImpl <em>Service Command Provider</em>}' class.
@@ -437,6 +654,33 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_COMMAND_PROVIDER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_COMMAND_PROVIDER___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_COMMAND_PROVIDER___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Command Provider</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_COMMAND_PROVIDER_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Entities</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -453,6 +697,15 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_CONFIG_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Service Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_CONFIG_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -480,6 +733,33 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_HOOK_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_HOOK___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_HOOK___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Hook</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_HOOK_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -527,6 +807,33 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_EXECUTOR_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Executor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -561,6 +868,33 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_RESOURCE_LISTENER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESOURCE_LISTENER___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESOURCE_LISTENER___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Resource Listener</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESOURCE_LISTENER_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -606,6 +940,33 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_REGISTRY_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Registry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -671,6 +1032,33 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_REGISTRY_ENTRY_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY_ENTRY___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY_ENTRY___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Registry Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY_ENTRY_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceServletImpl <em>Service Servlet</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -726,6 +1114,33 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_SERVLET_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Servlet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceTesterImpl <em>Service Tester</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -770,6 +1185,33 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_TESTER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Isa</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_TESTER___ISA = SERVICE_REF___ISA;
+
+	/**
+	 * The operation id for the '<em>Get Interface Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_TESTER___GET_INTERFACE_NAME = SERVICE_REF___GET_INTERFACE_NAME;
+
+	/**
+	 * The number of operations of the '<em>Service Tester</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_TESTER_OPERATION_COUNT = SERVICE_REF_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ServiceStatus <em>Service Status</em>}' enum.
@@ -978,6 +1420,36 @@ public interface ApplicationPackage extends EPackage {
 	EClass getApplicationManager();
 
 	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.application.ApplicationManager#start(java.lang.Class, org.abchip.mimo.application.Application, java.io.OutputStream) <em>Start</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see org.abchip.mimo.application.ApplicationManager#start(java.lang.Class, org.abchip.mimo.application.Application, java.io.OutputStream)
+	 * @generated
+	 */
+	EOperation getApplicationManager__Start__Class_Application_OutputStream();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.application.ApplicationManager#restart(org.abchip.mimo.application.Application) <em>Restart</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Restart</em>' operation.
+	 * @see org.abchip.mimo.application.ApplicationManager#restart(org.abchip.mimo.application.Application)
+	 * @generated
+	 */
+	EOperation getApplicationManager__Restart__Application();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.application.ApplicationManager#stop(org.abchip.mimo.application.Application) <em>Stop</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Stop</em>' operation.
+	 * @see org.abchip.mimo.application.ApplicationManager#stop(org.abchip.mimo.application.Application)
+	 * @generated
+	 */
+	EOperation getApplicationManager__Stop__Application();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1124,6 +1596,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getServiceRef_Status();
+
+	/**
+	 * Returns the meta object for the '{@link org.abchip.mimo.application.ServiceRef#getInterfaceName() <em>Get Interface Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Interface Name</em>' operation.
+	 * @see org.abchip.mimo.application.ServiceRef#getInterfaceName()
+	 * @generated
+	 */
+	EOperation getServiceRef__GetInterfaceName();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceResourceListener <em>Service Resource Listener</em>}'.
@@ -1468,6 +1950,30 @@ public interface ApplicationPackage extends EPackage {
 		EClass APPLICATION_MANAGER = eINSTANCE.getApplicationManager();
 
 		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation APPLICATION_MANAGER___START__CLASS_APPLICATION_OUTPUTSTREAM = eINSTANCE.getApplicationManager__Start__Class_Application_OutputStream();
+
+		/**
+		 * The meta object literal for the '<em><b>Restart</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation APPLICATION_MANAGER___RESTART__APPLICATION = eINSTANCE.getApplicationManager__Restart__Application();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation APPLICATION_MANAGER___STOP__APPLICATION = eINSTANCE.getApplicationManager__Stop__Application();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ApplicationModuleImpl <em>Module</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1590,6 +2096,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_REF__STATUS = eINSTANCE.getServiceRef_Status();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Interface Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SERVICE_REF___GET_INTERFACE_NAME = eINSTANCE.getServiceRef__GetInterfaceName();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceResourceListenerImpl <em>Service Resource Listener</em>}' class.

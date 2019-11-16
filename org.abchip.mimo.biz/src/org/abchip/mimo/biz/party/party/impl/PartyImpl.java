@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -1346,6 +1348,182 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PartyPackage.PARTY___ACCTG_TRANS_ENTRIES:
+				return acctgTransEntries();
+			case PartyPackage.PARTY___ACCTG_TRANSS:
+				return acctgTranss();
+			case PartyPackage.PARTY___APPLYING_EMPLOYMENT_APPS:
+				return applyingEmploymentApps();
+			case PartyPackage.PARTY___APPROVER_EMPLOYMENT_APPS:
+				return approverEmploymentApps();
+			case PartyPackage.PARTY___CARRIER_ORDER_ITEM_SHIP_GROUPS:
+				return carrierOrderItemShipGroups();
+			case PartyPackage.PARTY___CARRIER_SHIPMENT_BOX_TYPES:
+				return carrierShipmentBoxTypes();
+			case PartyPackage.PARTY___CARRIER_SHIPMENT_ROUTE_SEGMENTS:
+				return carrierShipmentRouteSegments();
+			case PartyPackage.PARTY___CLIENT_TIMESHEETS:
+				return clientTimesheets();
+			case PartyPackage.PARTY___COMMITTED_BY_CONTENT_REVISIONS:
+				return committedByContentRevisions();
+			case PartyPackage.PARTY___CONTENT_APPROVALS:
+				return contentApprovals();
+			case PartyPackage.PARTY___COST_COMPONENTS:
+				return costComponents();
+			case PartyPackage.PARTY___CUST_REQUEST_TYPES:
+				return custRequestTypes();
+			case PartyPackage.PARTY___EMPL_POSITIONS:
+				return emplPositions();
+			case PartyPackage.PARTY___FIN_ACCOUNT_TRANSS:
+				return finAccountTranss();
+			case PartyPackage.PARTY___FIXED_ASSETS:
+				return fixedAssets();
+			case PartyPackage.PARTY___FROM_AGREEMENTS:
+				return fromAgreements();
+			case PartyPackage.PARTY___FROM_COMMUNICATION_EVENTS:
+				return fromCommunicationEvents();
+			case PartyPackage.PARTY___FROM_CUST_REQUESTS:
+				return fromCustRequests();
+			case PartyPackage.PARTY___FROM_INVOICES:
+				return fromInvoices();
+			case PartyPackage.PARTY___FROM_PAYMENTS:
+				return fromPayments();
+			case PartyPackage.PARTY___FROM_SHIPMENTS:
+				return fromShipments();
+			case PartyPackage.PARTY___GIFT_CARD_FULFILLMENTS:
+				return giftCardFulfillments();
+			case PartyPackage.PARTY___GL_ACCOUNT_ORGANIZATIONS:
+				return glAccountOrganizations();
+			case PartyPackage.PARTY___GL_JOURNALS:
+				return glJournals();
+			case PartyPackage.PARTY___GL_RECONCILIATIONS:
+				return glReconciliations();
+			case PartyPackage.PARTY___GOV_AGENCY_FIXED_ASSET_REGISTRATIONS:
+				return govAgencyFixedAssetRegistrations();
+			case PartyPackage.PARTY___INTERNAL_SALES_FORECAST_HISTORIES:
+				return internalSalesForecastHistories();
+			case PartyPackage.PARTY___INTERNAL_SALES_FORECASTS:
+				return internalSalesForecasts();
+			case PartyPackage.PARTY___INTERVIEWEE_JOB_INTERVIEWS:
+				return intervieweeJobInterviews();
+			case PartyPackage.PARTY___INTERVIEWER_JOB_INTERVIEWS:
+				return interviewerJobInterviews();
+			case PartyPackage.PARTY___INVENTORY_ITEMS:
+				return inventoryItems();
+			case PartyPackage.PARTY___INVOICES:
+				return invoices();
+			case PartyPackage.PARTY___NOTE_NOTE_DATAS:
+				return noteNoteDatas();
+			case PartyPackage.PARTY___ORGANIZATION_CUSTOM_TIME_PERIODS:
+				return organizationCustomTimePeriods();
+			case PartyPackage.PARTY___ORGANIZATION_FIN_ACCOUNT_TYPE_GL_ACCOUNTS:
+				return organizationFinAccountTypeGlAccounts();
+			case PartyPackage.PARTY___ORGANIZATION_FIN_ACCOUNTS:
+				return organizationFinAccounts();
+			case PartyPackage.PARTY___ORGANIZATION_GL_ACCOUNT_TYPE_DEFAULTS:
+				return organizationGlAccountTypeDefaults();
+			case PartyPackage.PARTY___ORGANIZATION_INVOICE_ITEM_TYPE_GL_ACCOUNTS:
+				return organizationInvoiceItemTypeGlAccounts();
+			case PartyPackage.PARTY___ORGANIZATION_PAYMENT_METHOD_TYPE_GL_ACCOUNTS:
+				return organizationPaymentMethodTypeGlAccounts();
+			case PartyPackage.PARTY___ORGANIZATION_SALES_FORECAST_HISTORIES:
+				return organizationSalesForecastHistories();
+			case PartyPackage.PARTY___ORGANIZATION_SALES_FORECASTS:
+				return organizationSalesForecasts();
+			case PartyPackage.PARTY___ORGANIZATION_VARIANCE_REASON_GL_ACCOUNTS:
+				return organizationVarianceReasonGlAccounts();
+			case PartyPackage.PARTY___ORIGINATED_FROM_SUBSCRIPTIONS:
+				return originatedFromSubscriptions();
+			case PartyPackage.PARTY___OVERRIDE_ORG_INVOICE_ITEMS:
+				return overrideOrgInvoiceItems();
+			case PartyPackage.PARTY___OWNER_CONTACT_LISTS:
+				return ownerContactLists();
+			case PartyPackage.PARTY___OWNER_FACILITIES:
+				return ownerFacilities();
+			case PartyPackage.PARTY___OWNER_FIN_ACCOUNTS:
+				return ownerFinAccounts();
+			case PartyPackage.PARTY___OWNER_INVENTORY_ITEMS:
+				return ownerInventoryItems();
+			case PartyPackage.PARTY___PARTY_INVITATIONS:
+				return partyInvitations();
+			case PartyPackage.PARTY___PARTY_PREF_DOC_TYPE_TPLS:
+				return partyPrefDocTypeTpls();
+			case PartyPackage.PARTY___PARTY_RESUMES:
+				return partyResumes();
+			case PartyPackage.PARTY___PAYMENT_GL_ACCOUNT_TYPE_MAPS:
+				return paymentGlAccountTypeMaps();
+			case PartyPackage.PARTY___PAYMENT_METHODS:
+				return paymentMethods();
+			case PartyPackage.PARTY___PERFORMED_BY_FIN_ACCOUNT_TRANSS:
+				return performedByFinAccountTranss();
+			case PartyPackage.PARTY___PRODUCT_PROMO_CODE_PARTIES:
+				return productPromoCodeParties();
+			case PartyPackage.PARTY___PRODUCT_PROMO_USES:
+				return productPromoUses();
+			case PartyPackage.PARTY___PRODUCT_PROMOS:
+				return productPromos();
+			case PartyPackage.PARTY___PRODUCT_STORE_SHIPMENT_METHS:
+				return productStoreShipmentMeths();
+			case PartyPackage.PARTY___PRODUCT_STORES:
+				return productStores();
+			case PartyPackage.PARTY___QUOTES:
+				return quotes();
+			case PartyPackage.PARTY___REFERRED_BY_EMPLOYMENT_APPS:
+				return referredByEmploymentApps();
+			case PartyPackage.PARTY___REORDER_GUIDELINES:
+				return reorderGuidelines();
+			case PartyPackage.PARTY___RETURN_HEADERS:
+				return returnHeaders();
+			case PartyPackage.PARTY___SHIPMENT_COST_ESTIMATES:
+				return shipmentCostEstimates();
+			case PartyPackage.PARTY___SHOPPING_LISTS:
+				return shoppingLists();
+			case PartyPackage.PARTY___SUBSCRIPTIONS:
+				return subscriptions();
+			case PartyPackage.PARTY___SUPPLIER_ORDER_ITEM_SHIP_GROUPS:
+				return supplierOrderItemShipGroups();
+			case PartyPackage.PARTY___SURVEY_RESPONSES:
+				return surveyResponses();
+			case PartyPackage.PARTY___TAX_AUTH_TAX_AUTHORITIES:
+				return taxAuthTaxAuthorities();
+			case PartyPackage.PARTY___TAX_AUTHORITY_INVOICE_ITEMS:
+				return taxAuthorityInvoiceItems();
+			case PartyPackage.PARTY___TIME_ENTRIES:
+				return timeEntries();
+			case PartyPackage.PARTY___TIMESHEETS:
+				return timesheets();
+			case PartyPackage.PARTY___TO_AGREEMENTS:
+				return toAgreements();
+			case PartyPackage.PARTY___TO_COMMUNICATION_EVENTS:
+				return toCommunicationEvents();
+			case PartyPackage.PARTY___TO_PARTY_INVITATION_GROUP_ASSOCS:
+				return toPartyInvitationGroupAssocs();
+			case PartyPackage.PARTY___TO_PAYMENTS:
+				return toPayments();
+			case PartyPackage.PARTY___TO_RETURN_HEADERS:
+				return toReturnHeaders();
+			case PartyPackage.PARTY___TO_SHIPMENTS:
+				return toShipments();
+			case PartyPackage.PARTY___USER_LOGIN_HISTORIES:
+				return userLoginHistories();
+			case PartyPackage.PARTY___USER_LOGINS:
+				return userLogins();
+			case PartyPackage.PARTY___VENDOR_ORDER_ITEM_SHIP_GROUPS:
+				return vendorOrderItemShipGroups();
+			case PartyPackage.PARTY___WORK_EFFORT_EVENT_REMINDERS:
+				return workEffortEventReminders();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

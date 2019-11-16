@@ -7,11 +7,13 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -83,6 +85,20 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case FacilityPackage.CONTAINER_TYPE___CONTAINERS:
+				return containers();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

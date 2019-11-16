@@ -1353,7 +1353,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		entitySyncIncludeGroupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		entitySyncRemoveEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(entitySyncEClass, EntitySync.class, "EntitySync", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntitySync_EntitySyncId(), ecorePackage.getEString(), "entitySyncId", null, 1, 1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySync_ForPullOnly(), ecorePackage.getEBoolean(), "forPullOnly", null, 0, 1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

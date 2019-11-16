@@ -802,7 +802,7 @@ public class CertPackageImpl extends EPackageImpl implements CertPackage {
 		// Add supertypes to classes
 		x509IssuerProvisionEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(x509IssuerProvisionEClass, X509IssuerProvision.class, "X509IssuerProvision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getX509IssuerProvision_CertProvisionId(), ecorePackage.getEString(), "certProvisionId", null, 1, 1, X509IssuerProvision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getX509IssuerProvision_CityLocality(), ecorePackage.getEString(), "cityLocality", null, 0, 1, X509IssuerProvision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
