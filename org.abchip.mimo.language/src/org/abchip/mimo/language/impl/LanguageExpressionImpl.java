@@ -9,9 +9,7 @@ package org.abchip.mimo.language.impl;
 
 import org.abchip.mimo.language.LanguageExpression;
 import org.abchip.mimo.language.LanguagePackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -84,10 +82,7 @@ public class LanguageExpressionImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	@Override
 	public void setExpressionRow(Object newExpressionRow) {
-		Object oldExpressionRow = expressionRow;
 		expressionRow = newExpressionRow;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE_EXPRESSION__EXPRESSION_ROW, oldExpressionRow, expressionRow));
 	}
 
 	/**
