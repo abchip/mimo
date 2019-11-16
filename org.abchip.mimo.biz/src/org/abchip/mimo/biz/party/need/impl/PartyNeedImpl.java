@@ -19,11 +19,7 @@ import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,142 +50,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getPartyNeedId() <em>Party Need Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyNeedId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_NEED_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyNeedId() <em>Party Need Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyNeedId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyNeedId = PARTY_NEED_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDatetimeRecorded() <em>Datetime Recorded</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatetimeRecorded()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date DATETIME_RECORDED_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDatetimeRecorded() <em>Datetime Recorded</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatetimeRecorded()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date datetimeRecorded = DATETIME_RECORDED_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISIT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visitId = VISIT_ID_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getNeedTypeId() <em>Need Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNeedTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected NeedType needTypeId;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoleType roleTypeId;
-	/**
-	 * The cached value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PartyType partyTypeId;
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CommunicationEvent communicationEventId;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductCategory productCategoryId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -215,7 +75,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public Date getDatetimeRecorded() {
-		return datetimeRecorded;
+		return (Date)eGet(NeedPackage.Literals.PARTY_NEED__DATETIME_RECORDED, true);
 	}
 
 	/**
@@ -225,10 +85,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setDatetimeRecorded(Date newDatetimeRecorded) {
-		Date oldDatetimeRecorded = datetimeRecorded;
-		datetimeRecorded = newDatetimeRecorded;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__DATETIME_RECORDED, oldDatetimeRecorded, datetimeRecorded));
+		eSet(NeedPackage.Literals.PARTY_NEED__DATETIME_RECORDED, newDatetimeRecorded);
 	}
 
 	/**
@@ -238,7 +95,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(NeedPackage.Literals.PARTY_NEED__DESCRIPTION, true);
 	}
 
 	/**
@@ -248,10 +105,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__DESCRIPTION, oldDescription, description));
+		eSet(NeedPackage.Literals.PARTY_NEED__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -261,24 +115,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(NeedPackage.Literals.PARTY_NEED__PARTY_ID, true);
 	}
 
 	/**
@@ -288,10 +125,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_ID, oldPartyId, partyId));
+		eSet(NeedPackage.Literals.PARTY_NEED__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -301,7 +135,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public String getPartyNeedId() {
-		return partyNeedId;
+		return (String)eGet(NeedPackage.Literals.PARTY_NEED__PARTY_NEED_ID, true);
 	}
 
 	/**
@@ -311,10 +145,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setPartyNeedId(String newPartyNeedId) {
-		String oldPartyNeedId = partyNeedId;
-		partyNeedId = newPartyNeedId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_NEED_ID, oldPartyNeedId, partyNeedId));
+		eSet(NeedPackage.Literals.PARTY_NEED__PARTY_NEED_ID, newPartyNeedId);
 	}
 
 	/**
@@ -324,24 +155,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public PartyType getPartyTypeId() {
-		if (partyTypeId != null && ((EObject)partyTypeId).eIsProxy()) {
-			InternalEObject oldPartyTypeId = (InternalEObject)partyTypeId;
-			partyTypeId = (PartyType)eResolveProxy(oldPartyTypeId);
-			if (partyTypeId != oldPartyTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
-			}
-		}
-		return partyTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartyType basicGetPartyTypeId() {
-		return partyTypeId;
+		return (PartyType)eGet(NeedPackage.Literals.PARTY_NEED__PARTY_TYPE_ID, true);
 	}
 
 	/**
@@ -351,10 +165,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setPartyTypeId(PartyType newPartyTypeId) {
-		PartyType oldPartyTypeId = partyTypeId;
-		partyTypeId = newPartyTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
+		eSet(NeedPackage.Literals.PARTY_NEED__PARTY_TYPE_ID, newPartyTypeId);
 	}
 
 	/**
@@ -364,24 +175,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public ProductCategory getProductCategoryId() {
-		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
-			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
-			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
-			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
-			}
-		}
-		return productCategoryId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductCategory basicGetProductCategoryId() {
-		return productCategoryId;
+		return (ProductCategory)eGet(NeedPackage.Literals.PARTY_NEED__PRODUCT_CATEGORY_ID, true);
 	}
 
 	/**
@@ -391,10 +185,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
-		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+		eSet(NeedPackage.Literals.PARTY_NEED__PRODUCT_CATEGORY_ID, newProductCategoryId);
 	}
 
 	/**
@@ -404,24 +195,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(NeedPackage.Literals.PARTY_NEED__PRODUCT_ID, true);
 	}
 
 	/**
@@ -431,10 +205,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PRODUCT_ID, oldProductId, productId));
+		eSet(NeedPackage.Literals.PARTY_NEED__PRODUCT_ID, newProductId);
 	}
 
 	/**
@@ -444,24 +215,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public RoleType getRoleTypeId() {
-		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
-			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
-			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
-			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
-			}
-		}
-		return roleTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleType basicGetRoleTypeId() {
-		return roleTypeId;
+		return (RoleType)eGet(NeedPackage.Literals.PARTY_NEED__ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -471,10 +225,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
-		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+		eSet(NeedPackage.Literals.PARTY_NEED__ROLE_TYPE_ID, newRoleTypeId);
 	}
 
 	/**
@@ -484,7 +235,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public String getVisitId() {
-		return visitId;
+		return (String)eGet(NeedPackage.Literals.PARTY_NEED__VISIT_ID, true);
 	}
 
 	/**
@@ -494,10 +245,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
-		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__VISIT_ID, oldVisitId, visitId));
+		eSet(NeedPackage.Literals.PARTY_NEED__VISIT_ID, newVisitId);
 	}
 
 	/**
@@ -507,24 +255,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public NeedType getNeedTypeId() {
-		if (needTypeId != null && ((EObject)needTypeId).eIsProxy()) {
-			InternalEObject oldNeedTypeId = (InternalEObject)needTypeId;
-			needTypeId = (NeedType)eResolveProxy(oldNeedTypeId);
-			if (needTypeId != oldNeedTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
-			}
-		}
-		return needTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NeedType basicGetNeedTypeId() {
-		return needTypeId;
+		return (NeedType)eGet(NeedPackage.Literals.PARTY_NEED__NEED_TYPE_ID, true);
 	}
 
 	/**
@@ -534,10 +265,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setNeedTypeId(NeedType newNeedTypeId) {
-		NeedType oldNeedTypeId = needTypeId;
-		needTypeId = newNeedTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
+		eSet(NeedPackage.Literals.PARTY_NEED__NEED_TYPE_ID, newNeedTypeId);
 	}
 
 	/**
@@ -547,24 +275,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public CommunicationEvent getCommunicationEventId() {
-		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
-			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
-			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
-			if (communicationEventId != oldCommunicationEventId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
-			}
-		}
-		return communicationEventId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommunicationEvent basicGetCommunicationEventId() {
-		return communicationEventId;
+		return (CommunicationEvent)eGet(NeedPackage.Literals.PARTY_NEED__COMMUNICATION_EVENT_ID, true);
 	}
 
 	/**
@@ -574,197 +285,7 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
-		CommunicationEvent oldCommunicationEventId = communicationEventId;
-		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
-				return getPartyNeedId();
-			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
-				return getDatetimeRecorded();
-			case NeedPackage.PARTY_NEED__DESCRIPTION:
-				return getDescription();
-			case NeedPackage.PARTY_NEED__VISIT_ID:
-				return getVisitId();
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				if (resolve) return getNeedTypeId();
-				return basicGetNeedTypeId();
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				if (resolve) return getRoleTypeId();
-				return basicGetRoleTypeId();
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				if (resolve) return getPartyTypeId();
-				return basicGetPartyTypeId();
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				if (resolve) return getCommunicationEventId();
-				return basicGetCommunicationEventId();
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				if (resolve) return getProductCategoryId();
-				return basicGetProductCategoryId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
-				setPartyNeedId((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
-				setDatetimeRecorded((Date)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__VISIT_ID:
-				setVisitId((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				setNeedTypeId((NeedType)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				setPartyTypeId((PartyType)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((ProductCategory)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
-				setPartyNeedId(PARTY_NEED_ID_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
-				setDatetimeRecorded(DATETIME_RECORDED_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__VISIT_ID:
-				setVisitId(VISIT_ID_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				setNeedTypeId((NeedType)null);
-				return;
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)null);
-				return;
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				setPartyTypeId((PartyType)null);
-				return;
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)null);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((ProductCategory)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
-				return PARTY_NEED_ID_EDEFAULT == null ? partyNeedId != null : !PARTY_NEED_ID_EDEFAULT.equals(partyNeedId);
-			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
-				return DATETIME_RECORDED_EDEFAULT == null ? datetimeRecorded != null : !DATETIME_RECORDED_EDEFAULT.equals(datetimeRecorded);
-			case NeedPackage.PARTY_NEED__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case NeedPackage.PARTY_NEED__VISIT_ID:
-				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				return needTypeId != null;
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				return partyId != null;
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				return roleTypeId != null;
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				return partyTypeId != null;
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				return communicationEventId != null;
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				return productId != null;
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				return productCategoryId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyNeedId: ");
-		result.append(partyNeedId);
-		result.append(", datetimeRecorded: ");
-		result.append(datetimeRecorded);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", visitId: ");
-		result.append(visitId);
-		result.append(')');
-		return result.toString();
+		eSet(NeedPackage.Literals.PARTY_NEED__COMMUNICATION_EVENT_ID, newCommunicationEventId);
 	}
 
 } //PartyNeedImpl

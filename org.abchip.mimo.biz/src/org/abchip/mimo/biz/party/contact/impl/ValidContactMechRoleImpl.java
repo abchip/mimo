@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,25 +33,6 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoleType roleTypeId;
-	/**
-	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ContactMechType contactMechTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,24 +59,7 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 */
 	@Override
 	public RoleType getRoleTypeId() {
-		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
-			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
-			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
-			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
-			}
-		}
-		return roleTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleType basicGetRoleTypeId() {
-		return roleTypeId;
+		return (RoleType)eGet(ContactPackage.Literals.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -109,10 +69,7 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
-		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+		eSet(ContactPackage.Literals.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID, newRoleTypeId);
 	}
 
 	/**
@@ -122,24 +79,7 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 */
 	@Override
 	public ContactMechType getContactMechTypeId() {
-		if (contactMechTypeId != null && ((EObject)contactMechTypeId).eIsProxy()) {
-			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
-			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
-			if (contactMechTypeId != oldContactMechTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
-			}
-		}
-		return contactMechTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContactMechType basicGetContactMechTypeId() {
-		return contactMechTypeId;
+		return (ContactMechType)eGet(ContactPackage.Literals.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID, true);
 	}
 
 	/**
@@ -149,80 +89,7 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 */
 	@Override
 	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
-		ContactMechType oldContactMechTypeId = contactMechTypeId;
-		contactMechTypeId = newContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID:
-				if (resolve) return getRoleTypeId();
-				return basicGetRoleTypeId();
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				if (resolve) return getContactMechTypeId();
-				return basicGetContactMechTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)newValue);
-				return;
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((ContactMechType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)null);
-				return;
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((ContactMechType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID:
-				return roleTypeId != null;
-			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				return contactMechTypeId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(ContactPackage.Literals.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID, newContactMechTypeId);
 	}
 
 } //ValidContactMechRoleImpl

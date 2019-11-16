@@ -16,12 +16,7 @@ import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,116 +45,6 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getJobInterviewId() <em>Job Interview Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String JOB_INTERVIEW_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getJobInterviewId() <em>Job Interview Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String jobInterviewId = JOB_INTERVIEW_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getJobInterviewDate() <em>Job Interview Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date JOB_INTERVIEW_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getJobInterviewDate() <em>Job Interview Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date jobInterviewDate = JOB_INTERVIEW_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getJobInterviewResult() <em>Job Interview Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String JOB_INTERVIEW_RESULT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getJobInterviewResult() <em>Job Interview Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected String jobInterviewResult = JOB_INTERVIEW_RESULT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getJobIntervieweePartyId() <em>Job Interviewee Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobIntervieweePartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party jobIntervieweePartyId;
-
-	/**
-	 * The cached value of the '{@link #getJobInterviewerPartyId() <em>Job Interviewer Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party jobInterviewerPartyId;
-
-	/**
-	 * The cached value of the '{@link #getJobInterviewTypeId() <em>Job Interview Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected JobInterviewType jobInterviewTypeId;
-
-	/**
-	 * The cached value of the '{@link #getJobRequisitionId() <em>Job Requisition Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobRequisitionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected JobRequisition jobRequisitionId;
-
-	/**
-	 * The cached value of the '{@link #getGradeSecuredEnumId() <em>Grade Secured Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGradeSecuredEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration gradeSecuredEnumId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -185,24 +70,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public Enumeration getGradeSecuredEnumId() {
-		if (gradeSecuredEnumId != null && ((EObject)gradeSecuredEnumId).eIsProxy()) {
-			InternalEObject oldGradeSecuredEnumId = (InternalEObject)gradeSecuredEnumId;
-			gradeSecuredEnumId = (Enumeration)eResolveProxy(oldGradeSecuredEnumId);
-			if (gradeSecuredEnumId != oldGradeSecuredEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, oldGradeSecuredEnumId, gradeSecuredEnumId));
-			}
-		}
-		return gradeSecuredEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetGradeSecuredEnumId() {
-		return gradeSecuredEnumId;
+		return (Enumeration)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, true);
 	}
 
 	/**
@@ -212,10 +80,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setGradeSecuredEnumId(Enumeration newGradeSecuredEnumId) {
-		Enumeration oldGradeSecuredEnumId = gradeSecuredEnumId;
-		gradeSecuredEnumId = newGradeSecuredEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, oldGradeSecuredEnumId, gradeSecuredEnumId));
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, newGradeSecuredEnumId);
 	}
 
 	/**
@@ -225,7 +90,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public Date getJobInterviewDate() {
-		return jobInterviewDate;
+		return (Date)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_DATE, true);
 	}
 
 	/**
@@ -235,10 +100,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewDate(Date newJobInterviewDate) {
-		Date oldJobInterviewDate = jobInterviewDate;
-		jobInterviewDate = newJobInterviewDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE, oldJobInterviewDate, jobInterviewDate));
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_DATE, newJobInterviewDate);
 	}
 
 	/**
@@ -248,7 +110,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public String getJobInterviewId() {
-		return jobInterviewId;
+		return (String)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_ID, true);
 	}
 
 	/**
@@ -258,10 +120,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewId(String newJobInterviewId) {
-		String oldJobInterviewId = jobInterviewId;
-		jobInterviewId = newJobInterviewId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID, oldJobInterviewId, jobInterviewId));
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_ID, newJobInterviewId);
 	}
 
 	/**
@@ -271,7 +130,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public String getJobInterviewResult() {
-		return jobInterviewResult;
+		return (String)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_RESULT, true);
 	}
 
 	/**
@@ -281,10 +140,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewResult(String newJobInterviewResult) {
-		String oldJobInterviewResult = jobInterviewResult;
-		jobInterviewResult = newJobInterviewResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT, oldJobInterviewResult, jobInterviewResult));
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_RESULT, newJobInterviewResult);
 	}
 
 	/**
@@ -294,24 +150,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public JobInterviewType getJobInterviewTypeId() {
-		if (jobInterviewTypeId != null && ((EObject)jobInterviewTypeId).eIsProxy()) {
-			InternalEObject oldJobInterviewTypeId = (InternalEObject)jobInterviewTypeId;
-			jobInterviewTypeId = (JobInterviewType)eResolveProxy(oldJobInterviewTypeId);
-			if (jobInterviewTypeId != oldJobInterviewTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, oldJobInterviewTypeId, jobInterviewTypeId));
-			}
-		}
-		return jobInterviewTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public JobInterviewType basicGetJobInterviewTypeId() {
-		return jobInterviewTypeId;
+		return (JobInterviewType)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, true);
 	}
 
 	/**
@@ -321,10 +160,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewTypeId(JobInterviewType newJobInterviewTypeId) {
-		JobInterviewType oldJobInterviewTypeId = jobInterviewTypeId;
-		jobInterviewTypeId = newJobInterviewTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, oldJobInterviewTypeId, jobInterviewTypeId));
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, newJobInterviewTypeId);
 	}
 
 	/**
@@ -334,24 +170,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public Party getJobIntervieweePartyId() {
-		if (jobIntervieweePartyId != null && ((EObject)jobIntervieweePartyId).eIsProxy()) {
-			InternalEObject oldJobIntervieweePartyId = (InternalEObject)jobIntervieweePartyId;
-			jobIntervieweePartyId = (Party)eResolveProxy(oldJobIntervieweePartyId);
-			if (jobIntervieweePartyId != oldJobIntervieweePartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, oldJobIntervieweePartyId, jobIntervieweePartyId));
-			}
-		}
-		return jobIntervieweePartyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetJobIntervieweePartyId() {
-		return jobIntervieweePartyId;
+		return (Party)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, true);
 	}
 
 	/**
@@ -361,10 +180,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobIntervieweePartyId(Party newJobIntervieweePartyId) {
-		Party oldJobIntervieweePartyId = jobIntervieweePartyId;
-		jobIntervieweePartyId = newJobIntervieweePartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, oldJobIntervieweePartyId, jobIntervieweePartyId));
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, newJobIntervieweePartyId);
 	}
 
 	/**
@@ -374,24 +190,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public Party getJobInterviewerPartyId() {
-		if (jobInterviewerPartyId != null && ((EObject)jobInterviewerPartyId).eIsProxy()) {
-			InternalEObject oldJobInterviewerPartyId = (InternalEObject)jobInterviewerPartyId;
-			jobInterviewerPartyId = (Party)eResolveProxy(oldJobInterviewerPartyId);
-			if (jobInterviewerPartyId != oldJobInterviewerPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, oldJobInterviewerPartyId, jobInterviewerPartyId));
-			}
-		}
-		return jobInterviewerPartyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetJobInterviewerPartyId() {
-		return jobInterviewerPartyId;
+		return (Party)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, true);
 	}
 
 	/**
@@ -401,10 +200,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewerPartyId(Party newJobInterviewerPartyId) {
-		Party oldJobInterviewerPartyId = jobInterviewerPartyId;
-		jobInterviewerPartyId = newJobInterviewerPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, oldJobInterviewerPartyId, jobInterviewerPartyId));
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, newJobInterviewerPartyId);
 	}
 
 	/**
@@ -414,24 +210,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public JobRequisition getJobRequisitionId() {
-		if (jobRequisitionId != null && ((EObject)jobRequisitionId).eIsProxy()) {
-			InternalEObject oldJobRequisitionId = (InternalEObject)jobRequisitionId;
-			jobRequisitionId = (JobRequisition)eResolveProxy(oldJobRequisitionId);
-			if (jobRequisitionId != oldJobRequisitionId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
-			}
-		}
-		return jobRequisitionId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public JobRequisition basicGetJobRequisitionId() {
-		return jobRequisitionId;
+		return (JobRequisition)eGet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_REQUISITION_ID, true);
 	}
 
 	/**
@@ -441,163 +220,7 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobRequisitionId(JobRequisition newJobRequisitionId) {
-		JobRequisition oldJobRequisitionId = jobRequisitionId;
-		jobRequisitionId = newJobRequisitionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
-				return getJobInterviewId();
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
-				return getJobInterviewDate();
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
-				return getJobInterviewResult();
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				if (resolve) return getJobIntervieweePartyId();
-				return basicGetJobIntervieweePartyId();
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				if (resolve) return getJobInterviewerPartyId();
-				return basicGetJobInterviewerPartyId();
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				if (resolve) return getJobInterviewTypeId();
-				return basicGetJobInterviewTypeId();
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				if (resolve) return getJobRequisitionId();
-				return basicGetJobRequisitionId();
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				if (resolve) return getGradeSecuredEnumId();
-				return basicGetGradeSecuredEnumId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
-				setJobInterviewId((String)newValue);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
-				setJobInterviewDate((Date)newValue);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
-				setJobInterviewResult((String)newValue);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				setJobIntervieweePartyId((Party)newValue);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				setJobInterviewerPartyId((Party)newValue);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				setJobInterviewTypeId((JobInterviewType)newValue);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				setJobRequisitionId((JobRequisition)newValue);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				setGradeSecuredEnumId((Enumeration)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
-				setJobInterviewId(JOB_INTERVIEW_ID_EDEFAULT);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
-				setJobInterviewDate(JOB_INTERVIEW_DATE_EDEFAULT);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
-				setJobInterviewResult(JOB_INTERVIEW_RESULT_EDEFAULT);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				setJobIntervieweePartyId((Party)null);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				setJobInterviewerPartyId((Party)null);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				setJobInterviewTypeId((JobInterviewType)null);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				setJobRequisitionId((JobRequisition)null);
-				return;
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				setGradeSecuredEnumId((Enumeration)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
-				return JOB_INTERVIEW_ID_EDEFAULT == null ? jobInterviewId != null : !JOB_INTERVIEW_ID_EDEFAULT.equals(jobInterviewId);
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
-				return JOB_INTERVIEW_DATE_EDEFAULT == null ? jobInterviewDate != null : !JOB_INTERVIEW_DATE_EDEFAULT.equals(jobInterviewDate);
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
-				return JOB_INTERVIEW_RESULT_EDEFAULT == null ? jobInterviewResult != null : !JOB_INTERVIEW_RESULT_EDEFAULT.equals(jobInterviewResult);
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				return jobIntervieweePartyId != null;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				return jobInterviewerPartyId != null;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				return jobInterviewTypeId != null;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				return jobRequisitionId != null;
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				return gradeSecuredEnumId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (jobInterviewId: ");
-		result.append(jobInterviewId);
-		result.append(", jobInterviewDate: ");
-		result.append(jobInterviewDate);
-		result.append(", jobInterviewResult: ");
-		result.append(jobInterviewResult);
-		result.append(')');
-		return result.toString();
+		eSet(RecruitmentPackage.Literals.JOB_INTERVIEW__JOB_REQUISITION_ID, newJobRequisitionId);
 	}
 
 } //JobInterviewImpl

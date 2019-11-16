@@ -15,11 +15,7 @@ import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityParty;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,76 +40,6 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Facility facilityId;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoleType roleTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,7 +66,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(FacilityPackage.Literals.FACILITY_PARTY__FROM_DATE, true);
 	}
 
 	/**
@@ -150,10 +76,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__FROM_DATE, oldFromDate, fromDate));
+		eSet(FacilityPackage.Literals.FACILITY_PARTY__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -163,24 +86,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_PARTY__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(FacilityPackage.Literals.FACILITY_PARTY__PARTY_ID, true);
 	}
 
 	/**
@@ -190,10 +96,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__PARTY_ID, oldPartyId, partyId));
+		eSet(FacilityPackage.Literals.FACILITY_PARTY__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -203,24 +106,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public RoleType getRoleTypeId() {
-		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
-			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
-			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
-			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
-			}
-		}
-		return roleTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleType basicGetRoleTypeId() {
-		return roleTypeId;
+		return (RoleType)eGet(FacilityPackage.Literals.FACILITY_PARTY__ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -230,10 +116,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
-		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+		eSet(FacilityPackage.Literals.FACILITY_PARTY__ROLE_TYPE_ID, newRoleTypeId);
 	}
 
 	/**
@@ -243,7 +126,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(FacilityPackage.Literals.FACILITY_PARTY__THRU_DATE, true);
 	}
 
 	/**
@@ -253,10 +136,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__THRU_DATE, oldThruDate, thruDate));
+		eSet(FacilityPackage.Literals.FACILITY_PARTY__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -266,24 +146,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public Facility getFacilityId() {
-		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
-			InternalEObject oldFacilityId = (InternalEObject)facilityId;
-			facilityId = (Facility)eResolveProxy(oldFacilityId);
-			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_PARTY__FACILITY_ID, oldFacilityId, facilityId));
-			}
-		}
-		return facilityId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Facility basicGetFacilityId() {
-		return facilityId;
+		return (Facility)eGet(FacilityPackage.Literals.FACILITY_PARTY__FACILITY_ID, true);
 	}
 
 	/**
@@ -293,129 +156,7 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
-		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__FACILITY_ID, oldFacilityId, facilityId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FacilityPackage.FACILITY_PARTY__FROM_DATE:
-				return getFromDate();
-			case FacilityPackage.FACILITY_PARTY__THRU_DATE:
-				return getThruDate();
-			case FacilityPackage.FACILITY_PARTY__FACILITY_ID:
-				if (resolve) return getFacilityId();
-				return basicGetFacilityId();
-			case FacilityPackage.FACILITY_PARTY__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-			case FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID:
-				if (resolve) return getRoleTypeId();
-				return basicGetRoleTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FacilityPackage.FACILITY_PARTY__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case FacilityPackage.FACILITY_PARTY__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case FacilityPackage.FACILITY_PARTY__FACILITY_ID:
-				setFacilityId((Facility)newValue);
-				return;
-			case FacilityPackage.FACILITY_PARTY__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-			case FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FacilityPackage.FACILITY_PARTY__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY_PARTY__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY_PARTY__FACILITY_ID:
-				setFacilityId((Facility)null);
-				return;
-			case FacilityPackage.FACILITY_PARTY__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-			case FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FacilityPackage.FACILITY_PARTY__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case FacilityPackage.FACILITY_PARTY__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case FacilityPackage.FACILITY_PARTY__FACILITY_ID:
-				return facilityId != null;
-			case FacilityPackage.FACILITY_PARTY__PARTY_ID:
-				return partyId != null;
-			case FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID:
-				return roleTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(FacilityPackage.Literals.FACILITY_PARTY__FACILITY_ID, newFacilityId);
 	}
 
 } //FacilityPartyImpl

@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreVendorShipment;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,46 +36,6 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductStore productStoreId;
-
-	/**
-	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVendorPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party vendorPartyId;
-
-	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ShipmentMethodType shipmentMethodTypeId;
-
-	/**
-	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party carrierPartyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,24 +63,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public Party getCarrierPartyId() {
-		if (carrierPartyId != null && ((EObject)carrierPartyId).eIsProxy()) {
-			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
-			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
-			if (carrierPartyId != oldCarrierPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
-			}
-		}
-		return carrierPartyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetCarrierPartyId() {
-		return carrierPartyId;
+		return (Party)eGet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID, true);
 	}
 
 	/**
@@ -134,10 +73,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setCarrierPartyId(Party newCarrierPartyId) {
-		Party oldCarrierPartyId = carrierPartyId;
-		carrierPartyId = newCarrierPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID, newCarrierPartyId);
 	}
 
 	/**
@@ -147,24 +83,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public ShipmentMethodType getShipmentMethodTypeId() {
-		if (shipmentMethodTypeId != null && ((EObject)shipmentMethodTypeId).eIsProxy()) {
-			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
-			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
-			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
-			}
-		}
-		return shipmentMethodTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShipmentMethodType basicGetShipmentMethodTypeId() {
-		return shipmentMethodTypeId;
+		return (ShipmentMethodType)eGet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, true);
 	}
 
 	/**
@@ -174,10 +93,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
-		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
-		shipmentMethodTypeId = newShipmentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, newShipmentMethodTypeId);
 	}
 
 	/**
@@ -187,24 +103,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public Party getVendorPartyId() {
-		if (vendorPartyId != null && ((EObject)vendorPartyId).eIsProxy()) {
-			InternalEObject oldVendorPartyId = (InternalEObject)vendorPartyId;
-			vendorPartyId = (Party)eResolveProxy(oldVendorPartyId);
-			if (vendorPartyId != oldVendorPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
-			}
-		}
-		return vendorPartyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetVendorPartyId() {
-		return vendorPartyId;
+		return (Party)eGet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID, true);
 	}
 
 	/**
@@ -214,10 +113,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setVendorPartyId(Party newVendorPartyId) {
-		Party oldVendorPartyId = vendorPartyId;
-		vendorPartyId = newVendorPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID, newVendorPartyId);
 	}
 
 	/**
@@ -227,24 +123,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public ProductStore getProductStoreId() {
-		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
-			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
-			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
-			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
-			}
-		}
-		return productStoreId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductStore basicGetProductStoreId() {
-		return productStoreId;
+		return (ProductStore)eGet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, true);
 	}
 
 	/**
@@ -254,102 +133,7 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
-		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				if (resolve) return getProductStoreId();
-				return basicGetProductStoreId();
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
-				if (resolve) return getVendorPartyId();
-				return basicGetVendorPartyId();
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				if (resolve) return getShipmentMethodTypeId();
-				return basicGetShipmentMethodTypeId();
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID:
-				if (resolve) return getCarrierPartyId();
-				return basicGetCarrierPartyId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
-				setVendorPartyId((Party)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((ShipmentMethodType)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID:
-				setCarrierPartyId((Party)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)null);
-				return;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
-				setVendorPartyId((Party)null);
-				return;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((ShipmentMethodType)null);
-				return;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID:
-				setCarrierPartyId((Party)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID:
-				return productStoreId != null;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID:
-				return vendorPartyId != null;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				return shipmentMethodTypeId != null;
-			case StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID:
-				return carrierPartyId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(StorePackage.Literals.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, newProductStoreId);
 	}
 
 } //ProductStoreVendorShipmentImpl

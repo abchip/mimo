@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.security.securitygroup.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
 import org.abchip.mimo.biz.security.securitygroup.TarpittedLoginView;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,70 +33,6 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	private static final long serialVersionUID = 1L;
 
-
-	/**
-	 * The default value of the '{@link #getViewNameId() <em>View Name Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewNameId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VIEW_NAME_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getViewNameId() <em>View Name Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewNameId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String viewNameId = VIEW_NAME_ID_EDEFAULT;
-
-
-	/**
-	 * The default value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_LOGIN_ID_EDEFAULT = null;
-
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
-
-
-	/**
-	 * The default value of the '{@link #getTarpitReleaseDateTime() <em>Tarpit Release Date Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarpitReleaseDateTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long TARPIT_RELEASE_DATE_TIME_EDEFAULT = 0L;
-
-
-	/**
-	 * The cached value of the '{@link #getTarpitReleaseDateTime() <em>Tarpit Release Date Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarpitReleaseDateTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected long tarpitReleaseDateTime = TARPIT_RELEASE_DATE_TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +60,7 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public long getTarpitReleaseDateTime() {
-		return tarpitReleaseDateTime;
+		return (Long)eGet(SecuritygroupPackage.Literals.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME, true);
 	}
 
 	/**
@@ -136,10 +70,7 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public void setTarpitReleaseDateTime(long newTarpitReleaseDateTime) {
-		long oldTarpitReleaseDateTime = tarpitReleaseDateTime;
-		tarpitReleaseDateTime = newTarpitReleaseDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME, oldTarpitReleaseDateTime, tarpitReleaseDateTime));
+		eSet(SecuritygroupPackage.Literals.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME, newTarpitReleaseDateTime);
 	}
 
 	/**
@@ -149,7 +80,7 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public String getUserLoginId() {
-		return userLoginId;
+		return (String)eGet(SecuritygroupPackage.Literals.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID, true);
 	}
 
 	/**
@@ -159,10 +90,7 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
-		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+		eSet(SecuritygroupPackage.Literals.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID, newUserLoginId);
 	}
 
 	/**
@@ -172,7 +100,7 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public String getViewNameId() {
-		return viewNameId;
+		return (String)eGet(SecuritygroupPackage.Literals.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID, true);
 	}
 
 	/**
@@ -182,108 +110,7 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public void setViewNameId(String newViewNameId) {
-		String oldViewNameId = viewNameId;
-		viewNameId = newViewNameId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID, oldViewNameId, viewNameId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID:
-				return getViewNameId();
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID:
-				return getUserLoginId();
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME:
-				return getTarpitReleaseDateTime();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID:
-				setViewNameId((String)newValue);
-				return;
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID:
-				setUserLoginId((String)newValue);
-				return;
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME:
-				setTarpitReleaseDateTime((Long)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID:
-				setViewNameId(VIEW_NAME_ID_EDEFAULT);
-				return;
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID:
-				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
-				return;
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME:
-				setTarpitReleaseDateTime(TARPIT_RELEASE_DATE_TIME_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID:
-				return VIEW_NAME_ID_EDEFAULT == null ? viewNameId != null : !VIEW_NAME_ID_EDEFAULT.equals(viewNameId);
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID:
-				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
-			case SecuritygroupPackage.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME:
-				return tarpitReleaseDateTime != TARPIT_RELEASE_DATE_TIME_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (viewNameId: ");
-		result.append(viewNameId);
-		result.append(", userLoginId: ");
-		result.append(userLoginId);
-		result.append(", tarpitReleaseDateTime: ");
-		result.append(tarpitReleaseDateTime);
-		result.append(')');
-		return result.toString();
+		eSet(SecuritygroupPackage.Literals.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID, newViewNameId);
 	}
 
 } //TarpittedLoginViewImpl

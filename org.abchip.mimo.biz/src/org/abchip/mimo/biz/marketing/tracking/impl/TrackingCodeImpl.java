@@ -15,12 +15,7 @@ import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,366 +55,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getTrackingCodeId() <em>Tracking Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRACKING_CODE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTrackingCodeId() <em>Tracking Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String trackingCodeId = TRACKING_CODE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBillableLifetime() <em>Billable Lifetime</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillableLifetime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long BILLABLE_LIFETIME_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getBillableLifetime() <em>Billable Lifetime</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillableLifetime()
-	 * @generated
-	 * @ordered
-	 */
-	protected long billableLifetime = BILLABLE_LIFETIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENTS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date CREATED_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date createdDate = CREATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGroupId() <em>Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGroupId() <em>Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String groupId = GROUP_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date LAST_MODIFIED_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOverrideCss() <em>Override Css</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideCss()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OVERRIDE_CSS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOverrideCss() <em>Override Css</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideCss()
-	 * @generated
-	 * @ordered
-	 */
-	protected String overrideCss = OVERRIDE_CSS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOverrideLogo() <em>Override Logo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideLogo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OVERRIDE_LOGO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOverrideLogo() <em>Override Logo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideLogo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String overrideLogo = OVERRIDE_LOGO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CATALOG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatalogId = PROD_CATALOG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRedirectUrl() <em>Redirect Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRedirectUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REDIRECT_URL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRedirectUrl() <em>Redirect Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRedirectUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected String redirectUrl = REDIRECT_URL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSubgroupId() <em>Subgroup Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubgroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBGROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubgroupId() <em>Subgroup Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubgroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subgroupId = SUBGROUP_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTrackableLifetime() <em>Trackable Lifetime</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackableLifetime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long TRACKABLE_LIFETIME_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getTrackableLifetime() <em>Trackable Lifetime</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackableLifetime()
-	 * @generated
-	 * @ordered
-	 */
-	protected long trackableLifetime = TRACKABLE_LIFETIME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected MarketingCampaign marketingCampaignId;
-
-	/**
-	 * The cached value of the '{@link #getTrackingCodeTypeId() <em>Tracking Code Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected TrackingCodeType trackingCodeTypeId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -445,7 +80,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public long getBillableLifetime() {
-		return billableLifetime;
+		return (Long)eGet(TrackingPackage.Literals.TRACKING_CODE__BILLABLE_LIFETIME, true);
 	}
 
 	/**
@@ -455,10 +90,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setBillableLifetime(long newBillableLifetime) {
-		long oldBillableLifetime = billableLifetime;
-		billableLifetime = newBillableLifetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__BILLABLE_LIFETIME, oldBillableLifetime, billableLifetime));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__BILLABLE_LIFETIME, newBillableLifetime);
 	}
 
 	/**
@@ -468,7 +100,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getComments() {
-		return comments;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__COMMENTS, true);
 	}
 
 	/**
@@ -478,10 +110,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
-		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__COMMENTS, oldComments, comments));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__COMMENTS, newComments);
 	}
 
 	/**
@@ -491,7 +120,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getCreatedByUserLogin() {
-		return createdByUserLogin;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__CREATED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -501,10 +130,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
-		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__CREATED_BY_USER_LOGIN, newCreatedByUserLogin);
 	}
 
 	/**
@@ -514,7 +140,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public Date getCreatedDate() {
-		return createdDate;
+		return (Date)eGet(TrackingPackage.Literals.TRACKING_CODE__CREATED_DATE, true);
 	}
 
 	/**
@@ -524,10 +150,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
-		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__CREATED_DATE, oldCreatedDate, createdDate));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__CREATED_DATE, newCreatedDate);
 	}
 
 	/**
@@ -537,7 +160,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__DESCRIPTION, true);
 	}
 
 	/**
@@ -547,10 +170,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__DESCRIPTION, oldDescription, description));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -560,7 +180,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(TrackingPackage.Literals.TRACKING_CODE__FROM_DATE, true);
 	}
 
 	/**
@@ -570,10 +190,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__FROM_DATE, oldFromDate, fromDate));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -583,7 +200,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getGroupId() {
-		return groupId;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__GROUP_ID, true);
 	}
 
 	/**
@@ -593,10 +210,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setGroupId(String newGroupId) {
-		String oldGroupId = groupId;
-		groupId = newGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__GROUP_ID, oldGroupId, groupId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__GROUP_ID, newGroupId);
 	}
 
 	/**
@@ -606,7 +220,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getLastModifiedByUserLogin() {
-		return lastModifiedByUserLogin;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -616,10 +230,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
-		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN, newLastModifiedByUserLogin);
 	}
 
 	/**
@@ -629,7 +240,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public Date getLastModifiedDate() {
-		return lastModifiedDate;
+		return (Date)eGet(TrackingPackage.Literals.TRACKING_CODE__LAST_MODIFIED_DATE, true);
 	}
 
 	/**
@@ -639,10 +250,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
-		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__LAST_MODIFIED_DATE, newLastModifiedDate);
 	}
 
 	/**
@@ -652,24 +260,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public MarketingCampaign getMarketingCampaignId() {
-		if (marketingCampaignId != null && ((EObject)marketingCampaignId).eIsProxy()) {
-			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
-			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
-			if (marketingCampaignId != oldMarketingCampaignId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
-			}
-		}
-		return marketingCampaignId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MarketingCampaign basicGetMarketingCampaignId() {
-		return marketingCampaignId;
+		return (MarketingCampaign)eGet(TrackingPackage.Literals.TRACKING_CODE__MARKETING_CAMPAIGN_ID, true);
 	}
 
 	/**
@@ -679,10 +270,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
-		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
-		marketingCampaignId = newMarketingCampaignId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__MARKETING_CAMPAIGN_ID, newMarketingCampaignId);
 	}
 
 	/**
@@ -692,7 +280,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getOverrideCss() {
-		return overrideCss;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__OVERRIDE_CSS, true);
 	}
 
 	/**
@@ -702,10 +290,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setOverrideCss(String newOverrideCss) {
-		String oldOverrideCss = overrideCss;
-		overrideCss = newOverrideCss;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__OVERRIDE_CSS, oldOverrideCss, overrideCss));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__OVERRIDE_CSS, newOverrideCss);
 	}
 
 	/**
@@ -715,7 +300,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getOverrideLogo() {
-		return overrideLogo;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__OVERRIDE_LOGO, true);
 	}
 
 	/**
@@ -725,10 +310,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setOverrideLogo(String newOverrideLogo) {
-		String oldOverrideLogo = overrideLogo;
-		overrideLogo = newOverrideLogo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO, oldOverrideLogo, overrideLogo));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__OVERRIDE_LOGO, newOverrideLogo);
 	}
 
 	/**
@@ -738,7 +320,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getProdCatalogId() {
-		return prodCatalogId;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__PROD_CATALOG_ID, true);
 	}
 
 	/**
@@ -748,10 +330,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setProdCatalogId(String newProdCatalogId) {
-		String oldProdCatalogId = prodCatalogId;
-		prodCatalogId = newProdCatalogId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__PROD_CATALOG_ID, newProdCatalogId);
 	}
 
 	/**
@@ -761,7 +340,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getRedirectUrl() {
-		return redirectUrl;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__REDIRECT_URL, true);
 	}
 
 	/**
@@ -771,10 +350,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setRedirectUrl(String newRedirectUrl) {
-		String oldRedirectUrl = redirectUrl;
-		redirectUrl = newRedirectUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__REDIRECT_URL, oldRedirectUrl, redirectUrl));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__REDIRECT_URL, newRedirectUrl);
 	}
 
 	/**
@@ -784,7 +360,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getSubgroupId() {
-		return subgroupId;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__SUBGROUP_ID, true);
 	}
 
 	/**
@@ -794,10 +370,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setSubgroupId(String newSubgroupId) {
-		String oldSubgroupId = subgroupId;
-		subgroupId = newSubgroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__SUBGROUP_ID, oldSubgroupId, subgroupId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__SUBGROUP_ID, newSubgroupId);
 	}
 
 	/**
@@ -807,7 +380,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(TrackingPackage.Literals.TRACKING_CODE__THRU_DATE, true);
 	}
 
 	/**
@@ -817,10 +390,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__THRU_DATE, oldThruDate, thruDate));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -830,7 +400,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public long getTrackableLifetime() {
-		return trackableLifetime;
+		return (Long)eGet(TrackingPackage.Literals.TRACKING_CODE__TRACKABLE_LIFETIME, true);
 	}
 
 	/**
@@ -840,10 +410,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setTrackableLifetime(long newTrackableLifetime) {
-		long oldTrackableLifetime = trackableLifetime;
-		trackableLifetime = newTrackableLifetime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME, oldTrackableLifetime, trackableLifetime));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__TRACKABLE_LIFETIME, newTrackableLifetime);
 	}
 
 	/**
@@ -853,7 +420,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public String getTrackingCodeId() {
-		return trackingCodeId;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE__TRACKING_CODE_ID, true);
 	}
 
 	/**
@@ -863,10 +430,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setTrackingCodeId(String newTrackingCodeId) {
-		String oldTrackingCodeId = trackingCodeId;
-		trackingCodeId = newTrackingCodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__TRACKING_CODE_ID, newTrackingCodeId);
 	}
 
 	/**
@@ -876,24 +440,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public TrackingCodeType getTrackingCodeTypeId() {
-		if (trackingCodeTypeId != null && ((EObject)trackingCodeTypeId).eIsProxy()) {
-			InternalEObject oldTrackingCodeTypeId = (InternalEObject)trackingCodeTypeId;
-			trackingCodeTypeId = (TrackingCodeType)eResolveProxy(oldTrackingCodeTypeId);
-			if (trackingCodeTypeId != oldTrackingCodeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
-			}
-		}
-		return trackingCodeTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TrackingCodeType basicGetTrackingCodeTypeId() {
-		return trackingCodeTypeId;
+		return (TrackingCodeType)eGet(TrackingPackage.Literals.TRACKING_CODE__TRACKING_CODE_TYPE_ID, true);
 	}
 
 	/**
@@ -903,10 +450,7 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 */
 	@Override
 	public void setTrackingCodeTypeId(TrackingCodeType newTrackingCodeTypeId) {
-		TrackingCodeType oldTrackingCodeTypeId = trackingCodeTypeId;
-		trackingCodeTypeId = newTrackingCodeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE__TRACKING_CODE_TYPE_ID, newTrackingCodeTypeId);
 	}
 
 	/**
@@ -919,294 +463,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_ID:
-				return getTrackingCodeId();
-			case TrackingPackage.TRACKING_CODE__BILLABLE_LIFETIME:
-				return getBillableLifetime();
-			case TrackingPackage.TRACKING_CODE__COMMENTS:
-				return getComments();
-			case TrackingPackage.TRACKING_CODE__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
-			case TrackingPackage.TRACKING_CODE__CREATED_DATE:
-				return getCreatedDate();
-			case TrackingPackage.TRACKING_CODE__DESCRIPTION:
-				return getDescription();
-			case TrackingPackage.TRACKING_CODE__FROM_DATE:
-				return getFromDate();
-			case TrackingPackage.TRACKING_CODE__GROUP_ID:
-				return getGroupId();
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
-				return getLastModifiedDate();
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
-				return getOverrideCss();
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO:
-				return getOverrideLogo();
-			case TrackingPackage.TRACKING_CODE__PROD_CATALOG_ID:
-				return getProdCatalogId();
-			case TrackingPackage.TRACKING_CODE__REDIRECT_URL:
-				return getRedirectUrl();
-			case TrackingPackage.TRACKING_CODE__SUBGROUP_ID:
-				return getSubgroupId();
-			case TrackingPackage.TRACKING_CODE__THRU_DATE:
-				return getThruDate();
-			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
-				return getTrackableLifetime();
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				if (resolve) return getMarketingCampaignId();
-				return basicGetMarketingCampaignId();
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				if (resolve) return getTrackingCodeTypeId();
-				return basicGetTrackingCodeTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_ID:
-				setTrackingCodeId((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__BILLABLE_LIFETIME:
-				setBillableLifetime((Long)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__COMMENTS:
-				setComments((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__CREATED_DATE:
-				setCreatedDate((Date)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__GROUP_ID:
-				setGroupId((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
-				setLastModifiedDate((Date)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
-				setOverrideCss((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO:
-				setOverrideLogo((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__PROD_CATALOG_ID:
-				setProdCatalogId((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__REDIRECT_URL:
-				setRedirectUrl((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__SUBGROUP_ID:
-				setSubgroupId((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
-				setTrackableLifetime((Long)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((MarketingCampaign)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				setTrackingCodeTypeId((TrackingCodeType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_ID:
-				setTrackingCodeId(TRACKING_CODE_ID_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__BILLABLE_LIFETIME:
-				setBillableLifetime(BILLABLE_LIFETIME_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__COMMENTS:
-				setComments(COMMENTS_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__CREATED_DATE:
-				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__GROUP_ID:
-				setGroupId(GROUP_ID_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
-				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
-				setOverrideCss(OVERRIDE_CSS_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO:
-				setOverrideLogo(OVERRIDE_LOGO_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__PROD_CATALOG_ID:
-				setProdCatalogId(PROD_CATALOG_ID_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__REDIRECT_URL:
-				setRedirectUrl(REDIRECT_URL_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__SUBGROUP_ID:
-				setSubgroupId(SUBGROUP_ID_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
-				setTrackableLifetime(TRACKABLE_LIFETIME_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((MarketingCampaign)null);
-				return;
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				setTrackingCodeTypeId((TrackingCodeType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_ID:
-				return TRACKING_CODE_ID_EDEFAULT == null ? trackingCodeId != null : !TRACKING_CODE_ID_EDEFAULT.equals(trackingCodeId);
-			case TrackingPackage.TRACKING_CODE__BILLABLE_LIFETIME:
-				return billableLifetime != BILLABLE_LIFETIME_EDEFAULT;
-			case TrackingPackage.TRACKING_CODE__COMMENTS:
-				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case TrackingPackage.TRACKING_CODE__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
-			case TrackingPackage.TRACKING_CODE__CREATED_DATE:
-				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case TrackingPackage.TRACKING_CODE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case TrackingPackage.TRACKING_CODE__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case TrackingPackage.TRACKING_CODE__GROUP_ID:
-				return GROUP_ID_EDEFAULT == null ? groupId != null : !GROUP_ID_EDEFAULT.equals(groupId);
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
-			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
-				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
-				return OVERRIDE_CSS_EDEFAULT == null ? overrideCss != null : !OVERRIDE_CSS_EDEFAULT.equals(overrideCss);
-			case TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO:
-				return OVERRIDE_LOGO_EDEFAULT == null ? overrideLogo != null : !OVERRIDE_LOGO_EDEFAULT.equals(overrideLogo);
-			case TrackingPackage.TRACKING_CODE__PROD_CATALOG_ID:
-				return PROD_CATALOG_ID_EDEFAULT == null ? prodCatalogId != null : !PROD_CATALOG_ID_EDEFAULT.equals(prodCatalogId);
-			case TrackingPackage.TRACKING_CODE__REDIRECT_URL:
-				return REDIRECT_URL_EDEFAULT == null ? redirectUrl != null : !REDIRECT_URL_EDEFAULT.equals(redirectUrl);
-			case TrackingPackage.TRACKING_CODE__SUBGROUP_ID:
-				return SUBGROUP_ID_EDEFAULT == null ? subgroupId != null : !SUBGROUP_ID_EDEFAULT.equals(subgroupId);
-			case TrackingPackage.TRACKING_CODE__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
-				return trackableLifetime != TRACKABLE_LIFETIME_EDEFAULT;
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				return marketingCampaignId != null;
-			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				return trackingCodeTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (trackingCodeId: ");
-		result.append(trackingCodeId);
-		result.append(", billableLifetime: ");
-		result.append(billableLifetime);
-		result.append(", comments: ");
-		result.append(comments);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
-		result.append(", createdDate: ");
-		result.append(createdDate);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", fromDate: ");
-		result.append(fromDate);
-		result.append(", groupId: ");
-		result.append(groupId);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
-		result.append(", lastModifiedDate: ");
-		result.append(lastModifiedDate);
-		result.append(", overrideCss: ");
-		result.append(overrideCss);
-		result.append(", overrideLogo: ");
-		result.append(overrideLogo);
-		result.append(", prodCatalogId: ");
-		result.append(prodCatalogId);
-		result.append(", redirectUrl: ");
-		result.append(redirectUrl);
-		result.append(", subgroupId: ");
-		result.append(subgroupId);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(", trackableLifetime: ");
-		result.append(trackableLifetime);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TrackingCodeImpl

@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.common.portal.PortletCategory;
 import org.abchip.mimo.biz.common.portal.PortletPortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,26 +33,6 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPortletId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PortalPortlet portalPortletId;
-
-	/**
-	 * The cached value of the '{@link #getPortletCategoryId() <em>Portlet Category Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortletCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PortletCategory portletCategoryId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,24 +59,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 */
 	@Override
 	public PortalPortlet getPortalPortletId() {
-		if (portalPortletId != null && ((EObject)portalPortletId).eIsProxy()) {
-			InternalEObject oldPortalPortletId = (InternalEObject)portalPortletId;
-			portalPortletId = (PortalPortlet)eResolveProxy(oldPortalPortletId);
-			if (portalPortletId != oldPortalPortletId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
-			}
-		}
-		return portalPortletId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortalPortlet basicGetPortalPortletId() {
-		return portalPortletId;
+		return (PortalPortlet)eGet(PortalPackage.Literals.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, true);
 	}
 
 	/**
@@ -110,10 +69,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 */
 	@Override
 	public void setPortalPortletId(PortalPortlet newPortalPortletId) {
-		PortalPortlet oldPortalPortletId = portalPortletId;
-		portalPortletId = newPortalPortletId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
+		eSet(PortalPackage.Literals.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID, newPortalPortletId);
 	}
 
 	/**
@@ -123,24 +79,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 */
 	@Override
 	public PortletCategory getPortletCategoryId() {
-		if (portletCategoryId != null && ((EObject)portletCategoryId).eIsProxy()) {
-			InternalEObject oldPortletCategoryId = (InternalEObject)portletCategoryId;
-			portletCategoryId = (PortletCategory)eResolveProxy(oldPortletCategoryId);
-			if (portletCategoryId != oldPortletCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID, oldPortletCategoryId, portletCategoryId));
-			}
-		}
-		return portletCategoryId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortletCategory basicGetPortletCategoryId() {
-		return portletCategoryId;
+		return (PortletCategory)eGet(PortalPackage.Literals.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID, true);
 	}
 
 	/**
@@ -150,80 +89,7 @@ public class PortletPortletCategoryImpl extends BizEntityImpl implements Portlet
 	 */
 	@Override
 	public void setPortletCategoryId(PortletCategory newPortletCategoryId) {
-		PortletCategory oldPortletCategoryId = portletCategoryId;
-		portletCategoryId = newPortletCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID, oldPortletCategoryId, portletCategoryId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				if (resolve) return getPortalPortletId();
-				return basicGetPortalPortletId();
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
-				if (resolve) return getPortletCategoryId();
-				return basicGetPortletCategoryId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				setPortalPortletId((PortalPortlet)newValue);
-				return;
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
-				setPortletCategoryId((PortletCategory)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				setPortalPortletId((PortalPortlet)null);
-				return;
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
-				setPortletCategoryId((PortletCategory)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTAL_PORTLET_ID:
-				return portalPortletId != null;
-			case PortalPackage.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID:
-				return portletCategoryId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(PortalPackage.Literals.PORTLET_PORTLET_CATEGORY__PORTLET_CATEGORY_ID, newPortletCategoryId);
 	}
 
 } //PortletPortletCategoryImpl

@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.humanres.trainings.impl;
 import org.abchip.mimo.biz.humanres.trainings.TrainingRequest;
 import org.abchip.mimo.biz.humanres.trainings.TrainingsPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,26 +30,6 @@ public class TrainingRequestImpl extends BizEntityImpl implements TrainingReques
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getTrainingRequestId() <em>Training Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrainingRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRAINING_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTrainingRequestId() <em>Training Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrainingRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String trainingRequestId = TRAINING_REQUEST_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +57,7 @@ public class TrainingRequestImpl extends BizEntityImpl implements TrainingReques
 	 */
 	@Override
 	public String getTrainingRequestId() {
-		return trainingRequestId;
+		return (String)eGet(TrainingsPackage.Literals.TRAINING_REQUEST__TRAINING_REQUEST_ID, true);
 	}
 
 	/**
@@ -89,84 +67,7 @@ public class TrainingRequestImpl extends BizEntityImpl implements TrainingReques
 	 */
 	@Override
 	public void setTrainingRequestId(String newTrainingRequestId) {
-		String oldTrainingRequestId = trainingRequestId;
-		trainingRequestId = newTrainingRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrainingsPackage.TRAINING_REQUEST__TRAINING_REQUEST_ID, oldTrainingRequestId, trainingRequestId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TrainingsPackage.TRAINING_REQUEST__TRAINING_REQUEST_ID:
-				return getTrainingRequestId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TrainingsPackage.TRAINING_REQUEST__TRAINING_REQUEST_ID:
-				setTrainingRequestId((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TrainingsPackage.TRAINING_REQUEST__TRAINING_REQUEST_ID:
-				setTrainingRequestId(TRAINING_REQUEST_ID_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TrainingsPackage.TRAINING_REQUEST__TRAINING_REQUEST_ID:
-				return TRAINING_REQUEST_ID_EDEFAULT == null ? trainingRequestId != null : !TRAINING_REQUEST_ID_EDEFAULT.equals(trainingRequestId);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (trainingRequestId: ");
-		result.append(trainingRequestId);
-		result.append(')');
-		return result.toString();
+		eSet(TrainingsPackage.Literals.TRAINING_REQUEST__TRAINING_REQUEST_ID, newTrainingRequestId);
 	}
 
 } //TrainingRequestImpl

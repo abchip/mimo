@@ -19,11 +19,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,349 +61,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getPaymentGatewayResponseId() <em>Payment Gateway Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayResponseId() <em>Payment Gateway Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayResponseId = PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAltReference() <em>Alt Reference</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAltReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ALT_REFERENCE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAltReference() <em>Alt Reference</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAltReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected String altReference = ALT_REFERENCE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal AMOUNT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal amount = AMOUNT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGatewayAvsResult() <em>Gateway Avs Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayAvsResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GATEWAY_AVS_RESULT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGatewayAvsResult() <em>Gateway Avs Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayAvsResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gatewayAvsResult = GATEWAY_AVS_RESULT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGatewayCode() <em>Gateway Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GATEWAY_CODE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGatewayCode() <em>Gateway Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gatewayCode = GATEWAY_CODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGatewayCvResult() <em>Gateway Cv Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayCvResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GATEWAY_CV_RESULT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGatewayCvResult() <em>Gateway Cv Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayCvResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gatewayCvResult = GATEWAY_CV_RESULT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGatewayFlag() <em>Gateway Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GATEWAY_FLAG_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGatewayFlag() <em>Gateway Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gatewayFlag = GATEWAY_FLAG_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGatewayMessage() <em>Gateway Message</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayMessage()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GATEWAY_MESSAGE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGatewayMessage() <em>Gateway Message</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayMessage()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gatewayMessage = GATEWAY_MESSAGE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGatewayScoreResult() <em>Gateway Score Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayScoreResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GATEWAY_SCORE_RESULT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGatewayScoreResult() <em>Gateway Score Result</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGatewayScoreResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gatewayScoreResult = GATEWAY_SCORE_RESULT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getReferenceNum() <em>Reference Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REFERENCE_NUM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getReferenceNum() <em>Reference Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected String referenceNum = REFERENCE_NUM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isResultBadCardNumber() <em>Result Bad Card Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultBadCardNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RESULT_BAD_CARD_NUMBER_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isResultBadCardNumber() <em>Result Bad Card Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultBadCardNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean resultBadCardNumber = RESULT_BAD_CARD_NUMBER_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isResultBadExpire() <em>Result Bad Expire</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultBadExpire()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RESULT_BAD_EXPIRE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isResultBadExpire() <em>Result Bad Expire</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultBadExpire()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean resultBadExpire = RESULT_BAD_EXPIRE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isResultDeclined() <em>Result Declined</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultDeclined()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RESULT_DECLINED_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isResultDeclined() <em>Result Declined</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultDeclined()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean resultDeclined = RESULT_DECLINED_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isResultNsf() <em>Result Nsf</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultNsf()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RESULT_NSF_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isResultNsf() <em>Result Nsf</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResultNsf()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean resultNsf = RESULT_NSF_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getSubReference() <em>Sub Reference</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUB_REFERENCE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getSubReference() <em>Sub Reference</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subReference = SUB_REFERENCE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTransactionDate() <em>Transaction Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransactionDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date TRANSACTION_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTransactionDate() <em>Transaction Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransactionDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date transactionDate = TRANSACTION_DATE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getPaymentServiceTypeEnumId() <em>Payment Service Type Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentServiceTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration paymentServiceTypeEnumId;
-	/**
-	 * The cached value of the '{@link #getTransCodeEnumId() <em>Trans Code Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransCodeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration transCodeEnumId;
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uom currencyUomId;
-	/**
-	 * The cached value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderPaymentPreference orderPaymentPreferenceId;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PaymentMethodType paymentMethodTypeId;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PaymentMethod paymentMethodId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -433,7 +86,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getAltReference() {
-		return altReference;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE, true);
 	}
 
 	/**
@@ -443,10 +96,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setAltReference(String newAltReference) {
-		String oldAltReference = altReference;
-		altReference = newAltReference;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE, oldAltReference, altReference));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE, newAltReference);
 	}
 
 	/**
@@ -456,7 +106,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public BigDecimal getAmount() {
-		return amount;
+		return (BigDecimal)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__AMOUNT, true);
 	}
 
 	/**
@@ -466,10 +116,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
-		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT, oldAmount, amount));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__AMOUNT, newAmount);
 	}
 
 	/**
@@ -479,24 +126,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public Uom getCurrencyUomId() {
-		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
-			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
-			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
-			if (currencyUomId != oldCurrencyUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
-			}
-		}
-		return currencyUomId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uom basicGetCurrencyUomId() {
-		return currencyUomId;
+		return (Uom)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, true);
 	}
 
 	/**
@@ -506,10 +136,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
-		Uom oldCurrencyUomId = currencyUomId;
-		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, newCurrencyUomId);
 	}
 
 	/**
@@ -519,7 +146,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getGatewayAvsResult() {
-		return gatewayAvsResult;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT, true);
 	}
 
 	/**
@@ -529,10 +156,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayAvsResult(String newGatewayAvsResult) {
-		String oldGatewayAvsResult = gatewayAvsResult;
-		gatewayAvsResult = newGatewayAvsResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT, oldGatewayAvsResult, gatewayAvsResult));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT, newGatewayAvsResult);
 	}
 
 	/**
@@ -542,7 +166,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getGatewayCode() {
-		return gatewayCode;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE, true);
 	}
 
 	/**
@@ -552,10 +176,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayCode(String newGatewayCode) {
-		String oldGatewayCode = gatewayCode;
-		gatewayCode = newGatewayCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE, oldGatewayCode, gatewayCode));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE, newGatewayCode);
 	}
 
 	/**
@@ -565,7 +186,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getGatewayCvResult() {
-		return gatewayCvResult;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT, true);
 	}
 
 	/**
@@ -575,10 +196,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayCvResult(String newGatewayCvResult) {
-		String oldGatewayCvResult = gatewayCvResult;
-		gatewayCvResult = newGatewayCvResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT, oldGatewayCvResult, gatewayCvResult));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT, newGatewayCvResult);
 	}
 
 	/**
@@ -588,7 +206,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getGatewayFlag() {
-		return gatewayFlag;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG, true);
 	}
 
 	/**
@@ -598,10 +216,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayFlag(String newGatewayFlag) {
-		String oldGatewayFlag = gatewayFlag;
-		gatewayFlag = newGatewayFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG, oldGatewayFlag, gatewayFlag));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG, newGatewayFlag);
 	}
 
 	/**
@@ -611,7 +226,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getGatewayMessage() {
-		return gatewayMessage;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE, true);
 	}
 
 	/**
@@ -621,10 +236,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayMessage(String newGatewayMessage) {
-		String oldGatewayMessage = gatewayMessage;
-		gatewayMessage = newGatewayMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE, oldGatewayMessage, gatewayMessage));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE, newGatewayMessage);
 	}
 
 	/**
@@ -634,7 +246,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getGatewayScoreResult() {
-		return gatewayScoreResult;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT, true);
 	}
 
 	/**
@@ -644,10 +256,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setGatewayScoreResult(String newGatewayScoreResult) {
-		String oldGatewayScoreResult = gatewayScoreResult;
-		gatewayScoreResult = newGatewayScoreResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT, oldGatewayScoreResult, gatewayScoreResult));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT, newGatewayScoreResult);
 	}
 
 	/**
@@ -657,24 +266,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public OrderPaymentPreference getOrderPaymentPreferenceId() {
-		if (orderPaymentPreferenceId != null && ((EObject)orderPaymentPreferenceId).eIsProxy()) {
-			InternalEObject oldOrderPaymentPreferenceId = (InternalEObject)orderPaymentPreferenceId;
-			orderPaymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldOrderPaymentPreferenceId);
-			if (orderPaymentPreferenceId != oldOrderPaymentPreferenceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
-			}
-		}
-		return orderPaymentPreferenceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderPaymentPreference basicGetOrderPaymentPreferenceId() {
-		return orderPaymentPreferenceId;
+		return (OrderPaymentPreference)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, true);
 	}
 
 	/**
@@ -684,10 +276,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setOrderPaymentPreferenceId(OrderPaymentPreference newOrderPaymentPreferenceId) {
-		OrderPaymentPreference oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
-		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, newOrderPaymentPreferenceId);
 	}
 
 	/**
@@ -697,24 +286,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public Enumeration getPaymentServiceTypeEnumId() {
-		if (paymentServiceTypeEnumId != null && ((EObject)paymentServiceTypeEnumId).eIsProxy()) {
-			InternalEObject oldPaymentServiceTypeEnumId = (InternalEObject)paymentServiceTypeEnumId;
-			paymentServiceTypeEnumId = (Enumeration)eResolveProxy(oldPaymentServiceTypeEnumId);
-			if (paymentServiceTypeEnumId != oldPaymentServiceTypeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
-			}
-		}
-		return paymentServiceTypeEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetPaymentServiceTypeEnumId() {
-		return paymentServiceTypeEnumId;
+		return (Enumeration)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, true);
 	}
 
 	/**
@@ -724,10 +296,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentServiceTypeEnumId(Enumeration newPaymentServiceTypeEnumId) {
-		Enumeration oldPaymentServiceTypeEnumId = paymentServiceTypeEnumId;
-		paymentServiceTypeEnumId = newPaymentServiceTypeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, newPaymentServiceTypeEnumId);
 	}
 
 	/**
@@ -737,7 +306,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getReferenceNum() {
-		return referenceNum;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM, true);
 	}
 
 	/**
@@ -747,10 +316,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setReferenceNum(String newReferenceNum) {
-		String oldReferenceNum = referenceNum;
-		referenceNum = newReferenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM, oldReferenceNum, referenceNum));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM, newReferenceNum);
 	}
 
 	/**
@@ -760,7 +326,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isResultBadCardNumber() {
-		return resultBadCardNumber;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER, true);
 	}
 
 	/**
@@ -770,10 +336,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultBadCardNumber(boolean newResultBadCardNumber) {
-		boolean oldResultBadCardNumber = resultBadCardNumber;
-		resultBadCardNumber = newResultBadCardNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER, oldResultBadCardNumber, resultBadCardNumber));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER, newResultBadCardNumber);
 	}
 
 	/**
@@ -783,7 +346,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isResultBadExpire() {
-		return resultBadExpire;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE, true);
 	}
 
 	/**
@@ -793,10 +356,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultBadExpire(boolean newResultBadExpire) {
-		boolean oldResultBadExpire = resultBadExpire;
-		resultBadExpire = newResultBadExpire;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE, oldResultBadExpire, resultBadExpire));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE, newResultBadExpire);
 	}
 
 	/**
@@ -806,7 +366,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isResultDeclined() {
-		return resultDeclined;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED, true);
 	}
 
 	/**
@@ -816,10 +376,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultDeclined(boolean newResultDeclined) {
-		boolean oldResultDeclined = resultDeclined;
-		resultDeclined = newResultDeclined;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED, oldResultDeclined, resultDeclined));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED, newResultDeclined);
 	}
 
 	/**
@@ -829,7 +386,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isResultNsf() {
-		return resultNsf;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF, true);
 	}
 
 	/**
@@ -839,10 +396,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setResultNsf(boolean newResultNsf) {
-		boolean oldResultNsf = resultNsf;
-		resultNsf = newResultNsf;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF, oldResultNsf, resultNsf));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF, newResultNsf);
 	}
 
 	/**
@@ -852,7 +406,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getSubReference() {
-		return subReference;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE, true);
 	}
 
 	/**
@@ -862,10 +416,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setSubReference(String newSubReference) {
-		String oldSubReference = subReference;
-		subReference = newSubReference;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE, oldSubReference, subReference));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE, newSubReference);
 	}
 
 	/**
@@ -875,24 +426,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public Enumeration getTransCodeEnumId() {
-		if (transCodeEnumId != null && ((EObject)transCodeEnumId).eIsProxy()) {
-			InternalEObject oldTransCodeEnumId = (InternalEObject)transCodeEnumId;
-			transCodeEnumId = (Enumeration)eResolveProxy(oldTransCodeEnumId);
-			if (transCodeEnumId != oldTransCodeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, oldTransCodeEnumId, transCodeEnumId));
-			}
-		}
-		return transCodeEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetTransCodeEnumId() {
-		return transCodeEnumId;
+		return (Enumeration)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, true);
 	}
 
 	/**
@@ -902,10 +436,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setTransCodeEnumId(Enumeration newTransCodeEnumId) {
-		Enumeration oldTransCodeEnumId = transCodeEnumId;
-		transCodeEnumId = newTransCodeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, oldTransCodeEnumId, transCodeEnumId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, newTransCodeEnumId);
 	}
 
 	/**
@@ -915,7 +446,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public Date getTransactionDate() {
-		return transactionDate;
+		return (Date)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE, true);
 	}
 
 	/**
@@ -925,10 +456,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setTransactionDate(Date newTransactionDate) {
-		Date oldTransactionDate = transactionDate;
-		transactionDate = newTransactionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE, oldTransactionDate, transactionDate));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE, newTransactionDate);
 	}
 
 	/**
@@ -962,24 +490,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public PaymentMethodType getPaymentMethodTypeId() {
-		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
-			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
-			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
-			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
-			}
-		}
-		return paymentMethodTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PaymentMethodType basicGetPaymentMethodTypeId() {
-		return paymentMethodTypeId;
+		return (PaymentMethodType)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, true);
 	}
 
 	/**
@@ -989,10 +500,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
-		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
-		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, newPaymentMethodTypeId);
 	}
 
 	/**
@@ -1002,24 +510,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public PaymentMethod getPaymentMethodId() {
-		if (paymentMethodId != null && ((EObject)paymentMethodId).eIsProxy()) {
-			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
-			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
-			if (paymentMethodId != oldPaymentMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
-			}
-		}
-		return paymentMethodId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PaymentMethod basicGetPaymentMethodId() {
-		return paymentMethodId;
+		return (PaymentMethod)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, true);
 	}
 
 	/**
@@ -1029,10 +520,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
-		PaymentMethod oldPaymentMethodId = paymentMethodId;
-		paymentMethodId = newPaymentMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, newPaymentMethodId);
 	}
 
 	/**
@@ -1042,7 +530,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getPaymentGatewayResponseId() {
-		return paymentGatewayResponseId;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID, true);
 	}
 
 	/**
@@ -1052,330 +540,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentGatewayResponseId(String newPaymentGatewayResponseId) {
-		String oldPaymentGatewayResponseId = paymentGatewayResponseId;
-		paymentGatewayResponseId = newPaymentGatewayResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID:
-				return getPaymentGatewayResponseId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE:
-				return getAltReference();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
-				return getAmount();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
-				return getGatewayAvsResult();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE:
-				return getGatewayCode();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT:
-				return getGatewayCvResult();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG:
-				return getGatewayFlag();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE:
-				return getGatewayMessage();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
-				return getGatewayScoreResult();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
-				return getReferenceNum();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER:
-				return isResultBadCardNumber();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE:
-				return isResultBadExpire();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED:
-				return isResultDeclined();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF:
-				return isResultNsf();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
-				return getSubReference();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
-				return getTransactionDate();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				if (resolve) return getPaymentServiceTypeEnumId();
-				return basicGetPaymentServiceTypeEnumId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				if (resolve) return getTransCodeEnumId();
-				return basicGetTransCodeEnumId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				if (resolve) return getCurrencyUomId();
-				return basicGetCurrencyUomId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				if (resolve) return getOrderPaymentPreferenceId();
-				return basicGetOrderPaymentPreferenceId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				if (resolve) return getPaymentMethodTypeId();
-				return basicGetPaymentMethodTypeId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				if (resolve) return getPaymentMethodId();
-				return basicGetPaymentMethodId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID:
-				setPaymentGatewayResponseId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE:
-				setAltReference((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
-				setAmount((BigDecimal)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
-				setGatewayAvsResult((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE:
-				setGatewayCode((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT:
-				setGatewayCvResult((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG:
-				setGatewayFlag((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE:
-				setGatewayMessage((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
-				setGatewayScoreResult((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
-				setReferenceNum((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER:
-				setResultBadCardNumber((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE:
-				setResultBadExpire((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED:
-				setResultDeclined((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF:
-				setResultNsf((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
-				setSubReference((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
-				setTransactionDate((Date)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				setPaymentServiceTypeEnumId((Enumeration)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				setTransCodeEnumId((Enumeration)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				setCurrencyUomId((Uom)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId((OrderPaymentPreference)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((PaymentMethodType)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				setPaymentMethodId((PaymentMethod)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID:
-				setPaymentGatewayResponseId(PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE:
-				setAltReference(ALT_REFERENCE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
-				setAmount(AMOUNT_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
-				setGatewayAvsResult(GATEWAY_AVS_RESULT_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE:
-				setGatewayCode(GATEWAY_CODE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT:
-				setGatewayCvResult(GATEWAY_CV_RESULT_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG:
-				setGatewayFlag(GATEWAY_FLAG_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE:
-				setGatewayMessage(GATEWAY_MESSAGE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
-				setGatewayScoreResult(GATEWAY_SCORE_RESULT_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
-				setReferenceNum(REFERENCE_NUM_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER:
-				setResultBadCardNumber(RESULT_BAD_CARD_NUMBER_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE:
-				setResultBadExpire(RESULT_BAD_EXPIRE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED:
-				setResultDeclined(RESULT_DECLINED_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF:
-				setResultNsf(RESULT_NSF_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
-				setSubReference(SUB_REFERENCE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
-				setTransactionDate(TRANSACTION_DATE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				setPaymentServiceTypeEnumId((Enumeration)null);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				setTransCodeEnumId((Enumeration)null);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				setCurrencyUomId((Uom)null);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId((OrderPaymentPreference)null);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((PaymentMethodType)null);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				setPaymentMethodId((PaymentMethod)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID:
-				return PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT == null ? paymentGatewayResponseId != null : !PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT.equals(paymentGatewayResponseId);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ALT_REFERENCE:
-				return ALT_REFERENCE_EDEFAULT == null ? altReference != null : !ALT_REFERENCE_EDEFAULT.equals(altReference);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
-				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
-				return GATEWAY_AVS_RESULT_EDEFAULT == null ? gatewayAvsResult != null : !GATEWAY_AVS_RESULT_EDEFAULT.equals(gatewayAvsResult);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE:
-				return GATEWAY_CODE_EDEFAULT == null ? gatewayCode != null : !GATEWAY_CODE_EDEFAULT.equals(gatewayCode);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT:
-				return GATEWAY_CV_RESULT_EDEFAULT == null ? gatewayCvResult != null : !GATEWAY_CV_RESULT_EDEFAULT.equals(gatewayCvResult);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG:
-				return GATEWAY_FLAG_EDEFAULT == null ? gatewayFlag != null : !GATEWAY_FLAG_EDEFAULT.equals(gatewayFlag);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE:
-				return GATEWAY_MESSAGE_EDEFAULT == null ? gatewayMessage != null : !GATEWAY_MESSAGE_EDEFAULT.equals(gatewayMessage);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
-				return GATEWAY_SCORE_RESULT_EDEFAULT == null ? gatewayScoreResult != null : !GATEWAY_SCORE_RESULT_EDEFAULT.equals(gatewayScoreResult);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
-				return REFERENCE_NUM_EDEFAULT == null ? referenceNum != null : !REFERENCE_NUM_EDEFAULT.equals(referenceNum);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER:
-				return resultBadCardNumber != RESULT_BAD_CARD_NUMBER_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE:
-				return resultBadExpire != RESULT_BAD_EXPIRE_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED:
-				return resultDeclined != RESULT_DECLINED_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_NSF:
-				return resultNsf != RESULT_NSF_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
-				return SUB_REFERENCE_EDEFAULT == null ? subReference != null : !SUB_REFERENCE_EDEFAULT.equals(subReference);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
-				return TRANSACTION_DATE_EDEFAULT == null ? transactionDate != null : !TRANSACTION_DATE_EDEFAULT.equals(transactionDate);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				return paymentServiceTypeEnumId != null;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				return transCodeEnumId != null;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				return currencyUomId != null;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				return orderPaymentPreferenceId != null;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				return paymentMethodTypeId != null;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				return paymentMethodId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentGatewayResponseId: ");
-		result.append(paymentGatewayResponseId);
-		result.append(", altReference: ");
-		result.append(altReference);
-		result.append(", amount: ");
-		result.append(amount);
-		result.append(", gatewayAvsResult: ");
-		result.append(gatewayAvsResult);
-		result.append(", gatewayCode: ");
-		result.append(gatewayCode);
-		result.append(", gatewayCvResult: ");
-		result.append(gatewayCvResult);
-		result.append(", gatewayFlag: ");
-		result.append(gatewayFlag);
-		result.append(", gatewayMessage: ");
-		result.append(gatewayMessage);
-		result.append(", gatewayScoreResult: ");
-		result.append(gatewayScoreResult);
-		result.append(", referenceNum: ");
-		result.append(referenceNum);
-		result.append(", resultBadCardNumber: ");
-		result.append(resultBadCardNumber);
-		result.append(", resultBadExpire: ");
-		result.append(resultBadExpire);
-		result.append(", resultDeclined: ");
-		result.append(resultDeclined);
-		result.append(", resultNsf: ");
-		result.append(resultNsf);
-		result.append(", subReference: ");
-		result.append(subReference);
-		result.append(", transactionDate: ");
-		result.append(transactionDate);
-		result.append(')');
-		return result.toString();
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__PAYMENT_GATEWAY_RESPONSE_ID, newPaymentGatewayResponseId);
 	}
 
 } //PaymentGatewayResponseImpl

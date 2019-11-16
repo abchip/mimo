@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.language;
 
+import java.util.List;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Textable;
 
@@ -24,6 +25,8 @@ import org.abchip.mimo.entity.Textable;
  *   <li>{@link org.abchip.mimo.language.Language#getScope <em>Scope</em>}</li>
  *   <li>{@link org.abchip.mimo.language.Language#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.language.Language#getType <em>Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.Language#getPlanets <em>Planets</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.Language#getPlanetsCont <em>Planets Cont</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.language.LanguagePackage#getLanguage()
@@ -166,5 +169,37 @@ public interface Language extends EntityNameable, Textable {
 	 * @generated
 	 */
 	void setType(LanguageType value);
+
+	/**
+	 * Returns the value of the '<em><b>Planets</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.language.LanguagePlanet}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Planets</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Planets</em>' reference list.
+	 * @see org.abchip.mimo.language.LanguagePackage#getLanguage_Planets()
+	 * @model
+	 * @generated
+	 */
+	List<LanguagePlanet> getPlanets();
+
+	/**
+	 * Returns the value of the '<em><b>Planets Cont</b></em>' containment reference list.
+	 * The list contents are of type {@link org.abchip.mimo.language.LanguagePlanet}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Planets Cont</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Planets Cont</em>' containment reference list.
+	 * @see org.abchip.mimo.language.LanguagePackage#getLanguage_PlanetsCont()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	List<LanguagePlanet> getPlanetsCont();
 
 } // Language

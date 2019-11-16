@@ -11,11 +11,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.KeywordThesaurus;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,54 +33,6 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getEnteredKeyword() <em>Entered Keyword</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnteredKeyword()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENTERED_KEYWORD_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEnteredKeyword() <em>Entered Keyword</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnteredKeyword()
-	 * @generated
-	 * @ordered
-	 */
-	protected String enteredKeyword = ENTERED_KEYWORD_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAlternateKeyword() <em>Alternate Keyword</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAlternateKeyword()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ALTERNATE_KEYWORD_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAlternateKeyword() <em>Alternate Keyword</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAlternateKeyword()
-	 * @generated
-	 * @ordered
-	 */
-	protected String alternateKeyword = ALTERNATE_KEYWORD_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRelationshipEnumId() <em>Relationship Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelationshipEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration relationshipEnumId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,7 +59,7 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public String getAlternateKeyword() {
-		return alternateKeyword;
+		return (String)eGet(KeywordPackage.Literals.KEYWORD_THESAURUS__ALTERNATE_KEYWORD, true);
 	}
 
 	/**
@@ -121,10 +69,7 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public void setAlternateKeyword(String newAlternateKeyword) {
-		String oldAlternateKeyword = alternateKeyword;
-		alternateKeyword = newAlternateKeyword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, KeywordPackage.KEYWORD_THESAURUS__ALTERNATE_KEYWORD, oldAlternateKeyword, alternateKeyword));
+		eSet(KeywordPackage.Literals.KEYWORD_THESAURUS__ALTERNATE_KEYWORD, newAlternateKeyword);
 	}
 
 	/**
@@ -134,7 +79,7 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public String getEnteredKeyword() {
-		return enteredKeyword;
+		return (String)eGet(KeywordPackage.Literals.KEYWORD_THESAURUS__ENTERED_KEYWORD, true);
 	}
 
 	/**
@@ -144,10 +89,7 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public void setEnteredKeyword(String newEnteredKeyword) {
-		String oldEnteredKeyword = enteredKeyword;
-		enteredKeyword = newEnteredKeyword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, KeywordPackage.KEYWORD_THESAURUS__ENTERED_KEYWORD, oldEnteredKeyword, enteredKeyword));
+		eSet(KeywordPackage.Literals.KEYWORD_THESAURUS__ENTERED_KEYWORD, newEnteredKeyword);
 	}
 
 	/**
@@ -157,24 +99,7 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public Enumeration getRelationshipEnumId() {
-		if (relationshipEnumId != null && ((EObject)relationshipEnumId).eIsProxy()) {
-			InternalEObject oldRelationshipEnumId = (InternalEObject)relationshipEnumId;
-			relationshipEnumId = (Enumeration)eResolveProxy(oldRelationshipEnumId);
-			if (relationshipEnumId != oldRelationshipEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID, oldRelationshipEnumId, relationshipEnumId));
-			}
-		}
-		return relationshipEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetRelationshipEnumId() {
-		return relationshipEnumId;
+		return (Enumeration)eGet(KeywordPackage.Literals.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID, true);
 	}
 
 	/**
@@ -184,107 +109,7 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public void setRelationshipEnumId(Enumeration newRelationshipEnumId) {
-		Enumeration oldRelationshipEnumId = relationshipEnumId;
-		relationshipEnumId = newRelationshipEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID, oldRelationshipEnumId, relationshipEnumId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case KeywordPackage.KEYWORD_THESAURUS__ENTERED_KEYWORD:
-				return getEnteredKeyword();
-			case KeywordPackage.KEYWORD_THESAURUS__ALTERNATE_KEYWORD:
-				return getAlternateKeyword();
-			case KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID:
-				if (resolve) return getRelationshipEnumId();
-				return basicGetRelationshipEnumId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case KeywordPackage.KEYWORD_THESAURUS__ENTERED_KEYWORD:
-				setEnteredKeyword((String)newValue);
-				return;
-			case KeywordPackage.KEYWORD_THESAURUS__ALTERNATE_KEYWORD:
-				setAlternateKeyword((String)newValue);
-				return;
-			case KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID:
-				setRelationshipEnumId((Enumeration)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case KeywordPackage.KEYWORD_THESAURUS__ENTERED_KEYWORD:
-				setEnteredKeyword(ENTERED_KEYWORD_EDEFAULT);
-				return;
-			case KeywordPackage.KEYWORD_THESAURUS__ALTERNATE_KEYWORD:
-				setAlternateKeyword(ALTERNATE_KEYWORD_EDEFAULT);
-				return;
-			case KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID:
-				setRelationshipEnumId((Enumeration)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case KeywordPackage.KEYWORD_THESAURUS__ENTERED_KEYWORD:
-				return ENTERED_KEYWORD_EDEFAULT == null ? enteredKeyword != null : !ENTERED_KEYWORD_EDEFAULT.equals(enteredKeyword);
-			case KeywordPackage.KEYWORD_THESAURUS__ALTERNATE_KEYWORD:
-				return ALTERNATE_KEYWORD_EDEFAULT == null ? alternateKeyword != null : !ALTERNATE_KEYWORD_EDEFAULT.equals(alternateKeyword);
-			case KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID:
-				return relationshipEnumId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (enteredKeyword: ");
-		result.append(enteredKeyword);
-		result.append(", alternateKeyword: ");
-		result.append(alternateKeyword);
-		result.append(')');
-		return result.toString();
+		eSet(KeywordPackage.Literals.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID, newRelationshipEnumId);
 	}
 
 } //KeywordThesaurusImpl

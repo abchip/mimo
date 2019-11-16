@@ -15,12 +15,7 @@ import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.order.request.RespondingParty;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,76 +39,6 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getRespondingPartySeqId() <em>Responding Party Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRespondingPartySeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESPONDING_PARTY_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRespondingPartySeqId() <em>Responding Party Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRespondingPartySeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String respondingPartySeqId = RESPONDING_PARTY_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDateSent() <em>Date Sent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateSent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date DATE_SENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDateSent() <em>Date Sent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateSent()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date dateSent = DATE_SENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CustRequest custRequestId;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ContactMech contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,24 +66,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public ContactMech getContactMechId() {
-		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
-			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
-			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
-			}
-		}
-		return contactMechId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContactMech basicGetContactMechId() {
-		return contactMechId;
+		return (ContactMech)eGet(RequestPackage.Literals.RESPONDING_PARTY__CONTACT_MECH_ID, true);
 	}
 
 	/**
@@ -168,10 +76,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
-		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+		eSet(RequestPackage.Literals.RESPONDING_PARTY__CONTACT_MECH_ID, newContactMechId);
 	}
 
 	/**
@@ -181,24 +86,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public CustRequest getCustRequestId() {
-		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
-			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
-			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
-			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
-			}
-		}
-		return custRequestId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CustRequest basicGetCustRequestId() {
-		return custRequestId;
+		return (CustRequest)eGet(RequestPackage.Literals.RESPONDING_PARTY__CUST_REQUEST_ID, true);
 	}
 
 	/**
@@ -208,10 +96,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
-		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+		eSet(RequestPackage.Literals.RESPONDING_PARTY__CUST_REQUEST_ID, newCustRequestId);
 	}
 
 	/**
@@ -221,7 +106,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public Date getDateSent() {
-		return dateSent;
+		return (Date)eGet(RequestPackage.Literals.RESPONDING_PARTY__DATE_SENT, true);
 	}
 
 	/**
@@ -231,10 +116,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setDateSent(Date newDateSent) {
-		Date oldDateSent = dateSent;
-		dateSent = newDateSent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__DATE_SENT, oldDateSent, dateSent));
+		eSet(RequestPackage.Literals.RESPONDING_PARTY__DATE_SENT, newDateSent);
 	}
 
 	/**
@@ -244,24 +126,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.RESPONDING_PARTY__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(RequestPackage.Literals.RESPONDING_PARTY__PARTY_ID, true);
 	}
 
 	/**
@@ -271,10 +136,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__PARTY_ID, oldPartyId, partyId));
+		eSet(RequestPackage.Literals.RESPONDING_PARTY__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -284,7 +146,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public String getRespondingPartySeqId() {
-		return respondingPartySeqId;
+		return (String)eGet(RequestPackage.Literals.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID, true);
 	}
 
 	/**
@@ -294,129 +156,7 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setRespondingPartySeqId(String newRespondingPartySeqId) {
-		String oldRespondingPartySeqId = respondingPartySeqId;
-		respondingPartySeqId = newRespondingPartySeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID, oldRespondingPartySeqId, respondingPartySeqId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case RequestPackage.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID:
-				return getRespondingPartySeqId();
-			case RequestPackage.RESPONDING_PARTY__DATE_SENT:
-				return getDateSent();
-			case RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID:
-				if (resolve) return getCustRequestId();
-				return basicGetCustRequestId();
-			case RequestPackage.RESPONDING_PARTY__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-			case RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID:
-				if (resolve) return getContactMechId();
-				return basicGetContactMechId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RequestPackage.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID:
-				setRespondingPartySeqId((String)newValue);
-				return;
-			case RequestPackage.RESPONDING_PARTY__DATE_SENT:
-				setDateSent((Date)newValue);
-				return;
-			case RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID:
-				setCustRequestId((CustRequest)newValue);
-				return;
-			case RequestPackage.RESPONDING_PARTY__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-			case RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID:
-				setContactMechId((ContactMech)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RequestPackage.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID:
-				setRespondingPartySeqId(RESPONDING_PARTY_SEQ_ID_EDEFAULT);
-				return;
-			case RequestPackage.RESPONDING_PARTY__DATE_SENT:
-				setDateSent(DATE_SENT_EDEFAULT);
-				return;
-			case RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID:
-				setCustRequestId((CustRequest)null);
-				return;
-			case RequestPackage.RESPONDING_PARTY__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-			case RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID:
-				setContactMechId((ContactMech)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case RequestPackage.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID:
-				return RESPONDING_PARTY_SEQ_ID_EDEFAULT == null ? respondingPartySeqId != null : !RESPONDING_PARTY_SEQ_ID_EDEFAULT.equals(respondingPartySeqId);
-			case RequestPackage.RESPONDING_PARTY__DATE_SENT:
-				return DATE_SENT_EDEFAULT == null ? dateSent != null : !DATE_SENT_EDEFAULT.equals(dateSent);
-			case RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID:
-				return custRequestId != null;
-			case RequestPackage.RESPONDING_PARTY__PARTY_ID:
-				return partyId != null;
-			case RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID:
-				return contactMechId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (respondingPartySeqId: ");
-		result.append(respondingPartySeqId);
-		result.append(", dateSent: ");
-		result.append(dateSent);
-		result.append(')');
-		return result.toString();
+		eSet(RequestPackage.Literals.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID, newRespondingPartySeqId);
 	}
 
 } //RespondingPartyImpl

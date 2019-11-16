@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.ImageDataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,36 +33,6 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getImageData() <em>Image Data</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImageData()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final byte[] IMAGE_DATA_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getImageData() <em>Image Data</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImageData()
-	 * @generated
-	 * @ordered
-	 */
-	protected byte[] imageData = IMAGE_DATA_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataResource dataResourceId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,24 +59,7 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	 */
 	@Override
 	public DataResource getDataResourceId() {
-		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
-			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
-			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
-			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-			}
-		}
-		return dataResourceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataResource basicGetDataResourceId() {
-		return dataResourceId;
+		return (DataResource)eGet(DataPackage.Literals.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -121,10 +69,7 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
-		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+		eSet(DataPackage.Literals.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 
 	/**
@@ -134,7 +79,7 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	 */
 	@Override
 	public byte[] getImageData() {
-		return imageData;
+		return (byte[])eGet(DataPackage.Literals.IMAGE_DATA_RESOURCE__IMAGE_DATA, true);
 	}
 
 	/**
@@ -144,95 +89,7 @@ public class ImageDataResourceImpl extends BizEntityImpl implements ImageDataRes
 	 */
 	@Override
 	public void setImageData(byte[] newImageData) {
-		byte[] oldImageData = imageData;
-		imageData = newImageData;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.IMAGE_DATA_RESOURCE__IMAGE_DATA, oldImageData, imageData));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.IMAGE_DATA_RESOURCE__IMAGE_DATA:
-				return getImageData();
-			case DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				if (resolve) return getDataResourceId();
-				return basicGetDataResourceId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.IMAGE_DATA_RESOURCE__IMAGE_DATA:
-				setImageData((byte[])newValue);
-				return;
-			case DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.IMAGE_DATA_RESOURCE__IMAGE_DATA:
-				setImageData(IMAGE_DATA_EDEFAULT);
-				return;
-			case DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.IMAGE_DATA_RESOURCE__IMAGE_DATA:
-				return IMAGE_DATA_EDEFAULT == null ? imageData != null : !IMAGE_DATA_EDEFAULT.equals(imageData);
-			case DataPackage.IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return dataResourceId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (imageData: ");
-		result.append(imageData);
-		result.append(')');
-		return result.toString();
+		eSet(DataPackage.Literals.IMAGE_DATA_RESOURCE__IMAGE_DATA, newImageData);
 	}
 
 } //ImageDataResourceImpl

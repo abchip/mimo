@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
 import org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,46 +33,6 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getExprAssocType() <em>Expr Assoc Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExprAssocType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXPR_ASSOC_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExprAssocType() <em>Expr Assoc Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExprAssocType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String exprAssocType = EXPR_ASSOC_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getFromTempExprId() <em>From Temp Expr Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromTempExprId()
-	 * @generated
-	 * @ordered
-	 */
-	protected TemporalExpression fromTempExprId;
-
-	/**
-	 * The cached value of the '{@link #getToTempExprId() <em>To Temp Expr Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToTempExprId()
-	 * @generated
-	 * @ordered
-	 */
-	protected TemporalExpression toTempExprId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,24 +60,7 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public TemporalExpression getFromTempExprId() {
-		if (fromTempExprId != null && ((EObject)fromTempExprId).eIsProxy()) {
-			InternalEObject oldFromTempExprId = (InternalEObject)fromTempExprId;
-			fromTempExprId = (TemporalExpression)eResolveProxy(oldFromTempExprId);
-			if (fromTempExprId != oldFromTempExprId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, oldFromTempExprId, fromTempExprId));
-			}
-		}
-		return fromTempExprId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TemporalExpression basicGetFromTempExprId() {
-		return fromTempExprId;
+		return (TemporalExpression)eGet(SchedulePackage.Literals.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, true);
 	}
 
 	/**
@@ -132,10 +70,7 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public void setFromTempExprId(TemporalExpression newFromTempExprId) {
-		TemporalExpression oldFromTempExprId = fromTempExprId;
-		fromTempExprId = newFromTempExprId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, oldFromTempExprId, fromTempExprId));
+		eSet(SchedulePackage.Literals.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, newFromTempExprId);
 	}
 
 	/**
@@ -145,24 +80,7 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public TemporalExpression getToTempExprId() {
-		if (toTempExprId != null && ((EObject)toTempExprId).eIsProxy()) {
-			InternalEObject oldToTempExprId = (InternalEObject)toTempExprId;
-			toTempExprId = (TemporalExpression)eResolveProxy(oldToTempExprId);
-			if (toTempExprId != oldToTempExprId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID, oldToTempExprId, toTempExprId));
-			}
-		}
-		return toTempExprId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TemporalExpression basicGetToTempExprId() {
-		return toTempExprId;
+		return (TemporalExpression)eGet(SchedulePackage.Literals.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID, true);
 	}
 
 	/**
@@ -172,10 +90,7 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public void setToTempExprId(TemporalExpression newToTempExprId) {
-		TemporalExpression oldToTempExprId = toTempExprId;
-		toTempExprId = newToTempExprId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID, oldToTempExprId, toTempExprId));
+		eSet(SchedulePackage.Literals.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID, newToTempExprId);
 	}
 
 	/**
@@ -185,7 +100,7 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public String getExprAssocType() {
-		return exprAssocType;
+		return (String)eGet(SchedulePackage.Literals.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE, true);
 	}
 
 	/**
@@ -195,106 +110,7 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public void setExprAssocType(String newExprAssocType) {
-		String oldExprAssocType = exprAssocType;
-		exprAssocType = newExprAssocType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE, oldExprAssocType, exprAssocType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
-				return getExprAssocType();
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				if (resolve) return getFromTempExprId();
-				return basicGetFromTempExprId();
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
-				if (resolve) return getToTempExprId();
-				return basicGetToTempExprId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
-				setExprAssocType((String)newValue);
-				return;
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				setFromTempExprId((TemporalExpression)newValue);
-				return;
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
-				setToTempExprId((TemporalExpression)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
-				setExprAssocType(EXPR_ASSOC_TYPE_EDEFAULT);
-				return;
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				setFromTempExprId((TemporalExpression)null);
-				return;
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
-				setToTempExprId((TemporalExpression)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE:
-				return EXPR_ASSOC_TYPE_EDEFAULT == null ? exprAssocType != null : !EXPR_ASSOC_TYPE_EDEFAULT.equals(exprAssocType);
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID:
-				return fromTempExprId != null;
-			case SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID:
-				return toTempExprId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (exprAssocType: ");
-		result.append(exprAssocType);
-		result.append(')');
-		return result.toString();
+		eSet(SchedulePackage.Literals.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE, newExprAssocType);
 	}
 
 } //TemporalExpressionAssocImpl

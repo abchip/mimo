@@ -12,12 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +35,6 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getSurveyQuestionCategoryId() <em>Survey Question Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_QUESTION_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyQuestionCategoryId() <em>Survey Question Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyQuestionCategoryId = SURVEY_QUESTION_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected SurveyQuestionCategory parentCategoryId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,7 +61,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(SurveyPackage.Literals.SURVEY_QUESTION_CATEGORY__DESCRIPTION, true);
 	}
 
 	/**
@@ -126,10 +71,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_CATEGORY__DESCRIPTION, oldDescription, description));
+		eSet(SurveyPackage.Literals.SURVEY_QUESTION_CATEGORY__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -139,24 +81,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public SurveyQuestionCategory getParentCategoryId() {
-		if (parentCategoryId != null && ((EObject)parentCategoryId).eIsProxy()) {
-			InternalEObject oldParentCategoryId = (InternalEObject)parentCategoryId;
-			parentCategoryId = (SurveyQuestionCategory)eResolveProxy(oldParentCategoryId);
-			if (parentCategoryId != oldParentCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
-			}
-		}
-		return parentCategoryId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SurveyQuestionCategory basicGetParentCategoryId() {
-		return parentCategoryId;
+		return (SurveyQuestionCategory)eGet(SurveyPackage.Literals.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID, true);
 	}
 
 	/**
@@ -166,10 +91,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public void setParentCategoryId(SurveyQuestionCategory newParentCategoryId) {
-		SurveyQuestionCategory oldParentCategoryId = parentCategoryId;
-		parentCategoryId = newParentCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
+		eSet(SurveyPackage.Literals.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID, newParentCategoryId);
 	}
 
 	/**
@@ -203,7 +125,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public String getSurveyQuestionCategoryId() {
-		return surveyQuestionCategoryId;
+		return (String)eGet(SurveyPackage.Literals.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID, true);
 	}
 
 	/**
@@ -213,107 +135,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public void setSurveyQuestionCategoryId(String newSurveyQuestionCategoryId) {
-		String oldSurveyQuestionCategoryId = surveyQuestionCategoryId;
-		surveyQuestionCategoryId = newSurveyQuestionCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID, oldSurveyQuestionCategoryId, surveyQuestionCategoryId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID:
-				return getSurveyQuestionCategoryId();
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__DESCRIPTION:
-				return getDescription();
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID:
-				if (resolve) return getParentCategoryId();
-				return basicGetParentCategoryId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID:
-				setSurveyQuestionCategoryId((String)newValue);
-				return;
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId((SurveyQuestionCategory)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID:
-				setSurveyQuestionCategoryId(SURVEY_QUESTION_CATEGORY_ID_EDEFAULT);
-				return;
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId((SurveyQuestionCategory)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID:
-				return SURVEY_QUESTION_CATEGORY_ID_EDEFAULT == null ? surveyQuestionCategoryId != null : !SURVEY_QUESTION_CATEGORY_ID_EDEFAULT.equals(surveyQuestionCategoryId);
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID:
-				return parentCategoryId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (surveyQuestionCategoryId: ");
-		result.append(surveyQuestionCategoryId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(SurveyPackage.Literals.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID, newSurveyQuestionCategoryId);
 	}
 
 } //SurveyQuestionCategoryImpl

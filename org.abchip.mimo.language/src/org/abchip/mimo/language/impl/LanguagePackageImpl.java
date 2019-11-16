@@ -18,6 +18,7 @@ import org.abchip.mimo.language.LanguagePackage;
 
 import org.abchip.mimo.language.LanguageParser;
 import org.abchip.mimo.language.LanguageParserRegistry;
+import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.language.LanguageScope;
 import org.abchip.mimo.language.LanguageType;
 import org.abchip.mimo.language.LanguageLinearizer;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -89,6 +91,13 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * @generated
 	 */
 	private EClass languageLinearizerRegistryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass languagePlanetEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +250,26 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * @generated
 	 */
 	@Override
+	public EReference getLanguage_Planets() {
+		return (EReference)languageEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getLanguage_PlanetsCont() {
+		return (EReference)languageEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getLanguageExpression() {
 		return languageExpressionEClass;
 	}
@@ -311,6 +340,26 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * @generated
 	 */
 	@Override
+	public EClass getLanguagePlanet() {
+		return languagePlanetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLanguagePlanet_Name() {
+		return (EAttribute)languagePlanetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getLanguageScope() {
 		return languageScopeEEnum;
 	}
@@ -360,6 +409,8 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		createEAttribute(languageEClass, LANGUAGE__SCOPE);
 		createEAttribute(languageEClass, LANGUAGE__TEXT);
 		createEAttribute(languageEClass, LANGUAGE__TYPE);
+		createEReference(languageEClass, LANGUAGE__PLANETS);
+		createEReference(languageEClass, LANGUAGE__PLANETS_CONT);
 
 		languageExpressionEClass = createEClass(LANGUAGE_EXPRESSION);
 		createEAttribute(languageExpressionEClass, LANGUAGE_EXPRESSION__EXPRESSION_ROW);
@@ -373,6 +424,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		languageLinearizerEClass = createEClass(LANGUAGE_LINEARIZER);
 
 		languageLinearizerRegistryEClass = createEClass(LANGUAGE_LINEARIZER_REGISTRY);
+
+		languagePlanetEClass = createEClass(LANGUAGE_PLANET);
+		createEAttribute(languagePlanetEClass, LANGUAGE_PLANET__NAME);
 
 		// Create enums
 		languageScopeEEnum = createEEnum(LANGUAGE_SCOPE);
@@ -426,6 +480,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		g2 = createEGenericType(this.getLanguageLinearizer());
 		g1.getETypeArguments().add(g2);
 		languageLinearizerRegistryEClass.getEGenericSuperTypes().add(g1);
+		languagePlanetEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(languageEClass, Language.class, "Language", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -434,11 +489,13 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		initEAttribute(getLanguage_Scope(), this.getLanguageScope(), "scope", null, 1, 1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLanguage_Text(), ecorePackage.getEString(), "text", null, 1, 1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLanguage_Type(), this.getLanguageType(), "type", null, 0, 1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLanguage_Planets(), this.getLanguagePlanet(), null, "planets", null, 0, -1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLanguage_PlanetsCont(), this.getLanguagePlanet(), null, "planetsCont", null, 0, -1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(languageExpressionEClass, LanguageExpression.class, "LanguageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLanguageExpression_ExpressionRow(), ecorePackage.getEJavaObject(), "expressionRow", null, 1, 1, LanguageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(languageManagerEClass, LanguageManager.class, "LanguageManager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(languageManagerEClass, LanguageManager.class, "LanguageManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = addEOperation(languageManagerEClass, null, "classifyLanguage", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -471,6 +528,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		addEParameter(op, this.getLanguageExpression(), "expression", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(languageLinearizerRegistryEClass, LanguageLinearizerRegistry.class, "LanguageLinearizerRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(languagePlanetEClass, LanguagePlanet.class, "LanguagePlanet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLanguagePlanet_Name(), ecorePackage.getEString(), "name", null, 1, 1, LanguagePlanet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageScopeEEnum, LanguageScope.class, "LanguageScope");

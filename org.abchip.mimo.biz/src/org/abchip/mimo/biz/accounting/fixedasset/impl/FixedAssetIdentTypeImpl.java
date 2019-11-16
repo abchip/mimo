@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,43 +34,6 @@ public class FixedAssetIdentTypeImpl extends BizEntityTypeImpl<FixedAssetIdent> 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getFixedAssetIdentTypeId() <em>Fixed Asset Ident Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetIdentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetIdentTypeId() <em>Fixed Asset Ident Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetIdentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetIdentTypeId = FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,7 +60,7 @@ public class FixedAssetIdentTypeImpl extends BizEntityTypeImpl<FixedAssetIdent> 
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(FixedassetPackage.Literals.FIXED_ASSET_IDENT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -109,10 +70,7 @@ public class FixedAssetIdentTypeImpl extends BizEntityTypeImpl<FixedAssetIdent> 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_IDENT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -134,7 +92,7 @@ public class FixedAssetIdentTypeImpl extends BizEntityTypeImpl<FixedAssetIdent> 
 	 */
 	@Override
 	public String getFixedAssetIdentTypeId() {
-		return fixedAssetIdentTypeId;
+		return (String)eGet(FixedassetPackage.Literals.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID, true);
 	}
 
 	/**
@@ -144,96 +102,7 @@ public class FixedAssetIdentTypeImpl extends BizEntityTypeImpl<FixedAssetIdent> 
 	 */
 	@Override
 	public void setFixedAssetIdentTypeId(String newFixedAssetIdentTypeId) {
-		String oldFixedAssetIdentTypeId = fixedAssetIdentTypeId;
-		fixedAssetIdentTypeId = newFixedAssetIdentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID, oldFixedAssetIdentTypeId, fixedAssetIdentTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID:
-				return getFixedAssetIdentTypeId();
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID:
-				setFixedAssetIdentTypeId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID:
-				setFixedAssetIdentTypeId(FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID:
-				return FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT == null ? fixedAssetIdentTypeId != null : !FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT.equals(fixedAssetIdentTypeId);
-			case FixedassetPackage.FIXED_ASSET_IDENT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fixedAssetIdentTypeId: ");
-		result.append(fixedAssetIdentTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID, newFixedAssetIdentTypeId);
 	}
 
 } //FixedAssetIdentTypeImpl

@@ -12,9 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.CharacterSet;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,46 +34,6 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCharacterSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHARACTER_SET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCharacterSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String characterSetId = CHARACTER_SET_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,7 +60,7 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 	 */
 	@Override
 	public String getCharacterSetId() {
-		return characterSetId;
+		return (String)eGet(DataPackage.Literals.CHARACTER_SET__CHARACTER_SET_ID, true);
 	}
 
 	/**
@@ -112,10 +70,7 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 	 */
 	@Override
 	public void setCharacterSetId(String newCharacterSetId) {
-		String oldCharacterSetId = characterSetId;
-		characterSetId = newCharacterSetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.CHARACTER_SET__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
+		eSet(DataPackage.Literals.CHARACTER_SET__CHARACTER_SET_ID, newCharacterSetId);
 	}
 
 	/**
@@ -125,7 +80,7 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(DataPackage.Literals.CHARACTER_SET__DESCRIPTION, true);
 	}
 
 	/**
@@ -135,10 +90,7 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.CHARACTER_SET__DESCRIPTION, oldDescription, description));
+		eSet(DataPackage.Literals.CHARACTER_SET__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -163,92 +115,6 @@ public class CharacterSetImpl extends BizEntityImpl implements CharacterSet {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.CHARACTER_SET__CHARACTER_SET_ID:
-				return getCharacterSetId();
-			case DataPackage.CHARACTER_SET__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.CHARACTER_SET__CHARACTER_SET_ID:
-				setCharacterSetId((String)newValue);
-				return;
-			case DataPackage.CHARACTER_SET__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.CHARACTER_SET__CHARACTER_SET_ID:
-				setCharacterSetId(CHARACTER_SET_ID_EDEFAULT);
-				return;
-			case DataPackage.CHARACTER_SET__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.CHARACTER_SET__CHARACTER_SET_ID:
-				return CHARACTER_SET_ID_EDEFAULT == null ? characterSetId != null : !CHARACTER_SET_ID_EDEFAULT.equals(characterSetId);
-			case DataPackage.CHARACTER_SET__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (characterSetId: ");
-		result.append(characterSetId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CharacterSetImpl

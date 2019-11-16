@@ -7,20 +7,13 @@
  */
 package org.abchip.mimo.biz.common.uom.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,99 +38,6 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomId = UOM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbbreviation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ABBREVIATION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbbreviation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String abbreviation = ABBREVIATION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getNumericCode() <em>Numeric Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumericCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long NUMERIC_CODE_EDEFAULT = 0L;
-	/**
-	 * The cached value of the '{@link #getNumericCode() <em>Numeric Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumericCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected long numericCode = NUMERIC_CODE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUomTypeId() <em>Uom Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected UomType uomTypeId;
-
-	/**
-	 * The cached value of the '{@link #getMainUomConversions() <em>Main Uom Conversions</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMainUomConversions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> mainUomConversions;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,7 +64,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public String getAbbreviation() {
-		return abbreviation;
+		return (String)eGet(UomPackage.Literals.UOM__ABBREVIATION, true);
 	}
 
 	/**
@@ -174,10 +74,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setAbbreviation(String newAbbreviation) {
-		String oldAbbreviation = abbreviation;
-		abbreviation = newAbbreviation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__ABBREVIATION, oldAbbreviation, abbreviation));
+		eSet(UomPackage.Literals.UOM__ABBREVIATION, newAbbreviation);
 	}
 
 	/**
@@ -187,7 +84,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(UomPackage.Literals.UOM__DESCRIPTION, true);
 	}
 
 	/**
@@ -197,10 +94,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__DESCRIPTION, oldDescription, description));
+		eSet(UomPackage.Literals.UOM__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -210,7 +104,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public long getNumericCode() {
-		return numericCode;
+		return (Long)eGet(UomPackage.Literals.UOM__NUMERIC_CODE, true);
 	}
 
 	/**
@@ -220,10 +114,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setNumericCode(long newNumericCode) {
-		long oldNumericCode = numericCode;
-		numericCode = newNumericCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__NUMERIC_CODE, oldNumericCode, numericCode));
+		eSet(UomPackage.Literals.UOM__NUMERIC_CODE, newNumericCode);
 	}
 
 	/**
@@ -233,24 +124,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public UomType getUomTypeId() {
-		if (uomTypeId != null && ((EObject)uomTypeId).eIsProxy()) {
-			InternalEObject oldUomTypeId = (InternalEObject)uomTypeId;
-			uomTypeId = (UomType)eResolveProxy(oldUomTypeId);
-			if (uomTypeId != oldUomTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM__UOM_TYPE_ID, oldUomTypeId, uomTypeId));
-			}
-		}
-		return uomTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UomType basicGetUomTypeId() {
-		return uomTypeId;
+		return (UomType)eGet(UomPackage.Literals.UOM__UOM_TYPE_ID, true);
 	}
 
 	/**
@@ -260,10 +134,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setUomTypeId(UomType newUomTypeId) {
-		UomType oldUomTypeId = uomTypeId;
-		uomTypeId = newUomTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__UOM_TYPE_ID, oldUomTypeId, uomTypeId));
+		eSet(UomPackage.Literals.UOM__UOM_TYPE_ID, newUomTypeId);
 	}
 
 	/**
@@ -271,12 +142,10 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getMainUomConversions() {
-		if (mainUomConversions == null) {
-			mainUomConversions = new EDataTypeUniqueEList<String>(String.class, this, UomPackage.UOM__MAIN_UOM_CONVERSIONS);
-		}
-		return mainUomConversions;
+		return (List<String>)eGet(UomPackage.Literals.UOM__MAIN_UOM_CONVERSIONS, true);
 	}
 
 	/**
@@ -1102,7 +971,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public String getUomId() {
-		return uomId;
+		return (String)eGet(UomPackage.Literals.UOM__UOM_ID, true);
 	}
 
 	/**
@@ -1112,145 +981,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
-		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__UOM_ID, oldUomId, uomId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case UomPackage.UOM__UOM_ID:
-				return getUomId();
-			case UomPackage.UOM__ABBREVIATION:
-				return getAbbreviation();
-			case UomPackage.UOM__DESCRIPTION:
-				return getDescription();
-			case UomPackage.UOM__NUMERIC_CODE:
-				return getNumericCode();
-			case UomPackage.UOM__UOM_TYPE_ID:
-				if (resolve) return getUomTypeId();
-				return basicGetUomTypeId();
-			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
-				return getMainUomConversions();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case UomPackage.UOM__UOM_ID:
-				setUomId((String)newValue);
-				return;
-			case UomPackage.UOM__ABBREVIATION:
-				setAbbreviation((String)newValue);
-				return;
-			case UomPackage.UOM__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case UomPackage.UOM__NUMERIC_CODE:
-				setNumericCode((Long)newValue);
-				return;
-			case UomPackage.UOM__UOM_TYPE_ID:
-				setUomTypeId((UomType)newValue);
-				return;
-			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
-				getMainUomConversions().clear();
-				getMainUomConversions().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case UomPackage.UOM__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
-				return;
-			case UomPackage.UOM__ABBREVIATION:
-				setAbbreviation(ABBREVIATION_EDEFAULT);
-				return;
-			case UomPackage.UOM__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case UomPackage.UOM__NUMERIC_CODE:
-				setNumericCode(NUMERIC_CODE_EDEFAULT);
-				return;
-			case UomPackage.UOM__UOM_TYPE_ID:
-				setUomTypeId((UomType)null);
-				return;
-			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
-				getMainUomConversions().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case UomPackage.UOM__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
-			case UomPackage.UOM__ABBREVIATION:
-				return ABBREVIATION_EDEFAULT == null ? abbreviation != null : !ABBREVIATION_EDEFAULT.equals(abbreviation);
-			case UomPackage.UOM__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case UomPackage.UOM__NUMERIC_CODE:
-				return numericCode != NUMERIC_CODE_EDEFAULT;
-			case UomPackage.UOM__UOM_TYPE_ID:
-				return uomTypeId != null;
-			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
-				return mainUomConversions != null && !mainUomConversions.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (uomId: ");
-		result.append(uomId);
-		result.append(", abbreviation: ");
-		result.append(abbreviation);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", numericCode: ");
-		result.append(numericCode);
-		result.append(", mainUomConversions: ");
-		result.append(mainUomConversions);
-		result.append(')');
-		return result.toString();
+		eSet(UomPackage.Literals.UOM__UOM_ID, newUomId);
 	}
 
 } //UomImpl

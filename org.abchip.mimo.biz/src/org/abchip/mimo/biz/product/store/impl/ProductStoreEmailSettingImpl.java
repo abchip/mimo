@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreEmailSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,166 +42,6 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getBccAddress() <em>Bcc Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBccAddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BCC_ADDRESS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBccAddress() <em>Bcc Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBccAddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected String bccAddress = BCC_ADDRESS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBodyScreenLocation() <em>Body Screen Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBodyScreenLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BODY_SCREEN_LOCATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBodyScreenLocation() <em>Body Screen Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBodyScreenLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String bodyScreenLocation = BODY_SCREEN_LOCATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCcAddress() <em>Cc Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCcAddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CC_ADDRESS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCcAddress() <em>Cc Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCcAddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ccAddress = CC_ADDRESS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentType() <em>Content Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentType = CONTENT_TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromAddress() <em>From Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromAddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FROM_ADDRESS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromAddress() <em>From Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromAddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fromAddress = FROM_ADDRESS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSubject() <em>Subject</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubject()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBJECT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubject()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subject = SUBJECT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getXslfoAttachScreenLocation() <em>Xslfo Attach Screen Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getXslfoAttachScreenLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getXslfoAttachScreenLocation() <em>Xslfo Attach Screen Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getXslfoAttachScreenLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String xslfoAttachScreenLocation = XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductStore productStoreId;
-
-	/**
-	 * The cached value of the '{@link #getEmailType() <em>Email Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmailType()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration emailType;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -231,7 +67,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getBccAddress() {
-		return bccAddress;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS, true);
 	}
 
 	/**
@@ -241,10 +77,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setBccAddress(String newBccAddress) {
-		String oldBccAddress = bccAddress;
-		bccAddress = newBccAddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS, oldBccAddress, bccAddress));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS, newBccAddress);
 	}
 
 	/**
@@ -254,7 +87,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getBodyScreenLocation() {
-		return bodyScreenLocation;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION, true);
 	}
 
 	/**
@@ -264,10 +97,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setBodyScreenLocation(String newBodyScreenLocation) {
-		String oldBodyScreenLocation = bodyScreenLocation;
-		bodyScreenLocation = newBodyScreenLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION, oldBodyScreenLocation, bodyScreenLocation));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION, newBodyScreenLocation);
 	}
 
 	/**
@@ -277,7 +107,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getCcAddress() {
-		return ccAddress;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS, true);
 	}
 
 	/**
@@ -287,10 +117,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setCcAddress(String newCcAddress) {
-		String oldCcAddress = ccAddress;
-		ccAddress = newCcAddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS, oldCcAddress, ccAddress));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS, newCcAddress);
 	}
 
 	/**
@@ -300,7 +127,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getContentType() {
-		return contentType;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE, true);
 	}
 
 	/**
@@ -310,10 +137,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setContentType(String newContentType) {
-		String oldContentType = contentType;
-		contentType = newContentType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE, oldContentType, contentType));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE, newContentType);
 	}
 
 	/**
@@ -323,24 +147,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public Enumeration getEmailType() {
-		if (emailType != null && ((EObject)emailType).eIsProxy()) {
-			InternalEObject oldEmailType = (InternalEObject)emailType;
-			emailType = (Enumeration)eResolveProxy(oldEmailType);
-			if (emailType != oldEmailType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, oldEmailType, emailType));
-			}
-		}
-		return emailType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetEmailType() {
-		return emailType;
+		return (Enumeration)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, true);
 	}
 
 	/**
@@ -350,10 +157,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setEmailType(Enumeration newEmailType) {
-		Enumeration oldEmailType = emailType;
-		emailType = newEmailType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, oldEmailType, emailType));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, newEmailType);
 	}
 
 	/**
@@ -363,7 +167,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getFromAddress() {
-		return fromAddress;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS, true);
 	}
 
 	/**
@@ -373,10 +177,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setFromAddress(String newFromAddress) {
-		String oldFromAddress = fromAddress;
-		fromAddress = newFromAddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS, oldFromAddress, fromAddress));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS, newFromAddress);
 	}
 
 	/**
@@ -386,7 +187,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getSubject() {
-		return subject;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__SUBJECT, true);
 	}
 
 	/**
@@ -396,10 +197,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setSubject(String newSubject) {
-		String oldSubject = subject;
-		subject = newSubject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__SUBJECT, oldSubject, subject));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__SUBJECT, newSubject);
 	}
 
 	/**
@@ -409,7 +207,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getXslfoAttachScreenLocation() {
-		return xslfoAttachScreenLocation;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION, true);
 	}
 
 	/**
@@ -419,10 +217,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setXslfoAttachScreenLocation(String newXslfoAttachScreenLocation) {
-		String oldXslfoAttachScreenLocation = xslfoAttachScreenLocation;
-		xslfoAttachScreenLocation = newXslfoAttachScreenLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION, oldXslfoAttachScreenLocation, xslfoAttachScreenLocation));
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION, newXslfoAttachScreenLocation);
 	}
 
 	/**
@@ -432,24 +227,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public ProductStore getProductStoreId() {
-		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
-			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
-			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
-			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
-			}
-		}
-		return productStoreId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductStore basicGetProductStoreId() {
-		return productStoreId;
+		return (ProductStore)eGet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID, true);
 	}
 
 	/**
@@ -459,178 +237,7 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
-		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
-				return getBccAddress();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION:
-				return getBodyScreenLocation();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS:
-				return getCcAddress();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE:
-				return getContentType();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS:
-				return getFromAddress();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__SUBJECT:
-				return getSubject();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
-				return getXslfoAttachScreenLocation();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
-				if (resolve) return getProductStoreId();
-				return basicGetProductStoreId();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				if (resolve) return getEmailType();
-				return basicGetEmailType();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
-				setBccAddress((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION:
-				setBodyScreenLocation((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS:
-				setCcAddress((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE:
-				setContentType((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS:
-				setFromAddress((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__SUBJECT:
-				setSubject((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
-				setXslfoAttachScreenLocation((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				setEmailType((Enumeration)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
-				setBccAddress(BCC_ADDRESS_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION:
-				setBodyScreenLocation(BODY_SCREEN_LOCATION_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS:
-				setCcAddress(CC_ADDRESS_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE:
-				setContentType(CONTENT_TYPE_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS:
-				setFromAddress(FROM_ADDRESS_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__SUBJECT:
-				setSubject(SUBJECT_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
-				setXslfoAttachScreenLocation(XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)null);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				setEmailType((Enumeration)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
-				return BCC_ADDRESS_EDEFAULT == null ? bccAddress != null : !BCC_ADDRESS_EDEFAULT.equals(bccAddress);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION:
-				return BODY_SCREEN_LOCATION_EDEFAULT == null ? bodyScreenLocation != null : !BODY_SCREEN_LOCATION_EDEFAULT.equals(bodyScreenLocation);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS:
-				return CC_ADDRESS_EDEFAULT == null ? ccAddress != null : !CC_ADDRESS_EDEFAULT.equals(ccAddress);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE:
-				return CONTENT_TYPE_EDEFAULT == null ? contentType != null : !CONTENT_TYPE_EDEFAULT.equals(contentType);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS:
-				return FROM_ADDRESS_EDEFAULT == null ? fromAddress != null : !FROM_ADDRESS_EDEFAULT.equals(fromAddress);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__SUBJECT:
-				return SUBJECT_EDEFAULT == null ? subject != null : !SUBJECT_EDEFAULT.equals(subject);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
-				return XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT == null ? xslfoAttachScreenLocation != null : !XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT.equals(xslfoAttachScreenLocation);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
-				return productStoreId != null;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				return emailType != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (bccAddress: ");
-		result.append(bccAddress);
-		result.append(", bodyScreenLocation: ");
-		result.append(bodyScreenLocation);
-		result.append(", ccAddress: ");
-		result.append(ccAddress);
-		result.append(", contentType: ");
-		result.append(contentType);
-		result.append(", fromAddress: ");
-		result.append(fromAddress);
-		result.append(", subject: ");
-		result.append(subject);
-		result.append(", xslfoAttachScreenLocation: ");
-		result.append(xslfoAttachScreenLocation);
-		result.append(')');
-		return result.toString();
+		eSet(StorePackage.Literals.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID, newProductStoreId);
 	}
 
 } //ProductStoreEmailSettingImpl

@@ -11,11 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
 import org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,56 +34,6 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ATTR_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String attrName = ATTR_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryTypeId() <em>Product Category Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductCategoryType productCategoryTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,7 +60,7 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION, true);
 	}
 
 	/**
@@ -124,10 +70,7 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION, oldDescription, description));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -137,7 +80,7 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public String getAttrName() {
-		return attrName;
+		return (String)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME, true);
 	}
 
 	/**
@@ -147,10 +90,7 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
-		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME, newAttrName);
 	}
 
 	/**
@@ -160,24 +100,7 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public ProductCategoryType getProductCategoryTypeId() {
-		if (productCategoryTypeId != null && ((EObject)productCategoryTypeId).eIsProxy()) {
-			InternalEObject oldProductCategoryTypeId = (InternalEObject)productCategoryTypeId;
-			productCategoryTypeId = (ProductCategoryType)eResolveProxy(oldProductCategoryTypeId);
-			if (productCategoryTypeId != oldProductCategoryTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
-			}
-		}
-		return productCategoryTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductCategoryType basicGetProductCategoryTypeId() {
-		return productCategoryTypeId;
+		return (ProductCategoryType)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, true);
 	}
 
 	/**
@@ -187,107 +110,7 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductCategoryTypeId(ProductCategoryType newProductCategoryTypeId) {
-		ProductCategoryType oldProductCategoryTypeId = productCategoryTypeId;
-		productCategoryTypeId = newProductCategoryTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
-				return getAttrName();
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
-				return getDescription();
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				if (resolve) return getProductCategoryTypeId();
-				return basicGetProductCategoryTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
-				setAttrName((String)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				setProductCategoryTypeId((ProductCategoryType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
-				setAttrName(ATTR_NAME_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				setProductCategoryTypeId((ProductCategoryType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME:
-				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID:
-				return productCategoryTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (attrName: ");
-		result.append(attrName);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, newProductCategoryTypeId);
 	}
 
 } //ProductCategoryTypeAttrImpl

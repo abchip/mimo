@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnItemShipment;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,86 +38,6 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getReturnItemSeqId() <em>Return Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ITEM_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnItemSeqId() <em>Return Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnItemSeqId = RETURN_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getShipmentItemSeqId() <em>Shipment Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ITEM_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentItemSeqId() <em>Shipment Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentItemSeqId = SHIPMENT_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal QUANTITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal quantity = QUANTITY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ReturnHeader returnId;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Shipment shipmentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,7 +65,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public BigDecimal getQuantity() {
-		return quantity;
+		return (BigDecimal)eGet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__QUANTITY, true);
 	}
 
 	/**
@@ -160,10 +75,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
-		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY, oldQuantity, quantity));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__QUANTITY, newQuantity);
 	}
 
 	/**
@@ -173,24 +85,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public ReturnHeader getReturnId() {
-		if (returnId != null && ((EObject)returnId).eIsProxy()) {
-			InternalEObject oldReturnId = (InternalEObject)returnId;
-			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
-			if (returnId != oldReturnId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID, oldReturnId, returnId));
-			}
-		}
-		return returnId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReturnHeader basicGetReturnId() {
-		return returnId;
+		return (ReturnHeader)eGet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__RETURN_ID, true);
 	}
 
 	/**
@@ -200,10 +95,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
-		ReturnHeader oldReturnId = returnId;
-		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID, oldReturnId, returnId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__RETURN_ID, newReturnId);
 	}
 
 	/**
@@ -213,7 +105,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public String getReturnItemSeqId() {
-		return returnItemSeqId;
+		return (String)eGet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -223,10 +115,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
-		String oldReturnItemSeqId = returnItemSeqId;
-		returnItemSeqId = newReturnItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID, newReturnItemSeqId);
 	}
 
 	/**
@@ -236,24 +125,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public Shipment getShipmentId() {
-		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
-			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
-			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
-			if (shipmentId != oldShipmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
-			}
-		}
-		return shipmentId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Shipment basicGetShipmentId() {
-		return shipmentId;
+		return (Shipment)eGet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, true);
 	}
 
 	/**
@@ -263,10 +135,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
-		Shipment oldShipmentId = shipmentId;
-		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, newShipmentId);
 	}
 
 	/**
@@ -276,7 +145,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public String getShipmentItemSeqId() {
-		return shipmentItemSeqId;
+		return (String)eGet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -286,130 +155,7 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
-		String oldShipmentItemSeqId = shipmentItemSeqId;
-		shipmentItemSeqId = newShipmentItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
-				return getReturnItemSeqId();
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
-				return getShipmentItemSeqId();
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
-				return getQuantity();
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID:
-				if (resolve) return getReturnId();
-				return basicGetReturnId();
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				if (resolve) return getShipmentId();
-				return basicGetShipmentId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
-				setReturnItemSeqId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
-				setShipmentItemSeqId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
-				setQuantity((BigDecimal)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID:
-				setReturnId((ReturnHeader)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				setShipmentId((Shipment)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
-				setReturnItemSeqId(RETURN_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
-				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID:
-				setReturnId((ReturnHeader)null);
-				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				setShipmentId((Shipment)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
-				return RETURN_ITEM_SEQ_ID_EDEFAULT == null ? returnItemSeqId != null : !RETURN_ITEM_SEQ_ID_EDEFAULT.equals(returnItemSeqId);
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
-				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID:
-				return returnId != null;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				return shipmentId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnItemSeqId: ");
-		result.append(returnItemSeqId);
-		result.append(", shipmentItemSeqId: ");
-		result.append(shipmentItemSeqId);
-		result.append(", quantity: ");
-		result.append(quantity);
-		result.append(')');
-		return result.toString();
+		eSet(ReturnPackage.Literals.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID, newShipmentItemSeqId);
 	}
 
 } //ReturnItemShipmentImpl

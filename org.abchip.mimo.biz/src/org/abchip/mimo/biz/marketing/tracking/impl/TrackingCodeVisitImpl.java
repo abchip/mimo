@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,66 +37,6 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISIT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visitId = VISIT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTrackingCodeId() <em>Tracking Code Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected TrackingCode trackingCodeId;
-
-	/**
-	 * The cached value of the '{@link #getSourceEnumId() <em>Source Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSourceEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration sourceEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +64,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(TrackingPackage.Literals.TRACKING_CODE_VISIT__FROM_DATE, true);
 	}
 
 	/**
@@ -139,10 +74,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__FROM_DATE, oldFromDate, fromDate));
+		eSet(TrackingPackage.Literals.TRACKING_CODE_VISIT__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -152,24 +84,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public Enumeration getSourceEnumId() {
-		if (sourceEnumId != null && ((EObject)sourceEnumId).eIsProxy()) {
-			InternalEObject oldSourceEnumId = (InternalEObject)sourceEnumId;
-			sourceEnumId = (Enumeration)eResolveProxy(oldSourceEnumId);
-			if (sourceEnumId != oldSourceEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID, oldSourceEnumId, sourceEnumId));
-			}
-		}
-		return sourceEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetSourceEnumId() {
-		return sourceEnumId;
+		return (Enumeration)eGet(TrackingPackage.Literals.TRACKING_CODE_VISIT__SOURCE_ENUM_ID, true);
 	}
 
 	/**
@@ -179,10 +94,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setSourceEnumId(Enumeration newSourceEnumId) {
-		Enumeration oldSourceEnumId = sourceEnumId;
-		sourceEnumId = newSourceEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID, oldSourceEnumId, sourceEnumId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE_VISIT__SOURCE_ENUM_ID, newSourceEnumId);
 	}
 
 	/**
@@ -192,24 +104,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public TrackingCode getTrackingCodeId() {
-		if (trackingCodeId != null && ((EObject)trackingCodeId).eIsProxy()) {
-			InternalEObject oldTrackingCodeId = (InternalEObject)trackingCodeId;
-			trackingCodeId = (TrackingCode)eResolveProxy(oldTrackingCodeId);
-			if (trackingCodeId != oldTrackingCodeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
-			}
-		}
-		return trackingCodeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TrackingCode basicGetTrackingCodeId() {
-		return trackingCodeId;
+		return (TrackingCode)eGet(TrackingPackage.Literals.TRACKING_CODE_VISIT__TRACKING_CODE_ID, true);
 	}
 
 	/**
@@ -219,10 +114,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setTrackingCodeId(TrackingCode newTrackingCodeId) {
-		TrackingCode oldTrackingCodeId = trackingCodeId;
-		trackingCodeId = newTrackingCodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
+		eSet(TrackingPackage.Literals.TRACKING_CODE_VISIT__TRACKING_CODE_ID, newTrackingCodeId);
 	}
 
 	/**
@@ -232,7 +124,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public String getVisitId() {
-		return visitId;
+		return (String)eGet(TrackingPackage.Literals.TRACKING_CODE_VISIT__VISIT_ID, true);
 	}
 
 	/**
@@ -242,118 +134,7 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
-		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__VISIT_ID, oldVisitId, visitId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_VISIT__VISIT_ID:
-				return getVisitId();
-			case TrackingPackage.TRACKING_CODE_VISIT__FROM_DATE:
-				return getFromDate();
-			case TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID:
-				if (resolve) return getTrackingCodeId();
-				return basicGetTrackingCodeId();
-			case TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID:
-				if (resolve) return getSourceEnumId();
-				return basicGetSourceEnumId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_VISIT__VISIT_ID:
-				setVisitId((String)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE_VISIT__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID:
-				setTrackingCodeId((TrackingCode)newValue);
-				return;
-			case TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID:
-				setSourceEnumId((Enumeration)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_VISIT__VISIT_ID:
-				setVisitId(VISIT_ID_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE_VISIT__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID:
-				setTrackingCodeId((TrackingCode)null);
-				return;
-			case TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID:
-				setSourceEnumId((Enumeration)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TrackingPackage.TRACKING_CODE_VISIT__VISIT_ID:
-				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
-			case TrackingPackage.TRACKING_CODE_VISIT__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID:
-				return trackingCodeId != null;
-			case TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID:
-				return sourceEnumId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (visitId: ");
-		result.append(visitId);
-		result.append(", fromDate: ");
-		result.append(fromDate);
-		result.append(')');
-		return result.toString();
+		eSet(TrackingPackage.Literals.TRACKING_CODE_VISIT__VISIT_ID, newVisitId);
 	}
 
 } //TrackingCodeVisitImpl

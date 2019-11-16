@@ -16,11 +16,7 @@ import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryMember;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,126 +44,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENTS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal QUANTITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal quantity = QUANTITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long SEQUENCE_NUM_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductCategory productCategoryId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -193,7 +69,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public String getComments() {
-		return comments;
+		return (String)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__COMMENTS, true);
 	}
 
 	/**
@@ -203,10 +79,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
-		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS, oldComments, comments));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__COMMENTS, newComments);
 	}
 
 	/**
@@ -216,7 +89,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__FROM_DATE, true);
 	}
 
 	/**
@@ -226,10 +99,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE, oldFromDate, fromDate));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -239,24 +109,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, true);
 	}
 
 	/**
@@ -266,10 +119,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, oldProductId, productId));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, newProductId);
 	}
 
 	/**
@@ -279,7 +129,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public BigDecimal getQuantity() {
-		return quantity;
+		return (BigDecimal)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__QUANTITY, true);
 	}
 
 	/**
@@ -289,10 +139,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
-		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__QUANTITY, oldQuantity, quantity));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__QUANTITY, newQuantity);
 	}
 
 	/**
@@ -302,7 +149,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public long getSequenceNum() {
-		return sequenceNum;
+		return (Long)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM, true);
 	}
 
 	/**
@@ -312,10 +159,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
-		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM, newSequenceNum);
 	}
 
 	/**
@@ -325,7 +169,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__THRU_DATE, true);
 	}
 
 	/**
@@ -335,10 +179,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE, oldThruDate, thruDate));
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -348,24 +189,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public ProductCategory getProductCategoryId() {
-		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
-			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
-			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
-			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
-			}
-		}
-		return productCategoryId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductCategory basicGetProductCategoryId() {
-		return productCategoryId;
+		return (ProductCategory)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID, true);
 	}
 
 	/**
@@ -375,154 +199,7 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
-		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
-				return getFromDate();
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS:
-				return getComments();
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__QUANTITY:
-				return getQuantity();
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM:
-				return getSequenceNum();
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
-				return getThruDate();
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
-				if (resolve) return getProductCategoryId();
-				return basicGetProductCategoryId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS:
-				setComments((String)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__QUANTITY:
-				setQuantity((BigDecimal)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM:
-				setSequenceNum((Long)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((ProductCategory)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS:
-				setComments(COMMENTS_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM:
-				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((ProductCategory)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS:
-				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__SEQUENCE_NUM:
-				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				return productId != null;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
-				return productCategoryId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", comments: ");
-		result.append(comments);
-		result.append(", quantity: ");
-		result.append(quantity);
-		result.append(", sequenceNum: ");
-		result.append(sequenceNum);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID, newProductCategoryId);
 	}
 
 } //ProductCategoryMemberImpl

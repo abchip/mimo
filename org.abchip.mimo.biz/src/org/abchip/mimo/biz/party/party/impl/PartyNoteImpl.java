@@ -11,11 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyNote;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,15 +31,6 @@ public class PartyNoteImpl extends BizEntityNoteImpl implements PartyNote {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,24 +57,7 @@ public class PartyNoteImpl extends BizEntityNoteImpl implements PartyNote {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_NOTE__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(PartyPackage.Literals.PARTY_NOTE__PARTY_ID, true);
 	}
 
 	/**
@@ -97,69 +67,7 @@ public class PartyNoteImpl extends BizEntityNoteImpl implements PartyNote {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NOTE__PARTY_ID, oldPartyId, partyId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PartyPackage.PARTY_NOTE__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PartyPackage.PARTY_NOTE__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PartyPackage.PARTY_NOTE__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PartyPackage.PARTY_NOTE__PARTY_ID:
-				return partyId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(PartyPackage.Literals.PARTY_NOTE__PARTY_ID, newPartyId);
 	}
 
 } //PartyNoteImpl

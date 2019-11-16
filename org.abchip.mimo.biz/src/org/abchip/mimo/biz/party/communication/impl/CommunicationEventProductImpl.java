@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,25 +33,6 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CommunicationEvent communicationEventId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,24 +59,7 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID, true);
 	}
 
 	/**
@@ -109,10 +69,7 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID, oldProductId, productId));
+		eSet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID, newProductId);
 	}
 
 	/**
@@ -122,24 +79,7 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 */
 	@Override
 	public CommunicationEvent getCommunicationEventId() {
-		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
-			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
-			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
-			if (communicationEventId != oldCommunicationEventId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
-			}
-		}
-		return communicationEventId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommunicationEvent basicGetCommunicationEventId() {
-		return communicationEventId;
+		return (CommunicationEvent)eGet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID, true);
 	}
 
 	/**
@@ -149,80 +89,7 @@ public class CommunicationEventProductImpl extends BizEntityImpl implements Comm
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
-		CommunicationEvent oldCommunicationEventId = communicationEventId;
-		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
-				if (resolve) return getCommunicationEventId();
-				return basicGetCommunicationEventId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID:
-				return productId != null;
-			case CommunicationPackage.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID:
-				return communicationEventId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID, newCommunicationEventId);
 	}
 
 } //CommunicationEventProductImpl

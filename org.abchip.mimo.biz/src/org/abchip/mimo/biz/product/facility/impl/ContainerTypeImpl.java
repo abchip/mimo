@@ -12,9 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,46 +34,6 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getContainerTypeId() <em>Container Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTAINER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContainerTypeId() <em>Container Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String containerTypeId = CONTAINER_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,7 +60,7 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(FacilityPackage.Literals.CONTAINER_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -112,10 +70,7 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(FacilityPackage.Literals.CONTAINER_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -137,7 +92,7 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 */
 	@Override
 	public String getContainerTypeId() {
-		return containerTypeId;
+		return (String)eGet(FacilityPackage.Literals.CONTAINER_TYPE__CONTAINER_TYPE_ID, true);
 	}
 
 	/**
@@ -147,96 +102,7 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 */
 	@Override
 	public void setContainerTypeId(String newContainerTypeId) {
-		String oldContainerTypeId = containerTypeId;
-		containerTypeId = newContainerTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_TYPE__CONTAINER_TYPE_ID, oldContainerTypeId, containerTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FacilityPackage.CONTAINER_TYPE__CONTAINER_TYPE_ID:
-				return getContainerTypeId();
-			case FacilityPackage.CONTAINER_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FacilityPackage.CONTAINER_TYPE__CONTAINER_TYPE_ID:
-				setContainerTypeId((String)newValue);
-				return;
-			case FacilityPackage.CONTAINER_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FacilityPackage.CONTAINER_TYPE__CONTAINER_TYPE_ID:
-				setContainerTypeId(CONTAINER_TYPE_ID_EDEFAULT);
-				return;
-			case FacilityPackage.CONTAINER_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FacilityPackage.CONTAINER_TYPE__CONTAINER_TYPE_ID:
-				return CONTAINER_TYPE_ID_EDEFAULT == null ? containerTypeId != null : !CONTAINER_TYPE_ID_EDEFAULT.equals(containerTypeId);
-			case FacilityPackage.CONTAINER_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (containerTypeId: ");
-		result.append(containerTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(FacilityPackage.Literals.CONTAINER_TYPE__CONTAINER_TYPE_ID, newContainerTypeId);
 	}
 
 } //ContainerTypeImpl

@@ -15,11 +15,7 @@ import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,70 +39,6 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date STATUS_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date statusDate = STATUS_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStatusEndDate() <em>Status End Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusEndDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date STATUS_END_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusEndDate() <em>Status End Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusEndDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date statusEndDate = STATUS_END_DATE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FinAccount finAccountId;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusItem statusId;
-	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected UserLogin changeByUserLoginId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,24 +65,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public UserLogin getChangeByUserLoginId() {
-		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
-			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
-			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
-			if (changeByUserLoginId != oldChangeByUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
-			}
-		}
-		return changeByUserLoginId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserLogin basicGetChangeByUserLoginId() {
-		return changeByUserLoginId;
+		return (UserLogin)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID, true);
 	}
 
 	/**
@@ -160,10 +75,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
-		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
-		changeByUserLoginId = newChangeByUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID, newChangeByUserLoginId);
 	}
 
 	/**
@@ -173,7 +85,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public Date getStatusDate() {
-		return statusDate;
+		return (Date)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__STATUS_DATE, true);
 	}
 
 	/**
@@ -183,10 +95,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
-		Date oldStatusDate = statusDate;
-		statusDate = newStatusDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_DATE, oldStatusDate, statusDate));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__STATUS_DATE, newStatusDate);
 	}
 
 	/**
@@ -196,7 +105,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public Date getStatusEndDate() {
-		return statusEndDate;
+		return (Date)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__STATUS_END_DATE, true);
 	}
 
 	/**
@@ -206,10 +115,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setStatusEndDate(Date newStatusEndDate) {
-		Date oldStatusEndDate = statusEndDate;
-		statusEndDate = newStatusEndDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_END_DATE, oldStatusEndDate, statusEndDate));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__STATUS_END_DATE, newStatusEndDate);
 	}
 
 	/**
@@ -219,24 +125,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public StatusItem getStatusId() {
-		if (statusId != null && ((EObject)statusId).eIsProxy()) {
-			InternalEObject oldStatusId = (InternalEObject)statusId;
-			statusId = (StatusItem)eResolveProxy(oldStatusId);
-			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID, oldStatusId, statusId));
-			}
-		}
-		return statusId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusItem basicGetStatusId() {
-		return statusId;
+		return (StatusItem)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__STATUS_ID, true);
 	}
 
 	/**
@@ -246,10 +135,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
-		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID, oldStatusId, statusId));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__STATUS_ID, newStatusId);
 	}
 
 	/**
@@ -259,24 +145,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public FinAccount getFinAccountId() {
-		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
-			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
-			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
-			if (finAccountId != oldFinAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
-			}
-		}
-		return finAccountId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FinAccount basicGetFinAccountId() {
-		return finAccountId;
+		return (FinAccount)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID, true);
 	}
 
 	/**
@@ -286,129 +155,7 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
-		FinAccount oldFinAccountId = finAccountId;
-		finAccountId = newFinAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_DATE:
-				return getStatusDate();
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_END_DATE:
-				return getStatusEndDate();
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID:
-				if (resolve) return getFinAccountId();
-				return basicGetFinAccountId();
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID:
-				if (resolve) return getStatusId();
-				return basicGetStatusId();
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				if (resolve) return getChangeByUserLoginId();
-				return basicGetChangeByUserLoginId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_DATE:
-				setStatusDate((Date)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_END_DATE:
-				setStatusEndDate((Date)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID:
-				setFinAccountId((FinAccount)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID:
-				setStatusId((StatusItem)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((UserLogin)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_DATE:
-				setStatusDate(STATUS_DATE_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_END_DATE:
-				setStatusEndDate(STATUS_END_DATE_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID:
-				setFinAccountId((FinAccount)null);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID:
-				setStatusId((StatusItem)null);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((UserLogin)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_END_DATE:
-				return STATUS_END_DATE_EDEFAULT == null ? statusEndDate != null : !STATUS_END_DATE_EDEFAULT.equals(statusEndDate);
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID:
-				return finAccountId != null;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID:
-				return statusId != null;
-			case FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return changeByUserLoginId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (statusDate: ");
-		result.append(statusDate);
-		result.append(", statusEndDate: ");
-		result.append(statusEndDate);
-		result.append(')');
-		return result.toString();
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID, newFinAccountId);
 	}
 
 } //FinAccountStatusImpl

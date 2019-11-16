@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.content.data.AudioDataResource;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,36 +33,6 @@ public class AudioDataResourceImpl extends BizEntityImpl implements AudioDataRes
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getAudioData() <em>Audio Data</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAudioData()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final byte[] AUDIO_DATA_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAudioData() <em>Audio Data</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAudioData()
-	 * @generated
-	 * @ordered
-	 */
-	protected byte[] audioData = AUDIO_DATA_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataResource dataResourceId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,7 +59,7 @@ public class AudioDataResourceImpl extends BizEntityImpl implements AudioDataRes
 	 */
 	@Override
 	public byte[] getAudioData() {
-		return audioData;
+		return (byte[])eGet(DataPackage.Literals.AUDIO_DATA_RESOURCE__AUDIO_DATA, true);
 	}
 
 	/**
@@ -104,10 +69,7 @@ public class AudioDataResourceImpl extends BizEntityImpl implements AudioDataRes
 	 */
 	@Override
 	public void setAudioData(byte[] newAudioData) {
-		byte[] oldAudioData = audioData;
-		audioData = newAudioData;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.AUDIO_DATA_RESOURCE__AUDIO_DATA, oldAudioData, audioData));
+		eSet(DataPackage.Literals.AUDIO_DATA_RESOURCE__AUDIO_DATA, newAudioData);
 	}
 
 	/**
@@ -117,24 +79,7 @@ public class AudioDataResourceImpl extends BizEntityImpl implements AudioDataRes
 	 */
 	@Override
 	public DataResource getDataResourceId() {
-		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
-			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
-			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
-			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-			}
-		}
-		return dataResourceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataResource basicGetDataResourceId() {
-		return dataResourceId;
+		return (DataResource)eGet(DataPackage.Literals.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -144,95 +89,7 @@ public class AudioDataResourceImpl extends BizEntityImpl implements AudioDataRes
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
-		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.AUDIO_DATA_RESOURCE__AUDIO_DATA:
-				return getAudioData();
-			case DataPackage.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				if (resolve) return getDataResourceId();
-				return basicGetDataResourceId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.AUDIO_DATA_RESOURCE__AUDIO_DATA:
-				setAudioData((byte[])newValue);
-				return;
-			case DataPackage.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.AUDIO_DATA_RESOURCE__AUDIO_DATA:
-				setAudioData(AUDIO_DATA_EDEFAULT);
-				return;
-			case DataPackage.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.AUDIO_DATA_RESOURCE__AUDIO_DATA:
-				return AUDIO_DATA_EDEFAULT == null ? audioData != null : !AUDIO_DATA_EDEFAULT.equals(audioData);
-			case DataPackage.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return dataResourceId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (audioData: ");
-		result.append(audioData);
-		result.append(')');
-		return result.toString();
+		eSet(DataPackage.Literals.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 
 } //AudioDataResourceImpl

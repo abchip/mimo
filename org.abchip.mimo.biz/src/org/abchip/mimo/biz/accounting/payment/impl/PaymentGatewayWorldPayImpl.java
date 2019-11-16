@@ -11,11 +11,7 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,196 +42,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #isAuthMode() <em>Auth Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAuthMode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean AUTH_MODE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isAuthMode() <em>Auth Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAuthMode()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean authMode = AUTH_MODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isFixContact() <em>Fix Contact</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFixContact()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean FIX_CONTACT_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isFixContact() <em>Fix Contact</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFixContact()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean fixContact = FIX_CONTACT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHideContact() <em>Hide Contact</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHideContact()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HIDE_CONTACT_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHideContact() <em>Hide Contact</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHideContact()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hideContact = HIDE_CONTACT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHideCurrency() <em>Hide Currency</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHideCurrency()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HIDE_CURRENCY_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHideCurrency() <em>Hide Currency</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHideCurrency()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hideCurrency = HIDE_CURRENCY_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getInstId() <em>Inst Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INST_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInstId() <em>Inst Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String instId = INST_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getLangId() <em>Lang Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLangId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LANG_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getLangId() <em>Lang Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLangId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String langId = LANG_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isNoLanguageMenu() <em>No Language Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoLanguageMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean NO_LANGUAGE_MENU_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isNoLanguageMenu() <em>No Language Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoLanguageMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean noLanguageMenu = NO_LANGUAGE_MENU_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRedirectUrl() <em>Redirect Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRedirectUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REDIRECT_URL_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRedirectUrl() <em>Redirect Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRedirectUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected String redirectUrl = REDIRECT_URL_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTestMode() <em>Test Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestMode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long TEST_MODE_EDEFAULT = 0L;
-	/**
-	 * The cached value of the '{@link #getTestMode() <em>Test Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestMode()
-	 * @generated
-	 * @ordered
-	 */
-	protected long testMode = TEST_MODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isWithDelivery() <em>With Delivery</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isWithDelivery()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean WITH_DELIVERY_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isWithDelivery() <em>With Delivery</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isWithDelivery()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean withDelivery = WITH_DELIVERY_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PaymentGatewayConfig paymentGatewayConfigId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -261,7 +67,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getInstId() {
-		return instId;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__INST_ID, true);
 	}
 
 	/**
@@ -271,10 +77,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setInstId(String newInstId) {
-		String oldInstId = instId;
-		instId = newInstId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__INST_ID, oldInstId, instId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__INST_ID, newInstId);
 	}
 
 	/**
@@ -284,7 +87,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getLangId() {
-		return langId;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID, true);
 	}
 
 	/**
@@ -294,10 +97,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setLangId(String newLangId) {
-		String oldLangId = langId;
-		langId = newLangId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID, oldLangId, langId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID, newLangId);
 	}
 
 	/**
@@ -307,7 +107,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isNoLanguageMenu() {
-		return noLanguageMenu;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU, true);
 	}
 
 	/**
@@ -317,10 +117,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setNoLanguageMenu(boolean newNoLanguageMenu) {
-		boolean oldNoLanguageMenu = noLanguageMenu;
-		noLanguageMenu = newNoLanguageMenu;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU, oldNoLanguageMenu, noLanguageMenu));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU, newNoLanguageMenu);
 	}
 
 	/**
@@ -330,24 +127,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public PaymentGatewayConfig getPaymentGatewayConfigId() {
-		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
-			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
-			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
-			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
-			}
-		}
-		return paymentGatewayConfigId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
-		return paymentGatewayConfigId;
+		return (PaymentGatewayConfig)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, true);
 	}
 
 	/**
@@ -357,10 +137,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
-		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
-		paymentGatewayConfigId = newPaymentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, newPaymentGatewayConfigId);
 	}
 
 	/**
@@ -370,7 +147,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isAuthMode() {
-		return authMode;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, true);
 	}
 
 	/**
@@ -380,10 +157,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setAuthMode(boolean newAuthMode) {
-		boolean oldAuthMode = authMode;
-		authMode = newAuthMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, oldAuthMode, authMode));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, newAuthMode);
 	}
 
 	/**
@@ -393,7 +167,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isFixContact() {
-		return fixContact;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, true);
 	}
 
 	/**
@@ -403,10 +177,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setFixContact(boolean newFixContact) {
-		boolean oldFixContact = fixContact;
-		fixContact = newFixContact;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, oldFixContact, fixContact));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, newFixContact);
 	}
 
 	/**
@@ -416,7 +187,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isHideContact() {
-		return hideContact;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, true);
 	}
 
 	/**
@@ -426,10 +197,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setHideContact(boolean newHideContact) {
-		boolean oldHideContact = hideContact;
-		hideContact = newHideContact;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, oldHideContact, hideContact));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, newHideContact);
 	}
 
 	/**
@@ -439,7 +207,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isHideCurrency() {
-		return hideCurrency;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, true);
 	}
 
 	/**
@@ -449,10 +217,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setHideCurrency(boolean newHideCurrency) {
-		boolean oldHideCurrency = hideCurrency;
-		hideCurrency = newHideCurrency;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, oldHideCurrency, hideCurrency));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, newHideCurrency);
 	}
 
 	/**
@@ -462,7 +227,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public String getRedirectUrl() {
-		return redirectUrl;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL, true);
 	}
 
 	/**
@@ -472,10 +237,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setRedirectUrl(String newRedirectUrl) {
-		String oldRedirectUrl = redirectUrl;
-		redirectUrl = newRedirectUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL, oldRedirectUrl, redirectUrl));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL, newRedirectUrl);
 	}
 
 	/**
@@ -485,7 +247,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public long getTestMode() {
-		return testMode;
+		return (Long)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE, true);
 	}
 
 	/**
@@ -495,10 +257,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setTestMode(long newTestMode) {
-		long oldTestMode = testMode;
-		testMode = newTestMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE, oldTestMode, testMode));
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE, newTestMode);
 	}
 
 	/**
@@ -508,7 +267,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public boolean isWithDelivery() {
-		return withDelivery;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY, true);
 	}
 
 	/**
@@ -518,203 +277,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 */
 	@Override
 	public void setWithDelivery(boolean newWithDelivery) {
-		boolean oldWithDelivery = withDelivery;
-		withDelivery = newWithDelivery;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY, oldWithDelivery, withDelivery));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
-				return isAuthMode();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT:
-				return isFixContact();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT:
-				return isHideContact();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY:
-				return isHideCurrency();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__INST_ID:
-				return getInstId();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID:
-				return getLangId();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU:
-				return isNoLanguageMenu();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL:
-				return getRedirectUrl();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE:
-				return getTestMode();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
-				return isWithDelivery();
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				if (resolve) return getPaymentGatewayConfigId();
-				return basicGetPaymentGatewayConfigId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
-				setAuthMode((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT:
-				setFixContact((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT:
-				setHideContact((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY:
-				setHideCurrency((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__INST_ID:
-				setInstId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID:
-				setLangId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU:
-				setNoLanguageMenu((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL:
-				setRedirectUrl((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE:
-				setTestMode((Long)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
-				setWithDelivery((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
-				setAuthMode(AUTH_MODE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT:
-				setFixContact(FIX_CONTACT_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT:
-				setHideContact(HIDE_CONTACT_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY:
-				setHideCurrency(HIDE_CURRENCY_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__INST_ID:
-				setInstId(INST_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID:
-				setLangId(LANG_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU:
-				setNoLanguageMenu(NO_LANGUAGE_MENU_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL:
-				setRedirectUrl(REDIRECT_URL_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE:
-				setTestMode(TEST_MODE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
-				setWithDelivery(WITH_DELIVERY_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE:
-				return authMode != AUTH_MODE_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT:
-				return fixContact != FIX_CONTACT_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT:
-				return hideContact != HIDE_CONTACT_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY:
-				return hideCurrency != HIDE_CURRENCY_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__INST_ID:
-				return INST_ID_EDEFAULT == null ? instId != null : !INST_ID_EDEFAULT.equals(instId);
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__LANG_ID:
-				return LANG_ID_EDEFAULT == null ? langId != null : !LANG_ID_EDEFAULT.equals(langId);
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__NO_LANGUAGE_MENU:
-				return noLanguageMenu != NO_LANGUAGE_MENU_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__REDIRECT_URL:
-				return REDIRECT_URL_EDEFAULT == null ? redirectUrl != null : !REDIRECT_URL_EDEFAULT.equals(redirectUrl);
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__TEST_MODE:
-				return testMode != TEST_MODE_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY:
-				return withDelivery != WITH_DELIVERY_EDEFAULT;
-			case PaymentPackage.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID:
-				return paymentGatewayConfigId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (authMode: ");
-		result.append(authMode);
-		result.append(", fixContact: ");
-		result.append(fixContact);
-		result.append(", hideContact: ");
-		result.append(hideContact);
-		result.append(", hideCurrency: ");
-		result.append(hideCurrency);
-		result.append(", instId: ");
-		result.append(instId);
-		result.append(", langId: ");
-		result.append(langId);
-		result.append(", noLanguageMenu: ");
-		result.append(noLanguageMenu);
-		result.append(", redirectUrl: ");
-		result.append(redirectUrl);
-		result.append(", testMode: ");
-		result.append(testMode);
-		result.append(", withDelivery: ");
-		result.append(withDelivery);
-		result.append(')');
-		return result.toString();
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__WITH_DELIVERY, newWithDelivery);
 	}
 
 } //PaymentGatewayWorldPayImpl

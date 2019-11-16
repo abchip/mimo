@@ -9,9 +9,7 @@ package org.abchip.mimo.biz.common.geo.impl;
 
 import org.abchip.mimo.biz.common.geo.CountryTeleCode;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,25 +29,6 @@ public class CountryTeleCodeImpl extends CountryCodeImpl implements CountryTeleC
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getTeleCode() <em>Tele Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeleCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TELE_CODE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTeleCode() <em>Tele Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeleCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String teleCode = TELE_CODE_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,7 +55,7 @@ public class CountryTeleCodeImpl extends CountryCodeImpl implements CountryTeleC
 	 */
 	@Override
 	public String getTeleCode() {
-		return teleCode;
+		return (String)eGet(GeoPackage.Literals.COUNTRY_TELE_CODE__TELE_CODE, true);
 	}
 
 	/**
@@ -86,84 +65,7 @@ public class CountryTeleCodeImpl extends CountryCodeImpl implements CountryTeleC
 	 */
 	@Override
 	public void setTeleCode(String newTeleCode) {
-		String oldTeleCode = teleCode;
-		teleCode = newTeleCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_TELE_CODE__TELE_CODE, oldTeleCode, teleCode));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case GeoPackage.COUNTRY_TELE_CODE__TELE_CODE:
-				return getTeleCode();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case GeoPackage.COUNTRY_TELE_CODE__TELE_CODE:
-				setTeleCode((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case GeoPackage.COUNTRY_TELE_CODE__TELE_CODE:
-				setTeleCode(TELE_CODE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case GeoPackage.COUNTRY_TELE_CODE__TELE_CODE:
-				return TELE_CODE_EDEFAULT == null ? teleCode != null : !TELE_CODE_EDEFAULT.equals(teleCode);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (teleCode: ");
-		result.append(teleCode);
-		result.append(')');
-		return result.toString();
+		eSet(GeoPackage.Literals.COUNTRY_TELE_CODE__TELE_CODE, newTeleCode);
 	}
 
 } //CountryTeleCodeImpl

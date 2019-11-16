@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,56 +33,6 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ATTR_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String attrName = ATTR_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getShipmentTypeId() <em>Shipment Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ShipmentType shipmentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +60,7 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public String getAttrName() {
-		return attrName;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_TYPE_ATTR__ATTR_NAME, true);
 	}
 
 	/**
@@ -125,10 +70,7 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
-		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
+		eSet(Shipment_Package.Literals.SHIPMENT_TYPE_ATTR__ATTR_NAME, newAttrName);
 	}
 
 	/**
@@ -138,7 +80,7 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_TYPE_ATTR__DESCRIPTION, true);
 	}
 
 	/**
@@ -148,10 +90,7 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
+		eSet(Shipment_Package.Literals.SHIPMENT_TYPE_ATTR__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -161,24 +100,7 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public ShipmentType getShipmentTypeId() {
-		if (shipmentTypeId != null && ((EObject)shipmentTypeId).eIsProxy()) {
-			InternalEObject oldShipmentTypeId = (InternalEObject)shipmentTypeId;
-			shipmentTypeId = (ShipmentType)eResolveProxy(oldShipmentTypeId);
-			if (shipmentTypeId != oldShipmentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
-			}
-		}
-		return shipmentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShipmentType basicGetShipmentTypeId() {
-		return shipmentTypeId;
+		return (ShipmentType)eGet(Shipment_Package.Literals.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, true);
 	}
 
 	/**
@@ -188,107 +110,7 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public void setShipmentTypeId(ShipmentType newShipmentTypeId) {
-		ShipmentType oldShipmentTypeId = shipmentTypeId;
-		shipmentTypeId = newShipmentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
-				return getAttrName();
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
-				return getDescription();
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				if (resolve) return getShipmentTypeId();
-				return basicGetShipmentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
-				setAttrName((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				setShipmentTypeId((ShipmentType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
-				setAttrName(ATTR_NAME_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				setShipmentTypeId((ShipmentType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME:
-				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID:
-				return shipmentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (attrName: ");
-		result.append(attrName);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(Shipment_Package.Literals.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, newShipmentTypeId);
 	}
 
 } //ShipmentTypeAttrImpl

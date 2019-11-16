@@ -21,12 +21,7 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,116 +50,6 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getReturnItemResponseId() <em>Return Item Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ITEM_RESPONSE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnItemResponseId() <em>Return Item Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnItemResponseId = RETURN_ITEM_RESPONSE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getResponseAmount() <em>Response Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponseAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal RESPONSE_AMOUNT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResponseAmount() <em>Response Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponseAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal responseAmount = RESPONSE_AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getResponseDate() <em>Response Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponseDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date RESPONSE_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResponseDate() <em>Response Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponseDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date responseDate = RESPONSE_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderPaymentPreference orderPaymentPreferenceId;
-
-	/**
-	 * The cached value of the '{@link #getReplacementOrderId() <em>Replacement Order Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReplacementOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderHeader replacementOrderId;
-
-	/**
-	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Payment paymentId;
-
-	/**
-	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected BillingAccount billingAccountId;
-
-	/**
-	 * The cached value of the '{@link #getFinAccountTransId() <em>Fin Account Trans Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTransId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FinAccountTrans finAccountTransId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -190,24 +75,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public BillingAccount getBillingAccountId() {
-		if (billingAccountId != null && ((EObject)billingAccountId).eIsProxy()) {
-			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
-			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
-			if (billingAccountId != oldBillingAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
-			}
-		}
-		return billingAccountId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BillingAccount basicGetBillingAccountId() {
-		return billingAccountId;
+		return (BillingAccount)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID, true);
 	}
 
 	/**
@@ -217,10 +85,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
-		BillingAccount oldBillingAccountId = billingAccountId;
-		billingAccountId = newBillingAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID, newBillingAccountId);
 	}
 
 	/**
@@ -230,24 +95,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public FinAccountTrans getFinAccountTransId() {
-		if (finAccountTransId != null && ((EObject)finAccountTransId).eIsProxy()) {
-			InternalEObject oldFinAccountTransId = (InternalEObject)finAccountTransId;
-			finAccountTransId = (FinAccountTrans)eResolveProxy(oldFinAccountTransId);
-			if (finAccountTransId != oldFinAccountTransId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
-			}
-		}
-		return finAccountTransId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FinAccountTrans basicGetFinAccountTransId() {
-		return finAccountTransId;
+		return (FinAccountTrans)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID, true);
 	}
 
 	/**
@@ -257,10 +105,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setFinAccountTransId(FinAccountTrans newFinAccountTransId) {
-		FinAccountTrans oldFinAccountTransId = finAccountTransId;
-		finAccountTransId = newFinAccountTransId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID, newFinAccountTransId);
 	}
 
 	/**
@@ -270,24 +115,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public OrderPaymentPreference getOrderPaymentPreferenceId() {
-		if (orderPaymentPreferenceId != null && ((EObject)orderPaymentPreferenceId).eIsProxy()) {
-			InternalEObject oldOrderPaymentPreferenceId = (InternalEObject)orderPaymentPreferenceId;
-			orderPaymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldOrderPaymentPreferenceId);
-			if (orderPaymentPreferenceId != oldOrderPaymentPreferenceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
-			}
-		}
-		return orderPaymentPreferenceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderPaymentPreference basicGetOrderPaymentPreferenceId() {
-		return orderPaymentPreferenceId;
+		return (OrderPaymentPreference)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, true);
 	}
 
 	/**
@@ -297,10 +125,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setOrderPaymentPreferenceId(OrderPaymentPreference newOrderPaymentPreferenceId) {
-		OrderPaymentPreference oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
-		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, newOrderPaymentPreferenceId);
 	}
 
 	/**
@@ -310,24 +135,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public Payment getPaymentId() {
-		if (paymentId != null && ((EObject)paymentId).eIsProxy()) {
-			InternalEObject oldPaymentId = (InternalEObject)paymentId;
-			paymentId = (Payment)eResolveProxy(oldPaymentId);
-			if (paymentId != oldPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID, oldPaymentId, paymentId));
-			}
-		}
-		return paymentId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Payment basicGetPaymentId() {
-		return paymentId;
+		return (Payment)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__PAYMENT_ID, true);
 	}
 
 	/**
@@ -337,10 +145,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
-		Payment oldPaymentId = paymentId;
-		paymentId = newPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID, oldPaymentId, paymentId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__PAYMENT_ID, newPaymentId);
 	}
 
 	/**
@@ -350,24 +155,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public OrderHeader getReplacementOrderId() {
-		if (replacementOrderId != null && ((EObject)replacementOrderId).eIsProxy()) {
-			InternalEObject oldReplacementOrderId = (InternalEObject)replacementOrderId;
-			replacementOrderId = (OrderHeader)eResolveProxy(oldReplacementOrderId);
-			if (replacementOrderId != oldReplacementOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID, oldReplacementOrderId, replacementOrderId));
-			}
-		}
-		return replacementOrderId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderHeader basicGetReplacementOrderId() {
-		return replacementOrderId;
+		return (OrderHeader)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID, true);
 	}
 
 	/**
@@ -377,10 +165,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setReplacementOrderId(OrderHeader newReplacementOrderId) {
-		OrderHeader oldReplacementOrderId = replacementOrderId;
-		replacementOrderId = newReplacementOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID, oldReplacementOrderId, replacementOrderId));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID, newReplacementOrderId);
 	}
 
 	/**
@@ -390,7 +175,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public BigDecimal getResponseAmount() {
-		return responseAmount;
+		return (BigDecimal)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT, true);
 	}
 
 	/**
@@ -400,10 +185,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setResponseAmount(BigDecimal newResponseAmount) {
-		BigDecimal oldResponseAmount = responseAmount;
-		responseAmount = newResponseAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT, oldResponseAmount, responseAmount));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT, newResponseAmount);
 	}
 
 	/**
@@ -413,7 +195,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public Date getResponseDate() {
-		return responseDate;
+		return (Date)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__RESPONSE_DATE, true);
 	}
 
 	/**
@@ -423,10 +205,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setResponseDate(Date newResponseDate) {
-		Date oldResponseDate = responseDate;
-		responseDate = newResponseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_DATE, oldResponseDate, responseDate));
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__RESPONSE_DATE, newResponseDate);
 	}
 
 	/**
@@ -448,7 +227,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public String getReturnItemResponseId() {
-		return returnItemResponseId;
+		return (String)eGet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID, true);
 	}
 
 	/**
@@ -458,163 +237,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setReturnItemResponseId(String newReturnItemResponseId) {
-		String oldReturnItemResponseId = returnItemResponseId;
-		returnItemResponseId = newReturnItemResponseId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID, oldReturnItemResponseId, returnItemResponseId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID:
-				return getReturnItemResponseId();
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT:
-				return getResponseAmount();
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_DATE:
-				return getResponseDate();
-			case ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				if (resolve) return getOrderPaymentPreferenceId();
-				return basicGetOrderPaymentPreferenceId();
-			case ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID:
-				if (resolve) return getReplacementOrderId();
-				return basicGetReplacementOrderId();
-			case ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID:
-				if (resolve) return getPaymentId();
-				return basicGetPaymentId();
-			case ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID:
-				if (resolve) return getBillingAccountId();
-				return basicGetBillingAccountId();
-			case ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID:
-				if (resolve) return getFinAccountTransId();
-				return basicGetFinAccountTransId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID:
-				setReturnItemResponseId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT:
-				setResponseAmount((BigDecimal)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_DATE:
-				setResponseDate((Date)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId((OrderPaymentPreference)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID:
-				setReplacementOrderId((OrderHeader)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID:
-				setPaymentId((Payment)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID:
-				setBillingAccountId((BillingAccount)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID:
-				setFinAccountTransId((FinAccountTrans)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID:
-				setReturnItemResponseId(RETURN_ITEM_RESPONSE_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT:
-				setResponseAmount(RESPONSE_AMOUNT_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_DATE:
-				setResponseDate(RESPONSE_DATE_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId((OrderPaymentPreference)null);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID:
-				setReplacementOrderId((OrderHeader)null);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID:
-				setPaymentId((Payment)null);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID:
-				setBillingAccountId((BillingAccount)null);
-				return;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID:
-				setFinAccountTransId((FinAccountTrans)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID:
-				return RETURN_ITEM_RESPONSE_ID_EDEFAULT == null ? returnItemResponseId != null : !RETURN_ITEM_RESPONSE_ID_EDEFAULT.equals(returnItemResponseId);
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT:
-				return RESPONSE_AMOUNT_EDEFAULT == null ? responseAmount != null : !RESPONSE_AMOUNT_EDEFAULT.equals(responseAmount);
-			case ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_DATE:
-				return RESPONSE_DATE_EDEFAULT == null ? responseDate != null : !RESPONSE_DATE_EDEFAULT.equals(responseDate);
-			case ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				return orderPaymentPreferenceId != null;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID:
-				return replacementOrderId != null;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID:
-				return paymentId != null;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID:
-				return billingAccountId != null;
-			case ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID:
-				return finAccountTransId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnItemResponseId: ");
-		result.append(returnItemResponseId);
-		result.append(", responseAmount: ");
-		result.append(responseAmount);
-		result.append(", responseDate: ");
-		result.append(responseDate);
-		result.append(')');
-		return result.toString();
+		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID, newReturnItemResponseId);
 	}
 
 } //ReturnItemResponseImpl

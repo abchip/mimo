@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,86 +38,6 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStandardHoursPerWeek() <em>Standard Hours Per Week</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStandardHoursPerWeek()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double STANDARD_HOURS_PER_WEEK_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getStandardHoursPerWeek() <em>Standard Hours Per Week</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStandardHoursPerWeek()
-	 * @generated
-	 * @ordered
-	 */
-	protected double standardHoursPerWeek = STANDARD_HOURS_PER_WEEK_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected EmplPositionType emplPositionTypeId;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionClassTypeId() <em>Empl Position Class Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionClassTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected EmplPositionClassType emplPositionClassTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,24 +65,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public EmplPositionClassType getEmplPositionClassTypeId() {
-		if (emplPositionClassTypeId != null && ((EObject)emplPositionClassTypeId).eIsProxy()) {
-			InternalEObject oldEmplPositionClassTypeId = (InternalEObject)emplPositionClassTypeId;
-			emplPositionClassTypeId = (EmplPositionClassType)eResolveProxy(oldEmplPositionClassTypeId);
-			if (emplPositionClassTypeId != oldEmplPositionClassTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID, oldEmplPositionClassTypeId, emplPositionClassTypeId));
-			}
-		}
-		return emplPositionClassTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EmplPositionClassType basicGetEmplPositionClassTypeId() {
-		return emplPositionClassTypeId;
+		return (EmplPositionClassType)eGet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID, true);
 	}
 
 	/**
@@ -177,10 +75,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setEmplPositionClassTypeId(EmplPositionClassType newEmplPositionClassTypeId) {
-		EmplPositionClassType oldEmplPositionClassTypeId = emplPositionClassTypeId;
-		emplPositionClassTypeId = newEmplPositionClassTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID, oldEmplPositionClassTypeId, emplPositionClassTypeId));
+		eSet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID, newEmplPositionClassTypeId);
 	}
 
 	/**
@@ -190,24 +85,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public EmplPositionType getEmplPositionTypeId() {
-		if (emplPositionTypeId != null && ((EObject)emplPositionTypeId).eIsProxy()) {
-			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
-			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
-			if (emplPositionTypeId != oldEmplPositionTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
-			}
-		}
-		return emplPositionTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EmplPositionType basicGetEmplPositionTypeId() {
-		return emplPositionTypeId;
+		return (EmplPositionType)eGet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, true);
 	}
 
 	/**
@@ -217,10 +95,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
-		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
-		emplPositionTypeId = newEmplPositionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
+		eSet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, newEmplPositionTypeId);
 	}
 
 	/**
@@ -230,7 +105,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__FROM_DATE, true);
 	}
 
 	/**
@@ -240,10 +115,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE, oldFromDate, fromDate));
+		eSet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -253,7 +125,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public double getStandardHoursPerWeek() {
-		return standardHoursPerWeek;
+		return (Double)eGet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK, true);
 	}
 
 	/**
@@ -263,10 +135,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setStandardHoursPerWeek(double newStandardHoursPerWeek) {
-		double oldStandardHoursPerWeek = standardHoursPerWeek;
-		standardHoursPerWeek = newStandardHoursPerWeek;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK, oldStandardHoursPerWeek, standardHoursPerWeek));
+		eSet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK, newStandardHoursPerWeek);
 	}
 
 	/**
@@ -276,7 +145,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__THRU_DATE, true);
 	}
 
 	/**
@@ -286,130 +155,7 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE, oldThruDate, thruDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
-				return getFromDate();
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK:
-				return getStandardHoursPerWeek();
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
-				return getThruDate();
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				if (resolve) return getEmplPositionTypeId();
-				return basicGetEmplPositionTypeId();
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
-				if (resolve) return getEmplPositionClassTypeId();
-				return basicGetEmplPositionClassTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK:
-				setStandardHoursPerWeek((Double)newValue);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId((EmplPositionType)newValue);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
-				setEmplPositionClassTypeId((EmplPositionClassType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK:
-				setStandardHoursPerWeek(STANDARD_HOURS_PER_WEEK_EDEFAULT);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId((EmplPositionType)null);
-				return;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
-				setEmplPositionClassTypeId((EmplPositionClassType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK:
-				return standardHoursPerWeek != STANDARD_HOURS_PER_WEEK_EDEFAULT;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID:
-				return emplPositionTypeId != null;
-			case PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID:
-				return emplPositionClassTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", standardHoursPerWeek: ");
-		result.append(standardHoursPerWeek);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(PositionPackage.Literals.EMPL_POSITION_TYPE_CLASS__THRU_DATE, newThruDate);
 	}
 
 } //EmplPositionTypeClassImpl

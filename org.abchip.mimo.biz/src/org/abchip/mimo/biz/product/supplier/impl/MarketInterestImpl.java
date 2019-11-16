@@ -14,11 +14,7 @@ import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.supplier.MarketInterest;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,66 +37,6 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductCategory productCategoryId;
-
-	/**
-	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyClassificationGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PartyClassificationGroup partyClassificationGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +64,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(SupplierPackage.Literals.MARKET_INTEREST__FROM_DATE, true);
 	}
 
 	/**
@@ -138,10 +74,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__FROM_DATE, oldFromDate, fromDate));
+		eSet(SupplierPackage.Literals.MARKET_INTEREST__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -151,24 +84,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public PartyClassificationGroup getPartyClassificationGroupId() {
-		if (partyClassificationGroupId != null && ((EObject)partyClassificationGroupId).eIsProxy()) {
-			InternalEObject oldPartyClassificationGroupId = (InternalEObject)partyClassificationGroupId;
-			partyClassificationGroupId = (PartyClassificationGroup)eResolveProxy(oldPartyClassificationGroupId);
-			if (partyClassificationGroupId != oldPartyClassificationGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
-			}
-		}
-		return partyClassificationGroupId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartyClassificationGroup basicGetPartyClassificationGroupId() {
-		return partyClassificationGroupId;
+		return (PartyClassificationGroup)eGet(SupplierPackage.Literals.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, true);
 	}
 
 	/**
@@ -178,10 +94,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setPartyClassificationGroupId(PartyClassificationGroup newPartyClassificationGroupId) {
-		PartyClassificationGroup oldPartyClassificationGroupId = partyClassificationGroupId;
-		partyClassificationGroupId = newPartyClassificationGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
+		eSet(SupplierPackage.Literals.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, newPartyClassificationGroupId);
 	}
 
 	/**
@@ -191,7 +104,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(SupplierPackage.Literals.MARKET_INTEREST__THRU_DATE, true);
 	}
 
 	/**
@@ -201,10 +114,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__THRU_DATE, oldThruDate, thruDate));
+		eSet(SupplierPackage.Literals.MARKET_INTEREST__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -214,24 +124,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public ProductCategory getProductCategoryId() {
-		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
-			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
-			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
-			if (productCategoryId != oldProductCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
-			}
-		}
-		return productCategoryId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductCategory basicGetProductCategoryId() {
-		return productCategoryId;
+		return (ProductCategory)eGet(SupplierPackage.Literals.MARKET_INTEREST__PRODUCT_CATEGORY_ID, true);
 	}
 
 	/**
@@ -241,118 +134,7 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
-		ProductCategory oldProductCategoryId = productCategoryId;
-		productCategoryId = newProductCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
-				return getFromDate();
-			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
-				return getThruDate();
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				if (resolve) return getProductCategoryId();
-				return basicGetProductCategoryId();
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				if (resolve) return getPartyClassificationGroupId();
-				return basicGetPartyClassificationGroupId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((ProductCategory)newValue);
-				return;
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId((PartyClassificationGroup)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((ProductCategory)null);
-				return;
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId((PartyClassificationGroup)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
-				return productCategoryId != null;
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				return partyClassificationGroupId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(SupplierPackage.Literals.MARKET_INTEREST__PRODUCT_CATEGORY_ID, newProductCategoryId);
 	}
 
 } //MarketInterestImpl

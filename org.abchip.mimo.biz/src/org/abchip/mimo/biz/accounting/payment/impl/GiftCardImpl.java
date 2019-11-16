@@ -10,11 +10,7 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import org.abchip.mimo.biz.accounting.payment.GiftCard;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,74 +33,6 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getCardNumber() <em>Card Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARD_NUMBER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCardNumber() <em>Card Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cardNumber = CARD_NUMBER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getExpireDate() <em>Expire Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpireDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXPIRE_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExpireDate() <em>Expire Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpireDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected String expireDate = EXPIRE_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPinNumber() <em>Pin Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPinNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PIN_NUMBER_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPinNumber() <em>Pin Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPinNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected String pinNumber = PIN_NUMBER_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ContactMech contactMechId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,7 +59,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public String getCardNumber() {
-		return cardNumber;
+		return (String)eGet(PaymentPackage.Literals.GIFT_CARD__CARD_NUMBER, true);
 	}
 
 	/**
@@ -141,10 +69,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setCardNumber(String newCardNumber) {
-		String oldCardNumber = cardNumber;
-		cardNumber = newCardNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__CARD_NUMBER, oldCardNumber, cardNumber));
+		eSet(PaymentPackage.Literals.GIFT_CARD__CARD_NUMBER, newCardNumber);
 	}
 
 	/**
@@ -154,24 +79,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public ContactMech getContactMechId() {
-		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
-			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
-			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
-			}
-		}
-		return contactMechId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContactMech basicGetContactMechId() {
-		return contactMechId;
+		return (ContactMech)eGet(PaymentPackage.Literals.GIFT_CARD__CONTACT_MECH_ID, true);
 	}
 
 	/**
@@ -181,10 +89,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
-		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+		eSet(PaymentPackage.Literals.GIFT_CARD__CONTACT_MECH_ID, newContactMechId);
 	}
 
 	/**
@@ -194,7 +99,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public String getExpireDate() {
-		return expireDate;
+		return (String)eGet(PaymentPackage.Literals.GIFT_CARD__EXPIRE_DATE, true);
 	}
 
 	/**
@@ -204,10 +109,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setExpireDate(String newExpireDate) {
-		String oldExpireDate = expireDate;
-		expireDate = newExpireDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__EXPIRE_DATE, oldExpireDate, expireDate));
+		eSet(PaymentPackage.Literals.GIFT_CARD__EXPIRE_DATE, newExpireDate);
 	}
 
 	/**
@@ -217,7 +119,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public String getPinNumber() {
-		return pinNumber;
+		return (String)eGet(PaymentPackage.Literals.GIFT_CARD__PIN_NUMBER, true);
 	}
 
 	/**
@@ -227,119 +129,7 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setPinNumber(String newPinNumber) {
-		String oldPinNumber = pinNumber;
-		pinNumber = newPinNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__PIN_NUMBER, oldPinNumber, pinNumber));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PaymentPackage.GIFT_CARD__CARD_NUMBER:
-				return getCardNumber();
-			case PaymentPackage.GIFT_CARD__EXPIRE_DATE:
-				return getExpireDate();
-			case PaymentPackage.GIFT_CARD__PIN_NUMBER:
-				return getPinNumber();
-			case PaymentPackage.GIFT_CARD__CONTACT_MECH_ID:
-				if (resolve) return getContactMechId();
-				return basicGetContactMechId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PaymentPackage.GIFT_CARD__CARD_NUMBER:
-				setCardNumber((String)newValue);
-				return;
-			case PaymentPackage.GIFT_CARD__EXPIRE_DATE:
-				setExpireDate((String)newValue);
-				return;
-			case PaymentPackage.GIFT_CARD__PIN_NUMBER:
-				setPinNumber((String)newValue);
-				return;
-			case PaymentPackage.GIFT_CARD__CONTACT_MECH_ID:
-				setContactMechId((ContactMech)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.GIFT_CARD__CARD_NUMBER:
-				setCardNumber(CARD_NUMBER_EDEFAULT);
-				return;
-			case PaymentPackage.GIFT_CARD__EXPIRE_DATE:
-				setExpireDate(EXPIRE_DATE_EDEFAULT);
-				return;
-			case PaymentPackage.GIFT_CARD__PIN_NUMBER:
-				setPinNumber(PIN_NUMBER_EDEFAULT);
-				return;
-			case PaymentPackage.GIFT_CARD__CONTACT_MECH_ID:
-				setContactMechId((ContactMech)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.GIFT_CARD__CARD_NUMBER:
-				return CARD_NUMBER_EDEFAULT == null ? cardNumber != null : !CARD_NUMBER_EDEFAULT.equals(cardNumber);
-			case PaymentPackage.GIFT_CARD__EXPIRE_DATE:
-				return EXPIRE_DATE_EDEFAULT == null ? expireDate != null : !EXPIRE_DATE_EDEFAULT.equals(expireDate);
-			case PaymentPackage.GIFT_CARD__PIN_NUMBER:
-				return PIN_NUMBER_EDEFAULT == null ? pinNumber != null : !PIN_NUMBER_EDEFAULT.equals(pinNumber);
-			case PaymentPackage.GIFT_CARD__CONTACT_MECH_ID:
-				return contactMechId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (cardNumber: ");
-		result.append(cardNumber);
-		result.append(", expireDate: ");
-		result.append(expireDate);
-		result.append(", pinNumber: ");
-		result.append(pinNumber);
-		result.append(')');
-		return result.toString();
+		eSet(PaymentPackage.Literals.GIFT_CARD__PIN_NUMBER, newPinNumber);
 	}
 
 } //GiftCardImpl

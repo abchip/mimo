@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderItemType;
 import org.abchip.mimo.biz.order.order.OrderItemTypeAttr;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,56 +33,6 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ATTR_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String attrName = ATTR_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOrderItemTypeId() <em>Order Item Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderItemType orderItemTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +60,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public String getAttrName() {
-		return attrName;
+		return (String)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE_ATTR__ATTR_NAME, true);
 	}
 
 	/**
@@ -125,10 +70,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
-		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
+		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE_ATTR__ATTR_NAME, newAttrName);
 	}
 
 	/**
@@ -138,7 +80,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE_ATTR__DESCRIPTION, true);
 	}
 
 	/**
@@ -148,10 +90,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE_ATTR__DESCRIPTION, oldDescription, description));
+		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE_ATTR__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -161,24 +100,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public OrderItemType getOrderItemTypeId() {
-		if (orderItemTypeId != null && ((EObject)orderItemTypeId).eIsProxy()) {
-			InternalEObject oldOrderItemTypeId = (InternalEObject)orderItemTypeId;
-			orderItemTypeId = (OrderItemType)eResolveProxy(oldOrderItemTypeId);
-			if (orderItemTypeId != oldOrderItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
-			}
-		}
-		return orderItemTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderItemType basicGetOrderItemTypeId() {
-		return orderItemTypeId;
+		return (OrderItemType)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID, true);
 	}
 
 	/**
@@ -188,107 +110,7 @@ public class OrderItemTypeAttrImpl extends BizEntityImpl implements OrderItemTyp
 	 */
 	@Override
 	public void setOrderItemTypeId(OrderItemType newOrderItemTypeId) {
-		OrderItemType oldOrderItemTypeId = orderItemTypeId;
-		orderItemTypeId = newOrderItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ATTR_NAME:
-				return getAttrName();
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__DESCRIPTION:
-				return getDescription();
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID:
-				if (resolve) return getOrderItemTypeId();
-				return basicGetOrderItemTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ATTR_NAME:
-				setAttrName((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID:
-				setOrderItemTypeId((OrderItemType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ATTR_NAME:
-				setAttrName(ATTR_NAME_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID:
-				setOrderItemTypeId((OrderItemType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ATTR_NAME:
-				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case OrderPackage.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID:
-				return orderItemTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (attrName: ");
-		result.append(attrName);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE_ATTR__ORDER_ITEM_TYPE_ID, newOrderItemTypeId);
 	}
 
 } //OrderItemTypeAttrImpl

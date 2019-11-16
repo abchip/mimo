@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.product.product.GoodIdentification;
 import org.abchip.mimo.biz.product.product.GoodIdentificationType;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,46 +34,6 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getIdValue() <em>Id Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIdValue() <em>Id Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String idValue = ID_VALUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getGoodIdentificationTypeId() <em>Good Identification Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGoodIdentificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GoodIdentificationType goodIdentificationTypeId;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,7 +61,7 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public String getIdValue() {
-		return idValue;
+		return (String)eGet(ProductPackage.Literals.GOOD_IDENTIFICATION__ID_VALUE, true);
 	}
 
 	/**
@@ -115,10 +71,7 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public void setIdValue(String newIdValue) {
-		String oldIdValue = idValue;
-		idValue = newIdValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION__ID_VALUE, oldIdValue, idValue));
+		eSet(ProductPackage.Literals.GOOD_IDENTIFICATION__ID_VALUE, newIdValue);
 	}
 
 	/**
@@ -128,24 +81,7 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public GoodIdentificationType getGoodIdentificationTypeId() {
-		if (goodIdentificationTypeId != null && ((EObject)goodIdentificationTypeId).eIsProxy()) {
-			InternalEObject oldGoodIdentificationTypeId = (InternalEObject)goodIdentificationTypeId;
-			goodIdentificationTypeId = (GoodIdentificationType)eResolveProxy(oldGoodIdentificationTypeId);
-			if (goodIdentificationTypeId != oldGoodIdentificationTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, oldGoodIdentificationTypeId, goodIdentificationTypeId));
-			}
-		}
-		return goodIdentificationTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GoodIdentificationType basicGetGoodIdentificationTypeId() {
-		return goodIdentificationTypeId;
+		return (GoodIdentificationType)eGet(ProductPackage.Literals.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, true);
 	}
 
 	/**
@@ -155,10 +91,7 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public void setGoodIdentificationTypeId(GoodIdentificationType newGoodIdentificationTypeId) {
-		GoodIdentificationType oldGoodIdentificationTypeId = goodIdentificationTypeId;
-		goodIdentificationTypeId = newGoodIdentificationTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, oldGoodIdentificationTypeId, goodIdentificationTypeId));
+		eSet(ProductPackage.Literals.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, newGoodIdentificationTypeId);
 	}
 
 	/**
@@ -168,24 +101,7 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(ProductPackage.Literals.GOOD_IDENTIFICATION__PRODUCT_ID, true);
 	}
 
 	/**
@@ -195,106 +111,7 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID, oldProductId, productId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
-				return getIdValue();
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				if (resolve) return getGoodIdentificationTypeId();
-				return basicGetGoodIdentificationTypeId();
-			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
-				setIdValue((String)newValue);
-				return;
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				setGoodIdentificationTypeId((GoodIdentificationType)newValue);
-				return;
-			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
-				setIdValue(ID_VALUE_EDEFAULT);
-				return;
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				setGoodIdentificationTypeId((GoodIdentificationType)null);
-				return;
-			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ProductPackage.GOOD_IDENTIFICATION__ID_VALUE:
-				return ID_VALUE_EDEFAULT == null ? idValue != null : !ID_VALUE_EDEFAULT.equals(idValue);
-			case ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID:
-				return goodIdentificationTypeId != null;
-			case ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID:
-				return productId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (idValue: ");
-		result.append(idValue);
-		result.append(')');
-		return result.toString();
+		eSet(ProductPackage.Literals.GOOD_IDENTIFICATION__PRODUCT_ID, newProductId);
 	}
 
 } //GoodIdentificationImpl

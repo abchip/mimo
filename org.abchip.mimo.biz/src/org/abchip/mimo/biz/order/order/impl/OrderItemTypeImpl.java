@@ -7,21 +7,13 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.order.order.OrderItemType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,86 +37,6 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderItemTypeId() <em>Order Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ITEM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderItemTypeId() <em>Order Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderItemTypeId = ORDER_ITEM_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderItemType parentTypeId;
-
-	/**
-	 * The cached value of the '{@link #getOrderItemTypeAttrs() <em>Order Item Type Attrs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemTypeAttrs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> orderItemTypeAttrs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +64,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -162,10 +74,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -175,7 +84,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -185,10 +94,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -198,7 +104,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public String getOrderItemTypeId() {
-		return orderItemTypeId;
+		return (String)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID, true);
 	}
 
 	/**
@@ -208,10 +114,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setOrderItemTypeId(String newOrderItemTypeId) {
-		String oldOrderItemTypeId = orderItemTypeId;
-		orderItemTypeId = newOrderItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
+		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID, newOrderItemTypeId);
 	}
 
 	/**
@@ -221,24 +124,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public OrderItemType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (OrderItemType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderItemType basicGetParentTypeId() {
-		return parentTypeId;
+		return (OrderItemType)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -248,10 +134,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@Override
 	public void setParentTypeId(OrderItemType newParentTypeId) {
-		OrderItemType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -259,12 +142,10 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getOrderItemTypeAttrs() {
-		if (orderItemTypeAttrs == null) {
-			orderItemTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS);
-		}
-		return orderItemTypeAttrs;
+		return (List<String>)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -289,129 +170,6 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID:
-				return getOrderItemTypeId();
-			case OrderPackage.ORDER_ITEM_TYPE__DESCRIPTION:
-				return getDescription();
-			case OrderPackage.ORDER_ITEM_TYPE__HAS_TABLE:
-				return isHasTable();
-			case OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS:
-				return getOrderItemTypeAttrs();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID:
-				setOrderItemTypeId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((OrderItemType)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS:
-				getOrderItemTypeAttrs().clear();
-				getOrderItemTypeAttrs().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID:
-				setOrderItemTypeId(ORDER_ITEM_TYPE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((OrderItemType)null);
-				return;
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS:
-				getOrderItemTypeAttrs().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ID:
-				return ORDER_ITEM_TYPE_ID_EDEFAULT == null ? orderItemTypeId != null : !ORDER_ITEM_TYPE_ID_EDEFAULT.equals(orderItemTypeId);
-			case OrderPackage.ORDER_ITEM_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case OrderPackage.ORDER_ITEM_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case OrderPackage.ORDER_ITEM_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-			case OrderPackage.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS:
-				return orderItemTypeAttrs != null && !orderItemTypeAttrs.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderItemTypeId: ");
-		result.append(orderItemTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(", orderItemTypeAttrs: ");
-		result.append(orderItemTypeAttrs);
-		result.append(')');
-		return result.toString();
 	}
 
 } //OrderItemTypeImpl

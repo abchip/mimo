@@ -14,11 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +36,6 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_METER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productMeterTypeId = PRODUCT_METER_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDefaultUomId() <em>Default Uom Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uom defaultUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,24 +63,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public Uom getDefaultUomId() {
-		if (defaultUomId != null && ((EObject)defaultUomId).eIsProxy()) {
-			InternalEObject oldDefaultUomId = (InternalEObject)defaultUomId;
-			defaultUomId = (Uom)eResolveProxy(oldDefaultUomId);
-			if (defaultUomId != oldDefaultUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, oldDefaultUomId, defaultUomId));
-			}
-		}
-		return defaultUomId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uom basicGetDefaultUomId() {
-		return defaultUomId;
+		return (Uom)eGet(ProductPackage.Literals.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, true);
 	}
 
 	/**
@@ -144,10 +73,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public void setDefaultUomId(Uom newDefaultUomId) {
-		Uom oldDefaultUomId = defaultUomId;
-		defaultUomId = newDefaultUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, oldDefaultUomId, defaultUomId));
+		eSet(ProductPackage.Literals.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, newDefaultUomId);
 	}
 
 	/**
@@ -157,7 +83,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(ProductPackage.Literals.PRODUCT_METER_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -167,10 +93,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(ProductPackage.Literals.PRODUCT_METER_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -216,7 +139,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public String getProductMeterTypeId() {
-		return productMeterTypeId;
+		return (String)eGet(ProductPackage.Literals.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID, true);
 	}
 
 	/**
@@ -226,107 +149,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public void setProductMeterTypeId(String newProductMeterTypeId) {
-		String oldProductMeterTypeId = productMeterTypeId;
-		productMeterTypeId = newProductMeterTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
-				return getProductMeterTypeId();
-			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
-				return getDescription();
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				if (resolve) return getDefaultUomId();
-				return basicGetDefaultUomId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
-				setProductMeterTypeId((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				setDefaultUomId((Uom)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
-				setProductMeterTypeId(PRODUCT_METER_TYPE_ID_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				setDefaultUomId((Uom)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
-				return PRODUCT_METER_TYPE_ID_EDEFAULT == null ? productMeterTypeId != null : !PRODUCT_METER_TYPE_ID_EDEFAULT.equals(productMeterTypeId);
-			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				return defaultUomId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productMeterTypeId: ");
-		result.append(productMeterTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(ProductPackage.Literals.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID, newProductMeterTypeId);
 	}
 
 } //ProductMeterTypeImpl

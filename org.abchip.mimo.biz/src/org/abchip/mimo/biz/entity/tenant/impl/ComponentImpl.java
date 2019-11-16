@@ -7,17 +7,12 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.entity.tenant.Component;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,56 +34,6 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMPONENT_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String componentName = COMPONENT_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRootLocation() <em>Root Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRootLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROOT_LOCATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRootLocation() <em>Root Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRootLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String rootLocation = ROOT_LOCATION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTenantComponents() <em>Tenant Components</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantComponents()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> tenantComponents;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +60,7 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@Override
 	public String getComponentName() {
-		return componentName;
+		return (String)eGet(TenantPackage.Literals.COMPONENT__COMPONENT_NAME, true);
 	}
 
 	/**
@@ -125,10 +70,7 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@Override
 	public void setComponentName(String newComponentName) {
-		String oldComponentName = componentName;
-		componentName = newComponentName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.COMPONENT__COMPONENT_NAME, oldComponentName, componentName));
+		eSet(TenantPackage.Literals.COMPONENT__COMPONENT_NAME, newComponentName);
 	}
 
 	/**
@@ -138,7 +80,7 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@Override
 	public String getRootLocation() {
-		return rootLocation;
+		return (String)eGet(TenantPackage.Literals.COMPONENT__ROOT_LOCATION, true);
 	}
 
 	/**
@@ -148,41 +90,7 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@Override
 	public void setRootLocation(String newRootLocation) {
-		String oldRootLocation = rootLocation;
-		rootLocation = newRootLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.COMPONENT__ROOT_LOCATION, oldRootLocation, rootLocation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> getTenantComponents() {
-		if (tenantComponents == null) {
-			tenantComponents = new EDataTypeUniqueEList<String>(String.class, this, TenantPackage.COMPONENT__TENANT_COMPONENTS);
-		}
-		return tenantComponents;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TenantPackage.COMPONENT__COMPONENT_NAME:
-				return getComponentName();
-			case TenantPackage.COMPONENT__ROOT_LOCATION:
-				return getRootLocation();
-			case TenantPackage.COMPONENT__TENANT_COMPONENTS:
-				return getTenantComponents();
-		}
-		return super.eGet(featureID, resolve, coreType);
+		eSet(TenantPackage.Literals.COMPONENT__ROOT_LOCATION, newRootLocation);
 	}
 
 	/**
@@ -192,79 +100,8 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TenantPackage.COMPONENT__COMPONENT_NAME:
-				setComponentName((String)newValue);
-				return;
-			case TenantPackage.COMPONENT__ROOT_LOCATION:
-				setRootLocation((String)newValue);
-				return;
-			case TenantPackage.COMPONENT__TENANT_COMPONENTS:
-				getTenantComponents().clear();
-				getTenantComponents().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TenantPackage.COMPONENT__COMPONENT_NAME:
-				setComponentName(COMPONENT_NAME_EDEFAULT);
-				return;
-			case TenantPackage.COMPONENT__ROOT_LOCATION:
-				setRootLocation(ROOT_LOCATION_EDEFAULT);
-				return;
-			case TenantPackage.COMPONENT__TENANT_COMPONENTS:
-				getTenantComponents().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TenantPackage.COMPONENT__COMPONENT_NAME:
-				return COMPONENT_NAME_EDEFAULT == null ? componentName != null : !COMPONENT_NAME_EDEFAULT.equals(componentName);
-			case TenantPackage.COMPONENT__ROOT_LOCATION:
-				return ROOT_LOCATION_EDEFAULT == null ? rootLocation != null : !ROOT_LOCATION_EDEFAULT.equals(rootLocation);
-			case TenantPackage.COMPONENT__TENANT_COMPONENTS:
-				return tenantComponents != null && !tenantComponents.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (componentName: ");
-		result.append(componentName);
-		result.append(", rootLocation: ");
-		result.append(rootLocation);
-		result.append(", tenantComponents: ");
-		result.append(tenantComponents);
-		result.append(')');
-		return result.toString();
+	public List<String> getTenantComponents() {
+		return (List<String>)eGet(TenantPackage.Literals.COMPONENT__TENANT_COMPONENTS, true);
 	}
 
 } //ComponentImpl

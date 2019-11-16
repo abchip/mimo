@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.inventory.VarianceReason;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,34 +35,6 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getVarianceReasonId() <em>Variance Reason Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVarianceReasonId()
-	 * @generated
-	 * @ordered
-	 */
-	protected VarianceReason varianceReasonId;
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party organizationPartyId;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GlAccount glAccountId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,24 +61,7 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 */
 	@Override
 	public Party getOrganizationPartyId() {
-		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
-			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
-			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
-			if (organizationPartyId != oldOrganizationPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
-			}
-		}
-		return organizationPartyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetOrganizationPartyId() {
-		return organizationPartyId;
+		return (Party)eGet(LedgerPackage.Literals.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID, true);
 	}
 
 	/**
@@ -120,10 +71,7 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
-		Party oldOrganizationPartyId = organizationPartyId;
-		organizationPartyId = newOrganizationPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+		eSet(LedgerPackage.Literals.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID, newOrganizationPartyId);
 	}
 
 	/**
@@ -133,24 +81,7 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 */
 	@Override
 	public VarianceReason getVarianceReasonId() {
-		if (varianceReasonId != null && ((EObject)varianceReasonId).eIsProxy()) {
-			InternalEObject oldVarianceReasonId = (InternalEObject)varianceReasonId;
-			varianceReasonId = (VarianceReason)eResolveProxy(oldVarianceReasonId);
-			if (varianceReasonId != oldVarianceReasonId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID, oldVarianceReasonId, varianceReasonId));
-			}
-		}
-		return varianceReasonId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VarianceReason basicGetVarianceReasonId() {
-		return varianceReasonId;
+		return (VarianceReason)eGet(LedgerPackage.Literals.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID, true);
 	}
 
 	/**
@@ -160,10 +91,7 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 */
 	@Override
 	public void setVarianceReasonId(VarianceReason newVarianceReasonId) {
-		VarianceReason oldVarianceReasonId = varianceReasonId;
-		varianceReasonId = newVarianceReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID, oldVarianceReasonId, varianceReasonId));
+		eSet(LedgerPackage.Literals.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID, newVarianceReasonId);
 	}
 
 	/**
@@ -173,24 +101,7 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 */
 	@Override
 	public GlAccount getGlAccountId() {
-		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
-			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
-			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
-			if (glAccountId != oldGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
-			}
-		}
-		return glAccountId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GlAccount basicGetGlAccountId() {
-		return glAccountId;
+		return (GlAccount)eGet(LedgerPackage.Literals.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID, true);
 	}
 
 	/**
@@ -200,91 +111,7 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
-		GlAccount oldGlAccountId = glAccountId;
-		glAccountId = newGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID:
-				if (resolve) return getVarianceReasonId();
-				return basicGetVarianceReasonId();
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				if (resolve) return getOrganizationPartyId();
-				return basicGetOrganizationPartyId();
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				if (resolve) return getGlAccountId();
-				return basicGetGlAccountId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID:
-				setVarianceReasonId((VarianceReason)newValue);
-				return;
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((Party)newValue);
-				return;
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId((GlAccount)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID:
-				setVarianceReasonId((VarianceReason)null);
-				return;
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((Party)null);
-				return;
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId((GlAccount)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID:
-				return varianceReasonId != null;
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return organizationPartyId != null;
-			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				return glAccountId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(LedgerPackage.Literals.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID, newGlAccountId);
 	}
 
 } //VarianceReasonGlAccountImpl

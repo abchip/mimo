@@ -7,21 +7,13 @@
  */
 package org.abchip.mimo.biz.content.document.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,86 +38,6 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDocumentTypeId() <em>Document Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DOCUMENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDocumentTypeId() <em>Document Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String documentTypeId = DOCUMENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DocumentType parentTypeId;
-
-	/**
-	 * The cached value of the '{@link #getDocumentTypeAttrs() <em>Document Type Attrs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentTypeAttrs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> documentTypeAttrs;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,7 +64,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -162,10 +74,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(DocumentPackage.Literals.DOCUMENT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -175,7 +84,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -185,10 +94,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(DocumentPackage.Literals.DOCUMENT_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -198,7 +104,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public String getDocumentTypeId() {
-		return documentTypeId;
+		return (String)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__DOCUMENT_TYPE_ID, true);
 	}
 
 	/**
@@ -208,10 +114,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setDocumentTypeId(String newDocumentTypeId) {
-		String oldDocumentTypeId = documentTypeId;
-		documentTypeId = newDocumentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
+		eSet(DocumentPackage.Literals.DOCUMENT_TYPE__DOCUMENT_TYPE_ID, newDocumentTypeId);
 	}
 
 	/**
@@ -221,24 +124,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public DocumentType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (DocumentType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DocumentType basicGetParentTypeId() {
-		return parentTypeId;
+		return (DocumentType)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -248,10 +134,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@Override
 	public void setParentTypeId(DocumentType newParentTypeId) {
-		DocumentType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(DocumentPackage.Literals.DOCUMENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -259,12 +142,10 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getDocumentTypeAttrs() {
-		if (documentTypeAttrs == null) {
-			documentTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS);
-		}
-		return documentTypeAttrs;
+		return (List<String>)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -289,129 +170,6 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ID:
-				return getDocumentTypeId();
-			case DocumentPackage.DOCUMENT_TYPE__DESCRIPTION:
-				return getDescription();
-			case DocumentPackage.DOCUMENT_TYPE__HAS_TABLE:
-				return isHasTable();
-			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
-				return getDocumentTypeAttrs();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ID:
-				setDocumentTypeId((String)newValue);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((DocumentType)newValue);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
-				getDocumentTypeAttrs().clear();
-				getDocumentTypeAttrs().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ID:
-				setDocumentTypeId(DOCUMENT_TYPE_ID_EDEFAULT);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((DocumentType)null);
-				return;
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
-				getDocumentTypeAttrs().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ID:
-				return DOCUMENT_TYPE_ID_EDEFAULT == null ? documentTypeId != null : !DOCUMENT_TYPE_ID_EDEFAULT.equals(documentTypeId);
-			case DocumentPackage.DOCUMENT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case DocumentPackage.DOCUMENT_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
-				return documentTypeAttrs != null && !documentTypeAttrs.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (documentTypeId: ");
-		result.append(documentTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(", documentTypeAttrs: ");
-		result.append(documentTypeAttrs);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DocumentTypeImpl

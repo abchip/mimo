@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.entity.crypto.impl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.EntityKeyStore;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,46 +31,6 @@ public class EntityKeyStoreImpl extends BizEntityImpl implements EntityKeyStore 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getKeyName() <em>Key Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String KEY_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getKeyName() <em>Key Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String keyName = KEY_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getKeyText() <em>Key Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String KEY_TEXT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getKeyText() <em>Key Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String keyText = KEY_TEXT_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,7 +57,7 @@ public class EntityKeyStoreImpl extends BizEntityImpl implements EntityKeyStore 
 	 */
 	@Override
 	public String getKeyName() {
-		return keyName;
+		return (String)eGet(CryptoPackage.Literals.ENTITY_KEY_STORE__KEY_NAME, true);
 	}
 
 	/**
@@ -109,10 +67,7 @@ public class EntityKeyStoreImpl extends BizEntityImpl implements EntityKeyStore 
 	 */
 	@Override
 	public void setKeyName(String newKeyName) {
-		String oldKeyName = keyName;
-		keyName = newKeyName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CryptoPackage.ENTITY_KEY_STORE__KEY_NAME, oldKeyName, keyName));
+		eSet(CryptoPackage.Literals.ENTITY_KEY_STORE__KEY_NAME, newKeyName);
 	}
 
 	/**
@@ -122,7 +77,7 @@ public class EntityKeyStoreImpl extends BizEntityImpl implements EntityKeyStore 
 	 */
 	@Override
 	public String getKeyText() {
-		return keyText;
+		return (String)eGet(CryptoPackage.Literals.ENTITY_KEY_STORE__KEY_TEXT, true);
 	}
 
 	/**
@@ -132,96 +87,7 @@ public class EntityKeyStoreImpl extends BizEntityImpl implements EntityKeyStore 
 	 */
 	@Override
 	public void setKeyText(String newKeyText) {
-		String oldKeyText = keyText;
-		keyText = newKeyText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CryptoPackage.ENTITY_KEY_STORE__KEY_TEXT, oldKeyText, keyText));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_NAME:
-				return getKeyName();
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_TEXT:
-				return getKeyText();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_NAME:
-				setKeyName((String)newValue);
-				return;
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_TEXT:
-				setKeyText((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_NAME:
-				setKeyName(KEY_NAME_EDEFAULT);
-				return;
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_TEXT:
-				setKeyText(KEY_TEXT_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_NAME:
-				return KEY_NAME_EDEFAULT == null ? keyName != null : !KEY_NAME_EDEFAULT.equals(keyName);
-			case CryptoPackage.ENTITY_KEY_STORE__KEY_TEXT:
-				return KEY_TEXT_EDEFAULT == null ? keyText != null : !KEY_TEXT_EDEFAULT.equals(keyText);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (keyName: ");
-		result.append(keyName);
-		result.append(", keyText: ");
-		result.append(keyText);
-		result.append(')');
-		return result.toString();
+		eSet(CryptoPackage.Literals.ENTITY_KEY_STORE__KEY_TEXT, newKeyText);
 	}
 
 } //EntityKeyStoreImpl

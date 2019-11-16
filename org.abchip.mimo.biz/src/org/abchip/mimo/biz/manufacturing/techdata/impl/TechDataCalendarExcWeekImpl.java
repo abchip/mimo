@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,66 +37,6 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getExceptionDateStart() <em>Exception Date Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExceptionDateStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date EXCEPTION_DATE_START_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExceptionDateStart() <em>Exception Date Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExceptionDateStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date exceptionDateStart = EXCEPTION_DATE_START_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCalendarId() <em>Calendar Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarId()
-	 * @generated
-	 * @ordered
-	 */
-	protected TechDataCalendar calendarId;
-
-	/**
-	 * The cached value of the '{@link #getCalendarWeekId() <em>Calendar Week Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarWeekId()
-	 * @generated
-	 * @ordered
-	 */
-	protected TechDataCalendarWeek calendarWeekId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,24 +64,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public TechDataCalendar getCalendarId() {
-		if (calendarId != null && ((EObject)calendarId).eIsProxy()) {
-			InternalEObject oldCalendarId = (InternalEObject)calendarId;
-			calendarId = (TechDataCalendar)eResolveProxy(oldCalendarId);
-			if (calendarId != oldCalendarId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID, oldCalendarId, calendarId));
-			}
-		}
-		return calendarId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TechDataCalendar basicGetCalendarId() {
-		return calendarId;
+		return (TechDataCalendar)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID, true);
 	}
 
 	/**
@@ -156,10 +74,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setCalendarId(TechDataCalendar newCalendarId) {
-		TechDataCalendar oldCalendarId = calendarId;
-		calendarId = newCalendarId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID, oldCalendarId, calendarId));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID, newCalendarId);
 	}
 
 	/**
@@ -169,7 +84,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public Date getExceptionDateStart() {
-		return exceptionDateStart;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START, true);
 	}
 
 	/**
@@ -179,10 +94,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setExceptionDateStart(Date newExceptionDateStart) {
-		Date oldExceptionDateStart = exceptionDateStart;
-		exceptionDateStart = newExceptionDateStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START, oldExceptionDateStart, exceptionDateStart));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START, newExceptionDateStart);
 	}
 
 	/**
@@ -192,24 +104,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public TechDataCalendarWeek getCalendarWeekId() {
-		if (calendarWeekId != null && ((EObject)calendarWeekId).eIsProxy()) {
-			InternalEObject oldCalendarWeekId = (InternalEObject)calendarWeekId;
-			calendarWeekId = (TechDataCalendarWeek)eResolveProxy(oldCalendarWeekId);
-			if (calendarWeekId != oldCalendarWeekId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
-			}
-		}
-		return calendarWeekId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TechDataCalendarWeek basicGetCalendarWeekId() {
-		return calendarWeekId;
+		return (TechDataCalendarWeek)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID, true);
 	}
 
 	/**
@@ -219,10 +114,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setCalendarWeekId(TechDataCalendarWeek newCalendarWeekId) {
-		TechDataCalendarWeek oldCalendarWeekId = calendarWeekId;
-		calendarWeekId = newCalendarWeekId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID, newCalendarWeekId);
 	}
 
 	/**
@@ -232,7 +124,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION, true);
 	}
 
 	/**
@@ -242,118 +134,7 @@ public class TechDataCalendarExcWeekImpl extends BizEntityImpl implements TechDa
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION, oldDescription, description));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START:
-				return getExceptionDateStart();
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION:
-				return getDescription();
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID:
-				if (resolve) return getCalendarId();
-				return basicGetCalendarId();
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID:
-				if (resolve) return getCalendarWeekId();
-				return basicGetCalendarWeekId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START:
-				setExceptionDateStart((Date)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID:
-				setCalendarId((TechDataCalendar)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID:
-				setCalendarWeekId((TechDataCalendarWeek)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START:
-				setExceptionDateStart(EXCEPTION_DATE_START_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID:
-				setCalendarId((TechDataCalendar)null);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID:
-				setCalendarWeekId((TechDataCalendarWeek)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START:
-				return EXCEPTION_DATE_START_EDEFAULT == null ? exceptionDateStart != null : !EXCEPTION_DATE_START_EDEFAULT.equals(exceptionDateStart);
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID:
-				return calendarId != null;
-			case TechdataPackage.TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID:
-				return calendarWeekId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (exceptionDateStart: ");
-		result.append(exceptionDateStart);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION, newDescription);
 	}
 
 } //TechDataCalendarExcWeekImpl

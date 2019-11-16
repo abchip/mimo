@@ -7,20 +7,13 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,80 +37,6 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetTypeId = FIXED_ASSET_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FixedAssetType parentTypeId;
-
-	/**
-	 * The cached value of the '{@link #getFixedAssetTypeAttrs() <em>Fixed Asset Type Attrs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeAttrs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> fixedAssetTypeAttrs;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,7 +63,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -154,10 +73,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -167,7 +83,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -177,10 +93,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -190,24 +103,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public FixedAssetType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (FixedAssetType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FixedAssetType basicGetParentTypeId() {
-		return parentTypeId;
+		return (FixedAssetType)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -217,10 +113,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setParentTypeId(FixedAssetType newParentTypeId) {
-		FixedAssetType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -228,12 +121,10 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getFixedAssetTypeAttrs() {
-		if (fixedAssetTypeAttrs == null) {
-			fixedAssetTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS);
-		}
-		return fixedAssetTypeAttrs;
+		return (List<String>)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -279,7 +170,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public String getFixedAssetTypeId() {
-		return fixedAssetTypeId;
+		return (String)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID, true);
 	}
 
 	/**
@@ -289,133 +180,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setFixedAssetTypeId(String newFixedAssetTypeId) {
-		String oldFixedAssetTypeId = fixedAssetTypeId;
-		fixedAssetTypeId = newFixedAssetTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID:
-				return getFixedAssetTypeId();
-			case FixedassetPackage.FIXED_ASSET_TYPE__DESCRIPTION:
-				return getDescription();
-			case FixedassetPackage.FIXED_ASSET_TYPE__HAS_TABLE:
-				return isHasTable();
-			case FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS:
-				return getFixedAssetTypeAttrs();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((FixedAssetType)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS:
-				getFixedAssetTypeAttrs().clear();
-				getFixedAssetTypeAttrs().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId(FIXED_ASSET_TYPE_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((FixedAssetType)null);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS:
-				getFixedAssetTypeAttrs().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID:
-				return FIXED_ASSET_TYPE_ID_EDEFAULT == null ? fixedAssetTypeId != null : !FIXED_ASSET_TYPE_ID_EDEFAULT.equals(fixedAssetTypeId);
-			case FixedassetPackage.FIXED_ASSET_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case FixedassetPackage.FIXED_ASSET_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-			case FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS:
-				return fixedAssetTypeAttrs != null && !fixedAssetTypeAttrs.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fixedAssetTypeId: ");
-		result.append(fixedAssetTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(", fixedAssetTypeAttrs: ");
-		result.append(fixedAssetTypeAttrs);
-		result.append(')');
-		return result.toString();
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID, newFixedAssetTypeId);
 	}
 
 } //FixedAssetTypeImpl

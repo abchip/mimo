@@ -11,11 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.Vendor;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,88 +35,6 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getManifestCompanyName() <em>Manifest Company Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestCompanyName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANIFEST_COMPANY_NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getManifestCompanyName() <em>Manifest Company Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestCompanyName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String manifestCompanyName = MANIFEST_COMPANY_NAME_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getManifestCompanyTitle() <em>Manifest Company Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestCompanyTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANIFEST_COMPANY_TITLE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getManifestCompanyTitle() <em>Manifest Company Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestCompanyTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected String manifestCompanyTitle = MANIFEST_COMPANY_TITLE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getManifestLogoUrl() <em>Manifest Logo Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestLogoUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANIFEST_LOGO_URL_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getManifestLogoUrl() <em>Manifest Logo Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestLogoUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected String manifestLogoUrl = MANIFEST_LOGO_URL_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getManifestPolicies() <em>Manifest Policies</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestPolicies()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANIFEST_POLICIES_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getManifestPolicies() <em>Manifest Policies</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManifestPolicies()
-	 * @generated
-	 * @ordered
-	 */
-	protected String manifestPolicies = MANIFEST_POLICIES_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,7 +61,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public String getManifestCompanyName() {
-		return manifestCompanyName;
+		return (String)eGet(PartyPackage.Literals.VENDOR__MANIFEST_COMPANY_NAME, true);
 	}
 
 	/**
@@ -157,10 +71,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestCompanyName(String newManifestCompanyName) {
-		String oldManifestCompanyName = manifestCompanyName;
-		manifestCompanyName = newManifestCompanyName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_COMPANY_NAME, oldManifestCompanyName, manifestCompanyName));
+		eSet(PartyPackage.Literals.VENDOR__MANIFEST_COMPANY_NAME, newManifestCompanyName);
 	}
 
 	/**
@@ -170,7 +81,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public String getManifestCompanyTitle() {
-		return manifestCompanyTitle;
+		return (String)eGet(PartyPackage.Literals.VENDOR__MANIFEST_COMPANY_TITLE, true);
 	}
 
 	/**
@@ -180,10 +91,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestCompanyTitle(String newManifestCompanyTitle) {
-		String oldManifestCompanyTitle = manifestCompanyTitle;
-		manifestCompanyTitle = newManifestCompanyTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE, oldManifestCompanyTitle, manifestCompanyTitle));
+		eSet(PartyPackage.Literals.VENDOR__MANIFEST_COMPANY_TITLE, newManifestCompanyTitle);
 	}
 
 	/**
@@ -193,7 +101,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public String getManifestLogoUrl() {
-		return manifestLogoUrl;
+		return (String)eGet(PartyPackage.Literals.VENDOR__MANIFEST_LOGO_URL, true);
 	}
 
 	/**
@@ -203,10 +111,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestLogoUrl(String newManifestLogoUrl) {
-		String oldManifestLogoUrl = manifestLogoUrl;
-		manifestLogoUrl = newManifestLogoUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_LOGO_URL, oldManifestLogoUrl, manifestLogoUrl));
+		eSet(PartyPackage.Literals.VENDOR__MANIFEST_LOGO_URL, newManifestLogoUrl);
 	}
 
 	/**
@@ -216,7 +121,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public String getManifestPolicies() {
-		return manifestPolicies;
+		return (String)eGet(PartyPackage.Literals.VENDOR__MANIFEST_POLICIES, true);
 	}
 
 	/**
@@ -226,10 +131,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestPolicies(String newManifestPolicies) {
-		String oldManifestPolicies = manifestPolicies;
-		manifestPolicies = newManifestPolicies;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_POLICIES, oldManifestPolicies, manifestPolicies));
+		eSet(PartyPackage.Literals.VENDOR__MANIFEST_POLICIES, newManifestPolicies);
 	}
 
 	/**
@@ -239,24 +141,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.VENDOR__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(PartyPackage.Literals.VENDOR__PARTY_ID, true);
 	}
 
 	/**
@@ -266,131 +151,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__PARTY_ID, oldPartyId, partyId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
-				return getManifestCompanyName();
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE:
-				return getManifestCompanyTitle();
-			case PartyPackage.VENDOR__MANIFEST_LOGO_URL:
-				return getManifestLogoUrl();
-			case PartyPackage.VENDOR__MANIFEST_POLICIES:
-				return getManifestPolicies();
-			case PartyPackage.VENDOR__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
-				setManifestCompanyName((String)newValue);
-				return;
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE:
-				setManifestCompanyTitle((String)newValue);
-				return;
-			case PartyPackage.VENDOR__MANIFEST_LOGO_URL:
-				setManifestLogoUrl((String)newValue);
-				return;
-			case PartyPackage.VENDOR__MANIFEST_POLICIES:
-				setManifestPolicies((String)newValue);
-				return;
-			case PartyPackage.VENDOR__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
-				setManifestCompanyName(MANIFEST_COMPANY_NAME_EDEFAULT);
-				return;
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE:
-				setManifestCompanyTitle(MANIFEST_COMPANY_TITLE_EDEFAULT);
-				return;
-			case PartyPackage.VENDOR__MANIFEST_LOGO_URL:
-				setManifestLogoUrl(MANIFEST_LOGO_URL_EDEFAULT);
-				return;
-			case PartyPackage.VENDOR__MANIFEST_POLICIES:
-				setManifestPolicies(MANIFEST_POLICIES_EDEFAULT);
-				return;
-			case PartyPackage.VENDOR__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_NAME:
-				return MANIFEST_COMPANY_NAME_EDEFAULT == null ? manifestCompanyName != null : !MANIFEST_COMPANY_NAME_EDEFAULT.equals(manifestCompanyName);
-			case PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE:
-				return MANIFEST_COMPANY_TITLE_EDEFAULT == null ? manifestCompanyTitle != null : !MANIFEST_COMPANY_TITLE_EDEFAULT.equals(manifestCompanyTitle);
-			case PartyPackage.VENDOR__MANIFEST_LOGO_URL:
-				return MANIFEST_LOGO_URL_EDEFAULT == null ? manifestLogoUrl != null : !MANIFEST_LOGO_URL_EDEFAULT.equals(manifestLogoUrl);
-			case PartyPackage.VENDOR__MANIFEST_POLICIES:
-				return MANIFEST_POLICIES_EDEFAULT == null ? manifestPolicies != null : !MANIFEST_POLICIES_EDEFAULT.equals(manifestPolicies);
-			case PartyPackage.VENDOR__PARTY_ID:
-				return partyId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (manifestCompanyName: ");
-		result.append(manifestCompanyName);
-		result.append(", manifestCompanyTitle: ");
-		result.append(manifestCompanyTitle);
-		result.append(", manifestLogoUrl: ");
-		result.append(manifestLogoUrl);
-		result.append(", manifestPolicies: ");
-		result.append(manifestPolicies);
-		result.append(')');
-		return result.toString();
+		eSet(PartyPackage.Literals.VENDOR__PARTY_ID, newPartyId);
 	}
 
 } //VendorImpl

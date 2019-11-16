@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProdConfItemContent;
 import org.abchip.mimo.biz.product.config.ProdConfItemContentType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,76 +37,6 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getConfItemContentTypeId() <em>Conf Item Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfItemContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONF_ITEM_CONTENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConfItemContentTypeId() <em>Conf Item Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfItemContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String confItemContentTypeId = CONF_ITEM_CONTENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProdConfItemContentType parentTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,7 +63,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -147,10 +73,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -160,7 +83,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -170,10 +93,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -183,24 +103,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public ProdConfItemContentType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (ProdConfItemContentType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProdConfItemContentType basicGetParentTypeId() {
-		return parentTypeId;
+		return (ProdConfItemContentType)eGet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -210,10 +113,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setParentTypeId(ProdConfItemContentType newParentTypeId) {
-		ProdConfItemContentType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -235,7 +135,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public String getConfItemContentTypeId() {
-		return confItemContentTypeId;
+		return (String)eGet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID, true);
 	}
 
 	/**
@@ -245,119 +145,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 */
 	@Override
 	public void setConfItemContentTypeId(String newConfItemContentTypeId) {
-		String oldConfItemContentTypeId = confItemContentTypeId;
-		confItemContentTypeId = newConfItemContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID, oldConfItemContentTypeId, confItemContentTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID:
-				return getConfItemContentTypeId();
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION:
-				return getDescription();
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE:
-				return isHasTable();
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID:
-				setConfItemContentTypeId((String)newValue);
-				return;
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProdConfItemContentType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID:
-				setConfItemContentTypeId(CONF_ITEM_CONTENT_TYPE_ID_EDEFAULT);
-				return;
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProdConfItemContentType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID:
-				return CONF_ITEM_CONTENT_TYPE_ID_EDEFAULT == null ? confItemContentTypeId != null : !CONF_ITEM_CONTENT_TYPE_ID_EDEFAULT.equals(confItemContentTypeId);
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (confItemContentTypeId: ");
-		result.append(confItemContentTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(')');
-		return result.toString();
+		eSet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__CONF_ITEM_CONTENT_TYPE_ID, newConfItemContentTypeId);
 	}
 
 } //ProdConfItemContentTypeImpl

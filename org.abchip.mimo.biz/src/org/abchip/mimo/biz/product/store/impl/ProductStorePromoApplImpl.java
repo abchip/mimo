@@ -14,11 +14,7 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStorePromoAppl;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,106 +39,6 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isManualOnly() <em>Manual Only</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isManualOnly()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean MANUAL_ONLY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isManualOnly() <em>Manual Only</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isManualOnly()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean manualOnly = MANUAL_ONLY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long SEQUENCE_NUM_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductStore productStoreId;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductPromo productPromoId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,7 +66,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__FROM_DATE, true);
 	}
 
 	/**
@@ -180,10 +76,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE, oldFromDate, fromDate));
+		eSet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -193,7 +86,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public boolean isManualOnly() {
-		return manualOnly;
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY, true);
 	}
 
 	/**
@@ -203,10 +96,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setManualOnly(boolean newManualOnly) {
-		boolean oldManualOnly = manualOnly;
-		manualOnly = newManualOnly;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY, oldManualOnly, manualOnly));
+		eSet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY, newManualOnly);
 	}
 
 	/**
@@ -216,7 +106,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public long getSequenceNum() {
-		return sequenceNum;
+		return (Long)eGet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM, true);
 	}
 
 	/**
@@ -226,10 +116,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
-		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
+		eSet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM, newSequenceNum);
 	}
 
 	/**
@@ -239,7 +126,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__THRU_DATE, true);
 	}
 
 	/**
@@ -249,10 +136,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE, oldThruDate, thruDate));
+		eSet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -262,24 +146,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public ProductStore getProductStoreId() {
-		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
-			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
-			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
-			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
-			}
-		}
-		return productStoreId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductStore basicGetProductStoreId() {
-		return productStoreId;
+		return (ProductStore)eGet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID, true);
 	}
 
 	/**
@@ -289,10 +156,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
-		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID, newProductStoreId);
 	}
 
 	/**
@@ -302,24 +166,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public ProductPromo getProductPromoId() {
-		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
-			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
-			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
-			if (productPromoId != oldProductPromoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
-			}
-		}
-		return productPromoId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductPromo basicGetProductPromoId() {
-		return productPromoId;
+		return (ProductPromo)eGet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, true);
 	}
 
 	/**
@@ -329,142 +176,7 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
-		ProductPromo oldProductPromoId = productPromoId;
-		productPromoId = newProductPromoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
-				return getFromDate();
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY:
-				return isManualOnly();
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM:
-				return getSequenceNum();
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
-				return getThruDate();
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
-				if (resolve) return getProductStoreId();
-				return basicGetProductStoreId();
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				if (resolve) return getProductPromoId();
-				return basicGetProductPromoId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY:
-				setManualOnly((Boolean)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM:
-				setSequenceNum((Long)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				setProductPromoId((ProductPromo)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY:
-				setManualOnly(MANUAL_ONLY_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM:
-				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)null);
-				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				setProductPromoId((ProductPromo)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY:
-				return manualOnly != MANUAL_ONLY_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM:
-				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
-				return productStoreId != null;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				return productPromoId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", manualOnly: ");
-		result.append(manualOnly);
-		result.append(", sequenceNum: ");
-		result.append(sequenceNum);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(StorePackage.Literals.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, newProductPromoId);
 	}
 
 } //ProductStorePromoApplImpl

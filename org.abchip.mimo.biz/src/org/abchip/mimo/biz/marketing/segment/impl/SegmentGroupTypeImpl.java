@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,46 +34,6 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getSegmentGroupTypeId() <em>Segment Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSegmentGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SEGMENT_GROUP_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSegmentGroupTypeId() <em>Segment Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSegmentGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String segmentGroupTypeId = SEGMENT_GROUP_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +61,7 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(SegmentPackage.Literals.SEGMENT_GROUP_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -113,10 +71,7 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(SegmentPackage.Literals.SEGMENT_GROUP_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -138,7 +93,7 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 */
 	@Override
 	public String getSegmentGroupTypeId() {
-		return segmentGroupTypeId;
+		return (String)eGet(SegmentPackage.Literals.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID, true);
 	}
 
 	/**
@@ -148,96 +103,7 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 */
 	@Override
 	public void setSegmentGroupTypeId(String newSegmentGroupTypeId) {
-		String oldSegmentGroupTypeId = segmentGroupTypeId;
-		segmentGroupTypeId = newSegmentGroupTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID, oldSegmentGroupTypeId, segmentGroupTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SegmentPackage.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID:
-				return getSegmentGroupTypeId();
-			case SegmentPackage.SEGMENT_GROUP_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SegmentPackage.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID:
-				setSegmentGroupTypeId((String)newValue);
-				return;
-			case SegmentPackage.SEGMENT_GROUP_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SegmentPackage.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID:
-				setSegmentGroupTypeId(SEGMENT_GROUP_TYPE_ID_EDEFAULT);
-				return;
-			case SegmentPackage.SEGMENT_GROUP_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SegmentPackage.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID:
-				return SEGMENT_GROUP_TYPE_ID_EDEFAULT == null ? segmentGroupTypeId != null : !SEGMENT_GROUP_TYPE_ID_EDEFAULT.equals(segmentGroupTypeId);
-			case SegmentPackage.SEGMENT_GROUP_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (segmentGroupTypeId: ");
-		result.append(segmentGroupTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(SegmentPackage.Literals.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID, newSegmentGroupTypeId);
 	}
 
 } //SegmentGroupTypeImpl

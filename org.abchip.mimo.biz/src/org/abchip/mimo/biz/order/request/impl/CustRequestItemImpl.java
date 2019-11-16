@@ -18,12 +18,7 @@ import org.abchip.mimo.biz.order.request.CustRequestItem;
 import org.abchip.mimo.biz.order.request.CustRequestResolution;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,306 +56,6 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getCustRequestItemSeqId() <em>Cust Request Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestItemSeqId() <em>Cust Request Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestItemSeqId = CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getConfigId() <em>Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONFIG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConfigId() <em>Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String configId = CONFIG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaximumAmount() <em>Maximum Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaximumAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MAXIMUM_AMOUNT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaximumAmount() <em>Maximum Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaximumAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal maximumAmount = MAXIMUM_AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriority()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long PRIORITY_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriority()
-	 * @generated
-	 * @ordered
-	 */
-	protected long priority = PRIORITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal QUANTITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal quantity = QUANTITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRequiredByDate() <em>Required By Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequiredByDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date REQUIRED_BY_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRequiredByDate() <em>Required By Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequiredByDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date requiredByDate = REQUIRED_BY_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReservLength() <em>Reserv Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal RESERV_LENGTH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReservLength() <em>Reserv Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal reservLength = RESERV_LENGTH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReservPersons() <em>Reserv Persons</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservPersons()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal RESERV_PERSONS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReservPersons() <em>Reserv Persons</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservPersons()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal reservPersons = RESERV_PERSONS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReservStart() <em>Reserv Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date RESERV_START_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReservStart() <em>Reserv Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date reservStart = RESERV_START_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSelectedAmount() <em>Selected Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectedAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal SELECTED_AMOUNT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSelectedAmount() <em>Selected Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectedAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal selectedAmount = SELECTED_AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long SEQUENCE_NUM_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStory() <em>Story</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStory()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STORY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStory() <em>Story</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStory()
-	 * @generated
-	 * @ordered
-	 */
-	protected String story = STORY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CustRequest custRequestId;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusItem statusId;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestResolutionId() <em>Cust Request Resolution Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestResolutionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CustRequestResolution custRequestResolutionId;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -386,7 +81,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public String getConfigId() {
-		return configId;
+		return (String)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__CONFIG_ID, true);
 	}
 
 	/**
@@ -396,10 +91,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
-		String oldConfigId = configId;
-		configId = newConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID, oldConfigId, configId));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__CONFIG_ID, newConfigId);
 	}
 
 	/**
@@ -409,24 +101,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public CustRequest getCustRequestId() {
-		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
-			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
-			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
-			if (custRequestId != oldCustRequestId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
-			}
-		}
-		return custRequestId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CustRequest basicGetCustRequestId() {
-		return custRequestId;
+		return (CustRequest)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__CUST_REQUEST_ID, true);
 	}
 
 	/**
@@ -436,10 +111,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
-		CustRequest oldCustRequestId = custRequestId;
-		custRequestId = newCustRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__CUST_REQUEST_ID, newCustRequestId);
 	}
 
 	/**
@@ -449,7 +121,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public String getCustRequestItemSeqId() {
-		return custRequestItemSeqId;
+		return (String)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -459,10 +131,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setCustRequestItemSeqId(String newCustRequestItemSeqId) {
-		String oldCustRequestItemSeqId = custRequestItemSeqId;
-		custRequestItemSeqId = newCustRequestItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID, oldCustRequestItemSeqId, custRequestItemSeqId));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID, newCustRequestItemSeqId);
 	}
 
 	/**
@@ -472,24 +141,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public CustRequestResolution getCustRequestResolutionId() {
-		if (custRequestResolutionId != null && ((EObject)custRequestResolutionId).eIsProxy()) {
-			InternalEObject oldCustRequestResolutionId = (InternalEObject)custRequestResolutionId;
-			custRequestResolutionId = (CustRequestResolution)eResolveProxy(oldCustRequestResolutionId);
-			if (custRequestResolutionId != oldCustRequestResolutionId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID, oldCustRequestResolutionId, custRequestResolutionId));
-			}
-		}
-		return custRequestResolutionId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CustRequestResolution basicGetCustRequestResolutionId() {
-		return custRequestResolutionId;
+		return (CustRequestResolution)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID, true);
 	}
 
 	/**
@@ -499,10 +151,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setCustRequestResolutionId(CustRequestResolution newCustRequestResolutionId) {
-		CustRequestResolution oldCustRequestResolutionId = custRequestResolutionId;
-		custRequestResolutionId = newCustRequestResolutionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID, oldCustRequestResolutionId, custRequestResolutionId));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID, newCustRequestResolutionId);
 	}
 
 	/**
@@ -512,7 +161,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__DESCRIPTION, true);
 	}
 
 	/**
@@ -522,10 +171,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__DESCRIPTION, oldDescription, description));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -535,7 +181,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public BigDecimal getMaximumAmount() {
-		return maximumAmount;
+		return (BigDecimal)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT, true);
 	}
 
 	/**
@@ -545,10 +191,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setMaximumAmount(BigDecimal newMaximumAmount) {
-		BigDecimal oldMaximumAmount = maximumAmount;
-		maximumAmount = newMaximumAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT, oldMaximumAmount, maximumAmount));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT, newMaximumAmount);
 	}
 
 	/**
@@ -558,7 +201,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public long getPriority() {
-		return priority;
+		return (Long)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__PRIORITY, true);
 	}
 
 	/**
@@ -568,10 +211,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setPriority(long newPriority) {
-		long oldPriority = priority;
-		priority = newPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__PRIORITY, oldPriority, priority));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__PRIORITY, newPriority);
 	}
 
 	/**
@@ -581,24 +221,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__PRODUCT_ID, true);
 	}
 
 	/**
@@ -608,10 +231,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID, oldProductId, productId));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__PRODUCT_ID, newProductId);
 	}
 
 	/**
@@ -621,7 +241,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public BigDecimal getQuantity() {
-		return quantity;
+		return (BigDecimal)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__QUANTITY, true);
 	}
 
 	/**
@@ -631,10 +251,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
-		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__QUANTITY, oldQuantity, quantity));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__QUANTITY, newQuantity);
 	}
 
 	/**
@@ -644,7 +261,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public Date getRequiredByDate() {
-		return requiredByDate;
+		return (Date)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__REQUIRED_BY_DATE, true);
 	}
 
 	/**
@@ -654,10 +271,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setRequiredByDate(Date newRequiredByDate) {
-		Date oldRequiredByDate = requiredByDate;
-		requiredByDate = newRequiredByDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__REQUIRED_BY_DATE, oldRequiredByDate, requiredByDate));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__REQUIRED_BY_DATE, newRequiredByDate);
 	}
 
 	/**
@@ -667,7 +281,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public BigDecimal getReservLength() {
-		return reservLength;
+		return (BigDecimal)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__RESERV_LENGTH, true);
 	}
 
 	/**
@@ -677,10 +291,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setReservLength(BigDecimal newReservLength) {
-		BigDecimal oldReservLength = reservLength;
-		reservLength = newReservLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__RESERV_LENGTH, oldReservLength, reservLength));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__RESERV_LENGTH, newReservLength);
 	}
 
 	/**
@@ -690,7 +301,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public BigDecimal getReservPersons() {
-		return reservPersons;
+		return (BigDecimal)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__RESERV_PERSONS, true);
 	}
 
 	/**
@@ -700,10 +311,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setReservPersons(BigDecimal newReservPersons) {
-		BigDecimal oldReservPersons = reservPersons;
-		reservPersons = newReservPersons;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__RESERV_PERSONS, oldReservPersons, reservPersons));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__RESERV_PERSONS, newReservPersons);
 	}
 
 	/**
@@ -713,7 +321,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public Date getReservStart() {
-		return reservStart;
+		return (Date)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__RESERV_START, true);
 	}
 
 	/**
@@ -723,10 +331,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setReservStart(Date newReservStart) {
-		Date oldReservStart = reservStart;
-		reservStart = newReservStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__RESERV_START, oldReservStart, reservStart));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__RESERV_START, newReservStart);
 	}
 
 	/**
@@ -736,7 +341,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public BigDecimal getSelectedAmount() {
-		return selectedAmount;
+		return (BigDecimal)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__SELECTED_AMOUNT, true);
 	}
 
 	/**
@@ -746,10 +351,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setSelectedAmount(BigDecimal newSelectedAmount) {
-		BigDecimal oldSelectedAmount = selectedAmount;
-		selectedAmount = newSelectedAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__SELECTED_AMOUNT, oldSelectedAmount, selectedAmount));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__SELECTED_AMOUNT, newSelectedAmount);
 	}
 
 	/**
@@ -759,7 +361,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public long getSequenceNum() {
-		return sequenceNum;
+		return (Long)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__SEQUENCE_NUM, true);
 	}
 
 	/**
@@ -769,10 +371,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
-		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__SEQUENCE_NUM, newSequenceNum);
 	}
 
 	/**
@@ -782,24 +381,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public StatusItem getStatusId() {
-		if (statusId != null && ((EObject)statusId).eIsProxy()) {
-			InternalEObject oldStatusId = (InternalEObject)statusId;
-			statusId = (StatusItem)eResolveProxy(oldStatusId);
-			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_ITEM__STATUS_ID, oldStatusId, statusId));
-			}
-		}
-		return statusId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusItem basicGetStatusId() {
-		return statusId;
+		return (StatusItem)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__STATUS_ID, true);
 	}
 
 	/**
@@ -809,10 +391,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
-		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__STATUS_ID, oldStatusId, statusId));
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__STATUS_ID, newStatusId);
 	}
 
 	/**
@@ -822,7 +401,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public String getStory() {
-		return story;
+		return (String)eGet(RequestPackage.Literals.CUST_REQUEST_ITEM__STORY, true);
 	}
 
 	/**
@@ -832,272 +411,7 @@ public class CustRequestItemImpl extends BizEntityImpl implements CustRequestIte
 	 */
 	@Override
 	public void setStory(String newStory) {
-		String oldStory = story;
-		story = newStory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM__STORY, oldStory, story));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
-				return getCustRequestItemSeqId();
-			case RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID:
-				return getConfigId();
-			case RequestPackage.CUST_REQUEST_ITEM__DESCRIPTION:
-				return getDescription();
-			case RequestPackage.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT:
-				return getMaximumAmount();
-			case RequestPackage.CUST_REQUEST_ITEM__PRIORITY:
-				return getPriority();
-			case RequestPackage.CUST_REQUEST_ITEM__QUANTITY:
-				return getQuantity();
-			case RequestPackage.CUST_REQUEST_ITEM__REQUIRED_BY_DATE:
-				return getRequiredByDate();
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_LENGTH:
-				return getReservLength();
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_PERSONS:
-				return getReservPersons();
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_START:
-				return getReservStart();
-			case RequestPackage.CUST_REQUEST_ITEM__SELECTED_AMOUNT:
-				return getSelectedAmount();
-			case RequestPackage.CUST_REQUEST_ITEM__SEQUENCE_NUM:
-				return getSequenceNum();
-			case RequestPackage.CUST_REQUEST_ITEM__STORY:
-				return getStory();
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				if (resolve) return getCustRequestId();
-				return basicGetCustRequestId();
-			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
-				if (resolve) return getStatusId();
-				return basicGetStatusId();
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID:
-				if (resolve) return getCustRequestResolutionId();
-				return basicGetCustRequestResolutionId();
-			case RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
-				setCustRequestItemSeqId((String)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID:
-				setConfigId((String)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT:
-				setMaximumAmount((BigDecimal)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__PRIORITY:
-				setPriority((Long)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__QUANTITY:
-				setQuantity((BigDecimal)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__REQUIRED_BY_DATE:
-				setRequiredByDate((Date)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_LENGTH:
-				setReservLength((BigDecimal)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_PERSONS:
-				setReservPersons((BigDecimal)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_START:
-				setReservStart((Date)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__SELECTED_AMOUNT:
-				setSelectedAmount((BigDecimal)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__SEQUENCE_NUM:
-				setSequenceNum((Long)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__STORY:
-				setStory((String)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				setCustRequestId((CustRequest)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
-				setStatusId((StatusItem)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID:
-				setCustRequestResolutionId((CustRequestResolution)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
-				setCustRequestItemSeqId(CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID:
-				setConfigId(CONFIG_ID_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT:
-				setMaximumAmount(MAXIMUM_AMOUNT_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__PRIORITY:
-				setPriority(PRIORITY_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__REQUIRED_BY_DATE:
-				setRequiredByDate(REQUIRED_BY_DATE_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_LENGTH:
-				setReservLength(RESERV_LENGTH_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_PERSONS:
-				setReservPersons(RESERV_PERSONS_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_START:
-				setReservStart(RESERV_START_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__SELECTED_AMOUNT:
-				setSelectedAmount(SELECTED_AMOUNT_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__SEQUENCE_NUM:
-				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__STORY:
-				setStory(STORY_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				setCustRequestId((CustRequest)null);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
-				setStatusId((StatusItem)null);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID:
-				setCustRequestResolutionId((CustRequestResolution)null);
-				return;
-			case RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
-				return CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT == null ? custRequestItemSeqId != null : !CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT.equals(custRequestItemSeqId);
-			case RequestPackage.CUST_REQUEST_ITEM__CONFIG_ID:
-				return CONFIG_ID_EDEFAULT == null ? configId != null : !CONFIG_ID_EDEFAULT.equals(configId);
-			case RequestPackage.CUST_REQUEST_ITEM__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case RequestPackage.CUST_REQUEST_ITEM__MAXIMUM_AMOUNT:
-				return MAXIMUM_AMOUNT_EDEFAULT == null ? maximumAmount != null : !MAXIMUM_AMOUNT_EDEFAULT.equals(maximumAmount);
-			case RequestPackage.CUST_REQUEST_ITEM__PRIORITY:
-				return priority != PRIORITY_EDEFAULT;
-			case RequestPackage.CUST_REQUEST_ITEM__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case RequestPackage.CUST_REQUEST_ITEM__REQUIRED_BY_DATE:
-				return REQUIRED_BY_DATE_EDEFAULT == null ? requiredByDate != null : !REQUIRED_BY_DATE_EDEFAULT.equals(requiredByDate);
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_LENGTH:
-				return RESERV_LENGTH_EDEFAULT == null ? reservLength != null : !RESERV_LENGTH_EDEFAULT.equals(reservLength);
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_PERSONS:
-				return RESERV_PERSONS_EDEFAULT == null ? reservPersons != null : !RESERV_PERSONS_EDEFAULT.equals(reservPersons);
-			case RequestPackage.CUST_REQUEST_ITEM__RESERV_START:
-				return RESERV_START_EDEFAULT == null ? reservStart != null : !RESERV_START_EDEFAULT.equals(reservStart);
-			case RequestPackage.CUST_REQUEST_ITEM__SELECTED_AMOUNT:
-				return SELECTED_AMOUNT_EDEFAULT == null ? selectedAmount != null : !SELECTED_AMOUNT_EDEFAULT.equals(selectedAmount);
-			case RequestPackage.CUST_REQUEST_ITEM__SEQUENCE_NUM:
-				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
-			case RequestPackage.CUST_REQUEST_ITEM__STORY:
-				return STORY_EDEFAULT == null ? story != null : !STORY_EDEFAULT.equals(story);
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_ID:
-				return custRequestId != null;
-			case RequestPackage.CUST_REQUEST_ITEM__STATUS_ID:
-				return statusId != null;
-			case RequestPackage.CUST_REQUEST_ITEM__CUST_REQUEST_RESOLUTION_ID:
-				return custRequestResolutionId != null;
-			case RequestPackage.CUST_REQUEST_ITEM__PRODUCT_ID:
-				return productId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (custRequestItemSeqId: ");
-		result.append(custRequestItemSeqId);
-		result.append(", configId: ");
-		result.append(configId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", maximumAmount: ");
-		result.append(maximumAmount);
-		result.append(", priority: ");
-		result.append(priority);
-		result.append(", quantity: ");
-		result.append(quantity);
-		result.append(", requiredByDate: ");
-		result.append(requiredByDate);
-		result.append(", reservLength: ");
-		result.append(reservLength);
-		result.append(", reservPersons: ");
-		result.append(reservPersons);
-		result.append(", reservStart: ");
-		result.append(reservStart);
-		result.append(", selectedAmount: ");
-		result.append(selectedAmount);
-		result.append(", sequenceNum: ");
-		result.append(sequenceNum);
-		result.append(", story: ");
-		result.append(story);
-		result.append(')');
-		return result.toString();
+		eSet(RequestPackage.Literals.CUST_REQUEST_ITEM__STORY, newStory);
 	}
 
 } //CustRequestItemImpl

@@ -6,5 +6,6 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.language,
- org.abchip.mimo.mining
+ org.abchip.mimo.mining,
+ org.eclipse.osgi
 Import-Package: javax.inject

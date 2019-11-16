@@ -14,11 +14,7 @@ import org.abchip.mimo.biz.accounting.budget.BudgetItem;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,97 +39,6 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ITEM_SEQ_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetItemSeqId = BUDGET_ITEM_SEQ_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal AMOUNT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal amount = AMOUNT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getJustification() <em>Justification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJustification()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String JUSTIFICATION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getJustification() <em>Justification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJustification()
-	 * @generated
-	 * @ordered
-	 */
-	protected String justification = JUSTIFICATION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PURPOSE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPurpose() <em>Purpose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected String purpose = PURPOSE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Budget budgetId;
-	/**
-	 * The cached value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected BudgetItemType budgetItemTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,7 +65,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public BigDecimal getAmount() {
-		return amount;
+		return (BigDecimal)eGet(BudgetPackage.Literals.BUDGET_ITEM__AMOUNT, true);
 	}
 
 	/**
@@ -170,10 +75,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
-		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__AMOUNT, oldAmount, amount));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM__AMOUNT, newAmount);
 	}
 
 	/**
@@ -183,7 +85,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public String getBudgetItemSeqId() {
-		return budgetItemSeqId;
+		return (String)eGet(BudgetPackage.Literals.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -193,10 +95,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
-		String oldBudgetItemSeqId = budgetItemSeqId;
-		budgetItemSeqId = newBudgetItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID, newBudgetItemSeqId);
 	}
 
 	/**
@@ -206,7 +105,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public String getJustification() {
-		return justification;
+		return (String)eGet(BudgetPackage.Literals.BUDGET_ITEM__JUSTIFICATION, true);
 	}
 
 	/**
@@ -216,10 +115,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setJustification(String newJustification) {
-		String oldJustification = justification;
-		justification = newJustification;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__JUSTIFICATION, oldJustification, justification));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM__JUSTIFICATION, newJustification);
 	}
 
 	/**
@@ -229,7 +125,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public String getPurpose() {
-		return purpose;
+		return (String)eGet(BudgetPackage.Literals.BUDGET_ITEM__PURPOSE, true);
 	}
 
 	/**
@@ -239,10 +135,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setPurpose(String newPurpose) {
-		String oldPurpose = purpose;
-		purpose = newPurpose;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__PURPOSE, oldPurpose, purpose));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM__PURPOSE, newPurpose);
 	}
 
 	/**
@@ -252,24 +145,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public Budget getBudgetId() {
-		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
-			InternalEObject oldBudgetId = (InternalEObject)budgetId;
-			budgetId = (Budget)eResolveProxy(oldBudgetId);
-			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM__BUDGET_ID, oldBudgetId, budgetId));
-			}
-		}
-		return budgetId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Budget basicGetBudgetId() {
-		return budgetId;
+		return (Budget)eGet(BudgetPackage.Literals.BUDGET_ITEM__BUDGET_ID, true);
 	}
 
 	/**
@@ -279,10 +155,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
-		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__BUDGET_ID, oldBudgetId, budgetId));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM__BUDGET_ID, newBudgetId);
 	}
 
 	/**
@@ -292,24 +165,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public BudgetItemType getBudgetItemTypeId() {
-		if (budgetItemTypeId != null && ((EObject)budgetItemTypeId).eIsProxy()) {
-			InternalEObject oldBudgetItemTypeId = (InternalEObject)budgetItemTypeId;
-			budgetItemTypeId = (BudgetItemType)eResolveProxy(oldBudgetItemTypeId);
-			if (budgetItemTypeId != oldBudgetItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
-			}
-		}
-		return budgetItemTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BudgetItemType basicGetBudgetItemTypeId() {
-		return budgetItemTypeId;
+		return (BudgetItemType)eGet(BudgetPackage.Literals.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID, true);
 	}
 
 	/**
@@ -319,142 +175,7 @@ public class BudgetItemImpl extends BizEntityTypedImpl<BudgetItemType> implement
 	 */
 	@Override
 	public void setBudgetItemTypeId(BudgetItemType newBudgetItemTypeId) {
-		BudgetItemType oldBudgetItemTypeId = budgetItemTypeId;
-		budgetItemTypeId = newBudgetItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
-				return getBudgetItemSeqId();
-			case BudgetPackage.BUDGET_ITEM__AMOUNT:
-				return getAmount();
-			case BudgetPackage.BUDGET_ITEM__JUSTIFICATION:
-				return getJustification();
-			case BudgetPackage.BUDGET_ITEM__PURPOSE:
-				return getPurpose();
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				if (resolve) return getBudgetId();
-				return basicGetBudgetId();
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
-				if (resolve) return getBudgetItemTypeId();
-				return basicGetBudgetItemTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
-				setBudgetItemSeqId((String)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM__AMOUNT:
-				setAmount((BigDecimal)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM__JUSTIFICATION:
-				setJustification((String)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM__PURPOSE:
-				setPurpose((String)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				setBudgetId((Budget)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId((BudgetItemType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
-				setBudgetItemSeqId(BUDGET_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ITEM__AMOUNT:
-				setAmount(AMOUNT_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ITEM__JUSTIFICATION:
-				setJustification(JUSTIFICATION_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ITEM__PURPOSE:
-				setPurpose(PURPOSE_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				setBudgetId((Budget)null);
-				return;
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId((BudgetItemType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_SEQ_ID:
-				return BUDGET_ITEM_SEQ_ID_EDEFAULT == null ? budgetItemSeqId != null : !BUDGET_ITEM_SEQ_ID_EDEFAULT.equals(budgetItemSeqId);
-			case BudgetPackage.BUDGET_ITEM__AMOUNT:
-				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case BudgetPackage.BUDGET_ITEM__JUSTIFICATION:
-				return JUSTIFICATION_EDEFAULT == null ? justification != null : !JUSTIFICATION_EDEFAULT.equals(justification);
-			case BudgetPackage.BUDGET_ITEM__PURPOSE:
-				return PURPOSE_EDEFAULT == null ? purpose != null : !PURPOSE_EDEFAULT.equals(purpose);
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ID:
-				return budgetId != null;
-			case BudgetPackage.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID:
-				return budgetItemTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetItemSeqId: ");
-		result.append(budgetItemSeqId);
-		result.append(", amount: ");
-		result.append(amount);
-		result.append(", justification: ");
-		result.append(justification);
-		result.append(", purpose: ");
-		result.append(purpose);
-		result.append(')');
-		return result.toString();
+		eSet(BudgetPackage.Literals.BUDGET_ITEM__BUDGET_ITEM_TYPE_ID, newBudgetItemTypeId);
 	}
 
 } //BudgetItemImpl

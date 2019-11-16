@@ -7,20 +7,13 @@
  */
 package org.abchip.mimo.biz.common.status.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,108 +40,6 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getSequenceId() <em>Sequence Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SEQUENCE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getSequenceId() <em>Sequence Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String sequenceId = SEQUENCE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStatusCode() <em>Status Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_CODE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusCode() <em>Status Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusCode = STATUS_CODE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getStatusTypeId() <em>Status Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusType statusTypeId;
-
-	/**
-	 * The cached value of the '{@link #getShipmentStatuss() <em>Shipment Statuss</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentStatuss()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> shipmentStatuss;
-	/**
-	 * The cached value of the '{@link #getMainStatusValidChanges() <em>Main Status Valid Changes</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMainStatusValidChanges()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> mainStatusValidChanges;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -174,7 +65,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(StatusPackage.Literals.STATUS_ITEM__DESCRIPTION, true);
 	}
 
 	/**
@@ -184,10 +75,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__DESCRIPTION, oldDescription, description));
+		eSet(StatusPackage.Literals.STATUS_ITEM__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -197,7 +85,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public String getSequenceId() {
-		return sequenceId;
+		return (String)eGet(StatusPackage.Literals.STATUS_ITEM__SEQUENCE_ID, true);
 	}
 
 	/**
@@ -207,10 +95,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
-		String oldSequenceId = sequenceId;
-		sequenceId = newSequenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__SEQUENCE_ID, oldSequenceId, sequenceId));
+		eSet(StatusPackage.Literals.STATUS_ITEM__SEQUENCE_ID, newSequenceId);
 	}
 
 	/**
@@ -220,7 +105,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public String getStatusCode() {
-		return statusCode;
+		return (String)eGet(StatusPackage.Literals.STATUS_ITEM__STATUS_CODE, true);
 	}
 
 	/**
@@ -230,10 +115,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setStatusCode(String newStatusCode) {
-		String oldStatusCode = statusCode;
-		statusCode = newStatusCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__STATUS_CODE, oldStatusCode, statusCode));
+		eSet(StatusPackage.Literals.STATUS_ITEM__STATUS_CODE, newStatusCode);
 	}
 
 	/**
@@ -243,24 +125,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public StatusType getStatusTypeId() {
-		if (statusTypeId != null && ((EObject)statusTypeId).eIsProxy()) {
-			InternalEObject oldStatusTypeId = (InternalEObject)statusTypeId;
-			statusTypeId = (StatusType)eResolveProxy(oldStatusTypeId);
-			if (statusTypeId != oldStatusTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatusPackage.STATUS_ITEM__STATUS_TYPE_ID, oldStatusTypeId, statusTypeId));
-			}
-		}
-		return statusTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusType basicGetStatusTypeId() {
-		return statusTypeId;
+		return (StatusType)eGet(StatusPackage.Literals.STATUS_ITEM__STATUS_TYPE_ID, true);
 	}
 
 	/**
@@ -270,10 +135,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setStatusTypeId(StatusType newStatusTypeId) {
-		StatusType oldStatusTypeId = statusTypeId;
-		statusTypeId = newStatusTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__STATUS_TYPE_ID, oldStatusTypeId, statusTypeId));
+		eSet(StatusPackage.Literals.STATUS_ITEM__STATUS_TYPE_ID, newStatusTypeId);
 	}
 
 	/**
@@ -281,12 +143,10 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getShipmentStatuss() {
-		if (shipmentStatuss == null) {
-			shipmentStatuss = new EDataTypeUniqueEList<String>(String.class, this, StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS);
-		}
-		return shipmentStatuss;
+		return (List<String>)eGet(StatusPackage.Literals.STATUS_ITEM__SHIPMENT_STATUSS, true);
 	}
 
 	/**
@@ -294,12 +154,10 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getMainStatusValidChanges() {
-		if (mainStatusValidChanges == null) {
-			mainStatusValidChanges = new EDataTypeUniqueEList<String>(String.class, this, StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
-		}
-		return mainStatusValidChanges;
+		return (List<String>)eGet(StatusPackage.Literals.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES, true);
 	}
 
 	/**
@@ -1005,7 +863,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public String getStatusId() {
-		return statusId;
+		return (String)eGet(StatusPackage.Literals.STATUS_ITEM__STATUS_ID, true);
 	}
 
 	/**
@@ -1015,158 +873,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@Override
 	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
-		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__STATUS_ID, oldStatusId, statusId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case StatusPackage.STATUS_ITEM__STATUS_ID:
-				return getStatusId();
-			case StatusPackage.STATUS_ITEM__DESCRIPTION:
-				return getDescription();
-			case StatusPackage.STATUS_ITEM__SEQUENCE_ID:
-				return getSequenceId();
-			case StatusPackage.STATUS_ITEM__STATUS_CODE:
-				return getStatusCode();
-			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				if (resolve) return getStatusTypeId();
-				return basicGetStatusTypeId();
-			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
-				return getShipmentStatuss();
-			case StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES:
-				return getMainStatusValidChanges();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case StatusPackage.STATUS_ITEM__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
-			case StatusPackage.STATUS_ITEM__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case StatusPackage.STATUS_ITEM__SEQUENCE_ID:
-				setSequenceId((String)newValue);
-				return;
-			case StatusPackage.STATUS_ITEM__STATUS_CODE:
-				setStatusCode((String)newValue);
-				return;
-			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				setStatusTypeId((StatusType)newValue);
-				return;
-			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
-				getShipmentStatuss().clear();
-				getShipmentStatuss().addAll((Collection<? extends String>)newValue);
-				return;
-			case StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES:
-				getMainStatusValidChanges().clear();
-				getMainStatusValidChanges().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case StatusPackage.STATUS_ITEM__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
-			case StatusPackage.STATUS_ITEM__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case StatusPackage.STATUS_ITEM__SEQUENCE_ID:
-				setSequenceId(SEQUENCE_ID_EDEFAULT);
-				return;
-			case StatusPackage.STATUS_ITEM__STATUS_CODE:
-				setStatusCode(STATUS_CODE_EDEFAULT);
-				return;
-			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				setStatusTypeId((StatusType)null);
-				return;
-			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
-				getShipmentStatuss().clear();
-				return;
-			case StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES:
-				getMainStatusValidChanges().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case StatusPackage.STATUS_ITEM__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
-			case StatusPackage.STATUS_ITEM__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case StatusPackage.STATUS_ITEM__SEQUENCE_ID:
-				return SEQUENCE_ID_EDEFAULT == null ? sequenceId != null : !SEQUENCE_ID_EDEFAULT.equals(sequenceId);
-			case StatusPackage.STATUS_ITEM__STATUS_CODE:
-				return STATUS_CODE_EDEFAULT == null ? statusCode != null : !STATUS_CODE_EDEFAULT.equals(statusCode);
-			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				return statusTypeId != null;
-			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
-				return shipmentStatuss != null && !shipmentStatuss.isEmpty();
-			case StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES:
-				return mainStatusValidChanges != null && !mainStatusValidChanges.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (statusId: ");
-		result.append(statusId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", sequenceId: ");
-		result.append(sequenceId);
-		result.append(", statusCode: ");
-		result.append(statusCode);
-		result.append(", shipmentStatuss: ");
-		result.append(shipmentStatuss);
-		result.append(", mainStatusValidChanges: ");
-		result.append(mainStatusValidChanges);
-		result.append(')');
-		return result.toString();
+		eSet(StatusPackage.Literals.STATUS_ITEM__STATUS_ID, newStatusId);
 	}
 
 } //StatusItemImpl

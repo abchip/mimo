@@ -13,9 +13,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,86 +36,6 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getPhysicalInventoryId() <em>Physical Inventory Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPhysicalInventoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PHYSICAL_INVENTORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPhysicalInventoryId() <em>Physical Inventory Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPhysicalInventoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String physicalInventoryId = PHYSICAL_INVENTORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGeneralComments() <em>General Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeneralComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GENERAL_COMMENTS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeneralComments() <em>General Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeneralComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected String generalComments = GENERAL_COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPhysicalInventoryDate() <em>Physical Inventory Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPhysicalInventoryDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date PHYSICAL_INVENTORY_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPhysicalInventoryDate() <em>Physical Inventory Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPhysicalInventoryDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date physicalInventoryDate = PHYSICAL_INVENTORY_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,7 +63,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public String getGeneralComments() {
-		return generalComments;
+		return (String)eGet(InventoryPackage.Literals.PHYSICAL_INVENTORY__GENERAL_COMMENTS, true);
 	}
 
 	/**
@@ -155,10 +73,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setGeneralComments(String newGeneralComments) {
-		String oldGeneralComments = generalComments;
-		generalComments = newGeneralComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__GENERAL_COMMENTS, oldGeneralComments, generalComments));
+		eSet(InventoryPackage.Literals.PHYSICAL_INVENTORY__GENERAL_COMMENTS, newGeneralComments);
 	}
 
 	/**
@@ -168,7 +83,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public String getPartyId() {
-		return partyId;
+		return (String)eGet(InventoryPackage.Literals.PHYSICAL_INVENTORY__PARTY_ID, true);
 	}
 
 	/**
@@ -178,10 +93,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__PARTY_ID, oldPartyId, partyId));
+		eSet(InventoryPackage.Literals.PHYSICAL_INVENTORY__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -191,7 +103,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public Date getPhysicalInventoryDate() {
-		return physicalInventoryDate;
+		return (Date)eGet(InventoryPackage.Literals.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE, true);
 	}
 
 	/**
@@ -201,10 +113,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setPhysicalInventoryDate(Date newPhysicalInventoryDate) {
-		Date oldPhysicalInventoryDate = physicalInventoryDate;
-		physicalInventoryDate = newPhysicalInventoryDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE, oldPhysicalInventoryDate, physicalInventoryDate));
+		eSet(InventoryPackage.Literals.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE, newPhysicalInventoryDate);
 	}
 
 	/**
@@ -250,7 +159,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public String getPhysicalInventoryId() {
-		return physicalInventoryId;
+		return (String)eGet(InventoryPackage.Literals.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID, true);
 	}
 
 	/**
@@ -260,120 +169,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setPhysicalInventoryId(String newPhysicalInventoryId) {
-		String oldPhysicalInventoryId = physicalInventoryId;
-		physicalInventoryId = newPhysicalInventoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID:
-				return getPhysicalInventoryId();
-			case InventoryPackage.PHYSICAL_INVENTORY__GENERAL_COMMENTS:
-				return getGeneralComments();
-			case InventoryPackage.PHYSICAL_INVENTORY__PARTY_ID:
-				return getPartyId();
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE:
-				return getPhysicalInventoryDate();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID:
-				setPhysicalInventoryId((String)newValue);
-				return;
-			case InventoryPackage.PHYSICAL_INVENTORY__GENERAL_COMMENTS:
-				setGeneralComments((String)newValue);
-				return;
-			case InventoryPackage.PHYSICAL_INVENTORY__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE:
-				setPhysicalInventoryDate((Date)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID:
-				setPhysicalInventoryId(PHYSICAL_INVENTORY_ID_EDEFAULT);
-				return;
-			case InventoryPackage.PHYSICAL_INVENTORY__GENERAL_COMMENTS:
-				setGeneralComments(GENERAL_COMMENTS_EDEFAULT);
-				return;
-			case InventoryPackage.PHYSICAL_INVENTORY__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE:
-				setPhysicalInventoryDate(PHYSICAL_INVENTORY_DATE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID:
-				return PHYSICAL_INVENTORY_ID_EDEFAULT == null ? physicalInventoryId != null : !PHYSICAL_INVENTORY_ID_EDEFAULT.equals(physicalInventoryId);
-			case InventoryPackage.PHYSICAL_INVENTORY__GENERAL_COMMENTS:
-				return GENERAL_COMMENTS_EDEFAULT == null ? generalComments != null : !GENERAL_COMMENTS_EDEFAULT.equals(generalComments);
-			case InventoryPackage.PHYSICAL_INVENTORY__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE:
-				return PHYSICAL_INVENTORY_DATE_EDEFAULT == null ? physicalInventoryDate != null : !PHYSICAL_INVENTORY_DATE_EDEFAULT.equals(physicalInventoryDate);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (physicalInventoryId: ");
-		result.append(physicalInventoryId);
-		result.append(", generalComments: ");
-		result.append(generalComments);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", physicalInventoryDate: ");
-		result.append(physicalInventoryDate);
-		result.append(')');
-		return result.toString();
+		eSet(InventoryPackage.Literals.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID, newPhysicalInventoryId);
 	}
 
 } //PhysicalInventoryImpl

@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,66 +37,6 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ITEM_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBudgetItemSeqId() <em>Budget Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetItemSeqId = BUDGET_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal AMOUNT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal amount = AMOUNT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Budget budgetId;
-
-	/**
-	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Requirement requirementId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +64,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public BigDecimal getAmount() {
-		return amount;
+		return (BigDecimal)eGet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT, true);
 	}
 
 	/**
@@ -139,10 +74,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
-		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT, oldAmount, amount));
+		eSet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT, newAmount);
 	}
 
 	/**
@@ -152,24 +84,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public Budget getBudgetId() {
-		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
-			InternalEObject oldBudgetId = (InternalEObject)budgetId;
-			budgetId = (Budget)eResolveProxy(oldBudgetId);
-			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
-			}
-		}
-		return budgetId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Budget basicGetBudgetId() {
-		return budgetId;
+		return (Budget)eGet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, true);
 	}
 
 	/**
@@ -179,10 +94,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
-		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
+		eSet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID, newBudgetId);
 	}
 
 	/**
@@ -192,7 +104,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public String getBudgetItemSeqId() {
-		return budgetItemSeqId;
+		return (String)eGet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -202,10 +114,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
-		String oldBudgetItemSeqId = budgetItemSeqId;
-		budgetItemSeqId = newBudgetItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
+		eSet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID, newBudgetItemSeqId);
 	}
 
 	/**
@@ -215,24 +124,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public Requirement getRequirementId() {
-		if (requirementId != null && ((EObject)requirementId).eIsProxy()) {
-			InternalEObject oldRequirementId = (InternalEObject)requirementId;
-			requirementId = (Requirement)eResolveProxy(oldRequirementId);
-			if (requirementId != oldRequirementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID, oldRequirementId, requirementId));
-			}
-		}
-		return requirementId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Requirement basicGetRequirementId() {
-		return requirementId;
+		return (Requirement)eGet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID, true);
 	}
 
 	/**
@@ -242,118 +134,7 @@ public class RequirementBudgetAllocationImpl extends BizEntityImpl implements Re
 	 */
 	@Override
 	public void setRequirementId(Requirement newRequirementId) {
-		Requirement oldRequirementId = requirementId;
-		requirementId = newRequirementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID, oldRequirementId, requirementId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
-				return getBudgetItemSeqId();
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
-				return getAmount();
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				if (resolve) return getBudgetId();
-				return basicGetBudgetId();
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
-				if (resolve) return getRequirementId();
-				return basicGetRequirementId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
-				setBudgetItemSeqId((String)newValue);
-				return;
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
-				setAmount((BigDecimal)newValue);
-				return;
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				setBudgetId((Budget)newValue);
-				return;
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
-				setRequirementId((Requirement)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
-				setBudgetItemSeqId(BUDGET_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
-				setAmount(AMOUNT_EDEFAULT);
-				return;
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				setBudgetId((Budget)null);
-				return;
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
-				setRequirementId((Requirement)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID:
-				return BUDGET_ITEM_SEQ_ID_EDEFAULT == null ? budgetItemSeqId != null : !BUDGET_ITEM_SEQ_ID_EDEFAULT.equals(budgetItemSeqId);
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__AMOUNT:
-				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__BUDGET_ID:
-				return budgetId != null;
-			case RequirementPackage.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID:
-				return requirementId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetItemSeqId: ");
-		result.append(budgetItemSeqId);
-		result.append(", amount: ");
-		result.append(amount);
-		result.append(')');
-		return result.toString();
+		eSet(RequirementPackage.Literals.REQUIREMENT_BUDGET_ALLOCATION__REQUIREMENT_ID, newRequirementId);
 	}
 
 } //RequirementBudgetAllocationImpl

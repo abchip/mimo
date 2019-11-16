@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.entity.test.impl;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -15,14 +14,7 @@ import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
 import org.abchip.mimo.biz.entity.test.TestingType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,140 +42,6 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getTestingId() <em>Testing Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TESTING_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTestingId() <em>Testing Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String testingId = TESTING_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENTS_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comments = COMMENTS_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTestingDate() <em>Testing Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date TESTING_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTestingDate() <em>Testing Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date testingDate = TESTING_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTestingName() <em>Testing Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TESTING_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTestingName() <em>Testing Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String testingName = TESTING_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTestingSize() <em>Testing Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long TESTING_SIZE_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getTestingSize() <em>Testing Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected long testingSize = TESTING_SIZE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTestingTypeId() <em>Testing Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected TestingType testingTypeId;
-
-	/**
-	 * The cached value of the '{@link #getTestingItems() <em>Testing Items</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingItems()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> testingItems;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -209,7 +67,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public String getComments() {
-		return comments;
+		return (String)eGet(TestPackage.Literals.TESTING__COMMENTS, true);
 	}
 
 	/**
@@ -219,10 +77,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
-		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__COMMENTS, oldComments, comments));
+		eSet(TestPackage.Literals.TESTING__COMMENTS, newComments);
 	}
 
 	/**
@@ -232,7 +87,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(TestPackage.Literals.TESTING__DESCRIPTION, true);
 	}
 
 	/**
@@ -242,10 +97,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__DESCRIPTION, oldDescription, description));
+		eSet(TestPackage.Literals.TESTING__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -255,7 +107,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public Date getTestingDate() {
-		return testingDate;
+		return (Date)eGet(TestPackage.Literals.TESTING__TESTING_DATE, true);
 	}
 
 	/**
@@ -265,10 +117,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingDate(Date newTestingDate) {
-		Date oldTestingDate = testingDate;
-		testingDate = newTestingDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_DATE, oldTestingDate, testingDate));
+		eSet(TestPackage.Literals.TESTING__TESTING_DATE, newTestingDate);
 	}
 
 	/**
@@ -278,7 +127,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public String getTestingId() {
-		return testingId;
+		return (String)eGet(TestPackage.Literals.TESTING__TESTING_ID, true);
 	}
 
 	/**
@@ -288,10 +137,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingId(String newTestingId) {
-		String oldTestingId = testingId;
-		testingId = newTestingId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_ID, oldTestingId, testingId));
+		eSet(TestPackage.Literals.TESTING__TESTING_ID, newTestingId);
 	}
 
 	/**
@@ -301,7 +147,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public String getTestingName() {
-		return testingName;
+		return (String)eGet(TestPackage.Literals.TESTING__TESTING_NAME, true);
 	}
 
 	/**
@@ -311,10 +157,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingName(String newTestingName) {
-		String oldTestingName = testingName;
-		testingName = newTestingName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_NAME, oldTestingName, testingName));
+		eSet(TestPackage.Literals.TESTING__TESTING_NAME, newTestingName);
 	}
 
 	/**
@@ -324,7 +167,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public long getTestingSize() {
-		return testingSize;
+		return (Long)eGet(TestPackage.Literals.TESTING__TESTING_SIZE, true);
 	}
 
 	/**
@@ -334,10 +177,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingSize(long newTestingSize) {
-		long oldTestingSize = testingSize;
-		testingSize = newTestingSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_SIZE, oldTestingSize, testingSize));
+		eSet(TestPackage.Literals.TESTING__TESTING_SIZE, newTestingSize);
 	}
 
 	/**
@@ -347,24 +187,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public TestingType getTestingTypeId() {
-		if (testingTypeId != null && ((EObject)testingTypeId).eIsProxy()) {
-			InternalEObject oldTestingTypeId = (InternalEObject)testingTypeId;
-			testingTypeId = (TestingType)eResolveProxy(oldTestingTypeId);
-			if (testingTypeId != oldTestingTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
-			}
-		}
-		return testingTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TestingType basicGetTestingTypeId() {
-		return testingTypeId;
+		return (TestingType)eGet(TestPackage.Literals.TESTING__TESTING_TYPE_ID, true);
 	}
 
 	/**
@@ -374,52 +197,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@Override
 	public void setTestingTypeId(TestingType newTestingTypeId) {
-		TestingType oldTestingTypeId = testingTypeId;
-		testingTypeId = newTestingTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> getTestingItems() {
-		if (testingItems == null) {
-			testingItems = new EDataTypeUniqueEList<String>(String.class, this, TestPackage.TESTING__TESTING_ITEMS);
-		}
-		return testingItems;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TestPackage.TESTING__TESTING_ID:
-				return getTestingId();
-			case TestPackage.TESTING__COMMENTS:
-				return getComments();
-			case TestPackage.TESTING__DESCRIPTION:
-				return getDescription();
-			case TestPackage.TESTING__TESTING_DATE:
-				return getTestingDate();
-			case TestPackage.TESTING__TESTING_NAME:
-				return getTestingName();
-			case TestPackage.TESTING__TESTING_SIZE:
-				return getTestingSize();
-			case TestPackage.TESTING__TESTING_TYPE_ID:
-				if (resolve) return getTestingTypeId();
-				return basicGetTestingTypeId();
-			case TestPackage.TESTING__TESTING_ITEMS:
-				return getTestingItems();
-		}
-		return super.eGet(featureID, resolve, coreType);
+		eSet(TestPackage.Literals.TESTING__TESTING_TYPE_ID, newTestingTypeId);
 	}
 
 	/**
@@ -429,127 +207,8 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TestPackage.TESTING__TESTING_ID:
-				setTestingId((String)newValue);
-				return;
-			case TestPackage.TESTING__COMMENTS:
-				setComments((String)newValue);
-				return;
-			case TestPackage.TESTING__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case TestPackage.TESTING__TESTING_DATE:
-				setTestingDate((Date)newValue);
-				return;
-			case TestPackage.TESTING__TESTING_NAME:
-				setTestingName((String)newValue);
-				return;
-			case TestPackage.TESTING__TESTING_SIZE:
-				setTestingSize((Long)newValue);
-				return;
-			case TestPackage.TESTING__TESTING_TYPE_ID:
-				setTestingTypeId((TestingType)newValue);
-				return;
-			case TestPackage.TESTING__TESTING_ITEMS:
-				getTestingItems().clear();
-				getTestingItems().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TestPackage.TESTING__TESTING_ID:
-				setTestingId(TESTING_ID_EDEFAULT);
-				return;
-			case TestPackage.TESTING__COMMENTS:
-				setComments(COMMENTS_EDEFAULT);
-				return;
-			case TestPackage.TESTING__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case TestPackage.TESTING__TESTING_DATE:
-				setTestingDate(TESTING_DATE_EDEFAULT);
-				return;
-			case TestPackage.TESTING__TESTING_NAME:
-				setTestingName(TESTING_NAME_EDEFAULT);
-				return;
-			case TestPackage.TESTING__TESTING_SIZE:
-				setTestingSize(TESTING_SIZE_EDEFAULT);
-				return;
-			case TestPackage.TESTING__TESTING_TYPE_ID:
-				setTestingTypeId((TestingType)null);
-				return;
-			case TestPackage.TESTING__TESTING_ITEMS:
-				getTestingItems().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TestPackage.TESTING__TESTING_ID:
-				return TESTING_ID_EDEFAULT == null ? testingId != null : !TESTING_ID_EDEFAULT.equals(testingId);
-			case TestPackage.TESTING__COMMENTS:
-				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case TestPackage.TESTING__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case TestPackage.TESTING__TESTING_DATE:
-				return TESTING_DATE_EDEFAULT == null ? testingDate != null : !TESTING_DATE_EDEFAULT.equals(testingDate);
-			case TestPackage.TESTING__TESTING_NAME:
-				return TESTING_NAME_EDEFAULT == null ? testingName != null : !TESTING_NAME_EDEFAULT.equals(testingName);
-			case TestPackage.TESTING__TESTING_SIZE:
-				return testingSize != TESTING_SIZE_EDEFAULT;
-			case TestPackage.TESTING__TESTING_TYPE_ID:
-				return testingTypeId != null;
-			case TestPackage.TESTING__TESTING_ITEMS:
-				return testingItems != null && !testingItems.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (testingId: ");
-		result.append(testingId);
-		result.append(", comments: ");
-		result.append(comments);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", testingDate: ");
-		result.append(testingDate);
-		result.append(", testingName: ");
-		result.append(testingName);
-		result.append(", testingSize: ");
-		result.append(testingSize);
-		result.append(", testingItems: ");
-		result.append(testingItems);
-		result.append(')');
-		return result.toString();
+	public List<String> getTestingItems() {
+		return (List<String>)eGet(TestPackage.Literals.TESTING__TESTING_ITEMS, true);
 	}
 
 } //TestingImpl

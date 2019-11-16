@@ -15,11 +15,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomConversionDated;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,133 +44,6 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getConversionFactor() <em>Conversion Factor</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConversionFactor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double CONVERSION_FACTOR_EDEFAULT = 0.0;
-	/**
-	 * The cached value of the '{@link #getConversionFactor() <em>Conversion Factor</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConversionFactor()
-	 * @generated
-	 * @ordered
-	 */
-	protected double conversionFactor = CONVERSION_FACTOR_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDecimalScale() <em>Decimal Scale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDecimalScale()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long DECIMAL_SCALE_EDEFAULT = 0L;
-	/**
-	 * The cached value of the '{@link #getDecimalScale() <em>Decimal Scale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDecimalScale()
-	 * @generated
-	 * @ordered
-	 */
-	protected long decimalScale = DECIMAL_SCALE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoundingMode() <em>Rounding Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoundingMode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROUNDING_MODE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoundingMode() <em>Rounding Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoundingMode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roundingMode = ROUNDING_MODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uom uomId;
-	/**
-	 * The cached value of the '{@link #getUomIdTo() <em>Uom Id To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uom uomIdTo;
-	/**
-	 * The cached value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CustomMethod customMethodId;
-	/**
-	 * The cached value of the '{@link #getPurposeEnumId() <em>Purpose Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurposeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration purposeEnumId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -200,7 +69,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public double getConversionFactor() {
-		return conversionFactor;
+		return (Double)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__CONVERSION_FACTOR, true);
 	}
 
 	/**
@@ -210,10 +79,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setConversionFactor(double newConversionFactor) {
-		double oldConversionFactor = conversionFactor;
-		conversionFactor = newConversionFactor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR, oldConversionFactor, conversionFactor));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__CONVERSION_FACTOR, newConversionFactor);
 	}
 
 	/**
@@ -223,7 +89,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public long getDecimalScale() {
-		return decimalScale;
+		return (Long)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__DECIMAL_SCALE, true);
 	}
 
 	/**
@@ -233,10 +99,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setDecimalScale(long newDecimalScale) {
-		long oldDecimalScale = decimalScale;
-		decimalScale = newDecimalScale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__DECIMAL_SCALE, oldDecimalScale, decimalScale));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__DECIMAL_SCALE, newDecimalScale);
 	}
 
 	/**
@@ -246,7 +109,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__FROM_DATE, true);
 	}
 
 	/**
@@ -256,10 +119,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__FROM_DATE, oldFromDate, fromDate));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -269,7 +129,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public String getRoundingMode() {
-		return roundingMode;
+		return (String)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__ROUNDING_MODE, true);
 	}
 
 	/**
@@ -279,10 +139,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setRoundingMode(String newRoundingMode) {
-		String oldRoundingMode = roundingMode;
-		roundingMode = newRoundingMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__ROUNDING_MODE, oldRoundingMode, roundingMode));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__ROUNDING_MODE, newRoundingMode);
 	}
 
 	/**
@@ -292,7 +149,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__THRU_DATE, true);
 	}
 
 	/**
@@ -302,10 +159,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__THRU_DATE, oldThruDate, thruDate));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -315,24 +169,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public Uom getUomId() {
-		if (uomId != null && ((EObject)uomId).eIsProxy()) {
-			InternalEObject oldUomId = (InternalEObject)uomId;
-			uomId = (Uom)eResolveProxy(oldUomId);
-			if (uomId != oldUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__UOM_ID, oldUomId, uomId));
-			}
-		}
-		return uomId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uom basicGetUomId() {
-		return uomId;
+		return (Uom)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__UOM_ID, true);
 	}
 
 	/**
@@ -342,10 +179,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
-		Uom oldUomId = uomId;
-		uomId = newUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__UOM_ID, oldUomId, uomId));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__UOM_ID, newUomId);
 	}
 
 	/**
@@ -355,24 +189,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public Uom getUomIdTo() {
-		if (uomIdTo != null && ((EObject)uomIdTo).eIsProxy()) {
-			InternalEObject oldUomIdTo = (InternalEObject)uomIdTo;
-			uomIdTo = (Uom)eResolveProxy(oldUomIdTo);
-			if (uomIdTo != oldUomIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO, oldUomIdTo, uomIdTo));
-			}
-		}
-		return uomIdTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uom basicGetUomIdTo() {
-		return uomIdTo;
+		return (Uom)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__UOM_ID_TO, true);
 	}
 
 	/**
@@ -382,10 +199,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setUomIdTo(Uom newUomIdTo) {
-		Uom oldUomIdTo = uomIdTo;
-		uomIdTo = newUomIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO, oldUomIdTo, uomIdTo));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__UOM_ID_TO, newUomIdTo);
 	}
 
 	/**
@@ -395,24 +209,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public CustomMethod getCustomMethodId() {
-		if (customMethodId != null && ((EObject)customMethodId).eIsProxy()) {
-			InternalEObject oldCustomMethodId = (InternalEObject)customMethodId;
-			customMethodId = (CustomMethod)eResolveProxy(oldCustomMethodId);
-			if (customMethodId != oldCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
-			}
-		}
-		return customMethodId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CustomMethod basicGetCustomMethodId() {
-		return customMethodId;
+		return (CustomMethod)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID, true);
 	}
 
 	/**
@@ -422,10 +219,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setCustomMethodId(CustomMethod newCustomMethodId) {
-		CustomMethod oldCustomMethodId = customMethodId;
-		customMethodId = newCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID, newCustomMethodId);
 	}
 
 	/**
@@ -435,24 +229,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public Enumeration getPurposeEnumId() {
-		if (purposeEnumId != null && ((EObject)purposeEnumId).eIsProxy()) {
-			InternalEObject oldPurposeEnumId = (InternalEObject)purposeEnumId;
-			purposeEnumId = (Enumeration)eResolveProxy(oldPurposeEnumId);
-			if (purposeEnumId != oldPurposeEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID, oldPurposeEnumId, purposeEnumId));
-			}
-		}
-		return purposeEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetPurposeEnumId() {
-		return purposeEnumId;
+		return (Enumeration)eGet(UomPackage.Literals.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID, true);
 	}
 
 	/**
@@ -462,176 +239,7 @@ public class UomConversionDatedImpl extends BizEntityImpl implements UomConversi
 	 */
 	@Override
 	public void setPurposeEnumId(Enumeration newPurposeEnumId) {
-		Enumeration oldPurposeEnumId = purposeEnumId;
-		purposeEnumId = newPurposeEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID, oldPurposeEnumId, purposeEnumId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
-				return getFromDate();
-			case UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR:
-				return getConversionFactor();
-			case UomPackage.UOM_CONVERSION_DATED__DECIMAL_SCALE:
-				return getDecimalScale();
-			case UomPackage.UOM_CONVERSION_DATED__ROUNDING_MODE:
-				return getRoundingMode();
-			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
-				return getThruDate();
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				if (resolve) return getUomId();
-				return basicGetUomId();
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
-				if (resolve) return getUomIdTo();
-				return basicGetUomIdTo();
-			case UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID:
-				if (resolve) return getCustomMethodId();
-				return basicGetCustomMethodId();
-			case UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID:
-				if (resolve) return getPurposeEnumId();
-				return basicGetPurposeEnumId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR:
-				setConversionFactor((Double)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__DECIMAL_SCALE:
-				setDecimalScale((Long)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__ROUNDING_MODE:
-				setRoundingMode((String)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				setUomId((Uom)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
-				setUomIdTo((Uom)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID:
-				setCustomMethodId((CustomMethod)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID:
-				setPurposeEnumId((Enumeration)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR:
-				setConversionFactor(CONVERSION_FACTOR_EDEFAULT);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__DECIMAL_SCALE:
-				setDecimalScale(DECIMAL_SCALE_EDEFAULT);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__ROUNDING_MODE:
-				setRoundingMode(ROUNDING_MODE_EDEFAULT);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				setUomId((Uom)null);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
-				setUomIdTo((Uom)null);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID:
-				setCustomMethodId((CustomMethod)null);
-				return;
-			case UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID:
-				setPurposeEnumId((Enumeration)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case UomPackage.UOM_CONVERSION_DATED__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case UomPackage.UOM_CONVERSION_DATED__CONVERSION_FACTOR:
-				return conversionFactor != CONVERSION_FACTOR_EDEFAULT;
-			case UomPackage.UOM_CONVERSION_DATED__DECIMAL_SCALE:
-				return decimalScale != DECIMAL_SCALE_EDEFAULT;
-			case UomPackage.UOM_CONVERSION_DATED__ROUNDING_MODE:
-				return ROUNDING_MODE_EDEFAULT == null ? roundingMode != null : !ROUNDING_MODE_EDEFAULT.equals(roundingMode);
-			case UomPackage.UOM_CONVERSION_DATED__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID:
-				return uomId != null;
-			case UomPackage.UOM_CONVERSION_DATED__UOM_ID_TO:
-				return uomIdTo != null;
-			case UomPackage.UOM_CONVERSION_DATED__CUSTOM_METHOD_ID:
-				return customMethodId != null;
-			case UomPackage.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID:
-				return purposeEnumId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", conversionFactor: ");
-		result.append(conversionFactor);
-		result.append(", decimalScale: ");
-		result.append(decimalScale);
-		result.append(", roundingMode: ");
-		result.append(roundingMode);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(UomPackage.Literals.UOM_CONVERSION_DATED__PURPOSE_ENUM_ID, newPurposeEnumId);
 	}
 
 } //UomConversionDatedImpl

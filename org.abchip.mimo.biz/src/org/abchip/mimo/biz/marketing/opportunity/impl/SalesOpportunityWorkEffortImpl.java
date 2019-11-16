@@ -12,12 +12,7 @@ import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,26 +33,6 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected SalesOpportunity salesOpportunityId;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected WorkEffort workEffortId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,24 +60,7 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 */
 	@Override
 	public SalesOpportunity getSalesOpportunityId() {
-		if (salesOpportunityId != null && ((EObject)salesOpportunityId).eIsProxy()) {
-			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
-			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
-			if (salesOpportunityId != oldSalesOpportunityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
-			}
-		}
-		return salesOpportunityId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SalesOpportunity basicGetSalesOpportunityId() {
-		return salesOpportunityId;
+		return (SalesOpportunity)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, true);
 	}
 
 	/**
@@ -112,10 +70,7 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 */
 	@Override
 	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
-		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
-		salesOpportunityId = newSalesOpportunityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
+		eSet(OpportunityPackage.Literals.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, newSalesOpportunityId);
 	}
 
 	/**
@@ -125,24 +80,7 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 */
 	@Override
 	public WorkEffort getWorkEffortId() {
-		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
-			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
-			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
-			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-			}
-		}
-		return workEffortId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkEffort basicGetWorkEffortId() {
-		return workEffortId;
+		return (WorkEffort)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID, true);
 	}
 
 	/**
@@ -152,80 +90,7 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
-		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				if (resolve) return getSalesOpportunityId();
-				return basicGetSalesOpportunityId();
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
-				if (resolve) return getWorkEffortId();
-				return basicGetWorkEffortId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId((SalesOpportunity)newValue);
-				return;
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId((SalesOpportunity)null);
-				return;
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID:
-				return salesOpportunityId != null;
-			case OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID:
-				return workEffortId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(OpportunityPackage.Literals.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID, newWorkEffortId);
 	}
 
 } //SalesOpportunityWorkEffortImpl

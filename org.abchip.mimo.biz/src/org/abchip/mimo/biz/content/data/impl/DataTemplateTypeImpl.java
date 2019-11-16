@@ -12,9 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataTemplateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,66 +35,6 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDataTemplateTypeId() <em>Data Template Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataTemplateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_TEMPLATE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataTemplateTypeId() <em>Data Template Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataTemplateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataTemplateTypeId = DATA_TEMPLATE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getExtension() <em>Extension</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtension()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXTENSION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExtension() <em>Extension</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtension()
-	 * @generated
-	 * @ordered
-	 */
-	protected String extension = EXTENSION_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,7 +61,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public String getDataTemplateTypeId() {
-		return dataTemplateTypeId;
+		return (String)eGet(DataPackage.Literals.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID, true);
 	}
 
 	/**
@@ -133,10 +71,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public void setDataTemplateTypeId(String newDataTemplateTypeId) {
-		String oldDataTemplateTypeId = dataTemplateTypeId;
-		dataTemplateTypeId = newDataTemplateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID, oldDataTemplateTypeId, dataTemplateTypeId));
+		eSet(DataPackage.Literals.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID, newDataTemplateTypeId);
 	}
 
 	/**
@@ -146,7 +81,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(DataPackage.Literals.DATA_TEMPLATE_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -156,10 +91,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_TEMPLATE_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(DataPackage.Literals.DATA_TEMPLATE_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -169,7 +101,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public String getExtension() {
-		return extension;
+		return (String)eGet(DataPackage.Literals.DATA_TEMPLATE_TYPE__EXTENSION, true);
 	}
 
 	/**
@@ -179,10 +111,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 */
 	@Override
 	public void setExtension(String newExtension) {
-		String oldExtension = extension;
-		extension = newExtension;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_TEMPLATE_TYPE__EXTENSION, oldExtension, extension));
+		eSet(DataPackage.Literals.DATA_TEMPLATE_TYPE__EXTENSION, newExtension);
 	}
 
 	/**
@@ -195,104 +124,6 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID:
-				return getDataTemplateTypeId();
-			case DataPackage.DATA_TEMPLATE_TYPE__DESCRIPTION:
-				return getDescription();
-			case DataPackage.DATA_TEMPLATE_TYPE__EXTENSION:
-				return getExtension();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID:
-				setDataTemplateTypeId((String)newValue);
-				return;
-			case DataPackage.DATA_TEMPLATE_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case DataPackage.DATA_TEMPLATE_TYPE__EXTENSION:
-				setExtension((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID:
-				setDataTemplateTypeId(DATA_TEMPLATE_TYPE_ID_EDEFAULT);
-				return;
-			case DataPackage.DATA_TEMPLATE_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case DataPackage.DATA_TEMPLATE_TYPE__EXTENSION:
-				setExtension(EXTENSION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_TEMPLATE_TYPE__DATA_TEMPLATE_TYPE_ID:
-				return DATA_TEMPLATE_TYPE_ID_EDEFAULT == null ? dataTemplateTypeId != null : !DATA_TEMPLATE_TYPE_ID_EDEFAULT.equals(dataTemplateTypeId);
-			case DataPackage.DATA_TEMPLATE_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case DataPackage.DATA_TEMPLATE_TYPE__EXTENSION:
-				return EXTENSION_EDEFAULT == null ? extension != null : !EXTENSION_EDEFAULT.equals(extension);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataTemplateTypeId: ");
-		result.append(dataTemplateTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", extension: ");
-		result.append(extension);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DataTemplateTypeImpl

@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategory;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +36,6 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getProdCatalogCategoryTypeId() <em>Prod Catalog Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatalogCategoryTypeId() <em>Prod Catalog Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatalogCategoryTypeId = PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProdCatalogCategoryType parentTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,7 +62,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(CatalogPackage.Literals.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -126,10 +72,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(CatalogPackage.Literals.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -139,24 +82,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public ProdCatalogCategoryType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (ProdCatalogCategoryType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProdCatalogCategoryType basicGetParentTypeId() {
-		return parentTypeId;
+		return (ProdCatalogCategoryType)eGet(CatalogPackage.Literals.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -166,10 +92,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public void setParentTypeId(ProdCatalogCategoryType newParentTypeId) {
-		ProdCatalogCategoryType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(CatalogPackage.Literals.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -191,7 +114,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public String getProdCatalogCategoryTypeId() {
-		return prodCatalogCategoryTypeId;
+		return (String)eGet(CatalogPackage.Literals.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID, true);
 	}
 
 	/**
@@ -201,107 +124,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 */
 	@Override
 	public void setProdCatalogCategoryTypeId(String newProdCatalogCategoryTypeId) {
-		String oldProdCatalogCategoryTypeId = prodCatalogCategoryTypeId;
-		prodCatalogCategoryTypeId = newProdCatalogCategoryTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID, oldProdCatalogCategoryTypeId, prodCatalogCategoryTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID:
-				return getProdCatalogCategoryTypeId();
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION:
-				return getDescription();
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID:
-				setProdCatalogCategoryTypeId((String)newValue);
-				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProdCatalogCategoryType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID:
-				setProdCatalogCategoryTypeId(PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT);
-				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProdCatalogCategoryType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID:
-				return PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT == null ? prodCatalogCategoryTypeId != null : !PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT.equals(prodCatalogCategoryTypeId);
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CatalogPackage.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (prodCatalogCategoryTypeId: ");
-		result.append(prodCatalogCategoryTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(CatalogPackage.Literals.PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID, newProdCatalogCategoryTypeId);
 	}
 
 } //ProdCatalogCategoryTypeImpl

@@ -7,20 +7,13 @@
  */
 package org.abchip.mimo.biz.product.cost.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.product.cost.CostPackage;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,86 +38,6 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getCostComponentTypeId() <em>Cost Component Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostComponentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COST_COMPONENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCostComponentTypeId() <em>Cost Component Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostComponentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String costComponentTypeId = COST_COMPONENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CostComponentType parentTypeId;
-
-	/**
-	 * The cached value of the '{@link #getCostComponentTypeAttrs() <em>Cost Component Type Attrs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostComponentTypeAttrs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> costComponentTypeAttrs;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -151,7 +64,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -161,10 +74,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(CostPackage.Literals.COST_COMPONENT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -174,7 +84,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -184,10 +94,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(CostPackage.Literals.COST_COMPONENT_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -197,24 +104,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public CostComponentType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (CostComponentType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CostComponentType basicGetParentTypeId() {
-		return parentTypeId;
+		return (CostComponentType)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -224,10 +114,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public void setParentTypeId(CostComponentType newParentTypeId) {
-		CostComponentType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(CostPackage.Literals.COST_COMPONENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -235,12 +122,10 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getCostComponentTypeAttrs() {
-		if (costComponentTypeAttrs == null) {
-			costComponentTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS);
-		}
-		return costComponentTypeAttrs;
+		return (List<String>)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -274,7 +159,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public String getCostComponentTypeId() {
-		return costComponentTypeId;
+		return (String)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID, true);
 	}
 
 	/**
@@ -284,133 +169,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@Override
 	public void setCostComponentTypeId(String newCostComponentTypeId) {
-		String oldCostComponentTypeId = costComponentTypeId;
-		costComponentTypeId = newCostComponentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID, oldCostComponentTypeId, costComponentTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID:
-				return getCostComponentTypeId();
-			case CostPackage.COST_COMPONENT_TYPE__DESCRIPTION:
-				return getDescription();
-			case CostPackage.COST_COMPONENT_TYPE__HAS_TABLE:
-				return isHasTable();
-			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
-				return getCostComponentTypeAttrs();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID:
-				setCostComponentTypeId((String)newValue);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((CostComponentType)newValue);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
-				getCostComponentTypeAttrs().clear();
-				getCostComponentTypeAttrs().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID:
-				setCostComponentTypeId(COST_COMPONENT_TYPE_ID_EDEFAULT);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((CostComponentType)null);
-				return;
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
-				getCostComponentTypeAttrs().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID:
-				return COST_COMPONENT_TYPE_ID_EDEFAULT == null ? costComponentTypeId != null : !COST_COMPONENT_TYPE_ID_EDEFAULT.equals(costComponentTypeId);
-			case CostPackage.COST_COMPONENT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CostPackage.COST_COMPONENT_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
-				return costComponentTypeAttrs != null && !costComponentTypeAttrs.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (costComponentTypeId: ");
-		result.append(costComponentTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(", costComponentTypeAttrs: ");
-		result.append(costComponentTypeAttrs);
-		result.append(')');
-		return result.toString();
+		eSet(CostPackage.Literals.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID, newCostComponentTypeId);
 	}
 
 } //CostComponentTypeImpl

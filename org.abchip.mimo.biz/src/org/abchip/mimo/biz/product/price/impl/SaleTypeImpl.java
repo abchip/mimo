@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.product.price.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.SaleType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,46 +31,6 @@ public class SaleTypeImpl extends BizEntityImpl implements SaleType {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getSaleTypeId() <em>Sale Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSaleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SALE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSaleTypeId() <em>Sale Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSaleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String saleTypeId = SALE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +58,7 @@ public class SaleTypeImpl extends BizEntityImpl implements SaleType {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(PricePackage.Literals.SALE_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -110,10 +68,7 @@ public class SaleTypeImpl extends BizEntityImpl implements SaleType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.SALE_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(PricePackage.Literals.SALE_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -123,7 +78,7 @@ public class SaleTypeImpl extends BizEntityImpl implements SaleType {
 	 */
 	@Override
 	public String getSaleTypeId() {
-		return saleTypeId;
+		return (String)eGet(PricePackage.Literals.SALE_TYPE__SALE_TYPE_ID, true);
 	}
 
 	/**
@@ -133,96 +88,7 @@ public class SaleTypeImpl extends BizEntityImpl implements SaleType {
 	 */
 	@Override
 	public void setSaleTypeId(String newSaleTypeId) {
-		String oldSaleTypeId = saleTypeId;
-		saleTypeId = newSaleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.SALE_TYPE__SALE_TYPE_ID, oldSaleTypeId, saleTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PricePackage.SALE_TYPE__SALE_TYPE_ID:
-				return getSaleTypeId();
-			case PricePackage.SALE_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PricePackage.SALE_TYPE__SALE_TYPE_ID:
-				setSaleTypeId((String)newValue);
-				return;
-			case PricePackage.SALE_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PricePackage.SALE_TYPE__SALE_TYPE_ID:
-				setSaleTypeId(SALE_TYPE_ID_EDEFAULT);
-				return;
-			case PricePackage.SALE_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PricePackage.SALE_TYPE__SALE_TYPE_ID:
-				return SALE_TYPE_ID_EDEFAULT == null ? saleTypeId != null : !SALE_TYPE_ID_EDEFAULT.equals(saleTypeId);
-			case PricePackage.SALE_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (saleTypeId: ");
-		result.append(saleTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(PricePackage.Literals.SALE_TYPE__SALE_TYPE_ID, newSaleTypeId);
 	}
 
 } //SaleTypeImpl

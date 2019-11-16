@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PartyResume;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,86 +38,6 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getResumeId() <em>Resume Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResumeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESUME_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResumeId() <em>Resume Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResumeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String resumeId = RESUME_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getResumeDate() <em>Resume Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResumeDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date RESUME_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResumeDate() <em>Resume Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResumeDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date resumeDate = RESUME_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getResumeText() <em>Resume Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResumeText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESUME_TEXT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResumeText() <em>Resume Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResumeText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String resumeText = RESUME_TEXT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Content contentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,24 +65,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public Content getContentId() {
-		if (contentId != null && ((EObject)contentId).eIsProxy()) {
-			InternalEObject oldContentId = (InternalEObject)contentId;
-			contentId = (Content)eResolveProxy(oldContentId);
-			if (contentId != oldContentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_RESUME__CONTENT_ID, oldContentId, contentId));
-			}
-		}
-		return contentId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Content basicGetContentId() {
-		return contentId;
+		return (Content)eGet(AbilityPackage.Literals.PARTY_RESUME__CONTENT_ID, true);
 	}
 
 	/**
@@ -177,10 +75,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
-		Content oldContentId = contentId;
-		contentId = newContentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__CONTENT_ID, oldContentId, contentId));
+		eSet(AbilityPackage.Literals.PARTY_RESUME__CONTENT_ID, newContentId);
 	}
 
 	/**
@@ -190,24 +85,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_RESUME__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(AbilityPackage.Literals.PARTY_RESUME__PARTY_ID, true);
 	}
 
 	/**
@@ -217,10 +95,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__PARTY_ID, oldPartyId, partyId));
+		eSet(AbilityPackage.Literals.PARTY_RESUME__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -230,7 +105,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public Date getResumeDate() {
-		return resumeDate;
+		return (Date)eGet(AbilityPackage.Literals.PARTY_RESUME__RESUME_DATE, true);
 	}
 
 	/**
@@ -240,10 +115,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setResumeDate(Date newResumeDate) {
-		Date oldResumeDate = resumeDate;
-		resumeDate = newResumeDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__RESUME_DATE, oldResumeDate, resumeDate));
+		eSet(AbilityPackage.Literals.PARTY_RESUME__RESUME_DATE, newResumeDate);
 	}
 
 	/**
@@ -253,7 +125,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public String getResumeId() {
-		return resumeId;
+		return (String)eGet(AbilityPackage.Literals.PARTY_RESUME__RESUME_ID, true);
 	}
 
 	/**
@@ -263,10 +135,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setResumeId(String newResumeId) {
-		String oldResumeId = resumeId;
-		resumeId = newResumeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__RESUME_ID, oldResumeId, resumeId));
+		eSet(AbilityPackage.Literals.PARTY_RESUME__RESUME_ID, newResumeId);
 	}
 
 	/**
@@ -276,7 +145,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public String getResumeText() {
-		return resumeText;
+		return (String)eGet(AbilityPackage.Literals.PARTY_RESUME__RESUME_TEXT, true);
 	}
 
 	/**
@@ -286,130 +155,7 @@ public class PartyResumeImpl extends BizEntityImpl implements PartyResume {
 	 */
 	@Override
 	public void setResumeText(String newResumeText) {
-		String oldResumeText = resumeText;
-		resumeText = newResumeText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_RESUME__RESUME_TEXT, oldResumeText, resumeText));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case AbilityPackage.PARTY_RESUME__RESUME_ID:
-				return getResumeId();
-			case AbilityPackage.PARTY_RESUME__RESUME_DATE:
-				return getResumeDate();
-			case AbilityPackage.PARTY_RESUME__RESUME_TEXT:
-				return getResumeText();
-			case AbilityPackage.PARTY_RESUME__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-			case AbilityPackage.PARTY_RESUME__CONTENT_ID:
-				if (resolve) return getContentId();
-				return basicGetContentId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case AbilityPackage.PARTY_RESUME__RESUME_ID:
-				setResumeId((String)newValue);
-				return;
-			case AbilityPackage.PARTY_RESUME__RESUME_DATE:
-				setResumeDate((Date)newValue);
-				return;
-			case AbilityPackage.PARTY_RESUME__RESUME_TEXT:
-				setResumeText((String)newValue);
-				return;
-			case AbilityPackage.PARTY_RESUME__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-			case AbilityPackage.PARTY_RESUME__CONTENT_ID:
-				setContentId((Content)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case AbilityPackage.PARTY_RESUME__RESUME_ID:
-				setResumeId(RESUME_ID_EDEFAULT);
-				return;
-			case AbilityPackage.PARTY_RESUME__RESUME_DATE:
-				setResumeDate(RESUME_DATE_EDEFAULT);
-				return;
-			case AbilityPackage.PARTY_RESUME__RESUME_TEXT:
-				setResumeText(RESUME_TEXT_EDEFAULT);
-				return;
-			case AbilityPackage.PARTY_RESUME__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-			case AbilityPackage.PARTY_RESUME__CONTENT_ID:
-				setContentId((Content)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case AbilityPackage.PARTY_RESUME__RESUME_ID:
-				return RESUME_ID_EDEFAULT == null ? resumeId != null : !RESUME_ID_EDEFAULT.equals(resumeId);
-			case AbilityPackage.PARTY_RESUME__RESUME_DATE:
-				return RESUME_DATE_EDEFAULT == null ? resumeDate != null : !RESUME_DATE_EDEFAULT.equals(resumeDate);
-			case AbilityPackage.PARTY_RESUME__RESUME_TEXT:
-				return RESUME_TEXT_EDEFAULT == null ? resumeText != null : !RESUME_TEXT_EDEFAULT.equals(resumeText);
-			case AbilityPackage.PARTY_RESUME__PARTY_ID:
-				return partyId != null;
-			case AbilityPackage.PARTY_RESUME__CONTENT_ID:
-				return contentId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (resumeId: ");
-		result.append(resumeId);
-		result.append(", resumeDate: ");
-		result.append(resumeDate);
-		result.append(", resumeText: ");
-		result.append(resumeText);
-		result.append(')');
-		return result.toString();
+		eSet(AbilityPackage.Literals.PARTY_RESUME__RESUME_TEXT, newResumeText);
 	}
 
 } //PartyResumeImpl

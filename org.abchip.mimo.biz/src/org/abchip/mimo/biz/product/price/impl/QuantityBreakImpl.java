@@ -14,11 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,76 +37,6 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getQuantityBreakId() <em>Quantity Break Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityBreakId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUANTITY_BREAK_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantityBreakId() <em>Quantity Break Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityBreakId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quantityBreakId = QUANTITY_BREAK_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromQuantity() <em>From Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal FROM_QUANTITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromQuantity() <em>From Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal fromQuantity = FROM_QUANTITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruQuantity() <em>Thru Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal THRU_QUANTITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruQuantity() <em>Thru Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal thruQuantity = THRU_QUANTITY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getQuantityBreakTypeId() <em>Quantity Break Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityBreakTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected QuantityBreakType quantityBreakTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +64,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public BigDecimal getFromQuantity() {
-		return fromQuantity;
+		return (BigDecimal)eGet(PricePackage.Literals.QUANTITY_BREAK__FROM_QUANTITY, true);
 	}
 
 	/**
@@ -148,10 +74,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setFromQuantity(BigDecimal newFromQuantity) {
-		BigDecimal oldFromQuantity = fromQuantity;
-		fromQuantity = newFromQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__FROM_QUANTITY, oldFromQuantity, fromQuantity));
+		eSet(PricePackage.Literals.QUANTITY_BREAK__FROM_QUANTITY, newFromQuantity);
 	}
 
 	/**
@@ -161,7 +84,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public String getQuantityBreakId() {
-		return quantityBreakId;
+		return (String)eGet(PricePackage.Literals.QUANTITY_BREAK__QUANTITY_BREAK_ID, true);
 	}
 
 	/**
@@ -171,10 +94,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setQuantityBreakId(String newQuantityBreakId) {
-		String oldQuantityBreakId = quantityBreakId;
-		quantityBreakId = newQuantityBreakId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_ID, oldQuantityBreakId, quantityBreakId));
+		eSet(PricePackage.Literals.QUANTITY_BREAK__QUANTITY_BREAK_ID, newQuantityBreakId);
 	}
 
 	/**
@@ -184,7 +104,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public BigDecimal getThruQuantity() {
-		return thruQuantity;
+		return (BigDecimal)eGet(PricePackage.Literals.QUANTITY_BREAK__THRU_QUANTITY, true);
 	}
 
 	/**
@@ -194,10 +114,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setThruQuantity(BigDecimal newThruQuantity) {
-		BigDecimal oldThruQuantity = thruQuantity;
-		thruQuantity = newThruQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__THRU_QUANTITY, oldThruQuantity, thruQuantity));
+		eSet(PricePackage.Literals.QUANTITY_BREAK__THRU_QUANTITY, newThruQuantity);
 	}
 
 	/**
@@ -243,24 +160,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public QuantityBreakType getQuantityBreakTypeId() {
-		if (quantityBreakTypeId != null && ((EObject)quantityBreakTypeId).eIsProxy()) {
-			InternalEObject oldQuantityBreakTypeId = (InternalEObject)quantityBreakTypeId;
-			quantityBreakTypeId = (QuantityBreakType)eResolveProxy(oldQuantityBreakTypeId);
-			if (quantityBreakTypeId != oldQuantityBreakTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID, oldQuantityBreakTypeId, quantityBreakTypeId));
-			}
-		}
-		return quantityBreakTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QuantityBreakType basicGetQuantityBreakTypeId() {
-		return quantityBreakTypeId;
+		return (QuantityBreakType)eGet(PricePackage.Literals.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID, true);
 	}
 
 	/**
@@ -270,119 +170,7 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setQuantityBreakTypeId(QuantityBreakType newQuantityBreakTypeId) {
-		QuantityBreakType oldQuantityBreakTypeId = quantityBreakTypeId;
-		quantityBreakTypeId = newQuantityBreakTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID, oldQuantityBreakTypeId, quantityBreakTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_ID:
-				return getQuantityBreakId();
-			case PricePackage.QUANTITY_BREAK__FROM_QUANTITY:
-				return getFromQuantity();
-			case PricePackage.QUANTITY_BREAK__THRU_QUANTITY:
-				return getThruQuantity();
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID:
-				if (resolve) return getQuantityBreakTypeId();
-				return basicGetQuantityBreakTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_ID:
-				setQuantityBreakId((String)newValue);
-				return;
-			case PricePackage.QUANTITY_BREAK__FROM_QUANTITY:
-				setFromQuantity((BigDecimal)newValue);
-				return;
-			case PricePackage.QUANTITY_BREAK__THRU_QUANTITY:
-				setThruQuantity((BigDecimal)newValue);
-				return;
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID:
-				setQuantityBreakTypeId((QuantityBreakType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_ID:
-				setQuantityBreakId(QUANTITY_BREAK_ID_EDEFAULT);
-				return;
-			case PricePackage.QUANTITY_BREAK__FROM_QUANTITY:
-				setFromQuantity(FROM_QUANTITY_EDEFAULT);
-				return;
-			case PricePackage.QUANTITY_BREAK__THRU_QUANTITY:
-				setThruQuantity(THRU_QUANTITY_EDEFAULT);
-				return;
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID:
-				setQuantityBreakTypeId((QuantityBreakType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_ID:
-				return QUANTITY_BREAK_ID_EDEFAULT == null ? quantityBreakId != null : !QUANTITY_BREAK_ID_EDEFAULT.equals(quantityBreakId);
-			case PricePackage.QUANTITY_BREAK__FROM_QUANTITY:
-				return FROM_QUANTITY_EDEFAULT == null ? fromQuantity != null : !FROM_QUANTITY_EDEFAULT.equals(fromQuantity);
-			case PricePackage.QUANTITY_BREAK__THRU_QUANTITY:
-				return THRU_QUANTITY_EDEFAULT == null ? thruQuantity != null : !THRU_QUANTITY_EDEFAULT.equals(thruQuantity);
-			case PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID:
-				return quantityBreakTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quantityBreakId: ");
-		result.append(quantityBreakId);
-		result.append(", fromQuantity: ");
-		result.append(fromQuantity);
-		result.append(", thruQuantity: ");
-		result.append(thruQuantity);
-		result.append(')');
-		return result.toString();
+		eSet(PricePackage.Literals.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID, newQuantityBreakTypeId);
 	}
 
 } //QuantityBreakImpl

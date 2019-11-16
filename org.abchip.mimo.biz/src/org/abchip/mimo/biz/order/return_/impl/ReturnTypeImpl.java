@@ -12,9 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,66 +34,6 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getReturnTypeId() <em>Return Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnTypeId() <em>Return Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnTypeId = RETURN_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSequenceId() <em>Sequence Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SEQUENCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSequenceId() <em>Sequence Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String sequenceId = SEQUENCE_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,7 +61,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(ReturnPackage.Literals.RETURN_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -133,10 +71,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(ReturnPackage.Literals.RETURN_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -146,7 +81,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public String getReturnTypeId() {
-		return returnTypeId;
+		return (String)eGet(ReturnPackage.Literals.RETURN_TYPE__RETURN_TYPE_ID, true);
 	}
 
 	/**
@@ -156,10 +91,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public void setReturnTypeId(String newReturnTypeId) {
-		String oldReturnTypeId = returnTypeId;
-		returnTypeId = newReturnTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_TYPE__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
+		eSet(ReturnPackage.Literals.RETURN_TYPE__RETURN_TYPE_ID, newReturnTypeId);
 	}
 
 	/**
@@ -169,7 +101,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public String getSequenceId() {
-		return sequenceId;
+		return (String)eGet(ReturnPackage.Literals.RETURN_TYPE__SEQUENCE_ID, true);
 	}
 
 	/**
@@ -179,10 +111,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
-		String oldSequenceId = sequenceId;
-		sequenceId = newSequenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_TYPE__SEQUENCE_ID, oldSequenceId, sequenceId));
+		eSet(ReturnPackage.Literals.RETURN_TYPE__SEQUENCE_ID, newSequenceId);
 	}
 
 	/**
@@ -207,104 +136,6 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_TYPE__RETURN_TYPE_ID:
-				return getReturnTypeId();
-			case ReturnPackage.RETURN_TYPE__DESCRIPTION:
-				return getDescription();
-			case ReturnPackage.RETURN_TYPE__SEQUENCE_ID:
-				return getSequenceId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_TYPE__RETURN_TYPE_ID:
-				setReturnTypeId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ReturnPackage.RETURN_TYPE__SEQUENCE_ID:
-				setSequenceId((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_TYPE__RETURN_TYPE_ID:
-				setReturnTypeId(RETURN_TYPE_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_TYPE__SEQUENCE_ID:
-				setSequenceId(SEQUENCE_ID_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.RETURN_TYPE__RETURN_TYPE_ID:
-				return RETURN_TYPE_ID_EDEFAULT == null ? returnTypeId != null : !RETURN_TYPE_ID_EDEFAULT.equals(returnTypeId);
-			case ReturnPackage.RETURN_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ReturnPackage.RETURN_TYPE__SEQUENCE_ID:
-				return SEQUENCE_ID_EDEFAULT == null ? sequenceId != null : !SEQUENCE_ID_EDEFAULT.equals(sequenceId);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnTypeId: ");
-		result.append(returnTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", sequenceId: ");
-		result.append(sequenceId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ReturnTypeImpl

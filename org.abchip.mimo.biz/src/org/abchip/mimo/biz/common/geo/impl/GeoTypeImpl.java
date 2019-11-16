@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,70 +36,6 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getGeoTypeId() <em>Geo Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoTypeId() <em>Geo Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoTypeId = GEO_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GeoType parentTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +62,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(GeoPackage.Literals.GEO_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -140,10 +72,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(GeoPackage.Literals.GEO_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -153,7 +82,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(GeoPackage.Literals.GEO_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -163,10 +92,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(GeoPackage.Literals.GEO_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -176,24 +102,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public GeoType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (GeoType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GeoType basicGetParentTypeId() {
-		return parentTypeId;
+		return (GeoType)eGet(GeoPackage.Literals.GEO_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -203,10 +112,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public void setParentTypeId(GeoType newParentTypeId) {
-		GeoType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(GeoPackage.Literals.GEO_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -240,7 +146,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public String getGeoTypeId() {
-		return geoTypeId;
+		return (String)eGet(GeoPackage.Literals.GEO_TYPE__GEO_TYPE_ID, true);
 	}
 
 	/**
@@ -250,119 +156,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 */
 	@Override
 	public void setGeoTypeId(String newGeoTypeId) {
-		String oldGeoTypeId = geoTypeId;
-		geoTypeId = newGeoTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_TYPE__GEO_TYPE_ID, oldGeoTypeId, geoTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case GeoPackage.GEO_TYPE__GEO_TYPE_ID:
-				return getGeoTypeId();
-			case GeoPackage.GEO_TYPE__DESCRIPTION:
-				return getDescription();
-			case GeoPackage.GEO_TYPE__HAS_TABLE:
-				return isHasTable();
-			case GeoPackage.GEO_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case GeoPackage.GEO_TYPE__GEO_TYPE_ID:
-				setGeoTypeId((String)newValue);
-				return;
-			case GeoPackage.GEO_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case GeoPackage.GEO_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case GeoPackage.GEO_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((GeoType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case GeoPackage.GEO_TYPE__GEO_TYPE_ID:
-				setGeoTypeId(GEO_TYPE_ID_EDEFAULT);
-				return;
-			case GeoPackage.GEO_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case GeoPackage.GEO_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case GeoPackage.GEO_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((GeoType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case GeoPackage.GEO_TYPE__GEO_TYPE_ID:
-				return GEO_TYPE_ID_EDEFAULT == null ? geoTypeId != null : !GEO_TYPE_ID_EDEFAULT.equals(geoTypeId);
-			case GeoPackage.GEO_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case GeoPackage.GEO_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case GeoPackage.GEO_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (geoTypeId: ");
-		result.append(geoTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(')');
-		return result.toString();
+		eSet(GeoPackage.Literals.GEO_TYPE__GEO_TYPE_ID, newGeoTypeId);
 	}
 
 } //GeoTypeImpl

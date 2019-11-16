@@ -12,12 +12,7 @@ import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,26 +33,6 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderHeader orderId;
-
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CommunicationEvent communicationEventId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,24 +60,7 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 */
 	@Override
 	public CommunicationEvent getCommunicationEventId() {
-		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
-			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
-			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
-			if (communicationEventId != oldCommunicationEventId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
-			}
-		}
-		return communicationEventId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommunicationEvent basicGetCommunicationEventId() {
-		return communicationEventId;
+		return (CommunicationEvent)eGet(OrderPackage.Literals.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, true);
 	}
 
 	/**
@@ -112,10 +70,7 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
-		CommunicationEvent oldCommunicationEventId = communicationEventId;
-		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+		eSet(OrderPackage.Literals.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, newCommunicationEventId);
 	}
 
 	/**
@@ -125,24 +80,7 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 */
 	@Override
 	public OrderHeader getOrderId() {
-		if (orderId != null && ((EObject)orderId).eIsProxy()) {
-			InternalEObject oldOrderId = (InternalEObject)orderId;
-			orderId = (OrderHeader)eResolveProxy(oldOrderId);
-			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID, oldOrderId, orderId));
-			}
-		}
-		return orderId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderHeader basicGetOrderId() {
-		return orderId;
+		return (OrderHeader)eGet(OrderPackage.Literals.COMMUNICATION_EVENT_ORDER__ORDER_ID, true);
 	}
 
 	/**
@@ -152,80 +90,7 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
-		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID, oldOrderId, orderId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID:
-				if (resolve) return getOrderId();
-				return basicGetOrderId();
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				if (resolve) return getCommunicationEventId();
-				return basicGetCommunicationEventId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID:
-				setOrderId((OrderHeader)newValue);
-				return;
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID:
-				setOrderId((OrderHeader)null);
-				return;
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID:
-				return orderId != null;
-			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				return communicationEventId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(OrderPackage.Literals.COMMUNICATION_EVENT_ORDER__ORDER_ID, newOrderId);
 	}
 
 } //CommunicationEventOrderImpl

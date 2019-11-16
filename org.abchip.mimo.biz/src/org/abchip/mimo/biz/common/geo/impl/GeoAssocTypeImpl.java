@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,43 +34,6 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_ASSOC_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoAssocTypeId = GEO_ASSOC_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,7 +60,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(GeoPackage.Literals.GEO_ASSOC_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -109,10 +70,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(GeoPackage.Literals.GEO_ASSOC_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -146,7 +104,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 */
 	@Override
 	public String getGeoAssocTypeId() {
-		return geoAssocTypeId;
+		return (String)eGet(GeoPackage.Literals.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID, true);
 	}
 
 	/**
@@ -156,96 +114,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 */
 	@Override
 	public void setGeoAssocTypeId(String newGeoAssocTypeId) {
-		String oldGeoAssocTypeId = geoAssocTypeId;
-		geoAssocTypeId = newGeoAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case GeoPackage.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID:
-				return getGeoAssocTypeId();
-			case GeoPackage.GEO_ASSOC_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case GeoPackage.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID:
-				setGeoAssocTypeId((String)newValue);
-				return;
-			case GeoPackage.GEO_ASSOC_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case GeoPackage.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID:
-				setGeoAssocTypeId(GEO_ASSOC_TYPE_ID_EDEFAULT);
-				return;
-			case GeoPackage.GEO_ASSOC_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case GeoPackage.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID:
-				return GEO_ASSOC_TYPE_ID_EDEFAULT == null ? geoAssocTypeId != null : !GEO_ASSOC_TYPE_ID_EDEFAULT.equals(geoAssocTypeId);
-			case GeoPackage.GEO_ASSOC_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (geoAssocTypeId: ");
-		result.append(geoAssocTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(GeoPackage.Literals.GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID, newGeoAssocTypeId);
 	}
 
 } //GeoAssocTypeImpl

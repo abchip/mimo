@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortKeyword;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,56 +33,6 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyword()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String KEYWORD_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyword()
-	 * @generated
-	 * @ordered
-	 */
-	protected String keyword = KEYWORD_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRelevancyWeight() <em>Relevancy Weight</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelevancyWeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long RELEVANCY_WEIGHT_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getRelevancyWeight() <em>Relevancy Weight</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelevancyWeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected long relevancyWeight = RELEVANCY_WEIGHT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected WorkEffort workEffortId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +60,7 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public String getKeyword() {
-		return keyword;
+		return (String)eGet(WorkeffortPackage.Literals.WORK_EFFORT_KEYWORD__KEYWORD, true);
 	}
 
 	/**
@@ -125,10 +70,7 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public void setKeyword(String newKeyword) {
-		String oldKeyword = keyword;
-		keyword = newKeyword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD, oldKeyword, keyword));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_KEYWORD__KEYWORD, newKeyword);
 	}
 
 	/**
@@ -138,7 +80,7 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public long getRelevancyWeight() {
-		return relevancyWeight;
+		return (Long)eGet(WorkeffortPackage.Literals.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT, true);
 	}
 
 	/**
@@ -148,10 +90,7 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public void setRelevancyWeight(long newRelevancyWeight) {
-		long oldRelevancyWeight = relevancyWeight;
-		relevancyWeight = newRelevancyWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT, oldRelevancyWeight, relevancyWeight));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT, newRelevancyWeight);
 	}
 
 	/**
@@ -161,24 +100,7 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public WorkEffort getWorkEffortId() {
-		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
-			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
-			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
-			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-			}
-		}
-		return workEffortId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkEffort basicGetWorkEffortId() {
-		return workEffortId;
+		return (WorkEffort)eGet(WorkeffortPackage.Literals.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, true);
 	}
 
 	/**
@@ -188,107 +110,7 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
-		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
-				return getKeyword();
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
-				return getRelevancyWeight();
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				if (resolve) return getWorkEffortId();
-				return basicGetWorkEffortId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
-				setKeyword((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
-				setRelevancyWeight((Long)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
-				setKeyword(KEYWORD_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
-				setRelevancyWeight(RELEVANCY_WEIGHT_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD:
-				return KEYWORD_EDEFAULT == null ? keyword != null : !KEYWORD_EDEFAULT.equals(keyword);
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT:
-				return relevancyWeight != RELEVANCY_WEIGHT_EDEFAULT;
-			case WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID:
-				return workEffortId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (keyword: ");
-		result.append(keyword);
-		result.append(", relevancyWeight: ");
-		result.append(relevancyWeight);
-		result.append(')');
-		return result.toString();
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, newWorkEffortId);
 	}
 
 } //WorkEffortKeywordImpl

@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.abchip.mimo.biz.webapp.visit.Visitor;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +35,6 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getVisitorId() <em>Visitor Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitorId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISITOR_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVisitorId() <em>Visitor Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitorId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visitorId = VISITOR_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected UserLogin userLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +62,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public String getVisitorId() {
-		return visitorId;
+		return (String)eGet(VisitPackage.Literals.VISITOR__VISITOR_ID, true);
 	}
 
 	/**
@@ -127,10 +72,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public void setVisitorId(String newVisitorId) {
-		String oldVisitorId = visitorId;
-		visitorId = newVisitorId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISITOR__VISITOR_ID, oldVisitorId, visitorId));
+		eSet(VisitPackage.Literals.VISITOR__VISITOR_ID, newVisitorId);
 	}
 
 	/**
@@ -140,7 +82,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public String getPartyId() {
-		return partyId;
+		return (String)eGet(VisitPackage.Literals.VISITOR__PARTY_ID, true);
 	}
 
 	/**
@@ -150,10 +92,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISITOR__PARTY_ID, oldPartyId, partyId));
+		eSet(VisitPackage.Literals.VISITOR__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -163,24 +102,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public UserLogin getUserLoginId() {
-		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
-			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
-			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
-			if (userLoginId != oldUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.VISITOR__USER_LOGIN_ID, oldUserLoginId, userLoginId));
-			}
-		}
-		return userLoginId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserLogin basicGetUserLoginId() {
-		return userLoginId;
+		return (UserLogin)eGet(VisitPackage.Literals.VISITOR__USER_LOGIN_ID, true);
 	}
 
 	/**
@@ -190,10 +112,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
-		UserLogin oldUserLoginId = userLoginId;
-		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISITOR__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+		eSet(VisitPackage.Literals.VISITOR__USER_LOGIN_ID, newUserLoginId);
 	}
 
 	/**
@@ -206,103 +125,6 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case VisitPackage.VISITOR__VISITOR_ID:
-				return getVisitorId();
-			case VisitPackage.VISITOR__PARTY_ID:
-				return getPartyId();
-			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				if (resolve) return getUserLoginId();
-				return basicGetUserLoginId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case VisitPackage.VISITOR__VISITOR_ID:
-				setVisitorId((String)newValue);
-				return;
-			case VisitPackage.VISITOR__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				setUserLoginId((UserLogin)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case VisitPackage.VISITOR__VISITOR_ID:
-				setVisitorId(VISITOR_ID_EDEFAULT);
-				return;
-			case VisitPackage.VISITOR__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				setUserLoginId((UserLogin)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case VisitPackage.VISITOR__VISITOR_ID:
-				return VISITOR_ID_EDEFAULT == null ? visitorId != null : !VISITOR_ID_EDEFAULT.equals(visitorId);
-			case VisitPackage.VISITOR__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				return userLoginId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (visitorId: ");
-		result.append(visitorId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(')');
-		return result.toString();
 	}
 
 } //VisitorImpl

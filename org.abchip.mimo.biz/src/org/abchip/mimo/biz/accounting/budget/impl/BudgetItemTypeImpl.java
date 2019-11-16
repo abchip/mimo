@@ -7,20 +7,13 @@
  */
 package org.abchip.mimo.biz.accounting.budget.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.budget.BudgetItem;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,83 +34,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  */
 public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements BudgetItemType {
 	/**
-	 * The default value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The cached value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetItemTypeId = BUDGET_ITEM_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected BudgetItemType parentTypeId;
-
-	/**
-	 * The cached value of the '{@link #getBudgetItemTypeAttrs() <em>Budget Item Type Attrs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeAttrs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> budgetItemTypeAttrs;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,7 +63,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -154,10 +73,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -167,7 +83,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -177,10 +93,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -190,24 +103,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public BudgetItemType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (BudgetItemType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BudgetItemType basicGetParentTypeId() {
-		return parentTypeId;
+		return (BudgetItemType)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -217,10 +113,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public void setParentTypeId(BudgetItemType newParentTypeId) {
-		BudgetItemType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -228,12 +121,10 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getBudgetItemTypeAttrs() {
-		if (budgetItemTypeAttrs == null) {
-			budgetItemTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS);
-		}
-		return budgetItemTypeAttrs;
+		return (List<String>)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -279,7 +170,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public String getBudgetItemTypeId() {
-		return budgetItemTypeId;
+		return (String)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ID, true);
 	}
 
 	/**
@@ -289,133 +180,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@Override
 	public void setBudgetItemTypeId(String newBudgetItemTypeId) {
-		String oldBudgetItemTypeId = budgetItemTypeId;
-		budgetItemTypeId = newBudgetItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ID:
-				return getBudgetItemTypeId();
-			case BudgetPackage.BUDGET_ITEM_TYPE__DESCRIPTION:
-				return getDescription();
-			case BudgetPackage.BUDGET_ITEM_TYPE__HAS_TABLE:
-				return isHasTable();
-			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
-				return getBudgetItemTypeAttrs();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId((String)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((BudgetItemType)newValue);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
-				getBudgetItemTypeAttrs().clear();
-				getBudgetItemTypeAttrs().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId(BUDGET_ITEM_TYPE_ID_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((BudgetItemType)null);
-				return;
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
-				getBudgetItemTypeAttrs().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ID:
-				return BUDGET_ITEM_TYPE_ID_EDEFAULT == null ? budgetItemTypeId != null : !BUDGET_ITEM_TYPE_ID_EDEFAULT.equals(budgetItemTypeId);
-			case BudgetPackage.BUDGET_ITEM_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case BudgetPackage.BUDGET_ITEM_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
-				return budgetItemTypeAttrs != null && !budgetItemTypeAttrs.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (budgetItemTypeId: ");
-		result.append(budgetItemTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(", budgetItemTypeAttrs: ");
-		result.append(budgetItemTypeAttrs);
-		result.append(')');
-		return result.toString();
+		eSet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ID, newBudgetItemTypeId);
 	}
 
 } //BudgetItemTypeImpl

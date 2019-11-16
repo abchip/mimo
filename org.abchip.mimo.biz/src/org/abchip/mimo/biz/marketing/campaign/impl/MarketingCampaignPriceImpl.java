@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice;
 import org.abchip.mimo.biz.product.price.ProductPriceRule;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,66 +37,6 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected MarketingCampaign marketingCampaignId;
-
-	/**
-	 * The cached value of the '{@link #getProductPriceRuleId() <em>Product Price Rule Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductPriceRule productPriceRuleId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +64,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__FROM_DATE, true);
 	}
 
 	/**
@@ -139,10 +74,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PRICE__FROM_DATE, oldFromDate, fromDate));
+		eSet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -152,24 +84,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public MarketingCampaign getMarketingCampaignId() {
-		if (marketingCampaignId != null && ((EObject)marketingCampaignId).eIsProxy()) {
-			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
-			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
-			if (marketingCampaignId != oldMarketingCampaignId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
-			}
-		}
-		return marketingCampaignId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MarketingCampaign basicGetMarketingCampaignId() {
-		return marketingCampaignId;
+		return (MarketingCampaign)eGet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID, true);
 	}
 
 	/**
@@ -179,10 +94,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
-		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
-		marketingCampaignId = newMarketingCampaignId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
+		eSet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID, newMarketingCampaignId);
 	}
 
 	/**
@@ -192,24 +104,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public ProductPriceRule getProductPriceRuleId() {
-		if (productPriceRuleId != null && ((EObject)productPriceRuleId).eIsProxy()) {
-			InternalEObject oldProductPriceRuleId = (InternalEObject)productPriceRuleId;
-			productPriceRuleId = (ProductPriceRule)eResolveProxy(oldProductPriceRuleId);
-			if (productPriceRuleId != oldProductPriceRuleId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
-			}
-		}
-		return productPriceRuleId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductPriceRule basicGetProductPriceRuleId() {
-		return productPriceRuleId;
+		return (ProductPriceRule)eGet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID, true);
 	}
 
 	/**
@@ -219,10 +114,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setProductPriceRuleId(ProductPriceRule newProductPriceRuleId) {
-		ProductPriceRule oldProductPriceRuleId = productPriceRuleId;
-		productPriceRuleId = newProductPriceRuleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
+		eSet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID, newProductPriceRuleId);
 	}
 
 	/**
@@ -232,7 +124,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__THRU_DATE, true);
 	}
 
 	/**
@@ -242,118 +134,7 @@ public class MarketingCampaignPriceImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PRICE__THRU_DATE, oldThruDate, thruDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__FROM_DATE:
-				return getFromDate();
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__THRU_DATE:
-				return getThruDate();
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID:
-				if (resolve) return getMarketingCampaignId();
-				return basicGetMarketingCampaignId();
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID:
-				if (resolve) return getProductPriceRuleId();
-				return basicGetProductPriceRuleId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((MarketingCampaign)newValue);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID:
-				setProductPriceRuleId((ProductPriceRule)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((MarketingCampaign)null);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID:
-				setProductPriceRuleId((ProductPriceRule)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID:
-				return marketingCampaignId != null;
-			case CampaignPackage.MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID:
-				return productPriceRuleId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(CampaignPackage.Literals.MARKETING_CAMPAIGN_PRICE__THRU_DATE, newThruDate);
 	}
 
 } //MarketingCampaignPriceImpl

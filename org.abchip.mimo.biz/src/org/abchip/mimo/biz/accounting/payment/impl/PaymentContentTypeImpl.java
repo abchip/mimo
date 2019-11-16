@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.accounting.payment.PaymentContent;
 import org.abchip.mimo.biz.accounting.payment.PaymentContentType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,70 +36,6 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPaymentContentTypeId() <em>Payment Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_CONTENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentContentTypeId() <em>Payment Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentContentTypeId = PAYMENT_CONTENT_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PaymentContentType parentTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +62,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -140,10 +72,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -153,7 +82,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -163,10 +92,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -176,24 +102,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public PaymentContentType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (PaymentContentType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PaymentContentType basicGetParentTypeId() {
-		return parentTypeId;
+		return (PaymentContentType)eGet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -203,10 +112,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setParentTypeId(PaymentContentType newParentTypeId) {
-		PaymentContentType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -228,7 +134,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public String getPaymentContentTypeId() {
-		return paymentContentTypeId;
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID, true);
 	}
 
 	/**
@@ -238,119 +144,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setPaymentContentTypeId(String newPaymentContentTypeId) {
-		String oldPaymentContentTypeId = paymentContentTypeId;
-		paymentContentTypeId = newPaymentContentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID, oldPaymentContentTypeId, paymentContentTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID:
-				return getPaymentContentTypeId();
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__DESCRIPTION:
-				return getDescription();
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__HAS_TABLE:
-				return isHasTable();
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID:
-				setPaymentContentTypeId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((PaymentContentType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID:
-				setPaymentContentTypeId(PAYMENT_CONTENT_TYPE_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((PaymentContentType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID:
-				return PAYMENT_CONTENT_TYPE_ID_EDEFAULT == null ? paymentContentTypeId != null : !PAYMENT_CONTENT_TYPE_ID_EDEFAULT.equals(paymentContentTypeId);
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paymentContentTypeId: ");
-		result.append(paymentContentTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(')');
-		return result.toString();
+		eSet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID, newPaymentContentTypeId);
 	}
 
 } //PaymentContentTypeImpl

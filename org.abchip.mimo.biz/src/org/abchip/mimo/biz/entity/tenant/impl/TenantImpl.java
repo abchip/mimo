@@ -7,17 +7,12 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,92 +36,6 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TENANT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenantId = TENANT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDisabled()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean DISABLED_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDisabled()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean disabled = DISABLED_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getInitialPath() <em>Initial Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInitialPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INITIAL_PATH_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInitialPath() <em>Initial Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInitialPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String initialPath = INITIAL_PATH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTenantName() <em>Tenant Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TENANT_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTenantName() <em>Tenant Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenantName = TENANT_NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTenantDataSources() <em>Tenant Data Sources</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantDataSources()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> tenantDataSources;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -153,7 +62,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public String getInitialPath() {
-		return initialPath;
+		return (String)eGet(TenantPackage.Literals.TENANT__INITIAL_PATH, true);
 	}
 
 	/**
@@ -163,10 +72,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setInitialPath(String newInitialPath) {
-		String oldInitialPath = initialPath;
-		initialPath = newInitialPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__INITIAL_PATH, oldInitialPath, initialPath));
+		eSet(TenantPackage.Literals.TENANT__INITIAL_PATH, newInitialPath);
 	}
 
 	/**
@@ -176,7 +82,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public String getTenantId() {
-		return tenantId;
+		return (String)eGet(TenantPackage.Literals.TENANT__TENANT_ID, true);
 	}
 
 	/**
@@ -186,10 +92,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setTenantId(String newTenantId) {
-		String oldTenantId = tenantId;
-		tenantId = newTenantId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__TENANT_ID, oldTenantId, tenantId));
+		eSet(TenantPackage.Literals.TENANT__TENANT_ID, newTenantId);
 	}
 
 	/**
@@ -199,7 +102,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public boolean isDisabled() {
-		return disabled;
+		return (Boolean)eGet(TenantPackage.Literals.TENANT__DISABLED, true);
 	}
 
 	/**
@@ -209,10 +112,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setDisabled(boolean newDisabled) {
-		boolean oldDisabled = disabled;
-		disabled = newDisabled;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__DISABLED, oldDisabled, disabled));
+		eSet(TenantPackage.Literals.TENANT__DISABLED, newDisabled);
 	}
 
 	/**
@@ -222,7 +122,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public String getTenantName() {
-		return tenantName;
+		return (String)eGet(TenantPackage.Literals.TENANT__TENANT_NAME, true);
 	}
 
 	/**
@@ -232,10 +132,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setTenantName(String newTenantName) {
-		String oldTenantName = tenantName;
-		tenantName = newTenantName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__TENANT_NAME, oldTenantName, tenantName));
+		eSet(TenantPackage.Literals.TENANT__TENANT_NAME, newTenantName);
 	}
 
 	/**
@@ -243,12 +140,10 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getTenantDataSources() {
-		if (tenantDataSources == null) {
-			tenantDataSources = new EDataTypeUniqueEList<String>(String.class, this, TenantPackage.TENANT__TENANT_DATA_SOURCES);
-		}
-		return tenantDataSources;
+		return (List<String>)eGet(TenantPackage.Literals.TENANT__TENANT_DATA_SOURCES, true);
 	}
 
 	/**
@@ -273,130 +168,6 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TenantPackage.TENANT__TENANT_ID:
-				return getTenantId();
-			case TenantPackage.TENANT__DISABLED:
-				return isDisabled();
-			case TenantPackage.TENANT__INITIAL_PATH:
-				return getInitialPath();
-			case TenantPackage.TENANT__TENANT_NAME:
-				return getTenantName();
-			case TenantPackage.TENANT__TENANT_DATA_SOURCES:
-				return getTenantDataSources();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TenantPackage.TENANT__TENANT_ID:
-				setTenantId((String)newValue);
-				return;
-			case TenantPackage.TENANT__DISABLED:
-				setDisabled((Boolean)newValue);
-				return;
-			case TenantPackage.TENANT__INITIAL_PATH:
-				setInitialPath((String)newValue);
-				return;
-			case TenantPackage.TENANT__TENANT_NAME:
-				setTenantName((String)newValue);
-				return;
-			case TenantPackage.TENANT__TENANT_DATA_SOURCES:
-				getTenantDataSources().clear();
-				getTenantDataSources().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TenantPackage.TENANT__TENANT_ID:
-				setTenantId(TENANT_ID_EDEFAULT);
-				return;
-			case TenantPackage.TENANT__DISABLED:
-				setDisabled(DISABLED_EDEFAULT);
-				return;
-			case TenantPackage.TENANT__INITIAL_PATH:
-				setInitialPath(INITIAL_PATH_EDEFAULT);
-				return;
-			case TenantPackage.TENANT__TENANT_NAME:
-				setTenantName(TENANT_NAME_EDEFAULT);
-				return;
-			case TenantPackage.TENANT__TENANT_DATA_SOURCES:
-				getTenantDataSources().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TenantPackage.TENANT__TENANT_ID:
-				return TENANT_ID_EDEFAULT == null ? tenantId != null : !TENANT_ID_EDEFAULT.equals(tenantId);
-			case TenantPackage.TENANT__DISABLED:
-				return disabled != DISABLED_EDEFAULT;
-			case TenantPackage.TENANT__INITIAL_PATH:
-				return INITIAL_PATH_EDEFAULT == null ? initialPath != null : !INITIAL_PATH_EDEFAULT.equals(initialPath);
-			case TenantPackage.TENANT__TENANT_NAME:
-				return TENANT_NAME_EDEFAULT == null ? tenantName != null : !TENANT_NAME_EDEFAULT.equals(tenantName);
-			case TenantPackage.TENANT__TENANT_DATA_SOURCES:
-				return tenantDataSources != null && !tenantDataSources.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (tenantId: ");
-		result.append(tenantId);
-		result.append(", disabled: ");
-		result.append(disabled);
-		result.append(", initialPath: ");
-		result.append(initialPath);
-		result.append(", tenantName: ");
-		result.append(tenantName);
-		result.append(", tenantDataSources: ");
-		result.append(tenantDataSources);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TenantImpl

@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.datasource.DataSourceType;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,54 +35,6 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getDataSourceTypeId() <em>Data Source Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataSourceType dataSourceTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,7 +61,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public String getDataSourceId() {
-		return dataSourceId;
+		return (String)eGet(DatasourcePackage.Literals.DATA_SOURCE__DATA_SOURCE_ID, true);
 	}
 
 	/**
@@ -123,10 +71,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
-		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+		eSet(DatasourcePackage.Literals.DATA_SOURCE__DATA_SOURCE_ID, newDataSourceId);
 	}
 
 	/**
@@ -136,7 +81,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(DatasourcePackage.Literals.DATA_SOURCE__DESCRIPTION, true);
 	}
 
 	/**
@@ -146,10 +91,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE__DESCRIPTION, oldDescription, description));
+		eSet(DatasourcePackage.Literals.DATA_SOURCE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -231,24 +173,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public DataSourceType getDataSourceTypeId() {
-		if (dataSourceTypeId != null && ((EObject)dataSourceTypeId).eIsProxy()) {
-			InternalEObject oldDataSourceTypeId = (InternalEObject)dataSourceTypeId;
-			dataSourceTypeId = (DataSourceType)eResolveProxy(oldDataSourceTypeId);
-			if (dataSourceTypeId != oldDataSourceTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID, oldDataSourceTypeId, dataSourceTypeId));
-			}
-		}
-		return dataSourceTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataSourceType basicGetDataSourceTypeId() {
-		return dataSourceTypeId;
+		return (DataSourceType)eGet(DatasourcePackage.Literals.DATA_SOURCE__DATA_SOURCE_TYPE_ID, true);
 	}
 
 	/**
@@ -258,107 +183,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 */
 	@Override
 	public void setDataSourceTypeId(DataSourceType newDataSourceTypeId) {
-		DataSourceType oldDataSourceTypeId = dataSourceTypeId;
-		dataSourceTypeId = newDataSourceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID, oldDataSourceTypeId, dataSourceTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
-				return getDataSourceId();
-			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
-				return getDescription();
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				if (resolve) return getDataSourceTypeId();
-				return basicGetDataSourceTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
-				return;
-			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				setDataSourceTypeId((DataSourceType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
-				return;
-			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				setDataSourceTypeId((DataSourceType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
-			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				return dataSourceTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataSourceId: ");
-		result.append(dataSourceId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(DatasourcePackage.Literals.DATA_SOURCE__DATA_SOURCE_TYPE_ID, newDataSourceTypeId);
 	}
 
 } //DataSourceImpl

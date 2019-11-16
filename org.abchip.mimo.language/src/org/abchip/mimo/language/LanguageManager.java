@@ -18,7 +18,7 @@ import org.abchip.mimo.mining.classification.Classification;
  *
  *
  * @see org.abchip.mimo.language.LanguagePackage#getLanguageManager()
- * @model
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface LanguageManager {

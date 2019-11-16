@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductGeo;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +36,6 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Geo geoId;
-
-	/**
-	 * The cached value of the '{@link #getProductGeoEnumId() <em>Product Geo Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductGeoEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration productGeoEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +63,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(ProductPackage.Literals.PRODUCT_GEO__DESCRIPTION, true);
 	}
 
 	/**
@@ -127,10 +73,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GEO__DESCRIPTION, oldDescription, description));
+		eSet(ProductPackage.Literals.PRODUCT_GEO__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -140,24 +83,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public Geo getGeoId() {
-		if (geoId != null && ((EObject)geoId).eIsProxy()) {
-			InternalEObject oldGeoId = (InternalEObject)geoId;
-			geoId = (Geo)eResolveProxy(oldGeoId);
-			if (geoId != oldGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GEO__GEO_ID, oldGeoId, geoId));
-			}
-		}
-		return geoId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Geo basicGetGeoId() {
-		return geoId;
+		return (Geo)eGet(ProductPackage.Literals.PRODUCT_GEO__GEO_ID, true);
 	}
 
 	/**
@@ -167,10 +93,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
-		Geo oldGeoId = geoId;
-		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GEO__GEO_ID, oldGeoId, geoId));
+		eSet(ProductPackage.Literals.PRODUCT_GEO__GEO_ID, newGeoId);
 	}
 
 	/**
@@ -180,24 +103,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public Enumeration getProductGeoEnumId() {
-		if (productGeoEnumId != null && ((EObject)productGeoEnumId).eIsProxy()) {
-			InternalEObject oldProductGeoEnumId = (InternalEObject)productGeoEnumId;
-			productGeoEnumId = (Enumeration)eResolveProxy(oldProductGeoEnumId);
-			if (productGeoEnumId != oldProductGeoEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID, oldProductGeoEnumId, productGeoEnumId));
-			}
-		}
-		return productGeoEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetProductGeoEnumId() {
-		return productGeoEnumId;
+		return (Enumeration)eGet(ProductPackage.Literals.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID, true);
 	}
 
 	/**
@@ -207,10 +113,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public void setProductGeoEnumId(Enumeration newProductGeoEnumId) {
-		Enumeration oldProductGeoEnumId = productGeoEnumId;
-		productGeoEnumId = newProductGeoEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID, oldProductGeoEnumId, productGeoEnumId));
+		eSet(ProductPackage.Literals.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID, newProductGeoEnumId);
 	}
 
 	/**
@@ -220,24 +123,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GEO__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(ProductPackage.Literals.PRODUCT_GEO__PRODUCT_ID, true);
 	}
 
 	/**
@@ -247,117 +133,7 @@ public class ProductGeoImpl extends BizEntityImpl implements ProductGeo {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GEO__PRODUCT_ID, oldProductId, productId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
-				return getDescription();
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-			case ProductPackage.PRODUCT_GEO__GEO_ID:
-				if (resolve) return getGeoId();
-				return basicGetGeoId();
-			case ProductPackage.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID:
-				if (resolve) return getProductGeoEnumId();
-				return basicGetProductGeoEnumId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-			case ProductPackage.PRODUCT_GEO__GEO_ID:
-				setGeoId((Geo)newValue);
-				return;
-			case ProductPackage.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID:
-				setProductGeoEnumId((Enumeration)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-			case ProductPackage.PRODUCT_GEO__GEO_ID:
-				setGeoId((Geo)null);
-				return;
-			case ProductPackage.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID:
-				setProductGeoEnumId((Enumeration)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_GEO__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ProductPackage.PRODUCT_GEO__PRODUCT_ID:
-				return productId != null;
-			case ProductPackage.PRODUCT_GEO__GEO_ID:
-				return geoId != null;
-			case ProductPackage.PRODUCT_GEO__PRODUCT_GEO_ENUM_ID:
-				return productGeoEnumId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(ProductPackage.Literals.PRODUCT_GEO__PRODUCT_ID, newProductId);
 	}
 
 } //ProductGeoImpl

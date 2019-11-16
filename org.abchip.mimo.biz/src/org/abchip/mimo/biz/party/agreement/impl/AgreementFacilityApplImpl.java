@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementFacilityAppl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.product.facility.Facility;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,43 +34,6 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ITEM_SEQ_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Agreement agreementId;
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Facility facilityId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,7 +60,7 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public String getAgreementItemSeqId() {
-		return agreementItemSeqId;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -111,10 +70,7 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
-		String oldAgreementItemSeqId = agreementItemSeqId;
-		agreementItemSeqId = newAgreementItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
+		eSet(AgreementPackage.Literals.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID, newAgreementItemSeqId);
 	}
 
 	/**
@@ -124,24 +80,7 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public Facility getFacilityId() {
-		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
-			InternalEObject oldFacilityId = (InternalEObject)facilityId;
-			facilityId = (Facility)eResolveProxy(oldFacilityId);
-			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID, oldFacilityId, facilityId));
-			}
-		}
-		return facilityId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Facility basicGetFacilityId() {
-		return facilityId;
+		return (Facility)eGet(AgreementPackage.Literals.AGREEMENT_FACILITY_APPL__FACILITY_ID, true);
 	}
 
 	/**
@@ -151,10 +90,7 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
-		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID, oldFacilityId, facilityId));
+		eSet(AgreementPackage.Literals.AGREEMENT_FACILITY_APPL__FACILITY_ID, newFacilityId);
 	}
 
 	/**
@@ -164,24 +100,7 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public Agreement getAgreementId() {
-		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
-			InternalEObject oldAgreementId = (InternalEObject)agreementId;
-			agreementId = (Agreement)eResolveProxy(oldAgreementId);
-			if (agreementId != oldAgreementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
-			}
-		}
-		return agreementId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Agreement basicGetAgreementId() {
-		return agreementId;
+		return (Agreement)eGet(AgreementPackage.Literals.AGREEMENT_FACILITY_APPL__AGREEMENT_ID, true);
 	}
 
 	/**
@@ -191,106 +110,7 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
-		Agreement oldAgreementId = agreementId;
-		agreementId = newAgreementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID:
-				return getAgreementItemSeqId();
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID:
-				if (resolve) return getAgreementId();
-				return basicGetAgreementId();
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID:
-				if (resolve) return getFacilityId();
-				return basicGetFacilityId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID:
-				setAgreementItemSeqId((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID:
-				setAgreementId((Agreement)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID:
-				setFacilityId((Facility)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID:
-				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID:
-				setAgreementId((Agreement)null);
-				return;
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID:
-				setFacilityId((Facility)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID:
-				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID:
-				return agreementId != null;
-			case AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID:
-				return facilityId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementItemSeqId: ");
-		result.append(agreementItemSeqId);
-		result.append(')');
-		return result.toString();
+		eSet(AgreementPackage.Literals.AGREEMENT_FACILITY_APPL__AGREEMENT_ID, newAgreementId);
 	}
 
 } //AgreementFacilityApplImpl

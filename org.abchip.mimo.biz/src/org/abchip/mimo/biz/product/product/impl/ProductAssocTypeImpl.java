@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductAssoc;
 import org.abchip.mimo.biz.product.product.ProductAssocType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,76 +36,6 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductAssocTypeId() <em>Product Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ASSOC_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductAssocTypeId() <em>Product Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productAssocTypeId = PRODUCT_ASSOC_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductAssocType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,7 +63,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -147,10 +73,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -160,7 +83,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -170,10 +93,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -183,24 +103,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public ProductAssocType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (ProductAssocType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductAssocType basicGetParentTypeId() {
-		return parentTypeId;
+		return (ProductAssocType)eGet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -210,10 +113,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public void setParentTypeId(ProductAssocType newParentTypeId) {
-		ProductAssocType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -235,7 +135,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public String getProductAssocTypeId() {
-		return productAssocTypeId;
+		return (String)eGet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID, true);
 	}
 
 	/**
@@ -245,119 +145,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 */
 	@Override
 	public void setProductAssocTypeId(String newProductAssocTypeId) {
-		String oldProductAssocTypeId = productAssocTypeId;
-		productAssocTypeId = newProductAssocTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID, oldProductAssocTypeId, productAssocTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID:
-				return getProductAssocTypeId();
-			case ProductPackage.PRODUCT_ASSOC_TYPE__DESCRIPTION:
-				return getDescription();
-			case ProductPackage.PRODUCT_ASSOC_TYPE__HAS_TABLE:
-				return isHasTable();
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID:
-				setProductAssocTypeId((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_ASSOC_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_ASSOC_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProductAssocType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID:
-				setProductAssocTypeId(PRODUCT_ASSOC_TYPE_ID_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_ASSOC_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_ASSOC_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProductAssocType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID:
-				return PRODUCT_ASSOC_TYPE_ID_EDEFAULT == null ? productAssocTypeId != null : !PRODUCT_ASSOC_TYPE_ID_EDEFAULT.equals(productAssocTypeId);
-			case ProductPackage.PRODUCT_ASSOC_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ProductPackage.PRODUCT_ASSOC_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case ProductPackage.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productAssocTypeId: ");
-		result.append(productAssocTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(')');
-		return result.toString();
+		eSet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID, newProductAssocTypeId);
 	}
 
 } //ProductAssocTypeImpl

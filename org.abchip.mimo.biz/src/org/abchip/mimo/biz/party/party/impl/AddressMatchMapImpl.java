@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.party.party.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.AddressMatchMap;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,66 +32,6 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getMapKey() <em>Map Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMapKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MAP_KEY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMapKey() <em>Map Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMapKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String mapKey = MAP_KEY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMapValue() <em>Map Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMapValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MAP_VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMapValue() <em>Map Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMapValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String mapValue = MAP_VALUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long SEQUENCE_NUM_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,7 +58,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public String getMapKey() {
-		return mapKey;
+		return (String)eGet(PartyPackage.Literals.ADDRESS_MATCH_MAP__MAP_KEY, true);
 	}
 
 	/**
@@ -130,10 +68,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public void setMapKey(String newMapKey) {
-		String oldMapKey = mapKey;
-		mapKey = newMapKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ADDRESS_MATCH_MAP__MAP_KEY, oldMapKey, mapKey));
+		eSet(PartyPackage.Literals.ADDRESS_MATCH_MAP__MAP_KEY, newMapKey);
 	}
 
 	/**
@@ -143,7 +78,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public String getMapValue() {
-		return mapValue;
+		return (String)eGet(PartyPackage.Literals.ADDRESS_MATCH_MAP__MAP_VALUE, true);
 	}
 
 	/**
@@ -153,10 +88,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public void setMapValue(String newMapValue) {
-		String oldMapValue = mapValue;
-		mapValue = newMapValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ADDRESS_MATCH_MAP__MAP_VALUE, oldMapValue, mapValue));
+		eSet(PartyPackage.Literals.ADDRESS_MATCH_MAP__MAP_VALUE, newMapValue);
 	}
 
 	/**
@@ -166,7 +98,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public long getSequenceNum() {
-		return sequenceNum;
+		return (Long)eGet(PartyPackage.Literals.ADDRESS_MATCH_MAP__SEQUENCE_NUM, true);
 	}
 
 	/**
@@ -176,108 +108,7 @@ public class AddressMatchMapImpl extends BizEntityImpl implements AddressMatchMa
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
-		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ADDRESS_MATCH_MAP__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_KEY:
-				return getMapKey();
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_VALUE:
-				return getMapValue();
-			case PartyPackage.ADDRESS_MATCH_MAP__SEQUENCE_NUM:
-				return getSequenceNum();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_KEY:
-				setMapKey((String)newValue);
-				return;
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_VALUE:
-				setMapValue((String)newValue);
-				return;
-			case PartyPackage.ADDRESS_MATCH_MAP__SEQUENCE_NUM:
-				setSequenceNum((Long)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_KEY:
-				setMapKey(MAP_KEY_EDEFAULT);
-				return;
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_VALUE:
-				setMapValue(MAP_VALUE_EDEFAULT);
-				return;
-			case PartyPackage.ADDRESS_MATCH_MAP__SEQUENCE_NUM:
-				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_KEY:
-				return MAP_KEY_EDEFAULT == null ? mapKey != null : !MAP_KEY_EDEFAULT.equals(mapKey);
-			case PartyPackage.ADDRESS_MATCH_MAP__MAP_VALUE:
-				return MAP_VALUE_EDEFAULT == null ? mapValue != null : !MAP_VALUE_EDEFAULT.equals(mapValue);
-			case PartyPackage.ADDRESS_MATCH_MAP__SEQUENCE_NUM:
-				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (mapKey: ");
-		result.append(mapKey);
-		result.append(", mapValue: ");
-		result.append(mapValue);
-		result.append(", sequenceNum: ");
-		result.append(sequenceNum);
-		result.append(')');
-		return result.toString();
+		eSet(PartyPackage.Literals.ADDRESS_MATCH_MAP__SEQUENCE_NUM, newSequenceNum);
 	}
 
 } //AddressMatchMapImpl

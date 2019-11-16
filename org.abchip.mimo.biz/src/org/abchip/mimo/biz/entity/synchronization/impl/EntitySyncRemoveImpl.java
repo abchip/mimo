@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.entity.synchronization.impl;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncRemove;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,46 +31,6 @@ public class EntitySyncRemoveImpl extends BizEntityImpl implements EntitySyncRem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getEntitySyncRemoveId() <em>Entity Sync Remove Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntitySyncRemoveId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENTITY_SYNC_REMOVE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEntitySyncRemoveId() <em>Entity Sync Remove Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntitySyncRemoveId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String entitySyncRemoveId = ENTITY_SYNC_REMOVE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrimaryKeyRemoved() <em>Primary Key Removed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryKeyRemoved()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIMARY_KEY_REMOVED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrimaryKeyRemoved() <em>Primary Key Removed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryKeyRemoved()
-	 * @generated
-	 * @ordered
-	 */
-	protected String primaryKeyRemoved = PRIMARY_KEY_REMOVED_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,7 +57,7 @@ public class EntitySyncRemoveImpl extends BizEntityImpl implements EntitySyncRem
 	 */
 	@Override
 	public String getEntitySyncRemoveId() {
-		return entitySyncRemoveId;
+		return (String)eGet(SynchronizationPackage.Literals.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID, true);
 	}
 
 	/**
@@ -109,10 +67,7 @@ public class EntitySyncRemoveImpl extends BizEntityImpl implements EntitySyncRem
 	 */
 	@Override
 	public void setEntitySyncRemoveId(String newEntitySyncRemoveId) {
-		String oldEntitySyncRemoveId = entitySyncRemoveId;
-		entitySyncRemoveId = newEntitySyncRemoveId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID, oldEntitySyncRemoveId, entitySyncRemoveId));
+		eSet(SynchronizationPackage.Literals.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID, newEntitySyncRemoveId);
 	}
 
 	/**
@@ -122,7 +77,7 @@ public class EntitySyncRemoveImpl extends BizEntityImpl implements EntitySyncRem
 	 */
 	@Override
 	public String getPrimaryKeyRemoved() {
-		return primaryKeyRemoved;
+		return (String)eGet(SynchronizationPackage.Literals.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED, true);
 	}
 
 	/**
@@ -132,96 +87,7 @@ public class EntitySyncRemoveImpl extends BizEntityImpl implements EntitySyncRem
 	 */
 	@Override
 	public void setPrimaryKeyRemoved(String newPrimaryKeyRemoved) {
-		String oldPrimaryKeyRemoved = primaryKeyRemoved;
-		primaryKeyRemoved = newPrimaryKeyRemoved;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED, oldPrimaryKeyRemoved, primaryKeyRemoved));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID:
-				return getEntitySyncRemoveId();
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED:
-				return getPrimaryKeyRemoved();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID:
-				setEntitySyncRemoveId((String)newValue);
-				return;
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED:
-				setPrimaryKeyRemoved((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID:
-				setEntitySyncRemoveId(ENTITY_SYNC_REMOVE_ID_EDEFAULT);
-				return;
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED:
-				setPrimaryKeyRemoved(PRIMARY_KEY_REMOVED_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__ENTITY_SYNC_REMOVE_ID:
-				return ENTITY_SYNC_REMOVE_ID_EDEFAULT == null ? entitySyncRemoveId != null : !ENTITY_SYNC_REMOVE_ID_EDEFAULT.equals(entitySyncRemoveId);
-			case SynchronizationPackage.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED:
-				return PRIMARY_KEY_REMOVED_EDEFAULT == null ? primaryKeyRemoved != null : !PRIMARY_KEY_REMOVED_EDEFAULT.equals(primaryKeyRemoved);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (entitySyncRemoveId: ");
-		result.append(entitySyncRemoveId);
-		result.append(", primaryKeyRemoved: ");
-		result.append(primaryKeyRemoved);
-		result.append(')');
-		return result.toString();
+		eSet(SynchronizationPackage.Literals.ENTITY_SYNC_REMOVE__PRIMARY_KEY_REMOVED, newPrimaryKeyRemoved);
 	}
 
 } //EntitySyncRemoveImpl

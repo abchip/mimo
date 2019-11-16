@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.webapp.visit.ServerHit;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,46 +34,6 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHitTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HIT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHitTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String hitTypeId = HIT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +61,7 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 */
 	@Override
 	public String getHitTypeId() {
-		return hitTypeId;
+		return (String)eGet(VisitPackage.Literals.SERVER_HIT_TYPE__HIT_TYPE_ID, true);
 	}
 
 	/**
@@ -113,10 +71,7 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 */
 	@Override
 	public void setHitTypeId(String newHitTypeId) {
-		String oldHitTypeId = hitTypeId;
-		hitTypeId = newHitTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_TYPE__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
+		eSet(VisitPackage.Literals.SERVER_HIT_TYPE__HIT_TYPE_ID, newHitTypeId);
 	}
 
 	/**
@@ -126,7 +81,7 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(VisitPackage.Literals.SERVER_HIT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -136,10 +91,7 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(VisitPackage.Literals.SERVER_HIT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -152,92 +104,6 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case VisitPackage.SERVER_HIT_TYPE__HIT_TYPE_ID:
-				return getHitTypeId();
-			case VisitPackage.SERVER_HIT_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case VisitPackage.SERVER_HIT_TYPE__HIT_TYPE_ID:
-				setHitTypeId((String)newValue);
-				return;
-			case VisitPackage.SERVER_HIT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case VisitPackage.SERVER_HIT_TYPE__HIT_TYPE_ID:
-				setHitTypeId(HIT_TYPE_ID_EDEFAULT);
-				return;
-			case VisitPackage.SERVER_HIT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case VisitPackage.SERVER_HIT_TYPE__HIT_TYPE_ID:
-				return HIT_TYPE_ID_EDEFAULT == null ? hitTypeId != null : !HIT_TYPE_ID_EDEFAULT.equals(hitTypeId);
-			case VisitPackage.SERVER_HIT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (hitTypeId: ");
-		result.append(hitTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ServerHitTypeImpl

@@ -16,11 +16,7 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,196 +50,6 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * The default value of the '{@link #getInventoryTransferId() <em>Inventory Transfer Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryTransferId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_TRANSFER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryTransferId() <em>Inventory Transfer Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryTransferId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryTransferId = INVENTORY_TRANSFER_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENTS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLocationSeqId() <em>Location Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocationSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOCATION_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLocationSeqId() <em>Location Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocationSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String locationSeqId = LOCATION_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLocationSeqIdTo() <em>Location Seq Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocationSeqIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOCATION_SEQ_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLocationSeqIdTo() <em>Location Seq Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocationSeqIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String locationSeqIdTo = LOCATION_SEQ_ID_TO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReceiveDate() <em>Receive Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiveDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date RECEIVE_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReceiveDate() <em>Receive Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiveDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date receiveDate = RECEIVE_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSendDate() <em>Send Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSendDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date SEND_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSendDate() <em>Send Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSendDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date sendDate = SEND_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected InventoryItem inventoryItemId;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusItem statusId;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Facility facilityId;
-
-	/**
-	 * The cached value of the '{@link #getContainerId() <em>Container Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerId()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.abchip.mimo.biz.product.facility.Container containerId;
-
-	/**
-	 * The cached value of the '{@link #getFacilityIdTo() <em>Facility Id To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected Facility facilityIdTo;
-
-	/**
-	 * The cached value of the '{@link #getContainerIdTo() <em>Container Id To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.abchip.mimo.biz.product.facility.Container containerIdTo;
-
-	/**
-	 * The cached value of the '{@link #getItemIssuanceId() <em>Item Issuance Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getItemIssuanceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ItemIssuance itemIssuanceId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -269,7 +75,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public String getComments() {
-		return comments;
+		return (String)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__COMMENTS, true);
 	}
 
 	/**
@@ -279,10 +85,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
-		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__COMMENTS, oldComments, comments));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__COMMENTS, newComments);
 	}
 
 	/**
@@ -292,7 +95,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public String getInventoryTransferId() {
-		return inventoryTransferId;
+		return (String)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID, true);
 	}
 
 	/**
@@ -302,10 +105,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setInventoryTransferId(String newInventoryTransferId) {
-		String oldInventoryTransferId = inventoryTransferId;
-		inventoryTransferId = newInventoryTransferId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID, oldInventoryTransferId, inventoryTransferId));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID, newInventoryTransferId);
 	}
 
 	/**
@@ -315,24 +115,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public ItemIssuance getItemIssuanceId() {
-		if (itemIssuanceId != null && ((EObject)itemIssuanceId).eIsProxy()) {
-			InternalEObject oldItemIssuanceId = (InternalEObject)itemIssuanceId;
-			itemIssuanceId = (ItemIssuance)eResolveProxy(oldItemIssuanceId);
-			if (itemIssuanceId != oldItemIssuanceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
-			}
-		}
-		return itemIssuanceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ItemIssuance basicGetItemIssuanceId() {
-		return itemIssuanceId;
+		return (ItemIssuance)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID, true);
 	}
 
 	/**
@@ -342,10 +125,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setItemIssuanceId(ItemIssuance newItemIssuanceId) {
-		ItemIssuance oldItemIssuanceId = itemIssuanceId;
-		itemIssuanceId = newItemIssuanceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID, newItemIssuanceId);
 	}
 
 	/**
@@ -355,7 +135,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public String getLocationSeqId() {
-		return locationSeqId;
+		return (String)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__LOCATION_SEQ_ID, true);
 	}
 
 	/**
@@ -365,10 +145,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setLocationSeqId(String newLocationSeqId) {
-		String oldLocationSeqId = locationSeqId;
-		locationSeqId = newLocationSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID, oldLocationSeqId, locationSeqId));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__LOCATION_SEQ_ID, newLocationSeqId);
 	}
 
 	/**
@@ -378,7 +155,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public String getLocationSeqIdTo() {
-		return locationSeqIdTo;
+		return (String)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO, true);
 	}
 
 	/**
@@ -388,10 +165,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setLocationSeqIdTo(String newLocationSeqIdTo) {
-		String oldLocationSeqIdTo = locationSeqIdTo;
-		locationSeqIdTo = newLocationSeqIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO, oldLocationSeqIdTo, locationSeqIdTo));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO, newLocationSeqIdTo);
 	}
 
 	/**
@@ -401,7 +175,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public Date getReceiveDate() {
-		return receiveDate;
+		return (Date)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__RECEIVE_DATE, true);
 	}
 
 	/**
@@ -411,10 +185,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setReceiveDate(Date newReceiveDate) {
-		Date oldReceiveDate = receiveDate;
-		receiveDate = newReceiveDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__RECEIVE_DATE, oldReceiveDate, receiveDate));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__RECEIVE_DATE, newReceiveDate);
 	}
 
 	/**
@@ -424,7 +195,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public Date getSendDate() {
-		return sendDate;
+		return (Date)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__SEND_DATE, true);
 	}
 
 	/**
@@ -434,10 +205,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setSendDate(Date newSendDate) {
-		Date oldSendDate = sendDate;
-		sendDate = newSendDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__SEND_DATE, oldSendDate, sendDate));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__SEND_DATE, newSendDate);
 	}
 
 	/**
@@ -447,24 +215,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public StatusItem getStatusId() {
-		if (statusId != null && ((EObject)statusId).eIsProxy()) {
-			InternalEObject oldStatusId = (InternalEObject)statusId;
-			statusId = (StatusItem)eResolveProxy(oldStatusId);
-			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__STATUS_ID, oldStatusId, statusId));
-			}
-		}
-		return statusId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusItem basicGetStatusId() {
-		return statusId;
+		return (StatusItem)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__STATUS_ID, true);
 	}
 
 	/**
@@ -474,10 +225,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
-		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__STATUS_ID, oldStatusId, statusId));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__STATUS_ID, newStatusId);
 	}
 
 	/**
@@ -487,24 +235,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public InventoryItem getInventoryItemId() {
-		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
-			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
-			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
-			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
-			}
-		}
-		return inventoryItemId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InventoryItem basicGetInventoryItemId() {
-		return inventoryItemId;
+		return (InventoryItem)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__INVENTORY_ITEM_ID, true);
 	}
 
 	/**
@@ -514,10 +245,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
-		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__INVENTORY_ITEM_ID, newInventoryItemId);
 	}
 
 	/**
@@ -527,24 +255,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public Facility getFacilityId() {
-		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
-			InternalEObject oldFacilityId = (InternalEObject)facilityId;
-			facilityId = (Facility)eResolveProxy(oldFacilityId);
-			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID, oldFacilityId, facilityId));
-			}
-		}
-		return facilityId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Facility basicGetFacilityId() {
-		return facilityId;
+		return (Facility)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__FACILITY_ID, true);
 	}
 
 	/**
@@ -554,10 +265,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
-		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID, oldFacilityId, facilityId));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__FACILITY_ID, newFacilityId);
 	}
 
 	/**
@@ -567,24 +275,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public org.abchip.mimo.biz.product.facility.Container getContainerId() {
-		if (containerId != null && ((EObject)containerId).eIsProxy()) {
-			InternalEObject oldContainerId = (InternalEObject)containerId;
-			containerId = (org.abchip.mimo.biz.product.facility.Container)eResolveProxy(oldContainerId);
-			if (containerId != oldContainerId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID, oldContainerId, containerId));
-			}
-		}
-		return containerId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.abchip.mimo.biz.product.facility.Container basicGetContainerId() {
-		return containerId;
+		return (org.abchip.mimo.biz.product.facility.Container)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__CONTAINER_ID, true);
 	}
 
 	/**
@@ -594,10 +285,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setContainerId(org.abchip.mimo.biz.product.facility.Container newContainerId) {
-		org.abchip.mimo.biz.product.facility.Container oldContainerId = containerId;
-		containerId = newContainerId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID, oldContainerId, containerId));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__CONTAINER_ID, newContainerId);
 	}
 
 	/**
@@ -607,24 +295,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public Facility getFacilityIdTo() {
-		if (facilityIdTo != null && ((EObject)facilityIdTo).eIsProxy()) {
-			InternalEObject oldFacilityIdTo = (InternalEObject)facilityIdTo;
-			facilityIdTo = (Facility)eResolveProxy(oldFacilityIdTo);
-			if (facilityIdTo != oldFacilityIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO, oldFacilityIdTo, facilityIdTo));
-			}
-		}
-		return facilityIdTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Facility basicGetFacilityIdTo() {
-		return facilityIdTo;
+		return (Facility)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__FACILITY_ID_TO, true);
 	}
 
 	/**
@@ -634,10 +305,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setFacilityIdTo(Facility newFacilityIdTo) {
-		Facility oldFacilityIdTo = facilityIdTo;
-		facilityIdTo = newFacilityIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO, oldFacilityIdTo, facilityIdTo));
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__FACILITY_ID_TO, newFacilityIdTo);
 	}
 
 	/**
@@ -647,24 +315,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public org.abchip.mimo.biz.product.facility.Container getContainerIdTo() {
-		if (containerIdTo != null && ((EObject)containerIdTo).eIsProxy()) {
-			InternalEObject oldContainerIdTo = (InternalEObject)containerIdTo;
-			containerIdTo = (org.abchip.mimo.biz.product.facility.Container)eResolveProxy(oldContainerIdTo);
-			if (containerIdTo != oldContainerIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO, oldContainerIdTo, containerIdTo));
-			}
-		}
-		return containerIdTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.abchip.mimo.biz.product.facility.Container basicGetContainerIdTo() {
-		return containerIdTo;
+		return (org.abchip.mimo.biz.product.facility.Container)eGet(InventoryPackage.Literals.INVENTORY_TRANSFER__CONTAINER_ID_TO, true);
 	}
 
 	/**
@@ -674,221 +325,7 @@ public class InventoryTransferImpl extends BizEntityImpl implements InventoryTra
 	 */
 	@Override
 	public void setContainerIdTo(org.abchip.mimo.biz.product.facility.Container newContainerIdTo) {
-		org.abchip.mimo.biz.product.facility.Container oldContainerIdTo = containerIdTo;
-		containerIdTo = newContainerIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO, oldContainerIdTo, containerIdTo));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID:
-				return getInventoryTransferId();
-			case InventoryPackage.INVENTORY_TRANSFER__COMMENTS:
-				return getComments();
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID:
-				return getLocationSeqId();
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO:
-				return getLocationSeqIdTo();
-			case InventoryPackage.INVENTORY_TRANSFER__RECEIVE_DATE:
-				return getReceiveDate();
-			case InventoryPackage.INVENTORY_TRANSFER__SEND_DATE:
-				return getSendDate();
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID:
-				if (resolve) return getInventoryItemId();
-				return basicGetInventoryItemId();
-			case InventoryPackage.INVENTORY_TRANSFER__STATUS_ID:
-				if (resolve) return getStatusId();
-				return basicGetStatusId();
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID:
-				if (resolve) return getFacilityId();
-				return basicGetFacilityId();
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID:
-				if (resolve) return getContainerId();
-				return basicGetContainerId();
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO:
-				if (resolve) return getFacilityIdTo();
-				return basicGetFacilityIdTo();
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO:
-				if (resolve) return getContainerIdTo();
-				return basicGetContainerIdTo();
-			case InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID:
-				if (resolve) return getItemIssuanceId();
-				return basicGetItemIssuanceId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID:
-				setInventoryTransferId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__COMMENTS:
-				setComments((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID:
-				setLocationSeqId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO:
-				setLocationSeqIdTo((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__RECEIVE_DATE:
-				setReceiveDate((Date)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__SEND_DATE:
-				setSendDate((Date)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID:
-				setInventoryItemId((InventoryItem)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__STATUS_ID:
-				setStatusId((StatusItem)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID:
-				setFacilityId((Facility)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID:
-				setContainerId((org.abchip.mimo.biz.product.facility.Container)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO:
-				setFacilityIdTo((Facility)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO:
-				setContainerIdTo((org.abchip.mimo.biz.product.facility.Container)newValue);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID:
-				setItemIssuanceId((ItemIssuance)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID:
-				setInventoryTransferId(INVENTORY_TRANSFER_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__COMMENTS:
-				setComments(COMMENTS_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID:
-				setLocationSeqId(LOCATION_SEQ_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO:
-				setLocationSeqIdTo(LOCATION_SEQ_ID_TO_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__RECEIVE_DATE:
-				setReceiveDate(RECEIVE_DATE_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__SEND_DATE:
-				setSendDate(SEND_DATE_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID:
-				setInventoryItemId((InventoryItem)null);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__STATUS_ID:
-				setStatusId((StatusItem)null);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID:
-				setFacilityId((Facility)null);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID:
-				setContainerId((org.abchip.mimo.biz.product.facility.Container)null);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO:
-				setFacilityIdTo((Facility)null);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO:
-				setContainerIdTo((org.abchip.mimo.biz.product.facility.Container)null);
-				return;
-			case InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID:
-				setItemIssuanceId((ItemIssuance)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_TRANSFER_ID:
-				return INVENTORY_TRANSFER_ID_EDEFAULT == null ? inventoryTransferId != null : !INVENTORY_TRANSFER_ID_EDEFAULT.equals(inventoryTransferId);
-			case InventoryPackage.INVENTORY_TRANSFER__COMMENTS:
-				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID:
-				return LOCATION_SEQ_ID_EDEFAULT == null ? locationSeqId != null : !LOCATION_SEQ_ID_EDEFAULT.equals(locationSeqId);
-			case InventoryPackage.INVENTORY_TRANSFER__LOCATION_SEQ_ID_TO:
-				return LOCATION_SEQ_ID_TO_EDEFAULT == null ? locationSeqIdTo != null : !LOCATION_SEQ_ID_TO_EDEFAULT.equals(locationSeqIdTo);
-			case InventoryPackage.INVENTORY_TRANSFER__RECEIVE_DATE:
-				return RECEIVE_DATE_EDEFAULT == null ? receiveDate != null : !RECEIVE_DATE_EDEFAULT.equals(receiveDate);
-			case InventoryPackage.INVENTORY_TRANSFER__SEND_DATE:
-				return SEND_DATE_EDEFAULT == null ? sendDate != null : !SEND_DATE_EDEFAULT.equals(sendDate);
-			case InventoryPackage.INVENTORY_TRANSFER__INVENTORY_ITEM_ID:
-				return inventoryItemId != null;
-			case InventoryPackage.INVENTORY_TRANSFER__STATUS_ID:
-				return statusId != null;
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID:
-				return facilityId != null;
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID:
-				return containerId != null;
-			case InventoryPackage.INVENTORY_TRANSFER__FACILITY_ID_TO:
-				return facilityIdTo != null;
-			case InventoryPackage.INVENTORY_TRANSFER__CONTAINER_ID_TO:
-				return containerIdTo != null;
-			case InventoryPackage.INVENTORY_TRANSFER__ITEM_ISSUANCE_ID:
-				return itemIssuanceId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (inventoryTransferId: ");
-		result.append(inventoryTransferId);
-		result.append(", comments: ");
-		result.append(comments);
-		result.append(", locationSeqId: ");
-		result.append(locationSeqId);
-		result.append(", locationSeqIdTo: ");
-		result.append(locationSeqIdTo);
-		result.append(", receiveDate: ");
-		result.append(receiveDate);
-		result.append(", sendDate: ");
-		result.append(sendDate);
-		result.append(')');
-		return result.toString();
+		eSet(InventoryPackage.Literals.INVENTORY_TRANSFER__CONTAINER_ID_TO, newContainerIdTo);
 	}
 
 } //InventoryTransferImpl

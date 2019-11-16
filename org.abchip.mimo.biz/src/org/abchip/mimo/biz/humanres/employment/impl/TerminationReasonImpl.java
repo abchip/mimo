@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.TerminationReason;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,46 +31,6 @@ public class TerminationReasonImpl extends BizEntityImpl implements TerminationR
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getTerminationReasonId() <em>Termination Reason Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTerminationReasonId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TERMINATION_REASON_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTerminationReasonId() <em>Termination Reason Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTerminationReasonId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String terminationReasonId = TERMINATION_REASON_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +58,7 @@ public class TerminationReasonImpl extends BizEntityImpl implements TerminationR
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(EmploymentPackage.Literals.TERMINATION_REASON__DESCRIPTION, true);
 	}
 
 	/**
@@ -110,10 +68,7 @@ public class TerminationReasonImpl extends BizEntityImpl implements TerminationR
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.TERMINATION_REASON__DESCRIPTION, oldDescription, description));
+		eSet(EmploymentPackage.Literals.TERMINATION_REASON__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -123,7 +78,7 @@ public class TerminationReasonImpl extends BizEntityImpl implements TerminationR
 	 */
 	@Override
 	public String getTerminationReasonId() {
-		return terminationReasonId;
+		return (String)eGet(EmploymentPackage.Literals.TERMINATION_REASON__TERMINATION_REASON_ID, true);
 	}
 
 	/**
@@ -133,96 +88,7 @@ public class TerminationReasonImpl extends BizEntityImpl implements TerminationR
 	 */
 	@Override
 	public void setTerminationReasonId(String newTerminationReasonId) {
-		String oldTerminationReasonId = terminationReasonId;
-		terminationReasonId = newTerminationReasonId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.TERMINATION_REASON__TERMINATION_REASON_ID, oldTerminationReasonId, terminationReasonId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case EmploymentPackage.TERMINATION_REASON__TERMINATION_REASON_ID:
-				return getTerminationReasonId();
-			case EmploymentPackage.TERMINATION_REASON__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case EmploymentPackage.TERMINATION_REASON__TERMINATION_REASON_ID:
-				setTerminationReasonId((String)newValue);
-				return;
-			case EmploymentPackage.TERMINATION_REASON__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case EmploymentPackage.TERMINATION_REASON__TERMINATION_REASON_ID:
-				setTerminationReasonId(TERMINATION_REASON_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.TERMINATION_REASON__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case EmploymentPackage.TERMINATION_REASON__TERMINATION_REASON_ID:
-				return TERMINATION_REASON_ID_EDEFAULT == null ? terminationReasonId != null : !TERMINATION_REASON_ID_EDEFAULT.equals(terminationReasonId);
-			case EmploymentPackage.TERMINATION_REASON__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (terminationReasonId: ");
-		result.append(terminationReasonId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(EmploymentPackage.Literals.TERMINATION_REASON__TERMINATION_REASON_ID, newTerminationReasonId);
 	}
 
 } //TerminationReasonImpl

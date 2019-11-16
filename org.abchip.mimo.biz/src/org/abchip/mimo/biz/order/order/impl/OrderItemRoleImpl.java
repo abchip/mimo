@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.order.order.OrderItemRole;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,56 +36,6 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ITEM_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderHeader orderId;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoleType roleTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,24 +63,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public OrderHeader getOrderId() {
-		if (orderId != null && ((EObject)orderId).eIsProxy()) {
-			InternalEObject oldOrderId = (InternalEObject)orderId;
-			orderId = (OrderHeader)eResolveProxy(oldOrderId);
-			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ROLE__ORDER_ID, oldOrderId, orderId));
-			}
-		}
-		return orderId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderHeader basicGetOrderId() {
-		return orderId;
+		return (OrderHeader)eGet(OrderPackage.Literals.ORDER_ITEM_ROLE__ORDER_ID, true);
 	}
 
 	/**
@@ -145,10 +73,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
-		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__ORDER_ID, oldOrderId, orderId));
+		eSet(OrderPackage.Literals.ORDER_ITEM_ROLE__ORDER_ID, newOrderId);
 	}
 
 	/**
@@ -158,7 +83,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public String getOrderItemSeqId() {
-		return orderItemSeqId;
+		return (String)eGet(OrderPackage.Literals.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -168,10 +93,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
-		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
+		eSet(OrderPackage.Literals.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID, newOrderItemSeqId);
 	}
 
 	/**
@@ -181,24 +103,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ROLE__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(OrderPackage.Literals.ORDER_ITEM_ROLE__PARTY_ID, true);
 	}
 
 	/**
@@ -208,10 +113,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__PARTY_ID, oldPartyId, partyId));
+		eSet(OrderPackage.Literals.ORDER_ITEM_ROLE__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -221,24 +123,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public RoleType getRoleTypeId() {
-		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
-			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
-			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
-			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
-			}
-		}
-		return roleTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleType basicGetRoleTypeId() {
-		return roleTypeId;
+		return (RoleType)eGet(OrderPackage.Literals.ORDER_ITEM_ROLE__ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -248,117 +133,7 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
-		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID:
-				return getOrderItemSeqId();
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ID:
-				if (resolve) return getOrderId();
-				return basicGetOrderId();
-			case OrderPackage.ORDER_ITEM_ROLE__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-			case OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID:
-				if (resolve) return getRoleTypeId();
-				return basicGetRoleTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID:
-				setOrderItemSeqId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ID:
-				setOrderId((OrderHeader)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_ROLE__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID:
-				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ID:
-				setOrderId((OrderHeader)null);
-				return;
-			case OrderPackage.ORDER_ITEM_ROLE__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-			case OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID:
-				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case OrderPackage.ORDER_ITEM_ROLE__ORDER_ID:
-				return orderId != null;
-			case OrderPackage.ORDER_ITEM_ROLE__PARTY_ID:
-				return partyId != null;
-			case OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID:
-				return roleTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderItemSeqId: ");
-		result.append(orderItemSeqId);
-		result.append(')');
-		return result.toString();
+		eSet(OrderPackage.Literals.ORDER_ITEM_ROLE__ROLE_TYPE_ID, newRoleTypeId);
 	}
 
 } //OrderItemRoleImpl

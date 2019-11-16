@@ -18,11 +18,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,97 +45,6 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAverageCost() <em>Average Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAverageCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal AVERAGE_COST_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAverageCost() <em>Average Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAverageCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal averageCost = AVERAGE_COST_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getProductAverageCostTypeId() <em>Product Average Cost Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductAverageCostTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductAverageCostType productAverageCostTypeId;
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party organizationPartyId;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Facility facilityId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -165,7 +70,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public BigDecimal getAverageCost() {
-		return averageCost;
+		return (BigDecimal)eGet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__AVERAGE_COST, true);
 	}
 
 	/**
@@ -175,10 +80,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public void setAverageCost(BigDecimal newAverageCost) {
-		BigDecimal oldAverageCost = averageCost;
-		averageCost = newAverageCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PRODUCT_AVERAGE_COST__AVERAGE_COST, oldAverageCost, averageCost));
+		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__AVERAGE_COST, newAverageCost);
 	}
 
 	/**
@@ -188,24 +90,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public Facility getFacilityId() {
-		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
-			InternalEObject oldFacilityId = (InternalEObject)facilityId;
-			facilityId = (Facility)eResolveProxy(oldFacilityId);
-			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PRODUCT_AVERAGE_COST__FACILITY_ID, oldFacilityId, facilityId));
-			}
-		}
-		return facilityId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Facility basicGetFacilityId() {
-		return facilityId;
+		return (Facility)eGet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__FACILITY_ID, true);
 	}
 
 	/**
@@ -215,10 +100,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
-		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PRODUCT_AVERAGE_COST__FACILITY_ID, oldFacilityId, facilityId));
+		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__FACILITY_ID, newFacilityId);
 	}
 
 	/**
@@ -228,7 +110,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__FROM_DATE, true);
 	}
 
 	/**
@@ -238,10 +120,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PRODUCT_AVERAGE_COST__FROM_DATE, oldFromDate, fromDate));
+		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -251,24 +130,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public Party getOrganizationPartyId() {
-		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
-			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
-			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
-			if (organizationPartyId != oldOrganizationPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
-			}
-		}
-		return organizationPartyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetOrganizationPartyId() {
-		return organizationPartyId;
+		return (Party)eGet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID, true);
 	}
 
 	/**
@@ -278,10 +140,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
-		Party oldOrganizationPartyId = organizationPartyId;
-		organizationPartyId = newOrganizationPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID, newOrganizationPartyId);
 	}
 
 	/**
@@ -291,24 +150,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__PRODUCT_ID, true);
 	}
 
 	/**
@@ -318,10 +160,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_ID, oldProductId, productId));
+		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__PRODUCT_ID, newProductId);
 	}
 
 	/**
@@ -331,7 +170,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__THRU_DATE, true);
 	}
 
 	/**
@@ -341,10 +180,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PRODUCT_AVERAGE_COST__THRU_DATE, oldThruDate, thruDate));
+		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -354,24 +190,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public ProductAverageCostType getProductAverageCostTypeId() {
-		if (productAverageCostTypeId != null && ((EObject)productAverageCostTypeId).eIsProxy()) {
-			InternalEObject oldProductAverageCostTypeId = (InternalEObject)productAverageCostTypeId;
-			productAverageCostTypeId = (ProductAverageCostType)eResolveProxy(oldProductAverageCostTypeId);
-			if (productAverageCostTypeId != oldProductAverageCostTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID, oldProductAverageCostTypeId, productAverageCostTypeId));
-			}
-		}
-		return productAverageCostTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductAverageCostType basicGetProductAverageCostTypeId() {
-		return productAverageCostTypeId;
+		return (ProductAverageCostType)eGet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID, true);
 	}
 
 	/**
@@ -381,152 +200,7 @@ public class ProductAverageCostImpl extends BizEntityTypedImpl<ProductAverageCos
 	 */
 	@Override
 	public void setProductAverageCostTypeId(ProductAverageCostType newProductAverageCostTypeId) {
-		ProductAverageCostType oldProductAverageCostTypeId = productAverageCostTypeId;
-		productAverageCostTypeId = newProductAverageCostTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID, oldProductAverageCostTypeId, productAverageCostTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FROM_DATE:
-				return getFromDate();
-			case LedgerPackage.PRODUCT_AVERAGE_COST__AVERAGE_COST:
-				return getAverageCost();
-			case LedgerPackage.PRODUCT_AVERAGE_COST__THRU_DATE:
-				return getThruDate();
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID:
-				if (resolve) return getProductAverageCostTypeId();
-				return basicGetProductAverageCostTypeId();
-			case LedgerPackage.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID:
-				if (resolve) return getOrganizationPartyId();
-				return basicGetOrganizationPartyId();
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FACILITY_ID:
-				if (resolve) return getFacilityId();
-				return basicGetFacilityId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__AVERAGE_COST:
-				setAverageCost((BigDecimal)newValue);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID:
-				setProductAverageCostTypeId((ProductAverageCostType)newValue);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((Party)newValue);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FACILITY_ID:
-				setFacilityId((Facility)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__AVERAGE_COST:
-				setAverageCost(AVERAGE_COST_EDEFAULT);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID:
-				setProductAverageCostTypeId((ProductAverageCostType)null);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((Party)null);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FACILITY_ID:
-				setFacilityId((Facility)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case LedgerPackage.PRODUCT_AVERAGE_COST__AVERAGE_COST:
-				return AVERAGE_COST_EDEFAULT == null ? averageCost != null : !AVERAGE_COST_EDEFAULT.equals(averageCost);
-			case LedgerPackage.PRODUCT_AVERAGE_COST__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID:
-				return productAverageCostTypeId != null;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__ORGANIZATION_PARTY_ID:
-				return organizationPartyId != null;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__PRODUCT_ID:
-				return productId != null;
-			case LedgerPackage.PRODUCT_AVERAGE_COST__FACILITY_ID:
-				return facilityId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", averageCost: ");
-		result.append(averageCost);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST__PRODUCT_AVERAGE_COST_TYPE_ID, newProductAverageCostTypeId);
 	}
 
 } //ProductAverageCostImpl

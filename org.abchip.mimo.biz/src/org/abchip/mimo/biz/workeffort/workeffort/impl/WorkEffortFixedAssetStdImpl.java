@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,86 +38,6 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEstimatedCost() <em>Estimated Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimatedCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal ESTIMATED_COST_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEstimatedCost() <em>Estimated Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimatedCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal estimatedCost = ESTIMATED_COST_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEstimatedDuration() <em>Estimated Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimatedDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double ESTIMATED_DURATION_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getEstimatedDuration() <em>Estimated Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimatedDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected double estimatedDuration = ESTIMATED_DURATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEstimatedQuantity() <em>Estimated Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimatedQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double ESTIMATED_QUANTITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getEstimatedQuantity() <em>Estimated Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimatedQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double estimatedQuantity = ESTIMATED_QUANTITY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected WorkEffort workEffortId;
-
-	/**
-	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FixedAssetType fixedAssetTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,7 +65,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public BigDecimal getEstimatedCost() {
-		return estimatedCost;
+		return (BigDecimal)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST, true);
 	}
 
 	/**
@@ -160,10 +75,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedCost(BigDecimal newEstimatedCost) {
-		BigDecimal oldEstimatedCost = estimatedCost;
-		estimatedCost = newEstimatedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST, oldEstimatedCost, estimatedCost));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST, newEstimatedCost);
 	}
 
 	/**
@@ -173,7 +85,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public double getEstimatedDuration() {
-		return estimatedDuration;
+		return (Double)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION, true);
 	}
 
 	/**
@@ -183,10 +95,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedDuration(double newEstimatedDuration) {
-		double oldEstimatedDuration = estimatedDuration;
-		estimatedDuration = newEstimatedDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION, oldEstimatedDuration, estimatedDuration));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION, newEstimatedDuration);
 	}
 
 	/**
@@ -196,7 +105,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public double getEstimatedQuantity() {
-		return estimatedQuantity;
+		return (Double)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY, true);
 	}
 
 	/**
@@ -206,10 +115,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedQuantity(double newEstimatedQuantity) {
-		double oldEstimatedQuantity = estimatedQuantity;
-		estimatedQuantity = newEstimatedQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY, oldEstimatedQuantity, estimatedQuantity));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY, newEstimatedQuantity);
 	}
 
 	/**
@@ -219,24 +125,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public FixedAssetType getFixedAssetTypeId() {
-		if (fixedAssetTypeId != null && ((EObject)fixedAssetTypeId).eIsProxy()) {
-			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
-			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
-			if (fixedAssetTypeId != oldFixedAssetTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
-			}
-		}
-		return fixedAssetTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FixedAssetType basicGetFixedAssetTypeId() {
-		return fixedAssetTypeId;
+		return (FixedAssetType)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID, true);
 	}
 
 	/**
@@ -246,10 +135,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
-		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
-		fixedAssetTypeId = newFixedAssetTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID, newFixedAssetTypeId);
 	}
 
 	/**
@@ -259,24 +145,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public WorkEffort getWorkEffortId() {
-		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
-			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
-			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
-			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-			}
-		}
-		return workEffortId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkEffort basicGetWorkEffortId() {
-		return workEffortId;
+		return (WorkEffort)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, true);
 	}
 
 	/**
@@ -286,130 +155,7 @@ public class WorkEffortFixedAssetStdImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
-		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
-				return getEstimatedCost();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION:
-				return getEstimatedDuration();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
-				return getEstimatedQuantity();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				if (resolve) return getWorkEffortId();
-				return basicGetWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
-				if (resolve) return getFixedAssetTypeId();
-				return basicGetFixedAssetTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
-				setEstimatedCost((BigDecimal)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION:
-				setEstimatedDuration((Double)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
-				setEstimatedQuantity((Double)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId((FixedAssetType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
-				setEstimatedCost(ESTIMATED_COST_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION:
-				setEstimatedDuration(ESTIMATED_DURATION_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
-				setEstimatedQuantity(ESTIMATED_QUANTITY_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)null);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId((FixedAssetType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_COST:
-				return ESTIMATED_COST_EDEFAULT == null ? estimatedCost != null : !ESTIMATED_COST_EDEFAULT.equals(estimatedCost);
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_DURATION:
-				return estimatedDuration != ESTIMATED_DURATION_EDEFAULT;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__ESTIMATED_QUANTITY:
-				return estimatedQuantity != ESTIMATED_QUANTITY_EDEFAULT;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID:
-				return workEffortId != null;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_STD__FIXED_ASSET_TYPE_ID:
-				return fixedAssetTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (estimatedCost: ");
-		result.append(estimatedCost);
-		result.append(", estimatedDuration: ");
-		result.append(estimatedDuration);
-		result.append(", estimatedQuantity: ");
-		result.append(estimatedQuantity);
-		result.append(')');
-		return result.toString();
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_STD__WORK_EFFORT_ID, newWorkEffortId);
 	}
 
 } //WorkEffortFixedAssetStdImpl

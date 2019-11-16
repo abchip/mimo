@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.OAuth2Google;
 import org.abchip.mimo.biz.passport.PassportPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,156 +42,6 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getClientId() <em>Client Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClientId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CLIENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getClientId() <em>Client Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClientId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String clientId = CLIENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getClientSecret() <em>Client Secret</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClientSecret()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CLIENT_SECRET_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getClientSecret() <em>Client Secret</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClientSecret()
-	 * @generated
-	 * @ordered
-	 */
-	protected String clientSecret = CLIENT_SECRET_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIconUrl() <em>Icon Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIconUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ICON_URL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIconUrl() <em>Icon Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIconUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected String iconUrl = ICON_URL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLocalRedirectUri() <em>Local Redirect Uri</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocalRedirectUri()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOCAL_REDIRECT_URI_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLocalRedirectUri() <em>Local Redirect Uri</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocalRedirectUri()
-	 * @generated
-	 * @ordered
-	 */
-	protected String localRedirectUri = LOCAL_REDIRECT_URI_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReturnUrl() <em>Return Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_URL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnUrl() <em>Return Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnUrl = RETURN_URL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductStore productStoreId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -222,24 +67,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public ProductStore getProductStoreId() {
-		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
-			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
-			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
-			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.OAUTH2_GOOGLE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
-			}
-		}
-		return productStoreId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductStore basicGetProductStoreId() {
-		return productStoreId;
+		return (ProductStore)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__PRODUCT_STORE_ID, true);
 	}
 
 	/**
@@ -249,10 +77,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
-		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__PRODUCT_STORE_ID, newProductStoreId);
 	}
 
 	/**
@@ -262,7 +87,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__FROM_DATE, true);
 	}
 
 	/**
@@ -272,10 +97,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__FROM_DATE, oldFromDate, fromDate));
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -285,7 +107,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public String getClientId() {
-		return clientId;
+		return (String)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__CLIENT_ID, true);
 	}
 
 	/**
@@ -295,10 +117,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setClientId(String newClientId) {
-		String oldClientId = clientId;
-		clientId = newClientId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__CLIENT_ID, oldClientId, clientId));
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__CLIENT_ID, newClientId);
 	}
 
 	/**
@@ -308,7 +127,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public String getClientSecret() {
-		return clientSecret;
+		return (String)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__CLIENT_SECRET, true);
 	}
 
 	/**
@@ -318,10 +137,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setClientSecret(String newClientSecret) {
-		String oldClientSecret = clientSecret;
-		clientSecret = newClientSecret;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__CLIENT_SECRET, oldClientSecret, clientSecret));
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__CLIENT_SECRET, newClientSecret);
 	}
 
 	/**
@@ -331,7 +147,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public String getIconUrl() {
-		return iconUrl;
+		return (String)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__ICON_URL, true);
 	}
 
 	/**
@@ -341,10 +157,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setIconUrl(String newIconUrl) {
-		String oldIconUrl = iconUrl;
-		iconUrl = newIconUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__ICON_URL, oldIconUrl, iconUrl));
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__ICON_URL, newIconUrl);
 	}
 
 	/**
@@ -354,7 +167,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public String getLocalRedirectUri() {
-		return localRedirectUri;
+		return (String)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__LOCAL_REDIRECT_URI, true);
 	}
 
 	/**
@@ -364,10 +177,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setLocalRedirectUri(String newLocalRedirectUri) {
-		String oldLocalRedirectUri = localRedirectUri;
-		localRedirectUri = newLocalRedirectUri;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__LOCAL_REDIRECT_URI, oldLocalRedirectUri, localRedirectUri));
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__LOCAL_REDIRECT_URI, newLocalRedirectUri);
 	}
 
 	/**
@@ -377,7 +187,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public String getReturnUrl() {
-		return returnUrl;
+		return (String)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__RETURN_URL, true);
 	}
 
 	/**
@@ -387,10 +197,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setReturnUrl(String newReturnUrl) {
-		String oldReturnUrl = returnUrl;
-		returnUrl = newReturnUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__RETURN_URL, oldReturnUrl, returnUrl));
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__RETURN_URL, newReturnUrl);
 	}
 
 	/**
@@ -400,7 +207,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(PassportPackage.Literals.OAUTH2_GOOGLE__THRU_DATE, true);
 	}
 
 	/**
@@ -410,167 +217,7 @@ public class OAuth2GoogleImpl extends BizEntityImpl implements OAuth2Google {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GOOGLE__THRU_DATE, oldThruDate, thruDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PassportPackage.OAUTH2_GOOGLE__FROM_DATE:
-				return getFromDate();
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_ID:
-				return getClientId();
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_SECRET:
-				return getClientSecret();
-			case PassportPackage.OAUTH2_GOOGLE__ICON_URL:
-				return getIconUrl();
-			case PassportPackage.OAUTH2_GOOGLE__LOCAL_REDIRECT_URI:
-				return getLocalRedirectUri();
-			case PassportPackage.OAUTH2_GOOGLE__RETURN_URL:
-				return getReturnUrl();
-			case PassportPackage.OAUTH2_GOOGLE__THRU_DATE:
-				return getThruDate();
-			case PassportPackage.OAUTH2_GOOGLE__PRODUCT_STORE_ID:
-				if (resolve) return getProductStoreId();
-				return basicGetProductStoreId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PassportPackage.OAUTH2_GOOGLE__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_ID:
-				setClientId((String)newValue);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_SECRET:
-				setClientSecret((String)newValue);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__ICON_URL:
-				setIconUrl((String)newValue);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__LOCAL_REDIRECT_URI:
-				setLocalRedirectUri((String)newValue);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__RETURN_URL:
-				setReturnUrl((String)newValue);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PassportPackage.OAUTH2_GOOGLE__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_ID:
-				setClientId(CLIENT_ID_EDEFAULT);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_SECRET:
-				setClientSecret(CLIENT_SECRET_EDEFAULT);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__ICON_URL:
-				setIconUrl(ICON_URL_EDEFAULT);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__LOCAL_REDIRECT_URI:
-				setLocalRedirectUri(LOCAL_REDIRECT_URI_EDEFAULT);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__RETURN_URL:
-				setReturnUrl(RETURN_URL_EDEFAULT);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case PassportPackage.OAUTH2_GOOGLE__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PassportPackage.OAUTH2_GOOGLE__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_ID:
-				return CLIENT_ID_EDEFAULT == null ? clientId != null : !CLIENT_ID_EDEFAULT.equals(clientId);
-			case PassportPackage.OAUTH2_GOOGLE__CLIENT_SECRET:
-				return CLIENT_SECRET_EDEFAULT == null ? clientSecret != null : !CLIENT_SECRET_EDEFAULT.equals(clientSecret);
-			case PassportPackage.OAUTH2_GOOGLE__ICON_URL:
-				return ICON_URL_EDEFAULT == null ? iconUrl != null : !ICON_URL_EDEFAULT.equals(iconUrl);
-			case PassportPackage.OAUTH2_GOOGLE__LOCAL_REDIRECT_URI:
-				return LOCAL_REDIRECT_URI_EDEFAULT == null ? localRedirectUri != null : !LOCAL_REDIRECT_URI_EDEFAULT.equals(localRedirectUri);
-			case PassportPackage.OAUTH2_GOOGLE__RETURN_URL:
-				return RETURN_URL_EDEFAULT == null ? returnUrl != null : !RETURN_URL_EDEFAULT.equals(returnUrl);
-			case PassportPackage.OAUTH2_GOOGLE__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case PassportPackage.OAUTH2_GOOGLE__PRODUCT_STORE_ID:
-				return productStoreId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", clientId: ");
-		result.append(clientId);
-		result.append(", clientSecret: ");
-		result.append(clientSecret);
-		result.append(", iconUrl: ");
-		result.append(iconUrl);
-		result.append(", localRedirectUri: ");
-		result.append(localRedirectUri);
-		result.append(", returnUrl: ");
-		result.append(returnUrl);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(PassportPackage.Literals.OAUTH2_GOOGLE__THRU_DATE, newThruDate);
 	}
 
 } //OAuth2GoogleImpl

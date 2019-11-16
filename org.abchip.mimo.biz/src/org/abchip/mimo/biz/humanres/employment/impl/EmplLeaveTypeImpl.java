@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.humanres.employment.EmplLeave;
 import org.abchip.mimo.biz.humanres.employment.EmplLeaveType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,76 +36,6 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getLeaveTypeId() <em>Leave Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLeaveTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LEAVE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLeaveTypeId() <em>Leave Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLeaveTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String leaveTypeId = LEAVE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected EmplLeaveType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +63,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -148,10 +73,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -161,7 +83,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -171,10 +93,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -184,7 +103,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public String getLeaveTypeId() {
-		return leaveTypeId;
+		return (String)eGet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID, true);
 	}
 
 	/**
@@ -194,10 +113,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setLeaveTypeId(String newLeaveTypeId) {
-		String oldLeaveTypeId = leaveTypeId;
-		leaveTypeId = newLeaveTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID, oldLeaveTypeId, leaveTypeId));
+		eSet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID, newLeaveTypeId);
 	}
 
 	/**
@@ -207,24 +123,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public EmplLeaveType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (EmplLeaveType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EmplLeaveType basicGetParentTypeId() {
-		return parentTypeId;
+		return (EmplLeaveType)eGet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -234,10 +133,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 */
 	@Override
 	public void setParentTypeId(EmplLeaveType newParentTypeId) {
-		EmplLeaveType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -250,115 +146,6 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID:
-				return getLeaveTypeId();
-			case EmploymentPackage.EMPL_LEAVE_TYPE__DESCRIPTION:
-				return getDescription();
-			case EmploymentPackage.EMPL_LEAVE_TYPE__HAS_TABLE:
-				return isHasTable();
-			case EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID:
-				setLeaveTypeId((String)newValue);
-				return;
-			case EmploymentPackage.EMPL_LEAVE_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case EmploymentPackage.EMPL_LEAVE_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((EmplLeaveType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID:
-				setLeaveTypeId(LEAVE_TYPE_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.EMPL_LEAVE_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case EmploymentPackage.EMPL_LEAVE_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((EmplLeaveType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case EmploymentPackage.EMPL_LEAVE_TYPE__LEAVE_TYPE_ID:
-				return LEAVE_TYPE_ID_EDEFAULT == null ? leaveTypeId != null : !LEAVE_TYPE_ID_EDEFAULT.equals(leaveTypeId);
-			case EmploymentPackage.EMPL_LEAVE_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case EmploymentPackage.EMPL_LEAVE_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case EmploymentPackage.EMPL_LEAVE_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (leaveTypeId: ");
-		result.append(leaveTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EmplLeaveTypeImpl

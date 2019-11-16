@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,26 +34,6 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataResource dataResourceId;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductFeature productFeatureId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,24 +60,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public DataResource getDataResourceId() {
-		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
-			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
-			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
-			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-			}
-		}
-		return dataResourceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataResource basicGetDataResourceId() {
-		return dataResourceId;
+		return (DataResource)eGet(FeaturePackage.Literals.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -111,10 +70,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
-		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+		eSet(FeaturePackage.Literals.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 
 	/**
@@ -124,24 +80,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public ProductFeature getProductFeatureId() {
-		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
-			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
-			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
-			if (productFeatureId != oldProductFeatureId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
-			}
-		}
-		return productFeatureId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductFeature basicGetProductFeatureId() {
-		return productFeatureId;
+		return (ProductFeature)eGet(FeaturePackage.Literals.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, true);
 	}
 
 	/**
@@ -151,80 +90,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
-		ProductFeature oldProductFeatureId = productFeatureId;
-		productFeatureId = newProductFeatureId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				if (resolve) return getDataResourceId();
-				return basicGetDataResourceId();
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				if (resolve) return getProductFeatureId();
-				return basicGetProductFeatureId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)newValue);
-				return;
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				setProductFeatureId((ProductFeature)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)null);
-				return;
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				setProductFeatureId((ProductFeature)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return dataResourceId != null;
-			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				return productFeatureId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(FeaturePackage.Literals.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, newProductFeatureId);
 	}
 
 } //ProductFeatureDataResourceImpl

@@ -12,12 +12,7 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourcePurpose;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,26 +34,6 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataResource dataResourceId;
-
-	/**
-	 * The cached value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ContentPurposeType contentPurposeTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,24 +60,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 */
 	@Override
 	public ContentPurposeType getContentPurposeTypeId() {
-		if (contentPurposeTypeId != null && ((EObject)contentPurposeTypeId).eIsProxy()) {
-			InternalEObject oldContentPurposeTypeId = (InternalEObject)contentPurposeTypeId;
-			contentPurposeTypeId = (ContentPurposeType)eResolveProxy(oldContentPurposeTypeId);
-			if (contentPurposeTypeId != oldContentPurposeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
-			}
-		}
-		return contentPurposeTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContentPurposeType basicGetContentPurposeTypeId() {
-		return contentPurposeTypeId;
+		return (ContentPurposeType)eGet(DataPackage.Literals.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, true);
 	}
 
 	/**
@@ -112,10 +70,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 */
 	@Override
 	public void setContentPurposeTypeId(ContentPurposeType newContentPurposeTypeId) {
-		ContentPurposeType oldContentPurposeTypeId = contentPurposeTypeId;
-		contentPurposeTypeId = newContentPurposeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
+		eSet(DataPackage.Literals.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, newContentPurposeTypeId);
 	}
 
 	/**
@@ -125,24 +80,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 */
 	@Override
 	public DataResource getDataResourceId() {
-		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
-			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
-			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
-			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-			}
-		}
-		return dataResourceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataResource basicGetDataResourceId() {
-		return dataResourceId;
+		return (DataResource)eGet(DataPackage.Literals.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -152,80 +90,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
-		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID:
-				if (resolve) return getDataResourceId();
-				return basicGetDataResourceId();
-			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				if (resolve) return getContentPurposeTypeId();
-				return basicGetContentPurposeTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				setContentPurposeTypeId((ContentPurposeType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)null);
-				return;
-			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				setContentPurposeTypeId((ContentPurposeType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID:
-				return dataResourceId != null;
-			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				return contentPurposeTypeId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(DataPackage.Literals.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 
 } //DataResourcePurposeImpl

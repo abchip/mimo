@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -118,13 +119,31 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE__TYPE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Planets</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE__PLANETS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Planets Cont</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE__PLANETS_CONT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Language</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int LANGUAGE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguageExpressionImpl <em>Expression</em>}' class.
@@ -155,10 +174,10 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE_EXPRESSION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguageManagerImpl <em>Manager</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageManager <em>Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.language.impl.LanguageManagerImpl
+	 * @see org.abchip.mimo.language.LanguageManager
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageManager()
 	 * @generated
 	 */
@@ -250,6 +269,34 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE_LINEARIZER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguagePlanetImpl <em>Planet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.language.impl.LanguagePlanetImpl
+	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguagePlanet()
+	 * @generated
+	 */
+	int LANGUAGE_PLANET = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PLANET__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Planet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PLANET_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,7 +304,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageScope()
 	 * @generated
 	 */
-	int LANGUAGE_SCOPE = 7;
+	int LANGUAGE_SCOPE = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageType <em>Type</em>}' enum.
@@ -267,7 +314,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageType()
 	 * @generated
 	 */
-	int LANGUAGE_TYPE = 8;
+	int LANGUAGE_TYPE = 9;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.language.Language <em>Language</em>}'.
@@ -333,6 +380,28 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLanguage_Type();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.language.Language#getPlanets <em>Planets</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Planets</em>'.
+	 * @see org.abchip.mimo.language.Language#getPlanets()
+	 * @see #getLanguage()
+	 * @generated
+	 */
+	EReference getLanguage_Planets();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.language.Language#getPlanetsCont <em>Planets Cont</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Planets Cont</em>'.
+	 * @see org.abchip.mimo.language.Language#getPlanetsCont()
+	 * @see #getLanguage()
+	 * @generated
+	 */
+	EReference getLanguage_PlanetsCont();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.language.LanguageExpression <em>Expression</em>}'.
@@ -404,6 +473,27 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLanguageLinearizerRegistry();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.language.LanguagePlanet <em>Planet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Planet</em>'.
+	 * @see org.abchip.mimo.language.LanguagePlanet
+	 * @generated
+	 */
+	EClass getLanguagePlanet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.language.LanguagePlanet#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.language.LanguagePlanet#getName()
+	 * @see #getLanguagePlanet()
+	 * @generated
+	 */
+	EAttribute getLanguagePlanet_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}'.
@@ -492,6 +582,20 @@ public interface LanguagePackage extends EPackage {
 		 */
 		EAttribute LANGUAGE__TYPE = eINSTANCE.getLanguage_Type();
 		/**
+		 * The meta object literal for the '<em><b>Planets</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE__PLANETS = eINSTANCE.getLanguage_Planets();
+		/**
+		 * The meta object literal for the '<em><b>Planets Cont</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE__PLANETS_CONT = eINSTANCE.getLanguage_PlanetsCont();
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.language.impl.LanguageExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -508,10 +612,10 @@ public interface LanguagePackage extends EPackage {
 		 */
 		EAttribute LANGUAGE_EXPRESSION__EXPRESSION_ROW = eINSTANCE.getLanguageExpression_ExpressionRow();
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.language.impl.LanguageManagerImpl <em>Manager</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.language.LanguageManager <em>Manager</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.language.impl.LanguageManagerImpl
+		 * @see org.abchip.mimo.language.LanguageManager
 		 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageManager()
 		 * @generated
 		 */
@@ -552,6 +656,22 @@ public interface LanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass LANGUAGE_LINEARIZER_REGISTRY = eINSTANCE.getLanguageLinearizerRegistry();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.language.impl.LanguagePlanetImpl <em>Planet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.language.impl.LanguagePlanetImpl
+		 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguagePlanet()
+		 * @generated
+		 */
+		EClass LANGUAGE_PLANET = eINSTANCE.getLanguagePlanet();
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_PLANET__NAME = eINSTANCE.getLanguagePlanet_Name();
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.
 		 * <!-- begin-user-doc -->

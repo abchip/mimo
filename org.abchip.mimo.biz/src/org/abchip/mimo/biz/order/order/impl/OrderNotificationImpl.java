@@ -14,12 +14,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderNotification;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,86 +38,6 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getOrderNotificationId() <em>Order Notification Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderNotificationId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_NOTIFICATION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderNotificationId() <em>Order Notification Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderNotificationId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderNotificationId = ORDER_NOTIFICATION_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENTS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotificationDate() <em>Notification Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotificationDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date NOTIFICATION_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotificationDate() <em>Notification Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotificationDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date notificationDate = NOTIFICATION_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderHeader orderId;
-
-	/**
-	 * The cached value of the '{@link #getEmailType() <em>Email Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmailType()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration emailType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,7 +65,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public String getComments() {
-		return comments;
+		return (String)eGet(OrderPackage.Literals.ORDER_NOTIFICATION__COMMENTS, true);
 	}
 
 	/**
@@ -160,10 +75,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
-		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__COMMENTS, oldComments, comments));
+		eSet(OrderPackage.Literals.ORDER_NOTIFICATION__COMMENTS, newComments);
 	}
 
 	/**
@@ -173,24 +85,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public Enumeration getEmailType() {
-		if (emailType != null && ((EObject)emailType).eIsProxy()) {
-			InternalEObject oldEmailType = (InternalEObject)emailType;
-			emailType = (Enumeration)eResolveProxy(oldEmailType);
-			if (emailType != oldEmailType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE, oldEmailType, emailType));
-			}
-		}
-		return emailType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetEmailType() {
-		return emailType;
+		return (Enumeration)eGet(OrderPackage.Literals.ORDER_NOTIFICATION__EMAIL_TYPE, true);
 	}
 
 	/**
@@ -200,10 +95,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setEmailType(Enumeration newEmailType) {
-		Enumeration oldEmailType = emailType;
-		emailType = newEmailType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE, oldEmailType, emailType));
+		eSet(OrderPackage.Literals.ORDER_NOTIFICATION__EMAIL_TYPE, newEmailType);
 	}
 
 	/**
@@ -213,7 +105,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public Date getNotificationDate() {
-		return notificationDate;
+		return (Date)eGet(OrderPackage.Literals.ORDER_NOTIFICATION__NOTIFICATION_DATE, true);
 	}
 
 	/**
@@ -223,10 +115,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setNotificationDate(Date newNotificationDate) {
-		Date oldNotificationDate = notificationDate;
-		notificationDate = newNotificationDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__NOTIFICATION_DATE, oldNotificationDate, notificationDate));
+		eSet(OrderPackage.Literals.ORDER_NOTIFICATION__NOTIFICATION_DATE, newNotificationDate);
 	}
 
 	/**
@@ -236,24 +125,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public OrderHeader getOrderId() {
-		if (orderId != null && ((EObject)orderId).eIsProxy()) {
-			InternalEObject oldOrderId = (InternalEObject)orderId;
-			orderId = (OrderHeader)eResolveProxy(oldOrderId);
-			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_NOTIFICATION__ORDER_ID, oldOrderId, orderId));
-			}
-		}
-		return orderId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderHeader basicGetOrderId() {
-		return orderId;
+		return (OrderHeader)eGet(OrderPackage.Literals.ORDER_NOTIFICATION__ORDER_ID, true);
 	}
 
 	/**
@@ -263,10 +135,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
-		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__ORDER_ID, oldOrderId, orderId));
+		eSet(OrderPackage.Literals.ORDER_NOTIFICATION__ORDER_ID, newOrderId);
 	}
 
 	/**
@@ -276,7 +145,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public String getOrderNotificationId() {
-		return orderNotificationId;
+		return (String)eGet(OrderPackage.Literals.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID, true);
 	}
 
 	/**
@@ -286,130 +155,7 @@ public class OrderNotificationImpl extends BizEntityImpl implements OrderNotific
 	 */
 	@Override
 	public void setOrderNotificationId(String newOrderNotificationId) {
-		String oldOrderNotificationId = orderNotificationId;
-		orderNotificationId = newOrderNotificationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID, oldOrderNotificationId, orderNotificationId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID:
-				return getOrderNotificationId();
-			case OrderPackage.ORDER_NOTIFICATION__COMMENTS:
-				return getComments();
-			case OrderPackage.ORDER_NOTIFICATION__NOTIFICATION_DATE:
-				return getNotificationDate();
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_ID:
-				if (resolve) return getOrderId();
-				return basicGetOrderId();
-			case OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE:
-				if (resolve) return getEmailType();
-				return basicGetEmailType();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID:
-				setOrderNotificationId((String)newValue);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__COMMENTS:
-				setComments((String)newValue);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__NOTIFICATION_DATE:
-				setNotificationDate((Date)newValue);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_ID:
-				setOrderId((OrderHeader)newValue);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE:
-				setEmailType((Enumeration)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID:
-				setOrderNotificationId(ORDER_NOTIFICATION_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__COMMENTS:
-				setComments(COMMENTS_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__NOTIFICATION_DATE:
-				setNotificationDate(NOTIFICATION_DATE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_ID:
-				setOrderId((OrderHeader)null);
-				return;
-			case OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE:
-				setEmailType((Enumeration)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID:
-				return ORDER_NOTIFICATION_ID_EDEFAULT == null ? orderNotificationId != null : !ORDER_NOTIFICATION_ID_EDEFAULT.equals(orderNotificationId);
-			case OrderPackage.ORDER_NOTIFICATION__COMMENTS:
-				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case OrderPackage.ORDER_NOTIFICATION__NOTIFICATION_DATE:
-				return NOTIFICATION_DATE_EDEFAULT == null ? notificationDate != null : !NOTIFICATION_DATE_EDEFAULT.equals(notificationDate);
-			case OrderPackage.ORDER_NOTIFICATION__ORDER_ID:
-				return orderId != null;
-			case OrderPackage.ORDER_NOTIFICATION__EMAIL_TYPE:
-				return emailType != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderNotificationId: ");
-		result.append(orderNotificationId);
-		result.append(", comments: ");
-		result.append(comments);
-		result.append(", notificationDate: ");
-		result.append(notificationDate);
-		result.append(')');
-		return result.toString();
+		eSet(OrderPackage.Literals.ORDER_NOTIFICATION__ORDER_NOTIFICATION_ID, newOrderNotificationId);
 	}
 
 } //OrderNotificationImpl

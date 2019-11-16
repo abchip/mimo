@@ -18,12 +18,7 @@ import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,456 +67,6 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getShipmentCostEstimateId() <em>Shipment Cost Estimate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentCostEstimateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_COST_ESTIMATE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentCostEstimateId() <em>Shipment Cost Estimate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentCostEstimateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentCostEstimateId = SHIPMENT_COST_ESTIMATE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARRIER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String carrierPartyId = CARRIER_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCarrierRoleTypeId() <em>Carrier Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARRIER_ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCarrierRoleTypeId() <em>Carrier Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String carrierRoleTypeId = CARRIER_ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFeaturePercent() <em>Feature Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeaturePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal FEATURE_PERCENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFeaturePercent() <em>Feature Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeaturePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal featurePercent = FEATURE_PERCENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFeaturePrice() <em>Feature Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeaturePrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal FEATURE_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFeaturePrice() <em>Feature Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeaturePrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal featurePrice = FEATURE_PRICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderFlatPrice() <em>Order Flat Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderFlatPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal ORDER_FLAT_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderFlatPrice() <em>Order Flat Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderFlatPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal orderFlatPrice = ORDER_FLAT_PRICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderItemFlatPrice() <em>Order Item Flat Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemFlatPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal ORDER_ITEM_FLAT_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderItemFlatPrice() <em>Order Item Flat Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemFlatPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal orderItemFlatPrice = ORDER_ITEM_FLAT_PRICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderPricePercent() <em>Order Price Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPricePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal ORDER_PRICE_PERCENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderPricePercent() <em>Order Price Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPricePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal orderPricePercent = ORDER_PRICE_PERCENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOversizePrice() <em>Oversize Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOversizePrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal OVERSIZE_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOversizePrice() <em>Oversize Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOversizePrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal oversizePrice = OVERSIZE_PRICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOversizeUnit() <em>Oversize Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOversizeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal OVERSIZE_UNIT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOversizeUnit() <em>Oversize Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOversizeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal oversizeUnit = OVERSIZE_UNIT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPriceUnitPrice() <em>Price Unit Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriceUnitPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal PRICE_UNIT_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPriceUnitPrice() <em>Price Unit Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriceUnitPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal priceUnitPrice = PRICE_UNIT_PRICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeatureGroupId() <em>Product Feature Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureGroupId() <em>Product Feature Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureGroupId = PRODUCT_FEATURE_GROUP_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getQuantityUnitPrice() <em>Quantity Unit Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityUnitPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal QUANTITY_UNIT_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantityUnitPrice() <em>Quantity Unit Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityUnitPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal quantityUnitPrice = QUANTITY_UNIT_PRICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentMethodTypeId = SHIPMENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getShippingPricePercent() <em>Shipping Price Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShippingPricePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal SHIPPING_PRICE_PERCENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShippingPricePercent() <em>Shipping Price Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShippingPricePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal shippingPricePercent = SHIPPING_PRICE_PERCENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWeightUnitPrice() <em>Weight Unit Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWeightUnitPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal WEIGHT_UNIT_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWeightUnitPrice() <em>Weight Unit Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWeightUnitPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal weightUnitPrice = WEIGHT_UNIT_PRICE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreShipMethId() <em>Product Store Ship Meth Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreShipMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductStoreShipmentMeth productStoreShipMethId;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoleType roleTypeId;
-
-	/**
-	 * The cached value of the '{@link #getWeightUomId() <em>Weight Uom Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uom weightUomId;
-
-	/**
-	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uom quantityUomId;
-
-	/**
-	 * The cached value of the '{@link #getPriceUomId() <em>Price Uom Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriceUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uom priceUomId;
-
-	/**
-	 * The cached value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected Geo geoIdTo;
-
-	/**
-	 * The cached value of the '{@link #getGeoIdFrom() <em>Geo Id From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected Geo geoIdFrom;
-
-	/**
-	 * The cached value of the '{@link #getWeightBreakId() <em>Weight Break Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWeightBreakId()
-	 * @generated
-	 * @ordered
-	 */
-	protected QuantityBreak weightBreakId;
-
-	/**
-	 * The cached value of the '{@link #getQuantityBreakId() <em>Quantity Break Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityBreakId()
-	 * @generated
-	 * @ordered
-	 */
-	protected QuantityBreak quantityBreakId;
-
-	/**
-	 * The cached value of the '{@link #getPriceBreakId() <em>Price Break Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriceBreakId()
-	 * @generated
-	 * @ordered
-	 */
-	protected QuantityBreak priceBreakId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -547,7 +92,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public String getCarrierPartyId() {
-		return carrierPartyId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID, true);
 	}
 
 	/**
@@ -557,10 +102,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setCarrierPartyId(String newCarrierPartyId) {
-		String oldCarrierPartyId = carrierPartyId;
-		carrierPartyId = newCarrierPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID, newCarrierPartyId);
 	}
 
 	/**
@@ -570,7 +112,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public String getCarrierRoleTypeId() {
-		return carrierRoleTypeId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -580,10 +122,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setCarrierRoleTypeId(String newCarrierRoleTypeId) {
-		String oldCarrierRoleTypeId = carrierRoleTypeId;
-		carrierRoleTypeId = newCarrierRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID, oldCarrierRoleTypeId, carrierRoleTypeId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID, newCarrierRoleTypeId);
 	}
 
 	/**
@@ -593,7 +132,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getFeaturePercent() {
-		return featurePercent;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT, true);
 	}
 
 	/**
@@ -603,10 +142,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setFeaturePercent(BigDecimal newFeaturePercent) {
-		BigDecimal oldFeaturePercent = featurePercent;
-		featurePercent = newFeaturePercent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT, oldFeaturePercent, featurePercent));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT, newFeaturePercent);
 	}
 
 	/**
@@ -616,7 +152,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getFeaturePrice() {
-		return featurePrice;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE, true);
 	}
 
 	/**
@@ -626,10 +162,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setFeaturePrice(BigDecimal newFeaturePrice) {
-		BigDecimal oldFeaturePrice = featurePrice;
-		featurePrice = newFeaturePrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE, oldFeaturePrice, featurePrice));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE, newFeaturePrice);
 	}
 
 	/**
@@ -639,24 +172,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public Geo getGeoIdFrom() {
-		if (geoIdFrom != null && ((EObject)geoIdFrom).eIsProxy()) {
-			InternalEObject oldGeoIdFrom = (InternalEObject)geoIdFrom;
-			geoIdFrom = (Geo)eResolveProxy(oldGeoIdFrom);
-			if (geoIdFrom != oldGeoIdFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
-			}
-		}
-		return geoIdFrom;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Geo basicGetGeoIdFrom() {
-		return geoIdFrom;
+		return (Geo)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM, true);
 	}
 
 	/**
@@ -666,10 +182,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setGeoIdFrom(Geo newGeoIdFrom) {
-		Geo oldGeoIdFrom = geoIdFrom;
-		geoIdFrom = newGeoIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM, newGeoIdFrom);
 	}
 
 	/**
@@ -679,24 +192,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public Geo getGeoIdTo() {
-		if (geoIdTo != null && ((EObject)geoIdTo).eIsProxy()) {
-			InternalEObject oldGeoIdTo = (InternalEObject)geoIdTo;
-			geoIdTo = (Geo)eResolveProxy(oldGeoIdTo);
-			if (geoIdTo != oldGeoIdTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
-			}
-		}
-		return geoIdTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Geo basicGetGeoIdTo() {
-		return geoIdTo;
+		return (Geo)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__GEO_ID_TO, true);
 	}
 
 	/**
@@ -706,10 +202,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setGeoIdTo(Geo newGeoIdTo) {
-		Geo oldGeoIdTo = geoIdTo;
-		geoIdTo = newGeoIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__GEO_ID_TO, newGeoIdTo);
 	}
 
 	/**
@@ -719,7 +212,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getOrderFlatPrice() {
-		return orderFlatPrice;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE, true);
 	}
 
 	/**
@@ -729,10 +222,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOrderFlatPrice(BigDecimal newOrderFlatPrice) {
-		BigDecimal oldOrderFlatPrice = orderFlatPrice;
-		orderFlatPrice = newOrderFlatPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE, oldOrderFlatPrice, orderFlatPrice));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE, newOrderFlatPrice);
 	}
 
 	/**
@@ -742,7 +232,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getOrderItemFlatPrice() {
-		return orderItemFlatPrice;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE, true);
 	}
 
 	/**
@@ -752,10 +242,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOrderItemFlatPrice(BigDecimal newOrderItemFlatPrice) {
-		BigDecimal oldOrderItemFlatPrice = orderItemFlatPrice;
-		orderItemFlatPrice = newOrderItemFlatPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE, oldOrderItemFlatPrice, orderItemFlatPrice));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE, newOrderItemFlatPrice);
 	}
 
 	/**
@@ -765,7 +252,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getOrderPricePercent() {
-		return orderPricePercent;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT, true);
 	}
 
 	/**
@@ -775,10 +262,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOrderPricePercent(BigDecimal newOrderPricePercent) {
-		BigDecimal oldOrderPricePercent = orderPricePercent;
-		orderPricePercent = newOrderPricePercent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT, oldOrderPricePercent, orderPricePercent));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT, newOrderPricePercent);
 	}
 
 	/**
@@ -788,7 +272,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getOversizePrice() {
-		return oversizePrice;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE, true);
 	}
 
 	/**
@@ -798,10 +282,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOversizePrice(BigDecimal newOversizePrice) {
-		BigDecimal oldOversizePrice = oversizePrice;
-		oversizePrice = newOversizePrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE, oldOversizePrice, oversizePrice));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE, newOversizePrice);
 	}
 
 	/**
@@ -811,7 +292,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getOversizeUnit() {
-		return oversizeUnit;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT, true);
 	}
 
 	/**
@@ -821,10 +302,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOversizeUnit(BigDecimal newOversizeUnit) {
-		BigDecimal oldOversizeUnit = oversizeUnit;
-		oversizeUnit = newOversizeUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT, oldOversizeUnit, oversizeUnit));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT, newOversizeUnit);
 	}
 
 	/**
@@ -834,24 +312,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PARTY_ID, true);
 	}
 
 	/**
@@ -861,10 +322,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID, oldPartyId, partyId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -874,24 +332,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public QuantityBreak getPriceBreakId() {
-		if (priceBreakId != null && ((EObject)priceBreakId).eIsProxy()) {
-			InternalEObject oldPriceBreakId = (InternalEObject)priceBreakId;
-			priceBreakId = (QuantityBreak)eResolveProxy(oldPriceBreakId);
-			if (priceBreakId != oldPriceBreakId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID, oldPriceBreakId, priceBreakId));
-			}
-		}
-		return priceBreakId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QuantityBreak basicGetPriceBreakId() {
-		return priceBreakId;
+		return (QuantityBreak)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID, true);
 	}
 
 	/**
@@ -901,10 +342,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPriceBreakId(QuantityBreak newPriceBreakId) {
-		QuantityBreak oldPriceBreakId = priceBreakId;
-		priceBreakId = newPriceBreakId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID, oldPriceBreakId, priceBreakId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID, newPriceBreakId);
 	}
 
 	/**
@@ -914,7 +352,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getPriceUnitPrice() {
-		return priceUnitPrice;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE, true);
 	}
 
 	/**
@@ -924,10 +362,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPriceUnitPrice(BigDecimal newPriceUnitPrice) {
-		BigDecimal oldPriceUnitPrice = priceUnitPrice;
-		priceUnitPrice = newPriceUnitPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE, oldPriceUnitPrice, priceUnitPrice));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE, newPriceUnitPrice);
 	}
 
 	/**
@@ -937,24 +372,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public Uom getPriceUomId() {
-		if (priceUomId != null && ((EObject)priceUomId).eIsProxy()) {
-			InternalEObject oldPriceUomId = (InternalEObject)priceUomId;
-			priceUomId = (Uom)eResolveProxy(oldPriceUomId);
-			if (priceUomId != oldPriceUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID, oldPriceUomId, priceUomId));
-			}
-		}
-		return priceUomId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uom basicGetPriceUomId() {
-		return priceUomId;
+		return (Uom)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID, true);
 	}
 
 	/**
@@ -964,10 +382,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPriceUomId(Uom newPriceUomId) {
-		Uom oldPriceUomId = priceUomId;
-		priceUomId = newPriceUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID, oldPriceUomId, priceUomId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID, newPriceUomId);
 	}
 
 	/**
@@ -977,7 +392,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public String getProductFeatureGroupId() {
-		return productFeatureGroupId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID, true);
 	}
 
 	/**
@@ -987,10 +402,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setProductFeatureGroupId(String newProductFeatureGroupId) {
-		String oldProductFeatureGroupId = productFeatureGroupId;
-		productFeatureGroupId = newProductFeatureGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID, oldProductFeatureGroupId, productFeatureGroupId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID, newProductFeatureGroupId);
 	}
 
 	/**
@@ -1000,7 +412,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public String getProductStoreId() {
-		return productStoreId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID, true);
 	}
 
 	/**
@@ -1010,10 +422,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
-		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID, newProductStoreId);
 	}
 
 	/**
@@ -1023,24 +432,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public ProductStoreShipmentMeth getProductStoreShipMethId() {
-		if (productStoreShipMethId != null && ((EObject)productStoreShipMethId).eIsProxy()) {
-			InternalEObject oldProductStoreShipMethId = (InternalEObject)productStoreShipMethId;
-			productStoreShipMethId = (ProductStoreShipmentMeth)eResolveProxy(oldProductStoreShipMethId);
-			if (productStoreShipMethId != oldProductStoreShipMethId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID, oldProductStoreShipMethId, productStoreShipMethId));
-			}
-		}
-		return productStoreShipMethId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductStoreShipmentMeth basicGetProductStoreShipMethId() {
-		return productStoreShipMethId;
+		return (ProductStoreShipmentMeth)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID, true);
 	}
 
 	/**
@@ -1050,10 +442,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setProductStoreShipMethId(ProductStoreShipmentMeth newProductStoreShipMethId) {
-		ProductStoreShipmentMeth oldProductStoreShipMethId = productStoreShipMethId;
-		productStoreShipMethId = newProductStoreShipMethId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID, oldProductStoreShipMethId, productStoreShipMethId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID, newProductStoreShipMethId);
 	}
 
 	/**
@@ -1063,24 +452,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public QuantityBreak getQuantityBreakId() {
-		if (quantityBreakId != null && ((EObject)quantityBreakId).eIsProxy()) {
-			InternalEObject oldQuantityBreakId = (InternalEObject)quantityBreakId;
-			quantityBreakId = (QuantityBreak)eResolveProxy(oldQuantityBreakId);
-			if (quantityBreakId != oldQuantityBreakId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID, oldQuantityBreakId, quantityBreakId));
-			}
-		}
-		return quantityBreakId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QuantityBreak basicGetQuantityBreakId() {
-		return quantityBreakId;
+		return (QuantityBreak)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID, true);
 	}
 
 	/**
@@ -1090,10 +462,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setQuantityBreakId(QuantityBreak newQuantityBreakId) {
-		QuantityBreak oldQuantityBreakId = quantityBreakId;
-		quantityBreakId = newQuantityBreakId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID, oldQuantityBreakId, quantityBreakId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID, newQuantityBreakId);
 	}
 
 	/**
@@ -1103,7 +472,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getQuantityUnitPrice() {
-		return quantityUnitPrice;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE, true);
 	}
 
 	/**
@@ -1113,10 +482,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setQuantityUnitPrice(BigDecimal newQuantityUnitPrice) {
-		BigDecimal oldQuantityUnitPrice = quantityUnitPrice;
-		quantityUnitPrice = newQuantityUnitPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE, oldQuantityUnitPrice, quantityUnitPrice));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE, newQuantityUnitPrice);
 	}
 
 	/**
@@ -1126,24 +492,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public Uom getQuantityUomId() {
-		if (quantityUomId != null && ((EObject)quantityUomId).eIsProxy()) {
-			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
-			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
-			if (quantityUomId != oldQuantityUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
-			}
-		}
-		return quantityUomId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uom basicGetQuantityUomId() {
-		return quantityUomId;
+		return (Uom)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID, true);
 	}
 
 	/**
@@ -1153,10 +502,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setQuantityUomId(Uom newQuantityUomId) {
-		Uom oldQuantityUomId = quantityUomId;
-		quantityUomId = newQuantityUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID, newQuantityUomId);
 	}
 
 	/**
@@ -1166,24 +512,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public RoleType getRoleTypeId() {
-		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
-			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
-			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
-			if (roleTypeId != oldRoleTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
-			}
-		}
-		return roleTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleType basicGetRoleTypeId() {
-		return roleTypeId;
+		return (RoleType)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -1193,10 +522,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
-		RoleType oldRoleTypeId = roleTypeId;
-		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID, newRoleTypeId);
 	}
 
 	/**
@@ -1206,7 +532,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public String getShipmentCostEstimateId() {
-		return shipmentCostEstimateId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID, true);
 	}
 
 	/**
@@ -1216,10 +542,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setShipmentCostEstimateId(String newShipmentCostEstimateId) {
-		String oldShipmentCostEstimateId = shipmentCostEstimateId;
-		shipmentCostEstimateId = newShipmentCostEstimateId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID, oldShipmentCostEstimateId, shipmentCostEstimateId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID, newShipmentCostEstimateId);
 	}
 
 	/**
@@ -1229,7 +552,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public String getShipmentMethodTypeId() {
-		return shipmentMethodTypeId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID, true);
 	}
 
 	/**
@@ -1239,10 +562,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
-		String oldShipmentMethodTypeId = shipmentMethodTypeId;
-		shipmentMethodTypeId = newShipmentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID, newShipmentMethodTypeId);
 	}
 
 	/**
@@ -1252,7 +572,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getShippingPricePercent() {
-		return shippingPricePercent;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT, true);
 	}
 
 	/**
@@ -1262,10 +582,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setShippingPricePercent(BigDecimal newShippingPricePercent) {
-		BigDecimal oldShippingPricePercent = shippingPricePercent;
-		shippingPricePercent = newShippingPricePercent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT, oldShippingPricePercent, shippingPricePercent));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT, newShippingPricePercent);
 	}
 
 	/**
@@ -1275,24 +592,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public QuantityBreak getWeightBreakId() {
-		if (weightBreakId != null && ((EObject)weightBreakId).eIsProxy()) {
-			InternalEObject oldWeightBreakId = (InternalEObject)weightBreakId;
-			weightBreakId = (QuantityBreak)eResolveProxy(oldWeightBreakId);
-			if (weightBreakId != oldWeightBreakId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID, oldWeightBreakId, weightBreakId));
-			}
-		}
-		return weightBreakId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QuantityBreak basicGetWeightBreakId() {
-		return weightBreakId;
+		return (QuantityBreak)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID, true);
 	}
 
 	/**
@@ -1302,10 +602,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setWeightBreakId(QuantityBreak newWeightBreakId) {
-		QuantityBreak oldWeightBreakId = weightBreakId;
-		weightBreakId = newWeightBreakId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID, oldWeightBreakId, weightBreakId));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID, newWeightBreakId);
 	}
 
 	/**
@@ -1315,7 +612,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public BigDecimal getWeightUnitPrice() {
-		return weightUnitPrice;
+		return (BigDecimal)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE, true);
 	}
 
 	/**
@@ -1325,10 +622,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setWeightUnitPrice(BigDecimal newWeightUnitPrice) {
-		BigDecimal oldWeightUnitPrice = weightUnitPrice;
-		weightUnitPrice = newWeightUnitPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE, oldWeightUnitPrice, weightUnitPrice));
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE, newWeightUnitPrice);
 	}
 
 	/**
@@ -1338,24 +632,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public Uom getWeightUomId() {
-		if (weightUomId != null && ((EObject)weightUomId).eIsProxy()) {
-			InternalEObject oldWeightUomId = (InternalEObject)weightUomId;
-			weightUomId = (Uom)eResolveProxy(oldWeightUomId);
-			if (weightUomId != oldWeightUomId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
-			}
-		}
-		return weightUomId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uom basicGetWeightUomId() {
-		return weightUomId;
+		return (Uom)eGet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID, true);
 	}
 
 	/**
@@ -1365,397 +642,7 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setWeightUomId(Uom newWeightUomId) {
-		Uom oldWeightUomId = weightUomId;
-		weightUomId = newWeightUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID:
-				return getShipmentCostEstimateId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID:
-				return getCarrierPartyId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID:
-				return getCarrierRoleTypeId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT:
-				return getFeaturePercent();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE:
-				return getFeaturePrice();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE:
-				return getOrderFlatPrice();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE:
-				return getOrderItemFlatPrice();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT:
-				return getOrderPricePercent();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE:
-				return getOversizePrice();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT:
-				return getOversizeUnit();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE:
-				return getPriceUnitPrice();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID:
-				return getProductFeatureGroupId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID:
-				return getProductStoreId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE:
-				return getQuantityUnitPrice();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID:
-				return getShipmentMethodTypeId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT:
-				return getShippingPricePercent();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE:
-				return getWeightUnitPrice();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID:
-				if (resolve) return getProductStoreShipMethId();
-				return basicGetProductStoreShipMethId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID:
-				if (resolve) return getRoleTypeId();
-				return basicGetRoleTypeId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID:
-				if (resolve) return getWeightUomId();
-				return basicGetWeightUomId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID:
-				if (resolve) return getQuantityUomId();
-				return basicGetQuantityUomId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID:
-				if (resolve) return getPriceUomId();
-				return basicGetPriceUomId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO:
-				if (resolve) return getGeoIdTo();
-				return basicGetGeoIdTo();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM:
-				if (resolve) return getGeoIdFrom();
-				return basicGetGeoIdFrom();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID:
-				if (resolve) return getWeightBreakId();
-				return basicGetWeightBreakId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID:
-				if (resolve) return getQuantityBreakId();
-				return basicGetQuantityBreakId();
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID:
-				if (resolve) return getPriceBreakId();
-				return basicGetPriceBreakId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID:
-				setShipmentCostEstimateId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID:
-				setCarrierPartyId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID:
-				setCarrierRoleTypeId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT:
-				setFeaturePercent((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE:
-				setFeaturePrice((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE:
-				setOrderFlatPrice((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE:
-				setOrderItemFlatPrice((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT:
-				setOrderPricePercent((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE:
-				setOversizePrice((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT:
-				setOversizeUnit((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE:
-				setPriceUnitPrice((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID:
-				setProductFeatureGroupId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE:
-				setQuantityUnitPrice((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT:
-				setShippingPricePercent((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE:
-				setWeightUnitPrice((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID:
-				setProductStoreShipMethId((ProductStoreShipmentMeth)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID:
-				setWeightUomId((Uom)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID:
-				setQuantityUomId((Uom)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID:
-				setPriceUomId((Uom)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO:
-				setGeoIdTo((Geo)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM:
-				setGeoIdFrom((Geo)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID:
-				setWeightBreakId((QuantityBreak)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID:
-				setQuantityBreakId((QuantityBreak)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID:
-				setPriceBreakId((QuantityBreak)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID:
-				setShipmentCostEstimateId(SHIPMENT_COST_ESTIMATE_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID:
-				setCarrierPartyId(CARRIER_PARTY_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID:
-				setCarrierRoleTypeId(CARRIER_ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT:
-				setFeaturePercent(FEATURE_PERCENT_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE:
-				setFeaturePrice(FEATURE_PRICE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE:
-				setOrderFlatPrice(ORDER_FLAT_PRICE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE:
-				setOrderItemFlatPrice(ORDER_ITEM_FLAT_PRICE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT:
-				setOrderPricePercent(ORDER_PRICE_PERCENT_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE:
-				setOversizePrice(OVERSIZE_PRICE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT:
-				setOversizeUnit(OVERSIZE_UNIT_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE:
-				setPriceUnitPrice(PRICE_UNIT_PRICE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID:
-				setProductFeatureGroupId(PRODUCT_FEATURE_GROUP_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE:
-				setQuantityUnitPrice(QUANTITY_UNIT_PRICE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId(SHIPMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT:
-				setShippingPricePercent(SHIPPING_PRICE_PERCENT_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE:
-				setWeightUnitPrice(WEIGHT_UNIT_PRICE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID:
-				setProductStoreShipMethId((ProductStoreShipmentMeth)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID:
-				setRoleTypeId((RoleType)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID:
-				setWeightUomId((Uom)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID:
-				setQuantityUomId((Uom)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID:
-				setPriceUomId((Uom)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO:
-				setGeoIdTo((Geo)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM:
-				setGeoIdFrom((Geo)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID:
-				setWeightBreakId((QuantityBreak)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID:
-				setQuantityBreakId((QuantityBreak)null);
-				return;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID:
-				setPriceBreakId((QuantityBreak)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID:
-				return SHIPMENT_COST_ESTIMATE_ID_EDEFAULT == null ? shipmentCostEstimateId != null : !SHIPMENT_COST_ESTIMATE_ID_EDEFAULT.equals(shipmentCostEstimateId);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID:
-				return CARRIER_PARTY_ID_EDEFAULT == null ? carrierPartyId != null : !CARRIER_PARTY_ID_EDEFAULT.equals(carrierPartyId);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID:
-				return CARRIER_ROLE_TYPE_ID_EDEFAULT == null ? carrierRoleTypeId != null : !CARRIER_ROLE_TYPE_ID_EDEFAULT.equals(carrierRoleTypeId);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT:
-				return FEATURE_PERCENT_EDEFAULT == null ? featurePercent != null : !FEATURE_PERCENT_EDEFAULT.equals(featurePercent);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE:
-				return FEATURE_PRICE_EDEFAULT == null ? featurePrice != null : !FEATURE_PRICE_EDEFAULT.equals(featurePrice);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE:
-				return ORDER_FLAT_PRICE_EDEFAULT == null ? orderFlatPrice != null : !ORDER_FLAT_PRICE_EDEFAULT.equals(orderFlatPrice);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE:
-				return ORDER_ITEM_FLAT_PRICE_EDEFAULT == null ? orderItemFlatPrice != null : !ORDER_ITEM_FLAT_PRICE_EDEFAULT.equals(orderItemFlatPrice);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT:
-				return ORDER_PRICE_PERCENT_EDEFAULT == null ? orderPricePercent != null : !ORDER_PRICE_PERCENT_EDEFAULT.equals(orderPricePercent);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE:
-				return OVERSIZE_PRICE_EDEFAULT == null ? oversizePrice != null : !OVERSIZE_PRICE_EDEFAULT.equals(oversizePrice);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT:
-				return OVERSIZE_UNIT_EDEFAULT == null ? oversizeUnit != null : !OVERSIZE_UNIT_EDEFAULT.equals(oversizeUnit);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE:
-				return PRICE_UNIT_PRICE_EDEFAULT == null ? priceUnitPrice != null : !PRICE_UNIT_PRICE_EDEFAULT.equals(priceUnitPrice);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID:
-				return PRODUCT_FEATURE_GROUP_ID_EDEFAULT == null ? productFeatureGroupId != null : !PRODUCT_FEATURE_GROUP_ID_EDEFAULT.equals(productFeatureGroupId);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE:
-				return QUANTITY_UNIT_PRICE_EDEFAULT == null ? quantityUnitPrice != null : !QUANTITY_UNIT_PRICE_EDEFAULT.equals(quantityUnitPrice);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID:
-				return SHIPMENT_METHOD_TYPE_ID_EDEFAULT == null ? shipmentMethodTypeId != null : !SHIPMENT_METHOD_TYPE_ID_EDEFAULT.equals(shipmentMethodTypeId);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT:
-				return SHIPPING_PRICE_PERCENT_EDEFAULT == null ? shippingPricePercent != null : !SHIPPING_PRICE_PERCENT_EDEFAULT.equals(shippingPricePercent);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE:
-				return WEIGHT_UNIT_PRICE_EDEFAULT == null ? weightUnitPrice != null : !WEIGHT_UNIT_PRICE_EDEFAULT.equals(weightUnitPrice);
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID:
-				return productStoreShipMethId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID:
-				return partyId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID:
-				return roleTypeId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID:
-				return weightUomId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID:
-				return quantityUomId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID:
-				return priceUomId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO:
-				return geoIdTo != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM:
-				return geoIdFrom != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID:
-				return weightBreakId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID:
-				return quantityBreakId != null;
-			case Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID:
-				return priceBreakId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentCostEstimateId: ");
-		result.append(shipmentCostEstimateId);
-		result.append(", carrierPartyId: ");
-		result.append(carrierPartyId);
-		result.append(", carrierRoleTypeId: ");
-		result.append(carrierRoleTypeId);
-		result.append(", featurePercent: ");
-		result.append(featurePercent);
-		result.append(", featurePrice: ");
-		result.append(featurePrice);
-		result.append(", orderFlatPrice: ");
-		result.append(orderFlatPrice);
-		result.append(", orderItemFlatPrice: ");
-		result.append(orderItemFlatPrice);
-		result.append(", orderPricePercent: ");
-		result.append(orderPricePercent);
-		result.append(", oversizePrice: ");
-		result.append(oversizePrice);
-		result.append(", oversizeUnit: ");
-		result.append(oversizeUnit);
-		result.append(", priceUnitPrice: ");
-		result.append(priceUnitPrice);
-		result.append(", productFeatureGroupId: ");
-		result.append(productFeatureGroupId);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
-		result.append(", quantityUnitPrice: ");
-		result.append(quantityUnitPrice);
-		result.append(", shipmentMethodTypeId: ");
-		result.append(shipmentMethodTypeId);
-		result.append(", shippingPricePercent: ");
-		result.append(shippingPricePercent);
-		result.append(", weightUnitPrice: ");
-		result.append(weightUnitPrice);
-		result.append(')');
-		return result.toString();
+		eSet(Shipment_Package.Literals.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID, newWeightUomId);
 	}
 
 } //ShipmentCostEstimateImpl

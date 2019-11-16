@@ -11,9 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityNoteData;
 import org.abchip.mimo.biz.BizPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,166 +40,6 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getNoteId() <em>Note Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNoteId() <em>Note Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String noteId = NOTE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMoreInfoItemId() <em>More Info Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoreInfoItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MORE_INFO_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMoreInfoItemId() <em>More Info Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoreInfoItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String moreInfoItemId = MORE_INFO_ITEM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMoreInfoItemName() <em>More Info Item Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoreInfoItemName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MORE_INFO_ITEM_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMoreInfoItemName() <em>More Info Item Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoreInfoItemName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String moreInfoItemName = MORE_INFO_ITEM_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMoreInfoUrl() <em>More Info Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoreInfoUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MORE_INFO_URL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMoreInfoUrl() <em>More Info Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoreInfoUrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected String moreInfoUrl = MORE_INFO_URL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNoteDateTime() <em>Note Date Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteDateTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date NOTE_DATE_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNoteDateTime() <em>Note Date Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteDateTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date noteDateTime = NOTE_DATE_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNoteInfo() <em>Note Info</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteInfo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTE_INFO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNoteInfo() <em>Note Info</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteInfo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String noteInfo = NOTE_INFO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNoteName() <em>Note Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNoteName() <em>Note Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String noteName = NOTE_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNoteParty() <em>Note Party</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteParty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTE_PARTY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNoteParty() <em>Note Party</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteParty()
-	 * @generated
-	 * @ordered
-	 */
-	protected String noteParty = NOTE_PARTY_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -227,7 +65,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public String getNoteId() {
-		return noteId;
+		return (String)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_ID, true);
 	}
 
 	/**
@@ -237,10 +75,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteId(String newNoteId) {
-		String oldNoteId = noteId;
-		noteId = newNoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_ID, oldNoteId, noteId));
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_ID, newNoteId);
 	}
 
 	/**
@@ -250,7 +85,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public String getMoreInfoItemId() {
-		return moreInfoItemId;
+		return (String)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID, true);
 	}
 
 	/**
@@ -260,10 +95,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setMoreInfoItemId(String newMoreInfoItemId) {
-		String oldMoreInfoItemId = moreInfoItemId;
-		moreInfoItemId = newMoreInfoItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID, oldMoreInfoItemId, moreInfoItemId));
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID, newMoreInfoItemId);
 	}
 
 	/**
@@ -273,7 +105,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public String getMoreInfoItemName() {
-		return moreInfoItemName;
+		return (String)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME, true);
 	}
 
 	/**
@@ -283,10 +115,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setMoreInfoItemName(String newMoreInfoItemName) {
-		String oldMoreInfoItemName = moreInfoItemName;
-		moreInfoItemName = newMoreInfoItemName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME, oldMoreInfoItemName, moreInfoItemName));
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME, newMoreInfoItemName);
 	}
 
 	/**
@@ -296,7 +125,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public String getMoreInfoUrl() {
-		return moreInfoUrl;
+		return (String)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL, true);
 	}
 
 	/**
@@ -306,10 +135,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setMoreInfoUrl(String newMoreInfoUrl) {
-		String oldMoreInfoUrl = moreInfoUrl;
-		moreInfoUrl = newMoreInfoUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL, oldMoreInfoUrl, moreInfoUrl));
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL, newMoreInfoUrl);
 	}
 
 	/**
@@ -319,7 +145,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public Date getNoteDateTime() {
-		return noteDateTime;
+		return (Date)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME, true);
 	}
 
 	/**
@@ -329,10 +155,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteDateTime(Date newNoteDateTime) {
-		Date oldNoteDateTime = noteDateTime;
-		noteDateTime = newNoteDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME, oldNoteDateTime, noteDateTime));
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME, newNoteDateTime);
 	}
 
 	/**
@@ -342,7 +165,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public String getNoteInfo() {
-		return noteInfo;
+		return (String)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_INFO, true);
 	}
 
 	/**
@@ -352,10 +175,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteInfo(String newNoteInfo) {
-		String oldNoteInfo = noteInfo;
-		noteInfo = newNoteInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_INFO, oldNoteInfo, noteInfo));
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_INFO, newNoteInfo);
 	}
 
 	/**
@@ -365,7 +185,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public String getNoteName() {
-		return noteName;
+		return (String)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_NAME, true);
 	}
 
 	/**
@@ -375,10 +195,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteName(String newNoteName) {
-		String oldNoteName = noteName;
-		noteName = newNoteName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_NAME, oldNoteName, noteName));
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_NAME, newNoteName);
 	}
 
 	/**
@@ -388,7 +205,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public String getNoteParty() {
-		return noteParty;
+		return (String)eGet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY, true);
 	}
 
 	/**
@@ -398,168 +215,7 @@ public abstract class BizEntityNoteDataImpl extends BizEntityImpl implements Biz
 	 */
 	@Override
 	public void setNoteParty(String newNoteParty) {
-		String oldNoteParty = noteParty;
-		noteParty = newNoteParty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY, oldNoteParty, noteParty));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_ID:
-				return getNoteId();
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID:
-				return getMoreInfoItemId();
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME:
-				return getMoreInfoItemName();
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL:
-				return getMoreInfoUrl();
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME:
-				return getNoteDateTime();
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_INFO:
-				return getNoteInfo();
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_NAME:
-				return getNoteName();
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY:
-				return getNoteParty();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_ID:
-				setNoteId((String)newValue);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID:
-				setMoreInfoItemId((String)newValue);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME:
-				setMoreInfoItemName((String)newValue);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL:
-				setMoreInfoUrl((String)newValue);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME:
-				setNoteDateTime((Date)newValue);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_INFO:
-				setNoteInfo((String)newValue);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_NAME:
-				setNoteName((String)newValue);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY:
-				setNoteParty((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_ID:
-				setNoteId(NOTE_ID_EDEFAULT);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID:
-				setMoreInfoItemId(MORE_INFO_ITEM_ID_EDEFAULT);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME:
-				setMoreInfoItemName(MORE_INFO_ITEM_NAME_EDEFAULT);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL:
-				setMoreInfoUrl(MORE_INFO_URL_EDEFAULT);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME:
-				setNoteDateTime(NOTE_DATE_TIME_EDEFAULT);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_INFO:
-				setNoteInfo(NOTE_INFO_EDEFAULT);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_NAME:
-				setNoteName(NOTE_NAME_EDEFAULT);
-				return;
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY:
-				setNoteParty(NOTE_PARTY_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_ID:
-				return NOTE_ID_EDEFAULT == null ? noteId != null : !NOTE_ID_EDEFAULT.equals(noteId);
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID:
-				return MORE_INFO_ITEM_ID_EDEFAULT == null ? moreInfoItemId != null : !MORE_INFO_ITEM_ID_EDEFAULT.equals(moreInfoItemId);
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME:
-				return MORE_INFO_ITEM_NAME_EDEFAULT == null ? moreInfoItemName != null : !MORE_INFO_ITEM_NAME_EDEFAULT.equals(moreInfoItemName);
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL:
-				return MORE_INFO_URL_EDEFAULT == null ? moreInfoUrl != null : !MORE_INFO_URL_EDEFAULT.equals(moreInfoUrl);
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME:
-				return NOTE_DATE_TIME_EDEFAULT == null ? noteDateTime != null : !NOTE_DATE_TIME_EDEFAULT.equals(noteDateTime);
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_INFO:
-				return NOTE_INFO_EDEFAULT == null ? noteInfo != null : !NOTE_INFO_EDEFAULT.equals(noteInfo);
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_NAME:
-				return NOTE_NAME_EDEFAULT == null ? noteName != null : !NOTE_NAME_EDEFAULT.equals(noteName);
-			case BizPackage.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY:
-				return NOTE_PARTY_EDEFAULT == null ? noteParty != null : !NOTE_PARTY_EDEFAULT.equals(noteParty);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (noteId: ");
-		result.append(noteId);
-		result.append(", moreInfoItemId: ");
-		result.append(moreInfoItemId);
-		result.append(", moreInfoItemName: ");
-		result.append(moreInfoItemName);
-		result.append(", moreInfoUrl: ");
-		result.append(moreInfoUrl);
-		result.append(", noteDateTime: ");
-		result.append(noteDateTime);
-		result.append(", noteInfo: ");
-		result.append(noteInfo);
-		result.append(", noteName: ");
-		result.append(noteName);
-		result.append(", noteParty: ");
-		result.append(noteParty);
-		result.append(')');
-		return result.toString();
+		eSet(BizPackage.Literals.BIZ_ENTITY_NOTE_DATA__NOTE_PARTY, newNoteParty);
 	}
 
 } //BizEntityNoteDataImpl

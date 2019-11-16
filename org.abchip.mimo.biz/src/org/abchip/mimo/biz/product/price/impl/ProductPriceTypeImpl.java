@@ -11,9 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPrice;
 import org.abchip.mimo.biz.product.price.ProductPriceType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,46 +32,6 @@ public class ProductPriceTypeImpl extends BizEntityTypeImpl<ProductPrice> implem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPriceTypeId = PRODUCT_PRICE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +59,7 @@ public class ProductPriceTypeImpl extends BizEntityTypeImpl<ProductPrice> implem
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(PricePackage.Literals.PRODUCT_PRICE_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -111,10 +69,7 @@ public class ProductPriceTypeImpl extends BizEntityTypeImpl<ProductPrice> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(PricePackage.Literals.PRODUCT_PRICE_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -124,7 +79,7 @@ public class ProductPriceTypeImpl extends BizEntityTypeImpl<ProductPrice> implem
 	 */
 	@Override
 	public String getProductPriceTypeId() {
-		return productPriceTypeId;
+		return (String)eGet(PricePackage.Literals.PRODUCT_PRICE_TYPE__PRODUCT_PRICE_TYPE_ID, true);
 	}
 
 	/**
@@ -134,96 +89,7 @@ public class ProductPriceTypeImpl extends BizEntityTypeImpl<ProductPrice> implem
 	 */
 	@Override
 	public void setProductPriceTypeId(String newProductPriceTypeId) {
-		String oldProductPriceTypeId = productPriceTypeId;
-		productPriceTypeId = newProductPriceTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_TYPE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_TYPE__PRODUCT_PRICE_TYPE_ID:
-				return getProductPriceTypeId();
-			case PricePackage.PRODUCT_PRICE_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_TYPE__PRODUCT_PRICE_TYPE_ID:
-				setProductPriceTypeId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_TYPE__PRODUCT_PRICE_TYPE_ID:
-				setProductPriceTypeId(PRODUCT_PRICE_TYPE_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PricePackage.PRODUCT_PRICE_TYPE__PRODUCT_PRICE_TYPE_ID:
-				return PRODUCT_PRICE_TYPE_ID_EDEFAULT == null ? productPriceTypeId != null : !PRODUCT_PRICE_TYPE_ID_EDEFAULT.equals(productPriceTypeId);
-			case PricePackage.PRODUCT_PRICE_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productPriceTypeId: ");
-		result.append(productPriceTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(PricePackage.Literals.PRODUCT_PRICE_TYPE__PRODUCT_PRICE_TYPE_ID, newProductPriceTypeId);
 	}
 
 } //ProductPriceTypeImpl

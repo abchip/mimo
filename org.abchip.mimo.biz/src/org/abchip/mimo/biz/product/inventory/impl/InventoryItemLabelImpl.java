@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabel;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabelType;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +36,6 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getInventoryItemLabelId() <em>Inventory Item Label Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemLabelId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_LABEL_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemLabelId() <em>Inventory Item Label Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemLabelId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemLabelId = INVENTORY_ITEM_LABEL_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemLabelTypeId() <em>Inventory Item Label Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemLabelTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected InventoryItemLabelType inventoryItemLabelTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,7 +62,7 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(InventoryPackage.Literals.INVENTORY_ITEM_LABEL__DESCRIPTION, true);
 	}
 
 	/**
@@ -126,10 +72,7 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL__DESCRIPTION, oldDescription, description));
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_LABEL__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -139,24 +82,7 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	 */
 	@Override
 	public InventoryItemLabelType getInventoryItemLabelTypeId() {
-		if (inventoryItemLabelTypeId != null && ((EObject)inventoryItemLabelTypeId).eIsProxy()) {
-			InternalEObject oldInventoryItemLabelTypeId = (InternalEObject)inventoryItemLabelTypeId;
-			inventoryItemLabelTypeId = (InventoryItemLabelType)eResolveProxy(oldInventoryItemLabelTypeId);
-			if (inventoryItemLabelTypeId != oldInventoryItemLabelTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID, oldInventoryItemLabelTypeId, inventoryItemLabelTypeId));
-			}
-		}
-		return inventoryItemLabelTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InventoryItemLabelType basicGetInventoryItemLabelTypeId() {
-		return inventoryItemLabelTypeId;
+		return (InventoryItemLabelType)eGet(InventoryPackage.Literals.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID, true);
 	}
 
 	/**
@@ -166,10 +92,7 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	 */
 	@Override
 	public void setInventoryItemLabelTypeId(InventoryItemLabelType newInventoryItemLabelTypeId) {
-		InventoryItemLabelType oldInventoryItemLabelTypeId = inventoryItemLabelTypeId;
-		inventoryItemLabelTypeId = newInventoryItemLabelTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID, oldInventoryItemLabelTypeId, inventoryItemLabelTypeId));
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID, newInventoryItemLabelTypeId);
 	}
 
 	/**
@@ -191,7 +114,7 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	 */
 	@Override
 	public String getInventoryItemLabelId() {
-		return inventoryItemLabelId;
+		return (String)eGet(InventoryPackage.Literals.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_ID, true);
 	}
 
 	/**
@@ -201,107 +124,7 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	 */
 	@Override
 	public void setInventoryItemLabelId(String newInventoryItemLabelId) {
-		String oldInventoryItemLabelId = inventoryItemLabelId;
-		inventoryItemLabelId = newInventoryItemLabelId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_ID, oldInventoryItemLabelId, inventoryItemLabelId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_ID:
-				return getInventoryItemLabelId();
-			case InventoryPackage.INVENTORY_ITEM_LABEL__DESCRIPTION:
-				return getDescription();
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID:
-				if (resolve) return getInventoryItemLabelTypeId();
-				return basicGetInventoryItemLabelTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_ID:
-				setInventoryItemLabelId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_LABEL__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID:
-				setInventoryItemLabelTypeId((InventoryItemLabelType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_ID:
-				setInventoryItemLabelId(INVENTORY_ITEM_LABEL_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_LABEL__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID:
-				setInventoryItemLabelTypeId((InventoryItemLabelType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_ID:
-				return INVENTORY_ITEM_LABEL_ID_EDEFAULT == null ? inventoryItemLabelId != null : !INVENTORY_ITEM_LABEL_ID_EDEFAULT.equals(inventoryItemLabelId);
-			case InventoryPackage.INVENTORY_ITEM_LABEL__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case InventoryPackage.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID:
-				return inventoryItemLabelTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (inventoryItemLabelId: ");
-		result.append(inventoryItemLabelId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_ID, newInventoryItemLabelId);
 	}
 
 } //InventoryItemLabelImpl

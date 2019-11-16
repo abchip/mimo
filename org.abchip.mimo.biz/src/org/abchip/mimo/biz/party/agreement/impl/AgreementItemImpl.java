@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementItem;
 import org.abchip.mimo.biz.party.agreement.AgreementItemType;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,97 +37,6 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ITEM_SEQ_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAgreementImage() <em>Agreement Image</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementImage()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Object AGREEMENT_IMAGE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAgreementImage() <em>Agreement Image</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementImage()
-	 * @generated
-	 * @ordered
-	 */
-	protected Object agreementImage = AGREEMENT_IMAGE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAgreementText() <em>Agreement Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_TEXT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAgreementText() <em>Agreement Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementText = AGREEMENT_TEXT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Agreement agreementId;
-	/**
-	 * The cached value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected AgreementItemType agreementItemTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,7 +63,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public Object getAgreementImage() {
-		return agreementImage;
+		return (Object)eGet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_IMAGE, true);
 	}
 
 	/**
@@ -168,10 +73,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementImage(Object newAgreementImage) {
-		Object oldAgreementImage = agreementImage;
-		agreementImage = newAgreementImage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE, oldAgreementImage, agreementImage));
+		eSet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_IMAGE, newAgreementImage);
 	}
 
 	/**
@@ -181,7 +83,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public String getAgreementItemSeqId() {
-		return agreementItemSeqId;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -191,10 +93,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
-		String oldAgreementItemSeqId = agreementItemSeqId;
-		agreementItemSeqId = newAgreementItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
+		eSet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID, newAgreementItemSeqId);
 	}
 
 	/**
@@ -204,7 +103,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public String getAgreementText() {
-		return agreementText;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_TEXT, true);
 	}
 
 	/**
@@ -214,10 +113,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementText(String newAgreementText) {
-		String oldAgreementText = agreementText;
-		agreementText = newAgreementText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT, oldAgreementText, agreementText));
+		eSet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_TEXT, newAgreementText);
 	}
 
 	/**
@@ -227,7 +123,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public String getCurrencyUomId() {
-		return currencyUomId;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_ITEM__CURRENCY_UOM_ID, true);
 	}
 
 	/**
@@ -237,10 +133,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
-		currencyUomId = newCurrencyUomId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+		eSet(AgreementPackage.Literals.AGREEMENT_ITEM__CURRENCY_UOM_ID, newCurrencyUomId);
 	}
 
 	/**
@@ -250,24 +143,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public Agreement getAgreementId() {
-		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
-			InternalEObject oldAgreementId = (InternalEObject)agreementId;
-			agreementId = (Agreement)eResolveProxy(oldAgreementId);
-			if (agreementId != oldAgreementId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID, oldAgreementId, agreementId));
-			}
-		}
-		return agreementId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Agreement basicGetAgreementId() {
-		return agreementId;
+		return (Agreement)eGet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_ID, true);
 	}
 
 	/**
@@ -277,10 +153,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
-		Agreement oldAgreementId = agreementId;
-		agreementId = newAgreementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID, oldAgreementId, agreementId));
+		eSet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_ID, newAgreementId);
 	}
 
 	/**
@@ -290,24 +163,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public AgreementItemType getAgreementItemTypeId() {
-		if (agreementItemTypeId != null && ((EObject)agreementItemTypeId).eIsProxy()) {
-			InternalEObject oldAgreementItemTypeId = (InternalEObject)agreementItemTypeId;
-			agreementItemTypeId = (AgreementItemType)eResolveProxy(oldAgreementItemTypeId);
-			if (agreementItemTypeId != oldAgreementItemTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
-			}
-		}
-		return agreementItemTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AgreementItemType basicGetAgreementItemTypeId() {
-		return agreementItemTypeId;
+		return (AgreementItemType)eGet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, true);
 	}
 
 	/**
@@ -317,142 +173,7 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementItemTypeId(AgreementItemType newAgreementItemTypeId) {
-		AgreementItemType oldAgreementItemTypeId = agreementItemTypeId;
-		agreementItemTypeId = newAgreementItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
-				return getAgreementItemSeqId();
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
-				return getAgreementImage();
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
-				return getAgreementText();
-			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				if (resolve) return getAgreementId();
-				return basicGetAgreementId();
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				if (resolve) return getAgreementItemTypeId();
-				return basicGetAgreementItemTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
-				setAgreementItemSeqId((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
-				setAgreementImage(newValue);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
-				setAgreementText((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				setAgreementId((Agreement)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				setAgreementItemTypeId((AgreementItemType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
-				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
-				setAgreementImage(AGREEMENT_IMAGE_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
-				setAgreementText(AGREEMENT_TEXT_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				setAgreementId((Agreement)null);
-				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				setAgreementItemTypeId((AgreementItemType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID:
-				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
-				return AGREEMENT_IMAGE_EDEFAULT == null ? agreementImage != null : !AGREEMENT_IMAGE_EDEFAULT.equals(agreementImage);
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
-				return AGREEMENT_TEXT_EDEFAULT == null ? agreementText != null : !AGREEMENT_TEXT_EDEFAULT.equals(agreementText);
-			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID:
-				return agreementId != null;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				return agreementItemTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementItemSeqId: ");
-		result.append(agreementItemSeqId);
-		result.append(", agreementImage: ");
-		result.append(agreementImage);
-		result.append(", agreementText: ");
-		result.append(agreementText);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
-		result.append(')');
-		return result.toString();
+		eSet(AgreementPackage.Literals.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, newAgreementItemTypeId);
 	}
 
 } //AgreementItemImpl

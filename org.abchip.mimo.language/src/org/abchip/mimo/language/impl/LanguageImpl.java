@@ -7,16 +7,25 @@
  */
 package org.abchip.mimo.language.impl;
 
+import java.util.Collection;
+import java.util.List;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguagePackage;
 
+import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.language.LanguageScope;
 import org.abchip.mimo.language.LanguageType;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +40,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getScope <em>Scope</em>}</li>
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getPlanets <em>Planets</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getPlanetsCont <em>Planets Cont</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,6 +137,24 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * @ordered
 	 */
 	protected LanguageType type = TYPE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPlanets() <em>Planets</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanets()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LanguagePlanet> planets;
+	/**
+	 * The cached value of the '{@link #getPlanetsCont() <em>Planets Cont</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanetsCont()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LanguagePlanet> planetsCont;
 	/**
 	 * 
 	 */
@@ -271,6 +300,46 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * @generated
 	 */
 	@Override
+	public List<LanguagePlanet> getPlanets() {
+		if (planets == null) {
+			planets = new EObjectResolvingEList<LanguagePlanet>(LanguagePlanet.class, this, LanguagePackage.LANGUAGE__PLANETS);
+		}
+		return planets;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<LanguagePlanet> getPlanetsCont() {
+		if (planetsCont == null) {
+			planetsCont = new EObjectContainmentEList.Resolving<LanguagePlanet>(LanguagePlanet.class, this, LanguagePackage.LANGUAGE__PLANETS_CONT);
+		}
+		return planetsCont;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case LanguagePackage.LANGUAGE__PLANETS_CONT:
+				return ((InternalEList<?>)getPlanetsCont()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LanguagePackage.LANGUAGE__ISO_639_1:
@@ -283,6 +352,10 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 				return getText();
 			case LanguagePackage.LANGUAGE__TYPE:
 				return getType();
+			case LanguagePackage.LANGUAGE__PLANETS:
+				return getPlanets();
+			case LanguagePackage.LANGUAGE__PLANETS_CONT:
+				return getPlanetsCont();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,6 +365,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -309,6 +383,14 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 				return;
 			case LanguagePackage.LANGUAGE__TYPE:
 				setType((LanguageType)newValue);
+				return;
+			case LanguagePackage.LANGUAGE__PLANETS:
+				getPlanets().clear();
+				getPlanets().addAll((Collection<? extends LanguagePlanet>)newValue);
+				return;
+			case LanguagePackage.LANGUAGE__PLANETS_CONT:
+				getPlanetsCont().clear();
+				getPlanetsCont().addAll((Collection<? extends LanguagePlanet>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -337,6 +419,12 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 			case LanguagePackage.LANGUAGE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case LanguagePackage.LANGUAGE__PLANETS:
+				getPlanets().clear();
+				return;
+			case LanguagePackage.LANGUAGE__PLANETS_CONT:
+				getPlanetsCont().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -359,6 +447,10 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case LanguagePackage.LANGUAGE__TYPE:
 				return type != TYPE_EDEFAULT;
+			case LanguagePackage.LANGUAGE__PLANETS:
+				return planets != null && !planets.isEmpty();
+			case LanguagePackage.LANGUAGE__PLANETS_CONT:
+				return planetsCont != null && !planetsCont.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,46 +35,6 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getSurveyQuestionTypeId() <em>Survey Question Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_QUESTION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyQuestionTypeId() <em>Survey Question Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyQuestionTypeId = SURVEY_QUESTION_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,7 +61,7 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(SurveyPackage.Literals.SURVEY_QUESTION_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -113,10 +71,7 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(SurveyPackage.Literals.SURVEY_QUESTION_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -138,7 +93,7 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 */
 	@Override
 	public String getSurveyQuestionTypeId() {
-		return surveyQuestionTypeId;
+		return (String)eGet(SurveyPackage.Literals.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID, true);
 	}
 
 	/**
@@ -148,96 +103,7 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 */
 	@Override
 	public void setSurveyQuestionTypeId(String newSurveyQuestionTypeId) {
-		String oldSurveyQuestionTypeId = surveyQuestionTypeId;
-		surveyQuestionTypeId = newSurveyQuestionTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID, oldSurveyQuestionTypeId, surveyQuestionTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID:
-				return getSurveyQuestionTypeId();
-			case SurveyPackage.SURVEY_QUESTION_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID:
-				setSurveyQuestionTypeId((String)newValue);
-				return;
-			case SurveyPackage.SURVEY_QUESTION_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID:
-				setSurveyQuestionTypeId(SURVEY_QUESTION_TYPE_ID_EDEFAULT);
-				return;
-			case SurveyPackage.SURVEY_QUESTION_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID:
-				return SURVEY_QUESTION_TYPE_ID_EDEFAULT == null ? surveyQuestionTypeId != null : !SURVEY_QUESTION_TYPE_ID_EDEFAULT.equals(surveyQuestionTypeId);
-			case SurveyPackage.SURVEY_QUESTION_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (surveyQuestionTypeId: ");
-		result.append(surveyQuestionTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(SurveyPackage.Literals.SURVEY_QUESTION_TYPE__SURVEY_QUESTION_TYPE_ID, newSurveyQuestionTypeId);
 	}
 
 } //SurveyQuestionTypeImpl

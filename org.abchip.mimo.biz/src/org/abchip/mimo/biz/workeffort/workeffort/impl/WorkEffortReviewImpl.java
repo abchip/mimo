@@ -15,12 +15,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortReview;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,116 +43,6 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getReviewDate() <em>Review Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReviewDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date REVIEW_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReviewDate() <em>Review Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReviewDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date reviewDate = REVIEW_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isPostedAnonymous() <em>Posted Anonymous</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPostedAnonymous()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean POSTED_ANONYMOUS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isPostedAnonymous() <em>Posted Anonymous</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPostedAnonymous()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean postedAnonymous = POSTED_ANONYMOUS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRating() <em>Rating</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRating()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double RATING_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getRating() <em>Rating</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRating()
-	 * @generated
-	 * @ordered
-	 */
-	protected double rating = RATING_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReviewText() <em>Review Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReviewText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REVIEW_TEXT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReviewText() <em>Review Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReviewText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String reviewText = REVIEW_TEXT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected WorkEffort workEffortId;
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected UserLogin userLoginId;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusItem statusId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -183,7 +68,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public double getRating() {
-		return rating;
+		return (Double)eGet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__RATING, true);
 	}
 
 	/**
@@ -193,10 +78,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setRating(double newRating) {
-		double oldRating = rating;
-		rating = newRating;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__RATING, oldRating, rating));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__RATING, newRating);
 	}
 
 	/**
@@ -206,7 +88,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public Date getReviewDate() {
-		return reviewDate;
+		return (Date)eGet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__REVIEW_DATE, true);
 	}
 
 	/**
@@ -216,10 +98,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setReviewDate(Date newReviewDate) {
-		Date oldReviewDate = reviewDate;
-		reviewDate = newReviewDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE, oldReviewDate, reviewDate));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__REVIEW_DATE, newReviewDate);
 	}
 
 	/**
@@ -229,7 +108,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public boolean isPostedAnonymous() {
-		return postedAnonymous;
+		return (Boolean)eGet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS, true);
 	}
 
 	/**
@@ -239,10 +118,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setPostedAnonymous(boolean newPostedAnonymous) {
-		boolean oldPostedAnonymous = postedAnonymous;
-		postedAnonymous = newPostedAnonymous;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS, oldPostedAnonymous, postedAnonymous));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS, newPostedAnonymous);
 	}
 
 	/**
@@ -252,7 +128,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public String getReviewText() {
-		return reviewText;
+		return (String)eGet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__REVIEW_TEXT, true);
 	}
 
 	/**
@@ -262,10 +138,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setReviewText(String newReviewText) {
-		String oldReviewText = reviewText;
-		reviewText = newReviewText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT, oldReviewText, reviewText));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__REVIEW_TEXT, newReviewText);
 	}
 
 	/**
@@ -275,24 +148,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public StatusItem getStatusId() {
-		if (statusId != null && ((EObject)statusId).eIsProxy()) {
-			InternalEObject oldStatusId = (InternalEObject)statusId;
-			statusId = (StatusItem)eResolveProxy(oldStatusId);
-			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID, oldStatusId, statusId));
-			}
-		}
-		return statusId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusItem basicGetStatusId() {
-		return statusId;
+		return (StatusItem)eGet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__STATUS_ID, true);
 	}
 
 	/**
@@ -302,10 +158,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
-		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID, oldStatusId, statusId));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__STATUS_ID, newStatusId);
 	}
 
 	/**
@@ -315,24 +168,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public UserLogin getUserLoginId() {
-		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
-			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
-			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
-			if (userLoginId != oldUserLoginId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
-			}
-		}
-		return userLoginId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserLogin basicGetUserLoginId() {
-		return userLoginId;
+		return (UserLogin)eGet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__USER_LOGIN_ID, true);
 	}
 
 	/**
@@ -342,10 +178,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
-		UserLogin oldUserLoginId = userLoginId;
-		userLoginId = newUserLoginId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__USER_LOGIN_ID, newUserLoginId);
 	}
 
 	/**
@@ -355,24 +188,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public WorkEffort getWorkEffortId() {
-		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
-			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
-			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
-			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-			}
-		}
-		return workEffortId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkEffort basicGetWorkEffortId() {
-		return workEffortId;
+		return (WorkEffort)eGet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, true);
 	}
 
 	/**
@@ -382,153 +198,7 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
-		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
-				return getReviewDate();
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS:
-				return isPostedAnonymous();
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__RATING:
-				return getRating();
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
-				return getReviewText();
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				if (resolve) return getWorkEffortId();
-				return basicGetWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
-				if (resolve) return getUserLoginId();
-				return basicGetUserLoginId();
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID:
-				if (resolve) return getStatusId();
-				return basicGetStatusId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
-				setReviewDate((Date)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS:
-				setPostedAnonymous((Boolean)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__RATING:
-				setRating((Double)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
-				setReviewText((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
-				setUserLoginId((UserLogin)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID:
-				setStatusId((StatusItem)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
-				setReviewDate(REVIEW_DATE_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS:
-				setPostedAnonymous(POSTED_ANONYMOUS_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__RATING:
-				setRating(RATING_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
-				setReviewText(REVIEW_TEXT_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)null);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
-				setUserLoginId((UserLogin)null);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID:
-				setStatusId((StatusItem)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE:
-				return REVIEW_DATE_EDEFAULT == null ? reviewDate != null : !REVIEW_DATE_EDEFAULT.equals(reviewDate);
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS:
-				return postedAnonymous != POSTED_ANONYMOUS_EDEFAULT;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__RATING:
-				return rating != RATING_EDEFAULT;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT:
-				return REVIEW_TEXT_EDEFAULT == null ? reviewText != null : !REVIEW_TEXT_EDEFAULT.equals(reviewText);
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID:
-				return workEffortId != null;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID:
-				return userLoginId != null;
-			case WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID:
-				return statusId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (reviewDate: ");
-		result.append(reviewDate);
-		result.append(", postedAnonymous: ");
-		result.append(postedAnonymous);
-		result.append(", rating: ");
-		result.append(rating);
-		result.append(", reviewText: ");
-		result.append(reviewText);
-		result.append(')');
-		return result.toString();
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, newWorkEffortId);
 	}
 
 } //WorkEffortReviewImpl

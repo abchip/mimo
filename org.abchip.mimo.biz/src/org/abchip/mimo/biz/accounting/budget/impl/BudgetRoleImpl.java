@@ -12,11 +12,7 @@ import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,43 +34,6 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getBudgetId() <em>Budget Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Budget budgetId;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,24 +60,7 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ROLE__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(BudgetPackage.Literals.BUDGET_ROLE__PARTY_ID, true);
 	}
 
 	/**
@@ -128,10 +70,7 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__PARTY_ID, oldPartyId, partyId));
+		eSet(BudgetPackage.Literals.BUDGET_ROLE__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -141,7 +80,7 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public String getRoleTypeId() {
-		return roleTypeId;
+		return (String)eGet(BudgetPackage.Literals.BUDGET_ROLE__ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -151,10 +90,7 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
-		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+		eSet(BudgetPackage.Literals.BUDGET_ROLE__ROLE_TYPE_ID, newRoleTypeId);
 	}
 
 	/**
@@ -164,24 +100,7 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public Budget getBudgetId() {
-		if (budgetId != null && ((EObject)budgetId).eIsProxy()) {
-			InternalEObject oldBudgetId = (InternalEObject)budgetId;
-			budgetId = (Budget)eResolveProxy(oldBudgetId);
-			if (budgetId != oldBudgetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ROLE__BUDGET_ID, oldBudgetId, budgetId));
-			}
-		}
-		return budgetId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Budget basicGetBudgetId() {
-		return budgetId;
+		return (Budget)eGet(BudgetPackage.Literals.BUDGET_ROLE__BUDGET_ID, true);
 	}
 
 	/**
@@ -191,106 +110,7 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
-		Budget oldBudgetId = budgetId;
-		budgetId = newBudgetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__BUDGET_ID, oldBudgetId, budgetId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				if (resolve) return getBudgetId();
-				return basicGetBudgetId();
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				setBudgetId((Budget)newValue);
-				return;
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				setBudgetId((Budget)null);
-				return;
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
-				return budgetId != null;
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				return partyId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(')');
-		return result.toString();
+		eSet(BudgetPackage.Literals.BUDGET_ROLE__BUDGET_ID, newBudgetId);
 	}
 
 } //BudgetRoleImpl

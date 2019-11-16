@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.promo.impl;
 
-import java.util.Collection;
 import java.util.Date;
 
 import java.util.List;
@@ -17,13 +16,7 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,236 +51,6 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_CODE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoCodeId = PRODUCT_PROMO_CODE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date CREATED_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date createdDate = CREATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date LAST_MODIFIED_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isRequireEmailOrParty() <em>Require Email Or Party</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRequireEmailOrParty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean REQUIRE_EMAIL_OR_PARTY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isRequireEmailOrParty() <em>Require Email Or Party</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRequireEmailOrParty()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean requireEmailOrParty = REQUIRE_EMAIL_OR_PARTY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUseLimitPerCode() <em>Use Limit Per Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseLimitPerCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long USE_LIMIT_PER_CODE_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getUseLimitPerCode() <em>Use Limit Per Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseLimitPerCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected long useLimitPerCode = USE_LIMIT_PER_CODE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUseLimitPerCustomer() <em>Use Limit Per Customer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseLimitPerCustomer()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long USE_LIMIT_PER_CUSTOMER_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getUseLimitPerCustomer() <em>Use Limit Per Customer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseLimitPerCustomer()
-	 * @generated
-	 * @ordered
-	 */
-	protected long useLimitPerCustomer = USE_LIMIT_PER_CUSTOMER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isUserEntered() <em>User Entered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUserEntered()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean USER_ENTERED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isUserEntered() <em>User Entered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUserEntered()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean userEntered = USER_ENTERED_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductPromo productPromoId;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected UserLogin createdByUserLogin;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected UserLogin lastModifiedByUserLogin;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoCodeEmails() <em>Product Promo Code Emails</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeEmails()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> productPromoCodeEmails;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoCodeParties() <em>Product Promo Code Parties</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeParties()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> productPromoCodeParties;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -313,24 +76,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public UserLogin getCreatedByUserLogin() {
-		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
-			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
-			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
-			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
-			}
-		}
-		return createdByUserLogin;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserLogin basicGetCreatedByUserLogin() {
-		return createdByUserLogin;
+		return (UserLogin)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -340,10 +86,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
-		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN, newCreatedByUserLogin);
 	}
 
 	/**
@@ -353,7 +96,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public Date getCreatedDate() {
-		return createdDate;
+		return (Date)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__CREATED_DATE, true);
 	}
 
 	/**
@@ -363,10 +106,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
-		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE, oldCreatedDate, createdDate));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__CREATED_DATE, newCreatedDate);
 	}
 
 	/**
@@ -376,7 +116,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__FROM_DATE, true);
 	}
 
 	/**
@@ -386,10 +126,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE, oldFromDate, fromDate));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -399,24 +136,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public UserLogin getLastModifiedByUserLogin() {
-		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
-			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
-			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
-			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
-			}
-		}
-		return lastModifiedByUserLogin;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserLogin basicGetLastModifiedByUserLogin() {
-		return lastModifiedByUserLogin;
+		return (UserLogin)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -426,10 +146,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
-		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
-		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN, newLastModifiedByUserLogin);
 	}
 
 	/**
@@ -439,7 +156,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public Date getLastModifiedDate() {
-		return lastModifiedDate;
+		return (Date)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE, true);
 	}
 
 	/**
@@ -449,10 +166,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
-		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE, newLastModifiedDate);
 	}
 
 	/**
@@ -462,7 +176,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__THRU_DATE, true);
 	}
 
 	/**
@@ -472,10 +186,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__THRU_DATE, oldThruDate, thruDate));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -485,7 +196,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public long getUseLimitPerCode() {
-		return useLimitPerCode;
+		return (Long)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE, true);
 	}
 
 	/**
@@ -495,10 +206,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setUseLimitPerCode(long newUseLimitPerCode) {
-		long oldUseLimitPerCode = useLimitPerCode;
-		useLimitPerCode = newUseLimitPerCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE, oldUseLimitPerCode, useLimitPerCode));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE, newUseLimitPerCode);
 	}
 
 	/**
@@ -508,7 +216,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public long getUseLimitPerCustomer() {
-		return useLimitPerCustomer;
+		return (Long)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER, true);
 	}
 
 	/**
@@ -518,10 +226,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setUseLimitPerCustomer(long newUseLimitPerCustomer) {
-		long oldUseLimitPerCustomer = useLimitPerCustomer;
-		useLimitPerCustomer = newUseLimitPerCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER, oldUseLimitPerCustomer, useLimitPerCustomer));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER, newUseLimitPerCustomer);
 	}
 
 	/**
@@ -531,7 +236,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public boolean isUserEntered() {
-		return userEntered;
+		return (Boolean)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__USER_ENTERED, true);
 	}
 
 	/**
@@ -541,10 +246,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setUserEntered(boolean newUserEntered) {
-		boolean oldUserEntered = userEntered;
-		userEntered = newUserEntered;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED, oldUserEntered, userEntered));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__USER_ENTERED, newUserEntered);
 	}
 
 	/**
@@ -552,12 +254,10 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getProductPromoCodeEmails() {
-		if (productPromoCodeEmails == null) {
-			productPromoCodeEmails = new EDataTypeUniqueEList<String>(String.class, this, PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS);
-		}
-		return productPromoCodeEmails;
+		return (List<String>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS, true);
 	}
 
 	/**
@@ -565,12 +265,10 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getProductPromoCodeParties() {
-		if (productPromoCodeParties == null) {
-			productPromoCodeParties = new EDataTypeUniqueEList<String>(String.class, this, PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES);
-		}
-		return productPromoCodeParties;
+		return (List<String>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES, true);
 	}
 
 	/**
@@ -616,24 +314,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public ProductPromo getProductPromoId() {
-		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
-			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
-			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
-			if (productPromoId != oldProductPromoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
-			}
-		}
-		return productPromoId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductPromo basicGetProductPromoId() {
-		return productPromoId;
+		return (ProductPromo)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, true);
 	}
 
 	/**
@@ -643,10 +324,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
-		ProductPromo oldProductPromoId = productPromoId;
-		productPromoId = newProductPromoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, newProductPromoId);
 	}
 
 	/**
@@ -656,7 +334,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public boolean isRequireEmailOrParty() {
-		return requireEmailOrParty;
+		return (Boolean)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY, true);
 	}
 
 	/**
@@ -666,10 +344,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setRequireEmailOrParty(boolean newRequireEmailOrParty) {
-		boolean oldRequireEmailOrParty = requireEmailOrParty;
-		requireEmailOrParty = newRequireEmailOrParty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY, oldRequireEmailOrParty, requireEmailOrParty));
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY, newRequireEmailOrParty);
 	}
 
 	/**
@@ -679,7 +354,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public String getProductPromoCodeId() {
-		return productPromoCodeId;
+		return (String)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID, true);
 	}
 
 	/**
@@ -689,240 +364,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@Override
 	public void setProductPromoCodeId(String newProductPromoCodeId) {
-		String oldProductPromoCodeId = productPromoCodeId;
-		productPromoCodeId = newProductPromoCodeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				return getProductPromoCodeId();
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
-				return getCreatedDate();
-			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
-				return getFromDate();
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
-				return getLastModifiedDate();
-			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
-				return isRequireEmailOrParty();
-			case PromoPackage.PRODUCT_PROMO_CODE__THRU_DATE:
-				return getThruDate();
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE:
-				return getUseLimitPerCode();
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER:
-				return getUseLimitPerCustomer();
-			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
-				return isUserEntered();
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				if (resolve) return getProductPromoId();
-				return basicGetProductPromoId();
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				if (resolve) return getCreatedByUserLogin();
-				return basicGetCreatedByUserLogin();
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				if (resolve) return getLastModifiedByUserLogin();
-				return basicGetLastModifiedByUserLogin();
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
-				return getProductPromoCodeEmails();
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES:
-				return getProductPromoCodeParties();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId((String)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
-				setCreatedDate((Date)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
-				setLastModifiedDate((Date)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
-				setRequireEmailOrParty((Boolean)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE:
-				setUseLimitPerCode((Long)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER:
-				setUseLimitPerCustomer((Long)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
-				setUserEntered((Boolean)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				setProductPromoId((ProductPromo)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((UserLogin)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((UserLogin)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
-				getProductPromoCodeEmails().clear();
-				getProductPromoCodeEmails().addAll((Collection<? extends String>)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES:
-				getProductPromoCodeParties().clear();
-				getProductPromoCodeParties().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId(PRODUCT_PROMO_CODE_ID_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
-				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
-				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
-				setRequireEmailOrParty(REQUIRE_EMAIL_OR_PARTY_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE:
-				setUseLimitPerCode(USE_LIMIT_PER_CODE_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER:
-				setUseLimitPerCustomer(USE_LIMIT_PER_CUSTOMER_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
-				setUserEntered(USER_ENTERED_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				setProductPromoId((ProductPromo)null);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((UserLogin)null);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((UserLogin)null);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
-				getProductPromoCodeEmails().clear();
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES:
-				getProductPromoCodeParties().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				return PRODUCT_PROMO_CODE_ID_EDEFAULT == null ? productPromoCodeId != null : !PRODUCT_PROMO_CODE_ID_EDEFAULT.equals(productPromoCodeId);
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
-				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
-				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
-				return requireEmailOrParty != REQUIRE_EMAIL_OR_PARTY_EDEFAULT;
-			case PromoPackage.PRODUCT_PROMO_CODE__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE:
-				return useLimitPerCode != USE_LIMIT_PER_CODE_EDEFAULT;
-			case PromoPackage.PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER:
-				return useLimitPerCustomer != USE_LIMIT_PER_CUSTOMER_EDEFAULT;
-			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
-				return userEntered != USER_ENTERED_EDEFAULT;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				return productPromoId != null;
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				return createdByUserLogin != null;
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				return lastModifiedByUserLogin != null;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
-				return productPromoCodeEmails != null && !productPromoCodeEmails.isEmpty();
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES:
-				return productPromoCodeParties != null && !productPromoCodeParties.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productPromoCodeId: ");
-		result.append(productPromoCodeId);
-		result.append(", createdDate: ");
-		result.append(createdDate);
-		result.append(", fromDate: ");
-		result.append(fromDate);
-		result.append(", lastModifiedDate: ");
-		result.append(lastModifiedDate);
-		result.append(", requireEmailOrParty: ");
-		result.append(requireEmailOrParty);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(", useLimitPerCode: ");
-		result.append(useLimitPerCode);
-		result.append(", useLimitPerCustomer: ");
-		result.append(useLimitPerCustomer);
-		result.append(", userEntered: ");
-		result.append(userEntered);
-		result.append(", productPromoCodeEmails: ");
-		result.append(productPromoCodeEmails);
-		result.append(", productPromoCodeParties: ");
-		result.append(productPromoCodeParties);
-		result.append(')');
-		return result.toString();
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID, newProductPromoCodeId);
 	}
 
 } //ProductPromoCodeImpl

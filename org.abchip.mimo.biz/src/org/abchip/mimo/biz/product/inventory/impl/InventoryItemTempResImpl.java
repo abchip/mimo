@@ -16,12 +16,7 @@ import org.abchip.mimo.biz.product.inventory.InventoryItemTempRes;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,86 +41,6 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISIT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visitId = VISIT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal QUANTITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal quantity = QUANTITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReservedDate() <em>Reserved Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date RESERVED_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReservedDate() <em>Reserved Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReservedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date reservedDate = RESERVED_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductStore productStoreId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,24 +67,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID, true);
 	}
 
 	/**
@@ -179,10 +77,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID, oldProductId, productId));
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID, newProductId);
 	}
 
 	/**
@@ -192,24 +87,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public ProductStore getProductStoreId() {
-		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
-			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
-			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
-			if (productStoreId != oldProductStoreId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
-			}
-		}
-		return productStoreId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductStore basicGetProductStoreId() {
-		return productStoreId;
+		return (ProductStore)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID, true);
 	}
 
 	/**
@@ -219,10 +97,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
-		ProductStore oldProductStoreId = productStoreId;
-		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID, newProductStoreId);
 	}
 
 	/**
@@ -232,7 +107,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public BigDecimal getQuantity() {
-		return quantity;
+		return (BigDecimal)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__QUANTITY, true);
 	}
 
 	/**
@@ -242,10 +117,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
-		BigDecimal oldQuantity = quantity;
-		quantity = newQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__QUANTITY, oldQuantity, quantity));
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__QUANTITY, newQuantity);
 	}
 
 	/**
@@ -255,7 +127,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public Date getReservedDate() {
-		return reservedDate;
+		return (Date)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE, true);
 	}
 
 	/**
@@ -265,10 +137,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setReservedDate(Date newReservedDate) {
-		Date oldReservedDate = reservedDate;
-		reservedDate = newReservedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE, oldReservedDate, reservedDate));
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE, newReservedDate);
 	}
 
 	/**
@@ -278,7 +147,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public String getVisitId() {
-		return visitId;
+		return (String)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__VISIT_ID, true);
 	}
 
 	/**
@@ -288,130 +157,7 @@ public class InventoryItemTempResImpl extends BizEntityImpl implements Inventory
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
-		String oldVisitId = visitId;
-		visitId = newVisitId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TEMP_RES__VISIT_ID, oldVisitId, visitId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__VISIT_ID:
-				return getVisitId();
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__QUANTITY:
-				return getQuantity();
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE:
-				return getReservedDate();
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID:
-				if (resolve) return getProductStoreId();
-				return basicGetProductStoreId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__VISIT_ID:
-				setVisitId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__QUANTITY:
-				setQuantity((BigDecimal)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE:
-				setReservedDate((Date)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__VISIT_ID:
-				setVisitId(VISIT_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE:
-				setReservedDate(RESERVED_DATE_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID:
-				setProductStoreId((ProductStore)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__VISIT_ID:
-				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__RESERVED_DATE:
-				return RESERVED_DATE_EDEFAULT == null ? reservedDate != null : !RESERVED_DATE_EDEFAULT.equals(reservedDate);
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_ID:
-				return productId != null;
-			case InventoryPackage.INVENTORY_ITEM_TEMP_RES__PRODUCT_STORE_ID:
-				return productStoreId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (visitId: ");
-		result.append(visitId);
-		result.append(", quantity: ");
-		result.append(quantity);
-		result.append(", reservedDate: ");
-		result.append(reservedDate);
-		result.append(')');
-		return result.toString();
+		eSet(InventoryPackage.Literals.INVENTORY_ITEM_TEMP_RES__VISIT_ID, newVisitId);
 	}
 
 } //InventoryItemTempResImpl

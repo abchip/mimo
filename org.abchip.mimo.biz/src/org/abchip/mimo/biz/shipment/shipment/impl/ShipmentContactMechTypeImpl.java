@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMechType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,46 +34,6 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentContactMechTypeId() <em>Shipment Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_CONTACT_MECH_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentContactMechTypeId() <em>Shipment Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentContactMechTypeId = SHIPMENT_CONTACT_MECH_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +61,7 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -113,10 +71,7 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -138,7 +93,7 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 */
 	@Override
 	public String getShipmentContactMechTypeId() {
-		return shipmentContactMechTypeId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID, true);
 	}
 
 	/**
@@ -148,96 +103,7 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 */
 	@Override
 	public void setShipmentContactMechTypeId(String newShipmentContactMechTypeId) {
-		String oldShipmentContactMechTypeId = shipmentContactMechTypeId;
-		shipmentContactMechTypeId = newShipmentContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID, oldShipmentContactMechTypeId, shipmentContactMechTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				return getShipmentContactMechTypeId();
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				setShipmentContactMechTypeId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				setShipmentContactMechTypeId(SHIPMENT_CONTACT_MECH_TYPE_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				return SHIPMENT_CONTACT_MECH_TYPE_ID_EDEFAULT == null ? shipmentContactMechTypeId != null : !SHIPMENT_CONTACT_MECH_TYPE_ID_EDEFAULT.equals(shipmentContactMechTypeId);
-			case Shipment_Package.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentContactMechTypeId: ");
-		result.append(shipmentContactMechTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID, newShipmentContactMechTypeId);
 	}
 
 } //ShipmentContactMechTypeImpl

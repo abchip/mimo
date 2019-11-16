@@ -12,12 +12,7 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,26 +33,6 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected WorkEffort workEffortId;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected InventoryItem inventoryItemId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,24 +60,7 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 	 */
 	@Override
 	public InventoryItem getInventoryItemId() {
-		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
-			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
-			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
-			if (inventoryItemId != oldInventoryItemId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
-			}
-		}
-		return inventoryItemId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InventoryItem basicGetInventoryItemId() {
-		return inventoryItemId;
+		return (InventoryItem)eGet(WorkeffortPackage.Literals.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID, true);
 	}
 
 	/**
@@ -112,10 +70,7 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		InventoryItem oldInventoryItemId = inventoryItemId;
-		inventoryItemId = newInventoryItemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID, newInventoryItemId);
 	}
 
 	/**
@@ -125,24 +80,7 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 	 */
 	@Override
 	public WorkEffort getWorkEffortId() {
-		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
-			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
-			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
-			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-			}
-		}
-		return workEffortId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkEffort basicGetWorkEffortId() {
-		return workEffortId;
+		return (WorkEffort)eGet(WorkeffortPackage.Literals.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID, true);
 	}
 
 	/**
@@ -152,80 +90,7 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
-		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID:
-				if (resolve) return getWorkEffortId();
-				return basicGetWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID:
-				if (resolve) return getInventoryItemId();
-				return basicGetInventoryItemId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID:
-				setInventoryItemId((InventoryItem)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)null);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID:
-				setInventoryItemId((InventoryItem)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID:
-				return workEffortId != null;
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID:
-				return inventoryItemId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID, newWorkEffortId);
 	}
 
 } //WorkEffortInventoryProducedImpl

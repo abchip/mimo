@@ -10,9 +10,7 @@ package org.abchip.mimo.biz.entity.test.impl;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingSubtype;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,44 +31,6 @@ public class TestingSubtypeImpl extends BizEntityImpl implements TestingSubtype 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getTestingTypeId() <em>Testing Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TESTING_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTestingTypeId() <em>Testing Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String testingTypeId = TESTING_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getSubtypeDescription() <em>Subtype Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubtypeDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBTYPE_DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getSubtypeDescription() <em>Subtype Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubtypeDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subtypeDescription = SUBTYPE_DESCRIPTION_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,7 +57,7 @@ public class TestingSubtypeImpl extends BizEntityImpl implements TestingSubtype 
 	 */
 	@Override
 	public String getSubtypeDescription() {
-		return subtypeDescription;
+		return (String)eGet(TestPackage.Literals.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION, true);
 	}
 
 	/**
@@ -107,10 +67,7 @@ public class TestingSubtypeImpl extends BizEntityImpl implements TestingSubtype 
 	 */
 	@Override
 	public void setSubtypeDescription(String newSubtypeDescription) {
-		String oldSubtypeDescription = subtypeDescription;
-		subtypeDescription = newSubtypeDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION, oldSubtypeDescription, subtypeDescription));
+		eSet(TestPackage.Literals.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION, newSubtypeDescription);
 	}
 
 	/**
@@ -120,7 +77,7 @@ public class TestingSubtypeImpl extends BizEntityImpl implements TestingSubtype 
 	 */
 	@Override
 	public String getTestingTypeId() {
-		return testingTypeId;
+		return (String)eGet(TestPackage.Literals.TESTING_SUBTYPE__TESTING_TYPE_ID, true);
 	}
 
 	/**
@@ -130,96 +87,7 @@ public class TestingSubtypeImpl extends BizEntityImpl implements TestingSubtype 
 	 */
 	@Override
 	public void setTestingTypeId(String newTestingTypeId) {
-		String oldTestingTypeId = testingTypeId;
-		testingTypeId = newTestingTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_SUBTYPE__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TestPackage.TESTING_SUBTYPE__TESTING_TYPE_ID:
-				return getTestingTypeId();
-			case TestPackage.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION:
-				return getSubtypeDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TestPackage.TESTING_SUBTYPE__TESTING_TYPE_ID:
-				setTestingTypeId((String)newValue);
-				return;
-			case TestPackage.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION:
-				setSubtypeDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TestPackage.TESTING_SUBTYPE__TESTING_TYPE_ID:
-				setTestingTypeId(TESTING_TYPE_ID_EDEFAULT);
-				return;
-			case TestPackage.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION:
-				setSubtypeDescription(SUBTYPE_DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TestPackage.TESTING_SUBTYPE__TESTING_TYPE_ID:
-				return TESTING_TYPE_ID_EDEFAULT == null ? testingTypeId != null : !TESTING_TYPE_ID_EDEFAULT.equals(testingTypeId);
-			case TestPackage.TESTING_SUBTYPE__SUBTYPE_DESCRIPTION:
-				return SUBTYPE_DESCRIPTION_EDEFAULT == null ? subtypeDescription != null : !SUBTYPE_DESCRIPTION_EDEFAULT.equals(subtypeDescription);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (testingTypeId: ");
-		result.append(testingTypeId);
-		result.append(", subtypeDescription: ");
-		result.append(subtypeDescription);
-		result.append(')');
-		return result.toString();
+		eSet(TestPackage.Literals.TESTING_SUBTYPE__TESTING_TYPE_ID, newTestingTypeId);
 	}
 
 } //TestingSubtypeImpl

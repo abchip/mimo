@@ -11,11 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.PartyTypeAttr;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,52 +33,6 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ATTR_NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String attrName = ATTR_NAME_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PartyType partyTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,7 +59,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(PartyPackage.Literals.PARTY_TYPE_ATTR__DESCRIPTION, true);
 	}
 
 	/**
@@ -119,10 +69,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_TYPE_ATTR__DESCRIPTION, oldDescription, description));
+		eSet(PartyPackage.Literals.PARTY_TYPE_ATTR__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -132,7 +79,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public String getAttrName() {
-		return attrName;
+		return (String)eGet(PartyPackage.Literals.PARTY_TYPE_ATTR__ATTR_NAME, true);
 	}
 
 	/**
@@ -142,10 +89,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
-		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
+		eSet(PartyPackage.Literals.PARTY_TYPE_ATTR__ATTR_NAME, newAttrName);
 	}
 
 	/**
@@ -155,24 +99,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public PartyType getPartyTypeId() {
-		if (partyTypeId != null && ((EObject)partyTypeId).eIsProxy()) {
-			InternalEObject oldPartyTypeId = (InternalEObject)partyTypeId;
-			partyTypeId = (PartyType)eResolveProxy(oldPartyTypeId);
-			if (partyTypeId != oldPartyTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
-			}
-		}
-		return partyTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartyType basicGetPartyTypeId() {
-		return partyTypeId;
+		return (PartyType)eGet(PartyPackage.Literals.PARTY_TYPE_ATTR__PARTY_TYPE_ID, true);
 	}
 
 	/**
@@ -182,107 +109,7 @@ public class PartyTypeAttrImpl extends BizEntityImpl implements PartyTypeAttr {
 	 */
 	@Override
 	public void setPartyTypeId(PartyType newPartyTypeId) {
-		PartyType oldPartyTypeId = partyTypeId;
-		partyTypeId = newPartyTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PartyPackage.PARTY_TYPE_ATTR__ATTR_NAME:
-				return getAttrName();
-			case PartyPackage.PARTY_TYPE_ATTR__DESCRIPTION:
-				return getDescription();
-			case PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID:
-				if (resolve) return getPartyTypeId();
-				return basicGetPartyTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PartyPackage.PARTY_TYPE_ATTR__ATTR_NAME:
-				setAttrName((String)newValue);
-				return;
-			case PartyPackage.PARTY_TYPE_ATTR__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID:
-				setPartyTypeId((PartyType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PartyPackage.PARTY_TYPE_ATTR__ATTR_NAME:
-				setAttrName(ATTR_NAME_EDEFAULT);
-				return;
-			case PartyPackage.PARTY_TYPE_ATTR__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID:
-				setPartyTypeId((PartyType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PartyPackage.PARTY_TYPE_ATTR__ATTR_NAME:
-				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
-			case PartyPackage.PARTY_TYPE_ATTR__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PartyPackage.PARTY_TYPE_ATTR__PARTY_TYPE_ID:
-				return partyTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (attrName: ");
-		result.append(attrName);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(PartyPackage.Literals.PARTY_TYPE_ATTR__PARTY_TYPE_ID, newPartyTypeId);
 	}
 
 } //PartyTypeAttrImpl

@@ -14,11 +14,7 @@ import org.abchip.mimo.biz.accounting.rate.RatePackage;
 import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,97 +39,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isDefaultRate() <em>Default Rate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDefaultRate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean DEFAULT_RATE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isDefaultRate() <em>Default Rate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDefaultRate()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean defaultRate = DEFAULT_RATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPercentageUsed() <em>Percentage Used</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPercentageUsed()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double PERCENTAGE_USED_EDEFAULT = 0.0;
-	/**
-	 * The cached value of the '{@link #getPercentageUsed() <em>Percentage Used</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPercentageUsed()
-	 * @generated
-	 * @ordered
-	 */
-	protected double percentageUsed = PERCENTAGE_USED_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party partyId;
-	/**
-	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected RateType rateTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,7 +65,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(RatePackage.Literals.PARTY_RATE__FROM_DATE, true);
 	}
 
 	/**
@@ -170,10 +75,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__FROM_DATE, oldFromDate, fromDate));
+		eSet(RatePackage.Literals.PARTY_RATE__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -183,7 +85,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public boolean isDefaultRate() {
-		return defaultRate;
+		return (Boolean)eGet(RatePackage.Literals.PARTY_RATE__DEFAULT_RATE, true);
 	}
 
 	/**
@@ -193,10 +95,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setDefaultRate(boolean newDefaultRate) {
-		boolean oldDefaultRate = defaultRate;
-		defaultRate = newDefaultRate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__DEFAULT_RATE, oldDefaultRate, defaultRate));
+		eSet(RatePackage.Literals.PARTY_RATE__DEFAULT_RATE, newDefaultRate);
 	}
 
 	/**
@@ -206,24 +105,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public Party getPartyId() {
-		if (partyId != null && ((EObject)partyId).eIsProxy()) {
-			InternalEObject oldPartyId = (InternalEObject)partyId;
-			partyId = (Party)eResolveProxy(oldPartyId);
-			if (partyId != oldPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.PARTY_RATE__PARTY_ID, oldPartyId, partyId));
-			}
-		}
-		return partyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetPartyId() {
-		return partyId;
+		return (Party)eGet(RatePackage.Literals.PARTY_RATE__PARTY_ID, true);
 	}
 
 	/**
@@ -233,10 +115,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
-		Party oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__PARTY_ID, oldPartyId, partyId));
+		eSet(RatePackage.Literals.PARTY_RATE__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -246,7 +125,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public double getPercentageUsed() {
-		return percentageUsed;
+		return (Double)eGet(RatePackage.Literals.PARTY_RATE__PERCENTAGE_USED, true);
 	}
 
 	/**
@@ -256,10 +135,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setPercentageUsed(double newPercentageUsed) {
-		double oldPercentageUsed = percentageUsed;
-		percentageUsed = newPercentageUsed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__PERCENTAGE_USED, oldPercentageUsed, percentageUsed));
+		eSet(RatePackage.Literals.PARTY_RATE__PERCENTAGE_USED, newPercentageUsed);
 	}
 
 	/**
@@ -269,7 +145,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(RatePackage.Literals.PARTY_RATE__THRU_DATE, true);
 	}
 
 	/**
@@ -279,10 +155,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__THRU_DATE, oldThruDate, thruDate));
+		eSet(RatePackage.Literals.PARTY_RATE__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -292,24 +165,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public RateType getRateTypeId() {
-		if (rateTypeId != null && ((EObject)rateTypeId).eIsProxy()) {
-			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
-			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
-			if (rateTypeId != oldRateTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.PARTY_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
-			}
-		}
-		return rateTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RateType basicGetRateTypeId() {
-		return rateTypeId;
+		return (RateType)eGet(RatePackage.Literals.PARTY_RATE__RATE_TYPE_ID, true);
 	}
 
 	/**
@@ -319,142 +175,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	@Override
 	public void setRateTypeId(RateType newRateTypeId) {
-		RateType oldRateTypeId = rateTypeId;
-		rateTypeId = newRateTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case RatePackage.PARTY_RATE__FROM_DATE:
-				return getFromDate();
-			case RatePackage.PARTY_RATE__DEFAULT_RATE:
-				return isDefaultRate();
-			case RatePackage.PARTY_RATE__PERCENTAGE_USED:
-				return getPercentageUsed();
-			case RatePackage.PARTY_RATE__THRU_DATE:
-				return getThruDate();
-			case RatePackage.PARTY_RATE__PARTY_ID:
-				if (resolve) return getPartyId();
-				return basicGetPartyId();
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				if (resolve) return getRateTypeId();
-				return basicGetRateTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RatePackage.PARTY_RATE__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case RatePackage.PARTY_RATE__DEFAULT_RATE:
-				setDefaultRate((Boolean)newValue);
-				return;
-			case RatePackage.PARTY_RATE__PERCENTAGE_USED:
-				setPercentageUsed((Double)newValue);
-				return;
-			case RatePackage.PARTY_RATE__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case RatePackage.PARTY_RATE__PARTY_ID:
-				setPartyId((Party)newValue);
-				return;
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				setRateTypeId((RateType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RatePackage.PARTY_RATE__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case RatePackage.PARTY_RATE__DEFAULT_RATE:
-				setDefaultRate(DEFAULT_RATE_EDEFAULT);
-				return;
-			case RatePackage.PARTY_RATE__PERCENTAGE_USED:
-				setPercentageUsed(PERCENTAGE_USED_EDEFAULT);
-				return;
-			case RatePackage.PARTY_RATE__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case RatePackage.PARTY_RATE__PARTY_ID:
-				setPartyId((Party)null);
-				return;
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				setRateTypeId((RateType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case RatePackage.PARTY_RATE__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case RatePackage.PARTY_RATE__DEFAULT_RATE:
-				return defaultRate != DEFAULT_RATE_EDEFAULT;
-			case RatePackage.PARTY_RATE__PERCENTAGE_USED:
-				return percentageUsed != PERCENTAGE_USED_EDEFAULT;
-			case RatePackage.PARTY_RATE__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case RatePackage.PARTY_RATE__PARTY_ID:
-				return partyId != null;
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				return rateTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", defaultRate: ");
-		result.append(defaultRate);
-		result.append(", percentageUsed: ");
-		result.append(percentageUsed);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(RatePackage.Literals.PARTY_RATE__RATE_TYPE_ID, newRateTypeId);
 	}
 
 } //PartyRateImpl

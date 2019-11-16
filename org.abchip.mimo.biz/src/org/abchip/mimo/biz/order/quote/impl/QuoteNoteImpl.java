@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuoteNote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,16 +31,6 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Quote quoteId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,24 +58,7 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	 */
 	@Override
 	public Quote getQuoteId() {
-		if (quoteId != null && ((EObject)quoteId).eIsProxy()) {
-			InternalEObject oldQuoteId = (InternalEObject)quoteId;
-			quoteId = (Quote)eResolveProxy(oldQuoteId);
-			if (quoteId != oldQuoteId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_NOTE__QUOTE_ID, oldQuoteId, quoteId));
-			}
-		}
-		return quoteId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Quote basicGetQuoteId() {
-		return quoteId;
+		return (Quote)eGet(QuotePackage.Literals.QUOTE_NOTE__QUOTE_ID, true);
 	}
 
 	/**
@@ -100,69 +68,7 @@ public class QuoteNoteImpl extends BizEntityNoteImpl implements QuoteNote {
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
-		Quote oldQuoteId = quoteId;
-		quoteId = newQuoteId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_NOTE__QUOTE_ID, oldQuoteId, quoteId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				if (resolve) return getQuoteId();
-				return basicGetQuoteId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				setQuoteId((Quote)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				setQuoteId((Quote)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case QuotePackage.QUOTE_NOTE__QUOTE_ID:
-				return quoteId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(QuotePackage.Literals.QUOTE_NOTE__QUOTE_ID, newQuoteId);
 	}
 
 } //QuoteNoteImpl

@@ -7,17 +7,12 @@
  */
 package org.abchip.mimo.biz.entity.group.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.entity.group.EntityGroup;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,56 +34,6 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getEntityGroupId() <em>Entity Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENTITY_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEntityGroupId() <em>Entity Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String entityGroupId = ENTITY_GROUP_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEntityGroupName() <em>Entity Group Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityGroupName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENTITY_GROUP_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEntityGroupName() <em>Entity Group Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityGroupName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String entityGroupName = ENTITY_GROUP_NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getEntityGroupEntries() <em>Entity Group Entries</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityGroupEntries()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> entityGroupEntries;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +60,7 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 */
 	@Override
 	public String getEntityGroupId() {
-		return entityGroupId;
+		return (String)eGet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_ID, true);
 	}
 
 	/**
@@ -125,10 +70,7 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 */
 	@Override
 	public void setEntityGroupId(String newEntityGroupId) {
-		String oldEntityGroupId = entityGroupId;
-		entityGroupId = newEntityGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
+		eSet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_ID, newEntityGroupId);
 	}
 
 	/**
@@ -138,7 +80,7 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 */
 	@Override
 	public String getEntityGroupName() {
-		return entityGroupName;
+		return (String)eGet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_NAME, true);
 	}
 
 	/**
@@ -148,10 +90,7 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 */
 	@Override
 	public void setEntityGroupName(String newEntityGroupName) {
-		String oldEntityGroupName = entityGroupName;
-		entityGroupName = newEntityGroupName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GroupPackage.ENTITY_GROUP__ENTITY_GROUP_NAME, oldEntityGroupName, entityGroupName));
+		eSet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_NAME, newEntityGroupName);
 	}
 
 	/**
@@ -159,12 +98,10 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getEntityGroupEntries() {
-		if (entityGroupEntries == null) {
-			entityGroupEntries = new EDataTypeUniqueEList<String>(String.class, this, GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ENTRIES);
-		}
-		return entityGroupEntries;
+		return (List<String>)eGet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_ENTRIES, true);
 	}
 
 	/**
@@ -177,106 +114,6 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ID:
-				return getEntityGroupId();
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_NAME:
-				return getEntityGroupName();
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ENTRIES:
-				return getEntityGroupEntries();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ID:
-				setEntityGroupId((String)newValue);
-				return;
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_NAME:
-				setEntityGroupName((String)newValue);
-				return;
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ENTRIES:
-				getEntityGroupEntries().clear();
-				getEntityGroupEntries().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ID:
-				setEntityGroupId(ENTITY_GROUP_ID_EDEFAULT);
-				return;
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_NAME:
-				setEntityGroupName(ENTITY_GROUP_NAME_EDEFAULT);
-				return;
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ENTRIES:
-				getEntityGroupEntries().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ID:
-				return ENTITY_GROUP_ID_EDEFAULT == null ? entityGroupId != null : !ENTITY_GROUP_ID_EDEFAULT.equals(entityGroupId);
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_NAME:
-				return ENTITY_GROUP_NAME_EDEFAULT == null ? entityGroupName != null : !ENTITY_GROUP_NAME_EDEFAULT.equals(entityGroupName);
-			case GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ENTRIES:
-				return entityGroupEntries != null && !entityGroupEntries.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (entityGroupId: ");
-		result.append(entityGroupId);
-		result.append(", entityGroupName: ");
-		result.append(entityGroupName);
-		result.append(", entityGroupEntries: ");
-		result.append(entityGroupEntries);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EntityGroupImpl

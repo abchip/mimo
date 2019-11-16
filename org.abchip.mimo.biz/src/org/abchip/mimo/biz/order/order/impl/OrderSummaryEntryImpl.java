@@ -16,12 +16,7 @@ import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderSummaryEntry;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,106 +41,6 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getEntryDate() <em>Entry Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntryDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date ENTRY_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEntryDate() <em>Entry Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntryDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date entryDate = ENTRY_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGrossSales() <em>Gross Sales</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGrossSales()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal GROSS_SALES_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGrossSales() <em>Gross Sales</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGrossSales()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal grossSales = GROSS_SALES_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductCost() <em>Product Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal PRODUCT_COST_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCost() <em>Product Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal productCost = PRODUCT_COST_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTotalQuantity() <em>Total Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal TOTAL_QUANTITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTotalQuantity() <em>Total Quantity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalQuantity()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal totalQuantity = TOTAL_QUANTITY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Product productId;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Facility facilityId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,7 +68,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public Date getEntryDate() {
-		return entryDate;
+		return (Date)eGet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__ENTRY_DATE, true);
 	}
 
 	/**
@@ -183,10 +78,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setEntryDate(Date newEntryDate) {
-		Date oldEntryDate = entryDate;
-		entryDate = newEntryDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE, oldEntryDate, entryDate));
+		eSet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__ENTRY_DATE, newEntryDate);
 	}
 
 	/**
@@ -196,24 +88,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public Facility getFacilityId() {
-		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
-			InternalEObject oldFacilityId = (InternalEObject)facilityId;
-			facilityId = (Facility)eResolveProxy(oldFacilityId);
-			if (facilityId != oldFacilityId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID, oldFacilityId, facilityId));
-			}
-		}
-		return facilityId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Facility basicGetFacilityId() {
-		return facilityId;
+		return (Facility)eGet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__FACILITY_ID, true);
 	}
 
 	/**
@@ -223,10 +98,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
-		Facility oldFacilityId = facilityId;
-		facilityId = newFacilityId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID, oldFacilityId, facilityId));
+		eSet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__FACILITY_ID, newFacilityId);
 	}
 
 	/**
@@ -236,7 +108,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public BigDecimal getGrossSales() {
-		return grossSales;
+		return (BigDecimal)eGet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__GROSS_SALES, true);
 	}
 
 	/**
@@ -246,10 +118,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setGrossSales(BigDecimal newGrossSales) {
-		BigDecimal oldGrossSales = grossSales;
-		grossSales = newGrossSales;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES, oldGrossSales, grossSales));
+		eSet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__GROSS_SALES, newGrossSales);
 	}
 
 	/**
@@ -259,7 +128,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public BigDecimal getProductCost() {
-		return productCost;
+		return (BigDecimal)eGet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__PRODUCT_COST, true);
 	}
 
 	/**
@@ -269,10 +138,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setProductCost(BigDecimal newProductCost) {
-		BigDecimal oldProductCost = productCost;
-		productCost = newProductCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST, oldProductCost, productCost));
+		eSet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__PRODUCT_COST, newProductCost);
 	}
 
 	/**
@@ -282,24 +148,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public Product getProductId() {
-		if (productId != null && ((EObject)productId).eIsProxy()) {
-			InternalEObject oldProductId = (InternalEObject)productId;
-			productId = (Product)eResolveProxy(oldProductId);
-			if (productId != oldProductId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID, oldProductId, productId));
-			}
-		}
-		return productId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Product basicGetProductId() {
-		return productId;
+		return (Product)eGet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__PRODUCT_ID, true);
 	}
 
 	/**
@@ -309,10 +158,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
-		Product oldProductId = productId;
-		productId = newProductId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID, oldProductId, productId));
+		eSet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__PRODUCT_ID, newProductId);
 	}
 
 	/**
@@ -322,7 +168,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public BigDecimal getTotalQuantity() {
-		return totalQuantity;
+		return (BigDecimal)eGet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY, true);
 	}
 
 	/**
@@ -332,142 +178,7 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 */
 	@Override
 	public void setTotalQuantity(BigDecimal newTotalQuantity) {
-		BigDecimal oldTotalQuantity = totalQuantity;
-		totalQuantity = newTotalQuantity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY, oldTotalQuantity, totalQuantity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
-				return getEntryDate();
-			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
-				return getGrossSales();
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST:
-				return getProductCost();
-			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
-				return getTotalQuantity();
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				if (resolve) return getProductId();
-				return basicGetProductId();
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				if (resolve) return getFacilityId();
-				return basicGetFacilityId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
-				setEntryDate((Date)newValue);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
-				setGrossSales((BigDecimal)newValue);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST:
-				setProductCost((BigDecimal)newValue);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
-				setTotalQuantity((BigDecimal)newValue);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				setProductId((Product)newValue);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				setFacilityId((Facility)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
-				setEntryDate(ENTRY_DATE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
-				setGrossSales(GROSS_SALES_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST:
-				setProductCost(PRODUCT_COST_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
-				setTotalQuantity(TOTAL_QUANTITY_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				setProductId((Product)null);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				setFacilityId((Facility)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
-				return ENTRY_DATE_EDEFAULT == null ? entryDate != null : !ENTRY_DATE_EDEFAULT.equals(entryDate);
-			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
-				return GROSS_SALES_EDEFAULT == null ? grossSales != null : !GROSS_SALES_EDEFAULT.equals(grossSales);
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST:
-				return PRODUCT_COST_EDEFAULT == null ? productCost != null : !PRODUCT_COST_EDEFAULT.equals(productCost);
-			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
-				return TOTAL_QUANTITY_EDEFAULT == null ? totalQuantity != null : !TOTAL_QUANTITY_EDEFAULT.equals(totalQuantity);
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				return productId != null;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				return facilityId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (entryDate: ");
-		result.append(entryDate);
-		result.append(", grossSales: ");
-		result.append(grossSales);
-		result.append(", productCost: ");
-		result.append(productCost);
-		result.append(", totalQuantity: ");
-		result.append(totalQuantity);
-		result.append(')');
-		return result.toString();
+		eSet(OrderPackage.Literals.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY, newTotalQuantity);
 	}
 
 } //OrderSummaryEntryImpl

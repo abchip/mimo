@@ -7,20 +7,13 @@
  */
 package org.abchip.mimo.biz.common.geo.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,143 +42,6 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoId = GEO_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbbreviation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ABBREVIATION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbbreviation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String abbreviation = ABBREVIATION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGeoCode() <em>Geo Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_CODE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoCode() <em>Geo Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoCode = GEO_CODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGeoName() <em>Geo Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoName() <em>Geo Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoName = GEO_NAME_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGeoSecCode() <em>Geo Sec Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoSecCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_SEC_CODE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoSecCode() <em>Geo Sec Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoSecCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoSecCode = GEO_SEC_CODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getWellKnownText() <em>Well Known Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWellKnownText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WELL_KNOWN_TEXT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getWellKnownText() <em>Well Known Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWellKnownText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String wellKnownText = WELL_KNOWN_TEXT_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getGeoTypeId() <em>Geo Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GeoType geoTypeId;
-
-	/**
-	 * The cached value of the '{@link #getMainGeoAssocs() <em>Main Geo Assocs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMainGeoAssocs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> mainGeoAssocs;
-	/**
-	 * The cached value of the '{@link #getTaxAuthTaxAuthorities() <em>Tax Auth Tax Authorities</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthTaxAuthorities()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> taxAuthTaxAuthorities;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -211,7 +67,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public String getAbbreviation() {
-		return abbreviation;
+		return (String)eGet(GeoPackage.Literals.GEO__ABBREVIATION, true);
 	}
 
 	/**
@@ -221,10 +77,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setAbbreviation(String newAbbreviation) {
-		String oldAbbreviation = abbreviation;
-		abbreviation = newAbbreviation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__ABBREVIATION, oldAbbreviation, abbreviation));
+		eSet(GeoPackage.Literals.GEO__ABBREVIATION, newAbbreviation);
 	}
 
 	/**
@@ -234,7 +87,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public String getGeoCode() {
-		return geoCode;
+		return (String)eGet(GeoPackage.Literals.GEO__GEO_CODE, true);
 	}
 
 	/**
@@ -244,10 +97,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoCode(String newGeoCode) {
-		String oldGeoCode = geoCode;
-		geoCode = newGeoCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_CODE, oldGeoCode, geoCode));
+		eSet(GeoPackage.Literals.GEO__GEO_CODE, newGeoCode);
 	}
 
 	/**
@@ -257,7 +107,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public String getGeoName() {
-		return geoName;
+		return (String)eGet(GeoPackage.Literals.GEO__GEO_NAME, true);
 	}
 
 	/**
@@ -267,10 +117,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoName(String newGeoName) {
-		String oldGeoName = geoName;
-		geoName = newGeoName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_NAME, oldGeoName, geoName));
+		eSet(GeoPackage.Literals.GEO__GEO_NAME, newGeoName);
 	}
 
 	/**
@@ -280,7 +127,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public String getGeoSecCode() {
-		return geoSecCode;
+		return (String)eGet(GeoPackage.Literals.GEO__GEO_SEC_CODE, true);
 	}
 
 	/**
@@ -290,10 +137,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoSecCode(String newGeoSecCode) {
-		String oldGeoSecCode = geoSecCode;
-		geoSecCode = newGeoSecCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_SEC_CODE, oldGeoSecCode, geoSecCode));
+		eSet(GeoPackage.Literals.GEO__GEO_SEC_CODE, newGeoSecCode);
 	}
 
 	/**
@@ -303,7 +147,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public String getWellKnownText() {
-		return wellKnownText;
+		return (String)eGet(GeoPackage.Literals.GEO__WELL_KNOWN_TEXT, true);
 	}
 
 	/**
@@ -313,10 +157,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setWellKnownText(String newWellKnownText) {
-		String oldWellKnownText = wellKnownText;
-		wellKnownText = newWellKnownText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__WELL_KNOWN_TEXT, oldWellKnownText, wellKnownText));
+		eSet(GeoPackage.Literals.GEO__WELL_KNOWN_TEXT, newWellKnownText);
 	}
 
 	/**
@@ -324,12 +165,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getMainGeoAssocs() {
-		if (mainGeoAssocs == null) {
-			mainGeoAssocs = new EDataTypeUniqueEList<String>(String.class, this, GeoPackage.GEO__MAIN_GEO_ASSOCS);
-		}
-		return mainGeoAssocs;
+		return (List<String>)eGet(GeoPackage.Literals.GEO__MAIN_GEO_ASSOCS, true);
 	}
 
 	/**
@@ -337,12 +176,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getTaxAuthTaxAuthorities() {
-		if (taxAuthTaxAuthorities == null) {
-			taxAuthTaxAuthorities = new EDataTypeUniqueEList<String>(String.class, this, GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES);
-		}
-		return taxAuthTaxAuthorities;
+		return (List<String>)eGet(GeoPackage.Literals.GEO__TAX_AUTH_TAX_AUTHORITIES, true);
 	}
 
 	/**
@@ -664,24 +501,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public GeoType getGeoTypeId() {
-		if (geoTypeId != null && ((EObject)geoTypeId).eIsProxy()) {
-			InternalEObject oldGeoTypeId = (InternalEObject)geoTypeId;
-			geoTypeId = (GeoType)eResolveProxy(oldGeoTypeId);
-			if (geoTypeId != oldGeoTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO__GEO_TYPE_ID, oldGeoTypeId, geoTypeId));
-			}
-		}
-		return geoTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GeoType basicGetGeoTypeId() {
-		return geoTypeId;
+		return (GeoType)eGet(GeoPackage.Literals.GEO__GEO_TYPE_ID, true);
 	}
 
 	/**
@@ -691,10 +511,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoTypeId(GeoType newGeoTypeId) {
-		GeoType oldGeoTypeId = geoTypeId;
-		geoTypeId = newGeoTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_TYPE_ID, oldGeoTypeId, geoTypeId));
+		eSet(GeoPackage.Literals.GEO__GEO_TYPE_ID, newGeoTypeId);
 	}
 
 	/**
@@ -704,7 +521,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public String getGeoId() {
-		return geoId;
+		return (String)eGet(GeoPackage.Literals.GEO__GEO_ID, true);
 	}
 
 	/**
@@ -714,182 +531,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoId(String newGeoId) {
-		String oldGeoId = geoId;
-		geoId = newGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_ID, oldGeoId, geoId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case GeoPackage.GEO__GEO_ID:
-				return getGeoId();
-			case GeoPackage.GEO__ABBREVIATION:
-				return getAbbreviation();
-			case GeoPackage.GEO__GEO_CODE:
-				return getGeoCode();
-			case GeoPackage.GEO__GEO_NAME:
-				return getGeoName();
-			case GeoPackage.GEO__GEO_SEC_CODE:
-				return getGeoSecCode();
-			case GeoPackage.GEO__WELL_KNOWN_TEXT:
-				return getWellKnownText();
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				if (resolve) return getGeoTypeId();
-				return basicGetGeoTypeId();
-			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
-				return getMainGeoAssocs();
-			case GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES:
-				return getTaxAuthTaxAuthorities();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case GeoPackage.GEO__GEO_ID:
-				setGeoId((String)newValue);
-				return;
-			case GeoPackage.GEO__ABBREVIATION:
-				setAbbreviation((String)newValue);
-				return;
-			case GeoPackage.GEO__GEO_CODE:
-				setGeoCode((String)newValue);
-				return;
-			case GeoPackage.GEO__GEO_NAME:
-				setGeoName((String)newValue);
-				return;
-			case GeoPackage.GEO__GEO_SEC_CODE:
-				setGeoSecCode((String)newValue);
-				return;
-			case GeoPackage.GEO__WELL_KNOWN_TEXT:
-				setWellKnownText((String)newValue);
-				return;
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				setGeoTypeId((GeoType)newValue);
-				return;
-			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
-				getMainGeoAssocs().clear();
-				getMainGeoAssocs().addAll((Collection<? extends String>)newValue);
-				return;
-			case GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES:
-				getTaxAuthTaxAuthorities().clear();
-				getTaxAuthTaxAuthorities().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case GeoPackage.GEO__GEO_ID:
-				setGeoId(GEO_ID_EDEFAULT);
-				return;
-			case GeoPackage.GEO__ABBREVIATION:
-				setAbbreviation(ABBREVIATION_EDEFAULT);
-				return;
-			case GeoPackage.GEO__GEO_CODE:
-				setGeoCode(GEO_CODE_EDEFAULT);
-				return;
-			case GeoPackage.GEO__GEO_NAME:
-				setGeoName(GEO_NAME_EDEFAULT);
-				return;
-			case GeoPackage.GEO__GEO_SEC_CODE:
-				setGeoSecCode(GEO_SEC_CODE_EDEFAULT);
-				return;
-			case GeoPackage.GEO__WELL_KNOWN_TEXT:
-				setWellKnownText(WELL_KNOWN_TEXT_EDEFAULT);
-				return;
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				setGeoTypeId((GeoType)null);
-				return;
-			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
-				getMainGeoAssocs().clear();
-				return;
-			case GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES:
-				getTaxAuthTaxAuthorities().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case GeoPackage.GEO__GEO_ID:
-				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
-			case GeoPackage.GEO__ABBREVIATION:
-				return ABBREVIATION_EDEFAULT == null ? abbreviation != null : !ABBREVIATION_EDEFAULT.equals(abbreviation);
-			case GeoPackage.GEO__GEO_CODE:
-				return GEO_CODE_EDEFAULT == null ? geoCode != null : !GEO_CODE_EDEFAULT.equals(geoCode);
-			case GeoPackage.GEO__GEO_NAME:
-				return GEO_NAME_EDEFAULT == null ? geoName != null : !GEO_NAME_EDEFAULT.equals(geoName);
-			case GeoPackage.GEO__GEO_SEC_CODE:
-				return GEO_SEC_CODE_EDEFAULT == null ? geoSecCode != null : !GEO_SEC_CODE_EDEFAULT.equals(geoSecCode);
-			case GeoPackage.GEO__WELL_KNOWN_TEXT:
-				return WELL_KNOWN_TEXT_EDEFAULT == null ? wellKnownText != null : !WELL_KNOWN_TEXT_EDEFAULT.equals(wellKnownText);
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				return geoTypeId != null;
-			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
-				return mainGeoAssocs != null && !mainGeoAssocs.isEmpty();
-			case GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES:
-				return taxAuthTaxAuthorities != null && !taxAuthTaxAuthorities.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (geoId: ");
-		result.append(geoId);
-		result.append(", abbreviation: ");
-		result.append(abbreviation);
-		result.append(", geoCode: ");
-		result.append(geoCode);
-		result.append(", geoName: ");
-		result.append(geoName);
-		result.append(", geoSecCode: ");
-		result.append(geoSecCode);
-		result.append(", wellKnownText: ");
-		result.append(wellKnownText);
-		result.append(", mainGeoAssocs: ");
-		result.append(mainGeoAssocs);
-		result.append(", taxAuthTaxAuthorities: ");
-		result.append(taxAuthTaxAuthorities);
-		result.append(')');
-		return result.toString();
+		eSet(GeoPackage.Literals.GEO__GEO_ID, newGeoId);
 	}
 
 } //GeoImpl

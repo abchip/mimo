@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.OtherDataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,36 +33,6 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDataResourceContent() <em>Data Resource Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final byte[] DATA_RESOURCE_CONTENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceContent() <em>Data Resource Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected byte[] dataResourceContent = DATA_RESOURCE_CONTENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataResource dataResourceId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,7 +59,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 */
 	@Override
 	public byte[] getDataResourceContent() {
-		return dataResourceContent;
+		return (byte[])eGet(DataPackage.Literals.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT, true);
 	}
 
 	/**
@@ -104,10 +69,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 */
 	@Override
 	public void setDataResourceContent(byte[] newDataResourceContent) {
-		byte[] oldDataResourceContent = dataResourceContent;
-		dataResourceContent = newDataResourceContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT, oldDataResourceContent, dataResourceContent));
+		eSet(DataPackage.Literals.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT, newDataResourceContent);
 	}
 
 	/**
@@ -117,24 +79,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 */
 	@Override
 	public DataResource getDataResourceId() {
-		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
-			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
-			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
-			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-			}
-		}
-		return dataResourceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataResource basicGetDataResourceId() {
-		return dataResourceId;
+		return (DataResource)eGet(DataPackage.Literals.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -144,95 +89,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
-		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT:
-				return getDataResourceContent();
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID:
-				if (resolve) return getDataResourceId();
-				return basicGetDataResourceId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT:
-				setDataResourceContent((byte[])newValue);
-				return;
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT:
-				setDataResourceContent(DATA_RESOURCE_CONTENT_EDEFAULT);
-				return;
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT:
-				return DATA_RESOURCE_CONTENT_EDEFAULT == null ? dataResourceContent != null : !DATA_RESOURCE_CONTENT_EDEFAULT.equals(dataResourceContent);
-			case DataPackage.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID:
-				return dataResourceId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataResourceContent: ");
-		result.append(dataResourceContent);
-		result.append(')');
-		return result.toString();
+		eSet(DataPackage.Literals.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 
 } //OtherDataResourceImpl

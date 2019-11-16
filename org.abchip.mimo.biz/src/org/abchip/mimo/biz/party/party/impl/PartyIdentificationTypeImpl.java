@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyIdentification;
 import org.abchip.mimo.biz.party.party.PartyIdentificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,70 +36,6 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getPartyIdentificationTypeId() <em>Party Identification Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdentificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdentificationTypeId() <em>Party Identification Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdentificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdentificationTypeId = PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PartyIdentificationType parentTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +62,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -140,10 +72,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -153,7 +82,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -163,10 +92,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -176,24 +102,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public PartyIdentificationType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (PartyIdentificationType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartyIdentificationType basicGetParentTypeId() {
-		return parentTypeId;
+		return (PartyIdentificationType)eGet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -203,10 +112,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public void setParentTypeId(PartyIdentificationType newParentTypeId) {
-		PartyIdentificationType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -240,7 +146,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public String getPartyIdentificationTypeId() {
-		return partyIdentificationTypeId;
+		return (String)eGet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__PARTY_IDENTIFICATION_TYPE_ID, true);
 	}
 
 	/**
@@ -250,119 +156,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 */
 	@Override
 	public void setPartyIdentificationTypeId(String newPartyIdentificationTypeId) {
-		String oldPartyIdentificationTypeId = partyIdentificationTypeId;
-		partyIdentificationTypeId = newPartyIdentificationTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION_TYPE__PARTY_IDENTIFICATION_TYPE_ID, oldPartyIdentificationTypeId, partyIdentificationTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARTY_IDENTIFICATION_TYPE_ID:
-				return getPartyIdentificationTypeId();
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__DESCRIPTION:
-				return getDescription();
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__HAS_TABLE:
-				return isHasTable();
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARTY_IDENTIFICATION_TYPE_ID:
-				setPartyIdentificationTypeId((String)newValue);
-				return;
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((PartyIdentificationType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARTY_IDENTIFICATION_TYPE_ID:
-				setPartyIdentificationTypeId(PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT);
-				return;
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((PartyIdentificationType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARTY_IDENTIFICATION_TYPE_ID:
-				return PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT == null ? partyIdentificationTypeId != null : !PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT.equals(partyIdentificationTypeId);
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyIdentificationTypeId: ");
-		result.append(partyIdentificationTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(')');
-		return result.toString();
+		eSet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__PARTY_IDENTIFICATION_TYPE_ID, newPartyIdentificationTypeId);
 	}
 
 } //PartyIdentificationTypeImpl

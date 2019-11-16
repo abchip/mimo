@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.FileExtension;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,36 +33,6 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getFileExtensionId() <em>File Extension Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFileExtensionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FILE_EXTENSION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFileExtensionId() <em>File Extension Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFileExtensionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fileExtensionId = FILE_EXTENSION_ID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected MimeType mimeTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,7 +59,7 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 	 */
 	@Override
 	public String getFileExtensionId() {
-		return fileExtensionId;
+		return (String)eGet(DataPackage.Literals.FILE_EXTENSION__FILE_EXTENSION_ID, true);
 	}
 
 	/**
@@ -104,10 +69,7 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 	 */
 	@Override
 	public void setFileExtensionId(String newFileExtensionId) {
-		String oldFileExtensionId = fileExtensionId;
-		fileExtensionId = newFileExtensionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.FILE_EXTENSION__FILE_EXTENSION_ID, oldFileExtensionId, fileExtensionId));
+		eSet(DataPackage.Literals.FILE_EXTENSION__FILE_EXTENSION_ID, newFileExtensionId);
 	}
 
 	/**
@@ -117,24 +79,7 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 	 */
 	@Override
 	public MimeType getMimeTypeId() {
-		if (mimeTypeId != null && ((EObject)mimeTypeId).eIsProxy()) {
-			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
-			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
-			if (mimeTypeId != oldMimeTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.FILE_EXTENSION__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
-			}
-		}
-		return mimeTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MimeType basicGetMimeTypeId() {
-		return mimeTypeId;
+		return (MimeType)eGet(DataPackage.Literals.FILE_EXTENSION__MIME_TYPE_ID, true);
 	}
 
 	/**
@@ -144,95 +89,7 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 	 */
 	@Override
 	public void setMimeTypeId(MimeType newMimeTypeId) {
-		MimeType oldMimeTypeId = mimeTypeId;
-		mimeTypeId = newMimeTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.FILE_EXTENSION__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.FILE_EXTENSION__FILE_EXTENSION_ID:
-				return getFileExtensionId();
-			case DataPackage.FILE_EXTENSION__MIME_TYPE_ID:
-				if (resolve) return getMimeTypeId();
-				return basicGetMimeTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.FILE_EXTENSION__FILE_EXTENSION_ID:
-				setFileExtensionId((String)newValue);
-				return;
-			case DataPackage.FILE_EXTENSION__MIME_TYPE_ID:
-				setMimeTypeId((MimeType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.FILE_EXTENSION__FILE_EXTENSION_ID:
-				setFileExtensionId(FILE_EXTENSION_ID_EDEFAULT);
-				return;
-			case DataPackage.FILE_EXTENSION__MIME_TYPE_ID:
-				setMimeTypeId((MimeType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.FILE_EXTENSION__FILE_EXTENSION_ID:
-				return FILE_EXTENSION_ID_EDEFAULT == null ? fileExtensionId != null : !FILE_EXTENSION_ID_EDEFAULT.equals(fileExtensionId);
-			case DataPackage.FILE_EXTENSION__MIME_TYPE_ID:
-				return mimeTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fileExtensionId: ");
-		result.append(fileExtensionId);
-		result.append(')');
-		return result.toString();
+		eSet(DataPackage.Literals.FILE_EXTENSION__MIME_TYPE_ID, newMimeTypeId);
 	}
 
 } //FileExtensionImpl

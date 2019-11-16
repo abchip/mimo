@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.entity.synchronization.EntitySync;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,52 +33,6 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getEntityOrPackage() <em>Entity Or Package</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityOrPackage()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENTITY_OR_PACKAGE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getEntityOrPackage() <em>Entity Or Package</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityOrPackage()
-	 * @generated
-	 * @ordered
-	 */
-	protected String entityOrPackage = ENTITY_OR_PACKAGE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getApplEnumId() <em>Appl Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApplEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String APPL_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getApplEnumId() <em>Appl Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApplEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String applEnumId = APPL_ENUM_ID_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getEntitySyncId() <em>Entity Sync Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntitySyncId()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntitySync entitySyncId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,7 +59,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public String getApplEnumId() {
-		return applEnumId;
+		return (String)eGet(SynchronizationPackage.Literals.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID, true);
 	}
 
 	/**
@@ -120,10 +69,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public void setApplEnumId(String newApplEnumId) {
-		String oldApplEnumId = applEnumId;
-		applEnumId = newApplEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID, oldApplEnumId, applEnumId));
+		eSet(SynchronizationPackage.Literals.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID, newApplEnumId);
 	}
 
 	/**
@@ -133,7 +79,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public String getEntityOrPackage() {
-		return entityOrPackage;
+		return (String)eGet(SynchronizationPackage.Literals.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE, true);
 	}
 
 	/**
@@ -143,10 +89,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public void setEntityOrPackage(String newEntityOrPackage) {
-		String oldEntityOrPackage = entityOrPackage;
-		entityOrPackage = newEntityOrPackage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE, oldEntityOrPackage, entityOrPackage));
+		eSet(SynchronizationPackage.Literals.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE, newEntityOrPackage);
 	}
 
 	/**
@@ -156,24 +99,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public EntitySync getEntitySyncId() {
-		if (entitySyncId != null && ((EObject)entitySyncId).eIsProxy()) {
-			InternalEObject oldEntitySyncId = (InternalEObject)entitySyncId;
-			entitySyncId = (EntitySync)eResolveProxy(oldEntitySyncId);
-			if (entitySyncId != oldEntitySyncId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
-			}
-		}
-		return entitySyncId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntitySync basicGetEntitySyncId() {
-		return entitySyncId;
+		return (EntitySync)eGet(SynchronizationPackage.Literals.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID, true);
 	}
 
 	/**
@@ -183,107 +109,7 @@ public class EntitySyncIncludeImpl extends BizEntityImpl implements EntitySyncIn
 	 */
 	@Override
 	public void setEntitySyncId(EntitySync newEntitySyncId) {
-		EntitySync oldEntitySyncId = entitySyncId;
-		entitySyncId = newEntitySyncId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE:
-				return getEntityOrPackage();
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID:
-				return getApplEnumId();
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID:
-				if (resolve) return getEntitySyncId();
-				return basicGetEntitySyncId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE:
-				setEntityOrPackage((String)newValue);
-				return;
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID:
-				setApplEnumId((String)newValue);
-				return;
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID:
-				setEntitySyncId((EntitySync)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE:
-				setEntityOrPackage(ENTITY_OR_PACKAGE_EDEFAULT);
-				return;
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID:
-				setApplEnumId(APPL_ENUM_ID_EDEFAULT);
-				return;
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID:
-				setEntitySyncId((EntitySync)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_OR_PACKAGE:
-				return ENTITY_OR_PACKAGE_EDEFAULT == null ? entityOrPackage != null : !ENTITY_OR_PACKAGE_EDEFAULT.equals(entityOrPackage);
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__APPL_ENUM_ID:
-				return APPL_ENUM_ID_EDEFAULT == null ? applEnumId != null : !APPL_ENUM_ID_EDEFAULT.equals(applEnumId);
-			case SynchronizationPackage.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID:
-				return entitySyncId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (entityOrPackage: ");
-		result.append(entityOrPackage);
-		result.append(", applEnumId: ");
-		result.append(applEnumId);
-		result.append(')');
-		return result.toString();
+		eSet(SynchronizationPackage.Literals.ENTITY_SYNC_INCLUDE__ENTITY_SYNC_ID, newEntitySyncId);
 	}
 
 } //EntitySyncIncludeImpl

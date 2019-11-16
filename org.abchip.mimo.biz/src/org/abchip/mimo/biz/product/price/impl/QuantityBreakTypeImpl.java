@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,46 +34,6 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getQuantityBreakTypeId() <em>Quantity Break Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityBreakTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUANTITY_BREAK_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantityBreakTypeId() <em>Quantity Break Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityBreakTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quantityBreakTypeId = QUANTITY_BREAK_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +61,7 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(PricePackage.Literals.QUANTITY_BREAK_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -113,10 +71,7 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(PricePackage.Literals.QUANTITY_BREAK_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -138,7 +93,7 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 */
 	@Override
 	public String getQuantityBreakTypeId() {
-		return quantityBreakTypeId;
+		return (String)eGet(PricePackage.Literals.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID, true);
 	}
 
 	/**
@@ -148,96 +103,7 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 */
 	@Override
 	public void setQuantityBreakTypeId(String newQuantityBreakTypeId) {
-		String oldQuantityBreakTypeId = quantityBreakTypeId;
-		quantityBreakTypeId = newQuantityBreakTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID, oldQuantityBreakTypeId, quantityBreakTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID:
-				return getQuantityBreakTypeId();
-			case PricePackage.QUANTITY_BREAK_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID:
-				setQuantityBreakTypeId((String)newValue);
-				return;
-			case PricePackage.QUANTITY_BREAK_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID:
-				setQuantityBreakTypeId(QUANTITY_BREAK_TYPE_ID_EDEFAULT);
-				return;
-			case PricePackage.QUANTITY_BREAK_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PricePackage.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID:
-				return QUANTITY_BREAK_TYPE_ID_EDEFAULT == null ? quantityBreakTypeId != null : !QUANTITY_BREAK_TYPE_ID_EDEFAULT.equals(quantityBreakTypeId);
-			case PricePackage.QUANTITY_BREAK_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (quantityBreakTypeId: ");
-		result.append(quantityBreakTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(PricePackage.Literals.QUANTITY_BREAK_TYPE__QUANTITY_BREAK_TYPE_ID, newQuantityBreakTypeId);
 	}
 
 } //QuantityBreakTypeImpl

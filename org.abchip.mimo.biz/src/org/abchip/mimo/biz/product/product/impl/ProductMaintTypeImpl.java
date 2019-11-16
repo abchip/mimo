@@ -13,11 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,56 +35,6 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMaintTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_MAINT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMaintTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productMaintTypeId = PRODUCT_MAINT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductMaintType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,7 +62,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(ProductPackage.Literals.PRODUCT_MAINT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -126,10 +72,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(ProductPackage.Literals.PRODUCT_MAINT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -139,24 +82,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public ProductMaintType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (ProductMaintType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductMaintType basicGetParentTypeId() {
-		return parentTypeId;
+		return (ProductMaintType)eGet(ProductPackage.Literals.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -166,10 +92,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public void setParentTypeId(ProductMaintType newParentTypeId) {
-		ProductMaintType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(ProductPackage.Literals.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -215,7 +138,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public String getProductMaintTypeId() {
-		return productMaintTypeId;
+		return (String)eGet(ProductPackage.Literals.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID, true);
 	}
 
 	/**
@@ -225,107 +148,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public void setProductMaintTypeId(String newProductMaintTypeId) {
-		String oldProductMaintTypeId = productMaintTypeId;
-		productMaintTypeId = newProductMaintTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID:
-				return getProductMaintTypeId();
-			case ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION:
-				return getDescription();
-			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID:
-				setProductMaintTypeId((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProductMaintType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID:
-				setProductMaintTypeId(PRODUCT_MAINT_TYPE_ID_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((ProductMaintType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ProductPackage.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID:
-				return PRODUCT_MAINT_TYPE_ID_EDEFAULT == null ? productMaintTypeId != null : !PRODUCT_MAINT_TYPE_ID_EDEFAULT.equals(productMaintTypeId);
-			case ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productMaintTypeId: ");
-		result.append(productMaintTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(ProductPackage.Literals.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID, newProductMaintTypeId);
 	}
 
 } //ProductMaintTypeImpl

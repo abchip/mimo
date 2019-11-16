@@ -23,12 +23,7 @@ import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,416 +68,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderPaymentPreferenceId = ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBillingPostalCode() <em>Billing Postal Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingPostalCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BILLING_POSTAL_CODE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBillingPostalCode() <em>Billing Postal Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingPostalCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billingPostalCode = BILLING_POSTAL_CODE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date CREATED_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date createdDate = CREATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date LAST_MODIFIED_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getManualAuthCode() <em>Manual Auth Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManualAuthCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANUAL_AUTH_CODE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getManualAuthCode() <em>Manual Auth Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManualAuthCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String manualAuthCode = MANUAL_AUTH_CODE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getManualRefNum() <em>Manual Ref Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManualRefNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANUAL_REF_NUM_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getManualRefNum() <em>Manual Ref Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManualRefNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected String manualRefNum = MANUAL_REF_NUM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxAmount() <em>Max Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MAX_AMOUNT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaxAmount() <em>Max Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal maxAmount = MAX_AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isNeedsNsfRetry() <em>Needs Nsf Retry</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNeedsNsfRetry()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean NEEDS_NSF_RETRY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isNeedsNsfRetry() <em>Needs Nsf Retry</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNeedsNsfRetry()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean needsNsfRetry = NEEDS_NSF_RETRY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ITEM_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isOverflowFlag() <em>Overflow Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOverflowFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean OVERFLOW_FLAG_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOverflowFlag() <em>Overflow Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOverflowFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean overflowFlag = OVERFLOW_FLAG_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isPresentFlag() <em>Present Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPresentFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean PRESENT_FLAG_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isPresentFlag() <em>Present Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPresentFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean presentFlag = PRESENT_FLAG_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProcessAttempt() <em>Process Attempt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProcessAttempt()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long PROCESS_ATTEMPT_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getProcessAttempt() <em>Process Attempt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProcessAttempt()
-	 * @generated
-	 * @ordered
-	 */
-	protected long processAttempt = PROCESS_ATTEMPT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSecurityCode() <em>Security Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecurityCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SECURITY_CODE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSecurityCode() <em>Security Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecurityCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String securityCode = SECURITY_CODE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getShipGroupSeqId() <em>Ship Group Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipGroupSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIP_GROUP_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipGroupSeqId() <em>Ship Group Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipGroupSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipGroupSeqId = SHIP_GROUP_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isSwipedFlag() <em>Swiped Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSwipedFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean SWIPED_FLAG_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isSwipedFlag() <em>Swiped Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSwipedFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean swipedFlag = SWIPED_FLAG_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTrack2() <em>Track2</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrack2()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRACK2_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTrack2() <em>Track2</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrack2()
-	 * @generated
-	 * @ordered
-	 */
-	protected String track2 = TRACK2_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected OrderHeader orderId;
-
-	/**
-	 * The cached value of the '{@link #getProductPricePurposeId() <em>Product Price Purpose Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPricePurposeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProductPricePurpose productPricePurposeId;
-
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PaymentMethodType paymentMethodTypeId;
-
-	/**
-	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PaymentMethod paymentMethodId;
-
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FinAccount finAccountId;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusItem statusId;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected UserLogin createdByUserLogin;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -508,7 +93,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getBillingPostalCode() {
-		return billingPostalCode;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE, true);
 	}
 
 	/**
@@ -518,10 +103,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setBillingPostalCode(String newBillingPostalCode) {
-		String oldBillingPostalCode = billingPostalCode;
-		billingPostalCode = newBillingPostalCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE, oldBillingPostalCode, billingPostalCode));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE, newBillingPostalCode);
 	}
 
 	/**
@@ -531,24 +113,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public UserLogin getCreatedByUserLogin() {
-		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
-			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
-			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
-			if (createdByUserLogin != oldCreatedByUserLogin) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
-			}
-		}
-		return createdByUserLogin;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserLogin basicGetCreatedByUserLogin() {
-		return createdByUserLogin;
+		return (UserLogin)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -558,10 +123,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
-		UserLogin oldCreatedByUserLogin = createdByUserLogin;
-		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN, newCreatedByUserLogin);
 	}
 
 	/**
@@ -571,7 +133,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public Date getCreatedDate() {
-		return createdDate;
+		return (Date)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__CREATED_DATE, true);
 	}
 
 	/**
@@ -581,10 +143,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
-		Date oldCreatedDate = createdDate;
-		createdDate = newCreatedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_DATE, oldCreatedDate, createdDate));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__CREATED_DATE, newCreatedDate);
 	}
 
 	/**
@@ -594,24 +153,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public FinAccount getFinAccountId() {
-		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
-			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
-			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
-			if (finAccountId != oldFinAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
-			}
-		}
-		return finAccountId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FinAccount basicGetFinAccountId() {
-		return finAccountId;
+		return (FinAccount)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID, true);
 	}
 
 	/**
@@ -621,10 +163,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
-		FinAccount oldFinAccountId = finAccountId;
-		finAccountId = newFinAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID, newFinAccountId);
 	}
 
 	/**
@@ -634,7 +173,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getLastModifiedByUserLogin() {
-		return lastModifiedByUserLogin;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -644,10 +183,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
-		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN, newLastModifiedByUserLogin);
 	}
 
 	/**
@@ -657,7 +193,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public Date getLastModifiedDate() {
-		return lastModifiedDate;
+		return (Date)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE, true);
 	}
 
 	/**
@@ -667,10 +203,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
-		Date oldLastModifiedDate = lastModifiedDate;
-		lastModifiedDate = newLastModifiedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE, newLastModifiedDate);
 	}
 
 	/**
@@ -680,7 +213,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getManualAuthCode() {
-		return manualAuthCode;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE, true);
 	}
 
 	/**
@@ -690,10 +223,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setManualAuthCode(String newManualAuthCode) {
-		String oldManualAuthCode = manualAuthCode;
-		manualAuthCode = newManualAuthCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE, oldManualAuthCode, manualAuthCode));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE, newManualAuthCode);
 	}
 
 	/**
@@ -703,7 +233,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getManualRefNum() {
-		return manualRefNum;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM, true);
 	}
 
 	/**
@@ -713,10 +243,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setManualRefNum(String newManualRefNum) {
-		String oldManualRefNum = manualRefNum;
-		manualRefNum = newManualRefNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM, oldManualRefNum, manualRefNum));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM, newManualRefNum);
 	}
 
 	/**
@@ -726,7 +253,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public BigDecimal getMaxAmount() {
-		return maxAmount;
+		return (BigDecimal)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT, true);
 	}
 
 	/**
@@ -736,10 +263,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setMaxAmount(BigDecimal newMaxAmount) {
-		BigDecimal oldMaxAmount = maxAmount;
-		maxAmount = newMaxAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT, oldMaxAmount, maxAmount));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT, newMaxAmount);
 	}
 
 	/**
@@ -749,7 +273,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public boolean isNeedsNsfRetry() {
-		return needsNsfRetry;
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY, true);
 	}
 
 	/**
@@ -759,10 +283,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setNeedsNsfRetry(boolean newNeedsNsfRetry) {
-		boolean oldNeedsNsfRetry = needsNsfRetry;
-		needsNsfRetry = newNeedsNsfRetry;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY, oldNeedsNsfRetry, needsNsfRetry));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY, newNeedsNsfRetry);
 	}
 
 	/**
@@ -772,24 +293,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public OrderHeader getOrderId() {
-		if (orderId != null && ((EObject)orderId).eIsProxy()) {
-			InternalEObject oldOrderId = (InternalEObject)orderId;
-			orderId = (OrderHeader)eResolveProxy(oldOrderId);
-			if (orderId != oldOrderId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID, oldOrderId, orderId));
-			}
-		}
-		return orderId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrderHeader basicGetOrderId() {
-		return orderId;
+		return (OrderHeader)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__ORDER_ID, true);
 	}
 
 	/**
@@ -799,10 +303,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
-		OrderHeader oldOrderId = orderId;
-		orderId = newOrderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID, oldOrderId, orderId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__ORDER_ID, newOrderId);
 	}
 
 	/**
@@ -812,7 +313,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getOrderItemSeqId() {
-		return orderItemSeqId;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -822,10 +323,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
-		String oldOrderItemSeqId = orderItemSeqId;
-		orderItemSeqId = newOrderItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID, newOrderItemSeqId);
 	}
 
 	/**
@@ -835,7 +333,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public boolean isOverflowFlag() {
-		return overflowFlag;
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG, true);
 	}
 
 	/**
@@ -845,10 +343,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOverflowFlag(boolean newOverflowFlag) {
-		boolean oldOverflowFlag = overflowFlag;
-		overflowFlag = newOverflowFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG, oldOverflowFlag, overflowFlag));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG, newOverflowFlag);
 	}
 
 	/**
@@ -858,7 +353,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getOrderPaymentPreferenceId() {
-		return orderPaymentPreferenceId;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID, true);
 	}
 
 	/**
@@ -868,10 +363,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setOrderPaymentPreferenceId(String newOrderPaymentPreferenceId) {
-		String oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
-		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID, newOrderPaymentPreferenceId);
 	}
 
 	/**
@@ -881,24 +373,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public PaymentMethod getPaymentMethodId() {
-		if (paymentMethodId != null && ((EObject)paymentMethodId).eIsProxy()) {
-			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
-			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
-			if (paymentMethodId != oldPaymentMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
-			}
-		}
-		return paymentMethodId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PaymentMethod basicGetPaymentMethodId() {
-		return paymentMethodId;
+		return (PaymentMethod)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, true);
 	}
 
 	/**
@@ -908,10 +383,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
-		PaymentMethod oldPaymentMethodId = paymentMethodId;
-		paymentMethodId = newPaymentMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID, newPaymentMethodId);
 	}
 
 	/**
@@ -921,24 +393,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public PaymentMethodType getPaymentMethodTypeId() {
-		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
-			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
-			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
-			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
-			}
-		}
-		return paymentMethodTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PaymentMethodType basicGetPaymentMethodTypeId() {
-		return paymentMethodTypeId;
+		return (PaymentMethodType)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID, true);
 	}
 
 	/**
@@ -948,10 +403,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
-		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
-		paymentMethodTypeId = newPaymentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID, newPaymentMethodTypeId);
 	}
 
 	/**
@@ -961,7 +413,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public boolean isPresentFlag() {
-		return presentFlag;
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, true);
 	}
 
 	/**
@@ -971,10 +423,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setPresentFlag(boolean newPresentFlag) {
-		boolean oldPresentFlag = presentFlag;
-		presentFlag = newPresentFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, oldPresentFlag, presentFlag));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, newPresentFlag);
 	}
 
 	/**
@@ -984,7 +433,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public long getProcessAttempt() {
-		return processAttempt;
+		return (Long)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT, true);
 	}
 
 	/**
@@ -994,10 +443,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setProcessAttempt(long newProcessAttempt) {
-		long oldProcessAttempt = processAttempt;
-		processAttempt = newProcessAttempt;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT, oldProcessAttempt, processAttempt));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT, newProcessAttempt);
 	}
 
 	/**
@@ -1007,24 +453,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public ProductPricePurpose getProductPricePurposeId() {
-		if (productPricePurposeId != null && ((EObject)productPricePurposeId).eIsProxy()) {
-			InternalEObject oldProductPricePurposeId = (InternalEObject)productPricePurposeId;
-			productPricePurposeId = (ProductPricePurpose)eResolveProxy(oldProductPricePurposeId);
-			if (productPricePurposeId != oldProductPricePurposeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
-			}
-		}
-		return productPricePurposeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProductPricePurpose basicGetProductPricePurposeId() {
-		return productPricePurposeId;
+		return (ProductPricePurpose)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID, true);
 	}
 
 	/**
@@ -1034,10 +463,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setProductPricePurposeId(ProductPricePurpose newProductPricePurposeId) {
-		ProductPricePurpose oldProductPricePurposeId = productPricePurposeId;
-		productPricePurposeId = newProductPricePurposeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID, newProductPricePurposeId);
 	}
 
 	/**
@@ -1047,7 +473,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getSecurityCode() {
-		return securityCode;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE, true);
 	}
 
 	/**
@@ -1057,10 +483,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setSecurityCode(String newSecurityCode) {
-		String oldSecurityCode = securityCode;
-		securityCode = newSecurityCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE, oldSecurityCode, securityCode));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE, newSecurityCode);
 	}
 
 	/**
@@ -1070,7 +493,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getShipGroupSeqId() {
-		return shipGroupSeqId;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID, true);
 	}
 
 	/**
@@ -1080,10 +503,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
-		String oldShipGroupSeqId = shipGroupSeqId;
-		shipGroupSeqId = newShipGroupSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID, newShipGroupSeqId);
 	}
 
 	/**
@@ -1093,24 +513,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public StatusItem getStatusId() {
-		if (statusId != null && ((EObject)statusId).eIsProxy()) {
-			InternalEObject oldStatusId = (InternalEObject)statusId;
-			statusId = (StatusItem)eResolveProxy(oldStatusId);
-			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID, oldStatusId, statusId));
-			}
-		}
-		return statusId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusItem basicGetStatusId() {
-		return statusId;
+		return (StatusItem)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__STATUS_ID, true);
 	}
 
 	/**
@@ -1120,10 +523,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
-		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID, oldStatusId, statusId));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__STATUS_ID, newStatusId);
 	}
 
 	/**
@@ -1133,7 +533,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public boolean isSwipedFlag() {
-		return swipedFlag;
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, true);
 	}
 
 	/**
@@ -1143,10 +543,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setSwipedFlag(boolean newSwipedFlag) {
-		boolean oldSwipedFlag = swipedFlag;
-		swipedFlag = newSwipedFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, oldSwipedFlag, swipedFlag));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, newSwipedFlag);
 	}
 
 	/**
@@ -1156,7 +553,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public String getTrack2() {
-		return track2;
+		return (String)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__TRACK2, true);
 	}
 
 	/**
@@ -1166,10 +563,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 */
 	@Override
 	public void setTrack2(String newTrack2) {
-		String oldTrack2 = track2;
-		track2 = newTrack2;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PAYMENT_PREFERENCE__TRACK2, oldTrack2, track2));
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__TRACK2, newTrack2);
 	}
 
 	/**
@@ -1218,349 +612,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID:
-				return getOrderPaymentPreferenceId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE:
-				return getBillingPostalCode();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_DATE:
-				return getCreatedDate();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE:
-				return getLastModifiedDate();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE:
-				return getManualAuthCode();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM:
-				return getManualRefNum();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT:
-				return getMaxAmount();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY:
-				return isNeedsNsfRetry();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID:
-				return getOrderItemSeqId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG:
-				return isOverflowFlag();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG:
-				return isPresentFlag();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT:
-				return getProcessAttempt();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE:
-				return getSecurityCode();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID:
-				return getShipGroupSeqId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG:
-				return isSwipedFlag();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__TRACK2:
-				return getTrack2();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID:
-				if (resolve) return getOrderId();
-				return basicGetOrderId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID:
-				if (resolve) return getProductPricePurposeId();
-				return basicGetProductPricePurposeId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				if (resolve) return getPaymentMethodTypeId();
-				return basicGetPaymentMethodTypeId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				if (resolve) return getPaymentMethodId();
-				return basicGetPaymentMethodId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
-				if (resolve) return getFinAccountId();
-				return basicGetFinAccountId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID:
-				if (resolve) return getStatusId();
-				return basicGetStatusId();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
-				if (resolve) return getCreatedByUserLogin();
-				return basicGetCreatedByUserLogin();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE:
-				setBillingPostalCode((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_DATE:
-				setCreatedDate((Date)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE:
-				setLastModifiedDate((Date)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE:
-				setManualAuthCode((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM:
-				setManualRefNum((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT:
-				setMaxAmount((BigDecimal)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY:
-				setNeedsNsfRetry((Boolean)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID:
-				setOrderItemSeqId((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG:
-				setOverflowFlag((Boolean)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG:
-				setPresentFlag((Boolean)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT:
-				setProcessAttempt((Long)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE:
-				setSecurityCode((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID:
-				setShipGroupSeqId((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG:
-				setSwipedFlag((Boolean)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__TRACK2:
-				setTrack2((String)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID:
-				setOrderId((OrderHeader)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID:
-				setProductPricePurposeId((ProductPricePurpose)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((PaymentMethodType)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				setPaymentMethodId((PaymentMethod)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
-				setFinAccountId((FinAccount)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID:
-				setStatusId((StatusItem)newValue);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((UserLogin)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId(ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE:
-				setBillingPostalCode(BILLING_POSTAL_CODE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_DATE:
-				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE:
-				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE:
-				setManualAuthCode(MANUAL_AUTH_CODE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM:
-				setManualRefNum(MANUAL_REF_NUM_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT:
-				setMaxAmount(MAX_AMOUNT_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY:
-				setNeedsNsfRetry(NEEDS_NSF_RETRY_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID:
-				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG:
-				setOverflowFlag(OVERFLOW_FLAG_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG:
-				setPresentFlag(PRESENT_FLAG_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT:
-				setProcessAttempt(PROCESS_ATTEMPT_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE:
-				setSecurityCode(SECURITY_CODE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID:
-				setShipGroupSeqId(SHIP_GROUP_SEQ_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG:
-				setSwipedFlag(SWIPED_FLAG_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__TRACK2:
-				setTrack2(TRACK2_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID:
-				setOrderId((OrderHeader)null);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID:
-				setProductPricePurposeId((ProductPricePurpose)null);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((PaymentMethodType)null);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				setPaymentMethodId((PaymentMethod)null);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
-				setFinAccountId((FinAccount)null);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID:
-				setStatusId((StatusItem)null);
-				return;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((UserLogin)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_PAYMENT_PREFERENCE_ID:
-				return ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT == null ? orderPaymentPreferenceId != null : !ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT.equals(orderPaymentPreferenceId);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__BILLING_POSTAL_CODE:
-				return BILLING_POSTAL_CODE_EDEFAULT == null ? billingPostalCode != null : !BILLING_POSTAL_CODE_EDEFAULT.equals(billingPostalCode);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_DATE:
-				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__LAST_MODIFIED_DATE:
-				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_AUTH_CODE:
-				return MANUAL_AUTH_CODE_EDEFAULT == null ? manualAuthCode != null : !MANUAL_AUTH_CODE_EDEFAULT.equals(manualAuthCode);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MANUAL_REF_NUM:
-				return MANUAL_REF_NUM_EDEFAULT == null ? manualRefNum != null : !MANUAL_REF_NUM_EDEFAULT.equals(manualRefNum);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__MAX_AMOUNT:
-				return MAX_AMOUNT_EDEFAULT == null ? maxAmount != null : !MAX_AMOUNT_EDEFAULT.equals(maxAmount);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__NEEDS_NSF_RETRY:
-				return needsNsfRetry != NEEDS_NSF_RETRY_EDEFAULT;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ITEM_SEQ_ID:
-				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG:
-				return overflowFlag != OVERFLOW_FLAG_EDEFAULT;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG:
-				return presentFlag != PRESENT_FLAG_EDEFAULT;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PROCESS_ATTEMPT:
-				return processAttempt != PROCESS_ATTEMPT_EDEFAULT;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SECURITY_CODE:
-				return SECURITY_CODE_EDEFAULT == null ? securityCode != null : !SECURITY_CODE_EDEFAULT.equals(securityCode);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SHIP_GROUP_SEQ_ID:
-				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG:
-				return swipedFlag != SWIPED_FLAG_EDEFAULT;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__TRACK2:
-				return TRACK2_EDEFAULT == null ? track2 != null : !TRACK2_EDEFAULT.equals(track2);
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__ORDER_ID:
-				return orderId != null;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PRODUCT_PRICE_PURPOSE_ID:
-				return productPricePurposeId != null;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				return paymentMethodTypeId != null;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_ID:
-				return paymentMethodId != null;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__FIN_ACCOUNT_ID:
-				return finAccountId != null;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__STATUS_ID:
-				return statusId != null;
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN:
-				return createdByUserLogin != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (orderPaymentPreferenceId: ");
-		result.append(orderPaymentPreferenceId);
-		result.append(", billingPostalCode: ");
-		result.append(billingPostalCode);
-		result.append(", createdDate: ");
-		result.append(createdDate);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
-		result.append(", lastModifiedDate: ");
-		result.append(lastModifiedDate);
-		result.append(", manualAuthCode: ");
-		result.append(manualAuthCode);
-		result.append(", manualRefNum: ");
-		result.append(manualRefNum);
-		result.append(", maxAmount: ");
-		result.append(maxAmount);
-		result.append(", needsNsfRetry: ");
-		result.append(needsNsfRetry);
-		result.append(", orderItemSeqId: ");
-		result.append(orderItemSeqId);
-		result.append(", overflowFlag: ");
-		result.append(overflowFlag);
-		result.append(", presentFlag: ");
-		result.append(presentFlag);
-		result.append(", processAttempt: ");
-		result.append(processAttempt);
-		result.append(", securityCode: ");
-		result.append(securityCode);
-		result.append(", shipGroupSeqId: ");
-		result.append(shipGroupSeqId);
-		result.append(", swipedFlag: ");
-		result.append(swipedFlag);
-		result.append(", track2: ");
-		result.append(track2);
-		result.append(')');
-		return result.toString();
 	}
 
 } //OrderPaymentPreferenceImpl

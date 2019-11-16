@@ -15,12 +15,7 @@ import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PayGrade;
 import org.abchip.mimo.biz.humanres.employment.SalaryStep;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,156 +44,6 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getSalaryStepSeqId() <em>Salary Step Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalaryStepSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SALARY_STEP_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSalaryStepSeqId() <em>Salary Step Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalaryStepSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String salaryStepSeqId = SALARY_STEP_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal AMOUNT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmount()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal amount = AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDateModified() <em>Date Modified</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateModified()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date DATE_MODIFIED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDateModified() <em>Date Modified</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateModified()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date dateModified = DATE_MODIFIED_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPayGradeId() <em>Pay Grade Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPayGradeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PayGrade payGradeId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -224,7 +69,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public BigDecimal getAmount() {
-		return amount;
+		return (BigDecimal)eGet(EmploymentPackage.Literals.SALARY_STEP__AMOUNT, true);
 	}
 
 	/**
@@ -234,10 +79,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
-		BigDecimal oldAmount = amount;
-		amount = newAmount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__AMOUNT, oldAmount, amount));
+		eSet(EmploymentPackage.Literals.SALARY_STEP__AMOUNT, newAmount);
 	}
 
 	/**
@@ -247,7 +89,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public String getCreatedByUserLogin() {
-		return createdByUserLogin;
+		return (String)eGet(EmploymentPackage.Literals.SALARY_STEP__CREATED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -257,10 +99,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
-		createdByUserLogin = newCreatedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+		eSet(EmploymentPackage.Literals.SALARY_STEP__CREATED_BY_USER_LOGIN, newCreatedByUserLogin);
 	}
 
 	/**
@@ -270,7 +109,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public Date getDateModified() {
-		return dateModified;
+		return (Date)eGet(EmploymentPackage.Literals.SALARY_STEP__DATE_MODIFIED, true);
 	}
 
 	/**
@@ -280,10 +119,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setDateModified(Date newDateModified) {
-		Date oldDateModified = dateModified;
-		dateModified = newDateModified;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__DATE_MODIFIED, oldDateModified, dateModified));
+		eSet(EmploymentPackage.Literals.SALARY_STEP__DATE_MODIFIED, newDateModified);
 	}
 
 	/**
@@ -293,7 +129,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(EmploymentPackage.Literals.SALARY_STEP__FROM_DATE, true);
 	}
 
 	/**
@@ -303,10 +139,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__FROM_DATE, oldFromDate, fromDate));
+		eSet(EmploymentPackage.Literals.SALARY_STEP__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -316,7 +149,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public String getLastModifiedByUserLogin() {
-		return lastModifiedByUserLogin;
+		return (String)eGet(EmploymentPackage.Literals.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN, true);
 	}
 
 	/**
@@ -326,10 +159,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
-		lastModifiedByUserLogin = newLastModifiedByUserLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+		eSet(EmploymentPackage.Literals.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN, newLastModifiedByUserLogin);
 	}
 
 	/**
@@ -339,24 +169,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public PayGrade getPayGradeId() {
-		if (payGradeId != null && ((EObject)payGradeId).eIsProxy()) {
-			InternalEObject oldPayGradeId = (InternalEObject)payGradeId;
-			payGradeId = (PayGrade)eResolveProxy(oldPayGradeId);
-			if (payGradeId != oldPayGradeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.SALARY_STEP__PAY_GRADE_ID, oldPayGradeId, payGradeId));
-			}
-		}
-		return payGradeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PayGrade basicGetPayGradeId() {
-		return payGradeId;
+		return (PayGrade)eGet(EmploymentPackage.Literals.SALARY_STEP__PAY_GRADE_ID, true);
 	}
 
 	/**
@@ -366,10 +179,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setPayGradeId(PayGrade newPayGradeId) {
-		PayGrade oldPayGradeId = payGradeId;
-		payGradeId = newPayGradeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__PAY_GRADE_ID, oldPayGradeId, payGradeId));
+		eSet(EmploymentPackage.Literals.SALARY_STEP__PAY_GRADE_ID, newPayGradeId);
 	}
 
 	/**
@@ -379,7 +189,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public String getSalaryStepSeqId() {
-		return salaryStepSeqId;
+		return (String)eGet(EmploymentPackage.Literals.SALARY_STEP__SALARY_STEP_SEQ_ID, true);
 	}
 
 	/**
@@ -389,10 +199,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setSalaryStepSeqId(String newSalaryStepSeqId) {
-		String oldSalaryStepSeqId = salaryStepSeqId;
-		salaryStepSeqId = newSalaryStepSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID, oldSalaryStepSeqId, salaryStepSeqId));
+		eSet(EmploymentPackage.Literals.SALARY_STEP__SALARY_STEP_SEQ_ID, newSalaryStepSeqId);
 	}
 
 	/**
@@ -402,7 +209,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(EmploymentPackage.Literals.SALARY_STEP__THRU_DATE, true);
 	}
 
 	/**
@@ -412,167 +219,7 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__THRU_DATE, oldThruDate, thruDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
-				return getSalaryStepSeqId();
-			case EmploymentPackage.SALARY_STEP__FROM_DATE:
-				return getFromDate();
-			case EmploymentPackage.SALARY_STEP__AMOUNT:
-				return getAmount();
-			case EmploymentPackage.SALARY_STEP__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
-			case EmploymentPackage.SALARY_STEP__DATE_MODIFIED:
-				return getDateModified();
-			case EmploymentPackage.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
-			case EmploymentPackage.SALARY_STEP__THRU_DATE:
-				return getThruDate();
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				if (resolve) return getPayGradeId();
-				return basicGetPayGradeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
-				setSalaryStepSeqId((String)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__AMOUNT:
-				setAmount((BigDecimal)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__DATE_MODIFIED:
-				setDateModified((Date)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				setPayGradeId((PayGrade)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
-				setSalaryStepSeqId(SALARY_STEP_SEQ_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__AMOUNT:
-				setAmount(AMOUNT_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__DATE_MODIFIED:
-				setDateModified(DATE_MODIFIED_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				setPayGradeId((PayGrade)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
-				return SALARY_STEP_SEQ_ID_EDEFAULT == null ? salaryStepSeqId != null : !SALARY_STEP_SEQ_ID_EDEFAULT.equals(salaryStepSeqId);
-			case EmploymentPackage.SALARY_STEP__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case EmploymentPackage.SALARY_STEP__AMOUNT:
-				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case EmploymentPackage.SALARY_STEP__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
-			case EmploymentPackage.SALARY_STEP__DATE_MODIFIED:
-				return DATE_MODIFIED_EDEFAULT == null ? dateModified != null : !DATE_MODIFIED_EDEFAULT.equals(dateModified);
-			case EmploymentPackage.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
-			case EmploymentPackage.SALARY_STEP__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				return payGradeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (salaryStepSeqId: ");
-		result.append(salaryStepSeqId);
-		result.append(", fromDate: ");
-		result.append(fromDate);
-		result.append(", amount: ");
-		result.append(amount);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
-		result.append(", dateModified: ");
-		result.append(dateModified);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(EmploymentPackage.Literals.SALARY_STEP__THRU_DATE, newThruDate);
 	}
 
 } //SalaryStepImpl

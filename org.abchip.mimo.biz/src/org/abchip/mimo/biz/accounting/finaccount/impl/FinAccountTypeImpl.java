@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
@@ -15,13 +14,7 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,116 +42,6 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountTypeId = FIN_ACCOUNT_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isIsRefundable() <em>Is Refundable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsRefundable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_REFUNDABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isIsRefundable() <em>Is Refundable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsRefundable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isRefundable = IS_REFUNDABLE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FinAccountType parentTypeId;
-	/**
-	 * The cached value of the '{@link #getReplenishEnumId() <em>Replenish Enum Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReplenishEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumeration replenishEnumId;
-
-	/**
-	 * The cached value of the '{@link #getFinAccountTypeAttrs() <em>Fin Account Type Attrs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeAttrs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> finAccountTypeAttrs;
-	/**
-	 * The cached value of the '{@link #getFinAccountTypeGlAccounts() <em>Fin Account Type Gl Accounts</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeGlAccounts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> finAccountTypeGlAccounts;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -184,7 +67,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -194,10 +77,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -207,7 +87,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -217,10 +97,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -230,7 +107,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public boolean isIsRefundable() {
-		return isRefundable;
+		return (Boolean)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__IS_REFUNDABLE, true);
 	}
 
 	/**
@@ -240,10 +117,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setIsRefundable(boolean newIsRefundable) {
-		boolean oldIsRefundable = isRefundable;
-		isRefundable = newIsRefundable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__IS_REFUNDABLE, oldIsRefundable, isRefundable));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__IS_REFUNDABLE, newIsRefundable);
 	}
 
 	/**
@@ -253,24 +127,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public Enumeration getReplenishEnumId() {
-		if (replenishEnumId != null && ((EObject)replenishEnumId).eIsProxy()) {
-			InternalEObject oldReplenishEnumId = (InternalEObject)replenishEnumId;
-			replenishEnumId = (Enumeration)eResolveProxy(oldReplenishEnumId);
-			if (replenishEnumId != oldReplenishEnumId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID, oldReplenishEnumId, replenishEnumId));
-			}
-		}
-		return replenishEnumId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumeration basicGetReplenishEnumId() {
-		return replenishEnumId;
+		return (Enumeration)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID, true);
 	}
 
 	/**
@@ -280,10 +137,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setReplenishEnumId(Enumeration newReplenishEnumId) {
-		Enumeration oldReplenishEnumId = replenishEnumId;
-		replenishEnumId = newReplenishEnumId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID, oldReplenishEnumId, replenishEnumId));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID, newReplenishEnumId);
 	}
 
 	/**
@@ -291,12 +145,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getFinAccountTypeAttrs() {
-		if (finAccountTypeAttrs == null) {
-			finAccountTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS);
-		}
-		return finAccountTypeAttrs;
+		return (List<String>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -304,12 +156,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getFinAccountTypeGlAccounts() {
-		if (finAccountTypeGlAccounts == null) {
-			finAccountTypeGlAccounts = new EDataTypeUniqueEList<String>(String.class, this, FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS);
-		}
-		return finAccountTypeGlAccounts;
+		return (List<String>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS, true);
 	}
 
 	/**
@@ -355,24 +205,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public FinAccountType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (FinAccountType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FinAccountType basicGetParentTypeId() {
-		return parentTypeId;
+		return (FinAccountType)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -382,10 +215,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setParentTypeId(FinAccountType newParentTypeId) {
-		FinAccountType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -395,7 +225,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public String getFinAccountTypeId() {
-		return finAccountTypeId;
+		return (String)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID, true);
 	}
 
 	/**
@@ -405,169 +235,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setFinAccountTypeId(String newFinAccountTypeId) {
-		String oldFinAccountTypeId = finAccountTypeId;
-		finAccountTypeId = newFinAccountTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID:
-				return getFinAccountTypeId();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__DESCRIPTION:
-				return getDescription();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__HAS_TABLE:
-				return isHasTable();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__IS_REFUNDABLE:
-				return isIsRefundable();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID:
-				if (resolve) return getReplenishEnumId();
-				return basicGetReplenishEnumId();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS:
-				return getFinAccountTypeAttrs();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS:
-				return getFinAccountTypeGlAccounts();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__IS_REFUNDABLE:
-				setIsRefundable((Boolean)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((FinAccountType)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID:
-				setReplenishEnumId((Enumeration)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS:
-				getFinAccountTypeAttrs().clear();
-				getFinAccountTypeAttrs().addAll((Collection<? extends String>)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS:
-				getFinAccountTypeGlAccounts().clear();
-				getFinAccountTypeGlAccounts().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId(FIN_ACCOUNT_TYPE_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__IS_REFUNDABLE:
-				setIsRefundable(IS_REFUNDABLE_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((FinAccountType)null);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID:
-				setReplenishEnumId((Enumeration)null);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS:
-				getFinAccountTypeAttrs().clear();
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS:
-				getFinAccountTypeGlAccounts().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID:
-				return FIN_ACCOUNT_TYPE_ID_EDEFAULT == null ? finAccountTypeId != null : !FIN_ACCOUNT_TYPE_ID_EDEFAULT.equals(finAccountTypeId);
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__IS_REFUNDABLE:
-				return isRefundable != IS_REFUNDABLE_EDEFAULT;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID:
-				return replenishEnumId != null;
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS:
-				return finAccountTypeAttrs != null && !finAccountTypeAttrs.isEmpty();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS:
-				return finAccountTypeGlAccounts != null && !finAccountTypeGlAccounts.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (finAccountTypeId: ");
-		result.append(finAccountTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(", isRefundable: ");
-		result.append(isRefundable);
-		result.append(", finAccountTypeAttrs: ");
-		result.append(finAccountTypeAttrs);
-		result.append(", finAccountTypeGlAccounts: ");
-		result.append(finAccountTypeGlAccounts);
-		result.append(')');
-		return result.toString();
+		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID, newFinAccountTypeId);
 	}
 
 } //FinAccountTypeImpl

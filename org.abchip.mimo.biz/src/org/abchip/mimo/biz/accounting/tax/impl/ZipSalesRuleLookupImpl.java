@@ -12,9 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.ZipSalesRuleLookup;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,136 +39,6 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getStateCode() <em>State Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStateCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATE_CODE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStateCode() <em>State Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStateCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String stateCode = STATE_CODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCity() <em>City</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CITY_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCity() <em>City</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCity()
-	 * @generated
-	 * @ordered
-	 */
-	protected String city = CITY_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCounty() <em>County</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCounty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COUNTY_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCounty() <em>County</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCounty()
-	 * @generated
-	 * @ordered
-	 */
-	protected String county = COUNTY_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getIdCode() <em>Id Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_CODE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getIdCode() <em>Id Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String idCode = ID_CODE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getShipCond() <em>Ship Cond</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipCond()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIP_COND_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getShipCond() <em>Ship Cond</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipCond()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipCond = SHIP_COND_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTaxable() <em>Taxable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAXABLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTaxable() <em>Taxable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxable()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxable = TAXABLE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,7 +64,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public String getCity() {
-		return city;
+		return (String)eGet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__CITY, true);
 	}
 
 	/**
@@ -206,10 +74,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setCity(String newCity) {
-		String oldCity = city;
-		city = newCity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__CITY, oldCity, city));
+		eSet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__CITY, newCity);
 	}
 
 	/**
@@ -219,7 +84,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public String getCounty() {
-		return county;
+		return (String)eGet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__COUNTY, true);
 	}
 
 	/**
@@ -229,10 +94,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setCounty(String newCounty) {
-		String oldCounty = county;
-		county = newCounty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__COUNTY, oldCounty, county));
+		eSet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__COUNTY, newCounty);
 	}
 
 	/**
@@ -242,7 +104,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__FROM_DATE, true);
 	}
 
 	/**
@@ -252,10 +114,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__FROM_DATE, oldFromDate, fromDate));
+		eSet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -265,7 +124,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public String getIdCode() {
-		return idCode;
+		return (String)eGet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__ID_CODE, true);
 	}
 
 	/**
@@ -275,10 +134,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setIdCode(String newIdCode) {
-		String oldIdCode = idCode;
-		idCode = newIdCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__ID_CODE, oldIdCode, idCode));
+		eSet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__ID_CODE, newIdCode);
 	}
 
 	/**
@@ -288,7 +144,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public String getShipCond() {
-		return shipCond;
+		return (String)eGet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__SHIP_COND, true);
 	}
 
 	/**
@@ -298,10 +154,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setShipCond(String newShipCond) {
-		String oldShipCond = shipCond;
-		shipCond = newShipCond;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__SHIP_COND, oldShipCond, shipCond));
+		eSet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__SHIP_COND, newShipCond);
 	}
 
 	/**
@@ -311,7 +164,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public String getStateCode() {
-		return stateCode;
+		return (String)eGet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__STATE_CODE, true);
 	}
 
 	/**
@@ -321,10 +174,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setStateCode(String newStateCode) {
-		String oldStateCode = stateCode;
-		stateCode = newStateCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__STATE_CODE, oldStateCode, stateCode));
+		eSet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__STATE_CODE, newStateCode);
 	}
 
 	/**
@@ -334,7 +184,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public String getTaxable() {
-		return taxable;
+		return (String)eGet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__TAXABLE, true);
 	}
 
 	/**
@@ -344,156 +194,7 @@ public class ZipSalesRuleLookupImpl extends BizEntityImpl implements ZipSalesRul
 	 */
 	@Override
 	public void setTaxable(String newTaxable) {
-		String oldTaxable = taxable;
-		taxable = newTaxable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.ZIP_SALES_RULE_LOOKUP__TAXABLE, oldTaxable, taxable));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__STATE_CODE:
-				return getStateCode();
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__CITY:
-				return getCity();
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__COUNTY:
-				return getCounty();
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__FROM_DATE:
-				return getFromDate();
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__ID_CODE:
-				return getIdCode();
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__SHIP_COND:
-				return getShipCond();
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__TAXABLE:
-				return getTaxable();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__STATE_CODE:
-				setStateCode((String)newValue);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__CITY:
-				setCity((String)newValue);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__COUNTY:
-				setCounty((String)newValue);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__ID_CODE:
-				setIdCode((String)newValue);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__SHIP_COND:
-				setShipCond((String)newValue);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__TAXABLE:
-				setTaxable((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__STATE_CODE:
-				setStateCode(STATE_CODE_EDEFAULT);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__CITY:
-				setCity(CITY_EDEFAULT);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__COUNTY:
-				setCounty(COUNTY_EDEFAULT);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__ID_CODE:
-				setIdCode(ID_CODE_EDEFAULT);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__SHIP_COND:
-				setShipCond(SHIP_COND_EDEFAULT);
-				return;
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__TAXABLE:
-				setTaxable(TAXABLE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__STATE_CODE:
-				return STATE_CODE_EDEFAULT == null ? stateCode != null : !STATE_CODE_EDEFAULT.equals(stateCode);
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__CITY:
-				return CITY_EDEFAULT == null ? city != null : !CITY_EDEFAULT.equals(city);
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__COUNTY:
-				return COUNTY_EDEFAULT == null ? county != null : !COUNTY_EDEFAULT.equals(county);
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__ID_CODE:
-				return ID_CODE_EDEFAULT == null ? idCode != null : !ID_CODE_EDEFAULT.equals(idCode);
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__SHIP_COND:
-				return SHIP_COND_EDEFAULT == null ? shipCond != null : !SHIP_COND_EDEFAULT.equals(shipCond);
-			case TaxPackage.ZIP_SALES_RULE_LOOKUP__TAXABLE:
-				return TAXABLE_EDEFAULT == null ? taxable != null : !TAXABLE_EDEFAULT.equals(taxable);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (stateCode: ");
-		result.append(stateCode);
-		result.append(", city: ");
-		result.append(city);
-		result.append(", county: ");
-		result.append(county);
-		result.append(", fromDate: ");
-		result.append(fromDate);
-		result.append(", idCode: ");
-		result.append(idCode);
-		result.append(", shipCond: ");
-		result.append(shipCond);
-		result.append(", taxable: ");
-		result.append(taxable);
-		result.append(')');
-		return result.toString();
+		eSet(TaxPackage.Literals.ZIP_SALES_RULE_LOOKUP__TAXABLE, newTaxable);
 	}
 
 } //ZipSalesRuleLookupImpl

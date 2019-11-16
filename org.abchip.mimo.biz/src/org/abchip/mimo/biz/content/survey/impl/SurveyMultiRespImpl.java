@@ -11,12 +11,7 @@ import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyMultiResp;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,56 +34,6 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getSurveyMultiRespId() <em>Survey Multi Resp Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyMultiRespId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_MULTI_RESP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyMultiRespId() <em>Survey Multi Resp Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyMultiRespId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyMultiRespId = SURVEY_MULTI_RESP_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMultiRespTitle() <em>Multi Resp Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMultiRespTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MULTI_RESP_TITLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMultiRespTitle() <em>Multi Resp Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMultiRespTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected String multiRespTitle = MULTI_RESP_TITLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Survey surveyId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +60,7 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public String getMultiRespTitle() {
-		return multiRespTitle;
+		return (String)eGet(SurveyPackage.Literals.SURVEY_MULTI_RESP__MULTI_RESP_TITLE, true);
 	}
 
 	/**
@@ -125,10 +70,7 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public void setMultiRespTitle(String newMultiRespTitle) {
-		String oldMultiRespTitle = multiRespTitle;
-		multiRespTitle = newMultiRespTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP__MULTI_RESP_TITLE, oldMultiRespTitle, multiRespTitle));
+		eSet(SurveyPackage.Literals.SURVEY_MULTI_RESP__MULTI_RESP_TITLE, newMultiRespTitle);
 	}
 
 	/**
@@ -138,24 +80,7 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public Survey getSurveyId() {
-		if (surveyId != null && ((EObject)surveyId).eIsProxy()) {
-			InternalEObject oldSurveyId = (InternalEObject)surveyId;
-			surveyId = (Survey)eResolveProxy(oldSurveyId);
-			if (surveyId != oldSurveyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID, oldSurveyId, surveyId));
-			}
-		}
-		return surveyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Survey basicGetSurveyId() {
-		return surveyId;
+		return (Survey)eGet(SurveyPackage.Literals.SURVEY_MULTI_RESP__SURVEY_ID, true);
 	}
 
 	/**
@@ -165,10 +90,7 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
-		Survey oldSurveyId = surveyId;
-		surveyId = newSurveyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID, oldSurveyId, surveyId));
+		eSet(SurveyPackage.Literals.SURVEY_MULTI_RESP__SURVEY_ID, newSurveyId);
 	}
 
 	/**
@@ -178,7 +100,7 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public String getSurveyMultiRespId() {
-		return surveyMultiRespId;
+		return (String)eGet(SurveyPackage.Literals.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID, true);
 	}
 
 	/**
@@ -188,107 +110,7 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public void setSurveyMultiRespId(String newSurveyMultiRespId) {
-		String oldSurveyMultiRespId = surveyMultiRespId;
-		surveyMultiRespId = newSurveyMultiRespId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID, oldSurveyMultiRespId, surveyMultiRespId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID:
-				return getSurveyMultiRespId();
-			case SurveyPackage.SURVEY_MULTI_RESP__MULTI_RESP_TITLE:
-				return getMultiRespTitle();
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID:
-				if (resolve) return getSurveyId();
-				return basicGetSurveyId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID:
-				setSurveyMultiRespId((String)newValue);
-				return;
-			case SurveyPackage.SURVEY_MULTI_RESP__MULTI_RESP_TITLE:
-				setMultiRespTitle((String)newValue);
-				return;
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID:
-				setSurveyId((Survey)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID:
-				setSurveyMultiRespId(SURVEY_MULTI_RESP_ID_EDEFAULT);
-				return;
-			case SurveyPackage.SURVEY_MULTI_RESP__MULTI_RESP_TITLE:
-				setMultiRespTitle(MULTI_RESP_TITLE_EDEFAULT);
-				return;
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID:
-				setSurveyId((Survey)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID:
-				return SURVEY_MULTI_RESP_ID_EDEFAULT == null ? surveyMultiRespId != null : !SURVEY_MULTI_RESP_ID_EDEFAULT.equals(surveyMultiRespId);
-			case SurveyPackage.SURVEY_MULTI_RESP__MULTI_RESP_TITLE:
-				return MULTI_RESP_TITLE_EDEFAULT == null ? multiRespTitle != null : !MULTI_RESP_TITLE_EDEFAULT.equals(multiRespTitle);
-			case SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID:
-				return surveyId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (surveyMultiRespId: ");
-		result.append(surveyMultiRespId);
-		result.append(", multiRespTitle: ");
-		result.append(multiRespTitle);
-		result.append(')');
-		return result.toString();
+		eSet(SurveyPackage.Literals.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID, newSurveyMultiRespId);
 	}
 
 } //SurveyMultiRespImpl

@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
@@ -15,13 +14,7 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,99 +41,6 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceItemTypeId = INVOICE_ITEM_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HAS_TABLE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isHasTable() <em>Has Table</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHasTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean hasTable = HAS_TABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected InvoiceItemType parentTypeId;
-	/**
-	 * The cached value of the '{@link #getDefaultGlAccountId() <em>Default Gl Account Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GlAccount defaultGlAccountId;
-
-	/**
-	 * The cached value of the '{@link #getInvoiceItemTypeAttrs() <em>Invoice Item Type Attrs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeAttrs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> invoiceItemTypeAttrs;
-	/**
-	 * The cached value of the '{@link #getInvoiceItemTypeGlAccounts() <em>Invoice Item Type Gl Accounts</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeGlAccounts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> invoiceItemTypeGlAccounts;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -166,24 +66,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public GlAccount getDefaultGlAccountId() {
-		if (defaultGlAccountId != null && ((EObject)defaultGlAccountId).eIsProxy()) {
-			InternalEObject oldDefaultGlAccountId = (InternalEObject)defaultGlAccountId;
-			defaultGlAccountId = (GlAccount)eResolveProxy(oldDefaultGlAccountId);
-			if (defaultGlAccountId != oldDefaultGlAccountId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
-			}
-		}
-		return defaultGlAccountId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GlAccount basicGetDefaultGlAccountId() {
-		return defaultGlAccountId;
+		return (GlAccount)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, true);
 	}
 
 	/**
@@ -193,10 +76,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setDefaultGlAccountId(GlAccount newDefaultGlAccountId) {
-		GlAccount oldDefaultGlAccountId = defaultGlAccountId;
-		defaultGlAccountId = newDefaultGlAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
+		eSet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, newDefaultGlAccountId);
 	}
 
 	/**
@@ -206,7 +86,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -216,10 +96,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -229,7 +106,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public boolean isHasTable() {
-		return hasTable;
+		return (Boolean)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__HAS_TABLE, true);
 	}
 
 	/**
@@ -239,10 +116,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
-		boolean oldHasTable = hasTable;
-		hasTable = newHasTable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE, oldHasTable, hasTable));
+		eSet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__HAS_TABLE, newHasTable);
 	}
 
 	/**
@@ -252,24 +126,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public InvoiceItemType getParentTypeId() {
-		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
-			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
-			parentTypeId = (InvoiceItemType)eResolveProxy(oldParentTypeId);
-			if (parentTypeId != oldParentTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
-			}
-		}
-		return parentTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InvoiceItemType basicGetParentTypeId() {
-		return parentTypeId;
+		return (InvoiceItemType)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, true);
 	}
 
 	/**
@@ -279,10 +136,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setParentTypeId(InvoiceItemType newParentTypeId) {
-		InvoiceItemType oldParentTypeId = parentTypeId;
-		parentTypeId = newParentTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+		eSet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
 	}
 
 	/**
@@ -290,12 +144,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getInvoiceItemTypeAttrs() {
-		if (invoiceItemTypeAttrs == null) {
-			invoiceItemTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS);
-		}
-		return invoiceItemTypeAttrs;
+		return (List<String>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -303,12 +155,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getInvoiceItemTypeGlAccounts() {
-		if (invoiceItemTypeGlAccounts == null) {
-			invoiceItemTypeGlAccounts = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS);
-		}
-		return invoiceItemTypeGlAccounts;
+		return (List<String>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS, true);
 	}
 
 	/**
@@ -366,7 +216,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public String getInvoiceItemTypeId() {
-		return invoiceItemTypeId;
+		return (String)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID, true);
 	}
 
 	/**
@@ -376,157 +226,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setInvoiceItemTypeId(String newInvoiceItemTypeId) {
-		String oldInvoiceItemTypeId = invoiceItemTypeId;
-		invoiceItemTypeId = newInvoiceItemTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
-				return getInvoiceItemTypeId();
-			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
-				return getDescription();
-			case InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE:
-				return isHasTable();
-			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				if (resolve) return getParentTypeId();
-				return basicGetParentTypeId();
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				if (resolve) return getDefaultGlAccountId();
-				return basicGetDefaultGlAccountId();
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
-				return getInvoiceItemTypeAttrs();
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS:
-				return getInvoiceItemTypeGlAccounts();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE:
-				setHasTable((Boolean)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((InvoiceItemType)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				setDefaultGlAccountId((GlAccount)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
-				getInvoiceItemTypeAttrs().clear();
-				getInvoiceItemTypeAttrs().addAll((Collection<? extends String>)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS:
-				getInvoiceItemTypeGlAccounts().clear();
-				getInvoiceItemTypeGlAccounts().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId(INVOICE_ITEM_TYPE_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE:
-				setHasTable(HAS_TABLE_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((InvoiceItemType)null);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				setDefaultGlAccountId((GlAccount)null);
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
-				getInvoiceItemTypeAttrs().clear();
-				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS:
-				getInvoiceItemTypeGlAccounts().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
-				return INVOICE_ITEM_TYPE_ID_EDEFAULT == null ? invoiceItemTypeId != null : !INVOICE_ITEM_TYPE_ID_EDEFAULT.equals(invoiceItemTypeId);
-			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE:
-				return hasTable != HAS_TABLE_EDEFAULT;
-			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				return parentTypeId != null;
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				return defaultGlAccountId != null;
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
-				return invoiceItemTypeAttrs != null && !invoiceItemTypeAttrs.isEmpty();
-			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS:
-				return invoiceItemTypeGlAccounts != null && !invoiceItemTypeGlAccounts.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (invoiceItemTypeId: ");
-		result.append(invoiceItemTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", hasTable: ");
-		result.append(hasTable);
-		result.append(", invoiceItemTypeAttrs: ");
-		result.append(invoiceItemTypeAttrs);
-		result.append(", invoiceItemTypeGlAccounts: ");
-		result.append(invoiceItemTypeGlAccounts);
-		result.append(')');
-		return result.toString();
+		eSet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID, newInvoiceItemTypeId);
 	}
 
 } //InvoiceItemTypeImpl

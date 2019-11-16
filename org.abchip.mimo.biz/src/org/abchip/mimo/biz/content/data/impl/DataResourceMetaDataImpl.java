@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceMetaData;
 import org.abchip.mimo.biz.content.data.MetaDataPredicate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,56 +37,6 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getMetaDataValue() <em>Meta Data Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetaDataValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String META_DATA_VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMetaDataValue() <em>Meta Data Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetaDataValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String metaDataValue = META_DATA_VALUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataResource dataResourceId;
-
-	/**
-	 * The cached value of the '{@link #getMetaDataPredicateId() <em>Meta Data Predicate Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetaDataPredicateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected MetaDataPredicate metaDataPredicateId;
-
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataSource dataSourceId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,24 +63,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public DataResource getDataResourceId() {
-		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
-			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
-			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
-			if (dataResourceId != oldDataResourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
-			}
-		}
-		return dataResourceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataResource basicGetDataResourceId() {
-		return dataResourceId;
+		return (DataResource)eGet(DataPackage.Literals.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -145,10 +73,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
-		DataResource oldDataResourceId = dataResourceId;
-		dataResourceId = newDataResourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+		eSet(DataPackage.Literals.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID, newDataResourceId);
 	}
 
 	/**
@@ -158,24 +83,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public DataSource getDataSourceId() {
-		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
-			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
-			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
-			if (dataSourceId != oldDataSourceId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
-			}
-		}
-		return dataSourceId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataSource basicGetDataSourceId() {
-		return dataSourceId;
+		return (DataSource)eGet(DataPackage.Literals.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID, true);
 	}
 
 	/**
@@ -185,10 +93,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
-		DataSource oldDataSourceId = dataSourceId;
-		dataSourceId = newDataSourceId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+		eSet(DataPackage.Literals.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID, newDataSourceId);
 	}
 
 	/**
@@ -198,24 +103,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public MetaDataPredicate getMetaDataPredicateId() {
-		if (metaDataPredicateId != null && ((EObject)metaDataPredicateId).eIsProxy()) {
-			InternalEObject oldMetaDataPredicateId = (InternalEObject)metaDataPredicateId;
-			metaDataPredicateId = (MetaDataPredicate)eResolveProxy(oldMetaDataPredicateId);
-			if (metaDataPredicateId != oldMetaDataPredicateId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID, oldMetaDataPredicateId, metaDataPredicateId));
-			}
-		}
-		return metaDataPredicateId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MetaDataPredicate basicGetMetaDataPredicateId() {
-		return metaDataPredicateId;
+		return (MetaDataPredicate)eGet(DataPackage.Literals.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID, true);
 	}
 
 	/**
@@ -225,10 +113,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public void setMetaDataPredicateId(MetaDataPredicate newMetaDataPredicateId) {
-		MetaDataPredicate oldMetaDataPredicateId = metaDataPredicateId;
-		metaDataPredicateId = newMetaDataPredicateId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID, oldMetaDataPredicateId, metaDataPredicateId));
+		eSet(DataPackage.Literals.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID, newMetaDataPredicateId);
 	}
 
 	/**
@@ -238,7 +123,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public String getMetaDataValue() {
-		return metaDataValue;
+		return (String)eGet(DataPackage.Literals.DATA_RESOURCE_META_DATA__META_DATA_VALUE, true);
 	}
 
 	/**
@@ -248,117 +133,7 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 */
 	@Override
 	public void setMetaDataValue(String newMetaDataValue) {
-		String oldMetaDataValue = metaDataValue;
-		metaDataValue = newMetaDataValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE, oldMetaDataValue, metaDataValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
-				return getMetaDataValue();
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				if (resolve) return getDataResourceId();
-				return basicGetDataResourceId();
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				if (resolve) return getMetaDataPredicateId();
-				return basicGetMetaDataPredicateId();
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				if (resolve) return getDataSourceId();
-				return basicGetDataSourceId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
-				setMetaDataValue((String)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				setMetaDataPredicateId((MetaDataPredicate)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				setDataSourceId((DataSource)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
-				setMetaDataValue(META_DATA_VALUE_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				setDataResourceId((DataResource)null);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				setMetaDataPredicateId((MetaDataPredicate)null);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				setDataSourceId((DataSource)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
-				return META_DATA_VALUE_EDEFAULT == null ? metaDataValue != null : !META_DATA_VALUE_EDEFAULT.equals(metaDataValue);
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
-				return dataResourceId != null;
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				return metaDataPredicateId != null;
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				return dataSourceId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (metaDataValue: ");
-		result.append(metaDataValue);
-		result.append(')');
-		return result.toString();
+		eSet(DataPackage.Literals.DATA_RESOURCE_META_DATA__META_DATA_VALUE, newMetaDataValue);
 	}
 
 } //DataResourceMetaDataImpl

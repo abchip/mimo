@@ -17,12 +17,7 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetAssign;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,126 +46,6 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAllocatedCost() <em>Allocated Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllocatedCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal ALLOCATED_COST_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAllocatedCost() <em>Allocated Cost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllocatedCost()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal allocatedCost = ALLOCATED_COST_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENTS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComments()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected WorkEffort workEffortId;
-
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FixedAsset fixedAssetId;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusItem statusId;
-
-	/**
-	 * The cached value of the '{@link #getAvailabilityStatusId() <em>Availability Status Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailabilityStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected StatusItem availabilityStatusId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,7 +71,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public BigDecimal getAllocatedCost() {
-		return allocatedCost;
+		return (BigDecimal)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST, true);
 	}
 
 	/**
@@ -206,10 +81,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setAllocatedCost(BigDecimal newAllocatedCost) {
-		BigDecimal oldAllocatedCost = allocatedCost;
-		allocatedCost = newAllocatedCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST, oldAllocatedCost, allocatedCost));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST, newAllocatedCost);
 	}
 
 	/**
@@ -219,24 +91,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public StatusItem getAvailabilityStatusId() {
-		if (availabilityStatusId != null && ((EObject)availabilityStatusId).eIsProxy()) {
-			InternalEObject oldAvailabilityStatusId = (InternalEObject)availabilityStatusId;
-			availabilityStatusId = (StatusItem)eResolveProxy(oldAvailabilityStatusId);
-			if (availabilityStatusId != oldAvailabilityStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
-			}
-		}
-		return availabilityStatusId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusItem basicGetAvailabilityStatusId() {
-		return availabilityStatusId;
+		return (StatusItem)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID, true);
 	}
 
 	/**
@@ -246,10 +101,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setAvailabilityStatusId(StatusItem newAvailabilityStatusId) {
-		StatusItem oldAvailabilityStatusId = availabilityStatusId;
-		availabilityStatusId = newAvailabilityStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID, newAvailabilityStatusId);
 	}
 
 	/**
@@ -259,7 +111,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public String getComments() {
-		return comments;
+		return (String)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS, true);
 	}
 
 	/**
@@ -269,10 +121,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setComments(String newComments) {
-		String oldComments = comments;
-		comments = newComments;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS, oldComments, comments));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS, newComments);
 	}
 
 	/**
@@ -282,24 +131,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public FixedAsset getFixedAssetId() {
-		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
-			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
-			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
-			if (fixedAssetId != oldFixedAssetId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
-			}
-		}
-		return fixedAssetId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FixedAsset basicGetFixedAssetId() {
-		return fixedAssetId;
+		return (FixedAsset)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID, true);
 	}
 
 	/**
@@ -309,10 +141,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
-		FixedAsset oldFixedAssetId = fixedAssetId;
-		fixedAssetId = newFixedAssetId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID, newFixedAssetId);
 	}
 
 	/**
@@ -322,7 +151,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE, true);
 	}
 
 	/**
@@ -332,10 +161,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE, oldFromDate, fromDate));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -345,24 +171,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public StatusItem getStatusId() {
-		if (statusId != null && ((EObject)statusId).eIsProxy()) {
-			InternalEObject oldStatusId = (InternalEObject)statusId;
-			statusId = (StatusItem)eResolveProxy(oldStatusId);
-			if (statusId != oldStatusId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID, oldStatusId, statusId));
-			}
-		}
-		return statusId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StatusItem basicGetStatusId() {
-		return statusId;
+		return (StatusItem)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID, true);
 	}
 
 	/**
@@ -372,10 +181,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
-		StatusItem oldStatusId = statusId;
-		statusId = newStatusId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID, oldStatusId, statusId));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID, newStatusId);
 	}
 
 	/**
@@ -385,7 +191,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE, true);
 	}
 
 	/**
@@ -395,10 +201,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE, oldThruDate, thruDate));
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -408,24 +211,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public WorkEffort getWorkEffortId() {
-		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
-			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
-			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
-			if (workEffortId != oldWorkEffortId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-			}
-		}
-		return workEffortId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkEffort basicGetWorkEffortId() {
-		return workEffortId;
+		return (WorkEffort)eGet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, true);
 	}
 
 	/**
@@ -435,164 +221,7 @@ public class WorkEffortFixedAssetAssignImpl extends BizEntityImpl implements Wor
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
-		WorkEffort oldWorkEffortId = workEffortId;
-		workEffortId = newWorkEffortId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
-				return getFromDate();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST:
-				return getAllocatedCost();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS:
-				return getComments();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
-				return getThruDate();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				if (resolve) return getWorkEffortId();
-				return basicGetWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
-				if (resolve) return getFixedAssetId();
-				return basicGetFixedAssetId();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID:
-				if (resolve) return getStatusId();
-				return basicGetStatusId();
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID:
-				if (resolve) return getAvailabilityStatusId();
-				return basicGetAvailabilityStatusId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST:
-				setAllocatedCost((BigDecimal)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS:
-				setComments((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
-				setFixedAssetId((FixedAsset)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID:
-				setStatusId((StatusItem)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID:
-				setAvailabilityStatusId((StatusItem)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST:
-				setAllocatedCost(ALLOCATED_COST_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS:
-				setComments(COMMENTS_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				setWorkEffortId((WorkEffort)null);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
-				setFixedAssetId((FixedAsset)null);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID:
-				setStatusId((StatusItem)null);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID:
-				setAvailabilityStatusId((StatusItem)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__ALLOCATED_COST:
-				return ALLOCATED_COST_EDEFAULT == null ? allocatedCost != null : !ALLOCATED_COST_EDEFAULT.equals(allocatedCost);
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__COMMENTS:
-				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID:
-				return workEffortId != null;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__FIXED_ASSET_ID:
-				return fixedAssetId != null;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__STATUS_ID:
-				return statusId != null;
-			case WorkeffortPackage.WORK_EFFORT_FIXED_ASSET_ASSIGN__AVAILABILITY_STATUS_ID:
-				return availabilityStatusId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", allocatedCost: ");
-		result.append(allocatedCost);
-		result.append(", comments: ");
-		result.append(comments);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_FIXED_ASSET_ASSIGN__WORK_EFFORT_ID, newWorkEffortId);
 	}
 
 } //WorkEffortFixedAssetAssignImpl

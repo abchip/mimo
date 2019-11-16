@@ -30,6 +30,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/scope"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/text"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference language.ecore#//Language/planets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference language.ecore#//Language/planetsCont"/>
     </genClasses>
     <genClasses ecoreClass="language.ecore#//LanguageExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguageExpression/expressionRow"/>
@@ -62,6 +64,9 @@
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizerRegistry"/>
+    <genClasses ecoreClass="language.ecore#//LanguagePlanet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguagePlanet/name"/>
+    </genClasses>
     <nestedGenPackages prefix="Grammar" basePackage="org.abchip.mimo.language" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="language.ecore#//grammar">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//grammar/Gender">

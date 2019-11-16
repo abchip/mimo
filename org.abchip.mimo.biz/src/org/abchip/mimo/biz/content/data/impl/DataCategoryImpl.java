@@ -12,12 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.DataCategory;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +35,6 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * The default value of the '{@link #getDataCategoryId() <em>Data Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataCategoryId() <em>Data Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataCategoryId = DATA_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCategoryName() <em>Category Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCategoryName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CATEGORY_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCategoryName() <em>Category Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCategoryName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String categoryName = CATEGORY_NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataCategory parentCategoryId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,7 +61,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public String getCategoryName() {
-		return categoryName;
+		return (String)eGet(DataPackage.Literals.DATA_CATEGORY__CATEGORY_NAME, true);
 	}
 
 	/**
@@ -126,10 +71,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public void setCategoryName(String newCategoryName) {
-		String oldCategoryName = categoryName;
-		categoryName = newCategoryName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_CATEGORY__CATEGORY_NAME, oldCategoryName, categoryName));
+		eSet(DataPackage.Literals.DATA_CATEGORY__CATEGORY_NAME, newCategoryName);
 	}
 
 	/**
@@ -139,7 +81,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public String getDataCategoryId() {
-		return dataCategoryId;
+		return (String)eGet(DataPackage.Literals.DATA_CATEGORY__DATA_CATEGORY_ID, true);
 	}
 
 	/**
@@ -149,10 +91,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public void setDataCategoryId(String newDataCategoryId) {
-		String oldDataCategoryId = dataCategoryId;
-		dataCategoryId = newDataCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_CATEGORY__DATA_CATEGORY_ID, oldDataCategoryId, dataCategoryId));
+		eSet(DataPackage.Literals.DATA_CATEGORY__DATA_CATEGORY_ID, newDataCategoryId);
 	}
 
 	/**
@@ -162,24 +101,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public DataCategory getParentCategoryId() {
-		if (parentCategoryId != null && ((EObject)parentCategoryId).eIsProxy()) {
-			InternalEObject oldParentCategoryId = (InternalEObject)parentCategoryId;
-			parentCategoryId = (DataCategory)eResolveProxy(oldParentCategoryId);
-			if (parentCategoryId != oldParentCategoryId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
-			}
-		}
-		return parentCategoryId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataCategory basicGetParentCategoryId() {
-		return parentCategoryId;
+		return (DataCategory)eGet(DataPackage.Literals.DATA_CATEGORY__PARENT_CATEGORY_ID, true);
 	}
 
 	/**
@@ -189,10 +111,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public void setParentCategoryId(DataCategory newParentCategoryId) {
-		DataCategory oldParentCategoryId = parentCategoryId;
-		parentCategoryId = newParentCategoryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
+		eSet(DataPackage.Literals.DATA_CATEGORY__PARENT_CATEGORY_ID, newParentCategoryId);
 	}
 
 	/**
@@ -217,103 +136,6 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataPackage.DATA_CATEGORY__DATA_CATEGORY_ID:
-				return getDataCategoryId();
-			case DataPackage.DATA_CATEGORY__CATEGORY_NAME:
-				return getCategoryName();
-			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				if (resolve) return getParentCategoryId();
-				return basicGetParentCategoryId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataPackage.DATA_CATEGORY__DATA_CATEGORY_ID:
-				setDataCategoryId((String)newValue);
-				return;
-			case DataPackage.DATA_CATEGORY__CATEGORY_NAME:
-				setCategoryName((String)newValue);
-				return;
-			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId((DataCategory)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_CATEGORY__DATA_CATEGORY_ID:
-				setDataCategoryId(DATA_CATEGORY_ID_EDEFAULT);
-				return;
-			case DataPackage.DATA_CATEGORY__CATEGORY_NAME:
-				setCategoryName(CATEGORY_NAME_EDEFAULT);
-				return;
-			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId((DataCategory)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataPackage.DATA_CATEGORY__DATA_CATEGORY_ID:
-				return DATA_CATEGORY_ID_EDEFAULT == null ? dataCategoryId != null : !DATA_CATEGORY_ID_EDEFAULT.equals(dataCategoryId);
-			case DataPackage.DATA_CATEGORY__CATEGORY_NAME:
-				return CATEGORY_NAME_EDEFAULT == null ? categoryName != null : !CATEGORY_NAME_EDEFAULT.equals(categoryName);
-			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				return parentCategoryId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataCategoryId: ");
-		result.append(dataCategoryId);
-		result.append(", categoryName: ");
-		result.append(categoryName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DataCategoryImpl

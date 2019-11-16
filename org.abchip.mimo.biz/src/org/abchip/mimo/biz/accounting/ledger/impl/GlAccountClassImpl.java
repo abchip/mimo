@@ -12,11 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountClass;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,88 +36,6 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getGlAccountClassId() <em>Gl Account Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_CLASS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountClassId() <em>Gl Account Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountClassId = GL_ACCOUNT_CLASS_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isIsAssetClass() <em>Is Asset Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsAssetClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_ASSET_CLASS_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isIsAssetClass() <em>Is Asset Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsAssetClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isAssetClass = IS_ASSET_CLASS_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long SEQUENCE_NUM_EDEFAULT = 0L;
-	/**
-	 * The cached value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getParentClassId() <em>Parent Class Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected GlAccountClass parentClassId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,7 +62,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__DESCRIPTION, true);
 	}
 
 	/**
@@ -158,10 +72,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__DESCRIPTION, oldDescription, description));
+		eSet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -171,7 +82,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public boolean isIsAssetClass() {
-		return isAssetClass;
+		return (Boolean)eGet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__IS_ASSET_CLASS, true);
 	}
 
 	/**
@@ -181,10 +92,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setIsAssetClass(boolean newIsAssetClass) {
-		boolean oldIsAssetClass = isAssetClass;
-		isAssetClass = newIsAssetClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__IS_ASSET_CLASS, oldIsAssetClass, isAssetClass));
+		eSet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__IS_ASSET_CLASS, newIsAssetClass);
 	}
 
 	/**
@@ -194,24 +102,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public GlAccountClass getParentClassId() {
-		if (parentClassId != null && ((EObject)parentClassId).eIsProxy()) {
-			InternalEObject oldParentClassId = (InternalEObject)parentClassId;
-			parentClassId = (GlAccountClass)eResolveProxy(oldParentClassId);
-			if (parentClassId != oldParentClassId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
-			}
-		}
-		return parentClassId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GlAccountClass basicGetParentClassId() {
-		return parentClassId;
+		return (GlAccountClass)eGet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__PARENT_CLASS_ID, true);
 	}
 
 	/**
@@ -221,10 +112,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setParentClassId(GlAccountClass newParentClassId) {
-		GlAccountClass oldParentClassId = parentClassId;
-		parentClassId = newParentClassId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
+		eSet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__PARENT_CLASS_ID, newParentClassId);
 	}
 
 	/**
@@ -234,7 +122,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public long getSequenceNum() {
-		return sequenceNum;
+		return (Long)eGet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__SEQUENCE_NUM, true);
 	}
 
 	/**
@@ -244,10 +132,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
-		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
+		eSet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__SEQUENCE_NUM, newSequenceNum);
 	}
 
 	/**
@@ -281,7 +166,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public String getGlAccountClassId() {
-		return glAccountClassId;
+		return (String)eGet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID, true);
 	}
 
 	/**
@@ -291,131 +176,7 @@ public class GlAccountClassImpl extends BizEntityImpl implements GlAccountClass 
 	 */
 	@Override
 	public void setGlAccountClassId(String newGlAccountClassId) {
-		String oldGlAccountClassId = glAccountClassId;
-		glAccountClassId = newGlAccountClassId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID, oldGlAccountClassId, glAccountClassId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID:
-				return getGlAccountClassId();
-			case LedgerPackage.GL_ACCOUNT_CLASS__DESCRIPTION:
-				return getDescription();
-			case LedgerPackage.GL_ACCOUNT_CLASS__IS_ASSET_CLASS:
-				return isIsAssetClass();
-			case LedgerPackage.GL_ACCOUNT_CLASS__SEQUENCE_NUM:
-				return getSequenceNum();
-			case LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID:
-				if (resolve) return getParentClassId();
-				return basicGetParentClassId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID:
-				setGlAccountClassId((String)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__IS_ASSET_CLASS:
-				setIsAssetClass((Boolean)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__SEQUENCE_NUM:
-				setSequenceNum((Long)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID:
-				setParentClassId((GlAccountClass)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID:
-				setGlAccountClassId(GL_ACCOUNT_CLASS_ID_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__IS_ASSET_CLASS:
-				setIsAssetClass(IS_ASSET_CLASS_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__SEQUENCE_NUM:
-				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID:
-				setParentClassId((GlAccountClass)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case LedgerPackage.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID:
-				return GL_ACCOUNT_CLASS_ID_EDEFAULT == null ? glAccountClassId != null : !GL_ACCOUNT_CLASS_ID_EDEFAULT.equals(glAccountClassId);
-			case LedgerPackage.GL_ACCOUNT_CLASS__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case LedgerPackage.GL_ACCOUNT_CLASS__IS_ASSET_CLASS:
-				return isAssetClass != IS_ASSET_CLASS_EDEFAULT;
-			case LedgerPackage.GL_ACCOUNT_CLASS__SEQUENCE_NUM:
-				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
-			case LedgerPackage.GL_ACCOUNT_CLASS__PARENT_CLASS_ID:
-				return parentClassId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (glAccountClassId: ");
-		result.append(glAccountClassId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", isAssetClass: ");
-		result.append(isAssetClass);
-		result.append(", sequenceNum: ");
-		result.append(sequenceNum);
-		result.append(')');
-		return result.toString();
+		eSet(LedgerPackage.Literals.GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID, newGlAccountClassId);
 	}
 
 } //GlAccountClassImpl

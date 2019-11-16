@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMechType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,36 +35,6 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Shipment shipmentId;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ContactMech contactMechId;
-
-	/**
-	 * The cached value of the '{@link #getShipmentContactMechTypeId() <em>Shipment Contact Mech Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ShipmentContactMechType shipmentContactMechTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,24 +62,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public ContactMech getContactMechId() {
-		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
-			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
-			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
-			if (contactMechId != oldContactMechId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
-			}
-		}
-		return contactMechId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContactMech basicGetContactMechId() {
-		return contactMechId;
+		return (ContactMech)eGet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID, true);
 	}
 
 	/**
@@ -124,10 +72,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
-		ContactMech oldContactMechId = contactMechId;
-		contactMechId = newContactMechId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+		eSet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID, newContactMechId);
 	}
 
 	/**
@@ -137,24 +82,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public ShipmentContactMechType getShipmentContactMechTypeId() {
-		if (shipmentContactMechTypeId != null && ((EObject)shipmentContactMechTypeId).eIsProxy()) {
-			InternalEObject oldShipmentContactMechTypeId = (InternalEObject)shipmentContactMechTypeId;
-			shipmentContactMechTypeId = (ShipmentContactMechType)eResolveProxy(oldShipmentContactMechTypeId);
-			if (shipmentContactMechTypeId != oldShipmentContactMechTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID, oldShipmentContactMechTypeId, shipmentContactMechTypeId));
-			}
-		}
-		return shipmentContactMechTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShipmentContactMechType basicGetShipmentContactMechTypeId() {
-		return shipmentContactMechTypeId;
+		return (ShipmentContactMechType)eGet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID, true);
 	}
 
 	/**
@@ -164,10 +92,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public void setShipmentContactMechTypeId(ShipmentContactMechType newShipmentContactMechTypeId) {
-		ShipmentContactMechType oldShipmentContactMechTypeId = shipmentContactMechTypeId;
-		shipmentContactMechTypeId = newShipmentContactMechTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID, oldShipmentContactMechTypeId, shipmentContactMechTypeId));
+		eSet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID, newShipmentContactMechTypeId);
 	}
 
 	/**
@@ -177,24 +102,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public Shipment getShipmentId() {
-		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
-			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
-			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
-			if (shipmentId != oldShipmentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, oldShipmentId, shipmentId));
-			}
-		}
-		return shipmentId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Shipment basicGetShipmentId() {
-		return shipmentId;
+		return (Shipment)eGet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, true);
 	}
 
 	/**
@@ -204,91 +112,7 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
-		Shipment oldShipmentId = shipmentId;
-		shipmentId = newShipmentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, oldShipmentId, shipmentId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				if (resolve) return getShipmentId();
-				return basicGetShipmentId();
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
-				if (resolve) return getContactMechId();
-				return basicGetContactMechId();
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				if (resolve) return getShipmentContactMechTypeId();
-				return basicGetShipmentContactMechTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				setShipmentId((Shipment)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((ContactMech)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				setShipmentContactMechTypeId((ShipmentContactMechType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				setShipmentId((Shipment)null);
-				return;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
-				setContactMechId((ContactMech)null);
-				return;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				setShipmentContactMechTypeId((ShipmentContactMechType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID:
-				return shipmentId != null;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID:
-				return contactMechId != null;
-			case Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID:
-				return shipmentContactMechTypeId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, newShipmentId);
 	}
 
 } //ShipmentContactMechImpl

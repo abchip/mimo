@@ -11,11 +11,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeAttr;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,52 +33,6 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ATTR_NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String attrName = ATTR_NAME_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected FixedAssetType fixedAssetTypeId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,7 +59,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE_ATTR__DESCRIPTION, true);
 	}
 
 	/**
@@ -119,10 +69,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__DESCRIPTION, oldDescription, description));
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE_ATTR__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -132,7 +79,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public String getAttrName() {
-		return attrName;
+		return (String)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE_ATTR__ATTR_NAME, true);
 	}
 
 	/**
@@ -142,10 +89,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
-		attrName = newAttrName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE_ATTR__ATTR_NAME, newAttrName);
 	}
 
 	/**
@@ -155,24 +99,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public FixedAssetType getFixedAssetTypeId() {
-		if (fixedAssetTypeId != null && ((EObject)fixedAssetTypeId).eIsProxy()) {
-			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
-			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
-			if (fixedAssetTypeId != oldFixedAssetTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
-			}
-		}
-		return fixedAssetTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FixedAssetType basicGetFixedAssetTypeId() {
-		return fixedAssetTypeId;
+		return (FixedAssetType)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID, true);
 	}
 
 	/**
@@ -182,107 +109,7 @@ public class FixedAssetTypeAttrImpl extends BizEntityImpl implements FixedAssetT
 	 */
 	@Override
 	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
-		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
-		fixedAssetTypeId = newFixedAssetTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__ATTR_NAME:
-				return getAttrName();
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__DESCRIPTION:
-				return getDescription();
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID:
-				if (resolve) return getFixedAssetTypeId();
-				return basicGetFixedAssetTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__ATTR_NAME:
-				setAttrName((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId((FixedAssetType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__ATTR_NAME:
-				setAttrName(ATTR_NAME_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId((FixedAssetType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__ATTR_NAME:
-				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case FixedassetPackage.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID:
-				return fixedAssetTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (attrName: ");
-		result.append(attrName);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE_ATTR__FIXED_ASSET_TYPE_ID, newFixedAssetTypeId);
 	}
 
 } //FixedAssetTypeAttrImpl

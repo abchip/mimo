@@ -45,13 +45,13 @@ public interface LanguageFactory extends EFactory {
 	LanguageExpression createLanguageExpression();
 
 	/**
-	 * Returns a new object of class '<em>Manager</em>'.
+	 * Returns a new object of class '<em>Planet</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Manager</em>'.
+	 * @return a new object of class '<em>Planet</em>'.
 	 * @generated
 	 */
-	LanguageManager createLanguageManager();
+	LanguagePlanet createLanguagePlanet();
 
 	/**
 	 * Returns the package supported by this factory.

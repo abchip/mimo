@@ -13,9 +13,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,326 +50,6 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getCalendarWeekId() <em>Calendar Week Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarWeekId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CALENDAR_WEEK_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCalendarWeekId() <em>Calendar Week Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarWeekId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String calendarWeekId = CALENDAR_WEEK_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFridayCapacity() <em>Friday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFridayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double FRIDAY_CAPACITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getFridayCapacity() <em>Friday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFridayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double fridayCapacity = FRIDAY_CAPACITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFridayStartTime() <em>Friday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFridayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FRIDAY_START_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFridayStartTime() <em>Friday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFridayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fridayStartTime = FRIDAY_START_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMondayCapacity() <em>Monday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMondayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double MONDAY_CAPACITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getMondayCapacity() <em>Monday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMondayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double mondayCapacity = MONDAY_CAPACITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMondayStartTime() <em>Monday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMondayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date MONDAY_START_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMondayStartTime() <em>Monday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMondayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date mondayStartTime = MONDAY_START_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSaturdayCapacity() <em>Saturday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSaturdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double SATURDAY_CAPACITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getSaturdayCapacity() <em>Saturday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSaturdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double saturdayCapacity = SATURDAY_CAPACITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSaturdayStartTime() <em>Saturday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSaturdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date SATURDAY_START_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSaturdayStartTime() <em>Saturday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSaturdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date saturdayStartTime = SATURDAY_START_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSundayCapacity() <em>Sunday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSundayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double SUNDAY_CAPACITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getSundayCapacity() <em>Sunday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSundayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double sundayCapacity = SUNDAY_CAPACITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSundayStartTime() <em>Sunday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSundayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date SUNDAY_START_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSundayStartTime() <em>Sunday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSundayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date sundayStartTime = SUNDAY_START_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThursdayCapacity() <em>Thursday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThursdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double THURSDAY_CAPACITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getThursdayCapacity() <em>Thursday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThursdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double thursdayCapacity = THURSDAY_CAPACITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThursdayStartTime() <em>Thursday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThursdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THURSDAY_START_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThursdayStartTime() <em>Thursday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThursdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thursdayStartTime = THURSDAY_START_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTuesdayCapacity() <em>Tuesday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTuesdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double TUESDAY_CAPACITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getTuesdayCapacity() <em>Tuesday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTuesdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double tuesdayCapacity = TUESDAY_CAPACITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTuesdayStartTime() <em>Tuesday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTuesdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date TUESDAY_START_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTuesdayStartTime() <em>Tuesday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTuesdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date tuesdayStartTime = TUESDAY_START_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWednesdayCapacity() <em>Wednesday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWednesdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double WEDNESDAY_CAPACITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getWednesdayCapacity() <em>Wednesday Capacity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWednesdayCapacity()
-	 * @generated
-	 * @ordered
-	 */
-	protected double wednesdayCapacity = WEDNESDAY_CAPACITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWednesdayStartTime() <em>Wednesday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWednesdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date WEDNESDAY_START_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWednesdayStartTime() <em>Wednesday Start Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWednesdayStartTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date wednesdayStartTime = WEDNESDAY_START_TIME_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -397,7 +75,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public String getCalendarWeekId() {
-		return calendarWeekId;
+		return (String)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID, true);
 	}
 
 	/**
@@ -407,10 +85,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setCalendarWeekId(String newCalendarWeekId) {
-		String oldCalendarWeekId = calendarWeekId;
-		calendarWeekId = newCalendarWeekId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID, newCalendarWeekId);
 	}
 
 	/**
@@ -420,7 +95,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__DESCRIPTION, true);
 	}
 
 	/**
@@ -430,10 +105,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__DESCRIPTION, oldDescription, description));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -443,7 +115,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public double getFridayCapacity() {
-		return fridayCapacity;
+		return (Double)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY, true);
 	}
 
 	/**
@@ -453,10 +125,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setFridayCapacity(double newFridayCapacity) {
-		double oldFridayCapacity = fridayCapacity;
-		fridayCapacity = newFridayCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY, oldFridayCapacity, fridayCapacity));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY, newFridayCapacity);
 	}
 
 	/**
@@ -466,7 +135,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public Date getFridayStartTime() {
-		return fridayStartTime;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME, true);
 	}
 
 	/**
@@ -476,10 +145,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setFridayStartTime(Date newFridayStartTime) {
-		Date oldFridayStartTime = fridayStartTime;
-		fridayStartTime = newFridayStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME, oldFridayStartTime, fridayStartTime));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME, newFridayStartTime);
 	}
 
 	/**
@@ -489,7 +155,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public double getMondayCapacity() {
-		return mondayCapacity;
+		return (Double)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY, true);
 	}
 
 	/**
@@ -499,10 +165,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setMondayCapacity(double newMondayCapacity) {
-		double oldMondayCapacity = mondayCapacity;
-		mondayCapacity = newMondayCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY, oldMondayCapacity, mondayCapacity));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY, newMondayCapacity);
 	}
 
 	/**
@@ -512,7 +175,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public Date getMondayStartTime() {
-		return mondayStartTime;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME, true);
 	}
 
 	/**
@@ -522,10 +185,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setMondayStartTime(Date newMondayStartTime) {
-		Date oldMondayStartTime = mondayStartTime;
-		mondayStartTime = newMondayStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME, oldMondayStartTime, mondayStartTime));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME, newMondayStartTime);
 	}
 
 	/**
@@ -535,7 +195,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public double getSaturdayCapacity() {
-		return saturdayCapacity;
+		return (Double)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY, true);
 	}
 
 	/**
@@ -545,10 +205,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSaturdayCapacity(double newSaturdayCapacity) {
-		double oldSaturdayCapacity = saturdayCapacity;
-		saturdayCapacity = newSaturdayCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY, oldSaturdayCapacity, saturdayCapacity));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY, newSaturdayCapacity);
 	}
 
 	/**
@@ -558,7 +215,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public Date getSaturdayStartTime() {
-		return saturdayStartTime;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME, true);
 	}
 
 	/**
@@ -568,10 +225,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSaturdayStartTime(Date newSaturdayStartTime) {
-		Date oldSaturdayStartTime = saturdayStartTime;
-		saturdayStartTime = newSaturdayStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME, oldSaturdayStartTime, saturdayStartTime));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME, newSaturdayStartTime);
 	}
 
 	/**
@@ -581,7 +235,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public double getSundayCapacity() {
-		return sundayCapacity;
+		return (Double)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY, true);
 	}
 
 	/**
@@ -591,10 +245,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSundayCapacity(double newSundayCapacity) {
-		double oldSundayCapacity = sundayCapacity;
-		sundayCapacity = newSundayCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY, oldSundayCapacity, sundayCapacity));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY, newSundayCapacity);
 	}
 
 	/**
@@ -604,7 +255,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public Date getSundayStartTime() {
-		return sundayStartTime;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME, true);
 	}
 
 	/**
@@ -614,10 +265,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSundayStartTime(Date newSundayStartTime) {
-		Date oldSundayStartTime = sundayStartTime;
-		sundayStartTime = newSundayStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME, oldSundayStartTime, sundayStartTime));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME, newSundayStartTime);
 	}
 
 	/**
@@ -627,7 +275,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public double getThursdayCapacity() {
-		return thursdayCapacity;
+		return (Double)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY, true);
 	}
 
 	/**
@@ -637,10 +285,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setThursdayCapacity(double newThursdayCapacity) {
-		double oldThursdayCapacity = thursdayCapacity;
-		thursdayCapacity = newThursdayCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY, oldThursdayCapacity, thursdayCapacity));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY, newThursdayCapacity);
 	}
 
 	/**
@@ -650,7 +295,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public Date getThursdayStartTime() {
-		return thursdayStartTime;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME, true);
 	}
 
 	/**
@@ -660,10 +305,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setThursdayStartTime(Date newThursdayStartTime) {
-		Date oldThursdayStartTime = thursdayStartTime;
-		thursdayStartTime = newThursdayStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME, oldThursdayStartTime, thursdayStartTime));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME, newThursdayStartTime);
 	}
 
 	/**
@@ -673,7 +315,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public double getTuesdayCapacity() {
-		return tuesdayCapacity;
+		return (Double)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY, true);
 	}
 
 	/**
@@ -683,10 +325,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setTuesdayCapacity(double newTuesdayCapacity) {
-		double oldTuesdayCapacity = tuesdayCapacity;
-		tuesdayCapacity = newTuesdayCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY, oldTuesdayCapacity, tuesdayCapacity));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY, newTuesdayCapacity);
 	}
 
 	/**
@@ -696,7 +335,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public Date getTuesdayStartTime() {
-		return tuesdayStartTime;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME, true);
 	}
 
 	/**
@@ -706,10 +345,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setTuesdayStartTime(Date newTuesdayStartTime) {
-		Date oldTuesdayStartTime = tuesdayStartTime;
-		tuesdayStartTime = newTuesdayStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME, oldTuesdayStartTime, tuesdayStartTime));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME, newTuesdayStartTime);
 	}
 
 	/**
@@ -719,7 +355,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public double getWednesdayCapacity() {
-		return wednesdayCapacity;
+		return (Double)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY, true);
 	}
 
 	/**
@@ -729,10 +365,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setWednesdayCapacity(double newWednesdayCapacity) {
-		double oldWednesdayCapacity = wednesdayCapacity;
-		wednesdayCapacity = newWednesdayCapacity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY, oldWednesdayCapacity, wednesdayCapacity));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY, newWednesdayCapacity);
 	}
 
 	/**
@@ -742,7 +375,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public Date getWednesdayStartTime() {
-		return wednesdayStartTime;
+		return (Date)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME, true);
 	}
 
 	/**
@@ -752,10 +385,7 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setWednesdayStartTime(Date newWednesdayStartTime) {
-		Date oldWednesdayStartTime = wednesdayStartTime;
-		wednesdayStartTime = newWednesdayStartTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME, oldWednesdayStartTime, wednesdayStartTime));
+		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME, newWednesdayStartTime);
 	}
 
 	/**
@@ -780,260 +410,6 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID:
-				return getCalendarWeekId();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__DESCRIPTION:
-				return getDescription();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY:
-				return getFridayCapacity();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME:
-				return getFridayStartTime();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY:
-				return getMondayCapacity();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME:
-				return getMondayStartTime();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY:
-				return getSaturdayCapacity();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME:
-				return getSaturdayStartTime();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY:
-				return getSundayCapacity();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME:
-				return getSundayStartTime();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY:
-				return getThursdayCapacity();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME:
-				return getThursdayStartTime();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY:
-				return getTuesdayCapacity();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME:
-				return getTuesdayStartTime();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY:
-				return getWednesdayCapacity();
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME:
-				return getWednesdayStartTime();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID:
-				setCalendarWeekId((String)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY:
-				setFridayCapacity((Double)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME:
-				setFridayStartTime((Date)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY:
-				setMondayCapacity((Double)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME:
-				setMondayStartTime((Date)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY:
-				setSaturdayCapacity((Double)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME:
-				setSaturdayStartTime((Date)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY:
-				setSundayCapacity((Double)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME:
-				setSundayStartTime((Date)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY:
-				setThursdayCapacity((Double)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME:
-				setThursdayStartTime((Date)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY:
-				setTuesdayCapacity((Double)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME:
-				setTuesdayStartTime((Date)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY:
-				setWednesdayCapacity((Double)newValue);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME:
-				setWednesdayStartTime((Date)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID:
-				setCalendarWeekId(CALENDAR_WEEK_ID_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY:
-				setFridayCapacity(FRIDAY_CAPACITY_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME:
-				setFridayStartTime(FRIDAY_START_TIME_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY:
-				setMondayCapacity(MONDAY_CAPACITY_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME:
-				setMondayStartTime(MONDAY_START_TIME_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY:
-				setSaturdayCapacity(SATURDAY_CAPACITY_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME:
-				setSaturdayStartTime(SATURDAY_START_TIME_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY:
-				setSundayCapacity(SUNDAY_CAPACITY_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME:
-				setSundayStartTime(SUNDAY_START_TIME_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY:
-				setThursdayCapacity(THURSDAY_CAPACITY_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME:
-				setThursdayStartTime(THURSDAY_START_TIME_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY:
-				setTuesdayCapacity(TUESDAY_CAPACITY_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME:
-				setTuesdayStartTime(TUESDAY_START_TIME_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY:
-				setWednesdayCapacity(WEDNESDAY_CAPACITY_EDEFAULT);
-				return;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME:
-				setWednesdayStartTime(WEDNESDAY_START_TIME_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID:
-				return CALENDAR_WEEK_ID_EDEFAULT == null ? calendarWeekId != null : !CALENDAR_WEEK_ID_EDEFAULT.equals(calendarWeekId);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY:
-				return fridayCapacity != FRIDAY_CAPACITY_EDEFAULT;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME:
-				return FRIDAY_START_TIME_EDEFAULT == null ? fridayStartTime != null : !FRIDAY_START_TIME_EDEFAULT.equals(fridayStartTime);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY:
-				return mondayCapacity != MONDAY_CAPACITY_EDEFAULT;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME:
-				return MONDAY_START_TIME_EDEFAULT == null ? mondayStartTime != null : !MONDAY_START_TIME_EDEFAULT.equals(mondayStartTime);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY:
-				return saturdayCapacity != SATURDAY_CAPACITY_EDEFAULT;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME:
-				return SATURDAY_START_TIME_EDEFAULT == null ? saturdayStartTime != null : !SATURDAY_START_TIME_EDEFAULT.equals(saturdayStartTime);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY:
-				return sundayCapacity != SUNDAY_CAPACITY_EDEFAULT;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME:
-				return SUNDAY_START_TIME_EDEFAULT == null ? sundayStartTime != null : !SUNDAY_START_TIME_EDEFAULT.equals(sundayStartTime);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY:
-				return thursdayCapacity != THURSDAY_CAPACITY_EDEFAULT;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME:
-				return THURSDAY_START_TIME_EDEFAULT == null ? thursdayStartTime != null : !THURSDAY_START_TIME_EDEFAULT.equals(thursdayStartTime);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY:
-				return tuesdayCapacity != TUESDAY_CAPACITY_EDEFAULT;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME:
-				return TUESDAY_START_TIME_EDEFAULT == null ? tuesdayStartTime != null : !TUESDAY_START_TIME_EDEFAULT.equals(tuesdayStartTime);
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY:
-				return wednesdayCapacity != WEDNESDAY_CAPACITY_EDEFAULT;
-			case TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME:
-				return WEDNESDAY_START_TIME_EDEFAULT == null ? wednesdayStartTime != null : !WEDNESDAY_START_TIME_EDEFAULT.equals(wednesdayStartTime);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (calendarWeekId: ");
-		result.append(calendarWeekId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", fridayCapacity: ");
-		result.append(fridayCapacity);
-		result.append(", fridayStartTime: ");
-		result.append(fridayStartTime);
-		result.append(", mondayCapacity: ");
-		result.append(mondayCapacity);
-		result.append(", mondayStartTime: ");
-		result.append(mondayStartTime);
-		result.append(", saturdayCapacity: ");
-		result.append(saturdayCapacity);
-		result.append(", saturdayStartTime: ");
-		result.append(saturdayStartTime);
-		result.append(", sundayCapacity: ");
-		result.append(sundayCapacity);
-		result.append(", sundayStartTime: ");
-		result.append(sundayStartTime);
-		result.append(", thursdayCapacity: ");
-		result.append(thursdayCapacity);
-		result.append(", thursdayStartTime: ");
-		result.append(thursdayStartTime);
-		result.append(", tuesdayCapacity: ");
-		result.append(tuesdayCapacity);
-		result.append(", tuesdayStartTime: ");
-		result.append(tuesdayStartTime);
-		result.append(", wednesdayCapacity: ");
-		result.append(wednesdayCapacity);
-		result.append(", wednesdayStartTime: ");
-		result.append(wednesdayStartTime);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TechDataCalendarWeekImpl

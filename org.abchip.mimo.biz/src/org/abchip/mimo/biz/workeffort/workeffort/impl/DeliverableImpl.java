@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,76 +36,6 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DELIVERABLE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deliverableId = DELIVERABLE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDeliverableName() <em>Deliverable Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DELIVERABLE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeliverableName() <em>Deliverable Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deliverableName = DELIVERABLE_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDeliverableTypeId() <em>Deliverable Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected DeliverableType deliverableTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +63,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public String getDeliverableId() {
-		return deliverableId;
+		return (String)eGet(WorkeffortPackage.Literals.DELIVERABLE__DELIVERABLE_ID, true);
 	}
 
 	/**
@@ -148,10 +73,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDeliverableId(String newDeliverableId) {
-		String oldDeliverableId = deliverableId;
-		deliverableId = newDeliverableId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DELIVERABLE_ID, oldDeliverableId, deliverableId));
+		eSet(WorkeffortPackage.Literals.DELIVERABLE__DELIVERABLE_ID, newDeliverableId);
 	}
 
 	/**
@@ -161,7 +83,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public String getDeliverableName() {
-		return deliverableName;
+		return (String)eGet(WorkeffortPackage.Literals.DELIVERABLE__DELIVERABLE_NAME, true);
 	}
 
 	/**
@@ -171,10 +93,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDeliverableName(String newDeliverableName) {
-		String oldDeliverableName = deliverableName;
-		deliverableName = newDeliverableName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME, oldDeliverableName, deliverableName));
+		eSet(WorkeffortPackage.Literals.DELIVERABLE__DELIVERABLE_NAME, newDeliverableName);
 	}
 
 	/**
@@ -184,24 +103,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public DeliverableType getDeliverableTypeId() {
-		if (deliverableTypeId != null && ((EObject)deliverableTypeId).eIsProxy()) {
-			InternalEObject oldDeliverableTypeId = (InternalEObject)deliverableTypeId;
-			deliverableTypeId = (DeliverableType)eResolveProxy(oldDeliverableTypeId);
-			if (deliverableTypeId != oldDeliverableTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
-			}
-		}
-		return deliverableTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DeliverableType basicGetDeliverableTypeId() {
-		return deliverableTypeId;
+		return (DeliverableType)eGet(WorkeffortPackage.Literals.DELIVERABLE__DELIVERABLE_TYPE_ID, true);
 	}
 
 	/**
@@ -211,10 +113,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDeliverableTypeId(DeliverableType newDeliverableTypeId) {
-		DeliverableType oldDeliverableTypeId = deliverableTypeId;
-		deliverableTypeId = newDeliverableTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
+		eSet(WorkeffortPackage.Literals.DELIVERABLE__DELIVERABLE_TYPE_ID, newDeliverableTypeId);
 	}
 
 	/**
@@ -224,7 +123,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(WorkeffortPackage.Literals.DELIVERABLE__DESCRIPTION, true);
 	}
 
 	/**
@@ -234,10 +133,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DESCRIPTION, oldDescription, description));
+		eSet(WorkeffortPackage.Literals.DELIVERABLE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -262,115 +158,6 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_ID:
-				return getDeliverableId();
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
-				return getDeliverableName();
-			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
-				return getDescription();
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				if (resolve) return getDeliverableTypeId();
-				return basicGetDeliverableTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_ID:
-				setDeliverableId((String)newValue);
-				return;
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
-				setDeliverableName((String)newValue);
-				return;
-			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				setDeliverableTypeId((DeliverableType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_ID:
-				setDeliverableId(DELIVERABLE_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
-				setDeliverableName(DELIVERABLE_NAME_EDEFAULT);
-				return;
-			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				setDeliverableTypeId((DeliverableType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_ID:
-				return DELIVERABLE_ID_EDEFAULT == null ? deliverableId != null : !DELIVERABLE_ID_EDEFAULT.equals(deliverableId);
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
-				return DELIVERABLE_NAME_EDEFAULT == null ? deliverableName != null : !DELIVERABLE_NAME_EDEFAULT.equals(deliverableName);
-			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				return deliverableTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (deliverableId: ");
-		result.append(deliverableId);
-		result.append(", deliverableName: ");
-		result.append(deliverableName);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DeliverableImpl

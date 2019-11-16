@@ -14,11 +14,7 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGroup;
 import org.abchip.mimo.biz.accounting.payment.PaymentGroupMember;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,79 +38,6 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long SEQUENCE_NUM_EDEFAULT = 0L;
-	/**
-	 * The cached value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getPaymentGroupId() <em>Payment Group Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected PaymentGroup paymentGroupId;
-	/**
-	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Payment paymentId;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,7 +64,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__FROM_DATE, true);
 	}
 
 	/**
@@ -151,10 +74,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE, oldFromDate, fromDate));
+		eSet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -164,7 +84,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public long getSequenceNum() {
-		return sequenceNum;
+		return (Long)eGet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM, true);
 	}
 
 	/**
@@ -174,10 +94,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
-		long oldSequenceNum = sequenceNum;
-		sequenceNum = newSequenceNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
+		eSet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM, newSequenceNum);
 	}
 
 	/**
@@ -187,7 +104,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__THRU_DATE, true);
 	}
 
 	/**
@@ -197,10 +114,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE, oldThruDate, thruDate));
+		eSet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__THRU_DATE, newThruDate);
 	}
 
 	/**
@@ -210,24 +124,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public PaymentGroup getPaymentGroupId() {
-		if (paymentGroupId != null && ((EObject)paymentGroupId).eIsProxy()) {
-			InternalEObject oldPaymentGroupId = (InternalEObject)paymentGroupId;
-			paymentGroupId = (PaymentGroup)eResolveProxy(oldPaymentGroupId);
-			if (paymentGroupId != oldPaymentGroupId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID, oldPaymentGroupId, paymentGroupId));
-			}
-		}
-		return paymentGroupId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PaymentGroup basicGetPaymentGroupId() {
-		return paymentGroupId;
+		return (PaymentGroup)eGet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID, true);
 	}
 
 	/**
@@ -237,10 +134,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setPaymentGroupId(PaymentGroup newPaymentGroupId) {
-		PaymentGroup oldPaymentGroupId = paymentGroupId;
-		paymentGroupId = newPaymentGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID, oldPaymentGroupId, paymentGroupId));
+		eSet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID, newPaymentGroupId);
 	}
 
 	/**
@@ -250,24 +144,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public Payment getPaymentId() {
-		if (paymentId != null && ((EObject)paymentId).eIsProxy()) {
-			InternalEObject oldPaymentId = (InternalEObject)paymentId;
-			paymentId = (Payment)eResolveProxy(oldPaymentId);
-			if (paymentId != oldPaymentId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID, oldPaymentId, paymentId));
-			}
-		}
-		return paymentId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Payment basicGetPaymentId() {
-		return paymentId;
+		return (Payment)eGet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__PAYMENT_ID, true);
 	}
 
 	/**
@@ -277,130 +154,7 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
-		Payment oldPaymentId = paymentId;
-		paymentId = newPaymentId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID, oldPaymentId, paymentId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
-				return getFromDate();
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM:
-				return getSequenceNum();
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
-				return getThruDate();
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
-				if (resolve) return getPaymentGroupId();
-				return basicGetPaymentGroupId();
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				if (resolve) return getPaymentId();
-				return basicGetPaymentId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM:
-				setSequenceNum((Long)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
-				setPaymentGroupId((PaymentGroup)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				setPaymentId((Payment)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM:
-				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
-				setPaymentGroupId((PaymentGroup)null);
-				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				setPaymentId((Payment)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM:
-				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
-				return paymentGroupId != null;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				return paymentId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (fromDate: ");
-		result.append(fromDate);
-		result.append(", sequenceNum: ");
-		result.append(sequenceNum);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(PaymentPackage.Literals.PAYMENT_GROUP_MEMBER__PAYMENT_ID, newPaymentId);
 	}
 
 } //PaymentGroupMemberImpl

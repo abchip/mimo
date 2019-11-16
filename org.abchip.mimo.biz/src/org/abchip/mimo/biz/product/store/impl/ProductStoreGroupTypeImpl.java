@@ -13,9 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupType;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,46 +34,6 @@ public class ProductStoreGroupTypeImpl extends BizEntityTypeImpl<ProductStoreGro
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getProductStoreGroupTypeId() <em>Product Store Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreGroupTypeId() <em>Product Store Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreGroupTypeId = PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +61,7 @@ public class ProductStoreGroupTypeImpl extends BizEntityTypeImpl<ProductStoreGro
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION, true);
 	}
 
 	/**
@@ -113,10 +71,7 @@ public class ProductStoreGroupTypeImpl extends BizEntityTypeImpl<ProductStoreGro
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION, oldDescription, description));
+		eSet(StorePackage.Literals.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -138,7 +93,7 @@ public class ProductStoreGroupTypeImpl extends BizEntityTypeImpl<ProductStoreGro
 	 */
 	@Override
 	public String getProductStoreGroupTypeId() {
-		return productStoreGroupTypeId;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID, true);
 	}
 
 	/**
@@ -148,96 +103,7 @@ public class ProductStoreGroupTypeImpl extends BizEntityTypeImpl<ProductStoreGro
 	 */
 	@Override
 	public void setProductStoreGroupTypeId(String newProductStoreGroupTypeId) {
-		String oldProductStoreGroupTypeId = productStoreGroupTypeId;
-		productStoreGroupTypeId = newProductStoreGroupTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID, oldProductStoreGroupTypeId, productStoreGroupTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID:
-				return getProductStoreGroupTypeId();
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION:
-				return getDescription();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID:
-				setProductStoreGroupTypeId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID:
-				setProductStoreGroupTypeId(PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID:
-				return PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT == null ? productStoreGroupTypeId != null : !PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT.equals(productStoreGroupTypeId);
-			case StorePackage.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreGroupTypeId: ");
-		result.append(productStoreGroupTypeId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(StorePackage.Literals.PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID, newProductStoreGroupTypeId);
 	}
 
 } //ProductStoreGroupTypeImpl

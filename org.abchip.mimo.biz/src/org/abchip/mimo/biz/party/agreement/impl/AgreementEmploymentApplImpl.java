@@ -12,9 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,178 +41,6 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementId = AGREEMENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ITEM_SEQ_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdTo = PARTY_ID_TO_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdFrom = PARTY_ID_FROM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeIdTo() <em>Role Type Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeIdTo() <em>Role Type Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeIdTo = ROLE_TYPE_ID_TO_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeIdFrom() <em>Role Type Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeIdFrom() <em>Role Type Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeIdFrom = ROLE_TYPE_ID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date FROM_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date fromDate = FROM_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAgreementDate() <em>Agreement Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date AGREEMENT_DATE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAgreementDate() <em>Agreement Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date agreementDate = AGREEMENT_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date THRU_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThruDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date thruDate = THRU_DATE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -240,7 +66,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public Date getAgreementDate() {
-		return agreementDate;
+		return (Date)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE, true);
 	}
 
 	/**
@@ -250,10 +76,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setAgreementDate(Date newAgreementDate) {
-		Date oldAgreementDate = agreementDate;
-		agreementDate = newAgreementDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE, oldAgreementDate, agreementDate));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE, newAgreementDate);
 	}
 
 	/**
@@ -263,7 +86,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public String getAgreementId() {
-		return agreementId;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID, true);
 	}
 
 	/**
@@ -273,10 +96,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
-		agreementId = newAgreementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID, newAgreementId);
 	}
 
 	/**
@@ -286,7 +106,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public String getAgreementItemSeqId() {
-		return agreementItemSeqId;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID, true);
 	}
 
 	/**
@@ -296,10 +116,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
-		String oldAgreementItemSeqId = agreementItemSeqId;
-		agreementItemSeqId = newAgreementItemSeqId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID, newAgreementItemSeqId);
 	}
 
 	/**
@@ -309,7 +126,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public Date getFromDate() {
-		return fromDate;
+		return (Date)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE, true);
 	}
 
 	/**
@@ -319,10 +136,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
-		Date oldFromDate = fromDate;
-		fromDate = newFromDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE, oldFromDate, fromDate));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE, newFromDate);
 	}
 
 	/**
@@ -332,7 +146,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public String getPartyIdFrom() {
-		return partyIdFrom;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM, true);
 	}
 
 	/**
@@ -342,10 +156,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
-		partyIdFrom = newPartyIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM, newPartyIdFrom);
 	}
 
 	/**
@@ -355,7 +166,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public String getPartyIdTo() {
-		return partyIdTo;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO, true);
 	}
 
 	/**
@@ -365,10 +176,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setPartyIdTo(String newPartyIdTo) {
-		String oldPartyIdTo = partyIdTo;
-		partyIdTo = newPartyIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO, newPartyIdTo);
 	}
 
 	/**
@@ -378,7 +186,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public String getRoleTypeIdFrom() {
-		return roleTypeIdFrom;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM, true);
 	}
 
 	/**
@@ -388,10 +196,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setRoleTypeIdFrom(String newRoleTypeIdFrom) {
-		String oldRoleTypeIdFrom = roleTypeIdFrom;
-		roleTypeIdFrom = newRoleTypeIdFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM, newRoleTypeIdFrom);
 	}
 
 	/**
@@ -401,7 +206,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public String getRoleTypeIdTo() {
-		return roleTypeIdTo;
+		return (String)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO, true);
 	}
 
 	/**
@@ -411,10 +216,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setRoleTypeIdTo(String newRoleTypeIdTo) {
-		String oldRoleTypeIdTo = roleTypeIdTo;
-		roleTypeIdTo = newRoleTypeIdTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO, newRoleTypeIdTo);
 	}
 
 	/**
@@ -424,7 +226,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public Date getThruDate() {
-		return thruDate;
+		return (Date)eGet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE, true);
 	}
 
 	/**
@@ -434,180 +236,7 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
-		Date oldThruDate = thruDate;
-		thruDate = newThruDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE, oldThruDate, thruDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID:
-				return getAgreementId();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID:
-				return getAgreementItemSeqId();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO:
-				return getPartyIdTo();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM:
-				return getPartyIdFrom();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO:
-				return getRoleTypeIdTo();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM:
-				return getRoleTypeIdFrom();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE:
-				return getFromDate();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE:
-				return getAgreementDate();
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE:
-				return getThruDate();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID:
-				setAgreementId((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID:
-				setAgreementItemSeqId((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO:
-				setPartyIdTo((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM:
-				setPartyIdFrom((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO:
-				setRoleTypeIdTo((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM:
-				setRoleTypeIdFrom((String)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE:
-				setFromDate((Date)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE:
-				setAgreementDate((Date)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE:
-				setThruDate((Date)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID:
-				setAgreementId(AGREEMENT_ID_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID:
-				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO:
-				setPartyIdTo(PARTY_ID_TO_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM:
-				setPartyIdFrom(PARTY_ID_FROM_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO:
-				setRoleTypeIdTo(ROLE_TYPE_ID_TO_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM:
-				setRoleTypeIdFrom(ROLE_TYPE_ID_FROM_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE:
-				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE:
-				setAgreementDate(AGREEMENT_DATE_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE:
-				setThruDate(THRU_DATE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID:
-				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID:
-				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO:
-				return PARTY_ID_TO_EDEFAULT == null ? partyIdTo != null : !PARTY_ID_TO_EDEFAULT.equals(partyIdTo);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM:
-				return PARTY_ID_FROM_EDEFAULT == null ? partyIdFrom != null : !PARTY_ID_FROM_EDEFAULT.equals(partyIdFrom);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO:
-				return ROLE_TYPE_ID_TO_EDEFAULT == null ? roleTypeIdTo != null : !ROLE_TYPE_ID_TO_EDEFAULT.equals(roleTypeIdTo);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM:
-				return ROLE_TYPE_ID_FROM_EDEFAULT == null ? roleTypeIdFrom != null : !ROLE_TYPE_ID_FROM_EDEFAULT.equals(roleTypeIdFrom);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE:
-				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE:
-				return AGREEMENT_DATE_EDEFAULT == null ? agreementDate != null : !AGREEMENT_DATE_EDEFAULT.equals(agreementDate);
-			case AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE:
-				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (agreementId: ");
-		result.append(agreementId);
-		result.append(", agreementItemSeqId: ");
-		result.append(agreementItemSeqId);
-		result.append(", partyIdTo: ");
-		result.append(partyIdTo);
-		result.append(", partyIdFrom: ");
-		result.append(partyIdFrom);
-		result.append(", roleTypeIdTo: ");
-		result.append(roleTypeIdTo);
-		result.append(", roleTypeIdFrom: ");
-		result.append(roleTypeIdFrom);
-		result.append(", fromDate: ");
-		result.append(fromDate);
-		result.append(", agreementDate: ");
-		result.append(agreementDate);
-		result.append(", thruDate: ");
-		result.append(thruDate);
-		result.append(')');
-		return result.toString();
+		eSet(AgreementPackage.Literals.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE, newThruDate);
 	}
 
 } //AgreementEmploymentApplImpl

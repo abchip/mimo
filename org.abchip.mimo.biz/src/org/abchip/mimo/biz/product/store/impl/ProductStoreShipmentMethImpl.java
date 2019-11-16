@@ -18,12 +18,7 @@ import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,506 +67,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getProductStoreShipMethId() <em>Product Store Ship Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreShipMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_SHIP_METH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreShipMethId() <em>Product Store Ship Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreShipMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreShipMethId = PRODUCT_STORE_SHIP_METH_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isAllowCompanyAddr() <em>Allow Company Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAllowCompanyAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ALLOW_COMPANY_ADDR_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAllowCompanyAddr() <em>Allow Company Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAllowCompanyAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean allowCompanyAddr = ALLOW_COMPANY_ADDR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isAllowUspsAddr() <em>Allow Usps Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAllowUspsAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ALLOW_USPS_ADDR_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAllowUspsAddr() <em>Allow Usps Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAllowUspsAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean allowUspsAddr = ALLOW_USPS_ADDR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAllowancePercent() <em>Allowance Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllowancePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal ALLOWANCE_PERCENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAllowancePercent() <em>Allowance Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllowancePercent()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal allowancePercent = ALLOWANCE_PERCENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getConfigProps() <em>Config Props</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONFIG_PROPS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConfigProps() <em>Config Props</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected String configProps = CONFIG_PROPS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getExcludeFeatureGroup() <em>Exclude Feature Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExcludeFeatureGroup()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXCLUDE_FEATURE_GROUP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExcludeFeatureGroup() <em>Exclude Feature Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExcludeFeatureGroup()
-	 * @generated
-	 * @ordered
-	 */
-	protected String excludeFeatureGroup = EXCLUDE_FEATURE_GROUP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIncludeFeatureGroup() <em>Include Feature Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncludeFeatureGroup()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INCLUDE_FEATURE_GROUP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIncludeFeatureGroup() <em>Include Feature Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncludeFeatureGroup()
-	 * @generated
-	 * @ordered
-	 */
-	protected String includeFeatureGroup = INCLUDE_FEATURE_GROUP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isIncludeNoChargeItems() <em>Include No Charge Items</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIncludeNoChargeItems()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean INCLUDE_NO_CHARGE_ITEMS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIncludeNoChargeItems() <em>Include No Charge Items</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIncludeNoChargeItems()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean includeNoChargeItems = INCLUDE_NO_CHARGE_ITEMS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxSize() <em>Max Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MAX_SIZE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaxSize() <em>Max Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal maxSize = MAX_SIZE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxTotal() <em>Max Total</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxTotal()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MAX_TOTAL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaxTotal() <em>Max Total</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxTotal()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal maxTotal = MAX_TOTAL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxWeight() <em>Max Weight</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxWeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MAX_WEIGHT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaxWeight() <em>Max Weight</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxWeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal maxWeight = MAX_WEIGHT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMinSize() <em>Min Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MIN_SIZE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMinSize() <em>Min Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal minSize = MIN_SIZE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMinTotal() <em>Min Total</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinTotal()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MIN_TOTAL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMinTotal() <em>Min Total</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinTotal()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal minTotal = MIN_TOTAL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMinWeight() <em>Min Weight</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinWeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MIN_WEIGHT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMinWeight() <em>Min Weight</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinWeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal minWeight = MIN_WEIGHT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMinimumPrice() <em>Minimum Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinimumPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigDecimal MINIMUM_PRICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMinimumPrice() <em>Minimum Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinimumPrice()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal minimumPrice = MINIMUM_PRICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isRequireCompanyAddr() <em>Require Company Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRequireCompanyAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean REQUIRE_COMPANY_ADDR_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isRequireCompanyAddr() <em>Require Company Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRequireCompanyAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean requireCompanyAddr = REQUIRE_COMPANY_ADDR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isRequireUspsAddr() <em>Require Usps Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRequireUspsAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean REQUIRE_USPS_ADDR_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isRequireUspsAddr() <em>Require Usps Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRequireUspsAddr()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean requireUspsAddr = REQUIRE_USPS_ADDR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long SEQUENCE_NUMBER_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSequenceNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected long sequenceNumber = SEQUENCE_NUMBER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SERVICE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String serviceName = SERVICE_NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCompanyPartyId() <em>Company Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCompanyPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Party companyPartyId;
-
-	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ShipmentMethodType shipmentMethodTypeId;
-
-	/**
-	 * The cached value of the '{@link #getIncludeGeoId() <em>Include Geo Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncludeGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Geo includeGeoId;
-
-	/**
-	 * The cached value of the '{@link #getExcludeGeoId() <em>Exclude Geo Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExcludeGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected Geo excludeGeoId;
-
-	/**
-	 * The cached value of the '{@link #getShipmentGatewayConfigId() <em>Shipment Gateway Config Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ShipmentGatewayConfig shipmentGatewayConfigId;
-
-	/**
-	 * The cached value of the '{@link #getShipmentCustomMethodId() <em>Shipment Custom Method Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CustomMethod shipmentCustomMethodId;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -597,7 +92,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getAllowancePercent() {
-		return allowancePercent;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT, true);
 	}
 
 	/**
@@ -607,10 +102,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setAllowancePercent(BigDecimal newAllowancePercent) {
-		BigDecimal oldAllowancePercent = allowancePercent;
-		allowancePercent = newAllowancePercent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT, oldAllowancePercent, allowancePercent));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT, newAllowancePercent);
 	}
 
 	/**
@@ -620,24 +112,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public Party getCompanyPartyId() {
-		if (companyPartyId != null && ((EObject)companyPartyId).eIsProxy()) {
-			InternalEObject oldCompanyPartyId = (InternalEObject)companyPartyId;
-			companyPartyId = (Party)eResolveProxy(oldCompanyPartyId);
-			if (companyPartyId != oldCompanyPartyId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID, oldCompanyPartyId, companyPartyId));
-			}
-		}
-		return companyPartyId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Party basicGetCompanyPartyId() {
-		return companyPartyId;
+		return (Party)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID, true);
 	}
 
 	/**
@@ -647,10 +122,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setCompanyPartyId(Party newCompanyPartyId) {
-		Party oldCompanyPartyId = companyPartyId;
-		companyPartyId = newCompanyPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID, oldCompanyPartyId, companyPartyId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID, newCompanyPartyId);
 	}
 
 	/**
@@ -660,7 +132,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getConfigProps() {
-		return configProps;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS, true);
 	}
 
 	/**
@@ -670,10 +142,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setConfigProps(String newConfigProps) {
-		String oldConfigProps = configProps;
-		configProps = newConfigProps;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS, oldConfigProps, configProps));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS, newConfigProps);
 	}
 
 	/**
@@ -683,7 +152,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getExcludeFeatureGroup() {
-		return excludeFeatureGroup;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP, true);
 	}
 
 	/**
@@ -693,10 +162,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setExcludeFeatureGroup(String newExcludeFeatureGroup) {
-		String oldExcludeFeatureGroup = excludeFeatureGroup;
-		excludeFeatureGroup = newExcludeFeatureGroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP, oldExcludeFeatureGroup, excludeFeatureGroup));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP, newExcludeFeatureGroup);
 	}
 
 	/**
@@ -706,24 +172,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public Geo getExcludeGeoId() {
-		if (excludeGeoId != null && ((EObject)excludeGeoId).eIsProxy()) {
-			InternalEObject oldExcludeGeoId = (InternalEObject)excludeGeoId;
-			excludeGeoId = (Geo)eResolveProxy(oldExcludeGeoId);
-			if (excludeGeoId != oldExcludeGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID, oldExcludeGeoId, excludeGeoId));
-			}
-		}
-		return excludeGeoId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Geo basicGetExcludeGeoId() {
-		return excludeGeoId;
+		return (Geo)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID, true);
 	}
 
 	/**
@@ -733,10 +182,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setExcludeGeoId(Geo newExcludeGeoId) {
-		Geo oldExcludeGeoId = excludeGeoId;
-		excludeGeoId = newExcludeGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID, oldExcludeGeoId, excludeGeoId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID, newExcludeGeoId);
 	}
 
 	/**
@@ -746,7 +192,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getIncludeFeatureGroup() {
-		return includeFeatureGroup;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP, true);
 	}
 
 	/**
@@ -756,10 +202,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setIncludeFeatureGroup(String newIncludeFeatureGroup) {
-		String oldIncludeFeatureGroup = includeFeatureGroup;
-		includeFeatureGroup = newIncludeFeatureGroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP, oldIncludeFeatureGroup, includeFeatureGroup));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP, newIncludeFeatureGroup);
 	}
 
 	/**
@@ -769,24 +212,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public Geo getIncludeGeoId() {
-		if (includeGeoId != null && ((EObject)includeGeoId).eIsProxy()) {
-			InternalEObject oldIncludeGeoId = (InternalEObject)includeGeoId;
-			includeGeoId = (Geo)eResolveProxy(oldIncludeGeoId);
-			if (includeGeoId != oldIncludeGeoId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, oldIncludeGeoId, includeGeoId));
-			}
-		}
-		return includeGeoId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Geo basicGetIncludeGeoId() {
-		return includeGeoId;
+		return (Geo)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, true);
 	}
 
 	/**
@@ -796,10 +222,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setIncludeGeoId(Geo newIncludeGeoId) {
-		Geo oldIncludeGeoId = includeGeoId;
-		includeGeoId = newIncludeGeoId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, oldIncludeGeoId, includeGeoId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, newIncludeGeoId);
 	}
 
 	/**
@@ -809,7 +232,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public boolean isIncludeNoChargeItems() {
-		return includeNoChargeItems;
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS, true);
 	}
 
 	/**
@@ -819,10 +242,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setIncludeNoChargeItems(boolean newIncludeNoChargeItems) {
-		boolean oldIncludeNoChargeItems = includeNoChargeItems;
-		includeNoChargeItems = newIncludeNoChargeItems;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS, oldIncludeNoChargeItems, includeNoChargeItems));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS, newIncludeNoChargeItems);
 	}
 
 	/**
@@ -832,7 +252,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getMaxSize() {
-		return maxSize;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE, true);
 	}
 
 	/**
@@ -842,10 +262,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMaxSize(BigDecimal newMaxSize) {
-		BigDecimal oldMaxSize = maxSize;
-		maxSize = newMaxSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE, oldMaxSize, maxSize));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE, newMaxSize);
 	}
 
 	/**
@@ -855,7 +272,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getMaxTotal() {
-		return maxTotal;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL, true);
 	}
 
 	/**
@@ -865,10 +282,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMaxTotal(BigDecimal newMaxTotal) {
-		BigDecimal oldMaxTotal = maxTotal;
-		maxTotal = newMaxTotal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL, oldMaxTotal, maxTotal));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL, newMaxTotal);
 	}
 
 	/**
@@ -878,7 +292,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getMaxWeight() {
-		return maxWeight;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT, true);
 	}
 
 	/**
@@ -888,10 +302,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMaxWeight(BigDecimal newMaxWeight) {
-		BigDecimal oldMaxWeight = maxWeight;
-		maxWeight = newMaxWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT, oldMaxWeight, maxWeight));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT, newMaxWeight);
 	}
 
 	/**
@@ -901,7 +312,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getMinSize() {
-		return minSize;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE, true);
 	}
 
 	/**
@@ -911,10 +322,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinSize(BigDecimal newMinSize) {
-		BigDecimal oldMinSize = minSize;
-		minSize = newMinSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE, oldMinSize, minSize));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE, newMinSize);
 	}
 
 	/**
@@ -924,7 +332,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getMinTotal() {
-		return minTotal;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL, true);
 	}
 
 	/**
@@ -934,10 +342,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinTotal(BigDecimal newMinTotal) {
-		BigDecimal oldMinTotal = minTotal;
-		minTotal = newMinTotal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL, oldMinTotal, minTotal));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL, newMinTotal);
 	}
 
 	/**
@@ -947,7 +352,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getMinWeight() {
-		return minWeight;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT, true);
 	}
 
 	/**
@@ -957,10 +362,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinWeight(BigDecimal newMinWeight) {
-		BigDecimal oldMinWeight = minWeight;
-		minWeight = newMinWeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT, oldMinWeight, minWeight));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT, newMinWeight);
 	}
 
 	/**
@@ -970,7 +372,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public BigDecimal getMinimumPrice() {
-		return minimumPrice;
+		return (BigDecimal)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE, true);
 	}
 
 	/**
@@ -980,10 +382,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setMinimumPrice(BigDecimal newMinimumPrice) {
-		BigDecimal oldMinimumPrice = minimumPrice;
-		minimumPrice = newMinimumPrice;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE, oldMinimumPrice, minimumPrice));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE, newMinimumPrice);
 	}
 
 	/**
@@ -993,7 +392,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getPartyId() {
-		return partyId;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID, true);
 	}
 
 	/**
@@ -1003,10 +402,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
-		partyId = newPartyId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID, oldPartyId, partyId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID, newPartyId);
 	}
 
 	/**
@@ -1016,7 +412,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getProductStoreId() {
-		return productStoreId;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID, true);
 	}
 
 	/**
@@ -1026,10 +422,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
-		productStoreId = newProductStoreId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID, newProductStoreId);
 	}
 
 	/**
@@ -1039,7 +432,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public boolean isRequireCompanyAddr() {
-		return requireCompanyAddr;
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR, true);
 	}
 
 	/**
@@ -1049,10 +442,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRequireCompanyAddr(boolean newRequireCompanyAddr) {
-		boolean oldRequireCompanyAddr = requireCompanyAddr;
-		requireCompanyAddr = newRequireCompanyAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR, oldRequireCompanyAddr, requireCompanyAddr));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR, newRequireCompanyAddr);
 	}
 
 	/**
@@ -1062,7 +452,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public boolean isRequireUspsAddr() {
-		return requireUspsAddr;
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR, true);
 	}
 
 	/**
@@ -1072,10 +462,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRequireUspsAddr(boolean newRequireUspsAddr) {
-		boolean oldRequireUspsAddr = requireUspsAddr;
-		requireUspsAddr = newRequireUspsAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR, oldRequireUspsAddr, requireUspsAddr));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR, newRequireUspsAddr);
 	}
 
 	/**
@@ -1085,7 +472,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getProductStoreShipMethId() {
-		return productStoreShipMethId;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID, true);
 	}
 
 	/**
@@ -1095,10 +482,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductStoreShipMethId(String newProductStoreShipMethId) {
-		String oldProductStoreShipMethId = productStoreShipMethId;
-		productStoreShipMethId = newProductStoreShipMethId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID, oldProductStoreShipMethId, productStoreShipMethId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID, newProductStoreShipMethId);
 	}
 
 	/**
@@ -1108,7 +492,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public boolean isAllowCompanyAddr() {
-		return allowCompanyAddr;
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR, true);
 	}
 
 	/**
@@ -1118,10 +502,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setAllowCompanyAddr(boolean newAllowCompanyAddr) {
-		boolean oldAllowCompanyAddr = allowCompanyAddr;
-		allowCompanyAddr = newAllowCompanyAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR, oldAllowCompanyAddr, allowCompanyAddr));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR, newAllowCompanyAddr);
 	}
 
 	/**
@@ -1131,7 +512,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public boolean isAllowUspsAddr() {
-		return allowUspsAddr;
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR, true);
 	}
 
 	/**
@@ -1141,10 +522,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setAllowUspsAddr(boolean newAllowUspsAddr) {
-		boolean oldAllowUspsAddr = allowUspsAddr;
-		allowUspsAddr = newAllowUspsAddr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR, oldAllowUspsAddr, allowUspsAddr));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR, newAllowUspsAddr);
 	}
 
 	/**
@@ -1154,7 +532,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getRoleTypeId() {
-		return roleTypeId;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID, true);
 	}
 
 	/**
@@ -1164,10 +542,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
-		roleTypeId = newRoleTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID, newRoleTypeId);
 	}
 
 	/**
@@ -1177,7 +552,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public long getSequenceNumber() {
-		return sequenceNumber;
+		return (Long)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER, true);
 	}
 
 	/**
@@ -1187,10 +562,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setSequenceNumber(long newSequenceNumber) {
-		long oldSequenceNumber = sequenceNumber;
-		sequenceNumber = newSequenceNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER, oldSequenceNumber, sequenceNumber));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER, newSequenceNumber);
 	}
 
 	/**
@@ -1200,7 +572,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public String getServiceName() {
-		return serviceName;
+		return (String)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME, true);
 	}
 
 	/**
@@ -1210,10 +582,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setServiceName(String newServiceName) {
-		String oldServiceName = serviceName;
-		serviceName = newServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME, oldServiceName, serviceName));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME, newServiceName);
 	}
 
 	/**
@@ -1223,24 +592,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public CustomMethod getShipmentCustomMethodId() {
-		if (shipmentCustomMethodId != null && ((EObject)shipmentCustomMethodId).eIsProxy()) {
-			InternalEObject oldShipmentCustomMethodId = (InternalEObject)shipmentCustomMethodId;
-			shipmentCustomMethodId = (CustomMethod)eResolveProxy(oldShipmentCustomMethodId);
-			if (shipmentCustomMethodId != oldShipmentCustomMethodId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID, oldShipmentCustomMethodId, shipmentCustomMethodId));
-			}
-		}
-		return shipmentCustomMethodId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CustomMethod basicGetShipmentCustomMethodId() {
-		return shipmentCustomMethodId;
+		return (CustomMethod)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID, true);
 	}
 
 	/**
@@ -1250,10 +602,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setShipmentCustomMethodId(CustomMethod newShipmentCustomMethodId) {
-		CustomMethod oldShipmentCustomMethodId = shipmentCustomMethodId;
-		shipmentCustomMethodId = newShipmentCustomMethodId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID, oldShipmentCustomMethodId, shipmentCustomMethodId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID, newShipmentCustomMethodId);
 	}
 
 	/**
@@ -1263,24 +612,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public ShipmentGatewayConfig getShipmentGatewayConfigId() {
-		if (shipmentGatewayConfigId != null && ((EObject)shipmentGatewayConfigId).eIsProxy()) {
-			InternalEObject oldShipmentGatewayConfigId = (InternalEObject)shipmentGatewayConfigId;
-			shipmentGatewayConfigId = (ShipmentGatewayConfig)eResolveProxy(oldShipmentGatewayConfigId);
-			if (shipmentGatewayConfigId != oldShipmentGatewayConfigId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID, oldShipmentGatewayConfigId, shipmentGatewayConfigId));
-			}
-		}
-		return shipmentGatewayConfigId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShipmentGatewayConfig basicGetShipmentGatewayConfigId() {
-		return shipmentGatewayConfigId;
+		return (ShipmentGatewayConfig)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID, true);
 	}
 
 	/**
@@ -1290,10 +622,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setShipmentGatewayConfigId(ShipmentGatewayConfig newShipmentGatewayConfigId) {
-		ShipmentGatewayConfig oldShipmentGatewayConfigId = shipmentGatewayConfigId;
-		shipmentGatewayConfigId = newShipmentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID, oldShipmentGatewayConfigId, shipmentGatewayConfigId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID, newShipmentGatewayConfigId);
 	}
 
 	/**
@@ -1303,24 +632,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public ShipmentMethodType getShipmentMethodTypeId() {
-		if (shipmentMethodTypeId != null && ((EObject)shipmentMethodTypeId).eIsProxy()) {
-			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
-			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
-			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
-			}
-		}
-		return shipmentMethodTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShipmentMethodType basicGetShipmentMethodTypeId() {
-		return shipmentMethodTypeId;
+		return (ShipmentMethodType)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID, true);
 	}
 
 	/**
@@ -1330,10 +642,7 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
-		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
-		shipmentMethodTypeId = newShipmentMethodTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID, newShipmentMethodTypeId);
 	}
 
 	/**
@@ -1346,398 +655,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID:
-				return getProductStoreShipMethId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR:
-				return isAllowCompanyAddr();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR:
-				return isAllowUspsAddr();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT:
-				return getAllowancePercent();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS:
-				return getConfigProps();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP:
-				return getExcludeFeatureGroup();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP:
-				return getIncludeFeatureGroup();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS:
-				return isIncludeNoChargeItems();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE:
-				return getMaxSize();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL:
-				return getMaxTotal();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT:
-				return getMaxWeight();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE:
-				return getMinSize();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL:
-				return getMinTotal();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT:
-				return getMinWeight();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE:
-				return getMinimumPrice();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID:
-				return getPartyId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID:
-				return getProductStoreId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR:
-				return isRequireCompanyAddr();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR:
-				return isRequireUspsAddr();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER:
-				return getSequenceNumber();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME:
-				return getServiceName();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID:
-				if (resolve) return getCompanyPartyId();
-				return basicGetCompanyPartyId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID:
-				if (resolve) return getShipmentMethodTypeId();
-				return basicGetShipmentMethodTypeId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID:
-				if (resolve) return getIncludeGeoId();
-				return basicGetIncludeGeoId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID:
-				if (resolve) return getExcludeGeoId();
-				return basicGetExcludeGeoId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID:
-				if (resolve) return getShipmentGatewayConfigId();
-				return basicGetShipmentGatewayConfigId();
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID:
-				if (resolve) return getShipmentCustomMethodId();
-				return basicGetShipmentCustomMethodId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID:
-				setProductStoreShipMethId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR:
-				setAllowCompanyAddr((Boolean)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR:
-				setAllowUspsAddr((Boolean)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT:
-				setAllowancePercent((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS:
-				setConfigProps((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP:
-				setExcludeFeatureGroup((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP:
-				setIncludeFeatureGroup((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS:
-				setIncludeNoChargeItems((Boolean)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE:
-				setMaxSize((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL:
-				setMaxTotal((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT:
-				setMaxWeight((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE:
-				setMinSize((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL:
-				setMinTotal((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT:
-				setMinWeight((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE:
-				setMinimumPrice((BigDecimal)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR:
-				setRequireCompanyAddr((Boolean)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR:
-				setRequireUspsAddr((Boolean)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER:
-				setSequenceNumber((Long)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME:
-				setServiceName((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID:
-				setCompanyPartyId((Party)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((ShipmentMethodType)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID:
-				setIncludeGeoId((Geo)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID:
-				setExcludeGeoId((Geo)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID:
-				setShipmentGatewayConfigId((ShipmentGatewayConfig)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID:
-				setShipmentCustomMethodId((CustomMethod)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID:
-				setProductStoreShipMethId(PRODUCT_STORE_SHIP_METH_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR:
-				setAllowCompanyAddr(ALLOW_COMPANY_ADDR_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR:
-				setAllowUspsAddr(ALLOW_USPS_ADDR_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT:
-				setAllowancePercent(ALLOWANCE_PERCENT_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS:
-				setConfigProps(CONFIG_PROPS_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP:
-				setExcludeFeatureGroup(EXCLUDE_FEATURE_GROUP_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP:
-				setIncludeFeatureGroup(INCLUDE_FEATURE_GROUP_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS:
-				setIncludeNoChargeItems(INCLUDE_NO_CHARGE_ITEMS_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE:
-				setMaxSize(MAX_SIZE_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL:
-				setMaxTotal(MAX_TOTAL_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT:
-				setMaxWeight(MAX_WEIGHT_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE:
-				setMinSize(MIN_SIZE_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL:
-				setMinTotal(MIN_TOTAL_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT:
-				setMinWeight(MIN_WEIGHT_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE:
-				setMinimumPrice(MINIMUM_PRICE_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR:
-				setRequireCompanyAddr(REQUIRE_COMPANY_ADDR_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR:
-				setRequireUspsAddr(REQUIRE_USPS_ADDR_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER:
-				setSequenceNumber(SEQUENCE_NUMBER_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME:
-				setServiceName(SERVICE_NAME_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID:
-				setCompanyPartyId((Party)null);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((ShipmentMethodType)null);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID:
-				setIncludeGeoId((Geo)null);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID:
-				setExcludeGeoId((Geo)null);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID:
-				setShipmentGatewayConfigId((ShipmentGatewayConfig)null);
-				return;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID:
-				setShipmentCustomMethodId((CustomMethod)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_SHIP_METH_ID:
-				return PRODUCT_STORE_SHIP_METH_ID_EDEFAULT == null ? productStoreShipMethId != null : !PRODUCT_STORE_SHIP_METH_ID_EDEFAULT.equals(productStoreShipMethId);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_COMPANY_ADDR:
-				return allowCompanyAddr != ALLOW_COMPANY_ADDR_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOW_USPS_ADDR:
-				return allowUspsAddr != ALLOW_USPS_ADDR_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ALLOWANCE_PERCENT:
-				return ALLOWANCE_PERCENT_EDEFAULT == null ? allowancePercent != null : !ALLOWANCE_PERCENT_EDEFAULT.equals(allowancePercent);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__CONFIG_PROPS:
-				return CONFIG_PROPS_EDEFAULT == null ? configProps != null : !CONFIG_PROPS_EDEFAULT.equals(configProps);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_FEATURE_GROUP:
-				return EXCLUDE_FEATURE_GROUP_EDEFAULT == null ? excludeFeatureGroup != null : !EXCLUDE_FEATURE_GROUP_EDEFAULT.equals(excludeFeatureGroup);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_FEATURE_GROUP:
-				return INCLUDE_FEATURE_GROUP_EDEFAULT == null ? includeFeatureGroup != null : !INCLUDE_FEATURE_GROUP_EDEFAULT.equals(includeFeatureGroup);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS:
-				return includeNoChargeItems != INCLUDE_NO_CHARGE_ITEMS_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_SIZE:
-				return MAX_SIZE_EDEFAULT == null ? maxSize != null : !MAX_SIZE_EDEFAULT.equals(maxSize);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_TOTAL:
-				return MAX_TOTAL_EDEFAULT == null ? maxTotal != null : !MAX_TOTAL_EDEFAULT.equals(maxTotal);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MAX_WEIGHT:
-				return MAX_WEIGHT_EDEFAULT == null ? maxWeight != null : !MAX_WEIGHT_EDEFAULT.equals(maxWeight);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_SIZE:
-				return MIN_SIZE_EDEFAULT == null ? minSize != null : !MIN_SIZE_EDEFAULT.equals(minSize);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_TOTAL:
-				return MIN_TOTAL_EDEFAULT == null ? minTotal != null : !MIN_TOTAL_EDEFAULT.equals(minTotal);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MIN_WEIGHT:
-				return MIN_WEIGHT_EDEFAULT == null ? minWeight != null : !MIN_WEIGHT_EDEFAULT.equals(minWeight);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__MINIMUM_PRICE:
-				return MINIMUM_PRICE_EDEFAULT == null ? minimumPrice != null : !MINIMUM_PRICE_EDEFAULT.equals(minimumPrice);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_COMPANY_ADDR:
-				return requireCompanyAddr != REQUIRE_COMPANY_ADDR_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__REQUIRE_USPS_ADDR:
-				return requireUspsAddr != REQUIRE_USPS_ADDR_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SEQUENCE_NUMBER:
-				return sequenceNumber != SEQUENCE_NUMBER_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SERVICE_NAME:
-				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__COMPANY_PARTY_ID:
-				return companyPartyId != null;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID:
-				return shipmentMethodTypeId != null;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID:
-				return includeGeoId != null;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID:
-				return excludeGeoId != null;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID:
-				return shipmentGatewayConfigId != null;
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID:
-				return shipmentCustomMethodId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (productStoreShipMethId: ");
-		result.append(productStoreShipMethId);
-		result.append(", allowCompanyAddr: ");
-		result.append(allowCompanyAddr);
-		result.append(", allowUspsAddr: ");
-		result.append(allowUspsAddr);
-		result.append(", allowancePercent: ");
-		result.append(allowancePercent);
-		result.append(", configProps: ");
-		result.append(configProps);
-		result.append(", excludeFeatureGroup: ");
-		result.append(excludeFeatureGroup);
-		result.append(", includeFeatureGroup: ");
-		result.append(includeFeatureGroup);
-		result.append(", includeNoChargeItems: ");
-		result.append(includeNoChargeItems);
-		result.append(", maxSize: ");
-		result.append(maxSize);
-		result.append(", maxTotal: ");
-		result.append(maxTotal);
-		result.append(", maxWeight: ");
-		result.append(maxWeight);
-		result.append(", minSize: ");
-		result.append(minSize);
-		result.append(", minTotal: ");
-		result.append(minTotal);
-		result.append(", minWeight: ");
-		result.append(minWeight);
-		result.append(", minimumPrice: ");
-		result.append(minimumPrice);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
-		result.append(", requireCompanyAddr: ");
-		result.append(requireCompanyAddr);
-		result.append(", requireUspsAddr: ");
-		result.append(requireUspsAddr);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", sequenceNumber: ");
-		result.append(sequenceNumber);
-		result.append(", serviceName: ");
-		result.append(serviceName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProductStoreShipmentMethImpl

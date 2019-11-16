@@ -13,12 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfigType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,56 +35,6 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getShipmentGatewayConfigId() <em>Shipment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentGatewayConfigId() <em>Shipment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentGatewayConfigId = SHIPMENT_GATEWAY_CONFIG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getShipmentGatewayConfTypeId() <em>Shipment Gateway Conf Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentGatewayConfTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ShipmentGatewayConfigType shipmentGatewayConfTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +62,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public String getDescription() {
-		return description;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION, true);
 	}
 
 	/**
@@ -127,10 +72,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION, oldDescription, description));
+		eSet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -140,24 +82,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public ShipmentGatewayConfigType getShipmentGatewayConfTypeId() {
-		if (shipmentGatewayConfTypeId != null && ((EObject)shipmentGatewayConfTypeId).eIsProxy()) {
-			InternalEObject oldShipmentGatewayConfTypeId = (InternalEObject)shipmentGatewayConfTypeId;
-			shipmentGatewayConfTypeId = (ShipmentGatewayConfigType)eResolveProxy(oldShipmentGatewayConfTypeId);
-			if (shipmentGatewayConfTypeId != oldShipmentGatewayConfTypeId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID, oldShipmentGatewayConfTypeId, shipmentGatewayConfTypeId));
-			}
-		}
-		return shipmentGatewayConfTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShipmentGatewayConfigType basicGetShipmentGatewayConfTypeId() {
-		return shipmentGatewayConfTypeId;
+		return (ShipmentGatewayConfigType)eGet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID, true);
 	}
 
 	/**
@@ -167,10 +92,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public void setShipmentGatewayConfTypeId(ShipmentGatewayConfigType newShipmentGatewayConfTypeId) {
-		ShipmentGatewayConfigType oldShipmentGatewayConfTypeId = shipmentGatewayConfTypeId;
-		shipmentGatewayConfTypeId = newShipmentGatewayConfTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID, oldShipmentGatewayConfTypeId, shipmentGatewayConfTypeId));
+		eSet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID, newShipmentGatewayConfTypeId);
 	}
 
 	/**
@@ -192,7 +114,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public String getShipmentGatewayConfigId() {
-		return shipmentGatewayConfigId;
+		return (String)eGet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID, true);
 	}
 
 	/**
@@ -202,107 +124,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 */
 	@Override
 	public void setShipmentGatewayConfigId(String newShipmentGatewayConfigId) {
-		String oldShipmentGatewayConfigId = shipmentGatewayConfigId;
-		shipmentGatewayConfigId = newShipmentGatewayConfigId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID, oldShipmentGatewayConfigId, shipmentGatewayConfigId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID:
-				return getShipmentGatewayConfigId();
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION:
-				return getDescription();
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID:
-				if (resolve) return getShipmentGatewayConfTypeId();
-				return basicGetShipmentGatewayConfTypeId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID:
-				setShipmentGatewayConfigId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID:
-				setShipmentGatewayConfTypeId((ShipmentGatewayConfigType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID:
-				setShipmentGatewayConfigId(SHIPMENT_GATEWAY_CONFIG_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID:
-				setShipmentGatewayConfTypeId((ShipmentGatewayConfigType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID:
-				return SHIPMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? shipmentGatewayConfigId != null : !SHIPMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(shipmentGatewayConfigId);
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case Shipment_Package.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID:
-				return shipmentGatewayConfTypeId != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (shipmentGatewayConfigId: ");
-		result.append(shipmentGatewayConfigId);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
+		eSet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID, newShipmentGatewayConfigId);
 	}
 
 } //ShipmentGatewayConfigImpl

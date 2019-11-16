@@ -12,12 +12,7 @@ import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,26 +33,6 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected ReturnHeader returnId;
-
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected CommunicationEvent communicationEventId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,24 +60,7 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public CommunicationEvent getCommunicationEventId() {
-		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
-			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
-			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
-			if (communicationEventId != oldCommunicationEventId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
-			}
-		}
-		return communicationEventId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommunicationEvent basicGetCommunicationEventId() {
-		return communicationEventId;
+		return (CommunicationEvent)eGet(ReturnPackage.Literals.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID, true);
 	}
 
 	/**
@@ -112,10 +70,7 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
-		CommunicationEvent oldCommunicationEventId = communicationEventId;
-		communicationEventId = newCommunicationEventId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+		eSet(ReturnPackage.Literals.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID, newCommunicationEventId);
 	}
 
 	/**
@@ -125,24 +80,7 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public ReturnHeader getReturnId() {
-		if (returnId != null && ((EObject)returnId).eIsProxy()) {
-			InternalEObject oldReturnId = (InternalEObject)returnId;
-			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
-			if (returnId != oldReturnId) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID, oldReturnId, returnId));
-			}
-		}
-		return returnId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReturnHeader basicGetReturnId() {
-		return returnId;
+		return (ReturnHeader)eGet(ReturnPackage.Literals.COMMUNICATION_EVENT_RETURN__RETURN_ID, true);
 	}
 
 	/**
@@ -152,80 +90,7 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
-		ReturnHeader oldReturnId = returnId;
-		returnId = newReturnId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID, oldReturnId, returnId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				if (resolve) return getReturnId();
-				return basicGetReturnId();
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
-				if (resolve) return getCommunicationEventId();
-				return basicGetCommunicationEventId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				setReturnId((ReturnHeader)newValue);
-				return;
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				setReturnId((ReturnHeader)null);
-				return;
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((CommunicationEvent)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID:
-				return returnId != null;
-			case ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID:
-				return communicationEventId != null;
-		}
-		return super.eIsSet(featureID);
+		eSet(ReturnPackage.Literals.COMMUNICATION_EVENT_RETURN__RETURN_ID, newReturnId);
 	}
 
 } //CommunicationEventReturnImpl
