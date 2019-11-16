@@ -65,6 +65,7 @@ public class ResourceNotifierImpl<E extends EntityNameable> extends MinimalEObje
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public List<ResourceListener<E>> getListeners() {
 		return this.listeners;
 	}

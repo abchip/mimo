@@ -16,11 +16,9 @@ import org.abchip.mimo.context.Capability;
 import org.abchip.mimo.context.CapabilityRight;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,7 +94,7 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	@Override
 	public List<CapabilityRight> getRights() {
 		if (rights == null) {
-			rights = new EDataTypeUniqueEList<CapabilityRight>(CapabilityRight.class, this, ContextPackage.CAPABILITY__RIGHTS);
+			rights = new BasicInternalEList<CapabilityRight>(CapabilityRight.class);
 		}
 		return rights;
 	}
@@ -118,10 +116,7 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	 */
 	@Override
 	public void setEntityURI(URI newEntityURI) {
-		URI oldEntityURI = entityURI;
 		entityURI = newEntityURI;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CAPABILITY__ENTITY_URI, oldEntityURI, entityURI));
 	}
 
 	/**
@@ -129,6 +124,7 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String getEntityName() {
 		return getEntityURI().getFragment();
 	}

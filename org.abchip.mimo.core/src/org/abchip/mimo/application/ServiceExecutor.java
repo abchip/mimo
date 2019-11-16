@@ -40,6 +40,7 @@ public interface ServiceExecutor extends ServiceRef {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getInterfaceName();
 
 	/**

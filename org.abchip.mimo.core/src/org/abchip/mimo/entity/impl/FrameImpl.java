@@ -15,14 +15,11 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -218,10 +215,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setName(String newName) {
-		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__NAME, oldName, name));
 	}
 
 	/**
@@ -247,7 +241,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	@Override
 	public List<String> getKeys() {
 		if (keys == null) {
-			keys = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__KEYS);
+			keys = new BasicInternalEList<String>(String.class);
 		}
 		return keys;
 	}
@@ -266,7 +260,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	@Override
 	public List<Slot> getSlots() {
 		if (slots == null) {
-			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.FRAME__SLOTS);
+			slots = new BasicInternalEList<Slot>(Slot.class);
 		}
 		return slots;
 	}
@@ -296,7 +290,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	@Override
 	public List<String> getSuperNames() {
 		if (superNames == null) {
-			superNames = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__SUPER_NAMES);
+			superNames = new BasicInternalEList<String>(String.class);
 		}
 		return superNames;
 	}
@@ -316,10 +310,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setTextFormula(String newTextFormula) {
-		String oldTextFormula = textFormula;
 		textFormula = newTextFormula;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__TEXT_FORMULA, oldTextFormula, textFormula));
 	}
 
 	/**
@@ -542,10 +533,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setAbstract(boolean newAbstract) {
-		boolean oldAbstract = abstract_;
 		abstract_ = newAbstract;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__ABSTRACT, oldAbstract, abstract_));
 	}
 
 	/**
@@ -563,10 +551,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setAutoIncrement(boolean newAutoIncrement) {
-		boolean oldAutoIncrement = autoIncrement;
 		autoIncrement = newAutoIncrement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__AUTO_INCREMENT, oldAutoIncrement, autoIncrement));
 	}
 
 } // FrameImpl

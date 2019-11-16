@@ -41,5 +41,6 @@ public interface ServiceTester extends ServiceRef {
 	 * @model default="org.abchip.mimo.tester.TestSuiteLauncher" required="true" changeable="false"
 	 * @generated
 	 */
+	@Override
 	String getInterfaceName();
 } // ServiceTester

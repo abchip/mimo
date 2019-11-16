@@ -11,9 +11,7 @@ package org.abchip.mimo.util.impl;
 import org.abchip.mimo.util.FloatingDef;
 import org.abchip.mimo.util.FloatingType;
 import org.abchip.mimo.util.UtilPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -88,10 +86,7 @@ public class FloatingDefImpl extends DataDefImpl<Float> implements FloatingDef {
 	 */
 	@Override
 	public void setType(FloatingType newType) {
-		FloatingType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.FLOATING_DEF__TYPE, oldType, type));
 	}
 
 	/**

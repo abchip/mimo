@@ -10,11 +10,9 @@ package org.abchip.mimo.util.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.util.UtilPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.abchip.mimo.util.ThreadInfo;
 import org.abchip.mimo.util.ThreadStatus;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -258,10 +256,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadName(String newThreadName) {
-		String oldThreadName = threadName;
 		threadName = newThreadName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_NAME, oldThreadName, threadName));
 	}
 
 	/**
@@ -281,10 +276,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadId(long newThreadId) {
-		long oldThreadId = threadId;
 		threadId = newThreadId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_ID, oldThreadId, threadId));
 	}
 
 	/**
@@ -304,10 +296,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadPriority(int newThreadPriority) {
-		int oldThreadPriority = threadPriority;
 		threadPriority = newThreadPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_PRIORITY, oldThreadPriority, threadPriority));
 	}
 
 	/**
@@ -327,10 +316,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadCPUUsage(double newThreadCPUUsage) {
-		double oldThreadCPUUsage = threadCPUUsage;
 		threadCPUUsage = newThreadCPUUsage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_CPU_USAGE, oldThreadCPUUsage, threadCPUUsage));
 	}
 
 	/**
@@ -350,10 +336,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadStatus(ThreadStatus newThreadStatus) {
-		ThreadStatus oldThreadStatus = threadStatus;
 		threadStatus = newThreadStatus == null ? THREAD_STATUS_EDEFAULT : newThreadStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_STATUS, oldThreadStatus, threadStatus));
 	}
 
 	/**
@@ -373,10 +356,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadRunnable(boolean newThreadRunnable) {
-		boolean oldThreadRunnable = threadRunnable;
 		threadRunnable = newThreadRunnable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_RUNNABLE, oldThreadRunnable, threadRunnable));
 	}
 
 	/**
@@ -396,10 +376,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadInterrupted(boolean newThreadInterrupted) {
-		boolean oldThreadInterrupted = threadInterrupted;
 		threadInterrupted = newThreadInterrupted;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_INTERRUPTED, oldThreadInterrupted, threadInterrupted));
 	}
 
 	/**
@@ -419,10 +396,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadNative(boolean newThreadNative) {
-		boolean oldThreadNative = threadNative;
 		threadNative = newThreadNative;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_NATIVE, oldThreadNative, threadNative));
 	}
 
 	/**
@@ -442,10 +416,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadSuspended(boolean newThreadSuspended) {
-		boolean oldThreadSuspended = threadSuspended;
 		threadSuspended = newThreadSuspended;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_SUSPENDED, oldThreadSuspended, threadSuspended));
 	}
 
 	/**
@@ -465,10 +436,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	public void setThreadDaemon(boolean newThreadDaemon) {
-		boolean oldThreadDaemon = threadDaemon;
 		threadDaemon = newThreadDaemon;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_DAEMON, oldThreadDaemon, threadDaemon));
 	}
 
 	/**

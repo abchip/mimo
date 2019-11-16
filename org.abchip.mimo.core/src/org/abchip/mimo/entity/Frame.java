@@ -51,6 +51,7 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @model id="true" required="true" changeable="false"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**

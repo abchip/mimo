@@ -11,9 +11,7 @@ package org.abchip.mimo.context.impl;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,10 +124,7 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	 */
 	@Override
 	public void setUser(String newUser) {
-		String oldUser = user;
 		user = newUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_PASSWORD__USER, oldUser, user));
 	}
 
 	/**
@@ -149,10 +144,7 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	 */
 	@Override
 	public void setPassword(String newPassword) {
-		String oldPassword = password;
 		password = newPassword;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD, oldPassword, password));
 	}
 
 	/**
@@ -172,10 +164,7 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	 */
 	@Override
 	public void setTenant(String newTenant) {
-		String oldTenant = tenant;
 		tenant = newTenant;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT, oldTenant, tenant));
 	}
 
 	/**

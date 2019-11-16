@@ -40,6 +40,7 @@ public interface EntityEnum extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**
@@ -66,6 +67,7 @@ public interface EntityEnum extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getText();
 
 	/**

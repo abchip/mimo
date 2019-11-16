@@ -51,6 +51,7 @@ public interface Slot extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**
@@ -103,6 +104,7 @@ public interface Slot extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getText();
 
 	/**

@@ -40,6 +40,7 @@ public interface ServiceCommandProvider extends ServiceRef {
 	 * @model default="org.eclipse.osgi.framework.console.CommandProvider" required="true" changeable="false"
 	 * @generated
 	 */
+	@Override
 	String getInterfaceName();
 
 } // ServiceCommandProvider

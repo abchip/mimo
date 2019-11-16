@@ -12,13 +12,11 @@ import java.util.List;
 import org.abchip.mimo.entity.EntityContainer;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -94,7 +92,7 @@ public class EntityContainerImpl extends EntityImpl implements EntityContainer {
 	@Override
 	public List<EntityNameable> getContents() {
 		if (contents == null) {
-			contents = new EObjectContainmentEList.Resolving<EntityNameable>(EntityNameable.class, this, EntityPackage.ENTITY_CONTAINER__CONTENTS);
+			contents = new BasicInternalEList<EntityNameable>(EntityNameable.class);
 		}
 		return contents;
 	}
@@ -116,10 +114,7 @@ public class EntityContainerImpl extends EntityImpl implements EntityContainer {
 	 */
 	@Override
 	public void setName(String newName) {
-		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_CONTAINER__NAME, oldName, name));
 	}
 
 	/**

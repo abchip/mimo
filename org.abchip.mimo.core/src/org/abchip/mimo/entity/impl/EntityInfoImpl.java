@@ -11,9 +11,7 @@ import java.util.Date;
 
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -143,10 +141,7 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setCreatedStamp(Date newCreatedStamp) {
-		Date oldCreatedStamp = createdStamp;
 		createdStamp = newCreatedStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -166,10 +161,7 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setCreatedTxStamp(Date newCreatedTxStamp) {
-		Date oldCreatedTxStamp = createdTxStamp;
 		createdTxStamp = newCreatedTxStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
 	}
 
 	/**
@@ -189,10 +181,7 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setLastUpdatedStamp(Date newLastUpdatedStamp) {
-		Date oldLastUpdatedStamp = lastUpdatedStamp;
 		lastUpdatedStamp = newLastUpdatedStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
 	}
 
 	/**
@@ -212,10 +201,7 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setLastUpdatedTxStamp(Date newLastUpdatedTxStamp) {
-		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
 		lastUpdatedTxStamp = newLastUpdatedTxStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
 	}
 
 	/**

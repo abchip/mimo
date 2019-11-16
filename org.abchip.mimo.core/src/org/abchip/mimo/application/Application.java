@@ -114,6 +114,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
+	@Override
 	ContextRoot getContext();
 
 	/**
@@ -140,6 +141,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
+	@Override
 	ContextDescription getContextDescription();
 
 	/**
@@ -235,6 +237,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * @model
 	 * @generated
 	 */
+	@Override
 	String getText();
 
 	/**

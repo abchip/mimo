@@ -15,11 +15,9 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceReader;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -73,8 +71,6 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 			InternalEObject oldNotifier = (InternalEObject)notifier;
 			notifier = (ResourceNotifier<E>)eResolveProxy(oldNotifier);
 			if (notifier != oldNotifier) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE_READER__NOTIFIER, oldNotifier, notifier));
 			}
 		}
 		return notifier;
@@ -95,10 +91,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 */
 	@Override
 	public void setNotifier(ResourceNotifier<E> newNotifier) {
-		ResourceNotifier<E> oldNotifier = notifier;
 		notifier = newNotifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_READER__NOTIFIER, oldNotifier, notifier));
 	}
 
 	/**

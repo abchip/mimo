@@ -42,6 +42,7 @@ public interface ServiceRegistryEntry extends ServiceRef {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getInterfaceName();
 
 	/**

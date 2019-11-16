@@ -72,6 +72,7 @@ public interface EntityType<E extends EntityTyped<?>> extends EntityNameable, Te
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
+	@Override
 	String getText();
 
 } // EntityType

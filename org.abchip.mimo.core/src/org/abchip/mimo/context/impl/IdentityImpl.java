@@ -65,6 +65,7 @@ public class IdentityImpl<T extends Entity> extends EntityImpl implements Identi
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public Principal getJavaPrincipal() {
 		return this.principal;
 	}

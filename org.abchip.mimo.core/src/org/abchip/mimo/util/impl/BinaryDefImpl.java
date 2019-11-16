@@ -11,9 +11,7 @@ package org.abchip.mimo.util.impl;
 import org.abchip.mimo.util.BinaryDef;
 import org.abchip.mimo.util.BinaryType;
 import org.abchip.mimo.util.UtilPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -103,10 +101,7 @@ public class BinaryDefImpl extends MinimalEObjectImpl.Container implements Binar
 	 */
 	@Override
 	public void setType(BinaryType newType) {
-		BinaryType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.BINARY_DEF__TYPE, oldType, type));
 	}
 
 	/**
@@ -126,10 +121,7 @@ public class BinaryDefImpl extends MinimalEObjectImpl.Container implements Binar
 	 */
 	@Override
 	public void setUnsigned(boolean newUnsigned) {
-		boolean oldUnsigned = unsigned;
 		unsigned = newUnsigned;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.BINARY_DEF__UNSIGNED, oldUnsigned, unsigned));
 	}
 
 	/**

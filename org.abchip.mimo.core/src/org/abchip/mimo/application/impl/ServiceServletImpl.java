@@ -9,9 +9,7 @@ package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceServlet;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,10 +103,7 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 	 */
 	@Override
 	public void setAlias(String newAlias) {
-		String oldAlias = alias;
 		alias = newAlias;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_SERVLET__ALIAS, oldAlias, alias));
 	}
 
 	/**

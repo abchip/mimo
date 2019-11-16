@@ -70,6 +70,7 @@ public interface UserProfile extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**
@@ -96,6 +97,7 @@ public interface UserProfile extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getText();
 
 	/**

@@ -76,6 +76,7 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
+	@Override
 	Context getContext();
 
 	/**
@@ -150,6 +151,7 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**

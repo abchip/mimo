@@ -66,6 +66,7 @@ public interface ServiceServlet extends ServiceRef {
 	 * @model default="javax.servlet.Servlet" required="true" changeable="false"
 	 * @generated
 	 */
+	@Override
 	String getInterfaceName();
 
 } // ServiceServlet

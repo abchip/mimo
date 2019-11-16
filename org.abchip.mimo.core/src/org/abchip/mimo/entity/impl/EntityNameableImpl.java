@@ -49,6 +49,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public URI getURI() {
 		return URI.create(EcoreUtil.getURI(this).toString());
 	}

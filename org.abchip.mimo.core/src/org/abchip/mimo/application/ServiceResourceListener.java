@@ -40,6 +40,7 @@ public interface ServiceResourceListener extends ServiceRef {
 	 * @model default="org.abchip.mimo.resource.ResourceListener" required="true" changeable="false"
 	 * @generated
 	 */
+	@Override
 	String getInterfaceName();
 
 } // ServiceResourceListener

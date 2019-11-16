@@ -61,6 +61,7 @@ public interface MessageFile extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**
@@ -87,6 +88,7 @@ public interface MessageFile extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getText();
 
 	/**

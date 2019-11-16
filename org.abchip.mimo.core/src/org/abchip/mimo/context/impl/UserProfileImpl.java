@@ -12,9 +12,7 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.UserClass;
 import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -141,10 +139,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 */
 	@Override
 	public void setJobDescription(String newJobDescription) {
-		String oldJobDescription = jobDescription;
 		jobDescription = newJobDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__JOB_DESCRIPTION, oldJobDescription, jobDescription));
 	}
 
 	/**
@@ -164,10 +159,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 */
 	@Override
 	public void setName(String newName) {
-		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__NAME, oldName, name));
 	}
 
 	/**
@@ -187,10 +179,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 */
 	@Override
 	public void setUserClass(UserClass newUserClass) {
-		UserClass oldUserClass = userClass;
 		userClass = newUserClass == null ? USER_CLASS_EDEFAULT : newUserClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__USER_CLASS, oldUserClass, userClass));
 	}
 
 	/**
@@ -320,9 +309,6 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 */
 	@Override
 	public void setText(String newText) {
-		String oldText = text;
 		text = newText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__TEXT, oldText, text));
 	}
 } // QUserProfileImpl

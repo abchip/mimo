@@ -15,13 +15,11 @@ import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -107,10 +105,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 */
 	@Override
 	public void setName(String newName) {
-		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_MODULE__NAME, oldName, name));
 	}
 
 	/**
@@ -121,7 +116,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	@Override
 	public List<ServiceRef> getServices() {
 		if (services == null) {
-			services = new EObjectContainmentEList.Resolving<ServiceRef>(ServiceRef.class, this, ApplicationPackage.APPLICATION_MODULE__SERVICES);
+			services = new BasicInternalEList<ServiceRef>(ServiceRef.class);
 		}
 		return services;
 	}

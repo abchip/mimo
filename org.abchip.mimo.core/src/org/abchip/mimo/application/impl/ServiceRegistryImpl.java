@@ -14,13 +14,11 @@ import java.util.List;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRegistry;
 import org.abchip.mimo.application.ServiceRegistryEntry;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -96,7 +94,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	@Override
 	public List<ServiceRegistryEntry> getEntries() {
 		if (entries == null) {
-			entries = new EObjectContainmentEList.Resolving<ServiceRegistryEntry>(ServiceRegistryEntry.class, this, ApplicationPackage.SERVICE_REGISTRY__ENTRIES);
+			entries = new BasicInternalEList<ServiceRegistryEntry>(ServiceRegistryEntry.class);
 		}
 		return entries;
 	}
@@ -118,10 +116,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 */
 	@Override
 	public void setInterfaceName(String newInterfaceName) {
-		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**

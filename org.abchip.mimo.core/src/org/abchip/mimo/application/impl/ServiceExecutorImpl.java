@@ -10,9 +10,7 @@ package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceExecutor;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,10 +104,7 @@ public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecut
 	 */
 	@Override
 	public void setInterfaceName(String newInterfaceName) {
-		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_EXECUTOR__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**
@@ -129,10 +124,7 @@ public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecut
 	 */
 	@Override
 	public void setRemoteExport(boolean newRemoteExport) {
-		boolean oldRemoteExport = remoteExport;
 		remoteExport = newRemoteExport;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_EXECUTOR__REMOTE_EXPORT, oldRemoteExport, remoteExport));
 	}
 
 	/**

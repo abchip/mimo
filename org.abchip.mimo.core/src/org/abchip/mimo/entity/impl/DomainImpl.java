@@ -9,9 +9,7 @@ package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,10 +103,7 @@ public class DomainImpl extends EntityImpl implements Domain {
 	 */
 	@Override
 	public void setFrame(String newFrame) {
-		String oldFrame = frame;
 		frame = newFrame;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.DOMAIN__FRAME, oldFrame, frame));
 	}
 
 	/**
@@ -128,10 +123,7 @@ public class DomainImpl extends EntityImpl implements Domain {
 	 */
 	@Override
 	public void setRoute(String newRoute) {
-		String oldRoute = route;
 		route = newRoute;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.DOMAIN__ROUTE, oldRoute, route));
 	}
 
 	/**
