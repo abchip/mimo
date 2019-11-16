@@ -155,10 +155,10 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE_EXPRESSION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageManager <em>Manager</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguageManagerImpl <em>Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.language.LanguageManager
+	 * @see org.abchip.mimo.language.impl.LanguageManagerImpl
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageManager()
 	 * @generated
 	 */
@@ -508,10 +508,10 @@ public interface LanguagePackage extends EPackage {
 		 */
 		EAttribute LANGUAGE_EXPRESSION__EXPRESSION_ROW = eINSTANCE.getLanguageExpression_ExpressionRow();
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.language.LanguageManager <em>Manager</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.language.impl.LanguageManagerImpl <em>Manager</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.language.LanguageManager
+		 * @see org.abchip.mimo.language.impl.LanguageManagerImpl
 		 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageManager()
 		 * @generated
 		 */
