@@ -11,7 +11,9 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourcePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +31,60 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
+	/**
+	 * The default value of the '{@link #isLockSupport() <em>Lock Support</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isLockSupport()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean LOCK_SUPPORT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isLockSupport() <em>Lock Support</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isLockSupport()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean lockSupport = LOCK_SUPPORT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isOrderSupport() <em>Order Support</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOrderSupport()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ORDER_SUPPORT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isOrderSupport() <em>Order Support</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOrderSupport()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean orderSupport = ORDER_SUPPORT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPageSize() <em>Page Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPageSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PAGE_SIZE_EDEFAULT = 100;
+	/**
+	 * The cached value of the '{@link #getPageSize() <em>Page Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPageSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int pageSize = PAGE_SIZE_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -60,7 +116,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public boolean isLockSupport() {
-		return (Boolean)eGet(ResourcePackage.Literals.RESOURCE_CONFIG__LOCK_SUPPORT, true);
+		return lockSupport;
 	}
 
 	/**
@@ -70,7 +126,10 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public void setLockSupport(boolean newLockSupport) {
-		eSet(ResourcePackage.Literals.RESOURCE_CONFIG__LOCK_SUPPORT, newLockSupport);
+		boolean oldLockSupport = lockSupport;
+		lockSupport = newLockSupport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT, oldLockSupport, lockSupport));
 	}
 
 	/**
@@ -80,7 +139,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public boolean isOrderSupport() {
-		return (Boolean)eGet(ResourcePackage.Literals.RESOURCE_CONFIG__ORDER_SUPPORT, true);
+		return orderSupport;
 	}
 
 	/**
@@ -90,7 +149,10 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public void setOrderSupport(boolean newOrderSupport) {
-		eSet(ResourcePackage.Literals.RESOURCE_CONFIG__ORDER_SUPPORT, newOrderSupport);
+		boolean oldOrderSupport = orderSupport;
+		orderSupport = newOrderSupport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT, oldOrderSupport, orderSupport));
 	}
 
 	/**
@@ -100,7 +162,7 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public int getPageSize() {
-		return (Integer)eGet(ResourcePackage.Literals.RESOURCE_CONFIG__PAGE_SIZE, true);
+		return pageSize;
 	}
 
 	/**
@@ -110,7 +172,108 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public void setPageSize(int newPageSize) {
-		eSet(ResourcePackage.Literals.RESOURCE_CONFIG__PAGE_SIZE, newPageSize);
+		int oldPageSize = pageSize;
+		pageSize = newPageSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE, oldPageSize, pageSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+				return isLockSupport();
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
+				return isOrderSupport();
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
+				return getPageSize();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+				setLockSupport((Boolean)newValue);
+				return;
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
+				setOrderSupport((Boolean)newValue);
+				return;
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
+				setPageSize((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+				setLockSupport(LOCK_SUPPORT_EDEFAULT);
+				return;
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
+				setOrderSupport(ORDER_SUPPORT_EDEFAULT);
+				return;
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
+				setPageSize(PAGE_SIZE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT:
+				return lockSupport != LOCK_SUPPORT_EDEFAULT;
+			case ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT:
+				return orderSupport != ORDER_SUPPORT_EDEFAULT;
+			case ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE:
+				return pageSize != PAGE_SIZE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (lockSupport: ");
+		result.append(lockSupport);
+		result.append(", orderSupport: ");
+		result.append(orderSupport);
+		result.append(", pageSize: ");
+		result.append(pageSize);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ResourceConfigImpl

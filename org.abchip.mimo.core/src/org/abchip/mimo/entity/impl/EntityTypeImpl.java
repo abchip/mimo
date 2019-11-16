@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.entity.EntityPackage;
@@ -14,7 +15,12 @@ import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +36,15 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNameableImpl implements EntityType<E> {
+	/**
+	 * The cached value of the '{@link #getSlots() <em>Slots</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSlots()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Slot> slots;
 	/**
 	 * 
 	 */
@@ -58,10 +73,12 @@ public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Slot> getSlots() {
-		return (List<Slot>)eGet(EntityPackage.Literals.ENTITY_TYPE__SLOTS, true);
+		if (slots == null) {
+			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.ENTITY_TYPE__SLOTS);
+		}
+		return slots;
 	}
 
 	/**
@@ -110,6 +127,80 @@ public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNam
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_TYPE__SLOTS:
+				return ((InternalEList<?>)getSlots()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_TYPE__SLOTS:
+				return getSlots();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_TYPE__SLOTS:
+				getSlots().clear();
+				getSlots().addAll((Collection<? extends Slot>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_TYPE__SLOTS:
+				getSlots().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_TYPE__SLOTS:
+				return slots != null && !slots.isEmpty();
+		}
+		return super.eIsSet(featureID);
 	}
 
 } //EntityTypeImpl

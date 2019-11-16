@@ -25,16 +25,6 @@ public class EMFCardinalityAdapter extends CardinalityImpl {
 	}
 	
 	@Override
-	public void setMax(int value) {
-		throw new UnsupportedOperationException();
-	}
-	
-	@Override
-	public void setMin(int value) {
-		throw new UnsupportedOperationException();
-	}
-	
-	@Override
 	public boolean isMandatory() {
 		return getMin() > 0 ? true : false;
 	}

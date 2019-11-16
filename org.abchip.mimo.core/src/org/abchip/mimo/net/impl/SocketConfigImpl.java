@@ -11,7 +11,9 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.SocketConfig;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +30,42 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class SocketConfigImpl extends EntityImpl implements SocketConfig {
+	/**
+	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ADDRESS_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected String address = ADDRESS_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PORT_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected int port = PORT_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -59,7 +97,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	public String getAddress() {
-		return (String)eGet(NetPackage.Literals.SOCKET_CONFIG__ADDRESS, true);
+		return address;
 	}
 
 	/**
@@ -69,7 +107,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	public void setAddress(String newAddress) {
-		eSet(NetPackage.Literals.SOCKET_CONFIG__ADDRESS, newAddress);
+		String oldAddress = address;
+		address = newAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.SOCKET_CONFIG__ADDRESS, oldAddress, address));
 	}
 
 	/**
@@ -79,7 +120,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	public int getPort() {
-		return (Integer)eGet(NetPackage.Literals.SOCKET_CONFIG__PORT, true);
+		return port;
 	}
 
 	/**
@@ -89,7 +130,96 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	public void setPort(int newPort) {
-		eSet(NetPackage.Literals.SOCKET_CONFIG__PORT, newPort);
+		int oldPort = port;
+		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.SOCKET_CONFIG__PORT, oldPort, port));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case NetPackage.SOCKET_CONFIG__ADDRESS:
+				return getAddress();
+			case NetPackage.SOCKET_CONFIG__PORT:
+				return getPort();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case NetPackage.SOCKET_CONFIG__ADDRESS:
+				setAddress((String)newValue);
+				return;
+			case NetPackage.SOCKET_CONFIG__PORT:
+				setPort((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case NetPackage.SOCKET_CONFIG__ADDRESS:
+				setAddress(ADDRESS_EDEFAULT);
+				return;
+			case NetPackage.SOCKET_CONFIG__PORT:
+				setPort(PORT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case NetPackage.SOCKET_CONFIG__ADDRESS:
+				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
+			case NetPackage.SOCKET_CONFIG__PORT:
+				return port != PORT_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (address: ");
+		result.append(address);
+		result.append(", port: ");
+		result.append(port);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SocketConfigImpl

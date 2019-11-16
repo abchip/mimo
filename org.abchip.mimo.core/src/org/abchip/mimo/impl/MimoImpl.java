@@ -41,14 +41,4 @@ public class MimoImpl extends MinimalEObjectImpl.Container implements Mimo {
 		return MimoPackage.Literals.MIMO;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
-
 } //MimoImpl

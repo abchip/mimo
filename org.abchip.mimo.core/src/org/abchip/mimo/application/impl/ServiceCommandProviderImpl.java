@@ -27,6 +27,24 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class ServiceCommandProviderImpl extends ServiceRefImpl implements ServiceCommandProvider {
 	/**
+	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_NAME_EDEFAULT = "org.eclipse.osgi.framework.console.CommandProvider";
+	/**
+	 * The cached value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceName = INTERFACE_NAME_EDEFAULT;
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -57,7 +75,51 @@ public class ServiceCommandProviderImpl extends ServiceRefImpl implements Servic
 	 */
 	@Override
 	public String getInterfaceName() {
-		return (String)eGet(ApplicationPackage.Literals.SERVICE_COMMAND_PROVIDER__INTERFACE_NAME, true);
+		return interfaceName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_COMMAND_PROVIDER__INTERFACE_NAME:
+				return getInterfaceName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_COMMAND_PROVIDER__INTERFACE_NAME:
+				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (interfaceName: ");
+		result.append(interfaceName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ServiceCommandProviderImpl

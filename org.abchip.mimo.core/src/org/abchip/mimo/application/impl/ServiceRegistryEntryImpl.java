@@ -10,7 +10,9 @@ package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRegistryEntry;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +31,78 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceRegistryEntry {
+	/**
+	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceName = INTERFACE_NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getVendor() <em>Vendor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVendor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VENDOR_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getVendor() <em>Vendor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVendor()
+	 * @generated
+	 * @ordered
+	 */
+	protected String vendor = VENDOR_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VERSION_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String version = VERSION_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -59,7 +133,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public String getInterfaceName() {
-		return (String)eGet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME, true);
+		return interfaceName;
 	}
 
 	/**
@@ -69,7 +143,10 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setInterfaceName(String newInterfaceName) {
-		eSet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME, newInterfaceName);
+		String oldInterfaceName = interfaceName;
+		interfaceName = newInterfaceName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**
@@ -79,7 +156,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public String getName() {
-		return (String)eGet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__NAME, true);
+		return name;
 	}
 
 	/**
@@ -89,7 +166,10 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setName(String newName) {
-		eSet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__NAME, newName);
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__NAME, oldName, name));
 	}
 
 	/**
@@ -99,7 +179,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public String getVendor() {
-		return (String)eGet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__VENDOR, true);
+		return vendor;
 	}
 
 	/**
@@ -109,7 +189,10 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setVendor(String newVendor) {
-		eSet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__VENDOR, newVendor);
+		String oldVendor = vendor;
+		vendor = newVendor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__VENDOR, oldVendor, vendor));
 	}
 
 	/**
@@ -119,7 +202,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public String getVersion() {
-		return (String)eGet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__VERSION, true);
+		return version;
 	}
 
 	/**
@@ -129,7 +212,120 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setVersion(String newVersion) {
-		eSet(ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY__VERSION, newVersion);
+		String oldVersion = version;
+		version = newVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__VERSION, oldVersion, version));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME:
+				return getInterfaceName();
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__NAME:
+				return getName();
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VENDOR:
+				return getVendor();
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VERSION:
+				return getVersion();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME:
+				setInterfaceName((String)newValue);
+				return;
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__NAME:
+				setName((String)newValue);
+				return;
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VENDOR:
+				setVendor((String)newValue);
+				return;
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VERSION:
+				setVersion((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME:
+				setInterfaceName(INTERFACE_NAME_EDEFAULT);
+				return;
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VENDOR:
+				setVendor(VENDOR_EDEFAULT);
+				return;
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VERSION:
+				setVersion(VERSION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME:
+				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VENDOR:
+				return VENDOR_EDEFAULT == null ? vendor != null : !VENDOR_EDEFAULT.equals(vendor);
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY__VERSION:
+				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (interfaceName: ");
+		result.append(interfaceName);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", vendor: ");
+		result.append(vendor);
+		result.append(", version: ");
+		result.append(version);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ServiceRegistryImpl

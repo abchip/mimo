@@ -11,7 +11,9 @@ import java.util.Date;
 
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -31,6 +33,80 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implements EntityInfo {
+	/**
+	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date CREATED_STAMP_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date createdStamp = CREATED_STAMP_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedTxStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date CREATED_TX_STAMP_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedTxStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date createdTxStamp = CREATED_TX_STAMP_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastUpdatedStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date LAST_UPDATED_STAMP_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastUpdatedStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date lastUpdatedStamp = LAST_UPDATED_STAMP_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastUpdatedTxStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date LAST_UPDATED_TX_STAMP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastUpdatedTxStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date lastUpdatedTxStamp = LAST_UPDATED_TX_STAMP_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,18 +132,8 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Date getCreatedStamp() {
-		return (Date)eGet(EntityPackage.Literals.ENTITY_INFO__CREATED_STAMP, true);
+		return createdStamp;
 	}
 
 	/**
@@ -77,7 +143,10 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setCreatedStamp(Date newCreatedStamp) {
-		eSet(EntityPackage.Literals.ENTITY_INFO__CREATED_STAMP, newCreatedStamp);
+		Date oldCreatedStamp = createdStamp;
+		createdStamp = newCreatedStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -87,7 +156,7 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public Date getCreatedTxStamp() {
-		return (Date)eGet(EntityPackage.Literals.ENTITY_INFO__CREATED_TX_STAMP, true);
+		return createdTxStamp;
 	}
 
 	/**
@@ -97,7 +166,10 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setCreatedTxStamp(Date newCreatedTxStamp) {
-		eSet(EntityPackage.Literals.ENTITY_INFO__CREATED_TX_STAMP, newCreatedTxStamp);
+		Date oldCreatedTxStamp = createdTxStamp;
+		createdTxStamp = newCreatedTxStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
 	}
 
 	/**
@@ -107,7 +179,7 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public Date getLastUpdatedStamp() {
-		return (Date)eGet(EntityPackage.Literals.ENTITY_INFO__LAST_UPDATED_STAMP, true);
+		return lastUpdatedStamp;
 	}
 
 	/**
@@ -117,7 +189,10 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setLastUpdatedStamp(Date newLastUpdatedStamp) {
-		eSet(EntityPackage.Literals.ENTITY_INFO__LAST_UPDATED_STAMP, newLastUpdatedStamp);
+		Date oldLastUpdatedStamp = lastUpdatedStamp;
+		lastUpdatedStamp = newLastUpdatedStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
 	}
 
 	/**
@@ -127,7 +202,7 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public Date getLastUpdatedTxStamp() {
-		return (Date)eGet(EntityPackage.Literals.ENTITY_INFO__LAST_UPDATED_TX_STAMP, true);
+		return lastUpdatedTxStamp;
 	}
 
 	/**
@@ -137,7 +212,120 @@ public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	public void setLastUpdatedTxStamp(Date newLastUpdatedTxStamp) {
-		eSet(EntityPackage.Literals.ENTITY_INFO__LAST_UPDATED_TX_STAMP, newLastUpdatedTxStamp);
+		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
+		lastUpdatedTxStamp = newLastUpdatedTxStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
+				return getCreatedStamp();
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
+				return getCreatedTxStamp();
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
+				return getLastUpdatedStamp();
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
+				return getLastUpdatedTxStamp();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
+				setCreatedStamp((Date)newValue);
+				return;
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
+				setCreatedTxStamp((Date)newValue);
+				return;
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
+				setLastUpdatedStamp((Date)newValue);
+				return;
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
+				setLastUpdatedTxStamp((Date)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
+				setCreatedStamp(CREATED_STAMP_EDEFAULT);
+				return;
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
+				setCreatedTxStamp(CREATED_TX_STAMP_EDEFAULT);
+				return;
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
+				setLastUpdatedStamp(LAST_UPDATED_STAMP_EDEFAULT);
+				return;
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
+				setLastUpdatedTxStamp(LAST_UPDATED_TX_STAMP_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
+				return CREATED_STAMP_EDEFAULT == null ? createdStamp != null : !CREATED_STAMP_EDEFAULT.equals(createdStamp);
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
+				return CREATED_TX_STAMP_EDEFAULT == null ? createdTxStamp != null : !CREATED_TX_STAMP_EDEFAULT.equals(createdTxStamp);
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
+				return LAST_UPDATED_STAMP_EDEFAULT == null ? lastUpdatedStamp != null : !LAST_UPDATED_STAMP_EDEFAULT.equals(lastUpdatedStamp);
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
+				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (createdStamp: ");
+		result.append(createdStamp);
+		result.append(", createdTxStamp: ");
+		result.append(createdTxStamp);
+		result.append(", lastUpdatedStamp: ");
+		result.append(lastUpdatedStamp);
+		result.append(", lastUpdatedTxStamp: ");
+		result.append(lastUpdatedTxStamp);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EntityInfoImpl

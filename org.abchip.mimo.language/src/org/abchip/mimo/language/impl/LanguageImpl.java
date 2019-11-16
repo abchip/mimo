@@ -14,7 +14,9 @@ import org.abchip.mimo.language.LanguagePackage;
 
 import org.abchip.mimo.language.LanguageScope;
 import org.abchip.mimo.language.LanguageType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +36,96 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class LanguageImpl extends EntityNameableImpl implements Language {
+	/**
+	 * The default value of the '{@link #getIso_639_1() <em>Iso 639 1</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIso_639_1()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ISO_639_1_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getIso_639_1() <em>Iso 639 1</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIso_639_1()
+	 * @generated
+	 * @ordered
+	 */
+	protected String iso_639_1 = ISO_639_1_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getScope() <em>Scope</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScope()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final LanguageScope SCOPE_EDEFAULT = LanguageScope.INDIVIDUAL;
+	/**
+	 * The cached value of the '{@link #getScope() <em>Scope</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScope()
+	 * @generated
+	 * @ordered
+	 */
+	protected LanguageScope scope = SCOPE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final LanguageType TYPE_EDEFAULT = LanguageType.LIVING;
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected LanguageType type = TYPE_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -65,7 +157,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public String getIso_639_1() {
-		return (String)eGet(LanguagePackage.Literals.LANGUAGE__ISO_639_1, true);
+		return iso_639_1;
 	}
 
 	/**
@@ -75,7 +167,10 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public void setIso_639_1(String newIso_639_1) {
-		eSet(LanguagePackage.Literals.LANGUAGE__ISO_639_1, newIso_639_1);
+		String oldIso_639_1 = iso_639_1;
+		iso_639_1 = newIso_639_1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__ISO_639_1, oldIso_639_1, iso_639_1));
 	}
 
 	/**
@@ -85,7 +180,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public String getName() {
-		return (String)eGet(LanguagePackage.Literals.LANGUAGE__NAME, true);
+		return name;
 	}
 
 	/**
@@ -95,7 +190,10 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public void setName(String newName) {
-		eSet(LanguagePackage.Literals.LANGUAGE__NAME, newName);
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__NAME, oldName, name));
 	}
 
 	/**
@@ -105,7 +203,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public LanguageScope getScope() {
-		return (LanguageScope)eGet(LanguagePackage.Literals.LANGUAGE__SCOPE, true);
+		return scope;
 	}
 
 	/**
@@ -115,7 +213,10 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public void setScope(LanguageScope newScope) {
-		eSet(LanguagePackage.Literals.LANGUAGE__SCOPE, newScope);
+		LanguageScope oldScope = scope;
+		scope = newScope == null ? SCOPE_EDEFAULT : newScope;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__SCOPE, oldScope, scope));
 	}
 
 	/**
@@ -125,7 +226,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public String getText() {
-		return (String)eGet(LanguagePackage.Literals.LANGUAGE__TEXT, true);
+		return text;
 	}
 
 	/**
@@ -135,7 +236,10 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public void setText(String newText) {
-		eSet(LanguagePackage.Literals.LANGUAGE__TEXT, newText);
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__TEXT, oldText, text));
 	}
 
 	/**
@@ -145,7 +249,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public LanguageType getType() {
-		return (LanguageType)eGet(LanguagePackage.Literals.LANGUAGE__TYPE, true);
+		return type;
 	}
 
 	/**
@@ -155,7 +259,132 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 */
 	@Override
 	public void setType(LanguageType newType) {
-		eSet(LanguagePackage.Literals.LANGUAGE__TYPE, newType);
+		LanguageType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case LanguagePackage.LANGUAGE__ISO_639_1:
+				return getIso_639_1();
+			case LanguagePackage.LANGUAGE__NAME:
+				return getName();
+			case LanguagePackage.LANGUAGE__SCOPE:
+				return getScope();
+			case LanguagePackage.LANGUAGE__TEXT:
+				return getText();
+			case LanguagePackage.LANGUAGE__TYPE:
+				return getType();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case LanguagePackage.LANGUAGE__ISO_639_1:
+				setIso_639_1((String)newValue);
+				return;
+			case LanguagePackage.LANGUAGE__NAME:
+				setName((String)newValue);
+				return;
+			case LanguagePackage.LANGUAGE__SCOPE:
+				setScope((LanguageScope)newValue);
+				return;
+			case LanguagePackage.LANGUAGE__TEXT:
+				setText((String)newValue);
+				return;
+			case LanguagePackage.LANGUAGE__TYPE:
+				setType((LanguageType)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case LanguagePackage.LANGUAGE__ISO_639_1:
+				setIso_639_1(ISO_639_1_EDEFAULT);
+				return;
+			case LanguagePackage.LANGUAGE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case LanguagePackage.LANGUAGE__SCOPE:
+				setScope(SCOPE_EDEFAULT);
+				return;
+			case LanguagePackage.LANGUAGE__TEXT:
+				setText(TEXT_EDEFAULT);
+				return;
+			case LanguagePackage.LANGUAGE__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case LanguagePackage.LANGUAGE__ISO_639_1:
+				return ISO_639_1_EDEFAULT == null ? iso_639_1 != null : !ISO_639_1_EDEFAULT.equals(iso_639_1);
+			case LanguagePackage.LANGUAGE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case LanguagePackage.LANGUAGE__SCOPE:
+				return scope != SCOPE_EDEFAULT;
+			case LanguagePackage.LANGUAGE__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case LanguagePackage.LANGUAGE__TYPE:
+				return type != TYPE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (iso_639_1: ");
+		result.append(iso_639_1);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", scope: ");
+		result.append(scope);
+		result.append(", text: ");
+		result.append(text);
+		result.append(", type: ");
+		result.append(type);
+		result.append(')');
+		return result.toString();
 	}
 
 } //LanguageImpl

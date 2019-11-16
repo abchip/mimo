@@ -35,8 +35,9 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
-		for (E entity : resourceManager.getResourceReader(contextRoot, frame).find(null, null, order))
+		for (E entity : resourceManager.getResourceReader(contextRoot, frame).find(null, null, order))  {
 			System.out.println(entity);
+		}
 	}
 
 	public <E extends EntityNameable> void _lookup(CommandInterpreter interpreter) throws Exception {

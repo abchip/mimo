@@ -10,7 +10,9 @@ package org.abchip.mimo.util.impl;
 
 import org.abchip.mimo.util.CharacterDef;
 import org.abchip.mimo.util.UtilPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +29,42 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDef {
+	/**
+	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LENGTH_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected int length = LENGTH_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isVarying() <em>Varying</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVarying()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean VARYING_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isVarying() <em>Varying</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVarying()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean varying = VARYING_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -58,7 +96,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 */
 	@Override
 	public int getLength() {
-		return (Integer)eGet(UtilPackage.Literals.CHARACTER_DEF__LENGTH, true);
+		return length;
 	}
 
 	/**
@@ -68,7 +106,10 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 */
 	@Override
 	public void setLength(int newLength) {
-		eSet(UtilPackage.Literals.CHARACTER_DEF__LENGTH, newLength);
+		int oldLength = length;
+		length = newLength;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.CHARACTER_DEF__LENGTH, oldLength, length));
 	}
 
 	/**
@@ -78,7 +119,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 */
 	@Override
 	public boolean isVarying() {
-		return (Boolean)eGet(UtilPackage.Literals.CHARACTER_DEF__VARYING, true);
+		return varying;
 	}
 
 	/**
@@ -88,7 +129,96 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 */
 	@Override
 	public void setVarying(boolean newVarying) {
-		eSet(UtilPackage.Literals.CHARACTER_DEF__VARYING, newVarying);
+		boolean oldVarying = varying;
+		varying = newVarying;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.CHARACTER_DEF__VARYING, oldVarying, varying));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case UtilPackage.CHARACTER_DEF__LENGTH:
+				return getLength();
+			case UtilPackage.CHARACTER_DEF__VARYING:
+				return isVarying();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case UtilPackage.CHARACTER_DEF__LENGTH:
+				setLength((Integer)newValue);
+				return;
+			case UtilPackage.CHARACTER_DEF__VARYING:
+				setVarying((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case UtilPackage.CHARACTER_DEF__LENGTH:
+				setLength(LENGTH_EDEFAULT);
+				return;
+			case UtilPackage.CHARACTER_DEF__VARYING:
+				setVarying(VARYING_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case UtilPackage.CHARACTER_DEF__LENGTH:
+				return length != LENGTH_EDEFAULT;
+			case UtilPackage.CHARACTER_DEF__VARYING:
+				return varying != VARYING_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (length: ");
+		result.append(length);
+		result.append(", varying: ");
+		result.append(varying);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CharacterDefImpl

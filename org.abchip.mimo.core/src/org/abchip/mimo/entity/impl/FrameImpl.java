@@ -8,13 +8,22 @@
 package org.abchip.mimo.entity.impl;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -37,6 +46,141 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl implements Frame<E> {
+	/**
+	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ABSTRACT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean abstract_ = ABSTRACT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutoIncrement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean AUTO_INCREMENT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutoIncrement()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> keys;
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getSlots() <em>Slots</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSlots()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Slot> slots;
+	/**
+	 * The default value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSlotsNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SLOTS_NUMBER_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSlotsNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int slotsNumber = SLOTS_NUMBER_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutesNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ROUTES_NUMBER_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutesNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int routesNumber = ROUTES_NUMBER_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getSuperNames() <em>Super Names</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuperNames()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> superNames;
+	/**
+	 * The default value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTextFormula()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_FORMULA_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTextFormula()
+	 * @generated
+	 * @ordered
+	 */
+	protected String textFormula = TEXT_FORMULA_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -65,7 +209,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public String getName() {
-		return (String)eGet(EntityPackage.Literals.FRAME__NAME, true);
+		return name;
 	}
 
 	/**
@@ -74,7 +218,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setName(String newName) {
-		eSet(EntityPackage.Literals.FRAME__NAME, newName);
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__NAME, oldName, name));
 	}
 
 	/**
@@ -97,10 +244,12 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getKeys() {
-		return (List<String>)eGet(EntityPackage.Literals.FRAME__KEYS, true);
+		if (keys == null) {
+			keys = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__KEYS);
+		}
+		return keys;
 	}
 
 	/**
@@ -114,10 +263,12 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Slot> getSlots() {
-		return (List<Slot>)eGet(EntityPackage.Literals.FRAME__SLOTS, true);
+		if (slots == null) {
+			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.FRAME__SLOTS);
+		}
+		return slots;
 	}
 
 	/**
@@ -126,7 +277,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public int getSlotsNumber() {
-		return (Integer)eGet(EntityPackage.Literals.FRAME__SLOTS_NUMBER, true);
+		return slotsNumber;
 	}
 
 	/**
@@ -135,17 +286,19 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public int getRoutesNumber() {
-		return (Integer)eGet(EntityPackage.Literals.FRAME__ROUTES_NUMBER, true);
+		return routesNumber;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getSuperNames() {
-		return (List<String>)eGet(EntityPackage.Literals.FRAME__SUPER_NAMES, true);
+		if (superNames == null) {
+			superNames = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__SUPER_NAMES);
+		}
+		return superNames;
 	}
 
 	/**
@@ -154,7 +307,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public String getTextFormula() {
-		return (String)eGet(EntityPackage.Literals.FRAME__TEXT_FORMULA, true);
+		return textFormula;
 	}
 
 	/**
@@ -163,7 +316,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setTextFormula(String newTextFormula) {
-		eSet(EntityPackage.Literals.FRAME__TEXT_FORMULA, newTextFormula);
+		String oldTextFormula = textFormula;
+		textFormula = newTextFormula;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__TEXT_FORMULA, oldTextFormula, textFormula));
 	}
 
 	/**
@@ -205,12 +361,179 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	public abstract void setValue(Entity entity, String slotName, Object value);
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case EntityPackage.FRAME__SLOTS:
+				return ((InternalEList<?>)getSlots()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case EntityPackage.FRAME__ABSTRACT:
+				return isAbstract();
+			case EntityPackage.FRAME__AUTO_INCREMENT:
+				return isAutoIncrement();
+			case EntityPackage.FRAME__KEYS:
+				return getKeys();
+			case EntityPackage.FRAME__NAME:
+				return getName();
+			case EntityPackage.FRAME__SLOTS:
+				return getSlots();
+			case EntityPackage.FRAME__SLOTS_NUMBER:
+				return getSlotsNumber();
+			case EntityPackage.FRAME__ROUTES_NUMBER:
+				return getRoutesNumber();
+			case EntityPackage.FRAME__SUPER_NAMES:
+				return getSuperNames();
+			case EntityPackage.FRAME__TEXT_FORMULA:
+				return getTextFormula();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case EntityPackage.FRAME__ABSTRACT:
+				setAbstract((Boolean)newValue);
+				return;
+			case EntityPackage.FRAME__AUTO_INCREMENT:
+				setAutoIncrement((Boolean)newValue);
+				return;
+			case EntityPackage.FRAME__KEYS:
+				getKeys().clear();
+				getKeys().addAll((Collection<? extends String>)newValue);
+				return;
+			case EntityPackage.FRAME__NAME:
+				setName((String)newValue);
+				return;
+			case EntityPackage.FRAME__SLOTS:
+				getSlots().clear();
+				getSlots().addAll((Collection<? extends Slot>)newValue);
+				return;
+			case EntityPackage.FRAME__TEXT_FORMULA:
+				setTextFormula((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case EntityPackage.FRAME__ABSTRACT:
+				setAbstract(ABSTRACT_EDEFAULT);
+				return;
+			case EntityPackage.FRAME__AUTO_INCREMENT:
+				setAutoIncrement(AUTO_INCREMENT_EDEFAULT);
+				return;
+			case EntityPackage.FRAME__KEYS:
+				getKeys().clear();
+				return;
+			case EntityPackage.FRAME__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case EntityPackage.FRAME__SLOTS:
+				getSlots().clear();
+				return;
+			case EntityPackage.FRAME__TEXT_FORMULA:
+				setTextFormula(TEXT_FORMULA_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case EntityPackage.FRAME__ABSTRACT:
+				return abstract_ != ABSTRACT_EDEFAULT;
+			case EntityPackage.FRAME__AUTO_INCREMENT:
+				return autoIncrement != AUTO_INCREMENT_EDEFAULT;
+			case EntityPackage.FRAME__KEYS:
+				return keys != null && !keys.isEmpty();
+			case EntityPackage.FRAME__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case EntityPackage.FRAME__SLOTS:
+				return slots != null && !slots.isEmpty();
+			case EntityPackage.FRAME__SLOTS_NUMBER:
+				return slotsNumber != SLOTS_NUMBER_EDEFAULT;
+			case EntityPackage.FRAME__ROUTES_NUMBER:
+				return routesNumber != ROUTES_NUMBER_EDEFAULT;
+			case EntityPackage.FRAME__SUPER_NAMES:
+				return superNames != null && !superNames.isEmpty();
+			case EntityPackage.FRAME__TEXT_FORMULA:
+				return TEXT_FORMULA_EDEFAULT == null ? textFormula != null : !TEXT_FORMULA_EDEFAULT.equals(textFormula);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (abstract: ");
+		result.append(abstract_);
+		result.append(", autoIncrement: ");
+		result.append(autoIncrement);
+		result.append(", keys: ");
+		result.append(keys);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", slotsNumber: ");
+		result.append(slotsNumber);
+		result.append(", routesNumber: ");
+		result.append(routesNumber);
+		result.append(", superNames: ");
+		result.append(superNames);
+		result.append(", textFormula: ");
+		result.append(textFormula);
+		result.append(')');
+		return result.toString();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean isAbstract() {
-		return (Boolean)eGet(EntityPackage.Literals.FRAME__ABSTRACT, true);
+		return abstract_;
 	}
 
 	/**
@@ -219,7 +542,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setAbstract(boolean newAbstract) {
-		eSet(EntityPackage.Literals.FRAME__ABSTRACT, newAbstract);
+		boolean oldAbstract = abstract_;
+		abstract_ = newAbstract;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__ABSTRACT, oldAbstract, abstract_));
 	}
 
 	/**
@@ -228,7 +554,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public boolean isAutoIncrement() {
-		return (Boolean)eGet(EntityPackage.Literals.FRAME__AUTO_INCREMENT, true);
+		return autoIncrement;
 	}
 
 	/**
@@ -237,7 +563,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public void setAutoIncrement(boolean newAutoIncrement) {
-		eSet(EntityPackage.Literals.FRAME__AUTO_INCREMENT, newAutoIncrement);
+		boolean oldAutoIncrement = autoIncrement;
+		autoIncrement = newAutoIncrement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__AUTO_INCREMENT, oldAutoIncrement, autoIncrement));
 	}
 
 } // FrameImpl

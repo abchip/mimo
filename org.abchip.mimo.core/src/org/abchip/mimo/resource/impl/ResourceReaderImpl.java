@@ -15,7 +15,11 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceReader;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -31,6 +35,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class ResourceReaderImpl<E extends EntityNameable> extends MinimalEObjectImpl.Container implements ResourceReader<E> {
+	/**
+	 * The cached value of the '{@link #getNotifier() <em>Notifier</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNotifier()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResourceNotifier<E> notifier;
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -49,23 +63,30 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public ResourceNotifier<E> getNotifier() {
-		return (ResourceNotifier<E>)eGet(ResourcePackage.Literals.RESOURCE_READER__NOTIFIER, true);
+		if (notifier != null && ((EObject)notifier).eIsProxy()) {
+			InternalEObject oldNotifier = (InternalEObject)notifier;
+			notifier = (ResourceNotifier<E>)eResolveProxy(oldNotifier);
+			if (notifier != oldNotifier) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE_READER__NOTIFIER, oldNotifier, notifier));
+			}
+		}
+		return notifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceNotifier<E> basicGetNotifier() {
+		return notifier;
 	}
 
 	/**
@@ -74,7 +95,10 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 */
 	@Override
 	public void setNotifier(ResourceNotifier<E> newNotifier) {
-		eSet(ResourcePackage.Literals.RESOURCE_READER__NOTIFIER, newNotifier);
+		ResourceNotifier<E> oldNotifier = notifier;
+		notifier = newNotifier;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_READER__NOTIFIER, oldNotifier, notifier));
 	}
 
 	/**
@@ -193,4 +217,64 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 */
 	@Override
 	public abstract ContextProvider getContextProvider();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				if (resolve) return getNotifier();
+				return basicGetNotifier();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				setNotifier((ResourceNotifier<E>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				setNotifier((ResourceNotifier<E>)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				return notifier != null;
+		}
+		return super.eIsSet(featureID);
+	}
 } // QResourceImpl

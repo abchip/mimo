@@ -12,7 +12,9 @@ import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +31,42 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
+	/**
+	 * The default value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CLASS_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String className = CLASS_NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ServiceStatus STATUS_EDEFAULT = ServiceStatus.ACTIVE;
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceStatus status = STATUS_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -60,7 +98,7 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 */
 	@Override
 	public String getClassName() {
-		return (String)eGet(ApplicationPackage.Literals.SERVICE_REF__CLASS_NAME, true);
+		return className;
 	}
 
 	/**
@@ -70,7 +108,10 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 */
 	@Override
 	public void setClassName(String newClassName) {
-		eSet(ApplicationPackage.Literals.SERVICE_REF__CLASS_NAME, newClassName);
+		String oldClassName = className;
+		className = newClassName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REF__CLASS_NAME, oldClassName, className));
 	}
 
 	/**
@@ -91,8 +132,94 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 * @generated
 	 */
 	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+				return getClassName();
+			case ApplicationPackage.SERVICE_REF__STATUS:
+				return getStatus();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+				setClassName((String)newValue);
+				return;
+			case ApplicationPackage.SERVICE_REF__STATUS:
+				setStatus((ServiceStatus)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+				setClassName(CLASS_NAME_EDEFAULT);
+				return;
+			case ApplicationPackage.SERVICE_REF__STATUS:
+				setStatus(STATUS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
+			case ApplicationPackage.SERVICE_REF__STATUS:
+				return status != STATUS_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (className: ");
+		result.append(className);
+		result.append(", status: ");
+		result.append(status);
+		result.append(')');
+		return result.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ServiceStatus getStatus() {
-		return (ServiceStatus)eGet(ApplicationPackage.Literals.SERVICE_REF__STATUS, true);
+		return status;
 	}
 
 	/**
@@ -102,7 +229,10 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 */
 	@Override
 	public void setStatus(ServiceStatus newStatus) {
-		eSet(ApplicationPackage.Literals.SERVICE_REF__STATUS, newStatus);
+		ServiceStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REF__STATUS, oldStatus, status));
 	}
 
 } //ServiceRefImpl
